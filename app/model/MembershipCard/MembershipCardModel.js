@@ -36,8 +36,282 @@
         'MembershipCardBackgroundImgName_back',
       'MembershipCardBackgroundImg_back',
       'MembershipCardPoint',
-      'LoyaltCampaignCount'
-          , {
+      'LoyaltCampaignCount',
+      'CountReviewer',
+      'CountStar',
+      {
+        name: 'ModifiedEnterpriseAddress',
+        convert: function (value, record) {
+
+            var _value;
+            var str = record.get('EnterpriseAddress');
+
+            let address = str;
+            _value = address.replaceAll(",", "<br>");
+
+
+
+            return _value;
+        }
+    },
+
+    {
+        name: 'ModifiedMarketingTagline',
+        convert: function (value, record) {
+
+            var _value;
+            var taglines = [
+                "Enjoy Exclusive Perks",
+                "Unlock VIP Access",
+                "Member Deals Only",
+                "Get More as Member",
+                "Privileges Await You",
+                "Perks Made for You",
+                "Your VIP Journey Starts",
+                "Be Treated Like Royalty",
+                "Rewards All Year Long",
+                "Special For Members",
+                "Join. Save. Repeat.",
+                "Swipe for Perks",
+                "Scan and Enjoy",
+                "Your Perk Card",
+                "Member First Always",
+                "One Card, Many Perks",
+                "Member Life Starts",
+                "Your Pass to More",
+                "VIP Cardholder Zone",
+                "Card That Gives Back",
+                "Get It Now!",
+                "Sign Up & Save",
+                "Unlock the Perks",
+                "Tap Into Benefits",
+                "Claim Your Benefits",
+                "Don’t Miss Out!",
+                "Grab the Rewards",
+                "Activate Rewards",
+                "Limited Time Only",
+                "Join & Enjoy More",
+                "Shop More, Earn More",
+                "Earn As You Spend",
+                "Points, Deals, Perks",
+                "Your Daily Bonus",
+                "Instant Reward Mode",
+                "Save More Today",
+                "Spend Smart. Get Back.",
+                "Big Rewards Inside",
+                "Extra Value Daily",
+                "Exclusive & Worth It",
+                "Because You Deserve",
+                "Treat Yourself Right",
+                "Be Rewarded Always",
+                "Smarter Way to Shop",
+                "Live the Member Life",
+                "More Than Just Deals",
+                "You Earned This",
+                "Joy in Every Swipe",
+                "Everyday Bonus Life",
+                "Level Up Your Life"
+              ];
+              
+              // Randomly select a tagline
+              _value = taglines[Math.floor(Math.random() * taglines.length)];
+              
+
+
+
+            return _value;
+        }
+    },
+    {
+        name: 'ModifiedGetItNow',
+        convert: function (value, record) {
+
+            var _value;
+            var GetItNowtaglines = [
+                "Get It NOW!",
+                "Claim This Perk",
+                "Unlock Your Reward",
+                "Tap to Enjoy",
+                "Redeem Instantly",
+                "Activate Now",
+                "Join & Save",
+                "Enjoy This Deal",
+                "Tap & Get It",
+                "Start Saving Today",
+                "Grab It Fast",
+                "Dont Miss Out",
+                "Claim Your Spot",
+                "Unlock Exclusive Now",
+                "Join the Club",
+                "Snag This Offer",
+                "One Tap to Perks",
+                "Go VIP Now",
+                "Experience the Perks",
+                "Try It Today!",
+                "Get Member Access",
+                "Rebut Sekarang!",
+                "Terus Nikmati Ganjaran",
+                "Klik & Dapat!",
+                "Jom Join Sekarang",
+                "Tebus Sekarang",
+                "Cepat, Limited Offer!",
+                "Dapatkan Tawaran Ini"
+              ];
+              
+              // Randomly select a tagline
+              _value = GetItNowtaglines[Math.floor(Math.random() * GetItNowtaglines.length)];
+              
+
+
+
+            return _value;
+        }
+    },
+      {
+        name: 'ModifiedCountStarCountStar',
+        convert: function (value, record) {
+            var _value;
+            var RateReviews;
+
+
+
+            RateReviews = parseFloat(record.get('CountStar'));
+
+            if (RateReviews == 5) {
+                _value = '<img src="resources/icons/star.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/star.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/star.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/star.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/star.png" alt="Image" style="width:12px;height:12px;">&nbsp;('+RateReviews+')&nbsp;-';
+
+            }
+            if ((RateReviews >= 4) && (RateReviews < 5)) {
+                _value = '<img src="resources/icons/star.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/star.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/star.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/star.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/reviewstarunrate.png" alt="Image" style="width:12px;height:12px;">&nbsp;('+RateReviews+')&nbsp;-';
+
+
+                if ((RateReviews >= 4.2) && (RateReviews <= 4.4)) {
+                   // _value = '<div style="width100%;text-align:right;background-color: transparent;font-family:Arial, sans-serif;font-size:1px;color:black;font-weight:bold;overflow:hidden;margin:-15px 5px 0px 0px;" ><img src="resources/icons/star.png" alt="Image" style="width:12px;height:12px;">&nbsp;&nbsp;&nbsp;&nbsp;<img src="resources/icons/star.png" alt="Image" style="width:12px;height:12px;">&nbsp;&nbsp;&nbsp;&nbsp;<img src="resources/icons/star.png" alt="Image" style="width:12px;height:12px;">&nbsp;&nbsp;&nbsp;&nbsp;<img src="resources/icons/star.png" alt="Image" style="width:12px;height:12px;">&nbsp;&nbsp;&nbsp;&nbsp;<img src="resources/icons/StarpointThree.png" alt="Image" style="width:12px;height:12px;"></div>';
+                    _value = '<img src="resources/icons/star.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/star.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/star.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/star.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/StarpointThree.png" alt="Image" style="width:12px;height:12px;">&nbsp;('+RateReviews+')&nbsp;-';
+
+                }
+                if (RateReviews == 4.5) {
+                    _value = '<img src="resources/icons/star.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/star.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/star.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/star.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/StarpointFive.png" alt="Image" style="width:12px;height:12px;">&nbsp;('+RateReviews+')&nbsp;-';
+
+                }
+                if ((RateReviews >= 4.6) && (RateReviews <= 4.8)) {
+                    _value = '<img src="resources/icons/star.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/star.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/star.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/star.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/StarpointSeven.png" alt="Image" style="width:12px;height:12px;">&nbsp;('+RateReviews+')&nbsp;-';
+                    
+                }
+                if (RateReviews == 4.9) {
+                    _value = '<img src="resources/icons/star.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/star.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/star.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/star.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/StarpointNine.png" alt="Image" style="width:12px;height:12px;">&nbsp;('+RateReviews+')&nbsp;-';
+
+                }
+
+
+
+            }
+            if ((RateReviews >= 3) && (RateReviews < 4)) {
+                _value = '<img src="resources/icons/star.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/star.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/star.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/reviewstarunrate.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/reviewstarunrate.png" alt="Image" style="width:12px;height:12px;">&nbsp;('+RateReviews+')&nbsp;-';
+
+                if ((RateReviews >= 3.2) && (RateReviews <= 3.4)) {
+                    _value = '<img src="resources/icons/star.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/star.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/star.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/StarpointThree.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/reviewstarunrate.png" alt="Image" style="width:12px;height:12px;">&nbsp;('+RateReviews+')&nbsp;-';
+
+                }
+                if (RateReviews == 3.5) {
+                    _value = '<img src="resources/icons/star.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/star.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/star.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/StarpointFive.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/reviewstarunrate.png" alt="Image" style="width:12px;height:12px;">&nbsp;('+RateReviews+')&nbsp;-';
+
+                }
+                if ((RateReviews >= 3.6) && (RateReviews <= 3.8)) {
+                    _value = '<img src="resources/icons/star.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/star.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/star.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/StarpointSeven.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/reviewstarunrate.png" alt="Image" style="width:12px;height:12px;">&nbsp;('+RateReviews+')&nbsp;-';
+
+                }
+                if (RateReviews == 3.9) {
+                    _value = '<img src="resources/icons/star.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/star.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/star.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/StarpointNine.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/reviewstarunrate.png" alt="Image" style="width:12px;height:12px;">&nbsp;('+RateReviews+')&nbsp;-';
+
+                }
+
+
+
+            }
+            if ((RateReviews >= 2) && (RateReviews < 3)) {
+                _value = '<img src="resources/icons/star.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/star.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/reviewstarunrate.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/reviewstarunrate.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/reviewstarunrate.png" alt="Image" style="width:12px;height:12px;">&nbsp;('+RateReviews+')&nbsp;-';
+
+                if ((RateReviews >= 2.2) && (RateReviews <= 2.4)) {
+                    _value = '<img src="resources/icons/star.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/star.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/StarpointThree.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/reviewstarunrate.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/reviewstarunrate.png" alt="Image" style="width:12px;height:12px;">&nbsp;('+RateReviews+')&nbsp;-';
+
+                }
+                if (RateReviews == 2.5) {
+                    _value = '<img src="resources/icons/star.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/star.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/StarpointFive.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/reviewstarunrate.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/reviewstarunrate.png" alt="Image" style="width:12px;height:12px;">&nbsp;('+RateReviews+')&nbsp;-';
+
+                }
+                if ((RateReviews >= 2.6) && (RateReviews <= 2.8)) {
+                    _value = '<img src="resources/icons/star.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/star.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/StarpointSeven.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/reviewstarunrate.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/reviewstarunrate.png" alt="Image" style="width:12px;height:12px;">&nbsp;('+RateReviews+')&nbsp;-';
+
+                }
+                if (RateReviews == 2.9) {
+                    _value = '<img src="resources/icons/star.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/star.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/StarpointNine.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/reviewstarunrate.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/reviewstarunrate.png" alt="Image" style="width:12px;height:12px;">&nbsp;('+RateReviews+')&nbsp;-';
+
+                }
+
+
+
+
+
+            }
+            if ((RateReviews >= 1) && (RateReviews < 2)) {
+                _value = '<img src="resources/icons/star.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/reviewstarunrate.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/reviewstarunrate.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/reviewstarunrate.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/reviewstarunrate.png" alt="Image" style="width:12px;height:12px;">&nbsp;('+RateReviews+')&nbsp;-';
+
+                if ((RateReviews >= 1.2) && (RateReviews <= 1.4)) {
+                    _value = '<img src="resources/icons/star.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/StarpointThree.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/reviewstarunrate.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/reviewstarunrate.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/reviewstarunrate.png" alt="Image" style="width:12px;height:12px;">&nbsp;('+RateReviews+')&nbsp;-';
+
+                }
+                if (RateReviews == 1.5) {
+                    _value = '<img src="resources/icons/star.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/StarpointFive.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/reviewstarunrate.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/reviewstarunrate.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/reviewstarunrate.png" alt="Image" style="width:12px;height:12px;">&nbsp;('+RateReviews+')&nbsp;-';
+
+                }
+                if ((RateReviews >= 1.6) && (RateReviews <= 1.8)) {
+                    _value = '<img src="resources/icons/star.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/StarpointSeven.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/reviewstarunrate.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/reviewstarunrate.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/reviewstarunrate.png" alt="Image" style="width:12px;height:12px;">&nbsp;('+RateReviews+')&nbsp;-';
+
+                }
+                if (RateReviews == 1.9) {
+                    _value = '<img src="resources/icons/star.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/StarpointNine.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/reviewstarunrate.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/reviewstarunrate.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/reviewstarunrate.png" alt="Image" style="width:12px;height:12px;">&nbsp;('+RateReviews+')&nbsp;-';
+
+                }
+
+            }
+            if ((RateReviews >= 0) && (RateReviews < 1)) {
+                _value = '<img src="resources/icons/reviewstarunrate.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/reviewstarunrate.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/reviewstarunrate.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/reviewstarunrate.png" alt="Image" style="width:12px;height:12px;">&nbsp;<img src="resources/icons/reviewstarunrate.png" alt="Image" style="width:12px;height:12px;">&nbsp;('+RateReviews+')&nbsp;-';
+
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+//             if (_CountStar == 0) {
+//                 _value = 'No Rate';
+//             } if (_CountStar == 1) {
+//                 _value = '<img src="resources/icons/star.png" alt="Image" style="width:12px;height:12px;">';
+
+//             } if (_CountStar == 2) {
+//                 _value = '<img src="resources/icons/star.png" alt="Image" style="width:12px;height:12px;"> <img src="resources/icons/star.png" alt="Image" style="width:12px;height:12px;">';
+//             } if (_CountStar == 3) {
+//                 _value = '<img src="resources/icons/star.png" alt="Image" style="width:12px;height:12px;"> <img src="resources/icons/star.png" alt="Image" style="width:12px;height:12px;"><img src="resources/icons/star.png" alt="Image" style="width:12px;height:12px;">';
+//             } if (_CountStar == 4) {
+//                 _value = '<img src="resources/icons/star.png" alt="Image" style="width:12px;height:12px;"> <img src="resources/icons/star.png" alt="Image" style="width:12px;height:12px;"><img src="resources/icons/star.png" alt="Image" style="width:12px;height:12px;"><img src="resources/icons/star.png" alt="Image" style="width:12px;height:12px;">';
+//             } if (_CountStar == 5) {
+//                 _value = '<img src="resources/icons/star.png" alt="Image" style="width:12px;height:12px;"> <img src="resources/icons/star.png" alt="Image" style="width:12px;height:12px;"><img src="resources/icons/star.png" alt="Image" style="width:12px;height:12px;"><img src="resources/icons/star.png" alt="Image" style="width:12px;height:12px;"><img src="resources/icons/star.png" alt="Image" style="width:12px;height:12px;">';
+//             }
+
+
+
+            return _value
+        }
+    } , {
               name: 'ModifiedEnterprisesNameUpperCase',
               convert: function (value, record) {
 
@@ -59,24 +333,52 @@
                   var _value;
                   var str = record.get('EnterprisesName');
                   
-
-                  if (str.length <= 16) {
-                      _value = '<div style="margin:-51px 0px 0px 68px;font-family:Arial, sans-serif;font-size:22px;font-weight:bold;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:top;word-break:normal;color:white;width:100%;">' + str.toUpperCase() + '</div>';
-                    
-                      return _value;
-                  }
-                  if (str.length >= 17) {
-                      var str0 = str.substring(0, 16);
-                      var str1 = str.substring(16, str.length);
-                      _value = '<div style="margin:-61px 0px 0px 68px;font-family:Arial, sans-serif;font-size:18px;font-weight:bold;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:top;word-break:normal;color:white;width:100%;">' + str0.toUpperCase() + '-</div><br>' +
-                               '<div style="margin:-26px 0px 0px 68px;font-family:Arial, sans-serif;font-size:18px;font-weight:bold;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:top;word-break:normal;color:white;width:100%;">' + str1.toUpperCase() + '</div>';
-                      return _value;
-                  }
+if(str){
+    if (str.length <= 16) {
+        _value = '<div style="margin:-51px 0px 0px 68px;font-family:Arial, sans-serif;font-size:22px;font-weight:bold;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:top;word-break:normal;color:white;width:100%;">' + str.toUpperCase() + '</div>';
+      
+        return _value;
+    }
+    if (str.length >= 17) {
+        var str0 = str.substring(0, 16);
+        var str1 = str.substring(16, str.length);
+        _value = '<div style="margin:-61px 0px 0px 68px;font-family:Arial, sans-serif;font-size:18px;font-weight:bold;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:top;word-break:normal;color:white;width:100%;">' + str0.toUpperCase() + '-</div><br>' +
+                 '<div style="margin:-26px 0px 0px 68px;font-family:Arial, sans-serif;font-size:18px;font-weight:bold;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:top;word-break:normal;color:white;width:100%;">' + str1.toUpperCase() + '</div>';
+        return _value;
+    }
+}
+                 
 
 
 
               }
-          }
+          }  , {
+            name: 'ModifiedEnterprisesNameDesignOneTwo',
+            convert: function (value, record) {
+
+                var _value;
+                var str = record.get('EnterprisesName');
+                
+if(str){
+  if (str.length <= 16) {
+      _value = '<div style="margin:-29px 0px 0px 33px;font-family:Arial, sans-serif;font-size:10px;font-weight:bold;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:top;word-break:normal;color:white;width:100%;">' + str.toUpperCase() + '</div>';
+    
+      return _value;
+  }
+  if (str.length >= 17) {
+      var str0 = str.substring(0, 16);
+      var str1 = str.substring(16, str.length);
+      _value = '<div style="margin:-33px 0px 0px 33px;font-family:Arial, sans-serif;font-size:10px;font-weight:bold;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:top;word-break:normal;color:white;width:100%;">' + str0.toUpperCase() + '-</div><br>' +
+               '<div style="margin:-20px 0px 0px 33px;font-family:Arial, sans-serif;font-size:10px;font-weight:bold;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:top;word-break:normal;color:white;width:100%;">' + str1.toUpperCase() + '</div>';
+      return _value;
+  }
+}
+               
+
+
+
+            }
+        }
             , {
                 name: 'ModifiedEnterprisesLogo',
                 convert: function (value, record) {
@@ -95,6 +397,39 @@
                         console.log(str.length);
                         return _value;
                     }
+
+
+
+                }
+            } , {
+                name: 'ModifiedEnterprisesLogoDesignOneTwo',
+                convert: function (value, record) {
+
+                    var _value;
+                 
+                    // var logo = record.get('EnterprisesLogo');
+                  
+                 
+                    //     _value = '<img src="' + logo + '" alt="Image" style="width:32px;height:32px;border-radius: 50%;border: 1px solid white;margin:0px 0px 0px 0px">';
+                    //     //console.log(str.length);
+                    //     return _value;
+                  
+
+                    //     var _value;
+                        var str = record.get('EnterprisesName');
+                        var logo = record.get('EnterprisesLogo');
+                      
+                        if (str.length <= 16) {
+                            _value = '<img src="' + logo + '" alt="Image" style="width:32px;height:32px;border-radius: 50%;border: 1px solid white;margin:-12px 0px 0px 0px">';
+                          //  console.log(str.length);
+                            return _value;
+                        }
+                        if (str.length >= 17) {
+                            _value = '<img src="' + logo + '" alt="Image" style="width:32px;height:32px;border-radius: 50%;border: 1px solid white;margin:0px 0px 0px 0px">';
+                          //  console.log(str.length);
+                            return _value;
+                        }
+    
 
 
 
@@ -153,9 +488,14 @@
 
                         var _value;
                         var str = record.get('AyohaUserAccountNo');
-                        var str0 = str.split('-');
-                        var str1 = str0[2];
-                        _value = insert(str1, 3, " ");
+
+if(str){
+
+    var str0 = str.split('-');
+    var str1 = str0[2];
+    _value = insert(str1, 3, " ");
+}
+
 
                         return _value
 
@@ -169,6 +509,7 @@
                            // 0111 3218 9269
                            var _value;
                            var str = record.get('MembershipNo');
+                           if(str){
                            var str1 = str.split('-');
                            var str2 = str1[1];
                            var str3 = str1[2];
@@ -183,6 +524,7 @@
 
 
                            _value = str8;
+                           }
                            return _value;
 
 
@@ -280,8 +622,8 @@
                            return _value;
 
                        }
-                   }
-
+                   },
+                  
 
               
         ]

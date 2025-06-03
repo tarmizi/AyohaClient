@@ -653,7 +653,10 @@ function FloatPanel_AyohaeWallet_ScanAndPay_PaymentShow(EnterpriseLogoPath, Ente
 
     Ext.getCmp('htmlFloatPanel_AyohaeWallet_ScanAndPay_Payment_PayTo').setHtml('<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 24px;font-weight:bold;color:black;margin:0px 0px 0px 0px;height:62;vertical-align:middle">' + EnterpriseName + '</div>');
     Ext.getCmp('htmlFloatPanel_AyohaeWallet_ScanAndPay_Payment_PayToProfileImg').setHtml('<img src="' + EnterpriseLogoPath + '" width="72px" height="72px" style="border-radius:50%;border:1px solid grey;background-color:white;"/> ');
-   
+    if (isFloatPanel_AyohaStore_CheckOutOpen == 'Y') {
+        Ext.getCmp('LoadingFloatPanel_AyohaeWallet_ScanAndPay_PaymentID').setZIndex(400);
+    }
+
 }
 
 
@@ -697,6 +700,7 @@ var globalFloatPanel_AyohaeWallet_ScanAndPay_Payment_EnterpriseEmail;
 var globalFloatPanel_AyohaeWallet_ScanAndPay_Payment_ClientEmail;
 
 function FloatPanel_AyohaeWallet_ScanAndPay_Payment_ProcessQRCode(QrCode) {
+    LoadingPanelShow(getLoadingIcon(), 'Loading...');
     //var audio = document.getElementById("audioScanQRCodeSound");
     //audio.play();
     //var TempStampQRCode = GetCurrStampCardQrCode();
@@ -714,8 +718,11 @@ function FloatPanel_AyohaeWallet_ScanAndPay_Payment_ProcessQRCode(QrCode) {
     globalFloatPanel_AyohaeWallet_ScanAndPay_Payment_EnterpriseAcNo = EnterpriseAccNo;
    // console.log(QrCode);
     
+// alert(GetCurrAyohaUserAccountNo());
+// alert(EnterpriseAccNo);
+  
 
-    //Ext.getStore('MembershipsCheckIsMemberStore').getProxy().setExtraParams({
+//Ext.getStore('MembershipsCheckIsMemberStore').getProxy().setExtraParams({
     //CampaignCode: QrCode,
     //SubscriberAccNo:GetCurrAyohaUserAccountNo(),
     //EnterpriseAccNo:EnterpriseAccNo
@@ -804,9 +811,9 @@ function FloatPanel_AyohaeWallet_ScanAndPay_Payment_ProcessQRCode(QrCode) {
             // FloatPanel_AyohaeWallet_IconShow();
             // FloatPanel_QrCodeScanner_ScanCampaignHide();
         }
-
+        LoadingPanelHide();
     });
-    task.delay(500);
+    task.delay(1500);
 
 }
 

@@ -1136,7 +1136,8 @@ function loadUserAccountLatest() {
             //
             Load_FloatPanel_AyohaEnterpriseAccount_EnterprisesContactUsLinkStore();
         } else {
-            swalFireFail("Login Failed !");
+           // swalFireFail("Login Failed !");
+           swalFireFailLogin();
         }
         LoadingCustomMsgHide();
         Ext.Viewport.setMasked(false);

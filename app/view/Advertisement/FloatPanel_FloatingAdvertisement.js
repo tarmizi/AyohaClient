@@ -7,7 +7,7 @@
 
 
 
-var scanner;
+//var scanner;
 var _FloatPanel_FloatingAdvertisement;
 
 function FloatPanel_FloatingAdvertisement() {

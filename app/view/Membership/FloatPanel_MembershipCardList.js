@@ -823,7 +823,8 @@ function FloatPanel_MembershipCardListShow() {
     isFloatPanel_MembershipCardListOpen = 'Y';
     FloatPanel_MembershipCardList_MembershipLoadBySubscriberAccNoStore();
     document.getElementById("input-FloatPanel_MembershipCardList_SearchTxt").addEventListener("keyup", MembershipLoadBySubscriberAccNoStoreOnKeyUp);
-   
+    FloatPanel_MerchantDetailPageHide();
+    Dashboard_SearchMerchantListHide();
 
 }
 

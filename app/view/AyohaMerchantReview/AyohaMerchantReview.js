@@ -57,8 +57,8 @@ function AyohaMerchantReview() {
         },
         //style: 'border-bottom:1px solid;background-color:#353839;',
         // style: 'border-bottom:1px solid;background-color:white;',
-       // style: 'background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);',
-        style: 'background-color: #fac;background-image: linear-gradient(#c800ffc9,#ff00de75);',
+       style: 'background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);',
+       // style: 'background-color: #fac;background-image: linear-gradient(#c800ffc9,#ff00de75);',
         listeners: {
             initialize: function (c) {
                 this.element.on({
@@ -111,8 +111,8 @@ function AyohaMerchantReview() {
                         height: '100%',
                         //    margin: '0 0 0 0',
                         //  style: 'background-color: transparent',
-                        //style: ' background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);',
-                        style: 'background-color: #fac;background-image: linear-gradient(#c800ffc9,#ff00de75);',
+                        style: ' background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);',
+                        //style: 'background-color: #fac;background-image: linear-gradient(#c800ffc9,#ff00de75);',
                         layout: {
                             type: 'vbox',
                             pack: 'start',
@@ -124,6 +124,7 @@ function AyohaMerchantReview() {
 
                                 xtype: 'container',
                                 width: '100%',
+                                margin: '10 0 0 0',
                                 //docked: 'top',
                                 height: 32,
 
@@ -155,7 +156,7 @@ function AyohaMerchantReview() {
                                                          margin: '0 0 0 10',
                                                          width: 35,
                                                          // iconCls: 'list',
-                                                         html: '<div ><img src="resources/icons/backwhite03.png" width="25" height="20" alt="Company Name"></div>',
+                                                         html: '<div ><img src="resources/icons/backwhite03Ori.png" width="25" height="20" alt="Company Name"></div>',
                                                          ui: 'plain',
                                                          handler: function () {
                                                              _AyohaMerchantReview.hide(Ext.fx.Animation({
@@ -293,11 +294,11 @@ function AyohaMerchantReview() {
                            
 
                                                       {
-                                                          margin:'0 0 0 0',
+                                                          margin:'5 0 0 0',
                                                           html: '<img src="resources/icons/editReview.png" alt="Image" style="width:24px;height:24px;">'
                                                       },
                                                       {
-                                                          margin:'5 0 0 0',
+                                                          margin:'13 0 0 5',
                                                           html: '<div style="background: transparent;height:30px;font-size: 11px;font-weight:normal;color:black;text-align:center;" >Write a review</div>'
                                                       }
 
@@ -687,13 +688,27 @@ function AyohaMerchantReviewShow(ID) {
     Ext.getCmp('containerAyohaMerchantReview_ReviewCompanyInfo_Logo').setHtml('<img src="' + EnterpriseLogoPath.get('EnterpriseLogoPath') + '" alt="Image" style="width:90px;height:90px;">');
     Ext.getCmp('containerAyohaMerchantReview_ReviewCompanyInfo_Name').setHtml('<div style="width:100%;background-color: transparent;text-align:center;border: 1px none white;font-family:Century Gothic;font-size: 17px;font-weight:bold;color:white;">' + EnterpriseName.get('EnterpriseName') + '</div>');
 
-
-  
-
+}
 
 
+
+function AyohaMerchantReviewShow_FromOther(EnterpriseLogoPath,EnterpriseName,EnterpriseAccNo) {
+    AddRoutePages("AyohaMerchantReviewHide()");
+    Ext.Viewport.remove(_AyohaMerchantReview);
+    this.overlay = Ext.Viewport.add(AyohaMerchantReview());
+    this.overlay.show();   
+    AyohaMerchantReviewAdjustHeight();
+   // isAyohaMerchantReviewOpen = 'Y';
+    globalAyohaMerchantReview_AddEdit_PostReview_isSave = "N";
+    globalEnterpriseAccNo_AyohaMerchantReview = EnterpriseAccNo;
+    AyohaMerchantReview_AyohaMerchantReviewLoadByEnterpriseAccNoStore();
+
+   
+    Ext.getCmp('containerAyohaMerchantReview_ReviewCompanyInfo_Logo').setHtml('<img src="' + EnterpriseLogoPath + '" alt="Image" style="width:90px;height:90px;">');
+    Ext.getCmp('containerAyohaMerchantReview_ReviewCompanyInfo_Name').setHtml('<div style="width:100%;background-color: transparent;text-align:center;border: 1px none white;font-family:Century Gothic;font-size: 17px;font-weight:bold;color:white;">' + EnterpriseName + '</div>');
 
 }
+
 
 
 
@@ -885,6 +900,15 @@ function AyohaMerchantReview_initializedTapEvent() {
     var containerViewEl = containerView.element;
     containerViewEl.on('tap',
       function (event, node, options, eOpts) {
+if(isFloatPanel_MembershipCardList_NotYetSubscribedOpen=='Y'){
+
+    swalFireCannotReviewDueToNotMember();
+    return
+}
+if( MembershipTag == 'NO'){
+    swalFireCannotReviewDueToNotMember();
+    return
+}
           globalAyohaMerchantReview_ItemCodeReview = 'AyohaStoreReview';
           AyohaMerchantReview_AddEditShow_Add();
           //setDashBoardMerchantReviewRate();

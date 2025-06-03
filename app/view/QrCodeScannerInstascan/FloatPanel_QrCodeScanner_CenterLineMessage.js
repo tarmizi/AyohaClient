@@ -89,7 +89,7 @@ function FloatPanel_QrCodeScanner_CenterLineMessage() {
                    //width: 300,
                    //margin: '-3 0 0 -150',
                    width: 250,
-                   margin: '-3 0 0 -125',
+               //    margin: '-3 0 0 -125',
                    id: 'FloatPanel_QrCodeScanner_RedCenterLine',
 
                    html: '<div class="blink_me" style="color:white;text-align: center;border:3px solid red;font-size:12px;width:100%;font-weight:bold;width:100%;"></div>',

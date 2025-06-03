@@ -42,7 +42,8 @@ Ext.application({
     'Enterprises.EnterprisesMerchantListSearchResultModel', 'AyohaeWalletTransaction.AyohaeWalletTransactionModel', 'AyohaeWallet.AyohaeWalletModel', 'Memberships.MembershipsCheckIsMemberScanAndPayModel',
     'Enterprises.EnterprisesLoadByEnterpriseAccNoAndSubscriberAccNoModel', 'AyohaRewardVoucherEntitledUser.AyohaRewardVoucherEntitledUserModel', 'AyohaRewardVoucherEntitledUser.AyohaRewardVoucherEntitledUser_VoucherHistoryModel',
     'AyohaHotMerchant.AyohaHotMerchantModel', 'AyohaRewardEvent.AyohaRewardEventModel', 'AyohaRewardContest.AyohaRewardContest_SelfieAndWinModel', 'EnterprisesCoverMedia.EnterprisesCoverMediaModel',
-    'EnterprisesOnlineStore.EnterprisesOnlineStoreModel', 'EnterprisesWorkingHour.EnterprisesWorkingHourModel', 'AyohaMerchantInfoMembershipLoyaltyProgram.AyohaMerchantInfoMembershipLoyaltyProgramModel'],
+    'EnterprisesOnlineStore.EnterprisesOnlineStoreModel', 'EnterprisesWorkingHour.EnterprisesWorkingHourModel', 'AyohaMerchantInfoMembershipLoyaltyProgram.AyohaMerchantInfoMembershipLoyaltyProgramModel',
+    'Master.BankAccountTypeModel', 'AyohaUserProfile.AyohaUserProfile_BankAccountModel','MembershipCardPaymentPlan.MembershipCardPaymentPlanModel'],
 
     stores: ['Notifications.NotificationsCountTypeNNStore', 'Notifications.NotificationsCountTypeRStore', 'Enterprises.EnterprisesLoadByMerchantCategoryStore',
     'EnterpriseSubscriber.EnterpriseSubscribergetBySubcriberAccNoSearchReceiptStore','RedeemItem.RedeemItemgetByEnterpriseAccNoStore', 'LoyaltyStamp.LoyaltyStampLoadByEnterpriseAccNoStore', 'LoyaltyStamp.LoyaltyStampLoadBySubscriberAccNoAndEnterpriseAccNoStore',
@@ -88,7 +89,8 @@ Ext.application({
     'AyohaRewardContest.AyohaRewardContestSelfieAndWinLoadBySubscriberAccNoContestCodeStore', 'Enterprises.EnterprisesLoadAyohaMerchantListbyEnterpriseBusinessTypeStore', 'AyohaRewardEvent.AyohaRewardEventLoadBySubscriberAccNoEnterpriseAccNoStore',
     'AyohaRewardContest.AyohaRewardContestLoadBySubscriberAccNoEnterpriseAccNoStore', 'AyohaRewardVoucherEntitledUser.AyohaRewardVoucherEntitledUserLoadBySubscriberAccNoMerchantRewardVoucherHistoryStore', 'AyohaRewardVoucherEntitledUser.AyohaRewardVoucherEntitledUserLoadBySubscriberAccNoAyohaStoreVoucherHistoryStore',
     'EnterprisesCoverMedia.EnterprisesCoverMediaLoadByEnterpriseAccNoStore', 'EnterprisesOnlineStore.EnterprisesOnlineStoreLoadByEnterpriseAccNoStore', 'EnterprisesWorkingHour.EnterprisesWorkingHourLoadByEnterpriseAccNoStore', 'AyohaMerchantInfoMembershipLoyaltyProgram.AyohaMerchantInfoMembershipLoyaltyProgramStore',
-    'AyohaeWalletTransaction.AyohaeWalletTransactionLoadByeWalletAccNoRecentlyTransferToStore', 'AyohaStoreSaleItem.AyohaStoreSaleItemloadByEnterpriseAccNoHotItemStore'],
+    'AyohaeWalletTransaction.AyohaeWalletTransactionLoadByeWalletAccNoRecentlyTransferToStore', 'AyohaStoreSaleItem.AyohaStoreSaleItemloadByEnterpriseAccNoHotItemStore', 'AyohaeWallet.AyohaeWalletAccountSettingHardCodedStore',
+    'MembershipCard.MembershipCardLoadBySubscriberAccNoDashboardMainStore','Master.BankAccountTypeStore', 'AyohaeWallet.AyohaeWalletAccountRequestCashOutStore','AyohaRewardContest.AyohaRewardContestLoadBySubscriberAccNoAndContestCodeStore','MembershipCardPaymentPlan.MembershipCardPaymentPlanLoadByPaymentPlanCodeStore'],
 
     views: ['MyAccount.Dashboard', 'MyAccount.FloatPanel_MyAccountMaster', 'Config.Configs', 'Config.QRcode', 'Main', 'LoginAyohaUser', 'Subscriber.FloatPanel_SubscriberMaster', 'AyohaNotification.FloatPanel_AyohaNotification',
         'AyohaNotification.FloatPanel_AyohaNotification_Notification', 'AyohaReward.FloatPanel_AyohaReward_PointTransactions', 'AyohaReward.FloatPanel_AyohaReward_ContestHistory',
@@ -116,7 +118,9 @@ Ext.application({
     'AyohaHotMerchant.FloatPanel_AyohaHotMerchant_OnlineStoreList', 'Dashboard.FloatPanel_DashboardMerchantReward_MembershipEventDetail', 'MyAccount.FloatPanel_MyAccountRankDescription',
     'Dashboard.FloatPanel_DashboardMerchantReward_MembershipContestDetail', 'Dashboard.FloatPanel_DashboardMerchantReward_MembershipContestSelfieForm', 'Dashboard.FloatPanel_Dashboard_AyohaMerchant_SeeMore', 'AyohaeWallet.FloatPanel_AyohaeWallet_ForgotPassword',
     'AyohaStoreSaleItem.FloatPanel_AyohaStore_MembershipEventList', 'AyohaStoreSaleItem.FloatPanel_AyohaStore_MembershipContestList', 'AyohaRewardVoucher.FloatPanel_AyohaRewardVoucherList_AyohaRewardHome', 'AyohaRewardVoucher.FloatPanel_AyohaRewardVoucherList_AyohaStore',
-    'MyAccount.FloatPanel_MerchantDetailPage', 'AyohaMerchantInfo.FloatPanel_AyohaMerchantInfo_BusinessHour'],
+    'MyAccount.FloatPanel_MerchantDetailPage', 'AyohaMerchantInfo.FloatPanel_AyohaMerchantInfo_BusinessHour', 'MyAccount.Scan_QRCode_StampCard', 'MyAccount.FloatPanel_AyohaMembershipAdvantages', 'AyohaeWallet.FloatPanel_AyohaeWallet_CashOut',
+    'AyohaeWallet.FloatPanel_AyohaeWallet_CashOutConfirm', 'Master.FloatPanel_BankAccountName', 'Master.FloatPanel_BankAccountType','AyohaRewardMerchantDiscountLoyalty.FloatPanel_MerchantDiscountLoyaltyDescription','Dashboard.FloatPanel_DashboardMerchantReward_UploadedReceipt',
+    'Membership.FloatPanel_Membership_MembershipCardSaleDetail','Membership.FloatPanel_MembershipCardList_NotYetSubscribed','AyohaStoreSaleItem.FloatPanel_AyohaStore_CheckOut_MembershipCard'],
 
 
     icon: {
@@ -141,14 +145,71 @@ Ext.application({
         // Destroy the #appLoadingIndicator element
         Ext.fly('appLoadingIndicator').destroy();
 
-        // Initialize the main view
-        //  Ext.Viewport.add(Ext.create('ReceiptsWorld.view.MyAccount.VehicleList'));
-        // Initialize the main view
-
+      
 
         Ext.Viewport.add(Ext.create('ianMizi.view.Main'));
-     // TestRoutePanelShow();
-     onLoad();
+        var hash = window.location.hash || "";
+        if (hash.startsWith("#notification")) {
+            console.log("🔔 Notification tapped");
+    
+            // Parse custom params from hash
+            var params = new URLSearchParams(hash.split('?')[1] || "");
+            var type = params.get("type");
+            var merchant = params.get("merchant");
+    
+            alert("🧭 Type:", type);
+            alert("🏪 Merchant ID:", merchant);
+    
+            Ext.defer(function () {
+                // Your logic to show view or panel
+                FloatPanel_AyohaNotificationShow();
+            }, 500);
+        }
+// Ext.onReady(function () {
+//     var hash = window.location.hash;
+  
+//     if (hash === "#notification") {
+//       console.log("📩 Notification tapped. Redirecting to notification view...");
+  
+//       // Delay to ensure app is ready before navigation
+//       Ext.defer(function () {
+//         FloatPanel_AyohaNotificationShow();
+//       }, 500);
+//     }
+//   });
+
+
+
+
+
+
+
+        // TestRoutePanelShow();
+
+        // window.OneSignalDeferred = window.OneSignalDeferred || [];
+    
+        // OneSignalDeferred.push(async function(OneSignal) {
+        //   // Initialize OneSignal
+        //   await OneSignal.init({
+        //     appId: "93c4c7cb-e23a-4fad-984e-8d49f1cffbc4",
+        //     notifyButton: { enable: false }
+        //   });
+      
+        
+         
+        //   // Wait for user to be fully available
+        //   // const user = await OneSignal.User.onesignalId; // ✅ this returns user object
+        //   // const userId = user.id; // ✅ this is the Player ID
+  
+  
+     
+      
+        //   alert("OneSignal User ID: " + userId);
+        //   console.log("✅ OneSignal User ID (Player ID):", userId);
+        // });
+       
+       //disabled on 20052025
+     //onLoad();
 
         //Ext.Viewport.add(Ext.create('ianMizi.view.AyohaLogin'));
 
@@ -204,7 +265,10 @@ var networkState;
 
 
 function onLoad() {
-   // alert('onLoad');
+    // alert('onLoad');
+
+  
+
     document.addEventListener("deviceready", onDeviceReady, false);
     //var userName = localStorage.getItem('CurrentUserLogin');
     //if (userName) {
@@ -402,7 +466,7 @@ function setSubscription() {
 
 
 function getPlayerIDS() {
-    window.open('http://42.1.63.57/termandcondition.html', '_system'); return false;
+    window.open('https://setkita.com/termandcondition.html', '_system'); return false;
     //window.plugins.OneSignal.getIds(function (ids) {
     //   // alert("userId = " + ids.userId + "\npushToken = " + ids.pushToken);
     //    localStorage.setItem("player_id", ids.userId);

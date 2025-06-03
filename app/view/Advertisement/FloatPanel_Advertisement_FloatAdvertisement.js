@@ -14,27 +14,28 @@ var _FloatPanel_Advertisement_FloatAdvertisement;
 
 function FloatPanel_Advertisement_FloatAdvertisement() {
 
-    _FloatPanel_Advertisement_FloatAdvertisement = Ext.create('Ext.Panel',
+    _FloatPanel_Advertisement_FloatAdvertisement = Ext.create('Ext.Container',
 
 
         {
             id: 'FloatPanel_Advertisement_FloatAdvertisementID',
-            xtype: 'panel',
-            height: 1,
-            width: 1,
+            xtype: 'container',
+            height: 100,
+            width: 100,
             //  draggable: true,
-            //  zIndex: -10,
+            //zIndex: 410,
+            zIndex: 360,
             draggable: false,
-           // top: 100,
-          //  centered: true,
+          // top: 100,
+        //centered: true,
             modal: false,
-            bottom:110,
-            left: -20,
+          // bottom:110,
+         //  left: -20,
            // right: -40,
             showAnimation: {
                 type: 'popIn',
-                duration: 250,
-                easing: 'ease-out'
+                duration: 50,
+                easing: 'ease-in'
                 //type: 'slideIn',
                 //direction: 'left',
                 //easing: 'cubic-bezier(.7,0,.7,1)',
@@ -60,8 +61,8 @@ function FloatPanel_Advertisement_FloatAdvertisement() {
                     xtype: 'container',
                     height: 115,
                     width: 120,
-                    // margin:'-50 0 0 -50',
-                    margin:'-50 0 0 20',
+                    
+                    //margin:'-50 0 0 20',
                     style: 'background-color: transparent;',
                     layout: {
                         type: 'hbox',
@@ -70,8 +71,12 @@ function FloatPanel_Advertisement_FloatAdvertisement() {
                     },
                     items: [
                         {
-                            html: '<div class="blink_me"><img src="resources/icons/floatAdvertisement03.png" width="100" height="105" alt="Company Name"  OnClick="FloatPanel_FloatingAdvertisementShow()"></div>',
-                            name:'nameHtmlFloatPanel_Advertisement_FloatAdvertisementIcon',
+                           // html: '<div class="blink_me"><img src="resources/icons/floatAdvertisement03.png" width="100" height="105" alt="Company Name"  OnClick="FloatPanel_FloatingAdvertisementShow()"></div>',
+                            html: '<div><img src="resources/icons/SaleThree.gif" width="100" height="105" alt="Company Name"  OnClick="FloatPanel_PreviewAdvertisementShow_PointCard()"></div>',
+                            
+                           
+                           
+                           // name:'nameHtmlFloatPanel_Advertisement_FloatAdvertisementIcon',
                             height: 105,
                             width: 100,
                         },
@@ -87,11 +92,9 @@ function FloatPanel_Advertisement_FloatAdvertisement() {
                                ui: 'plain',
                                handler: function () {
                                    FloatPanel_Advertisement_FloatAdvertisementHide();
-                                   Ext.getCmp('Dashboard_FloatingAdvertisement_Txt').setHidden(false);
-                                   Ext.getCmp('Dashboard_FloatingAdvertisement_Icon').setHidden(false);
-                                   //var QrCode = "56923-4468-0123456789-NoEnterprise-4468-0123456789-Point";
-                                   //Scan_QRCode_VerifyQRCode_PointCampaign(QrCode);
-
+                                //   Ext.getCmp('Dashboard_FloatingAdvertisement_Txt').setHidden(false);
+                                  // Ext.getCmp('Dashboard_FloatingAdvertisement_Icon').setHidden(false);
+                                  
                                }
                            },
                          
@@ -109,13 +112,14 @@ function FloatPanel_Advertisement_FloatAdvertisement() {
     return _FloatPanel_Advertisement_FloatAdvertisement;
 }
 
-
+var globalFloatPanel_AyohaCardManagement_AdvertisementButton;
 
 function FloatPanel_Advertisement_FloatAdvertisementShow() {
     Ext.Viewport.remove(_FloatPanel_Advertisement_FloatAdvertisement);
     this.overlay = Ext.Viewport.add(FloatPanel_Advertisement_FloatAdvertisement());
     this.overlay.show();
     isFloatAdvertisementOpen = 'Y';
+   // globalFloatPanel_AyohaCardManagement_AdvertisementButton="FloatPanel_AyohaCardManagement_AdvertisementButton_Point";
 }
 
 

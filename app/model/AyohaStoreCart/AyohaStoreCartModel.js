@@ -31,6 +31,7 @@
       'TotalMerchantPoint',
       'TotalAyohaPoint',
       'TotalMerchantSumStamp',
+      'StampRuleAmount',
       'ItemDescriptions',
       'ItemCartCode',
       'EnterpriseName',

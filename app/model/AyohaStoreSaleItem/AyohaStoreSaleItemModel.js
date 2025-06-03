@@ -22,6 +22,7 @@
       'CampaignCode',
       'CampaignType',
       'MerchantPoint',
+      'StampRuleAmount',
       'AyohaPoint',
       'AyohaUser_MembershipCardCount',
       'MembershipCardImage',
@@ -40,25 +41,25 @@
               var _value;
 
               var CampaignType = record.get('CampaignType');
+              var TTlMerchantPoint;
+              var TTlAyohaPoint;
+              var MerchantPoint = parseFloat(record.get('MerchantPoint'));
+              var AyohaPoint = parseFloat(record.get('AyohaPoint'));
+              var ItemPrice = parseFloat(record.get('ItemPrice'));
+              var ItemPriceDiscount = parseFloat(record.get('ItemPriceDiscount'));
 
+              var ItemPriceDiscountRate = parseFloat(record.get('ItemPriceDiscountRate'));
+  
+              if (ItemPriceDiscountRate >= 0.1) {
+                TTlMerchantPoint = ItemPriceDiscount * MerchantPoint;
+                TTlAyohaPoint = ItemPriceDiscount * AyohaPoint;
+            } else {
+                TTlMerchantPoint = ItemPrice * MerchantPoint;
+                TTlAyohaPoint = ItemPrice * AyohaPoint;
+            }
 
               if (CampaignType == "Point Reward Loyalty Card") {
-                  var TTlMerchantPoint;
-                  var TTlAyohaPoint;
-                  var MerchantPoint = parseFloat(record.get('MerchantPoint'));
-                  var AyohaPoint = parseFloat(record.get('AyohaPoint'));
-                  var ItemPrice = parseFloat(record.get('ItemPrice'));
-                  var ItemPriceDiscount = parseFloat(record.get('ItemPriceDiscount'));
-
-                  var ItemPriceDiscountRate = parseFloat(record.get('ItemPriceDiscountRate'));
-                  if (ItemPriceDiscountRate >= 0.1) {
-                      TTlMerchantPoint = ItemPriceDiscount * MerchantPoint;
-                      TTlAyohaPoint = ItemPriceDiscount * AyohaPoint;
-                  } else {
-                      TTlMerchantPoint = ItemPrice * MerchantPoint;
-                      TTlAyohaPoint = ItemPrice * AyohaPoint;
-                  }
-
+                
 
 
 
@@ -101,12 +102,16 @@
                  
 
               }
-
+             
               if (CampaignType == "NoMembershipCard") {
                   _value = '<div style="font-family:Arial, sans-serif;font-size:10px;font-weight:normal;word-break:normal;margin:-17px 0px 0px 0px;color:white;background-color:transparent;width:100%;border:1px none white;border-radius:0px;text-align:left;"><input type="text" readOnly value="? Point" style="border-radius: 3px;border: 1px solid purple;padding: 2px; width: 70px;height: 16px;font-family:Arial, sans-serif;font-size:11px;font-weight:normal;word-break:normal;color:white;text-align:center;background-color:#c800ffc9;"/>&nbsp;&nbsp;<input type="text" readOnly value="*? A.Point" style="border-radius: 0px;border: 1px none purple;padding: 2px; width: 68px;height: 16px;font-family:Arial, sans-serif;font-size:11px;font-weight:normal;word-break:normal;color:black;text-align:left;background-color:transparent;"/></div>';
               }
-
-
+              if (CampaignType == "Point Reward Loyalty Card|Stamp Reward Loyalty Card") {
+                //_value = '<div style="font-family:Arial, sans-serif;font-size:10px;font-weight:normal;word-break:normal;margin:-20px 0px 0px 0px;color:white;background-color:transparent;width:100%;border:1px none white;border-radius:0px;text-align:left;"><input type="text" readOnly value="' + parseInt(TTlMerchantPoint) + ' M.Point" style="border-radius: 3px;border: 1px solid purple;padding: 2px; width: 70px;height: 16px;font-family:Arial, sans-serif;font-size:11px;font-weight:normal;word-break:normal;color:white;text-align:center;background-color:#c800ffc9;"/>&nbsp;&nbsp;<input type="text" readOnly value="1 Stamp" style="border-radius: 3px;border: 1px solid purple;padding: 2px; width: 70px;height: 16px;font-family:Arial, sans-serif;font-size:11px;font-weight:normal;word-break:normal;color:white;text-align:center;background-color:#c800ffc9;"/>&nbsp;&nbsp;<input type="text" readOnly value="*' + parseInt(TTlAyohaPoint) + ' A.Point" style="border-radius: 0px;border: 1px none purple;padding: 2px; width: 68px;height: 16px;font-family:Arial, sans-serif;font-size:11px;font-weight:normal;word-break:normal;color:black;text-align:left;background-color:transparent;"/></div>';
+               
+                _value = '<div style="font-family:Arial, sans-serif;font-size:10px;font-weight:normal;word-break:normal;margin:-17px 0px 0px 0px;color:white;background-color:transparent;width:100%;border:1px none white;border-radius:0px;text-align:left;"><input type="text" readOnly value="' + TTlMerchantPoint.toFixed(2) + ' M.Point" style="border-radius: 3px;border: 1px solid purple;padding: 2px; width: 70px;height: 16px;font-family:Arial, sans-serif;font-size:11px;font-weight:normal;word-break:normal;color:white;text-align:center;background-color:#c800ffc9;"/>&nbsp;&nbsp;<input type="text" readOnly value="*' + TTlAyohaPoint.toFixed(2) + ' A.Point" style="border-radius: 0px;border: 1px none purple;padding: 2px; width: 68px;height: 16px;font-family:Arial, sans-serif;font-size:11px;font-weight:normal;word-break:normal;color:black;text-align:left;background-color:transparent;"/></div>';
+            }
+             
 
 
               return _value;
@@ -152,7 +157,7 @@
 
                  if (count > 100) {
                      _result = _value.substring(0, 100) + " <font color='blue'><u>See More...</u></font>";
-                     console.log(_result);
+                     //console.log(_result);
                      return _result;
                  } else {
                      _result = _value;
@@ -294,15 +299,19 @@
                      var TTlAyohaPoint;
                      var MerchantPoint = parseFloat(record.get('MerchantPoint'));
                      var AyohaPoint = parseFloat(record.get('AyohaPoint'));
+                     var StampRuleAmount = parseFloat(record.get('StampRuleAmount'));
+                     var stampEntitled;
 
                      if (ItemPriceDiscountRate >= 0.1) {
                          isPrice = "<div style='font-family:Arial, sans-serif;font-size:14px;font-weight:bold;word-break:normal;margin:-21px 0px 0px 0px;color:#c800ffc9;text-align:left;'><strike>RM" + ItemPrice + "</strike></div><div style='font-family:Arial, sans-serif;font-size:14px;font-weight:bold;word-break:normal;margin:-16px 0px 0px 80px;color:#c800ffc9;text-align:left;'>RM" + ItemPriceDiscount + "</div>";
                          TTlMerchantPoint = ItemPriceDiscount * MerchantPoint;
                          TTlAyohaPoint = ItemPriceDiscount * AyohaPoint;
+                         stampEntitled=ItemPriceDiscount / StampRuleAmount;
                      } else {
                          isPrice = "<div style='font-family:Arial, sans-serif;font-size:14px;font-weight:bold;word-break:normal;margin:-21px 0px 0px 0px;color:#c800ffc9;width:100%;text-align:left;'>RM" + ItemPrice + "</div>";
                          TTlMerchantPoint = ItemPrice * MerchantPoint;
                          TTlAyohaPoint = ItemPrice * AyohaPoint;
+                         stampEntitled=ItemPrice / StampRuleAmount;
                      }
 
 
@@ -316,40 +325,40 @@
                      if (CampaignType == "Point Reward Loyalty Card") {
 
 
-                         isPoint = '<div style="font-family:Arial, sans-serif;font-size:10px;font-weight:normal;word-break:normal;margin:-20px 0px 0px 0px;color:white;background-color:transparent;width:100%;border:1px none white;border-radius:0px;text-align:left;"><input type="text" readOnly value="' + TTlMerchantPoint.toFixed(2) + ' M.Point" style="border-radius: 3px;border: 1px solid purple;padding: 2px; width: 70px;height: 16px;font-family:Arial, sans-serif;font-size:11px;font-weight:normal;word-break:normal;color:white;text-align:center;background-color:#c800ffc9;"/>&nbsp;&nbsp;<input type="text" readOnly value="*' + TTlAyohaPoint.toFixed(2) + ' A.Point" style="border-radius: 0px;border: 1px none purple;padding: 2px; width: 68px;height: 16px;font-family:Arial, sans-serif;font-size:11px;font-weight:normal;word-break:normal;color:black;text-align:left;background-color:transparent;"/></div>';
+                         isPoint = '<div style="font-family:Arial, sans-serif;font-size:10px;font-weight:normal;word-break:normal;margin:-20px 0px 0px 0px;color:white;background-color:transparent;width:100%;border:1px none white;border-radius:0px;text-align:left;"><input type="text" readOnly value="' + parseInt(TTlMerchantPoint) + ' M.Point" style="border-radius: 3px;border: 1px solid purple;padding: 2px; width: 70px;height: 16px;font-family:Arial, sans-serif;font-size:11px;font-weight:normal;word-break:normal;color:white;text-align:center;background-color:#c800ffc9;"/>&nbsp;&nbsp;<input type="text" readOnly value="*' + parseInt(TTlAyohaPoint) + ' A.Point" style="border-radius: 0px;border: 1px none purple;padding: 2px; width: 68px;height: 16px;font-family:Arial, sans-serif;font-size:11px;font-weight:normal;word-break:normal;color:black;text-align:left;background-color:transparent;"/></div>';
                      }
 
                      if (CampaignType == "Stamp Reward Loyalty Card") {
-                         //StampRuleAmount minimum RM10
-                         var StampRuleAmount = parseFloat(record.get('MerchantPoint'));
-                         var ItemPriceDiscountRate = parseFloat(record.get('ItemPriceDiscountRate'));
-                         var ItemPrice = parseFloat(record.get('ItemPrice'));
-                         var ItemPriceDiscount = parseFloat(record.get('ItemPriceDiscount'));
-                         var stamp;
-                         if (ItemPriceDiscountRate >= 0.1) {
-                             if (ItemPriceDiscount >= StampRuleAmount) {
+                        isPoint = '<div style="font-family:Arial, sans-serif;font-size:10px;font-weight:normal;word-break:normal;margin:-20px 0px 0px 0px;color:white;background-color:transparent;width:100%;border:1px none white;border-radius:0px;text-align:left;"><input type="text" readOnly value="'+ parseInt(stampEntitled) +' Stamp(s)" style="border-radius: 3px;border: 1px solid purple;padding: 2px; width: 70px;height: 16px;font-family:Arial, sans-serif;font-size:11px;font-weight:normal;word-break:normal;color:white;text-align:center;background-color:#c800ffc9;"/>&nbsp;&nbsp;<input type="text" readOnly value="*2 A.Point" style="border-radius: 0px;border: 1px none purple;padding: 2px; width: 68px;height: 16px;font-family:Arial, sans-serif;font-size:11px;font-weight:normal;word-break:normal;color:black;text-align:left;background-color:transparent;"/></div>';
+                        //  var StampRuleAmount = parseFloat(record.get('MerchantPoint'));
+                        //  var ItemPriceDiscountRate = parseFloat(record.get('ItemPriceDiscountRate'));
+                        //  var ItemPrice = parseFloat(record.get('ItemPrice'));
+                        //  var ItemPriceDiscount = parseFloat(record.get('ItemPriceDiscount'));
+                        //  var stamp;
+                        //  if (ItemPriceDiscountRate >= 0.1) {
+                        //      if (ItemPriceDiscount >= StampRuleAmount) {
 
-                                 stamp = parseInt(ItemPriceDiscount) / parseInt(StampRuleAmount)
-                             }
-
-
-                         } else {
-                             if (ItemPrice >= StampRuleAmount) {
-
-                                // stamp = parseInt(ItemPrice) / parseInt(StampRuleAmount)
-                                 stamp = ItemPrice /StampRuleAmount
-                                 isPoint = '<div style="font-family:Arial, sans-serif;font-size:10px;font-weight:normal;word-break:normal;margin:-20px 0px 0px 0px;color:white;background-color:transparent;width:100%;border:1px none white;border-radius:0px;text-align:left;"><input type="text" readOnly value="' + stamp + ' Stamp(s)" style="border-radius: 3px;border: 1px solid purple;padding: 2px; width: 70px;height: 16px;font-family:Arial, sans-serif;font-size:11px;font-weight:normal;word-break:normal;color:white;text-align:center;background-color:#c800ffc9;"/>&nbsp;&nbsp;<input type="text" readOnly value="*' + stamp + ' A.Point" style="border-radius: 0px;border: 1px none purple;padding: 2px; width: 68px;height: 16px;font-family:Arial, sans-serif;font-size:11px;font-weight:normal;word-break:normal;color:black;text-align:left;background-color:transparent;"/></div>';
-
-                             }
-                             if (ItemPrice < StampRuleAmount) {
-
-                                 // stamp = parseInt(ItemPrice) / parseInt(StampRuleAmount)
-                                 stamp = 0
-                                 isPoint = '<div style="font-family:Arial, sans-serif;font-size:10px;font-weight:normal;word-break:normal;margin:-20px 0px 0px 0px;color:white;background-color:transparent;width:100%;border:1px none white;border-radius:0px;text-align:left;"><input type="text" readOnly value="' + stamp + ' Stamp(s)" style="border-radius: 3px;border: 1px solid purple;padding: 2px; width: 70px;height: 16px;font-family:Arial, sans-serif;font-size:11px;font-weight:normal;word-break:normal;color:white;text-align:center;background-color:#c800ffc9;"/>&nbsp;&nbsp;<input type="text" readOnly value="*1 A.Point" style="border-radius: 0px;border: 1px none purple;padding: 2px; width: 68px;height: 16px;font-family:Arial, sans-serif;font-size:11px;font-weight:normal;word-break:normal;color:black;text-align:left;background-color:transparent;"/></div>';
+                        //          stamp = parseInt(ItemPriceDiscount) / parseInt(StampRuleAmount)
+                        //      }
 
 
-                             }
-                         }
+                        //  } else {
+                        //      if (ItemPrice >= StampRuleAmount) {
+
+                        //         // stamp = parseInt(ItemPrice) / parseInt(StampRuleAmount)
+                        //          stamp = ItemPrice /StampRuleAmount
+                        //          isPoint = '<div style="font-family:Arial, sans-serif;font-size:10px;font-weight:normal;word-break:normal;margin:-20px 0px 0px 0px;color:white;background-color:transparent;width:100%;border:1px none white;border-radius:0px;text-align:left;"><input type="text" readOnly value="' + stamp + ' Stamp(s)" style="border-radius: 3px;border: 1px solid purple;padding: 2px; width: 70px;height: 16px;font-family:Arial, sans-serif;font-size:11px;font-weight:normal;word-break:normal;color:white;text-align:center;background-color:#c800ffc9;"/>&nbsp;&nbsp;<input type="text" readOnly value="*' + stamp + ' A.Point" style="border-radius: 0px;border: 1px none purple;padding: 2px; width: 68px;height: 16px;font-family:Arial, sans-serif;font-size:11px;font-weight:normal;word-break:normal;color:black;text-align:left;background-color:transparent;"/></div>';
+
+                        //      }
+                        //      if (ItemPrice < StampRuleAmount) {
+
+                        //          // stamp = parseInt(ItemPrice) / parseInt(StampRuleAmount)
+                        //          stamp = 0
+                        //          isPoint = '<div style="font-family:Arial, sans-serif;font-size:10px;font-weight:normal;word-break:normal;margin:-20px 0px 0px 0px;color:white;background-color:transparent;width:100%;border:1px none white;border-radius:0px;text-align:left;"><input type="text" readOnly value="' + stamp + ' Stamp(s)" style="border-radius: 3px;border: 1px solid purple;padding: 2px; width: 70px;height: 16px;font-family:Arial, sans-serif;font-size:11px;font-weight:normal;word-break:normal;color:white;text-align:center;background-color:#c800ffc9;"/>&nbsp;&nbsp;<input type="text" readOnly value="*1 A.Point" style="border-radius: 0px;border: 1px none purple;padding: 2px; width: 68px;height: 16px;font-family:Arial, sans-serif;font-size:11px;font-weight:normal;word-break:normal;color:black;text-align:left;background-color:transparent;"/></div>';
+
+
+                        //      }
+                        //  }
 
                        
 
@@ -363,6 +372,10 @@
 
 
 
+                     if (CampaignType == "Point Reward Loyalty Card|Stamp Reward Loyalty Card") {
+                        isPoint = '<div style="font-family:Arial, sans-serif;font-size:10px;font-weight:normal;word-break:normal;margin:-20px 0px 0px 0px;color:white;background-color:transparent;width:100%;border:1px none white;border-radius:0px;text-align:left;"><input type="text" readOnly value="' + parseInt(TTlMerchantPoint) + ' M.Point" style="border-radius: 3px;border: 1px solid purple;padding: 2px; width: 70px;height: 16px;font-family:Arial, sans-serif;font-size:11px;font-weight:normal;word-break:normal;color:white;text-align:center;background-color:#c800ffc9;"/>&nbsp;&nbsp;<input type="text" readOnly value="'+parseInt(stampEntitled)+' Stamp(s)" style="border-radius: 3px;border: 1px solid purple;padding: 2px; width: 70px;height: 16px;font-family:Arial, sans-serif;font-size:11px;font-weight:normal;word-break:normal;color:white;text-align:center;background-color:#c800ffc9;"/>&nbsp;&nbsp;<input type="text" readOnly value="*' + parseInt(TTlAyohaPoint) + ' A.Point" style="border-radius: 0px;border: 1px none purple;padding: 2px; width: 68px;height: 16px;font-family:Arial, sans-serif;font-size:11px;font-weight:normal;word-break:normal;color:black;text-align:left;background-color:transparent;"/></div>';
+                        //isPoint = '<div style="font-family:Arial, sans-serif;font-size:10px;font-weight:normal;word-break:normal;margin:-20px 0px 0px 0px;color:white;background-color:transparent;width:100%;border:1px none white;border-radius:0px;text-align:left;"><input type="text" readOnly value="' + parseInt(TTlMerchantPoint) + ' M.Point" style="border-radius: 3px;border: 1px solid purple;padding: 2px; width: 70px;height: 16px;font-family:Arial, sans-serif;font-size:11px;font-weight:normal;word-break:normal;color:white;text-align:center;background-color:#c800ffc9;"/>&nbsp;&nbsp;<input type="text" readOnly value="1 Stamp" style="border-radius: 3px;border: 1px solid purple;padding: 2px; width: 70px;height: 16px;font-family:Arial, sans-serif;font-size:11px;font-weight:normal;word-break:normal;color:white;text-align:center;background-color:#c800ffc9;"/>&nbsp;&nbsp;<input type="text" readOnly value="*' + parseInt(TTlAyohaPoint) + ' A.Point" style="border-radius: 0px;border: 1px none purple;padding: 2px; width: 68px;height: 16px;font-family:Arial, sans-serif;font-size:11px;font-weight:normal;word-break:normal;color:black;text-align:left;background-color:transparent;"/></div>';
+                     }
 
 
                      var _StockShowHide;
@@ -372,15 +385,15 @@
 
                      if (ShowStock == "Y") {
                          if (Stock > 0) {
-                             _StockShowHide = '<input type="text"  value="Stock:' + Stock + '"  style="border-radius: 5px;border: 1px none purple;padding: 0px; width: 127px;height: 20px;font-family:Arial, sans-serif;font-size:12px;font-weight:bold;word-break:normal;color:#c800ffc9;text-align:left;margin:-7px 0px 0px 0px;"/>';
+                             _StockShowHide = '<input type="text"  value="Stock:' + Stock + '"  style="border-radius: 5px;border: 1px none purple;padding: 0px; width: 127px;height: 20px;font-family:Arial, sans-serif;font-size:12px;font-weight:bold;word-break:normal;color:#c800ffc9;text-align:right;margin:-7px 0px 0px 0px;"/>';
                              //_value = '<div style="border-radius: 5px;border: 1px none purple;padding: 0px; width: 40px;height: 20px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;word-break:normal;color:#c800ffc9;text-align:left;margin:30px 120px 0px 0px;">Stock:' + Stock + '</div>';
 
                          } else {
-                             _StockShowHide = '<input type="text"  value="Out of Stock" style="border-radius: 5px;border: 1px none purple;padding: 0px; width: 127px;height: 20px;font-family:Arial, sans-serif;font-size:12px;font-weight:bold;word-break:normal;color:red;text-align:left;margin:-7px 0px 0px 0px;"/>';
+                             _StockShowHide = '<input type="text"  value="Out of Stock" style="border-radius: 5px;border: 1px none purple;padding: 0px; width: 127px;height: 20px;font-family:Arial, sans-serif;font-size:12px;font-weight:bold;word-break:normal;color:red;text-align:right;margin:-7px 0px 0px 0px;"/>';
                          }
 
                      } else {
-                         _StockShowHide = '<input type="text"  value="Stock:' + Stock + '"  style="border-radius: 5px;border: 1px none purple;padding: 0px; width: 127px;height: 20px;font-family:Arial, sans-serif;font-size:12px;font-weight:bold;word-break:normal;color:white;text-align:left;margin:-7px 0px 0px 0px;"/>';
+                         _StockShowHide = '<input type="text"  value="Stock:' + Stock + '"  style="border-radius: 5px;border: 1px none purple;padding: 0px; width: 127px;height: 20px;font-family:Arial, sans-serif;font-size:12px;font-weight:bold;word-break:normal;color:transparent;text-align:right;margin:-7px 0px 0px 0px;"/>';
                      }
 
 
@@ -417,7 +430,7 @@
                          ModifiedItemName = ItemName
 
                      }
-                     _value = '<div class="img" style="width: ' + divWidth + 'px; height: ' + divHeight + 'px; border:2px none grey;border-radius:0px 0px 0px 0px;z-index:-10;position: relative;margin:-40px 0px 0px 0px;"><div style="border:1px none grey;border-radius:0px 0px 0px 0px;margin-left: auto;margin-right: auto;width: ' + divImgInner + 'px; height: ' + divImgHeightInner + 'px;display: block;"><img src="' + ItemCoverImg + '" style="margin-left: auto;margin-right: auto;width: ' + divImg + 'px; height: ' + divImgHeight + 'px;display: block;" /><br><div style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;word-break:normal;margin:-17px 0px 0px 0px;color:black;text-align:left;">' + row_num + ').' + ModifiedItemName + '</div><br>' + isPrice + '<br>' + isPoint + '</div></div><br><div style="margin:-35px 0px 0px 0px;width:90%;height: 20px;text-align:right;">' + _StockShowHide + '<img src="resources/icons/ordercartpurple01.png" style="width: 20px; height: 20px;" /><br><br></div>';
+                     _value = '<div class="img" style="width: ' + divWidth + 'px; height: ' + divHeight + 'px; border:2px none grey;border-radius:0px 0px 0px 0px;z-index:-10;position: relative;margin:-40px 0px 0px 0px;"><div style="border:1px none grey;border-radius:0px 0px 0px 0px;margin-left: auto;margin-right: auto;width: ' + divImgInner + 'px; height: ' + divImgHeightInner + 'px;display: block;"><img src="' + ItemCoverImg + '" style="margin-left: auto;margin-right: auto;width: ' + divImg + 'px; height: ' + divImgHeight + 'px;display: block;" /><br><div style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;word-break:normal;margin:-17px 0px 0px 0px;color:black;text-align:left;">' + row_num + ').' + ModifiedItemName + '</div><br>' + isPrice + '<br>' + isPoint + '</div></div><br><div style="margin:-45px 0px 0px 0px;width:90%;height: 20px;text-align:right;">' + _StockShowHide + '<br><br><br></div>';
 
 
 

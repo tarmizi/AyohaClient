@@ -722,7 +722,7 @@ function SaveCardEditBackgroundImage() {
     }
 
 
-    var ImgPaths = "http://42.1.63.57/AyohaImgCard/BackgroundImgCard/" + GetEnterpriseAccNo() + "/" + document.getElementById('inputName-FloatPanel_AyohaCardManagement_EditCardBackgroundImg_UploadedImage').value;
+    var ImgPaths = "https://setkita.com/AyohaImgCard/BackgroundImgCard/" + GetEnterpriseAccNo() + "/" + document.getElementById('inputName-FloatPanel_AyohaCardManagement_EditCardBackgroundImg_UploadedImage').value;
     // (CC.ID, CC.EnterpriseAccNo, CC.StampCampaignCode, CC.ImgName, CC.ImgPath, CC.RowStatus, CC.CreatedBy, CC.ImageBase64, CC.ShowHide);
     // alert(ContentCardImgNames);
     var obj = {
@@ -796,7 +796,7 @@ function SaveCardDeleteBackgroundImage() {
     }
 
 
-    var ImgPaths = "http://42.1.63.57/AyohaImgCard/BackgroundImgCard/" + GetEnterpriseAccNo() + "/" + document.getElementById('inputName-FloatPanel_AyohaCardManagement_EditCardBackgroundImg_UploadedImage').value;
+    var ImgPaths = "https://setkita.com/AyohaImgCard/BackgroundImgCard/" + GetEnterpriseAccNo() + "/" + document.getElementById('inputName-FloatPanel_AyohaCardManagement_EditCardBackgroundImg_UploadedImage').value;
     // (CC.ID, CC.EnterpriseAccNo, CC.StampCampaignCode, CC.ImgName, CC.ImgPath, CC.RowStatus, CC.CreatedBy, CC.ImageBase64, CC.ShowHide);
     // alert(ContentCardImgNames);
     var obj = {

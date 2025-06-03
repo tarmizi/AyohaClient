@@ -124,7 +124,7 @@ function FloatPanel_MyAccountMaster() {
                                               height: 30,
                                               width: 35,
                                               // iconCls: 'list',
-                                              html: '<div ><img src="resources/icons/backwhite03.png" width="25" height="20" alt="Company Name"></div>',
+                                              html: '<div ><img src="resources/icons/backwhite03Ori.png" width="25" height="20" alt="Company Name"></div>',
                                               ui: 'plain',
                                               handler: function () {
                                                   _FloatPanel_MyAccountMaster.hide(Ext.fx.Animation({
@@ -837,8 +837,13 @@ function FloatPanel_MyAccountMasterShow() {
     var containerViewElnameFloatPanel_MyAccountMaster_VerificationStatusBox = containerViewnameFloatPanel_MyAccountMaster_VerificationStatusBox.element;
     containerViewElnameFloatPanel_MyAccountMaster_VerificationStatusBox.on('tap',
       function (event, node, options, eOpts) {
-          FloatPanel_AccountVerifiedShow();
-
+          // FloatPanel_AccountVerifiedShow();
+          if (GetAyohaUserisUserVerified() == "NO") {
+              FloatPanel_AyohaMembershipAdvantagesShow();
+          } else if (GetAyohaUserisUserVerified() == "YES") {
+              FloatPanel_MyAccountRankDescriptionShow();
+          }
+          
       }
     );
 
@@ -958,7 +963,7 @@ function LogOuting() {
 function SingleTap_Open_EditProfile() {
 
     FloatPanel_SubscriberMasterShow();
-    Ext.getCmp('htmlFloatPanel_SubscriberMaster_TitleHeaderTxt').setHtml('<font size=2 color=white><b>Edit Profile</b></font>');
+    Ext.getCmp('htmlFloatPanel_SubscriberMaster_TitleHeaderTxt').setHtml('<font size=2 color=black><b>Edit Profile</b></font>');
    // Ext.getCmp('tabpanelFloatPanel_SubscriberMaster').setActiveItem(1);
 }
 
@@ -967,9 +972,11 @@ function SingleTap_Open_ManagePassword() {
     FloatPanel_SubscriberMasterShow();
 
    
-    Ext.getCmp('htmlFloatPanel_SubscriberMaster_TitleHeaderTxt').setHtml('<font size=2 color=white><b>Change Password</b></font>');
+    Ext.getCmp('htmlFloatPanel_SubscriberMaster_TitleHeaderTxt').setHtml('<font size=2 color=black><b>Change Password</b></font>');
     Ext.getCmp('btnFloatPanel_SubscriberMaster_TitleHeaderIcon').setHtml('<div ><img src="resources/icons/changePasswordWhite01.png" width="25" height="20" alt="Company Name"></div>');
-    Ext.getCmp('tabpanelFloatPanel_SubscriberMaster').setActiveItem(1);
+    Ext.getCmp('tabpanelFloatPanel_SubscriberMaster_inner').setActiveItem(2);
+    Ext.getCmp('btnFloatPanel_SubscriberMasterChangePassword_Save').setHidden(false);
+    
 }
 
 function FloatPanel_MyAccountMasterAdjustHeight() {

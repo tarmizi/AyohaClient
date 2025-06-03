@@ -28,6 +28,9 @@
       'ContestName',
       'WinnerAnnoucementStatus',
       'TodayDateSvr',
+      'ContestType',
+      'ContestQuestion',
+      'isRequiredReceipt',
       'ContestStatus_ContestStatus',
        {
            name: 'ModifiedWidth',

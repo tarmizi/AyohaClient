@@ -1866,6 +1866,70 @@ function FloatPanel_RewardStore_OpenStore_FromAyohaHotMerchant_OnlineStoreList_H
 
 function FloatPanel_RewardStore_OpenStore_FromFloatPanelMerchantDetailPage_OnlineStoreList(ID) {
 
+   // alert(ID);
+    var EnterpriseAccNo = _DataStore_EnterprisesLoadByMerchantCategory.findRecord('ID', ID, 0, false, false, true);
+    var EnterpriseName = _DataStore_EnterprisesLoadByMerchantCategory.findRecord('ID', ID, 0, false, false, true);
+    var EnterpriseLogoPath = _DataStore_EnterprisesLoadByMerchantCategory.findRecord('ID', ID, 0, false, false, true);
+    //  var EnterpriseAdvertisementTitle = _DataStore_EnterprisesLoadByMerchantCategory.findRecord('ID', ID, 0, false, false, true);
+
+    var EnterpriseFacebook = _DataStore_EnterprisesLoadByMerchantCategory.findRecord('ID', ID, 0, false, false, true);
+    var EnterpriseInstagram = _DataStore_EnterprisesLoadByMerchantCategory.findRecord('ID', ID, 0, false, false, true);
+    var PICContactNo = _DataStore_EnterprisesLoadByMerchantCategory.findRecord('ID', ID, 0, false, false, true);
+    var EnterpriseCoordinate = _DataStore_EnterprisesLoadByMerchantCategory.findRecord('ID', ID, 0, false, false, true);
+    var EnterpriseWebsite = _DataStore_EnterprisesLoadByMerchantCategory.findRecord('ID', ID, 0, false, false, true);
+    var MerchantLinkType = _DataStore_EnterprisesLoadByMerchantCategory.findRecord('ID', ID, 0, false, false, true);
+    var EnterpriseDescriptions = _DataStore_EnterprisesLoadByMerchantCategory.findRecord('ID', ID, 0, false, false, true);
+    var EnterpriseTagLine = _DataStore_EnterprisesLoadByMerchantCategory.findRecord('ID', ID, 0, false, false, true);
+    var AdvertisementCode = _DataStore_EnterprisesLoadByMerchantCategory.findRecord('ID', ID, 0, false, false, true);
+
+    globalFloatPanel_RewardStore_EnterpriseAccNo = EnterpriseAccNo.get('EnterpriseAccNo');
+    globalFloatPanel_RewardStore_EnterpriseName = EnterpriseName.get('EnterpriseName');
+    globalFloatPanel_RewardStore_EnterpriseLogoPath = EnterpriseLogoPath.get('EnterpriseLogoPath');
+    //globalFloatPanel_RewardStore_EnterpriseAdvertisementTitle = EnterpriseWebsite.get('EnterpriseWebsite');
+    globalFloatPanel_RewardStore_EnterpriseFacebook = EnterpriseFacebook.get('EnterpriseFacebook');
+    globalFloatPanel_RewardStore_EnterpriseInstagram = EnterpriseInstagram.get('EnterpriseInstagram');
+    globalFloatPanel_RewardStore_PICContactNo = PICContactNo.get('PICContactNo');
+    globalFloatPanel_RewardStore_EnterpriseCoordinate = EnterpriseCoordinate.get('EnterpriseCoordinate');
+    globalFloatPanel_RewardStore_EnterpriseWebsite = EnterpriseWebsite.get('EnterpriseWebsite');
+    globalFloatPanel_RewardStore_MerchantLinkType = MerchantLinkType.get('MerchantLinkType');
+    globalFloatPanel_RewardStore_EnterpriseDescriptions = EnterpriseDescriptions.get('EnterpriseDescriptions');
+    globalFloatPanel_RewardStore_EnterpriseTagLine = EnterpriseTagLine.get('EnterpriseTagLine');
+    globalFloatPanel_RewardStore_AdvertisementCode = AdvertisementCode.get('AdvertisementCode');
+
+  
+    //globalFloatPanelMerchantDetailPage_EnterpriseLogo = EnterpriseLogoPath.get('EnterpriseLogoPath');
+    //globalFloatPanelMerchantDetailPage_EnterpriseName = EnterpriseName.get('EnterpriseName');
+    //globalFloatPanelMerchantDetailPage_EnterpriseTagLine = EnterpriseTagLine.get('EnterpriseTagLine');
+    //globalFloatPanelMerchantDetailPage_EnterpriseAccNo = EnterpriseAccNo.get('EnterpriseAccNo');
+   
+    if (globalFloatPanel_RewardStore_MerchantLinkType.includes("WebSite")) {
+        var UrlEnterpriseWebsite = EnterpriseWebsite.get('EnterpriseWebsite');
+
+        setTimeout(function () { window.open(UrlEnterpriseWebsite, '_system'); return false; }, 25);
+    } else {
+        setTimeout(function () { FloatPanel_AyohaStoreShow_FloatPanelMerchantDetailPage() }, 50);
+    }
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+function FloatPanel_RewardStore_OpenStore_FromFloatPanel_MembershipCardList_Upgrade(ID) {
+
+    // alert(ID);
     var EnterpriseAccNo = _DataStore_EnterprisesLoadByMerchantCategory.findRecord('ID', ID, 0, false, false, true);
     var EnterpriseName = _DataStore_EnterprisesLoadByMerchantCategory.findRecord('ID', ID, 0, false, false, true);
     var EnterpriseLogoPath = _DataStore_EnterprisesLoadByMerchantCategory.findRecord('ID', ID, 0, false, false, true);
@@ -1896,13 +1960,27 @@ function FloatPanel_RewardStore_OpenStore_FromFloatPanelMerchantDetailPage_Onlin
     globalFloatPanel_RewardStore_AdvertisementCode = AdvertisementCode.get('AdvertisementCode');
 
 
-   
+    //globalFloatPanelMerchantDetailPage_EnterpriseLogo = EnterpriseLogoPath.get('EnterpriseLogoPath');
+    //globalFloatPanelMerchantDetailPage_EnterpriseName = EnterpriseName.get('EnterpriseName');
+    global_FloatPanel_MembershipCardList_Upgrade_EnterprisesTagLine = EnterpriseTagLine.get('EnterpriseTagLine');
+    //globalFloatPanelMerchantDetailPage_EnterpriseAccNo = EnterpriseAccNo.get('EnterpriseAccNo');
+
     if (globalFloatPanel_RewardStore_MerchantLinkType.includes("WebSite")) {
         var UrlEnterpriseWebsite = EnterpriseWebsite.get('EnterpriseWebsite');
 
         setTimeout(function () { window.open(UrlEnterpriseWebsite, '_system'); return false; }, 25);
     } else {
-        setTimeout(function () { FloatPanel_AyohaStoreShow_FloatPanelMerchantDetailPage() }, 50);
+        setTimeout(function () {
+            if (isFloatPanel_MembershipCardList_UpgradeOpen=='Y'){
+                FloatPanel_AyohaStoreShow_FloatPanel_MembershipCardList_Upgrade() 
+            }
+             
+            
+            if (isFloatPanel_MembershipCardList_NotYetSubscribedOpen=='Y'){
+                FloatPanel_AyohaStoreShow_FloatPanel_MembershipCardList_NotYetSubscribed();
+            }
+           
+            }, 100);
     }
 
 
@@ -1916,6 +1994,35 @@ function FloatPanel_RewardStore_OpenStore_FromFloatPanelMerchantDetailPage_Onlin
 
 function FloatPanel_AyohaStoreShow_FloatPanelMerchantDetailPage() {
     globalFloatPanel_AyohaStore_ModuleTagging = "FloatPanelMerchantDetailPage";
+   // Ext.getCmp('FloatPanel_MembershipCardList_UpgradeID').setZIndex(80);
+    FloatPanel_AyohaStoreShow();
+    if (globalFloatPanel_RewardStore_AdvertisementCode == "NoAdvertisementCreated") {
+        Ext.getCmp('btnFloatPanel_AyohaStore_SaleAnimated').setHidden(true);
+    }
+}
+
+
+
+
+
+
+function FloatPanel_AyohaStoreShow_FloatPanel_MembershipCardList_Upgrade() {
+    Ext.getCmp('FloatPanel_MembershipCardList_UpgradeID').setZIndex(80);
+   // Ext.getCmp('FloatPanel_MembershipCardList_MyMembershipCardID').setZIndex(80);
+    FloatPanel_MembershipCardList_MyMembershipCardHide();
+    globalFloatPanel_AyohaStore_ModuleTagging = "FloatPanel_MembershipCardList_Upgrade";
+ 
+    FloatPanel_AyohaStoreShow();
+    if (globalFloatPanel_RewardStore_AdvertisementCode == "NoAdvertisementCreated") {
+        Ext.getCmp('btnFloatPanel_AyohaStore_SaleAnimated').setHidden(true);
+    }
+}
+
+function FloatPanel_AyohaStoreShow_FloatPanel_MembershipCardList_NotYetSubscribed() {
+    Ext.getCmp('FloatPanel_MembershipCardList_NotYetSubscribedID').setZIndex(80);
+   // Ext.getCmp('FloatPanel_MembershipCardList_MyMembershipCardID').setZIndex(80);
+    FloatPanel_MembershipCardList_MyMembershipCardHide();   
+    globalFloatPanel_AyohaStore_ModuleTagging = "FloatPanel_MembershipCardList_NotYetSubscribed";
     FloatPanel_AyohaStoreShow();
     if (globalFloatPanel_RewardStore_AdvertisementCode == "NoAdvertisementCreated") {
         Ext.getCmp('btnFloatPanel_AyohaStore_SaleAnimated').setHidden(true);

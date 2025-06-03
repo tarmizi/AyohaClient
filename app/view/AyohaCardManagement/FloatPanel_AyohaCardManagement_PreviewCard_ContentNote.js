@@ -27,7 +27,7 @@ function FloatPanel_AyohaCardManagement_PreviewCard_ContentNote() {
             //bottom: 64,
             // zIndex: 100,
             modal: true,
-           // hideOnMaskTap: true,
+            hideOnMaskTap: true,
             layout: {
                 type: 'fit'
             },
@@ -146,7 +146,7 @@ function FloatPanel_AyohaCardManagement_PreviewCard_ContentNote() {
                              height: 30,
                              width: 35,
                              // iconCls: 'list',
-                             html: '<div ><img src="resources/icons/backFullWhite.png" width="25" height="20" alt="Company Name"></div>',
+                             html: '<div ><img src="resources/icons/backwhite03Ori.png" width="25" height="20" alt="Company Name"></div>',
                              ui: 'plain',
                              handler: function () {
 
@@ -162,11 +162,16 @@ function FloatPanel_AyohaCardManagement_PreviewCard_ContentNote() {
                              }
                          },
                          {
+                            xtype: 'spacer',
+
+                        },
+                         {
                              margin: '0 0 0 0',
                              html: '<font size=2 color=white><b>Card Content Note</b></font>'
                          },
                           {
                               xtype: 'spacer',
+                              width:'3%',
 
                           },
 
@@ -193,7 +198,7 @@ function FloatPanel_AyohaCardManagement_PreviewCard_ContentNote() {
                     {
                         xtype: 'container',
                         style: ' background-color:transparent',
-                        margin: '10 0 0 0',
+                        margin: '30 0 0 0',
                         layout: {
                             type: 'vbox',
                             pack: 'center',

@@ -7,7 +7,7 @@
 
 
 
-var scanner;
+let scanner;
 var _FloatPanel_QrCodeScanner_ScanCampaign;
 
 function FloatPanel_QrCodeScanner_ScanCampaign() {
@@ -63,7 +63,47 @@ function FloatPanel_QrCodeScanner_ScanCampaign() {
 
 
 
+             listeners: {
+                 initialize: function (c) {
+                     this.element.on({
+                         swipe: function (e, node, options) {
 
+                             if (e.direction == "left") {
+                                 scanner.stop();
+                                 Ext.getCmp('mainView').setHidden(false);
+                                 FloatPanel_QrCodeScanner_CenterLineMessageHide();
+
+                                 _FloatPanel_QrCodeScanner_ScanCampaign.hide(Ext.fx.Animation({
+                                     type: 'slideOut',
+                                     direction: 'left',
+                                     easing: 'cubic-bezier(.7,0,.7,1)',
+                                     duration: 250
+
+                                 }));
+
+                                 is_FloatPanel_QrCodeScanner_ScanCampaignOpen = 'N';
+                                 RemovePages("FloatPanel_QrCodeScanner_ScanCampaignHide()");
+                             } if (e.direction == "right") {
+                                 scanner.stop();
+                                 Ext.getCmp('mainView').setHidden(false);
+                                 FloatPanel_QrCodeScanner_CenterLineMessageHide();
+
+                                 _FloatPanel_QrCodeScanner_ScanCampaign.hide(Ext.fx.Animation({
+                                     type: 'slideOut',
+                                     direction: 'left',
+                                     easing: 'cubic-bezier(.7,0,.7,1)',
+                                     duration: 250
+
+                                 }));
+
+                                 is_FloatPanel_QrCodeScanner_ScanCampaignOpen = 'N';
+                                 RemovePages("FloatPanel_QrCodeScanner_ScanCampaignHide()");
+                             }
+
+                         }
+                     });
+                 }
+             },
 
 
 
@@ -81,9 +121,9 @@ function FloatPanel_QrCodeScanner_ScanCampaign() {
                      //hidden: true,
 
                      id: 'containerFloatPanel_QrCodeScanner_ScanCampaignHeader',
-                     //style: 'background-color:rgba(0, 0, 0, 0.1);border-radius: 0px 0px 0px 0px;',
-                     style: 'background-color:rgba(0, 0, 0, 0.5);border-radius: 0px 0px 0px 0px;',
-                   //  style: ' background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);',
+                     style: 'background-color:black',
+                    // style: 'background-color:rgba(0, 0, 0, 0.5);border-radius: 0px 0px 0px 0px;',
+                 
                      layout: {
                          type: 'hbox',
                          pack: 'center',
@@ -102,12 +142,13 @@ function FloatPanel_QrCodeScanner_ScanCampaign() {
                                               xtype: 'button',
                                               id: 'btnFloatPanel_QrCodeScanner_ScanCampaignBack',
                                               height: 30,
-                                              width: 35,
+                                              width: 55,
                                               margin: '0 0 0 10',
                                               // iconCls: 'list',
                                               html: '<div ><img src="resources/icons/backwhite03.png" width="25" height="20" alt="Company Name"></div>',
                                               ui: 'plain',
                                               handler: function () {
+                                                  scanner.stop();
                                                   Ext.getCmp('mainView').setHidden(false);
                                                   FloatPanel_QrCodeScanner_CenterLineMessageHide();
 
@@ -118,12 +159,14 @@ function FloatPanel_QrCodeScanner_ScanCampaign() {
                                                       duration: 250
 
                                                   }));
-                                                 // FloatPanel_AyohaeWallet_IconShow();
+                                                
                                                   is_FloatPanel_QrCodeScanner_ScanCampaignOpen = 'N';
                                                   RemovePages("FloatPanel_QrCodeScanner_ScanCampaignHide()");
-                                                  window.QRScanner.destroy(function (status) {
+
+                                                  //comment on 02112022 11:18pm
+                                                  //window.QRScanner.destroy(function (status) {
                                                      
-                                                  });
+                                                  //});
                                                  
                                               }
                                           },
@@ -163,12 +206,13 @@ function FloatPanel_QrCodeScanner_ScanCampaign() {
 
                                                                  }));
                                                                  RemovePages("FloatPanel_QrCodeScanner_ScanCampaignHide()");
-                                                                 window.QRScanner.destroy(function (status) {
+
+                                                                 //comment on 2/11/2022
+                                                                 //window.QRScanner.destroy(function (status) {
                                                                     
-                                                                 });
+                                                                 //});
                                                                 
-                                                                 //  RemovePages(_FloatPanel_AyohaNotification, "isFloatPanel_AyohaNotificationOpen");
-                                                                 //FloatPanel_AyohaNotification_AddCardHide();
+                                                               
                                                              }
                                                          },
 
@@ -226,6 +270,7 @@ function FloatPanel_QrCodeScanner_ScanCampaign() {
                  {
                      xtype: 'container',
                      height: '100%',
+                    // hidden:true,
                      width: '100%',
                      layout: {
                          type: 'vbox',
@@ -383,7 +428,20 @@ function FloatPanel_QrCodeScanner_ScanCampaign() {
                      ]
                  },
 
-                 
+                 {
+
+                    //  height: 884,
+                    //  zIndex:-50,
+                    //  //height: '60%',
+                    //  width: '100%',
+                     html: ' <video id="preview_scan"></video>',
+                     //handler: function () {
+
+                     ////    FloatPanel_QrCodeScanner_ScanLoyaltyStampCardHide();
+
+                     //},
+
+                 },
 
                  //////////////////
 
@@ -396,8 +454,8 @@ function FloatPanel_QrCodeScanner_ScanCampaign() {
                            // width: 40,
                            docked: 'bottom',
                            height: 40,
-                           // style: 'background-color:rgba(0, 0, 0, 0.1);border-radius: 0px 0px 0px 0px;',
-                           style: ' background-color: #fac;background-image: linear-gradient(#c800ffc9,#ff00de75);',
+                           style: 'background-color:black',
+                          // style: ' background-color: #fac;background-image: linear-gradient(#c800ffc9,#ff00de75);',
                            layout: {
                                type: 'vbox',
                                pack: 'center',
@@ -406,7 +464,7 @@ function FloatPanel_QrCodeScanner_ScanCampaign() {
                            items: [
 
                                 {
-                                    html: '<div style="color:white;text-align: center;font-size:11px;width:100%;font-weight:normal;margin:0px 0px 0px 0px;background-color:transparent" >Developed by AA Property Solution. Kuala Lumpur ,MALAYSIA</div>',
+                                    html: '<div style="color:white;text-align: center;font-size:11px;width:100%;font-weight:normal;margin:0px 0px 0px 0px;background-color:transparent" >Developed by Versilani Technology Sdn bhd. Kuala Lumpur ,MALAYSIA</div>',
                                     margin: '0 0 0 0',
                                 },
 
@@ -446,7 +504,7 @@ function FloatPanel_QrCodeScanner_ScanCampaign() {
 
 var QRCodeResult;
 
-function FloatPanel_QrCodeScanner_ScanCampaignShow() {
+function FloatPanel_QrCodeScanner_ScanCampaignShow_ORI() {
     QRCodeResult = "";
     Ext.Viewport.remove(_FloatPanel_QrCodeScanner_ScanCampaign);
     this.overlay = Ext.Viewport.add(FloatPanel_QrCodeScanner_ScanCampaign());
@@ -470,27 +528,507 @@ function FloatPanel_QrCodeScanner_ScanCampaignShow() {
 
  
 }
+
+
+
+
+function FloatPanel_QrCodeScanner_ScanCampaignShow() {
+    QRCodeResult = "";
+    Ext.Viewport.remove(_FloatPanel_QrCodeScanner_ScanCampaign);
+    this.overlay = Ext.Viewport.add(FloatPanel_QrCodeScanner_ScanCampaign());
+    this.overlay.show();
+    AddRoutePages("FloatPanel_QrCodeScanner_ScanCampaignHide()");
+    is_FloatPanel_QrCodeScanner_ScanCampaignOpen = 'Y';
+    FloatPanel_QrCodeScanner_CenterLineMessageShow();
+
+
+    var x = screen.width;
+    var y = screen.height;
+    var xx = x - 28;
+
+    console.log(y);
+    if (y < 700) {
+        Ext.getCmp('FloatPanel_QrCodeScanner_ScanCampaign_AyohaRewardLogo').setHeight(130);
+        Ext.getCmp('FloatPanel_QrCodeScanner_ScanCampaign_AyohaRewardLogo').setWidth(130);
+        Ext.getCmp('FloatPanel_QrCodeScanner_ScanCampaign_AyohaRewardLogo').setHtml('<img src="resources/icons/Logo/LogoOrangeSimplifed.png" alt="Image" style="width:130px;height:130px;">');
+    }
+
+    //Ext.getCmp('QrCodeInstaScan').setHtml('<video id="preview" style="width:' + x +'px;height:'+ y +'px;"></video>');
+
+    scanner = new Instascan.Scanner({
+        video: document.getElementById('preview_scan'),
+        mirror: false,
+       
+    });
+
+
+   
+
+    scanner.addListener('scan', function (content) {
+      
+        //QRCodeResult = content;
+        //Ext.getCmp('FloatPanel_QrCodeScanner_CenterLineMessageID').setStyle('background-color:black;');
+        //Ext.getCmp('FloatPanel_QrCodeScanner_RedCenterLine').setHidden(true);
+        //Ext.getCmp('FloatPanel_QrCodeScanner_ProcessImage').setHidden(false);
+        //Ext.getCmp('FloatPanel_QrCodeScanner_ProcessLbl').setHidden(false);
+        //var audio = new Audio();
+        //audio.src = 'http://42.1.63.57/AyohaSoundExternal/store-scanner-beep.mp3';
+        //audio.play();
+
+        //var n = QRCodeResult.includes("Point");
+        //if (n) {
+        //    Scan_QRCode_VerifyQRCode_PointCampaign(QRCodeResult);
+        //} else {
+        //    Scan_QRCode_VerifyQRCodeStampCampaign(QRCodeResult);
+        //}
+        
+        QRCodeResult = content;
+        var audio = new Audio();
+        audio.src = 'https://setkita.com/AyohaSoundExternal/store-scanner-beep.mp3';
+        audio.play();
+
+
+       
+        Ext.getCmp('mainView').setHidden(false);
+        FloatPanel_QrCodeScanner_CenterLineMessageHide();
+
+        _FloatPanel_QrCodeScanner_ScanCampaign.hide(Ext.fx.Animation({
+            type: 'popOut',
+            duration: 250,
+            easing: 'ease-out'
+
+        }));
+
+        is_FloatPanel_QrCodeScanner_ScanCampaignOpen = 'N';
+        RemovePages("FloatPanel_QrCodeScanner_ScanCampaignHide()");
+
+
+
+
+
+        //is_FloatPanel_QrCodeScanner_ScanCampaignOpen = 'N';
+        //RemovePages(_FloatPanel_QrCodeScanner_ScanCampaign, "is_FloatPanel_QrCodeScanner_ScanCampaignOpen");
+      
+
+
+
+
+
+//commented on 7/4/2024
+        // var n = QRCodeResult.includes("Point");
+        // if (n) {
+           
+        //     Scan_QRCode_VerifyQRCode_PointCampaign(QRCodeResult);
+        // } else {
+           
+        //     Scan_QRCode_VerifyQRCode_StampCampaign(QRCodeResult);
+        // }
+        var text = QRCodeResult; 
+
+
+        var newString = text.slice(-2);
+        if(newString=="EP"){
+            FloatPanel_QrCodeScanner_ScanCampaign_LoadEnterprisePage(QRCodeResult);
+        }
+        if(newString=="MC"){
+           // alert(newString);
+          FloatPanel_QrCodeScanner_ScanCampaign_LoadMembershipCardPage(QRCodeResult);
+        }
+        
+     
+        scanner.stop();
+
+
+       
+
+    });
+    //Instascan.Camera.getCameras().then(function (cameras) {
+    //    if (cameras.length > 0) {
+    //        scanner.start(cameras[1]);
+    //    } else {
+    //        console.error('No cameras found.');
+    //    }
+    //}).catch(function (e) {
+    //    console.error(e);
+    //});
+
+    Instascan.Camera.getCameras().then(function (cameras) {
+        if (cameras.length > 0) {
+            scanner.start(cameras[1]);
+        } else {
+            console.error('No cameras found.');
+        }
+    }).then(function (e) {
+        console.error(e);
+    });
+}
+
+
+
 var is_FloatPanel_QrCodeScanner_ScanCampaignOpen = 'N';
 
 function FloatPanel_QrCodeScanner_ScanCampaignHide() {
-    // scanner.stop();
+    scanner.stop();
     Ext.getCmp('mainView').setHidden(false);
     FloatPanel_QrCodeScanner_CenterLineMessageHide();
     if (is_FloatPanel_QrCodeScanner_ScanCampaignOpen == 'Y') {
         _FloatPanel_QrCodeScanner_ScanCampaign.hide();
         is_FloatPanel_QrCodeScanner_ScanCampaignOpen = 'N';
         RemovePages("FloatPanel_QrCodeScanner_ScanCampaignHide()");
-        window.QRScanner.destroy(function (status) {
-           // alert(status);
-        });
-        // swalFireSuccessStampedCardMsg("Stamped Success!!");
+        //comment on 02112022
+        //window.QRScanner.destroy(function (status) {
+         
+        //});
+       
     }
+
+}
+
+
+function FloatPanel_QrCodeScanner_ScanCampaign_LoadEnterprisePage(ContentQR){
+  //  var string = ContentQR;
+  LoadingPanelShow(getLoadingIcon(),'Loading....');
+  var EnterpriseAccNo = ContentQR.substring(0, ContentQR.length-3);
+
+
+  var task = Ext.create('Ext.util.DelayedTask', function () {
+           
+    var objn = {
+        "EnterpriseAccNo": EnterpriseAccNo,           
+    };
+    console.log(objn);
+    var _value = Ext.Ajax.request({
+
+        type: "POST",
+
+        url: GetAPIurl_Web() + '/Enterprises/EnterprisesLoadByEnterpriseAccNoEnterprisePageMerchant',
+
+        dataType: "json",
+        data: JSON.stringify(objn),
+        headers: {
+            "Content-Type": "application/json; charset=utf-8"
+        },
+
+        success: function (result, request) {
+
+            //console.log(result.responseText);
+
+
+            data = Ext.decode(result.responseText.trim());
+
+            if (data.success == "true") {
+                globalLogin_EnterpriseEmail=data.results[0].ID;
+
+                globalFloatPanelMerchantDetailPage_ID = data.results[0].ID;
+                globalFloatPanelMerchantDetailPage_EnterpriseAccNo = data.results[0].EnterpriseAccNo;
+                globalFloatPanelMerchantDetailPage_EnterpriseLogo = data.results[0].EnterpriseLogoPath;
+                globalFloatPanelMerchantDetailPage_EnterpriseName = data.results[0].EnterpriseName;
+                globalFloatPanelMerchantDetailPage_EnterpriseTagLine = data.results[0].EnterpriseTagLine;
+                globalFloatPanel_MerchantDetailPage_EnterpriseFacebook = data.results[0].EnterpriseFacebook;
+                globalFloatPanel_MerchantDetailPage_EnterpriseWebsite = data.results[0].EnterpriseWebsite;
+                globalFloatPanel_MerchantDetailPage_EnterpriseInstagram = data.results[0].EnterpriseInstagram;
+                globalFloatPanel_MerchantDetailPage_EnterpriseTikTok = data.results[0].EnterpriseTikTok;
+                globalFloatPanelMerchantDetailPage_EnterpriseCoordinate = data.results[0].EnterpriseCoordinate;
+                globalFloatPanelMerchantDetailPage_BusinessMode = data.results[0].BusinessMode;
+                globalFloatPanelMerchantDetailPage_WhatsAppNo = data.results[0].PICContactNo;
+                EnterpriseDescriptions = data.results[0].EnterpriseDescriptions;
+                EnterprisePhoneNo= data.results[0].EnterprisePhoneNo;              
+                NamaJalan=data.results[0].NamaJalan;
+                Postkod=data.results[0].Postkod;
+                Bandar=data.results[0].Bandar;
+                Negeri=data.results[0].Negeri;
+
+
+//alert(globalFloatPanelMerchantDetailPage_EnterpriseName)
+
+
+FloatPanel_MerchantDetailPageShow(data.results[0].ID, data.results[0].EnterpriseAccNo, data.results[0].EnterpriseLogoPath,
+data.results[0].EnterpriseName, data.results[0].EnterpriseTagLine,data.results[0].NamaJalan, data.results[0].Postkod,
+data.results[0].Bandar,data.results[0].Negeri, data.results[0].EnterpriseCoordinate, data.results[0].EnterpriseDescriptions, 
+data.results[0].EnterprisePhoneNo, data.results[0].PICContactNo, data.results[0].EnterpriseFacebook, data.results[0].EnterpriseWebsite,
+data.results[0].EnterpriseInstagram, data.results[0].EnterpriseTikTok, data.results[0].BusinessMode
+);
+
+
+
+
+FloatPanel_QrCodeScanner_ScanCampaign_InsertScanActivity(ContentQR,EnterpriseAccNo,"Scan_EnterprisePage");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            }
+            else {
+
+                swalFireFail("Fail!-->" + result.responseText.trim());
+                Ext.Viewport.unmask();
+                LoadingPanelHide();
+            }
+            Ext.Viewport.unmask();
+            LoadingPanelHide();
+
+        },
+
+        failure: function (result, request) {
+            swalFireFail("Fail!");
+            Ext.Viewport.unmask();
+            LoadingPanelHide();
+        }
+
+    });
+  
+    Ext.Viewport.unmask();
+});
+task.delay(500);
 
 }
 
 
 
 
+function FloatPanel_QrCodeScanner_ScanCampaign_LoadMembershipCardPage(ContentQR){
+    //  var string = ContentQR;
+    LoadingPanelShow(getLoadingIcon(),'Loading....');
+    var result = ContentQR.substring(0, ContentQR.length-3);
+  
+   
+
+        _DataStore_MembershipCardLoadByEnterpriseAccNoStore.getProxy().setExtraParam('EnterpriseAccNo', result);
+        _DataStore_MembershipCardLoadByEnterpriseAccNoStore.getProxy().setExtraParam('EnterpriseHQAccNo', result);
+        _DataStore_MembershipCardLoadByEnterpriseAccNoStore.getProxy().setExtraParam('AyohaUserAccountNo', GetCurrAyohaUserAccountNo());
+        _DataStore_MembershipCardLoadByEnterpriseAccNoStore.getProxy().setUrl(GetAPIurl() + '/MembershipCard/MembershipCardLoadByEnterpriseAccNo');
+        _DataStore_MembershipCardLoadByEnterpriseAccNoStore.load();
+    
+        var task = Ext.create('Ext.util.DelayedTask', function () {
+    
+            var count = parseInt(_DataStore_MembershipCardLoadByEnterpriseAccNoStore.getCount());
+            
+            //alert(count);
+            if(count==1){
+                var  Store = _DataStore_MembershipCardLoadByEnterpriseAccNoStore.getAt(0);
+                FloatPanel_MembershipCardList_UpgradeShow_FromFloatPanel_MerchantDetailPage(Store.get('MembershipCardCode'), result, Store.get('isMembershipCardSubscribed'));
+            }
+            if(count>1){
+
+            }
+            FloatPanel_QrCodeScanner_ScanCampaign_InsertScanActivity(ContentQR,result,"Scan_MembershipCardPage");
+            // for (i = 0; i < count; i++) {
+            //   var  Store = _DataStore_MembershipCardLoadByEnterpriseAccNoStore.getAt(i);
+            //     ArrFloatPanelMerchantDetailPage_MembershipCardCode.push(Store.get('MembershipCardCode'))
+            // }
+    
+          
+           
+        });
+        task.delay(500);
+    
+    
+        Ext.Viewport.setMasked(false);
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+//     var task = Ext.create('Ext.util.DelayedTask', function () {
+             
+//       var objn = {
+//           "EnterpriseAccNo": result,           
+//       };
+//       console.log(objn);
+//       var _value = Ext.Ajax.request({
+  
+//           type: "POST",
+  
+//           url: GetAPIurl_Web() + '/Enterprises/EnterprisesLoadByEnterpriseAccNoEnterprisePageMerchant',
+  
+//           dataType: "json",
+//           data: JSON.stringify(objn),
+//           headers: {
+//               "Content-Type": "application/json; charset=utf-8"
+//           },
+  
+//           success: function (result, request) {
+  
+//               //console.log(result.responseText);
+  
+  
+//               data = Ext.decode(result.responseText.trim());
+  
+//               if (data.success == "true") {
+//                   globalLogin_EnterpriseEmail=data.results[0].ID;
+  
+//                   globalFloatPanelMerchantDetailPage_ID = data.results[0].ID;
+//                   globalFloatPanelMerchantDetailPage_EnterpriseAccNo = data.results[0].EnterpriseAccNo;
+//                   globalFloatPanelMerchantDetailPage_EnterpriseLogo = data.results[0].EnterpriseLogoPath;
+//                   globalFloatPanelMerchantDetailPage_EnterpriseName = data.results[0].EnterpriseName;
+//                   globalFloatPanelMerchantDetailPage_EnterpriseTagLine = data.results[0].EnterpriseTagLine;
+//                   globalFloatPanel_MerchantDetailPage_EnterpriseFacebook = data.results[0].EnterpriseFacebook;
+//                   globalFloatPanel_MerchantDetailPage_EnterpriseWebsite = data.results[0].EnterpriseWebsite;
+//                   globalFloatPanel_MerchantDetailPage_EnterpriseInstagram = data.results[0].EnterpriseInstagram;
+//                   globalFloatPanel_MerchantDetailPage_EnterpriseTikTok = data.results[0].EnterpriseTikTok;
+//                   globalFloatPanelMerchantDetailPage_EnterpriseCoordinate = data.results[0].EnterpriseCoordinate;
+//                   globalFloatPanelMerchantDetailPage_BusinessMode = data.results[0].BusinessMode;
+//                   globalFloatPanelMerchantDetailPage_WhatsAppNo = data.results[0].PICContactNo;
+//                   EnterpriseDescriptions = data.results[0].EnterpriseDescriptions;
+//                   EnterprisePhoneNo= data.results[0].EnterprisePhoneNo;              
+//                   NamaJalan=data.results[0].NamaJalan;
+//                   Postkod=data.results[0].Postkod;
+//                   Bandar=data.results[0].Bandar;
+//                   Negeri=data.results[0].Negeri;
+  
+  
+  
+//   FloatPanel_MerchantDetailPageShow(data.results[0].ID, data.results[0].EnterpriseAccNo, data.results[0].EnterpriseLogoPath,
+//   data.results[0].EnterpriseName, data.results[0].EnterpriseTagLine,data.results[0].NamaJalan, data.results[0].Postkod,
+//   data.results[0].Bandar,data.results[0].Negeri, data.results[0].EnterpriseCoordinate, data.results[0].EnterpriseDescriptions, 
+//   data.results[0].EnterprisePhoneNo, data.results[0].PICContactNo, data.results[0].EnterpriseFacebook, data.results[0].EnterpriseWebsite,
+//   data.results[0].EnterpriseInstagram, data.results[0].EnterpriseTikTok, data.results[0].BusinessMode
+//   );
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+//               }
+//               else {
+  
+//                   swalFireFail("Fail!-->" + result.responseText.trim());
+//                   Ext.Viewport.unmask();
+//                   LoadingPanelHide();
+//               }
+//               Ext.Viewport.unmask();
+//               LoadingPanelHide();
+  
+//           },
+  
+//           failure: function (result, request) {
+//               swalFireFail("Fail!");
+//               Ext.Viewport.unmask();
+//               LoadingPanelHide();
+//           }
+  
+//       });
+    
+//       Ext.Viewport.unmask();
+//   });
+//   task.delay(500);
+  
+  }
+
+
+
+
+
+  function FloatPanel_QrCodeScanner_ScanCampaign_InsertScanActivity(QrCodeString,EnterpriseAccNo,Activity){
+    var task = Ext.create('Ext.util.DelayedTask', function () {
+      
+        var objn = {
+            "SubscriberAccNo":GetCurrAyohaUserAccountNo(),
+            "QrCodeString":QrCodeString,
+            "EnterpriseAccNo": EnterpriseAccNo,
+            "Activity":Activity           
+        };
+        console.log(objn);
+        var _value = Ext.Ajax.request({
+    
+            type: "POST",
+    
+            url: GetAPIurl() + '/AyohaScanQrCodeActivity/AyohaScanQrCodeActivityInsertUpdate',
+    
+            dataType: "json",
+            data: JSON.stringify(objn),
+            headers: {
+                "Content-Type": "application/json; charset=utf-8"
+            },
+    
+            success: function (result, request) {
+    
+                //console.log(result.responseText);
+    
+    
+                data = Ext.decode(result.responseText.trim());
+    
+                if (data.success == "true") {
+              
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+                }
+                else {
+    
+                    swalFireFail("Fail!-->" + result.responseText.trim());
+                    Ext.Viewport.unmask();
+                    LoadingPanelHide();
+                }
+                Ext.Viewport.unmask();
+                LoadingPanelHide();
+    
+            },
+    
+            failure: function (result, request) {
+                swalFireFail("Fail!");
+                Ext.Viewport.unmask();
+                LoadingPanelHide();
+            }
+    
+        });
+      
+        Ext.Viewport.unmask();
+    });
+    task.delay(500);
+  }

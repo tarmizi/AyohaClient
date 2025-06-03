@@ -617,7 +617,7 @@ function FloatPanel_AyohaeWallet_TransferConfirmShow()
     this.overlay.show();
     AddRoutePages("FloatPanel_AyohaeWallet_TransferConfirmHide()");
     isFloatPanel_AyohaeWallet_TransferConfirmOpen = 'Y';
-
+   
     var AccNo = document.getElementById('input-FloatPanel_AyohaeWallet_Transfer_SearchAyohaUser').value;
 
 
@@ -631,6 +631,11 @@ function FloatPanel_AyohaeWallet_TransferConfirmShow()
     Ext.getCmp('htmlFloatPanel_AyohaeWallet_TransferConfirm_TransactioneWalletAccountNo').setHtml('<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 12px;font-weight:bold;color:white;margin:0px 0px 0px 0px;vertical-align:middle">' + AccNo + '</div>');
     Ext.getCmp('htmlFloatPanel_AyohaeWallet_TransferConfirm_TransactionNote').setHtml('<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 12px;font-weight:bold;color:white;margin:0px 0px 0px 0px;vertical-align:middle">' + TransferNoted + '</div>');
     Ext.getCmp('htmlFloatPanel_AyohaeWallet_TransferConfirm_TransactionAmount').setHtml('<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 16px;font-weight:bold;color:white;margin:0px 0px 0px 0px;vertical-align:middle">RM' + TransactionAmount_Creditd + '</div>');
+
+    if (isFloatPanel_AyohaStore_CheckOutOpen == 'Y') {
+        Ext.getCmp('LoadingFloatPanel_AyohaeWallet_TransferConfirmID').setZIndex(410);
+    }
+
 }
 
 

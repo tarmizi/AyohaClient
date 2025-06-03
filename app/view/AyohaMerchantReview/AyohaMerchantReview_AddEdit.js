@@ -743,6 +743,13 @@ function AyohaMerchantReview_AddEditShow_Add() {
 
 var globalAyohaMerchantReview_AddEdit_PostReview_ReviewCode;
 function AyohaMerchantReview_AddEditShow_Edit(ID) {
+if(is_FloatPanel_Membership_MembershipCardSaleDetailOpen=='Y'){
+    AyohaMerchantReview_AddEditShow_Edit_FloatPanel_Membership_MembershipCardSaleDetail(ID);
+    return;
+}
+
+
+
     AddRoutePages("AyohaMerchantReview_AddEditHide()");
     Ext.Viewport.remove(_AyohaMerchantReview_AddEdit);
     this.overlay = Ext.Viewport.add(AyohaMerchantReview_AddEdit());
@@ -785,8 +792,101 @@ function AyohaMerchantReview_AddEditShow_Edit(ID) {
 
     var MsgBody=ReviewText.get('ReviewText');
    // .replace(/\n/g, "<br>")
+   var str = MsgBody;
+
+var resultMsgBody = str.split('<')[0];
+
     
-    document.getElementById('input-AyohaMerchantReview_AddEdit_BodyMsg').value = MsgBody;
+    document.getElementById('input-AyohaMerchantReview_AddEdit_BodyMsg').value = resultMsgBody;
+    globalAyohaMerchantReview_AddEdit_PostReview_ID = ID;
+    globalAyohaMerchantReview_AddEdit_PostReview_ReviewCode = ReviewCode.get('ReviewCode');
+
+
+    var star1 = StarReview.get('StarReview');
+    if (star1 == 1) {
+        Ext.getCmp('btnAyohaMerchantReview_AddEditStar1').setHtml('<div ><img src="resources/icons/star.png" width="25" height="25" alt="Company Name"></div>');
+        Ext.getCmp('htmlAyohaMerchantReview_AddEdit_RatingCountTxt').setHtml('<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 17px;font-weight:bold;color:black;margin:0px 0px 0px 0px">' + star1 + '/5</div>');
+    }
+    if (star1 == 2) {
+        Ext.getCmp('btnAyohaMerchantReview_AddEditStar1').setHtml('<div ><img src="resources/icons/star.png" width="25" height="25" alt="Company Name"></div>');
+        Ext.getCmp('btnAyohaMerchantReview_AddEditStar2').setHtml('<div ><img src="resources/icons/star.png" width="25" height="25" alt="Company Name"></div>');
+        Ext.getCmp('htmlAyohaMerchantReview_AddEdit_RatingCountTxt').setHtml('<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 17px;font-weight:bold;color:black;margin:0px 0px 0px 0px">' + star1 + '/5</div>');
+    }
+    if (star1 == 3) {
+        Ext.getCmp('btnAyohaMerchantReview_AddEditStar1').setHtml('<div ><img src="resources/icons/star.png" width="25" height="25" alt="Company Name"></div>');
+        Ext.getCmp('btnAyohaMerchantReview_AddEditStar2').setHtml('<div ><img src="resources/icons/star.png" width="25" height="25" alt="Company Name"></div>');
+        Ext.getCmp('btnAyohaMerchantReview_AddEditStar3').setHtml('<div ><img src="resources/icons/star.png" width="25" height="25" alt="Company Name"></div>');
+        Ext.getCmp('htmlAyohaMerchantReview_AddEdit_RatingCountTxt').setHtml('<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 17px;font-weight:bold;color:black;margin:0px 0px 0px 0px">' + star1 + '/5</div>');
+    }
+    if (star1 == 4) {
+        Ext.getCmp('btnAyohaMerchantReview_AddEditStar1').setHtml('<div ><img src="resources/icons/star.png" width="25" height="25" alt="Company Name"></div>');
+        Ext.getCmp('btnAyohaMerchantReview_AddEditStar2').setHtml('<div ><img src="resources/icons/star.png" width="25" height="25" alt="Company Name"></div>');
+        Ext.getCmp('btnAyohaMerchantReview_AddEditStar3').setHtml('<div ><img src="resources/icons/star.png" width="25" height="25" alt="Company Name"></div>');
+        Ext.getCmp('btnAyohaMerchantReview_AddEditStar4').setHtml('<div ><img src="resources/icons/star.png" width="25" height="25" alt="Company Name"></div>');
+        Ext.getCmp('htmlAyohaMerchantReview_AddEdit_RatingCountTxt').setHtml('<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 17px;font-weight:bold;color:black;margin:0px 0px 0px 0px">' + star1 + '/5</div>');
+    }
+    if (star1 == 5) {
+        Ext.getCmp('btnAyohaMerchantReview_AddEditStar1').setHtml('<div ><img src="resources/icons/star.png" width="25" height="25" alt="Company Name"></div>');
+        Ext.getCmp('btnAyohaMerchantReview_AddEditStar2').setHtml('<div ><img src="resources/icons/star.png" width="25" height="25" alt="Company Name"></div>');
+        Ext.getCmp('btnAyohaMerchantReview_AddEditStar3').setHtml('<div ><img src="resources/icons/star.png" width="25" height="25" alt="Company Name"></div>');
+        Ext.getCmp('btnAyohaMerchantReview_AddEditStar4').setHtml('<div ><img src="resources/icons/star.png" width="25" height="25" alt="Company Name"></div>');
+        Ext.getCmp('btnAyohaMerchantReview_AddEditStar5').setHtml('<div ><img src="resources/icons/star.png" width="25" height="25" alt="Company Name"></div>');
+        Ext.getCmp('htmlAyohaMerchantReview_AddEdit_RatingCountTxt').setHtml('<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 17px;font-weight:bold;color:black;margin:0px 0px 0px 0px">' + star1 + '/5</div>');
+    }
+    starCount = star1;
+    Ext.getCmp('btnAyohaMerchantReview_AddEdit_Delete').setHidden(false);
+    Ext.getCmp('btnAyohaMerchantReview_AddEdit_AddPostReview').setHidden(true);
+    Ext.getCmp('btnAyohaMerchantReview_AddEdit_EditPostReview').setHidden(false);
+
+
+
+
+}
+
+
+
+
+
+function AyohaMerchantReview_AddEditShow_Edit_FloatPanel_Membership_MembershipCardSaleDetail(ID) {
+    AddRoutePages("AyohaMerchantReview_AddEditHide()");
+    Ext.Viewport.remove(_AyohaMerchantReview_AddEdit);
+    this.overlay = Ext.Viewport.add(AyohaMerchantReview_AddEdit());
+    this.overlay.show();   
+    isAyohaMerchantReview_AddEditOpen = 'Y';
+    globalAyohaMerchantReview_AddEdit_PostReview_isSave = "N";
+    var AccountName;
+    var Photo;
+    var StarReview;
+    var ReviewText;
+    var ReviewCode;
+    var AyohaUserPicProfile;
+    var AyohaUserAccountNames;
+
+
+   
+        AccountName = _DataStore_AyohaMerchantReviewLoadByEnterpriseAccNoAndItemCodeReviewMembershipCardSaleStore.findRecord('ID', ID, 0, false, false, true);
+        Photo = _DataStore_AyohaMerchantReviewLoadByEnterpriseAccNoAndItemCodeReviewMembershipCardSaleStore.findRecord('ID', ID, 0, false, false, true);
+        StarReview = _DataStore_AyohaMerchantReviewLoadByEnterpriseAccNoAndItemCodeReviewMembershipCardSaleStore.findRecord('ID', ID, 0, false, false, true);
+        ReviewText = _DataStore_AyohaMerchantReviewLoadByEnterpriseAccNoAndItemCodeReviewMembershipCardSaleStore.findRecord('ID', ID, 0, false, false, true);
+        ReviewCode = _DataStore_AyohaMerchantReviewLoadByEnterpriseAccNoAndItemCodeReviewMembershipCardSaleStore.findRecord('ID', ID, 0, false, false, true);
+    
+
+    
+
+    AyohaUserPicProfile = Photo.get('Photo');
+    AyohaUserAccountNames = AccountName.get('AccountName');
+
+    Ext.getCmp('htmlAyohaMerchantReview_AddEdit_TitleHeaderTxt').setHtml('<div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-family:Century Gothic;font-size: 11px;font-weight:normal;color:black;margin:10px 0px 0px 0px">Review By</div><br><div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-family:Century Gothic;font-size: 17px;font-weight:bold;color:black;margin:-25px 0px 0px 0px">' + AyohaUserAccountNames + '</div>');
+    Ext.getCmp('btnAyohaMerchantReview_AddEdit_PicProfile').setHtml('<div ><img src="' + AyohaUserPicProfile + '" width="30" height="30" alt="Company Name"></div>');
+
+    var MsgBody=ReviewText.get('ReviewText');
+   // .replace(/\n/g, "<br>")
+   var str = MsgBody;
+
+var resultMsgBody = str.split('<')[0];
+
+    
+    document.getElementById('input-AyohaMerchantReview_AddEdit_BodyMsg').value = resultMsgBody;
     globalAyohaMerchantReview_AddEdit_PostReview_ID = ID;
     globalAyohaMerchantReview_AddEdit_PostReview_ReviewCode = ReviewCode.get('ReviewCode');
 
@@ -859,6 +959,11 @@ function AyohaMerchantReview_AddEdit_PostReview_Add() {
     if (starCount == 0) {
         swalFireFail("Rating is Required!");
         return
+    }
+
+    if(is_FloatPanel_Membership_MembershipCardSaleDetailOpen=='Y'){
+        globalAyohaMerchantReview_ItemCodeReview=globalFloatPanel_Membership_MembershipCardSaleDetail_MembershipCardCode;
+        globalEnterpriseAccNo_AyohaMerchantReview=globalFloatPanel_Membership_MembershipCardSaleDetail_EnterpriseAccNo;
     }
 
         var objn = {
@@ -937,6 +1042,9 @@ function AyohaMerchantReview_AddEdit_PostReview_Add() {
 
 var globalAyohaMerchantReview_AddEdit_PostReview_ID;
 function AyohaMerchantReview_AddEdit_PostReview_Edit() {
+
+
+
 
     if (starCount == 0) {
         swalFireFail("Rating is Required!");

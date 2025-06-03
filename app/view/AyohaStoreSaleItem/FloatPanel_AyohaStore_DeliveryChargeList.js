@@ -478,8 +478,10 @@ function FloatPanel_AyohaStore_DeliveryChargeList_List(DeliveryName, Rate, Charg
     FloatPanel_AyohaStore_DeliveryChargeListHide();
 
     // var result = parseFloat(globalFloatPanel_AyohaStore_Cart_TotalSumPrice) + parseFloat(globalFloatPanel_AyohaStore_DeliveryChargeList_DeliveryCharge);
-    var result = (globalFloatPanel_AyohaStore_Cart_TotalSumPrice + parseFloat(globalFloatPanel_AyohaStore_DeliveryChargeList_DeliveryCharge)) - parseFloat(globalFloatPanel_AyohaRewardVoucherList_AyohaStore_Cart_TotalAmountVoucher);
-    globalFloatPanel_AyohaStore_Cart_GrandTotal = result.toFixed(2);
+   
+   
+    // var result = (globalFloatPanel_AyohaStore_Cart_TotalSumPrice + parseFloat(globalFloatPanel_AyohaStore_DeliveryChargeList_DeliveryCharge)) - parseFloat(globalFloatPanel_AyohaRewardVoucherList_AyohaStore_Cart_TotalAmountVoucher);
+    // globalFloatPanel_AyohaStore_Cart_GrandTotal = result.toFixed(2);
  
     FloatPanel_AyohaStore_CheckOut_SetDeliveryCharge();
     

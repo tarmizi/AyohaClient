@@ -27,7 +27,16 @@
       'NextRedeemPoint',
       'NextRedeemStamp',
       'UserVerifiedDate',
-      'Email_Debit'
+      'Email_Debit',
+      'PlayerID',
+      'AyohaeWalletTransactionTransactionType',
+      'StreetAddress',
+      'Town',
+      'PostCode',
+      'Country',
+      'Profession',
+      'Hobby',
+      'States'
         ]
     }
 });

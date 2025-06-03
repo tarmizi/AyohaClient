@@ -16,7 +16,6 @@ var isFloatPanel_AyohaeWallet_ScanAndPay_PaymentConfirmOpen = 'N';
 
 
 
-
 function FloatPanel_AyohaeWallet_ScanAndPay_PaymentConfirm() {
 
     _FloatPanel_AyohaeWallet_ScanAndPay_PaymentConfirm =
@@ -874,6 +873,10 @@ function FloatPanel_AyohaeWallet_ScanAndPay_PaymentConfirmShow() {
     Ext.getCmp('htmlFloatPanel_AyohaeWallet_ScanAndPay_PaymentConfirm_MerchantPointEarn').setHtml('<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 16px;font-weight:bold;color:white;margin:0px 0px 0px 0px;vertical-align:middle">' + MerchantPoint.toFixed(2) + '</div>');
     Ext.getCmp('htmlFloatPanel_AyohaeWallet_ScanAndPay_PaymentConfirm_AyohaPointEarn').setHtml('<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 16px;font-weight:bold;color:white;margin:0px 0px 0px 0px;vertical-align:middle">' + MerchantPoint.toFixed(2) + '</div>');
     Ext.getCmp('htmlFloatPanel_AyohaeWallet_ScanAndPay_PaymentConfirm_PayAmountAfterDiscount').setHtml('<div class="blink_me" style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-family:Century Gothic;font-size: 20px;font-weight:bold;color:white;margin:0px 0px 0px 0px;vertical-align:middle">' + PayAmount + '</div>');
+
+    if (isFloatPanel_AyohaStore_CheckOutOpen == 'Y') {
+        Ext.getCmp('LoadingFloatPanel_AyohaeWallet_ScanAndPay_PaymentConfirmID').setZIndex(400);
+    }
 
 }
 

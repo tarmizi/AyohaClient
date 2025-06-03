@@ -6,7 +6,7 @@
 
 
 
-
+let scanner_eWallet;
 
 var _FloatPanel_AyohaeWallet_ScanAndPay_Upgrade;
 
@@ -81,8 +81,8 @@ function FloatPanel_AyohaeWallet_ScanAndPay_Upgrade() {
                     //hidden: true,
 
                     id: 'containerFloatPanel_AyohaeWallet_ScanAndPay_UpgradeHeader',
-                  //  style: 'background-color:rgba(0, 0, 0, 0.1);border-radius: 0px 0px 0px 0px;',
-                    style: 'background-color:rgba(0, 0, 0, 0.5);border-radius: 0px 0px 0px 0px;',
+                    style: 'background-color:black',
+                   // style: 'background-color:rgba(0, 0, 0, 0.5);border-radius: 0px 0px 0px 0px;',
                     //  style: ' background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);',
                     layout: {
                         type: 'hbox',
@@ -105,9 +105,10 @@ function FloatPanel_AyohaeWallet_ScanAndPay_Upgrade() {
                                 width: 35,
                                 margin: '0 0 0 10',
                                 // iconCls: 'list',
-                                html: '<div ><img src="resources/icons/backwhite03.png" width="25" height="20" alt="Company Name"></div>',
+                                html: '<div ><img src="resources/icons/backwhite03Ori.png" width="25" height="20" alt="Company Name"></div>',
                                 ui: 'plain',
                                 handler: function () {
+                                    scanner_eWallet.stop()
                                     Ext.getCmp('mainView').setHidden(false);
                                     FloatPanel_QrCodeScanner_CenterLineMessageHide();
 
@@ -122,9 +123,10 @@ function FloatPanel_AyohaeWallet_ScanAndPay_Upgrade() {
                                     is_FloatPanel_AyohaeWallet_ScanAndPay_UpgradeOpen = 'N';
                                     RemovePages("FloatPanel_AyohaeWallet_ScanAndPay_UpgradeHide()");
                                     FloatPanel_AyohaeWalletShow();
-                                    window.QRScanner.destroy(function (status) {
+                                    //comment on 3112022
+                                    //window.QRscanner_eWallet.destroy(function (status) {
 
-                                    });
+                                    //});
 
                                 }
                             },
@@ -152,6 +154,7 @@ function FloatPanel_AyohaeWallet_ScanAndPay_Upgrade() {
                                 html: '<div ><img src="resources/icons/scanQRcodeGrey.png" width="25" height="20" alt="Company Name"></div>',
                                 ui: 'plain',
                                 handler: function () {
+                                    scanner_eWallet.stop()
                                     Ext.getCmp('mainView').setHidden(false);
                                     FloatPanel_QrCodeScanner_CenterLineMessageHide();
                                     is_FloatPanel_AyohaeWallet_ScanAndPay_UpgradeOpen = 'N';
@@ -164,12 +167,13 @@ function FloatPanel_AyohaeWallet_ScanAndPay_Upgrade() {
 
                                     }));
                                     RemovePages("FloatPanel_AyohaeWallet_ScanAndPay_UpgradeHide()");
-                                    window.QRScanner.destroy(function (status) {
 
-                                    });
+                                    //comment on 3/11/2022
+                                    //window.QRscanner_eWallet.destroy(function (status) {
 
-                                    //  RemovePages(_FloatPanel_AyohaNotification, "isFloatPanel_AyohaNotificationOpen");
-                                    //FloatPanel_AyohaNotification_AddCardHide();
+                                    //});
+
+                                  
                                 }
                             },
 
@@ -384,7 +388,17 @@ function FloatPanel_AyohaeWallet_ScanAndPay_Upgrade() {
                     ]
                 },
 
+                 {
 
+                    
+                     html: '<video id="preview_scan_eWallet"></video>',
+                     //handler: function () {
+
+                     ////    FloatPanel_QrCodescanner_eWallet_ScanLoyaltyStampCardHide();
+
+                     //},
+
+                 },
 
                 //////////////////
 
@@ -397,8 +411,8 @@ function FloatPanel_AyohaeWallet_ScanAndPay_Upgrade() {
                     // width: 40,
                     docked: 'bottom',
                     height: 40,
-                    // style: 'background-color:rgba(0, 0, 0, 0.1);border-radius: 0px 0px 0px 0px;',
-                    style: ' background-color: #fac;background-image: linear-gradient(#c800ffc9,#ff00de75);',
+                    style: 'background-color:black',
+                    //style: ' background-color: #fac;background-image: linear-gradient(#c800ffc9,#ff00de75);',
                     layout: {
                         type: 'vbox',
                         pack: 'center',
@@ -407,7 +421,7 @@ function FloatPanel_AyohaeWallet_ScanAndPay_Upgrade() {
                     items: [
 
                         {
-                            html: '<div style="color:white;text-align: center;font-size:11px;width:100%;font-weight:normal;margin:0px 0px 0px 0px;background-color:transparent" >Developed by AA Property Solution. Kuala Lumpur ,MALAYSIA</div>',
+                            html: '<div style="color:white;text-align: center;font-size:11px;width:100%;font-weight:normal;margin:0px 0px 0px 0px;background-color:transparent" >Developed by ianMizi Advanced Technology.</div>',
                             margin: '0 0 0 0',
                         },
 
@@ -447,6 +461,38 @@ function FloatPanel_AyohaeWallet_ScanAndPay_Upgrade() {
 
 
 
+//function FloatPanel_AyohaeWallet_ScanAndPay_UpgradeShow_ORI() {
+//    QRCodeResult = "";
+//    Ext.Viewport.remove(_FloatPanel_AyohaeWallet_ScanAndPay_Upgrade);
+//    this.overlay = Ext.Viewport.add(FloatPanel_AyohaeWallet_ScanAndPay_Upgrade());
+//    this.overlay.show();
+//    AddRoutePages("FloatPanel_AyohaeWallet_ScanAndPay_UpgradeHide()");
+//    is_FloatPanel_AyohaeWallet_ScanAndPay_UpgradeOpen = 'Y';
+//    FloatPanel_QrCodescanner_eWallet_CenterLineMessageShow();
+
+
+//    var x = screen.width;
+//    var y = screen.height;
+//    var xx = x - 28;
+
+
+//    if (y < 700) {
+//        Ext.getCmp('FloatPanel_AyohaeWallet_ScanAndPay_Upgrade_AyohaRewardLogo').setHeight(130);
+//        Ext.getCmp('FloatPanel_AyohaeWallet_ScanAndPay_Upgrade_AyohaRewardLogo').setWidth(130);
+//        Ext.getCmp('FloatPanel_AyohaeWallet_ScanAndPay_Upgrade_AyohaRewardLogo').setHtml('<img src="resources/icons/Logo/LogoOrangeSimplifed.png" alt="Image" style="width:130px;height:130px;">');
+//    }
+
+
+//    if (isFloatPanel_AyohaStore_CheckOutOpen == 'Y') {
+//        Ext.getCmp('FloatPanel_AyohaeWallet_ScanAndPay_UpgradeID').setZIndex(400);
+//    }
+
+
+//}
+
+
+
+
 function FloatPanel_AyohaeWallet_ScanAndPay_UpgradeShow() {
     QRCodeResult = "";
     Ext.Viewport.remove(_FloatPanel_AyohaeWallet_ScanAndPay_Upgrade);
@@ -454,8 +500,8 @@ function FloatPanel_AyohaeWallet_ScanAndPay_UpgradeShow() {
     this.overlay.show();
     AddRoutePages("FloatPanel_AyohaeWallet_ScanAndPay_UpgradeHide()");
     is_FloatPanel_AyohaeWallet_ScanAndPay_UpgradeOpen = 'Y';
+    //FloatPanel_QrCodescanner_eWallet_CenterLineMessageShow();
     FloatPanel_QrCodeScanner_CenterLineMessageShow();
-
 
     var x = screen.width;
     var y = screen.height;
@@ -469,12 +515,80 @@ function FloatPanel_AyohaeWallet_ScanAndPay_UpgradeShow() {
     }
 
 
+    if (isFloatPanel_AyohaStore_CheckOutOpen == 'Y') {
+        Ext.getCmp('FloatPanel_AyohaeWallet_ScanAndPay_UpgradeID').setZIndex(400);
+    }
 
+
+    scanner_eWallet = new Instascan.Scanner({
+        video: document.getElementById('preview_scan_eWallet'),
+        mirror: false,
+       
+    });
+
+
+
+
+    scanner_eWallet.addListener('scan', function (content) {
+
+        QRCodeResult = content;
+        var audio = new Audio();
+        audio.src = 'https://setkita.com/AyohaSoundExternal/store-scanner_eWallet-beep.mp3';
+        audio.play();
+
+
+
+        scanner_eWallet.stop()
+        Ext.getCmp('mainView').setHidden(false);
+        FloatPanel_QrCodeScanner_CenterLineMessageHide();
+
+        _FloatPanel_AyohaeWallet_ScanAndPay_Upgrade.hide(Ext.fx.Animation({
+            type: 'popOut',
+            duration: 250,
+            easing: 'ease-out'
+
+        }));
+        // FloatPanel_AyohaeWallet_IconShow();
+        is_FloatPanel_AyohaeWallet_ScanAndPay_UpgradeOpen = 'N';
+        RemovePages("FloatPanel_AyohaeWallet_ScanAndPay_UpgradeHide()");
+        FloatPanel_AyohaeWalletShow();
+
+
+
+
+        FloatPanel_AyohaeWallet_ScanAndPay_Payment_ProcessQRCode(QRCodeResult);
+
+        scanner_eWallet.stop();
+
+
+
+
+    });
+    //Instascan.Camera.getCameras().then(function (cameras) {
+    //    if (cameras.length > 0) {
+    //        scanner_eWallet.start(cameras[1]);
+    //    } else {
+    //        console.error('No cameras found.');
+    //    }
+    //}).catch(function (e) {
+    //    console.error(e);
+    //});
+
+
+    Instascan.Camera.getCameras().then(function (cameras) {
+        if (cameras.length > 0) {
+            scanner_eWallet.start(cameras[1]);
+        } else {
+            console.error('No cameras found.');
+        }
+    }).then(function (e) {
+        console.error(e);
+    });
 }
 var is_FloatPanel_AyohaeWallet_ScanAndPay_UpgradeOpen = 'N';
 
 function FloatPanel_AyohaeWallet_ScanAndPay_UpgradeHide() {
-    // scanner.stop();
+    scanner_eWallet.stop();
     Ext.getCmp('mainView').setHidden(false);
     FloatPanel_QrCodeScanner_CenterLineMessageHide();
     if (is_FloatPanel_AyohaeWallet_ScanAndPay_UpgradeOpen == 'Y') {
@@ -482,10 +596,11 @@ function FloatPanel_AyohaeWallet_ScanAndPay_UpgradeHide() {
         is_FloatPanel_AyohaeWallet_ScanAndPay_UpgradeOpen = 'N';
         RemovePages("FloatPanel_AyohaeWallet_ScanAndPay_UpgradeHide()");
         FloatPanel_AyohaeWalletShow();
-        window.QRScanner.destroy(function (status) {
-            // alert(status);
-        });
-        // swalFireSuccessStampedCardMsg("Stamped Success!!");
+        //comment on 03112022
+        //window.QRscanner_eWallet.destroy(function (status) {
+           
+        //});
+      
     }
 
 }

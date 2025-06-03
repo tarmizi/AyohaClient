@@ -93,8 +93,7 @@ function FloatPanel_AyohaReward_PointTransactions() {
          items: [
 
 
-
-
+          
              {
                  xtype: 'container',
                  width: '100%',
@@ -109,129 +108,132 @@ function FloatPanel_AyohaReward_PointTransactions() {
                      align: 'center'
                  },
                  items: [
-                     {
+                    {
 
-                         xtype: 'container',
-                         width: '100%',
-                         // width: 40,
-                         //zIndex:-10,
-                         //  title: '<font size="3" color="white">Live Tracking Map</font>',
-                         //hidden: true,
-                         docked: 'top',
-                         id: 'containerFloatPanel_AyohaReward_PointTransactionsHeader1',
-                         style: "background-color: transparent;",
-                         //style: {
-                         //    // background: '#D25959',
-                         //    background: 'transparent',
-                         //    // border: '2px'
-                         //},
-                         //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
-                         // style: 'border-bottom:2px solid #D25959;background-color:transparent',
-                         layout: {
-                             type: 'hbox',
-                             pack: 'center',
-                             align: 'center',
-                         },
-                         // hidden:true,
-                         items:
-                                [
-
-
-
-
-
-
-
-
+                        xtype: 'container',
+                        width: '100%',
+                        // width: 40,
+                        //zIndex:-10,
+                        //  title: '<font size="3" color="white">Live Tracking Map</font>',
+                        //hidden: true,
+                        docked: 'top',
+                       height:50,
+                        id: 'containerFloatPanel_AyohaReward_PointTransactionsHeader1',
+                        style: "background-color: transparent;",
+                        //style: {
+                        //    // background: '#D25959',
+                        //    background: 'transparent',
+                        //    // border: '2px'
+                        //},
+                        //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
+                        // style: 'border-bottom:2px solid #D25959;background-color:transparent',
+                        layout: {
+                            type: 'hbox',
+                            pack: 'center',
+                            align: 'center',
+                        },
+                        // hidden:true,
+                        items:
+                               [
+        
+        
+        
+        
+        
+        
+        
+        
+                                   {
+                                       xtype: 'button',
+                                       id: 'btnFloatPanel_AyohaReward_PointTransactionsBack',
+                                       height: 30,
+                                       width: 35,
+                                       margin: '0 0 0 0',
+                                       // iconCls: 'list',
+                                       html: '<div ><img src="resources/icons/backwhite03Ori.png"   width="25" height="20" alt="Company Name"></div>',
+                                       ui: 'plain',
+                                       handler: function () {
+                                           _FloatPanel_AyohaReward_PointTransactions.hide(Ext.fx.Animation({
+                                               type: 'slideOut',
+                                               direction: 'left',
+                                               easing: 'cubic-bezier(.7,0,.7,1)',
+                                               duration: 250
+        
+                                           }));
+                                           isFloatPanel_AyohaReward_PointTransactionsOpen = 'N';
+                                           _FloatPanel_AyohaReward_PointTransactions_isFirstLoad = "N";
+                                           RemovePages("FloatPanel_AyohaReward_PointTransactionsHide()");
+                                       }
+                                   },
+        
+                                              {
+                                                  xtype: 'spacer',
+        
+                                              },
+        
+                                              {
+                                                  xtype: 'button',
+                                                  margin: '-10 -13 0 0',
+                                                  zIndex: 100,
+                                                  html: '<font size=2 color=white><b>Ayoha Points(AP)</b></font>',
+                                                  ui: 'plain',
+                                                  handler: function () {
+                                                      _FloatPanel_AyohaReward_PointTransactions.hide(Ext.fx.Animation({
+                                                          type: 'slideOut',
+                                                          direction: 'right',
+                                                          easing: 'cubic-bezier(.7,0,.7,1)',
+                                                          duration: 250
+        
+                                                      }));
+                                                      isFloatPanel_AyohaReward_PointTransactionsOpen = 'N';
+                                                      _FloatPanel_AyohaReward_PointTransactions_isFirstLoad = "N";
+                                                      RemovePages("FloatPanel_AyohaReward_PointTransactionsHide()");
+                                                  }
+                                              },
+        
                                     {
                                         xtype: 'button',
-                                        id: 'btnFloatPanel_AyohaReward_PointTransactionsBack',
-                                        height: 30,
+                                        id: 'btnbtnFloatPanel_AyohaReward_PointTransactionsBacksLogo',
+                                        height: 35,
                                         width: 35,
-                                        margin: '0 0 0 0',
                                         // iconCls: 'list',
-                                        html: '<div ><img src="resources/icons/backwhite03.png" width="25" height="20" alt="Company Name"></div>',
+                                        margin: '-5 3 0 0',
+                                        html: '<div><img src="resources/icons/Logo/LogoWhiteSimplifed.png" width="25" height="25" alt="Company Name"></div>',
                                         ui: 'plain',
                                         handler: function () {
                                             _FloatPanel_AyohaReward_PointTransactions.hide(Ext.fx.Animation({
                                                 type: 'slideOut',
-                                                direction: 'left',
+                                                direction: 'right',
                                                 easing: 'cubic-bezier(.7,0,.7,1)',
                                                 duration: 250
-
+        
                                             }));
                                             isFloatPanel_AyohaReward_PointTransactionsOpen = 'N';
                                             _FloatPanel_AyohaReward_PointTransactions_isFirstLoad = "N";
                                             RemovePages("FloatPanel_AyohaReward_PointTransactionsHide()");
                                         }
                                     },
-
-                                               {
-                                                   xtype: 'spacer',
-
-                                               },
-
-                                               {
-                                                   xtype: 'button',
-                                                   margin: '-10 -13 0 0',
-                                                   zIndex: 100,
-                                                   html: '<font size=2 color=white><b>Ayoha Points(AP)</b></font>',
-                                                   ui: 'plain',
-                                                   handler: function () {
-                                                       _FloatPanel_AyohaReward_PointTransactions.hide(Ext.fx.Animation({
-                                                           type: 'slideOut',
-                                                           direction: 'right',
-                                                           easing: 'cubic-bezier(.7,0,.7,1)',
-                                                           duration: 250
-
-                                                       }));
-                                                       isFloatPanel_AyohaReward_PointTransactionsOpen = 'N';
-                                                       _FloatPanel_AyohaReward_PointTransactions_isFirstLoad = "N";
-                                                       RemovePages("FloatPanel_AyohaReward_PointTransactionsHide()");
-                                                   }
-                                               },
-
-                                     {
-                                         xtype: 'button',
-                                         id: 'btnbtnFloatPanel_AyohaReward_PointTransactionsBacksLogo',
-                                         height: 35,
-                                         width: 35,
-                                         // iconCls: 'list',
-                                         margin: '-5 3 0 0',
-                                         html: '<div><img src="resources/icons/Logo/LogoWhiteSimplifed.png" width="25" height="25" alt="Company Name"></div>',
-                                         ui: 'plain',
-                                         handler: function () {
-                                             _FloatPanel_AyohaReward_PointTransactions.hide(Ext.fx.Animation({
-                                                 type: 'slideOut',
-                                                 direction: 'right',
-                                                 easing: 'cubic-bezier(.7,0,.7,1)',
-                                                 duration: 250
-
-                                             }));
-                                             isFloatPanel_AyohaReward_PointTransactionsOpen = 'N';
-                                             _FloatPanel_AyohaReward_PointTransactions_isFirstLoad = "N";
-                                             RemovePages("FloatPanel_AyohaReward_PointTransactionsHide()");
-                                         }
-                                     },
-
-                                                      
-                                                    
-
-
-
-
-
-
-
-
-
-                                ]
-
-                     },
+        
+                                                     
+                                                   
+        
+        
+        
+        
+        
+        
+        
+        
+        
+                               ]
+        
+                    },
+        
 
                      {
                          xtype: 'container',
-                         height: 135,
+                        // height: 135,
+                         height: 120,
                          //  hidden:true,
                          //flex: 1,
                          // height:'35%',
@@ -693,7 +695,7 @@ function FloatPanel_AyohaReward_PointTransactions() {
                                          //'<table style="border-collapse:collapse;border-spacing:0;background-color:transparent;width:100%;margin:0px 0px 0px 0px;"><tr><td style="font-family:Arial, sans-serif;font-size:11px;padding:0px 0px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:transparent;color:black;background-color:transparent;font-weight:normal;text-align:left;width:70%" >{ModifiedEnterpriseName}</td></tr><tr><td style="font-family:Arial, sans-serif;font-size:11px;padding:4px 0px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:transparent;color:black;background-color:transparent;font-weight:normal;vertical-align:top;width:50%;"><div style="font-family:Arial, sans-serif;font-size:11px;font-weight:normal;word-break:normal;margin:-4px 0px 0px 0px;">{AyohaPointType}</div><br><div style="font-family:Arial, sans-serif;font-size:11px;font-weight:normal;word-break:normal;margin:-10px 0px 0px 0px;"><b>{ModifiedCreatedDate_DateOnly} {ModifiedCreatedDate_TimeOnly}</b></div></td><td style="font-family:Arial, sans-serif;font-size:11px;padding:4px 0px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:transparent;color:black;background-color:transparent;font-weight:normal;vertical-align:top;width:50%;">{ModifiedTypeCRDB}</td></tr></table>' +
 
 
-                                         '<table onclick="FloatPanel_AyohaReward_PointTransaction_ShowTransactionDetail(' + "'" + '{ItemCartCode}' + "'" + ',' + "'" + '{MembershipCardCode_AyohaStore_Order}' + "'" + ',' + "'" + '{AyohaPointType}' + "'" + ',' + "'" + '{GUIDRow}' + "'" + ',' + "'" + '{PaymentNo}' + "'" + ',' + "'" + '{EnterpriseLogo}' + "'" + ',' + "'" + '{PointAmountEquation}' + "'" + ',' + "'" + '{PaymentAmount}' + "'" + ',' + "'" + '{PaymentNoDisplay}' + "'" + ',' + "'" + '{MembershipCardImg}' + "'" + ',' + "'" + '{MembershipCardName}' + "'" + ',' + "'" + '{PaymentNote}' + "'" + ',' + "'" + '{EnterpriseName}' + "'" + ',' + "'" + '{EnterpriseAccNo}' + "'" + ',' + "'" + '{CreatedDate}' + "'" + ',' + "'" + '{OrderNo}' + "'" + ')" style="border-collapse:collapse;border-spacing:0;width:100%;background-color:white;margin:-10px 0px 0px -13px;height:100px;" ><thead><tr><th style="border-color:black;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:16px;font-weight:normal;overflow:hidden;padding:0px 10px;text-align:left;vertical-align:bottom;word-break:normal"><div style="margin:5px 0px 0px 0px">{ModifiedEnterpriseName}</div></th><th style="border-color:black;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 10px;text-align:right;vertical-align:middle;word-break:normal" rowspan="3">{ModifiedTypeCRDB}</th></tr><tr><td style="border-color:black;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:12px;overflow:hidden;padding:0px 10px;text-align:left;vertical-align:top;word-break:normal">{AyohaPointType}<br><div style="border-color:black;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:12px;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:top;word-break:normal;margin:0px 0px 0px 0px">{ModifiedCreatedDate_DateOnly} {ModifiedCreatedDate_TimeOnly}</div></td></tr></thead></table>' +
+                                         '<table onclick="FloatPanel_AyohaReward_PointTransaction_ShowTransactionDetail({TotalStampEarn},' + "'" + '{ItemCartCode}' + "'" + ',' + "'" + '{MembershipCardCode_AyohaStore_Order}' + "'" + ',' + "'" + '{AyohaPointType}' + "'" + ',' + "'" + '{GUIDRow}' + "'" + ',' + "'" + '{PaymentNo}' + "'" + ',' + "'" + '{EnterpriseLogo}' + "'" + ',' + "'" + '{PointAmountEquation}' + "'" + ',' + "'" + '{PaymentAmount}' + "'" + ',' + "'" + '{PaymentNoDisplay}' + "'" + ',' + "'" + '{MembershipCardImg}' + "'" + ',' + "'" + '{MembershipCardName}' + "'" + ',' + "'" + '{PaymentNote}' + "'" + ',' + "'" + '{EnterpriseName}' + "'" + ',' + "'" + '{EnterpriseAccNo}' + "'" + ',' + "'" + '{CreatedDate}' + "'" + ',' + "'" + '{OrderNo}' + "'" + ',' + "'" + '{CreatedBy}' + "'" + ')" style="border-collapse:collapse;border-spacing:0;width:100%;background-color:white;margin:-10px 0px 0px -13px;height:100px;" ><thead><tr><th style="border-color:black;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:16px;font-weight:normal;overflow:hidden;padding:0px 10px;text-align:left;vertical-align:bottom;word-break:normal"><div style="margin:5px 0px 0px 0px">{ModifiedEnterpriseName}</div></th><th style="border-color:black;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 10px;text-align:right;vertical-align:middle;word-break:normal" rowspan="3">{ModifiedTypeCRDB}</th></tr><tr><td style="border-color:black;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:12px;overflow:hidden;padding:0px 10px;text-align:left;vertical-align:top;word-break:normal">{ModifiedMembershipCardName}<br><div style="border-color:black;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:12px;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:top;word-break:normal;margin:0px 0px 0px 0px">{ModifiedCreatedDate_DateOnly} {ModifiedCreatedDate_TimeOnly}</div></td></tr></thead></table>' +
 
 
 
@@ -801,6 +803,9 @@ function FloatPanel_AyohaReward_PointTransactionsShow() {
     //AyohaRedeemPrizeLoadByAyohaUserGroupCodeStore();
 
 
+if(isFloatPanel_AyohaStore_CheckOutOpen=="Y"){
+    Ext.getCmp('FloatPanel_AyohaReward_PointTransactionsID').setZIndex(400);
+}
 
 }
 
@@ -925,40 +930,86 @@ function FloatPanel_AyohaReward_PointTransactions_AyohaRewardPointLoadBySubscrib
 
 
 
-function FloatPanel_AyohaReward_PointTransaction_ShowTransactionDetail(ItemCartCode, MembershipCardCode_AyohaStore_Order, AyohaPointType, GUIDRow, PaymentNo, EnterpriseLogo, PointAmountEquation, PaymentAmount, PaymentNoDisplay, MembershipCardImg, MembershipCardName, PaymentNote, EnterpriseName, EnterpriseAccNo, CreatedDate,OrderNo) {
+function FloatPanel_AyohaReward_PointTransaction_ShowTransactionDetail(TotalStampEarn,ItemCartCode, MembershipCardCode_AyohaStore_Order, AyohaPointType, GUIDRow, PaymentNo, EnterpriseLogo, PointAmountEquation, PaymentAmount, PaymentNoDisplay, MembershipCardImg, MembershipCardName, PaymentNote, EnterpriseName, EnterpriseAccNo, CreatedDate,OrderNo,CreatedBy) {
     globalFloatPanel_AyohaStore_ModuleTagging = "FloatPanel_AyohaStore_CheckOut";
     //var AyohaPointType = record.get('AyohaPointType');
     //var RedeemHistoryCode = record.get('GUIDRow');
-   // alert(AyohaPointType)
+
     globalFloatPanel_AyohaStore_CheckOut_EnterpriseAccNo = EnterpriseAccNo;
-   // alert(globalFloatPanel_AyohaStore_CheckOut_EnterpriseAccNo);
+
+FloatPanel_AyohaReward_PointTransactionsHide();
     if (AyohaPointType == "(Point Loyalty Card)") {
 
-        if (PaymentNo.startsWith('ePN')) {
-            FloatPanel_AyohaReward_PointTransaction_eWalletShow(PaymentNo, EnterpriseLogo, PointAmountEquation, PaymentAmount, PaymentNoDisplay, MembershipCardImg, MembershipCardName, PaymentNote, EnterpriseName, EnterpriseAccNo, CreatedDate);
+
+     
+        if (PaymentNo) {
+            if (PaymentNo.startsWith('ePN')) {
+                FloatPanel_AyohaReward_PointTransaction_eWalletShow(PaymentNo, EnterpriseLogo, PointAmountEquation, PaymentAmount, PaymentNoDisplay, MembershipCardImg, MembershipCardName, PaymentNote, EnterpriseName, EnterpriseAccNo, CreatedDate);
+            } else {
+                // FloatPanel_AyohaStore_CheckOut_AyohaStoreOrderLoadByItemCartCodeAndMembershipCardCodeStore(ItemCartCode, MembershipCardCode_AyohaStore_Order);
+               
+               if(PaymentNo=="NotRequired"){
+
+               }else{
+                
+                FloatPanel_AyohaStore_CheckOut_AyohaStoreOrderLoadByItemCartCodeAndMembershipCardCodeStore_WithOrderNo(TotalStampEarn,ItemCartCode, MembershipCardCode_AyohaStore_Order, OrderNo, EnterpriseName, EnterpriseLogo);
+
+               }
+               
+               
+               
+            }
         } else {
-           // FloatPanel_AyohaStore_CheckOut_AyohaStoreOrderLoadByItemCartCodeAndMembershipCardCodeStore(ItemCartCode, MembershipCardCode_AyohaStore_Order);
-            FloatPanel_AyohaStore_CheckOut_AyohaStoreOrderLoadByItemCartCodeAndMembershipCardCodeStore_WithOrderNo(ItemCartCode, MembershipCardCode_AyohaStore_Order, OrderNo, EnterpriseName, EnterpriseLogo);
            
         }
+     
 
        
         return;
     }
 
-    //if (AyohaPointType == "<font color=purple class=blink_me> <b>Winner TAP And Win Contest Point </b></font>") {
+    if (AyohaPointType == "<font color=purple class=blink_me> <b>Ayoha eWallet Greeting Point! </b></font>") {
 
-    //    FloatPanel_AyohaReward_PointTransaction_eWalletShow(PaymentNo, EnterpriseLogo, PointAmountEquation, PaymentAmount, PaymentNoDisplay, MembershipCardImg, MembershipCardName, PaymentNote, EnterpriseName, EnterpriseAccNo, CreatedDate);
+        swalFireStampInfo("Opening Account Point,Complementary Point from Ayoha Reward.Com!","resources/icons/Logo/LogoOrangeSimplifed.png");
 
-
-    //    return;
-    //}
+       return;
+    }
 
     if (AyohaPointType == "(Stamp Loyalty Card)") {
       //  FloatPanel_AyohaStore_CheckOut_AyohaStoreOrderLoadByItemCartCodeAndMembershipCardCodeStore(ItemCartCode, MembershipCardCode_AyohaStore_Order);
        // FloatPanel_AyohaStore_CheckOut_AyohaStoreOrderLoadByItemCartCodeAndMembershipCardCodeStore_WithOrderNo(ItemCartCode, MembershipCardCode_AyohaStore_Order, OrderNo)
-        FloatPanel_AyohaStore_CheckOut_AyohaStoreOrderLoadByItemCartCodeAndMembershipCardCodeStore_WithOrderNo(ItemCartCode, MembershipCardCode_AyohaStore_Order, OrderNo, EnterpriseName, EnterpriseLogo);
 
+
+        if (PaymentNo) {
+            if (PaymentNo.startsWith('PN')) {
+                //FloatPanel_AyohaStore_CheckOut_AyohaStoreOrderLoadByItemCartCodeAndMembershipCardCodeStore_WithOrderNo(ItemCartCode, MembershipCardCode_AyohaStore_Order, OrderNo, EnterpriseName, EnterpriseLogo);
+                FloatPanel_AyohaStore_CheckOut_AyohaStoreOrderLoadByItemCartCodeAndMembershipCardCodeStore_WithOrderNo(TotalStampEarn,ItemCartCode, MembershipCardCode_AyohaStore_Order, OrderNo, EnterpriseName, EnterpriseLogo);
+
+            } else {
+
+                //FloatPanel_AyohaStore_CheckOut_AyohaStoreOrderLoadByItemCartCodeAndMembershipCardCodeStore_WithOrderNo(ItemCartCode, MembershipCardCode_AyohaStore_Order, OrderNo, EnterpriseName, EnterpriseLogo);
+                FloatPanel_AyohaStore_CheckOut_AyohaStoreOrderLoadByItemCartCodeAndMembershipCardCodeStore_WithOrderNo(TotalStampEarn,ItemCartCode, MembershipCardCode_AyohaStore_Order, OrderNo, EnterpriseName, EnterpriseLogo);
+
+
+            }
+        } else {
+           
+            if(CreatedBy=="Auto-PaidOnline"){
+                swalFireStampInfo("Complementary Point from Ayoha Reward.Com!","resources/icons/Logo/LogoOrangeSimplifed.png");
+                return;
+            }
+            if(CreatedBy=="AyohaAdmin"){
+                swalFireStampInfo("Opening Account Point,Complementary Point from Ayoha Reward.Com!","resources/icons/Logo/LogoOrangeSimplifed.png");
+                return;
+            }
+            else{
+                swalFireStampInfo("Stamp Thru QR Code by Merchant!","resources/icons/stampAnimation.gif");
+                return;
+            }
+            
+        }
+        
+       
         //if (PaymentNo.startsWith('ePN')) {
         //    FloatPanel_AyohaReward_PointTransaction_eWalletShow(PaymentNo, EnterpriseLogo, PointAmountEquation, PaymentAmount, PaymentNoDisplay, MembershipCardImg, MembershipCardName, PaymentNote, EnterpriseName, EnterpriseAccNo, CreatedDate);
         //} else {

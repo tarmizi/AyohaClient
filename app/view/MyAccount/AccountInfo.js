@@ -201,7 +201,7 @@ Ext.define('ianMizi.view.MyAccount.AccountInfo', {
                                                         {
                                                             //html: '<input type="file" id="fileElemPicProfile" multiple accept="image/*" style="display:none" onchange="handleFiles(this.files)" />',
 
-                                                            html: '<link href="http://42.1.63.57/CRCSS/ratchet.css" rel="stylesheet"/><label for="imageUpload" class="btn btn-primary btn-block btn-outlined">Upload Picture Profile</label><input type="file" id="imageUpload" accept="image/*" style="display: none" onchange="EnableuploadPicProfile()" />',
+                                                            html: '<link href="https://setkita.com/CRCSS/ratchet.css" rel="stylesheet"/><label for="imageUpload" class="btn btn-primary btn-block btn-outlined">Upload Picture Profile</label><input type="file" id="imageUpload" accept="image/*" style="display: none" onchange="EnableuploadPicProfile()" />',
 
                                                             //   html: '<div style="padding:10px;font-weight:bolder; background-color:#446655;color: white;margin-top:10px;width:112px;overflow: hidden;">UPLOAD IMAGE <input id="imageUpload"  style="width:100px;color:#446655;display: none;" type="file" accept="image/*" onchange="EnableuploadPicProfile()" /></div>',
 

@@ -167,7 +167,7 @@ function LoadingPanel() {
 
 
 
-function LoadingPanelHide() {
+function LoadingPanelHidex() {
 
     if (isFromNotification != 'Y') {
         _LoadingPanel.hide();

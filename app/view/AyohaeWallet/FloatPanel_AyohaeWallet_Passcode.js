@@ -142,9 +142,9 @@ function FloatPanel_AyohaeWallet_Passcode() {
                                      id: 'btnFloatPanel_AyohaeWallet_PasscodeBack',
                                      height: 30,
                                      width: 35,
-                                     margin: '10 0 0 0',
+                                     margin: '20 0 0 0',
                                      // iconCls: 'list',
-                                     html: '<div ><img src="resources/icons/backwhite03.png" width="25" height="20" alt="Company Name"></div>',
+                                     html: '<div ><img src="resources/icons/backwhite03Ori.png" width="25" height="20" alt="Company Name"></div>',
                                      ui: 'plain',
                                      handler: function () {
 
@@ -246,11 +246,38 @@ function FloatPanel_AyohaeWallet_Passcode() {
                              
                                         {
                                             margin: '0 0 0 0',
+                                            id: 'htmlFloatPanel_AyohaeWallet_passcodetxt',
+                                            hidden:true,
                                             //  html: '<input type="number" div style="border-bottom:1px none #ECF0F1;background: transparent;color:black; text-align:center;font-size: 46px;font-weight:normal;width:100%;" >RM 0.00</div>',
-                                            html: '<input type="password" id="input-FloatPanel_AyohaeWallet_Passcode_Amount" inputmode="none"  maxlength="6"  value="*******" style="pointer-events:none;border: 1px none white;color:white;text-align: center;font-size:46px;background-color: transparent;width:100%;height:70px;font-weight:bold;">'
+                                            html: '<input type="password" id="input-FloatPanel_AyohaeWallet_Passcode_Amount" inputmode="none"  maxlength="6"  value="******" style="pointer-events:none;border: 1px none white;color:white;text-align: center;font-size:46px;background-color: transparent;width:100%;height:70px;font-weight:bold;">'
                                         },
+                                        {
+                                            margin: '0 0 0 0',                                                                                 
+                                            xtype: 'container',
+                                            width: '100%',                                           
+                                            height: 70,
+                                            id: 'containerFloatPanel_AyohaeWallet_PasscodeCursorAnim',
+                                            style: {
+                                                background: 'transparent',
+                                                // border: '2px'
+                                            },
+                                            //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
+                                            // style: 'border-bottom:2px solid #D25959;background-color:transparent',
+                                            layout: {
+                                                type: 'hbox',
+                                                pack: 'center',
+                                                align: 'center',
+                                            },
+                                            items: [
+                                                {
+                                                    html: '<div ><img src="resources/icons/passcodeCursorAnim.gif" width="42" height="71" alt="Company Name"></div>',
+                                                }
+                                            ]
+                                        },
+
+
                          ]
-                        
+                         
                      },
 
                      {
@@ -658,7 +685,7 @@ function FloatPanel_AyohaeWallet_PasscodeShow() {
 
 
 
-    alert(globalFloatPanel_AyohaeWallet_Passcode_CheckingTaggingModule);
+   
     //FloatPanel_AyohaeWallet_PasscodeAdjustHeight();
 
     //Ext.getCmp('htmlFloatPanel_AyohaeWallet_Passcode_Logo').setHtml('<img src="' + GetEnterpriseLogoPath() + '" width="130" height="130"/>');
@@ -701,14 +728,14 @@ function FloatPanel_AyohaeWallet_PasscodeShow_SettingeWallet() {
 
     AddRoutePages("FloatPanel_AyohaeWallet_PasscodeHide()");
     FloatPanel_AyohaeWallet_TransferConfirmHide();
+    Ext.getCmp('htmlFloatPanel_AyohaeWallet_passcodetxt').setHidden(true);
     //FloatPanel_AyohaeWallet_PasscodeAdjustHeight();
    
     Ext.getCmp('htmlFloatPanel_AyohaeWallet_Passcode_Label').setHtml('<div style="border-bottom:1px none #ECF0F1;background: transparent;color:white; text-align:center;font-family:Arial, sans-serif;font-size: 11px;font-weight:normal;width:100%;" >Secure your eWallet Setting with 6 digit Passcode</div>');
 
 
 
-
- 
+   
     //Ext.getCmp('htmlFloatPanel_AyohaeWallet_Passcode_Logo').setHtml('<img src="' + GetAyohaUserPicProfile() + '" style = "width: 120px; height: 120px; border:2px solid grey; border-radius: 50%; max-width:250px;" />');
 
 
@@ -776,8 +803,10 @@ var globalFloatPanel_AyohaeWallet_Passcode_CheckingTaggingModule;
 
 function sendNum(digit) {
 
-  
-
+    
+    Ext.getCmp('htmlFloatPanel_AyohaeWallet_passcodetxt').setHidden(false);
+    Ext.getCmp('containerFloatPanel_AyohaeWallet_PasscodeCursorAnim').setHidden(true);
+    
     a += digit;
 
     document.getElementById('input-FloatPanel_AyohaeWallet_Passcode_Amount').value = a;
@@ -849,6 +878,9 @@ function sendNum(digit) {
                 FloatPanel_AyohaeWallet_PasscodeHide();
                 FloatPanel_AyohaeWallet_SettingShow_UpdateEwalletAccount();
                 FloatPanel_AyohaeWallet_Setting_AyohaeWalletAccountSettingStore();
+            } if (globalFloatPanel_AyohaeWallet_Passcode_CheckingTaggingModule == "FloatPanel_AyohaeWallet_CashOutConfirm") {
+                FloatPanel_AyohaeWallet_PasscodeHide();
+                FloatPanel_AyohaeWallet_CashOutConfirm_Confirm();
             }
             
         } else {

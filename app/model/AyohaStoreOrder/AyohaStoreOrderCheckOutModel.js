@@ -54,6 +54,8 @@
       'PaymentStatus',
       'PaymentDate',
       'LoyaltyRewardType',
+      'MemberDiscountPercent',
+      'MemberDiscountAmount',
         {
             name: 'ModifiedItemPrice',
             convert: function (value, record) {

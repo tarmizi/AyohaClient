@@ -44,11 +44,20 @@ function FloatPanel_AyohaUserRegistration() {
             type: 'popIn',
             duration: 250,
             easing: 'ease-out'
+            //type: 'slideIn',
+            //direction: 'up',
+            //easing: 'cubic-bezier(.2,0,.2,1)',
+            //duration: 250
         },
         hideAnimation: {
-            type: 'popOut',
-            //direction: 'up',
-            //easing: 'cubic-bezier(.7,0,.7,1)',
+            //type: 'popOut',
+            ////direction: 'up',
+            ////easing: 'cubic-bezier(.7,0,.7,1)',
+            //duration: 250
+
+            type: 'slideOut',
+            direction: 'down',
+            easing: 'cubic-bezier(.2,0,.2,1)',
             duration: 250
         },
 
@@ -426,10 +435,10 @@ function FloatPanel_AyohaUserRegistration() {
                                                   swalFireFail("Email required!");
                                                   return;
                                               }
-                                              if (!PhoneNo) {
-                                                  swalFireFail("Mobile Phone No required!");
-                                                  return;
-                                              }
+                                              //if (!PhoneNo) {
+                                              //    swalFireFail("Mobile Phone No required!");
+                                              //    return;
+                                              //}
 
 
                                               if (!Password) {
@@ -931,7 +940,7 @@ function FloatPanel_AyohaUserRegistration() {
                                                  xtype: 'container',
                                                  width: '100%',
                                                  margin: '30 0 0 0',
-                                              //   hidden: true,
+                                                 hidden: true,
                                                  style: ' background-color:transparent',
                                                  layout: {
                                                      type: 'hbox',
@@ -2126,7 +2135,9 @@ function inputImgFloatPanel_AyohaUserRegistrationUploadedPhoto() {
 
 function ResizeImage() {
     if (window.File && window.FileReader && window.FileList && window.Blob) {
-        var filesToUploads = document.getElementById('inputImg-FloatPanel_AyohaUserRegistrationUploadedPhoto').files;
+       var filesToUploads = document.getElementById('inputImg-FloatPanel_AyohaUserRegistrationUploadedPhoto').files;
+       // var filesToUploads = document.getElementById('inputImg-htmlFloatPanel_DashboardMerchantReward_MembershipContestSelfieForm_UploadReceiptImage').files;
+    
         var file = filesToUploads[0];
         if (file) {
 
@@ -2170,7 +2181,7 @@ function ResizeImage() {
 
                // Ext.getCmp('FloatPanel_AyohaUserRegistrationPicProfile').setHtml('<img src="' + dataurl + '"  style="width: 140px; height: 140px; border:2px solid white; border-radius: 50%; "/>');
 
-               // console.log("Resize image:" + globalUserPicProfile64)
+              // alert("Resize image:" + globalUserPicProfile64)
             }
             reader.readAsDataURL(file);
 
@@ -2198,8 +2209,8 @@ function FloatPanel_AyohaUserRegistration_Save() {
     var strEmail = document.getElementById('input-FloatPanel_AyohaUserRegistrationEmail').value;
     var TrimStrEmail = strEmail.replace(/\s/g, '');
 
-    var strPhoneNo = document.getElementById('input-FloatPanel_AyohaUserRegistrationPhoneNumber').value;
-    var TrimStrPhoneNo = strPhoneNo.replace(/\s/g, '');
+    //var strPhoneNo = document.getElementById('input-FloatPanel_AyohaUserRegistrationPhoneNumber').value;
+    //var TrimStrPhoneNo = strPhoneNo.replace(/\s/g, '');
 
 
     var imgbase64;
@@ -2211,24 +2222,29 @@ function FloatPanel_AyohaUserRegistration_Save() {
     }
 
 
-   
-
+    var date = new Date();
+    var current_date = date.getFullYear() + '' + (date.getMonth() + 1) + '' + date.getDate();
+    var current_time = date.getHours() + '' + date.getMinutes() + '' + date.getSeconds();
+    var date_time = current_date + '' + current_time;
 
     var task = Ext.create('Ext.util.DelayedTask', function () {
     var objn = {
        
-        "AccountNo": AccountName + '-' + TrimStrPhoneNo + '-' + GenerateRandomNo(),
-        "AccountName": document.getElementById('input-FloatPanel_AyohaUserRegistrationAccountName').value,
+        //"AccountNo": AccountName.replace(/ /g, '') + '-' + TrimStrPhoneNo + '-' + GenerateRandomNo(),
+        "AccountNo": AccountName.replace(/ /g, '') + '-' + date_time.replace(/ /g, '') + '-' + GenerateRandomNo(),
+        "AccountName": document.getElementById('input-FloatPanel_AyohaUserRegistrationAccountName').value.toUpperCase(),
         "Email": TrimStrEmail,
-        "PhoneNo": TrimStrPhoneNo,
+        //"PhoneNo": TrimStrPhoneNo,
+        "PhoneNo": '',
         "Photo": imgbase64,
-        "Email": document.getElementById('input-FloatPanel_AyohaUserRegistrationEmail').value,
-        "UserName": TrimStrPhoneNo,
+       // "Email": document.getElementById('input-FloatPanel_AyohaUserRegistrationEmail').value,
+        "UserName": TrimStrEmail,
+        //"UserName": TrimStrPhoneNo,
         "Katalaluan": document.getElementById('input-FloatPanel_AyohaUserRegistrationPassword').value,        
         "PhotoName": document.getElementById('input-FloatPanel_AyohaUserRegistrationPhotoName').value,
         "PlayerID":  localStorage.getItem("player_id"),
         //"ContentCardImgName": document.getElementById('inputName-FloatPanel_AyohaCardManagement_AddCardBackgroundImg_UploadedImage').value,
-
+      
     };
     var _value = Ext.Ajax.request({
 
@@ -2255,7 +2271,7 @@ function FloatPanel_AyohaUserRegistration_Save() {
                 var valKatatLalu=document.getElementById('input-FloatPanel_AyohaUserRegistrationPassword').value;
                
                 FloatPanel_AyohaUserRegistrationHide();
-                loadAyohaUserProfileLoginBodyAfterCreatedAccount(TrimStrPhoneNo, valKatatLalu);
+                loadAyohaUserProfileLoginBodyAfterCreatedAccount(TrimStrEmail, valKatatLalu);
 
             }
             else {
@@ -2323,8 +2339,8 @@ function AyohaUserProfile_CheckExistingUser() {
     var strEmail = document.getElementById('input-FloatPanel_AyohaUserRegistrationEmail').value;
     var TrimStrEmail = strEmail.replace(/\s/g, '');
 
-    var strPhoneNo = document.getElementById('input-FloatPanel_AyohaUserRegistrationPhoneNumber').value;
-    var TrimStrPhoneNo = strPhoneNo.replace(/\s/g, '');
+    //var strPhoneNo = document.getElementById('input-FloatPanel_AyohaUserRegistrationPhoneNumber').value;
+    //var TrimStrPhoneNo = strPhoneNo.replace(/\s/g, '');
 
 
 
@@ -2332,7 +2348,10 @@ function AyohaUserProfile_CheckExistingUser() {
     var task = Ext.create('Ext.util.DelayedTask', function () {
 
         var objn = {
-            "UserName": TrimStrPhoneNo,
+            //"UserName": TrimStrPhoneNo,
+            //"Email": TrimStrEmail
+
+            "UserName": TrimStrEmail,
             "Email": TrimStrEmail
         };
         // console.log(objn);
@@ -2364,18 +2383,18 @@ function AyohaUserProfile_CheckExistingUser() {
                         globalCheckUserName = data.results[0].UserName;
                         globalCheckEmail = data.results[0].Email;
 
-                        var RegUserName = TrimStrPhoneNo;
+                      //  var RegUserName = TrimStrPhoneNo;
                         var RegEmail = TrimStrEmail;
                       
 
-                        if (RegUserName == globalCheckUserName) {
-                            swalFireFail("(" + RegUserName + ") Already Registered!");
+                        //if (RegUserName == globalCheckUserName) {
+                        //    swalFireFail("(" + RegUserName + ") Already Registered!");
                             
-                            return;
-                        }
+                        //    return;
+                        //}
                         if (RegEmail == globalCheckEmail) {
                             swalFireFail("(" + RegEmail + ") Already Registered!");
-                         
+                            LoadingPanelHide();
                             return;
                         }
                         return;
@@ -2393,6 +2412,7 @@ function AyohaUserProfile_CheckExistingUser() {
                 else {
 
                     swalFireFail("Cheking Failed!!!" + result.responseText.trim() + "</font>");
+                    LoadingPanelHide();
                     Ext.Viewport.unmask();
                 }
                
@@ -2402,6 +2422,7 @@ function AyohaUserProfile_CheckExistingUser() {
             failure: function (result, request) {
                 Ext.Viewport.unmask();
                 swalFireFail("Cheking Failed!!!</font>");
+                LoadingPanelHide();
             }
 
         });

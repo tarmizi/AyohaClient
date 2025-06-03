@@ -3339,7 +3339,7 @@ function FloatPanel_AyohaStore_BuyNow_OrderOnly_ReOrder() {
 
 function FloatPanel_AyohaStore_BuyNow_PlayAyohaPointSound() {
     var audio = new Audio();
-    audio.src = 'http://42.1.63.57/AyohaSoundExternal/KidsCheering.mp3';
+    audio.src = 'https://setkita.com/AyohaSoundExternal/KidsCheering.mp3';
     audio.play();
 }
 

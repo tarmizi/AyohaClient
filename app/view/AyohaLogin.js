@@ -90,7 +90,7 @@ Ext.define('ianMizi.view.AyohaLogin', {
                              },
 
                             {
-                                html: '<input type="text" id="ip2" placeHolder="Mobile Phone No"/>'
+                                html: '<input type="text" id="ip2" placeHolder="Email"/>'
                             },
                              {
                                  margin: '10 0 0 0',

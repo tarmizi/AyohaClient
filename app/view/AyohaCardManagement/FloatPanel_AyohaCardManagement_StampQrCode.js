@@ -385,17 +385,17 @@ function FloatPanel_AyohaCardManagement_StampQrCode_CreateQrCode(TmpQrCodeTxt) {
 
 
 
-function makeCode () {		
-    var elText = document.getElementById("text");
+// function makeCode () {		
+//     var elText = document.getElementById("text");
 	
-    if (!elText.value) {
-        alert("Input a text");
-        elText.focus();
-        return;
-    }
+//     if (!elText.value) {
+//         alert("Input a text");
+//         elText.focus();
+//         return;
+//     }
 	
-    qrcode.makeCode(elText.value);
-}
+//     qrcode.makeCode(elText.value);
+// }
 var CloseTimerQrCodeInterval;
 function FloatPanel_AyohaCardManagement_StampQrCode_CloseTimerQrCode() {
     var interval = parseInt(1000);

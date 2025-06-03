@@ -55,7 +55,7 @@ function FloatPanel_AyohaeWallet_Setting() {
              easing: 'ease-out'
          },
          //style: 'border-bottom:1px solid;background-color:#353839;',
-         style: 'border-bottom:1px solid;background-color:white;',
+         style: 'border-bottom:1px none;background-color:white;',
          // style: ' background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);',
          //listeners: {
          //    initialize: function (c) {
@@ -176,7 +176,7 @@ function FloatPanel_AyohaeWallet_Setting() {
                                            margin: '0 10 0 0',
                                            id: 'htmlFloatPanel_AyohaeWallet_Setting_TitleHeaderTxt',
                                           // html: '<div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-family:Century Gothic;font-size: 12px;font-weight:normal;color:black;margin:10px 0px 0px 0px">eWallet Transaction History </div><br><div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-family:Century Gothic;font-size: 17px;font-weight:bold;color:black;margin:-23px 0px 0px 0px">YEAR 2021</div>',
-                                          html: '<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 12px;font-weight:bold;color:black;">Ayoha eWallet Setting</div>',
+                                          html: '<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 12px;font-weight:bold;color:black;">Ayoha eWallet Settings</div>',
 
                                            //html: '<font size=2 color=white><b>Review By Tarmizi Bin Rahim</b></font>'
                                        },
@@ -243,16 +243,209 @@ function FloatPanel_AyohaeWallet_Setting() {
                               pack: 'start',
                               align: 'center',
                           },
+                          scrollable: {
+                              direction: 'vertical',
+                              indicators:false,
+                          },
                           items: [
+
+                              {
+
+                                  xtype: 'container',
+                                  width: '90%',
+                                  height: 60,
+                                  //margin: '10 0 0 0',
+                                 // zIndex:200,
+                                  id: 'containerFloatPanel_AyohaeWallet_Setting_Security',
+                                  name: 'containerViewnamecontainerFloatPanel_AyohaeWallet_Setting_Security',
+                                  //style: 'border-bottom:2px solid #fac;border-top:2px solid #fac ;background-color: #FAD6DE;',
+                                  style: 'border-bottom:1px solid #dddddd;border-top:2px none #fac ;background-color:transparent;',
+                                  layout: {
+                                      type: 'hbox',
+                                      pack: 'center',
+                                      align: 'center'
+                                  },
+                                  items: [
+
+
+                                      {
+                                          xtype: 'container',
+                                          id: 'containerFloatPanel_AyohaeWallet_Setting_Security_tap',
+                                          width: 10,
+                                          height: 56,
+                                          margin: '-1 0 0 0',
+                                          // style: 'background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9)',
+                                          style: 'background-color:transparent;',
+                                      },
+                                       {
+                                           xtype: 'spacer',
+                                           width: 10
+                                       },
+
+
+                                       {
+                                           xtype: 'container',
+                                           width: '100%',
+                                           height: 40,
+                                           margin: '4 0 0 0',
+                                           id: 'containerFloatPanel_AyohaeWallet_Setting_Securityinner',
+                                           name: 'nameFloatPanel_AyohaeWallet_Setting_Securityinner',
+                                           //style: 'background-color:rgba(255, 255, 255, 0.3);border-radius: 40px 40px 40px 40px;',
+                                           // style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px solid pink;border-top:2px solid pink ;background: transparent;',
+                                           style: 'background-color:transparent',
+                                           layout: {
+                                               type: 'hbox',
+                                               pack: 'center',
+                                               align: 'center'
+                                           },
+                                           items: [
+
+                                                {
+                                                    //height: 28,
+                                                    //width: 28,
+                                                    id: 'htmlFloatPanel_AyohaeWallet_Setting_Security_Image',
+                                                    //badgeText: "2",
+                                                    html: '<div style="border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none white;background: transparent;border-radius: 0px 0px 0px 0px;width:40px;height:40px;font-size: 10px;font-weight:normal;color:black;" ><img src="resources/icons/securiti.png"  style="width: 40px; height: 40px; border:2px none white;  margin:0px 0px 0px 0px"></div>',
+                                                },
+                                      {
+                                          xtype: 'spacer',
+                                          width: 10
+                                      },
+                                       {
+                                           //height: 28,
+                                           //width: 28,
+                                           id: 'htmlFloatPanel_AyohaeWallet_Setting_Security_Name',
+                                           //badgeText: "2",
+                                           html: '<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 12px;font-weight:bold;color:black;height:15px">Security</div>',
+                                       },
+
+                                       {
+                                           xtype: 'spacer'
+                                       },
+                                      {
+                                          id: 'htmlFloatPanel_AyohaeWallet_Setting_Security_arrow',
+                                          margin: '0 0 0 0',
+                                          html: '<div style="border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none white;background: transparent;border-radius: 0px 0px 0px 0px;width:40px;height:15px;font-size: 12px;font-weight:bold;color:black;" >></div>',
+                                          //  height: 20,
+                                          //  html: '<div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-size: 12px;font-weight:normal;color:black;height:20px">950 Points</div>'
+                                      },
+                                      {
+                                          id: 'htmlFloatPanel_AyohaeWallet_Setting_Security_Spacer',
+                                          xtype: 'spacer',
+                                          width: 33
+                                      },
+
+                                           ]
+                                       },
+
+
+                                  ]
+
+                              },
+
+
+
+                              {
+
+                                  xtype: 'container',
+                                  width: '90%',
+                                  height: 60,
+                                  //margin: '10 0 0 0',
+                                  id: 'containerFloatPanel_AyohaeWallet_Setting_Credit_and_Debit_Limit',
+                                  name: 'containerViewnamecontainerFloatPanel_AyohaeWallet_Setting_Credit_and_Debit_Limit',
+                                  style: 'border-bottom:1px solid #dddddd;border-top:2px none #fac ;background-color:transparent;',
+                                  layout: {
+                                      type: 'hbox',
+                                      pack: 'center',
+                                      align: 'center'
+                                  },
+                                  items: [
+
+
+                                      {
+                                          xtype: 'container',
+                                          id: 'containerFloatPanel_AyohaeWallet_Setting_Credit_and_Debit_Limit_tap',
+                                          width: 10,
+                                          height: 56,
+                                          margin: '-1 0 0 0',
+                                          // style: 'background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9)',
+                                          style: 'background-color:transparent;',
+                                      },
+                                       {
+                                           xtype: 'spacer',
+                                           width: 10
+                                       },
+
+
+                                       {
+                                           xtype: 'container',
+                                           width: '100%',
+                                           height: 40,
+                                           margin: '4 0 0 0',
+                                           id: 'containerFloatPanel_AyohaeWallet_Credit_and_Debit_Limit_inner',
+                                           name: 'nameFloatPanel_AyohaeWallet_Credit_and_Debit_Limit_inner',
+                                           //style: 'background-color:rgba(255, 255, 255, 0.3);border-radius: 40px 40px 40px 40px;',
+                                           // style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px solid pink;border-top:2px solid pink ;background: transparent;',
+                                           style: 'background-color:transparent',
+                                           layout: {
+                                               type: 'hbox',
+                                               pack: 'center',
+                                               align: 'center'
+                                           },
+                                           items: [
+
+                                                {
+                                                    //height: 28,
+                                                    //width: 28,
+                                                    id: 'htmlFloatPanel_AyohaeWallet_Setting_Credit_and_Debit_Limit_Image',
+                                                    //badgeText: "2",
+                                                    html: '<div style="border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none white;background: transparent;border-radius: 0px 0px 0px 0px;width:40px;height:40px;font-size: 10px;font-weight:normal;color:black;" ><img src="resources/icons/kreditdebit.png"  style="width: 40px; height: 40px; border:2px none white;  margin:0px 0px 0px 0px"></div>',
+                                                },
+                                      {
+                                          xtype: 'spacer',
+                                          width: 10
+                                      },
+                                       {
+                                           //height: 28,
+                                           //width: 28,
+                                           id: 'htmlFloatPanel_AyohaeWallet_Setting_Credit_and_Debit_Limit_Name',
+                                           //badgeText: "2",
+                                           html: '<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 12px;font-weight:bold;color:black;height:15px">Credit and Debit Limit</div>',
+                                       },
+
+                                       {
+                                           xtype: 'spacer'
+                                       },
+                                      {
+                                          id: 'htmlFloatPanel_AyohaeWallet_Setting__Credit_and_Debit_Limit_arrow',
+                                          margin: '0 0 0 0',
+                                          html: '<div style="border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none white;background: transparent;border-radius: 0px 0px 0px 0px;width:40px;height:15px;font-size: 12px;font-weight:bold;color:black;" >></div>',
+                                          //  height: 20,
+                                          //  html: '<div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-size: 12px;font-weight:normal;color:black;height:20px">950 Points</div>'
+                                      },
+                                      {
+                                          id: 'htmlFloatPanel_AyohaeWallet_Setting_Credit_and_Debit_Limit_Spacer',
+                                          xtype: 'spacer',
+                                          width: 33
+                                      },
+
+                                           ]
+                                       },
+
+
+                                  ]
+
+                              },
                               {
                                   xtype: 'list',
-                                  store: _DataStore_AyohaeWalletAccountSettingStore,
-                                  id: 'FloatPanel_AyohaeWallet_SettingIDx',
+                                  // store: _DataStore_AyohaeWalletAccountSettingStore,
+                                  store:'AyohaeWalletAccountSettingHardCodedStore',
+                                  id: 'FloatPanel_AyohaeWallet_SettingIDListID',
+                                  hidden:true,
                                   mode: 'SINGLE',
+                                  disableSelection: true,
+                                
                                  
-                                  // flex: 1,
-                                  mode: 'SINGLE',
-                                  disableSelection: false,
                                   scrollable: {
                                       direction: 'vertical',
                                       indicators: {
@@ -264,7 +457,7 @@ function FloatPanel_AyohaeWallet_Setting() {
                                           }
                                       }
                                   },
-                                  //store: 'AyohaeWalletAccountSettingStore',
+                            
                                  
                                   style: 'background-color:rgba(255,255,255, 10);border-radius: 0px 0px 0px 0px;',
                                   //style: 'background-color:rgba(0, 0, 0, 0.0);border-radius: 0px 0px 0px 0px;',
@@ -272,15 +465,20 @@ function FloatPanel_AyohaeWallet_Setting() {
                                //'<table onclick="FloatPanel_AyohaeWallet_SettingMenu({ID})" style="border-collapse:collapse;border-spacing:0;width:100%;background-color:white;margin:0px 0px 0px 0px;"><tr><td style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:0px 7px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:15%;vertical-align:center;text-align:center;"><img src="{Icon}" style="border:1px none black; width:25px;height:25px;" /></td><td style="font-family:Arial, sans-serif;font-size:12px;font-weight:normal;padding:0px 0px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:72%;vertical-align:center;text-align:left;"><b>{AyohaeWalletAccountSettingName}</b></td><td style="font-family:Arial, sans-serif;font-size:24px;font-weight:bold;padding:0px 0px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:10%;vertical-align:center;text-align:left">></td></tr></table></div>',                                 
 
 
-                                  itemTpl: '<div onclick="FloatPanel_AyohaeWallet_SettingMenu({IDs})" class="myContent" style="background-color:white;width:104%">' +
-                                      '<div onclick="FloatPanel_AyohaeWallet_SettingMenu({IDs})" style="overflow:auto;width:104%;margin:-2px 0px 0px 0px;background-color:white;height:35px;"><div style="font-family:Arial, sans-serif;font-size:18px;font-weight:normal;float:left;width:20%;margin:5px 0px 0px 20px;background-color:white;"><img src="{Icons}" style="border:1px none white; width:25px;height:25px;" /></div><div style="font-family:Arial, sans-serif;font-size:12px;font-weight:normal;float:left;width:70%;margin:15px 0px 0px -20px;background-color:white;color:black"><b>{AyohaeWalletAccountSettingNames}</b></div><div style="font-family:Arial, sans-serif;font-size:24px;font-weight:normal;float:left;width:10%;margin:5px 0px 0px 0px;background-color:white;color:black"><b> > </b></div></div>' ,
+                                  ////itemTpl: '<div onclick="FloatPanel_AyohaeWallet_SettingMenu({IDs})" class="myContent" style="background-color:white;width:104%">' +
+                                  ////    '<div onclick="FloatPanel_AyohaeWallet_SettingMenu({IDs})" style="overflow:auto;width:104%;margin:-2px 0px 0px 0px;background-color:white;height:35px;"><div style="font-family:Arial, sans-serif;font-size:18px;font-weight:normal;float:left;width:20%;margin:5px 0px 0px 20px;background-color:white;"><img src="{Icons}" style="border:1px none white; width:25px;height:25px;" /></div><div style="font-family:Arial, sans-serif;font-size:12px;font-weight:normal;float:left;width:70%;margin:15px 0px 0px -20px;background-color:white;color:black"><b>{AyohaeWalletAccountSettingNames}</b></div><div style="font-family:Arial, sans-serif;font-size:24px;font-weight:normal;float:left;width:10%;margin:5px 0px 0px 0px;background-color:white;color:black"><b> > </b></div></div>' ,
 
-                                     // '</div><br><div onclick="FloatPanel_AyohaeWallet_SettingMenu({ID})" style="width:104%;text-align:center;margin:-65px 0px 0px 0px;height: 23px;background-color:transparent;"></div>',
+                                  itemTpl: '<div class="myContent">' +
+                                  '<div onclick="FloatPanel_AyohaeWallet_SettingMenu({ID})" class="myContent" style="background-color:white;width:104%">' +
+                                      '<div onclick="FloatPanel_AyohaeWallet_SettingMenu({ID})" style="overflow:auto;width:104%;margin:-2px 0px 0px 0px;background-color:white;height:35px;"><div style="font-family:Arial, sans-serif;font-size:18px;font-weight:normal;float:left;width:20%;margin:5px 0px 0px 20px;background-color:white;">{Icon}</div><div style="font-family:Arial, sans-serif;font-size:12px;font-weight:normal;float:left;width:70%;margin:15px 0px 0px -20px;background-color:white;color:black"><b>{AyohaeWalletAccountSettingName}</b></div><div style="font-family:Arial, sans-serif;font-size:24px;font-weight:normal;float:left;width:10%;margin:5px 0px 0px 0px;background-color:white;color:black"><b> > </b></div></div></div>',
+
+
+                               
 
                                   width: '90%',
-                                  //height: 300,
-                                  height: '100%',
-                                  disableSelection: true,
+                                 // height: 300,
+                                 height: '100%',
+                                 
 
                                   emptyText: '<div class="myContent">No Setting!</div>',
 
@@ -366,6 +564,29 @@ function FloatPanel_AyohaeWallet_Setting() {
                                               },
                                       ]
                                   },
+
+
+
+
+
+
+
+
+
+                                  
+
+
+
+
+
+
+
+
+
+
+
+
+
                                   {
                                       xtype: 'container',
                                       width: '95%',
@@ -977,9 +1198,19 @@ function FloatPanel_AyohaeWallet_Setting() {
 function FloatPanel_AyohaeWallet_SettingShow() {
 
 
+   
+  
+
     if (localStorage.getItem("isUserHasEwalletAccount") == "Y") {
         FloatPanel_AyohaeWallet_PasscodeShow_SettingeWallet();
         globalFloatPanel_AyohaeWallet_Passcode_CheckingTaggingModule = "FloatPanel_AyohaeWallet_PasscodeShow_SettingeWallet";
+
+
+
+
+
+       
+
         return;
     }
 
@@ -996,8 +1227,39 @@ function FloatPanel_AyohaeWallet_SettingShow() {
 
     document.getElementById("input-FloatPanel_AyohaeWallet_SettingPassword").addEventListener("keyup", OnKeyUp_FloatPanel_AyohaeWallet_SettingPassword);
     document.getElementById("input-FloatPanel_AyohaeWallet_SettingConfirmPassword").addEventListener("keyup", OnKeyUp_FloatPanel_AyohaeWallet_SettingConfirmPassword);
-   // var FloatPanel_AyohaeWallet_isUserHasEwalletAccount = localStorage.getItem("isUserHasEwalletAccount");
+    // var FloatPanel_AyohaeWallet_isUserHasEwalletAccount = localStorage.getItem("isUserHasEwalletAccount");
+
    
+
+    
+
+
+    if (isFloatPanel_AyohaStore_CheckOutOpen == 'Y') {
+        Ext.getCmp('LoadingFloatPanel_AyohaeWallet_SettingID').setZIndex(400);
+    }
+
+    var containerViewnamecontainerFloatPanel_AyohaeWallet_Setting_Security = Ext.ComponentQuery.query('container[name=containerViewnamecontainerFloatPanel_AyohaeWallet_Setting_Security]')[0];
+    var containerViewElcontainerViewnamecontainerFloatPanel_AyohaeWallet_Setting_Security = containerViewnamecontainerFloatPanel_AyohaeWallet_Setting_Security.element;
+    containerViewElcontainerViewnamecontainerFloatPanel_AyohaeWallet_Setting_Security.on('tap',
+      function (event, node, options, eOpts) {
+
+          FloatPanel_AyohaeWallet_SettingMenu(1);
+      }
+    );
+
+
+
+    var containerViewnamecontainerFloatPanel_AyohaeWallet_Setting_Credit_and_Debit_Limit = Ext.ComponentQuery.query('container[name=containerViewnamecontainerFloatPanel_AyohaeWallet_Setting_Credit_and_Debit_Limit]')[0];
+    var containerViewElcontainerViewnamecontainerFloatPanel_AyohaeWallet_Setting_Credit_and_Debit_Limit = containerViewnamecontainerFloatPanel_AyohaeWallet_Setting_Credit_and_Debit_Limit.element;
+    containerViewElcontainerViewnamecontainerFloatPanel_AyohaeWallet_Setting_Credit_and_Debit_Limit.on('tap',
+      function (event, node, options, eOpts) {
+
+          FloatPanel_AyohaeWallet_SettingMenu(2);
+      }
+    );
+
+
+    
    
 }
 
@@ -1012,22 +1274,28 @@ function FloatPanel_AyohaeWallet_Setting_AyohaeWalletAccountSettingStore() {
 
 
 
-
+    return;
 
 
    
     _DataStore_AyohaeWalletAccountSettingStore.getProxy().setUrl(GetAPIurl() + '/AyohaeWalletAccountSetting/AyohaeWalletAccountSettingload');
-    _DataStore_AyohaeWalletAccountSettingStore.load();
-
+  
 
 
 
 
     var task = Ext.create('Ext.util.DelayedTask', function () {
+       
+        _DataStore_AyohaeWalletAccountSettingStore.load();
+
 
         //_DataStore_EnterprisesLoadByMerchantCategory.load();
         var count = _DataStore_AyohaeWalletAccountSettingStore.getCount();
-       
+        var Stores = _DataStore_AyohaeWalletAccountSettingStore.getAt(0);
+        var icon = Stores.get('Icons');
+        var txt = Stores.get('AyohaeWalletAccountSettingNames');
+        console.log(icon);
+        console.log(txt);
 
     });
     task.delay(500);
@@ -1071,6 +1339,28 @@ function FloatPanel_AyohaeWallet_SettingShow_UpdateEwalletAccount() {
     document.getElementById("input-FloatPanel_AyohaeWallet_SettingPassword").addEventListener("keyup", OnKeyUp_FloatPanel_AyohaeWallet_SettingPassword);
     document.getElementById("input-FloatPanel_AyohaeWallet_SettingConfirmPassword").addEventListener("keyup", OnKeyUp_FloatPanel_AyohaeWallet_SettingConfirmPassword);
     // var FloatPanel_AyohaeWallet_isUserHasEwalletAccount = localStorage.getItem("isUserHasEwalletAccount");
+
+
+    var containerViewnamecontainerFloatPanel_AyohaeWallet_Setting_Security = Ext.ComponentQuery.query('container[name=containerViewnamecontainerFloatPanel_AyohaeWallet_Setting_Security]')[0];
+    var containerViewElcontainerViewnamecontainerFloatPanel_AyohaeWallet_Setting_Security = containerViewnamecontainerFloatPanel_AyohaeWallet_Setting_Security.element;
+    containerViewElcontainerViewnamecontainerFloatPanel_AyohaeWallet_Setting_Security.on('tap',
+      function (event, node, options, eOpts) {
+
+          FloatPanel_AyohaeWallet_SettingMenu(1);
+      }
+    );
+
+
+
+
+    var containerViewnamecontainerFloatPanel_AyohaeWallet_Setting_Credit_and_Debit_Limit = Ext.ComponentQuery.query('container[name=containerViewnamecontainerFloatPanel_AyohaeWallet_Setting_Credit_and_Debit_Limit]')[0];
+    var containerViewElcontainerViewnamecontainerFloatPanel_AyohaeWallet_Setting_Credit_and_Debit_Limit = containerViewnamecontainerFloatPanel_AyohaeWallet_Setting_Credit_and_Debit_Limit.element;
+    containerViewElcontainerViewnamecontainerFloatPanel_AyohaeWallet_Setting_Credit_and_Debit_Limit.on('tap',
+      function (event, node, options, eOpts) {
+
+          FloatPanel_AyohaeWallet_SettingMenu(2);
+      }
+    );
 
 
 }

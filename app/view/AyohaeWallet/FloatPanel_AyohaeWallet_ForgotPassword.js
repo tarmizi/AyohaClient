@@ -422,6 +422,9 @@ function FloatPanel_AyohaeWallet_ForgotPasswordShow() {
     _FloatPanel_AyohaeWallet_ForgotPasswordisOpen = 'Y';
 
     AddRoutePages("FloatPanel_AyohaeWallet_ForgotPasswordHide()");
+    if (isFloatPanel_AyohaStore_CheckOutOpen == 'Y') {
+        Ext.getCmp('LoadingFloatPanel_AyohaeWallet_ForgotPasswordID').setZIndex(400);
+    }
 }
 
 

@@ -170,7 +170,7 @@ function FloatPanel_AyohaReward_AyohaTapContest() {
                                                 height: 30,
                                                 width: 35,
                                                 // iconCls: 'list',
-                                                html: '<div ><img src="resources/icons/backwhite03.png" width="25" height="20" alt="Company Name"></div>',
+                                                html: '<div ><img src="resources/icons/backwhite03Ori.png" width="25" height="20" alt="Company Name"></div>',
                                                 ui: 'plain',
                                                 handler: function () {
                                                     // FloatPanel_AyohaReward_TopTenRankingHide();
@@ -572,6 +572,8 @@ function FloatPanel_AyohaReward_AyohaTapContest() {
                                              },
                                              items: [
                                                  {
+                                                   // hidden:true,
+                                                    id:'htmlFloatPanel_AyohaReward_AyohaTapContestSponserContestTitle',
                                                      html: '<div style="font-family:Arial, sans-serif;font-size:10px;font-weight:normal;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:center;color:white;">Contest Sponsored By:</div>',
                                                  },
                                                  {
@@ -602,6 +604,8 @@ function FloatPanel_AyohaReward_AyohaTapContest() {
                                                          {
                                                              xtype: 'container',
                                                             // flex: 1,
+                                                            hidden:true,
+                                                            id:'containerFloatPanel_AyohaReward_AyohaTapContestSponserContest0',
                                                              height: 65,
                                                              width:85,
                                                              margin: '-10 0 0 0',
@@ -628,6 +632,8 @@ function FloatPanel_AyohaReward_AyohaTapContest() {
                                                                // flex: 1,
                                                                height: 65,
                                                                width: 85,
+                                                               hidden:true,
+                                                               id:'containerFloatPanel_AyohaReward_AyohaTapContestSponserContest1',
                                                                margin: '-10 0 0 0',
                                                                layout: {
                                                                    type: 'vbox',
@@ -653,6 +659,8 @@ function FloatPanel_AyohaReward_AyohaTapContest() {
                                                                  // flex: 1,
                                                                  height: 65,
                                                                  width: 85,
+                                                                 hidden:true,
+                                                                 id:'containerFloatPanel_AyohaReward_AyohaTapContestSponserContest2',
                                                                  margin: '-10 0 0 0',
                                                                  layout: {
                                                                      type: 'vbox',
@@ -674,6 +682,33 @@ function FloatPanel_AyohaReward_AyohaTapContest() {
                                                                  ]
                                                              },
                                                         
+                                                             {
+                                                                xtype: 'container',
+                                                                // flex: 1,
+                                                                height: 65,
+                                                                width: 85,
+                                                                hidden:true,
+                                                                id:'containerFloatPanel_AyohaReward_AyohaTapContestSponserContest3',
+                                                                margin: '-10 0 0 0',
+                                                                layout: {
+                                                                    type: 'vbox',
+                                                                    pack: 'start',
+                                                                    align: 'center',
+                                                                },
+                                                                items: [
+                                                                     {
+                                                                         id: 'htmlFloatPanel_AyohaReward_AyohaTapContestSponserContest_EnterpriseLogo3',
+                                                                         html: '<img src="resources/icons/bawaljuelogo.jpg" style="width:55px;height:55px;border-radius:50%;border:1px solid white;"/>',
+                                                                     },
+                                                                  {
+                                                                      margin: '-4 0 0 0',
+                                                                      id: 'htmlFloatPanel_AyohaReward_AyohaTapContestSponserContest_EnterpriseName3',
+                                                                      html: '<div style="font-family:Arial, sans-serif;font-size:9px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:center;color:white;">Bawal by Jue</div>',
+                                                                  },
+
+
+                                                                ]
+                                                            },
                                                          // {
                                                          //     xtype: 'spacer',
                                                          //     width: 15,
@@ -1360,6 +1395,8 @@ function FloatPanel_AyohaReward_AyohaTapContest_AyohaRewardContestTapAndWinSpons
                             arrglobalFloatPanel_AyohaReward_AyohaTapContest_EnterpriseAccNo.push(data.results[i].EnterpriseAccNo);
                             arrglobalFloatPanel_AyohaReward_AyohaTapContest_EnterpriseName.push(data.results[i].EnterpriseName);
                             arrglobalFloatPanel_AyohaReward_AyohaTapContest_EnterpriseLogo.push(data.results[i].EnterpriseLogo);
+                            
+                            Ext.getCmp('containerFloatPanel_AyohaReward_AyohaTapContestSponserContest' + i).setHidden(false);
                             Ext.getCmp('htmlFloatPanel_AyohaReward_AyohaTapContestSponserContest_EnterpriseLogo' + i).setHtml('<img onclick="FloatPanel_AyohaReward_AyohaTapContest_AyohaRewardContestTapAndWinSponsor_SetEnterpriseAccNo(' + i + ');FloatPanel_AyohaReward_AyohaTapContest_AyohaRewardContestTapAndWinSponsor_OpenAyohaStore(' + i + ');" src="' + data.results[i].EnterpriseLogo + '" style="width:55px;height:55px;border-radius:50%;border:1px solid white;background-color:white;"/>');
                             Ext.getCmp('htmlFloatPanel_AyohaReward_AyohaTapContestSponserContest_EnterpriseName' + i).setHtml('<div onclick="FloatPanel_AyohaReward_AyohaTapContest_AyohaRewardContestTapAndWinSponsor_SetEnterpriseAccNo(' + i + ');FloatPanel_AyohaReward_AyohaTapContest_AyohaRewardContestTapAndWinSponsor_OpenAyohaStore(' + i + ');" style="font-family:Arial, sans-serif;font-size:9px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:center;color:white;">' + data.results[i].EnterpriseName + '</div>');
                         }

@@ -2159,7 +2159,7 @@ function FloatPanel_AyohaEnterpriseAccount_EnterpriseDetails_SaveAyohaEnterprise
 
     var gile = document.getElementById('input-FloatPanel_AyohaEnterpriseAccount_EnterpriseDetails_BusinessType').value;
     console.log(gile);
-    var ImgPaths = "http://42.1.63.57/AyohaImgCard/Logo/" + GetEnterpriseAccNo() + "/" + document.getElementById('input-FloatPanel_AyohaEnterpriseAccount_EnterpriseDetails_EnterpriseLogoName').value;
+    var ImgPaths = "https://setkita.com/AyohaImgCard/Logo/" + GetEnterpriseAccNo() + "/" + document.getElementById('input-FloatPanel_AyohaEnterpriseAccount_EnterpriseDetails_EnterpriseLogoName').value;
     // (CC.ID, CC.EnterpriseAccNo, CC.StampCampaignCode, CC.ImgName, CC.ImgPath, CC.RowStatus, CC.CreatedBy, CC.ImageBase64, CC.ShowHide);
     // alert(ContentCardImgNames);
     var obj = {

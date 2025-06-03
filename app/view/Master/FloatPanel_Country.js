@@ -369,8 +369,13 @@ function FloatPanel_CountryHide() {
 
 
 function FloatPanel_StateLoadMaster_SetCountry(Country) {
-    document.getElementById('input-FloatPanel_AyohaStore_DeliveryAddress_Country').value = Country;
-
+    
+    if(isFloatPanel_SubscriberMasterOpen=="Y"){
+        document.getElementById('input-FloatPanel_SubscriberMasterCountry_edit').value = Country;
+    }else
+    {
+        document.getElementById('input-FloatPanel_AyohaStore_DeliveryAddress_Country').value = Country;
+    }
     if (isFloatPanel_CountryOpen == 'Y') {
         _FloatPanel_Country.hide(Ext.fx.Animation({
             type: 'popOut',

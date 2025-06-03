@@ -116,6 +116,7 @@ function FloatPanel_DashboardMerchantReward() {
                                     xtype: 'container',
                                     width: '100%',
                                     docked: 'top',
+                                    height:40,
                                     // width: 40,
 
                                     //  title: '<font size="3" color="white">Live Tracking Map</font>',
@@ -189,7 +190,32 @@ function FloatPanel_DashboardMerchantReward() {
 
                                 },
 
-
+                                {
+                                    xtype: 'container',
+                                    width: '100%',
+                                    /// hidden:true,
+                                    margin: '0 0 0 0',
+                                    style: {
+                                       // background: '#D25959',
+                                      background: 'transparent',
+                                        // border: '2px'
+                                    },
+                                    //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
+                                    // style: 'border-bottom:2px solid #D25959;background-color:transparent',
+                                    layout: {
+                                        type: 'hbox',
+                                        pack: 'left',
+                                        align: 'left',
+                                    },
+                                    items: [
+                                         {
+                                             margin: '0 0 0 14',
+                                             //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
+                                             html: '<div style="color:black;text-align: center;font-size:16px;width:100%;"><b>Merchant Advertisement</b></div>'
+                                             // html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: 70%"><col style="width:30%"></colgroup><thead><tr><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:right;vertical-align:top;word-break:normal" rowspan="2"><div style="margin:0px 0px 0px -15px">TARMIZI RAHIM</div><br>Lagendary Card Mortal </th><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:middle;word-break:normal" rowspan="2">Medal</th></tr><tr></tr></thead></table>'
+                                         },
+                                    ]
+                                },
 
 
                                 ////////////
@@ -213,7 +239,7 @@ function FloatPanel_DashboardMerchantReward() {
                                       xtype: 'container',
                                       //  style: 'background-image: url("resources/icons/bgfront07.png"); background-size: 100% 400px;background-repeat: no-repeat;',
                                       width: '100%',
-                                      height: 460,
+                                      height: 400,
                                       style: "background-color: transparent;",
                                       layout: {
                                           type: 'vbox',
@@ -229,36 +255,37 @@ function FloatPanel_DashboardMerchantReward() {
                                            },
 
                                            /////////Start VIA Advertisement
-                                           {
-                                               xtype: 'container',
-                                               width: '100%',
-                                               /// hidden:true,
-                                               margin: '0 0 0 0',
-                                               style: {
-                                                   // background: '#D25959',
-                                                   background: 'transparent',
-                                                   // border: '2px'
-                                               },
-                                               //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
-                                               // style: 'border-bottom:2px solid #D25959;background-color:transparent',
-                                               layout: {
-                                                   type: 'hbox',
-                                                   pack: 'left',
-                                                   align: 'left',
-                                               },
-                                               items: [
-                                                    {
-                                                        margin: '0 0 0 14',
-                                                        //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
-                                                        html: '<div style="color:black;text-align: center;font-size:16px;width:100%;"><b>Merchant Advertisement and News</b></div>'
-                                                        // html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: 70%"><col style="width:30%"></colgroup><thead><tr><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:right;vertical-align:top;word-break:normal" rowspan="2"><div style="margin:0px 0px 0px -15px">TARMIZI RAHIM</div><br>Lagendary Card Mortal </th><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:middle;word-break:normal" rowspan="2">Medal</th></tr><tr></tr></thead></table>'
-                                                    },
-                                               ]
-                                           },
+                                        //    {
+                                        //        xtype: 'container',
+                                        //        width: '100%',
+                                        //        /// hidden:true,
+                                        //        margin: '0 0 0 0',
+                                        //        style: {
+                                        //            background: '#D25959',
+                                        //          //  background: 'transparent',
+                                        //            // border: '2px'
+                                        //        },
+                                        //        //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
+                                        //        // style: 'border-bottom:2px solid #D25959;background-color:transparent',
+                                        //        layout: {
+                                        //            type: 'hbox',
+                                        //            pack: 'left',
+                                        //            align: 'left',
+                                        //        },
+                                        //        items: [
+                                        //             {
+                                        //                 margin: '0 0 0 14',
+                                        //                 //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
+                                        //                 html: '<div style="color:black;text-align: center;font-size:16px;width:100%;"><b>Merchant Advertisement and News</b></div>'
+                                        //                 // html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: 70%"><col style="width:30%"></colgroup><thead><tr><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:right;vertical-align:top;word-break:normal" rowspan="2"><div style="margin:0px 0px 0px -15px">TARMIZI RAHIM</div><br>Lagendary Card Mortal </th><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:middle;word-break:normal" rowspan="2">Medal</th></tr><tr></tr></thead></table>'
+                                        //             },
+                                        //        ]
+                                        //    },
 
                                            {
                                                xtype: 'container',
                                                width: '100%',
+                                               //hidden:true,
                                                height: 250,
                                                margin: '0 0 0 0',
                                                name: 'namecontainerVIA_Advertisement',
@@ -285,8 +312,9 @@ function FloatPanel_DashboardMerchantReward() {
                                                    {
                                                        xtype: 'container',
                                                        width: '95%',
-                                                       height: 330,
-                                                       margin: '0 0 0 0',
+                                                       //hidden:true,
+                                                       height: 345,
+                                                       margin: '30 0 0 0',
                                                        //style: {
                                                        //    // background: '#D25959',
                                                        //    background: 'rgba(76, 175, 80, 0.3);',
@@ -627,6 +655,7 @@ function FloatPanel_DashboardMerchantReward() {
                                                                name: 'Dashboard_PreviewAdvertisement_CarouselName',
                                                                width: '99%',
                                                                height: '100%',
+                                                               margin:'10 0 0 0',
 
                                                                //delay :2000,
                                                                //  carouselSlideDelay: 1000,
@@ -789,7 +818,7 @@ function FloatPanel_DashboardMerchantReward() {
                                                      margin: '5 0 0 0',
                                                      id: 'DashboardVIAAdvertisement_eStoreIcon',
                                                      //badgeText: "2",
-                                                     html: '<div><img src="http://42.1.63.57/AyohaImgCard/eStoreLogo/Default.png" width="38" height="38" alt="Company Name"></div>',
+                                                     html: '<div><img src="https://setkita.com/AyohaImgCard/eStoreLogo/Default.png" width="38" height="38" alt="Company Name"></div>',
 
                                                  },
                                                  {
@@ -1851,7 +1880,8 @@ function FloatPanel_DashboardMerchantReward() {
                                                                                                 //xtype: 'button',
                                                                                                 //height: 90,
                                                                                                 //width: 90,
-                                                                                                margin: '-18 0 0 -10',
+                                                                                               // margin: '-18 0 0 -10',
+                                                                                                margin: '-18 0 0 35',
                                                                                                 //zIndex: 400,
                                                                                                 id: 'Dashboard_NearestRedeem_StampContent0',
                                                                                                 html: '<img src="resources/icons/AyohaRedeemPrize02.png" alt="Image" style="width:60px;height:60px;zIndex:400px">',
@@ -1867,8 +1897,8 @@ function FloatPanel_DashboardMerchantReward() {
                                                                                   },
                                                                                     {
                                                                                         xtype: 'container',
-                                                                                        width: '85%',
-                                                                                        width: '100%',
+                                                                                        width: '95%',
+                                                                                       // width: '100%',
                                                                                         //zIndex: -99,
                                                                                         //margin: '-18 0 0 0',                                   
                                                                                         //height: 80,                                   
@@ -1982,7 +2012,8 @@ function FloatPanel_DashboardMerchantReward() {
                                                                                            //xtype: 'button',
                                                                                            //height: 90,
                                                                                            //width: 90,
-                                                                                           margin: '-18 0 0 -10',
+                                                                                          // margin: '-18 0 0 -10',
+                                                                                          margin: '-18 0 0 35',
                                                                                            //zIndex: 400,
                                                                                            id: 'Dashboard_NearestRedeem_StampContent1',
                                                                                            html: '<img src="resources/icons/AyohaRedeemPrize02.png" alt="Image" style="width:60px;height:60px;zIndex:400px">',
@@ -1998,8 +2029,8 @@ function FloatPanel_DashboardMerchantReward() {
                                                                              },
                                                                                {
                                                                                    xtype: 'container',
-                                                                                   width: '85%',
-                                                                                   width: '100%',
+                                                                                   width: '95%',
+                                                                                  // width: '100%',
                                                                                    // zIndex: -99,
                                                                                    //margin: '-18 0 0 0',                                   
                                                                                    //height: 80,                                   
@@ -2111,7 +2142,8 @@ function FloatPanel_DashboardMerchantReward() {
                                                                                               //xtype: 'button',
                                                                                               //height: 90,
                                                                                               //width: 90,
-                                                                                              margin: '-18 0 0 -10',
+                                                                                            //  margin: '-18 0 0 -10',
+                                                                                              margin: '-18 0 0 35',
                                                                                               //zIndex: 400,
                                                                                               id: 'Dashboard_NearestRedeem_StampContent2',
                                                                                               html: '<img src="resources/icons/AyohaRedeemPrize02.png" alt="Image" style="width:60px;height:60px;zIndex:400px">',
@@ -2127,8 +2159,8 @@ function FloatPanel_DashboardMerchantReward() {
                                                                                 },
                                                                                   {
                                                                                       xtype: 'container',
-                                                                                      width: '85%',
-                                                                                      width: '100%',
+                                                                                      width: '95%',
+                                                                                     // width: '100%',
                                                                                       // zIndex: -99,
                                                                                       //margin: '-18 0 0 0',                                   
                                                                                       //height: 80,                                   
@@ -2264,7 +2296,8 @@ function FloatPanel_DashboardMerchantReward() {
                                                                                                 //xtype: 'button',
                                                                                                 //height: 90,
                                                                                                 //width: 90,
-                                                                                                margin: '-18 0 0 -10',
+                                                                                               // margin: '-18 0 0 -10',
+                                                                                                margin: '-18 0 0 35',
                                                                                                 //zIndex: 400,
                                                                                                 id: 'Dashboard_NearestRedeem_StampContent3',
                                                                                                 html: '<img src="resources/icons/AyohaRedeemPrize02.png" alt="Image" style="width:60px;height:60px;zIndex:400px">',
@@ -2280,8 +2313,8 @@ function FloatPanel_DashboardMerchantReward() {
                                                                                   },
                                                                                     {
                                                                                         xtype: 'container',
-                                                                                        width: '85%',
-                                                                                        width: '100%',
+                                                                                        width: '95%',
+                                                                                      //  width: '100%',
                                                                                         //zIndex: -99,
                                                                                         //margin: '-18 0 0 0',                                   
                                                                                         //height: 80,                                   
@@ -2395,7 +2428,8 @@ function FloatPanel_DashboardMerchantReward() {
                                                                                            //xtype: 'button',
                                                                                            //height: 90,
                                                                                            //width: 90,
-                                                                                           margin: '-18 0 0 -10',
+                                                                                          // margin: '-18 0 0 -10',
+                                                                                           margin: '-18 0 0 35',
                                                                                            //zIndex: 400,
                                                                                            id: 'Dashboard_NearestRedeem_StampContent4',
                                                                                            html: '<img src="resources/icons/AyohaRedeemPrize02.png" alt="Image" style="width:60px;height:60px;zIndex:400px">',
@@ -2411,8 +2445,8 @@ function FloatPanel_DashboardMerchantReward() {
                                                                              },
                                                                                {
                                                                                    xtype: 'container',
-                                                                                   width: '85%',
-                                                                                   width: '100%',
+                                                                                   width: '95%',
+                                                                                  // width: '100%',
                                                                                    // zIndex: -99,
                                                                                    //margin: '-18 0 0 0',                                   
                                                                                    //height: 80,                                   
@@ -2524,7 +2558,8 @@ function FloatPanel_DashboardMerchantReward() {
                                                                                               //xtype: 'button',
                                                                                               //height: 90,
                                                                                               //width: 90,
-                                                                                              margin: '-18 0 0 -10',
+                                                                                             // margin: '-18 0 0 -10',
+                                                                                              margin: '-18 0 0 35',
                                                                                               //zIndex: 400,
                                                                                               id: 'Dashboard_NearestRedeem_StampContent5',
                                                                                               html: '<img src="resources/icons/AyohaRedeemPrize02.png" alt="Image" style="width:60px;height:60px;zIndex:400px">',
@@ -2540,8 +2575,8 @@ function FloatPanel_DashboardMerchantReward() {
                                                                                 },
                                                                                   {
                                                                                       xtype: 'container',
-                                                                                      width: '85%',
-                                                                                      width: '100%',
+                                                                                      width: '95%',
+                                                                                     // width: '100%',
                                                                                       // zIndex: -99,
                                                                                       //margin: '-18 0 0 0',                                   
                                                                                       //height: 80,                                   
@@ -2679,7 +2714,8 @@ function FloatPanel_DashboardMerchantReward() {
                                                                                                 //xtype: 'button',
                                                                                                 //height: 90,
                                                                                                 //width: 90,
-                                                                                                margin: '-18 0 0 -10',
+                                                                                               // margin: '-18 0 0 -10',
+                                                                                                margin: '-18 0 0 35',
                                                                                                 //zIndex: 400,
                                                                                                 id: 'Dashboard_NearestRedeem_StampContent6',
                                                                                                 html: '<img src="resources/icons/AyohaRedeemPrize02.png" alt="Image" style="width:60px;height:60px;zIndex:400px">',
@@ -2695,8 +2731,8 @@ function FloatPanel_DashboardMerchantReward() {
                                                                                   },
                                                                                     {
                                                                                         xtype: 'container',
-                                                                                        width: '85%',
-                                                                                        width: '100%',
+                                                                                        width: '95%',
+                                                                                       // width: '100%',
                                                                                         //zIndex: -99,
                                                                                         //margin: '-18 0 0 0',                                   
                                                                                         //height: 80,                                   
@@ -2810,7 +2846,8 @@ function FloatPanel_DashboardMerchantReward() {
                                                                                            //xtype: 'button',
                                                                                            //height: 90,
                                                                                            //width: 90,
-                                                                                           margin: '-18 0 0 -10',
+                                                                                          // margin: '-18 0 0 -10',
+                                                                                           margin: '-18 0 0 35',
                                                                                            //zIndex: 400,
                                                                                            id: 'Dashboard_NearestRedeem_StampContent7',
                                                                                            html: '<img src="resources/icons/AyohaRedeemPrize02.png" alt="Image" style="width:60px;height:60px;zIndex:400px">',
@@ -2826,8 +2863,8 @@ function FloatPanel_DashboardMerchantReward() {
                                                                              },
                                                                                {
                                                                                    xtype: 'container',
-                                                                                   width: '85%',
-                                                                                   width: '100%',
+                                                                                   width: '95%',
+                                                                                  // width: '100%',
                                                                                    // zIndex: -99,
                                                                                    //margin: '-18 0 0 0',                                   
                                                                                    //height: 80,                                   
@@ -2939,7 +2976,8 @@ function FloatPanel_DashboardMerchantReward() {
                                                                                               //xtype: 'button',
                                                                                               //height: 90,
                                                                                               //width: 90,
-                                                                                              margin: '-18 0 0 -10',
+                                                                                             // margin: '-18 0 0 -10',
+                                                                                              margin: '-18 0 0 35',
                                                                                               //zIndex: 400,
                                                                                               id: 'Dashboard_NearestRedeem_StampContent8',
                                                                                               html: '<img src="resources/icons/AyohaRedeemPrize02.png" alt="Image" style="width:60px;height:60px;zIndex:400px">',
@@ -2955,8 +2993,8 @@ function FloatPanel_DashboardMerchantReward() {
                                                                                 },
                                                                                   {
                                                                                       xtype: 'container',
-                                                                                      width: '85%',
-                                                                                      width: '100%',
+                                                                                      width: '95%',
+                                                                                     // width: '100%',
                                                                                       // zIndex: -99,
                                                                                       //margin: '-18 0 0 0',                                   
                                                                                       //height: 80,                                   
@@ -5593,6 +5631,9 @@ function FloatPanel_DashboardMerchantReward_AyohaUserDashBoardNearestRedeemItemS
                 var isCampaignExpired = modelRecord.get('isCampaignExpired');
                 var CampaignDayLeft = parseInt(modelRecord.get('CampaignDayLeft'));
                 var AdvertisementTitle = modelRecord.get('AdvertisementTitle');
+
+
+             
                 if (i <= 8) {
                     Ext.getCmp('Dashboard_NearestRedeem_StampContent' + i).setHtml(StampContent.replace("-90px", "-50px"));
                     Ext.getCmp('Dashboard_NearestRedeem_StampContentNote' + i).setHtml('<div style="color:black;text-align: center;font-size:15px;width:100%;font-weight:bold">' + StampContentNote + '</div>');
@@ -5794,11 +5835,11 @@ function FloatPanel_DashboardMerchantReward_loadVIAAdvertisement() {
             Ext.getCmp('btnDashboard_PreviewAdvertisement_Timing' + i).setHidden(false);
             //  xtype: 'pinchzoomimage',
             if (MediaType == "Image") {
-                carouselDasboardVIAAdertisement.add({ xtype: 'image', src: AdvertismentMediaUrl, height: '98%', width: '100%', mode: 'image', margin: '7 0 0 0' });
+                carouselDasboardVIAAdertisement.add({ xtype: 'image', src: AdvertismentMediaUrl, height: '100%', width: '100%', mode: 'image', margin: '7 0 0 0' });
                 // myCarousel.add({ xtype: 'pinchzoomimage', src: AdvertismentMediaUrl, height: 670, width: '100%', mode: 'image' });
             }
             if (MediaType == "Video") {
-                carouselDasboardVIAAdertisement.add({ xtype: 'video', src: AdvertismentMediaUrl, height: '98%', width: '100%', mode: 'video', posterUrl: 'resources/icons/videoPurple.png', loop: false, enableControls: true, margin: '7 0 0 0' });
+                carouselDasboardVIAAdertisement.add({ xtype: 'video', src: AdvertismentMediaUrl, height: '100%', width: '100%', mode: 'video', posterUrl: 'resources/icons/videoPurple.png', loop: false, enableControls: true, margin: '7 0 0 0' });
 
             }
 
@@ -5887,7 +5928,9 @@ function FloatPanel_DashboardMerchantReward_AyohaRewardVoucherEntitledUserLoadBy
 
 
 function FloatPanel_DashboardMerchantReward_AyohaRewardEventLoadBySubscriberAccNoStore() {
-
+if(isFloatPanel_MembershipCardList_UpgradeOpen=="Y"){
+    return;
+}
     _DataStore_AyohaRewardEventLoadBySubscriberAccNoStore.getProxy().setExtraParam('SubscriberAccNo', GetCurrAyohaUserAccountNo());
     _DataStore_AyohaRewardEventLoadBySubscriberAccNoStore.getProxy().setUrl(GetAPIurl() + '/AyohaRewardEvent/AyohaRewardEventLoadBySubscriberAccNo');
 
@@ -5899,9 +5942,12 @@ function FloatPanel_DashboardMerchantReward_AyohaRewardEventLoadBySubscriberAccN
 
 
         Ext.getCmp('FloatPanel_MerchantReward_MembershipEvent').setStore(_DataStore_AyohaRewardEventLoadBySubscriberAccNoStore);
+      
+
+
         //_DataStore_EnterprisesLoadByMerchantCategory.load();
         var count = _DataStore_AyohaRewardEventLoadBySubscriberAccNoStore.getCount();
-        // alert(count);
+        
         //Ext.getCmp('FloatPanel_DashboardMerchantRewardVoucherList').setStore(_DataStore_AyohaRewardVoucherEntitledUserLoadBySubscriberAccNoMerchantRewardStore);
 
         //if (count < 1) {
@@ -5929,14 +5975,24 @@ function FloatPanel_DashboardMerchantReward_AyohaRewardContestLoadBySubscriberAc
 
     _DataStore_AyohaRewardContestLoadBySubscriberAccNoStore.load();
 
-    console.log(GetCurrAyohaUserAccountNo())
+  
 
     var task = Ext.create('Ext.util.DelayedTask', function () {
 
 
+       
+       
+        if (isFloatPanel_MembershipCardList_UpgradeOpen=="Y"){
+        
+        return
+           // Ext.getCmp('FloatPanel_DashboardMerchantReward_MembershipContestSelfieFormID').setZIndex(335);
+        }
         Ext.getCmp('FloatPanel_MerchantReward_MembershipContest').setStore(_DataStore_AyohaRewardContestLoadBySubscriberAccNoStore);
         //_DataStore_EnterprisesLoadByMerchantCategory.load();
         var count = _DataStore_AyohaRewardContestLoadBySubscriberAccNoStore.getCount();
+       
+       
+       
         // alert(count);
         //Ext.getCmp('FloatPanel_DashboardMerchantRewardVoucherList').setStore(_DataStore_AyohaRewardVoucherEntitledUserLoadBySubscriberAccNoMerchantRewardStore);
 

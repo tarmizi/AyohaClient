@@ -258,7 +258,7 @@ function LoadingPanel() {
                          items: [
 
                               {
-                                  html: '<div style="color:white;text-align: center;font-size:11px;width:100%;font-weight:normal;margin:0px 0px 0px 0px;background-color:transparent" >Developed by AA Property Solution. Kuala Lumpur ,MALAYSIA</div>',
+                                  html: '<div style="color:white;text-align: center;font-size:11px;width:100%;font-weight:normal;margin:0px 0px 0px 0px;background-color:transparent" >Developed by Versilani Technology Sdn bhd. Kuala Lumpur ,MALAYSIA</div>',
                                   margin: '0 0 0 0',
                               },
 

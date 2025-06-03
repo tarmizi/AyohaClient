@@ -326,10 +326,22 @@ function FloatPanel_ExitDialogBoxHide() {
     RemovePages("FloatPanel_ExitDialogBoxHide()");  
 }
 
+var openedWindow = "NoOut";
+var openedApp;
 
 function FloatPanel_ExitDialogBox_Yes() {
    /// open_a_window();
     AddRoutePages("FloatPanel_ExitDialogBoxHide()");
-    navigator.app.exitApp();
-    //Ext.getCmp('mainView').setHidden(true);
+    openedWindow = "YesOut";
+    closeAyoha('quit')
+  //  openedWindow = window.open('https://ayoha-reward.com', "_self");
+    //openedApp = window.open('https://setkita.com/termandcondition.html', '_self', '');
+   // openedApp.close();
+   // window.close()
+  //  setTimeout("window.close()", 3000)
+   // setTimeout(alert("adsadsa"), 3000)
+   
+    //window.close();
+   // navigator.app.exitApp();
+   
 }

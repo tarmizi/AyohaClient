@@ -146,6 +146,10 @@ function ResizeUploadedImage(val) {
 }
 
 
+
+
+
+
 function animatedClickTabExt(Componant) {
 
 
@@ -234,7 +238,7 @@ function animatedClickTab() {
 
 function PlayAyohaSound(sound) {
     var audio = new Audio();
-    audio.src = 'http://42.1.63.57/AyohaSoundExternal/'+sound;
+    audio.src = 'https://42.1.63.57/AyohaSoundExternal/'+sound;
     audio.play();
 }
 
@@ -309,34 +313,34 @@ function swalFireSuccess(Msg) {
 }
 
 
-function swalFireFail(Msg) {
-    event.preventDefault();
+// function swalFireFail(Msg) {
+//     event.preventDefault();
 
 
-    Swal.fire({
-        title: '<font size=5 color=white>Failed!</font><br><font size=3 color=red>' + Msg + '</font>',
-        text:'' ,
-        imageUrl: "resources/icons/errorklipklip.gif",
-        imageWidth: 400,
-        imageHeight: 230,
-        showCloseButton: true,
-        showCancelButton: false,
-        //  confirmButtonColor: '#3085d6',
-        confirmButtonColor: 'red',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'OK',
-        footer: '<img src="resources/icons/Logo/AyohaLogofullOrange.png" width="100" height="70" alt="Company Name"/>'
-    }).then(function (result) {
-        if (result.isConfirmed) {
+//     Swal.fire({
+//         title: '<font size=5 color=white>Failed!</font><br><font size=3 color=red>' + Msg + '</font>',
+//         text:'' ,
+//         imageUrl: "resources/icons/errorklipklip.gif",
+//         imageWidth: 400,
+//         imageHeight: 230,
+//         showCloseButton: true,
+//         showCancelButton: false,
+//         //  confirmButtonColor: '#3085d6',
+//         confirmButtonColor: 'red',
+//         cancelButtonColor: '#d33',
+//         confirmButtonText: 'OK',
+//         footer: '<img src="resources/icons/Logo/AyohaLogofullOrange.png" width="100" height="70" alt="Company Name"/>'
+//     }).then(function (result) {
+//         if (result.isConfirmed) {
 
            
 
-        }
-    });
+//         }
+//     });
 
 
-    Ext.Viewport.unmask();
-}
+//     Ext.Viewport.unmask();
+// }
 
 
 
@@ -393,7 +397,7 @@ function swalFireInformationMsg(Msg) {
 
 
 function swalFireInfo(Msg) {
-    event.preventDefault();
+   // event.preventDefault();
     Swal.fire({
         text: '<font size=5 color=white>Ayoha Reward v 1.0</font>',
         text:  Msg ,
@@ -719,12 +723,12 @@ function swalFireInfoMerchantButtonLink(Msg, Module) {
         }
     });
 }
-function swalFireStampInfo(Msg) {
+function swalFireStampInfo(Msg,Icon) {
     event.preventDefault();
     Swal.fire({
         title: '<font size=5>Ayoha Reward v 1.0</font>',
         text: Msg,
-        imageUrl: "resources/icons/stampAnimation.gif",
+        imageUrl: Icon,
         imageWidth: 400,
         imageHeight: 230,
         showCloseButton: true,
@@ -1148,21 +1152,30 @@ function GetFlatBillStatusUpdateDate() {
     var _value = FlatBillUpdateDate;
     return _value;
 }
+function setMessage_toBeAyohaMember(){
+    var val="<br><br><b>Join the Ayoha Rewards Revolution!</b><br><br>Maximize your benefits with every purchase by becoming a member of our online stores.<br><br>Tap <b>JOIN</b> now to get your exclusive membership card and unlock amazing rewards today!";
 
+    return val;
+}
 
 function GetAPIurl() {
 
    // var _value = 'http://42.1.63.57:17655';
     // var _value = 'http://192.168.0.107:9018';
    // var _value = 'https://ianmizi.com/webapiresit/webapiresit/';
-  var _value = 'http://42.1.63.57/CRMOBILEAPI/';
+    //var _value = 'https://42.1.63.57/CRMOBILEAPI/';
+    var _value = 'https://setkita.com/CRMOBILEAPI/';
    // var _value = 'https://192.168.0.101/CRMOBILEAPI/';
   //  var _value = 'http://tarmizi-004-site6.etempurl.com/webapiresit/webapiresit/';
   //  var _value = 'http://cloudreceipts.sytes.net:9018/'
     return _value;
 }
 
+function GetAPIurl_Web() {
 
+    var _value = 'https://setkita.com/AYOHA_M_API/';
+     return _value;
+ }
 function GetCurrentOneSignalPlayerID() {
 
     var _value = OneSignalPlayerID;
@@ -1244,6 +1257,11 @@ function GetCurrentPhoneNumber() {
     return _value;
 }
 
+function GetAyohaUserEmail() {
+
+    var _value = localStorage.getItem('AyohaUserEmail');
+    return _value;
+}
 
 
 
@@ -2125,3 +2143,200 @@ function GetPersonInCharge() {
     return _value;
 }
 
+function getCurrentScreen() {
+    var _value =parseInt(screen.width);
+
+    
+    return _value;
+}
+
+
+
+
+
+function getCurrentOs() {
+    var os;
+    var userAgent = window.navigator.userAgent,
+      platform = window.navigator.platform,
+      macosPlatforms = ['Macintosh', 'MacIntel', 'MacPPC', 'Mac68K'],
+      windowsPlatforms = ['Win32', 'Win64', 'Windows', 'WinCE'],
+      iosPlatforms = ['iPhone', 'iPad', 'iPod'],
+      os = null;
+
+    if (macosPlatforms.indexOf(platform) !== -1) {
+        os = 'Mac OS';
+    } else if (iosPlatforms.indexOf(platform) !== -1) {
+        os = 'iOS';
+    } else if (windowsPlatforms.indexOf(platform) !== -1) {
+        os = 'Windows';
+    } else if (/Android/.test(userAgent)) {
+        os = 'Android';
+    } else if (!os && /Linux/.test(platform)) {
+        os = 'Linux';
+    }
+
+    return os;
+}
+
+
+
+
+function eWalletWarningToBeMembershipFirst() {
+    event.preventDefault();
+    Swal.fire({
+        title: '',
+        html: "<b>Hi!, " + GetAyohaUserAccountNames() + "</b>.<br><br>To use the ayoha ewallet facility, we need you to be a member of our ayoha reward application platform. A variety of exciting gift reward offers await you when you become a member of our platform.join us now!",
+        imageUrl: "resources/icons/Logo/AyohaLogofullOrange.png",
+       // imageUrl: FloatPanel_AyohaStore_getEnterpriseLogo(),
+        imageWidth: 350,
+        imageHeight: 200,
+        showCloseButton: true,
+        showCancelButton: false,
+        //  confirmButtonColor: '#3085d6',
+        confirmButtonColor: '#9932cc',
+        cancelButtonColor: '#d33',
+        confirmButtonText: '<div class="blink_me">Be an Ayoha Reward Member Now!</div>',
+        footer: '<img src="resources/icons/Logo/AyohaLogofullOrange.png" width="100" height="70" alt="Company Name"/>'
+    }).then(function (result) {
+        if (result.isConfirmed) {
+            FloatPanel_AyohaMembershipAdvantagesShow();
+        }
+    });
+}
+
+
+
+
+function swalFireCannotReviewDueToNotMember(){
+    event.preventDefault();
+    Swal.fire({
+        title: '',
+        html: "<b>Hi!,! You are not member of " + FloatPanel_AyohaStore_getEnterpriseName() + "</b>."+setMessage_toBeAyohaMember(),
+       // html: "<b>Hi!,! You are not member of " + FloatPanel_AyohaStore_getEnterpriseName() + "</b>.<br><br>every ayoha reward user required to be a member in every one of our online stores,we will give you more rewards for every purchase you make.<br><br>  Press JOIN to get a membership card and join the campaign!",
+        //imageUrl: "resources/icons/membershipPurpleThree.png",
+        imageUrl: FloatPanel_AyohaStore_getEnterpriseLogo(),
+        imageWidth: 350,
+        imageHeight: 200,
+        showCloseButton: true,
+        showCancelButton: false,
+        //  confirmButtonColor: '#3085d6',
+        confirmButtonColor: '#9932cc',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'JOIN',
+        footer: '<img src="resources/icons/Logo/AyohaLogofullOrange.png" width="100" height="70" alt="Company Name"/>'
+    }).then(function (result) {
+        if (result.isConfirmed) {
+            AyohaMerchantReviewHide();
+            // localStorage.setItem("MembershipByMethod", "AyohaStore");
+            // // GetMembershipCardEnableClick_containerFloatPanel_MembershipCardList_UpgradeBottom()
+            // FloatPanel_AyohaStore_SaleItemDetailHide();
+            // var ent = FloatPanel_AyohaStore_getEnterpriseAccNo();
+            // FloatPanel_RewardStoreMembershipCardShow_FromQrCode(ent, ent);
+        }
+    });
+}
+
+
+
+function swalFireFailLogin() {
+    // event.preventDefault();
+  
+
+      Swal.fire({
+        title: '<font size=5 color=black>Login Failed!</font><br><font size=3 color=grey>Invalid UserName Or Password</font><br>',
+        //  title: '<font size=4 color=black>Error!</font><br>',
+       //   text: Msg,
+      //     width:200,
+      height:200,
+        width: '400px', /*set width container*/
+         //height: '150px', /*set width container*/
+          imageUrl: "resources/icons/wired-gradient-94-lock-unlock.gif",
+         imageWidth: 200,
+         imageHeight: 200,
+          showCloseButton: true,
+          showCancelButton: false,
+          //  confirmButtonColor: '#3085d6',
+          confirmButtonColor: 'purple',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'OK',
+          footer: '<img src="resources/icons/Logo/AyohaLogofullOrange.png" width="100" height="70" alt="Company Name"/>'
+      }).then(function (result) {
+          if (result.isConfirmed) {
+  
+  
+  
+          }
+      });
+  
+  
+      Ext.Viewport.unmask();
+  }
+
+
+
+
+
+  function swalFireFail(Msg) {
+    event.preventDefault();
+  
+  var nMssg=Msg.replace("Save Failed!!!<br>","");
+      Swal.fire({
+        title: '<font size=5 color=black>Error!</font><br><font size=3 color=grey>' + nMssg.replace("size=2","size=3") + '</font><br>',
+        //  title: '<font size=4 color=black>Error!</font><br>',
+       //   text: Msg,
+      //     width:200,
+      height:200,
+        width: '400px', /*set width container*/
+         //height: '150px', /*set width container*/
+          imageUrl: "resources/icons/wired-gradient-1140-error.gif",
+         imageWidth: 200,
+         imageHeight: 200,
+          showCloseButton: true,
+          showCancelButton: false,
+          //  confirmButtonColor: '#3085d6',
+          confirmButtonColor: 'purple',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'OK',
+          footer: '<img src="resources/icons/Logo/AyohaLogofullOrange.png" width="100" height="70" alt="Company Name"/>'
+      }).then(function (result) {
+          if (result.isConfirmed) {
+  
+  
+  
+          }
+      });
+  
+  
+      Ext.Viewport.unmask();
+  }
+
+  function setMessage_NotYetMembershipMessage() {
+  
+    Swal.fire({
+        title: '',
+        html: "<b>Hi!,! You are not member of " + FloatPanel_AyohaStore_getEnterpriseName() + "</b>."+setMessage_toBeAyohaMember(),
+       // html: "<b>Hi!,! You are not member of " + FloatPanel_AyohaStore_getEnterpriseName() + "</b>.<br><br>every ayoha reward user required to be a member in every one of our online stores,we will give you more rewards for every purchase you make.<br><br>  Press JOIN to get a membership card and join the campaign!",
+        //imageUrl: "resources/icons/membershipPurpleThree.png",
+        imageUrl: FloatPanel_AyohaStore_getEnterpriseLogo(),
+        imageWidth: 350,
+        imageHeight: 200,
+        showCloseButton: true,
+        showCancelButton: false,
+        //  confirmButtonColor: '#3085d6',
+        confirmButtonColor: '#9932cc',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'JOIN',
+        footer: '<img src="resources/icons/Logo/AyohaLogofullOrange.png" width="100" height="70" alt="Company Name"/>'
+    }).then(function (result) {
+        if (result.isConfirmed) {
+           // localStorage.setItem("MembershipByMethod", "AyohaStore");
+            // GetMembershipCardEnableClick_containerFloatPanel_MembershipCardList_UpgradeBottom()
+            FloatPanel_AyohaStore_SaleItemDetailHide();
+           // var ent = FloatPanel_AyohaStore_getEnterpriseAccNo();
+           // FloatPanel_RewardStoreMembershipCardShow_FromQrCode(ent, ent);
+        }
+    });
+
+
+
+}

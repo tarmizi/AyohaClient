@@ -17,6 +17,8 @@ function FloatPanel_MembershipCardList_MyMembershipCard() {
 
     _FloatPanel_MembershipCardList_MyMembershipCard =
     Ext.create('Ext.Panel', {
+      
+        //zIndex: 310,
         zIndex: 310,
         xtype: 'container',
         //height: 465,
@@ -360,8 +362,144 @@ function FloatPanel_MembershipCardList_MyMembershipCard() {
                                                   //style: 'background-color:#f7f7f7',
                                                   style: 'background-color:white',
                                                   items: [
+                                                      //{
+                                                      //    xtype: 'container',
+                                                      //    id: 'container_FloatPanel_MembershipCardList_MyMembershipCardListID_no_membershipcard',
+                                                      //    hidden:false,
+                                                      //    width: '100%',
+                                                      //    height: '100%',
+                                                      //    layout: {
+                                                      //        type: 'vbox',
+                                                      //        pack: 'center',
+                                                      //        align: 'center'
+
+                                                      //    },
+                                                      //    //style: 'background-color:#f7f7f7',
+                                                      //    style: 'background-color:white',
+                                                      //    items: [
+                                                      //        {
+                                                      //            width: '100%',
+                                                      //            height: '100%',
+                                                      //            html: '<div OnClick="Dashboard_SearchMerchantListShow()" style="background-color:transparent;width: 100%; height: 400px;margin:40px 0px 0px 0px;padding:0px 0px"><div style="width:100%;text-align:center;margin:0px 0px 0px 0px;color:grey;font-family:Arial, sans-serif;font-size:12px;font-weight:normal;" OnClick="Dashboard_SearchMerchantListShow()">Hi!, you have not subscribed any membership card.Tap Ayoha Mechant below and get their Membership card Now!</div><br><img OnClick="Dashboard_SearchMerchantListShow()" src="resources/icons/AyohaMerchant03.png" style="width: 150px; height: 130px;"/><br><div style="color:grey;text-align: center;font-size:12px;width:100%;"><b>Ayoha Merchants</b></div></div>',
+                                                      //        }
+                                                      //    ]
+                                                      //},
+
+
+                                                      {
+                                                          xtype: 'container',
+                                                          //width: '95%',
+                                                          //height: 80,
+                                                         // hidden: true,
+                                                          margin: '0 0 0 0',
+                                                          width: '100%',
+                                                          id: 'container_FloatPanel_MembershipCardList_MyMembershipCardListID_no_membershipcard',
+                                                          name: 'namecontainer_FloatPanel_MembershipCardList_MyMembershipCardListID_no_membershipcard',
+                                                          height: '100%',
+                                                          //  style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1 ;background: transparent;border-radius: 10px 10px 10px 10px;',
+                                                          style: 'background-color:transparent',
+                                                          layout: {
+                                                              type: 'vbox',
+                                                              pack: 'center',
+                                                              align: 'center',
+                                                          },
+                                                          items: [
+
+                                                              {
+
+                                                                  //xtype: 'button',
+                                                                  //height: 90,
+                                                                  //width: 90,
+                                                                  margin: '10 0 0 0',
+                                                                  //zIndex: 400,
+
+                                                                 // id: 'htmlDashboard_NearestRedeem_NonMembersTxtx',
+                                                                  html: '<div style="color:grey;text-align: center;font-size:12px;width:100%;">Hi!, you have not subscribed any membership card.</div>'
+
+                                                                  //ui: 'plain',
+                                                                  //handler: function () {
+
+                                                                  //}
+
+                                                              },
+
+
+                                                               {
+
+                                                                   //xtype: 'button',
+                                                                   //height: 90,
+                                                                   //width: 90,
+                                                                   //  margin: '0 0 0 60',
+                                                                   //zIndex: 400,
+                                                                   margin: '0 0 0 0',
+                                                                  // id: 'htmlDashboard_NearestRedeem_NonMembersTxt0x',
+                                                                   html: '<div style="color:grey;text-align: center;font-size:12px;width:100%;">Tap Ayoha Mechant below and get their Membership card Now!.</div>'
+
+                                                                   //ui: 'plain',
+                                                                   //handler: function () {
+
+                                                                   //}
+
+                                                               },
+
+                                                                {
+
+                                                                    //xtype: 'button',
+                                                                    //height: 90,
+                                                                    //width: 90,
+                                                                    //  margin: '0 0 0 60',
+                                                                    //zIndex: 400,
+                                                                    margin: '0 0 0 0',
+                                                                   // id: 'htmlDashboard_NearestRedeem_NonMembersTxt00x',
+                                                                    html: '<div style="color:grey;text-align: center;font-size:12px;width:100%;">Enjoy the membership privilleg and get double reward from us!</div>'
+
+                                                                    //ui: 'plain',
+                                                                    //handler: function () {
+
+                                                                    //}
+
+                                                                },
+                                                               {
+
+                                                                   //xtype: 'button',
+                                                                   //height: 90,
+                                                                   //width: 90,
+                                                                   margin: '20 0 0 0',
+                                                                   //zIndex: 400,
+                                                                   width: 100,
+                                                                   height: 100,
+                                                                   id: 'htmlDashboard_NearestRedeem_NonMembersx',
+                                                                   html: '<img src="resources/icons/AyohaMerchant03.png" alt="Image" style="width:150px;height:100px;zIndex:400px">',
+
+                                                                   //ui: 'plain',
+                                                                   //handler: function () {
+
+                                                                   //}
+
+                                                               },
+                                                               {
+
+                                                                   //xtype: 'button',
+                                                                   //height: 90,
+                                                                   //width: 90,
+                                                                   //  margin: '0 0 0 60',
+                                                                   //zIndex: 400,
+                                                                   margin: '3 0 0 0',
+                                                                   id: 'htmlDashboard_NearestRedeem_NonMembersTxtAyohaMerchantx',
+                                                                   html: '<div style="color:grey;text-align: center;font-size:12px;width:100%;"><b>Ayoha Merchants</b></div>'
+
+                                                                   //ui: 'plain',
+                                                                   //handler: function () {
+
+                                                                   //}
+
+                                                               },
+
+                                                          ]
+                                                      },
                                                       {
                                                           xtype: 'list',
+                                                          hidden: true,
                                                           //flex:1,
                                                         //  height: '100%',
                                                           //  store: 'MembershipsLoadBySubscriberAccNoStore',
@@ -392,7 +530,7 @@ function FloatPanel_MembershipCardList_MyMembershipCard() {
                                                         //  itemTpl: '<div class="myContent" style="margin:0px 0px 0px 0px;width:100%;height:190px;background-color: #fac;background-image: url({MembershipCardBackgroundImg});background-size: 100% 100%;border-radius: 20px 20px 20px 20px;">' +
                                                        // '<div style="margin:14px 0px 0px 10px;width:100%;text-align:center;color:black;font-family:Arial, sans-serif;font-size:15px;font-weight:bold;border-top: 1px none white;padding:0px 0px"><div style="width:100%;text-align:left;">xxxx</div><div style="width:100%;text-align:right;margin:0px 0px 0px 0px;color:black;font-family:Arial, sans-serif;font-size:9px;font-weight:normal;"><div style="background-color:red;color:white;width:25px;">Need Approval</div></div></div>' +
                                                              '{ModifiedMembershipApprovalStatus}' +
-                                                        '<table style="border-collapse:collapse;border-spacing:0;border:none;width:100%;margin:-15px 0px 0px 0px;" OnClick="FloatPanel_MembershipCardList_MyMembershipCardOpenMembershiCardDetail(' + "'" + '{CampaignEnterpriseHQAccNo}' + "'" + ',' + "'" + '{CampaignEnterpriseAccNo}' + "'" + ', ' + "'" + '{MembershipCardCode}' + "'" + ', {ID})" ><tr><td style="background-color:transparent;border-color:black;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 10px;text-align:left;vertical-align:middle;word-break:normal;width:100%;{ModifiedHeaderHeight}" colspan="3">{ModifiedEnterprisesLogo}{ModifiedEnterprisesName}</td></tr><tr><td style="border-color:black;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:top;word-break:normal;width:100%;" colspan="3"><div style="margin:-10px 0px 0px 10px;width:100%;text-align:left;font-family:Playball,cursive;font-size:24px;font-weight:normal;border-top: 1px none white;color:white;padding:0px 0px;">{MembershipLevel}</div><br><div style="margin:-34px 0px 0px 10px;width:100%;text-align:left;color:white;font-family:Orbitron;font-size:16px;font-weight:normal;border-top: 1px none white;padding:0px 0px">{ModifiedMembershipNo}</div><br><div style="margin:-28px 0px 0px 10px;width:100%;text-align:left;color:white;font-family:Orbitron;font-size:16px;font-weight:normal;border-top: 1px none white;padding:0px 0px">{ModifiedAccountName}</div></td><td style="border-color:black;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal;width:5%;"></td></tr><tr><td style="border-color:black;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:top;word-break:normal" colspan="2"><div style="margin:16px 0px 0px 15px;width:100%;text-align:left;color:white;font-family:Orbitron,sans-serif;font-size:7px;font-weight:normal;border-top: 1px none white;padding:0px 0px">Member Since</div><br><div style="margin:-21px 0px 0px 15px;width:100%;text-align:left;color:white;font-family:Orbitron,sans-serif;font-size:7px;font-weight:normal;border-top: 1px none white;padding:0px 0px">{ModifiedMemberSinceDate}</div><br><div style="margin:-18px 0px 0px 0px;width:100%;text-align:left;color:transparent;font-family:Orbitron,sans-serif;font-size:7px;font-weight:normal;border-top: 1px none white;padding:0px 0px;height:5px">02/2021</div></td><td style="border-color:black;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:10px;overflow:hidden;padding:0px 0px;text-align:right;vertical-align:top;word-break:normal"><div style="margin:16px 0px 0px -15px;width:100%;text-align:right;color:white;font-family:Orbitron,sans-serif;font-size:7px;font-weight:normal;border-top: 1px none white;padding:0px 0px">Valid Until</div><br><div style="margin:-15px 0px 0px -15px;width:100%;text-align:right;color:white;font-family:Orbitron,sans-serif;font-size:7px;font-weight:normal;border-top: 1px none white;padding:0px 0px">{ModifiedUntilDate}</div></td><br><div style="margin:-18px 0px 0px 0px;width:100%;text-align:left;color:transparent;font-family:Orbitron,sans-serif;font-size:11px;font-weight:normal;border-top: 1px none white;padding:0px 0px;height:5px">02/2021</div></tr></table>' +
+                                                        '<table style="border-collapse:collapse;border-spacing:0;border:none;width:100%;margin:-15px 0px 0px 0px;" OnClick="FloatPanel_MembershipCardList_MyMembershipCardOpenMembershiCardDetail(' + "'" + '{CampaignEnterpriseHQAccNo}' + "'" + ',' + "'" + '{CampaignEnterpriseAccNo}' + "'" + ', ' + "'" + '{MembershipCardCode}' + "'" + ',' + "'" + '{EnterpriseTagLine}' + "'" + ', {ID})" ><tr><td style="background-color:transparent;border-color:black;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 10px;text-align:left;vertical-align:middle;word-break:normal;width:100%;{ModifiedHeaderHeight}" colspan="3">{ModifiedEnterprisesLogo}{ModifiedEnterprisesName}</td></tr><tr><td style="border-color:black;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:top;word-break:normal;width:100%;" colspan="3"><div style="margin:-10px 0px 0px 10px;width:100%;text-align:left;font-family:Playball,cursive;font-size:24px;font-weight:normal;border-top: 1px none white;color:white;padding:0px 0px;">{MembershipLevel}</div><br><div style="margin:-34px 0px 0px 10px;width:100%;text-align:left;color:white;font-family:Orbitron;font-size:16px;font-weight:normal;border-top: 1px none white;padding:0px 0px">{ModifiedMembershipNo}</div><br><div style="margin:-28px 0px 0px 10px;width:100%;text-align:left;color:white;font-family:Orbitron;font-size:16px;font-weight:normal;border-top: 1px none white;padding:0px 0px">{ModifiedAccountName}</div></td><td style="border-color:black;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal;width:5%;"></td></tr><tr><td style="border-color:black;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:top;word-break:normal" colspan="2"><div style="margin:16px 0px 0px 15px;width:100%;text-align:left;color:white;font-family:Orbitron,sans-serif;font-size:7px;font-weight:normal;border-top: 1px none white;padding:0px 0px">Member Since</div><br><div style="margin:-21px 0px 0px 15px;width:100%;text-align:left;color:white;font-family:Orbitron,sans-serif;font-size:7px;font-weight:normal;border-top: 1px none white;padding:0px 0px">{ModifiedMemberSinceDate}</div><br><div style="margin:-18px 0px 0px 0px;width:100%;text-align:left;color:transparent;font-family:Orbitron,sans-serif;font-size:7px;font-weight:normal;border-top: 1px none white;padding:0px 0px;height:5px">02/2021</div></td><td style="border-color:black;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:10px;overflow:hidden;padding:0px 0px;text-align:right;vertical-align:top;word-break:normal"><div style="margin:16px 0px 0px -15px;width:100%;text-align:right;color:white;font-family:Orbitron,sans-serif;font-size:7px;font-weight:normal;border-top: 1px none white;padding:0px 0px">Valid Until</div><br><div style="margin:-15px 0px 0px -15px;width:100%;text-align:right;color:white;font-family:Orbitron,sans-serif;font-size:7px;font-weight:normal;border-top: 1px none white;padding:0px 0px">{ModifiedUntilDate}</div></td><br><div style="margin:-18px 0px 0px 0px;width:100%;text-align:left;color:transparent;font-family:Orbitron,sans-serif;font-size:11px;font-weight:normal;border-top: 1px none white;padding:0px 0px;height:5px">02/2021</div></tr></table>' +
                                                                                       '</div>' +
                                                                                       // '<br><div style="margin:-20px 0px 0px 0px;width:100%;text-align:center;color:black;font-family:Arial, sans-serif;font-size:15px;font-weight:bold;border-bottom: 1px solid grey;padding:0px 0px">{MembershipCardName}</div>' +
                                                           '<br><div style="margin:-18px 0px 0px 10px;width:100%;text-align:center;color:black;font-family:Arial, sans-serif;font-size:10px;font-weight:normal;border-top: 1px none white;padding:0px 0px"><div style="width:100%;text-align:left;">Card Name</div><div style="width:100%;text-align:right;margin:-15px 0px 0px -20px">Card Expired:</div></div>' +
@@ -409,7 +547,7 @@ function FloatPanel_MembershipCardList_MyMembershipCard() {
                                                     
                                                           //  '<div style="width:100%;text-align:right;margin:-185px 0px 0px 3px;background-color: transparent;height:100px"><img src="resources/icons/MemberPhotos.png" alt="Image" style="width:90px;height:100px;border-radius: 10%;border: 1px solid white;margin:0px 10px 0px 0px"></div>',
 
-
+                                                        //  emptyText: '<div OnClick="Dashboard_SearchMerchantListShow()" style="background-color:transparent;width: 100%; height: 400px;margin:40px 0px 0px 0px;padding:0px 0px"><div style="width:100%;text-align:center;margin:0px 0px 0px 0px;color:grey;font-family:Arial, sans-serif;font-size:12px;font-weight:normal;" OnClick="Dashboard_SearchMerchantListShow()">Hi!, you have not subscribed any membership card.Tap Ayoha Mechant below and get their Membership card Now!</div><br><img OnClick="Dashboard_SearchMerchantListShow()" src="resources/icons/AyohaMerchant03.png" style="width: 150px; height: 130px;"/><br><div style="color:grey;text-align: center;font-size:12px;width:100%;"><b>Ayoha Merchants</b></div></div>',
 
 
 
@@ -738,8 +876,28 @@ function FloatPanel_MembershipCardList_MyMembershipCardShow() {
     //Ext.getCmp('htmlPointHistoryTxt').setHtml('<font size=1 color=grey><b>Point History</b></font>');
     //Ext.getCmp('htmlCustomerInfoTxt').setHtml('<font size=1 color=purple><b><u>Customer Info</u></b></font>');
     document.getElementById("input-FloatPanel_MembershipCardList_MyMembershipCard_SearchTxt").addEventListener("keyup", MembershipsLoadBySubscriberAccNoStoreOnKeyUp);
+   // document.getElementById("ext-element-914").addEventListener("onclick", Dashboard_SearchMerchantListShow);
+   
     FloatPanel_MembershipCardList_MyMembershipCard_MembershipsLoadBySubscriberAccNoStore();
     FloatPanel_MembershipCardList_MyMembershipCardAdjustHeight();
+
+
+
+
+    var containerViewnamecontainer_FloatPanel_MembershipCardList_MyMembershipCardListID_no_membershipcard = Ext.ComponentQuery.query('container[name=namecontainer_FloatPanel_MembershipCardList_MyMembershipCardListID_no_membershipcard]')[0];
+    var containerViewElnamecontainer_FloatPanel_MembershipCardList_MyMembershipCardListID_no_membershipcard = containerViewnamecontainer_FloatPanel_MembershipCardList_MyMembershipCardListID_no_membershipcard.element;
+    containerViewElnamecontainer_FloatPanel_MembershipCardList_MyMembershipCardListID_no_membershipcard.on('tap',
+      function (event, node, options, eOpts) {
+          Dashboard_SearchMerchantListShow();
+          // FloatPanel_RewardStoreShow();
+      }
+    );
+
+
+    FloatPanel_MerchantDetailPageHide();
+    Dashboard_SearchMerchantListHide();
+
+    
 }
 
 
@@ -767,13 +925,13 @@ function FloatPanel_MembershipCardList_MyMembershipCard_MembershipsLoadBySubscri
     //});
     //Ext.StoreMgr.get('MembershipsLoadBySubscriberAccNoStore').load();
 
-    console.log(GetCurrAyohaUserAccountNo())
+   // alert(GetCurrAyohaUserAccountNo())
     _DataStore_MembershipsLoadBySubscriberAccNoStore.getProxy().setExtraParam('SubscriberAccNo', GetCurrAyohaUserAccountNo());
     _DataStore_MembershipsLoadBySubscriberAccNoStore.getProxy().setUrl(GetAPIurl() + '/Memberships/MembershipsLoadBySubscriberAccNo');
     _DataStore_MembershipsLoadBySubscriberAccNoStore.load();
 
     var task = Ext.create('Ext.util.DelayedTask', function () {
-       
+      
         //Ext.getStore('MembershipsLoadBySubscriberAccNoStore').getProxy().setExtraParams({
         //    SubscriberAccNo: GetCurrAyohaUserAccountNo()
         //});
@@ -787,6 +945,13 @@ function FloatPanel_MembershipCardList_MyMembershipCard_MembershipsLoadBySubscri
 
         //var myStore = Ext.getStore('MembershipsLoadBySubscriberAccNoStore');
         //_DataStore_MembershipsLoadBySubscriberAccNoStore = Ext.getStore('MembershipsLoadBySubscriberAccNoStore');
+
+        var count = parseInt(_DataStore_MembershipsLoadBySubscriberAccNoStore.getCount());
+
+        if (count>0) {
+            Ext.getCmp('container_FloatPanel_MembershipCardList_MyMembershipCardListID_no_membershipcard').setHidden(true);
+            Ext.getCmp('FloatPanel_MembershipCardList_MyMembershipCardListID').setHidden(false);
+        }
 
         countMembershipsLoadBySubscriberAccNoStoreFirst = _DataStore_MembershipsLoadBySubscriberAccNoStore.getCount();
         Ext.getCmp('FloatPanel_MembershipCardList_MyMembershipCard_CountSearchTxt').setHtml('<font size=3 color=black><b>(' + countMembershipsLoadBySubscriberAccNoStoreFirst + ')</b></font>');
@@ -913,19 +1078,35 @@ function FloatPanel_MembershipCardList_MyMembershipCardAdjustHeight() {
 
 
 }
-function FloatPanel_MembershipCardList_MyMembershipCardOpenMembershiCardDetail(EnterpriseHQAccountNo, EnterpriseAccountNo, MembershipCardCode, ID) {
+var globalFloatPanel_MembershipCardList_MyMembershipCardOpenMembershiCard_EnterpriseTagLine;
+function FloatPanel_MembershipCardList_MyMembershipCardOpenMembershiCardDetail(EnterpriseHQAccountNo, EnterpriseAccountNo, MembershipCardCode,EnterpriseTagLine, ID) {
+  
+///comment 29/9/2024
+    // _isFloatPanel_Membership_MembershipCardSaleDetail_loadFirstTime='N';
+    // FloatPanel_Membership_MembershipCardSaleDetailShow(EnterpriseAccountNo,MembershipCardCode);
+    // return;
+
+
+
+
+
+//   alert(EnterpriseHQAccountNo)
+//   alert(EnterpriseAccountNo)
+//   alert(MembershipCardCode)
+//   alert(EnterpriseTagLine)
+//   alert(ID)
     //var EnterpriseHQAccountNo = records.get('CampaignEnterpriseHQAccNo');
     //var EnterpriseAccountNo = records.get('CampaignEnterpriseAccNo');
     //var MembershipCardCode = records.get('MembershipCardCode');
     //var ID = records.get('ID');
     //var isMembershipCardSubscribed = records.get('isMembershipCardSubscribed');
 
-   // alert(EnterpriseAccountNo);
-
+    globalFloatPanel_MembershipCardList_MyMembershipCardOpenMembershiCard_EnterpriseTagLine=EnterpriseTagLine;
+//alert(globalFloatPanel_MembershipCardList_MyMembershipCardOpenMembershiCard_EnterpriseTagLine)
     globalOpenMembershipCardList_Upgrade_From = "FloatPanel_MembershipCardList_MyMembershipCard";
     FloatPanel_MembershipCardList_UpgradeShow_MyMembershipCard(EnterpriseHQAccountNo, EnterpriseAccountNo, MembershipCardCode, ID);
     setTimeout(function () {
-
+        
         Ext.getCmp('htmlFloatPanel_MembershipCardList_Upgrade_TitleHeaderTxt').setHtml('<font size=2 color=black><b>My Membership Card</b></font>');
     }, 2000);
 

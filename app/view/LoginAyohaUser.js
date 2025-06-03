@@ -69,13 +69,13 @@ Ext.define('ianMizi.view.LoginAyohaUser', {
 
                                  margin: '0 0 0 0',
                                  // height: 20,
-                                 html: '<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 25px;font-weight:bold;color:white;">Ayoha Rewards</div>'
+                                 html: '<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 25px;font-weight:bold;color:white;">Ayoha Reward</div>'
                              },
                               {
 
                                   margin: '-3 0 0 0',
                                   // height: 20,
-                                  html: '<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 11px;font-weight:normal;color:white;">We Double Your Reward !</div>'
+                                  html: '<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 11px;font-weight:normal;color:white;">One hub, Every benefit </div>'
                               },
                         ]
 
@@ -121,7 +121,7 @@ Ext.define('ianMizi.view.LoginAyohaUser', {
                                     },
 
                             {
-                                html: '<input type="text" id="ip2" placeHolder="Mobile Phone No"/>'
+                                html: '<input type="text" id="ip2" placeHolder="Email"/>'
                             },
                              {
                                  margin: '10 0 0 0',
@@ -364,7 +364,7 @@ function loadAyohaUserProfile() {
        // Ext.getCmp('basicform').getTabBar().hide();
        
         if (count >= 1) {
-            Ext.getCmp('tabpanelMyAccount_Dashboard').getTabBar().hide();
+          //  Ext.getCmp('tabpanelMyAccount_Dashboard').getTabBar().hide();
             localStorage.setItem('AyohaUserAccountNo', modelRecord.get('AccountNo'));
             localStorage.setItem('AyohaUserKatalaluan', modelRecord.get('Katalaluan'));
             //routeCurrPage = '15';
@@ -372,7 +372,8 @@ function loadAyohaUserProfile() {
             Ext.getCmp('mainView').setActiveItem(1);
 
            
-            Ext.getCmp('htmlMyAccount_Dashboard_TitleHeaderTxt').setHtml('<font size=2 color=white><b>' + modelRecord.get('AyohaVersion') + '</b></font>');
+            //Ext.getCmp('htmlMyAccount_Dashboard_TitleHeaderTxt').setHtml('<font size=2 color=white><b>' + modelRecord.get('AyohaVersion') + '</b></font>');
+           
             var AccountName = modelRecord.get('AccountName').substring(0, 7);
             Ext.getCmp('htmlMyAccount_DashboardHaiUser').setHtml('<font size=2 color=black><b>Hi ' + AccountName.toLowerCase() + '</b></font>');
             Ext.getCmp('btnMyAccount_DashboardPicProfile').setHtml('<div style="border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none white;background: transparent;border-radius: 20px 20px 20px 20px;width:33px;height:33px" ><img src="' + modelRecord.get('Photo') + '"      style="width: 30px; height: 30px; border:2px none grey; border-radius: 50%; max-width:32px; margin:-1px 0px 0px 2px"></div>');
@@ -483,7 +484,7 @@ function loadAyohaUserProfileLoginBody() {
                 if (data.success == "true") {
 
                     if (data.total > 0) {
-                        Ext.getCmp('tabpanelMyAccount_Dashboard').getTabBar().hide();
+                     //   Ext.getCmp('tabpanelMyAccount_Dashboard').getTabBar().hide();
                         localStorage.setItem('AyohaUserAccountNo',data.results[0].AccountNo);
                         localStorage.setItem('AyohaUserKatalaluan', data.results[0].Katalaluan);
                        
@@ -492,14 +493,17 @@ function loadAyohaUserProfileLoginBody() {
                       //  ArrappRoute.push("MainDashBoard");
                         Ext.getCmp('mainView').setActiveItem(1);
                         
-                        Ext.getCmp('htmlMyAccount_Dashboard_TitleHeaderTxt').setHtml('<font size=2 color=white><b>Ayoha-Reward</b></font><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 10px;font-weight:normal;color:white;margin:-5px 0px 0px 0px">' + data.results[0].AyohaVersion + '</div>');
+                      //  Ext.getCmp('htmlMyAccount_Dashboard_TitleHeaderTxt').setHtml('<font size=2 color=white><b>Ayoha-Reward</b></font><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 10px;font-weight:normal;color:white;margin:-5px 0px 0px 0px">' + data.results[0].AyohaVersion + '</div>');
 
                         //Ext.getCmp('htmlMyAccount_Dashboard_TitleHeaderTxt').setHtml('<font size=2 color=white><b>' + data.results[0].AyohaVersion + '</b></font>');
                         var AccountName = data.results[0].AccountName.substring(0, 9);
                        localStorage.setItem('AyohaUserAccountNameDisplay', AccountName);
                         //Ext.getCmp('htmlMyAccount_DashboardHaiUser').setHtml('<font size=2 color=black><b>Hi ' + AccountName.toLowerCase() + '</b></font>');
-                        Ext.getCmp('htmlMyAccount_Dashboard_ProfileTitle').setHtml('<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 11px;font-weight:normal;color:black;margin:0px 0px 0px 0px">Hello!,</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 16px;font-weight:bold;color:black;margin:-25px 0px 0px 0px">' + AccountName.toLowerCase() + '</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 10px;font-weight:bold;color:black;margin:-27px 0px 0px 0px">Non-Ayoha Member</div>');
-                       // Ext.getCmp('btnMyAccount_DashboardPicProfile').setHtml('<div style="border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none white;background: transparent;border-radius: 20px 20px 20px 20px;width:33px;height:33px" ><img src="' + data.results[0].Photo + '"      style="width: 30px; height: 30px; border:2px none grey; border-radius: 50%; max-width:32px; margin:-1px 0px 0px 2px"></div>');
+                      //  Ext.getCmp('htmlMyAccount_Dashboard_ProfileTitle').setHtml('<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 11px;font-weight:normal;color:white;margin:0px 0px 0px 0px">Good Days!,</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 16px;font-weight:bold;color:white;margin:-25px 0px 0px 0px">' + AccountName.toUpperCase() + '</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 10px;font-weight:bold;color:white;margin:-27px 0px 0px 0px">Non-Ayoha Member</div>');
+                        Ext.getCmp('htmlMyAccount_Dashboard_ProfileTitle').setHtml('<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 11px;font-weight:normal;color:white;margin:0px 0px 0px 0px">Good Days!,</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 14px;font-weight:bold;color:white;margin:-25px 0px 0px 0px">' + AccountName.toUpperCase() + '</div>');
+                      
+                      
+                        // Ext.getCmp('btnMyAccount_DashboardPicProfile').setHtml('<div style="border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none white;background: transparent;border-radius: 20px 20px 20px 20px;width:33px;height:33px" ><img src="' + data.results[0].Photo + '"      style="width: 30px; height: 30px; border:2px none grey; border-radius: 50%; max-width:32px; margin:-1px 0px 0px 2px"></div>');
                         Ext.getCmp('btnMyAccount_DashboardPicProfileIcon').setHtml('<div ><img src="' + data.results[0].Photo + '"  style ="width:45px;height:45px;border-radius:50%;border:2px solid white;" alt="Company Name"></div>');
 
 
@@ -511,17 +515,17 @@ function loadAyohaUserProfileLoginBody() {
                         localStorage.setItem('AyohaUserisUserVerified',data.results[0].isUserVerified);
                         localStorage.setItem('CurrPhoneNumber', data.results[0].PhoneNo);
                         localStorage.setItem('AyohaUserVerifiedString', data.results[0].VerifyString);
-
+                        localStorage.setItem('AyohaUserEmail', data.results[0].Email);
 
                         var AccountNoDisplay = data.results[0].AccountNo.split('-');
                         localStorage.setItem('AccountNoDisplay', AccountNoDisplay[1] + '-' + AccountNoDisplay[2]);
 
 
                         if (data.results[0].isUserVerified == "YES") {
-                            Ext.getCmp('htmlMyAccount_Dashboard_ProfileTitle').setHtml('<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 11px;font-weight:normal;color:black;margin:0px 0px 0px 0px">Hello!,</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 16px;font-weight:bold;color:black;margin:-25px 0px 0px 0px">' + AccountName.toLowerCase() + '</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 10px;font-weight:bold;color:black;margin:-27px 0px 0px 0px">' + AccountNoDisplay[1] + '-' + AccountNoDisplay[2] + '</div>');
+                            Ext.getCmp('htmlMyAccount_Dashboard_ProfileTitle').setHtml('<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 11px;font-weight:normal;color:white;margin:0px 0px 0px 0px">Good Days!,</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 14px;font-weight:bold;color:white;margin:-25px 0px 0px 0px">' + AccountName.toLowerCase() + '</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 10px;font-weight:bold;color:white;margin:-27px 0px 0px 0px">' + AccountNoDisplay[1] + '-' + AccountNoDisplay[2] + '</div>');
                         }
                         if (data.results[0].isUserVerified == "NO") {
-                            Ext.getCmp('htmlMyAccount_Dashboard_ProfileTitle').setHtml('<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 11px;font-weight:normal;color:black;margin:0px 0px 0px 0px">Hello!,</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 16px;font-weight:bold;color:black;margin:-25px 0px 0px 0px">' + AccountName.toLowerCase() + '</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 10px;font-weight:bold;color:black;margin:-27px 0px 0px 0px">Non-Ayoha Member</div>');
+                            Ext.getCmp('htmlMyAccount_Dashboard_ProfileTitle').setHtml('<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 11px;font-weight:normal;color:white;margin:0px 0px 0px 0px">Good Days!,</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 14px;font-weight:bold;color:white;margin:-25px 0px 0px 0px">' + AccountName.toUpperCase() + '</div>');
                         }
 
 
@@ -544,7 +548,7 @@ function loadAyohaUserProfileLoginBody() {
                         
                        //FloatPanel_AyohaeWallet_IconShow();
                         AyohaRedeemPrize_LoadByRowStatusAndGCStore();
-                       // FloatPanel_Advertisement_FloatAdvertisementShow();
+                      // FloatPanel_Advertisement_FloatAdvertisementShow();
                         Dashboard_LoadAyohaEwallet();
                         initTapListener_AyohaMerchantsIcon();
                         //
@@ -556,7 +560,8 @@ function loadAyohaUserProfileLoginBody() {
                     if (data.total <= 0) {
                         // swalFireFail("Login Failed!");
                         LoadingPanelHide();
-                        swalFireLoginFailed("<font color=red>Login Failed!</font>", "resources/icons/loginfailed01.png");
+                        swalFireFailLogin();
+                      //  swalFireLoginFailed("<font color=red>Login Failed!</font>", "resources/icons/loginfailed01.png");
                         //alert("Login Failed!");
                         Ext.Viewport.unmask();
 
@@ -566,7 +571,8 @@ function loadAyohaUserProfileLoginBody() {
                 }
                 else {
                     LoadingPanelHide();
-                    swalFireLoginFailed("<font color=red>Login Failed!</font>", "resources/icons/loginfailed01.png");
+                    swalFireFailLogin();
+                  //  swalFireLoginFailed("<font color=red>Login Failed!</font>", "resources/icons/loginfailed01.png");
                     Ext.Viewport.unmask();
                 }
               
@@ -591,7 +597,7 @@ function loadAyohaUserProfileLoginBody() {
 
 
 function loadUserProfileWithOutLogOut() {
-    Ext.getCmp('tabpanelMyAccount_Dashboard').getTabBar().hide();
+   // Ext.getCmp('tabpanelMyAccount_Dashboard').getTabBar().hide();
     Ext.getCmp('mainView').setActiveItem(1);
 
 
@@ -648,7 +654,7 @@ function loadUserProfileWithOutLogOut() {
                 if (data.success == "true") {
 
                     if (data.total > 0) {
-                        Ext.getCmp('tabpanelMyAccount_Dashboard').getTabBar().hide();
+                     //   Ext.getCmp('tabpanelMyAccount_Dashboard').getTabBar().hide();
                         localStorage.setItem('AyohaUserAccountNo', data.results[0].AccountNo);
                         localStorage.setItem('AyohaUserKatalaluan', data.results[0].Katalaluan);
 
@@ -657,13 +663,13 @@ function loadUserProfileWithOutLogOut() {
                         //  ArrappRoute.push("MainDashBoard");
                         Ext.getCmp('mainView').setActiveItem(1);
 
-                        Ext.getCmp('htmlMyAccount_Dashboard_TitleHeaderTxt').setHtml('<font size=2 color=white><b>Ayoha-Reward</b></font><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 10px;font-weight:normal;color:white;margin:-5px 0px 0px 0px">' + data.results[0].AyohaVersion + '</div>');
+                       // Ext.getCmp('htmlMyAccount_Dashboard_TitleHeaderTxt').setHtml('<font size=2 color=white><b>Ayoha-Reward</b></font><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 10px;font-weight:normal;color:white;margin:-5px 0px 0px 0px">' + data.results[0].AyohaVersion + '</div>');
 
                         //Ext.getCmp('htmlMyAccount_Dashboard_TitleHeaderTxt').setHtml('<font size=2 color=white><b>' + data.results[0].AyohaVersion + '</b></font>');
                         var AccountName = data.results[0].AccountName.substring(0, 9);
                         localStorage.setItem('AyohaUserAccountNameDisplay', AccountName);
                         //Ext.getCmp('htmlMyAccount_DashboardHaiUser').setHtml('<font size=2 color=black><b>Hi ' + AccountName.toLowerCase() + '</b></font>');
-                        Ext.getCmp('htmlMyAccount_Dashboard_ProfileTitle').setHtml('<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 11px;font-weight:normal;color:black;margin:0px 0px 0px 0px">Hello!,</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 16px;font-weight:bold;color:black;margin:-25px 0px 0px 0px">' + AccountName.toLowerCase() + '</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 10px;font-weight:bold;color:black;margin:-27px 0px 0px 0px">Non-Ayoha Member</div>');
+                        Ext.getCmp('htmlMyAccount_Dashboard_ProfileTitle').setHtml('<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 11px;font-weight:normal;color:white;margin:0px 0px 0px 0px">Good Days!,</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 14px;font-weight:bold;color:white;margin:-25px 0px 0px 0px">' + AccountName.toUpperCase() + '</div>');
                         // Ext.getCmp('btnMyAccount_DashboardPicProfile').setHtml('<div style="border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none white;background: transparent;border-radius: 20px 20px 20px 20px;width:33px;height:33px" ><img src="' + data.results[0].Photo + '"      style="width: 30px; height: 30px; border:2px none grey; border-radius: 50%; max-width:32px; margin:-1px 0px 0px 2px"></div>');
                         Ext.getCmp('btnMyAccount_DashboardPicProfileIcon').setHtml('<div ><img src="' + data.results[0].Photo + '"  style ="width:45px;height:45px;border-radius:50%;border:2px solid white;" alt="Company Name"></div>');
 
@@ -676,17 +682,17 @@ function loadUserProfileWithOutLogOut() {
                         localStorage.setItem('AyohaUserisUserVerified', data.results[0].isUserVerified);
                         localStorage.setItem('CurrPhoneNumber', data.results[0].PhoneNo);
                         localStorage.setItem('AyohaUserVerifiedString', data.results[0].VerifyString);
-
+                        localStorage.setItem('AyohaUserEmail', data.results[0].Email);
 
                         var AccountNoDisplay = data.results[0].AccountNo.split('-');
                         localStorage.setItem('AccountNoDisplay', AccountNoDisplay[1] + '-' + AccountNoDisplay[2]);
 
 
                         if (data.results[0].isUserVerified == "YES") {
-                            Ext.getCmp('htmlMyAccount_Dashboard_ProfileTitle').setHtml('<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 11px;font-weight:normal;color:black;margin:0px 0px 0px 0px">Hello!,</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 16px;font-weight:bold;color:black;margin:-25px 0px 0px 0px">' + AccountName.toLowerCase() + '</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 10px;font-weight:bold;color:black;margin:-27px 0px 0px 0px">' + AccountNoDisplay[1] + '-' + AccountNoDisplay[2] + '</div>');
+                            Ext.getCmp('htmlMyAccount_Dashboard_ProfileTitle').setHtml('<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 11px;font-weight:normal;color:white;margin:0px 0px 0px 0px">Good Days!,</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 14px;font-weight:bold;color:white;margin:-25px 0px 0px 0px">' + AccountName.toUpperCase() + '</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 10px;font-weight:bold;color:white;margin:-27px 0px 0px 0px">' + AccountNoDisplay[1] + '-' + AccountNoDisplay[2] + '</div>');
                         }
                         if (data.results[0].isUserVerified == "NO") {
-                            Ext.getCmp('htmlMyAccount_Dashboard_ProfileTitle').setHtml('<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 11px;font-weight:normal;color:black;margin:0px 0px 0px 0px">Hello!,</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 16px;font-weight:bold;color:black;margin:-25px 0px 0px 0px">' + AccountName.toLowerCase() + '</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 10px;font-weight:bold;color:black;margin:-27px 0px 0px 0px">Non-Ayoha Member</div>');
+                            Ext.getCmp('htmlMyAccount_Dashboard_ProfileTitle').setHtml('<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 11px;font-weight:normal;color:white;margin:0px 0px 0px 0px">Good Days!,</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 16px;font-weight:bold;color:white;margin:-25px 0px 0px 0px">' + AccountName.toUpperCase() + '</div>');
                         }
 
 
@@ -889,13 +895,27 @@ function loadUserProfileWithOutLogOut() {
 
 
 function loadAyohaUserProfileLoginBodyAfterCreatedAccount(valUserName,valKataLalu) {
+   // console.log(getCurrentOs());
+
+    //if (getCurrentOs() == "Windows") {
+    //    localStorage.setItem("player_id", "webAccess_Windows");
+    //} else if (getCurrentOs() == "MacOS") {
+    //    localStorage.setItem("player_id", "webAccess_MacOS");
+    //}else if (getCurrentOs() == "Linux") {
+    //    localStorage.setItem("player_id", "webAccess_Linux");
+    //}
+    //else { 
+
+    //    window.plugins.OneSignal.getPermissionSubscriptionState(function (status) {
+    //        localStorage.setItem("player_id", status.subscriptionStatus.userId);
+
+    //    });
+    //}
+
+
 
 
    
-    window.plugins.OneSignal.getPermissionSubscriptionState(function (status) {
-        localStorage.setItem("player_id", status.subscriptionStatus.userId);
-        
-    });
     LoadingPanelShow(getLoadingIcon(), 'Login....');
     var UN = valUserName;
     var PWD = valKataLalu;
@@ -951,7 +971,7 @@ function loadAyohaUserProfileLoginBodyAfterCreatedAccount(valUserName,valKataLal
 
                     if (data.total > 0) {
                         
-                        Ext.getCmp('tabpanelMyAccount_Dashboard').getTabBar().hide();
+                       // Ext.getCmp('tabpanelMyAccount_Dashboard').getTabBar().hide();
                         localStorage.setItem('AyohaUserAccountNo', data.results[0].AccountNo);
                         localStorage.setItem('AyohaUserKatalaluan', data.results[0].Katalaluan);
 
@@ -960,13 +980,13 @@ function loadAyohaUserProfileLoginBodyAfterCreatedAccount(valUserName,valKataLal
                         //  ArrappRoute.push("MainDashBoard");
                         Ext.getCmp('mainView').setActiveItem(1);
 
-                        Ext.getCmp('htmlMyAccount_Dashboard_TitleHeaderTxt').setHtml('<font size=2 color=white><b>Ayoha-Reward</b></font><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 10px;font-weight:normal;color:white;margin:-5px 0px 0px 0px">' + data.results[0].AyohaVersion + '</div>');
+                       // Ext.getCmp('htmlMyAccount_Dashboard_TitleHeaderTxt').setHtml('<font size=2 color=white><b>Ayoha-Reward</b></font><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 10px;font-weight:normal;color:white;margin:-5px 0px 0px 0px">' + data.results[0].AyohaVersion + '</div>');
 
                         //Ext.getCmp('htmlMyAccount_Dashboard_TitleHeaderTxt').setHtml('<font size=2 color=white><b>' + data.results[0].AyohaVersion + '</b></font>');
                         var AccountName = data.results[0].AccountName.substring(0, 9);
                         localStorage.setItem('AyohaUserAccountNameDisplay', AccountName);
                         //Ext.getCmp('htmlMyAccount_DashboardHaiUser').setHtml('<font size=2 color=black><b>Hi ' + AccountName.toLowerCase() + '</b></font>');
-                        Ext.getCmp('htmlMyAccount_Dashboard_ProfileTitle').setHtml('<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 11px;font-weight:normal;color:black;margin:0px 0px 0px 0px">Hello!,</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 16px;font-weight:bold;color:black;margin:-25px 0px 0px 0px">' + AccountName.toLowerCase() + '</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 10px;font-weight:bold;color:black;margin:-27px 0px 0px 0px">Non-Ayoha Member</div>');
+                        Ext.getCmp('htmlMyAccount_Dashboard_ProfileTitle').setHtml('<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 11px;font-weight:normal;color:white;margin:0px 0px 0px 0px">Good Days!,</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 14px;font-weight:bold;color:white;margin:-25px 0px 0px 0px">' + AccountName.toUpperCase() + '</div>');
                         // Ext.getCmp('btnMyAccount_DashboardPicProfile').setHtml('<div style="border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none white;background: transparent;border-radius: 20px 20px 20px 20px;width:33px;height:33px" ><img src="' + data.results[0].Photo + '"      style="width: 30px; height: 30px; border:2px none grey; border-radius: 50%; max-width:32px; margin:-1px 0px 0px 2px"></div>');
                         Ext.getCmp('btnMyAccount_DashboardPicProfileIcon').setHtml('<div ><img src="' + data.results[0].Photo + '"  style ="width:45px;height:45px;border-radius:50%;border:2px solid white;" alt="Company Name"></div>');
 
@@ -979,17 +999,17 @@ function loadAyohaUserProfileLoginBodyAfterCreatedAccount(valUserName,valKataLal
                         localStorage.setItem('AyohaUserisUserVerified', data.results[0].isUserVerified);
                         localStorage.setItem('CurrPhoneNumber', data.results[0].PhoneNo);
                         localStorage.setItem('AyohaUserVerifiedString', data.results[0].VerifyString);
-
+                        localStorage.setItem('AyohaUserEmail', data.results[0].Email);
 
                         var AccountNoDisplay = data.results[0].AccountNo.split('-');
                         localStorage.setItem('AccountNoDisplay', AccountNoDisplay[1] + '-' + AccountNoDisplay[2]);
 
 
                         if (data.results[0].isUserVerified == "YES") {
-                            Ext.getCmp('htmlMyAccount_Dashboard_ProfileTitle').setHtml('<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 11px;font-weight:normal;color:black;margin:0px 0px 0px 0px">Hello!,</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 16px;font-weight:bold;color:black;margin:-25px 0px 0px 0px">' + AccountName.toLowerCase() + '</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 10px;font-weight:bold;color:black;margin:-27px 0px 0px 0px">' + AccountNoDisplay[1] + '-' + AccountNoDisplay[2] + '</div>');
+                            Ext.getCmp('htmlMyAccount_Dashboard_ProfileTitle').setHtml('<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 11px;font-weight:normal;color:white;margin:0px 0px 0px 0px">Good Days!,</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 14px;font-weight:bold;color:white;margin:-25px 0px 0px 0px">' + AccountName.toUpperCase() + '</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 10px;font-weight:bold;color:white;margin:-27px 0px 0px 0px">' + AccountNoDisplay[1] + '-' + AccountNoDisplay[2] + '</div>');
                         }
                         if (data.results[0].isUserVerified == "NO") {
-                            Ext.getCmp('htmlMyAccount_Dashboard_ProfileTitle').setHtml('<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 11px;font-weight:normal;color:black;margin:0px 0px 0px 0px">Hello!,</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 16px;font-weight:bold;color:black;margin:-25px 0px 0px 0px">' + AccountName.toLowerCase() + '</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 10px;font-weight:bold;color:black;margin:-27px 0px 0px 0px">Non-Ayoha Member</div>');
+                            Ext.getCmp('htmlMyAccount_Dashboard_ProfileTitle').setHtml('<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 11px;font-weight:normal;color:white;margin:0px 0px 0px 0px">Good Days!,</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 16px;font-weight:bold;color:white;margin:-25px 0px 0px 0px">' + AccountName.toUpperCase() + '</div>');
                         }
 
 
@@ -1119,6 +1139,8 @@ function LoginAyohaUser_OneSignalCreateAccountMessage() {
 
 
 function ForgotPassword() {
+   // alert(getCurrentOs());
+   // alert(getOS());
     FloatPanel_ForgotPasswordShow();
 }
 
@@ -1207,5 +1229,5 @@ function loadEnterprisesContactUsLinkStore() {
 
 function termandcondtionpage() {
    
-    window.open('http://42.1.63.57/termandcondition.html', '_system'); return false;
+    window.open('https://setkita.com/termandcondition.html', '_system'); return false;
 }

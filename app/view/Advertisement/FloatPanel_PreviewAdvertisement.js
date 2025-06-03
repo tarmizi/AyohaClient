@@ -28,9 +28,10 @@ function FloatPanel_PreviewAdvertisement() {
           'Ext.Video'
         ],
         zIndex: 370,
+       // zIndex:410,
         xtype: 'container',
         //height: 465,
-        height: '90%',
+        height: '92%',
         width: '95%',
         id: 'FloatPanel_PreviewAdvertisementID',
         draggable: false,
@@ -952,7 +953,7 @@ function FloatPanel_PreviewAdvertisement() {
                                                                         margin: '0 0 0 0',
                                                                         id: 'btnFloatPanel_PreviewAdvertisementbottom_OnlineStoreIcon0',
                                                                         //badgeText: "2",
-                                                                        html: '<div class="blink_me"><img src="http://42.1.63.57/AyohaImgCard/eStoreLogo/kiahStoreLogo.png" width="32" height="32" alt="Company Name"></div>',
+                                                                        html: '<div class="blink_me"><img src="https://setkita.com/AyohaImgCard/eStoreLogo/kiahStoreLogo.png" width="32" height="32" alt="Company Name"></div>',
                                                                     },
                                                                     {
                                                                         id: 'btnFloatPanel_PreviewAdvertisementbottom_OnlineStoreName0',
@@ -984,7 +985,7 @@ function FloatPanel_PreviewAdvertisement() {
                                                                            margin: '0 0 0 0',
                                                                            id: 'btnFloatPanel_PreviewAdvertisementbottom_OnlineStoreIcon1',
                                                                            //badgeText: "2",
-                                                                           html: '<div class="blink_me"><img src="http://42.1.63.57/AyohaImgCard/eStoreLogo/shoopeeLogo.png" width="32" height="32" alt="Company Name"></div>',
+                                                                           html: '<div class="blink_me"><img src="https://setkita.com/AyohaImgCard/eStoreLogo/shoopeeLogo.png" width="32" height="32" alt="Company Name"></div>',
                                                                        },
                                                                        {
                                                                            id: 'btnFloatPanel_PreviewAdvertisementbottom_OnlineStoreName1',
@@ -1015,7 +1016,7 @@ function FloatPanel_PreviewAdvertisement() {
                                                                             width: 32,
                                                                             margin: '0 0 0 0',
                                                                             id: 'btnFloatPanel_PreviewAdvertisementbottom_OnlineStoreIcon2',
-                                                                            html: '<div class="blink_me"><img src="http://42.1.63.57/AyohaImgCard/eStoreLogo/AyohaStoreLogo.png" width="32" height="32" alt="Company Name"></div>',
+                                                                            html: '<div class="blink_me"><img src="https://setkita.com/AyohaImgCard/eStoreLogo/AyohaStoreLogo.png" width="32" height="32" alt="Company Name"></div>',
                                                                         },
                                                                         {
                                                                             id: 'btnFloatPanel_PreviewAdvertisementbottom_OnlineStoreName2',
@@ -1772,10 +1773,9 @@ function FloatPanel_PreviewAdvertisementShow_StampCard(Module) {
     Ext.getCmp('btnFloatPanel_PreviewAdvertisement_PicProfile').setHtml('<img src="' + globalStampCampaignEnterpriseLogo + '" style="background-color:white;width: 80px; height: 80px; border:2px solid #ECF0F1; border-radius: 50%; max-width:200px;">');
     //  Ext.getCmp('htmlFloatPanel_PreviewAdvertisement_CompanyName').setHtml('<div style="color:white;text-align: left;font-size:16px;width:95%;font-weight:bold;border-bottom:1px none white;">' + EnterpriseName + '</div><br><div style="color:white;text-align: left;font-size:12px;width:100%;font-weight:normal;margin:-15px 0px 0px 0px;">' + AdvertisementTitle + '</div>')
     Ext.getCmp('htmlFloatPanel_PreviewAdvertisement_CompanyName').setHtml('<div style="color:white;text-align: left;font-size:16px;width:95%;font-weight:bold;border-bottom:1px none white;">' + globalStampCampaignEnterpriseName + '</div>');
-    Ext.getCmp('htmlFloatPanel_PreviewAdvertisement_CompanyTagLine').setHtml('<div style="color:white;text-align: left;font-size:12px;width:100%;font-weight:normal;margin:0px 0px 0px 0px;">' + globalStampCampaignAdvertisementTitle + '</div>');
-
-
-
+   
+//alert(globalStampCampaignAdvertisementTitle)
+//alert(Module)
 
     Load_FloatPanel_PreviewAdvertisement_AdvertisementloadMediaPreviewStore(Module, globalStampCampaignEnterpriseAccNo);
    
@@ -1797,7 +1797,27 @@ function FloatPanel_PreviewAdvertisementShow_StampCard(Module) {
     //  }
     //);
 }
-
+function FloatPanel_PreviewAdvertisementShow_PointCard() {
+    Ext.getCmp('LoadingFloatLoyaltyCardPointID').setZIndex(360);
+    // function FloatPanel_PreviewAdvertisementShow(Module) {
+    Ext.Viewport.remove(_FloatPanel_PreviewAdvertisement);
+    this.overlay = Ext.Viewport.add(FloatPanel_PreviewAdvertisement());
+    this.overlay.show();
+    AddRoutePages("FloatPanel_PreviewAdvertisementHide()");
+    isFloatPanel_PreviewAdvertisementOpen = 'Y';
+    //_FloatPanel_PreviewAdvertisement_isFirstLoad = 'N';
+    Ext.getCmp('containerFloatPanel_Advertisement_CaptionText').setHidden(true);
+    MoveCountSwipe = 0;
+    swipeDirection = 'Left';
+    AdvertismentTypeTag = 'PointCardAdvertisement';
+   
+    
+    Ext.getCmp('btnFloatPanel_PreviewAdvertisement_PicProfile').setHtml('<img src="' + global_FloatPanel_MembershipCardList_Upgrade_EnterprisesLogo + '" style="background-color:white;width: 80px; height: 80px; border:2px solid #ECF0F1; border-radius: 50%; max-width:200px;">');
+    // //  Ext.getCmp('htmlFloatPanel_PreviewAdvertisement_CompanyName').setHtml('<div style="color:white;text-align: left;font-size:16px;width:95%;font-weight:bold;border-bottom:1px none white;">' + EnterpriseName + '</div><br><div style="color:white;text-align: left;font-size:12px;width:100%;font-weight:normal;margin:-15px 0px 0px 0px;">' + AdvertisementTitle + '</div>')
+    Ext.getCmp('htmlFloatPanel_PreviewAdvertisement_CompanyName').setHtml('<div style="color:white;text-align: left;font-size:16px;width:95%;font-weight:bold;border-bottom:1px none white;">' + global_FloatPanel_MembershipCardList_Upgrade_EnterprisesName + '</div>');
+    
+    LoadFloatPanel_PreviewAdvertisementShow_PointCard();
+}
 
 
 function FloatPanel_PreviewAdvertisementShow_RewardStore(Module) {
@@ -1943,20 +1963,38 @@ function FloatPanel_PreviewAdvertisement_EnterprisesContactUsLinkStore(Enterpris
         var Stores;
         if (_DataStore_EnterprisesContactUsLinkStore.getCount() >= 1) {
             Ext.getCmp('htmlFloatPanel_PreviewAdvertisementbottom_eStoreNameTitle').setHtml('<font class="blink_me" size=2 color=white><b>Visit Our Online Store</b></font>');
-            for (i = 0; i < _DataStore_EnterprisesContactUsLinkStore.getCount() ; i++) {
+            for (i = 0; i <= _DataStore_EnterprisesContactUsLinkStore.getCount() ; i++) {
                 Stores = _DataStore_EnterprisesContactUsLinkStore.getAt(i);
-               
+              console.log(i)
+              console.log(_DataStore_EnterprisesContactUsLinkStore.getCount())
+              if (i == _DataStore_EnterprisesContactUsLinkStore.getCount()) { 
+                // _DataStore_EnterprisesContactUsLinkStore.removeAll();
+                // _DataStore_EnterprisesContactUsLinkStore.sync();
+               // _DataStore_EnterprisesContactUsLinkStore.syncAll();
+                break; }
                 if (Stores.get('eStoreName')) {
-                    Ext.getCmp('containerFloatPanel_Advertisement_BottomPanel_OnlineShop_Icon_' + i).setHidden(false);
+                    
+                   
+                    Ext.getCmp('containerFloatPanel_Advertisement_BottomPanel_OnlineShop_Icon_'+i).setHidden(false);
                     Ext.getCmp('btnFloatPanel_PreviewAdvertisementbottom_OnlineStoreIcon' + i).setHtml('<div class="blink_me"><img src="' + Stores.get('eStoreIconPath') + '" width="32" height="32" alt="Company Name" onclick="FloatPanel_PreviewAdvertisement_OpenOnlineStore' + i + '()"></div>');
                     Ext.getCmp('btnFloatPanel_PreviewAdvertisementbottom_OnlineStoreName' + i).setHtml('<div class="blink_me" style="color:white;text-align: center;font-size:10px;width:100%;font-weight:normal;margin:0px 0px 0px 0px;">' + Stores.get('eStoreName') + '</div>');
-
+                   
+                   
+                   
                 } else {
                     Ext.getCmp('htmlFloatPanel_PreviewAdvertisementbottom_eStoreNameTitle').setHtml('<font size=2 color=white><b>No Online Store</b></font>');
+                    return;
                 }
               
             }
-        } else {
+        } 
+        
+        
+       
+        
+        
+        
+        else {
             Ext.getCmp('htmlFloatPanel_PreviewAdvertisementbottom_eStoreNameTitle').setHtml('<font size=2 color=white><b>No Online Store</b></font>');
         }
 
@@ -1973,7 +2011,8 @@ function FloatPanel_PreviewAdvertisement_EnterprisesContactUsLinkStore(Enterpris
 function FloatPanel_PreviewAdvertisement_OpenOnlineStore0() {
    // 
     var Stores = _DataStore_EnterprisesContactUsLinkStore.getAt(0);
-    if (Stores.get('eStoreName') == "Ayoha") {
+  
+    if (Stores.get('eStoreName') == "Ayoha Store") {
         if (AdvertismentTypeTag == 'VIAAdvertisement') {
 
             FloatPanel_AyohaStoreShow_VIA();
@@ -1996,10 +2035,36 @@ function FloatPanel_PreviewAdvertisement_OpenOnlineStore0() {
     }
 }
 
+function closeBackLoyaltyProgramCard(){
+    // if(isFloatLoyaltyCardPointOpen=='Y'){
+    //     FloatLoyaltyCardPointHide();
+    // }
+
+    // _FloatLoyaltyCardPoint.hide(Ext.fx.Animation({
+    //     type: 'slideOut',
+    //     direction: 'left',
+    //     easing: 'cubic-bezier(.7,0,.7,1)',
+    //     duration: 250
+
+    // }));
+    // isFloatLoyaltyCardPointOpen = 'N';
+    // _FloatLoyaltyCardPoint_isFirstLoad = "N";
+    // RemovePages("FloatLoyaltyCardPointHide()");
+
+
+
+
+    if(isFloatAdvertisementOpen=='Y'){
+        FloatPanel_Advertisement_FloatAdvertisementHide();
+    }
+}
+
 function FloatPanel_PreviewAdvertisement_OpenOnlineStore1() {
-  
+  //alert('FloatPanel_PreviewAdvertisement_OpenOnlineStore1')
+ // alert(AdvertismentTypeTag)
     var Stores = _DataStore_EnterprisesContactUsLinkStore.getAt(1);
-    if (Stores.get('eStoreName') == "Ayoha") {
+  //  closeBackLoyaltyProgramCard();
+    if (Stores.get('eStoreName') == "Ayoha Store") {
         if (AdvertismentTypeTag == 'VIAAdvertisement') {
 
             FloatPanel_AyohaStoreShow_VIA();
@@ -2013,6 +2078,9 @@ function FloatPanel_PreviewAdvertisement_OpenOnlineStore1() {
         if (AdvertismentTypeTag == 'PushNotification') {
 
             FloatPanel_AyohaStoreShow_FromPushNotification();
+        } if (AdvertismentTypeTag == 'PointCardAdvertisement') {
+
+            FloatPanel_AyohaStoreShow_FromPointCard();
         }
         else {
             FloatPanel_AyohaStoreShow();
@@ -2024,7 +2092,8 @@ function FloatPanel_PreviewAdvertisement_OpenOnlineStore1() {
 }
 function FloatPanel_PreviewAdvertisement_OpenOnlineStore2() {
     var Stores = _DataStore_EnterprisesContactUsLinkStore.getAt(2);
-      if (Stores.get('eStoreName') == "Ayoha") {
+ 
+      if (Stores.get('eStoreName') == "Ayoha Store") {
         if (AdvertismentTypeTag == 'VIAAdvertisement') {
 
             FloatPanel_AyohaStoreShow_VIA();
@@ -2041,6 +2110,7 @@ function FloatPanel_PreviewAdvertisement_OpenOnlineStore2() {
         }
         else {
             FloatPanel_AyohaStoreShow();
+           // closeBackLoyaltyProgramCard();
         }
     } else {
         window.open(Stores.get('OnlineStoreUrl'), '_system'); return false;
@@ -2048,7 +2118,8 @@ function FloatPanel_PreviewAdvertisement_OpenOnlineStore2() {
 }
 function FloatPanel_PreviewAdvertisement_OpenOnlineStore3() {
     var Stores = _DataStore_EnterprisesContactUsLinkStore.getAt(3);
-    if (Stores.get('eStoreName') == "Ayoha") {
+    closeBackLoyaltyProgramCard();
+    if (Stores.get('eStoreName') == "Ayoha Store") {
         if (AdvertismentTypeTag == 'VIAAdvertisement') {
 
             FloatPanel_AyohaStoreShow_VIA();
@@ -2071,8 +2142,9 @@ function FloatPanel_PreviewAdvertisement_OpenOnlineStore3() {
     }
 }
 function FloatPanel_PreviewAdvertisement_OpenOnlineStore4() {
+    closeBackLoyaltyProgramCard();
     var Stores = _DataStore_EnterprisesContactUsLinkStore.getAt(4);
-    if (Stores.get('eStoreName') == "Ayoha") {
+    if (Stores.get('eStoreName') == "Ayoha Store") {
         if (AdvertismentTypeTag == 'VIAAdvertisement') {
 
             FloatPanel_AyohaStoreShow_VIA();
@@ -2095,8 +2167,9 @@ function FloatPanel_PreviewAdvertisement_OpenOnlineStore4() {
     }
 }
 function FloatPanel_PreviewAdvertisement_OpenOnlineStore5() {
+    closeBackLoyaltyProgramCard();
     var Stores = _DataStore_EnterprisesContactUsLinkStore.getAt(5);
-    if (Stores.get('eStoreName') == "Ayoha") {
+    if (Stores.get('eStoreName') == "Ayoha Store") {
         if (AdvertismentTypeTag == 'VIAAdvertisement') {
 
             FloatPanel_AyohaStoreShow_VIA();
@@ -2143,9 +2216,9 @@ var globalFloatPanel_PreviewAdvertisement_AdvertismentCodes;
 function Load_FloatPanel_PreviewAdvertisement_AdvertisementloadMediaPreviewStore(Module,EnterpriseAccNo) {
    
 
-
-    
-
+    //FloatPanel_AyohaCardManagement_AdvertisementButton
+//     alert(Module)
+// alert(globalPointCampaignCode_FloatLoyaltyCardPoint)
     var AdvertismentCodes;
    
     if (Module == "FloatPanel_PreviewAdvertisement") {
@@ -2166,7 +2239,10 @@ function Load_FloatPanel_PreviewAdvertisement_AdvertisementloadMediaPreviewStore
         AdvertismentCodes = localStorage.getItem("FloatPanel_AyohaCardManagement_PreviewCard_AyohaUserCardShow_AdvertismentCode");
         Ext.getCmp('htmlFloatPanel_PreviewAdvertisement_TitleHeaderTxt').setHtml('<font size=2 color=white><b>Advertisement</b></font>');
     }
-
+    if (Module == "FloatPanel_AyohaCardManagement_AdvertisementButton_Point") {
+        AdvertismentCodes =  localStorage.getItem('FloatPanel_AyohaCardManagement_PreviewCard_AyohaUserCardShow_AdvertismentCode');
+        Ext.getCmp('htmlFloatPanel_PreviewAdvertisement_TitleHeaderTxt').setHtml('<font size=2 color=white><b>Advertisement</b></font>');
+    }
     if (Module == "FloatPanel_AyohaStore") {
         AdvertismentCodes = globalFloatPanel_RewardStore_AdvertisementCode;
     }
@@ -2184,12 +2260,7 @@ function Load_FloatPanel_PreviewAdvertisement_AdvertisementloadMediaPreviewStore
   
     myCarousel = Ext.getCmp('FloatPanel_PreviewAdvertisement_Carousel');
 
-    //Ext.getStore('AdvertisementloadMediaAyohaUserDashboardStore').getProxy().setExtraParams({
-    //    AdvertisementCode: AdvertismentCodes
-    //});
-    //Ext.StoreMgr.get('AdvertisementloadMediaAyohaUserDashboardStore').load();
-
-
+    
 
     _DataStore_AdvertisementloadMediaAyohaUserDashboardStore.getProxy().setExtraParam('AdvertisementCode', AdvertismentCodes);
     _DataStore_AdvertisementloadMediaAyohaUserDashboardStore.getProxy().setUrl(GetAPIurl() + '/Advertisement/AdvertisementloadMediaAyohaUserDashboard');
@@ -2222,7 +2293,10 @@ function Load_FloatPanel_PreviewAdvertisement_AdvertisementloadMediaPreviewStore
         var EnterpriseLogoPath = modelRecorded.get('EnterpriseLogoPath');
         var SocialMediaLink = modelRecorded.get('SocialMediaLink');
         var ModifiedSocialMediaLink=SocialMediaLink.split("|");
-
+        
+        
+        Ext.getCmp('htmlFloatPanel_PreviewAdvertisement_CompanyTagLine').setHtml('<div style="color:white;text-align: left;font-size:12px;width:100%;font-weight:normal;margin:0px 0px 0px 0px;">' + AdvertisementTitle + '</div>');
+        globalStampCampaignAdvertisementTitle=AdvertisementTitle;
 
 
       
@@ -2303,13 +2377,137 @@ function Load_FloatPanel_PreviewAdvertisement_AdvertisementloadMediaPreviewStore
 }
 
 
+
+
+
+
+
+function LoadFloatPanel_PreviewAdvertisementShow_PointCard(){
+    myCarousel = Ext.getCmp('FloatPanel_PreviewAdvertisement_Carousel');
+var advCode=localStorage.getItem('FloatPanel_AyohaCardManagement_PreviewCard_AyohaUserCardShow_AdvertismentCode');
+    //FloatPanel_PreviewAdvertisementShow_PointCard()
+//alert(globalPointCampaignCode_FloatLoyaltyCardPoint)
+
+    _DataStore_AdvertisementloadMediaAyohaUserDashboardStore.getProxy().setExtraParam('AdvertisementCode', advCode);
+    _DataStore_AdvertisementloadMediaAyohaUserDashboardStore.getProxy().setUrl(GetAPIurl() + '/Advertisement/AdvertisementloadMediaAyohaUserDashboard');
+    _DataStore_AdvertisementloadMediaAyohaUserDashboardStore.load();
+
+
+
+    var task = Ext.create('Ext.util.DelayedTask', function () {
+        //Ext.getStore('AdvertisementloadMediaAyohaUserDashboardStore').getProxy().setExtraParams({
+        //    AdvertisementCode: AdvertismentCodes
+        //});
+        //Ext.StoreMgr.get('AdvertisementloadMediaAyohaUserDashboardStore').load();
+        //var myStore = Ext.getStore('AdvertisementloadMediaAyohaUserDashboardStore');
+
+        var count = _DataStore_AdvertisementloadMediaAyohaUserDashboardStore.getCount();
+
+
+        if (count <= 0) {
+          
+            FloatPanel_PreviewAdvertisementHide();
+            swalFireGeneralMessaging("No Sale Advertisement!", "resources/icons/noAdvertisementIcon.jpg");
+            return;
+        }
+
+
+
+        var modelRecorded = _DataStore_AdvertisementloadMediaAyohaUserDashboardStore.getAt(0);
+        var AdvertisementTitle = modelRecorded.get('AdvertisementTitle');
+        var EnterpriseName = modelRecorded.get('EnterpriseName');
+        var EnterpriseLogoPath = modelRecorded.get('EnterpriseLogoPath');
+        var SocialMediaLink = modelRecorded.get('SocialMediaLink');
+        var ModifiedSocialMediaLink=SocialMediaLink.split("|");
+        
+        
+        Ext.getCmp('htmlFloatPanel_PreviewAdvertisement_CompanyTagLine').setHtml('<div style="color:white;text-align: left;font-size:12px;width:100%;font-weight:normal;margin:0px 0px 0px 0px;">' + AdvertisementTitle + '</div>');
+        globalStampCampaignAdvertisementTitle=AdvertisementTitle;
+
+
+      
+
+   
+
+      
+
+       
+        CountAdvertisementMedia = count - 1;
+       // console.log(CountAdvertisementMedia);
+        //console.log(GetEnterpriseHQAccNo());
+        //console.log(document.getElementById('input-FloatPanel_AdvertisementSetting_Code').value);
+        //var modelRecord = myStore.getAt(0);
+
+        //var Complaint = modelRecord.get('Complaint');
+        // var MinStoreAlert = modelRecord.get('MinStoreAlert');
+        // var StoreBalance = modelRecord.get('TotalStock');
+      
+       // myCarousel = Ext.getCmp('FloatPanel_PreviewAdvertisement_Carousel');
+        ArrCaptionText.length = 0;
+        ArrMediaFileName.length = 0;
+       
+        for (i = 0; i < count; i++) {
+            var modelRecord = _DataStore_AdvertisementloadMediaAyohaUserDashboardStore.getAt(i);
+
+            var AdvertismentMediaUrl =modelRecord.get('AdvertismentMediaUrl');
+            var AdvertismentMediaNote =modelRecord.get('AdvertismentMediaNote');
+            var MediaType = modelRecord.get('MediaType');
+            var MediaFileName = modelRecord.get('MediaFileName');
+            
+           
+
+
+            ArrMediaFileName.push(MediaFileName);
+            
+            Ext.getCmp('btnFloatPanel_PreviewAdvertisement_Timing' + i).setHidden(false);
+          //  xtype: 'pinchzoomimage',
+            if (MediaType == "Image") {
+               myCarousel.add({ xtype: 'image', src: AdvertismentMediaUrl , height: '100%', width: '100%', mode: 'image' });
+               // myCarousel.add({ xtype: 'pinchzoomimage', src: AdvertismentMediaUrl, height: 670, width: '100%', mode: 'image' });
+            }
+            if (MediaType == "Video") {
+                myCarousel.add({ xtype: 'video', url: AdvertismentMediaUrl, height: '100%', width: '100%', mode: 'video', posterUrl: 'resources/icons/videoPurple.png', loop: false, enableControls: true, });
+
+            }
+
+            if (AdvertismentMediaNote) {
+                ArrCaptionText.push(AdvertismentMediaNote);
+            } else {
+                ArrCaptionText.push('NULL');
+            }
+          
+           
+            // Ext.getCmp('FloatPanel_PreviewAdvertisement_Carousel').setHidden(true);
+        }
+        if (ArrCaptionText[0] != 'NULL') {
+            Ext.getCmp('containerFloatPanel_Advertisement_CaptionText').setHidden(false);
+            valCaptionText = ArrCaptionText[0];
+            Ext.getCmp('FloatPanel_PreviewAdvertisement_Carousel').setMargin('40px 0px 0px 0px');
+            Ext.getCmp('htmlFloatPanel_Advertisement_CaptionText').setHtml('<div style="color:white;text-align: center;font-size:13px;width:100%;font-weight:bold;font-style: italic;">' + ArrCaptionText[0] + '</div>');
+
+        } else {
+            Ext.getCmp('containerFloatPanel_Advertisement_CaptionText').setHidden(true);
+            Ext.getCmp('FloatPanel_PreviewAdvertisement_Carousel').setMargin('20px 0px 0px 0px');
+        }
+        
+
+        Ext.getCmp('containerFloatPanel_PreviewAdvertisement_CarouselLoading').setHidden(true);
+        Ext.getCmp('FloatPanel_PreviewAdvertisement_Carousel').setHidden(false);
+        _FloatPanel_PreviewAdvertisement_isFirstLoad = 'N';
+        FloatPanel_PreviewAdvertisement_EnterprisesContactUsLinkStore(globalEnterpriseAccNo_FloatLoyaltyCardPoint);
+        FloatPanel_PreviewAdvertisement_AdvertisementAnalsysInsertUpdate();
+        Ext.Viewport.setMasked(false);
+
+    });
+    task.delay(1000);
+}
 var ArrCaptionText = [];
 var ArrMediaFileName = [];
 var CountAdvertisementMedia
 
 
 function  FloatPanel_PreviewAdvertisement_OpenOnlineShop() {
-    alert('bisa')
+   
    // alert(globalFloatPanel_PreviewAdvertisement_WebSiteLink);
     if (globalFloatPanel_PreviewAdvertisement_eStoreName == "Ayoha") {
         FloatPanel_AyohaStoreShow();

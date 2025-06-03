@@ -45,6 +45,7 @@
       'AyohaRewardPoint',
       'MerchantPoint',
       'LoyaltCampaignCount',
+      'EnterpriseTagLine',
        {
            name: 'ModifiedEnterprisesNameUpperCase',
            convert: function (value, record) {

@@ -228,7 +228,7 @@ function FloatPanel_DashboardMerchantReward_MembershipContestDetail() {
 
                        {
                            xtype: 'container',
-                           id: 'ContainerFloatPanel_DashboardMerchantReward_MembershipContestDetail',
+                           id: 'ContainerFloatPanel_DashboardMerchantReward_MembershipContestDetail_Inner',
                            // style: 'background-image: url("resources/icons/contestAdvertisement01.png"); background-size: 100% 100%;background-repeat: no-repeat;',
                            // name: 'clickableContainerFloatPanel_DashboardMerchantReward_MembershipContestDetail',
                            style: ' background-color:transparent;',
@@ -408,6 +408,12 @@ var globalFloatPanel_DashboardMerchantReward_MembershipContestDetail_ID;
 var globalFloatPanel_DashboardMerchantReward_MembershipContestDetail_ContestCode;
 var globalFloatPanel_DashboardMerchantReward_MembershipContestDetail_EnterpriseAccNo;
 var globalFloatPanel_DashboardMerchantReward_MembershipContestDetail_ContestStatus;
+var globalFloatPanel_DashboardMerchantReward_MembershipContestDetail_ContestType;
+var globalFloatPanel_DashboardMerchantReward_MembershipContestDetail_AdvertisementImgPath;
+var globalFloatPanel_DashboardMerchantReward_MembershipContestDetail_ContestName;
+var globalFloatPanel_DashboardMerchantReward_MembershipContestDetail_ContestQuestion;
+var globalFloatPanel_DashboardMerchantReward_MembershipContestDetail_isRequiredReceipt;
+
 //function FloatPanel_DashboardMerchantReward_MembershipContestDetailShow(VoucherName, VoucherImage, VoucherEndDate, VoucherDayLeft, VoucherCode, VoucherAmount) {
 function FloatPanel_DashboardMerchantReward_MembershipContestDetailShow(ID) {
     AddRoutePages("FloatPanel_DashboardMerchantReward_MembershipContestDetailHide()");
@@ -432,12 +438,21 @@ function FloatPanel_DashboardMerchantReward_MembershipContestDetailShow(ID) {
     ContestDescription = _DataStore_AyohaRewardContestLoadBySubscriberAccNoStore.findRecord('ID', ID, 0, false, false, true);
     EnterpriseAccNo = _DataStore_AyohaRewardContestLoadBySubscriberAccNoStore.findRecord('ID', ID, 0, false, false, true);
     ContestStatus = _DataStore_AyohaRewardContestLoadBySubscriberAccNoStore.findRecord('ID', ID, 0, false, false, true);
-
+    ContestType = _DataStore_AyohaRewardContestLoadBySubscriberAccNoStore.findRecord('ID', ID, 0, false, false, true);
+    ContestQuestion = _DataStore_AyohaRewardContestLoadBySubscriberAccNoStore.findRecord('ID', ID, 0, false, false, true);
+    isRequiredReceipt = _DataStore_AyohaRewardContestLoadBySubscriberAccNoStore.findRecord('ID', ID, 0, false, false, true);
+    
     globalFloatPanel_DashboardMerchantReward_MembershipContestDetail_ID = ID;
     globalFloatPanel_DashboardMerchantReward_MembershipContestDetail_ContestCode = ContestCode.get('ContestCode');
     globalFloatPanel_DashboardMerchantReward_MembershipContestDetail_EnterpriseAccNo = EnterpriseAccNo.get('EnterpriseAccNo');
     globalFloatPanel_DashboardMerchantReward_MembershipContestDetail_ContestStatus = ContestStatus_ContestStatus.get('ContestStatus_ContestStatus');
     globalConfig_ResizeUploadedImage = "";
+    globalFloatPanel_DashboardMerchantReward_MembershipContestDetail_ContestType= ContestType.get('ContestType');
+    globalFloatPanel_DashboardMerchantReward_MembershipContestDetail_AdvertisementImgPath= AdvertisementImgPath.get('AdvertisementImgPath');
+    globalFloatPanel_DashboardMerchantReward_MembershipContestDetail_ContestName= ContestName.get('ContestName');
+    globalFloatPanel_DashboardMerchantReward_MembershipContestDetail_ContestQuestion= ContestQuestion.get('ContestQuestion');
+    globalFloatPanel_DashboardMerchantReward_MembershipContestDetail_isRequiredReceipt= isRequiredReceipt.get('isRequiredReceipt');
+    // alert(globalFloatPanel_DashboardMerchantReward_MembershipContestDetail_ContestType)
 
     Ext.getCmp('htmlFloatPanel_DashboardMerchantReward_MembershipContestDetail').setHtml('<div class="myContent" style="background-color:white;width:100%;height:600px;">' +
                         '&nbsp;&nbsp;<div style="font-family:Arial, sans-serif;font-size:14px;color:black;font-weight:bold;text-align:left;"><img src="' + EnterpriseLogo.get('EnterpriseLogo') + '" style="width:30px;height:30px;border-radius:50%;margin:0px 0px 0px 20px;"/><div style="margin:-28px 0px 0px 55px;">' + EnterpriseName.get('EnterpriseName') + '</div></div>&nbsp;&nbsp;' +
@@ -457,9 +472,118 @@ function FloatPanel_DashboardMerchantReward_MembershipContestDetailShow(ID) {
    // alert(globalFloatPanel_DashboardMerchantReward_MembershipContestDetail_ContestStatus)
 
     if (globalFloatPanel_DashboardMerchantReward_MembershipContestDetail_ContestStatus != 'New') {
-        Ext.getCmp('htmlFloatPanel_DashboardMerchantReward_MembershipContestDetail_Register').setHtml('<div onclick="FloatPanel_DashboardMerchantReward_MembershipContestSelfieFormShow_Edit();"  style="border-right:2px solid #fac;border-left:2px solid #fac;border-bottom:2px solid #fac;border-top:2px solid #fac;background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);border-radius: 20px 20px 20px 20px;width:100%;height:40px;font-size: 12px;font-weight:bold;color:white;text-align:center;vertical-align:middle;"><div style="font-size: 16px;font-weight:bold;color:white;margin:6px 0px 0px 0px;">View My Submitted Selfie</div></div>');
+
+        if(globalFloatPanel_DashboardMerchantReward_MembershipContestDetail_ContestType=="Text"){
+            Ext.getCmp('htmlFloatPanel_DashboardMerchantReward_MembershipContestDetail_Register').setHtml('<div onclick="FloatPanel_DashboardMerchantReward_MembershipContestSelfieFormShow_Edit();"  style="border-right:2px solid #fac;border-left:2px solid #fac;border-bottom:2px solid #fac;border-top:2px solid #fac;background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);border-radius: 20px 20px 20px 20px;width:100%;height:40px;font-size: 12px;font-weight:bold;color:white;text-align:center;vertical-align:middle;"><div style="font-size: 16px;font-weight:bold;color:white;margin:6px 0px 0px 0px;">View My Submitted Answer</div></div>');
+        }
+        if(globalFloatPanel_DashboardMerchantReward_MembershipContestDetail_ContestType=="Picture"){
+            Ext.getCmp('htmlFloatPanel_DashboardMerchantReward_MembershipContestDetail_Register').setHtml('<div onclick="FloatPanel_DashboardMerchantReward_MembershipContestSelfieFormShow_Edit();"  style="border-right:2px solid #fac;border-left:2px solid #fac;border-bottom:2px solid #fac;border-top:2px solid #fac;background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);border-radius: 20px 20px 20px 20px;width:100%;height:40px;font-size: 12px;font-weight:bold;color:white;text-align:center;vertical-align:middle;"><div style="font-size: 16px;font-weight:bold;color:white;margin:6px 0px 0px 0px;">View My Submitted Selfie</div></div>'); 
+        }
+        
     }
 }
+
+function FloatPanel_DashboardMerchantReward_MembershipContestDetailShow_FromMembershipCardList_Upgrade(ContestCode) {
+    AddRoutePages("FloatPanel_DashboardMerchantReward_MembershipContestDetailHide()");
+    Ext.Viewport.remove(_FloatPanel_DashboardMerchantReward_MembershipContestDetail);
+    this.overlay = Ext.Viewport.add(FloatPanel_DashboardMerchantReward_MembershipContestDetail());
+    this.overlay.show();
+    //AddRoutePages(_FloatPanel_DashboardMerchantReward_MembershipContestDetail, "is_FloatPanel_DashboardMerchantReward_MembershipContestDetailOpen");
+    LoadingPanelShow(getLoadingIcon(), 'Loading...');
+    Ext.getCmp('FloatPanel_DashboardMerchantReward_MembershipContestDetailID').setZIndex(330);
+    is_FloatPanel_DashboardMerchantReward_MembershipContestDetailOpen = 'Y';
+
+  
+ 
+  _DataStore_AyohaRewardContestLoadBySubscriberAccNoAndContestCodeStore.getProxy().setExtraParam('SubscriberAccNo', GetCurrAyohaUserAccountNo());
+  _DataStore_AyohaRewardContestLoadBySubscriberAccNoAndContestCodeStore.getProxy().setExtraParam('ContestCode', ContestCode);
+  _DataStore_AyohaRewardContestLoadBySubscriberAccNoAndContestCodeStore.getProxy().setUrl(GetAPIurl() + '/AyohaRewardContest/AyohaRewardContestLoadBySubscriberAccNoAndContestCode');
+  _DataStore_AyohaRewardContestLoadBySubscriberAccNoAndContestCodeStore.load();
+    var task = Ext.create('Ext.util.DelayedTask', function () {
+       
+       
+    
+
+        var count = _DataStore_AyohaRewardContestLoadBySubscriberAccNoAndContestCodeStore.getCount();
+     
+        if(count>0){
+
+            var Store = _DataStore_AyohaRewardContestLoadBySubscriberAccNoAndContestCodeStore.getAt(0);
+           
+            // EnterpriseLogo = _DataStore_AyohaRewardContestLoadBySubscriberAccNoAndContestCodeStore.findRecord('ContestCode', ContestCode, 0, false, false, true);
+            // EnterpriseName = _DataStore_AyohaRewardContestLoadBySubscriberAccNoAndContestCodeStore.findRecord('ContestCode', ContestCode, 0, false, false, true);
+            // AdvertisementImgPath = _DataStore_AyohaRewardContestLoadBySubscriberAccNoAndContestCodeStore.findRecord('ContestCode', ContestCode, 0, false, false, true);
+            // ModifiedWidth = _DataStore_AyohaRewardContestLoadBySubscriberAccNoAndContestCodeStore.findRecord('ContestCode', ContestCode, 0, false, false, true);
+            // ContestCode = _DataStore_AyohaRewardContestLoadBySubscriberAccNoAndContestCodeStore.findRecord('ContestCode', ContestCode, 0, false, false, true);
+            // ContestName = _DataStore_AyohaRewardContestLoadBySubscriberAccNoAndContestCodeStore.findRecord('ContestCode', ContestCode, 0, false, false, true);
+            // ContestStatus_ContestStatus = _DataStore_AyohaRewardContestLoadBySubscriberAccNoAndContestCodeStore.findRecord('ContestCode', ContestCode, 0, false, false, true);
+            // StartDate_DateOnly = _DataStore_AyohaRewardContestLoadBySubscriberAccNoAndContestCodeStore.findRecord('ContestCode', ContestCode, 0, false, false, true);
+            // EndDate_DateOnly = _DataStore_AyohaRewardContestLoadBySubscriberAccNoAndContestCodeStore.findRecord('ContestCode', ContestCode, 0, false, false, true);
+            // EndDate_DateOnly = _DataStore_AyohaRewardContestLoadBySubscriberAccNoAndContestCodeStore.findRecord('ContestCode', ContestCode, 0, false, false, true);
+            // ContestDescription = _DataStore_AyohaRewardContestLoadBySubscriberAccNoAndContestCodeStore.findRecord('ContestCode', ContestCode, 0, false, false, true);
+            // EnterpriseAccNo = _DataStore_AyohaRewardContestLoadBySubscriberAccNoAndContestCodeStore.findRecord('ContestCode', ContestCode, 0, false, false, true);
+            // ContestStatus = _DataStore_AyohaRewardContestLoadBySubscriberAccNoAndContestCodeStore.findRecord('ContestCode', ContestCode, 0, false, false, true);
+            // ContestType = _DataStore_AyohaRewardContestLoadBySubscriberAccNoAndContestCodeStore.findRecord('ContestCode', ContestCode, 0, false, false, true);
+            // ContestQuestion = _DataStore_AyohaRewardContestLoadBySubscriberAccNoAndContestCodeStore.findRecord('ContestCode', ContestCode, 0, false, false, true);
+            // isRequiredReceipt = _DataStore_AyohaRewardContestLoadBySubscriberAccNoAndContestCodeStore.findRecord('ContestCode', ContestCode, 0, false, false, true);
+            
+           // globalFloatPanel_DashboardMerchantReward_MembershipContestDetail_ID = ID;
+            globalFloatPanel_DashboardMerchantReward_MembershipContestDetail_ContestCode = Store.get('ContestCode');
+            globalFloatPanel_DashboardMerchantReward_MembershipContestDetail_EnterpriseAccNo = Store.get('EnterpriseAccNo');
+            globalFloatPanel_DashboardMerchantReward_MembershipContestDetail_ContestStatus = Store.get('ContestStatus_ContestStatus');
+            globalConfig_ResizeUploadedImage = "";
+            globalFloatPanel_DashboardMerchantReward_MembershipContestDetail_ContestType= Store.get('ContestType');
+            globalFloatPanel_DashboardMerchantReward_MembershipContestDetail_AdvertisementImgPath= Store.get('AdvertisementImgPath');
+            globalFloatPanel_DashboardMerchantReward_MembershipContestDetail_ContestName= Store.get('ContestName');
+            globalFloatPanel_DashboardMerchantReward_MembershipContestDetail_ContestQuestion= Store.get('ContestQuestion');
+            globalFloatPanel_DashboardMerchantReward_MembershipContestDetail_isRequiredReceipt= Store.get('isRequiredReceipt');
+
+
+
+            // alert(globalFloatPanel_DashboardMerchantReward_MembershipContestDetail_ContestType)
+        
+            Ext.getCmp('htmlFloatPanel_DashboardMerchantReward_MembershipContestDetail').setHtml('<div class="myContent" style="background-color:white;width:100%;height:600px;">' +
+                                '&nbsp;&nbsp;<div style="font-family:Arial, sans-serif;font-size:14px;color:black;font-weight:bold;text-align:left;"><img src="' + Store.get('EnterpriseLogo') + '" style="width:30px;height:30px;border-radius:50%;margin:0px 0px 0px 20px;"/><div style="margin:-28px 0px 0px 55px;">' + Store.get('EnterpriseName') + '</div></div>&nbsp;&nbsp;' +
+                                '&nbsp;&nbsp;<img src="' + Store.get('AdvertisementImgPath') + '" style="width:' + Store.get('ModifiedWidth') + 'px;height:600px;margin:-10px 0px 0px 0px;"/>&nbsp;&nbsp;<br>' +
+        
+                              '<div style="width: 50%; float:left; height:30px; background:white; margin:-17px 0px 0px 0px;"><div style="font-family:Arial, sans-serif;font-size:10px;color:black;font-weight:normal;text-align:left;padding:0px 10px;">Contest Name:</div><br><div style="font-family:Arial, sans-serif;font-size:14px;color:black;font-weight:bold;margin:-22px 0px 0px 0px;text-align:left;padding:0px 10px;">' + Store.get('ContestName') + '</div></div><div style="width: 50%; float:left; height:30px; background:white; margin:-17px 0px 0px 0px;word-break: break-all;"><div style="margin:0px 0px 0px 0px;text-align:right;color:black;font-family: Arial; font-size:10px;word-wrap: break-word;word-break: break-all;white-space: break-spaces;font-weight:normal;width:100%;height:30px;padding:0px 7px;">Contest Host:<br><div style="margin:0px 0px 0px 0px;text-align:right;color:black;font-family: Arial; font-size:12px;word-wrap: break-word;word-break: break-all;white-space: break-spaces;font-weight:bold;width:100%;padding:0px 0px;"><div style="font-family:Arial, sans-serif;font-size:14px;color:black;font-weight:bold;text-align:right;width:100%;"><div style="margin:0px 0px 0px 0px;">' + Store.get('EnterpriseName') + '</div></div></div></div></div><br>' +
+        
+                                                                   '<div  style="width: 70%; float:left; height:30px; background:white; margin:10px 0px 0px 0px;"><div style="font-family:Arial, sans-serif;font-size:10px;color:black;font-weight:normal;text-align:left;padding:0px 10px;">Contest Period:</div><br><div style="font-family:Arial, sans-serif;font-size:14px;color:black;font-weight:bold;margin:-22px 0px 0px 0px;text-align:left;padding:0px 10px;">' + Store.get('StartDate_DateOnly') + ' - ' + Store.get('EndDate_DateOnly') + '</div></div><div style="width: 30%; float:left; height:30px; background:white; margin:10px 0px 0px 0px;word-break: break-all;"><div style="margin:0px 0px 0px 0px;text-align:right;color:black;font-family: Arial; font-size:10px;word-wrap: break-word;word-break: break-all;white-space: break-spaces;font-weight:normal;width:100%;height:30px;padding:0px 7px;">Contest Status<br><div style="margin:0px 0px 0px 0px;text-align:right;color:black;font-family: Arial; font-size:12px;word-wrap: break-word;word-break: break-all;white-space: break-spaces;font-weight:bold;width:100%;padding:0px 0px;">' + Store.get('ContestStatus') + '</div></div></div><br>');
+        
+        
+        
+        
+            // '<div style="width: 90px; float:left; height:70px; background:white; margin:-5px 0px 0px 0px;"><div style="font-family:Arial, sans-serif;font-size:40px;color:black;font-weight:bold;text-align:center;">' + EventStartDate_Day + '</div><br><div style="font-family:Arial, sans-serif;font-size:16px;color:red;font-weight:bold;margin:-30px 0px 0px 0px;text-align:center;">' + EventStartDate_Month + '</div></div><div style="width: 230px; float:left; height:70px; background:white; margin:0px;word-break: break-all;"><div style="margin:5px 0px 0px 0px;text-align:left;color:black;font-family: Arial; font-size:14px;word-wrap: break-word;word-break: break-all;white-space: break-spaces;font-weight:bold;width:100%;height:30px;">' + EventName + '<br><br><div style="margin:-24px 0px 0px 0px;text-align:left;color:black;font-family: Arial; font-size:11px;word-wrap: break-word;word-break: break-all;white-space: break-spaces;font-weight:normal;width:100%;">' + EventStartDate_Day + ' ' + EventStartDate_Month + ',' + EventStartTime + ' - ' + EventEndDate_Day + ' ' + EventEndDate_Month + ',' + EventEndTime + '.</div><br><div style="margin:-24px 0px 0px 0px;text-align:left;color:black;font-family: Arial; font-size:11px;word-wrap: break-word;word-break: break-all;white-space: break-spaces;font-weight:normal;width:100%;">' + EventLocationName + '.</div></div></div>');
+        
+            Ext.getCmp('htmlFloatPanel_DashboardMerchantReward_MembershipContestDetailText').setHtml('<div style="width: 100%; height:450px; background:white;text-align:left;font-size:12px;font-weight:bold;">' + Store.get('ContestDescription') + '</div>');
+        
+           // alert(globalFloatPanel_DashboardMerchantReward_MembershipContestDetail_ContestStatus)
+        
+            if (globalFloatPanel_DashboardMerchantReward_MembershipContestDetail_ContestStatus != 'New') {
+        
+                if(globalFloatPanel_DashboardMerchantReward_MembershipContestDetail_ContestType=="Text"){
+                    Ext.getCmp('htmlFloatPanel_DashboardMerchantReward_MembershipContestDetail_Register').setHtml('<div onclick="FloatPanel_DashboardMerchantReward_MembershipContestSelfieFormShow_Edit();"  style="border-right:2px solid #fac;border-left:2px solid #fac;border-bottom:2px solid #fac;border-top:2px solid #fac;background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);border-radius: 20px 20px 20px 20px;width:100%;height:40px;font-size: 12px;font-weight:bold;color:white;text-align:center;vertical-align:middle;"><div style="font-size: 16px;font-weight:bold;color:white;margin:6px 0px 0px 0px;">View My Submitted Answer</div></div>');
+                }
+                if(globalFloatPanel_DashboardMerchantReward_MembershipContestDetail_ContestType=="Picture"){
+                    Ext.getCmp('htmlFloatPanel_DashboardMerchantReward_MembershipContestDetail_Register').setHtml('<div onclick="FloatPanel_DashboardMerchantReward_MembershipContestSelfieFormShow_Edit();"  style="border-right:2px solid #fac;border-left:2px solid #fac;border-bottom:2px solid #fac;border-top:2px solid #fac;background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);border-radius: 20px 20px 20px 20px;width:100%;height:40px;font-size: 12px;font-weight:bold;color:white;text-align:center;vertical-align:middle;"><div style="font-size: 16px;font-weight:bold;color:white;margin:6px 0px 0px 0px;">View My Submitted Selfie</div></div>'); 
+                }
+                
+            }
+            LoadingPanelHide();
+        }
+        LoadingPanelHide();
+
+    });
+    task.delay(700);
+    
+    
+  
+}
+
+
+
+
+
 
 function FloatPanel_DashboardMerchantReward_MembershipContestDetailShow_FromAyohaStore_ContestList(ID) {
     AddRoutePages("FloatPanel_DashboardMerchantReward_MembershipContestDetailHide()");

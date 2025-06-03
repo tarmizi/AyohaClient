@@ -367,7 +367,18 @@ function FloatPanel_StateHide() {
 
 
 function FloatPanel_StateLoadMaster_SetState(State) {
-    document.getElementById('input-FloatPanel_AyohaStore_DeliveryAddress_State').value = State;
+
+
+    if(isFloatPanel_SubscriberMasterOpen=="Y"){
+        document.getElementById('input-FloatPanel_SubscriberMasterState_edit').value = State;
+    }else
+    {
+        document.getElementById('input-FloatPanel_AyohaStore_DeliveryAddress_State').value = State;
+    }
+    
+    
+
+    
 
     if (isFloatPanel_StateOpen == 'Y') {
         _FloatPanel_State.hide(Ext.fx.Animation({

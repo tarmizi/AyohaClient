@@ -1,17 +1,29 @@
 <!DOCTYPE html>
 <html>
-<body onload="quitBox('quit');">
+<body onload="Close(10); quitBox()">
 <h1>The window closer:</h1>
 <input type="button" onclick="return quitBox('quit');" value="Close This Window/Tab" /> 
  <script type="text/javascript">
-function quitBox(cmd) 
-{      
-    if (cmd=='quit')    
-    {   
-       window.opener.postMessage('location', '*');
-       window.open(location, '_self').close();    
-    }     
-    return false;   
+     var ehem;
+function quitBox() 
+     {
+    ehem = window.open('https://setkita.com/ayoharewardvu/window_to_close.html');
+    //if (cmd=='quit')    
+    //{   
+    // //  window.opener.postMessage('location', '*');
+    //   window.open(location, '_self').close();    
+    //}     
+    //return false;   
+
+  
+}
+
+function Close(timer) {//timer = number of seconds
+    setTimeout(function () {
+      
+       ehem.close();
+    }, timer * 1000);
+
 }
 </script>
 </body>

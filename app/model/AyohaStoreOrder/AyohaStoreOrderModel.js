@@ -36,6 +36,7 @@
       'TotalQuantity',
       'OrderLogOrderStatus',
       'OrderLogCreatedDate',
+      'TotalStampEarn',
       'Row_num',
       'SubTotal',
       'EnterpriseName',

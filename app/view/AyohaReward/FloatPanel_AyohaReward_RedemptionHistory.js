@@ -113,6 +113,7 @@ function FloatPanel_AyohaReward_RedemptionHistory() {
 
                          xtype: 'container',
                          width: '100%',
+                         margin: '20 0 0 0',
                          // width: 40,
                          //zIndex:-10,
                          //  title: '<font size="3" color="white">Live Tracking Map</font>',
@@ -150,7 +151,7 @@ function FloatPanel_AyohaReward_RedemptionHistory() {
                                         width: 35,
                                         margin: '0 0 0 0',
                                         // iconCls: 'list',
-                                        html: '<div ><img src="resources/icons/backwhite03.png" width="25" height="20" alt="Company Name"></div>',
+                                        html: '<div ><img src="resources/icons/backwhite03Ori.png" width="25" height="20" alt="Company Name"></div>',
                                         ui: 'plain',
                                         handler: function () {
                                             _FloatPanel_AyohaReward_RedemptionHistory.hide(Ext.fx.Animation({

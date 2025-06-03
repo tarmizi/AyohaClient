@@ -1,0 +1,23 @@
+{
+    "name": "Ayoha Reward",
+    "short_name": "Ayoha",
+    "start_url": "/ayohaclient/index.html",
+    "display": "standalone",
+    "background_color": "#c800ffc9",
+    "theme_color": "#ff00cc",
+    "orientation": "portrait",
+    "gcm_sender_id": "482941778795",
+    "icons": [
+      {
+        "src": "/ayohaclient/resources/icons/Logo/LogoOrangeSimplifed.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "/ayohaclient/resources/icons/Logo/LogoOrangeSimplifed.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ]
+  }
+  

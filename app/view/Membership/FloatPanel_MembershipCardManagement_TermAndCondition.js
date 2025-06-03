@@ -588,16 +588,16 @@ function MembershipCardAgree() {
                 swalFireHoorayMessage("Membership Process Successfully!,Please Check your Card in Membership Card List.");
                 FloatPanel_MembershipCardList_UpgradeHide();
                 FloatPanel_RewardStoreMembershipCardHide();
-          
+                Dashboard_MembershipCardLoadBySubscriberAccNoDashboardMainStore();
                 //  Load_FloatPanel_AyohaEnterpriseAccount_AyohaEnterprisesUserLoadByEnterpriseHQAccNoStore();
 
                 //  Load_FloatPanel_AyohaCardManagement_EditCard_StampCampaignEnterprisesLoadByStampCampaignCodeStore();
-
+               
                 if (isFloatPanel_AyohaStoreOpen == "Y") {
                     FloatPanel_AyohaStore_AyohaStoreSaleItemloadByEnterpriseAccNoItemCategoryStore("firstload");
                 }
                
-
+               
             }
             else {
 

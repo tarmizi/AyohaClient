@@ -33,7 +33,7 @@ function FloatPanel_YearOnly() {
          centered: false,
          //bottom: 64,
          bottom: 0,
-         zIndex: 150,
+         zIndex: 250,
          modal: true,
          hideOnMaskTap: false,
          layout: {
@@ -235,6 +235,17 @@ function FloatPanel_YearOnly() {
                         mode: 'SINGLE',
                         //disableSelection: false,
                         style: 'background-color:rgba(0, 0, 0, 0.0);border-radius: 0px 0px 0px 0px;',
+                        scrollable: {
+                            direction: 'vertical',
+                            indicators: {
+                                y: {
+                                    autoHide: true
+                                },
+                                x: {
+                                    autoHide: true
+                                }
+                            }
+                        },
 
                         //itemTpl: '<div class="myContent">' +
                         //   '<div><b>{ID}</b></div>' +
@@ -357,6 +368,9 @@ function FloatPanel_YearOnlyShow() {
     this.overlay.show();
     isFloatPanel_YearOnlyOpen = 'Y';
     AddRoutePages("FloatPanel_YearOnlyHide()");
+    if (isFloatPanel_AyohaStore_CheckOutOpen == 'Y') {
+        Ext.getCmp('LoadingFloatPanel_YearOnlyID').setZIndex(410);
+    }
 }
 
 

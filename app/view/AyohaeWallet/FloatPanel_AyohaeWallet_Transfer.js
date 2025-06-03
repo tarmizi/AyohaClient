@@ -16,7 +16,6 @@ var isFloatPanel_AyohaeWallet_TransferOpen = 'N';
 
 
 
-
 function FloatPanel_AyohaeWallet_Transfer() {
 
     _FloatPanel_AyohaeWallet_Transfer =
@@ -114,7 +113,7 @@ function FloatPanel_AyohaeWallet_Transfer() {
                                           height: 30,
                                           width: 35,
                                           // iconCls: 'list',
-                                          html: '<div ><img src="resources/icons/backwhite03.png" width="25" height="20" alt="Company Name"></div>',
+                                          html: '<div ><img src="resources/icons/backwhite03Ori.png" width="25" height="20" alt="Company Name"></div>',
                                           ui: 'plain',
                                           handler: function () {
                                               RemovePages("FloatPanel_AyohaeWallet_TransferHide()");
@@ -344,7 +343,7 @@ function FloatPanel_AyohaeWallet_Transfer() {
                                                   margin: '0 0 0 0',
                                                   width: '53%',
                                                   height: 38,
-                                                  html: '<input  type="tel" id="input-FloatPanel_AyohaeWallet_Transfer_SearchAyohaUser" style="width:100%;height: 38px;padding: 5px 5px;box-sizing: border-box;border: 1px solid #ccc;border-radius: 5px;background-color:#f0f2f5;font-size: 16px;color: black;font-weight:bold;text-align:left;margin:0px 0px 0px 0px;box-shadow: 0 0 5pt 2pt #D3D3D3;outline-width: 0px;"  placeholder="Mobile Phone No">',
+                                                  html: '<input  type="tel" id="input-FloatPanel_AyohaeWallet_Transfer_SearchAyohaUser" style="width:100%;height: 38px;padding: 5px 5px;box-sizing: border-box;border: 1px solid #ccc;border-radius: 5px;background-color:#f0f2f5;font-size: 16px;color: black;font-weight:bold;text-align:left;margin:0px 0px 0px 0px;box-shadow: 0 0 5pt 2pt #D3D3D3;outline-width: 0px;"  placeholder="Ayoha Account No">',
                                               },
                                                                                  {
 
@@ -810,7 +809,10 @@ function FloatPanel_AyohaeWallet_TransferShow() {
       }
     );
 
-    
+    if (isFloatPanel_AyohaStore_CheckOutOpen == 'Y') {
+        Ext.getCmp('LoadingFloatPanel_AyohaeWallet_TransferID').setZIndex(410);
+    }
+
 }
 
 
@@ -829,17 +831,22 @@ var globalFloatPanel_AyohaeWallet_Transfer_Email_Credit;
 var globalFloatPanel_AyohaeWallet_Transfer_Email_Debit;
 var globalFloatPanel_AyohaeWallet_Transfer_Name_Credit;
 var globalFloatPanel_AyohaeWallet_Transfer_Photo_Credit;
-
+var globalFloatPanel_AyohaeWallet_Transfer_PlayerID;
 function FloatPanel_AyohaeWallet_Transfer_SearchAyohaUserPhoneNo() {
-
+   
 
     var PhoneNo = document.getElementById('input-FloatPanel_AyohaeWallet_Transfer_SearchAyohaUser').value;
+ 
+   
     if (PhoneNo.length > 5) {
         LoadingPanelShow(getLoadingIcon(), 'Loading....');
         _DataStore_AyohaUserProfileLoadByPhoneNoStore.getProxy().setExtraParam('PhoneNo', PhoneNo);
         _DataStore_AyohaUserProfileLoadByPhoneNoStore.getProxy().setExtraParam('SubscriberAccNo', GetCurrAyohaUserAccountNo());
         _DataStore_AyohaUserProfileLoadByPhoneNoStore.getProxy().setUrl(GetAPIurl() + '/AyohaUserProfile/AyohaUserProfileLoadByPhoneNo');
         _DataStore_AyohaUserProfileLoadByPhoneNoStore.load();
+
+
+
 
 
         var task = Ext.create('Ext.util.DelayedTask', function () {
@@ -852,9 +859,11 @@ function FloatPanel_AyohaeWallet_Transfer_SearchAyohaUserPhoneNo() {
                 globalFloatPanel_AyohaeWallet_Transfer_Email_Debit = Store.get('Email_Debit');
                 globalFloatPanel_AyohaeWallet_Transfer_Name_Credit = Store.get('AccountName');
                 globalFloatPanel_AyohaeWallet_Transfer_Photo_Credit = Store.get('Photo');
+                globalFloatPanel_AyohaeWallet_Transfer_PlayerID = Store.get('PlayerID');
+                globalFloatPanel_AyohaeWallet_Transfer_AyohaeWalletTransactionTransactionType = Store.get('AyohaeWalletTransactionTransactionType');
                 var CurrPhoneNumber = localStorage.getItem('CurrPhoneNumber');
 
-                if (PhoneNo == CurrPhoneNumber) {
+                if (PhoneNo == GetCurrAyohaUserAccountNo()) {
                     swalFireWarning_NoPreventDefault("Cannot Transfer eWallet to same account!");
                 } else {
                     Ext.getCmp('tabpanelFloatPanel_AyohaeWallet_Transfer_MasterContent').setActiveItem(1);
@@ -905,9 +914,11 @@ function FloatPanel_AyohaeWallet_Transfer_SearchAyohaUserPhoneNo_FromRecentlyTra
                 globalFloatPanel_AyohaeWallet_Transfer_Email_Debit = Store.get('Email_Debit');
                 globalFloatPanel_AyohaeWallet_Transfer_Name_Credit = Store.get('AccountName');
                 globalFloatPanel_AyohaeWallet_Transfer_Photo_Credit = Store.get('Photo');
+                globalFloatPanel_AyohaeWallet_Transfer_PlayerID = Store.get('PlayerID');
+                
                 var CurrPhoneNumber = localStorage.getItem('CurrPhoneNumber');
 
-                if (PhoneNo == CurrPhoneNumber) {
+                if (PhoneNo  == GetCurrAyohaUserAccountNo()) {
                     swalFireWarning_NoPreventDefault("Cannot Transfer eWallet to same account!");
                 } else {
                     Ext.getCmp('tabpanelFloatPanel_AyohaeWallet_Transfer_MasterContent').setActiveItem(1);
@@ -968,6 +979,7 @@ function FloatPanel_AyohaeWallet_Transfer_TransferNow_Validate() {
 
 
 function FloatPanel_AyohaeWallet_Transfer_TransferNow() {
+    //alert(globalFloatPanel_AyohaeWallet_Transfer_AyohaeWalletTransactionTransactionType)
     var TransferNote = document.getElementById('input-FloatPanel_AyohaeWallet_Transfer_TransferNote').value;
     var TransactionAmount_Credits = parseFloat(document.getElementById('input-FloatPanel_AyohaeWallet_Transfer_AmountTransfer').value);
     if (TransferNote) {
@@ -997,8 +1009,14 @@ function FloatPanel_AyohaeWallet_Transfer_TransferNow() {
             "TransactionNote_Debit": TransferNote,
             "CreditDebitType_Debit": "Debit",
             "CustomerAccNo_Debit": globalFloatPanel_AyohaeWallet_Transfer_eWalletAccNo_Credit,
-            "Email_Debit": globalFloatPanel_AyohaeWallet_Transfer_Email_Debit
+            // check ni email debit dgn player ID debit tak boleh kosong bila transfer to merchant 11/1/2024
+            "Email_Debit": globalFloatPanel_AyohaeWallet_Transfer_Email_Debit,
+            "PlayerID_Credit": globalFloatPanel_AyohaeWallet_Transfer_PlayerID,
+
+            "AyohaeWalletTransactionTransactionType":globalFloatPanel_AyohaeWallet_Transfer_AyohaeWalletTransactionTransactionType
         };
+
+        console.log(objn)
         var _value = Ext.Ajax.request({
 
             type: "POST",
@@ -1015,18 +1033,36 @@ function FloatPanel_AyohaeWallet_Transfer_TransferNow() {
 
                 //console.log(result.responseText);
 
-
+                
                 data = Ext.decode(result.responseText.trim());
-
+               
                 if (data.success == "true") {
                     FloatPanel_AyohaeWallet_TransferHide();
                     Dashboard_LoadAyohaEwallet();
                    
-                 //   swalFireDynamicIconWithMessage("resources/icons/eWalletTransferSuccess.gif", "eWallet Transfer has been process successfully!", "black", "#9932cc");
+                    swalFireDynamicIconWithMessage("resources/icons/eWalletTransferSuccess.gif", "Ayoha eWallet Amount <b>RM" + TransactionAmount_Credits.toFixed(2) + "</b> has been transferred to  <b>" + globalFloatPanel_AyohaeWallet_Transfer_Name_Credit + "</b> successfully!", "black", "#9932cc");
                    
                     FloatPanel_AyohaeWallet_AyohaeWalletTransactionLoadByeWalletAccNoLatestTransactionsStore();
                   
                     LoadingPanelHide();
+                    return
+                    //var task = Ext.create('Ext.util.DelayedTask', function () {
+                    //FloatPanel_AyohaStore_AyohaPointCollectedAnim_startCounter();
+
+                    //});
+                    //task.delay(1000);
+                }
+                if (data.success == "false-Email") {
+                    FloatPanel_AyohaeWallet_TransferHide();
+                    Dashboard_LoadAyohaEwallet();
+
+                  //  swalFireDynamicIconWithMessage("resources/icons/eWalletTransferSuccess.gif", "eWallet Transfer has been process successfully-Notification Email Failed!", "black", "#9932cc");
+                    swalFireDynamicIconWithMessage("resources/icons/eWalletTransferSuccess.gif", "Ayoha eWallet Amount <b>RM" + TransactionAmount_Credits.toFixed(2) + "</b> has been transferred to  <b>" + globalFloatPanel_AyohaeWallet_Transfer_Name_Credit + "</b> successfully!-->BUT,Notification Email Failed!", "black", "#9932cc");
+
+                    FloatPanel_AyohaeWallet_AyohaeWalletTransactionLoadByeWalletAccNoLatestTransactionsStore();
+
+                    LoadingPanelHide();
+                    return
                     //var task = Ext.create('Ext.util.DelayedTask', function () {
                     //FloatPanel_AyohaStore_AyohaPointCollectedAnim_startCounter();
 
@@ -1035,7 +1071,7 @@ function FloatPanel_AyohaeWallet_Transfer_TransferNow() {
                 }
                 else {
 
-                    swalFireFail("Fail!");
+                    swalFireFail("Fail Transfer!--->" + data.message +"||"+result.responseText.trim());
                     Ext.Viewport.unmask();
                     LoadingPanelHide();
                 }
@@ -1045,7 +1081,7 @@ function FloatPanel_AyohaeWallet_Transfer_TransferNow() {
             },
 
             failure: function (result, request) {
-                swalFireFail("Fail!");
+                swalFireFail("Fail Transfer !!");
                 Ext.Viewport.unmask();
                 LoadingPanelHide();
             }

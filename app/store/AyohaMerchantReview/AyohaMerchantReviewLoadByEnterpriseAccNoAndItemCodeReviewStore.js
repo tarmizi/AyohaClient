@@ -26,3 +26,33 @@ var _DataStore_AyohaMerchantReviewLoadByEnterpriseAccNoAndItemCodeReviewStore = 
     //autoLoad: true
 
 });
+
+
+
+
+
+
+var _DataStore_AyohaMerchantReviewLoadByEnterpriseAccNoAndItemCodeReviewMembershipCardSaleStore = Ext.create('Ext.data.Store', {
+
+    model: 'ianMizi.model.AyohaMerchantReview.AyohaMerchantReviewModel',
+    id: '_AyohaMerchantReviewLoadByEnterpriseAccNoAndItemCodeReviewMembershipCardSaleStore',
+    proxy: {
+        type: 'ajax',
+        url: GetAPIurl() + '/AyohaMerchantReview/AyohaMerchantReviewLoadByEnterpriseAccNoAndItemCodeReviewMembershipCardSale',
+        actionMethods: {
+            read: 'POST'
+        },
+        reader: {
+            type: 'json',
+            rootProperty: 'results',
+            totalProperty: 'total',
+            successProperty: 'success',
+            messageProperty: 'message'
+        }
+    },
+
+
+
+    //autoLoad: true
+
+});

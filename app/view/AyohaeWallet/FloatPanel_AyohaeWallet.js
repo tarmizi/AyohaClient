@@ -73,6 +73,8 @@ function FloatPanel_AyohaeWallet() {
                              }));
                              isFloatPanel_AyohaeWalletOpen = 'N';
                              RemovePages("FloatPanel_AyohaeWalletHide()");
+                             clearInterval(CheckPaymentGatewayTransaction_timer);
+                             no = 0;
                          } if (e.direction == "right") {
                              _FloatPanel_AyohaeWallet.hide(Ext.fx.Animation({
                                  type: 'slideOut',
@@ -83,6 +85,8 @@ function FloatPanel_AyohaeWallet() {
                              }));
                              isFloatPanel_AyohaeWalletOpen = 'N';
                              RemovePages("FloatPanel_AyohaeWalletHide()");
+                             clearInterval(CheckPaymentGatewayTransaction_timer);
+                             no = 0;
                          }
                         
                      }
@@ -114,7 +118,7 @@ function FloatPanel_AyohaeWallet() {
                                           height: 30,
                                           width: 35,
                                           // iconCls: 'list',
-                                          html: '<div ><img src="resources/icons/backwhite03.png" width="25" height="20" alt="Company Name"></div>',
+                                          html: '<div ><img src="resources/icons/backwhite03Ori.png" width="25" height="20" alt="Company Name"></div>',
                                           ui: 'plain',
                                           handler: function () {
                                               RemovePages("FloatPanel_AyohaeWalletHide()");
@@ -126,6 +130,8 @@ function FloatPanel_AyohaeWallet() {
 
                                               }));
                                               isFloatPanel_AyohaeWalletOpen = 'N';
+                                              clearInterval(CheckPaymentGatewayTransaction_timer);
+                                              no = 0;
                                               FloatPanel_RewardStoreHide();
 
                                           }
@@ -136,7 +142,7 @@ function FloatPanel_AyohaeWallet() {
                                       },
                                         {
                                             margin:'10 0 0 0',
-                                            html: '<div style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;float:right;margin:-2px 0px 0px 0px;background-color:transparent;color:white">eWallet Setting</div>'
+                                            html: '<div id="FloatPanel_AyohaeWallet_eWalletSetting" style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;float:right;margin:-2px 0px 0px 0px;background-color:transparent;color:white">eWallet Setting</div>'
                                         },
                                      
                                            {
@@ -208,11 +214,77 @@ function FloatPanel_AyohaeWallet() {
                                  html: '<div style="font-family:Arial, sans-serif;font-size:38px;font-weight:bold;float:left;margin:-7px 0px 0px 0px;background-color:transparent;color:white;padding:0px 25px;">RM</div>'
                              },
                              {
-                                 width: 240,
+                                 //width: 240,
                                  //height: 38,
                                  id: 'htmlFloatPanel_AyohaeWalletHeader_AyohaeWalletTxt',
                                  html: '<div style="font-family:Arial, sans-serif;font-size:38px;font-weight:bold;float:left;margin:-7px 0px 0px 0px;background-color:transparent;color:white;padding:0px 25px;">00.00</div>'
-                             }
+                             },
+                                {
+                                    xtype: 'spacer'
+                                },
+                                {
+                                    xtype: 'container',
+                                    width: 90,
+                                    margin: '0 0 0 -10',
+                                    id: 'containerFloatPanel_AyohaeWallet_CashOut',
+                                    name: 'namecontainerFloatPanel_AyohaeWallet_CashOut',
+                                    height: 30,
+                                    layout: {
+                                        type: 'hbox',
+                                        pack: 'center',
+                                        align: 'center',
+                                    },
+                                    //  style: 'background-color: white;border-left: 1px solid #D0D3D4;border-right: 1px solid #D0D3D4;border-bottom: 1px solid #D0D3D4;border-top: 1px solid #D0D3D4;box-shadow: 5px 10px 18px #888888;border-radius: 10px 10px 10px 10px;',
+                                    items: [
+
+                                        {
+                                            xtype: 'container',
+                                            width: '100%',
+                                            height: 30,
+                                            margin: '0 0 0 0',
+                                            style: 'background-color: white;border-left: 1px solid #D0D3D4;border-right: 1px solid #D0D3D4;border-bottom: 1px solid #D0D3D4;border-top: 1px solid #D0D3D4;border-radius: 15px 15px 15px 15px;',
+                                            // style: 'background-color: white;border-left: 1px solid #D0D3D4;border-right: 1px solid #D0D3D4;border-bottom: 1px solid #D0D3D4;border-top: 1px solid #D0D3D4;box-shadow: 5px 10px 18px #888888;border-radius: 10px 10px 10px 10px;',
+                                            // style: 'border-right:0.1px solid #ECECEC;border-left:0.1px solid #ECECEC;border-bottom:0.1px solid #ECECEC;border-top:0.1px solid #ECECEC;background-color: white;border-radius: 10px 10px 10px 10px;',
+                                            layout: {
+                                                type: 'hbox',
+                                                pack: 'center',
+                                                align: 'center',
+                                            },
+                                            items: [
+                                                 {
+                                                     xtype: 'panel',
+                                                     width: 8
+                                                 },
+                                        {
+                                            html: '<div style="font-family:Arial, sans-serif;font-size:11px;font-weight:normal;float:left;margin:-2px 0px 0px 0px;background-color:transparent;color:black">Cash Out</div>'
+                                        },
+                                        {
+                                            xtype: 'spacer'
+                                        },
+                                                  {
+                                                      height: 22,
+                                                      width: 22,
+
+
+                                                      //badgeText: "2",
+                                                      html: '<img src="resources/icons/cashout.png" width="18" height="18" alt="Company Name">',
+                                                  },
+                                                   {
+                                                       xtype: 'panel',
+                                                       width: 6
+                                                   },
+
+
+                                            ]
+                                        },
+
+                                    ]
+                                },
+                                 {
+                                     xtype: 'spacer',
+                                     width: 17
+                                 },
+
                          ]
                      }
                       
@@ -261,6 +333,8 @@ function FloatPanel_AyohaeWallet() {
                        xtype: 'container',
                        width: '18%',
                        margin: '-10 0 0 0',
+                       id: 'containerFloatPanel_AyohaeWallet_TopUp',
+                       name: 'namecontainerFloatPanel_AyohaeWallet_TopUp',
                        height: 100,
                        layout: {
                            type: 'vbox',
@@ -692,15 +766,35 @@ function FloatPanel_AyohaeWallet() {
                                             }
                                         },
                                        
-                                        itemTpl: '<div onclick="FloatPanel_AyohaeWallet_TransactionHistory_AyohaeWalletTransactionStaging(' + "'" + '{CreatedDate}' + "'" + ',' + "'" + '{AccountName}' + "'" + ',' + "'" + '{UserProfileImg}' + "'" + ',' + "'" + '{PhoneNo}' + "'" + ',' + "'" + '{TransactionNote}' + "'" + ',' + "'" + '{TransactionAmount}' + "'" + ',' + "'" + '{TransactionType}' + "'" + ',' + "'" + '{MembershipCardCode}' + "'" + ',' + "'" + '{OrderNo}' + "'" + ',' + "'" + '{ItemCartCode}' + "'" + ',' + "'" + '{FullAccountName}' + "'" + ',' + "'" + '{TransactionReferenceNo}' + "'" + ',{ID})"  class="myContent" style="background-color:white;width:106%;height:70px;">' +
+                                        itemTpl: '<div onclick="FloatPanel_AyohaeWallet_TransactionHistory_AyohaeWalletTransactionStaging({TotalStampEarn},' + "'" + '{CreatedDate}' + "'" + ',' + "'" + '{AccountName}' + "'" + ',' + "'" + '{UserProfileImg}' + "'" + ',' + "'" + '{PhoneNo}' + "'" + ',' + "'" + '{TransactionNote}' + "'" + ',' + "'" + '{TransactionAmount}' + "'" + ',' + "'" + '{TransactionType}' + "'" + ',' + "'" + '{MembershipCardCode}' + "'" + ',' + "'" + '{OrderNo}' + "'" + ',' + "'" + '{ItemCartCode}' + "'" + ',' + "'" + '{FullAccountName}' + "'" + ',' + "'" + '{TransactionReferenceNo}' + "'" + ',{ID})"  class="myContent" style="background-color:white;width:106%;height:70px;">' +
 
 
-                                         '<table onclick="FloatPanel_AyohaeWallet_TransactionHistory_AyohaeWalletTransactionStaging(' + "'" + '{CreatedDate}' + "'" + ',' + "'" + '{AccountName}' + "'" + ',' + "'" + '{UserProfileImg}' + "'" + ',' + "'" + '{PhoneNo}' + "'" + ',' + "'" + '{TransactionNote}' + "'" + ',' + "'" + '{TransactionAmount}' + "'" + ',' + "'" + '{TransactionType}' + "'" + ',' + "'" + '{MembershipCardCode}' + "'" + ',' + "'" + '{OrderNo}' + "'" + ',' + "'" + '{ItemCartCode}' + "'" + ',' + "'" + '{FullAccountName}' + "'" + ',' + "'" + '{TransactionReferenceNo}' + "'" + ',{ID})"  style="border-collapse:collapse;border-spacing:0;width:106%;background-color:white;margin:-10px 0px 0px -18px;height:80px;"><tr><td style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:0px 5px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:20%;vertical-align:center"><div style="border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none white;border-radius: 50px;width:60px;height:60px;color:white;vertical-align: bottom; text-align:center;font-family: Lucida Console, Courier, monospace;font-size: 35px;background-image: url({AccountProfileImg}); background-size: 100% 100%;"></div></td><td style="font-family:Arial, sans-serif;font-size:14px;font-weight:bold;padding:0px 0px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:80%;vertical-align:center">{AccountName}<br><font style="font-family:Arial, sans-serif;font-size:10px;font-weight:normal;">{isSpentOrIncome} - {CreatedDate}</font></td></tr></table><br>'
-                                         + '<div style="width:96%;height:20px;margin:-68px 0px 0px 0px;color:black;vertical-align: top; text-align:right;font-family:Arial, sans-serif;font-size: 14px;font-weight:bold;">{ModifiedTransactionAmount}</div>'
-                                             + '</div>',
+                                        //  '<table onclick="FloatPanel_AyohaeWallet_TransactionHistory_AyohaeWalletTransactionStaging({TotalStampEarn},' + "'" + '{CreatedDate}' + "'" + ',' + "'" + '{AccountName}' + "'" + ',' + "'" + '{UserProfileImg}' + "'" + ',' + "'" + '{PhoneNo}' + "'" + ',' + "'" + '{TransactionNote}' + "'" + ',' + "'" + '{TransactionAmount}' + "'" + ',' + "'" + '{TransactionType}' + "'" + ',' + "'" + '{MembershipCardCode}' + "'" + ',' + "'" + '{OrderNo}' + "'" + ',' + "'" + '{ItemCartCode}' + "'" + ',' + "'" + '{FullAccountName}' + "'" + ',' + "'" + '{TransactionReferenceNo}' + "'" + ',{ID})"  style="border-collapse:collapse;border-spacing:0;width:106%;background-color:white;margin:-10px 0px 0px -18px;height:80px;"><tr><td style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:0px 5px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:20%;vertical-align:center"><div style="border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none white;border-radius: 50px;width:60px;height:60px;color:white;vertical-align: bottom; text-align:center;font-family: Lucida Console, Courier, monospace;font-size: 35px;background-image: url({AccountProfileImg}); background-size: 100% 100%;"></div></td><td style="font-family:Arial, sans-serif;font-size:14px;font-weight:bold;padding:0px 0px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:80%;vertical-align:center">{ModifiedFullAccountName}<br><font style="font-family:Arial, sans-serif;font-size:10px;font-weight:normal;">{isSpentOrIncome} - {CreatedDate}</font></td></tr></table><br>'
+                                        //  + '<div style="width:96%;height:20px;margin:-68px 0px 0px 0px;color:black;vertical-align: top; text-align:right;font-family:Arial, sans-serif;font-size: 14px;font-weight:bold;">{ModifiedTransactionAmount}</div>'
+                                        //      + '</div>',
 
+
+
+
+                                             '<table  style="border-collapse:collapse;border-spacing:0;width:106%;background-color:white;margin:-10px 0px 0px -18px;height:80px;"><tr><td style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:0px 5px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:20%;vertical-align:center"><div style="border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none white;border-radius: 50px;width:60px;height:60px;color:white;vertical-align: bottom; text-align:center;font-family: Lucida Console, Courier, monospace;font-size: 35px;background-image: url({AccountProfileImg}); background-size: 100% 100%;"></div></td><td style="font-family:Arial, sans-serif;font-size:14px;font-weight:bold;padding:0px 0px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:80%;vertical-align:center">{ModifiedFullAccountName}<br><font style="font-family:Arial, sans-serif;font-size:10px;font-weight:normal;">{isSpentOrIncome} - {CreatedDate}</font></td></tr></table><br>'
+                                             + '<div style="width:96%;height:20px;margin:-68px 0px 0px 0px;color:black;vertical-align: top; text-align:right;font-family:Arial, sans-serif;font-size: 14px;font-weight:bold;">{ModifiedTransactionAmount}</div>'
+                                                 + '</div>',
 
                                         //height: '100%',
+
+
+
+                                       // itemTpl: '<div onclick="FloatPanel_AyohaeWallet_TransactionHistory_AyohaeWalletTransactionStaging(' + "'" + '{TransactionReferenceNo}' + "'" + ',' + "'" + '{CreatedDate}' + "'" + ',' + "'" + '{AccountName}' + "'" + ',' + "'" + '{UserProfileImg}' + "'" + ',' + "'" + '{PhoneNo}' + "'" + ',' + "'" + '{TransactionNote}' + "'" + ',' + "'" + '{TransactionAmount}' + "'" + ',' + "'" + '{TransactionType}' + "'" + ',' + "'" + '{MembershipCardCode}' + "'" + ',' + "'" + '{OrderNo}' + "'" + ',' + "'" + '{ItemCartCode}' + "'" + ',' + "'" + '{FullAccountName}' + "'" + ',' + "'" + '{OrderNo}' + "'" + ',{ID})"  class="myContent" style="background-color:white;width:106%;height:70px;">' +
+
+
+                                       //'<table onclick="FloatPanel_AyohaeWallet_TransactionHistory_AyohaeWalletTransactionStaging(' + "'" + '{TransactionReferenceNo}' + "'" + ',' + "'" + '{CreatedDate}' + "'" + ',' + "'" + '{AccountName}' + "'" + ',' + "'" + '{UserProfileImg}' + "'" + ',' + "'" + '{PhoneNo}' + "'" + ',' + "'" + '{TransactionNote}' + "'" + ',' + "'" + '{TransactionAmount}' + "'" + ',' + "'" + '{TransactionType}' + "'" + ',' + "'" + '{MembershipCardCode}' + "'" + ',' + "'" + '{OrderNo}' + "'" + ',' + "'" + '{ItemCartCode}' + "'" + ',' + "'" + '{FullAccountName}' + "'" + ',' + "'" + '{OrderNo}' + "'" + ',{ID})"  style="border-collapse:collapse;border-spacing:0;width:106%;background-color:white;margin:-10px 0px 0px -18px;height:80px;"><tr><td style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:0px 5px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:20%;vertical-align:center"><div style="border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none white;border-radius: 10px;width:60px;height:60px;color:white;vertical-align: bottom; text-align:center;font-family: Lucida Console, Courier, monospace;font-size: 35px;background-image: url({AccountProfileImg}); background-size: 100% 100%;"></div></td><td style="font-family:Arial, sans-serif;font-size:14px;font-weight:bold;padding:0px 0px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:80%;vertical-align:center">{AccountName}<br><font style="font-family:Arial, sans-serif;font-size:10px;font-weight:bold;">{FullAccountName}</font><br><font style="font-family:Arial, sans-serif;font-size:10px;font-weight:normal;">{isSpentOrIncome} - {CreatedDate}</font></td></tr></table><br>'
+                                       //+ '<div style="width:96%;height:20px;margin:-68px 0px 0px 0px;color:black;vertical-align: top; text-align:right;font-family:Arial, sans-serif;font-size: 14px;font-weight:bold;">{ModifiedTransactionAmount}</div>'
+                                       //    + '</div>',
+
+
+                                       
+
+                                        emptyText: '<div  style="background-color:transparent;width:100%;height100%;">No Transaction!</div>',
 
                                         emptyText: '<div  style="background-color:transparent;width:100%;height100%;">No Transaction!</div>',
 
@@ -750,9 +844,24 @@ function FloatPanel_AyohaeWalletShow() {
     isFloatPanel_AyohaeWalletOpen = 'Y';
     floatPanel_AyohaeWallet_setHeigtFloatPanel_AyohaeWallet_TransactionListID();
     FloatPanel_AyohaeWallet_AyohaeWalletTransactionLoadByeWalletAccNoLatestTransactionsStore();
+
+    if (isFloatPanel_AyohaStore_CheckOutOpen == 'Y') {
+        Ext.getCmp('LoadingFloatPanel_AyohaeWalletID').setZIndex(400);
+    }
+
     //   document.getElementById("input-FloatPanel_AyohaeWallet_SearchTxt").addEventListener("keyup", SearchBusinessTypeListOnKeyUp);
     // _DataStore_BusinessTypeList = Ext.StoreMgr.get('BusinessTypeLoadStore').load();
     Ext.getCmp('htmlFloatPanel_AyohaeWalletHeader_AyohaeWalletTxt').setHtml('<div class="odometer" style="font-family:Arial, sans-serif;font-size:38px;font-weight:bold;float:left;margin:-7px 0px 0px 0px;background-color:transparent;color:white;padding:0px 25px;">' + globalDashboardeWalletCurrentBalance + '</div>');
+
+
+    var containerViewnamecontainerFloatPanel_AyohaeWallet_CashOut = Ext.ComponentQuery.query('container[name=namecontainerFloatPanel_AyohaeWallet_CashOut]')[0];
+    var containerViewElnamecontainerFloatPanel_AyohaeWallet_CashOut = containerViewnamecontainerFloatPanel_AyohaeWallet_CashOut.element;
+    containerViewElnamecontainerFloatPanel_AyohaeWallet_CashOut.on('tap',
+      function (event, node, options, eOpts) {
+          FloatPanel_AyohaeWallet_CashOutShow();
+      }
+    );
+
 
 
     var containerViewnamecontainerFloatPanel_AyohaeWallet_Transfer = Ext.ComponentQuery.query('container[name=namecontainerFloatPanel_AyohaeWallet_Transfer]')[0];
@@ -768,17 +877,34 @@ function FloatPanel_AyohaeWalletShow() {
     var containerViewElnamecontainerFloatPanel_AyohaeWallet_ScanAndPay = containerViewnamecontainerFloatPanel_AyohaeWallet_ScanAndPay.element;
     containerViewElnamecontainerFloatPanel_AyohaeWallet_ScanAndPay.on('tap',
       function (event, node, options, eOpts) {
-          //FloatPanel_AyohaeWallet_ScanAndPayShow();
+         
           FloatPanel_AyohaeWallet_ScanAndPay_UpgradeShow(); 
           Ext.getCmp('mainView').setHidden(true);
           FloatPanel_AyohaeWalletHide();
-          // document.getElementsByTagName("BODY")[0].setAttribute('style', 'background-color: transparent');
-          // FloatPanel_AyohaeWallet_IconHide();
-          window.QRScanner.prepare(onDone_ScanAndPay);
+         
+
+          //comment on 3/11/2022
+         // window.QRScanner.prepare(onDone_ScanAndPay);
       }
     );
     
     
+
+    var containerViewnamecontainerFloatPanel_AyohaeWallet_TopUp = Ext.ComponentQuery.query('container[name=namecontainerFloatPanel_AyohaeWallet_TopUp]')[0];
+    var containerViewElnamecontainerFloatPanel_AyohaeWallet_TopUp = containerViewnamecontainerFloatPanel_AyohaeWallet_TopUp.element;
+    containerViewElnamecontainerFloatPanel_AyohaeWallet_TopUp.on('tap',
+      function (event, node, options, eOpts) {
+          FloatPanel_AyohaeWallet_TopUp();
+        //  FloatPanel_AyohaeWallet_getBillTransaction();
+      }
+    );
+
+
+    
+
+
+
+
     var containerViewnamecontainerFloatPanel_AyohaeWallet_TransactionHistory = Ext.ComponentQuery.query('container[name=namecontainerFloatPanel_AyohaeWallet_TransactionHistory]')[0];
     var containerViewElnamecontainerFloatPanel_AyohaeWallet_TransactionHistory = containerViewnamecontainerFloatPanel_AyohaeWallet_TransactionHistory.element;
     containerViewElnamecontainerFloatPanel_AyohaeWallet_TransactionHistory.on('tap',
@@ -798,6 +924,8 @@ function FloatPanel_AyohaeWalletShow() {
         FloatPanel_AyohaeWalletHide();
     } 
 
+
+ 
    
   
 }
@@ -839,7 +967,7 @@ function displayContents_ScanAndPay(err, text) {
 
 
         var audio = new Audio();
-        audio.src = 'http://42.1.63.57/AyohaSoundExternal/store-scanner-beep.mp3';
+        audio.src = 'https://setkita.com/AyohaSoundExternal/store-scanner-beep.mp3';
         audio.play();
 
 
@@ -870,6 +998,8 @@ function displayContents_ScanAndPay(err, text) {
 function FloatPanel_AyohaeWalletHide() {
     if (isFloatPanel_AyohaeWalletOpen == 'Y') {
         _FloatPanel_AyohaeWallet.hide(); isFloatPanel_AyohaeWalletOpen = 'N';
+        clearInterval(CheckPaymentGatewayTransaction_timer);
+        no = 0;
         RemovePages("FloatPanel_AyohaeWalletHide()");
         //  FloatPanel_RewardStoreHide();
     }
@@ -918,9 +1048,11 @@ function FloatPanel_AyohaeWallet_AyohaeWalletTransactionLoadByeWalletAccNoLatest
 
 
 
-function FloatPanel_AyohaeWallet_Transaction_StagingViewInvoice(ItemCartCode, MembershipCardCode, OrderNo, TransactionType, AccountName, UserProfileImg) {
+function FloatPanel_AyohaeWallet_Transaction_StagingViewInvoice(TotalStampEarn,ItemCartCode, MembershipCardCode, OrderNo, TransactionType, AccountName, UserProfileImg) {
+  
+ 
     if (TransactionType == 'AyohaStore_Payment') {
-        FloatPanel_AyohaStore_CheckOut_AyohaStoreOrderLoadByItemCartCodeAndMembershipCardCodeStore_WithOrderNo(ItemCartCode, MembershipCardCode, OrderNo, AccountName, UserProfileImg);
+        FloatPanel_AyohaStore_CheckOut_AyohaStoreOrderLoadByItemCartCodeAndMembershipCardCodeStore_WithOrderNo(TotalStampEarn,ItemCartCode, MembershipCardCode, OrderNo, AccountName, UserProfileImg);
         return;
 
     }
@@ -938,4 +1070,389 @@ function floatPanel_AyohaeWallet_setHeigtFloatPanel_AyohaeWallet_TransactionList
     var innerHight = parseInt(window.innerHeight) - 406;
     console.log(innerHight)
     Ext.getCmp('FloatPanel_AyohaeWallet_TransactionListID').setHeight(innerHight);
+}
+
+
+var billPaymentGateWayID_randomNo;
+//var billExternalID;
+var FloatPanel_AyohaeWallet_BillCode;
+var popUpExternalwindow;
+function FloatPanel_AyohaeWallet_TopUp() {
+    
+  
+    var modifiedAccountNo=GetCurrAyohaUserAccountNo().split('-');
+    billPaymentGateWayID_randomNo = GenerateRandomNo();
+   var billExternalID = modifiedAccountNo[2] + '-50528-0133376958-NoEnterprise-' + billPaymentGateWayID_randomNo;
+  
+    $.ajax({
+
+        url: "https://setkita.com/CRMOBILEAPI/PaymentGateway/PaymentGatewayCreateBill_eWalletTopUp?namBill=Ayoha Membership Bill&name=" + GetAyohaUserAccountNames() + "&hpNo=" + GetCurrentPhoneNumber() + " &billName=Ayoha Membership Fees&billDesc=Ayoha Membership Fees&billEmail=" + GetAyohaUserEmail() + "&billExternalID=" + billExternalID,
+      
+        success: function (result) {
+         
+            data = Ext.decode(JSON.stringify(result));
+            var json = data.success.replace("[", "").replace("]", "");
+            var obj = JSON.parse(json);
+            console.log(obj.BillCode);
+
+
+            var task = Ext.create('Ext.util.DelayedTask', function () {
+
+                popUpExternalwindow=window.open('https://dev.toyyibpay.com/' + obj.BillCode, '_system');
+                FloatPanel_AyohaeWallet_BillCode = obj.BillCode;
+                FloatPanel_AyohaeWallet_PaymentGateWayBillMasterInsert(obj.BillCode, "Ayoha_eWallet_TopUp", billExternalID);
+                FloatPanel_AyohaeWallet_CheckPaymentGatewayTransaction(billExternalID);
+                return false;
+
+               
+                
+         
+            });
+
+
+            task.delay(500);
+
+
+
+
+            //console.log('After character removed: ', newStr);
+            //var obj = JSON.parse(newStr);
+            //alert("--->" + obj);
+
+
+            // console.log(obj.billpaymentSettlement);
+
+        }
+    });
+
+       
+
+
+    //var task = Ext.create('Ext.util.DelayedTask', function () {
+    //    var objn = {
+    //        "namBill": "Ayoha Membership Bill",
+    //        "name": GetAyohaUserAccountNames(),
+    //        "hpNo": GetCurrentPhoneNumber(),
+    //        "billName": "Ayoha membesrhip Fee",
+    //        "billDesc": "Ayoha membesrhip Fee",
+    //        "billEmail": GetAyohaUserEmail(),
+            
+    //    };
+    //    console.log(objn);
+    //    var _value = Ext.Ajax.request({
+    //        type: "POST",
+    //        url: GetAPIurl() + '/PaymentGateway/PaymentGatewayCreateBill_eWalletTopUp',
+    //        dataType: "json",
+    //        data: JSON.stringify(objn),
+    //        headers: {
+    //            "Content-Type": "application/json; charset=utf-8"
+    //        },
+
+    //        success: function (result, request) {
+
+    //            //console.log(result.responseText);
+
+
+    //            data = Ext.decode(result.responseText.trim());
+               
+
+    //            var json = data.success.replace("[", "").replace("]", "");
+    //            var obj = JSON.parse(json);
+    //            console.log(obj.BillCode);
+                
+    //            window.open('https://dev.toyyibpay.com/' + obj.BillCode, '_system'); return false;
+    //            // Ext.Viewport.unmask();
+
+    //        },
+
+    //        failure: function (result, request) {
+
+    //            //Ext.Viewport.unmask();
+    //            swalFireFail("Send Failed!" + result.responseText.trim());
+    //        }
+
+    //    });
+    //});
+
+
+    //task.delay(500);
+}
+
+
+
+
+
+function FloatPanel_AyohaeWallet_PaymentGateWayBillMasterInsert(billCode, billName, billExternalIDs) {
+
+
+   
+
+
+    var task = Ext.create('Ext.util.DelayedTask', function () {
+        var objn = {
+            "billCode": billCode,
+            "billName": billName,
+            "SubscriberAccNo": GetCurrAyohaUserAccountNo(),
+            "EnterpriseAccNo": '50528-0133376958-NoEnterprise',
+            "billExternalReferenceNo": billExternalIDs,
+
+        };
+        console.log(objn);
+        var _value = Ext.Ajax.request({
+            type: "POST",
+            url: GetAPIurl() + '/PaymentGateWayBillTransaction/PaymentGateWayBillMasterInsert',
+            dataType: "json",
+            data: JSON.stringify(objn),
+            headers: {
+                "Content-Type": "application/json; charset=utf-8"
+            },
+
+            success: function (result, request) {
+
+              
+            },
+
+            failure: function (result, request) {
+
+                //Ext.Viewport.unmask();
+                swalFireFail("Failed!" + result.responseText.trim());
+            }
+
+        });
+    });
+
+
+    task.delay(500);
+}
+
+
+
+function FloatPanel_AyohaeWallet_getBillTransaction() {
+
+
+    $.ajax({
+                
+        url: "https://setkita.com/CRMOBILEAPI/PaymentGateway/PaymentGatewayGetBillTransaction?billCode=18y5pena&billpaymentStatus=1",
+        success: function (result) {
+           
+            data = Ext.decode(JSON.stringify(result));
+            var json = data.success.replace("[", "").replace("]", "");
+            var obj = JSON.parse(json);
+            console.log(obj.billName);
+            console.log(obj.billDescription);
+            console.log(obj.billTo);
+            console.log(obj.billEmail);
+            console.log(obj.billPhone);
+            console.log(obj.billStatus);
+            console.log(obj.billpaymentStatus);
+            console.log(obj.billpaymentChannel);
+            console.log(obj.billpaymentAmount);
+
+            console.log(obj.billpaymentInvoiceNo);
+            console.log(obj.billSplitPayment);
+            console.log(obj.billSplitPaymentArgs);
+            console.log(obj.billpaymentSettlement);
+            console.log(obj.billpaymentSettlementDate);
+            console.log(obj.SettlementReferenceNo);
+            console.log(obj.billPaymentDate);
+            console.log(obj.billExternalReferenceNo);
+      
+      
+          
+
+
+           
+            //console.log('After character removed: ', newStr);
+            //var obj = JSON.parse(newStr);
+            //alert("--->" + obj);
+
+          
+                       // console.log(obj.billpaymentSettlement);
+
+        }
+    });
+
+
+
+
+
+    //Ext.Ajax.request({
+
+       
+    //    url: 'https://42.1.63.57/CRMOBILEAPI/PaymentGateway/PaymentGatewayGetBillTransaction',
+    //    params: {
+    //        billCode: "4fvinckq",
+    //        billpaymentStatus: "1",
+    //    },
+    //    success: function (result, request) {
+          
+    //        alert(result.responseText);
+    //    },
+    //    failure: function (result, request) {
+    //        swalFireFail("Error-->!" + result.responseText)
+    //        //   LoadingCustomMsgShow('Error, Contact Admin!', '2');
+
+    //    }
+    //});
+
+    //var task = Ext.create('Ext.util.DelayedTask', function () {
+    //    var objn = {
+    //        "billCode": "4fvinckq",
+    //        "billpaymentStatus":"1"
+    //    };
+    //    console.log(objn);
+    //    var _value = Ext.Ajax.request({
+    //        type: "POST",
+    //        url: GetAPIurl() + '/PaymentGateway/PaymentGatewayGetBillTransaction',
+    //        //  dataType: "json",
+    //        dataType: 'text',
+    //        data: 'billCode="4fvinckq"&billpaymentStatus=""',
+    //       // data:({ billCode: "4fvinckq", billpaymentStatus:"" }),
+           
+    //       // data: JSON.stringify(objn),
+    //       // data: 'billCode="4fvinckq"&billpaymentStatus=""',
+    //        headers: {
+    //            //"Content-Type": "application/json; charset=utf-8"
+    //            "Content-Type": "application/x-www-form-urlencoded"
+                
+    //        },
+
+    //        success: function (result, request) {
+
+    //            //console.log(result.responseText);
+
+
+    //            data = Ext.decode(result.responseText.trim());
+
+
+    //            //var json = data.success.replace("[", "").replace("]", "");
+    //            //var obj = JSON.parse(json);
+    //            console.log(data.success);
+    //           // console.log(obj.billpaymentSettlement);
+
+    //           // window.open('https://dev.toyyibpay.com/' + obj.BillCode, '_system'); return false;
+    //            // Ext.Viewport.unmask();
+
+    //        },
+
+    //        failure: function (result, request) {
+
+    //            //Ext.Viewport.unmask();
+    //            swalFireFail("Send Failed!" + result.responseText.trim());
+    //        }
+
+    //    });
+    //});
+
+
+    //task.delay(500);
+}
+
+
+
+var CheckPaymentGatewayTransaction_timer;
+var no = 0;
+function FloatPanel_AyohaeWallet_CheckPaymentGatewayTransaction(billExternalID_ext) {
+
+   
+
+
+    CheckPaymentGatewayTransaction_timer = setInterval(function () {
+        no = no + 1;
+        if (no == 4) {
+           
+
+
+
+                var objn = {
+
+                    "eWalletAccNo": GetCurrAyohaUserAccountNo(),
+                    "TransactionReferenceNo": billExternalID_ext,
+                   
+                };
+                console.log(objn);
+                var _value = Ext.Ajax.request({
+
+                    type: "POST",
+
+                    url: GetAPIurl() + '/AyohaeWalletTransaction/AyohaeWalletTransaction_LoadBy_eWalletAccNo_TransactionReferenceNo',
+
+                    dataType: "json",
+                    data: JSON.stringify(objn),
+                    headers: {
+                        "Content-Type": "application/json; charset=utf-8"
+                    },
+
+                    success: function (result, request) {
+                        data = Ext.decode(result.responseText.trim());
+
+                        if (data.success == "true") {
+
+                            if (data.total > 0) {
+                              
+                               
+                                Dashboard_LoadAyohaEwallet();
+                                clearInterval(CheckPaymentGatewayTransaction_timer);
+                                no = 0;
+                                floatPanel_AyohaeWallet_setHeigtFloatPanel_AyohaeWallet_TransactionListID();
+                                FloatPanel_AyohaeWallet_AyohaeWalletTransactionLoadByeWalletAccNoLatestTransactionsStore();
+                                FloatPanel_AyohaStore_CheckOut_PlayAyohaPointSound();
+                                FloatPanel_AyohaStore_AyohaPointCollectedAnimShow();
+                                if (popUpExternalwindow)
+                                    popUpExternalwindow.close();                              
+                                    return
+                                //localStorage.setItem('AyohaVersion', data.results[0].AyohaVersion);
+                                //localStorage.setItem('AyohaUserGroupCode', data.results[0].AyohaUserGroupCode);
+                               
+                               
+                            }
+                            if (data.total <= 0) {
+                                console.log("No Data!");
+                                no = 0;
+                            }
+
+
+                        }
+                        else {
+                            
+                            swalFireLoginFailed("Reading Failed!" + result.responseText.trim());
+                           
+                        }
+
+
+                    },
+
+                    failure: function (result, request) {
+                       
+                        swalFireLoginFailed("Reading Failed!" + result.responseText.trim());
+
+                    }
+
+                });
+          
+
+
+
+
+
+            //var Externalvar_CheckPaymentGatewayTransaction = window.localStorage.getItem('Externalvar_CheckPaymentGatewayTransaction');
+            //alert("Externalvar_CheckPaymentGatewayTransactionxxxxx:" + Externalvar_CheckPaymentGatewayTransaction);
+            //if (Externalvar_CheckPaymentGatewayTransaction == "Done") {
+            //    alert("Done");
+
+            //    localStorage.setItem("Externalvar_CheckPaymentGatewayTransaction", "Idle");
+            //    clearInterval(x);
+            //    no = 0;
+            //    return
+            //}
+
+
+
+           
+
+
+        }
+        console.log(no);
+
+    }, 1000);
 }

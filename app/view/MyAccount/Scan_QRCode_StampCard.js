@@ -308,7 +308,10 @@ function Scan_QRCode_StampCard_Reload(strStampCampaignCode, EnterpriseAccNo, Sub
         }
 
         FloatPanel_AyohaCardManagement_StampSuccesAnimationShow();
-
+        FloatPanel_MembershipCardList_UpgradeHide();
+        FloatPanel_MembershipCardList_MyMembershipCardHide();
+        DashboardAyohaUserMainStore();
+        FloatPanel_AyohaStore_CheckOut_PlayAyohaPointSound();
        // Timer_CheckStampedStatus();
       
     });

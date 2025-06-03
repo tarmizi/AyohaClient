@@ -120,6 +120,7 @@ function FloatPanel_AyohaReward_ContestHistory() {
                                 xtype: 'container',
                                 width: '100%',
                                 docked: 'top',
+                                margin: '20 0 0 0',
                                 // width: 40,
 
                                 //  title: '<font size="3" color="white">Live Tracking Map</font>',

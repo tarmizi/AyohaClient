@@ -158,7 +158,7 @@ function FloatPanel_AdvertisementLinkModule() {
                                           },
                                           {
                                               margin: '0 0 0 0',
-                                              html: '<font size=2 color=white><b>Advertisement Linked Module</b></font>'
+                                              html: '<font size=2 color=white><b>Advertisement Linked Modules</b></font>'
                                           },
                                            {
                                                xtype: 'spacer',
@@ -275,6 +275,8 @@ function FloatPanel_AdvertisementLinkModule() {
                                 var ModuleCode = record.get('ID');
                                 var ModuleName = record.get('ModuleName');
                                 var ModuleDesc = record.get('Descriptions');
+
+
                                 FloatPanel_AdvertisementLinkModule_AdvertisementLinkModuleInsertUpdate(0, "Active", ModuleCode, ModuleName, ModuleDesc);
                             },
 
@@ -298,6 +300,8 @@ function FloatPanel_AdvertisementLinkModule() {
                                 var ModuleCode = record.get('ID');
                                 var ModuleName = record.get('ModuleName');
                                 var ModuleDesc = record.get('Descriptions');
+
+                               
                                 FloatPanel_AdvertisementLinkModule_AdvertisementLinkModuleInsertUpdate(0, "Active", ModuleCode, ModuleName, ModuleDesc);
 
 
@@ -367,7 +371,7 @@ function FloatPanel_AdvertisementLinkModuleHide() {
 
 function FloatPanel_AdvertisementLinkModule_AdvertisementLinkModuleInsertUpdate(ID, RowStatus, ModuleCode, ModuleName, ModuleDesc) {
 
-   
+    alert(ModuleName)
 
 
 
@@ -412,6 +416,7 @@ function FloatPanel_AdvertisementLinkModule_AdvertisementLinkModuleInsertUpdate(
 
                 FloatPanel_AdvertisementLinkModuleHide();
                 FloatPanel_AdvertisementLinkModule_AdvertisementLinkModuleloadByEnterpriseHQAccNoAdvertisementCodeStore();
+                alert(ModuleName)
 
             }
             else {
@@ -547,3 +552,5 @@ function buttonsHtmlDeleteAdvertisementLinkModule(ID) {
 
 
 }
+
+

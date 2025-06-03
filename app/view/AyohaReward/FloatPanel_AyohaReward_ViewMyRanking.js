@@ -117,6 +117,7 @@ function FloatPanel_AyohaReward_ViewMyRanking() {
 
                                 xtype: 'container',
                                 width: '100%',
+                                margin: '10 0 0 0',
                               //  docked: 'top',
                                 // width: 40,
 
@@ -147,7 +148,7 @@ function FloatPanel_AyohaReward_ViewMyRanking() {
                                                          height: 30,
                                                          width: 35,
                                                          // iconCls: 'list',
-                                                         html: '<div ><img src="resources/icons/backwhite03.png" width="25" height="20" alt="Company Name"></div>',
+                                                         html: '<div ><img src="resources/icons/backwhite03Ori.png" width="25" height="20" alt="Company Name"></div>',
                                                          ui: 'plain',
                                                          handler: function () {
                                                              // FloatPanel_AyohaReward_ViewMyRankingHide();

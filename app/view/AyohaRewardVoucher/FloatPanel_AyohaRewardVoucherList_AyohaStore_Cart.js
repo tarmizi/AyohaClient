@@ -616,7 +616,7 @@ function FloatPanel_AyohaRewardVoucherList_AyohaStore_CartShow() {
     globalFloatPanel_AyohaRewardVoucherList_AyohaStore_Cart_TotalAmountVoucher = 0;
     globalglobalFloatPanel_AyohaRewardVoucherList_AyohaStore_Cart_VoucherCode = "";
     arrglobalFloatPanel_AyohaRewardVoucherList_AyohaStore_Cart_VoucherCode.length = 0;
-   
+  // alert("xxxxxxxxx")
     FloatPanel_AyohaRewardVoucherList_AyohaStore_CartAdjustHeight();
     var containerViewnamecontainerFloatPanel_AyohaRewardVoucherList_AyohaStore_Cart_TotalVoucherAmount = Ext.ComponentQuery.query('container[name=namecontainerFloatPanel_AyohaRewardVoucherList_AyohaStore_Cart_TotalVoucherAmount]')[0];
     var containerViewElnamecontainerFloatPanel_AyohaRewardVoucherList_AyohaStore_Cart_TotalVoucherAmount = containerViewnamecontainerFloatPanel_AyohaRewardVoucherList_AyohaStore_Cart_TotalVoucherAmount.element;
@@ -801,7 +801,7 @@ function FloatPanel_AyohaRewardVoucherList_AyohaStore_Cart_UpdateVoucherStatus_B
 
 function FloatPanel_AyohaRewardVoucherList_AyohaStore_Cart_UpdateVoucherStatus() {
 
-
+//alert(globalFloatPanel_AyohaStore_CheckOut_OrderOption)
     LoadingPanelShow(getLoadingIcon(), 'Calculate....');
     //if (arrglobalFloatPanel_AyohaRewardVoucherList_AyohaStore_Cart_VoucherCode.length == 0) {
     //    swalFireWarning("You have not select any voucher!");
@@ -840,16 +840,19 @@ function FloatPanel_AyohaRewardVoucherList_AyohaStore_Cart_UpdateVoucherStatus()
             if (arrglobalFloatPanel_AyohaRewardVoucherList_AyohaStore_Cart_VoucherCode.length > 0) {
                 Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_VoucherDiscount').setHtml('<div style="font-family:Arial, sans-serif;font-size:11px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:left;color:black;">' + globalFloatPanel_AyohaRewardVoucherList_AyohaStore_Cart_TotalAmountVoucher.toFixed(2) + '</div>');
                
-                var result = (parseFloat(globalFloatPanel_AyohaStore_Cart_TotalSumPrice) + parseFloat(globalFloatPanel_AyohaStore_DeliveryChargeList_DeliveryCharge)) - parseFloat(globalFloatPanel_AyohaRewardVoucherList_AyohaStore_Cart_TotalAmountVoucher);
-                
-                //console.log(globalFloatPanel_AyohaStore_Cart_TotalSumPrice);
-                //console.log(globalFloatPanel_AyohaStore_DeliveryChargeList_DeliveryCharge);
-                //console.log(globalFloatPanel_AyohaRewardVoucherList_AyohaStore_Cart_TotalAmountVoucher);
-                //console.log(result)
+                var result = (parseFloat(globalFloatPanel_AyohaStore_Cart_TotalSumPrice) + parseFloat(globalFloatPanel_AyohaStore_DeliveryChargeList_DeliveryCharge)) - parseFloat(globalFloatPanel_AyohaRewardVoucherList_AyohaStore_Cart_TotalAmountVoucher);    
                 Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_GrandTotal').setHtml('<div style="font-family:Arial, sans-serif;font-size:22px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:left;color:black;">' + result.toFixed(2) + '</div>');
-                globalFloatPanel_AyohaStore_Cart_GrandTotal = result.toFixed(2);
+              //  globalFloatPanel_AyohaStore_Cart_GrandTotal = result.toFixed(2);
+                FloatPanel_AyohaStore_CheckOut_Calculate_GrandTotal();
+
+
                
             }
+
+
+
+
+
             LoadingPanelHide();
             FloatPanel_AyohaRewardVoucherList_AyohaStore_CartHide();
             return;

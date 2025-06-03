@@ -180,7 +180,8 @@ function FloatPanel_AyohaCardManagement_PreviewCard() {
                                                          height: 30,
                                                          width: 35,
                                                          // iconCls: 'list',
-                                                         html: '<div ><img src="resources/icons/backwhite03.png" width="25" height="20" alt="Company Name"></div>',
+                                                         html: '<div ><img src="resources/icons/backwhite03Ori.png" width="25" height="20" alt="Company Name"></div>',
+                                                        // html: '<div ><img src="resources/icons/backwhite03.png" width="25" height="20" alt="Company Name"></div>',
                                                          ui: 'plain',
                                                          handler: function () {
 
@@ -196,7 +197,8 @@ function FloatPanel_AyohaCardManagement_PreviewCard() {
                                                              clearInterval(BackgroungImgInterval);
                                                             // FloatPanel_AyohaCardManagement_AdvertisementButtonHide();
                                                              RemovePages("FloatPanel_AyohaCardManagement_PreviewCardHide()");
-                                                         }
+                                                        
+                                                            }
                                                      },
                                                     
                                                       {
@@ -2225,6 +2227,7 @@ function FloatPanel_AyohaCardManagement_PreviewCard() {
                                              html: '<img src="resources/icons/SaleThree.gif" width="150" height="150" alt="Company Name">',
                                              ui: 'plain',
                                              handler: function () {
+                                                
                                                  FloatPanel_PreviewAdvertisementShow_StampCard("FloatPanel_AyohaCardManagement_AdvertisementButton");
 
                                              }
@@ -2404,7 +2407,7 @@ function FloatPanel_AyohaCardManagement_PreviewCard_AyohaUserCardShow(StampedCam
     }
 
 
-    
+  
 
     Ext.getCmp('htmlMyFloatPanel_AyohaCardManagement_CampaignName_PreviewCard').setHtml('<font size=2 color=white><b>' + StampCampaignName + '</b></font>');
     globalStampCampaingName = StampCampaignName;
@@ -2565,14 +2568,21 @@ function AyohaUserStampCardLoadStampCardfromQrCodeStore(strStampCampaignCode, En
 
         Ext.getCmp('btnStampCard_FloatPanel_AyohaCardManagement_PreviewCard_CountStamp').setHtml('<font size=5 color=white><b>' + CountLoyaltyStamped + '/' + CountStampCardRowShow + '</b></font>');
 
-        globalStampCard_FloatPanel_AyohaCardManagement_PreviewCard_CurrentCountStamp = CountLoyaltyStamped;
+       // globalStampCard_FloatPanel_AyohaCardManagement_PreviewCard_CurrentCountStamp = CountLoyaltyStamped;
+       // globalStampCard_FloatPanel_AyohaCardManagement_PreviewCard_CurrentCountStampCardRowShow = CountStampCardRowShow;
+
+
+        var splitCountLoyaltyStamped=CountLoyaltyStamped.split("/");
+        globalStampCard_FloatPanel_AyohaCardManagement_PreviewCard_CurrentCountStamp = splitCountLoyaltyStamped[0];
         globalStampCard_FloatPanel_AyohaCardManagement_PreviewCard_CurrentCountStampCardRowShow = CountStampCardRowShow;
-
-
-
+    
+    
+       
+    //alert("CountLoyaltyStamped:"+globalStampCard_FloatPanel_AyohaCardManagement_PreviewCard_CurrentCountStamp)
+   // alert("CountStampCardRowShow:"+globalStampCard_FloatPanel_AyohaCardManagement_PreviewCard_CurrentCountStampCardRowShow)
        
 
-        if (CountLoyaltyStamped == CountStampCardRowShow) {
+        if (globalStampCard_FloatPanel_AyohaCardManagement_PreviewCard_CurrentCountStamp == globalStampCard_FloatPanel_AyohaCardManagement_PreviewCard_CurrentCountStampCardRowShow) {
             Ext.getCmp('btnQrCode_FloatPanel_AyohaCardManagement_PreviewCard').setHtml('<img src="resources/icons/ResetPurpleOne.png" width="25" height="25" alt="Company Name">');
             Ext.getCmp('htmlFloatPanel_AyohaCardManagement_PreviewCard_StampQrCode').setHtml('<font size=2 color=grey><b>Reset Card</b></font>');
         }
@@ -2608,7 +2618,7 @@ function AyohaUserStampCardLoadStampCardfromQrCodeStore(strStampCampaignCode, En
             var modelRecord = myStore.getAt(ii);
             var TextOne = modelRecord.get('TextOne');
             var TextTwo = modelRecord.get('TextTwo');
-            var StampContent = modelRecord.get('StampContent');
+            var StampContent = modelRecord.get('StampContent').replace("http://42.1.63.57/", "https://setkita.com/");
             var StampContentNote = modelRecord.get('StampContentNote');
             var StampedStatus = modelRecord.get('StampedStatus');
 
@@ -2757,18 +2767,23 @@ function Load_FloatPanel_AyohaCardManagement_PreviewCard_AyohaUserStampCardLoadB
 
 
     Ext.getCmp('btnStampCard_FloatPanel_AyohaCardManagement_PreviewCard_CountStamp').setHtml('<font size=5 color=white><b>' + CountLoyaltyStamped + '/' + CountStampCardRowShow + '</b></font>');
-    globalStampCard_FloatPanel_AyohaCardManagement_PreviewCard_CurrentCountStamp = CountLoyaltyStamped;
+   
+   
+   
+   
+   var splitCountLoyaltyStamped=CountLoyaltyStamped.split("/");
+    globalStampCard_FloatPanel_AyohaCardManagement_PreviewCard_CurrentCountStamp = splitCountLoyaltyStamped[0];
     globalStampCard_FloatPanel_AyohaCardManagement_PreviewCard_CurrentCountStampCardRowShow = CountStampCardRowShow;
 
 
    
+//alert("CountLoyaltyStamped:"+globalStampCard_FloatPanel_AyohaCardManagement_PreviewCard_CurrentCountStamp)
+//alert("CountStampCardRowShow:"+globalStampCard_FloatPanel_AyohaCardManagement_PreviewCard_CurrentCountStampCardRowShow)
 
 
 
 
-
-
-    if (CountLoyaltyStamped == CountStampCardRowShow) {
+    if (globalStampCard_FloatPanel_AyohaCardManagement_PreviewCard_CurrentCountStamp == globalStampCard_FloatPanel_AyohaCardManagement_PreviewCard_CurrentCountStampCardRowShow) {
         Ext.getCmp('btnQrCode_FloatPanel_AyohaCardManagement_PreviewCard').setHtml('<img src="resources/icons/ResetPurpleOne.png" width="25" height="25" alt="Company Name">');
         Ext.getCmp('htmlFloatPanel_AyohaCardManagement_PreviewCard_StampQrCode').setHtml('<font size=2 color=grey><b>Reset Card</b></font>');
     }
@@ -2794,6 +2809,10 @@ function Load_FloatPanel_AyohaCardManagement_PreviewCard_AyohaUserStampCardLoadB
     localStorage.setItem('EnterpriseHQAccNo', EnterpriseAccNo);
     localStorage.setItem('AyohaUserAccountNo', SubscriberAccNo)
 
+
+//alert(strStampCampaignCode)
+//alert(EnterpriseAccNo)
+//alert(SubscriberAccNo)
     Ext.getStore('AyohaUserStampCardLoadByStampCampaignCodeEnterpriseAccNoShowHideSubscriberAccNoStore').getProxy().setExtraParams({
         StampCampaignCode: strStampCampaignCode,
         EnterpriseAccNo: EnterpriseAccNo,
@@ -2817,12 +2836,21 @@ function Load_FloatPanel_AyohaCardManagement_PreviewCard_AyohaUserStampCardLoadB
         Ext.Viewport.setMasked(false);
 
        
-       
-        console.log(SubscriberAccNo);
-        console.log(strStampCampaignCode);
-        console.log(EnterpriseAccNo);
-
+      //  alert(count)
+   
         if (count <= 0) {
+            _FloatPanel_AyohaCardManagement_PreviewCard.hide(Ext.fx.Animation({
+                type: 'slideOut',
+                direction: 'left',
+                easing: 'cubic-bezier(.7,0,.7,1)',
+                duration: 250
+
+            }));
+            isFloatPanel_AyohaCardManagement_PreviewCardOpen = 'N';
+            clearInterval(BackgroungImgInterval);
+           // FloatPanel_AyohaCardManagement_AdvertisementButtonHide();
+            RemovePages("FloatPanel_AyohaCardManagement_PreviewCardHide()");
+       
             return;
         }
         var modelRecords = myStore.getAt(0);
@@ -2838,7 +2866,7 @@ function Load_FloatPanel_AyohaCardManagement_PreviewCard_AyohaUserStampCardLoadB
             var modelRecord = myStore.getAt(ii);
             var TextOne = modelRecord.get('TextOne');
             var TextTwo = modelRecord.get('TextTwo');
-            var StampContent = modelRecord.get('StampContent');
+            var StampContent = modelRecord.get('StampContent').replace("http://42.1.63.57/", "https://setkita.com/");
             var StampContentNote = modelRecord.get('StampContentNote');
             var StampedStatus = modelRecord.get('StampedStatus');
 
@@ -2854,7 +2882,9 @@ function Load_FloatPanel_AyohaCardManagement_PreviewCard_AyohaUserStampCardLoadB
             var x = TextOne;
             arrStampRewardNote.push(StampContentNote);
             console.log(No);
+            console.log(x);
             if (x != No) {
+                console.log('btnFloatPanel_AyohaCardManagement_PreviewCard' + No);
                 Ext.getCmp('btnFloatPanel_AyohaCardManagement_PreviewCard' + No).setHidden(false);
                 Ext.getCmp('btnFloatPanel_AyohaCardManagement_PreviewCard' + No).setHtml('<div style="border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid white;background: #85929E;border-radius: 50px;width:70px;height:70px;color:#566573;vertical-align: bottom; text-align:center;font-family: Lucida Console, Courier, monospace;font-size: 35px;" ><div style="margin:23px 0px 0px 0px">' + TextOne + '</div><br><div style="margin:-20px 0px 0px 0px"><font size=2>' + TextTwo + '</font></div></div>');
 
@@ -2971,6 +3001,8 @@ function Load_FloatPanel_AyohaCardManagement_PreviewCard_AyohaUserStampCardLoadB
 
 
 function Load_FloatPanel_AyohaCardManagement_PreviewCard_AdvertisementLinkModuleloadByEnterpriseHQAccNoModuleCodeStore(EnterpriseAccNo) {
+
+   
     Ext.getStore('AdvertisementLinkModuleloadByEnterpriseHQAccNoModuleCodeStore').getProxy().setExtraParams({
         EnterpriseHQAccNo: EnterpriseAccNo,
         ModuleCode:2,
@@ -2986,10 +3018,12 @@ function Load_FloatPanel_AyohaCardManagement_PreviewCard_AdvertisementLinkModule
         Ext.StoreMgr.get('AdvertisementLinkModuleloadByEnterpriseHQAccNoModuleCodeStore').load();
         var myStore = Ext.getStore('AdvertisementLinkModuleloadByEnterpriseHQAccNoModuleCodeStore');
         count = myStore.getCount();
-
+//alert(count)
         if (count >= 1) {
             var modelRecord = myStore.getAt(0);         
             localStorage.setItem('FloatPanel_AyohaCardManagement_PreviewCard_AyohaUserCardShow_AdvertismentCode', modelRecord.get('AdvertisementCode'));
+          //alert(modelRecord.get('AdvertisementCode'));
+          
             Ext.getCmp('btnStampCard_FloatPanel_AyohaCardManagement_PreviewCard_AdvertisementButton').setHidden(false);
             Ext.getCmp('btnStampCard_FloatPanel_AyohaCardManagement_PreviewCard_AdvertisementButton_TransparentBox').setHidden(true);
            // FloatPanel_AyohaCardManagement_AdvertisementButtonShow();
@@ -3195,7 +3229,7 @@ function Load_FloatPanel_AyohaCardManagement_PreviewCardLoadByStampCampaignCodeE
         Ext.Viewport.setMasked(false);
        
 
-      
+      //alert(count)
 
 
 
@@ -3210,7 +3244,7 @@ function Load_FloatPanel_AyohaCardManagement_PreviewCardLoadByStampCampaignCodeE
             var modelRecord = myStore.getAt(ii);
             var TextOne = modelRecord.get('TextOne');
             var TextTwo = modelRecord.get('TextTwo');
-            var StampContent = modelRecord.get('StampContent');
+            var StampContent = modelRecord.get('StampContent').replace("http://42.1.63.57/", "https://setkita.com/");
             var StampContentNote = modelRecord.get('StampContentNote');
             var StampedStatus = modelRecord.get('StampedStatus');
             console.log(StampedStatus);
@@ -3285,19 +3319,24 @@ function Load_FloatPanel_AyohaCardManagement_PreviewCardLoyaltyCardBackgroundIma
         Ext.StoreMgr.get('LoyaltyCardBackgroundImageLoadByEnterpriseAccNoStampCampaignCodeBackgroundImageAnimStore').load();
         var myStore = Ext.getStore('LoyaltyCardBackgroundImageLoadByEnterpriseAccNoStampCampaignCodeBackgroundImageAnimStore');
         count = myStore.getCount();
-        for (var ii = 0; ii < count; ii++) {
 
-            var modelRecord = myStore.getAt(ii);
-            var ImgPath = modelRecord.get('ImgPath');
-           // console.log(ImgPath);
-            ArrCardBackgroundImg.push(ImgPath);
-            
+
+        if(count>0){
+            for (var ii = 0; ii < count; ii++) {
+
+                var modelRecord = myStore.getAt(ii);
+                var ImgPath = modelRecord.get('ImgPath');
+               // console.log(ImgPath);
+                ArrCardBackgroundImg.push(ImgPath);
+                
+            }
+    
+            var modelRecords = myStore.getAt(0);
+            var isAnimated = modelRecords.get('isAnimated');
+            var AnimatedInterval = modelRecords.get('AnimatedInterval');
+            setPreviewCardBackgroundImage(AnimatedInterval, isAnimated);
         }
-
-        var modelRecords = myStore.getAt(0);
-        var isAnimated = modelRecords.get('isAnimated');
-        var AnimatedInterval = modelRecords.get('AnimatedInterval');
-        setPreviewCardBackgroundImage(AnimatedInterval, isAnimated);
+       
         Ext.Viewport.setMasked(false);
 
     });
@@ -3495,11 +3534,23 @@ function SingleTap_FloatPanel_AyohaCardManagement_PreviewCard_CreateStampQRCode(
     }
 
 
-    var CountLoyaltyStamped = localStorage.getItem('CountLoyaltyStamped');
-    var CountStampCardRowShow = localStorage.getItem('CountStampCardRowShow');
+    // var CountLoyaltyStamped = localStorage.getItem('CountLoyaltyStamped');
+    // var CountStampCardRowShow = localStorage.getItem('CountStampCardRowShow');
+    // globalStampCard_FloatPanel_AyohaCardManagement_PreviewCard_CurrentCountStamp = splitCountLoyaltyStamped[0];
+    // globalStampCard_FloatPanel_AyohaCardManagement_PreviewCard_CurrentCountStampCardRowShow = CountStampCardRowShow;
 
-    if (CountLoyaltyStamped == CountStampCardRowShow) {
-
+    if (globalStampCard_FloatPanel_AyohaCardManagement_PreviewCard_CurrentCountStamp == globalStampCard_FloatPanel_AyohaCardManagement_PreviewCard_CurrentCountStampCardRowShow) {
+        Swal.fire({
+            //title: "",
+            title:"<div style=font-color:purple;font-size:16px>"+ globalStampCampaingName + " Stamped has been completed!,Need Administrator to Reset It,Thank You!</div>",
+            showConfirmButton: false,
+            imageUrl: "resources/icons/StampSuccessCount.gif",
+            imageWidth: 300,
+            imageHeight: 300,
+            //   imageAlt: 'Cloud-Reward Pro v 1.0',
+            footer: '<img src="resources/icons/Logo/AyohaLogofullOrange.png" width="100" height="70" alt="Company Name"/>'
+        })
+        return;  
         return;
     }
     FloatPanel_AyohaCardManagement_StampQrCodeShow();

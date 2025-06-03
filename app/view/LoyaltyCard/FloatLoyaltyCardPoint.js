@@ -33,8 +33,8 @@ function FloatLoyaltyCardPoint() {
          id: 'LoadingFloatLoyaltyCardPointID',
          draggable: false,
          styleHtmlContent: true,
-         zIndex: 400,
-
+        // zIndex: 400,
+         zIndex: 350,
          centered: true,
          //bottom: 64,
          // zIndex: 100,
@@ -125,7 +125,7 @@ function FloatLoyaltyCardPoint() {
                                                             height: 30,
                                                             width: 35,
                                                             // iconCls: 'list',
-                                                            html: '<div ><img src="resources/icons/backwhite03.png" width="25" height="20" alt="Company Name"></div>',
+                                                            html: '<div ><img src="resources/icons/backwhite03Ori.png" width="25" height="20" alt="Company Name"></div>',
                                                             ui: 'plain',
                                                             handler: function () {
 
@@ -785,6 +785,17 @@ function FloatLoyaltyCardPoint() {
                                                                id: 'List_FloatLoyaltyCardPoint_RedeemPrize',
                                                                mode: 'SINGLE',
                                                                disableSelection: true,
+                                                               scrollable: {
+                                                                direction: 'vertical',
+                                                                indicators: {
+                                                                    y: {
+                                                                        autoHide: true
+                                                                    },
+                                                                    x: {
+                                                                        autoHide: true
+                                                                    }
+                                                                }
+                                                            },
                                                                //itemTpl: '<div class="myContent">' +
                                                                //        '<table style="border-collapse:collapse;border-spacing:0;width:100%" class="tg"><thead><tr><th style="background-color:transparent;border-color:transparent;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:middle;word-break:normal;width:30%" rowspan="2"><img src="{ImgPath}" style="width: 100px; height: 100px; border:1px none white;max-width:100px;" /></th><th style="background-color:transparent;border-color:transparent;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:top;word-break:normal;width:70%" colspan="2"><div style="font-family:Arial, sans-serif;font-size:10px;font-weight:normal;word-break:normal;margin:5px 0px 0px 0px;">Item Name:</div><br><div style="font-family:Arial, sans-serif;font-size:17px;font-weight:normal;word-break:normal;margin:-23px 0px 0px 0px;">{ItemName}</div><br><div style="font-family:Arial, sans-serif;font-size:10px;font-weight:normal;word-break:normal;margin:-15px 0px 0px 0px;">Item Code:</div><br><div style="font-family:Arial, sans-serif;font-size:17px;font-weight:normal;word-break:normal;margin:-23px 0px 0px 0px;">{ModifiedItemCode}</div><br><div style="font-family:Arial, sans-serif;font-size:10px;font-weight:normal;word-break:normal;margin:-15px 0px 0px 0px;">Entitled Point:</div><br><div style="font-family:Arial, sans-serif;font-size:19px;font-weight:normal;word-break:normal;margin:-23px 0px 0px 0px;"><b>{ItemPoint}</b></div><div style="width:100%;text-align:right;margin:-45px 0px 0px 0px;"><button OnClick="FloatLoyaltyCardPointCheckRedeemEntitle({ID})" class="buttonLoyaltyCardPointRedeemList">Redeem</button></div></th></tr></thead></table>'
                                                                //        + '</div>',
@@ -850,7 +861,17 @@ function FloatLoyaltyCardPoint() {
                                                     id: 'List_FloatLoyaltyCardPoint_RedeemPrizeHistory',
                                                     mode: 'SINGLE',
                                                     disableSelection: true,
-                                                    // disableSelection: true,
+                                                    scrollable: {
+                                                        direction: 'vertical',
+                                                        indicators: {
+                                                            y: {
+                                                                autoHide: true
+                                                            },
+                                                            x: {
+                                                                autoHide: true
+                                                            }
+                                                        }
+                                                    },
 
                                                     itemTpl: '<div class="myContent">' +
                                                                      '<table style="border-collapse:collapse;border-spacing:0;width:100%" class="tg"><thead><tr><th style="background-color:transparent;border-color:transparent;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:middle;word-break:normal;width:30%" rowspan="2"><img src="{ImgPath}" style="width: 100px; height: 100px; border:1px none white;max-width:100px;" /></th><th style="background-color:transparent;border-color:transparent;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:top;word-break:normal;width:70%" colspan="2"><div style="font-family:Arial, sans-serif;font-size:10px;font-weight:normal;word-break:normal;margin:5px 0px 0px 0px;">Redeem Item Name:</div><br><div style="font-family:Arial, sans-serif;font-size:17px;font-weight:normal;word-break:normal;margin:-23px 0px 0px 0px;">{ItemName}-({ModifiedItemCode})</div><br><div style="font-family:Arial, sans-serif;font-size:10px;font-weight:normal;word-break:normal;margin:-15px 0px 0px 0px;">Redeem Item ID:</div><br><div style="font-family:Arial, sans-serif;font-size:17px;font-weight:normal;word-break:normal;margin:-23px 0px 0px 0px;">{ID}</div><br><div style="font-family:Arial, sans-serif;font-size:10px;font-weight:normal;word-break:normal;margin:-15px 0px 0px 0px;">Redeem Point:</div><br><div style="font-family:Arial, sans-serif;font-size:19px;font-weight:normal;word-break:normal;margin:-23px 0px 0px 0px;"><b>{RedeemPoint}</b></div><div style="width:100%;text-align:left;margin:0px 0px 0px 0px;font-family:Arial, sans-serif;font-size:10px;font-weight:normal;word-break:normal;">Redeem Status:<br>{ModifiedRedeemHistoryStatus}</div></th></tr></thead></table>'
@@ -918,7 +939,17 @@ function FloatLoyaltyCardPoint() {
                                                         mode: 'SINGLE',
                                                         disableSelection: true,
                                                         grouped: true,
-                                                        // disableSelection: true,
+                                                        scrollable: {
+                                                            direction: 'vertical',
+                                                            indicators: {
+                                                                y: {
+                                                                    autoHide: true
+                                                                },
+                                                                x: {
+                                                                    autoHide: true
+                                                                }
+                                                            }
+                                                        },
 
 
                                                         itemTpl: '<div class="myContent">' +
@@ -1804,6 +1835,8 @@ var globalEnterpriseAccNo_FloatLoyaltyCardPoint;
 var globalPointCampaignCode_FloatLoyaltyCardPoint;
 var globalPointCampaignIsExpired = "NotExpired";
 var globalPointCampaingName;
+var globalPointCampaignEnterpriseName_FloatLoyaltyCardPoint;
+
 function FloatLoyaltyCardPointShow(CampaingName, PointCampaignCode, EnterpriseLogo, EnterpriseName, EnterpriseAccNo, EndDate, PointisRequiredStartEndDate, PointisCampaignExpired) {
     globalPointCampaignIsExpired = "NotExpired";
    
@@ -1814,12 +1847,12 @@ function FloatLoyaltyCardPointShow(CampaingName, PointCampaignCode, EnterpriseLo
     isFloatLoyaltyCardPointOpen = 'Y';
  
     FloatLoyaltyCardPointAdjustHeight();
-
+    //FloatPanel_FloatingAdvertisementShow();
     //Ext.getCmp('htmlFloatLoyaltyCardPoint_Logo').setHtml('<img src="' + GetEnterpriseLogoPath() + '" width="130" height="130"/>');
 
     Ext.getCmp('htmlFloatLoyaltyCardPoint_Logo').setHtml('<img src="' + EnterpriseLogo + '" style = "width: 120px; height: 120px; border:1px none grey; border-radius: 50%; max-width:120px;max-height:120px;" />');
     globalPointCampaingName = CampaingName;
-
+    globalPointCampaignEnterpriseName_FloatLoyaltyCardPoint=EnterpriseName;
     Ext.getCmp('htmlFloatLoyaltyCardPoint_EnterpriseName').setHtml('<div style="border-bottom:1px none #ECF0F1;background: transparent;color:white; text-align:center;font-size: 16px;font-weight:bold;width:100%;" >' + EnterpriseName + '</div>');
 
     if (PointisRequiredStartEndDate == "YES") {
@@ -1882,11 +1915,48 @@ function FloatLoyaltyCardPointShow(CampaingName, PointCampaignCode, EnterpriseLo
     //  Ext.getCmp('containerRedeemListItems').setHeight(adjustHeight());
     // AyohaRedeemPrizeLoadByAyohaUserGroupCodeStore();
     _FloatLoyaltyCardPoint_isFirstLoad = 'Y';
-
+    
+   
 }
 
 
+function Load_FloatLoyaltyCardPoint_AdvertisementLinkModuleloadByEnterpriseHQAccNoModuleCodeStore(EnterpriseAccNo) {
 
+   
+    Ext.getStore('AdvertisementLinkModuleloadByEnterpriseHQAccNoModuleCodeStore').getProxy().setExtraParams({
+        EnterpriseHQAccNo: EnterpriseAccNo,
+        ModuleCode:3,
+    });
+
+    Ext.StoreMgr.get('AdvertisementLinkModuleloadByEnterpriseHQAccNoModuleCodeStore').load();
+    var task = Ext.create('Ext.util.DelayedTask', function () {
+        Ext.getStore('AdvertisementLinkModuleloadByEnterpriseHQAccNoModuleCodeStore').getProxy().setExtraParams({
+            EnterpriseHQAccNo: EnterpriseAccNo,
+            ModuleCode: 3,
+        });
+
+        Ext.StoreMgr.get('AdvertisementLinkModuleloadByEnterpriseHQAccNoModuleCodeStore').load();
+        var myStore = Ext.getStore('AdvertisementLinkModuleloadByEnterpriseHQAccNoModuleCodeStore');
+        count = myStore.getCount();
+//alert(count)
+        if (count >= 1) {
+            var modelRecord = myStore.getAt(0);         
+            localStorage.setItem('FloatPanel_AyohaCardManagement_PreviewCard_AyohaUserCardShow_AdvertismentCode', modelRecord.get('AdvertisementCode'));
+            FloatPanel_Advertisement_FloatAdvertisementShow();
+          
+           // Ext.getCmp('btnStampCard_FloatPanel_AyohaCardManagement_PreviewCard_AdvertisementButton').setHidden(false);
+            //Ext.getCmp('btnStampCard_FloatPanel_AyohaCardManagement_PreviewCard_AdvertisementButton_TransparentBox').setHidden(true);
+           // FloatPanel_AyohaCardManagement_AdvertisementButtonShow();
+        } else {
+           // Ext.getCmp('btnStampCard_FloatPanel_AyohaCardManagement_PreviewCard_AdvertisementButton').setHidden(true);
+           // Ext.getCmp('btnStampCard_FloatPanel_AyohaCardManagement_PreviewCard_AdvertisementButton_TransparentBox').setHidden(false);
+        }
+
+       // LoadingPanelHide();
+    });
+    task.delay(500);
+
+}
 
 
 function FloatLoyaltyCardPointHide() {
@@ -2060,6 +2130,7 @@ function FloatLoyaltyCardPoint_MoveCarousel(Idx) {
 
         if (globalPointCampaignIsExpired == "NotExpired") {
             var val = GetCurrAyohaUserAccountNo() + "|" + _FloatLoyaltyCardPoint_PointCampaignCode;
+            //var val = GetCurrAyohaUserAccountNo()+ "|Point";            
             FloatLoyaltyCardPoint_CreateQrCode(val);
         }
         if (globalPointCampaignIsExpired == "Expired") {
@@ -2180,6 +2251,8 @@ var globalFloatLoyaltyCardPoint_SumPoint;
 //LoyaltyPoint History
 function Load_FloatLoyaltyCardPoint_LoyaltyPointLoadByPointCampaignCodeUserStore(PointCampaignCode, EnterpriseAccNo) {
 
+console.log(PointCampaignCode)
+console.log(GetCurrAyohaUserAccountNo())
     Ext.getStore('LoyaltyPointLoadByPointCampaignCodeUserStore').getProxy().setExtraParams({
         PointCampaignCode: PointCampaignCode,
         SubscriberAccNo: GetCurrAyohaUserAccountNo()
@@ -2195,7 +2268,7 @@ function Load_FloatLoyaltyCardPoint_LoyaltyPointLoadByPointCampaignCodeUserStore
         Ext.StoreMgr.get('LoyaltyPointLoadByPointCampaignCodeUserStore').load();
         var myStore = Ext.getStore('LoyaltyPointLoadByPointCampaignCodeUserStore');
         var count = myStore.getCount();
-
+        
         if (count >= 1) {
             var modelRecord = myStore.getAt(0);
             var SumPoint = modelRecord.get('SumPoint');
@@ -2204,6 +2277,7 @@ function Load_FloatLoyaltyCardPoint_LoyaltyPointLoadByPointCampaignCodeUserStore
         }
       
         LoadingPanelHide();
+        Load_FloatLoyaltyCardPoint_AdvertisementLinkModuleloadByEnterpriseHQAccNoModuleCodeStore(EnterpriseAccNo);
         Ext.Viewport.setMasked(false);
 
     });
@@ -2220,21 +2294,29 @@ function FloatLoyaltyCardPoint_CreateQrCode(TmpQrCodeTxt) {
     Ext.getCmp('htmlFloatLoyaltyCardPoint_AccountName').setHtml('<div id="divFloatLoyaltyCardPoint_PointQRCodeInnerTop"  style="width: 100%;  border:2px none red;text-align:center;font-size:12px;color:purple;font-weight:bold;" >' + GetAyohaUserAccountNames() + '</div>');
     Ext.getCmp('htmlFloatLoyaltyCardPoint_MembershipNo').setHtml('<div id="divFloatLoyaltyCardPoint_PointQRCodeInnerTopMembershipNi"  style="width: 100%;  border:2px none red;text-align:center;font-size:12px;color:purple;font-weight:bold;" >' + val[1] + '-' + val[2] + '</div>');
 
-    var x = screen.width;
-    var y = screen.height;
-    var xx = x - 32;
-    var yy = y - 427;
+    // var x = screen.width;
+    // var y = screen.height;
+    // var xx = x - 32;
+    // var yy = y - 427;
 
   
 
     
+    // qrcode = new QRCode(document.getElementById("myPointQRCodeImg"), {       
+    //     width: xx-1,
+    //     height: yy,
+    // });
+
+    
+
+    var x = screen.width;
+    var xx = x - 28;
     qrcode = new QRCode(document.getElementById("myPointQRCodeImg"), {
         //width: 330,
-        width: xx-18,
-        height: yy,
+        width: xx,
+        height: 360
     });
 
-    //var qrcode = new QRCode(document.getElementById("myQRCodeImg"));
 
 
     qrcode.clear();
@@ -2244,3 +2326,15 @@ function FloatLoyaltyCardPoint_CreateQrCode(TmpQrCodeTxt) {
     
 
 }
+
+// function makeCodePoint () {		
+//     var elText = document.getElementById("text");
+	
+//     if (!elText.value) {
+//         alert("Input a text");
+//         elText.focus();
+//         return;
+//     }
+	
+//     qrcode.makeCodePoint(elText.value);
+// }

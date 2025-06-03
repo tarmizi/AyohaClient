@@ -817,6 +817,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "ianMizi.store.AyohaStorePayment.AyohaStorePaymentGenerateReceiptStore": [],
   "ianMizi.store.AyohaStoreSaleItem.AyohaStoreSaleItemAyohaStoreFrontPageStore": [],
   "ianMizi.store.AyohaStoreSaleItem.AyohaStoreSaleItemImgExtendloadByItemCodeStore": [],
+  "ianMizi.store.AyohaStoreSaleItem.AyohaStoreSaleItemloadByEnterpriseAccNoHotItemStore": [],
   "ianMizi.store.AyohaStoreSaleItem.AyohaStoreSaleItemloadByEnterpriseAccNoItemCategoryStore": [],
   "ianMizi.store.AyohaStoreSaleItem.AyohaStoreSaleItemloadItemCategoryStore": [],
   "ianMizi.store.AyohaStoreShippingAddress.AyohaStoreShippingAddressLoadBySubscriberAccNoStore": [],
@@ -832,6 +833,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "ianMizi.store.AyohaUserStampCard.AyohaUserStampCardLoadStampCardfromQrCodeStore": [],
   "ianMizi.store.AyohaUserStampCard.AyohaUserStampCardNearestRedeemItemListStore": [],
   "ianMizi.store.AyohaUserStampCard.AyohaUserStampCardNearestRedeemItemStore": [],
+  "ianMizi.store.AyohaeWallet.AyohaeWalletAccountSettingHardCodedStore": [],
   "ianMizi.store.AyohaeWallet.AyohaeWalletAccountSettingStore": [],
   "ianMizi.store.AyohaeWalletTransaction.AyohaeWalletTransactionLoadByeWalletAccNoDebitCreditStore": [],
   "ianMizi.store.AyohaeWalletTransaction.AyohaeWalletTransactionLoadByeWalletAccNoFilterTypeStore": [],
@@ -1109,7 +1111,6 @@ Ext.ClassManager.addNameAlternateMappings({
   "ianMizi.view.MyAccount.FloatPanel_OrderCart": [],
   "ianMizi.view.MyAccount.FloatPanel_OrderHistory": [],
   "ianMizi.view.MyAccount.Scan_QRCode_StampCard": [],
-  "ianMizi.view.MyAccount.VehicleList": [],
   "ianMizi.view.NearestRedemption.FloatPanel_NearestRedemption": [],
   "ianMizi.view.Notification.NotificationSummary": [],
   "ianMizi.view.Notification.NotificationsPanel": [],
@@ -2019,6 +2020,7 @@ Ext.ClassManager.addNameAliasMappings({
   "ianMizi.store.AyohaStorePayment.AyohaStorePaymentGenerateReceiptStore": [],
   "ianMizi.store.AyohaStoreSaleItem.AyohaStoreSaleItemAyohaStoreFrontPageStore": [],
   "ianMizi.store.AyohaStoreSaleItem.AyohaStoreSaleItemImgExtendloadByItemCodeStore": [],
+  "ianMizi.store.AyohaStoreSaleItem.AyohaStoreSaleItemloadByEnterpriseAccNoHotItemStore": [],
   "ianMizi.store.AyohaStoreSaleItem.AyohaStoreSaleItemloadByEnterpriseAccNoItemCategoryStore": [],
   "ianMizi.store.AyohaStoreSaleItem.AyohaStoreSaleItemloadItemCategoryStore": [],
   "ianMizi.store.AyohaStoreShippingAddress.AyohaStoreShippingAddressLoadBySubscriberAccNoStore": [],
@@ -2034,6 +2036,7 @@ Ext.ClassManager.addNameAliasMappings({
   "ianMizi.store.AyohaUserStampCard.AyohaUserStampCardLoadStampCardfromQrCodeStore": [],
   "ianMizi.store.AyohaUserStampCard.AyohaUserStampCardNearestRedeemItemListStore": [],
   "ianMizi.store.AyohaUserStampCard.AyohaUserStampCardNearestRedeemItemStore": [],
+  "ianMizi.store.AyohaeWallet.AyohaeWalletAccountSettingHardCodedStore": [],
   "ianMizi.store.AyohaeWallet.AyohaeWalletAccountSettingStore": [],
   "ianMizi.store.AyohaeWalletTransaction.AyohaeWalletTransactionLoadByeWalletAccNoDebitCreditStore": [],
   "ianMizi.store.AyohaeWalletTransaction.AyohaeWalletTransactionLoadByeWalletAccNoFilterTypeStore": [],
@@ -2343,9 +2346,6 @@ Ext.ClassManager.addNameAliasMappings({
   "ianMizi.view.MyAccount.FloatPanel_OrderCart": [],
   "ianMizi.view.MyAccount.FloatPanel_OrderHistory": [],
   "ianMizi.view.MyAccount.Scan_QRCode_StampCard": [],
-  "ianMizi.view.MyAccount.VehicleList": [
-    "widget.MyAccountVehicleList"
-  ],
   "ianMizi.view.NearestRedemption.FloatPanel_NearestRedemption": [],
   "ianMizi.view.Notification.NotificationSummary": [
     "widget.NotificationSummaryList"

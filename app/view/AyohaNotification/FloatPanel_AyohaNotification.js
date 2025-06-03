@@ -120,6 +120,7 @@ function FloatPanel_AyohaNotification() {
                                 width: '100%',
                                 docked: 'top',
                                 // width: 40,
+                               // height:40,
 
                                 //  title: '<font size="3" color="white">Live Tracking Map</font>',
                                 //hidden: true,
@@ -145,9 +146,9 @@ function FloatPanel_AyohaNotification() {
                                                      {
                                                          xtype: 'button',
                                                          id: 'btnFloatPanel_AyohaNotificationBack',
-                                                         height: 30,
-                                                         width: 35,
-                                                         margin: '0 0 0 10',
+                                                         height: 55,
+                                                         width: 55,
+                                                         margin: '10 0 0 0',
                                                          // iconCls: 'list',
                                                          html: '<div ><img src="resources/icons/backPurple.png" width="25" height="20" alt="Company Name"></div>',
                                                          ui: 'plain',
@@ -781,10 +782,12 @@ function FloatPanel_AyohaNotificationLoadBySubscriberAccNoStore() {
       //  _DataStore_AyohaNotificationLoadBySubscriberAccNoStore = Ext.getStore('AyohaNotificationLoadBySubscriberAccNoStore');
 
         countAyohaNotificationLoadBySubscriberAccNoFirst = _DataStore_AyohaNotificationLoadBySubscriberAccNoStore.getCount();
+     
+      
         Ext.getCmp('FloatPanel_AyohaNotification_CountSearchTxt').setHtml('<font size=3 color=black><b>(' + countAyohaNotificationLoadBySubscriberAccNoFirst + ')</b></font>');
         LoadingPanelHide();
      
-        Ext.Viewport.setMasked(false);
+       
 
 
 
@@ -864,10 +867,134 @@ function AyohaNotificationLoadBySubscriberAccNoStoreOnKeyUp() {
 
 
 
-function openNotificationPanel(ID) {
-   
+function openNotificationPanel(ID,NotificationType,ReviewCode,EnterpriseAccNo,IsReadStatus) {
+    LoadingPanelShow(getLoadingIcon(), 'Loading....');
+    
+   if(NotificationType=="ReviewAndRate"){  
+    FloatPanel_AyohaNotification_AyohaStoreSaleItemloadByItemCode(EnterpriseAccNo,ReviewCode,ID,IsReadStatus);
+   return;
+}if(NotificationType=="AyohaStoreOrderStatus"){  
+    FloatPanel_OrderHistoryShow_FromNotificationList(ID);
+    return;
+   }
+   else{
     FloatPanel_AyohaNotification_NotificationShow(ID);
+   }
+    
+
+   
   //  FloatPanel_AyohaNotificationHide();
+}
+
+var globalDashboard_TotalItemQuantityCart_fromAyohaNotification;
+function FloatPanel_AyohaNotification_AyohaStoreSaleItemloadByItemCode(EnterpriseAccNo,ReviewCode,ID,IsReadStatus) {
+    globalFloatPanel_AyohaNotification_Notification_EnterpriseAccNo=EnterpriseAccNo;
+    var task = Ext.create('Ext.util.DelayedTask', function () {
+        var objn = {
+
+          
+            "EnterpriseAccNo": EnterpriseAccNo,
+            "SubscriberAccNo": GetCurrAyohaUserAccountNo(),
+            "ReviewCode":ReviewCode
+        };
+        var _value = Ext.Ajax.request({
+
+            type: "POST",
+
+            url: GetAPIurl() + '/AyohaStore_SaleItem/AyohaStoreSaleItemloadByItemCode',
+
+            dataType: "json",
+            data: JSON.stringify(objn),
+            headers: {
+                "Content-Type": "application/json; charset=utf-8"
+            },
+
+            success: function (result, request) {
+                data = Ext.decode(result.responseText.trim());
+
+                if (data.success == "true") {
+                   
+                    globalFloatPanel_AyohaStore_ModuleTagging = "FloatPanel_AyohaNotification";
+                    if (data.total > 0) {
+
+                        FloatPanel_AyohaStore_SaleItemDetailShow(data.results[0].StampRuleAmount,data.results[0].ID,data.results[0].ItemCode,data.results[0].ItemCoverImg,data.results[0].ItemName,data.results[0].ItemPrice,data.results[0].MerchantPoint,data.results[0].AyohaPoint,data.results[0].CampaignType,data.results[0].MembershipCardCode,data.results[0].ProductCategoryName,data.results[0].ItemCategoryCode,data.results[0].MembershipCardName,data.results[0].ItemCoverImgName,data.results[0].Stock,data.results[0].ShowStock,data.results[0].StockAlert,data.results[0].ItemDescriptions,data.results[0].ItemPriceDiscount,data.results[0].ItemPriceDiscountRate);
+                        globalEnterpriseAccNo_AyohaMerchantReview=data.results[0].EnterpriseAccNo;
+                        //Ext.getCmp('FloatPanel_AyohaStore_SaleItemDetail_CarouselMasterContent').setActiveItem(1);
+                      // globalFloatPanelAyohaStore_AyohaUser_MembershipCardCode=data.results[0].MembershipCardCode;
+                     
+
+
+                        var task = Ext.create('Ext.util.DelayedTask', function () {
+
+                            //htmlFloatPanel_AyohaStore_SaleItemDetail_MyCartCountbadgeText
+                            //globalDashboard_TotalItemQuantityCart
+                           // alert(globalDashboard_TotalItemQuantityCart)
+                            Ext.getCmp('containerFloatPanel_AyohaStore_SaleItemDetail_MyCartCountbadge').setHidden(true);
+                           Ext.getCmp('containerFloatPanel_AyohaStore_SaleItemDetail_bottomInfo').setHidden(true);
+                            var crsl = Ext.getCmp('FloatPanel_AyohaStore_SaleItemDetail_CarouselMasterContent');
+                            crsl.next();
+    
+                    
+                            var task = Ext.create('Ext.util.DelayedTask', function () {
+                                Ext.getCmp('btnFloatPanel_AyohaStore_SaleItemDetailBack').setZIndex(50);
+                                
+                                FloatPanel_AyohaStore_SaleItem_AyohaStoreSaleItemDetail_CarouselReviewAndRate();
+                                
+                        
+                                var task = Ext.create('Ext.util.DelayedTask', function () {
+                                    if(IsReadStatus=='N'){
+                                        FloatPanel_AyohaNotification_Notification_UpdateIsRead(ID);
+                                    }
+                               
+                            });
+                            task.delay(1000);
+                        
+                        
+                            });
+                            task.delay(1200);
+                    
+                    
+                        });
+                        task.delay(500);
+
+
+
+
+                       
+
+
+
+
+                        Ext.Viewport.setMasked(false);
+
+                    }
+                    if (data.total <= 0) {
+                        LoadingPanelHide();
+                        swalFireLoginFailed("Failed!" + result.responseText.trim());
+                    }
+
+
+                }
+                else {
+                    LoadingPanelHide();
+                    swalFireLoginFailed("Failed!" + result.responseText.trim());
+                    Ext.Viewport.unmask();
+                }
+
+
+            },
+
+            failure: function (result, request) {
+                Ext.Viewport.unmask();
+                LoadingPanelHide();
+                swalFireLoginFailed("Failed!" + result.responseText.trim());
+
+            }
+
+        });
+    });
+
+    task.delay(500);
 }
 
 function FloatPanel_AyohaNotification_DeleteNotification(ID) {
@@ -905,7 +1032,7 @@ function FloatPanel_AyohaNotification_DeleteNotification(ID) {
                 "UserRowStatus": "InActive"
 
             };
-            console.log(objn);
+           
             var _value = Ext.Ajax.request({
                 type: "POST",
                 url: GetAPIurl() + '/AyohaNotification/AyohaNotificationUserRowStatusUpdate',

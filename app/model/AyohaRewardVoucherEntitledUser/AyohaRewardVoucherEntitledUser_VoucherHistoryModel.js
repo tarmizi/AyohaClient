@@ -21,6 +21,7 @@
 'Voucher_EnterpriseLogo',
 'ItemCartCode',
 'TotalQuantity',
+'TotalStampEarn',
 'PaymentAtEnterpriseAccNo',
        {
            name: 'isThisVoucherUses',

@@ -14,7 +14,9 @@
       'Note',
       'RowStatus',
       'ContestStatus',
-      'EnterpriseAccNo'
+      'EnterpriseAccNo',
+      'ReceiptLink',
+      'ReceiptName'
         ]
     }
 });

@@ -28,6 +28,8 @@
       'Month',
       'ItemCartCode',
       'MembershipCardCode_AyohaStore_Order',
+      'OrderNo',
+      'TotalStampEarn',
       {
           name: 'ModifiedTypeCRDB',
           convert: function (value, record) {
@@ -43,6 +45,7 @@
               var ModifiedDateTime = record.get('ModifiedDateTime');
               var CampaignCode = record.get('CampaignCode');
               var RedeemHistoryCode = record.get('GUIDRow');
+             
               if (str == "Credit") {
                  // _value = '<font size=2 color=black><b>+</b></font>' + AyohaPoint;
                   _value = '<div style="font-family:Arial, sans-serif;font-size:15px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;text-align:right"><font size=2 color=black><b>+</b></font>' + AyohaPoint + ' Point</div>';
@@ -174,6 +177,10 @@
                 var CreatedDate_TimeOnly = record.get('CreatedDate_TimeOnly');
                 var CampaignCode = record.get('CampaignCode');
                 var strCampaignCode;
+
+
+
+
                 if (CampaignCode) {
                     strCampaignCode = CampaignCode.includes("Ayoha");
                 }
@@ -229,12 +236,33 @@
                  var str = record.get('JenisPoint');
                  var EnterpriseName = record.get('EnterpriseName');
                  var CampaignCode = record.get('CampaignCode');
+                 var CreatedBy = record.get('CreatedBy');
                  var strCampaignCode;
+                 var OrderNo = record.get('OrderNo');
                  if (CampaignCode) {
                      strCampaignCode = CampaignCode.includes("Ayoha");
                  }
+                 var method="";
 
-                 _value = _value = '<div style="font-family:Arial, sans-serif;font-size:15px;font-weight:bold;word-break:normal;margin:-1px 0px 0px 0px;color:black">' + EnterpriseName + '</div>'
+
+
+                 
+                 if (OrderNo) {
+                    _value = '<div style="font-family:Arial, sans-serif;font-size:15px;font-weight:bold;word-break:normal;margin:5px 0px 0px 0px;color:black">' + EnterpriseName + '</div>'
+                 } else {
+                   // method = "-<img src=resources/icons/Logo/LogoOrangeSimplifed.png width=25 height=20 alt=Company Name><font size=1 color=black>-Complementary Point</font>";
+
+                     if (str == "Point") {
+                         method = "-<img src=resources/icons/StampLoyaltyCard.png width=25 height=20 alt=Company Name>";
+                     }
+                     if (str == "Stamp" && CreatedBy !="Auto-PaidOnline" ) {
+                         method = "-<img src=resources/icons/scanQrCodePurple.png width=25 height=20 alt=Company Name><font size=1 color=black>-QR Code digital Stamp</font>";
+                     }
+                     if (str == "Stamp" && CreatedBy =="Auto-PaidOnline" ) {
+                        method = "-<img src=resources/icons/Logo/LogoOrangeSimplifed.png width=25 height=20 alt=Company Name><font size=1 color=black>-Complementary Point</font>";
+                    }
+                 }
+                 _value = _value = '<div style="font-family:Arial, sans-serif;font-size:15px;font-weight:bold;word-break:normal;margin:-1px 0px 0px 0px;color:black">' + EnterpriseName +  method + '</div>'
 
                  if (str == "Cancel") {
                  //    _value = '<font color=red>' + EnterpriseName + '</font>';
@@ -245,7 +273,7 @@
                  {
                      if (EnterpriseName == "Ayoha-Reward.Com") {
                          //  _value = '<font color=purple>' + EnterpriseName + '</font>';
-
+console.log(CampaignCode);
 
                          if (CampaignCode == "AyohaPointRedemption" || CampaignCode == "AyohaPointRedemptionCancel") {
                              //  _value = '<font color=purple>' + EnterpriseName + '</font>';
@@ -254,13 +282,20 @@
 
 
                          }
-                         if (CampaignCode == "AyohaPointGreetingPoint" || CampaignCode == "AyohaPointToken-eWalletOpeningAccount") {
+                         if (CampaignCode == "AyohaPointGreetingPoint") {
                              //  _value = '<font color=purple>' + EnterpriseName + '</font>';
                              _value = '<div style="font-family:Arial, sans-serif;font-size:15px;font-weight:bold;word-break:normal;margin:-5px 0px 0px 0px;color:black">' + EnterpriseName + '</div>'
 
 
 
                          }
+                         if (CampaignCode == "AyohaPointToken-eWalletOpeningAccount") {
+                            //  _value = '<font color=purple>' + EnterpriseName + '</font>';
+                            _value = '<div style="font-family:Arial, sans-serif;font-size:15px;font-weight:bold;word-break:normal;margin:-5px 0px 0px 0px;color:black">' + EnterpriseName + '</div>'
+
+
+
+                        }
                         
 
 
@@ -290,6 +325,39 @@
 
              }
          },
+         {
+            name: 'ModifiedMembershipCardName',
+            convert: function (value, record) {
+                var _value;
+
+              
+                var MembershipCardName = record.get('MembershipCardName');
+                var CampaignCode = record.get('CampaignCode');
+                if (CampaignCode == "AyohaPointGreetingPoint") {
+                    _value= "Opening Ayoha Account!-<img src=resources/icons/Logo/LogoOrangeSimplifed.png width=25 height=20 alt=Company Name><font size=1 color=black>-Complementary Point</font>"
+                    return _value;
+
+                }if (CampaignCode == "AyohaPointToken-eWalletOpeningAccount") {
+                    _value= "Ayoha eWalllet Account!-<img src=resources/icons/AyohaeWallet02.png width=25 height=20 alt=Company Name><font size=1 color=black>-Complementary Point</font>"
+                    return _value;
+
+                }
+                else
+                {
+                    _value= MembershipCardName;
+                    return _value;
+                }
+
+                
+
+
+            }
+        },
+
+
+
+
+
        'AccountName',
       'Photo',
        'JoinDate_DateOnly',
