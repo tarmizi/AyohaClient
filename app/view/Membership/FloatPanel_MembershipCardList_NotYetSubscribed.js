@@ -146,7 +146,7 @@ function FloatPanel_MembershipCardList_NotYetSubscribed() {
                                 id: 'btnFloatPanel_MembershipCardList_NotYetSubscribed_GetMembershipCard',
                                 //hidden: true,
                               
-                                html: '<div class="blink_me"><button class="button3viewloyaltycard">Get Membership Card !!!</button></div>',
+                                html: '<div class="blink_me"><button class="button3viewloyaltycard">Get Membership Card NOW !</button></div>',
                                 //handler: function () {
                                 //    getMembershipCard();
                                 //    // FloatPanel_MembershipCardManagement_NewCardAdd_Save();
@@ -3308,6 +3308,7 @@ function FloatPanel_MembershipCardList_NotYetSubscribed_MembershipCardAyohaUserM
             global_FloatPanel_MembershipCardList_NotYetSubscribed_EnterprisesTagLine = modelRecorded.get('EnterprisesTagLine');
             globalFloatPanelMerchantDetailPage_EnterpriseLogo= modelRecorded.get('EnterprisesLogo');
             globalFloatPanelMerchantDetailPage_EnterpriseName= modelRecorded.get('EnterprisesName');
+            global_FloatPanel_MembershipCardList_NotYetSubscribed_EnterprisesName= modelRecorded.get('EnterprisesName');
             MmcCode.push(MembershipCardCode);
             MembershipCardLevels.push(MembershipCardType);
             //       Ext.getCmp('carouselFloatPanel_MembershipCardList_NotYetSubscribed_' + i).setHidden(false);

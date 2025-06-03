@@ -746,6 +746,24 @@ height:150,
 
 //function FloatPanel_DashboardMerchantReward_MembershipContestSelfieFormShow(VoucherName, VoucherImage, VoucherEndDate, VoucherDayLeft, VoucherCode, VoucherAmount) {
 function FloatPanel_DashboardMerchantReward_MembershipContestSelfieFormShow() {
+
+
+    if(is_prompt_setMessage_NotYetMembershipMessage()){
+        return
+         }
+        
+
+
+
+
+
+
+
+
+
+
+
+
     Ext.Viewport.remove(_FloatPanel_DashboardMerchantReward_MembershipContestSelfieForm);
     this.overlay = Ext.Viewport.add(FloatPanel_DashboardMerchantReward_MembershipContestSelfieForm());
     this.overlay.show();

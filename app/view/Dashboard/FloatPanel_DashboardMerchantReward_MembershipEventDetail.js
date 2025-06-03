@@ -711,7 +711,9 @@ function FloatPanel_DashboardMerchantReward_MembershipEventDetail_OpenLocation()
 
 
 function FloatPanel_MerchantReward_MembershipEventDetail_RespondStatus(RespondStatus) {
-
+    if(is_prompt_setMessage_NotYetMembershipMessage()){
+        return
+         }
 
 
 

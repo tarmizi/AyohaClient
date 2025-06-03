@@ -1157,7 +1157,11 @@ function setMessage_toBeAyohaMember(){
 
     return val;
 }
+function setMessage_toBeAyohaMemberNotYetSubscribe(){
+    var val="<br><br><b>Join the Ayoha Rewards Revolution!</b><br><br>Maximize your benefits with every purchase by becoming a member of our online stores.<br><br>Tap <b>Get Membership Card!</b> now to get your exclusive membership card and unlock amazing rewards today!";
 
+    return val;
+}
 function GetAPIurl() {
 
    // var _value = 'http://42.1.63.57:17655';
@@ -2314,7 +2318,7 @@ function swalFireFailLogin() {
   
     Swal.fire({
         title: '',
-        html: "<b>Hi!,! You are not member of " + FloatPanel_AyohaStore_getEnterpriseName() + "</b>."+setMessage_toBeAyohaMember(),
+        html: "<b>Hi!,! You are not member of " + FloatPanel_AyohaStore_getEnterpriseName() + "</b>."+setMessage_toBeAyohaMemberNotYetSubscribe(),
        // html: "<b>Hi!,! You are not member of " + FloatPanel_AyohaStore_getEnterpriseName() + "</b>.<br><br>every ayoha reward user required to be a member in every one of our online stores,we will give you more rewards for every purchase you make.<br><br>  Press JOIN to get a membership card and join the campaign!",
         //imageUrl: "resources/icons/membershipPurpleThree.png",
         imageUrl: FloatPanel_AyohaStore_getEnterpriseLogo(),
@@ -2325,7 +2329,7 @@ function swalFireFailLogin() {
         //  confirmButtonColor: '#3085d6',
         confirmButtonColor: '#9932cc',
         cancelButtonColor: '#d33',
-        confirmButtonText: 'JOIN',
+        confirmButtonText: 'OK',
         footer: '<img src="resources/icons/Logo/AyohaLogofullOrange.png" width="100" height="70" alt="Company Name"/>'
     }).then(function (result) {
         if (result.isConfirmed) {
@@ -2339,4 +2343,19 @@ function swalFireFailLogin() {
 
 
 
+}
+
+
+
+function is_prompt_setMessage_NotYetMembershipMessage(){
+    var value;
+if(MembershipTag == 'NO'){
+    setMessage_NotYetMembershipMessage();
+    value=true;
+}
+if(MembershipTag == 'YES'){
+    value=false;
+}
+
+    return value;
 }

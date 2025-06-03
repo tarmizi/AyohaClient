@@ -2005,7 +2005,9 @@ function FloatLoyaltyCardPointAdjustHeight() {
 
 function FloatLoyaltyCardPointCheckRedeemEntitle(val) {
 
-
+    if(is_prompt_setMessage_NotYetMembershipMessage()){
+        return
+     }
     if (globalPointCampaignIsExpired == "Expired") {
         Swal.fire({
             title: "",
@@ -2126,7 +2128,9 @@ function FloatLoyaltyCardPoint_MoveCarousel(Idx) {
         Ext.getCmp('htmlFloatLoyaltyCardPoint_MenuBottom_AyohaPointHistoryTxt02').setHtml('<font size=1 color=grey><b>History</b></font>');
 
 
-        console.log(globalPointCampaignIsExpired);
+        if(is_prompt_setMessage_NotYetMembershipMessage()){
+            return
+           }
 
         if (globalPointCampaignIsExpired == "NotExpired") {
             var val = GetCurrAyohaUserAccountNo() + "|" + _FloatLoyaltyCardPoint_PointCampaignCode;

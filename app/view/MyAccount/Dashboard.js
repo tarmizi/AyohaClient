@@ -10082,59 +10082,53 @@ function Dashboard_MembershipCardLoadBySubscriberAccNoDashboardMainStore() {
     globalFloatPanel_MembershipCardList_UpgradeShow_FromAyohaMerchant_isMembershipCardSubscribed = 'NO';
     _DataStore_MembershipCardLoadBySubscriberAccNoDashboardMainStore.getProxy().setExtraParam('SubscriberAccNo', GetCurrAyohaUserAccountNo());
     _DataStore_MembershipCardLoadBySubscriberAccNoDashboardMainStore.getProxy().setUrl(GetAPIurl() + '/MembershipCard/MembershipCardLoadBySubscriberAccNoDashboardMain');
-    _DataStore_MembershipCardLoadBySubscriberAccNoDashboardMainStore.load();
-   
-
-    var task = Ext.create('Ext.util.DelayedTask', function () {
-
-        var count = parseInt(_DataStore_MembershipCardLoadBySubscriberAccNoDashboardMainStore.getCount());
-      
-     
-     // Dapatkan data asal
-var allData = _DataStore_MembershipCardLoadBySubscriberAccNoDashboardMainStore.getRange();
-
-// Sediakan dua store manual
-var storeWithFee = Ext.create('Ext.data.Store', {
-    model: 'ianMizi.model.MembershipCard.MembershipCardModel', // Gantikan dengan model sebenar anda
-    data: allData.filter(function (record) {
-        return record.get('MembershipCardFee') > 0;
-    })
-});
-
-var storeFOC = Ext.create('Ext.data.Store', {
-    model: 'ianMizi.model.MembershipCard.MembershipCardModel', // Gantikan dengan model sebenar anda
-    data: allData.filter(function (record) {
-        return record.get('MembershipCardFee') <= 0;
-    })
-});
-// Ext.getCmp('Dashboard_MyAccount_UnSubscribedMembershipCardList').setStore(_DataStore_MembershipCardLoadBySubscriberAccNoDashboardMainStore);
-// Ext.getCmp('Dashboard_MyAccount_UnSubscribedMembershipCardListDesignOne').setStore(_DataStore_MembershipCardLoadBySubscriberAccNoDashboardMainStore);
-
-
-var storeTopRated = Ext.create('Ext.data.Store', { 
-    model: 'ianMizi.model.MembershipCard.MembershipCardModel',
-    data: allData
-        .filter(function (record) {
-            var star = record.get('CountStar');
-            return star !== null && star !== undefined && star >= 3.5;
-        })
-        .sort(function (a, b) {
-            return b.get('CountStar') - a.get('CountStar');
-        })
-});
-
-Ext.getCmp('Dashboard_MyAccount_UnSubscribedMembershipCardList').setStore(storeFOC);
-Ext.getCmp('Dashboard_MyAccount_UnSubscribedMembershipCardListDesignOne').setStore(storeWithFee);
-Ext.getCmp('Dashboard_MyAccount_UnSubscribedMembershipCardListDesignTwo').setStore(storeTopRated);
-
-
-        LoadingPanelHide();
-
+    
+    _DataStore_MembershipCardLoadBySubscriberAccNoDashboardMainStore.load({
+        callback: function (records, operation, success) {
+            if (success && records.length > 0) {
+                var allData = records;
+    
+                // Store - MembershipCardFee > 0
+                var storeWithFee = Ext.create('Ext.data.Store', {
+                    model: 'ianMizi.model.MembershipCard.MembershipCardModel',
+                    data: allData.filter(function (record) {
+                        return record.get('MembershipCardFee') > 0;
+                    })
+                });
+    
+                // Store - MembershipCardFee <= 0
+                var storeFOC = Ext.create('Ext.data.Store', {
+                    model: 'ianMizi.model.MembershipCard.MembershipCardModel',
+                    data: allData.filter(function (record) {
+                        return record.get('MembershipCardFee') <= 0;
+                    })
+                });
+    
+                // Store - Top Rated (3.5 stars and above, sorted descending)
+                var storeTopRated = Ext.create('Ext.data.Store', {
+                    model: 'ianMizi.model.MembershipCard.MembershipCardModel',
+                    data: allData
+                        .filter(function (record) {
+                            var star = record.get('CountStar');
+                            return star !== null && star !== undefined && star >= 3.5;
+                        })
+                        .sort(function (a, b) {
+                            return b.get('CountStar') - a.get('CountStar');
+                        })
+                });
+    
+                // Set stores to list components
+                Ext.getCmp('Dashboard_MyAccount_UnSubscribedMembershipCardList').setStore(storeFOC);
+                Ext.getCmp('Dashboard_MyAccount_UnSubscribedMembershipCardListDesignOne').setStore(storeWithFee);
+                Ext.getCmp('Dashboard_MyAccount_UnSubscribedMembershipCardListDesignTwo').setStore(storeTopRated);
+    
+                console.log('Stores updated based on loaded membership card data.');
+            } else {
+                console.log('Failed to load membership card data or no records returned.');
+            }
+        }
     });
-    task.delay(500);
-
-
-    Ext.Viewport.setMasked(false);
+    
 
 
 

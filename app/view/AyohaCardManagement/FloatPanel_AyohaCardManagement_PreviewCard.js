@@ -2141,7 +2141,13 @@ function FloatPanel_AyohaCardManagement_PreviewCard() {
                                                         html: '<img src="resources/icons/qrcodetwo.png" width="25" height="25" alt="Company Name">',
                                                         ui: 'plain',
                                                         handler: function () {
-                                                            SingleTap_FloatPanel_AyohaCardManagement_PreviewCard_CreateStampQRCode();
+                                                            if(is_prompt_setMessage_NotYetMembershipMessage()){
+return
+                                                            }else
+                                                            {
+                                                                SingleTap_FloatPanel_AyohaCardManagement_PreviewCard_CreateStampQRCode();
+                                                            }
+                                                           
                                                             //if (globalStampCampaignisCampaignExpired == "Expired") {
 
                                                             //    return;
@@ -2810,9 +2816,326 @@ function Load_FloatPanel_AyohaCardManagement_PreviewCard_AyohaUserStampCardLoadB
     localStorage.setItem('AyohaUserAccountNo', SubscriberAccNo)
 
 
-//alert(strStampCampaignCode)
-//alert(EnterpriseAccNo)
-//alert(SubscriberAccNo)
+// alert(strStampCampaignCode)
+// alert(EnterpriseAccNo)
+//alert(MembershipTag)
+
+
+Ext.getCmp('htmlFloatPanel_AyohaCardManagement_PreviewCard_EnterpriseLogo').setHtml('<img src="' + EnterpriseLogo + '" style="width: 120px; height: 120px; border:2px none white; border-radius: 50%; max-width:150px;"/>');
+Ext.getCmp('htmlFloatPanel_AyohaCardManagement_PreviewCard_EnterpriseName').setHtml('<font size=3 color=white><b>' + EnterpriseName + '</b></font>');
+
+
+var No = 0;
+
+if (MembershipTag=="NO"){
+    _DataStore_AyohaUserStampCardLoadByStampCampaignCodeEnterpriseAccNoShowHideStore.getProxy().setExtraParam('StampCampaignCode', strStampCampaignCode);
+    _DataStore_AyohaUserStampCardLoadByStampCampaignCodeEnterpriseAccNoShowHideStore.getProxy().setExtraParam('EnterpriseAccNo',EnterpriseAccNo);
+    _DataStore_AyohaUserStampCardLoadByStampCampaignCodeEnterpriseAccNoShowHideStore.getProxy().setUrl(GetAPIurl() + '/StampCard/StampCardLoadByStampCampaignCodeEnterpriseAccNo');
+    
+    
+    
+    _DataStore_AyohaUserStampCardLoadByStampCampaignCodeEnterpriseAccNoShowHideStore.load({
+        callback: function(records, operation, success) {
+            if (success && records.length > 0) {
+                for (var i = 0; i < records.length; i++) {
+                    var rec = records[i];
+    
+                    var TextOne = rec.get('TextOne');
+                    var TextTwo = rec.get('TextTwo');
+                    var StampContent = rec.get('StampContent').replace("http://42.1.63.57/", "https://setkita.com/");
+                    var StampContentNote = rec.get('StampContentNote');
+                    var StampedStatus = rec.get('StampedStatus');
+        
+                    var StampedBy = rec.get('StampedBy');
+                    var StampedDate = rec.get('StampedDate');
+                    var StampedTime = rec.get('StampedTime');
+        
+        
+        
+                    console.log(StampedStatus);
+        
+                    No = i + 1;
+                    var x = TextOne;
+                    arrStampRewardNote.push(StampContentNote);
+                    console.log(No);
+                    console.log(x);
+                    if (x != No) {
+                        console.log('btnFloatPanel_AyohaCardManagement_PreviewCard' + No);
+                        Ext.getCmp('btnFloatPanel_AyohaCardManagement_PreviewCard' + No).setHidden(false);
+                        Ext.getCmp('btnFloatPanel_AyohaCardManagement_PreviewCard' + No).setHtml('<div style="border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid white;background: #85929E;border-radius: 50px;width:70px;height:70px;color:#566573;vertical-align: bottom; text-align:center;font-family: Lucida Console, Courier, monospace;font-size: 35px;" ><div style="margin:23px 0px 0px 0px">' + TextOne + '</div><br><div style="margin:-20px 0px 0px 0px"><font size=2>' + TextTwo + '</font></div></div>');
+        
+                        if (StampedStatus == "YES") {
+        
+                            var ycontent = Ext.getCmp('btnFloatPanel_AyohaCardManagement_PreviewCard' + No).getHtml();
+                            var randomcolor = getRandomColor();
+                            var replaceBgColor = ycontent.replace("#85929E", randomcolor);
+                            Ext.getCmp('btnFloatPanel_AyohaCardManagement_PreviewCard' + No).setHtml(replaceBgColor.replace("#566573", 'white'));
+        
+        
+        
+        
+        
+        
+        
+                            Ext.getCmp('btnFloatPanel_AyohaCardManagement_StampTopImgOne_PreviewCard' + No).setHidden(false);
+                            Ext.getCmp('htmlFloatPanel_AyohaCardManagement_DateTimeStampby_PreviewCard' + No).setHidden(false);
+                            Ext.getCmp('htmlFloatPanel_AyohaCardManagement_DateTimeStampby_PreviewCard' + No).setHtml('<div style="margin:5px 0px 0px 8px;font-size:8px;color:white;font-weight:bold">' + StampedDate + '</div><div style="margin:-3px 0px 0px 0px;font-size:8px;color:white;font-weight:bold">' + StampedTime + '</div><div style="margin:-3px 0px 0px 0px;font-size:8px;color:white;font-weight:bold;text-align:center">' + StampedBy + '</div>');
+                            Ext.getCmp('containerFloatPanel_AyohaCardManagement_PreviewCardMaster').setMargin('-40 0 0 0');
+                            
+        
+                            if (No == 1) {
+                                Ext.getCmp('containerFloatPanel_AyohaCardManagement_PreviewCard1').setMargin('30 0 0 0');
+                                Ext.getCmp('containerFloatPanel_AyohaCardManagement_PreviewCard2').setMargin('30 0 0 0');
+        
+        
+                            }
+        
+        
+        
+                            
+                            if (No == 4) {
+                                Ext.getCmp('containerFloatPanel_AyohaCardManagement_PreviewCard2').setMargin('30 0 0 0');
+                                Ext.getCmp('containerFloatPanel_AyohaCardManagement_PreviewCard3').setMargin('30 0 0 0');
+                             
+                                
+                            }
+                            if (No == 7) {
+                                Ext.getCmp('containerFloatPanel_AyohaCardManagement_PreviewCard3').setMargin('30 0 0 0');
+                                Ext.getCmp('containerFloatPanel_AyohaCardManagement_PreviewCard4').setMargin('30 0 0 0');
+                            }
+                            if (No == 10) {
+                                Ext.getCmp('containerFloatPanel_AyohaCardManagement_PreviewCard4').setMargin('30 0 0 0');
+                            }
+                        }
+        
+        
+                    } else {
+                        Ext.getCmp('btnFloatPanel_AyohaCardManagement_PreviewCard' + No).setHidden(false);
+                        Ext.getCmp('btnFloatPanel_AyohaCardManagement_PreviewCard' + No).setHtml('<div style="border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid white;background: #85929E;border-radius: 50px;width:70px;height:70px;color:#566573;vertical-align: bottom; text-align:center;font-family: Lucida Console, Courier, monospace;font-size: 35px;" ><div style="margin:23px 0px 0px 0px" id="divContentFloatPanel_AyohaCardManagement_PreviewCard3">' + TextOne + '</div></div>');
+        
+                        if (StampedStatus == "YES") {
+                            var ycontent = Ext.getCmp('btnFloatPanel_AyohaCardManagement_PreviewCard' + No).getHtml();
+                            var randomcolor = getRandomColor();
+                            var replaceBgColor = ycontent.replace("#85929E", randomcolor);
+                            Ext.getCmp('btnFloatPanel_AyohaCardManagement_PreviewCard' + No).setHtml(replaceBgColor.replace("#566573", 'white'));
+        
+        
+                            Ext.getCmp('containerFloatPanel_AyohaCardManagement_PreviewCardMaster').setMargin('-40 0 0 0');
+                            Ext.getCmp('btnFloatPanel_AyohaCardManagement_StampTopImgOne_PreviewCard' + No).setHidden(false);
+                            Ext.getCmp('htmlFloatPanel_AyohaCardManagement_DateTimeStampby_PreviewCard' + No).setHidden(false);
+                            Ext.getCmp('htmlFloatPanel_AyohaCardManagement_DateTimeStampby_PreviewCard' + No).setHtml('<div style="margin:5px 0px 0px 8px;font-size:8px;color:white;font-weight:bold">' + StampedDate + '</div><div style="margin:-3px 0px 0px 0px;font-size:8px;color:white;font-weight:bold">' + StampedTime + '</div><div style="margin:-3px 0px 0px 0px;font-size:8px;color:white;font-weight:bold;text-align:center">' + StampedBy + '</div>');
+        
+                            if (No == 1) {
+                                Ext.getCmp('containerFloatPanel_AyohaCardManagement_PreviewCard1').setMargin('30 0 0 0');
+                                Ext.getCmp('containerFloatPanel_AyohaCardManagement_PreviewCard2').setMargin('30 0 0 0');
+        
+        
+                            }
+        
+        
+                            if (No == 4) {
+                                Ext.getCmp('containerFloatPanel_AyohaCardManagement_PreviewCard2').setMargin('30 0 0 0');
+                                Ext.getCmp('containerFloatPanel_AyohaCardManagement_PreviewCard3').setMargin('30 0 0 0');
+                            }
+                            if (No == 7) {
+                                Ext.getCmp('containerFloatPanel_AyohaCardManagement_PreviewCard3').setMargin('30 0 0 0');
+                                Ext.getCmp('containerFloatPanel_AyohaCardManagement_PreviewCard4').setMargin('30 0 0 0');
+                            }
+                            if (No == 10) {
+                                Ext.getCmp('containerFloatPanel_AyohaCardManagement_PreviewCard4').setMargin('30 0 0 0');
+                            }
+                        }
+        
+        
+                        //   html: '<div style="border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none white;border-radius: 50px;width:90px;height:90px;color:white;vertical-align: bottom; text-align:center;font-family: Lucida Console, Courier, monospace;font-size: 35px;background-image: url(resources/icons/freecup1Inactive.png); background-size: 100% 100%;" id="divContentFloatLoyaltyCardStamp11" ></div>',  
+        
+                    }
+        
+        
+                    var str = StampContent;
+                    var n = str.includes("background-image");
+        
+        
+                    if (n) {
+                        Ext.getCmp('btnFloatPanel_AyohaCardManagement_PreviewCard' + No).setHidden(false);
+                        Ext.getCmp('btnFloatPanel_AyohaCardManagement_PreviewCard' + No).setHtml(StampContent);
+                    }
+        
+    
+    
+    
+                 
+                }
+    
+                Ext.getCmp('containerFloatPanel_AyohaCardManagement_PreviewCardMasterLoading').setHidden(true);
+                Load_FloatPanel_AyohaCardManagement_PreviewCardLoyaltyCardBackgroundImageLoadByEnterpriseAccNoStampCampaignCodeStore(strStampCampaignCode, EnterpriseAccNo);
+                Load_FloatPanel_AyohaCardManagement_PreviewCard_AdvertisementLinkModuleloadByEnterpriseHQAccNoModuleCodeStore(EnterpriseAccNo);
+            } else {
+                console.log('No data found or load failed.');
+            }
+        }
+    });
+    
+
+}
+
+if (MembershipTag=="YES"){
+    _DataStore_AyohaUserStampCardLoadByStampCampaignCodeEnterpriseAccNoShowHideSubscriberAccNoStore.getProxy().setExtraParam('StampCampaignCode', strStampCampaignCode);
+    _DataStore_AyohaUserStampCardLoadByStampCampaignCodeEnterpriseAccNoShowHideSubscriberAccNoStore.getProxy().setExtraParam('EnterpriseAccNo',EnterpriseAccNo);
+    _DataStore_AyohaUserStampCardLoadByStampCampaignCodeEnterpriseAccNoShowHideSubscriberAccNoStore.getProxy().setExtraParam('SubscriberAccNo',SubscriberAccNo);
+    
+    _DataStore_AyohaUserStampCardLoadByStampCampaignCodeEnterpriseAccNoShowHideSubscriberAccNoStore.getProxy().setUrl(GetAPIurl() + '/AyohaUserStampCard/AyohaUserStampCardLoadByStampCampaignCodeEnterpriseAccNoShowHideSubscriberAccNo');
+    
+    
+    
+    _DataStore_AyohaUserStampCardLoadByStampCampaignCodeEnterpriseAccNoShowHideSubscriberAccNoStore.load({
+        callback: function(records, operation, success) {
+            if (success && records.length > 0) {
+                for (var i = 0; i < records.length; i++) {
+                    var rec = records[i];
+    
+                    var TextOne = rec.get('TextOne');
+                    var TextTwo = rec.get('TextTwo');
+                    var StampContent = rec.get('StampContent').replace("http://42.1.63.57/", "https://setkita.com/");
+                    var StampContentNote = rec.get('StampContentNote');
+                    var StampedStatus = rec.get('StampedStatus');
+        
+                    var StampedBy = rec.get('StampedBy');
+                    var StampedDate = rec.get('StampedDate');
+                    var StampedTime = rec.get('StampedTime');
+        
+        
+        
+                    console.log(StampedStatus);
+        
+                    No = i + 1;
+                    var x = TextOne;
+                    arrStampRewardNote.push(StampContentNote);
+                    console.log(No);
+                    console.log(x);
+                    if (x != No) {
+                        console.log('btnFloatPanel_AyohaCardManagement_PreviewCard' + No);
+                        Ext.getCmp('btnFloatPanel_AyohaCardManagement_PreviewCard' + No).setHidden(false);
+                        Ext.getCmp('btnFloatPanel_AyohaCardManagement_PreviewCard' + No).setHtml('<div style="border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid white;background: #85929E;border-radius: 50px;width:70px;height:70px;color:#566573;vertical-align: bottom; text-align:center;font-family: Lucida Console, Courier, monospace;font-size: 35px;" ><div style="margin:23px 0px 0px 0px">' + TextOne + '</div><br><div style="margin:-20px 0px 0px 0px"><font size=2>' + TextTwo + '</font></div></div>');
+        
+                        if (StampedStatus == "YES") {
+        
+                            var ycontent = Ext.getCmp('btnFloatPanel_AyohaCardManagement_PreviewCard' + No).getHtml();
+                            var randomcolor = getRandomColor();
+                            var replaceBgColor = ycontent.replace("#85929E", randomcolor);
+                            Ext.getCmp('btnFloatPanel_AyohaCardManagement_PreviewCard' + No).setHtml(replaceBgColor.replace("#566573", 'white'));
+        
+        
+        
+        
+        
+        
+        
+                            Ext.getCmp('btnFloatPanel_AyohaCardManagement_StampTopImgOne_PreviewCard' + No).setHidden(false);
+                            Ext.getCmp('htmlFloatPanel_AyohaCardManagement_DateTimeStampby_PreviewCard' + No).setHidden(false);
+                            Ext.getCmp('htmlFloatPanel_AyohaCardManagement_DateTimeStampby_PreviewCard' + No).setHtml('<div style="margin:5px 0px 0px 8px;font-size:8px;color:white;font-weight:bold">' + StampedDate + '</div><div style="margin:-3px 0px 0px 0px;font-size:8px;color:white;font-weight:bold">' + StampedTime + '</div><div style="margin:-3px 0px 0px 0px;font-size:8px;color:white;font-weight:bold;text-align:center">' + StampedBy + '</div>');
+                            Ext.getCmp('containerFloatPanel_AyohaCardManagement_PreviewCardMaster').setMargin('-40 0 0 0');
+                            
+        
+                            if (No == 1) {
+                                Ext.getCmp('containerFloatPanel_AyohaCardManagement_PreviewCard1').setMargin('30 0 0 0');
+                                Ext.getCmp('containerFloatPanel_AyohaCardManagement_PreviewCard2').setMargin('30 0 0 0');
+        
+        
+                            }
+        
+        
+        
+                            
+                            if (No == 4) {
+                                Ext.getCmp('containerFloatPanel_AyohaCardManagement_PreviewCard2').setMargin('30 0 0 0');
+                                Ext.getCmp('containerFloatPanel_AyohaCardManagement_PreviewCard3').setMargin('30 0 0 0');
+                             
+                                
+                            }
+                            if (No == 7) {
+                                Ext.getCmp('containerFloatPanel_AyohaCardManagement_PreviewCard3').setMargin('30 0 0 0');
+                                Ext.getCmp('containerFloatPanel_AyohaCardManagement_PreviewCard4').setMargin('30 0 0 0');
+                            }
+                            if (No == 10) {
+                                Ext.getCmp('containerFloatPanel_AyohaCardManagement_PreviewCard4').setMargin('30 0 0 0');
+                            }
+                        }
+        
+        
+                    } else {
+                        Ext.getCmp('btnFloatPanel_AyohaCardManagement_PreviewCard' + No).setHidden(false);
+                        Ext.getCmp('btnFloatPanel_AyohaCardManagement_PreviewCard' + No).setHtml('<div style="border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid white;background: #85929E;border-radius: 50px;width:70px;height:70px;color:#566573;vertical-align: bottom; text-align:center;font-family: Lucida Console, Courier, monospace;font-size: 35px;" ><div style="margin:23px 0px 0px 0px" id="divContentFloatPanel_AyohaCardManagement_PreviewCard3">' + TextOne + '</div></div>');
+        
+                        if (StampedStatus == "YES") {
+                            var ycontent = Ext.getCmp('btnFloatPanel_AyohaCardManagement_PreviewCard' + No).getHtml();
+                            var randomcolor = getRandomColor();
+                            var replaceBgColor = ycontent.replace("#85929E", randomcolor);
+                            Ext.getCmp('btnFloatPanel_AyohaCardManagement_PreviewCard' + No).setHtml(replaceBgColor.replace("#566573", 'white'));
+        
+        
+                            Ext.getCmp('containerFloatPanel_AyohaCardManagement_PreviewCardMaster').setMargin('-40 0 0 0');
+                            Ext.getCmp('btnFloatPanel_AyohaCardManagement_StampTopImgOne_PreviewCard' + No).setHidden(false);
+                            Ext.getCmp('htmlFloatPanel_AyohaCardManagement_DateTimeStampby_PreviewCard' + No).setHidden(false);
+                            Ext.getCmp('htmlFloatPanel_AyohaCardManagement_DateTimeStampby_PreviewCard' + No).setHtml('<div style="margin:5px 0px 0px 8px;font-size:8px;color:white;font-weight:bold">' + StampedDate + '</div><div style="margin:-3px 0px 0px 0px;font-size:8px;color:white;font-weight:bold">' + StampedTime + '</div><div style="margin:-3px 0px 0px 0px;font-size:8px;color:white;font-weight:bold;text-align:center">' + StampedBy + '</div>');
+        
+                            if (No == 1) {
+                                Ext.getCmp('containerFloatPanel_AyohaCardManagement_PreviewCard1').setMargin('30 0 0 0');
+                                Ext.getCmp('containerFloatPanel_AyohaCardManagement_PreviewCard2').setMargin('30 0 0 0');
+        
+        
+                            }
+        
+        
+                            if (No == 4) {
+                                Ext.getCmp('containerFloatPanel_AyohaCardManagement_PreviewCard2').setMargin('30 0 0 0');
+                                Ext.getCmp('containerFloatPanel_AyohaCardManagement_PreviewCard3').setMargin('30 0 0 0');
+                            }
+                            if (No == 7) {
+                                Ext.getCmp('containerFloatPanel_AyohaCardManagement_PreviewCard3').setMargin('30 0 0 0');
+                                Ext.getCmp('containerFloatPanel_AyohaCardManagement_PreviewCard4').setMargin('30 0 0 0');
+                            }
+                            if (No == 10) {
+                                Ext.getCmp('containerFloatPanel_AyohaCardManagement_PreviewCard4').setMargin('30 0 0 0');
+                            }
+                        }
+        
+        
+                        //   html: '<div style="border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none white;border-radius: 50px;width:90px;height:90px;color:white;vertical-align: bottom; text-align:center;font-family: Lucida Console, Courier, monospace;font-size: 35px;background-image: url(resources/icons/freecup1Inactive.png); background-size: 100% 100%;" id="divContentFloatLoyaltyCardStamp11" ></div>',  
+        
+                    }
+        
+        
+                    var str = StampContent;
+                    var n = str.includes("background-image");
+        
+        
+                    if (n) {
+                        Ext.getCmp('btnFloatPanel_AyohaCardManagement_PreviewCard' + No).setHidden(false);
+                        Ext.getCmp('btnFloatPanel_AyohaCardManagement_PreviewCard' + No).setHtml(StampContent);
+                    }
+        
+    
+    
+    
+                 
+                }
+    
+                Ext.getCmp('containerFloatPanel_AyohaCardManagement_PreviewCardMasterLoading').setHidden(true);
+                Load_FloatPanel_AyohaCardManagement_PreviewCardLoyaltyCardBackgroundImageLoadByEnterpriseAccNoStampCampaignCodeStore(strStampCampaignCode, EnterpriseAccNo);
+                Load_FloatPanel_AyohaCardManagement_PreviewCard_AdvertisementLinkModuleloadByEnterpriseHQAccNoModuleCodeStore(EnterpriseAccNo);
+            } else {
+                console.log('No data found or load failed.');
+            }
+        }
+    });
+    
+
+}
+
+return;
+
+if (MembershipTag=="YES"){
     Ext.getStore('AyohaUserStampCardLoadByStampCampaignCodeEnterpriseAccNoShowHideSubscriberAccNoStore').getProxy().setExtraParams({
         StampCampaignCode: strStampCampaignCode,
         EnterpriseAccNo: EnterpriseAccNo,
@@ -2838,22 +3161,22 @@ function Load_FloatPanel_AyohaCardManagement_PreviewCard_AyohaUserStampCardLoadB
        
       //  alert(count)
    
-        if (count <= 0) {
-            _FloatPanel_AyohaCardManagement_PreviewCard.hide(Ext.fx.Animation({
-                type: 'slideOut',
-                direction: 'left',
-                easing: 'cubic-bezier(.7,0,.7,1)',
-                duration: 250
+        // if (count <= 0) {
+        //     _FloatPanel_AyohaCardManagement_PreviewCard.hide(Ext.fx.Animation({
+        //         type: 'slideOut',
+        //         direction: 'left',
+        //         easing: 'cubic-bezier(.7,0,.7,1)',
+        //         duration: 250
 
-            }));
-            isFloatPanel_AyohaCardManagement_PreviewCardOpen = 'N';
-            clearInterval(BackgroungImgInterval);
-           // FloatPanel_AyohaCardManagement_AdvertisementButtonHide();
-            RemovePages("FloatPanel_AyohaCardManagement_PreviewCardHide()");
+        //     }));
+        //     isFloatPanel_AyohaCardManagement_PreviewCardOpen = 'N';
+        //     clearInterval(BackgroungImgInterval);
+        //    // FloatPanel_AyohaCardManagement_AdvertisementButtonHide();
+        //     RemovePages("FloatPanel_AyohaCardManagement_PreviewCardHide()");
        
-            return;
-        }
-        var modelRecords = myStore.getAt(0);
+        //     return;
+        // }
+        // var modelRecords = myStore.getAt(0);
         Ext.getCmp('htmlFloatPanel_AyohaCardManagement_PreviewCard_EnterpriseLogo').setHtml('<img src="' + EnterpriseLogo + '" style="width: 120px; height: 120px; border:2px none white; border-radius: 50%; max-width:150px;"/>');
         Ext.getCmp('htmlFloatPanel_AyohaCardManagement_PreviewCard_EnterpriseName').setHtml('<font size=3 color=white><b>' + EnterpriseName + '</b></font>');
 
@@ -2996,6 +3319,9 @@ function Load_FloatPanel_AyohaCardManagement_PreviewCard_AyohaUserStampCardLoadB
         Load_FloatPanel_AyohaCardManagement_PreviewCard_AdvertisementLinkModuleloadByEnterpriseHQAccNoModuleCodeStore(EnterpriseAccNo);
     });
     task.delay(2000);
+}
+
+   
 }
 
 
