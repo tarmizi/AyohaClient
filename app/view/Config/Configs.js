@@ -1153,13 +1153,13 @@ function GetFlatBillStatusUpdateDate() {
     return _value;
 }
 function setMessage_toBeAyohaMember(){
-    var val="<br><br><b>Join the Ayoha Rewards Revolution!</b><br><br>Maximize your benefits with every purchase by becoming a member of our online stores.<br><br>Tap <b>JOIN</b> now to get your exclusive membership card and unlock amazing rewards today!";
-
+    //var val="<br><br><b>Join the Ayoha Rewards Revolution!</b><br><br>Maximize your benefits with every purchase by becoming a member of our online stores.<br><br>Tap <b>JOIN</b> now to get your exclusive membership card and unlock amazing rewards today!";
+    var val="<br><br>🎉 Join the Ayoha Rewards Revolution 🎉<br><br>Get exclusive perks & rewards with every purchase.Tap Get Membership Card now to unlock your benefits!";
     return val;
 }
 function setMessage_toBeAyohaMemberNotYetSubscribe(){
-    var val="<br><br><b>Join the Ayoha Rewards Revolution!</b><br><br>Maximize your benefits with every purchase by becoming a member of our online stores.<br><br>Tap <b>Get Membership Card!</b> now to get your exclusive membership card and unlock amazing rewards today!";
-
+   // var val="<br><br><b>Join the Ayoha Rewards Revolution!</b><br><br>Maximize your benefits with every purchase by becoming a member of our online stores.<br><br>Tap <b>Get Membership Card!</b> now to get your exclusive membership card and unlock amazing rewards today!";
+var val="<br><br>🎉 Join the Ayoha Rewards Revolution 🎉<br><br>Get exclusive perks & rewards with every purchase.Tap Get Membership Card now to unlock your benefits!";
     return val;
 }
 function GetAPIurl() {
@@ -1173,6 +1173,11 @@ function GetAPIurl() {
   //  var _value = 'http://tarmizi-004-site6.etempurl.com/webapiresit/webapiresit/';
   //  var _value = 'http://cloudreceipts.sytes.net:9018/'
     return _value;
+}
+
+function GetDomainName() {
+    var _value = 'https://setkita.com/';
+    return _value;  
 }
 
 function GetAPIurl_Web() {

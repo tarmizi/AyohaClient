@@ -2624,7 +2624,7 @@ function AyohaUserStampCardLoadStampCardfromQrCodeStore(strStampCampaignCode, En
             var modelRecord = myStore.getAt(ii);
             var TextOne = modelRecord.get('TextOne');
             var TextTwo = modelRecord.get('TextTwo');
-            var StampContent = modelRecord.get('StampContent').replace("http://42.1.63.57/", "https://setkita.com/");
+            var StampContent = modelRecord.get('StampContent').replace("http://42.1.63.57/", GetDomainName());
             var StampContentNote = modelRecord.get('StampContentNote');
             var StampedStatus = modelRecord.get('StampedStatus');
 
@@ -2842,7 +2842,7 @@ if (MembershipTag=="NO"){
     
                     var TextOne = rec.get('TextOne');
                     var TextTwo = rec.get('TextTwo');
-                    var StampContent = rec.get('StampContent').replace("http://42.1.63.57/", "https://setkita.com/");
+                    var StampContent = rec.get('StampContent').replace("http://42.1.63.57/",GetDomainName());
                     var StampContentNote = rec.get('StampContentNote');
                     var StampedStatus = rec.get('StampedStatus');
         
@@ -2996,7 +2996,7 @@ if (MembershipTag=="YES"){
     
                     var TextOne = rec.get('TextOne');
                     var TextTwo = rec.get('TextTwo');
-                    var StampContent = rec.get('StampContent').replace("http://42.1.63.57/", "https://setkita.com/");
+                    var StampContent = rec.get('StampContent').replace("http://42.1.63.57/", GetDomainName());
                     var StampContentNote = rec.get('StampContentNote');
                     var StampedStatus = rec.get('StampedStatus');
         
@@ -3570,7 +3570,7 @@ function Load_FloatPanel_AyohaCardManagement_PreviewCardLoadByStampCampaignCodeE
             var modelRecord = myStore.getAt(ii);
             var TextOne = modelRecord.get('TextOne');
             var TextTwo = modelRecord.get('TextTwo');
-            var StampContent = modelRecord.get('StampContent').replace("http://42.1.63.57/", "https://setkita.com/");
+            var StampContent = modelRecord.get('StampContent').replace("http://42.1.63.57/",GetDomainName());
             var StampContentNote = modelRecord.get('StampContentNote');
             var StampedStatus = modelRecord.get('StampedStatus');
             console.log(StampedStatus);

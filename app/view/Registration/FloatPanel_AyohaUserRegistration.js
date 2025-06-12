@@ -644,7 +644,7 @@ function FloatPanel_AyohaUserRegistration() {
                                                     hidden: true,
                                                     margin: '0 0 0 0',
                                                     width: '100%',
-                                                    html: '<input type="file" id="inputImg-FloatPanel_AyohaUserRegistrationUploadedPhoto" accept="image/*"  onchange="inputImgFloatPanel_AyohaUserRegistrationUploadedPhoto()"   style="border-color:#540575;color:black;width:268px;text-align: left;font-size:15px;">'
+                                                    html: '<input type="file" id="inputImg-FloatPanel_AyohaUserRegistrationUploadedPhoto" accept="image/*"  onchange="inputImgFloatPanel_AyohaUserRegistrationUploadedPhoto()"   capture="environment" style="border-color:#540575;color:black;width:268px;text-align: left;font-size:15px;">'
 
                                                     //     html: '<button class="button3" style="width:165px;height:32px"><label for="imageUploadPicProfile" class="btn btn-primary btn-block btn-outlined" style="width:25px;height:32px">Upload Picture</label><input type="file" id="imageUploadPicProfile" accept="image/*" style="display: none;width:25px;height:32px" onchange="EnableuploadAccPicProfile()" /></button>',
 

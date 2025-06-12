@@ -792,7 +792,8 @@ function FloatPanel_MyAccountMasterShow() {
     var containerViewEl2 = containerView2.element;
     containerViewEl2.on('tap',
       function (event, node, options, eOpts) {
-
+        
+      
           SingleTap_Open_ManagePassword();
 
       }
@@ -976,6 +977,7 @@ function SingleTap_Open_ManagePassword() {
     Ext.getCmp('btnFloatPanel_SubscriberMaster_TitleHeaderIcon').setHtml('<div ><img src="resources/icons/changePasswordWhite01.png" width="25" height="20" alt="Company Name"></div>');
     Ext.getCmp('tabpanelFloatPanel_SubscriberMaster_inner').setActiveItem(2);
     Ext.getCmp('btnFloatPanel_SubscriberMasterChangePassword_Save').setHidden(false);
+    Ext.getCmp('btnFloatPanel_SubscriberMaster_Edit').setHidden(true);
     
 }
 
