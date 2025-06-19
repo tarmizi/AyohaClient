@@ -23,6 +23,8 @@
    'isRequiredStartEndDate',
    'isCampaignExpired',
    'CampaignDayLeft',
+   'MembershipCardName',
+   'MembershipcardImg',
        {
            name: 'CampaignIcon',
            convert: function (value, record) {

@@ -925,7 +925,7 @@ function FloatPanel_AyohaeWalletShow() {
     } 
 
 
- 
+    billPaymentGateWayID_randomNo = GenerateRandomNo();
    
   
 }
@@ -1074,7 +1074,7 @@ function floatPanel_AyohaeWallet_setHeigtFloatPanel_AyohaeWallet_TransactionList
 
 
 var billPaymentGateWayID_randomNo;
-//var billExternalID;
+var billExternalID;
 var FloatPanel_AyohaeWallet_BillCode;
 var popUpExternalwindow;
 function FloatPanel_AyohaeWallet_TopUp() {
@@ -1082,7 +1082,7 @@ function FloatPanel_AyohaeWallet_TopUp() {
   
     var modifiedAccountNo=GetCurrAyohaUserAccountNo().split('-');
     billPaymentGateWayID_randomNo = GenerateRandomNo();
-   var billExternalID = modifiedAccountNo[2] + '-50528-0133376958-NoEnterprise-' + billPaymentGateWayID_randomNo;
+    billExternalID = modifiedAccountNo[2] + '-50528-0133376958-NoEnterprise-' + billPaymentGateWayID_randomNo;
   
     $.ajax({
 
@@ -1097,9 +1097,10 @@ function FloatPanel_AyohaeWallet_TopUp() {
 
 
             var task = Ext.create('Ext.util.DelayedTask', function () {
-
+               
                 popUpExternalwindow=window.open('https://dev.toyyibpay.com/' + obj.BillCode, '_system');
                 FloatPanel_AyohaeWallet_BillCode = obj.BillCode;
+                
                 FloatPanel_AyohaeWallet_PaymentGateWayBillMasterInsert(obj.BillCode, "Ayoha_eWallet_TopUp", billExternalID);
                 FloatPanel_AyohaeWallet_CheckPaymentGatewayTransaction(billExternalID);
                 return false;

@@ -149,9 +149,12 @@ function ResizeUploadedImage(val) {
 
 
 
-
+var animatedClickTabExtComponant=null;
 function animatedClickTabExt(Componant) {
-
+if(animatedClickTabExtComponant){
+    Ext.getCmp(animatedClickTabExtComponant).setStyle('background-color:transparent;border-bottom:3px none purple');
+}
+    
 
     $("#"+Componant).animate({
         opacity: 0.25,
@@ -168,6 +171,10 @@ function animatedClickTabExt(Componant) {
 
         });
     });
+    Ext.getCmp(Componant).setStyle('background-color:transparent;border-bottom:3px solid purple');
+    animatedClickTabExtComponant = Componant;
+
+    
 }
 
 
@@ -2363,4 +2370,144 @@ if(MembershipTag == 'YES'){
 }
 
     return value;
+}
+
+function setMessage_NotYetMembershipMessage_WithJoinButton(){
+    Swal.fire({
+        title: '',
+        html: "<b>Hi!,! You are not member of " + FloatPanel_AyohaStore_getEnterpriseName() + "</b>."+setMessage_toBeAyohaMember(),
+       // html: "<b>Hi!,! You are not member of " + FloatPanel_AyohaStore_getEnterpriseName() + "</b>.<br><br>every ayoha reward user required to be a member in every one of our online stores,we will give you more rewards for every purchase you make.<br><br>  Press JOIN to get a membership card and join the campaign!",
+        //imageUrl: "resources/icons/membershipPurpleThree.png",
+        imageUrl: FloatPanel_AyohaStore_getEnterpriseLogo(),
+        imageWidth: 350,
+        imageHeight: 200,
+        showCloseButton: true,
+        showCancelButton: false,
+        //  confirmButtonColor: '#3085d6',
+        confirmButtonColor: '#9932cc',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'JOIN',
+        footer: '<img src="resources/icons/Logo/AyohaLogofullOrange.png" width="100" height="70" alt="Company Name"/>'
+    }).then(function (result) {
+        if (result.isConfirmed) {
+    
+    FloatPanel_MembershipCardList_NotYetSubscribedShow_FromDashboard_Main(globalFloatPanelMerchantDetailPage_MembershipCardCode, globalFloatPanelMerchantDetailPage_EnterpriseAccNo, MembershipTag,'NA',globalFloatPanelMerchantDetailPage_CountStar,globalFloatPanelMerchantDetailPage_CountReviewer)
+    localStorage.setItem("MembershipByMethod", "AyohaStore");
+    FloatPanel_AyohaStoreHide();
+    
+          
+        }
+    });
+}
+
+
+
+
+
+
+
+function SampleRefactoreLoadDataStore01() {
+   
+        globalOpenMembershipCardList_Upgrade_From = 'DashboardMain';
+        globalFloatPanel_MembershipCardList_UpgradeShow_FromAyohaMerchant_isMembershipCardSubscribed = 'NO';
+        _DataStore_MembershipCardLoadBySubscriberAccNoDashboardMainStore.getProxy().setExtraParam('SubscriberAccNo', GetCurrAyohaUserAccountNo());
+        _DataStore_MembershipCardLoadBySubscriberAccNoDashboardMainStore.getProxy().setUrl(GetAPIurl() + '/MembershipCard/MembershipCardLoadBySubscriberAccNoDashboardMain');
+        
+        _DataStore_MembershipCardLoadBySubscriberAccNoDashboardMainStore.load({
+            callback: function (records, operation, success) {
+                if (success && records.length > 0) {
+                    var allData = records;
+        
+                    // Store - MembershipCardFee > 0
+                    var storeWithFee = Ext.create('Ext.data.Store', {
+                        model: 'ianMizi.model.MembershipCard.MembershipCardModel',
+                        data: allData.filter(function (record) {
+                            return record.get('MembershipCardFee') > 0;
+                        })
+                    });
+        
+                    // Store - MembershipCardFee <= 0
+                    var storeFOC = Ext.create('Ext.data.Store', {
+                        model: 'ianMizi.model.MembershipCard.MembershipCardModel',
+                        data: allData.filter(function (record) {
+                            return record.get('MembershipCardFee') <= 0;
+                        })
+                    });
+        
+                    // Store - Top Rated (3.5 stars and above, sorted descending)
+                    var storeTopRated = Ext.create('Ext.data.Store', {
+                        model: 'ianMizi.model.MembershipCard.MembershipCardModel',
+                        data: allData
+                            .filter(function (record) {
+                                var star = record.get('CountStar');
+                                return star !== null && star !== undefined && star >= 3.5;
+                            })
+                            .sort(function (a, b) {
+                                return b.get('CountStar') - a.get('CountStar');
+                            })
+                    });
+        
+                    // Set stores to list components
+                    Ext.getCmp('Dashboard_MyAccount_UnSubscribedMembershipCardList').setStore(storeFOC);
+                    Ext.getCmp('Dashboard_MyAccount_UnSubscribedMembershipCardListDesignOne').setStore(storeWithFee);
+                    Ext.getCmp('Dashboard_MyAccount_UnSubscribedMembershipCardListDesignTwo').setStore(storeTopRated);
+        
+                    console.log('Stores updated based on loaded membership card data.');
+                } else {
+                    console.log('Failed to load membership card data or no records returned.');
+                }
+            }
+        });
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    }
+    
+    function SampleRefactoreLoadDataStore02(){
+        _DataStore_MembershipCardPaymentPlanLoadByPaymentPlanCodeStore.getProxy().setExtraParam('EnterpriseAccNo', EnterpriseAccNo);
+        _DataStore_MembershipCardPaymentPlanLoadByPaymentPlanCodeStore.getProxy().setExtraParam('MembershipCardCode', MembershipCardCode);
+        _DataStore_MembershipCardPaymentPlanLoadByPaymentPlanCodeStore.getProxy().setUrl(GetAPIurl() + '/MembershipCard/MembershipCardLoadByEnterpriseAccNoMerchantVersion');
+        
+        _DataStore_MembershipCardPaymentPlanLoadByPaymentPlanCodeStore.load({
+            callback: function (records, operation, success) {
+                if (success) {
+                    console.log('Store loaded successfully, total records: ' + records.length);
+        
+                    // Loop through all records
+                    records.forEach(function (record) {
+                        var planCode = record.get('PaymentPlanCode');
+                        var fee = record.get('MembershipCardFee');
+                        var cycle = record.get('MembershipCardFeePaymentCycle');
+        
+                        console.log('Plan Code:', planCode);
+                        console.log('Fee:', fee);
+                        console.log('Cycle:', cycle);
+                        globalFloatPanel_MembershipCardList_NotYetSubscribed_price = parseFloat(fee);
+                        globalFloatPanel_MembershipCardList_NotYetSubscribed_plan = cycle;
+                        globalFloatPanel_MembershipCardList_NotYetSubscribed_paymentCycleCode = cycle;
+        
+                        // You can also trigger UI actions here like:
+                      // changeBackground(null, fee, cycle, 1);
+                        //changeBackground
+                        changeBackgroundfromdataload(document.querySelector('.membership-card-container'), fee, cycle, 1);
+                        //changeBackground(event,{MembershipCardFee},`{MembershipCardFeePaymentCycle}`,`{1}`)
+                    });
+        
+                    // Optionally continue your task after loading
+                    FloatPanel_MembershipCardList_NotYetSubscribed_loadEnterprise();
+                    LoadingPanelHide();
+                } else {
+                    console.error('Failed to load store data.');
+                    LoadingPanelHide();
+                }
+            }
+        });
 }

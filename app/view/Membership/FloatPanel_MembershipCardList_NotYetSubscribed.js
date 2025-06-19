@@ -2102,7 +2102,7 @@ items: [
                                                         {
                                                             xtype: 'container',
                                                             width: '95%',
-                                                            margin:'20 0 0 0',
+                                                            margin:'0 0 0 0',
                                                             style: 'background-color:white',
                                                           //  hidden:true,
                                                           //  style: 'background-image: url("resources/icons/border7.png"); background-size: 100% 100%;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-radius: 10px 10px 0px 0px;',
@@ -2148,7 +2148,7 @@ items: [
     xtype: 'container',
     id: 'containerFloatPanel_MembershipCardList_NotYetSubscribed_Enterpriselist',
     style: ' background-color: transparent',
-    height: 400,
+    height: 500,
     width: '100%',
     layout: {
         type: 'vbox',
@@ -2780,7 +2780,9 @@ function FloatPanel_MembershipCardList_NotYetSubscribedShow_FromDashboard_Main(M
     FloatPanel_MembershipCardList_NotYetSubscribed_MembershipCardPaymentPlanLoadByPaymentPlanCodeStore(EnterpriseAccountNo,MembershipCardCode);
 
 
-
+if(CountStar=="NaN"){
+    CountStar=0.0;
+}
     
     FloatPanel_MembershipCardList_NotYetSubscribed_RateAndReview(CountStar,CountReviewer);
     FloatPanel_MembershipCardList_NotYetSubscribed_initEventContainer();
@@ -3544,46 +3546,48 @@ function FloatPanel_MembershipCardList_NotYetSubscribed_MembershipCardCampaingEn
 
     var mmmCode = MMCCode;
     if (mmmCode) {
-    //Ext.getStore('MembershipCardCampaingEntitledLoadByMembershipCardCodeStore').getProxy().setExtraParams({
-    //    MembershipCardCode: MMCCode,
-    //    SubscriberAccNo: GetCurrAyohaUserAccountNo(),
-    //});
-        //Ext.StoreMgr.get('MembershipCardCampaingEntitledLoadByMembershipCardCodeStore').load();
-       
+
         _DataStore_MembershipCardCampaingEntitledLoadByMembershipCardCodeStore.getProxy().setExtraParam('MembershipCardCode', MMCCode);
         _DataStore_MembershipCardCampaingEntitledLoadByMembershipCardCodeStore.getProxy().setExtraParam('SubscriberAccNo', GetCurrAyohaUserAccountNo());
         _DataStore_MembershipCardCampaingEntitledLoadByMembershipCardCodeStore.getProxy().setUrl(GetAPIurl() + '/MembershipCardCampaingEntitled/MembershipCardCampaingEntitledLoadByMembershipCardCode');
-        _DataStore_MembershipCardCampaingEntitledLoadByMembershipCardCodeStore.load();
+      
+
+        _DataStore_MembershipCardCampaingEntitledLoadByMembershipCardCodeStore.load({
+            callback: function (records, operation, success) {
+                if (success) {
+                    console.log('Store loaded successfully, total records: ' + records.length);
+        
+                    var Count = _DataStore_MembershipCardCampaingEntitledLoadByMembershipCardCodeStore.getCount();
+
+                    var heightlist =Count *100;
+                            Ext.getCmp('FloatPanel_MembershipCardList_NotYetSubscribed_Campaignlist').setHeight(heightlist)
+                       
+                          //  _DataStore_MembershipCardCampaingEntitledLoadByMembershipCardCodeStore = Ext.getStore('MembershipCardCampaingEntitledLoadByMembershipCardCodeStore');
+                         // FloatPanel_MembershipCardList_NotYetSubscribed_MembershipCardCalculateRating(MMCCode);
+                    
+                         FloatPanel_MembershipCardList_NotYetSubscribed_loadEnterprise();
+                          LoadingPanelHide();
 
 
-    var task = Ext.create('Ext.util.DelayedTask', function () {
-        //Ext.getStore('MembershipCardCampaingEntitledLoadByMembershipCardCodeStore').getProxy().setExtraParams({
-        //    MembershipCardCode: MMCCode,
-        //    SubscriberAccNo: GetCurrAyohaUserAccountNo(),
-        //});
-        //Ext.StoreMgr.get('MembershipCardCampaingEntitledLoadByMembershipCardCodeStore').load();
-        //var myStore = Ext.getStore('MembershipCardCampaingEntitledLoadByMembershipCardCodeStore');
-        var Count = _DataStore_MembershipCardCampaingEntitledLoadByMembershipCardCodeStore.getCount();
-
-var heightlist =Count *100;
-        Ext.getCmp('FloatPanel_MembershipCardList_NotYetSubscribed_Campaignlist').setHeight(heightlist)
-   
-      //  _DataStore_MembershipCardCampaingEntitledLoadByMembershipCardCodeStore = Ext.getStore('MembershipCardCampaingEntitledLoadByMembershipCardCodeStore');
-     // FloatPanel_MembershipCardList_NotYetSubscribed_MembershipCardCalculateRating(MMCCode);
+                  
+                } else {
+                    console.error('Failed to load store data.');
+                    LoadingPanelHide();
+                }
+            }
+        });
 
 
-      LoadingPanelHide();
-      Ext.Viewport.setMasked(false);
 
-    });
-    task.delay(1000);
+
+
     }
 }
 
 
 function FloatPanel_MembershipCardList_NotYetSubscribed_MembershipCardEnterprisesEntitledLoadByMembershipCardCodeStore(MembershipCode, EnterpriseAccountNo) {
    // Ext.getStore('MembershipCardEnterprisesEntitledLoadByMembershipCardCodeStore').removeAll();
-
+//alert(MembershipCode)
     if (MembershipCode) {
         Ext.getStore('MembershipCardEnterprisesEntitledLoadByMembershipCardCodeStore').getProxy().setExtraParams({
             MembershipCardCode: MembershipCode,
@@ -3935,542 +3939,7 @@ function FloatPanel_MembershipCardList_NotYetSubscribed_AyohaStore() {
 
 function FloatPanel_MembershipCardList_NotYetSubscribed_MembershipCardCalculateRating(EnterpriseAccNo,ItemCodeReview) {
     FloatPanel_MembershipCardList_NotYetSubscribed_MembershipCardCampaingEntitledLoadByMembershipCardCodeStore(ItemCodeReview);
-return;
-   
-    Ext.Viewport.mask({ xtype: 'loadmask', message: 'Calculate Rating....' });
-   
 
-    var task = Ext.create('Ext.util.DelayedTask', function () {
-
-        var objn = {
-            "EnterpriseAccNo": EnterpriseAccNo,
-            "ItemCodeReview": ItemCodeReview
-        };
-        // console.log(objn);
-        var _value = Ext.Ajax.request({
-
-            type: "POST",
-
-            url: GetAPIurl() + '/AyohaMerchantReview/AyohaMerchantReviewCalculateRatingSaleItemDetail',
-
-            dataType: "json",
-            data: JSON.stringify(objn),
-            headers: {
-                "Content-Type": "application/json; charset=utf-8"
-            },
-
-            success: function (result, request) {
-
-                //console.log(result.responseText);
-
-
-                data = Ext.decode(result.responseText.trim());
-
-                if (data.success == "true") {
-                    //var newData = JSON.parse(JSON.stringify(result.results.Email))
-                    //console.log(result.results.Email);
-                    //  //data.results[0];
-                    // console.log(data.total);
-                    if (data.total > 0) {
-                        FiveStar = data.results[0].FiveStar;
-                        FourStar = data.results[0].FourStar;
-                        ThreeStar = data.results[0].ThreeStar;
-                        TwoStar = data.results[0].TwoStar;
-                        OneStar = data.results[0].OneStar;
-                        TotalStar = data.results[0].TotalStar;
-                        TotalVoter = data.results[0].TotalVoter;
-                        VoteFiveStar = data.results[0].VoteFiveStar;
-                        VoteFourStar = data.results[0].VoteFourStar;
-                        VoteThreeStar = data.results[0].VoteThreeStar;
-                        VoteTwoStar = data.results[0].VoteTwoStar;
-                        VoteOneStar = data.results[0].VoteOneStar;
-
-
-                        var TotalAvg = (VoteFiveStar + VoteFourStar + VoteThreeStar + VoteTwoStar + VoteOneStar) / TotalVoter;
-
-                        if (TotalAvg) {
-                            
-                            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_ReviewAndRateCountOutter').setHtml('<div style="color:black;text-align: center;font-size:16px;width:100%;font-weight:bold;margin:0px 0px 0px 0px;">' + TotalAvg.toFixed(1) + '</div>');
-                           // Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Rate').setHtml('<div style="color:black;text-align: center;font-size:60px;width:100%;font-weight:bold;margin:0px 0px 0px 0px;">' + TotalAvg.toFixed(1) + '</div>');
-
-
-                        } else {
-                            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_ReviewAndRateCountOutter').setHtml('<div style="color:black;text-align: center;font-size:16px;width:100%;font-weight:bold;margin:0px 0px 0px 0px;">0.0</div>');
-                        }
-
-                      //  Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_TotalReviews').setHtml('<div style="width100%;text-align:right;background-color: transparent;font-family:Arial, sans-serif;font-size:10px;color:black;font-weight:bold;overflow:hidden;margin:-13px 10px 10px 0px;"><img src="resources/icons/merchantrateusAccountImg.png" alt="Image" style="width:10px;height:10px;">&nbsp;&nbsp;&nbsp;' + TotalVoter + ' Reviews</div>');
-                        Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_TotalReviewsOutter').setHtml('<div style="width100%;text-align:right;background-color: transparent;font-family:Arial, sans-serif;font-size:10px;color:black;font-weight:bold;overflow:hidden;margin:-13px 10px 10px 0px;"><img src="resources/icons/merchantrateusAccountImg.png" alt="Image" style="width:10px;height:10px;">&nbsp;&nbsp;&nbsp;' + TotalVoter + ' Reviews</div>');
-                       
-                        
-                       
-                      //  Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_ReviewAndRateTitle').setHtml('<div style="background: transparent;width:100%;font-size: 12px;font-weight:normal;color:black;text-align:center;" >Rating(' + TotalVoter + ')</div>');
-                       
-                        var RateReviews = TotalAvg.toFixed(1);
-
-
-
-                        if (RateReviews == 5) {                           
-                            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star1Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-                            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star2Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-                            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star3Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-                            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star4Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-                            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star5Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-                           
-                            // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star1').setHtml('<div ><img src="resources/icons/star.png" width="18" height="18" alt="Company Name"></div>');
-                            // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star2').setHtml('<div ><img src="resources/icons/star.png" width="18" height="18" alt="Company Name"></div>');
-                            // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star3').setHtml('<div ><img src="resources/icons/star.png" width="18" height="18" alt="Company Name"></div>');
-                            // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star4').setHtml('<div ><img src="resources/icons/star.png" width="18" height="18" alt="Company Name"></div>');
-                            // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star5').setHtml('<div ><img src="resources/icons/star.png" width="18" height="18" alt="Company Name"></div>');
-
-
-                            
-
-                        }
-                        if ((RateReviews >= 4) && (RateReviews < 5)) {
-                            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star1Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-                            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star2Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-                            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star3Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-                            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star4Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-                            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star5Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="17" height="17" alt="Company Name"></div>');
-
-                            // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star1').setHtml('<div ><img src="resources/icons/star.png" width="18" height="18" alt="Company Name"></div>');
-                            // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star2').setHtml('<div ><img src="resources/icons/star.png" width="18" height="18" alt="Company Name"></div>');
-                            // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star3').setHtml('<div ><img src="resources/icons/star.png" width="18" height="18" alt="Company Name"></div>');
-                            // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star4').setHtml('<div ><img src="resources/icons/star.png" width="18" height="18" alt="Company Name"></div>');
-                            // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star5').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="18" height="18" alt="Company Name"></div>');
-
-
-
-                            if ((RateReviews >= 4.2) && (RateReviews <= 4.4)) {
-
-                                Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star1Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-                                Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star2Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-                                Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star3Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-                                Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star4Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-                                Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star5Outter').setHtml('<div ><img src="resources/icons/StarpointThree.png" width="17" height="17" alt="Company Name"></div>');
-
-
-
-                                // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star1').setHtml('<div ><img src="resources/icons/star.png" width="18" height="18" alt="Company Name"></div>');
-                                // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star2').setHtml('<div ><img src="resources/icons/star.png" width="18" height="18" alt="Company Name"></div>');
-                                // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star3').setHtml('<div ><img src="resources/icons/star.png" width="18" height="18" alt="Company Name"></div>');
-                                // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star4').setHtml('<div ><img src="resources/icons/star.png" width="18" height="18" alt="Company Name"></div>');
-                                // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star5').setHtml('<div ><img src="resources/icons/StarpointThree.png" width="18" height="18" alt="Company Name"></div>');
-                            }
-                            if (RateReviews == 4.5) {
-
-                                Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star1Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-                                Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star2Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-                                Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star3Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-                                Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star4Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-                                Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star5Outter').setHtml('<div ><img src="resources/icons/StarpointFive.png" width="17" height="17" alt="Company Name"></div>');
-                           
-                                // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star1').setHtml('<div ><img src="resources/icons/star.png" width="18" height="18" alt="Company Name"></div>');
-                                // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star2').setHtml('<div ><img src="resources/icons/star.png" width="18" height="18" alt="Company Name"></div>');
-                                // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star3').setHtml('<div ><img src="resources/icons/star.png" width="18" height="18" alt="Company Name"></div>');
-                                // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star4').setHtml('<div ><img src="resources/icons/star.png" width="18" height="18" alt="Company Name"></div>');
-                                // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star5').setHtml('<div ><img src="resources/icons/StarpointFive.png" width="18" height="18" alt="Company Name"></div>');
-                           
-                           
-                            }
-                            if ((RateReviews >= 4.6) && (RateReviews <= 4.8)) {
-
-                                Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star1Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-                                Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star2Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-                                Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star3Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-                                Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star4Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-                                Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star5Outter').setHtml('<div ><img src="resources/icons/StarpointSeven.png" width="17" height="17" alt="Company Name"></div>');
-                           
-                                // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star1').setHtml('<div ><img src="resources/icons/star.png" width="18" height="18" alt="Company Name"></div>');
-                                // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star2').setHtml('<div ><img src="resources/icons/star.png" width="18" height="18" alt="Company Name"></div>');
-                                // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star3').setHtml('<div ><img src="resources/icons/star.png" width="18" height="18" alt="Company Name"></div>');
-                                // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star4').setHtml('<div ><img src="resources/icons/star.png" width="18" height="18" alt="Company Name"></div>');
-                                // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star5').setHtml('<div ><img src="resources/icons/StarpointSeven.png" width="18" height="18" alt="Company Name"></div>');
-                           
-                           
-                           
-                            }
-                            if (RateReviews == 4.9) {
-                                Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star1Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-                                Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star2Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-                                Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star3Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-                                Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star4Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-                                Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star5Outter').setHtml('<div ><img src="resources/icons/StarpointNine.png" width="17" height="17" alt="Company Name"></div>');
-                           
-                                                      
-                                // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star1').setHtml('<div ><img src="resources/icons/star.png" width="18" height="18" alt="Company Name"></div>');
-                                // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star2').setHtml('<div ><img src="resources/icons/star.png" width="18" height="18" alt="Company Name"></div>');
-                                // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star3').setHtml('<div ><img src="resources/icons/star.png" width="18" height="18" alt="Company Name"></div>');
-                                // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star4').setHtml('<div ><img src="resources/icons/star.png" width="18" height="18" alt="Company Name"></div>');
-                                // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star5').setHtml('<div ><img src="resources/icons/StarpointNine.png" width="18" height="18" alt="Company Name"></div>');
-                           
-                           
-                            }
-
-
-
-                        }
-                        if ((RateReviews >= 3) && (RateReviews < 4)) {
-
-                            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star1Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-                            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star2Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-                            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star3Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-                            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star4Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="17" height="17" alt="Company Name"></div>');
-                            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star5Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="17" height="17" alt="Company Name"></div>');
-
-
-                            // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star1').setHtml('<div ><img src="resources/icons/star.png" width="18" height="18" alt="Company Name"></div>');
-                            // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star2').setHtml('<div ><img src="resources/icons/star.png" width="18" height="18" alt="Company Name"></div>');
-                            // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star3').setHtml('<div ><img src="resources/icons/star.png" width="18" height="18" alt="Company Name"></div>');
-                            // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star4').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="18" height="18" alt="Company Name"></div>');
-                            // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star5').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="18" height="18" alt="Company Name"></div>');
-
-
-
-                            if ((RateReviews >= 3.2) && (RateReviews <= 3.4)) {
-
-                                Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star1Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-                                Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star2Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-                                Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star3Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-                                Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star4Outter').setHtml('<div ><img src="resources/icons/StarpointThree.png" width="17" height="17" alt="Company Name"></div>');
-                                Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star5Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="17" height="17" alt="Company Name"></div>');
-
-
-                                
-                            // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star1').setHtml('<div ><img src="resources/icons/star.png" width="18" height="18" alt="Company Name"></div>');
-                            // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star2').setHtml('<div ><img src="resources/icons/star.png" width="18" height="18" alt="Company Name"></div>');
-                            // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star3').setHtml('<div ><img src="resources/icons/star.png" width="18" height="18" alt="Company Name"></div>');
-                            // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star4').setHtml('<div ><img src="resources/icons/StarpointThree.png" width="18" height="18" alt="Company Name"></div>');
-                            // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star5').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="18" height="18" alt="Company Name"></div>');
-                            }
-                            if (RateReviews == 3.5) {
-
-                                Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star1Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-                                Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star2Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-                                Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star3Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-                                Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star4Outter').setHtml('<div ><img src="resources/icons/StarpointFive.png" width="17" height="17" alt="Company Name"></div>');
-                                Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star5Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="17" height="17" alt="Company Name"></div>');
-
-
-                                
-                                // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star1').setHtml('<div ><img src="resources/icons/star.png" width="18" height="18" alt="Company Name"></div>');
-                                // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star2').setHtml('<div ><img src="resources/icons/star.png" width="18" height="18" alt="Company Name"></div>');
-                                // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star3').setHtml('<div ><img src="resources/icons/star.png" width="18" height="18" alt="Company Name"></div>');
-                                // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star4').setHtml('<div ><img src="resources/icons/StarpointFive.png" width="18" height="18" alt="Company Name"></div>');
-                                // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star5').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="18" height="18" alt="Company Name"></div>');
-
-
-                            }
-                            if ((RateReviews >= 3.6) && (RateReviews <= 3.8)) {
-
-                                Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star1Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-                                Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star2Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-                                Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star3Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-                                Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star4Outter').setHtml('<div ><img src="resources/icons/StarpointSeven.png" width="17" height="17" alt="Company Name"></div>');
-                                Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star5Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="17" height="17" alt="Company Name"></div>');
-                            
-                            
-                                
-                                // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star1').setHtml('<div ><img src="resources/icons/star.png" width="18" height="18" alt="Company Name"></div>');
-                                // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star2').setHtml('<div ><img src="resources/icons/star.png" width="18" height="18" alt="Company Name"></div>');
-                                // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star3').setHtml('<div ><img src="resources/icons/star.png" width="18" height="18" alt="Company Name"></div>');
-                                // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star4').setHtml('<div ><img src="resources/icons/StarpointSeven.png" width="18" height="18" alt="Company Name"></div>');
-                                // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star5').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="18" height="18" alt="Company Name"></div>');
-                            
-                            
-                            }
-                            if (RateReviews == 3.9) {
-                                Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star1Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-                                Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star2Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-                                Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star3Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-                                Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star4Outter').setHtml('<div ><img src="resources/icons/StarpointNine.png" width="17" height="17" alt="Company Name"></div>');
-                                Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star5Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="17" height="17" alt="Company Name"></div>');
-                            
-                            
-                                                            
-                                // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star1').setHtml('<div ><img src="resources/icons/star.png" width="18" height="18" alt="Company Name"></div>');
-                                // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star2').setHtml('<div ><img src="resources/icons/star.png" width="18" height="18" alt="Company Name"></div>');
-                                // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star3').setHtml('<div ><img src="resources/icons/star.png" width="18" height="18" alt="Company Name"></div>');
-                                // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star4').setHtml('<div ><img src="resources/icons/StarpointNine.png" width="18" height="18" alt="Company Name"></div>');
-                                // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star5').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="18" height="18" alt="Company Name"></div>');
-                            
-                            }
-
-
-
-                        }
-                        if ((RateReviews >= 2) && (RateReviews < 3)) {
-
-
-                            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star1Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-                            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star2Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-                            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star3Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="17" height="17" alt="Company Name"></div>');
-                            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star4Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="17" height="17" alt="Company Name"></div>');
-                            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star5Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="17" height="17" alt="Company Name"></div>');
-
-                                                            
-                            // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star1').setHtml('<div ><img src="resources/icons/star.png" width="18" height="18" alt="Company Name"></div>');
-                            // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star2').setHtml('<div ><img src="resources/icons/star.png" width="18" height="18" alt="Company Name"></div>');
-                            // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star3').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="18" height="18" alt="Company Name"></div>');
-                            // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star4').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="18" height="18" alt="Company Name"></div>');
-                            // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star5').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="18" height="18" alt="Company Name"></div>');
-
-
-
-                            if ((RateReviews >= 2.2) && (RateReviews <= 2.4)) {
-
-                                Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star1Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-                                Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star2Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-                                Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star3Outter').setHtml('<div ><img src="resources/icons/StarpointThree.png" width="17" height="17" alt="Company Name"></div>');
-                                Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star4Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="17" height="17" alt="Company Name"></div>');
-                                Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star5Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="17" height="17" alt="Company Name"></div>');
-                          
-                          
-                                                            
-                                // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star1').setHtml('<div ><img src="resources/icons/star.png" width="18" height="18" alt="Company Name"></div>');
-                                // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star2').setHtml('<div ><img src="resources/icons/star.png" width="18" height="18" alt="Company Name"></div>');
-                                // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star3').setHtml('<div ><img src="resources/icons/StarpointThree.png" width="18" height="18" alt="Company Name"></div>');
-                                // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star4').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="18" height="18" alt="Company Name"></div>');
-                                // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star5').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="18" height="18" alt="Company Name"></div>');
-                          
-                          
-                            }
-                            if (RateReviews == 2.5) {
-
-                                Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star1Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-                                Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star2Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-                                Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star3Outter').setHtml('<div ><img src="resources/icons/StarpointFive.png" width="17" height="17" alt="Company Name"></div>');
-                                Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star4Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="17" height="17" alt="Company Name"></div>');
-                                Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star5Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="17" height="17" alt="Company Name"></div>');
-                           
-                                                           
-                                // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star1').setHtml('<div ><img src="resources/icons/star.png" width="18" height="18" alt="Company Name"></div>');
-                                // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star2').setHtml('<div ><img src="resources/icons/star.png" width="18" height="18" alt="Company Name"></div>');
-                                // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star3').setHtml('<div ><img src="resources/icons/StarpointFive.png" width="18" height="18" alt="Company Name"></div>');
-                                // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star4').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="18" height="18" alt="Company Name"></div>');
-                                // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star5').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="18" height="18" alt="Company Name"></div>');
-                           
-                           
-                            }
-                            if ((RateReviews >= 2.6) && (RateReviews <= 2.8)) {
-                                Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star1Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-                                Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star2Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-                                Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star3Outter').setHtml('<div ><img src="resources/icons/StarpointSeven.png" width="17" height="17" alt="Company Name"></div>');
-                                Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star4Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="17" height="17" alt="Company Name"></div>');
-                                Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star5Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="17" height="17" alt="Company Name"></div>');
-                           
-                           
-                                // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star1').setHtml('<div ><img src="resources/icons/star.png" width="18" height="18" alt="Company Name"></div>');
-                                // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star2').setHtml('<div ><img src="resources/icons/star.png" width="18" height="18" alt="Company Name"></div>');
-                                // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star3').setHtml('<div ><img src="resources/icons/StarpointSeven.png" width="18" height="18" alt="Company Name"></div>');
-                                // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star4').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="18" height="18" alt="Company Name"></div>');
-                                // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star5').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="18" height="18" alt="Company Name"></div>');
-                           
-                           
-                            }
-                            if (RateReviews == 2.9) {
-                                Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star1Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-                                Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star2Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-                                Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star3Outter').setHtml('<div ><img src="resources/icons/StarpointNine.png" width="17" height="17" alt="Company Name"></div>');
-                                Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star4Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="17" height="17" alt="Company Name"></div>');
-                                Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star5Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="17" height="17" alt="Company Name"></div>');
-
-                           
-                                                      
-                                // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star1').setHtml('<div ><img src="resources/icons/star.png" width="18" height="18" alt="Company Name"></div>');
-                                // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star2').setHtml('<div ><img src="resources/icons/star.png" width="18" height="18" alt="Company Name"></div>');
-                                // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star3').setHtml('<div ><img src="resources/icons/StarpointNine.png" width="18" height="18" alt="Company Name"></div>');
-                                // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star4').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="18" height="18" alt="Company Name"></div>');
-                                // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star5').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="18" height="18" alt="Company Name"></div>');
-                           
-                            }
-
-
-
-
-
-                        }
-                        if ((RateReviews >= 1) && (RateReviews < 2)) {
-
-                            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star1Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-                            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star2Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="17" height="17" alt="Company Name"></div>');
-                            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star3Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="17" height="17" alt="Company Name"></div>');
-                            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star4Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="17" height="17" alt="Company Name"></div>');
-                            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star5Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="17" height="17" alt="Company Name"></div>');
-
-
-                            // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star1').setHtml('<div ><img src="resources/icons/star.png" width="18" height="18" alt="Company Name"></div>');
-                            // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star2').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="18" height="18" alt="Company Name"></div>');
-                            // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star3').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="18" height="18" alt="Company Name"></div>');
-                            // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star4').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="18" height="18" alt="Company Name"></div>');
-                            // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star5').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="18" height="18" alt="Company Name"></div>');
-
-
-
-                            if ((RateReviews >= 1.2) && (RateReviews <= 1.4)) {
-
-
-                                Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star1Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-                                Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star2Outter').setHtml('<div ><img src="resources/icons/StarpointThree.png" width="17" height="17" alt="Company Name"></div>');
-                                Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star3Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="17" height="17" alt="Company Name"></div>');
-                                Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star4Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="17" height="17" alt="Company Name"></div>');
-                                Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star5Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="17" height="17" alt="Company Name"></div>');
-
-
-                                // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star1').setHtml('<div ><img src="resources/icons/star.png" width="18" height="18" alt="Company Name"></div>');
-                                // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star2').setHtml('<div ><img src="resources/icons/StarpointThree.png" width="18" height="18" alt="Company Name"></div>');
-                                // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star3').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="18" height="18" alt="Company Name"></div>');
-                                // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star4').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="18" height="18" alt="Company Name"></div>');
-                                // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star5').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="18" height="18" alt="Company Name"></div>');
-
-                            }
-                            if (RateReviews == 1.5) {
-                                Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star1Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-                                Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star2Outter').setHtml('<div ><img src="resources/icons/StarpointFive.png" width="17" height="17" alt="Company Name"></div>');
-                                Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star3Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="17" height="17" alt="Company Name"></div>');
-                                Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star4Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="17" height="17" alt="Company Name"></div>');
-                                Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star5Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="17" height="17" alt="Company Name"></div>');
-
-                         
-                                // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star1').setHtml('<div ><img src="resources/icons/star.png" width="18" height="18" alt="Company Name"></div>');
-                                // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star2').setHtml('<div ><img src="resources/icons/StarpointFive.png" width="18" height="18" alt="Company Name"></div>');
-                                // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star3').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="18" height="18" alt="Company Name"></div>');
-                                // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star4').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="18" height="18" alt="Company Name"></div>');
-                                // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star5').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="18" height="18" alt="Company Name"></div>');
-                         
-                            }
-                            if ((RateReviews >= 1.6) && (RateReviews <= 1.8)) {
-                                Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star1Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-                                Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star2Outter').setHtml('<div ><img src="resources/icons/StarpointSeven.png" width="17" height="17" alt="Company Name"></div>');
-                                Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star3Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="17" height="17" alt="Company Name"></div>');
-                                Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star4Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="17" height="17" alt="Company Name"></div>');
-                                Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star5Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="17" height="17" alt="Company Name"></div>');
-                          
-                                // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star1').setHtml('<div ><img src="resources/icons/star.png" width="18" height="18" alt="Company Name"></div>');
-                                // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star2').setHtml('<div ><img src="resources/icons/StarpointSeven.png" width="18" height="18" alt="Company Name"></div>');
-                                // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star3').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="18" height="18" alt="Company Name"></div>');
-                                // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star4').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="18" height="18" alt="Company Name"></div>');
-                                // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star5').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="18" height="18" alt="Company Name"></div>');
-                          
-                          
-                            }
-                            if (RateReviews == 1.9) {
-                                Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star1Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-                                Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star2Outter').setHtml('<div ><img src="resources/icons/StarpointNine.png" width="17" height="17" alt="Company Name"></div>');
-                                Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star3Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="17" height="17" alt="Company Name"></div>');
-                                Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star4Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="17" height="17" alt="Company Name"></div>');
-                                Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star5Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="17" height="17" alt="Company Name"></div>');
-                           
-                           
-                                // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star1').setHtml('<div ><img src="resources/icons/star.png" width="18" height="18" alt="Company Name"></div>');
-                                // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star2').setHtml('<div ><img src="resources/icons/StarpointNine.png" width="18" height="18" alt="Company Name"></div>');
-                                // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star3').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="18" height="18" alt="Company Name"></div>');
-                                // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star4').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="18" height="18" alt="Company Name"></div>');
-                                // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star5').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="18" height="18" alt="Company Name"></div>');
-                           
-                            }
-
-                        }
-                        if ((RateReviews >= 0) && (RateReviews < 1)) {
-
-                            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star1Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="17" height="17" alt="Company Name"></div>');
-                            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star2Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="17" height="17" alt="Company Name"></div>');
-                            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star3Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="17" height="17" alt="Company Name"></div>');
-                            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star4Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="17" height="17" alt="Company Name"></div>');
-                            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star5Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="17" height="17" alt="Company Name"></div>');
-
-                                                       
-                            // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star1').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="18" height="18" alt="Company Name"></div>');
-                            // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star2').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="18" height="18" alt="Company Name"></div>');
-                            // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star3').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="18" height="18" alt="Company Name"></div>');
-                            // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star4').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="18" height="18" alt="Company Name"></div>');
-                            // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star5').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="18" height="18" alt="Company Name"></div>');
-
-                        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                        //var task = Ext.create('Ext.util.DelayedTask', function () {
-
-                        //    setDashBoardMerchantReviewRate();
-                        //});
-
-                        //task.delay(500);
-
-
-
-
-
-                        // globalAyohaMerchantReviewRating = Math.round(TotalAvg);
-                        // globalAyohaMerchantReviewRating = TotalAvg.toFixed(1);
-
-
-
-                        // console.log(globalAyohaMerchantReviewRating);
-                        // --20 + 8 + 9 + 2 + 1 / 11
-                      //  FloatPanel_Membership_MembershipCardSaleDetail_setDashBoardMerchantReviewRate();
-                      FloatPanel_MembershipCardList_NotYetSubscribed_MembershipCardCampaingEntitledLoadByMembershipCardCodeStore(ItemCodeReview);
-                   //   FloatPanel_MembershipCardList_NotYetSubscribed_MembershipCardAyohaUserMembershipCardStore_Maindashboard(ItemCodeReview);
-                      //FloatPanel_MembershipCardList_NotYetSubscribed_MembershipCardAyohaUserMembershipCardStore_Maindashboard(ItemCodeReview);
-                        Ext.Viewport.unmask();
-                    }
-                    if (data.total == 0) {
-
-                        Ext.Viewport.unmask();
-
-                    }
-
-
-
-
-
-                }
-                else {
-
-
-                    Ext.Viewport.unmask();
-                }
-
-
-            },
-
-            failure: function (result, request) {
-                Ext.Viewport.unmask();
-            }
-
-        });
-
-
-
-    });
-
-    //  Ext.Viewport.unmask();
-
-    //   setDashBoardMerchantReviewRate(FiveStar, FourStar, ThreeStar, TwoStar, OneStar);
-    task.delay(500);
 
 
 }
@@ -4541,7 +4010,7 @@ function FloatPanel_MembershipCardList_NotYetSubscribed_MembershipCardPaymentPla
 
 
     var PaymentPlanCode = EnterpriseAccNo + '-' + MembershipCardCode;
-
+   // alert(PaymentPlanCode)
     _DataStore_MembershipCardPaymentPlanLoadByPaymentPlanCodeStore.getProxy().setExtraParam('EnterpriseAccNo', EnterpriseAccNo);
     _DataStore_MembershipCardPaymentPlanLoadByPaymentPlanCodeStore.getProxy().setExtraParam('MembershipCardCode', MembershipCardCode);
     _DataStore_MembershipCardPaymentPlanLoadByPaymentPlanCodeStore.getProxy().setUrl(GetAPIurl() + '/MembershipCard/MembershipCardLoadByEnterpriseAccNoMerchantVersion');
@@ -4572,7 +4041,7 @@ function FloatPanel_MembershipCardList_NotYetSubscribed_MembershipCardPaymentPla
                 });
     
                 // Optionally continue your task after loading
-                FloatPanel_MembershipCardList_NotYetSubscribed_loadEnterprise();
+             
                 LoadingPanelHide();
             } else {
                 console.error('Failed to load store data.');

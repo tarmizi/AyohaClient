@@ -52,12 +52,32 @@ Ext.define('ianMizi.view.LoginAyohaUser', {
                         //height: '35%',
                         height: 300,
                         items: [
+                            {
+                                xtype: 'container',
+                                //  style: 'background-image: url("resources/icons/AyohaHeaderLogin.png"); background-size: 100% 40%;background-repeat: no-repeat;',
+                                style: "background-color: transparent;",
+                                layout: {
+                                    type: 'vbox',
+                                    pack: 'start',
+                                    align: 'right'
+        
+                                },
+                                width: '100%',
+                                height:10,
+                                items:[
+                                    {
+
+                                        margin: '0 0 0 0',
+                                        // height: 20,
+                                        html: '<div class="blink_me" style="width:100%;background-color: orange;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 11px;font-weight:normal;color:white;border-radius:5px 5px 5px 5px">&nbsp; - BETA VERSION - &nbsp;</div>'
+                                    },
+                                ]
+                            },
+                           
                              {
-                                 //margin: '10 0 0 0',
-                                 //height: 160,
-                                 //width: 160,
-                                 //html: '<img src="resources/icons/ayohaReward01.gif" alt="Image" style="width:160px;height:160px;">',
-                                 margin: '10 0 0 -10',
+                               
+                                // ori// margin: '10 0 0 -10',
+                                 margin: '0 0 0 -10',
                                  height: 160,
                                  width: 160,
                                  //html: '<img src="resources/icons/Logo/LogoOrangeSimplifed.png" alt="Image" style="width:160px;height:160px;">',
@@ -77,6 +97,7 @@ Ext.define('ianMizi.view.LoginAyohaUser', {
                                   // height: 20,
                                   html: '<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 11px;font-weight:normal;color:white;">One hub, Double Rewards </div>'
                               },
+                              
                         ]
 
                     },

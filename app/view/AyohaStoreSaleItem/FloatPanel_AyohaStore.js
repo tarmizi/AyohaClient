@@ -2163,7 +2163,6 @@ function FloatPanel_AyohaStore() {
                                    ui: 'plain',
                                    handler: function () {
 
-
                                        if (globalFloatPanelAyohaStore_CheckMembershipCardIsUsedStatus == "Not Select Any Card") {
                                            FloatPanel_AyohaStore_MembershipCardUsedShow();
                                        }
@@ -2192,6 +2191,14 @@ function FloatPanel_AyohaStore() {
                                                footer: '<img src="resources/icons/Logo/AyohaLogofullOrange.png" width="100" height="70" alt="Company Name"/>'
                                            }).then(function (result) {
                                                if (result.isConfirmed) {
+if(MembershipTag=="NO"){
+     FloatPanel_MembershipCardList_NotYetSubscribedShow_FromDashboard_Main(globalFloatPanelMerchantDetailPage_MembershipCardCode, globalFloatPanelMerchantDetailPage_EnterpriseAccNo, MembershipTag,'NA',globalFloatPanelMerchantDetailPage_CountStar,globalFloatPanelMerchantDetailPage_CountReviewer)
+     localStorage.setItem("MembershipByMethod", "AyohaStore");
+     FloatPanel_AyohaStoreHide();
+
+
+    return
+}
                                                    localStorage.setItem("MembershipByMethod", "AyohaStore");
                                                    // GetMembershipCardEnableClick_containerFloatPanel_MembershipCardList_UpgradeBottom()
                                                    FloatPanel_AyohaStore_SaleItemDetailHide();
@@ -4763,7 +4770,7 @@ function FloatPanel_AyohaStore_AyohaRewardContestLoadBySubscriberAccNoEnterprise
 function FloatPanel_AyohaStore_AyohaRewardEventLoadBySubscriberAccNoStore_Event1() {
 
 
-    LoadingPanelShow(getLoadingIcon(), 'Loading....');
+   LoadingPanelShow(getLoadingIcon(), 'Loading....');
 
 
     _DataStore_AyohaRewardEventLoadBySubscriberAccNoEnterpriseAccNoStore.getProxy().setExtraParam('SubscriberAccNo', GetCurrAyohaUserAccountNo());

@@ -224,7 +224,7 @@ function Dashboard_SearchMerchantList() {
                      listeners: {
                          itemtap: function (list, idx, target, records, evt) {
                              LoadingPanelShow(getLoadingIcon(),'Loading....');
-                            
+                             MembershipTag= records.get('isMember');
                             // FloatPanel_RewardStore_OpenStore(records.get('ID'));
                              FloatPanel_MerchantDetailPageShow(records.get('ID'), records.get('EnterpriseAccNo'), records.get('EnterpriseLogoPath'), records.get('EnterpriseName'), records.get('EnterpriseTagLine'),
                                  records.get('NamaJalan'), records.get('Postkod'), records.get('Bandar'), records.get('Negeri'), records.get('EnterpriseCoordinate'), records.get('EnterpriseDescriptions'), records.get('EnterprisePhoneNo')
@@ -399,9 +399,9 @@ function Dashboard_SearchMerchantList_EnterprisesLoadAyohaMerchantListStore() {
         var count = _DataStore_EnterprisesLoadByMerchantCategory.getCount();
         var counted = _DataStore_EnterprisesLoadByMerchantCategory_temp.getCount();
        // alert(count + ' - ' + counted);
-       setTimeout(function () {
-           document.getElementById('input-Dashboard_SearchMerchant').blur();
-       }, 500);
+    //    setTimeout(function () {
+    //        document.getElementById('input-Dashboard_SearchMerchant').blur();
+    //    }, 1000);
         //Ext.getCmp('FloatPanel_RewardStore_CountSearchTxt').setHtml('<font size=3 color=black><b>(' + _DataStore_EnterprisesLoadByMerchantCategory.getCount() + ')</b></font>')
         LoadingPanelHide();
 
@@ -494,21 +494,21 @@ function Dashboard_SearchMerchantList_EnterprisesLoadAyohaMerchantListStoreOnKey
     var countEnterprisesLoadAyohaMerchantListStore = 0;
 
 
-    _DataStore_EnterprisesLoadByMerchantCategory.clearFilter();
+    _DataStore_EnterprisesLoadByMerchantCategory_temp.clearFilter();
 
     var queryString = document.getElementById('input-Dashboard_SearchMerchantList').value;
 
-
+console.log('queryString: ' + queryString);
 
     if (queryString) {
         
 
         var thisRegEx = new RegExp(queryString, "i");
-        _DataStore_EnterprisesLoadByMerchantCategory.filterBy(function (record) {
+        _DataStore_EnterprisesLoadByMerchantCategory_temp.filterBy(function (record) {
             if (thisRegEx.test(record.get('SearchCol'))) {
                 console.log('ada0');
 
-                countEnterprisesLoadAyohaMerchantListStore = _DataStore_EnterprisesLoadByMerchantCategory.getCount();
+                countEnterprisesLoadAyohaMerchantListStore = _DataStore_EnterprisesLoadByMerchantCategory_temp.getCount();
                 return true;
 
             };
@@ -517,13 +517,13 @@ function Dashboard_SearchMerchantList_EnterprisesLoadAyohaMerchantListStoreOnKey
 
             //  return false;
         });
-        countEnterprisesLoadAyohaMerchantListStore = _DataStore_EnterprisesLoadByMerchantCategory.getCount();
+        countEnterprisesLoadAyohaMerchantListStore = _DataStore_EnterprisesLoadByMerchantCategory_temp.getCount();
         //  Ext.getCmp('htmlSubscriberListTypeLbl').setHtml('<font size="2" color="black"><b>All Cards(' + countEnterprise + ')</b></font>');
     }
 
 
     else {
-        _DataStore_EnterprisesLoadByMerchantCategory.clearFilter();
+        _DataStore_EnterprisesLoadByMerchantCategory_temp.clearFilter();
         return false;
     }
 

@@ -10198,7 +10198,9 @@ function Dashboard_AyohaStoreSaleItemloadByEnterpriseAccNoHotItemStore(Enterpris
 
 
 function Dashboard_MembershipCardLoadBySubscriberAccNoDashboardMainStore() {
-
+if(isFloatPanel_Membership_MembershipCardHubsOpen=='N'){
+    return;
+}
     globalOpenMembershipCardList_Upgrade_From = 'DashboardMain';
     globalFloatPanel_MembershipCardList_UpgradeShow_FromAyohaMerchant_isMembershipCardSubscribed = 'NO';
     _DataStore_MembershipCardLoadBySubscriberAccNoDashboardMainStore.getProxy().setExtraParam('SubscriberAccNo', GetCurrAyohaUserAccountNo());

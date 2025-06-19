@@ -1528,7 +1528,7 @@ width:20
                                                             localStorage.setItem('CountLoyaltyStamped', CountLoyaltyStamped);
                                                             localStorage.setItem('CountStampCardRowShow', Stamp);
                                                              
-                                                        // alert(CampaignCode);
+                                                      
 
 
 
@@ -1584,8 +1584,23 @@ width:20
                                                                 if (CampaignType == "Point Reward Loyalty Card") {
                                                                     FloatLoyaltyCardPointShow(CampaignName, CampaignCode, EnterpriseLogo, EnterpriseName, EnterpriseAccNo);
                                                                 }
+                                                               
+                                                                if (CampaignType == "Membership Card Discount") {
+                                                                    LoadingPanelShow(getLoadingIcon(), 'Loading....');
+                                                                    FloatPanel_MerchantDiscountLoyaltyDescriptionShow(CampaignCode,EnterpriseAccNo);
+                                                                }
                                                                 if (CampaignType == "Membership Card Contest") {
+                                                                    LoadingPanelShow(getLoadingIcon(), 'Loading....');
                                                                     FloatPanel_DashboardMerchantReward_MembershipContestDetailShow_FromMembershipCardList_Upgrade(CampaignCode);
+                                                                   // FloatPanel_MerchantDiscountLoyaltyDescriptionShow(CampaignCode,EnterpriseAccNo);
+                                                                }
+                                                                if (CampaignType == "Membership Card Event") {
+                                                                    LoadingPanelShow(getLoadingIcon(), 'Loading....');
+                                                                    //FloatPanel_DashboardMerchantReward_MembershipEventDetailShow(EnterpriseLogo, EnterpriseName, EventCoverPhoto, EventName, EventStartDate_Day, EventStartDate_Month, EventStartTime, EventEndDate_Day, EventEndDate_Month, EventEndTime, EventLocationName, ModifiedWidth, EventDescription, EventLocationCoordinate, EventUrlTicket, EventCode, EnterpriseAccNo, RespondStatus,ID);
+                                                                    FloatPanel_DashboardMerchantReward_MembershipEventDetailShow_FromMembershipCardList_Upgrade(CampaignCode,EnterpriseLogo, EnterpriseName);
+                                                                   
+                                                                   
+                                                                    // FloatPanel_DashboardMerchantReward_MembershipContestDetailShow_FromMembershipCardList_Upgrade(CampaignCode);
                                                                    // FloatPanel_MerchantDiscountLoyaltyDescriptionShow(CampaignCode,EnterpriseAccNo);
                                                                 }
                                                             }
@@ -2138,6 +2153,28 @@ function FloatPanel_MembershipCardList_UpgradeShow_FromAyohaMerchant(MembershipC
 
 
 function FloatPanel_MembershipCardList_UpgradeShow_FromFloatPanel_MerchantDetailPage(MembershipCardCode, EnterpriseAccountNo, isMembershipCardSubscribed) {
+   
+
+
+    _FloatPanel_MembershipCardList_Upgrade_EnterpriseAccNo = EnterpriseAccountNo;
+
+    _FloatPanel_MembershipCardList_Upgrade_MembershipCode = MembershipCardCode;
+    globalFloatPanelMerchantDetailPage_MembershipCardCode= MembershipCardCode;
+    globalFloatPanelMerchantDetailPage_EnterpriseAccNo = EnterpriseAccountNo;
+
+    globalFloatPanel_MembershipCardList_UpgradeShow_FromAyohaMerchant_isMembershipCardSubscribed = isMembershipCardSubscribed;
+
+   
+
+    if(MembershipTag=="NO"){
+        setMessage_NotYetMembershipMessage_WithJoinButton();
+   
+   
+       return
+   }
+    
+    
+    
     Ext.Viewport.remove(_FloatPanel_MembershipCardList_Upgrade);
     this.overlay = Ext.Viewport.add(FloatPanel_MembershipCardList_Upgrade());
     this.overlay.show();
@@ -2147,7 +2184,7 @@ function FloatPanel_MembershipCardList_UpgradeShow_FromFloatPanel_MerchantDetail
 
   
 
-    globalFloatPanel_MembershipCardList_UpgradeShow_FromAyohaMerchant_isMembershipCardSubscribed = isMembershipCardSubscribed;
+ 
     isFloatPanel_MembershipCardList_UpgradeOpen = 'Y';
 
     FloatPanel_MembershipCardList_UpgradeAdjustHeight();
@@ -2168,11 +2205,6 @@ function FloatPanel_MembershipCardList_UpgradeShow_FromFloatPanel_MerchantDetail
   
 
 
-    _FloatPanel_MembershipCardList_Upgrade_EnterpriseAccNo = EnterpriseAccountNo;
-
-    _FloatPanel_MembershipCardList_Upgrade_MembershipCode = MembershipCardCode;
-
-    globalFloatPanelMerchantDetailPage_EnterpriseAccNo = EnterpriseAccountNo;
   
 
     FloatPanel_MembershipCardList_Upgrade_MembershipCardAyohaUserMembershipCardStore_FloatPanel_MerchantDetailPage(MembershipCardCode);
@@ -2556,7 +2588,7 @@ function FloatPanel_MembershipCardList_Upgrade_MembershipCardAyohaUserMembership
     //Ext.StoreMgr.get('MembershipCardAyohaUserMembershipCardStore').load();
 
 
-   
+   //alert(MembershipCardCode)
 
     _DataStore_MembershipCardAyohaUserMembershipCardStore.getProxy().setExtraParam('EnterpriseAccNo', globalFloatPanelMerchantDetailPage_EnterpriseAccNo);
     _DataStore_MembershipCardAyohaUserMembershipCardStore.getProxy().setExtraParam('EnterpriseHQAccNo', globalFloatPanelMerchantDetailPage_EnterpriseAccNo);
@@ -3275,14 +3307,16 @@ function GetMembershipCardEnableClick_containerFloatPanel_MembershipCardList_Upg
 function disabledBottomButton() {
 
     Ext.getCmp('btnFloatPanel_MembershipCardList_Upgrade_MenuBottom_CardTransaction').setHtml('<img src="resources/icons/cardTransactionDisabled.png" width="26" height="26" alt="Company Name">');
-    Ext.getCmp('htmlCardTxt01').setHtml('<font size=1 color=#DCDCDC>Card</font>');
-    Ext.getCmp('htmlTransactionTxt').setHtml('<font size=1 color=#DCDCDC>Transaction</font>');
+    Ext.getCmp('htmlCardTransactionTxt01').setHtml('<div style="color:#DCDCDC;text-align: center;font-size:8px;width:100%;margin:3px 0px 0px 0px">Card</div><br><div style="color:#DCDCDC;text-align: center;font-size:8px;width:100%;margin:-22px 0px 0px 0px">Transactions</div>');
+   // Ext.getCmp('htmlTransactionTxt').setHtml('<font size=1 color=#DCDCDC>Transaction</font>');
 
+   
 
+    
 
     Ext.getCmp('btnFloatPanel_MembershipCardList_Upgrade_MenuBottom_CardDetailsInfo').setHtml('<img src="resources/icons/disableCardInfo.png" width="26" height="26" alt="Company Name">');
     Ext.getCmp('htmlCardDetailTxt').setHtml('<font size=1 color=#DCDCDC>Card Detail</font>');
-    Ext.getCmp('htmlInfoTxt').setHtml('<font size=1 color=#DCDCDC>Info</font>');
+    //Ext.getCmp('htmlInfoTxt').setHtml('<font size=1 color=#DCDCDC>Info</font>');
 
 
 
@@ -3298,7 +3332,7 @@ function disabledBottomButton() {
 
     Ext.getCmp('btnFloatPanel_MembershipCardList_Upgrade_MenuBottom_DeleteCard').setHtml('<img src="resources/icons/disableCardUnsubscribe.png" width="26" height="26" alt="Company Name">');
     Ext.getCmp('htmlUnsubscribeTxt').setHtml('<font size=1 color=#DCDCDC>Unsubscribe</font>');
-    Ext.getCmp('htmlMembershipCardTxt').setHtml('<font size=1 color=#DCDCDC>Membership Card</font>');
+  //  Ext.getCmp('htmlMembershipCardTxt').setHtml('<font size=1 color=#DCDCDC>Membership Card</font>');
 
 }
 

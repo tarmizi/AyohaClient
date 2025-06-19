@@ -1494,7 +1494,7 @@ function FloatPanel_MerchantDetailPage() {
                                                             Ext.getCmp('btn_FloatPanel_MerchantDetailPage_MembershipLoyaltyProgram_DropUp').setHidden(true);
                                                             FloatPanelMerchantDetailPage_AyohaMerchantInfoMembershipLoyaltyProgramStore_animatedAccordianSlideUp();
                                                            // FloatPanelMerchantDetailPage_MembershipCardLoadByEnterpriseAccNoStore_animatedAccordianSlideUp();
-
+                                                          
                                                         },
                                                     },
                                                       {
@@ -1506,7 +1506,9 @@ function FloatPanel_MerchantDetailPage() {
                                                           html: '<img src="resources/icons/DropDownWhite.png" style="width:22px;height:22px;">',
                                                           ui: 'plain',
                                                           handler: function () {
+                                                            LoadingPanelShow(getLoadingIcon(), 'Loading...');
                                                               // FloatPanelMerchantDetailPage_AyohaMerchantInfoMembershipLoyaltyProgramStore();
+                                                              FloatPanelMerchantDetailPage_MembershipCardCampaingEntitledLoadByEnterpriseAccNoMerchantDetailPageStore();
                                                               OnClickFloatPanel_MerchantDetailPage_MembershipLoyaltyProgram_Txt_tagging = 'slideUp';
                                                               Ext.getCmp('btn_FloatPanel_MerchantDetailPage_MembershipLoyaltyProgram_DropDown').setHidden(true);
                                                               Ext.getCmp('btn_FloatPanel_MerchantDetailPage_MembershipLoyaltyProgram_DropUp').setHidden(false);
@@ -1543,10 +1545,182 @@ function FloatPanel_MerchantDetailPage() {
                                                      items: [
                                                         {
                                                             xtype: 'list',
+                                                            //  flex: 1,
+                                                           // hidden:true,
+                                                          //  margin: '1 0 0 0',
+                                                            width: '100%',
+                                                            // store: 'EnterprisegetAllStore',
+                                                           store: _DataStore_MembershipCardCampaingEntitledLoadByEnterpriseAccNoMerchantDetailPageStore,
+                                                          // store: _DataStore_MembershipCardCampaingEntitledLoadByMembershipCardCodeStore,
+                                                          id: 'ListFloatPanel_MerchantDetailPage_MembershipLoyaltyProgramID',
+                                                            scrollable:false,
+                                                            grouped: true,
+                                                            mode: 'SINGLE',
+                                                            //  indexBar: true,
+                                                            disableSelection: true,
+                                                            style: 'background-color:rgba(255,255,255, 10);border-radius: 0px 0px 0px 0px;',
+                                                            // scrollable: {
+                                                            //     direction: 'vertical',
+                                                            //     directionLock: true,
+                                                            //     indicators: {
+                                                            //         y: {
+                                                            //             autoHide: true
+                                                            //         },
+                                                            //         x: {
+                                                            //             autoHide: true
+                                                            //         }
+                                                            //     }
+                                                            // },
+                                                                 
+                                                          
+                                                        //     itemTpl: '{ModifiedCampaignTypeShorted}' +                                              
+                                                        //    '<br><div style="width:100%;text-align:center;margin:-10px 0px 0px 0px;background-color: transparent;font-family:Arial, sans-serif;font-size:12px;font-weight:bold;color:black">{ModifiedCampaignType}</div>' +
+                                                        //        '<br><div style="width:100%;text-align:center;margin:-30px 0px 0px 0px;background-color: transparent;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;color:black">{CampaignName}</div>' +
+                                                        //         '<br><div style="width:100%;text-align:center;margin:-25px 0px 0px 0px;background-color: transparent;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;color:black">{ModifiedCountLoyaltyStamped}</div>' +
+                                                        //           '{ModifiedisRequiredStartEndDate}' +
+                                                        //                                                      // '<br><div style="width:100%;text-align:center;margin:-25px 0px 0px 0px;background-color: transparent;font-family:Arial, sans-serif;font-size:10px;font-weight:normal;color:black">Day Left:{CampaignDayLeft}</div>' +
+        
+                                                        //     '</div>',
+        
+        
+                                                        itemTpl: '<div class="myContent" style="background-color:transparent;">' +
+                    
+        
+                                                       '<table  style="border-collapse:collapse;border-spacing:0;width:100%;background-color:white;margin:0px 0px 0px 0px;height:60px;"><tr><td style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:0px 5px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:20%;vertical-align:center"><div style="border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none white;border-radius: 0px;width:30px;height:30px;color:white;vertical-align: bottom; text-align:center;font-family: Lucida Console, Courier, monospace;font-size: 35px;background-image: url({ModifiedCampaignType}); background-size: 100% 100%;"></div></td><td style="font-family:Arial, sans-serif;font-size:14px;font-weight:bold;padding:0px 0px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:80%;vertical-align:center">{ModifiedCampaignTypeShorted}<br><font style="font-family:Arial, sans-serif;font-size:10px;font-weight:normal;">{CampaignName} - {ModifiedCountLoyaltyStamped}</font></td></tr></table>'
+                                                       // '<table style="border-collapse:collapse;border-spacing:0;width:100%;background-color:white;margin:-10px 0px 0px -13px;height:90px;"><tr onclick="openNotificationPanel(' + ID + ',' + "'" + NotificationType + "'" + ',' + "'" + NotificationCode + "'" + ',' + "'" + EnterpriseAccNo + "'" + ',' + "'" + IsReadStatus + "'" + ')"><td style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:0px 7px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:25%;vertical-align:center"><img src="' + EnterpriseLogoPath + '" style="border:1px solid white; width:75px;height:75px;" /></td><td style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:0px 0px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:80%;vertical-align:center">{ModifiedCampaignTypeShorted}<br><font style="font-family:Arial, sans-serif;font-size:12px;font-weight:normal;">{CampaignName} - {ModifiedCountLoyaltyStamped}</font></td></tr></table>'   
+                                                       
+                                                       
+                                                       + '</div>',
+        
+        
+        
+        
+        
+        
+                                                           
+                                                            // itemTpl: '<div class="myContent" style="background-color:transparent;height:125px">' +
+                    
+                                                            //    '<div style="width:100%;text-align:center;margin:0px 0px 0px 0px;background-color: transparent;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;color:black"><u>{ModifiedCampaignTypeShorted}</u></div>' +
+                                                            //                                                                            // '<br><div style="width:100%;text-align:right;margin:-30px 0px 0px 0px;background-color: transparent;font-family:Arial, sans-serif;font-size:10px;font-weight:bold;color:black"></div>' +
+                                                            //     '<br><div style="width:100%;text-align:center;margin:-10px 0px 0px 0px;background-color: transparent;font-family:Arial, sans-serif;font-size:12px;font-weight:bold;color:black">{ModifiedCampaignType}</div>' +
+                                                            //         '<br><div style="width:100%;text-align:center;margin:-30px 0px 0px 0px;background-color: transparent;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;color:black">{CampaignName}</div>' +
+                                                            //          '<br><div style="width:100%;text-align:center;margin:-25px 0px 0px 0px;background-color: transparent;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;color:black">{ModifiedCountLoyaltyStamped}</div>' +
+                                                                     
+                                                            //      '</div>',
+                                                            height: 0,
+                                                           //height: '100%',
+                                                            listeners: {
+                                                                itemsingletap: function (list, idx, target, records, evt) {
+        
+                                                                    //var Stamps = records.get('Stamps');
+                                                                    //var StampsArr = Stamps.split('/');
+        
+        
+                                                                    var CampaignCode = records.get('CampaignCode');
+                                                                    var EnterpriseHQAccNo = records.get('EnterpriseHQAccNo');
+                                                                    var StartDate = records.get('CampaignStartDate');
+                                                                    var EndDate = records.get('CampaignEndDate');
+                                                                    var SubscriberAccNo = GetCurrAyohaUserAccountNo();
+                                                                    //var EnterpriseName = records.get('EnterpriseName');     
+                                                                    var EnterpriseName = records.get('EnterpriseName');
+                                                                    var StampRuleRemarks = records.get('Remarks');
+                                                                    var isStampRulePopUp = records.get('isRulePopUp');
+                                                                    var CampaignName = records.get('CampaignName');
+                                                                    var Stamp = records.get('Stamp');
+                                                                    var CountLoyaltyStamped = records.get('CountLoyaltyStamped');
+                                                                    //var EnterpriseLogo = records.get('EnterpriseLogo');
+                                                                    var EnterpriseLogo = records.get('EnterpriseLogo');
+                                                                    var CampaignType = records.get('CampaignType');
+                                                                    var EnterpriseAccNo = records.get('EnterpriseAccNo');
+        
+                                                                    var isRequiredStartEndDate = records.get('isRequiredStartEndDate');
+                                                                    var isCampaignExpired = records.get('isCampaignExpired');
+                                                                    var CampaignDayLeft = records.get('CampaignDayLeft');
+        
+                                                                    //  FloatPanel_AyohaCardManagement_PreviewCardShow(CampaignCode, EnterpriseHQAccNo, "NA", StartDate, EndDate, CampaignName, StampRuleRemarks);
+        
+        
+        
+                                                                    //var StampedCampaignCode = records.get('StampedCampaignCode');
+                                                                    //var EnterpriseAccNo = records.get('EnterpriseAccNo');
+                                                                    //var StartDate = records.get('StartDate');
+                                                                    //var EndDate = records.get('EndDate');
+                                                                    //var SubscriberAccNo = records.get('SubscriberAccNo');
+                                                                    //var EnterpriseName = records.get('EnterpriseName');
+                                                                    //var StampRuleRemarks = records.get('StampRuleRemarks');
+                                                                    //var isStampRulePopUp = records.get('isStampRulePopUp');
+                                                                    //var StampCampaignName = records.get('StampCampaignName');
+                                                                    //var CountLoyaltyStamped = records.get('CountLoyaltyStamped');
+                                                                    //var CountStampCardRowShow = records.get('CountStampCardRowShow');
+                                                                    localStorage.setItem('StampCampaignCode', CampaignCode);
+        
+                                                                    localStorage.setItem('CountLoyaltyStamped', CountLoyaltyStamped);
+                                                                    localStorage.setItem('CountStampCardRowShow', Stamp);
+                                                                     
+                                                                
+        
+        
+        
+                                                                   
+                                                                    if (MembershipTag == 'NO') {
+                                                                        
+                                                                      
+
+                                                                      //  setMessage_NotYetMembershipMessage();
+
+
+
+                                                                        
+                                                                if (CampaignType == "Stamp Reward Loyalty Card") {
+
+                                                                    //alert(CampaignType);
+                                                                   // FloatPanel_AyohaCardManagement_PreviewCard_AyohaUserCardShow(StampedCampaignCode, EnterpriseAccNo, StartDate, EndDate, SubscriberAccNo, EnterpriseName, StampRuleRemarks, StampCampaignName, CountLoyaltyStamped, CountStampCardRowShow, EnterpriseLogo, isRequiredStartEndDate, isCampaignExpired, CampaignDayLeft, AdvertismentTitle) {
+
+                                                                    FloatPanel_AyohaCardManagement_PreviewCard_AyohaUserCardShow(CampaignCode, EnterpriseHQAccNo, StartDate, EndDate, SubscriberAccNo, EnterpriseName, StampRuleRemarks, CampaignName, CountLoyaltyStamped, Stamp, EnterpriseLogo);
+                                                                    //Ext.getCmp('btnStampCard_FloatPanel_AyohaCardManagement_PreviewCard_CountStamp').setHtml('<font size=5 color=white><b>' + CountLoyaltyStamped + '/' + Stamp + '</b></font>');
+                                                                    Ext.getCmp('btnStampCard_FloatPanel_AyohaCardManagement_PreviewCard_CountStamp').setHtml('<font size=5 color=white><b>' + CountLoyaltyStamped + '</b></font>');
+                                                                }
+                                                                if (CampaignType == "Point Reward Loyalty Card") {
+                                                                    LoadingPanelShow(getLoadingIcon(), 'Loading....');
+                                                                    FloatLoyaltyCardPointShow(CampaignName, CampaignCode, EnterpriseLogo, EnterpriseName, EnterpriseAccNo, EndDate, isRequiredStartEndDate, isCampaignExpired);
+                                                                   // FloatLoyaltyCardPointShow(StampCampaignName, StampCampaignCode, EnterprisesLogo, EnterpriseName, EnterpriseAccNo, EndDate, isRequiredStartEndDate, PointisCampaignExpired);
+                                                                }
+                                                                if (CampaignType == "Membership Card Discount") {
+                                                                    LoadingPanelShow(getLoadingIcon(), 'Loading....');
+                                                                    FloatPanel_MerchantDiscountLoyaltyDescriptionShow(CampaignCode,EnterpriseAccNo);
+                                                                }
+                                                                if (CampaignType == "Membership Card Contest") {
+                                                                    LoadingPanelShow(getLoadingIcon(), 'Loading....');
+                                                                    FloatPanel_DashboardMerchantReward_MembershipContestDetailShow_FromMembershipCardList_Upgrade(CampaignCode);
+                                                                   // FloatPanel_MerchantDiscountLoyaltyDescriptionShow(CampaignCode,EnterpriseAccNo);
+                                                                }
+                                                                if (CampaignType == "Membership Card Event") {
+                                                                    LoadingPanelShow(getLoadingIcon(), 'Loading....');
+                                                                    //FloatPanel_DashboardMerchantReward_MembershipEventDetailShow(EnterpriseLogo, EnterpriseName, EventCoverPhoto, EventName, EventStartDate_Day, EventStartDate_Month, EventStartTime, EventEndDate_Day, EventEndDate_Month, EventEndTime, EventLocationName, ModifiedWidth, EventDescription, EventLocationCoordinate, EventUrlTicket, EventCode, EnterpriseAccNo, RespondStatus,ID);
+                                                                    FloatPanel_DashboardMerchantReward_MembershipEventDetailShow_FromMembershipCardList_Upgrade(CampaignCode,EnterpriseLogo, EnterpriseName);
+                                                                   
+                                                                   
+                                                                    // FloatPanel_DashboardMerchantReward_MembershipContestDetailShow_FromMembershipCardList_Upgrade(CampaignCode);
+                                                                   // FloatPanel_MerchantDiscountLoyaltyDescriptionShow(CampaignCode,EnterpriseAccNo);
+                                                                }
+                                                                    }
+        
+                                                                
+        
+                                                                },
+                                                                deselect: function (list, records) {
+        
+                                                                }
+                                                            },
+        
+                                                        },
+                                                        {
+                                                            xtype: 'list',
+                                                            hidden: true,
                                                             //xtype: 'dataview',
                                                             height: 0,
                                                             store: _DataStore_AyohaMerchantInfoMembershipLoyaltyProgramStore,
-                                                            id: 'ListFloatPanel_MerchantDetailPage_MembershipLoyaltyProgramID',
+                                                          
 
                                                             mode: 'SINGLE',
                                                             style: 'background-color:rgba(255,255,255, 10);border-radius: 0px 0px 0px 0px;',
@@ -2046,7 +2220,7 @@ console.log(GetCurrAyohaUserAccountNo())
         if(Store.get('CountLike')){
             Ext.getCmp('htmlFloatPanel_MerchantDetailPage_EnterpriseLoveUsDetails').setHtml('<div onclick="FloatPanel_AyohaStore_LikeStatusListShow()" style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 14px;font-weight:bold;color:black;margin:0px 0px 0px 0px;padding:0px 6px;">' + Store.get('CountLike') + '</div><br><div onclick="FloatPanel_AyohaStore_LikeStatusListShow()" style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 10px;font-weight:normal;color:black;margin:-27px 0px 0px 0px;padding:0px 6px;">Love Us</div>');
             globalFloatPanel_AyohaStore_CountLike = parseInt(Store.get('CountLike'));
-            globalFloatPanelMerchantDetailPage_MembershipLoyaltyProgramPanel_Height = parseInt(Store.get('CountMembershipCard')) * 400;
+           // globalFloatPanelMerchantDetailPage_MembershipLoyaltyProgramPanel_Height = parseInt(Store.get('CountMembershipCard')) * 400;
             Ext.getCmp('htmlFloatPanel_MerchantDetailPage_MembershipCard_Txt').setHtml('<div onclick="OnClickhtmlFloatPanel_MerchantDetailPage_MembershipCard_Txt()" style="width:100%;background-color:transparent;"><font size=2 color=white><b>Our Membership Card (' + Store.get('CountMembershipCard') + ')</b></font></div>');
             Ext.getCmp('htmlFloatPanel_MerchantDetailPage_OnlineStore_Txt').setHtml('<div onclick="OnClickhtmlFloatPanel_MerchantDetailPage_OnlineStore_Txt()" style="width:100%;background-color:transparent;"><font size=2 color=white><b>Our Online Store (' + Store.get('CountOnlineStore') + ')</b></font></div>');
         
@@ -2168,7 +2342,8 @@ function convertTimeFrom12To24(timeStr) {
     }
     return hoursInt + "." + minutes;
 }
-
+var globalFloatPanelMerchantDetailPage_CountStar;
+var globalFloatPanelMerchantDetailPage_CountReviewer;
 function FloatPanelMerchantDetailPage_CalculateRating(EnterpriseAccNo) {
    
 
@@ -2220,7 +2395,8 @@ function FloatPanelMerchantDetailPage_CalculateRating(EnterpriseAccNo) {
 
 
                         var TotalAvg = (VoteFiveStar + VoteFourStar + VoteThreeStar + VoteTwoStar + VoteOneStar) / TotalVoter;
-
+globalFloatPanelMerchantDetailPage_CountStar=TotalAvg;
+globalFloatPanelMerchantDetailPage_CountReviewer=TotalVoter;
                         if (TotalAvg) {
 
                             Ext.getCmp('htmlFloatPanel_MerchantDetailPage_ReviewAndRateCount').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();" style="color:black;text-align: center;font-size:20px;width:100%;font-weight:bold;margin:0px 0px 0px 0px;">' + TotalAvg.toFixed(1) + '</div>');
@@ -2234,8 +2410,9 @@ function FloatPanelMerchantDetailPage_CalculateRating(EnterpriseAccNo) {
                         //  Ext.getCmp('htmlAyohaMerchantReview_TotalReviews').setHtml('<div style="width100%;text-align:right;background-color: transparent;font-family:Arial, sans-serif;font-size:10px;color:black;font-weight:bold;overflow:hidden;margin:-13px 10px 10px 0px;"><img src="resources/icons/merchantrateusAccountImg.png" alt="Image" style="width:10px;height:10px;">&nbsp;&nbsp;&nbsp; Reviews</div>');
 
                         var RateReviews = TotalAvg.toFixed(1);
-
-
+                        globalFloatPanelMerchantDetailPage_CountReviewer= TotalVoter;
+                        globalFloatPanelMerchantDetailPage_CountStar=TotalAvg.toFixed(1);
+                      
 
                         if (RateReviews == 5) {
 
@@ -2550,7 +2727,7 @@ function FloatPanelMerchantDetailPage_EnterprisesOnlineStoreLoadByEnterpriseAccN
     Ext.Viewport.setMasked(false);
 }
 
-
+var globalFloatPanelMerchantDetailPage_MembershipCardCode;
 function FloatPanelMerchantDetailPage_AyohaMerchantInfoMembershipLoyaltyProgramStore() {
 
 
@@ -2568,7 +2745,7 @@ if(counting<=0){
 
     var ModifiedMCC = MCC.replace("undefined", "");
     var strMCC = ModifiedMCC.slice(0, -1);
-   
+    globalFloatPanelMerchantDetailPage_MembershipCardCode= strMCC;
    
 
 
@@ -2619,7 +2796,7 @@ function FloatPanelMerchantDetailPage_AyohaMerchantInfoMembershipLoyaltyProgramS
         Ext.getCmp('containeFloatPanel_MerchantDetailPage_MembershipLoyaltyProgram_Inner').setHeight(globalFloatPanelMerchantDetailPage_MembershipLoyaltyProgramPanel_Height);
         Ext.getCmp('ListFloatPanel_MerchantDetailPage_MembershipLoyaltyProgramID').setHeight(globalFloatPanelMerchantDetailPage_MembershipLoyaltyProgramPanel_Height);
        
-
+        LoadingPanelHide();
 
     });
 }
@@ -2702,6 +2879,45 @@ function FloatPanelMerchantDetailPage_EnterprisesOnlineStoreLoadByEnterpriseAccN
 var ArrFloatPanelMerchantDetailPage_MembershipCardCode=[];
 
 function FloatPanelMerchantDetailPage_MembershipCardLoadByEnterpriseAccNoStore() {
+    globalFloatPanelMerchantDetailPage_MembershipLoyaltyProgramPanel_Height=0;
+    _DataStore_MembershipCardLoadByEnterpriseAccNoStore.getProxy().setExtraParam('EnterpriseAccNo', globalFloatPanelMerchantDetailPage_EnterpriseAccNo);
+    _DataStore_MembershipCardLoadByEnterpriseAccNoStore.getProxy().setExtraParam('EnterpriseHQAccNo', globalFloatPanelMerchantDetailPage_EnterpriseAccNo);
+    _DataStore_MembershipCardLoadByEnterpriseAccNoStore.getProxy().setExtraParam('AyohaUserAccountNo', GetCurrAyohaUserAccountNo());
+    _DataStore_MembershipCardLoadByEnterpriseAccNoStore.getProxy().setUrl(GetAPIurl() + '/MembershipCard/MembershipCardLoadByEnterpriseAccNo');
+    _DataStore_MembershipCardLoadByEnterpriseAccNoStore.load({
+        callback: function (records, operation, success) {
+            if (success) {
+                console.log('Store loaded successfully, total records: ' + records.length);
+    
+                // Loop through all records
+                records.forEach(function (record) {
+                    var LoyaltCampaignCount = parseInt(record.get('LoyaltCampaignCount'));
+                    Ext.getCmp('htmlFloatPanel_MerchantDetailPage_MembershipLoyaltyProgram_Txt').setHtml('<div onclick="OnClickFloatPanel_MerchantDetailPage_MembershipLoyaltyProgram_Txt()" style="width:100%;background-color:transparent;"><font size=2 color=white><b>Our Loyalty Program (' + LoyaltCampaignCount + ')</b></font></div>');
+                    globalFloatPanelMerchantDetailPage_MembershipLoyaltyProgramPanel_Height = LoyaltCampaignCount * 100;
+                  
+                });
+    
+              
+               
+            } else {
+                console.error('Failed to load store data.');
+              
+            }
+        }
+    });
+
+return;
+
+
+
+
+
+
+
+
+
+
+
 
     _DataStore_MembershipCardLoadByEnterpriseAccNoStore.getProxy().setExtraParam('EnterpriseAccNo', globalFloatPanelMerchantDetailPage_EnterpriseAccNo);
     _DataStore_MembershipCardLoadByEnterpriseAccNoStore.getProxy().setExtraParam('EnterpriseHQAccNo', globalFloatPanelMerchantDetailPage_EnterpriseAccNo);
@@ -2719,14 +2935,14 @@ function FloatPanelMerchantDetailPage_MembershipCardLoadByEnterpriseAccNoStore()
             ArrFloatPanelMerchantDetailPage_MembershipCardCode.push(Store.get('MembershipCardCode'))
         }
 
-        //  globalFloatPanelMerchantDetailPage_EnterprisesOnlineStoreCount = count;
-
-        // globalFloatPanelMerchantDetailPage_EnterprisesOnlineStore_tinggi = count * 80;
+       
 
 
 
-
-
+       
+       
+       
+       
         FloatPanelMerchantDetailPage_AyohaMerchantInfoMembershipLoyaltyProgramStore();
 
         // FloatPanelMerchantDetailPage_EnterprisesOnlineStoreLoadByEnterpriseAccNoStore_animatedAccordianSlideDown();
@@ -2738,6 +2954,38 @@ function FloatPanelMerchantDetailPage_MembershipCardLoadByEnterpriseAccNoStore()
     Ext.Viewport.setMasked(false);
 }
 
+
+function FloatPanelMerchantDetailPage_MembershipCardCampaingEntitledLoadByEnterpriseAccNoMerchantDetailPageStore(){
+
+
+
+// Set parameter dan URL API
+//_DataStore_MembershipCardCampaingEntitledLoadByEnterpriseAccNoMerchantDetailPageStore;
+_DataStore_MembershipCardCampaingEntitledLoadByEnterpriseAccNoMerchantDetailPageStore.getProxy().setExtraParams({
+    'EnterpriseAccNo': globalFloatPanelMerchantDetailPage_EnterpriseAccNo,
+    'SubscriberAccNo': GetCurrAyohaUserAccountNo()
+});
+_DataStore_MembershipCardCampaingEntitledLoadByEnterpriseAccNoMerchantDetailPageStore.getProxy().setUrl(GetAPIurl() + 'MembershipCardCampaingEntitled/MembershipCardCampaingEntitledLoadByEnterpriseAccNoMerchantDetailPage');
+
+// Load data dengan callback
+_DataStore_MembershipCardCampaingEntitledLoadByEnterpriseAccNoMerchantDetailPageStore.load({
+    callback: function(records, operation, success) {
+        // Remove loading mask
+        Ext.Viewport.setMasked(false);
+
+        if (success) {
+           // alert('Data loaded successfully:'+ records);
+            // Lakukan apa-apa selepas data dimuat
+        } else {
+            console.error('Failed to load data.');
+           // Ext.Msg.alert('Error', 'Gagal untuk muatkan data.');
+        }
+    }
+});
+
+
+
+}
 
 
 
@@ -2791,7 +3039,12 @@ function FloatPanel_MerchantDetailPage_EnterpriseWorkingHourDetails() {
 }
 
 function FloatPanel_MerchantDetailPage_Staging_MembershipLoyaltyProgram(MembershipSegmentCode, Bilangan, AyohaLoyaltyProgram, LoyaltyProgramCode) {
+    
+   
     var bil = parseInt(Bilangan);
+
+    alert(bil)
+    alert(AyohaLoyaltyProgram)
     if (AyohaLoyaltyProgram == "Point Loyalty Card") {
         if (bil == 1) {
             globalFloatPanel_AyohaStore_Cart_StampPointCampaignCode = LoyaltyProgramCode;
