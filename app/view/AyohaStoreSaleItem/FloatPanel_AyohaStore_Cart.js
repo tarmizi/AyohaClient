@@ -1968,7 +1968,7 @@ globalFloatPanel_AyohaStore_CheckOut_MembershipDiscountPrice=parseFloat((result/
 
 
 
-   // Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_MembershipDiscountCampaignPersent').setHtml('<div style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:right;color:black;">'+globalFloatPanel_AyohaStore_CheckOut_MembershipDiscountPercent.toFixed(2)+'% -Membership Discount(RM):</div>');
+   //// Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_MembershipDiscountCampaignPersent').setHtml('<div style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:right;color:black;">'+globalFloatPanel_AyohaStore_CheckOut_MembershipDiscountPercent.toFixed(2)+'% -Membership Discount(RM):</div>');
    // Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_Discount').setHtml('<div style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:left;color:black;">' + globalFloatPanel_AyohaStore_CheckOut_MembershipDiscountPrice.toFixed(2) + '</div>');
     
    // Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_GrandTotal').setHtml('<div style="font-family:Arial, sans-serif;font-size:16px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:left;color:black;">' + (result.toFixed(2)-globalFloatPanel_AyohaStore_CheckOut_MembershipDiscountPrice.toFixed(2)).toFixed(2) + '</div>');
