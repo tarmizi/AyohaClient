@@ -2102,7 +2102,7 @@ items: [
                                                         {
                                                             xtype: 'container',
                                                             width: '95%',
-                                                            margin:'0 0 0 0',
+                                                            margin:'30 0 0 0',
                                                             style: 'background-color:white',
                                                           //  hidden:true,
                                                           //  style: 'background-image: url("resources/icons/border7.png"); background-size: 100% 100%;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-radius: 10px 10px 0px 0px;',
@@ -2148,7 +2148,7 @@ items: [
     xtype: 'container',
     id: 'containerFloatPanel_MembershipCardList_NotYetSubscribed_Enterpriselist',
     style: ' background-color: transparent',
-    height: 500,
+    height: 300,
     width: '100%',
     layout: {
         type: 'vbox',
@@ -2730,6 +2730,9 @@ function FloatPanel_MembershipCardList_NotYetSubscribedShow_FromDashboard_Main(M
     globalFloatPanel_MembershipCardList_NotYetSubscribed_ItemCoverImg="";
     FloatPanel_MembershipCardList_NotYetSubscribedAdjustHeight();
     AddRoutePages("FloatPanel_MembershipCardList_NotYetSubscribedHide()");
+    if(isFloatPanel_RewardStoreMembershipCardOpen == 'Y'){
+        Ext.getCmp('FloatPanel_MembershipCardList_NotYetSubscribedID').setZIndex(185);
+    }
     //var EnterpriseAccNo = _DataStore_EnterprisesLoadByRowStatusStore.findRecord('ID', ID, 0, false, false, true);
     //var EnterpriseHQAccNo = _DataStore_EnterprisesLoadByRowStatusStore.findRecord('ID', ID, 0, false, false, true);
 
@@ -3559,7 +3562,7 @@ function FloatPanel_MembershipCardList_NotYetSubscribed_MembershipCardCampaingEn
         
                     var Count = _DataStore_MembershipCardCampaingEntitledLoadByMembershipCardCodeStore.getCount();
 
-                    var heightlist =Count *100;
+                    var heightlist =(Count *100)-20;
                             Ext.getCmp('FloatPanel_MembershipCardList_NotYetSubscribed_Campaignlist').setHeight(heightlist)
                        
                           //  _DataStore_MembershipCardCampaingEntitledLoadByMembershipCardCodeStore = Ext.getStore('MembershipCardCampaingEntitledLoadByMembershipCardCodeStore');

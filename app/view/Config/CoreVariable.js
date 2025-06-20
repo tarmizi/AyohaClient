@@ -235,3 +235,295 @@ function FloatPanel_AyohaStore_getEnterpriseAccNo() {
        }
        return EntTagLine;
    }
+
+
+
+
+
+
+
+   function FloatPanel_AyohaStore_AddToCart_ADD(StampRuleAmounts,ID, MerchantPoint, AyohaPoint, ItemPrice, CampaignType, ItemCode, ItemPriceDiscount, ItemPriceDiscountRate, MerchantSumStamp) {
+  
+    globalFloatPanel_AyohaStore_SaleItemDetail_StampRuleAmount=StampRuleAmounts;
+
+
+
+
+    AddToCart_ADD = parseInt(document.getElementById("input-FloatPanel_AyohaStore_Qty" + ID).value);
+    AddToCart_ADD = AddToCart_ADD + 1;
+    if (AddToCart_ADD <= 999) {      
+        document.getElementById("input-FloatPanel_AyohaStore_Qty" + ID).value = AddToCart_ADD;
+       
+
+      
+        // var MerchantSumStamps=0;
+        // var TTlMerchantPoint=0;
+        // var TTlAyohaPoint=0;
+        // var SumPrice;
+        if (CampaignType == "Stamp Reward Loyalty Card") {
+         
+
+
+
+            var StampRuleAmount = parseInt(globalFloatPanel_AyohaStore_SaleItemDetail_StampRuleAmount);
+           
+         //   var stamp=0;
+            // if (ItemPriceDiscountRate >= 0.1) {
+            //     if (ItemPriceDiscount >= StampRuleAmount) {
+            //         stamp = parseInt(ItemPriceDiscounts) / parseInt(StampRuleAmount);                  
+            //     } else {
+            //         stamp = 0;
+            //     }            
+            // } else {
+            //     if (ItemPrice >= StampRuleAmount) {                      
+            //         stamp = parseInt(ItemPrice) / parseInt(StampRuleAmount);                 
+            //     } else {
+            //         stamp = 0;
+            //     }
+             
+            // }
+         
+
+            if (ItemPriceDiscountRate >= 0.1) {
+               
+                //TTlMerchantPoint = ItemPriceDiscount * MerchantPoint;
+                TTlMerchantPoint = 0.00;
+                TTlAyohaPoint = ItemPriceDiscount * AyohaPoint;
+                stamp=ItemPriceDiscount / StampRuleAmount;
+              //  SumPrice = globalFloatPanel_AyohaStore_SaleItemDetail_ItemPriceDiscount * Qty;
+            } else {
+                
+               // TTlMerchantPoint = ItemPrice * MerchantPoint;
+               TTlMerchantPoint = 0.00;
+                TTlAyohaPoint = ItemPrice * AyohaPoint;
+                stamp=ItemPrice / StampRuleAmount;
+                //SumPrice = globalFloatPanel_AyohaStore_SaleItemDetail_ItemPrice * Qty;
+            }
+          
+            MerchantSumStamps = stamp;
+          //  TTlAyohaPoint = MerchantSumStamps;
+            AyohaPoint = TTlAyohaPoint;
+            //TTlMerchantPoint = parseFloat(MerchantPoint);
+
+
+        }
+        if (CampaignType == "Point Reward Loyalty Card") {
+            //TTlMerchantPoint = (ItemPrice * AddToCart_ADD) * MerchantPoint;
+            //TTlAyohaPoint = (ItemPrice * AddToCart_ADD) * AyohaPoint;
+            //MerchantSumStamp = 0;
+            if (ItemPriceDiscountRate > 0) {
+                TTlMerchantPoint = (ItemPriceDiscount * AddToCart_ADD) * MerchantPoint;
+                TTlAyohaPoint = (ItemPriceDiscount * AddToCart_ADD) * AyohaPoint;
+                MerchantSumStamps = 0;
+            } else {
+                TTlMerchantPoint = (ItemPrice * AddToCart_ADD) * MerchantPoint;
+                TTlAyohaPoint = (ItemPrice * AddToCart_ADD) * AyohaPoint;
+                MerchantSumStamps = 0;
+            }
+        }
+
+        if (CampaignType == "Point Reward Loyalty Card|Stamp Reward Loyalty Card") {
+          
+            var StampRuleAmount = parseInt(globalFloatPanel_AyohaStore_SaleItemDetail_StampRuleAmount);
+           
+          
+            if (ItemPriceDiscountRate >= 0.1) {
+               
+                TTlMerchantPoint = (ItemPriceDiscount * AddToCart_ADD) * MerchantPoint;
+                TTlAyohaPoint = (ItemPriceDiscount * AddToCart_ADD) * AyohaPoint;
+                stamp=ItemPriceDiscount / StampRuleAmount;
+              //  SumPrice = globalFloatPanel_AyohaStore_SaleItemDetail_ItemPriceDiscount * Qty;
+            } else {
+                
+                TTlMerchantPoint = (ItemPrice * AddToCart_ADD) * MerchantPoint;
+                TTlAyohaPoint = (ItemPrice * AddToCart_ADD) * AyohaPoint;
+                stamp=ItemPrice / StampRuleAmount;
+                //SumPrice = globalFloatPanel_AyohaStore_SaleItemDetail_ItemPrice * Qty;
+            }
+
+           
+          
+          
+            // MerchantSumStamps = stamp;
+            // AyohaPoint = TTlAyohaPoint;
+            MerchantSumStamps = parseInt(MerchantSumStamp) + stamp;
+            //TTlAyohaPoint = MerchantSumStamps;
+            AyohaPoint = parseInt(MerchantSumStamp) + stamp;
+           
+        
+        }
+       
+        if (ItemPriceDiscountRate > 0) {
+            SumPrice = ItemPriceDiscount * AddToCart_ADD;
+        } else {
+            SumPrice = ItemPrice * AddToCart_ADD;
+        }
+
+
+       // SumPrice = ItemPrice * AddToCart_ADD;
+        //Ext.Viewport.mask({ xtype: 'loadmask', message: '...' });
+        FloatPanel_AyohaStore_Cart_AyohaStoreCart_Update(ID, ItemCode, AddToCart_ADD, SumPrice, CampaignType, TTlMerchantPoint, TTlAyohaPoint, MerchantSumStamps, MerchantPoint, AyohaPoint);
+       
+    }
+    
+
+}
+
+
+function FloatPanel_AyohaStore_cart_AddToCart_MINUS(StampRuleAmounts,ID, MerchantPoint, AyohaPoint, ItemPrice, CampaignType, ItemCode, ItemPriceDiscount, ItemPriceDiscountRate, MerchantSumStamp) {
+  
+    AddToCart_MINUS = parseInt(document.getElementById("input-FloatPanel_AyohaStore_Cart_Qty" + ID).value);
+    AddToCart_MINUS = AddToCart_MINUS - 1;
+    globalFloatPanel_AyohaStore_SaleItemDetail_StampRuleAmount=StampRuleAmounts;
+    if (AddToCart_MINUS >= 1) {      
+        document.getElementById("input-FloatPanel_AyohaStore_Cart_Qty" + ID).value = AddToCart_MINUS;
+
+
+        // var MerchantSumStamps=0;
+        // var TTlMerchantPoint=0;
+        // var TTlAyohaPoint=0;
+        // var SumPrice;
+        //if (CampaignType == "Stamp Reward Loyalty Card") {
+        //    TTlMerchantPoint = 0.00;
+        //    TTlAyohaPoint = AddToCart_MINUS * AyohaPoint;
+        //    MerchantSumStamp = 1;
+        //}
+        //if (CampaignType == "Point Reward Loyalty Card") {
+        //    TTlMerchantPoint = (ItemPrice * AddToCart_MINUS) * MerchantPoint;
+        //    TTlAyohaPoint = (ItemPrice * AddToCart_MINUS) * AyohaPoint;
+        //    MerchantSumStamp = 0;
+        //}
+        //SumPrice = ItemPrice * AddToCart_MINUS;
+
+
+
+
+
+
+
+
+        if (CampaignType == "Stamp Reward Loyalty Card") {
+           
+
+
+
+            // var StampRuleAmount = parseFloat(MerchantPoint);
+            // var stamp;
+            // if (ItemPriceDiscountRate >= 0.1) {
+            //     if (ItemPriceDiscount >= StampRuleAmount) {
+            //         stamp = parseInt(ItemPriceDiscounts) / parseInt(StampRuleAmount);
+            //     } else {
+            //         stamp = 0;
+            //     }
+            // } else {
+            //     if (ItemPrice >= StampRuleAmount) {
+            //         stamp = parseInt(ItemPrice) / parseInt(StampRuleAmount);
+            //     } else {
+            //         stamp = 0;
+            //     }             
+            // }
+            // MerchantSumStamps = parseInt(MerchantSumStamp) - stamp;
+            // TTlAyohaPoint = MerchantSumStamps;
+            // AyohaPoint = parseInt(MerchantSumStamp) - stamp;
+            // TTlMerchantPoint = parseFloat(MerchantPoint);
+
+
+
+
+            var StampRuleAmount = parseInt(globalFloatPanel_AyohaStore_SaleItemDetail_StampRuleAmount);
+           
+          
+           
+         
+
+            if (ItemPriceDiscountRate >= 0.1) {
+                TTlMerchantPoint = 0.00;
+                TTlAyohaPoint = ItemPriceDiscount * AyohaPoint;
+                stamp=ItemPriceDiscount / StampRuleAmount;
+            } else {
+            
+               TTlMerchantPoint = 0.00;
+                TTlAyohaPoint = ItemPrice * AyohaPoint;
+                stamp=ItemPrice / StampRuleAmount;
+            }
+          
+
+
+             MerchantSumStamps = parseInt(MerchantSumStamp) - stamp;
+            // TTlAyohaPoint = MerchantSumStamps;
+            // AyohaPoint = parseInt(MerchantSumStamp) - stamp;
+  
+           
+           
+          
+       
+
+
+            
+        }
+
+
+        if (CampaignType == "Point Reward Loyalty Card|Stamp Reward Loyalty Card") {
+            var StampRuleAmount = parseInt(globalFloatPanel_AyohaStore_SaleItemDetail_StampRuleAmount);
+           
+       
+           
+         
+
+
+
+            if (ItemPriceDiscountRate >= 0.1) {
+               // TTlMerchantPoint = ItemPriceDiscount * MerchantPoint;
+               // TTlAyohaPoint = ItemPriceDiscount * AyohaPoint;
+               TTlMerchantPoint = (ItemPriceDiscount * AddToCart_MINUS) * MerchantPoint;
+               TTlAyohaPoint = (ItemPriceDiscount * AddToCart_MINUS) * AyohaPoint;
+                stamp=ItemPriceDiscount / StampRuleAmount;
+            } else {
+            
+             
+              
+              // TTlMerchantPoint = ItemPrice * MerchantPoint;
+                //TTlAyohaPoint = ItemPrice * AyohaPoint;
+                TTlMerchantPoint = (ItemPrice * AddToCart_MINUS) * MerchantPoint;
+                TTlAyohaPoint = (ItemPrice * AddToCart_MINUS) * AyohaPoint;
+                stamp=ItemPrice / StampRuleAmount;
+            }
+          
+           
+             MerchantSumStamps = parseInt(MerchantSumStamp) - stamp;
+            TTlAyohaPoint =TTlAyohaPoint - AyohaPoint;
+          //  AyohaPoint = parseInt(MerchantSumStamp) - stamp;
+          
+
+
+          
+        }
+
+
+
+        if (CampaignType == "Point Reward Loyalty Card") {
+            //TTlMerchantPoint = (ItemPrice * AddToCart_ADD) * MerchantPoint;
+            //TTlAyohaPoint = (ItemPrice * AddToCart_ADD) * AyohaPoint;
+            //MerchantSumStamp = 0;
+            if (ItemPriceDiscountRate > 0) {
+                TTlMerchantPoint = (ItemPriceDiscount * AddToCart_MINUS) * MerchantPoint;
+                TTlAyohaPoint = (ItemPriceDiscount * AddToCart_MINUS) * AyohaPoint;
+                MerchantSumStamps = 0;
+            } else {
+                TTlMerchantPoint = (ItemPrice * AddToCart_MINUS) * MerchantPoint;
+                TTlAyohaPoint = (ItemPrice * AddToCart_MINUS) * AyohaPoint;
+                MerchantSumStamps = 0;
+            }
+            TTlAyohaPoint =TTlAyohaPoint - AyohaPoint;
+        }
+
+        if (ItemPriceDiscountRate > 0) {
+            SumPrice = ItemPriceDiscount * AddToCart_MINUS;
+        } else {
+            SumPrice = ItemPrice * AddToCart_MINUS;
+        }
+        FloatPanel_AyohaStore_Cart_AyohaStoreCart_Update(ID, ItemCode, AddToCart_MINUS, SumPrice, CampaignType, TTlMerchantPoint, TTlAyohaPoint, MerchantSumStamps, MerchantPoint, AyohaPoint);
+      
+    }
+  
+}

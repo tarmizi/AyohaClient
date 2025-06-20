@@ -360,7 +360,7 @@ Ext.define('ianMizi.view.AyohaStoreSaleItem.FloatPanel_AyohaStore_CheckOut_Membe
                                                                     
                                                                     //hidden: true,
                                                                   
-                                                                    html: '<div class="blink_me"><button class="button3viewloyaltycard">Get It Now,Hurry up,Its FOC !!!</button></div>',
+                                                                    html: '<div><button class="button3viewloyaltycard">🎉 Don’t Miss Out – 100% FREE, Just a Click Away!</button></div>',
                                                                     //handler: function () {
                                                                     //    getMembershipCard();
                                                                     //    // FloatPanel_MembershipCardManagement_NewCardAdd_Save();
@@ -2856,6 +2856,8 @@ FloatPanel_AyohaStore_CheckOut_MembershipCardLoadByMembershipCardCode();
             var containerViewElclickableContainerFloatPanel_AyohaStore_CheckOut_GetFOCMembershipCard = containerViewclickableContainerFloatPanel_AyohaStore_CheckOut_GetFOCMembershipCard.element;
             containerViewElclickableContainerFloatPanel_AyohaStore_CheckOut_GetFOCMembershipCard.on('tap',
               function (event, node, options, eOpts) {
+
+
                 FloatPanel_AyohaStore_CheckOut_MembershipCard_MembershipsInsertPayFOC();
               //  alert('jem')
                 //   if(globalFloatPanel_AyohaStore_PaymentMethod_Code==2){
@@ -5870,8 +5872,7 @@ function FloatPanel_AyohaStore_CheckOut_MembershipCard_MembershipsInsertPayFOC()
                 FloatPanel_MembershipCardList_UpgradeHide();
                 FloatPanel_RewardStoreMembershipCardHide();
                 FloatPanel_AyohaStore_CheckOut_MembershipCardHide();
-                FloatPanel_MembershipCardList_NotYetSubscribedHide();
-                FloatPanel_RewardStoreMembershipCardHide();
+                FloatPanel_MembershipCardList_NotYetSubscribedHide();                
                 FloatPanel_OrderCartHide();
               //  swalFireHoorayMessage("Membership Card Successfully!");
                 swalFireHoorayMessage("Welcome aboard! 🚀 Your membership was successful. You can now view your card in the Membership Card List.");

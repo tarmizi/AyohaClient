@@ -2511,3 +2511,26 @@ function SampleRefactoreLoadDataStore01() {
             }
         });
 }
+
+
+function SampleRefactoreLoadDataStore03(){
+    _DataStore_MembershipCardPaymentPlanLoadByPaymentPlanCodeStore.getProxy().setExtraParam('EnterpriseAccNo', EnterpriseAccNo);
+_DataStore_MembershipCardPaymentPlanLoadByPaymentPlanCodeStore.getProxy().setExtraParam('MembershipCardCode', MembershipCardCode);
+_DataStore_MembershipCardPaymentPlanLoadByPaymentPlanCodeStore.getProxy().setUrl(GetAPIurl() + '/MembershipCard/MembershipCardLoadByEnterpriseAccNoMerchantVersion');
+
+_DataStore_MembershipCardPaymentPlanLoadByPaymentPlanCodeStore.load({
+    callback: function (records, operation, success) {
+        if (success && records.length > 0) {
+            console.log('Store loaded successfully, total records: ' + records.length);
+
+            var record = records[0]; // Access only the first record
+            var planCode = record.get('PaymentPlanCode');
+           
+            LoadingPanelHide();
+        } else {
+            console.error('Failed to load store data or no record found.');
+            LoadingPanelHide();
+        }
+    }
+});
+}

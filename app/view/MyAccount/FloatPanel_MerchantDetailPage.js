@@ -158,7 +158,7 @@ function FloatPanel_MerchantDetailPage() {
                                              {
                                                  margin: '0 15 0 0',
                                                  id: 'htmlFloatPanel_MerchantDetailPage_TitleHeaderTxt',
-                                                 html: '<font size=2 color=black><b>Ayoha Merchant Info</b></font>'
+                                                 html: '<font size=2 color=black><b>Ayoha Merchant Page</b></font>'
                                              },
 
                                              {
@@ -2892,6 +2892,7 @@ function FloatPanelMerchantDetailPage_MembershipCardLoadByEnterpriseAccNoStore()
                 // Loop through all records
                 records.forEach(function (record) {
                     var LoyaltCampaignCount = parseInt(record.get('LoyaltCampaignCount'));
+                    globalFloatPanelMerchantDetailPage_MembershipCardCode = record.get('MembershipCardCode');
                     Ext.getCmp('htmlFloatPanel_MerchantDetailPage_MembershipLoyaltyProgram_Txt').setHtml('<div onclick="OnClickFloatPanel_MerchantDetailPage_MembershipLoyaltyProgram_Txt()" style="width:100%;background-color:transparent;"><font size=2 color=white><b>Our Loyalty Program (' + LoyaltCampaignCount + ')</b></font></div>');
                     globalFloatPanelMerchantDetailPage_MembershipLoyaltyProgramPanel_Height = LoyaltCampaignCount * 100;
                   

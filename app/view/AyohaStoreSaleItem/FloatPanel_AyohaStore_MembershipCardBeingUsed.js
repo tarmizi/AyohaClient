@@ -614,15 +614,28 @@ function FloatPanel_AyohaStore_MembershipCardBeingUsed() {
 
 
 function FloatPanel_AyohaStore_MembershipCardBeingUsedShow() {
-
-    Ext.Viewport.remove(_FloatPanel_AyohaStore_MembershipCardBeingUsed);
-    this.overlay = Ext.Viewport.add(FloatPanel_AyohaStore_MembershipCardBeingUsed());
-    this.overlay.show();
-    LoadingPanelShow(getLoadingIcon(), 'Loading....');
-    AddRoutePages("FloatPanel_AyohaStore_MembershipCardBeingUsedHide()");
-    isFloatPanel_AyohaStore_MembershipCardBeingUsedOpen = 'Y';
-    globalOpenMembershipCardList_Upgrade_From = "FloatPanel_AyohaStore_MembershipCardBeingUsed";
-    FloatPanel_AyohaStore_MembershipCardBeingUsed_MembershipsLoadBySubscriberAccNoAndEnterpriseAccNoStore();
+    var countCard=parseInt(globalFloatPanel_AyohaStore_CountMembershipCard);
+    if(countCard==1){
+       FloatPanel_OpenMembershipCard();
+       return
+    }if(countCard>1){
+        Ext.Viewport.remove(_FloatPanel_AyohaStore_MembershipCardBeingUsed);
+        this.overlay = Ext.Viewport.add(FloatPanel_AyohaStore_MembershipCardBeingUsed());
+        this.overlay.show();
+        LoadingPanelShow(getLoadingIcon(), 'Loading....');
+        AddRoutePages("FloatPanel_AyohaStore_MembershipCardBeingUsedHide()");
+        isFloatPanel_AyohaStore_MembershipCardBeingUsedOpen = 'Y';
+        globalOpenMembershipCardList_Upgrade_From = "FloatPanel_AyohaStore_MembershipCardBeingUsed";
+        FloatPanel_AyohaStore_MembershipCardBeingUsed_MembershipsLoadBySubscriberAccNoAndEnterpriseAccNoStore();
+    }
+   
+  
+  
+  
+  
+  
+  
+   
    // alert(globalFloatPanelAyohaStore_CheckMembershipCardIsUsedStatus)
    
     // FloatPanel_AyohaStore_MembershipCardBeingUsedAdjustHeight();
@@ -664,13 +677,8 @@ function FloatPanel_AyohaStore_MembershipCardBeingUsedAdjustHeight() {
 
 function FloatPanel_AyohaStore_MembershipCardBeingUsed_MembershipsLoadBySubscriberAccNoAndEnterpriseAccNoStore() {
 
-
-    //console.log(GetCurrAyohaUserAccountNo());
-
-    //Ext.getStore('MembershipsLoadBySubscriberAccNoStore').getProxy().setExtraParams({
-    //    SubscriberAccNo: GetCurrAyohaUserAccountNo()
-    //});
-    //Ext.StoreMgr.get('MembershipsLoadBySubscriberAccNoStore').load();
+   
+    
 
     var entAccNo;
     var membershipCardCcode;
@@ -683,45 +691,37 @@ function FloatPanel_AyohaStore_MembershipCardBeingUsed_MembershipsLoadBySubscrib
     }
 
 
+
+
+
+
+
+
+
+
+// alert("entAccNo: " + entAccNo + " membershipCardCcode: " + membershipCardCcode);
+// alert("GetCurrAyohaUserAccountNo(): " + GetCurrAyohaUserAccountNo());
     _DataStore_MembershipsLoadBySubscriberAccNoAndEnterpriseAccNoAndMembershipCardCodeStore.getProxy().setExtraParam('SubscriberAccNo', GetCurrAyohaUserAccountNo());
     _DataStore_MembershipsLoadBySubscriberAccNoAndEnterpriseAccNoAndMembershipCardCodeStore.getProxy().setExtraParam('EnterpriseAccNo', entAccNo);
     _DataStore_MembershipsLoadBySubscriberAccNoAndEnterpriseAccNoAndMembershipCardCodeStore.getProxy().setExtraParam('MembershipCardCode', membershipCardCcode);
-    _DataStore_MembershipsLoadBySubscriberAccNoAndEnterpriseAccNoAndMembershipCardCodeStore.getProxy().setUrl(GetAPIurl() + '/Memberships/MembershipsLoadBySubscriberAccNoAndEnterpriseAccNoAndMembershipCardCode');
-    _DataStore_MembershipsLoadBySubscriberAccNoAndEnterpriseAccNoAndMembershipCardCodeStore.load();
-
-    var task = Ext.create('Ext.util.DelayedTask', function () {
-
-        //Ext.getStore('MembershipsLoadBySubscriberAccNoStore').getProxy().setExtraParams({
-        //    SubscriberAccNo: GetCurrAyohaUserAccountNo()
-        //});
-
-        ////  var myStore = Ext.getStore('MembershipCardLoadByEnterpriseAccNoStore');
-        ////  countMembershipCardLoadByEnterpriseAccNoStoreFirst = myStore.getCount();
-        ////console.log(countMembershipCardLoadByEnterpriseAccNoStoreFirst)
-
-
-        //Ext.StoreMgr.get('MembershipsLoadBySubscriberAccNoStore').load();
-
-        //var myStore = Ext.getStore('MembershipsLoadBySubscriberAccNoStore');
-        //_DataStore_MembershipsLoadBySubscriberAccNoStore = Ext.getStore('MembershipsLoadBySubscriberAccNoStore');
-
-        //alert(_DataStore_MembershipsLoadBySubscriberAccNoAndEnterpriseAccNoStore.getCount());
-
-        LoadingPanelHide();
-        FloatPanel_AyohaStore_MembershipCardBeingUsed_CheckCanUseAnotherCard();
-        Ext.Viewport.setMasked(false);
-
-
-
-
-
-
-
-
-
-
+    _DataStore_MembershipsLoadBySubscriberAccNoAndEnterpriseAccNoAndMembershipCardCodeStore.getProxy().setUrl(GetAPIurl() + '/Memberships/MembershipsLoadBySubscriberAccNoAndEnterpriseAccNoAndMembershipCardCode');  
+    _DataStore_MembershipsLoadBySubscriberAccNoAndEnterpriseAccNoAndMembershipCardCodeStore.load({
+        callback: function (records, operation, success) {
+            if (success) {
+                FloatPanel_AyohaStore_MembershipCardBeingUsed_CheckCanUseAnotherCard();
+            } else {
+                console.error('Failed to load store data.');
+                LoadingPanelHide();
+            }
+        }
     });
-    task.delay(500);
+
+
+
+
+
+    
+  
 
 
 
@@ -772,49 +772,47 @@ function FloatPanel_AyohaStore_MembershipCardBeingUsed_CheckCanUseAnotherCard() 
 
     _DataStore_MembershipsLoadBySubscriberAccNoAndEnterpriseAccNoStore.getProxy().setExtraParam('SubscriberAccNo', GetCurrAyohaUserAccountNo());
     _DataStore_MembershipsLoadBySubscriberAccNoAndEnterpriseAccNoStore.getProxy().setExtraParam('EnterpriseAccNo', entAccNo);
-    _DataStore_MembershipsLoadBySubscriberAccNoAndEnterpriseAccNoStore.getProxy().setUrl(GetAPIurl() + '/Memberships/MembershipsLoadBySubscriberAccNoAndEnterpriseAccNo');
-    _DataStore_MembershipsLoadBySubscriberAccNoAndEnterpriseAccNoStore.load();
-
-    var task = Ext.create('Ext.util.DelayedTask', function () {
-
-        //Ext.getStore('MembershipsLoadBySubscriberAccNoStore').getProxy().setExtraParams({
-        //    SubscriberAccNo: GetCurrAyohaUserAccountNo()
-        //});
-        var SubscribeMembershipCard =parseInt(_DataStore_MembershipsLoadBySubscriberAccNoAndEnterpriseAccNoStore.getCount());
+    _DataStore_MembershipsLoadBySubscriberAccNoAndEnterpriseAccNoStore.getProxy().setUrl(GetAPIurl() + '/Memberships/MembershipsLoadBySubscriberAccNoAndEnterpriseAccNo');  
+    _DataStore_MembershipsLoadBySubscriberAccNoAndEnterpriseAccNoStore.load({
+        callback: function (records, operation, success) {
+            if (success) {
+                var SubscribeMembershipCard =parseInt(_DataStore_MembershipsLoadBySubscriberAccNoAndEnterpriseAccNoStore.getCount());
       
-        console.log("SubscribeMembershipCard:" + SubscribeMembershipCard)
-        console.log("globalFloatPanelAyohaStore_MembershipCardCount:" + globalFloatPanelAyohaStore_MembershipCardCount)
-
-        if (globalFloatPanelAyohaStore_MembershipCardCount == 1) {
-            Ext.getCmp('containerFloatPanel_AyohaStore_MembershipCardBeingUsedTitleOutter').setHidden(true);
-            return;
-        }
-        if (globalFloatPanelAyohaStore_MembershipCardCount > 1) {
-           
-            if (SubscribeMembershipCard >= globalFloatPanelAyohaStore_MembershipCardCount) {
-                Ext.getCmp('containerFloatPanel_AyohaStore_MembershipCardBeingUsedTitleOutter').setHidden(false);
+               
+                if (globalFloatPanelAyohaStore_MembershipCardCount == 1) {
+                    Ext.getCmp('containerFloatPanel_AyohaStore_MembershipCardBeingUsedTitleOutter').setHidden(true);
+                    return;
+                }
+                if (globalFloatPanelAyohaStore_MembershipCardCount > 1) {
+                   
+                    if (SubscribeMembershipCard >= globalFloatPanelAyohaStore_MembershipCardCount) {
+                        Ext.getCmp('containerFloatPanel_AyohaStore_MembershipCardBeingUsedTitleOutter').setHidden(false);
+                    }
+                    if (SubscribeMembershipCard < globalFloatPanelAyohaStore_MembershipCardCount) {
+                        Ext.getCmp('containerFloatPanel_AyohaStore_MembershipCardBeingUsedTitleOutter').setHidden(true);
+                    }
+                }
+                LoadingPanelHide();
+            } else {
+                console.error('Failed to load store data.');
+                LoadingPanelHide();
             }
-            if (SubscribeMembershipCard < globalFloatPanelAyohaStore_MembershipCardCount) {
-                Ext.getCmp('containerFloatPanel_AyohaStore_MembershipCardBeingUsedTitleOutter').setHidden(true);
-            }
         }
-        
-
-     
-        
-        Ext.Viewport.setMasked(false);
-
-
-
-
-
-
-
-
-
-
     });
-    task.delay(600);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
