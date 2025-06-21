@@ -837,6 +837,19 @@ function FloatPanel_AyohaeWallet() {
 }
 
 function FloatPanel_AyohaeWalletShow() {
+
+
+    if (GetAyohaUserisUserVerified() == "NO") {
+        iseWalletButtonTap = "YES";
+        eWalletWarningToBeMembershipFirst();
+        return
+    }
+
+
+
+
+
+
     AddRoutePages("FloatPanel_AyohaeWalletHide()");
     Ext.Viewport.remove(_FloatPanel_AyohaeWallet);
     this.overlay = Ext.Viewport.add(FloatPanel_AyohaeWallet());

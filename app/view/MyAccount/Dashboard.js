@@ -7912,18 +7912,18 @@ function initializeContainerSingleTapEvent() {
       function (event, node, options, eOpts) {
 
 
-
+        FloatPanel_AyohaeWalletShow();
 
          
-          if (GetAyohaUserisUserVerified() == "YES") {
-              FloatPanel_AyohaeWalletShow();
-          }else
+        //   if (GetAyohaUserisUserVerified() == "YES") {
+        //       FloatPanel_AyohaeWalletShow();
+        //   }else
 
-              if (GetAyohaUserisUserVerified() == "NO") {
-                  iseWalletButtonTap = "YES";
-                  eWalletWarningToBeMembershipFirst();
+        //       if (GetAyohaUserisUserVerified() == "NO") {
+        //           iseWalletButtonTap = "YES";
+        //           eWalletWarningToBeMembershipFirst();
              
-          } 
+        //   } 
 
 
         

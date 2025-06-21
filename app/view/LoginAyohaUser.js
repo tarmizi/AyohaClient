@@ -446,7 +446,7 @@ function loadAyohaUserProfile() {
 
 
 
-
+var globalLogginAyohaUser_AyohaUserPicProfile;
 function loadAyohaUserProfileLoginBody() {
 
 
@@ -531,7 +531,8 @@ function loadAyohaUserProfileLoginBody() {
 
                         localStorage.setItem('AyohaVersion', data.results[0].AyohaVersion);
                         localStorage.setItem('AyohaUserGroupCode',data.results[0].AyohaUserGroupCode);
-                        localStorage.setItem('AyohaUserPicProfile',data.results[0].Photo);
+                       // localStorage.setItem('AyohaUserPicProfile',data.results[0].Photo);
+                        globalLogginAyohaUser_AyohaUserPicProfile = data.results[0].Photo;
                         localStorage.setItem('AyohaUserAccountNames', data.results[0].AccountName);
                         localStorage.setItem('AyohaUserisUserVerified',data.results[0].isUserVerified);
                         localStorage.setItem('CurrPhoneNumber', data.results[0].PhoneNo);

@@ -642,13 +642,76 @@ Ext.define('ianMizi.view.AyohaStoreSaleItem.FloatPanel_AyohaStore_CheckOut', {
                                                   ]
                                               },
     
-    
-                                                  
-    
+    /////////////////////////Ordered Item List//////////////////////////////////////
+    {
+        xtype: 'container',
+        width: '100%',
+        id:'containerFloatPanel_AyohaStore_CheckOut_OrderItem',
+        height: 18,
+        style: "background-color: transparent;border-top:1px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-bottom:2px none #ECF0F1;",
+        layout: {
+            type: 'vbox',
+            pack: 'start',
+            align: 'right'
+
+        },
+        items: [
+            {
+                xtype: 'container',
+                width: '100%',
+               // height: 15,
+                layout: {
+                    type: 'hbox',
+                    pack: 'left',
+                    align: 'left'
+
+                },
+                items: [
+                    {
+xtype:'spacer',
+width:10
+                    },
+                    {
+                        id: 'htmlFloatPanel_AyohaStore_CheckOut_OrderItem',
+                        html:'<div style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:163px;text-align:left;align-items: center;color:black;background-color:#ECF0F1;height:25px; padding: 5px 10px;border-radius:5px 5px 0px 0px;border-top:1px solid grey;border-left:1px solid grey;border-right:1px solid grey;border-bottom:1px none grey;"> <span style="margin-left: 5px;">Ordered Items</span></div>',
+                          // html: '<div style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:left;color:black;">Billing Charges:</div>'
+                       },
+                   
+                    
+                ]
+            },
+        ]
+    },
+    {
+        xtype: 'container',
+        width: '100%',
+        height: 20,
+        style: "background-color: transparent;",
+        layout: {
+            type: 'vbox',
+            pack: 'center',
+            align: 'center'
+
+        },
+        items: [
+            {
+                xtype: 'container',
+                width: '95%',
+                height: 1,
+                style: "background-color: grey;",
+            }
+        ]
+    },
+                                            //   {
+                                            //     margin: '0 0 0 10',
+                                            //     html: '<div style="width:100%;text-align:center;color:black;font-family: Arial; font-size:12px;word-wrap: break-word;">Ordered Item</div>'
+                                            // },
+    /////////////////////////////////////////////////////////
                                                   {
                                                       xtype: 'container',
                                                       width: '100%',
-                                                      height: 330,
+                                                      height: 340,
+                                                      id:'containerFloatPanel_AyohaStore_CheckOut_OrderedItemList',
                                                       layout: {
                                                           type: 'vbox',
                                                           pack: 'start',
@@ -658,15 +721,12 @@ Ext.define('ianMizi.view.AyohaStoreSaleItem.FloatPanel_AyohaStore_CheckOut', {
                                                      style: 'background-color:transparent',
                                                      
                                                      items: [
-                                                         {
-                                                             margin: '0 0 0 10',
-                                                             html: '<div style="width:100%;text-align:center;color:black;font-family: Arial; font-size:12px;word-wrap: break-word;">Ordered Item</div>'
-                                                         },
+                                                        
                                                           {
                                                               xtype: 'container',
                                                               width: '100%',
                                                               height: 267,
-                                                              margin:'-10 0 0 0',
+                                                              margin:'0 0 0 0',
                                                               style: "background-color: transparent;border-bottom:1px none #ECF0F1;",
                                                              // style: "background-color: transparent;border-right:1px solid #ECF0F1;border-left:1px solid #ECF0F1;border-bottom:1px solid #ECF0F1;border-top:1px solid #ECF0F1;border-radius: 10px 10px 10px 10px;",
                                                               layout: {
@@ -676,34 +736,74 @@ Ext.define('ianMizi.view.AyohaStoreSaleItem.FloatPanel_AyohaStore_CheckOut', {
     
                                                               },
                                                               items: [
+                                                                //   {
+    
+                                                                //       id: 'FloatPanel_AyohaStore_CheckOut_PurchasedItem_FromCart',
+                                                                //       store: _DataStore_AyohaStoreCartLoadCartAyohaStore,
+                                                                //       hidden:true,
+                                                                //       // grouped: true,
+                                                                //       xtype: 'dataview',
+                                                                //       // xtype: 'list',
+                                                                //      height: 115,
+                                                                //       //scrollable: true,
+                                                                //      // scrollable: 'horizontal',
+                                                                //      // indicators: false,
+                                                                //       //inline: true,
+                                                                //       inline: {
+                                                                //           wrap: false
+                                                                //       },
+                                                                //       scrollable: {
+                                                                //           direction: 'horizontal',
+                                                                //           indicators: false,
+                                                                //       },
+                                                                //       width: '100%',                                                               
+                                                                //       cls: 'dataview-item',
+                                                                //       itemTpl: '<div style="width: 85px; height: 85px; border:3px none white;padding:5px 5px;margin:5px 0px 0px 5px;"><img src="{ItemCoverImg}" style="width: 80px; height: 80px; border:1px solid grey;"/><br><div style="margin:-7px 0px 0px 0px;text-align:left;color:black;font-family: Arial; font-size:7px;word-wrap: break-word;font-weight:normal;">({RowNumber}).{ItemName}</div><br><div style="margin:-26px 0px 0px 0px;text-align:left;color:#c800ffc9;font-family: Arial; font-size:10px;word-wrap: break-word;font-weight:bold;">RM:{ModifiedItemPriceCheckOut}</div></div>',
+    
+    
+                                                                //   },
+    
                                                                   {
     
-                                                                      id: 'FloatPanel_AyohaStore_CheckOut_PurchasedItem_FromCart',
-                                                                      store: _DataStore_AyohaStoreCartLoadCartAyohaStore,
-                                                                      hidden:true,
-                                                                      // grouped: true,
-                                                                      xtype: 'dataview',
-                                                                      // xtype: 'list',
-                                                                     height: 115,
-                                                                      //scrollable: true,
-                                                                     // scrollable: 'horizontal',
-                                                                     // indicators: false,
-                                                                      //inline: true,
-                                                                      inline: {
-                                                                          wrap: false
-                                                                      },
-                                                                      scrollable: {
-                                                                          direction: 'horizontal',
-                                                                          indicators: false,
-                                                                      },
-                                                                      width: '100%',                                                               
-                                                                      cls: 'dataview-item',
-                                                                      itemTpl: '<div style="width: 85px; height: 85px; border:3px none white;padding:5px 5px;margin:5px 0px 0px 5px;"><img src="{ItemCoverImg}" style="width: 80px; height: 80px; border:1px solid grey;"/><br><div style="margin:-7px 0px 0px 0px;text-align:left;color:black;font-family: Arial; font-size:7px;word-wrap: break-word;font-weight:normal;">({RowNumber}).{ItemName}</div><br><div style="margin:-26px 0px 0px 0px;text-align:left;color:#c800ffc9;font-family: Arial; font-size:10px;word-wrap: break-word;font-weight:bold;">RM:{ModifiedItemPriceCheckOut}</div></div>',
-    
-    
-                                                                  },
-    
-    
+                                                                    id: 'FloatPanel_AyohaStore_CheckOut_PurchasedItem_FromCart',
+                                                                    store: _DataStore_AyohaStoreCartLoadCartAyohaStore,
+                                                                    hidden:true,
+                                                                    // grouped: true,
+                                                                   // xtype: 'dataview',
+                                                                 xtype: 'list',
+                                                                   height: 370,
+                                                                    //scrollable: true,
+                                                                   // scrollable: 'horizontal',
+                                                                   // indicators: false,
+                                                                    //inline: true,
+                                                                    inline: {
+                                                                        wrap: false
+                                                                    },
+                                                                    style: 'border-bottom:1px none grey;background-color:white;',
+                                                                    scrollable: {
+                                                                        direction: 'vertical',
+                                                                        indicators: false,
+                                                                    },
+                                                                    width: '95%',                                                               
+                                                                  //  cls: 'dataview-item',
+                                                                   // itemTpl: '<div style="width: 85px; height: 85px; border:3px none white;padding:5px 5px;margin:5px 0px 0px 5px;"><img src="{ItemCoverImg}" style="width: 80px; height: 80px; border:1px solid grey;"/><br><div style="margin:-7px 0px 0px 0px;text-align:left;color:black;font-family: Arial; font-size:7px;word-wrap: break-word;font-weight:normal;">({RowNumber}).{ItemName}</div><br><div style="margin:-26px 0px 0px 0px;text-align:left;color:#c800ffc9;font-family: Arial; font-size:10px;word-wrap: break-word;font-weight:bold;">RM:{ModifiedItemPriceCheckOut}</div></div>',
+  itemTpl:'<div style="display: flex; align-items: center; margin: 0px -16px;">'+
+  '<div style="flex: 1; padding-right: 0px;">'+
+  '<div style="font-family: Arial; font-size: 12px; color: black;margin:-40px 0px 0px 0px;font-weight:bold">'+
+  '{RowNumber}). {ItemName}'+
+  '</div>'+
+  '<div style="font-family: Arial; font-size: 12px; color: #c800ffc9; font-weight: bold;padding:0px 0px;">'+
+  'RM {ModifiedItemPriceCheckOut}'+
+  '</div>'+
+  '</div>'+
+  '<div style="width: 85px; height: 85px; padding: 2px;">'+
+  '<img src="{ItemCoverImg}" style="width: 80px; height: 80px; border: 1px solid grey; border-radius: 5px;" />'+
+  '</div>'+
+ '</div>'
+
+
+  
+                                                                },
                                                                       {
     
                                                                           id: 'FloatPanel_AyohaStore_CheckOut_PurchasedItem_FromPurchaseHistory',
@@ -729,658 +829,759 @@ Ext.define('ianMizi.view.AyohaStoreSaleItem.FloatPanel_AyohaStore_CheckOut', {
     
     
                                                                       },
-                                                                  {
-                                                                      xtype: 'container',
-                                                                      width: '100%',
-                                                                      height: 100,
-                                                                      style: "background-color: white;border-top:1px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-bottom:2px none #ECF0F1;;",
-                                                                      layout: {
-                                                                          type: 'vbox',
-                                                                          pack: 'start',
-                                                                          align: 'right'
-    
-                                                                      },
-                                                                      items: [
-                                                                          {
-                                                                              xtype: 'container',
-                                                                              width: '100%',
-                                                                             // height: 15,
-                                                                              layout: {
-                                                                                  type: 'hbox',
-                                                                                  pack: 'center',
-                                                                                  align: 'center'
-    
-                                                                              },
-                                                                              items: [
-    
-                                                                                  {
-                                                                                      xtype: 'container',
-                                                                                      width: '84%',
-                                                                                      // height: 30,
-                                                                                      layout: {
-                                                                                          type: 'hbox',
-                                                                                          pack: 'right',
-                                                                                          align: 'center'
-    
-                                                                                      },
-                                                                                      items: [
-                                                                                           {
-    
-                                                                                               html: '<div style="font-family:Arial, sans-serif;font-size:11px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:right;color:black;">Total Quantity:</div>'
-                                                                                           }
-                                                                                      ]
-                                                                                  },
-                                                                                   {
-                                                                                       xtype: 'container',
-                                                                                       width: '10%',
-                                                                                       // height: 30,
-                                                                                       layout: {
-                                                                                           type: 'hbox',
-                                                                                           pack: 'left',
-                                                                                           align: 'center'
-    
-                                                                                       },
-                                                                                       items: [
-                                                                                         {
-                                                                                             margin: '0 0 0 5',
-                                                                                             id: 'htmlFloatPanel_AyohaStore_CheckOut_TotalQuantity',
-                                                                                             html: '<div style="font-family:Arial, sans-serif;font-size:11px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:left;color:black;">2</div>'
-                                                                                         }
-                                                                                       ]
-                                                                                   },
-                                                                              ]
-                                                                          },
-                                                                          {
-                                                                              xtype: 'container',
-                                                                              width: '100%',
-                                                                              id:'containerFloatPanel_AyohaStore_CheckOut_DeliveryChargeType',
-                                                                              margin: '0 0 0 0',
-                                                                              height: 50,
-                                                                              layout: {
-                                                                                  type: 'vbox',
-                                                                                  pack: 'start',
-                                                                                  align: 'left'
-    
-                                                                              },
-                                                                              items: [
-    
-                                                                                  {
-                                                                                      xtype: 'container',
-                                                                                      width: '100%',
-                                                                                      // height: 30,
-                                                                                      layout: {
-                                                                                          type: 'vbox',
-                                                                                          pack: 'center',
-                                                                                          align: 'left'
-    
-                                                                                      },
-                                                                                      items: [
-                                                                                           {
-                                                                                               margin: '0 0 0 10',
-                                                                                               html: '<div style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:Left;color:Red;">*Delivery Type:</div>'
-                                                                                           },
-                                                                                           {
-                                                                                               xtype: 'container',
-                                                                                               width: '100%',
-                                                                                               // height: 30,
-                                                                                               layout: {
-                                                                                                   type: 'hbox',
-                                                                                                   pack: 'left',
-                                                                                                   align: 'center'
-    
-                                                                                               },
-                                                                                               items: [
-    
-                                                             {
-                                                                 xtype: 'panel',
-                                                                 width: 11
-                                                             },
-                                                               {
-                                                                   id: 'htmlFloatPanel_AyohaStore_CheckOut_DeliveryChargeType',
-                                                                   margin: '0 0 0 0',
-    
-                                                                   // zIndex: -10,
-                                                                   width: '92%',
-                                                                   // html: '<textarea id="input-FloatPanel_AyohaStore_SearchProduct" style="width:97%;height: 30px;padding: 5px 5px;box-sizing: border-box;border: 1px solid #ccc;border-radius: 4px;background-color: #f8f8f8;font-size: 12px;resize: none;" placeholder="Search Product"></textarea>',
-                                                                   // html: '<input type="text"  id="input-FloatPanel_AyohaStoreMerchant_AddEditItem_Descriptions"  style="border-color:black;color:black;width:100%;text-align: left;font-size:14px;font-weight:bold;width:90%;height:30px;">'
-                                                                   html: '<input type="text" id="input-FloatPanel_AyohaStore_CheckOut_DeliveryChargeType"  onClick="FloatPanel_AyohaStore_Cart_DeliveryChargeTypeOpen()" readOnly style="width:100%;height: 32px;padding: 5px 5px;box-sizing: border-box;border: 1px solid #ccc;border-radius: 0px;background-color: #f0f2f5;font-size: 12px;color: black;font-weight:bold;text-align:center;margin:0px 0px 0px 3px"  placeholder="--- Select Delivery ---">',
-                                                               },
-    
-    
-    
-                                                                 {
-                                                                     xtype: 'panel',
-                                                                     width: 11
-                                                                 },
-                                                                                               ]
-                                                                                           },
-                                                                                      ]
-                                                                                  },
-    
-                                                                              ]
-                                                                          },
-    
-    
-                                                                          
-                                                                        {
-                                                                            xtype: 'container',
-                                                                            width: '100%',
-                                                                            //  height: 15,
-                                                                            layout: {
-                                                                                type: 'hbox',
-                                                                                pack: 'center',
-                                                                                align: 'center'
-    
-                                                                            },
-                                                                            items: [
-    
-                                                                                {
-                                                                                    xtype: 'container',
-                                                                                    width: '84%',
-                                                                                    // height: 30,
-                                                                                    layout: {
-                                                                                        type: 'hbox',
-                                                                                        pack: 'right',
-                                                                                        align: 'center'
-    
-                                                                                    },
-                                                                                    items: [
-                                                                                         {
-    
-                                                                                             html: '<div style="font-family:Arial, sans-serif;font-size:11px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:right;color:black;">SubTotal(RM):</div>'
-                                                                                         }
-                                                                                    ]
-                                                                                },
-                                                                                 {
-                                                                                     xtype: 'container',
-                                                                                     width: '10%',
-                                                                                     // height: 30,
-                                                                                     layout: {
-                                                                                         type: 'hbox',
-                                                                                         pack: 'left',
-                                                                                         align: 'center'
-    
-                                                                                     },
-                                                                                     items: [
-                                                                                       {
-                                                                                           margin: '0 0 0 5',
-                                                                                           id: 'htmlFloatPanel_AyohaStore_CheckOut_SubTotal',
-                                                                                           html: '<div style="font-family:Arial, sans-serif;font-size:11px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:left;color:black;">00.00</div>'
-                                                                                       }
-                                                                                     ]
-                                                                                 },
-                                                                            ]
-                                                                        },
-                                                                          {
-                                                                              xtype: 'container',
-                                                                              width: '100%',
-                                                                            //  height: 15,
-                                                                              layout: {
-                                                                                  type: 'hbox',
-                                                                                  pack: 'center',
-                                                                                  align: 'center'
-    
-                                                                              },
-                                                                              items: [
-    
-                                                                                  {
-                                                                                      xtype: 'container',
-                                                                                      width: '84%',
-                                                                                      // height: 30,
-                                                                                      layout: {
-                                                                                          type: 'hbox',
-                                                                                          pack: 'right',
-                                                                                          align: 'center'
-    
-                                                                                      },
-                                                                                      items: [
-                                                                                           {
-                                                                                               id: 'htmlFloatPanel_AyohaStore_CheckOut_DeliveryType',
-                                                                                               html: '<div style="font-family:Arial, sans-serif;font-size:11px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:right;color:black;">Delivery Charge(RM):</div>'
-                                                                                           }
-                                                                                      ]
-                                                                                  },
-                                                                                   {
-                                                                                       xtype: 'container',
-                                                                                       width: '10%',
-                                                                                       // height: 30,
-                                                                                       layout: {
-                                                                                           type: 'hbox',
-                                                                                           pack: 'left',
-                                                                                           align: 'center'
-    
-                                                                                       },
-                                                                                       items: [
-                                                                                         {
-                                                                                             margin: '0 0 0 5',
-                                                                                             id: 'htmlFloatPanel_AyohaStore_CheckOut_Delivery',
-                                                                                             html: '<div style="font-family:Arial, sans-serif;font-size:11px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:left;color:black;">00.00</div>'
-                                                                                         }
-                                                                                       ]
-                                                                                   },
-                                                                              ]
-                                                                          },
-    
-                                                                          ///////////////////////
-                                                                       
-                                                                          ////////////////
-    
-                                                                              {
-                                                                                  xtype: 'container',
-                                                                                  width: '100%',
-                                                                                  id:'containerFloatPanel_AyohaStore_CheckOut_DeliveryTypeName',
-                                                                                  hidden:true,
-                                                                                  //  height: 15,
-                                                                                  layout: {
-                                                                                      type: 'hbox',
-                                                                                      pack: 'center',
-                                                                                      align: 'center'
-    
-                                                                                  },
-                                                                                  items: [
-    
-                                                                                      {
-                                                                                          xtype: 'container',
-                                                                                          width: '73%',
-                                                                                          // height: 30,
-                                                                                          layout: {
-                                                                                              type: 'hbox',
-                                                                                              pack: 'right',
-                                                                                              align: 'center'
-    
-                                                                                          },
-                                                                                          items: [
-                                                                                               {
-                                                                                                   id: 'htmlFloatPanel_AyohaStore_CheckOut_DeliveryTypeName',
-                                                                                                   margin:'-4 0 0 0',
-                                                                                                   html: '<div style="font-family:Arial, sans-serif;font-size:10px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:right;color:black;">(J&T Semenanjung Malaysia)</div>'
-    
-                                                                                               }
-                                                                                          ]
-                                                                                      },
-                                                                                      
-                                                                                  ]
-                                                                              },
-    
-    
-                                                                          //////////
-                                                                          {
-                                                                            xtype: 'container',
-                                                                            width: '100%',
-                                                                            //  height: 15,
-                                                                            layout: {
-                                                                                type: 'hbox',
-                                                                                pack: 'center',
-                                                                                align: 'center'
-    
-                                                                            },
-                                                                            items: [
-    
-                                                                                {
-                                                                                    xtype: 'container',
-                                                                                    width: '84%',
-                                                                                    // height: 30,
-                                                                                    layout: {
-                                                                                        type: 'hbox',
-                                                                                        pack: 'right',
-                                                                                        align: 'center'
-    
-                                                                                    },
-                                                                                    items: [
-                                                                                         {
-                                                                                             id: 'htmlFloatPanel_AyohaStore_CheckOut_VoucherDiscountLabel',
-                                                                                             html: '<div style="font-family:Arial, sans-serif;font-size:11px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:right;color:black;">Voucher Discount(RM):</div>'
-                                                                                         }
-                                                                                    ]
-                                                                                },
-                                                                                 {
-                                                                                     xtype: 'container',
-                                                                                     width: '10%',
-                                                                                     // height: 30,
-                                                                                     layout: {
-                                                                                         type: 'hbox',
-                                                                                         pack: 'left',
-                                                                                         align: 'center'
-    
-                                                                                     },
-                                                                                     items: [
-                                                                                       {
-                                                                                           margin: '0 0 0 5',
-                                                                                           id: 'htmlFloatPanel_AyohaStore_CheckOut_VoucherDiscount',
-                                                                                           html: '<div style="font-family:Arial, sans-serif;font-size:11px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:left;color:black;">00.00</div>'
-                                                                                       }
-                                                                                     ]
-                                                                                 },
-                                                                            ]
-                                                                        },
-                                                                          {
-                                                                              xtype: 'container',
-                                                                              width: '100%',
-                                                                              margin:'-1 0 0 0',
-                                                                              //  height: 15,
-                                                                              layout: {
-                                                                                  type: 'hbox',
-                                                                                  pack: 'center',
-                                                                                  align: 'center'
-    
-                                                                              },
-                                                                              items: [
-    
-                                                                                  {
-                                                                                      xtype: 'container',
-                                                                                      width: '84%',
-                                                                                      // height: 30,
-                                                                                      layout: {
-                                                                                          type: 'hbox',
-                                                                                          pack: 'right',
-                                                                                          align: 'center'
-    
-                                                                                      },
-                                                                                      items: [
-                                                                                           {
-                                                                                              id: 'htmlFloatPanel_AyohaStore_CheckOut_MembershipDiscountLbl',
-                                                                                               html: '<div style="font-family:Arial, sans-serif;font-size:11px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:right;color:black;">Membership Discount(%):</div>'
-                                                                                           }
-                                                                                      ]
-                                                                                  },
-                                                                                   {
-                                                                                       xtype: 'container',
-                                                                                       width: '10%',
-                                                                                       // height: 30,
-                                                                                       layout: {
-                                                                                           type: 'hbox',
-                                                                                           pack: 'left',
-                                                                                           align: 'center'
-    
-                                                                                       },
-                                                                                       items: [
-                                                                                         {
-                                                                                             margin: '0 0 0 5',
-                                                                                             id: 'htmlFloatPanel_AyohaStore_CheckOut_MembershipDiscount',
-                                                                                             html: '<div style="font-family:Arial, sans-serif;font-size:11px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:left;color:black;">00.00</div>'
-                                                                                         }
-                                                                                       ]
-                                                                                   },
-                                                                              ]
-                                                                          },
-                                                                
-                                                                            {
-                                                                                xtype: 'container',
-                                                                                width: '100%',
-                                                                                margin: '-3 0 0 0',
-                                                                                height: 1,
-                                                                                style: 'background-color:transparent;',
-                                                                                layout: {
-                                                                                    type: 'vbox',
-                                                                                    pack: 'center',
-                                                                                    align: 'right'
-    
-                                                                                },
-                                                                                items: [
-                                                                                     {
-                                                                                         xtype: 'container',
-                                                                                         width: '55%',
-                                                                                         margin: '3 0 0 0',
-                                                                                         height: 1,
-                                                                                         style: 'background-color:grey;',
-                                                                                     },
-                                                                                ]
-                                                                            },
-                                                                          {
-                                                                              xtype: 'container',
-                                                                              width: '100%',
-                                                                            //  height: 38,
-                                                                              layout: {
-                                                                                  type: 'hbox',
-                                                                                  pack: 'center',
-                                                                                  align: 'center'
-    
-                                                                              },
-                                                                              items: [
-    
-                                                                                  {
-                                                                                      xtype: 'container',
-                                                                                      width: '78%',
-                                                                                      // height: 30,
-                                                                                      layout: {
-                                                                                          type: 'hbox',
-                                                                                          pack: 'right',
-                                                                                          align: 'center'
-    
-                                                                                      },
-                                                                                      items: [
-                                                                                           {
-                                                                                               margin: '3 0 0 0',
-    
-                                                                                               html: '<div style="font-family:Arial, sans-serif;font-size:22px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:right;color:black;">Grand Total(RM):</div>'
-                                                                                           }
-                                                                                      ]
-                                                                                  },
-                                                                                   {
-                                                                                       xtype: 'container',
-                                                                                       width: '17%',
-                                                                                       // height: 30,
-                                                                                       layout: {
-                                                                                           type: 'hbox',
-                                                                                           pack: 'left',
-                                                                                           align: 'center'
-    
-                                                                                       },
-                                                                                       items: [
-                                                                                         {
-                                                                                             margin: '3 0 0 0',
-                                                                                             id: 'htmlFloatPanel_AyohaStore_CheckOut_GrandTotal',
-                                                                                             html: '<div style="font-family:Arial, sans-serif;font-size:22px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:left;color:black;">00.00</div>'
-                                                                                         }
-                                                                                       ]
-                                                                                   },
-                                                                              ]
-                                                                          },
-                                                                                                                         {
-                                                                                                                             xtype: 'container',
-                                                                                                                             width: '100%',
-                                                                                                                             margin: '-3 0 0 0',
-                                                                                                                             height: 1,
-                                                                                                                             style: 'background-color:transparent;',
-                                                                                                                             layout: {
-                                                                                                                                 type: 'vbox',
-                                                                                                                                 pack: 'center',
-                                                                                                                                 align: 'right'
-    
-                                                                                                                             },
-                                                                                                                             items: [
-                                                                                                                                  {
-                                                                                                                                      xtype: 'container',
-                                                                                                                                      width: '55%',
-                                                                                                                                      margin: '3 0 0 0',
-                                                                                                                                      height: 1,
-                                                                                                                                      style: 'background-color:grey;',
-                                                                                                                                  },
-                                                                                                                             ]
-                                                                                                                         },
-    
-    
-                                                                                                                         {
-                                                                                                                             xtype: 'container',
-                                                                                                                             width: '100%',
-                                                                                                                             margin: '3 0 0 0',
-                                                                                                                             //  height: 15,
-                                                                                                                             layout: {
-                                                                                                                                 type: 'hbox',
-                                                                                                                                 pack: 'center',
-                                                                                                                                 align: 'center'
-    
-                                                                                                                             },
-                                                                                                                             items: [
-    
-                                                                                                                                 {
-                                                                                                                                     xtype: 'container',
-                                                                                                                                     width: '84%',
-                                                                                                                                     // height: 30,
-                                                                                                                                     layout: {
-                                                                                                                                         type: 'hbox',
-                                                                                                                                         pack: 'right',
-                                                                                                                                         align: 'center'
-    
-                                                                                                                                     },
-                                                                                                                                     items: [
-                                                                                                                                          {
-                                                                                                                                              id:'htmlFloatPanel_AyohaStore_CheckOut_MerchantPointEarnLbl',
-                                                                                                                                              html: '<div onclick="FloatPanel_AyohaStore_CheckOut_openMembershipCard()" style="font-family:Arial, sans-serif;font-size:11px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:right;color:blue;"><u>M.Point Earn:</u></div>'
-                                                                                                                                          }
-                                                                                                                                     ]
-                                                                                                                                 },
-                                                                                                                                  {
-                                                                                                                                      xtype: 'container',
-                                                                                                                                      width: '10%',
-                                                                                                                                      // height: 30,
-                                                                                                                                      layout: {
-                                                                                                                                          type: 'hbox',
-                                                                                                                                          pack: 'left',
-                                                                                                                                          align: 'center'
-    
-                                                                                                                                      },
-                                                                                                                                      items: [
-                                                                                                                                        {
-                                                                                                                                            margin: '0 0 0 5',
-                                                                                                                                            id: 'htmlFloatPanel_AyohaStore_CheckOut_MerchantPointEarn',
-                                                                                                                                            html: '<div onclick="FloatPanel_AyohaStore_CheckOut_openMembershipCard()" style="font-family:Arial, sans-serif;font-size:11px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:left;color:black;">00.00</div>'
-                                                                                                                                        }
-                                                                                                                                      ]
-                                                                                                                                  },
-                                                                                                                             ]
-                                                                                                                         },
-    
-    
-    
-    
-    
-                                                                                                                         {
-                                                                                                                            xtype: 'container',
-                                                                                                                            width: '100%',
-                                                                                                                            margin: '3 0 0 0',
-                                                                                                                            //  height: 15,
-                                                                                                                            layout: {
-                                                                                                                                type: 'hbox',
-                                                                                                                                pack: 'center',
-                                                                                                                                align: 'center'
-    
-                                                                                                                            },
-                                                                                                                            items: [
-    
-                                                                                                                                {
-                                                                                                                                    xtype: 'container',
-                                                                                                                                    width: '84%',
-                                                                                                                                    // height: 30,
-                                                                                                                                    layout: {
-                                                                                                                                        type: 'hbox',
-                                                                                                                                        pack: 'right',
-                                                                                                                                        align: 'center'
-    
-                                                                                                                                    },
-                                                                                                                                    items: [
-                                                                                                                                         {
-                                                                                                                                             id:'htmlFloatPanel_AyohaStore_CheckOut_StampedCollectedLbl',
-                                                                                                                                             html: '<div onclick="FloatPanel_AyohaStore_CheckOut_openMembershipCard()" style="font-family:Arial, sans-serif;font-size:11px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:right;color:blue;"><u>Stamped Collected:</u></div>'
-                                                                                                                                         }
-                                                                                                                                    ]
-                                                                                                                                },
-                                                                                                                                 {
-                                                                                                                                     xtype: 'container',
-                                                                                                                                     width: '10%',
-                                                                                                                                     // height: 30,
-                                                                                                                                     layout: {
-                                                                                                                                         type: 'hbox',
-                                                                                                                                         pack: 'left',
-                                                                                                                                         align: 'center'
-    
-                                                                                                                                     },
-                                                                                                                                     items: [
-                                                                                                                                       {
-                                                                                                                                           margin: '0 0 0 5',
-                                                                                                                                           id: 'htmlFloatPanel_AyohaStore_CheckOut_StampedCollected',
-                                                                                                                                           html: '<div onclick="FloatPanel_AyohaStore_CheckOut_openMembershipCard()" style="font-family:Arial, sans-serif;font-size:11px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:left;color:black;">00.00</div>'
-                                                                                                                                       }
-                                                                                                                                     ]
-                                                                                                                                 },
-                                                                                                                            ]
-                                                                                                                        },
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-                                                                                                                         {
-                                                                                                                             xtype: 'container',
-                                                                                                                             width: '100%',
-                                                                                                                             //  height: 15,
-                                                                                                                             layout: {
-                                                                                                                                 type: 'hbox',
-                                                                                                                                 pack: 'center',
-                                                                                                                                 align: 'center'
-    
-                                                                                                                             },
-                                                                                                                             items: [
-    
-                                                                                                                                 {
-                                                                                                                                     xtype: 'container',
-                                                                                                                                     width: '84%',
-                                                                                                                                     // height: 30,
-                                                                                                                                     layout: {
-                                                                                                                                         type: 'hbox',
-                                                                                                                                         pack: 'right',
-                                                                                                                                         align: 'center'
-    
-                                                                                                                                     },
-                                                                                                                                     items: [
-                                                                                                                                          {
-    
-                                                                                                                                              html: '<div style="font-family:Arial, sans-serif;font-size:11px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:right;color:blue;" onclick="FloatPanel_AyohaReward_PointTransactionsShow();"><u>A.Point Earn:</u></div>'
-                                                                                                                                          }
-                                                                                                                                     ]
-                                                                                                                                 },
-                                                                                                                                  {
-                                                                                                                                      xtype: 'container',
-                                                                                                                                      width: '10%',
-                                                                                                                                      // height: 30,
-                                                                                                                                      layout: {
-                                                                                                                                          type: 'hbox',
-                                                                                                                                          pack: 'left',
-                                                                                                                                          align: 'center'
-    
-                                                                                                                                      },
-                                                                                                                                      items: [
-                                                                                                                                        {
-                                                                                                                                            margin: '0 0 0 5',
-                                                                                                                                            id: 'htmlFloatPanel_AyohaStore_CheckOut_AyohaPointEarn',
-                                                                                                                                            html: '<div style="font-family:Arial, sans-serif;font-size:11px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:left;color:black;">00.00</div>'
-                                                                                                                                        }
-                                                                                                                                      ]
-                                                                                                                                  },
-                                                                                                                             ]
-                                                                                                                         },
-                                                                          
-                                                                      ]
-                                                                  }
+                                                                 
                                                               ]
                                                           },
                                                           
                                                           
                                                       ]
                                                   },
-    
+    /////////////////////////////////////////////////////////Total quantity
+    {
+        xtype: 'container',
+        width: '100%',
+        id:'containerFloatPanel_AyohaStore_CheckOut_TotalQuantity',
+        height: 18,
+        style: "background-color: transparent;border-top:1px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-bottom:2px none #ECF0F1;;",
+        layout: {
+            type: 'vbox',
+            pack: 'start',
+            align: 'right'
+
+        },
+        items: [
+            {
+                xtype: 'container',
+                width: '100%',
+               // height: 15,
+                layout: {
+                    type: 'hbox',
+                    pack: 'left',
+                    align: 'left'
+
+                },
+                items: [
+                    {
+xtype:'spacer',
+width:10
+                    },
+                    {
+                        id: 'htmlFloatPanel_AyohaStore_CheckOut_TotalQuantity',
+                        
+                           html: '<div style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:left;color:black;">Total Quantity Ordered:</div>'
+                       },
+                   
+                    
+                ]
+            },
+        ]
+    },
+    {
+        xtype: 'container',
+        width: '100%',
+        height: 20,
+        style: "background-color: transparent;",
+        layout: {
+            type: 'vbox',
+            pack: 'center',
+            align: 'center'
+
+        },
+        items: [
+            {
+                xtype: 'container',
+                width: '95%',
+                height: 1,
+                style: "background-color: transparent;",
+            }
+        ]
+    },
+//////////////////////////// Delivery Type
+{
+    xtype: 'container',
+    width: '100%',
+    id:'containerFloatPanel_AyohaStore_CheckOut_DeliveryChargeType',
+    style: "background-color: transparent;",
+   
+    margin: '0 0 0 0',
+    height: 85,
+    layout: {
+        type: 'vbox',
+        pack: 'center',
+        align: 'center'
+
+    },
+    items: [
+
+        {
+            xtype: 'container',
+            width: '100%',
+            height: 80,
+            style: "background-color: transparent;border-top:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:1px none grey;border-right:2px none #ECF0F1;",
+            // height: 30,
+            layout: {
+                type: 'vbox',
+                pack: 'start',
+                align: 'left'
+
+            },
+            items: [
+                 {
+                     margin: '2 0 0 10',
+                    // html: '<div style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:Left;color:Red;">*Delivery Type:</div>'
+                html:'<div style="border-top:1px solid grey;border-left:1px solid grey;border-right:1px solid grey;border-bottom:1px none grey;font-family:Arial, sans-serif;font-size:12px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:163px;text-align:left;align-items: center;color:red;background-color:#ECF0F1;height:25px; padding: 5px 10px;border-radius:5px 5px 0px 0px"> <span style="margin-left: 5px;">*Delivery Type:</span></div>',
+                    },
+                    {
+                        xtype: 'container',
+                        width: '100%',
+                        height: 1,
+                        style: "background-color: transparent;",
+                        layout: {
+                            type: 'vbox',
+                            pack: 'center',
+                            align: 'center'
+                
+                        },
+                        items: [
+                            {
+                                xtype: 'container',
+                                width: '95%',
+                                height: 1,
+                                style: "background-color: grey;",
+                            }
+                        ]
+                    },
+                 {
+                     xtype: 'container',
+                     margin: '5 0 0 0',
+                     width: '100%',
+                     // height: 30,
+                     layout: {
+                         type: 'hbox',
+                         pack: 'left',
+                         align: 'center'
+
+                     },
+                     items: [
+
+// {
+// xtype: 'panel',
+// width: 11
+// },
+{
+id: 'htmlFloatPanel_AyohaStore_CheckOut_DeliveryChargeType',
+margin: '0 0 0 10',
+
+// zIndex: -10,
+width: '95%',
+// html: '<textarea id="input-FloatPanel_AyohaStore_SearchProduct" style="width:97%;height: 30px;padding: 5px 5px;box-sizing: border-box;border: 1px solid #ccc;border-radius: 4px;background-color: #f8f8f8;font-size: 12px;resize: none;" placeholder="Search Product"></textarea>',
+// html: '<input type="text"  id="input-FloatPanel_AyohaStoreMerchant_AddEditItem_Descriptions"  style="border-color:black;color:black;width:100%;text-align: left;font-size:14px;font-weight:bold;width:90%;height:30px;">'
+html: '<input type="text" id="input-FloatPanel_AyohaStore_CheckOut_DeliveryChargeType"  onClick="FloatPanel_AyohaStore_Cart_DeliveryChargeTypeOpen()" readOnly style="width:100%;height: 32px;padding: 5px 5px; border-top:1px none grey;border-left:1px none grey;border-right:1px none grey;border-bottom:1px none grey;border-radius: 0px;background-color: #f0f2f5;font-size: 12px;color: black;font-weight:bold;text-align:center;margin:0px 0px 0px 3px"  placeholder="--- Select Delivery ---">',
+},
+
+
+
+{
+xtype: 'panel',
+width: 11
+},
+                     ]
+                 },
+            ]
+        },
+
+    ]
+},
+//////////////////////////// Billing Detail Info    
+    {
+        xtype: 'container',
+        width: '100%',
+        id:'containerFloatPanel_AyohaStore_CheckOut_Charges',
+        height: 18,
+        style: "background-color: transparent;border-top:1px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-bottom:2px none #ECF0F1;",
+        layout: {
+            type: 'vbox',
+            pack: 'start',
+            align: 'right'
+
+        },
+        items: [
+            {
+                xtype: 'container',
+                width: '100%',
+               // height: 15,
+                layout: {
+                    type: 'hbox',
+                    pack: 'left',
+                    align: 'left'
+
+                },
+                items: [
+                    {
+xtype:'spacer',
+width:10
+                    },
+                    {
+                        id: 'htmlFloatPanel_AyohaStore_CheckOut_Charges',
+                        html:'<div style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:163px;text-align:left;align-items: center;color:black;background-color:#ECF0F1;height:25px; padding: 5px 10px;border-radius:5px 5px 0px 0px;border-top:1px solid grey;border-left:1px solid grey;border-right:1px solid grey;border-bottom:1px none grey;"> <span style="margin-left: 5px;">Bill Charges</span></div>',
+                          // html: '<div style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:left;color:black;">Billing Charges:</div>'
+                       },
+                   
+                    
+                ]
+            },
+        ]
+    },
+    {
+        xtype: 'container',
+        width: '100%',
+        height: 20,
+        style: "background-color: transparent;",
+        layout: {
+            type: 'vbox',
+            pack: 'center',
+            align: 'center'
+
+        },
+        items: [
+            {
+                xtype: 'container',
+                width: '95%',
+                height: 1,
+                style: "background-color: grey;",
+            }
+        ]
+    },
+    {
+        xtype: 'container',
+        width: '100%',
+        height: 159,
+        id:'containerFloatPanel_AyohaStore_CheckOut_BillingDetailInfo',
+        style: "background-color: transparent;border-top:1px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-bottom:2px none #ECF0F1;;",
+        layout: {
+            type: 'vbox',
+            pack: 'start',
+            align: 'right'
+
+        },
+        items: [
+         
+            
+
+
+            
+          {
+              xtype: 'container',
+              width: '100%',
+              //  height: 15,
+              layout: {
+                  type: 'hbox',
+                  pack: 'center',
+                  align: 'center'
+
+              },
+              items: [
+
+                  {
+                      xtype: 'container',
+                      width: '84%',
+                      // height: 30,
+                      layout: {
+                          type: 'hbox',
+                          pack: 'right',
+                          align: 'center'
+
+                      },
+                      items: [
+                           {
+
+                               html: '<div style="font-family:Arial, sans-serif;font-size:11px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:right;color:black;">SubTotal(RM):</div>'
+                           }
+                      ]
+                  },
+                   {
+                       xtype: 'container',
+                       width: '10%',
+                       // height: 30,
+                       layout: {
+                           type: 'hbox',
+                           pack: 'left',
+                           align: 'center'
+
+                       },
+                       items: [
+                         {
+                             margin: '0 0 0 5',
+                             id: 'htmlFloatPanel_AyohaStore_CheckOut_SubTotal',
+                             html: '<div style="font-family:Arial, sans-serif;font-size:11px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:left;color:black;">00.00</div>'
+                         }
+                       ]
+                   },
+              ]
+          },
+            {
+                xtype: 'container',
+                width: '100%',
+              //  height: 15,
+                layout: {
+                    type: 'hbox',
+                    pack: 'center',
+                    align: 'center'
+
+                },
+                items: [
+
+                    {
+                        xtype: 'container',
+                        width: '84%',
+                        // height: 30,
+                        layout: {
+                            type: 'hbox',
+                            pack: 'right',
+                            align: 'center'
+
+                        },
+                        items: [
+                             {
+                                 id: 'htmlFloatPanel_AyohaStore_CheckOut_DeliveryType',
+                                 html: '<div style="font-family:Arial, sans-serif;font-size:11px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:right;color:black;">Delivery Charge(RM):</div>'
+                             }
+                        ]
+                    },
+                     {
+                         xtype: 'container',
+                         width: '10%',
+                         // height: 30,
+                         layout: {
+                             type: 'hbox',
+                             pack: 'left',
+                             align: 'center'
+
+                         },
+                         items: [
+                           {
+                               margin: '0 0 0 5',
+                               id: 'htmlFloatPanel_AyohaStore_CheckOut_Delivery',
+                               html: '<div style="font-family:Arial, sans-serif;font-size:11px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:left;color:black;">00.00</div>'
+                           }
+                         ]
+                     },
+                ]
+            },
+
+            ///////////////////////
+         
+            ////////////////
+
+                {
+                    xtype: 'container',
+                    width: '100%',
+                    id:'containerFloatPanel_AyohaStore_CheckOut_DeliveryTypeName',
+                    hidden:true,
+                    //  height: 15,
+                    layout: {
+                        type: 'hbox',
+                        pack: 'center',
+                        align: 'center'
+
+                    },
+                    items: [
+
+                        {
+                            xtype: 'container',
+                            width: '73%',
+                            // height: 30,
+                            layout: {
+                                type: 'hbox',
+                                pack: 'right',
+                                align: 'center'
+
+                            },
+                            items: [
+                                 {
+                                     id: 'htmlFloatPanel_AyohaStore_CheckOut_DeliveryTypeName',
+                                     margin:'-4 0 0 0',
+                                     html: '<div style="font-family:Arial, sans-serif;font-size:10px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:right;color:black;">(J&T Semenanjung Malaysia)</div>'
+
+                                 }
+                            ]
+                        },
+                        
+                    ]
+                },
+
+
+            //////////
+            {
+              xtype: 'container',
+              width: '100%',
+              //  height: 15,
+              layout: {
+                  type: 'hbox',
+                  pack: 'center',
+                  align: 'center'
+
+              },
+              items: [
+
+                  {
+                      xtype: 'container',
+                      width: '84%',
+                      // height: 30,
+                      layout: {
+                          type: 'hbox',
+                          pack: 'right',
+                          align: 'center'
+
+                      },
+                      items: [
+                           {
+                               id: 'htmlFloatPanel_AyohaStore_CheckOut_VoucherDiscountLabel',
+                               html: '<div style="font-family:Arial, sans-serif;font-size:11px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:right;color:black;">Voucher Discount(RM):</div>'
+                           }
+                      ]
+                  },
+                   {
+                       xtype: 'container',
+                       width: '10%',
+                       // height: 30,
+                       layout: {
+                           type: 'hbox',
+                           pack: 'left',
+                           align: 'center'
+
+                       },
+                       items: [
+                         {
+                             margin: '0 0 0 5',
+                             id: 'htmlFloatPanel_AyohaStore_CheckOut_VoucherDiscount',
+                             html: '<div style="font-family:Arial, sans-serif;font-size:11px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:left;color:black;">00.00</div>'
+                         }
+                       ]
+                   },
+              ]
+          },
+            {
+                xtype: 'container',
+                width: '100%',
+                margin:'-1 0 0 0',
+                //  height: 15,
+                layout: {
+                    type: 'hbox',
+                    pack: 'center',
+                    align: 'center'
+
+                },
+                items: [
+
+                    {
+                        xtype: 'container',
+                        width: '84%',
+                        // height: 30,
+                        layout: {
+                            type: 'hbox',
+                            pack: 'right',
+                            align: 'center'
+
+                        },
+                        items: [
+                             {
+                                id: 'htmlFloatPanel_AyohaStore_CheckOut_MembershipDiscountLbl',
+                                 html: '<div style="font-family:Arial, sans-serif;font-size:11px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:right;color:black;">Membership Discount(%):</div>'
+                             }
+                        ]
+                    },
+                     {
+                         xtype: 'container',
+                         width: '10%',
+                         // height: 30,
+                         layout: {
+                             type: 'hbox',
+                             pack: 'left',
+                             align: 'center'
+
+                         },
+                         items: [
+                           {
+                               margin: '0 0 0 5',
+                               id: 'htmlFloatPanel_AyohaStore_CheckOut_MembershipDiscount',
+                               html: '<div style="font-family:Arial, sans-serif;font-size:11px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:left;color:black;">00.00</div>'
+                           }
+                         ]
+                     },
+                ]
+            },
+  
+              {
+                  xtype: 'container',
+                  width: '100%',
+                  margin: '-3 0 0 0',
+                  height: 1,
+                  style: 'background-color:transparent;',
+                  layout: {
+                      type: 'vbox',
+                      pack: 'center',
+                      align: 'right'
+
+                  },
+                  items: [
+                       {
+                           xtype: 'container',
+                           width: '55%',
+                           margin: '3 0 0 0',
+                           height: 1,
+                           style: 'background-color:grey;',
+                       },
+                  ]
+              },
+            {
+                xtype: 'container',
+                width: '100%',
+              //  height: 38,
+                layout: {
+                    type: 'hbox',
+                    pack: 'center',
+                    align: 'center'
+
+                },
+                items: [
+
+                    {
+                        xtype: 'container',
+                        width: '78%',
+                        // height: 30,
+                        layout: {
+                            type: 'hbox',
+                            pack: 'right',
+                            align: 'center'
+
+                        },
+                        items: [
+                             {
+                                 margin: '3 0 0 0',
+
+                                 html: '<div style="font-family:Arial, sans-serif;font-size:22px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:right;color:black;">Grand Total(RM):</div>'
+                             }
+                        ]
+                    },
+                     {
+                         xtype: 'container',
+                         width: '17%',
+                         // height: 30,
+                         layout: {
+                             type: 'hbox',
+                             pack: 'left',
+                             align: 'center'
+
+                         },
+                         items: [
+                           {
+                               margin: '3 0 0 0',
+                               id: 'htmlFloatPanel_AyohaStore_CheckOut_GrandTotal',
+                               html: '<div style="font-family:Arial, sans-serif;font-size:22px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:left;color:black;">00.00</div>'
+                           }
+                         ]
+                     },
+                ]
+            },
+                                                           {
+                                                               xtype: 'container',
+                                                               width: '100%',
+                                                               margin: '-3 0 0 0',
+                                                               height: 1,
+                                                               style: 'background-color:transparent;',
+                                                               layout: {
+                                                                   type: 'vbox',
+                                                                   pack: 'center',
+                                                                   align: 'right'
+
+                                                               },
+                                                               items: [
+                                                                    {
+                                                                        xtype: 'container',
+                                                                        width: '55%',
+                                                                        margin: '3 0 0 0',
+                                                                        height: 1,
+                                                                        style: 'background-color:grey;',
+                                                                    },
+                                                               ]
+                                                           },
+
+
+                                                           {
+                                                               xtype: 'container',
+                                                               width: '100%',
+                                                               margin: '3 0 0 0',
+                                                               //  height: 15,
+                                                               layout: {
+                                                                   type: 'hbox',
+                                                                   pack: 'center',
+                                                                   align: 'center'
+
+                                                               },
+                                                               items: [
+
+                                                                   {
+                                                                       xtype: 'container',
+                                                                       width: '84%',
+                                                                       // height: 30,
+                                                                       layout: {
+                                                                           type: 'hbox',
+                                                                           pack: 'right',
+                                                                           align: 'center'
+
+                                                                       },
+                                                                       items: [
+                                                                            {
+                                                                                id:'htmlFloatPanel_AyohaStore_CheckOut_MerchantPointEarnLbl',
+                                                                                html: '<div onclick="FloatPanel_AyohaStore_CheckOut_openMembershipCard()" style="font-family:Arial, sans-serif;font-size:11px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:right;color:blue;"><u>M.Point Earn:</u></div>'
+                                                                            }
+                                                                       ]
+                                                                   },
+                                                                    {
+                                                                        xtype: 'container',
+                                                                        width: '10%',
+                                                                        // height: 30,
+                                                                        layout: {
+                                                                            type: 'hbox',
+                                                                            pack: 'left',
+                                                                            align: 'center'
+
+                                                                        },
+                                                                        items: [
+                                                                          {
+                                                                              margin: '0 0 0 5',
+                                                                              id: 'htmlFloatPanel_AyohaStore_CheckOut_MerchantPointEarn',
+                                                                              html: '<div onclick="FloatPanel_AyohaStore_CheckOut_openMembershipCard()" style="font-family:Arial, sans-serif;font-size:11px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:left;color:black;">00.00</div>'
+                                                                          }
+                                                                        ]
+                                                                    },
+                                                               ]
+                                                           },
+
+
+
+
+
+                                                           {
+                                                              xtype: 'container',
+                                                              width: '100%',
+                                                              margin: '3 0 0 0',
+                                                              //  height: 15,
+                                                              layout: {
+                                                                  type: 'hbox',
+                                                                  pack: 'center',
+                                                                  align: 'center'
+
+                                                              },
+                                                              items: [
+
+                                                                  {
+                                                                      xtype: 'container',
+                                                                      width: '84%',
+                                                                      // height: 30,
+                                                                      layout: {
+                                                                          type: 'hbox',
+                                                                          pack: 'right',
+                                                                          align: 'center'
+
+                                                                      },
+                                                                      items: [
+                                                                           {
+                                                                               id:'htmlFloatPanel_AyohaStore_CheckOut_StampedCollectedLbl',
+                                                                               html: '<div onclick="FloatPanel_AyohaStore_CheckOut_openMembershipCard()" style="font-family:Arial, sans-serif;font-size:11px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:right;color:blue;"><u>Stamped Collected:</u></div>'
+                                                                           }
+                                                                      ]
+                                                                  },
+                                                                   {
+                                                                       xtype: 'container',
+                                                                       width: '10%',
+                                                                       // height: 30,
+                                                                       layout: {
+                                                                           type: 'hbox',
+                                                                           pack: 'left',
+                                                                           align: 'center'
+
+                                                                       },
+                                                                       items: [
+                                                                         {
+                                                                             margin: '0 0 0 5',
+                                                                             id: 'htmlFloatPanel_AyohaStore_CheckOut_StampedCollected',
+                                                                             html: '<div onclick="FloatPanel_AyohaStore_CheckOut_openMembershipCard()" style="font-family:Arial, sans-serif;font-size:11px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:left;color:black;">00.00</div>'
+                                                                         }
+                                                                       ]
+                                                                   },
+                                                              ]
+                                                          },
+
+
+
+
+
+
+
+
+
+
+
+                                                           {
+                                                               xtype: 'container',
+                                                               width: '100%',
+                                                               //  height: 15,
+                                                               layout: {
+                                                                   type: 'hbox',
+                                                                   pack: 'center',
+                                                                   align: 'center'
+
+                                                               },
+                                                               items: [
+
+                                                                   {
+                                                                       xtype: 'container',
+                                                                       width: '84%',
+                                                                       // height: 30,
+                                                                       layout: {
+                                                                           type: 'hbox',
+                                                                           pack: 'right',
+                                                                           align: 'center'
+
+                                                                       },
+                                                                       items: [
+                                                                            {
+
+                                                                                html: '<div style="font-family:Arial, sans-serif;font-size:11px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:right;color:blue;" onclick="FloatPanel_AyohaReward_PointTransactionsShow();"><u>A.Point Earn:</u></div>'
+                                                                            }
+                                                                       ]
+                                                                   },
+                                                                    {
+                                                                        xtype: 'container',
+                                                                        width: '10%',
+                                                                        // height: 30,
+                                                                        layout: {
+                                                                            type: 'hbox',
+                                                                            pack: 'left',
+                                                                            align: 'center'
+
+                                                                        },
+                                                                        items: [
+                                                                          {
+                                                                              margin: '0 0 0 5',
+                                                                              id: 'htmlFloatPanel_AyohaStore_CheckOut_AyohaPointEarn',
+                                                                              html: '<div style="font-family:Arial, sans-serif;font-size:11px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:left;color:black;">00.00</div>'
+                                                                          }
+                                                                        ]
+                                                                    },
+                                                               ]
+                                                           },
+            
+        ]
+    },
                                                   /////////////////////
     
                                                   {
                                                       xtype: 'container',
                                                       id: 'containerFloatPanel_AyohaStore_CheckOut_PaymentInfo',
-                                                      hidden:true,
+                                                     // hidden:true,
                                                       width: '100%',
                                                       height: 90,
                                                       margin: '20 0 0 0',
@@ -1393,30 +1594,90 @@ Ext.define('ianMizi.view.AyohaStoreSaleItem.FloatPanel_AyohaStore_CheckOut', {
                                                       style: 'background-color:transparent',
                                                       items: [
     
-                                                           {
-                                                               xtype: 'container',
-                                                               width: '100%',
-                                                               // margin: '0 0 0 0',
-                                                               margin: '0 0 0 10',
-                                                               // height: 20,
-                                                               style: 'background-color:transparent;',
-                                                               layout: {
-                                                                   type: 'hbox',
-                                                                   pack: 'center',
-                                                                   align: 'center'
+                                                        //    {
+                                                        //        xtype: 'container',
+                                                        //        width: '100%',
+                                                        //        // margin: '0 0 0 0',
+                                                        //        margin: '0 0 0 10',
+                                                        //        // height: 20,
+                                                        //        style: 'background-color:transparent;',
+                                                        //        layout: {
+                                                        //            type: 'hbox',
+                                                        //            pack: 'center',
+                                                        //            align: 'center'
     
-                                                               },
-                                                               items: [
-                                                                  {
-                                                                      //  margin: '16 0 0 14',
-                                                                      html: '<div style="font-family:Arial, sans-serif;font-size:12px;font-weight:normal;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:right;color:black;">Payment Info</div>'
-                                                                  },
-                                                                  {
-                                                                      xtype: 'spacer'
-                                                                  },
+                                                        //        },
+                                                        //        items: [
+                                                        //           {
+                                                        //               //  margin: '16 0 0 14',
+                                                        //               html: '<div style="font-family:Arial, sans-serif;font-size:12px;font-weight:normal;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:right;color:black;">Payment Info</div>'
+                                                        //           },
+                                                        //           {
+                                                        //               xtype: 'spacer'
+                                                        //           },
                                                                   
-                                                               ]
-                                                           },
+                                                        //        ]
+                                                        //    },
+                                                            /////////////////////////Payment Info//////////////////////////////////////
+    {
+        xtype: 'container',
+        width: '100%',
+        id:'containerFloatPanel_AyohaStore_CheckOut_PaymentInfoInner',
+        height: 18,
+        style: "background-color: transparent;border-top:1px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-bottom:2px none #ECF0F1;",
+        layout: {
+            type: 'vbox',
+            pack: 'start',
+            align: 'right'
+
+        },
+        items: [
+            {
+                xtype: 'container',
+                width: '100%',
+               // height: 15,
+                layout: {
+                    type: 'hbox',
+                    pack: 'left',
+                    align: 'left'
+
+                },
+                items: [
+                    {
+xtype:'spacer',
+width:10
+                    },
+                    {
+                        id: 'htmlFloatPanel_AyohaStore_CheckOut_PaymentInfoInner',
+                        html:'<div style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:163px;text-align:left;align-items: center;color:black;background-color:#ECF0F1;height:25px; padding: 5px 10px;border-radius:5px 5px 0px 0px;border-top:1px solid grey;border-left:1px solid grey;border-right:1px solid grey;border-bottom:1px none grey;"> <span style="margin-left: 5px;">Payment Info</span></div>',
+                          // html: '<div style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:left;color:black;">Billing Charges:</div>'
+                       },
+                   
+                    
+                ]
+            },
+        ]
+    },
+    {
+        xtype: 'container',
+        width: '100%',
+        height: 20,
+        style: "background-color: transparent;",
+        layout: {
+            type: 'vbox',
+            pack: 'center',
+            align: 'center'
+
+        },
+        items: [
+            {
+                xtype: 'container',
+                width: '95%',
+                height: 1,
+                style: "background-color: grey;",
+            }
+        ]
+    },
                                                          {
                                                              xtype: 'container',
                                                              width: '100%',
@@ -1437,7 +1698,7 @@ Ext.define('ianMizi.view.AyohaStoreSaleItem.FloatPanel_AyohaStore_CheckOut', {
                                                                       width: '97%',
                                                                       height: 60,
                                                                       // html: '<input type="textarea" id="input-FloatPanel_AyohaEnterpriseAccount_EnterpriseDetails_Address" wrap="hard"  style="border-color:white;color:white;width:100%;height:35px;text-align: left;font-size:12px;word-wrap:break-word;">'
-                                                                      html: '<textarea id="input-FloatPanel_AyohaStore_CheckOut_PaymentInfo" style="width:100%;height:80px;padding: 5px 5px;box-sizing: border-box;border: 1px none grey;border-radius: 4px;background-color: transparent;color:black;font-size: 12px;font-weight:bold" wrap="hard">Payment Method:Ayoha eWallet\nPayment Amount(RM):25:00\nPaymentStatus:FullPaid\nPayment No:145a4s4\nOrder No:ON-qiwuwu</textarea>'
+                                                                      html: '<textarea id="input-FloatPanel_AyohaStore_CheckOut_PaymentInfo" style="width:100%;height:80px;padding: 5px 5px;box-sizing: border-box;border: 1px none grey;border-radius: 4px;background-color: transparent;color:black;font-size: 12px;font-weight:bold;text-align:left" wrap="hard">Payment Method:Ayoha eWallet\nPayment Amount(RM):25:00\nPaymentStatus:FullPaid\nPayment No:145a4s4\nOrder No:ON-qiwuwu</textarea>'
                                                                       // html: '<input type="textarea" id="input-FloatPanel_AyohaEnterpriseAccount_EnterpriseDetails_Address" wrap="hard"  rows="25" cols="60">'
     
                                                                   },
@@ -1455,6 +1716,7 @@ Ext.define('ianMizi.view.AyohaStoreSaleItem.FloatPanel_AyohaStore_CheckOut', {
                                                        width: '100%',
                                                        margin: '45 0 0 0',
                                                        height: 95,
+                                                      // hidden:true,
                                                        layout: {
                                                            type: 'vbox',
                                                            pack: 'start',
@@ -1467,6 +1729,7 @@ Ext.define('ianMizi.view.AyohaStoreSaleItem.FloatPanel_AyohaStore_CheckOut', {
                                                             {
                                                                 xtype: 'container',
                                                                 width: '100%',
+                                                                hidden:true,
                                                                 // margin: '0 0 0 0',
                                                                 margin: '0 0 0 10',
                                                                // height: 20,
@@ -1524,6 +1787,7 @@ Ext.define('ianMizi.view.AyohaStoreSaleItem.FloatPanel_AyohaStore_CheckOut', {
                                                               width: '100%',
                                                               margin:'-10 0 0 0',
                                                               height: 70,
+                                                             // hidden:true,
                                                               style: "background-color: transparent;",
                                                               //style: "background-color: white;border-right:1px solid #ECF0F1;border-left:1px solid #ECF0F1;border-bottom:1px solid #ECF0F1;border-top:1px solid #ECF0F1;border-radius: 10px 10px 10px 10px;",
                                                               layout: {
@@ -1537,6 +1801,7 @@ Ext.define('ianMizi.view.AyohaStoreSaleItem.FloatPanel_AyohaStore_CheckOut', {
                                                                        margin: '5 0 0 0',
                                                                        id: 'htmlFloatPanel_AyohaStore_CheckOut_ShippingAddress',
                                                                        width: '97%',
+                                                                       hidden:true,
                                                                        height: 65,
                                                                        // html: '<input type="textarea" id="input-FloatPanel_AyohaEnterpriseAccount_EnterpriseDetails_Address" wrap="hard"  style="border-color:white;color:white;width:100%;height:35px;text-align: left;font-size:12px;word-wrap:break-word;">'
                                                                        html: '<textarea   onclick="FloatPanel_AyohaStore_CheckOut_ShippingAddress_ReEditAddress()"  readOnly  id="input-FloatPanel_AyohaStore_CheckOut_ShippingAddress" style="width:100%;height:65px;padding: 2px 2px;box-sizing: border-box;border: 1px solid grey;border-radius: 4px;background-color: #F2F3F5;color:black;font-size: 12px;font-weight:bold" wrap="hard"></textarea>'
@@ -1546,6 +1811,7 @@ Ext.define('ianMizi.view.AyohaStoreSaleItem.FloatPanel_AyohaStore_CheckOut', {
                                                                    {
                                                                        xtype: 'container',
                                                                        width: '100%',
+                                                                       hidden:true,
                                                                        // margin: '0 0 0 0',
                                                                        //zIndex:100,
                                                                        margin: '0 0 0 0',
@@ -1593,6 +1859,7 @@ Ext.define('ianMizi.view.AyohaStoreSaleItem.FloatPanel_AyohaStore_CheckOut', {
                                                    {
                                                        xtype: 'container',
                                                        width: '100%',
+                                                       hidden: true,
                                                        height: 90,
                                                        margin: '30 0 0 0',
                                                        layout: {
@@ -2490,7 +2757,14 @@ Ext.define('ianMizi.view.AyohaStoreSaleItem.FloatPanel_AyohaStore_CheckOut', {
         var DelCharge = parseFloat(globalFloatPanel_AyohaStore_DeliveryChargeList_DeliveryCharge);
         Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_DeliveryTypeName').setHtml('<div style="font-family:Arial, sans-serif;font-size:10px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:right;color:black;">(' + globalFloatPanel_AyohaStore_DeliveryChargeList_DeliveryName + ')</div>');
         Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_Delivery').setHtml('<div style="font-family:Arial, sans-serif;font-size:11px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:left;color:black;">' + DelCharge.toFixed(2) + '</div>');
-        Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_TotalQuantity').setHtml('<div style="font-family:Arial, sans-serif;font-size:11px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:left;color:black;">' + globalFloatPanel_AyohaStore_Cart_TotalItemQuantity + '</div>');
+       // Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_TotalQuantity').setHtml('<div style="font-family:Arial, sans-serif;font-size:11px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:left;color:black;">' + globalFloatPanel_AyohaStore_Cart_TotalItemQuantity + '</div>');
+       // Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_TotalQuantity').setHtml('<div style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:left;align-items: center;color:black;background-color:#ECF0F1;height:25px; padding: 5px 10px;border-radius:5px 5px 0px 0px"> <span style="margin-left: 5px;">Total Quantity Ordered:' + globalFloatPanel_AyohaStore_Cart_TotalItemQuantity + '</span></div>');
+        Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_TotalQuantity').setHtml('<div style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:left;align-items: center;color:black;background-color:transparent;height:25px; padding: 5px 10px;border-radius:5px 5px 0px 0px"> <span style="margin-left: 5px;"><u>#Total Quantity Ordered:' + globalFloatPanel_AyohaStore_Cart_TotalItemQuantity + '</u></span></div>');
+      
+      
+      
+      
+      
         // Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_Delivery').setHtml('<div style="font-family:Arial, sans-serif;font-size:11px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:left;color:black;">' + globalFloatPanel_AyohaStore_DeliveryChargeList_DeliveryCharge + '</div>');
       //bukak balik 15/7/2023
       /////  Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_MembershipDiscount').setHtml('<div style="font-family:Arial, sans-serif;font-size:11px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:left;color:black;">00.00</div>');
@@ -2922,7 +3196,9 @@ globalFloatPanel_MembershipCardList_NotYetSubscribed_paymentCycleCode=result;
             var Store = _DataStore_AyohaStoreOrderLoadByItemCartCodeAndMembershipCardCodeStore.getAt(0);
     
     
-            Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_TotalQuantity').setHtml('<div style="font-family:Arial, sans-serif;font-size:11px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:left;color:black;">' + Store.get('TotalQuantity') + '</div>')
+           // Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_TotalQuantity').setHtml('<div style="font-family:Arial, sans-serif;font-size:11px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:left;color:black;">' + Store.get('TotalQuantity') + '</div>')
+            Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_TotalQuantity').setHtml('<div style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:left;color:black;">Total Quantity Ordered:' +  Store.get('TotalQuantity') + '</div>');
+        
             Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_Delivery').setHtml('<div style="font-family:Arial, sans-serif;font-size:11px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:left;color:black;">' + Store.get('DeliveryCharge') + '</div>')
             Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_MembershipDiscount').setHtml('<div style="font-family:Arial, sans-serif;font-size:11px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:left;color:black;">' + Store.get('MemberDiscountAmount') + '</div>')
             Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_DeliveryTypeName').setHtml('<div style="font-family:Arial, sans-serif;font-size:10px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:right;color:black;">(' + Store.get('DeliveryName') + ')</div>')
@@ -3184,7 +3460,9 @@ globalFloatPanel_MembershipCardList_NotYetSubscribed_paymentCycleCode=result;
             var Store = _DataStore_AyohaStoreOrderLoadByItemCartCodeAndMembershipCardCodeStore.getAt(0);
     
           
-            Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_TotalQuantity').setHtml('<div style="font-family:Arial, sans-serif;font-size:11px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:left;color:black;">' + Store.get('TotalQuantity') + '</div>')
+          //  Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_TotalQuantity').setHtml('<div style="font-family:Arial, sans-serif;font-size:11px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:left;color:black;">' + Store.get('TotalQuantity') + '</div>')
+            Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_TotalQuantity').setHtml('<div style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:left;color:black;">Total Quantity Ordered:' +  Store.get('TotalQuantity') + '</div>');
+        
             Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_Delivery').setHtml('<div style="font-family:Arial, sans-serif;font-size:11px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:left;color:black;">' + Store.get('DeliveryCharge') + '</div>')
            Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_MembershipDiscount').setHtml('<div style="font-family:Arial, sans-serif;font-size:11px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:left;color:black;">' + Store.get('MemberDiscountAmount') + '</div>')
             Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_DeliveryTypeName').setHtml('<div style="font-family:Arial, sans-serif;font-size:10px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:right;color:black;">(' + Store.get('DeliveryName') + ')</div>')
@@ -3606,7 +3884,9 @@ globalFloatPanel_MembershipCardList_NotYetSubscribed_paymentCycleCode=result;
             var Store = _DataStore_AyohaStoreOrderLoadByItemCartCodeAndMembershipCardCodeStore.getAt(0);
     
     
-            Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_TotalQuantity').setHtml('<div style="font-family:Arial, sans-serif;font-size:11px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:left;color:black;">' + Store.get('TotalQuantity') + '</div>')
+           // Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_TotalQuantity').setHtml('<div style="font-family:Arial, sans-serif;font-size:11px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:left;color:black;">' + Store.get('TotalQuantity') + '</div>')
+            Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_TotalQuantity').setHtml('<div style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:left;color:black;">Total Quantity Ordered:' +  Store.get('TotalQuantity') + '</div>');
+        
             Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_Delivery').setHtml('<div style="font-family:Arial, sans-serif;font-size:11px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:left;color:black;">' + Store.get('DeliveryCharge') + '</div>')
            // Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_MembershipDiscount').setHtml('<div style="font-family:Arial, sans-serif;font-size:11px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:left;color:black;">' + Store.get('MembershipDiscount') + '</div>')
             Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_DeliveryTypeName').setHtml('<div style="font-family:Arial, sans-serif;font-size:10px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:right;color:black;">(' + Store.get('DeliveryName') + ')</div>')

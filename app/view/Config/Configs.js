@@ -2201,17 +2201,21 @@ function eWalletWarningToBeMembershipFirst() {
     event.preventDefault();
     Swal.fire({
         title: '',
-        html: "<b>Hi!, " + GetAyohaUserAccountNames() + "</b>.<br><br>To use the ayoha ewallet facility, we need you to be a member of our ayoha reward application platform. A variety of exciting gift reward offers await you when you become a member of our platform.join us now!",
-        imageUrl: "resources/icons/Logo/AyohaLogofullOrange.png",
+       // html: "<b>Hi!, " + GetAyohaUserAccountNames() + "</b>.<br><br>To use the ayoha ewallet facility, we need you to be a member of our ayoha reward application platform. A variety of exciting gift reward offers await you when you become a member of our platform.join us now!",
+      
+        html:'<img src="'+globalLogginAyohaUser_AyohaUserPicProfile+'" style="width:100px;height:100px;border-radius:50%" alt=Company Name/><br><b>Hello!, '+ GetAyohaUserAccountNames() +'</b>.<br><br>Unlock Ayoha eWallet,Become Ayoha Member First! 🚀<br><br>Just one step away! Simply join as an Ayoha Reward member to activate your eWallet and access exclusive rewards, gifts, and special perks.<br><br>Membership is your gateway to everything awesome in Ayoha Reward.',
+      
+       // imageUrl:globalLogginAyohaUser_AyohaUserPicProfile,
+        //imageUrl: "resources/icons/Logo/LogoOrangeSimplifed.png",
        // imageUrl: FloatPanel_AyohaStore_getEnterpriseLogo(),
-        imageWidth: 350,
-        imageHeight: 200,
+       // imageWidth: 350,
+        //imageHeight: 200,
         showCloseButton: true,
         showCancelButton: false,
         //  confirmButtonColor: '#3085d6',
         confirmButtonColor: '#9932cc',
         cancelButtonColor: '#d33',
-        confirmButtonText: '<div class="blink_me">Be an Ayoha Reward Member Now!</div>',
+        confirmButtonText: '<div class="blink_me">Sign up today and unlock your Ayoha eWallet!</div>',
         footer: '<img src="resources/icons/Logo/AyohaLogofullOrange.png" width="100" height="70" alt="Company Name"/>'
     }).then(function (result) {
         if (result.isConfirmed) {
