@@ -7,7 +7,7 @@ var _Dashboard_SearchMerchantList;
 
 var isDashboard_SearchMerchantListOpen = 'N';
 
-
+var glonbalDashboard_SearchMerchantList_FullCompanyAddress;
 
 
 
@@ -225,6 +225,7 @@ function Dashboard_SearchMerchantList() {
                          itemtap: function (list, idx, target, records, evt) {
                              LoadingPanelShow(getLoadingIcon(),'Loading....');
                              MembershipTag= records.get('isMember');
+                             glonbalDashboard_SearchMerchantList_FullCompanyAddress=records.get('NamaJalan')+',<br>'+records.get('Postkod')+' '+records.get('Bandar')+'.<br> '+records.get('Negeri')
                             // FloatPanel_RewardStore_OpenStore(records.get('ID'));
                              FloatPanel_MerchantDetailPageShow(records.get('ID'), records.get('EnterpriseAccNo'), records.get('EnterpriseLogoPath'), records.get('EnterpriseName'), records.get('EnterpriseTagLine'),
                                  records.get('NamaJalan'), records.get('Postkod'), records.get('Bandar'), records.get('Negeri'), records.get('EnterpriseCoordinate'), records.get('EnterpriseDescriptions'), records.get('EnterprisePhoneNo')
