@@ -3,7 +3,7 @@ Ext.define('ianMizi.view.Config.CoreVariable', {
 
 
 
-
+var CoreVariable_CheckOutBoxDesign="background-color: white;border-top:1px none grey;border-left:1px none grey;border-bottom:1px none grey;border-right:1px none grey;box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);";
 
 function FloatPanel_AyohaStore_getEnterpriseAccNo() {
     // alert(globalFloatPanel_AyohaStore_ModuleTagging)
