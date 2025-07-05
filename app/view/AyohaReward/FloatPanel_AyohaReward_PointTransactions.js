@@ -695,7 +695,7 @@ function FloatPanel_AyohaReward_PointTransactions() {
                                          //'<table style="border-collapse:collapse;border-spacing:0;background-color:transparent;width:100%;margin:0px 0px 0px 0px;"><tr><td style="font-family:Arial, sans-serif;font-size:11px;padding:0px 0px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:transparent;color:black;background-color:transparent;font-weight:normal;text-align:left;width:70%" >{ModifiedEnterpriseName}</td></tr><tr><td style="font-family:Arial, sans-serif;font-size:11px;padding:4px 0px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:transparent;color:black;background-color:transparent;font-weight:normal;vertical-align:top;width:50%;"><div style="font-family:Arial, sans-serif;font-size:11px;font-weight:normal;word-break:normal;margin:-4px 0px 0px 0px;">{AyohaPointType}</div><br><div style="font-family:Arial, sans-serif;font-size:11px;font-weight:normal;word-break:normal;margin:-10px 0px 0px 0px;"><b>{ModifiedCreatedDate_DateOnly} {ModifiedCreatedDate_TimeOnly}</b></div></td><td style="font-family:Arial, sans-serif;font-size:11px;padding:4px 0px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:transparent;color:black;background-color:transparent;font-weight:normal;vertical-align:top;width:50%;">{ModifiedTypeCRDB}</td></tr></table>' +
 
 
-                                         '<table onclick="FloatPanel_AyohaReward_PointTransaction_ShowTransactionDetail({TotalStampEarn},' + "'" + '{ItemCartCode}' + "'" + ',' + "'" + '{MembershipCardCode_AyohaStore_Order}' + "'" + ',' + "'" + '{AyohaPointType}' + "'" + ',' + "'" + '{GUIDRow}' + "'" + ',' + "'" + '{PaymentNo}' + "'" + ',' + "'" + '{EnterpriseLogo}' + "'" + ',' + "'" + '{PointAmountEquation}' + "'" + ',' + "'" + '{PaymentAmount}' + "'" + ',' + "'" + '{PaymentNoDisplay}' + "'" + ',' + "'" + '{MembershipCardImg}' + "'" + ',' + "'" + '{MembershipCardName}' + "'" + ',' + "'" + '{PaymentNote}' + "'" + ',' + "'" + '{EnterpriseName}' + "'" + ',' + "'" + '{EnterpriseAccNo}' + "'" + ',' + "'" + '{CreatedDate}' + "'" + ',' + "'" + '{OrderNo}' + "'" + ',' + "'" + '{CreatedBy}' + "'" + ')" style="border-collapse:collapse;border-spacing:0;width:100%;background-color:white;margin:-10px 0px 0px -13px;height:100px;" ><thead><tr><th style="border-color:black;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:16px;font-weight:normal;overflow:hidden;padding:0px 10px;text-align:left;vertical-align:bottom;word-break:normal"><div style="margin:5px 0px 0px 0px">{ModifiedEnterpriseName}</div></th><th style="border-color:black;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 10px;text-align:right;vertical-align:middle;word-break:normal" rowspan="3">{ModifiedTypeCRDB}</th></tr><tr><td style="border-color:black;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:12px;overflow:hidden;padding:0px 10px;text-align:left;vertical-align:top;word-break:normal">{ModifiedMembershipCardName}<br><div style="border-color:black;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:12px;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:top;word-break:normal;margin:0px 0px 0px 0px">{ModifiedCreatedDate_DateOnly} {ModifiedCreatedDate_TimeOnly}</div></td></tr></thead></table>' +
+                                         '<table onclick="FloatPanel_AyohaReward_PointTransaction_ShowTransactionDetail({TotalStampEarn},' + "'" + '{ItemCartCode}' + "'" + ',' + "'" + '{MembershipCardCode_AyohaStore_Order}' + "'" + ',' + "'" + '{AyohaPointType}' + "'" + ',' + "'" + '{GUIDRow}' + "'" + ',' + "'" + '{PaymentNo}' + "'" + ',' + "'" + '{EnterpriseLogo}' + "'" + ',' + "'" + '{PointAmountEquation}' + "'" + ',' + "'" + '{PaymentAmount}' + "'" + ',' + "'" + '{PaymentNoDisplay}' + "'" + ',' + "'" + '{MembershipCardImg}' + "'" + ',' + "'" + '{MembershipCardName}' + "'" + ',' + "'" + '{PaymentNote}' + "'" + ',' + "'" + '{EnterpriseName}' + "'" + ',' + "'" + '{EnterpriseAccNo}' + "'" + ',' + "'" + '{CreatedDate}' + "'" + ',' + "'" + '{OrderNo}' + "'" + ',' + "'" + '{CreatedBy}' + "'" + ',' + "'" + '{EnterpriseAddress}' + "'" + ',' + "'" + '{EnterpriseTagLine}' + "'" + ')" style="border-collapse:collapse;border-spacing:0;width:100%;background-color:white;margin:-10px 0px 0px -13px;height:100px;" ><thead><tr><th style="border-color:black;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:16px;font-weight:normal;overflow:hidden;padding:0px 10px;text-align:left;vertical-align:bottom;word-break:normal"><div style="margin:5px 0px 0px 0px">{ModifiedEnterpriseName}</div></th><th style="border-color:black;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 10px;text-align:right;vertical-align:middle;word-break:normal" rowspan="3">{ModifiedTypeCRDB}</th></tr><tr><td style="border-color:black;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:12px;overflow:hidden;padding:0px 10px;text-align:left;vertical-align:top;word-break:normal">{ModifiedMembershipCardName}<br><div style="border-color:black;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:12px;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:top;word-break:normal;margin:0px 0px 0px 0px">{ModifiedCreatedDate_DateOnly} {ModifiedCreatedDate_TimeOnly}</div></td></tr></thead></table>' +
 
 
 
@@ -863,25 +863,48 @@ function FloatPanel_AyohaReward_PointTransactions_AyohaRewardPointLoadBySubscrib
     _DataStore_AyohaRewardPointLoadBySubscriberAccNoStore.getProxy().setExtraParam('SubscriberAccNo', GetCurrAyohaUserAccountNo());
     _DataStore_AyohaRewardPointLoadBySubscriberAccNoStore.getProxy().setExtraParam('Year', GetCurrentYear());
     _DataStore_AyohaRewardPointLoadBySubscriberAccNoStore.getProxy().setUrl(GetAPIurl() + '/AyohaRewardPoint/AyohaRewardPointLoadBySubscriberAccNo');
-    _DataStore_AyohaRewardPointLoadBySubscriberAccNoStore.load();
-
-    var task = Ext.create('Ext.util.DelayedTask', function () {
-
-        var count = _DataStore_AyohaRewardPointLoadBySubscriberAccNoStore.getCount();
-        if (count > 0) {
-            var store = _DataStore_AyohaRewardPointLoadBySubscriberAccNoStore.getAt(0);
-            Ext.getCmp('htmlFloatPanel_AyohaReward_PointTransactionsPointsCollected').setHtml('<div  style="color:white;text-align: center;font-size:58px;width:100%;margin:50px 0px 0px 0px;"><b>' + store.get('AyohaPoint_Yearly') + '</b></div><br><div style="color:white;text-align: center;font-size:11px;width:100%;margin:-40px 0px 0px 0px"><b>Ayoha Point</b></div>');
-
-        } else {
-            Ext.getCmp('htmlFloatPanel_AyohaReward_PointTransactionsPointsCollected').setHtml('<div  style="color:white;text-align: center;font-size:58px;width:100%;margin:50px 0px 0px 0px;"><b>0</b></div><br><div style="color:white;text-align: center;font-size:11px;width:100%;margin:-40px 0px 0px 0px"><b>Ayoha Point</b></div>');
-
+    _DataStore_AyohaRewardPointLoadBySubscriberAccNoStore.load({
+        callback: function (records, operation, success) {
+            if (success && records.length > 0) {
+                console.log('Store loaded successfully, total records: ' + records.length);
+    
+                var store = records[0]; // Access only the first record
+                var count = _DataStore_AyohaRewardPointLoadBySubscriberAccNoStore.getCount();
+                if (count > 0) {
+                   // var store = _DataStore_AyohaRewardPointLoadBySubscriberAccNoStore.getAt(0);
+                    Ext.getCmp('htmlFloatPanel_AyohaReward_PointTransactionsPointsCollected').setHtml('<div  style="color:white;text-align: center;font-size:58px;width:100%;margin:50px 0px 0px 0px;"><b>' + store.get('AyohaPoint_Yearly') + '</b></div><br><div style="color:white;text-align: center;font-size:11px;width:100%;margin:-40px 0px 0px 0px"><b>Ayoha Point</b></div>');
+        
+                } else {
+                    Ext.getCmp('htmlFloatPanel_AyohaReward_PointTransactionsPointsCollected').setHtml('<div  style="color:white;text-align: center;font-size:58px;width:100%;margin:50px 0px 0px 0px;"><b>0</b></div><br><div style="color:white;text-align: center;font-size:11px;width:100%;margin:-40px 0px 0px 0px"><b>Ayoha Point</b></div>');
+        
+                }
+            } else {
+                console.error('Failed to load store data or no record found.');
+                LoadingPanelHide();
+            }
         }
-      
     });
-    task.delay(1000);
 
 
-    Ext.Viewport.setMasked(false);
+
+
+    // var task = Ext.create('Ext.util.DelayedTask', function () {
+
+    //     var count = _DataStore_AyohaRewardPointLoadBySubscriberAccNoStore.getCount();
+    //     if (count > 0) {
+    //         var store = _DataStore_AyohaRewardPointLoadBySubscriberAccNoStore.getAt(0);
+    //         Ext.getCmp('htmlFloatPanel_AyohaReward_PointTransactionsPointsCollected').setHtml('<div  style="color:white;text-align: center;font-size:58px;width:100%;margin:50px 0px 0px 0px;"><b>' + store.get('AyohaPoint_Yearly') + '</b></div><br><div style="color:white;text-align: center;font-size:11px;width:100%;margin:-40px 0px 0px 0px"><b>Ayoha Point</b></div>');
+
+    //     } else {
+    //         Ext.getCmp('htmlFloatPanel_AyohaReward_PointTransactionsPointsCollected').setHtml('<div  style="color:white;text-align: center;font-size:58px;width:100%;margin:50px 0px 0px 0px;"><b>0</b></div><br><div style="color:white;text-align: center;font-size:11px;width:100%;margin:-40px 0px 0px 0px"><b>Ayoha Point</b></div>');
+
+    //     }
+      
+    // });
+    // task.delay(1000);
+
+
+    // Ext.Viewport.setMasked(false);
 
 
 
@@ -930,22 +953,30 @@ function FloatPanel_AyohaReward_PointTransactions_AyohaRewardPointLoadBySubscrib
 
 
 
-function FloatPanel_AyohaReward_PointTransaction_ShowTransactionDetail(TotalStampEarn,ItemCartCode, MembershipCardCode_AyohaStore_Order, AyohaPointType, GUIDRow, PaymentNo, EnterpriseLogo, PointAmountEquation, PaymentAmount, PaymentNoDisplay, MembershipCardImg, MembershipCardName, PaymentNote, EnterpriseName, EnterpriseAccNo, CreatedDate,OrderNo,CreatedBy) {
+function FloatPanel_AyohaReward_PointTransaction_ShowTransactionDetail(TotalStampEarn,ItemCartCode, MembershipCardCode_AyohaStore_Order, AyohaPointType, GUIDRow, PaymentNo, EnterpriseLogo, PointAmountEquation, PaymentAmount, PaymentNoDisplay, MembershipCardImg, MembershipCardName, PaymentNote, EnterpriseName, EnterpriseAccNo, CreatedDate,OrderNo,CreatedBy,EnterpriseAddress,EnterpriseTagLine) {
     globalFloatPanel_AyohaStore_ModuleTagging = "FloatPanel_AyohaStore_CheckOut";
     //var AyohaPointType = record.get('AyohaPointType');
     //var RedeemHistoryCode = record.get('GUIDRow');
 
     globalFloatPanel_AyohaStore_CheckOut_EnterpriseAccNo = EnterpriseAccNo;
-
+    glonbalDashboard_SearchMerchantList_FullCompanyAddress=EnterpriseAddress;
+    localStorage.setItem("EnterpriseAccNo",EnterpriseAccNo);
+    localStorage.setItem("PaymentNo",PaymentNo);
 FloatPanel_AyohaReward_PointTransactionsHide();
     if (AyohaPointType == "(Point Loyalty Card)") {
 
 
-     
+       // PN-370-152-0-0-72666-0134292934-NoEnterprise
         if (PaymentNo) {
             if (PaymentNo.startsWith('ePN')) {
                 FloatPanel_AyohaReward_PointTransaction_eWalletShow(PaymentNo, EnterpriseLogo, PointAmountEquation, PaymentAmount, PaymentNoDisplay, MembershipCardImg, MembershipCardName, PaymentNote, EnterpriseName, EnterpriseAccNo, CreatedDate);
-            } else {
+            } 
+            if (PaymentNo.startsWith('PN')) {
+               // FloatPanel_AyohaReward_PointTransaction_eWalletShow(PaymentNo, EnterpriseLogo, PointAmountEquation, PaymentAmount, PaymentNoDisplay, MembershipCardImg, MembershipCardName, PaymentNote, EnterpriseName, EnterpriseAccNo, CreatedDate);
+                FloatPanel_AyohaStore_CheckOut_AyohaStoreOrderLoadByItemCartCodeAndMembershipCardCodeStore_WithOrderNo(TotalStampEarn,ItemCartCode, MembershipCardCode_AyohaStore_Order, OrderNo, EnterpriseName, EnterpriseLogo);
+
+            } 
+            else {
                 // FloatPanel_AyohaStore_CheckOut_AyohaStoreOrderLoadByItemCartCodeAndMembershipCardCodeStore(ItemCartCode, MembershipCardCode_AyohaStore_Order);
                
                if(PaymentNo=="NotRequired"){
@@ -965,6 +996,8 @@ FloatPanel_AyohaReward_PointTransactionsHide();
      
 
        
+   
+
         return;
     }
 

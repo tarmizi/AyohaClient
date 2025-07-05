@@ -30,6 +30,8 @@
       'MembershipCardCode_AyohaStore_Order',
       'OrderNo',
       'TotalStampEarn',
+      'EnterpriseAddress',
+      'EnterpriseTagLine',
       {
           name: 'ModifiedTypeCRDB',
           convert: function (value, record) {

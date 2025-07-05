@@ -772,7 +772,9 @@ function FloatPanel_AyohaRewardVoucherList_AyohaStore_Cart_UpdateVoucherStatus_B
 
 
 
-        Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_VoucherDiscountLabel').setHtml('<div onclick="FloatPanel_AyohaRewardVoucherList_AyohaStore_CartShow();"  class="blink_me" style="font-family:Arial, sans-serif;font-size:11px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:right;color:black;"><img style="margin:0px 5px -3px 0px;" src="resources/icons/voucher01.png" width="20px" height="16px"/><font color=purple>' + globalFloatPanel_AyohaStore_Cart_VoucherCountOriginal + ' Voucher Available!</font> - Voucher Discount(RM):</div>');
+      //  Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_VoucherDiscountLabel').setHtml('<div onclick="FloatPanel_AyohaRewardVoucherList_AyohaStore_CartShow();"  class="blink_me" style="font-family:Arial, sans-serif;font-size:11px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:right;color:black;"><img style="margin:0px 5px -3px 0px;" src="resources/icons/voucher01.png" width="20px" height="16px"/><font color=purple>' + globalFloatPanel_AyohaStore_Cart_VoucherCountOriginal + ' Voucher Available!</font> - Voucher Discount(RM):</div>');
+       
+       
         Ext.getCmp('htmlFloatPanel_AyohaRewardVoucherList_AyohaStore_Cart_TitleHeaderTxt').setHtml('<font size=2 color=black><b>Hi!.You have <font size=3 class="blink_me"> (' + globalFloatPanel_AyohaStore_Cart_VoucherCountOriginal + ') </font> Redeemable Vouchers!</b></font>');
         globalFloatPanel_AyohaStore_Cart_VoucherCount = parseInt(globalFloatPanel_AyohaStore_Cart_VoucherCountOriginal);
        // FloatPanel_AyohaStore_Cart_AyohaStoreCartLoadCartAyohaStore('NewCart');
@@ -1001,9 +1003,11 @@ function FloatPanel_AyohaRewardVoucherList_AyohaStore_Cart_OnChangeCheckbox(chec
 
     }
   
-
-    Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_VoucherDiscountLabel').setHtml('<div onclick="FloatPanel_AyohaRewardVoucherList_AyohaStore_CartShow();"  class="blink_me" style="font-family:Arial, sans-serif;font-size:11px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:right;color:black;"><img style="margin:0px 5px -3px 0px;" src="resources/icons/voucher01.png" width="20px" height="16px"/><font color=purple>' + globalFloatPanel_AyohaStore_Cart_VoucherCount + ' Voucher Left!</font> -Discount(RM):</div>');
-   
+    Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_VoucherDiscountLabel').setHtml('<div onclick="FloatPanel_AyohaRewardVoucherList_AyohaStore_CartShow();"  class="blink_me" style="font-family:Arial, sans-serif;font-size:16px;font-weight:bold;word-break:normal;margin:0px 0px 0px 10px;width:100%;text-align:center;color:#6B7280;"><font color=#6B7280>' + globalFloatPanel_AyohaStore_Cart_VoucherCount + ' Voucher Left!</font></div>');
+    
+    Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_VoucherDiscountLabel').setMargin('0 0 0 40');
+    Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_VoucherDiscountLabel_OrderSummary').setHtml('<div style="font-family:Arial, sans-serif;font-size:11px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:right;color:#6B7280;"> Voucher Discount(RM):</div>');
+ //   Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_VoucherDiscountLabel_OrderSummary').setHtml('<div onclick="FloatPanel_AyohaRewardVoucherList_AyohaStore_CartShow();"  class="blink_me" style="font-family:Arial, sans-serif;font-size:11px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:right;color:black;"><img style="margin:0px 5px -3px 0px;" src="resources/icons/voucher01.png" width="20px" height="16px"/><font color=purple>' + globalFloatPanel_AyohaStore_Cart_VoucherCount + ' Voucher Left!</font> -Discount(RM):</div>');
 
 
    

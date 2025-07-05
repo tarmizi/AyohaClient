@@ -3,6 +3,7 @@
     config: {
         fields: [
         'ID',
+        'Row_num',
       'OrderNo',
       'ItemCartCode',
       'DeliveryChargeCode',

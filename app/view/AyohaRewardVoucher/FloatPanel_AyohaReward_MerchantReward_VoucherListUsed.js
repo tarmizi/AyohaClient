@@ -645,22 +645,18 @@ function FloatPanel_AyohaReward_MerchantReward_VoucherListUsedShow_OrderPlaced()
 
 function FloatPanel_AyohaRewardVoucherList_DataStore_AyohaRewardVoucherEntitledUserLoadBySubscriberAccNoPaymentNoEntitledVoucherStatusStore(EntitledVoucherStatus) {
 
-    var EntAcc = localStorage.getItem("EnterpriseAccNo");
-    var PayNo = localStorage.getItem("PaymentNo");
+  
     _DataStore_AyohaRewardVoucherEntitledUserLoadBySubscriberAccNoPaymentNoEntitledVoucherStatusStore.getProxy().setExtraParam('SubscriberAccNo', GetCurrAyohaUserAccountNo());
-    _DataStore_AyohaRewardVoucherEntitledUserLoadBySubscriberAccNoPaymentNoEntitledVoucherStatusStore.getProxy().setExtraParam('PaymentNo', PayNo);
+    _DataStore_AyohaRewardVoucherEntitledUserLoadBySubscriberAccNoPaymentNoEntitledVoucherStatusStore.getProxy().setExtraParam('PaymentNo', localStorage.getItem("PaymentNo"));
     _DataStore_AyohaRewardVoucherEntitledUserLoadBySubscriberAccNoPaymentNoEntitledVoucherStatusStore.getProxy().setExtraParam('EntitledVoucherStatus', EntitledVoucherStatus);
-    _DataStore_AyohaRewardVoucherEntitledUserLoadBySubscriberAccNoPaymentNoEntitledVoucherStatusStore.getProxy().setExtraParam('EnterpriseAccNo', EntAcc);
+    _DataStore_AyohaRewardVoucherEntitledUserLoadBySubscriberAccNoPaymentNoEntitledVoucherStatusStore.getProxy().setExtraParam('EnterpriseAccNo', localStorage.getItem("EnterpriseAccNo"));
     _DataStore_AyohaRewardVoucherEntitledUserLoadBySubscriberAccNoPaymentNoEntitledVoucherStatusStore.getProxy().setUrl(GetAPIurl() + '/AyohaRewardVoucher_EntitledUser/AyohaRewardVoucherEntitledUserLoadBySubscriberAccNoPaymentNoEntitledVoucherStatus');
-    _DataStore_AyohaRewardVoucherEntitledUserLoadBySubscriberAccNoPaymentNoEntitledVoucherStatusStore.load();
+   // _DataStore_AyohaRewardVoucherEntitledUserLoadBySubscriberAccNoPaymentNoEntitledVoucherStatusStore.load();
 
-
-    var task = Ext.create('Ext.util.DelayedTask', function () {
-
-
-
-        //_DataStore_EnterprisesLoadByMerchantCategory.load();
-        var count = _DataStore_AyohaRewardVoucherEntitledUserLoadBySubscriberAccNoPaymentNoEntitledVoucherStatusStore.getCount();
+   _DataStore_AyohaRewardVoucherEntitledUserLoadBySubscriberAccNoPaymentNoEntitledVoucherStatusStore.load({
+    callback: function (records, operation, success) {
+        if (success && records.length > 0) {
+            var count = _DataStore_AyohaRewardVoucherEntitledUserLoadBySubscriberAccNoPaymentNoEntitledVoucherStatusStore.getCount();
         if (count > 0) {
 
             if (isFloatPanel_AyohaStore_CheckOutOpen == "Y") {
@@ -669,13 +665,59 @@ function FloatPanel_AyohaRewardVoucherList_DataStore_AyohaRewardVoucherEntitledU
             }
            
         }
+        } else {
+            console.error('Failed to load store data or no record found.');
+            LoadingPanelHide();
+        }
+    }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // var task = Ext.create('Ext.util.DelayedTask', function () {
+
+
+
+    //     //_DataStore_EnterprisesLoadByMerchantCategory.load();
+    //     var count = _DataStore_AyohaRewardVoucherEntitledUserLoadBySubscriberAccNoPaymentNoEntitledVoucherStatusStore.getCount();
+    //     if (count > 0) {
+
+    //         if (isFloatPanel_AyohaStore_CheckOutOpen == "Y") {
+    //             Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_VoucherDiscountLabel').setHtml('<div onclick="FloatPanel_AyohaReward_MerchantReward_VoucherListUsedShow();"  style="font-family:Arial, sans-serif;font-size:11px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:right;color:black;"><img style="margin:0px 5px -3px 0px;" src="resources/icons/voucher01.png" width="20px" height="16px"/><font color=purple>' + count + ' Voucher Used</font> -Discount(RM):</div>');
+
+    //         }
+           
+    //     }
         
 
 
 
 
-    });
-    task.delay(500);
+    // });
+    // task.delay(500);
 }
 
 

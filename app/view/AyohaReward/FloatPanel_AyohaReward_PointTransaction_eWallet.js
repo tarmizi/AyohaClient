@@ -935,7 +935,7 @@ function FloatPanel_AyohaReward_PointTransaction_eWalletShow(PaymentNo, Enterpri
     //var AccNo = document.getElementById('input-FloatPanel_AyohaeWallet_Transfer_SearchAyohaUser').value;
 
 
-   
+   //alert("FloatPanel_AyohaReward_PointTransaction_eWalletShow")
     var PayAmount = PaymentAmount
 
     var MerchantPoint = parseFloat(PayAmount * PointAmountEquation);

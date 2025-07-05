@@ -420,12 +420,12 @@ function FloatPanel_AyohaStore_DeliveryChargeList_List(DeliveryName, Rate, Charg
     document.getElementById('input-FloatPanel_AyohaStore_CheckOut_DeliveryChargeType').value = DeliveryName;
     globalFloatPanel_AyohaStore_DeliveryChargeList_DeliveryName = DeliveryName;
     globalFloatPanel_AyohaStore_DeliveryChargeList_DeliveryCharge = 0.00;
-   
+    Ext.getCmp('containerFloatPanel_AyohaStore_CheckOut_ShippingAddress_Main').setHidden(false);
     if (ChargeTypeCode == "1-FOC") {
         //swalFireSuccess("Save Successfully");
         //FloatPanel_AyohaStore_DeliveryChargeHide();
         globalFloatPanel_AyohaStore_DeliveryChargeList_DeliveryCharge = 0.00;
-    }
+    }else
 
     if (ChargeTypeCode == "2-FR") {
         var decimal = Rate.replace("<font size=3>", "");
@@ -434,7 +434,7 @@ function FloatPanel_AyohaStore_DeliveryChargeList_List(DeliveryName, Rate, Charg
         var ExtractedNumber = decimalStart.slice(0, decimalEnd);
         globalFloatPanel_AyohaStore_DeliveryChargeList_DeliveryCharge = ExtractedNumber;
        // document.getElementById('input-FloatPanel_AyohaStore_DeliveryCharge_FlatRate_S').value = ExtractedNumber;
-    }
+    }else
     if (ChargeTypeCode == "3-WR") {
         var decimals = Rate.replace("<font size=2.5>", "");
         var ArrDecimal = decimals.split("|");
@@ -465,7 +465,7 @@ function FloatPanel_AyohaStore_DeliveryChargeList_List(DeliveryName, Rate, Charg
         globalFloatPanel_AyohaStore_DeliveryChargeList_DeliveryCharge = ExtractedNumber0;
 
         // FloatPanel_AyohaStore_DeliveryCharge_ChargeDelivery_WeightRate_Save();
-    }
+    }else
     if (ChargeTypeCode == "4-QB") {
         var decimalss = Rate.replace("<font size=3>", "");
         var decimalStart11 = decimalss.slice(decimalss.search(/(\d+)/));
@@ -473,6 +473,8 @@ function FloatPanel_AyohaStore_DeliveryChargeList_List(DeliveryName, Rate, Charg
         var ExtractedNumber11 = decimalStart11.slice(0, decimalEnd11);
        // document.getElementById('input-FloatPanel_AyohaStore_DeliveryCharge_ChargePerUnit_S').value = ExtractedNumber11;
         globalFloatPanel_AyohaStore_DeliveryChargeList_DeliveryCharge =  ExtractedNumber11;
+    }else{
+        Ext.getCmp('containerFloatPanel_AyohaStore_CheckOut_ShippingAddress_Main').setHidden(true);
     }
 
     FloatPanel_AyohaStore_DeliveryChargeListHide();
