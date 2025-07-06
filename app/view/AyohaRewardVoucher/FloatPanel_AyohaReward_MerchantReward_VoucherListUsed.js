@@ -660,7 +660,26 @@ function FloatPanel_AyohaRewardVoucherList_DataStore_AyohaRewardVoucherEntitledU
         if (count > 0) {
 
             if (isFloatPanel_AyohaStore_CheckOutOpen == "Y") {
-                Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_VoucherDiscountLabel').setHtml('<div onclick="FloatPanel_AyohaReward_MerchantReward_VoucherListUsedShow();"  style="font-family:Arial, sans-serif;font-size:11px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:right;color:black;"><img style="margin:0px 5px -3px 0px;" src="resources/icons/voucher01.png" width="20px" height="16px"/><font color=purple>' + count + ' Voucher Used</font> -Discount(RM):</div>');
+                
+                Ext.getCmp('containerFloatPanel_AyohaStore_CheckOut_Voucher_Main').setHidden(false);
+                Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_VoucherTypeImg').setHidden(true);
+                Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_AddMoreItem').setHidden(true); 
+               
+                Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_VoucherDiscountLabel').setHtml('<div onclick="FloatPanel_AyohaReward_MerchantReward_VoucherListUsedShow();" ' +
+                'style="font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; word-break: normal; width: 100%; text-align: center; color: #6B7280;">' +
+                  '<div style="display: inline-flex; align-items: center; justify-content: center;">' +
+                    '<img onclick="FloatPanel_AyohaReward_MerchantReward_VoucherListUsedShow();" src="resources/icons/discount-voucher.png" width="65px" height="80px" style="margin: 0 5px 0 0;" />' +
+                    '<div><font color="#6B7280">' + count + ' Voucher Used!</font></div>' +
+                  '</div>' +
+                '</div>');
+                
+               
+               
+               
+               
+                Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_VoucherTypeTxt').setHtml('<div style="font-family:Arial, sans-serif;font-size:14px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:163px;text-align:left;align-items: center;color:black;background-color:transparent;height:25px; padding: 5px 0px;border-radius:5px 5px 0px 0px;border-top:1px none grey;border-left:1px none grey;border-right:1px none grey;border-bottom:1px none grey;"> <span style="margin-left: 0px;">Applied Voucher:</span></div>');
+               // Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_VoucherTypeImg').setHtml('<img onclick="FloatPanel_AyohaReward_MerchantReward_VoucherListUsedShow();" style="margin:0px 0px 0px 25px;" src="resources/icons/discount-voucher.png" width="65px" height="80px"/>');
+                //  Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_VoucherDiscountLabel').setHtml('<div onclick="FloatPanel_AyohaReward_MerchantReward_VoucherListUsedShow();"  style="font-family:Arial, sans-serif;font-size:11px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:right;color:black;"><img style="margin:0px 5px -3px 0px;" src="resources/icons/voucher01.png" width="20px" height="16px"/><font color=purple>' + count + ' Voucher Used</font> -Discount(RM):</div>');
 
             }
            

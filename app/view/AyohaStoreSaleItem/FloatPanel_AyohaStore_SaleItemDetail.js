@@ -1712,6 +1712,41 @@ html: '<input type="text"  id="input-FloatPanel_AyohaStore_SaleItemDetail_Seller
                                                                                   width: '90%',
                                                                                   html: '<input type="text"  id="input-FloatPanel_AyohaStore_SaleItemDetail_SellerInfo_DateJoin"  style="border-color:transparent;color:black;width:100%;text-align: left;font-size:14px;font-weight:bold">'
                                                                               },
+                                                                              {
+                                                                                margin: '10 0 0 5',
+                                                                                html: '<font color="black" size="1"><b>WhatsApp</b></font>',
+                                                                            },
+                                                                            //   {
+                                                                            //     id: 'htmlFloatPanel_AyohaStore_SaleItemDetail_SellerInfo_WhatsAppNo',
+                                                                            //     margin: '-5 0 0 5',
+
+                                                                            //     // zIndex: -10,
+                                                                            //     width: '90%',
+                                                                            //     html: '<input type="text"  id="input-FloatPanel_AyohaStore_SaleItemDetail_SellerInfo_DateJoin"  style="border-color:transparent;color:black;width:100%;text-align: left;font-size:14px;font-weight:bold">'
+                                                                            // },
+                                                                            {
+                                                                                xtype: 'button',
+                                                                                height: 50,
+                                                                                width: 50,
+                                                                                margin: '-5 0 0 5',
+                                                                                id: 'btnFloatPanel_AyohaStore_SaleItemDetail_WhatsappWsBtn',
+                                                                                //badgeText: "2",
+                                                                                html: '<img src="resources/icons/WhatsApp01.png" style="width:25px;height:25px;margin:0px 0px 0px -5px;" alt="Company Name">',
+                                                                                ui: 'plain',
+                                                                                handler: function () {
+                                            
+                                                                                    var WhatsAppLink = FloatPanel_AyohaStore_getWhatsAppLink();
+                                                                                    if (WhatsAppLink.length > 4) {
+                                                                                        // var ModifiedMediaFileName = globalMediaFileName.replace(".", "") + ".html?ImgId=" + globalMediaFileName;
+                                                                                        //  window.open("https://api.whatsapp.com/send?phone=" + globalFloatPanel_PreviewAdvertisement_WhatsAppLink + "&text=Hi");
+                                                                                        window.open("https://api.whatsapp.com/send?phone=" + WhatsAppLink + "&text=Hi,i want to know more about this product-*%0a*" + globalFloatPanel_AyohaStore_SaleItemDetail_ItemName + "*%0a*", '_system'); return false;
+                                                                                        // window.open("https://api.whatsapp.com/send?phone=" + globalFloatPanel_PreviewAdvertisement_WhatsAppLink + "&text=https://ianmizi.com/ayohaimg/" + ModifiedMediaFileName);
+                                                                                    } else {
+                                                                                        swalFireInfoMerchantButtonLink("Merchant Might be Not Set WhatsApp No.,Help merchant to know this Message!", "WhatsApp");
+                                                                                    }
+                                            
+                                                                                }
+                                                                            },
 
                                                                         ]
                                                                     },
@@ -1828,12 +1863,13 @@ html: '<input type="text"  id="input-FloatPanel_AyohaStore_SaleItemDetail_Seller
                             id:'containerFloatPanel_AyohaStore_SaleItemDetail_bottomInfo',
                            docked: 'bottom',
                             width: '100%',
+                            style: 'background-color:white;border-top:1px none #f0f2f5;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 4px 16px 0 rgba(0, 0, 0, 0.19)',
                            // margin:'-100 0 0 0',
                             zIndex:100,
-                            height:38,
+                            height:50,
                             layout: {
                                 type: 'hbox',
-                                pack: 'center',
+                                pack: 'right',
                                 align: 'center'
                             },
                             items: [
@@ -1849,29 +1885,30 @@ html: '<input type="text"  id="input-FloatPanel_AyohaStore_SaleItemDetail_Seller
                                     html: '<div style="background: transparent;width:100%;font-size: 13px;font-weight:bold;black:white;text-align:center;" >Stock:110</div>',
                                 },
                                  
-                                {
-                                    xtype: 'button',
-                                    height: 50,
-                                    width: 50,
-                                    margin: '-3 0 0 0',
-                                    id: 'btnFloatPanel_AyohaStore_SaleItemDetail_WhatsappWsBtn',
-                                    //badgeText: "2",
-                                    html: '<img src="resources/icons/WhatsApp01.png" style="width:25px;height:25px;margin:0px 0px 0px -5px;" alt="Company Name">',
-                                    ui: 'plain',
-                                    handler: function () {
+                                // {
+                                //     xtype: 'button',
+                                //     height: 50,
+                                //     width: 50,
+                                //     margin: '-3 0 0 0',
+                                //     hidden:true,
+                                //     id: 'btnFloatPanel_AyohaStore_SaleItemDetail_WhatsappWsBtnx',
+                                //     //badgeText: "2",
+                                //     html: '<img src="resources/icons/WhatsApp01.png" style="width:25px;height:25px;margin:0px 0px 0px -5px;" alt="Company Name">',
+                                //     ui: 'plain',
+                                //     handler: function () {
 
-                                        var WhatsAppLink = FloatPanel_AyohaStore_getWhatsAppLink();
-                                        if (WhatsAppLink.length > 4) {
-                                            // var ModifiedMediaFileName = globalMediaFileName.replace(".", "") + ".html?ImgId=" + globalMediaFileName;
-                                            //  window.open("https://api.whatsapp.com/send?phone=" + globalFloatPanel_PreviewAdvertisement_WhatsAppLink + "&text=Hi");
-                                            window.open("https://api.whatsapp.com/send?phone=" + WhatsAppLink + "&text=Hi,i want to know more about this product-*%0a*" + globalFloatPanel_AyohaStore_SaleItemDetail_ItemName + "*%0a*", '_system'); return false;
-                                            // window.open("https://api.whatsapp.com/send?phone=" + globalFloatPanel_PreviewAdvertisement_WhatsAppLink + "&text=https://ianmizi.com/ayohaimg/" + ModifiedMediaFileName);
-                                        } else {
-                                            swalFireInfoMerchantButtonLink("Merchant Might be Not Set WhatsApp No.,Help merchant to know this Message!", "WhatsApp");
-                                        }
+                                //         var WhatsAppLink = FloatPanel_AyohaStore_getWhatsAppLink();
+                                //         if (WhatsAppLink.length > 4) {
+                                //             // var ModifiedMediaFileName = globalMediaFileName.replace(".", "") + ".html?ImgId=" + globalMediaFileName;
+                                //             //  window.open("https://api.whatsapp.com/send?phone=" + globalFloatPanel_PreviewAdvertisement_WhatsAppLink + "&text=Hi");
+                                //             window.open("https://api.whatsapp.com/send?phone=" + WhatsAppLink + "&text=Hi,i want to know more about this product-*%0a*" + globalFloatPanel_AyohaStore_SaleItemDetail_ItemName + "*%0a*", '_system'); return false;
+                                //             // window.open("https://api.whatsapp.com/send?phone=" + globalFloatPanel_PreviewAdvertisement_WhatsAppLink + "&text=https://ianmizi.com/ayohaimg/" + ModifiedMediaFileName);
+                                //         } else {
+                                //             swalFireInfoMerchantButtonLink("Merchant Might be Not Set WhatsApp No.,Help merchant to know this Message!", "WhatsApp");
+                                //         }
 
-                                    }
-                                },
+                                //     }
+                                // },
 
                                 {
                                     xtype:'spacer'
@@ -1879,9 +1916,17 @@ html: '<input type="text"  id="input-FloatPanel_AyohaStore_SaleItemDetail_Seller
 
                                
                                 
-                                {margin:'25 0 0 0',
-                                html: '<div style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;word-break:normal;margin:-28px 0px 0px 0px;width:100%;text-align:right;color:black;height:22px;">Quantity:<input type="number" id="input-FloatPanel_AyohaStore_SaleItemDetail" value="1" style="border-radius: 5px;border: 1px solid purple;padding: 2px; width: 40px;height: 27px;font-family:Arial, sans-serif;font-size:15px;font-weight:normal;word-break:normal;color:black;text-align:center"/><button OnClick="FloatPanel_AyohaStore_SaleItemDetailAddToCart();" class="buttonAddToCartLarge" style="margin:-10px 0px 0px 2px;">Add to Cart<img src="resources/icons/myCart03.png" alt="Image" style="width:13px;height:13px;margin:0px 0px 0px 0px;"></button></div>',
-                                },
+                                {
+                                    margin:'20 0 0 0',
+                               // html: '<div style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;word-break:normal;margin:-28px 0px 0px 0px;width:100%;text-align:right;color:black;height:22px;">Quantity:<input type="number" id="input-FloatPanel_AyohaStore_SaleItemDetail" value="1" readOnly style="border-radius: 5px;border: 1px solid purple;padding: 2px; width: 40px;height: 27px;font-family:Arial, sans-serif;font-size:15px;font-weight:normal;word-break:normal;color:black;text-align:center"/><button OnClick="FloatPanel_AyohaStore_SaleItemDetailAddToCart();" class="buttonAddToCartLarge" style="margin:-10px 0px 0px 2px;">Add to Cart<img src="resources/icons/myCart03.png" alt="Image" style="width:13px;height:13px;margin:0px 0px 0px 0px;"></button></div>',
+                                html: '<div style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;word-break:normal;margin:-28px 0px 0px 0px;width:100%;text-align:right;color:black;height:22px;"><button onclick="FloatPanel_AyohaStore_SaleItemDetail_UpdateQuantity(-1)" class="buttonAddMinusToCartSign">-</button><input type="number" id="input-FloatPanel_AyohaStore_SaleItemDetail" value="1" readOnly style="border-radius: 5px;border: 1px solid purple;padding: 2px; width: 40px;height: 27px;font-family:Arial, sans-serif;font-size:15px;font-weight:normal;word-break:normal;color:black;text-align:center"/><button onclick="FloatPanel_AyohaStore_SaleItemDetail_UpdateQuantity(1)" class="buttonAddMinusToCartSign">+</button>&nbsp;&nbsp;&nbsp;&nbsp;<button OnClick="FloatPanel_AyohaStore_SaleItemDetailAddToCart();" class="buttonAddToCartLarge" style="margin:-10px 0px 0px 2px;">Add to Cart<img src="resources/icons/myCart03.png" alt="Image" style="width:13px;height:13px;margin:0px 0px 0px 0px;"></button></div>',
+                               
+                            
+                            },
+
+
+                          
+                           
                                  //{
                                  //    margin: '25 0 0 0',
                                  //    html: '<div style="font-family:Arial, sans-serif;font-size:13px;font-weight:bold;word-break:normal;margin:-28px 0px 0px 0px;width:100%;text-align:right;color:#c800ffc9;height:22px;"><button OnClick="FloatPanel_AyohaStore_Cart_CheckOutStaging_BuyNow();" class="buttonBuyNow" style="margin:0px 0px 0px 2px;">Buy Now</button></div>',
@@ -3308,4 +3353,13 @@ function FloatPanel_AyohaStore_AyohaStoreSaleItemDetail_EnterprisesLoadByEnterpr
 
 
     Ext.Viewport.setMasked(false);
+}
+
+
+function FloatPanel_AyohaStore_SaleItemDetail_UpdateQuantity(change) {
+    const input = document.getElementById('input-FloatPanel_AyohaStore_SaleItemDetail');
+    let currentValue = parseInt(input.value) || 0;
+    currentValue += change;
+    if (currentValue < 1) currentValue = 1;  // Prevent going below 1
+    input.value = currentValue;
 }
