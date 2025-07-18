@@ -824,7 +824,7 @@ function FloatPanel_AyohaRewardVoucherList_AyohaStore_Cart_UpdateVoucherStatus()
         //var text = 'abcdef'
     //const editedText = text.slice(0, -1) //'abcde'
 
-    console.log(globalFloatPanel_AyohaRewardVoucherList_AyohaStore_Cart_TotalAmountVoucher)
+  // alert("globalFloatPanel_AyohaStore_CheckOut_OrderOption:"+globalFloatPanel_AyohaStore_CheckOut_OrderOption)
 
    // Ext.getCmp('htmlFloatPanel_AyohaRewardVoucherList_AyohaStore_Cart_TotalVoucherAmount').setHtml('<div style="background: transparent;height:40px;font-size: 16px;font-weight:bold;color:white;text-align:center;margin:8px 0px 0px 0px;" >TOTAL:RM ' + globalFloatPanel_AyohaRewardVoucherList_AyohaStore_Cart_TotalAmountVoucher.toFixed(2) + '- <font class="blink_me">Use This Voucher!</font></div>');
 
@@ -839,13 +839,21 @@ function FloatPanel_AyohaRewardVoucherList_AyohaStore_Cart_UpdateVoucherStatus()
 
 
         if (globalFloatPanel_AyohaStore_CheckOut_OrderOption == 'Re-Order'){
-            if (arrglobalFloatPanel_AyohaRewardVoucherList_AyohaStore_Cart_VoucherCode.length > 0) {
+            if (arrglobalFloatPanel_AyohaRewardVoucherList_AyohaStore_Cart_VoucherCode.length >= 0) {
                 Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_VoucherDiscount').setHtml('<div style="font-family:Arial, sans-serif;font-size:11px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:left;color:black;">' + globalFloatPanel_AyohaRewardVoucherList_AyohaStore_Cart_TotalAmountVoucher.toFixed(2) + '</div>');
                
                 var result = (parseFloat(globalFloatPanel_AyohaStore_Cart_TotalSumPrice) + parseFloat(globalFloatPanel_AyohaStore_DeliveryChargeList_DeliveryCharge)) - parseFloat(globalFloatPanel_AyohaRewardVoucherList_AyohaStore_Cart_TotalAmountVoucher);    
                 Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_GrandTotal').setHtml('<div style="font-family:Arial, sans-serif;font-size:22px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:left;color:black;">' + result.toFixed(2) + '</div>');
               //  globalFloatPanel_AyohaStore_Cart_GrandTotal = result.toFixed(2);
-                FloatPanel_AyohaStore_CheckOut_Calculate_GrandTotal();
+              //  alert("FloatPanel_AyohaRewardVoucherList_AyohaStore_Cart_UpdateVoucherStatus:"+isFloatPanel_AyohaStore_CheckOutOpen_ReOrder)
+              if(isFloatPanel_AyohaStore_CheckOutOpen_ReOrder=='Y'){
+                FloatPanel_AyohaStore_CheckOut_Calculate_GrandTotal_ReOrder();
+                LoadingPanelHide();
+                FloatPanel_AyohaRewardVoucherList_AyohaStore_CartHide();
+                return
+             }
+              
+              FloatPanel_AyohaStore_CheckOut_Calculate_GrandTotal();
 
 
                
@@ -966,7 +974,7 @@ function FloatPanel_AyohaRewardVoucherList_AyohaStore_Cart_OnChangeCheckbox(chec
     var n = arrglobalFloatPanel_AyohaRewardVoucherList_AyohaStore_Cart_VoucherCode.includes(VoucherCode);
     
     if (checkbox.checked) {
-       
+
         globalFloatPanel_AyohaRewardVoucherList_AyohaStore_Cart_TotalAmountVoucher = parseFloat(globalFloatPanel_AyohaRewardVoucherList_AyohaStore_Cart_TotalAmountVoucher) +parseFloat(VoucherAmount)
         globalFloatPanel_AyohaStore_Cart_VoucherCount = parseInt(globalFloatPanel_AyohaStore_Cart_VoucherCount) - 1;
         FloatPanel_AyohaRewardVoucherList_AyohaStore_Cart_UpdateVoucherStatusSingleTap(VoucherCode, "ShoppingCart");

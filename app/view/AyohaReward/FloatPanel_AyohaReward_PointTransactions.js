@@ -831,7 +831,7 @@ function FloatPanel_AyohaReward_PointTransactionsHide() {
 function FloatPanel_AyohaReward_PointTransactionsAdjustHeight() {
     var y = parseInt(screen.height);
     var x = parseInt(window.innerHeight);
-
+    isFloatPanel_AyohaStore_Cart_AyohaStore_CheckOut_ReOrder='N';
 
     var newHeights = x - 196;
     // globalFloatPanel_AyohaNotificationManagement_ViewMessageAdjustHeight = newHeights;

@@ -8758,6 +8758,7 @@ var globalEnterpriseNameStampCard;
 var globalDashboard_AyohaPoint;
 var globalDashboard_TotalItemQuantityCart;
 function DashboardAyohaUserMainStore() {
+  //  alert("DashboardAyohaUserMainStore");
     globalLatestPoint = "0";
     globalLatestStamp = "0/0";
 
