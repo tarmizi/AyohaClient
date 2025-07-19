@@ -994,7 +994,7 @@ itemTpl:'<div style="display: flex; align-items: center; margin: 0px -16px;">'+
                                                 },
                                                 {
                                                     id: 'htmlFloatPanel_AyohaStore_CheckOut_AddMoreItem',
-                                                    
+                                                    hidden:true,
                                                        html: '<div onclick="FloatPanel_AyohaStore_CheckOutHide();FloatPanel_AyohaStore_CartHide();FloatPanel_AyohaStore_CheckOut_UnSold();" style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:left;color:black;"> + Add More Orders</div>'
                                                    },
                        
@@ -3357,7 +3357,7 @@ itemTpl:'<div style="display: flex; align-items: center; margin: 0px -16px;">'+
         Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_EnterpriseName').setHtml('<div style="width:100%;background-color: transparent;text-align:center;border: 1px none white;font-family:Century Gothic;font-size: 16px;font-weight:bold;color:white;margin:0px 0px 0px 0px">' + FloatPanel_AyohaStore_getEnterpriseName() + '</div>');
         Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_EnterpriseLogo').setHtml('<div style="width:100%;background-color: transparent;text-align:center;border: 1px none white;font-family:Century Gothic;font-size: 11px;font-weight:normal;color:white;margin:0px 0px 0px 0px"><img src="' + FloatPanel_AyohaStore_getEnterpriseLogo() + '" style="width:72px;height:72px;border-radius:50%"/></div>');
         Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_EnterpriseFullAddress').setHtml('<div style="width:100%;background-color: transparent;text-align:center;border: 1px none white;font-family:Century Gothic;font-size: 12px;font-weight:normal;color:white;margin:0px 0px 0px 0px">'+glonbalDashboard_SearchMerchantList_FullCompanyAddress+'</div>');
-
+        Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_AddMoreItem').setHidden(false);
 
 
         var TotalSumPrice = parseFloat(globalFloatPanel_AyohaStore_Cart_TotalSumPrice);
@@ -3493,6 +3493,7 @@ itemTpl:'<div style="display: flex; align-items: center; margin: 0px -16px;">'+
     
     }
     var  isFloatPanel_AyohaStore_CheckOutOpen_ReOrder = 'N';
+    var globalFloatPanel_AyohaStore_CheckOut_EnterpriseTagline = "";
     function FloatPanel_AyohaStore_CheckOutShow_ReOrder() {
     
         Ext.Viewport.remove(_FloatPanel_AyohaStore_CheckOut);
@@ -3513,8 +3514,8 @@ itemTpl:'<div style="display: flex; align-items: center; margin: 0px -16px;">'+
         Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_EnterpriseName').setHtml('<div style="width:100%;background-color: transparent;text-align:center;border: 1px none white;font-family:Century Gothic;font-size: 16px;font-weight:bold;color:white;margin:0px 0px 0px 0px">' + globalFloatPanel_AyohaStore_CheckOut_EnterpriseName + '</div>');
         Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_EnterpriseLogo').setHtml('<div style="width:100%;background-color: transparent;text-align:center;border: 1px none white;font-family:Century Gothic;font-size: 11px;font-weight:normal;color:white;margin:0px 0px 0px 0px"><img src="' + globalFloatPanel_AyohaStore_CheckOut_EnterpriseLogo + '" style="width:72px;height:72px;border-radius:50%"/></div>');
         Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_EnterpriseFullAddress').setHtml('<div style="width:100%;background-color: transparent;text-align:center;border: 1px none white;font-family:Century Gothic;font-size: 12px;font-weight:normal;color:white;margin:0px 0px 0px 0px">'+glonbalDashboard_SearchMerchantList_FullCompanyAddress+'</div>');
-
-
+        Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_AddMoreItem').setHidden(false);
+        
 
         var TotalSumPrice = parseFloat(globalFloatPanel_AyohaStore_Cart_TotalSumPrice);
         var DelCharge = parseFloat(globalFloatPanel_AyohaStore_DeliveryChargeList_DeliveryCharge);
@@ -6685,13 +6686,15 @@ if(globalFloatPanel_AyohaStore_DeliveryChargeList_DeliveryName !='Dine-In'){
 
 
 function FloatPanel_AyohaStore_CheckOut_UnSold(){
-    alert(isFloatPanel_AyohaStore_Cart_AyohaStore_CheckOut_ReOrder)
-    alert(isFloatPanel_AyohaStoreOpen)
+ 
 
-    if(isFloatPanel_AyohaStore_Cart_AyohaStore_CheckOut_ReOrder=='N' && isFloatPanel_AyohaStoreOpen=='N'){
+
+
+    if(isFloatPanel_AyohaStore_Cart_AyohaStore_CheckOut_ReOrder=='Y' && isFloatPanel_AyohaStoreOpen=='N'){
         const payload = {
             "EnterpriseAccNo": FloatPanel_AyohaStore_getEnterpriseAccNo(),
-            "SubscriberAccNo": GetCurrAyohaUserAccountNo()
+            "SubscriberAccNo": GetCurrAyohaUserAccountNo(),
+            "ItemCartCode": globalFloatPanel_AyohaStore_Cart_ItemCartCode,
         };
     
         Ext.Ajax.request({
@@ -6707,7 +6710,7 @@ function FloatPanel_AyohaStore_CheckOut_UnSold(){
                 const data = Ext.decode(response.responseText.trim());
     
                 if (data.success === "true") {
-                   
+                    FloatPanel_AyohaStoreShow_AyohaStore_CheckOut();
                 } else {
                     alert("Error"+ data.message || "Failed to reorder cart.");
                 }

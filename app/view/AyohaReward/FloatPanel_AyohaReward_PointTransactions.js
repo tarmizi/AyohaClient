@@ -960,6 +960,7 @@ function FloatPanel_AyohaReward_PointTransaction_ShowTransactionDetail(TotalStam
 
     globalFloatPanel_AyohaStore_CheckOut_EnterpriseAccNo = EnterpriseAccNo;
     glonbalDashboard_SearchMerchantList_FullCompanyAddress=EnterpriseAddress;
+    globalFloatPanel_AyohaStore_CheckOut_EnterpriseTagLine = EnterpriseTagLine;
     localStorage.setItem("EnterpriseAccNo",EnterpriseAccNo);
     localStorage.setItem("PaymentNo",PaymentNo);
 FloatPanel_AyohaReward_PointTransactionsHide();

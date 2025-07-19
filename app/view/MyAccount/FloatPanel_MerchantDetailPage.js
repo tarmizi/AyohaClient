@@ -551,7 +551,7 @@ function FloatPanel_MerchantDetailPage() {
                                                   },
                                                    {
                                                        xtype: 'container',
-                                                       width: '65%',
+                                                       width: '71%',
                                                        height: 90,
                                                        style: 'background-color: transparent;',
                                                        id: 'containerFloatPanel_MerchantDetailPage_EnterpriseInfo_EnterpiseInfoExtended',
@@ -583,6 +583,7 @@ function FloatPanel_MerchantDetailPage() {
                                                                },
                                                                items: [
                                                                    {
+                                                                    margin: '-10 0 0 0',
                                                                        id: 'htmlFloatPanel_MerchantDetailPage_EnterpriseInfo_EnterpiseInfoExtended_EnterpriseFullAddress',
                                                                        html: '<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 12px;font-weight:normal;color:black;padding:0px 6px;">Lot 153,Aeon Nilai, Bandar Baru Nilai,71800 Nilai,Negeri Sembilan</div>'
                                                                    }
@@ -592,65 +593,85 @@ function FloatPanel_MerchantDetailPage() {
                                                    },
 
 
+{
+    xtype: 'container',
+    width: '6%',    
+    //height: 90,
+    height: 100,
+    style: 'background-color: transparent;',
+    layout: {
+        type: 'vbox',
+        pack: 'center',
+        align: 'center',
+    },
+    items: [
+        {
+            xtype: 'container',
+            width: '100%',
+            hidden:true,
+            //height: 90,
+            height: 40,
+            style: 'background-color: transparent;',
+            id: 'containerFloatPanel_MerchantDetailPage_EnterpriseInfo_Direction',
 
-                                                    {
-                                                        xtype: 'container',
-                                                        width: '12%',
-                                                        hidden:true,
-                                                        height: 90,
-                                                        style: 'background-color: transparent;',
-                                                        id: 'containerFloatPanel_MerchantDetailPage_EnterpriseInfo_Direction',
+            //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
+            // style: 'border-bottom:2px solid #D25959;background-color:transparent',
+            layout: {
+                type: 'vbox',
+                pack: 'top',
+                align: 'right',
+            },
+            items: [
+                {
+                    width: '100%',
+                    height: 30,
+                    html: '<div onclick="FloatPanelMerchantDetailPage_OpenDirection();"><img src="resources/icons/DirectionPurple.jpg" width="24" height="24" alt="Company Name"></div>',
+                },
+                //  {
+                //      width: '100%',
+                //      height: 5,
+                //      margin: '-7 0 0 0',
+                //     // hidden:true,
+                //      html: '<div onclick="FloatPanelMerchantDetailPage_OpenDirection();" style="width:100%;background-color: transparent;text-align:center;border: 1px none white;font-family:Century Gothic;font-size: 7px;font-weight:normal;color:black;">Location</div>'
+                //  },
+            ]
+        },
+         {
+             xtype: 'container',
+             width: '100%',
+            // height: 90,
+             height: 40,
+             hidden:true,
+            style: 'background-color: transparent;',
+             id: 'containerFloatPanel_MerchantDetailPage_EnterpriseInfo_OnlineStore',
+             name:'namecontainerFloatPanel_MerchantDetailPage_EnterpriseInfo_OnlineStore',
 
-                                                        //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
-                                                        // style: 'border-bottom:2px solid #D25959;background-color:transparent',
-                                                        layout: {
-                                                            type: 'vbox',
-                                                            pack: 'center',
-                                                            align: 'center',
-                                                        },
-                                                        items: [
-                                                            {
-                                                                width: '90%',
-                                                                height: 50,
-                                                                html: '<div onclick="FloatPanelMerchantDetailPage_OpenDirection();"><img src="resources/icons/DirectionPurple.jpg" width="90%" height="50" alt="Company Name"></div>',
-                                                            },
-                                                             {
-                                                                 width: '100%',
-                                                                 height: 10,
-                                                                 html: '<div onclick="FloatPanelMerchantDetailPage_OpenDirection();" style="width:100%;background-color: transparent;text-align:center;border: 1px none white;font-family:Century Gothic;font-size: 12px;font-weight:bold;color:black;">7.2KM</div>'
-                                                             },
-                                                        ]
-                                                    },
-                                                     {
-                                                         xtype: 'container',
-                                                         width: '12%',
-                                                         height: 90,
-                                                         hidden:true,
-                                                         style: 'background-color: transparent;',
-                                                         id: 'containerFloatPanel_MerchantDetailPage_EnterpriseInfo_OnlineStore',
-                                                         name:'namecontainerFloatPanel_MerchantDetailPage_EnterpriseInfo_OnlineStore',
+            // style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:1px solid #ECF0F1 ;background-color: transparent;',
+             // style: 'border-bottom:2px solid #D25959;background-color:transparent',
+             layout: {
+                 type: 'vbox',
+                 pack: 'center',
+                 align: 'center',
+             },
+             items: [
+                 {
+                     width: '100%',
+                     height: 30,
+                     html: '<div onclick="FloatPanelMerchantDetailPage_AyohaStore()"><img src="resources/icons/onlineStore.jpg" width="24" height="24" alt="Company Name"></div>',
+                   //  margin:'15 0 0 0',
+                 },
+                //   {
+                //       width: '100%',                     
+                // height: 5,
+                // margin: '4 0 0 5',
+                //       html: '<div onclick="FloatPanelMerchantDetailPage_AyohaStore()" style="width:100%;background-color: transparent;text-align:center;border: 1px none white;font-family:Century Gothic;font-size: 7px;font-weight:normal;color:black;margin:-12px 0px 0px -5px;">Ayoha</div><br><div style="width:100%;background-color: transparent;text-align:center;border: 1px none white;font-family:Century Gothic;font-size: 7px;font-weight:normal;color:black;margin:-26px 0px 0px -5px">Store</div>'
+                //   },
+             ]
+         }
+    ]
 
-                                                         //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
-                                                         // style: 'border-bottom:2px solid #D25959;background-color:transparent',
-                                                         layout: {
-                                                             type: 'vbox',
-                                                             pack: 'center',
-                                                             align: 'center',
-                                                         },
-                                                         items: [
-                                                             {
-                                                                 width: '90%',
-                                                                 height: 50,
-                                                                 html: '<div onclick="FloatPanelMerchantDetailPage_AyohaStore()"><img src="resources/icons/onlineStore.jpg" width="80%" height="40" alt="Company Name"></div>',
-                                                                 margin:'15 0 0 0',
-                                                             },
-                                                              {
-                                                                  width: '100%',
-                                                                  height: 10,
-                                                                  html: '<div onclick="FloatPanelMerchantDetailPage_AyohaStore()" style="width:100%;background-color: transparent;text-align:center;border: 1px none white;font-family:Century Gothic;font-size: 10px;font-weight:bold;color:black;margin:-12px 0px 0px -5px;">Online</div><br><div style="width:100%;background-color: transparent;text-align:center;border: 1px none white;font-family:Century Gothic;font-size: 10px;font-weight:bold;color:black;margin:-26px 0px 0px -5px">Store</div>'
-                                                              },
-                                                         ]
-                                                     }
+},
+                                                  
                                               ]
 
                                           },
@@ -1005,7 +1026,7 @@ function FloatPanel_MerchantDetailPage() {
                                                                        xtype: 'container',
                                                                        width: '100%',
                                                                       // flex: 1,
-                                                                       margin: '-19 0 0 0',
+                                                                       margin: '-10 0 0 0',
                                                                        height: 50,
                                                                        id: 'containerFloatPanel_MerchantDetailPage_ReviewAndRate',
                                                                       // name: 'namecontainerFloatPanel_AyohaStore_ReviewAndRate',
@@ -1108,18 +1129,49 @@ function FloatPanel_MerchantDetailPage() {
                                                            {
                                                                xtype: 'container',
                                                                width: '37%',
-                                                               hidden:true,
+                                                              // hidden:true,
                                                                height: 35,
                                                                style: 'background-color: transparent;',
-                                                               id: 'containerFloatPanel_MerchantDetailPage_EnterpriseSocialMedia',
+                                                               id: 'containerFloatPanel_MerchantDetailPage_AyohaStoreCart',
                                                                layout: {
-                                                                   type: 'hbox',
-                                                                   pack: 'right',
-                                                                   align: 'right'
+                                                                type: 'vbox',
+                                                                pack: 'top',
+                                                                align: 'right'
 
                                                                },
                                                                items: [
+
+                                                                {
+                                                                    xtype: 'container',
+                                                                    width: '100%',
+                                                                   // hidden:true,
+                                                                 margin: '0 0 0 0',
+                                                                    height: 30,
+                                                                    style: 'background-color: transparent;',
+                                                                    layout: {
+                                                                     type: 'vbox',
+                                                                     pack: 'top',
+                                                                     align: 'right'
+                                                                },
+                                                                items:[
+                                                                    {
+                                                                        margin: '-10 8 0 0',
+                                                                       // id: 'htmlFloatPanel_AyohaStore_MyCartCountbadgeText',
+                                                                        html: '<div style="background: transparent;height:10px;font-size: 14px;font-weight:normal;color:black;text-align:center;" ><b>0</b></div>'
+                                                                       
+                                                                    },
+                                                                    {
+                                                                       margin: '2 0 0 0',
+                                                                        // hidden: true,
+                                                                        width: 30,
+                                                                        height: 30,
+                                                                        html: '<img src="resources/icons/myCart02.png" alt="Image" style="width:30px;height:30px;">',
+                                                                        // ui:'plain'
+                                                                    },
+                                                                ]
+                                                            },
                                                                   
+
                                                                ]
                                                            }
 
@@ -1977,23 +2029,7 @@ function FloatPanel_MerchantDetailPageShow(ID,EnterpriseAccNo, EnterpriseLogoPat
     var weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     var d = new Date();
     var day = weekday[d.getDay()];
-  
 
-    if (BusinessMode != 'Online') {
-        Ext.getCmp('containerFloatPanel_MerchantDetailPage_EnterpriseInfo_OnlineStore').setHidden(true);
-        Ext.getCmp('containerFloatPanel_MerchantDetailPage_EnterpriseInfo_Direction').setHidden(false);
-        FloatPanelMerchantDetailPage_EnterprisesCoverMediaLoadByEnterpriseAccNoStore(EnterpriseAccNo, day);
-    } else {
-        FloatPanelMerchantDetailPage_EnterprisesCoverMediaLoadByEnterpriseAccNoStore(EnterpriseAccNo, BusinessMode);
-        Ext.getCmp('containerFloatPanel_MerchantDetailPage_EnterpriseInfo_OnlineStore').setHidden(false);
-        Ext.getCmp('containerFloatPanel_MerchantDetailPage_EnterpriseInfo_Direction').setHidden(true);
-
-
-       
-    }
-
-   
-   
     if (globalFloatPanel_MerchantDetailPage_EnterpriseFacebook != 'NA') {
         Ext.getCmp('htmlFloatPanel_MerchantDetailPage_FB').setHidden(false);
 
@@ -2007,16 +2043,55 @@ function FloatPanel_MerchantDetailPageShow(ID,EnterpriseAccNo, EnterpriseLogoPat
     if (globalFloatPanel_MerchantDetailPage_EnterpriseTikTok != 'NA') {
         Ext.getCmp('htmlFloatPanel_MerchantDetailPage_TikTok').setHidden(false);
     }
+  
+   // alert(BusinessMode)
+
+    if (BusinessMode == 'Online') {
+        // Ext.getCmp('containerFloatPanel_MerchantDetailPage_EnterpriseInfo_OnlineStore').setHidden(true);
+        // Ext.getCmp('containerFloatPanel_MerchantDetailPage_EnterpriseInfo_Direction').setHidden(false);
+        // FloatPanelMerchantDetailPage_EnterprisesCoverMediaLoadByEnterpriseAccNoStore(EnterpriseAccNo, day);
+
+
+      
+        Ext.getCmp('containerFloatPanel_MerchantDetailPage_EnterpriseInfo_OnlineStore').setHidden(false);
+        Ext.getCmp('containerFloatPanel_MerchantDetailPage_EnterpriseInfo_Direction').setHidden(true);
+        FloatPanelMerchantDetailPage_EnterprisesCoverMediaLoadByEnterpriseAccNoStore(EnterpriseAccNo, BusinessMode);
+        return
+    } else
+    if (BusinessMode == 'InPremise') {
+        Ext.getCmp('containerFloatPanel_MerchantDetailPage_EnterpriseInfo_OnlineStore').setHidden(true);
+        Ext.getCmp('containerFloatPanel_MerchantDetailPage_EnterpriseInfo_Direction').setHidden(false);
+        FloatPanelMerchantDetailPage_EnterprisesCoverMediaLoadByEnterpriseAccNoStore(EnterpriseAccNo, day);
+        return
+    } 
+    else {
+        FloatPanelMerchantDetailPage_EnterprisesCoverMediaLoadByEnterpriseAccNoStore(EnterpriseAccNo, day);
+        Ext.getCmp('containerFloatPanel_MerchantDetailPage_EnterpriseInfo_OnlineStore').setHidden(false);
+        Ext.getCmp('containerFloatPanel_MerchantDetailPage_EnterpriseInfo_Direction').setHidden(false);
+
+
+       
+    }
+
+   
+   
+ 
 
    
 
-    if (globalFloatPanelMerchantDetailPage_EnterpriseCoordinate != 'NA') {
-        Ext.getCmp('containerFloatPanel_MerchantDetailPage_EnterpriseInfo_Direction').setHidden(false);
+    // if (globalFloatPanelMerchantDetailPage_EnterpriseCoordinate != 'NA') {
+    //     Ext.getCmp('containerFloatPanel_MerchantDetailPage_EnterpriseInfo_Direction').setHidden(false);
 
-    } else {
-        Ext.getCmp('containerFloatPanel_MerchantDetailPage_EnterpriseInfo_Direction').setHidden(true);
+    // } else {
+    //     Ext.getCmp('containerFloatPanel_MerchantDetailPage_EnterpriseInfo_Direction').setHidden(true);
 
-    }
+    // }
+
+
+
+
+
+
     //var containerViewnamecontainerFloatPanel_MerchantDetailPage_EnterpriseInfo_OnlineStore = Ext.ComponentQuery.query('container[name=namecontainerFloatPanel_MerchantDetailPage_EnterpriseInfo_OnlineStore')[0];
     //var containerViewElnamecontainerFloatPanel_MerchantDetailPage_EnterpriseInfo_OnlineStore = containerViewnamecontainerFloatPanel_MerchantDetailPage_EnterpriseInfo_OnlineStore.element;
     //containerViewElnamecontainerFloatPanel_MerchantDetailPage_EnterpriseInfo_OnlineStore.on('tap',
@@ -2185,7 +2260,7 @@ function FloatPanelMerchantDetailPage_EnterprisesCoverMediaLoadByEnterpriseAccNo
 console.log(EnterpriseAccNo)
 console.log(day)
 console.log(GetCurrAyohaUserAccountNo())
-
+     _DataStore_EnterprisesCoverMediaLoadByEnterpriseAccNoStore.removeAll();
     _DataStore_EnterprisesCoverMediaLoadByEnterpriseAccNoStore.getProxy().setExtraParam('EnterpriseAccNo', EnterpriseAccNo);
     _DataStore_EnterprisesCoverMediaLoadByEnterpriseAccNoStore.getProxy().setExtraParam('Today', day);
     _DataStore_EnterprisesCoverMediaLoadByEnterpriseAccNoStore.getProxy().setExtraParam('SubscriberAccNo', GetCurrAyohaUserAccountNo());
@@ -2196,7 +2271,7 @@ console.log(GetCurrAyohaUserAccountNo())
     var task = Ext.create('Ext.util.DelayedTask', function () {
 
         var count = parseInt(_DataStore_EnterprisesCoverMediaLoadByEnterpriseAccNoStore.getCount());
-       
+    //   alert("count: " + count);
 
         if (count > 0) {
            
