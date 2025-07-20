@@ -1156,7 +1156,7 @@ function FloatPanel_MerchantDetailPage() {
                                                                 items:[
                                                                     {
                                                                         margin: '-10 8 0 0',
-                                                                       // id: 'htmlFloatPanel_AyohaStore_MyCartCountbadgeText',
+                                                                        id: 'htmlFloatPanel_MerchantDetailPage_CountbadgeText',
                                                                         html: '<div style="background: transparent;height:10px;font-size: 14px;font-weight:normal;color:black;text-align:center;" ><b>0</b></div>'
                                                                        
                                                                     },
@@ -1165,7 +1165,7 @@ function FloatPanel_MerchantDetailPage() {
                                                                         // hidden: true,
                                                                         width: 30,
                                                                         height: 30,
-                                                                        html: '<img src="resources/icons/myCart02.png" alt="Image" style="width:30px;height:30px;">',
+                                                                        html: '<img onClick="FloatPanel_AyohaStore_CartShow()" src="resources/icons/myCart02.png" alt="Image" style="width:30px;height:30px;">',
                                                                         // ui:'plain'
                                                                     },
                                                                 ]
@@ -2268,133 +2268,165 @@ console.log(GetCurrAyohaUserAccountNo())
     _DataStore_EnterprisesCoverMediaLoadByEnterpriseAccNoStore.load();
     globalFloatPanelMerchantDetailPage_EnterpriseAccNo = EnterpriseAccNo;
     globalFloatPanelMerchantDetailPage_MembershipLoyaltyProgramPanel_Height = 0;
-    var task = Ext.create('Ext.util.DelayedTask', function () {
 
-        var count = parseInt(_DataStore_EnterprisesCoverMediaLoadByEnterpriseAccNoStore.getCount());
-    //   alert("count: " + count);
-
-        if (count > 0) {
-           
-            for (i = 0; i < count; i++) {
-                Stores = _DataStore_EnterprisesCoverMediaLoadByEnterpriseAccNoStore.getAt(i);
-                //Ext.getCmp('containerFloatPanel_AyohaStore_SaleItemDetail_Picture' + counter).setHidden(false);
-                //Ext.getCmp('containerFloatPanel_AyohaStore_SaleItemDetail_Picture' + counter).setHtml('<img src="' + Store.get('ImgPath') + '" style="width:42px;height:42px;margin:0px 0px 0px 0px;border-right:2px solid #fac;border-left:2px solid #fac;border-bottom:2px solid #fac;border-top:2px solid #fac;background: white;border-radius: 5px 5px 5px 5px;" alt="Company Name">');
+    _DataStore_EnterprisesCoverMediaLoadByEnterpriseAccNoStore.load({
+        callback: function (records, operation, success) {
+            if (success && records.length > 0) {
+                console.log('Store loaded successfully, total records: ' + records.length);
     
-                FloatPanel_MerchantPageDetail.add({ xtype: 'image', src: Stores.get('CoverMediaUrl'), height: '96%', width: '100%', mode: 'image' });
-                counter++;
-            }
-        }
-
-
-        
-
-
-
-        var Store = _DataStore_EnterprisesCoverMediaLoadByEnterpriseAccNoStore.getAt(0);
-        if (count > 0) {
-        if(Store.get('CountLike')){
-            Ext.getCmp('htmlFloatPanel_MerchantDetailPage_EnterpriseLoveUsDetails').setHtml('<div onclick="FloatPanel_AyohaStore_LikeStatusListShow()" style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 14px;font-weight:bold;color:black;margin:0px 0px 0px 0px;padding:0px 6px;">' + Store.get('CountLike') + '</div><br><div onclick="FloatPanel_AyohaStore_LikeStatusListShow()" style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 10px;font-weight:normal;color:black;margin:-27px 0px 0px 0px;padding:0px 6px;">Love Us</div>');
-            globalFloatPanel_AyohaStore_CountLike = parseInt(Store.get('CountLike'));
-           // globalFloatPanelMerchantDetailPage_MembershipLoyaltyProgramPanel_Height = parseInt(Store.get('CountMembershipCard')) * 400;
-            Ext.getCmp('htmlFloatPanel_MerchantDetailPage_MembershipCard_Txt').setHtml('<div onclick="OnClickhtmlFloatPanel_MerchantDetailPage_MembershipCard_Txt()" style="width:100%;background-color:transparent;"><font size=2 color=white><b>Our Membership Card (' + Store.get('CountMembershipCard') + ')</b></font></div>');
-            Ext.getCmp('htmlFloatPanel_MerchantDetailPage_OnlineStore_Txt').setHtml('<div onclick="OnClickhtmlFloatPanel_MerchantDetailPage_OnlineStore_Txt()" style="width:100%;background-color:transparent;"><font size=2 color=white><b>Our Online Store (' + Store.get('CountOnlineStore') + ')</b></font></div>');
-        
-        }
-    }
-
-console.log(globalFloatPanelMerchantDetailPage_BusinessMode)
-        if (globalFloatPanelMerchantDetailPage_BusinessMode == "Online") {
-            Ext.getCmp('htmlFloatPanel_MerchantDetailPage_EnterpriseWorkingHourDetails').setHtml('<div onclick="FloatPanel_MerchantDetailPage_EnterpriseWorkingHourDetails()" style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 14px;font-weight:bold;color:black;margin:0px 0px 0px 0px;padding:0px 6px;">Open 24/7 (Open Now)</div><br><div onclick="FloatPanel_MerchantDetailPage_EnterpriseWorkingHourDetails()" style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 10px;font-weight:normal;color:black;margin:-27px 0px 0px 0px;padding:0px 6px;">Business Hour</div>');
-
-        } else {
-
-            var today = new Date();
-            var time = today.getHours() + "." + today.getMinutes();
-            var TutupBuka;
-            var isWorkingDay = Store.get('isWorkingDay');
-            var weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-            var d = new Date();
-            var day = weekday[d.getDay()];
-
-            if (isWorkingDay == "Y") {
-                var PremiseOpenTime = Store.get('WorkingHourStart').replace(".", ":") + " " + Store.get('WorkingHourStartAMPM');
-                var PremiseCloseTime = Store.get('WorkingHourEnd').replace(".", ":") + " " + Store.get('WorkingHourEndAMPM');
-
-
-                var OpenModified12Hour = parseFloat(convertTimeFrom12To24(PremiseOpenTime));
-                var ClosedModified12Hour = parseFloat(convertTimeFrom12To24(PremiseCloseTime));
-                var MasaSekarang = parseFloat(time);
-
-                if ((MasaSekarang > OpenModified12Hour) && (MasaSekarang < ClosedModified12Hour)) {
-
-                    TutupBuka = "Open Now";
-                } else {
-                    TutupBuka = "Closed Now";
+              //  var Store = records[0]; // Access only the first record
+                var count = parseInt(_DataStore_EnterprisesCoverMediaLoadByEnterpriseAccNoStore.getCount());
+                //   alert("count: " + count);
+            
+                    if (count > 0) {
+                       
+                        for (i = 0; i < count; i++) {
+                            Stores = _DataStore_EnterprisesCoverMediaLoadByEnterpriseAccNoStore.getAt(i);
+                            //Ext.getCmp('containerFloatPanel_AyohaStore_SaleItemDetail_Picture' + counter).setHidden(false);
+                            //Ext.getCmp('containerFloatPanel_AyohaStore_SaleItemDetail_Picture' + counter).setHtml('<img src="' + Store.get('ImgPath') + '" style="width:42px;height:42px;margin:0px 0px 0px 0px;border-right:2px solid #fac;border-left:2px solid #fac;border-bottom:2px solid #fac;border-top:2px solid #fac;background: white;border-radius: 5px 5px 5px 5px;" alt="Company Name">');
+                
+                            FloatPanel_MerchantPageDetail.add({ xtype: 'image', src: Stores.get('CoverMediaUrl'), height: '96%', width: '100%', mode: 'image' });
+                            counter++;
+                        }
+                    }
+            
+            
+                    
+            
+            
+            
+                    var Store = _DataStore_EnterprisesCoverMediaLoadByEnterpriseAccNoStore.getAt(0);
+                    if (count > 0) {
+                    if(Store.get('CountLike')){
+                        Ext.getCmp('htmlFloatPanel_MerchantDetailPage_EnterpriseLoveUsDetails').setHtml('<div onclick="FloatPanel_AyohaStore_LikeStatusListShow()" style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 14px;font-weight:bold;color:black;margin:0px 0px 0px 0px;padding:0px 6px;">' + Store.get('CountLike') + '</div><br><div onclick="FloatPanel_AyohaStore_LikeStatusListShow()" style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 10px;font-weight:normal;color:black;margin:-27px 0px 0px 0px;padding:0px 6px;">Love Us</div>');
+                        globalFloatPanel_AyohaStore_CountLike = parseInt(Store.get('CountLike'));
+                       // globalFloatPanelMerchantDetailPage_MembershipLoyaltyProgramPanel_Height = parseInt(Store.get('CountMembershipCard')) * 400;
+                        Ext.getCmp('htmlFloatPanel_MerchantDetailPage_MembershipCard_Txt').setHtml('<div onclick="OnClickhtmlFloatPanel_MerchantDetailPage_MembershipCard_Txt()" style="width:100%;background-color:transparent;"><font size=2 color=white><b>Our Membership Card (' + Store.get('CountMembershipCard') + ')</b></font></div>');
+                        Ext.getCmp('htmlFloatPanel_MerchantDetailPage_OnlineStore_Txt').setHtml('<div onclick="OnClickhtmlFloatPanel_MerchantDetailPage_OnlineStore_Txt()" style="width:100%;background-color:transparent;"><font size=2 color=white><b>Our Online Store (' + Store.get('CountOnlineStore') + ')</b></font></div>');
+                    
+                    }
                 }
+            
+            console.log(globalFloatPanelMerchantDetailPage_BusinessMode)
+                    if (globalFloatPanelMerchantDetailPage_BusinessMode == "Online") {
+                        Ext.getCmp('htmlFloatPanel_MerchantDetailPage_EnterpriseWorkingHourDetails').setHtml('<div onclick="FloatPanel_MerchantDetailPage_EnterpriseWorkingHourDetails()" style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 14px;font-weight:bold;color:black;margin:0px 0px 0px 0px;padding:0px 6px;">Open 24/7 (Open Now)</div><br><div onclick="FloatPanel_MerchantDetailPage_EnterpriseWorkingHourDetails()" style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 10px;font-weight:normal;color:black;margin:-27px 0px 0px 0px;padding:0px 6px;">Business Hour</div>');
+            
+                    } else {
+            
+                        var today = new Date();
+                        var time = today.getHours() + "." + today.getMinutes();
+                        var TutupBuka;
+                        var isWorkingDay = Store.get('isWorkingDay');
+                        var weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+                        var d = new Date();
+                        var day = weekday[d.getDay()];
+            
+                        if (isWorkingDay == "Y") {
+                            var PremiseOpenTime = Store.get('WorkingHourStart').replace(".", ":") + " " + Store.get('WorkingHourStartAMPM');
+                            var PremiseCloseTime = Store.get('WorkingHourEnd').replace(".", ":") + " " + Store.get('WorkingHourEndAMPM');
+            
+            
+                            var OpenModified12Hour = parseFloat(convertTimeFrom12To24(PremiseOpenTime));
+                            var ClosedModified12Hour = parseFloat(convertTimeFrom12To24(PremiseCloseTime));
+                            var MasaSekarang = parseFloat(time);
+            
+                            if ((MasaSekarang > OpenModified12Hour) && (MasaSekarang < ClosedModified12Hour)) {
+            
+                                TutupBuka = "Open Now";
+                            } else {
+                                TutupBuka = "Closed Now";
+                            }
+            
+            
+            
+                            Ext.getCmp('htmlFloatPanel_MerchantDetailPage_EnterpriseWorkingHourDetails').setHtml('<div onclick="FloatPanel_MerchantDetailPage_EnterpriseWorkingHourDetails()" style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 14px;font-weight:bold;color:black;margin:0px 0px 0px 0px;padding:0px 6px;">' + Store.get('WorkingHourStart') + Store.get('WorkingHourStartAMPM') + ' - ' + Store.get('WorkingHourEnd') + Store.get('WorkingHourEndAMPM') + ' (' + TutupBuka + ')</div><br><div onclick="FloatPanel_MerchantDetailPage_EnterpriseWorkingHourDetails()" style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 10px;font-weight:normal;color:black;margin:-27px 0px 0px 0px;padding:0px 6px;">Business Hour</div>');
+            
+                        } else {
+            
+                            Ext.getCmp('htmlFloatPanel_MerchantDetailPage_EnterpriseWorkingHourDetails').setHtml('<div onclick="FloatPanel_MerchantDetailPage_EnterpriseWorkingHourDetails()" style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 14px;font-weight:bold;color:black;margin:0px 0px 0px 0px;padding:0px 6px;">' + day + ' (Off Day/Holiday)</div><br><div onclick="FloatPanel_MerchantDetailPage_EnterpriseWorkingHourDetails()" style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 10px;font-weight:normal;color:black;margin:-27px 0px 0px 0px;padding:0px 6px;">Business Hour</div>');
+                        }
+            
+                       
+                    }
+            
+            
+                    
+                    
+                  
+            
+            
+            
+                   
+                    //Ext.getCmp('htmlFloatPanel_MerchantDetailPage_MembershipCard_Txt').setHtml('<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 14px;font-weight:bold;color:black;margin:0px 0px 0px 0px;padding:0px 0px;">Our Membership Card (' + Store.get('CountMembershipCard') + ')</div>');
+                    //Ext.getCmp('htmlFloatPanel_MerchantDetailPage_OnlineStore_Txt').setHtml('<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 14px;font-weight:bold;color:black;margin:0px 0px 0px 0px;padding:0px 0px;">Our Online Store (' + Store.get('CountOnlineStore') + ')</div>');
+            
+            
+            
+                    
+            
+            
+            
+                    globalFloatPanelMerchantDetailPage_EnterprisesOnlineStore_tinggi = Store.get('CountOnlineStore') * 80;
+            
+                    globalFloatPanelMerchantDetailPage_MembershipCard_tinggi = Store.get('CountMembershipCard') * 300;
+            
+                  
+                  
+            
+                    if (Store.get('isLikeStatus') == "Y") {
+                        Ext.getCmp('htmlFloatPanel_MerchantDetailPage_EnterpriseLoveUsIcon').setHtml('<div onclick="FloatPanel_MerchantDetailPage_LikeDislikeStore();" ><img src="resources/icons/likeOn.png" width="100%" height="26" alt="Company Name"></div>');
+                       
+                    }
+                    if (Store.get('isLikeStatus') == "N") {
+                        Ext.getCmp('htmlFloatPanel_MerchantDetailPage_EnterpriseLoveUsIcon').setHtml('<div onclick="FloatPanel_MerchantDetailPage_LikeDislikeStore();"><img src="resources/icons/unlovepurple.png" width="100%" height="26" alt="Company Name"></div>');
+                       
+                    }
+            
+            
+                    
+            
+                    LoadingPanelHide();
+            
+            
+            
+                    FloatPanelMerchantDetailPage_CalculateRating(EnterpriseAccNo);
+                    FloatPanelMerchantDetailPage_EnterprisesOnlineStoreLoadByEnterpriseAccNoStore();
+                    FloatPanelMerchantDetailPage_MembershipCardLoadByEnterpriseAccNoStore();
+                  //  FloatPanelMerchantDetailPage_CartTotalItemQuantity();
 
 
 
-                Ext.getCmp('htmlFloatPanel_MerchantDetailPage_EnterpriseWorkingHourDetails').setHtml('<div onclick="FloatPanel_MerchantDetailPage_EnterpriseWorkingHourDetails()" style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 14px;font-weight:bold;color:black;margin:0px 0px 0px 0px;padding:0px 6px;">' + Store.get('WorkingHourStart') + Store.get('WorkingHourStartAMPM') + ' - ' + Store.get('WorkingHourEnd') + Store.get('WorkingHourEndAMPM') + ' (' + TutupBuka + ')</div><br><div onclick="FloatPanel_MerchantDetailPage_EnterpriseWorkingHourDetails()" style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 10px;font-weight:normal;color:black;margin:-27px 0px 0px 0px;padding:0px 6px;">Business Hour</div>');
 
+
+
+
+
+
+               
+                LoadingPanelHide();
             } else {
-
-                Ext.getCmp('htmlFloatPanel_MerchantDetailPage_EnterpriseWorkingHourDetails').setHtml('<div onclick="FloatPanel_MerchantDetailPage_EnterpriseWorkingHourDetails()" style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 14px;font-weight:bold;color:black;margin:0px 0px 0px 0px;padding:0px 6px;">' + day + ' (Off Day/Holiday)</div><br><div onclick="FloatPanel_MerchantDetailPage_EnterpriseWorkingHourDetails()" style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 10px;font-weight:normal;color:black;margin:-27px 0px 0px 0px;padding:0px 6px;">Business Hour</div>');
+                console.error('Failed to load store data or no record found.');
+                LoadingPanelHide();
             }
-
-           
         }
-
-
-        
-        
-      
-
-
-
-       
-        //Ext.getCmp('htmlFloatPanel_MerchantDetailPage_MembershipCard_Txt').setHtml('<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 14px;font-weight:bold;color:black;margin:0px 0px 0px 0px;padding:0px 0px;">Our Membership Card (' + Store.get('CountMembershipCard') + ')</div>');
-        //Ext.getCmp('htmlFloatPanel_MerchantDetailPage_OnlineStore_Txt').setHtml('<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 14px;font-weight:bold;color:black;margin:0px 0px 0px 0px;padding:0px 0px;">Our Online Store (' + Store.get('CountOnlineStore') + ')</div>');
-
-
-
-        
-
-
-
-        globalFloatPanelMerchantDetailPage_EnterprisesOnlineStore_tinggi = Store.get('CountOnlineStore') * 80;
-
-        globalFloatPanelMerchantDetailPage_MembershipCard_tinggi = Store.get('CountMembershipCard') * 300;
-
-      
-      
-
-        if (Store.get('isLikeStatus') == "Y") {
-            Ext.getCmp('htmlFloatPanel_MerchantDetailPage_EnterpriseLoveUsIcon').setHtml('<div onclick="FloatPanel_MerchantDetailPage_LikeDislikeStore();" ><img src="resources/icons/likeOn.png" width="100%" height="26" alt="Company Name"></div>');
-           
-        }
-        if (Store.get('isLikeStatus') == "N") {
-            Ext.getCmp('htmlFloatPanel_MerchantDetailPage_EnterpriseLoveUsIcon').setHtml('<div onclick="FloatPanel_MerchantDetailPage_LikeDislikeStore();"><img src="resources/icons/unlovepurple.png" width="100%" height="26" alt="Company Name"></div>');
-           
-        }
-
-
-        
-
-        LoadingPanelHide();
-
-
-
-        FloatPanelMerchantDetailPage_CalculateRating(EnterpriseAccNo);
-        FloatPanelMerchantDetailPage_EnterprisesOnlineStoreLoadByEnterpriseAccNoStore();
-        FloatPanelMerchantDetailPage_MembershipCardLoadByEnterpriseAccNoStore();
-        
-
-
     });
-    task.delay(500);
 
 
-    Ext.Viewport.setMasked(false);
+
+
+
+
+    // var task = Ext.create('Ext.util.DelayedTask', function () {
+
+     
+        
+
+
+    // });
+    // task.delay(500);
+
+
+    // Ext.Viewport.setMasked(false);
 }
 
 
@@ -2779,13 +2811,32 @@ function FloatPanelMerchantDetailPage_EnterprisesOnlineStoreLoadByEnterpriseAccN
     _DataStore_EnterprisesOnlineStoreLoadByEnterpriseAccNoStore.getProxy().setUrl(GetAPIurl() + '/EnterprisesOnlineStore/EnterprisesOnlineStoreLoadByEnterpriseAccNo');
     _DataStore_EnterprisesOnlineStoreLoadByEnterpriseAccNoStore.load();
 
+    _DataStore_EnterprisesOnlineStoreLoadByEnterpriseAccNoStore.load({
+        callback: function (records, operation, success) {
+            if (success && records.length > 0) {
+                console.log('Store loaded successfully, total records: ' + records.length);
+    
+               
+                LoadingPanelHide();
+            } else {
+                console.error('Failed to load store data or no record found.');
+                LoadingPanelHide();
+            }
+        }
+    });
 
-    var task = Ext.create('Ext.util.DelayedTask', function () {
 
-        var count = parseInt(_DataStore_EnterprisesOnlineStoreLoadByEnterpriseAccNoStore.getCount());
-      //  globalFloatPanelMerchantDetailPage_EnterprisesOnlineStoreCount = count;
 
-       // globalFloatPanelMerchantDetailPage_EnterprisesOnlineStore_tinggi = count * 80;
+
+
+
+
+    // var task = Ext.create('Ext.util.DelayedTask', function () {
+
+    //     var count = parseInt(_DataStore_EnterprisesOnlineStoreLoadByEnterpriseAccNoStore.getCount());
+    //   //  globalFloatPanelMerchantDetailPage_EnterprisesOnlineStoreCount = count;
+
+    //    // globalFloatPanelMerchantDetailPage_EnterprisesOnlineStore_tinggi = count * 80;
 
        
 
@@ -2793,13 +2844,13 @@ function FloatPanelMerchantDetailPage_EnterprisesOnlineStoreLoadByEnterpriseAccN
 
 
 
-    // FloatPanelMerchantDetailPage_EnterprisesOnlineStoreLoadByEnterpriseAccNoStore_animatedAccordianSlideDown();
+    // // FloatPanelMerchantDetailPage_EnterprisesOnlineStoreLoadByEnterpriseAccNoStore_animatedAccordianSlideDown();
 
-    });
-    task.delay(500);
+    // });
+    // task.delay(500);
 
 
-    Ext.Viewport.setMasked(false);
+    // Ext.Viewport.setMasked(false);
 }
 
 var globalFloatPanelMerchantDetailPage_MembershipCardCode;
@@ -2968,12 +3019,13 @@ function FloatPanelMerchantDetailPage_MembershipCardLoadByEnterpriseAccNoStore()
                 records.forEach(function (record) {
                     var LoyaltCampaignCount = parseInt(record.get('LoyaltCampaignCount'));
                     globalFloatPanelMerchantDetailPage_MembershipCardCode = record.get('MembershipCardCode');
+                    globalFloatPanelAyohaStore_AyohaUser_MembershipCardCode = record.get('MembershipCardCode');
                     Ext.getCmp('htmlFloatPanel_MerchantDetailPage_MembershipLoyaltyProgram_Txt').setHtml('<div onclick="OnClickFloatPanel_MerchantDetailPage_MembershipLoyaltyProgram_Txt()" style="width:100%;background-color:transparent;"><font size=2 color=white><b>Our Loyalty Program (' + LoyaltCampaignCount + ')</b></font></div>');
                     globalFloatPanelMerchantDetailPage_MembershipLoyaltyProgramPanel_Height = LoyaltCampaignCount * 100;
                   
                 });
-    
               
+                FloatPanelMerchantDetailPage_CartTotalItemQuantity();
                
             } else {
                 console.error('Failed to load store data.');
@@ -3119,8 +3171,7 @@ function FloatPanel_MerchantDetailPage_Staging_MembershipLoyaltyProgram(Membersh
    
     var bil = parseInt(Bilangan);
 
-    alert(bil)
-    alert(AyohaLoyaltyProgram)
+
     if (AyohaLoyaltyProgram == "Point Loyalty Card") {
         if (bil == 1) {
             globalFloatPanel_AyohaStore_Cart_StampPointCampaignCode = LoyaltyProgramCode;
@@ -3421,6 +3472,76 @@ function FloatPanelMerchantDetailPage_EnterprisesStageLoad(EnterpriseAccNo) {
     //  Ext.Viewport.unmask();
 
     //   setDashBoardMerchantReviewRate(FiveStar, FourStar, ThreeStar, TwoStar, OneStar);
+    task.delay(500);
+
+
+}
+
+
+
+
+function FloatPanelMerchantDetailPage_CartTotalItemQuantity() {
+    var task = Ext.create('Ext.util.DelayedTask', function () {
+        globalFloatPanelMerchantDetailPage_CartTotalItemQuantity=0;
+        var objn = {
+            'EnterpriseAccNo': globalFloatPanelMerchantDetailPage_EnterpriseAccNo,
+            'SubscriberAccNo': GetCurrAyohaUserAccountNo()
+        };
+        console.log(objn);
+        var _value = Ext.Ajax.request({
+
+            type: "POST",
+
+            url: GetAPIurl() + '/AyohaStore_Cart/AyohaStoreCartCartTotalItemQuantity',
+
+            dataType: "json",
+            data: JSON.stringify(objn),
+            headers: {
+                "Content-Type": "application/json; charset=utf-8"
+            },
+
+            success: function (result, request) {
+                data = Ext.decode(result.responseText.trim());
+                if (data.success == "true") {
+                    if (data.total > 0) {
+                        AppState.FloatPanel_MerchantDetailPage.cartTotalItemQuantity = data.results[0].TotalItemQuantity;
+                        if(data.results[0].TotalItemQuantity){
+                            AppState.FloatPanel_MerchantDetailPage.cartTotalItemQuantity = data.results[0].TotalItemQuantity;                           
+                           Ext.getCmp('htmlFloatPanel_MerchantDetailPage_CountbadgeText').setHtml('<div onClick="FloatPanel_AyohaStore_CartShow()" style="background: transparent;height:10px;font-size: 14px;font-weight:normal;color:black;text-align:center;"><b>'+AppState.FloatPanel_MerchantDetailPage.cartTotalItemQuantity+'</b></div>');
+                        }else{
+                            AppState.FloatPanel_MerchantDetailPage.cartTotalItemQuantity =0;
+                            Ext.getCmp('htmlFloatPanel_MerchantDetailPage_CountbadgeText').setHtml('<div style="background: transparent;height:10px;font-size: 14px;font-weight:normal;color:black;text-align:center;"><b>'+AppState.FloatPanel_MerchantDetailPage.cartTotalItemQuantity+'</b></div>');
+                        }
+                       
+                    }
+                    if (data.total == 0) {
+                        AppState.FloatPanel_MerchantDetailPage.cartTotalItemQuantity = 0;
+                        Ext.getCmp('htmlFloatPanel_MerchantDetailPage_CountbadgeText').setHtml('<div style="background: transparent;height:10px;font-size: 14px;font-weight:normal;color:black;text-align:center;"><b>'+AppState.FloatPanel_MerchantDetailPage.cartTotalItemQuantity+'</b></div>');
+                        Ext.Viewport.unmask();
+                    }
+                }
+                else {
+                    AppState.FloatPanel_MerchantDetailPage.cartTotalItemQuantity = 0;
+                    Ext.getCmp('htmlFloatPanel_MerchantDetailPage_CountbadgeText').setHtml('<div style="background: transparent;height:10px;font-size: 14px;font-weight:normal;color:black;text-align:center;"><b>'+AppState.FloatPanel_MerchantDetailPage.cartTotalItemQuantity+'</b></div>');
+                    Ext.Viewport.unmask();
+                 
+                }
+            },
+
+            failure: function (result, request) {
+                AppState.FloatPanel_MerchantDetailPage.cartTotalItemQuantity = 0;
+                Ext.getCmp('htmlFloatPanel_MerchantDetailPage_CountbadgeText').setHtml('<div style="background: transparent;height:10px;font-size: 14px;font-weight:normal;color:black;text-align:center;"><b>'+AppState.FloatPanel_MerchantDetailPage.cartTotalItemQuantity+'</b></div>');
+                Ext.Viewport.unmask();
+               
+            }
+
+        });
+
+
+
+    });
+
+    
     task.delay(500);
 
 

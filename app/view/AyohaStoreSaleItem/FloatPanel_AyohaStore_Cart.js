@@ -2063,8 +2063,7 @@ var globalFloatPanel_AyohaStore_Cart_TotalMerchantSumStamp;
 function FloatPanel_AyohaStore_Cart_AyohaStoreCartLoadCartAyohaStore(ItemCartStatus) {
 
 
-    
-  
+   
    
     _DataStore_AyohaStoreCartLoadCartAyohaStore.getProxy().setExtraParam('ItemCartStatus', ItemCartStatus);
     _DataStore_AyohaStoreCartLoadCartAyohaStore.getProxy().setExtraParam('EnterpriseAccNo', FloatPanel_AyohaStore_getEnterpriseAccNo());

@@ -3754,7 +3754,7 @@ var globalFloatPanelAyohaStore_CheckMembershipCardIsUsedStatus;
 
 function FloatPanel_AyohaStore_AyohaStoreSaleItemloadByEnterpriseAccNoItemCategoryStore(ItemCategoryCode) {
 
-
+//alert('FloatPanel_AyohaStore_AyohaStoreSaleItemloadByEnterpriseAccNoItemCategoryStore' + ItemCategoryCode)
 console.log(FloatPanel_AyohaStore_getEnterpriseAccNo())
 console.log(ItemCategoryCode)
 console.log(GetCurrAyohaUserAccountNo())

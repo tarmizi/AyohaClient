@@ -854,6 +854,8 @@ function sendNum(digit) {
     Ext.getCmp('containerFloatPanel_AyohaeWallet_Passcode_WrongPasscode').setHidden(true);
     if (document.getElementById('input-FloatPanel_AyohaeWallet_Passcode_Amount').value.length == 6) {
         if (localStorage.getItem("AyohaeWalletPassCode") == document.getElementById('input-FloatPanel_AyohaeWallet_Passcode_Amount').value) {
+         
+          
             FloatPanel_AyohaeWallet_PasscodeHide();
             if (globalFloatPanel_AyohaeWallet_Passcode_CheckingTaggingModule == "FloatPanel_AyohaStore_CheckOut_ConfirmPay") {
                 // alert("success")

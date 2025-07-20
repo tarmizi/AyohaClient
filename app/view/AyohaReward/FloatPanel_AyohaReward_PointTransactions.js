@@ -952,7 +952,6 @@ function FloatPanel_AyohaReward_PointTransactions_AyohaRewardPointLoadBySubscrib
 }
 
 
-
 function FloatPanel_AyohaReward_PointTransaction_ShowTransactionDetail(TotalStampEarn,ItemCartCode, MembershipCardCode_AyohaStore_Order, AyohaPointType, GUIDRow, PaymentNo, EnterpriseLogo, PointAmountEquation, PaymentAmount, PaymentNoDisplay, MembershipCardImg, MembershipCardName, PaymentNote, EnterpriseName, EnterpriseAccNo, CreatedDate,OrderNo,CreatedBy,EnterpriseAddress,EnterpriseTagLine) {
     globalFloatPanel_AyohaStore_ModuleTagging = "FloatPanel_AyohaStore_CheckOut";
     //var AyohaPointType = record.get('AyohaPointType');
@@ -961,6 +960,7 @@ function FloatPanel_AyohaReward_PointTransaction_ShowTransactionDetail(TotalStam
     globalFloatPanel_AyohaStore_CheckOut_EnterpriseAccNo = EnterpriseAccNo;
     glonbalDashboard_SearchMerchantList_FullCompanyAddress=EnterpriseAddress;
     globalFloatPanel_AyohaStore_CheckOut_EnterpriseTagLine = EnterpriseTagLine;
+
     localStorage.setItem("EnterpriseAccNo",EnterpriseAccNo);
     localStorage.setItem("PaymentNo",PaymentNo);
 FloatPanel_AyohaReward_PointTransactionsHide();
@@ -974,7 +974,7 @@ FloatPanel_AyohaReward_PointTransactionsHide();
             } 
             if (PaymentNo.startsWith('PN')) {
                // FloatPanel_AyohaReward_PointTransaction_eWalletShow(PaymentNo, EnterpriseLogo, PointAmountEquation, PaymentAmount, PaymentNoDisplay, MembershipCardImg, MembershipCardName, PaymentNote, EnterpriseName, EnterpriseAccNo, CreatedDate);
-                FloatPanel_AyohaStore_CheckOut_AyohaStoreOrderLoadByItemCartCodeAndMembershipCardCodeStore_WithOrderNo(TotalStampEarn,ItemCartCode, MembershipCardCode_AyohaStore_Order, OrderNo, EnterpriseName, EnterpriseLogo);
+                FloatPanel_AyohaStore_CheckOut_AyohaStoreOrderLoadByItemCartCodeAndMembershipCardCodeStore_WithOrderNo(TotalStampEarn,ItemCartCode, MembershipCardCode_AyohaStore_Order, OrderNo, EnterpriseName, EnterpriseLogo,CreatedDate);
 
             } 
             else {
@@ -984,7 +984,7 @@ FloatPanel_AyohaReward_PointTransactionsHide();
 
                }else{
                 
-                FloatPanel_AyohaStore_CheckOut_AyohaStoreOrderLoadByItemCartCodeAndMembershipCardCodeStore_WithOrderNo(TotalStampEarn,ItemCartCode, MembershipCardCode_AyohaStore_Order, OrderNo, EnterpriseName, EnterpriseLogo);
+                FloatPanel_AyohaStore_CheckOut_AyohaStoreOrderLoadByItemCartCodeAndMembershipCardCodeStore_WithOrderNo(TotalStampEarn,ItemCartCode, MembershipCardCode_AyohaStore_Order, OrderNo, EnterpriseName, EnterpriseLogo, CreatedDate);
 
                }
                
