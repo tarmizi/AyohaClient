@@ -4372,13 +4372,14 @@ globalFloatPanel_MembershipCardList_NotYetSubscribed_paymentCycleCode=result;
         globalFloatPanel_AyohaStore_CheckOut_TotalStampEarn = TotalStampEarn;
         globalFloatPanelAyohaStore_AyohaUser_MembershipCardCode = MembershipCardCode;
         globalFloatPanel_AyohaStore_CheckOut_ItemCartCode = ItemCartCode;
+        globalFloatPanel_AyohaStore_Cart_ItemCartCode = ItemCartCode;
         globalFloatPanel_AyohaStore_CheckOut_MembershipCardCode = MembershipCardCode;
         globalFloatPanel_AyohaStore_CheckOut_OrderNo = OrderNo;
         globalFloatPanel_AyohaStore_CheckOut_EnterpriseName = EnterpriseName;
         globalFloatPanel_AyohaStore_CheckOut_EnterpriseLogo = EnterpriseLogo;      
         globalFloatPanel_AyohaStore_CheckOut_CreatedDate = CreatedDate;
       
-
+//alert(globalFloatPanel_AyohaStore_CheckOut_ItemCartCode)
       //  FloatPanel_AyohaStore_CheckOut_AyohaStoreOrderLoadByItemCartCodeAndMembershipCardCodeStore_WithOrderNo_Proccessing(TotalStampEarn,ItemCartCode, MembershipCardCode, OrderNo, EnterpriseName, EnterpriseLogo);
 
         FloatPanel_AyohaStore_CheckOut_AyohaStoreOrderLoadByItemCartCodeAndMembershipCardCodeStore_WithOrderNo_Proccessing();
