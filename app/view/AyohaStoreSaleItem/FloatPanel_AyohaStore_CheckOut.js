@@ -4725,86 +4725,116 @@ if(globalFloatPanel_AyohaStore_DeliveryChargeList_DeliveryName !='Dine-In'){
         
                 if (OrderStatus == "Order_Confirmed") {
                     Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_TitleHeaderTxt_AfterOrder').setHtml('<div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-family:Century Gothic;font-size: 17px;font-weight:bold;color:green;margin:17px 0px 0px 0px">Invoice</div><br><div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-family:Century Gothic;font-size: 12px;font-weight:bold;color:orange;margin:-25px 0px 0px 0px">ORDER RECEIVED</div>');
+                  //  Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_TitleHeaderTxt_AfterOrder').setHtml('<div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-family:Century Gothic;font-size: 17px;font-weight:bold;color:green;margin:17px 0px 0px 0px">Invoice</div><br><div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-family:Century Gothic;font-size: 12px;font-weight:bold;color:green;margin:-25px 0px 0px 0px">PAID</div>');
+                    Ext.getCmp('containerFloatPanel_AyohaStore_CheckOutStampCardList').setStyle('background-color: white;');
+                    Ext.getCmp('FloatPanel_AyohaStore_CheckOut_InnerID').setStyle('background-color: white;');
+                    Ext.getCmp('containerFloatPanel_AyohaStore_CheckOut_Header').setStyle('background-color: white;');
+                    Ext.getCmp('containerFloatPanel_AyohaStore_CheckOutHeader').setStyle('background-color: white;');
+
+                    Ext.getCmp('btnFloatPanel_AyohaStore_CheckOutBack').setHtml('<div><img src="resources/icons/backFullWhite.png" width="25" height="20" alt="Company Name"></div>');
+
+                    Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_EnterpriseName').setHtml('<div style="width:100%;background-color: transparent;text-align:center;border: 1px none white;font-family:Century Gothic;font-size: 16px;font-weight:bold;color:black;margin:0px 0px 0px 0px">' + globalFloatPanel_AyohaStore_CheckOut_EnterpriseName + '</div>');
+                    Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_EnterpriseFullAddress').setHtml('<div style="width:100%;background-color: transparent;text-align:center;border: 1px none white;font-family:Century Gothic;font-size: 12px;font-weight:normal;color:#6B7280;margin:0px 0px 0px 0px">'+glonbalDashboard_SearchMerchantList_FullCompanyAddress+'</div>');
+                    
+                    
+                    
                     Ext.getCmp('radioBtnFloatPanel_AyohaStore_CheckOut_OrderOption_OrderOnly').setHidden(true);
                     Ext.getCmp('radioBtnFloatPanel_AyohaStore_CheckOut_OrderOption_MakePayment').setHidden(true);
                     Ext.getCmp('radioBtnFloatPanel_AyohaStore_CheckOut_OrderOption_CancelOrder').setHidden(true);
+                    Ext.getCmp('containerFloatPanel_AyohaStore_CheckOut_Voucher_Main').setHidden(true);                   
         
                     Ext.getCmp('radioBtnFloatPanel_AyohaStore_CheckOut_OrderOption_ViewReceipt').setHidden(false);
-                    Ext.getCmp('radioBtnFloatPanel_AyohaStore_CheckOut_OrderOption_ViewReceipt').setChecked(true);
-                    Ext.getCmp('radioBtnFloatPanel_AyohaStore_CheckOut_OrderOption_Re-Order').setHidden(false);
+                   // Ext.getCmp('radioBtnFloatPanel_AyohaStore_CheckOut_OrderOption_ViewReceipt').setChecked(true);
+                    Ext.getCmp('radioBtnFloatPanel_AyohaStore_CheckOut_OrderOption_Re-Order').setHidden(true);
         
         
                     Ext.getCmp('containerFloatPanel_AyohaStore_CheckOut_ConfirmPay').setHidden(true);
-                    Ext.getCmp('containerFloatPanel_AyohaStore_CheckOut_ViewReceipt').setHidden(true);
+                    Ext.getCmp('containerFloatPanel_AyohaStore_CheckOut_ViewReceipt').setHidden(false);
                     Ext.getCmp('containerFloatPanel_AyohaStore_CheckOut_PaymentInfo').setHidden(false);
         
                     document.getElementById('input-FloatPanel_AyohaStore_CheckOut_PaymentInfo').value = "Payment Method:" + Store.get('PaymentMethod') + "\nPayment Amount:(RM)" + Store.get('PaymentAmount') + "\nPayment Status:" + Store.get('PaymentStatus') + "\nPayment Date:" + Store.get('PaymentDate') + "\nInvoice No:" + Store.get('DisplayOrderNo')
+                   
                     Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_MembershipDiscount').setHtml('<div style="font-family:Arial, sans-serif;font-size:11px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:left;color:#6B7280;">' + Store.get('MemberDiscountAmount') + '</div>');
                     Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_MembershipDiscountLbl').setHtml('<div style="font-family:Arial, sans-serif;font-size:11px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:right;color:#6B7280;">'+Store.get('MemberDiscountPercent')+'% - Membership Discount(RM):</div>')
                    
-                    //Store.get('PaymentAmount')
-                    //Store.get('PaymentMethod')
-                    //Store.get('PaymentNoDisplay')
-                    //Store.get('PaymentStatus')
-                    //Store.get('DisplayOrderNo')
-                    
+                 
           
         
         
                 } 
                 if (OrderStatus == "Order_Sent") {
                     Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_TitleHeaderTxt_AfterOrder').setHtml('<div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-family:Century Gothic;font-size: 17px;font-weight:bold;color:green;margin:17px 0px 0px 0px">Invoice</div><br><div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-family:Century Gothic;font-size: 12px;font-weight:bold;color:blue;margin:-25px 0px 0px 0px">ORDER POST/SENT OUT</div>');
+                  //  Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_TitleHeaderTxt_AfterOrder').setHtml('<div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-family:Century Gothic;font-size: 17px;font-weight:bold;color:green;margin:17px 0px 0px 0px">Invoice</div><br><div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-family:Century Gothic;font-size: 12px;font-weight:bold;color:green;margin:-25px 0px 0px 0px">PAID</div>');
+                    Ext.getCmp('containerFloatPanel_AyohaStore_CheckOutStampCardList').setStyle('background-color: white;');
+                    Ext.getCmp('FloatPanel_AyohaStore_CheckOut_InnerID').setStyle('background-color: white;');
+                    Ext.getCmp('containerFloatPanel_AyohaStore_CheckOut_Header').setStyle('background-color: white;');
+                    Ext.getCmp('containerFloatPanel_AyohaStore_CheckOutHeader').setStyle('background-color: white;');
+
+                    Ext.getCmp('btnFloatPanel_AyohaStore_CheckOutBack').setHtml('<div><img src="resources/icons/backFullWhite.png" width="25" height="20" alt="Company Name"></div>');
+
+                    Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_EnterpriseName').setHtml('<div style="width:100%;background-color: transparent;text-align:center;border: 1px none white;font-family:Century Gothic;font-size: 16px;font-weight:bold;color:black;margin:0px 0px 0px 0px">' + globalFloatPanel_AyohaStore_CheckOut_EnterpriseName + '</div>');
+                    Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_EnterpriseFullAddress').setHtml('<div style="width:100%;background-color: transparent;text-align:center;border: 1px none white;font-family:Century Gothic;font-size: 12px;font-weight:normal;color:#6B7280;margin:0px 0px 0px 0px">'+glonbalDashboard_SearchMerchantList_FullCompanyAddress+'</div>');
+                    
+                    
+                    
                     Ext.getCmp('radioBtnFloatPanel_AyohaStore_CheckOut_OrderOption_OrderOnly').setHidden(true);
                     Ext.getCmp('radioBtnFloatPanel_AyohaStore_CheckOut_OrderOption_MakePayment').setHidden(true);
                     Ext.getCmp('radioBtnFloatPanel_AyohaStore_CheckOut_OrderOption_CancelOrder').setHidden(true);
+                    Ext.getCmp('containerFloatPanel_AyohaStore_CheckOut_Voucher_Main').setHidden(true);                   
         
                     Ext.getCmp('radioBtnFloatPanel_AyohaStore_CheckOut_OrderOption_ViewReceipt').setHidden(false);
-                    Ext.getCmp('radioBtnFloatPanel_AyohaStore_CheckOut_OrderOption_ViewReceipt').setChecked(true);
-                    Ext.getCmp('radioBtnFloatPanel_AyohaStore_CheckOut_OrderOption_Re-Order').setHidden(true);
+                   // Ext.getCmp('radioBtnFloatPanel_AyohaStore_CheckOut_OrderOption_ViewReceipt').setChecked(true);
+                    Ext.getCmp('radioBtnFloatPanel_AyohaStore_CheckOut_OrderOption_Re-Order').setHidden(false);
         
         
                     Ext.getCmp('containerFloatPanel_AyohaStore_CheckOut_ConfirmPay').setHidden(true);
-                    Ext.getCmp('containerFloatPanel_AyohaStore_CheckOut_ViewReceipt').setHidden(true);
+                    Ext.getCmp('containerFloatPanel_AyohaStore_CheckOut_ViewReceipt').setHidden(false);
                     Ext.getCmp('containerFloatPanel_AyohaStore_CheckOut_PaymentInfo').setHidden(false);
         
                     document.getElementById('input-FloatPanel_AyohaStore_CheckOut_PaymentInfo').value = "Payment Method:" + Store.get('PaymentMethod') + "\nPayment Amount:(RM)" + Store.get('PaymentAmount') + "\nPayment Status:" + Store.get('PaymentStatus') + "\nPayment Date:" + Store.get('PaymentDate') + "\nInvoice No:" + Store.get('DisplayOrderNo')
+                   
                     Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_MembershipDiscount').setHtml('<div style="font-family:Arial, sans-serif;font-size:11px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:left;color:#6B7280;">' + Store.get('MemberDiscountAmount') + '</div>');
                     Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_MembershipDiscountLbl').setHtml('<div style="font-family:Arial, sans-serif;font-size:11px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:right;color:#6B7280;">'+Store.get('MemberDiscountPercent')+'% - Membership Discount(RM):</div>')
                    
-                    //Store.get('PaymentAmount')
-                    //Store.get('PaymentMethod')
-                    //Store.get('PaymentNoDisplay')
-                    //Store.get('PaymentStatus')
-                    //Store.get('DisplayOrderNo')
-                    
           
         
         
                 } 
                 if (OrderStatus == "Order_Completed") {
                     Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_TitleHeaderTxt_AfterOrder').setHtml('<div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-family:Century Gothic;font-size: 17px;font-weight:bold;color:green;margin:17px 0px 0px 0px">Invoice</div><br><div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-family:Century Gothic;font-size: 12px;font-weight:bold;color:green;margin:-25px 0px 0px 0px">ORDER COMPLETED</div>');
+                   // Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_TitleHeaderTxt_AfterOrder').setHtml('<div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-family:Century Gothic;font-size: 17px;font-weight:bold;color:green;margin:17px 0px 0px 0px">Invoice</div><br><div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-family:Century Gothic;font-size: 12px;font-weight:bold;color:green;margin:-25px 0px 0px 0px">PAID</div>');
+                    Ext.getCmp('containerFloatPanel_AyohaStore_CheckOutStampCardList').setStyle('background-color: white;');
+                    Ext.getCmp('FloatPanel_AyohaStore_CheckOut_InnerID').setStyle('background-color: white;');
+                    Ext.getCmp('containerFloatPanel_AyohaStore_CheckOut_Header').setStyle('background-color: white;');
+                    Ext.getCmp('containerFloatPanel_AyohaStore_CheckOutHeader').setStyle('background-color: white;');
+
+                    Ext.getCmp('btnFloatPanel_AyohaStore_CheckOutBack').setHtml('<div><img src="resources/icons/backFullWhite.png" width="25" height="20" alt="Company Name"></div>');
+
+                    Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_EnterpriseName').setHtml('<div style="width:100%;background-color: transparent;text-align:center;border: 1px none white;font-family:Century Gothic;font-size: 16px;font-weight:bold;color:black;margin:0px 0px 0px 0px">' + globalFloatPanel_AyohaStore_CheckOut_EnterpriseName + '</div>');
+                    Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_EnterpriseFullAddress').setHtml('<div style="width:100%;background-color: transparent;text-align:center;border: 1px none white;font-family:Century Gothic;font-size: 12px;font-weight:normal;color:#6B7280;margin:0px 0px 0px 0px">'+glonbalDashboard_SearchMerchantList_FullCompanyAddress+'</div>');
+                    
+                    
+                    
                     Ext.getCmp('radioBtnFloatPanel_AyohaStore_CheckOut_OrderOption_OrderOnly').setHidden(true);
                     Ext.getCmp('radioBtnFloatPanel_AyohaStore_CheckOut_OrderOption_MakePayment').setHidden(true);
                     Ext.getCmp('radioBtnFloatPanel_AyohaStore_CheckOut_OrderOption_CancelOrder').setHidden(true);
+                    Ext.getCmp('containerFloatPanel_AyohaStore_CheckOut_Voucher_Main').setHidden(true);                   
         
                     Ext.getCmp('radioBtnFloatPanel_AyohaStore_CheckOut_OrderOption_ViewReceipt').setHidden(false);
-                    Ext.getCmp('radioBtnFloatPanel_AyohaStore_CheckOut_OrderOption_ViewReceipt').setChecked(true);
-                    Ext.getCmp('radioBtnFloatPanel_AyohaStore_CheckOut_OrderOption_Re-Order').setHidden(true);
+                   // Ext.getCmp('radioBtnFloatPanel_AyohaStore_CheckOut_OrderOption_ViewReceipt').setChecked(true);
+                    Ext.getCmp('radioBtnFloatPanel_AyohaStore_CheckOut_OrderOption_Re-Order').setHidden(false);
         
         
                     Ext.getCmp('containerFloatPanel_AyohaStore_CheckOut_ConfirmPay').setHidden(true);
-                    Ext.getCmp('containerFloatPanel_AyohaStore_CheckOut_ViewReceipt').setHidden(true);
+                    Ext.getCmp('containerFloatPanel_AyohaStore_CheckOut_ViewReceipt').setHidden(false);
                     Ext.getCmp('containerFloatPanel_AyohaStore_CheckOut_PaymentInfo').setHidden(false);
         
                     document.getElementById('input-FloatPanel_AyohaStore_CheckOut_PaymentInfo').value = "Payment Method:" + Store.get('PaymentMethod') + "\nPayment Amount:(RM)" + Store.get('PaymentAmount') + "\nPayment Status:" + Store.get('PaymentStatus') + "\nPayment Date:" + Store.get('PaymentDate') + "\nInvoice No:" + Store.get('DisplayOrderNo')
+                   
                     Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_MembershipDiscount').setHtml('<div style="font-family:Arial, sans-serif;font-size:11px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:left;color:#6B7280;">' + Store.get('MemberDiscountAmount') + '</div>');
                     Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_MembershipDiscountLbl').setHtml('<div style="font-family:Arial, sans-serif;font-size:11px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:right;color:#6B7280;">'+Store.get('MemberDiscountPercent')+'% - Membership Discount(RM):</div>')
                    
-                    //Store.get('PaymentAmount')
-                    //Store.get('PaymentMethod')
-                    //Store.get('PaymentNoDisplay')
-                    //Store.get('PaymentStatus')
-                    //Store.get('DisplayOrderNo')
+                  
                     
           
         
@@ -4814,20 +4844,35 @@ if(globalFloatPanel_AyohaStore_DeliveryChargeList_DeliveryName !='Dine-In'){
         
                 if (OrderStatus == "Order_Rejected") {
                     Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_TitleHeaderTxt_AfterOrder').setHtml('<div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-family:Century Gothic;font-size: 17px;font-weight:bold;color:green;margin:17px 0px 0px 0px">Invoice</div><br><div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-family:Century Gothic;font-size: 12px;font-weight:bold;color:red;margin:-25px 0px 0px 0px">ORDER REJECTED</div>');
+                   // Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_TitleHeaderTxt_AfterOrder').setHtml('<div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-family:Century Gothic;font-size: 17px;font-weight:bold;color:green;margin:17px 0px 0px 0px">Invoice</div><br><div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-family:Century Gothic;font-size: 12px;font-weight:bold;color:green;margin:-25px 0px 0px 0px">PAID</div>');
+                    Ext.getCmp('containerFloatPanel_AyohaStore_CheckOutStampCardList').setStyle('background-color: white;');
+                    Ext.getCmp('FloatPanel_AyohaStore_CheckOut_InnerID').setStyle('background-color: white;');
+                    Ext.getCmp('containerFloatPanel_AyohaStore_CheckOut_Header').setStyle('background-color: white;');
+                    Ext.getCmp('containerFloatPanel_AyohaStore_CheckOutHeader').setStyle('background-color: white;');
+
+                    Ext.getCmp('btnFloatPanel_AyohaStore_CheckOutBack').setHtml('<div><img src="resources/icons/backFullWhite.png" width="25" height="20" alt="Company Name"></div>');
+
+                    Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_EnterpriseName').setHtml('<div style="width:100%;background-color: transparent;text-align:center;border: 1px none white;font-family:Century Gothic;font-size: 16px;font-weight:bold;color:black;margin:0px 0px 0px 0px">' + globalFloatPanel_AyohaStore_CheckOut_EnterpriseName + '</div>');
+                    Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_EnterpriseFullAddress').setHtml('<div style="width:100%;background-color: transparent;text-align:center;border: 1px none white;font-family:Century Gothic;font-size: 12px;font-weight:normal;color:#6B7280;margin:0px 0px 0px 0px">'+glonbalDashboard_SearchMerchantList_FullCompanyAddress+'</div>');
+                    
+                    
+                    
                     Ext.getCmp('radioBtnFloatPanel_AyohaStore_CheckOut_OrderOption_OrderOnly').setHidden(true);
                     Ext.getCmp('radioBtnFloatPanel_AyohaStore_CheckOut_OrderOption_MakePayment').setHidden(true);
                     Ext.getCmp('radioBtnFloatPanel_AyohaStore_CheckOut_OrderOption_CancelOrder').setHidden(true);
+                    Ext.getCmp('containerFloatPanel_AyohaStore_CheckOut_Voucher_Main').setHidden(true);                   
         
                     Ext.getCmp('radioBtnFloatPanel_AyohaStore_CheckOut_OrderOption_ViewReceipt').setHidden(false);
-                    Ext.getCmp('radioBtnFloatPanel_AyohaStore_CheckOut_OrderOption_ViewReceipt').setChecked(true);
-                    Ext.getCmp('radioBtnFloatPanel_AyohaStore_CheckOut_OrderOption_Re-Order').setHidden(true);
+                   // Ext.getCmp('radioBtnFloatPanel_AyohaStore_CheckOut_OrderOption_ViewReceipt').setChecked(true);
+                    Ext.getCmp('radioBtnFloatPanel_AyohaStore_CheckOut_OrderOption_Re-Order').setHidden(false);
         
         
                     Ext.getCmp('containerFloatPanel_AyohaStore_CheckOut_ConfirmPay').setHidden(true);
-                    Ext.getCmp('containerFloatPanel_AyohaStore_CheckOut_ViewReceipt').setHidden(true);
+                    Ext.getCmp('containerFloatPanel_AyohaStore_CheckOut_ViewReceipt').setHidden(false);
                     Ext.getCmp('containerFloatPanel_AyohaStore_CheckOut_PaymentInfo').setHidden(false);
         
                     document.getElementById('input-FloatPanel_AyohaStore_CheckOut_PaymentInfo').value = "Payment Method:" + Store.get('PaymentMethod') + "\nPayment Amount:(RM)" + Store.get('PaymentAmount') + "\nPayment Status:" + Store.get('PaymentStatus') + "\nPayment Date:" + Store.get('PaymentDate') + "\nInvoice No:" + Store.get('DisplayOrderNo')
+                   
                     Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_MembershipDiscount').setHtml('<div style="font-family:Arial, sans-serif;font-size:11px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:left;color:#6B7280;">' + Store.get('MemberDiscountAmount') + '</div>');
                     Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_MembershipDiscountLbl').setHtml('<div style="font-family:Arial, sans-serif;font-size:11px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:right;color:#6B7280;">'+Store.get('MemberDiscountPercent')+'% - Membership Discount(RM):</div>')
                    
@@ -4843,28 +4888,38 @@ if(globalFloatPanel_AyohaStore_DeliveryChargeList_DeliveryName !='Dine-In'){
                 } 
                 if (OrderStatus == "Order_Refunded") {
                     Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_TitleHeaderTxt_AfterOrder').setHtml('<div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-family:Century Gothic;font-size: 17px;font-weight:bold;color:green;margin:17px 0px 0px 0px">Invoice</div><br><div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-family:Century Gothic;font-size: 12px;font-weight:bold;color:black;margin:-25px 0px 0px 0px">ORDER REFUNDED</div>');
+                    //Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_TitleHeaderTxt_AfterOrder').setHtml('<div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-family:Century Gothic;font-size: 17px;font-weight:bold;color:green;margin:17px 0px 0px 0px">Invoice</div><br><div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-family:Century Gothic;font-size: 12px;font-weight:bold;color:green;margin:-25px 0px 0px 0px">PAID</div>');
+                    Ext.getCmp('containerFloatPanel_AyohaStore_CheckOutStampCardList').setStyle('background-color: white;');
+                    Ext.getCmp('FloatPanel_AyohaStore_CheckOut_InnerID').setStyle('background-color: white;');
+                    Ext.getCmp('containerFloatPanel_AyohaStore_CheckOut_Header').setStyle('background-color: white;');
+                    Ext.getCmp('containerFloatPanel_AyohaStore_CheckOutHeader').setStyle('background-color: white;');
+
+                    Ext.getCmp('btnFloatPanel_AyohaStore_CheckOutBack').setHtml('<div><img src="resources/icons/backFullWhite.png" width="25" height="20" alt="Company Name"></div>');
+
+                    Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_EnterpriseName').setHtml('<div style="width:100%;background-color: transparent;text-align:center;border: 1px none white;font-family:Century Gothic;font-size: 16px;font-weight:bold;color:black;margin:0px 0px 0px 0px">' + globalFloatPanel_AyohaStore_CheckOut_EnterpriseName + '</div>');
+                    Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_EnterpriseFullAddress').setHtml('<div style="width:100%;background-color: transparent;text-align:center;border: 1px none white;font-family:Century Gothic;font-size: 12px;font-weight:normal;color:#6B7280;margin:0px 0px 0px 0px">'+glonbalDashboard_SearchMerchantList_FullCompanyAddress+'</div>');
+                    
+                    
+                    
                     Ext.getCmp('radioBtnFloatPanel_AyohaStore_CheckOut_OrderOption_OrderOnly').setHidden(true);
                     Ext.getCmp('radioBtnFloatPanel_AyohaStore_CheckOut_OrderOption_MakePayment').setHidden(true);
                     Ext.getCmp('radioBtnFloatPanel_AyohaStore_CheckOut_OrderOption_CancelOrder').setHidden(true);
+                    Ext.getCmp('containerFloatPanel_AyohaStore_CheckOut_Voucher_Main').setHidden(true);                   
         
                     Ext.getCmp('radioBtnFloatPanel_AyohaStore_CheckOut_OrderOption_ViewReceipt').setHidden(false);
-                    Ext.getCmp('radioBtnFloatPanel_AyohaStore_CheckOut_OrderOption_ViewReceipt').setChecked(true);
-                    Ext.getCmp('radioBtnFloatPanel_AyohaStore_CheckOut_OrderOption_Re-Order').setHidden(true);
+                   // Ext.getCmp('radioBtnFloatPanel_AyohaStore_CheckOut_OrderOption_ViewReceipt').setChecked(true);
+                    Ext.getCmp('radioBtnFloatPanel_AyohaStore_CheckOut_OrderOption_Re-Order').setHidden(false);
         
         
                     Ext.getCmp('containerFloatPanel_AyohaStore_CheckOut_ConfirmPay').setHidden(true);
-                    Ext.getCmp('containerFloatPanel_AyohaStore_CheckOut_ViewReceipt').setHidden(true);
+                    Ext.getCmp('containerFloatPanel_AyohaStore_CheckOut_ViewReceipt').setHidden(false);
                     Ext.getCmp('containerFloatPanel_AyohaStore_CheckOut_PaymentInfo').setHidden(false);
         
                     document.getElementById('input-FloatPanel_AyohaStore_CheckOut_PaymentInfo').value = "Payment Method:" + Store.get('PaymentMethod') + "\nPayment Amount:(RM)" + Store.get('PaymentAmount') + "\nPayment Status:" + Store.get('PaymentStatus') + "\nPayment Date:" + Store.get('PaymentDate') + "\nInvoice No:" + Store.get('DisplayOrderNo')
+                   
                     Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_MembershipDiscount').setHtml('<div style="font-family:Arial, sans-serif;font-size:11px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:left;color:#6B7280;">' + Store.get('MemberDiscountAmount') + '</div>');
                     Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_MembershipDiscountLbl').setHtml('<div style="font-family:Arial, sans-serif;font-size:11px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:right;color:#6B7280;">'+Store.get('MemberDiscountPercent')+'% - Membership Discount(RM):</div>')
                    
-                    //Store.get('PaymentAmount')
-                    //Store.get('PaymentMethod')
-                    //Store.get('PaymentNoDisplay')
-                    //Store.get('PaymentStatus')
-                    //Store.get('DisplayOrderNo')
                     
           
         

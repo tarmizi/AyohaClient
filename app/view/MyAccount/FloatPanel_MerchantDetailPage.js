@@ -999,7 +999,8 @@ function FloatPanel_MerchantDetailPage() {
                                                        },
                                                        items: [
                                                            {
-                                                               width: '33%',
+                                                              // width: '33%',
+                                                               width: '31%',
                                                                height: 35,
                                                                margin: '-3 0 0 0',
                                                                id: 'htmlFloatPanel_MerchantDetailPage_EnterpriseLoveUsDetails',                                                              
@@ -1008,7 +1009,8 @@ function FloatPanel_MerchantDetailPage() {
                                                            {
 
                                                                xtype: 'container',
-                                                               width: '30%',
+                                                             //  width: '30%',
+                                                               width: '23%',
                                                                //margin:'0 0 0 0',
                                                                height: 35,
                                                                style: 'background-color: transparent;',
@@ -1123,13 +1125,33 @@ function FloatPanel_MerchantDetailPage() {
                                                                ]
                                                            },
 
-
+{
+    xtype: 'container',
+    width: '33%',
+    height: 35,
+    style: 'background-color: transparent;',
+    layout: {
+        type: 'vbox',
+        pack: 'top',
+        align: 'right'
+   },
+   items:[
+    {
+        margin: '2 0 0 0',
+         // hidden: true,
+         width: 30,
+         height: 30,
+         html: '<img onClick="FloatPanel_AyohaStore_OrderHistoryShow()" src="resources/icons/purchase01.png" alt="Image" style="width:30px;height:30px;">',
+         // ui:'plain'
+     },
+   ]
+},
 
 
                                                            {
                                                                xtype: 'container',
-                                                               width: '37%',
-                                                              // hidden:true,
+                                                              // width: '37%',
+                                                               width: '13%',
                                                                height: 35,
                                                                style: 'background-color: transparent;',
                                                                id: 'containerFloatPanel_MerchantDetailPage_AyohaStoreCart',

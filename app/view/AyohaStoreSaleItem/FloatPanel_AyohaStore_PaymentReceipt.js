@@ -217,26 +217,25 @@ function FloatPanel_AyohaStore_PaymentReceipt() {
 function FloatPanel_AyohaStore_PaymentReceipt_PrintHtml() {
 
 
-    console.log(globalFloatPanel_AyohaStore_CheckOut_OrderNo);
-    console.log(localStorage.getItem("ItemCartCode"));
-    console.log(localStorage.getItem("PaymentNo"));
-    console.log(localStorage.getItem("MembershipCardCode"));
+  
 
     _DataStore_AyohaStorePaymentGenerateReceiptStore.getProxy().setExtraParam('OrderNo', globalFloatPanel_AyohaStore_CheckOut_OrderNo);
-    _DataStore_AyohaStorePaymentGenerateReceiptStore.getProxy().setExtraParam('ItemCartCode', localStorage.getItem("ItemCartCode"));
+    _DataStore_AyohaStorePaymentGenerateReceiptStore.getProxy().setExtraParam('ItemCartCode', globalFloatPanel_AyohaStore_Cart_ItemCartCode);
     _DataStore_AyohaStorePaymentGenerateReceiptStore.getProxy().setExtraParam('PaymentNo', localStorage.getItem("PaymentNo"));
     _DataStore_AyohaStorePaymentGenerateReceiptStore.getProxy().setExtraParam('SubscriberAccNo', GetCurrAyohaUserAccountNo());
-    _DataStore_AyohaStorePaymentGenerateReceiptStore.getProxy().setExtraParam('MembershipCardCode', localStorage.getItem("MembershipCardCode"));
+    _DataStore_AyohaStorePaymentGenerateReceiptStore.getProxy().setExtraParam('MembershipCardCode', globalFloatPanelAyohaStore_AyohaUser_MembershipCardCode);
     _DataStore_AyohaStorePaymentGenerateReceiptStore.getProxy().setUrl(GetAPIurl() + '/AyohaStorePayment/AyohaStorePaymentGenerateReceipt');
-    _DataStore_AyohaStorePaymentGenerateReceiptStore.load();
+   // _DataStore_AyohaStorePaymentGenerateReceiptStore.load();
 
 
-    var tbltdDesc = "";
-    var extraRows = "";
 
-
-    var task = Ext.create('Ext.util.DelayedTask', function () {
-        var count = parseInt(_DataStore_AyohaStorePaymentGenerateReceiptStore.getCount());
+    _DataStore_AyohaStorePaymentGenerateReceiptStore.load({
+        callback: function (records, operation, success) {
+            if (success && records.length > 0) {
+                var tbltdDesc = "";
+                var extraRows = "";    
+              //  var Store = records[0]; // Access only the first record
+                var count = parseInt(_DataStore_AyohaStorePaymentGenerateReceiptStore.getCount());
 
         var Stores = _DataStore_AyohaStorePaymentGenerateReceiptStore.getAt(0);
         for (i = 0; i < count; i++) {
@@ -539,8 +538,31 @@ function FloatPanel_AyohaStore_PaymentReceipt_PrintHtml() {
         setTimeout(function () { Ext.getCmp('htmlPrintPaymentReceipt').setHtml(mywindow); }, 500);
         
         setTimeout(function () { printJS('myPrint', 'html'); FloatPanel_AyohaStore_PaymentReceiptHide(); }, 500);
+               
+
+
+
+
+                LoadingPanelHide();
+            } else {
+                console.error('Failed to load store data or no record found.');
+                LoadingPanelHide();
+            }
+        }
     });
-    task.delay(1000);
+
+
+
+
+
+
+ 
+
+
+    // var task = Ext.create('Ext.util.DelayedTask', function () {
+      
+    // });
+    // task.delay(1000);
 
 
 
