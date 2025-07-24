@@ -664,7 +664,7 @@ Ext.define('ianMizi.view.MyAccount.Dashboard', {
                         zIndex: 100,
                         height: 40,
                         width: 40,
-                        hidden:true,
+                      //  hidden:true,
                        // margin: '10 0 0 0',
                         margin: '0 0 0 0',
                         // id: 'containerFloatPanel_AyohaStore_MyCartCountbadge',
@@ -691,7 +691,7 @@ Ext.define('ianMizi.view.MyAccount.Dashboard', {
                         // hidden: true,
                         width: 18,
                         height: 18,
-                        html: '<img src="resources/icons/myCart02.png" alt="Image" style="width:20px;height:20px;">',
+                        html: '<img onclick="FloatPanel_MainDashboard_PendingOrderShow()" src="resources/icons/myCart02.png" alt="Image" style="width:20px;height:20px;">',
                         // ui:'plain'
                     },
                     
@@ -5776,6 +5776,7 @@ html:'<div style="display: flex; flex-direction: column; align-items: center; ju
 
                           xtype: 'container',
                           width: '100%',
+                         // zIndex:-5,
                           // width: 40,
                           docked: 'bottom',
                           height: 55,
@@ -8759,6 +8760,7 @@ var globalDashboard_AyohaPoint;
 var globalDashboard_TotalItemQuantityCart;
 function DashboardAyohaUserMainStore() {
   //  alert("DashboardAyohaUserMainStore");
+  FloatPanel_MainDashboard_PendingOrderShow();
     globalLatestPoint = "0";
     globalLatestStamp = "0/0";
 
