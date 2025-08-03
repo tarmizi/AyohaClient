@@ -404,6 +404,52 @@ Ext.define('ianMizi.view.AyohaStoreSaleItem.FloatPanel_AyohaStore_CheckOut', {
                                          },
                                                      ]
                                                  },
+
+
+
+                                                 {
+                                                    xtype: 'container',
+                                                    id: 'containerFloatPanel_AyohaStore_CheckOut_OrderStatus',
+                                                  name: 'namecontainerFloatPanel_AyohaStore_CheckOut_OrderStatus',
+                                                    width: '95%',
+                                                    hidden:true,
+                                                    height: 40,
+                                                    margin: '-20 0 0 -26',
+   
+                                                    style: 'border-right:1px solid white;border-left:1px solid white;border-bottom:1px solid white;border-top:1px solid white ;background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);border-radius: 5px 5px 5px 5px;',
+   
+                                                    //style: 'border-right:1px solid white;border-left:1px solid white;border-bottom:1px solid white;border-top:1px solid white ;background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);border-radius: 20px 20px 20px 20px;',
+                                                    layout: {
+                                                        type: 'hbox',
+                                                        pack: 'center',
+                                                        align: 'center'
+   
+                                                    },
+                                                    items: [
+                                                        {
+                                                            margin: '0 0 0 0',
+   
+                                                            width: 24,
+                                                            height: 24,
+                                                            //html: '<img src="resources/icons/whatsappWhite.png" alt="Image" style="width:24px;height:24px;">',
+                                                            html: '<img src="resources/icons/payNowIcon.png" alt="Image" style="width:24px;height:24px;">',
+   
+   
+                                                            // ui:'plain'
+                                                        },
+   
+                                        {
+                                            margin: '12 0 0 5',
+                                            id: 'htmlFloatPanel_AyohaStore_CheckOut_OrderStatusText_OrderStatus',
+                                            html: '<div style="background: transparent;height:30px;font-size: 12px;font-weight:bold;color:white;text-align:center;width:100%;" >View Order Status Log </div>'
+                                        },
+                                                    ]
+                                                },
+
+
+
+
+
                                                  {
                                                      xtype: 'container',
                                                      id: 'containerFloatPanel_AyohaStore_CheckOut_OrderOnly',
@@ -2337,7 +2383,7 @@ itemTpl:'<div style="display: flex; align-items: center; margin: 0px -16px;">'+
                                 },
                                 {
                                     xtype: 'button',
-                                   // hidden:true,
+                                   hidden:true,
                                     ui: 'plain',
                                     width: 30,
                                     height: 30,
@@ -2347,6 +2393,7 @@ itemTpl:'<div style="display: flex; align-items: center; margin: 0px -16px;">'+
                                     handler: function () {
                                        // FloatPanel_AyohaStore_PaymentReceiptShow();
                                        // savepdf();
+                                     
 
                                     }
                                 },
@@ -2483,6 +2530,7 @@ itemTpl:'<div style="display: flex; align-items: center; margin: 0px -16px;">'+
                                             Ext.getCmp('containerFloatPanel_AyohaStore_CheckOut_ConfirmPay').setHidden(false);
                                             Ext.getCmp('containerFloatPanel_AyohaStore_CheckOut_CancelOrder').setHidden(true);
                                             Ext.getCmp('containerFloatPanel_AyohaStore_CheckOut_PaymentInfo').setHidden(true);
+                                            Ext.getCmp('containerFloatPanel_AyohaStore_CheckOut_OrderStatus').setHidden(true);
                                             // globalFloatPanel_AyohaStore_CheckOut_TotalStampEarn = TotalStampEarn;
                                             // globalFloatPanelAyohaStore_AyohaUser_MembershipCardCode = MembershipCardCode;
                                             // globalFloatPanel_AyohaStore_CheckOut_ItemCartCode = ItemCartCode;
@@ -2528,46 +2576,49 @@ itemTpl:'<div style="display: flex; align-items: center; margin: 0px -16px;">'+
                                              Ext.getCmp('containerFloatPanel_AyohaStore_CheckOut_ConfirmPay').setHidden(true);
                                              Ext.getCmp('containerFloatPanel_AyohaStore_CheckOut_CancelOrder').setHidden(true);
                                              Ext.getCmp('containerFloatPanel_AyohaStore_CheckOut_ViewReceipt').setHidden(false);
+                                             Ext.getCmp('containerFloatPanel_AyohaStore_CheckOut_OrderStatus').setHidden(true);
                                              //  Ext.getCmp('containerFloatPanel_AyohaStore_CheckOut_OrderOnly').setHidden(true);
-                                             if (FloatPanel_AyohaStore_CheckOut_AyohaStoreOrderLoadByItemCartCodeAndMembershipCardCodeStore_WithOrderNo_isUsed == "Y") {
 
 
-                                                // alert(globalFloatPanel_AyohaStore_CheckOut_GrandTotal)
-                                                 Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_GrandTotal').setHtml('<div style="font-family:Arial, sans-serif;font-size:22px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:left;color:black;">' + globalFloatPanel_AyohaStore_CheckOut_GrandTotal + '</div>')
-                                                 Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_VoucherDiscount').setHtml('<div style="font-family:Arial, sans-serif;font-size:11px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:left;color:black;">' + localStorage.getItem("VoucherDiscount") + '</div>')
+                                            //  if (FloatPanel_AyohaStore_CheckOut_AyohaStoreOrderLoadByItemCartCodeAndMembershipCardCodeStore_WithOrderNo_isUsed == "Y") {
 
-                                                 if (globalFloatPanel_AyohaStore_CheckOut_OrderStatus == "NewOrder") {
-                                                     Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_TitleHeaderTxt_AfterOrder').setHtml('<div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-family:Century Gothic;font-size: 17px;font-weight:bold;color:red;margin:17px 0px 0px 0px">Invoice</div><br><div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-family:Century Gothic;font-size: 12px;font-weight:bold;color:red;margin:-25px 0px 0px 0px">UNPAID</div>');
-                                                     //  Ext.getCmp('radioBtnFloatPanel_AyohaStore_CheckOut_OrderOption_OrderOnly').setLabel('Cancel Order  ');
 
-                                                 } if (globalFloatPanel_AyohaStore_CheckOut_OrderStatus == "OrderPaid") {
-                                                     Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_TitleHeaderTxt_AfterOrder').setHtml('<div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-family:Century Gothic;font-size: 17px;font-weight:bold;color:green;margin:17px 0px 0px 0px">Invoice</div><br><div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-family:Century Gothic;font-size: 12px;font-weight:bold;color:green;margin:-25px 0px 0px 0px">PAID</div>');
+                                            //     // alert(globalFloatPanel_AyohaStore_CheckOut_GrandTotal)
+                                            //      Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_GrandTotal').setHtml('<div style="font-family:Arial, sans-serif;font-size:22px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:left;color:black;">' + globalFloatPanel_AyohaStore_CheckOut_GrandTotal + '</div>')
+                                            //      Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_VoucherDiscount').setHtml('<div style="font-family:Arial, sans-serif;font-size:11px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:left;color:black;">' + localStorage.getItem("VoucherDiscount") + '</div>')
+                                            //      var ItemCartCode = globalFloatPanel_AyohaStore_CheckOut_ItemCartCode;
+                                            //      var MembershipCardCode = globalFloatPanel_AyohaStore_CheckOut_MembershipCardCode;
+                                            //      var OrderNo = globalFloatPanel_AyohaStore_CheckOut_OrderNo;
+                                            //      var EnterpriseName = globalFloatPanel_AyohaStore_CheckOut_EnterpriseName;
+                                            //      var EnterpriseLogo = globalFloatPanel_AyohaStore_CheckOut_EnterpriseLogo;
+
+                                            //      FloatPanel_AyohaStore_CheckOut_AyohaStoreOrderLoadByItemCartCodeAndMembershipCardCodeStore_WithOrderNo_OrderPlaced(ItemCartCode, MembershipCardCode, OrderNo, EnterpriseName, EnterpriseLogo);
+
+                                            //     //  if (globalFloatPanel_AyohaStore_CheckOut_OrderStatus == "NewOrder") {
+                                            //     //      Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_TitleHeaderTxt_AfterOrder').setHtml('<div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-family:Century Gothic;font-size: 17px;font-weight:bold;color:red;margin:17px 0px 0px 0px">Invoice</div><br><div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-family:Century Gothic;font-size: 12px;font-weight:bold;color:red;margin:-25px 0px 0px 0px">UNPAID</div>');
+                                            //     //      //  Ext.getCmp('radioBtnFloatPanel_AyohaStore_CheckOut_OrderOption_OrderOnly').setLabel('Cancel Order  ');
+
+                                            //     //  } if (globalFloatPanel_AyohaStore_CheckOut_OrderStatus == "OrderPaid") {
+                                            //     //      Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_TitleHeaderTxt_AfterOrder').setHtml('<div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-family:Century Gothic;font-size: 17px;font-weight:bold;color:green;margin:17px 0px 0px 0px">Invoice</div><br><div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-family:Century Gothic;font-size: 12px;font-weight:bold;color:green;margin:-25px 0px 0px 0px">PAID</div>');
                                                     
-                                                     //Store.get('PaymentAmount')
-                                                     //Store.get('PaymentMethod')
-                                                     //Store.get('PaymentNoDisplay')
-                                                     //Store.get('PaymentStatus')
-                                                     //Store.get('DisplayOrderNo')
+                                            //     //      //Store.get('PaymentAmount')
+                                            //     //      //Store.get('PaymentMethod')
+                                            //     //      //Store.get('PaymentNoDisplay')
+                                            //     //      //Store.get('PaymentStatus')
+                                            //     //      //Store.get('DisplayOrderNo')
 
 
 
 
-                                                 } if (globalFloatPanel_AyohaStore_CheckOut_OrderStatus == "Order_Cancel") {
-                                                     Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_TitleHeaderTxt_AfterOrder').setHtml('<div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-family:Century Gothic;font-size: 17px;font-weight:bold;color:red;margin:17px 0px 0px 0px">Invoice </div><br><div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-family:Century Gothic;font-size: 12px;font-weight:bold;color:red;margin:-25px 0px 0px 0px">CANCEL</div>');
+                                            //     //  } if (globalFloatPanel_AyohaStore_CheckOut_OrderStatus == "Order_Cancel") {
+                                            //     //      Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_TitleHeaderTxt_AfterOrder').setHtml('<div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-family:Century Gothic;font-size: 17px;font-weight:bold;color:red;margin:17px 0px 0px 0px">Invoice </div><br><div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-family:Century Gothic;font-size: 12px;font-weight:bold;color:red;margin:-25px 0px 0px 0px">CANCEL</div>');
                                                     
-                                                 }
+                                            //     //  }
 
 
-                                                 var ItemCartCode = globalFloatPanel_AyohaStore_CheckOut_ItemCartCode;
-                                                 var MembershipCardCode = globalFloatPanel_AyohaStore_CheckOut_MembershipCardCode;
-                                                 var OrderNo = globalFloatPanel_AyohaStore_CheckOut_OrderNo;
-                                                 var EnterpriseName = globalFloatPanel_AyohaStore_CheckOut_EnterpriseName;
-                                                 var EnterpriseLogo = globalFloatPanel_AyohaStore_CheckOut_EnterpriseLogo;
-
-                                                 FloatPanel_AyohaStore_CheckOut_AyohaStoreOrderLoadByItemCartCodeAndMembershipCardCodeStore_WithOrderNo_OrderPlaced(ItemCartCode, MembershipCardCode, OrderNo, EnterpriseName, EnterpriseLogo);
-
+                                               
                                                 
-                                                }
+                                            //     }
 
 
 
@@ -2595,6 +2646,7 @@ itemTpl:'<div style="display: flex; align-items: center; margin: 0px -16px;">'+
                                                       Ext.getCmp('containerFloatPanel_AyohaStore_CheckOut_ConfirmPay').setHidden(true);
                                                       Ext.getCmp('containerFloatPanel_AyohaStore_CheckOut_OrderOnly').setHidden(false);
                                                       Ext.getCmp('containerFloatPanel_AyohaStore_CheckOut_CancelOrder').setHidden(true);
+                                                      Ext.getCmp('containerFloatPanel_AyohaStore_CheckOut_OrderStatus').setHidden(true);
                                                     
 
                                                   }
@@ -2656,7 +2708,7 @@ itemTpl:'<div style="display: flex; align-items: center; margin: 0px -16px;">'+
                                                           Ext.getCmp('containerFloatPanel_AyohaStore_CheckOut_DeleteOrder').setHidden(true);
                                                           Ext.getCmp('containerFloatPanel_AyohaStore_CheckOut_PaymentInfo').setHidden(true);
                                                           Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_TitleHeaderTxt_AfterOrder').setHtml('<div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-family:Century Gothic;font-size: 17px;font-weight:bold;color:red;margin:17px 0px 0px 0px">Invoice</div><br><div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-family:Century Gothic;font-size: 12px;font-weight:bold;color:red;margin:-25px 0px 0px 0px">UNPAID</div>');
-                                                          
+                                                          Ext.getCmp('containerFloatPanel_AyohaStore_CheckOut_OrderStatus').setHidden(true);
                                                           
                                                           FloatPanel_AyohaStore_CheckOut_AyohaStoreCartReOrder();
                                                         
@@ -2678,6 +2730,36 @@ itemTpl:'<div style="display: flex; align-items: center; margin: 0px -16px;">'+
                                                   }
                                               }
                                           },
+
+                                          {
+                                            xtype: 'radiofield',
+                                            value: 'OrderStatus',
+                                            hidden:false,
+                                            name: 'color',
+                                            id: 'radioBtnFloatPanel_AyohaStore_CheckOut_OrderOption_OrderStatus',
+                                            label: 'Order Status',
+                                            checked: false,
+                                            labelWidth: '80%',
+                                            labelAlign: 'right',
+                                            listeners: {
+                                                check: function (radioFld, event, obj) {
+                                                    if (radioFld.isChecked()) {
+                                                        globalFloatPanel_AyohaStore_CheckOut_OrderOption = 'OrderStatus';
+                                                        Ext.getCmp('containerFloatPanel_AyohaStore_CheckOut_PaymentMethod_CarouselMasterOutter').setHidden(true);
+                                                        Ext.getCmp('containerFloatPanel_AyohaStore_CheckOut_SelectPaymentMethod').setHidden(true);
+                                                        Ext.getCmp('containerFloatPanel_AyohaStore_CheckOut_ConfirmPay').setHidden(true);
+                                                        Ext.getCmp('containerFloatPanel_AyohaStore_CheckOut_OrderOnly').setHidden(true);
+                                                        Ext.getCmp('containerFloatPanel_AyohaStore_CheckOut_CancelOrder').setHidden(true);
+                                                        Ext.getCmp('containerFloatPanel_AyohaStore_CheckOut_OrderStatus').setHidden(false);
+                                                        Ext.getCmp('containerFloatPanel_AyohaStore_CheckOut_ViewReceipt').setHidden(true);
+                                                        
+                                                        
+
+
+                                                    }
+                                                }
+                                            }
+                                        },
                                            {
                                                xtype: 'radiofield',
                                                value: 'DeleteOrder',
@@ -3315,7 +3397,7 @@ itemTpl:'<div style="display: flex; align-items: center; margin: 0px -16px;">'+
                 Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_Delivery').setHtml('<div style="font-family:Arial, sans-serif;font-size:11px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:left;color:#6B7280;">' + resultDelCharge.toFixed(2) + '</div>');
                 Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_GrandTotal').setHtml('<div style="font-family:Arial, sans-serif;font-size:22px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:left;color:black;">' + globalFloatPanel_AyohaStore_Cart_GrandTotal.toFixed(2) + '</div>');
                 Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_SubTotal').setHtml('<div style="font-family:Arial, sans-serif;font-size:11px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:left;color:#6B7280;">' + result.toFixed(2) + '</div>');
-              
+               
                 Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_MerchantPointEarn').setHtml('<div style="font-family:Arial, sans-serif;font-size:22px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:left;color:#6B7280;">' + globalFloatPanel_AyohaStore_Cart_TotalMerchantPoint + '</div>');
                 Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_AyohaPointEarn').setHtml('<div style="font-family:Arial, sans-serif;font-size:22px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:left;color:#6B7280;" onclick="FloatPanel_AyohaReward_PointTransactionsShow();">' + globalFloatPanel_AyohaStore_Cart_TotalAyohaPoint + '</div>');            
                 Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_StampedCollected').setHtml('<div style="font-family:Arial, sans-serif;font-size:22px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:left;color:#6B7280;">' + globalFloatPanel_AyohaStore_Cart_TotalMerchantSumStamp + '</div>');
@@ -3378,7 +3460,7 @@ itemTpl:'<div style="display: flex; align-items: center; margin: 0px -16px;">'+
                 Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_AyohaPointEarn').setHtml('<div style="font-family:Arial, sans-serif;font-size:22px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:left;color:#6B7280;" onclick="FloatPanel_AyohaReward_PointTransactionsShow();">' + globalFloatPanel_AyohaStore_Cart_TotalAyohaPoint + '</div>');            
                 Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_StampedCollected').setHtml('<div style="font-family:Arial, sans-serif;font-size:22px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:left;color:#6B7280;">' + globalFloatPanel_AyohaStore_Cart_TotalMerchantSumStamp + '</div>');
                 Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_TotalQuantity').setHtml('<div style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:left;align-items: center;color:#6B7280;background-color:transparent;height:15px; padding: 0px 0px;border-radius:5px 5px 0px 0px"> <span style="margin-left: 0px;">Total Items:' + globalFloatPanel_AyohaStore_Cart_TotalItemQuantity + '</span></div>');
-              
+           
                 //alert(isFloatPanel_AyohaStore_CheckOutOpen_ReOrder)
 
      if(isFloatPanel_AyohaStore_CheckOutOpen_ReOrder=='N'){
@@ -3406,7 +3488,8 @@ itemTpl:'<div style="display: flex; align-items: center; margin: 0px -16px;">'+
         Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_EnterpriseLogo').setHtml('<div style="width:100%;background-color: transparent;text-align:center;border: 1px none white;font-family:Century Gothic;font-size: 11px;font-weight:normal;color:white;margin:0px 0px 0px 0px"><img src="' + FloatPanel_AyohaStore_getEnterpriseLogo() + '" style="width:72px;height:72px;border-radius:50%"/></div>');
         Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_EnterpriseFullAddress').setHtml('<div style="width:100%;background-color: transparent;text-align:center;border: 1px none white;font-family:Century Gothic;font-size: 12px;font-weight:normal;color:white;margin:0px 0px 0px 0px">'+glonbalDashboard_SearchMerchantList_FullCompanyAddress+'</div>');
         Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_AddMoreItem').setHidden(false);
-
+        Ext.getCmp('containerFloatPanel_AyohaStore_CheckOut_OrderStatus').setHidden(true);
+        Ext.getCmp('radioBtnFloatPanel_AyohaStore_CheckOut_OrderOption_OrderStatus').setHidden(true);
 
         var TotalSumPrice = parseFloat(globalFloatPanel_AyohaStore_Cart_TotalSumPrice);
         var DelCharge = parseFloat(globalFloatPanel_AyohaStore_DeliveryChargeList_DeliveryCharge);
@@ -3462,7 +3545,7 @@ itemTpl:'<div style="display: flex; align-items: center; margin: 0px -16px;">'+
             //console.log(DelCharge);
             var tempGrandTotal = parseFloat(TotalSumPrice.toFixed(2)) + DelCharge;
            // var xxx = (tempGrandTotal - parseFloat(globalFloatPanel_AyohaRewardVoucherList_AyohaStore_Cart_TotalAmountVoucher));
-            globalFloatPanel_AyohaStore_Cart_GrandTotal = (tempGrandTotal - parseFloat(globalFloatPanel_AyohaRewardVoucherList_AyohaStore_Cart_TotalAmountVoucher));
+            globalFloatPanel_AyohaStore_Cart_GrandTotal =parseFloat (tempGrandTotal - parseFloat(globalFloatPanel_AyohaRewardVoucherList_AyohaStore_Cart_TotalAmountVoucher));
             
            
             Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_GrandTotal').setHtml('<div style="font-family:Arial, sans-serif;font-size:22px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:left;color:black;">' + globalFloatPanel_AyohaStore_Cart_GrandTotal.toFixed(2) + '</div>');
@@ -3521,8 +3604,21 @@ itemTpl:'<div style="display: flex; align-items: center; margin: 0px -16px;">'+
     
           }
         );
-    
+     //alert("mangkuk:"+FloatPanel_AyohaStore_getEnterpriseName())
         
+        var containerViewnnamecontainerFloatPanel_AyohaStore_CheckOut_OrderStatus = Ext.ComponentQuery.query('container[name=namecontainerFloatPanel_AyohaStore_CheckOut_OrderStatus]')[0];
+        var containerViewElnamecontainerFloatPanel_AyohaStore_CheckOut_OrderStatus = containerViewnnamecontainerFloatPanel_AyohaStore_CheckOut_OrderStatus.element;
+        containerViewElnamecontainerFloatPanel_AyohaStore_CheckOut_OrderStatus.on('tap',
+          function (event, node, options, eOpts) {
+    
+            FloatPanel_AyohaStore_OrderHistory_SingleShow();
+         
+             
+    
+    
+          }
+        );
+    
     
         if (globalFloatPanel_AyohaStore_Cart_LoyaltyRewardType == "Stamp Reward Loyalty Card") {
             globalFloatPanel_AyohaStore_Cart_TotalMerchantPoint = 0.00;
@@ -3554,7 +3650,7 @@ itemTpl:'<div style="display: flex; align-items: center; margin: 0px -16px;">'+
         Ext.getCmp('FloatPanel_AyohaStore_CheckOut_PurchasedItem_FromCart').setHidden(false);
         Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_TitleHeaderTxt').setHidden(false);
         FloatPanel_AyohaStore_CheckOut_AyohaStoreOrderLoadByItemCartCodeAndMembershipCardCodeStore_WithOrderNo_isUsed = "N";
-       // alert(FloatPanel_AyohaStore_getEnterpriseName())
+       //alert(FloatPanel_AyohaStore_getEnterpriseName())
         globalFloatPanel_AyohaStore_DeliveryChargeList_DeliveryCharge = 0.00;
         globalFloatPanel_AyohaStore_DeliveryChargeList_ChargeTypeCode = "";
         AddToCart_MINUS=0;
@@ -3563,6 +3659,8 @@ itemTpl:'<div style="display: flex; align-items: center; margin: 0px -16px;">'+
         Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_EnterpriseLogo').setHtml('<div style="width:100%;background-color: transparent;text-align:center;border: 1px none white;font-family:Century Gothic;font-size: 11px;font-weight:normal;color:white;margin:0px 0px 0px 0px"><img src="' + globalFloatPanel_AyohaStore_CheckOut_EnterpriseLogo + '" style="width:72px;height:72px;border-radius:50%"/></div>');
         Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_EnterpriseFullAddress').setHtml('<div style="width:100%;background-color: transparent;text-align:center;border: 1px none white;font-family:Century Gothic;font-size: 12px;font-weight:normal;color:white;margin:0px 0px 0px 0px">'+glonbalDashboard_SearchMerchantList_FullCompanyAddress+'</div>');
         Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_AddMoreItem').setHidden(false);
+        Ext.getCmp('containerFloatPanel_AyohaStore_CheckOut_OrderStatus').setHidden(true);
+        Ext.getCmp('radioBtnFloatPanel_AyohaStore_CheckOut_OrderOption_OrderStatus').setHidden(true);
         
 
         var TotalSumPrice = parseFloat(globalFloatPanel_AyohaStore_Cart_TotalSumPrice);
@@ -3619,7 +3717,7 @@ itemTpl:'<div style="display: flex; align-items: center; margin: 0px -16px;">'+
             //console.log(DelCharge);
             var tempGrandTotal = parseFloat(TotalSumPrice.toFixed(2)) + DelCharge;
            // var xxx = (tempGrandTotal - parseFloat(globalFloatPanel_AyohaRewardVoucherList_AyohaStore_Cart_TotalAmountVoucher));
-            globalFloatPanel_AyohaStore_Cart_GrandTotal = (tempGrandTotal - parseFloat(globalFloatPanel_AyohaRewardVoucherList_AyohaStore_Cart_TotalAmountVoucher));
+            globalFloatPanel_AyohaStore_Cart_GrandTotal =parseFloat (tempGrandTotal - parseFloat(globalFloatPanel_AyohaRewardVoucherList_AyohaStore_Cart_TotalAmountVoucher));
             
            
             Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_GrandTotal').setHtml('<div style="font-family:Arial, sans-serif;font-size:22px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:100%;text-align:left;color:black;">' + globalFloatPanel_AyohaStore_Cart_GrandTotal.toFixed(2) + '</div>');
@@ -3680,6 +3778,27 @@ itemTpl:'<div style="display: flex; align-items: center; margin: 0px -16px;">'+
         );
     
         
+
+
+
+        var containerViewnnamecontainerFloatPanel_AyohaStore_CheckOut_OrderStatus = Ext.ComponentQuery.query('container[name=namecontainerFloatPanel_AyohaStore_CheckOut_OrderStatus]')[0];
+        var containerViewElnamecontainerFloatPanel_AyohaStore_CheckOut_OrderStatus = containerViewnnamecontainerFloatPanel_AyohaStore_CheckOut_OrderStatus.element;
+        containerViewElnamecontainerFloatPanel_AyohaStore_CheckOut_OrderStatus.on('tap',
+          function (event, node, options, eOpts) {
+    
+            FloatPanel_AyohaStore_OrderHistory_SingleShow();
+         
+             
+    
+    
+          }
+        );
+    
+
+
+
+
+
     
         if (globalFloatPanel_AyohaStore_Cart_LoyaltyRewardType == "Stamp Reward Loyalty Card") {
             globalFloatPanel_AyohaStore_Cart_TotalMerchantPoint = 0.00;
@@ -4347,8 +4466,8 @@ globalFloatPanel_MembershipCardList_NotYetSubscribed_paymentCycleCode=result;
         Ext.Viewport.remove(_FloatPanel_AyohaStore_CheckOut);
         this.overlay = Ext.Viewport.add(FloatPanel_AyohaStore_CheckOut());
         this.overlay.show();
-    
-       //alert("FloatPanel_AyohaStore_CheckOut_AyohaStoreOrderLoadByItemCartCodeAndMembershipCardCodeStore_WithOrderNo")
+        isFromMainDashboard = 'N';
+      // alert("FloatPanel_AyohaStore_CheckOut_AyohaStoreOrderLoadByItemCartCodeAndMembershipCardCodeStore_WithOrderNo")
     
         AddRoutePages("FloatPanel_AyohaStore_CheckOutHide()");
         isFloatPanel_AyohaStore_CheckOutOpen = 'Y';
@@ -4393,8 +4512,57 @@ globalFloatPanel_MembershipCardList_NotYetSubscribed_paymentCycleCode=result;
        
     }
     
+    var isFromMainDashboard = 'N';
+    function FloatPanel_AyohaStore_CheckOut_AyohaStoreOrderLoadByItemCartCodeAndMembershipCardCodeStore_WithOrderNo_Dashboard(TotalStampEarn,ItemCartCode, MembershipCardCode, OrderNo, EnterpriseName, EnterpriseLogo,CreatedDate,EnterpriseAddress) {
+        Ext.Viewport.remove(_FloatPanel_AyohaStore_CheckOut);
+        this.overlay = Ext.Viewport.add(FloatPanel_AyohaStore_CheckOut());
+        this.overlay.show();
+        isFromMainDashboard = 'Y';
+      
     
+        AddRoutePages("FloatPanel_AyohaStore_CheckOutHide()");
+        isFloatPanel_AyohaStore_CheckOutOpen = 'Y';
+        globalFloatPanel_AyohaStore_DeliveryChargeList_ChargeTypeCode = "";
+        Ext.getCmp('FloatPanel_AyohaStore_CheckOut_PurchasedItem_FromPurchaseHistory').setHidden(false);
+        Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_TitleHeaderTxt_AfterOrder').setHidden(false);
+        Ext.getCmp('radioBtnFloatPanel_AyohaStore_CheckOut_OrderOption_CancelOrder').setHidden(false);
+        Ext.getCmp('radioBtnFloatPanel_AyohaStore_CheckOut_OrderOption_OrderOnly').setHidden(true);
+        Ext.getCmp('containerFloatPanel_AyohaStore_CheckOut_PaymentMethod_CarouselMasterOutter').setHidden(true);
+        Ext.getCmp('containerFloatPanel_AyohaStore_CheckOut_OrderDate').setHidden(false);
+        glonbalDashboard_SearchMerchantList_FullCompanyAddress=EnterpriseAddress;
+      
+        Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_EnterpriseName').setHtml('<div style="width:100%;background-color: transparent;text-align:center;border: 1px none white;font-family:Century Gothic;font-size: 16px;font-weight:bold;color:white;margin:0px 0px 0px 0px">' + EnterpriseName + '</div>');
+        Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_EnterpriseLogo').setHtml('<div style="width:100%;background-color: transparent;text-align:center;border: 1px none white;font-family:Century Gothic;font-size: 11px;font-weight:normal;color:white;margin:0px 0px 0px 0px"><img src="' + EnterpriseLogo + '" style="width:72px;height:72px;border-radius:50%"/></div>');
+       
+        glonbalDashboard_SearchMerchantList_FullCompanyAddress = glonbalDashboard_SearchMerchantList_FullCompanyAddress.replace(/,/g, '<br>');
+        Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_EnterpriseFullAddress').setHtml('<div style="width:100%;background-color: transparent;text-align:center;border: 1px none white;font-family:Century Gothic;font-size: 12px;font-weight:normal;color:white;margin:0px 0px 0px 0px">'+glonbalDashboard_SearchMerchantList_FullCompanyAddress+'</div>');
+        Ext.getCmp('htmlFloatPanel_AyohaStore_CheckOut_OrderDate').setHtml('<div style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;width:163px;text-align:left;align-items: center;color:#6B7280;background-color:transparent;height:25px; padding: 5px 10px;border-radius:5px 5px 0px 0px;border-top:1px none grey;border-left:1px none grey;border-right:1px none grey;border-bottom:1px none grey;"> <span style="margin-left: 5px;">'+CreatedDate+'</span></div>');
+       
+        FloatPanel_AyohaStore_CheckOut_AyohaStoreOrderLoadByItemCartCodeAndMembershipCardCodeStore_WithOrderNo_isUsed = "Y";
+        globalFloatPanel_AyohaStore_CheckOut_TotalStampEarn = TotalStampEarn;
+        globalFloatPanelAyohaStore_AyohaUser_MembershipCardCode = MembershipCardCode;
+        globalFloatPanel_AyohaStore_CheckOut_ItemCartCode = ItemCartCode;
+        globalFloatPanel_AyohaStore_Cart_ItemCartCode = ItemCartCode;
+        globalFloatPanel_AyohaStore_CheckOut_MembershipCardCode = MembershipCardCode;
+        globalFloatPanel_AyohaStore_CheckOut_OrderNo = OrderNo;
+        globalFloatPanel_AyohaStore_CheckOut_EnterpriseName = EnterpriseName;
+        globalFloatPanel_AyohaStore_CheckOut_EnterpriseLogo = EnterpriseLogo;      
+        globalFloatPanel_AyohaStore_CheckOut_CreatedDate = CreatedDate;
+       
+
+//alert(globalFloatPanel_AyohaStore_CheckOut_ItemCartCode)
+      //  FloatPanel_AyohaStore_CheckOut_AyohaStoreOrderLoadByItemCartCodeAndMembershipCardCodeStore_WithOrderNo_Proccessing(TotalStampEarn,ItemCartCode, MembershipCardCode, OrderNo, EnterpriseName, EnterpriseLogo);
+
+        FloatPanel_AyohaStore_CheckOut_AyohaStoreOrderLoadByItemCartCodeAndMembershipCardCodeStore_WithOrderNo_Proccessing();
+
+        
+        
+
     
+     
+    
+       
+    }
 
 
 
@@ -4413,7 +4581,7 @@ function FloatPanel_AyohaStore_CheckOut_AyohaStoreOrderLoadByItemCartCodeAndMemb
     // globalFloatPanel_AyohaStore_CheckOut_EnterpriseName = EnterpriseName;
     // globalFloatPanel_AyohaStore_CheckOut_EnterpriseLogo = EnterpriseLogo;
   
-
+    globalFloatPanel_AyohaStore_ModuleTagging = "FloatPanel_AyohaStore_CheckOut";
     _DataStore_AyohaStoreOrderLoadByItemCartCodeAndMembershipCardCodeStore.getProxy().setExtraParam('ItemCartCode', globalFloatPanel_AyohaStore_CheckOut_ItemCartCode);
     _DataStore_AyohaStoreOrderLoadByItemCartCodeAndMembershipCardCodeStore.getProxy().setExtraParam('MembershipCardCode', globalFloatPanel_AyohaStore_CheckOut_MembershipCardCode);
     _DataStore_AyohaStoreOrderLoadByItemCartCodeAndMembershipCardCodeStore.getProxy().setExtraParam('OrderNo', globalFloatPanel_AyohaStore_CheckOut_OrderNo);
@@ -4427,7 +4595,7 @@ function FloatPanel_AyohaStore_CheckOut_AyohaStoreOrderLoadByItemCartCodeAndMemb
             if (success && records.length > 0) {                 
                 var count = parseInt(_DataStore_AyohaStoreOrderLoadByItemCartCodeAndMembershipCardCodeStore.getCount());
        
-  
+                _DataStore_AyohaStoreCartLoadCartAyohaStore=_DataStore_AyohaStoreOrderLoadByItemCartCodeAndMembershipCardCodeStore;
                 if (count <= 0) {
                    
         
@@ -4537,8 +4705,9 @@ function FloatPanel_AyohaStore_CheckOut_AyohaStoreOrderLoadByItemCartCodeAndMemb
               //  globalFloatPanel_AyohaStore_Cart_ItemCartCode = Store.get('ItemCartCode');
                 globalFloatPanel_AyohaStore_Cart_LoyaltyRewardType = Store.get('LoyaltyRewardType');
                 globalFloatPanel_AyohaStore_Cart_TotalMerchantSumStamp =parseInt(globalFloatPanel_AyohaStore_CheckOut_TotalStampEarn);
-                globalFloatPanel_AyohaStore_Cart_GrandTotal = Store.get('GrandTotal');
-     
+                globalFloatPanel_AyohaStore_Cart_GrandTotal =parseFloat(Store.get('GrandTotal'));
+                globalFloatPanel_AyohaStore_CheckOut_EnterpriseAccNo = Store.get('EnterpriseAccNo');
+
                 localStorage.setItem("PaymentNo", Store.get('PaymentNo'));
 
 
@@ -4926,6 +5095,9 @@ if(globalFloatPanel_AyohaStore_DeliveryChargeList_DeliveryName !='Dine-In'){
         
                 } 
                 
+                if(isFromMainDashboard == 'Y'){
+                    Ext.getCmp('radioBtnFloatPanel_AyohaStore_CheckOut_OrderOption_Re-Order').setHidden(true);
+                }
         
                 var containerViewnamecontainerFloatPanel_AyohaStore_CheckOut_CancelOrder = Ext.ComponentQuery.query('container[name=namecontainerFloatPanel_AyohaStore_CheckOut_CancelOrder]')[0];
                 var containerViewElnamecontainerFloatPanel_AyohaStore_CheckOut_CancelOrder = containerViewnamecontainerFloatPanel_AyohaStore_CheckOut_CancelOrder.element;
@@ -4937,7 +5109,18 @@ if(globalFloatPanel_AyohaStore_DeliveryChargeList_DeliveryName !='Dine-In'){
                   }
                 );
         
-        
+                var containerViewnnamecontainerFloatPanel_AyohaStore_CheckOut_OrderStatus = Ext.ComponentQuery.query('container[name=namecontainerFloatPanel_AyohaStore_CheckOut_OrderStatus]')[0];
+                var containerViewElnamecontainerFloatPanel_AyohaStore_CheckOut_OrderStatus = containerViewnnamecontainerFloatPanel_AyohaStore_CheckOut_OrderStatus.element;
+                containerViewElnamecontainerFloatPanel_AyohaStore_CheckOut_OrderStatus.on('tap',
+                  function (event, node, options, eOpts) {
+            
+                    FloatPanel_AyohaStore_OrderHistory_SingleShow();
+                 
+                     
+            
+            
+                  }
+                );
         
         
         

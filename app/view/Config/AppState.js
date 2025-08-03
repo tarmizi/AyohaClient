@@ -12,6 +12,12 @@ var AppState = {
         // subscriberAccNo: null
     },
 
+    FloatPanel_MainDashboard_PendingOrder: {
+        TotalItemQuantity: 0,
+        OrderStatus: null,
+        // enterpriseAccNo: null,
+        // subscriberAccNo: null
+    },
     // Tambah modul lain di sini bila perlu
     // Example:
     // UserProfile: {

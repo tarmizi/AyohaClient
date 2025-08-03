@@ -21,7 +21,7 @@ function FloatPanel_AyohaStore_PaymentMethodList() {
          xtype: 'container',
          // height: '50%',
          width: '95%',
-         height: 460,
+         height: 360,
          //width: 280,
          id: 'LoadingFloatPanel_AyohaStore_PaymentMethodListID',
          draggable: false,
@@ -224,7 +224,8 @@ function FloatPanel_AyohaStore_PaymentMethodList() {
                              xtype: 'container',
                              width: '100%',
                              //height: 300,
-                             height: '95%',
+                           height: '75%',
+                           margin: '30 0 0 0',
                              style: 'background-color:white',                            
                              layout: {
                                  type: 'vbox',
@@ -708,7 +709,10 @@ function FloatPanel_AyohaStore_PaymentMethodListShow() {
    
 
 
-
+   if (isFloatPanel_AyohaStore_CheckOutOpen=='Y')
+   {
+    Ext.getCmp('containerFloatPanel_AyohaStore_PaymentMethodList_COD').setHidden(true);
+   }
 
 
 
@@ -845,6 +849,11 @@ function FloatPanel_AyohaStore_PaymentMethodListPaymentMethodSelected(ID) {
         // Ext.getCmp('containerFloatPanel_AyohaStore_CheckOut_PaymentMethod_ManualTransfer').setHidden(true);
         // Ext.getCmp('containerFloatPanel_AyohaStore_CheckOut_PaymentMethod_COD').setHidden(false);
        // document.getElementById('input-FloatPanel_AyohaStore_CheckOut_PaymentMethod').value = "Pay At Counter";
+     
+
+       
+  
+
         document.getElementById('input-FloatPanel_AyohaStore_CheckOut_MembershipCardPaymentMethod').value = "Pay At Counter";
         FloatPanel_AyohaStore_PaymentMethodListHide();
     }
@@ -907,6 +916,8 @@ for (i = 0; i < count; i++) {
 }
 var entName = FloatPanel_AyohaStore_getEnterpriseName();
 //orderss = "Hi " + entName + "%0a%0a" + "Below is my order:%0a%0a";
+
+
 orders = strOrder.replace("undefined", "");
 
 

@@ -691,7 +691,7 @@ Ext.define('ianMizi.view.MyAccount.Dashboard', {
                         // hidden: true,
                         width: 18,
                         height: 18,
-                        html: '<img onclick="FloatPanel_MainDashboard_PendingOrderShow()" src="resources/icons/myCart02.png" alt="Image" style="width:20px;height:20px;">',
+                        html: '<img src="resources/icons/myCart02.png" alt="Image" style="width:20px;height:20px;">',
                         // ui:'plain'
                     },
                     
@@ -1109,7 +1109,7 @@ Ext.define('ianMizi.view.MyAccount.Dashboard', {
                                         height:80,
                                         id:'containerMyAccount_Dashboard_AyohaRewardHomeID',
                                         name:'nameContainerMyAccount_Dashboard_AyohaRewardHome',
-                                        hidden: false,
+                                        hidden: true,
                                         margin: '0 0 0 0',
                                         style: 'background-color:transparent',
                                         layout: {
@@ -1121,7 +1121,7 @@ Ext.define('ianMizi.view.MyAccount.Dashboard', {
     xtype: 'container',
     width: '100%',
     height:80,
-    hidden: false,
+    hidden: true,
     margin: '0 0 0 0',
     style: 'background-color:transparent',
     //style: 'border-right:2px solid purple;border-left:2px solid purple;border-bottom:2px solid purple;border-top:2px solid purple;background: white;border-radius: 10px 10px 10px 10px;',
@@ -1285,7 +1285,7 @@ html:'<div style="display: flex; flex-direction: column; align-items: center; ju
                                                     {
             
 
-
+                                                        margin: '5 0 0 0',
                                                         html:'<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; font-family: sans-serif;">'+ 
                                                         '<img src="resources/icons/onlineStore.jpg" style="width: 30px; height: 30px; margin-bottom: 5px;" />'+ 
                                                         '<div style="font-size: 10px; font-weight: normal; color: black; text-align: center;">'+ 
@@ -1296,6 +1296,67 @@ html:'<div style="display: flex; flex-direction: column; align-items: center; ju
                                                          
                                                                 
                                                                 },
+                                                   
+                                                   
+                                                ]
+                                            }
+                                        ]
+                                    },
+
+
+
+                                    {
+                                        xtype: 'container',
+                                       // width: '33.3%',
+                                      // width: 150,
+                                      width: '25%',
+                                        height:80,
+                                        hidden: false,
+                                        margin: '0 0 0 0',
+                                        style: 'background-color:transparent',
+                                        layout: {
+                                        type: 'hbox',
+                                        pack: 'center',
+                                        align: 'center',
+                                        },items:[
+                                            {
+                                                xtype: 'container',
+                                                width: '100%',
+                                                height:80,
+                                                hidden: false,
+                                                margin: '0 0 0 0',
+                                                style: 'background-color:transparent',
+                                                id:'containerMyAccount_Dashboard_AyohaMerchantShoppingBagID',
+                                                name:'nameMyAccount_Dashboard_AyohaMerchantShoppingBag',
+                                                //style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 10px 10px 10px 10px;',
+                                                layout: {
+                                                type: 'vbox',
+                                                pack: 'center',
+                                                align: 'center',
+                                                },items:[
+                                                    {
+                                                        margin: '0 0 0 28',
+                                                        height: 20,
+                                                        width: 20,
+                                                        zIndex:-1,
+                                                        id:'txtDashboard_AyohaMerchantShoppingBagBadgeID',
+                                                      html: '<div style="text-align:center;font-size:12px;color:white;background-color:red;width:20px;height:20px;border-radius:50%;font-weight:bold;padding:2px 0px;">1</div>',
+                                                    },
+                                                    {
+            
+
+                                                        margin: '-15 0 0 0',
+                                                        html:'<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; font-family: sans-serif;">'+ 
+                                                        '<img src="resources/icons/shoppingbag02.png" style="width: 30px; height: 30px; margin-bottom: 5px;" ></img>'+ 
+                                                        '<div style="font-size: 10px; font-weight: normal; color: black; text-align: center;">'+ 
+                                                        'Ayoha Shopping<br>'+ 
+                                                        '<span style="display: block; margin-top: -4px;">Bag</span>'+ 
+                                                        '</div>'+ 
+                                                        '</div>'
+                                                         
+                                                                
+                                                                },
+                                                               
                                                    
                                                    
                                                 ]
@@ -8252,6 +8313,17 @@ function initializeContainerSingleTapEvent() {
         FloatPanel_MyAccountRankDescriptionShow();
       }
     );
+
+
+
+
+    var ContainernameMyAccount_Dashboard_AyohaMerchantShoppingBag = Ext.ComponentQuery.query('container[name=nameMyAccount_Dashboard_AyohaMerchantShoppingBag]')[0];
+    var containerViewElnameMyAccount_Dashboard_AyohaMerchantShoppingBag = ContainernameMyAccount_Dashboard_AyohaMerchantShoppingBag.element;
+    containerViewElnameMyAccount_Dashboard_AyohaMerchantShoppingBag.on('tap',
+      function (event, node, options, eOpts) {
+        FloatPanel_MainDashboard_PendingOrderShow();
+      }
+    );
 }
 
 
@@ -8760,7 +8832,7 @@ var globalDashboard_AyohaPoint;
 var globalDashboard_TotalItemQuantityCart;
 function DashboardAyohaUserMainStore() {
   //  alert("DashboardAyohaUserMainStore");
-  FloatPanel_MainDashboard_PendingOrderShow();
+ 
     globalLatestPoint = "0";
     globalLatestStamp = "0/0";
 
@@ -9122,6 +9194,8 @@ function DashboardAyohaUserMainStore() {
               }
             );
     
+
+            FloatPanel_MainDashboard_PendingOrderAyohaStoreOrderPendingOrderMainDashbord_CountStore();
             LoadingPanelHide();
             Ext.Viewport.setMasked(false);
 
