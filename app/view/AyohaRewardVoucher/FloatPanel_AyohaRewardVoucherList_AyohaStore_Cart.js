@@ -1172,6 +1172,10 @@ function FloatPanel_AyohaRewardVoucherList_AyohaStore_Cart_AyohaRewardVoucherEnt
 
 
                     LoadingPanelHide();
+                    //alert("Function FloatPanel_AyohaRewardVoucherList_AyohaStore_Cart_AyohaRewardVoucherEntitledUserEntitledVoucherStatusTempUpdateEntitledVoucherStatus_BackButton:"+isFloatPanel_AyohaStore_CheckOutOpen_ReOrder)
+                  if(isFloatPanel_AyohaStore_CheckOutOpen_ReOrder=='N'){
+                    return;
+                  }
                     FloatPanel_AyohaStore_Cart_AyohaStoreCartLoadCartAyohaStore('NewCart');
 
                 }

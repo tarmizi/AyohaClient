@@ -3526,33 +3526,33 @@ function FloatPanelMerchantDetailPage_CartTotalItemQuantity() {
                 data = Ext.decode(result.responseText.trim());
                 if (data.success == "true") {
                     if (data.total > 0) {
-                        AppState.FloatPanel_MerchantDetailPage.cartTotalItemQuantity = data.results[0].TotalItemQuantity;
+                      //  AppState.FloatPanel_MerchantDetailPage.cartTotalItemQuantity = data.results[0].TotalItemQuantity;
                         if(data.results[0].TotalItemQuantity){
-                            AppState.FloatPanel_MerchantDetailPage.cartTotalItemQuantity = data.results[0].TotalItemQuantity;                           
-                           Ext.getCmp('htmlFloatPanel_MerchantDetailPage_CountbadgeText').setHtml('<div onClick="FloatPanel_AyohaStore_CartShow()" style="background: transparent;height:10px;font-size: 14px;font-weight:normal;color:black;text-align:center;"><b>'+AppState.FloatPanel_MerchantDetailPage.cartTotalItemQuantity+'</b></div>');
+                          ///  AppState.FloatPanel_MerchantDetailPage.cartTotalItemQuantity = data.results[0].TotalItemQuantity;                           
+                           Ext.getCmp('htmlFloatPanel_MerchantDetailPage_CountbadgeText').setHtml('<div onClick="FloatPanel_AyohaStore_CartShow()" style="background: transparent;height:10px;font-size: 14px;font-weight:normal;color:black;text-align:center;"><b>'+data.results[0].TotalItemQuantity+'</b></div>');
                         }else{
-                            AppState.FloatPanel_MerchantDetailPage.cartTotalItemQuantity =0;
-                            Ext.getCmp('htmlFloatPanel_MerchantDetailPage_CountbadgeText').setHtml('<div style="background: transparent;height:10px;font-size: 14px;font-weight:normal;color:black;text-align:center;"><b>'+AppState.FloatPanel_MerchantDetailPage.cartTotalItemQuantity+'</b></div>');
+                           // AppState.FloatPanel_MerchantDetailPage.cartTotalItemQuantity =0;
+                            Ext.getCmp('htmlFloatPanel_MerchantDetailPage_CountbadgeText').setHtml('<div style="background: transparent;height:10px;font-size: 14px;font-weight:normal;color:black;text-align:center;"><b>'+data.results[0].TotalItemQuantity+'</b></div>');
                         }
                        
                     }
                     if (data.total == 0) {
-                        AppState.FloatPanel_MerchantDetailPage.cartTotalItemQuantity = 0;
-                        Ext.getCmp('htmlFloatPanel_MerchantDetailPage_CountbadgeText').setHtml('<div style="background: transparent;height:10px;font-size: 14px;font-weight:normal;color:black;text-align:center;"><b>'+AppState.FloatPanel_MerchantDetailPage.cartTotalItemQuantity+'</b></div>');
+                      //  AppState.FloatPanel_MerchantDetailPage.cartTotalItemQuantity = 0;
+                        Ext.getCmp('htmlFloatPanel_MerchantDetailPage_CountbadgeText').setHtml('<div style="background: transparent;height:10px;font-size: 14px;font-weight:normal;color:black;text-align:center;"><b>'+data.results[0].TotalItemQuantity+'</b></div>');
                         Ext.Viewport.unmask();
                     }
                 }
                 else {
-                    AppState.FloatPanel_MerchantDetailPage.cartTotalItemQuantity = 0;
-                    Ext.getCmp('htmlFloatPanel_MerchantDetailPage_CountbadgeText').setHtml('<div style="background: transparent;height:10px;font-size: 14px;font-weight:normal;color:black;text-align:center;"><b>'+AppState.FloatPanel_MerchantDetailPage.cartTotalItemQuantity+'</b></div>');
+                  //  AppState.FloatPanel_MerchantDetailPage.cartTotalItemQuantity = 0;
+                    Ext.getCmp('htmlFloatPanel_MerchantDetailPage_CountbadgeText').setHtml('<div style="background: transparent;height:10px;font-size: 14px;font-weight:normal;color:black;text-align:center;"><b>'+data.results[0].TotalItemQuantity+'</b></div>');
                     Ext.Viewport.unmask();
                  
                 }
             },
 
             failure: function (result, request) {
-                AppState.FloatPanel_MerchantDetailPage.cartTotalItemQuantity = 0;
-                Ext.getCmp('htmlFloatPanel_MerchantDetailPage_CountbadgeText').setHtml('<div style="background: transparent;height:10px;font-size: 14px;font-weight:normal;color:black;text-align:center;"><b>'+AppState.FloatPanel_MerchantDetailPage.cartTotalItemQuantity+'</b></div>');
+                //AppState.FloatPanel_MerchantDetailPage.cartTotalItemQuantity = 0;
+                Ext.getCmp('htmlFloatPanel_MerchantDetailPage_CountbadgeText').setHtml('<div style="background: transparent;height:10px;font-size: 14px;font-weight:normal;color:black;text-align:center;"><b>'+data.results[0].TotalItemQuantity+'</b></div>');
                 Ext.Viewport.unmask();
                
             }

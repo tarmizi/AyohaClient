@@ -1340,7 +1340,7 @@ html:'<div style="display: flex; flex-direction: column; align-items: center; ju
                                                         width: 20,
                                                         zIndex:-1,
                                                         id:'txtDashboard_AyohaMerchantShoppingBagBadgeID',
-                                                      html: '<div style="text-align:center;font-size:12px;color:white;background-color:red;width:20px;height:20px;border-radius:50%;font-weight:bold;padding:2px 0px;">1</div>',
+                                                      html: '<div style="text-align:center;font-size:12px;color:white;background-color:red;width:20px;height:20px;border-radius:50%;font-weight:bold;padding:2px 0px;">0</div>',
                                                     },
                                                     {
             

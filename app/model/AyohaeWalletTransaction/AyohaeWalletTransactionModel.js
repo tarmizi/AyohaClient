@@ -29,6 +29,8 @@
       'TotalStampEarn',
       'MemberDiscountPercent',
       'MemberDiscountAmount',
+      'EnterpriseAddress',
+      'EnterpriseTagLine',
       {
           name: 'ModifiedTransactionAmount',
           convert: function (value, record) {

@@ -766,7 +766,13 @@ function FloatPanel_AyohaeWallet() {
                                             }
                                         },
                                        
-                                        itemTpl: '<div onclick="FloatPanel_AyohaeWallet_TransactionHistory_AyohaeWalletTransactionStaging({TotalStampEarn},' + "'" + '{CreatedDate}' + "'" + ',' + "'" + '{AccountName}' + "'" + ',' + "'" + '{UserProfileImg}' + "'" + ',' + "'" + '{PhoneNo}' + "'" + ',' + "'" + '{TransactionNote}' + "'" + ',' + "'" + '{TransactionAmount}' + "'" + ',' + "'" + '{TransactionType}' + "'" + ',' + "'" + '{MembershipCardCode}' + "'" + ',' + "'" + '{OrderNo}' + "'" + ',' + "'" + '{ItemCartCode}' + "'" + ',' + "'" + '{FullAccountName}' + "'" + ',' + "'" + '{TransactionReferenceNo}' + "'" + ',{ID})"  class="myContent" style="background-color:white;width:106%;height:70px;">' +
+
+
+
+
+                                        itemTpl: '<div onclick="FloatPanel_AyohaeWallet_TransactionHistory_AyohaeWalletTransactionStaging({TotalStampEarn},' + "'" + '{CreatedDate}' + "'" + ',' + "'" + '{AccountName}' + "'" + ',' + "'" + '{UserProfileImg}' + "'" + ',' + "'" + '{PhoneNo}' + "'" + ',' + "'" + '{TransactionNote}' + "'" + ',' + "'" + '{TransactionAmount}' + "'" + ',' + "'" + '{TransactionType}' + "'" + ',' + "'" + '{MembershipCardCode}' + "'" + ',' + "'" + '{OrderNo}' + "'" + ',' + "'" + '{ItemCartCode}' + "'" + ',' + "'" + '{FullAccountName}' + "'" + ',' + "'" + '{TransactionReferenceNo}' + "'" + ','+ "'" + '{EnterpriseAddress}' + "'" + ','+ "'" + '{EnterpriseTagLine}' + "'" + ',`{CustomerAccNo}`,{ID},`{CreatedDate}`)" class="myContent" style="background-color:white;width:106%;height:70px;">' +
+
+                                       // itemTpl: '<div onclick="FloatPanel_AyohaeWallet_TransactionHistory_AyohaeWalletTransactionStaging({TotalStampEarn},' + "'" + '{CreatedDate}' + "'" + ',' + "'" + '{AccountName}' + "'" + ',' + "'" + '{UserProfileImg}' + "'" + ',' + "'" + '{PhoneNo}' + "'" + ',' + "'" + '{TransactionNote}' + "'" + ',' + "'" + '{TransactionAmount}' + "'" + ',' + "'" + '{TransactionType}' + "'" + ',' + "'" + '{MembershipCardCode}' + "'" + ',' + "'" + '{OrderNo}' + "'" + ',' + "'" + '{ItemCartCode}' + "'" + ',' + "'" + '{FullAccountName}' + "'" + ',' + "'" + '{TransactionReferenceNo}' + "'" + ',{ID})"  class="myContent" style="background-color:white;width:106%;height:70px;">' +
 
 
                                         //  '<table onclick="FloatPanel_AyohaeWallet_TransactionHistory_AyohaeWalletTransactionStaging({TotalStampEarn},' + "'" + '{CreatedDate}' + "'" + ',' + "'" + '{AccountName}' + "'" + ',' + "'" + '{UserProfileImg}' + "'" + ',' + "'" + '{PhoneNo}' + "'" + ',' + "'" + '{TransactionNote}' + "'" + ',' + "'" + '{TransactionAmount}' + "'" + ',' + "'" + '{TransactionType}' + "'" + ',' + "'" + '{MembershipCardCode}' + "'" + ',' + "'" + '{OrderNo}' + "'" + ',' + "'" + '{ItemCartCode}' + "'" + ',' + "'" + '{FullAccountName}' + "'" + ',' + "'" + '{TransactionReferenceNo}' + "'" + ',{ID})"  style="border-collapse:collapse;border-spacing:0;width:106%;background-color:white;margin:-10px 0px 0px -18px;height:80px;"><tr><td style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:0px 5px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:20%;vertical-align:center"><div style="border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none white;border-radius: 50px;width:60px;height:60px;color:white;vertical-align: bottom; text-align:center;font-family: Lucida Console, Courier, monospace;font-size: 35px;background-image: url({AccountProfileImg}); background-size: 100% 100%;"></div></td><td style="font-family:Arial, sans-serif;font-size:14px;font-weight:bold;padding:0px 0px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:80%;vertical-align:center">{ModifiedFullAccountName}<br><font style="font-family:Arial, sans-serif;font-size:10px;font-weight:normal;">{isSpentOrIncome} - {CreatedDate}</font></td></tr></table><br>'
@@ -1037,35 +1043,72 @@ function FloatPanel_AyohaeWallet_AyohaeWalletTransactionLoadByeWalletAccNoLatest
     _DataStore_AyohaeWalletTransactionLoadByeWalletAccNoLatestTransactionsStore.load();
 
 
-    var task = Ext.create('Ext.util.DelayedTask', function () {
+    _DataStore_AyohaeWalletTransactionLoadByeWalletAccNoLatestTransactionsStore.load({
+        callback: function (records, operation, success) {
+            if (success && records.length > 0) {
+                console.log('Store loaded successfully, total records: ' + records.length);
+    
+                var Store = records[0]; // Access only the first record
+              //  var planCode = record.get('PaymentPlanCode');
+                var count = _DataStore_AyohaeWalletTransactionLoadByeWalletAccNoLatestTransactionsStore.getCount();
+                if (count > 0) {
+                    //var Store = _DataStore_AyohaeWalletTransactionLoadByeWalletAccNoLatestTransactionsStore.getAt(0);
+                    globalFloatPanel_AyohaeWallet_AyohaeWalletTransaction_ThisMonthSpent = parseFloat(Store.get('ThisMonthSpent'));
+                    globalFloatPanel_AyohaeWallet_AyohaeWalletTransaction_ThisMonthIncome = parseFloat(Store.get('ThisMonthIncome'));
         
-        var count = _DataStore_AyohaeWalletTransactionLoadByeWalletAccNoLatestTransactionsStore.getCount();
-        if (count > 0) {
-            var Store = _DataStore_AyohaeWalletTransactionLoadByeWalletAccNoLatestTransactionsStore.getAt(0);
-            globalFloatPanel_AyohaeWallet_AyohaeWalletTransaction_ThisMonthSpent = parseFloat(Store.get('ThisMonthSpent'));
-            globalFloatPanel_AyohaeWallet_AyohaeWalletTransaction_ThisMonthIncome = parseFloat(Store.get('ThisMonthIncome'));
-
-            Ext.getCmp('htmltableFloatPanel_AyohaeWallet_IncomeThisMonth').setHtml('<table onclick="FloatPanel_AyohaeWallet_IncomeThisMonth();" style="border-collapse:collapse;border-spacing:0;width:100%;height:50px;" class="tg"><thead><tr><td style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:11px;overflow:hidden;padding:0px 5px;text-align:left;vertical-align:top;word-break:normal">Income This Month</td><td style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:middle;word-break:normal" rowspan="2"><img src="resources/icons/income01.png" width="30" height="30" alt="Company Name"></td></tr><tr><td style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:16px;font-weight:bold;overflow:hidden;padding:0px 5px;text-align:left;vertical-align:top;word-break:normal">RM' + globalFloatPanel_AyohaeWallet_AyohaeWalletTransaction_ThisMonthIncome.toFixed(2) + '</td></tr></thead></table>');
-            Ext.getCmp('htmltableFloatPanel_AyohaeWallet_SpentThisMonth').setHtml('<table onclick="FloatPanel_AyohaeWallet_SpentThisMonth();" style="border-collapse:collapse;border-spacing:0;width:100%;height:50px;" class="tg"><thead><tr><td style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:11px;overflow:hidden;padding:0px 5px;text-align:left;vertical-align:top;word-break:normal">Spent This Month</td><td style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:middle;word-break:normal" rowspan="2"><img src="resources/icons/spent01.png" width="30" height="30" alt="Company Name"></td></tr><tr><td style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:16px;font-weight:bold;overflow:hidden;padding:0px 5px;text-align:left;vertical-align:top;word-break:normal">RM' + globalFloatPanel_AyohaeWallet_AyohaeWalletTransaction_ThisMonthSpent.toFixed(2) + '</td></tr></thead></table>');
-
+                    Ext.getCmp('htmltableFloatPanel_AyohaeWallet_IncomeThisMonth').setHtml('<table onclick="FloatPanel_AyohaeWallet_IncomeThisMonth();" style="border-collapse:collapse;border-spacing:0;width:100%;height:50px;" class="tg"><thead><tr><td style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:11px;overflow:hidden;padding:0px 5px;text-align:left;vertical-align:top;word-break:normal">Income This Month</td><td style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:middle;word-break:normal" rowspan="2"><img src="resources/icons/income01.png" width="30" height="30" alt="Company Name"></td></tr><tr><td style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:16px;font-weight:bold;overflow:hidden;padding:0px 5px;text-align:left;vertical-align:top;word-break:normal">RM' + globalFloatPanel_AyohaeWallet_AyohaeWalletTransaction_ThisMonthIncome.toFixed(2) + '</td></tr></thead></table>');
+                    Ext.getCmp('htmltableFloatPanel_AyohaeWallet_SpentThisMonth').setHtml('<table onclick="FloatPanel_AyohaeWallet_SpentThisMonth();" style="border-collapse:collapse;border-spacing:0;width:100%;height:50px;" class="tg"><thead><tr><td style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:11px;overflow:hidden;padding:0px 5px;text-align:left;vertical-align:top;word-break:normal">Spent This Month</td><td style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:middle;word-break:normal" rowspan="2"><img src="resources/icons/spent01.png" width="30" height="30" alt="Company Name"></td></tr><tr><td style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:16px;font-weight:bold;overflow:hidden;padding:0px 5px;text-align:left;vertical-align:top;word-break:normal">RM' + globalFloatPanel_AyohaeWallet_AyohaeWalletTransaction_ThisMonthSpent.toFixed(2) + '</td></tr></thead></table>');
+        
+                }
+        
+               
+        
+                Ext.Viewport.setMasked(false);
+            } else {
+                console.error('Failed to load store data or no record found.');
+                LoadingPanelHide();
+            }
         }
+    });
+
+
+
+
+
+
+
+
+
+
+
+    // var task = Ext.create('Ext.util.DelayedTask', function () {
+        
+    //     var count = _DataStore_AyohaeWalletTransactionLoadByeWalletAccNoLatestTransactionsStore.getCount();
+    //     if (count > 0) {
+    //         var Store = _DataStore_AyohaeWalletTransactionLoadByeWalletAccNoLatestTransactionsStore.getAt(0);
+    //         globalFloatPanel_AyohaeWallet_AyohaeWalletTransaction_ThisMonthSpent = parseFloat(Store.get('ThisMonthSpent'));
+    //         globalFloatPanel_AyohaeWallet_AyohaeWalletTransaction_ThisMonthIncome = parseFloat(Store.get('ThisMonthIncome'));
+
+    //         Ext.getCmp('htmltableFloatPanel_AyohaeWallet_IncomeThisMonth').setHtml('<table onclick="FloatPanel_AyohaeWallet_IncomeThisMonth();" style="border-collapse:collapse;border-spacing:0;width:100%;height:50px;" class="tg"><thead><tr><td style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:11px;overflow:hidden;padding:0px 5px;text-align:left;vertical-align:top;word-break:normal">Income This Month</td><td style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:middle;word-break:normal" rowspan="2"><img src="resources/icons/income01.png" width="30" height="30" alt="Company Name"></td></tr><tr><td style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:16px;font-weight:bold;overflow:hidden;padding:0px 5px;text-align:left;vertical-align:top;word-break:normal">RM' + globalFloatPanel_AyohaeWallet_AyohaeWalletTransaction_ThisMonthIncome.toFixed(2) + '</td></tr></thead></table>');
+    //         Ext.getCmp('htmltableFloatPanel_AyohaeWallet_SpentThisMonth').setHtml('<table onclick="FloatPanel_AyohaeWallet_SpentThisMonth();" style="border-collapse:collapse;border-spacing:0;width:100%;height:50px;" class="tg"><thead><tr><td style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:11px;overflow:hidden;padding:0px 5px;text-align:left;vertical-align:top;word-break:normal">Spent This Month</td><td style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:middle;word-break:normal" rowspan="2"><img src="resources/icons/spent01.png" width="30" height="30" alt="Company Name"></td></tr><tr><td style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:16px;font-weight:bold;overflow:hidden;padding:0px 5px;text-align:left;vertical-align:top;word-break:normal">RM' + globalFloatPanel_AyohaeWallet_AyohaeWalletTransaction_ThisMonthSpent.toFixed(2) + '</td></tr></thead></table>');
+
+    //     }
 
        
 
-        Ext.Viewport.setMasked(false);
-        //  VIAAdvertismentAutoSlide();
+    //     Ext.Viewport.setMasked(false);
+    //     //  VIAAdvertismentAutoSlide();
 
-    });
-    task.delay(500);
+    // });
+    // task.delay(500);
 }
 
 
 
-function FloatPanel_AyohaeWallet_Transaction_StagingViewInvoice(TotalStampEarn,ItemCartCode, MembershipCardCode, OrderNo, TransactionType, AccountName, UserProfileImg) {
-  
- 
+function FloatPanel_AyohaeWallet_Transaction_StagingViewInvoice(TotalStampEarn,ItemCartCode, MembershipCardCode, OrderNo, TransactionType, AccountName, UserProfileImg,CreatedDate) {
+
     if (TransactionType == 'AyohaStore_Payment') {
-        FloatPanel_AyohaStore_CheckOut_AyohaStoreOrderLoadByItemCartCodeAndMembershipCardCodeStore_WithOrderNo(TotalStampEarn,ItemCartCode, MembershipCardCode, OrderNo, AccountName, UserProfileImg);
+        FloatPanel_AyohaStore_CheckOut_AyohaStoreOrderLoadByItemCartCodeAndMembershipCardCodeStore_WithOrderNo(TotalStampEarn,ItemCartCode, MembershipCardCode, OrderNo, AccountName, UserProfileImg,CreatedDate);
         return;
 
     }

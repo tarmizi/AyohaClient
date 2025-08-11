@@ -1,4 +1,52 @@
-﻿Ext.define('ianMizi.model.AyohaStoreCart.AyohaStoreCartModel', {
+// Ext.define('ianMizi.model.AyohaStoreCart.AyohaStoreCartReOrderModel', {
+//     extend: 'Ext.data.Model',
+//     config: {
+//         fields: [
+//             'RowNumber',
+//       'ID',
+//         'ItemCode',
+//       'ItemQuantity',
+//       'ItemSumPrice',
+//       'ItemCartStatus',
+//       'CreatedBy',
+//       'CreatedDate',
+//       'ModifiedBy',
+//       'ModifiedDate',
+//       'RowStatus',
+//       'EnterpriseAccNo',
+//       'SubscriberAccNo',
+//       'LoyaltyRewardType',
+//       'MerchantSumPoint',
+//       'AyohaSumPoint',
+//       'MerchantSumStamp',
+//        'ItemCoverImg',
+//       'MerchantPoint',
+//       'AyohaPoint',
+//       'ItemName',
+//       'ItemPrice',
+//       'ItemPriceDiscount',
+//       'ItemPriceDiscountRate',
+//       'TotalItemQuantity',
+//       'TotalSumPrice',
+//       'TotalMerchantPoint',
+//       'TotalAyohaPoint',
+//       'TotalMerchantSumStamp',
+//       'StampRuleAmount',
+//       'ItemDescriptions',
+//       'ItemCartCode',
+//       'EnterpriseName',
+//       'EnterpriseLogo',
+//       'MembershipCardCode',
+//         ]
+//     }
+// });
+
+
+
+
+
+
+Ext.define('ianMizi.model.AyohaStoreCart.AyohaStoreCartReOrderModel', {
     extend: 'Ext.data.Model',
     config: {
         fields: [
@@ -156,7 +204,7 @@
                  var ItemQuantity = record.get('ItemQuantity');
 
 
-              
+           
 
                  if (ItemPriceDiscount > 0) {
                      _value = ItemPriceDiscount + " X (" + ItemQuantity + ")"

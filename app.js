@@ -43,7 +43,8 @@ Ext.application({
     'Enterprises.EnterprisesLoadByEnterpriseAccNoAndSubscriberAccNoModel', 'AyohaRewardVoucherEntitledUser.AyohaRewardVoucherEntitledUserModel', 'AyohaRewardVoucherEntitledUser.AyohaRewardVoucherEntitledUser_VoucherHistoryModel',
     'AyohaHotMerchant.AyohaHotMerchantModel', 'AyohaRewardEvent.AyohaRewardEventModel', 'AyohaRewardContest.AyohaRewardContest_SelfieAndWinModel', 'EnterprisesCoverMedia.EnterprisesCoverMediaModel',
     'EnterprisesOnlineStore.EnterprisesOnlineStoreModel', 'EnterprisesWorkingHour.EnterprisesWorkingHourModel', 'AyohaMerchantInfoMembershipLoyaltyProgram.AyohaMerchantInfoMembershipLoyaltyProgramModel',
-    'Master.BankAccountTypeModel', 'AyohaUserProfile.AyohaUserProfile_BankAccountModel','MembershipCardPaymentPlan.MembershipCardPaymentPlanModel','AyohaStoreOrder.AyohaStoreOrderPeding_MainDashboardModel'],
+    'Master.BankAccountTypeModel', 'AyohaUserProfile.AyohaUserProfile_BankAccountModel','MembershipCardPaymentPlan.MembershipCardPaymentPlanModel','AyohaStoreOrder.AyohaStoreOrderPeding_MainDashboardModel',
+    'AyohaStoreCart.AyohaStoreCartReOrderModel'],
 
     stores: ['Notifications.NotificationsCountTypeNNStore', 'Notifications.NotificationsCountTypeRStore', 'Enterprises.EnterprisesLoadByMerchantCategoryStore',
     'EnterpriseSubscriber.EnterpriseSubscribergetBySubcriberAccNoSearchReceiptStore','RedeemItem.RedeemItemgetByEnterpriseAccNoStore', 'LoyaltyStamp.LoyaltyStampLoadByEnterpriseAccNoStore', 'LoyaltyStamp.LoyaltyStampLoadBySubscriberAccNoAndEnterpriseAccNoStore',

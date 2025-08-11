@@ -956,7 +956,7 @@ function FloatPanel_AyohaReward_PointTransaction_ShowTransactionDetail(TotalStam
     globalFloatPanel_AyohaStore_ModuleTagging = "FloatPanel_AyohaStore_CheckOut";
     //var AyohaPointType = record.get('AyohaPointType');
     //var RedeemHistoryCode = record.get('GUIDRow');
-
+   
     globalFloatPanel_AyohaStore_CheckOut_EnterpriseAccNo = EnterpriseAccNo;
     glonbalDashboard_SearchMerchantList_FullCompanyAddress=EnterpriseAddress;
     globalFloatPanel_AyohaStore_CheckOut_EnterpriseTagLine = EnterpriseTagLine;
@@ -964,6 +964,11 @@ function FloatPanel_AyohaReward_PointTransaction_ShowTransactionDetail(TotalStam
     localStorage.setItem("EnterpriseAccNo",EnterpriseAccNo);
     localStorage.setItem("PaymentNo",PaymentNo);
 FloatPanel_AyohaReward_PointTransactionsHide();
+
+
+
+// alert(ItemCartCode)
+// alert(PaymentNo)
     if (AyohaPointType == "(Point Loyalty Card)") {
 
 

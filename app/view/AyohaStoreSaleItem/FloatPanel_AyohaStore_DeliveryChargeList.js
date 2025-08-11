@@ -414,7 +414,7 @@ var globalFloatPanel_AyohaStore_DeliveryChargeList_ChargeTypeCode;
 var globalFloatPanel_AyohaStore_DeliveryChargeList_DeliveryName;
 //(' + "'" + '{DeliveryName}' + "'" + ',' + "'" + '{DeliveryRate_Charge}' + "'" + ',' + "'" + '{ChargeTypes}' + "'" + ',' + "'{ChargeTypeCode}'" + ')
 function FloatPanel_AyohaStore_DeliveryChargeList_List(DeliveryName, Rate, ChargeTypes, ChargeTypeCode) {
-    //alert(DeliveryRate_Charge);
+   // alert(DeliveryName);
     globalFloatPanel_AyohaStore_DeliveryChargeList_ChargeTypeCode = ChargeTypeCode;
     //document.getElementById('input-FloatPanel_AyohaStore_Cart_DeliveryChargeType').value = DeliveryName;
     document.getElementById('input-FloatPanel_AyohaStore_CheckOut_DeliveryChargeType').value = DeliveryName;
@@ -477,6 +477,13 @@ function FloatPanel_AyohaStore_DeliveryChargeList_List(DeliveryName, Rate, Charg
         Ext.getCmp('containerFloatPanel_AyohaStore_CheckOut_ShippingAddress_Main').setHidden(true);
     }
 
+
+
+    if(DeliveryName.includes('DINE')){
+        Ext.getCmp('containerFloatPanel_AyohaStore_CheckOut_ShippingAddress_Main').setHidden(true);
+        document.getElementById('input-FloatPanel_AyohaStore_CheckOut_ShippingAddress').value ="DINE-IN";
+         
+    }
     FloatPanel_AyohaStore_DeliveryChargeListHide();
 
     // var result = parseFloat(globalFloatPanel_AyohaStore_Cart_TotalSumPrice) + parseFloat(globalFloatPanel_AyohaStore_DeliveryChargeList_DeliveryCharge);

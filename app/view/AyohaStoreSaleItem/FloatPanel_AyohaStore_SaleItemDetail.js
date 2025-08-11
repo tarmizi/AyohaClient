@@ -2844,22 +2844,45 @@ function FloatPanel_AyohaStore_SaleItemDetail_RateAndReview() {
     _DataStore_AyohaMerchantReviewLoadByEnterpriseAccNoAndItemCodeReviewStore.getProxy().setExtraParam('ItemCodeReview', globalFloatPanel_AyohaStore_SaleItemDetail_ItemCode);
     _DataStore_AyohaMerchantReviewLoadByEnterpriseAccNoAndItemCodeReviewStore.getProxy().setUrl(GetAPIurl() + '/AyohaMerchantReview/AyohaMerchantReviewLoadByEnterpriseAccNoAndItemCodeReview');
     _DataStore_AyohaMerchantReviewLoadByEnterpriseAccNoAndItemCodeReviewStore.load();
-    console.log(FloatPanel_AyohaStore_getEnterpriseAccNo());
-    console.log(globalFloatPanel_AyohaStore_SaleItemDetail_ItemCode);
+ 
 
-    var task = Ext.create('Ext.util.DelayedTask', function () {
-
-        var count = _DataStore_AyohaMerchantReviewLoadByEnterpriseAccNoAndItemCodeReviewStore.getCount();
-        FloatPanel_AyohaStore_SaleItemDetail_CalculateRating();
-       
-     //   Ext.getCmp('htmlFloatPanel_AyohaStore_ItemCategory_CountLoveTxt').setHtml('<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 12px;font-weight:bold;color:black;margin:4px 0px 0px 0px">' + count + ' Record found</div>');
-
-
+    _DataStore_AyohaMerchantReviewLoadByEnterpriseAccNoAndItemCodeReviewStore.load({
+        callback: function (records, operation, success) {
+            if (success && records.length > 0) {
+                var count = _DataStore_AyohaMerchantReviewLoadByEnterpriseAccNoAndItemCodeReviewStore.getCount();
+                FloatPanel_AyohaStore_SaleItemDetail_CalculateRating();
+              //  LoadingPanelHide();
+            } else {
+                console.error('Failed to load store data or no record found.');
+                LoadingPanelHide();
+            }
+        }
     });
-    task.delay(500);
 
 
-    Ext.Viewport.setMasked(false);
+
+
+
+
+
+
+
+
+
+
+    // var task = Ext.create('Ext.util.DelayedTask', function () {
+
+    //     var count = _DataStore_AyohaMerchantReviewLoadByEnterpriseAccNoAndItemCodeReviewStore.getCount();
+    //     FloatPanel_AyohaStore_SaleItemDetail_CalculateRating();
+       
+    //  //   Ext.getCmp('htmlFloatPanel_AyohaStore_ItemCategory_CountLoveTxt').setHtml('<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 12px;font-weight:bold;color:black;margin:4px 0px 0px 0px">' + count + ' Record found</div>');
+
+
+    // });
+    // task.delay(500);
+
+
+    // Ext.Viewport.setMasked(false);
 }
 
 

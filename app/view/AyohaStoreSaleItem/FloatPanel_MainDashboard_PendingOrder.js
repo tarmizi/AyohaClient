@@ -274,7 +274,7 @@ function FloatPanel_MainDashboard_PendingOrderShow() {
     this.overlay.show();
     isFloatPanel_MainDashboard_PendingOrder_Open = 'Y';
 
-var count= AppState.FloatPanel_MainDashboard_PendingOrder.TotalItemQuantity;
+var count=parseInt(globalFloatPanel_MainDashboard_PendingOrder_Count);
 if(count>1){
   //  alert('You have ' +  AppState.FloatPanel_MainDashboard_PendingOrder.OrderStatus + '  orders. Please check your orders.');
     Ext.getCmp('LoadingFloatPanel_YearOnlyFloatPanel_MainDashboard_PendingOrderID').setHeight(200);
@@ -307,7 +307,7 @@ function FloatPanel_MainDashboard_PendingOrderHide() {
 
 }
 
-
+var globalFloatPanel_MainDashboard_PendingOrder_Count; 
 function FloatPanel_MainDashboard_PendingOrderAyohaStoreOrderPendingOrderMainDashbordStore() {
 
   
@@ -318,7 +318,7 @@ function FloatPanel_MainDashboard_PendingOrderAyohaStoreOrderPendingOrderMainDas
    _DataStore_AyohaStoreOrderPendingOrderMainDashbordStore.load({
     callback: function (records, operation, success) {
         if (success && records.length > 0) {
-            var count = _DataStore_AyohaStoreOrderPendingOrderMainDashbordStore.getCount();
+            globalFloatPanel_MainDashboard_PendingOrder_Count = _DataStore_AyohaStoreOrderPendingOrderMainDashbordStore.getCount();
            // console.error('FloatPanel_MainDashboard_PendingOrderAyohaStoreOrderPendingOrderMainDashbordStore' + count);
         } else {
             console.error('Failed to load store data or no record found.');
@@ -344,20 +344,14 @@ function FloatPanel_MainDashboard_PendingOrderAyohaStoreOrderPendingOrderMainDas
     callback: function (records, operation, success) {
         if (success && records.length > 0) {
             var count = _DataStore_AyohaStoreOrderPendingOrderMainDashbord_CountStore.getCount();
-            AppState.FloatPanel_MainDashboard_PendingOrder.TotalItemQuantity = count;
-           
-           // alert('FloatPanel_MainDashboard_PendingOrderAyohaStoreOrderPendingOrderMainDashbord_CountStore' + count);
             if(count > 0) {
-                var record = records[0]; // Access only the first record
-                AppState.FloatPanel_MainDashboard_PendingOrder.OrderStatus=record.get('OrderStatus');
-               
-                Ext.getCmp('txtDashboard_AyohaMerchantShoppingBagBadgeID').setHtml('<div style="text-align:center;font-size:12px;color:white;background-color:red;width:20px;height:20px;border-radius:50%;font-weight:bold;padding:2px 0px;">'+AppState.FloatPanel_MainDashboard_PendingOrder.TotalItemQuantity+'</div>');
+             //   var record = records[0]; // Access only the first record
+                // AppState.FloatPanel_MainDashboard_PendingOrder.OrderStatus=record.get('OrderStatus');
+                globalFloatPanel_MainDashboard_PendingOrder_Count = _DataStore_AyohaStoreOrderPendingOrderMainDashbord_CountStore.getCount();
+                Ext.getCmp('txtDashboard_AyohaMerchantShoppingBagBadgeID').setHtml('<div style="text-align:center;font-size:12px;color:white;background-color:red;width:20px;height:20px;border-radius:50%;font-weight:bold;padding:2px 0px;">'+globalFloatPanel_MainDashboard_PendingOrder_Count+'</div>');
 
                 FloatPanel_MainDashboard_PendingOrderShow();
-                
-               // FloatPanel_Advertisement_FloatAdvertisementShow();  
             }           
-                        // alert('FloatPanel_MainDashboard_PendingOrderAyohaStoreOrderPendingOrderMainDashbord_CountStore' + AppState.FloatPanel_MainDashboard_PendingOrder.TotalItemQuantity);
         } else {
            // console.error('Failed to load store data or no record found.');
             LoadingPanelHide();
