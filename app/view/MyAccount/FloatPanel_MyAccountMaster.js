@@ -230,10 +230,10 @@ function FloatPanel_MyAccountMaster() {
                 {
  
              xtype: 'container',
-      width: '90%',
+      width: '95%',
                     height: 350,  
       margin: '-240 0 0 0',   
-     style: 'background-color:rgba(255, 255, 255, 0.3);border-radius: 40px 40px 40px 40px;',
+     style: 'background-color:rgba(255, 255, 255, 0.3);border-radius: 20px 20px 0px 0px;',
       //style: 'background-color:red;border-radius: 10px 10px 10px 10px;',
       layout: {
           type: 'hbox',
@@ -309,7 +309,7 @@ function FloatPanel_MyAccountMaster() {
                   },
                   {
                       xtype: 'container',
-                      width: '80%',
+                      width: '90%',
                       heigt: 350,
 
                       margin: '-140 0 0 0',
@@ -321,24 +321,38 @@ function FloatPanel_MyAccountMaster() {
                           align: 'left'
                       },
                       items: [
+                        {
+                            id: 'FloatPanel_MyAccountMaster_AccountName',
+                            margin: '0 0 0 30',
+                           // height: 20,
+                            html: '<div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-size: 12px;font-weight:bold;color:white;height:20px">TARMIZI BIN RAHIM</div>'
+  
+  
+                        },
                           {
-                              id: 'FloatPanel_MyAccountMaster_Hi',
-                              margin: '6 0 0 25',
-                              height: 20,
-                              html: '<div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-size: 16px;font-weight:bold;color:white;height:20px">Hello !</div>'
+                              id: 'FloatPanel_MyAccountMaster_emailAddress',
+                              margin: '0 0 0 30',
+                             // height: 20,
+                              html: '<div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-size: 12px;font-weight:bold;color:white;height:20px">asfa@map2u.com.my</div>'
 
 
                           },
+                          {
+                            xtype: 'container',
+                            width: '60%',
+                            margin: '0 0 0 30',
+                            height: 0.5,
+                            style: 'background-color:white;',
+                          },
 
-                      {
-                          id: 'FloatPanel_MyAccountMaster_AccountName',
-                          margin: '0 0 0 25',
-                          height: 20,
-                          html: '<div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-size: 16px;font-weight:bold;color:white;height:20px">TARMIZI BIN RAHIM</div>'
-
-
-                      },
-
+                     
+                          {
+                            xtype: 'container',
+                            width: '100%',
+                            height: 5,
+                            margin: '0 0 0 30',
+                            style: 'background-color:transparent;',
+                          },
 
                       //{
                       //    id: 'FloatPanel_MyAccountMaster_AyohaPoint',
@@ -349,15 +363,31 @@ function FloatPanel_MyAccountMaster() {
 
                       //},
                       {
+                        margin: '0 0 0 10',
+                        width: '100%',
+                        html: '<div  style="color:white;text-align: left;font-size:10px;width:100%;margin:0px 0px 0px 20px;font-weight:bold"> Ayoha Membership:</div>'
+                       // html: '<div style="color:black;text-align: left;font-size:16px;width:100%;margin:0px 0px 0px 20px"><b>Membership Cards Hubs</b></div><br><br><div  style="color:black;text-align: left;font-size:12px;width:100%;margin:-25px 0px 0px 20px;font-weight:bold"> 👑 Paid Membership</div>'
+                       // html: '<div  style="color:white;text-align: left;font-size:10px;width:100%;margin:0px 0px 0px 20px;font-weight:bold"> 👑 Ayoha Membership No:</div>'
+                       
+                    },
+                      {
                           id: 'FloatPanel_MyAccountMaster_AccountNo',
-                          margin: '-1 0 0 25',
-                          height: 23,
+                          margin: '5 0 0 30',
+                         // height: 23,
                           html: '<div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-size: 11px;font-weight:bold;color:white;height:23px">0133376958-986574</div>'
                           // html: '<div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-size: 16px;font-weight:bold;color:white;height:20px">0133376958-56884548</div>'
 
 
                       },
 
+                     
+                    //   {
+                    //     xtype: 'container',
+                    //     width: '100%',
+                    //     height: 5,
+                    //     margin: '0 0 0 30',
+                    //     style: 'background-color:transparent;',
+                    //   },
                       //{
                       //    id: 'FloatPanel_MyAccountMaster_VerificationStatusBox',
                       //   name:'nameFloatPanel_MyAccountMaster_VerificationStatusBox',
@@ -371,9 +401,9 @@ function FloatPanel_MyAccountMaster() {
                        {
                            id: 'FloatPanel_MyAccountMaster_VerificationStatusBox',
                            name: 'nameFloatPanel_MyAccountMaster_VerificationStatusBox',
-                           margin: '-7 0 0 25',
-                           width: 'auto',
-                           // height: 20,
+                           margin: '-5 0 0 30',
+                          // width: 'auto',
+                          // height: 20,
                            html: '<div  style="width:70%;background-color: orange;text-align:center;border: 1px solid orange;font-size: 11px;font-weight:normal;color:white;height:21px;vertical-align:middle;border-radius: 5px 5px 5px 5px;"><div style="margin:3px 0px 0px 0px;">Not Ayoha Member</div></div>',
                        },
 
@@ -406,12 +436,12 @@ function FloatPanel_MyAccountMaster() {
 
 
                     xtype: 'container',
-                    width: '90%',
-                    height: 600,
+                    width: '95%',
+                    height: 630,
                     id:'containerFloatPanel_MyAccountMasterMaster',
                     margin: '-200 0 0 0',
                     //style: 'background-color:rgba(255, 255, 255, 0.3);border-radius: 40px 40px 40px 40px;',
-                    style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1 ;background: white;border-radius: 40px 40px 40px 40px;',
+                    style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px solid #ECF0F1 ;background: white;border-radius: 0px 0px 0px 0px;',
                     //style: 'background-color:red;border-radius: 10px 10px 10px 10px;',
                     layout: {
                         type: 'vbox',
@@ -425,273 +455,850 @@ function FloatPanel_MyAccountMaster() {
                     },
                     items: [
 
+{
+    xtype: 'container',
+    width: '100%',
+    height: 270,
+    id:'containerFloatPanel_MyAccountMasterMaster_Profile',
+    layout: {
+        type: 'vbox',
+        pack: 'start',
+        align: 'center'
+    },
+    items:[
 
-                        {
 
-                            xtype: 'container',
-                            width: '95%',
-                            height: 60,
-                            margin: '10 0 0 0',
-                            name: 'nameContainerFloatPanel_MyAccountMaster_EditProfile',
-                            //style: 'background-color:rgba(255, 255, 255, 0.3);border-radius: 40px 40px 40px 40px;',
-                            style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px none #ECF0F1 ;background: transparent;',
-                            //style: 'background-color:red;border-radius: 10px 10px 10px 10px;',
-                            layout: {
-                                type: 'hbox',
-                                pack: 'center',
-                                align: 'center'
-                            },
-                            items: [
-                                {
-                                    xtype: 'spacer',
-                                    width: 20
-                                },
-                                {
-                                    height: 28,
-                                    width: 28,
-                                    html: '<img src="resources/icons/editProfile.png" alt="Image" style="width:28px;height:28px;">',
-                                },
-                                {
-                                    xtype: 'spacer',
-                                    width: 10
-                                },
-                                {
-                                    id: 'FloatPanel_MyAccountMaster_Menu_EditProfile',
-                                    margin: '5 0 0 0',
-                                    height: 20,
-                                    html: '<div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-size: 14px;font-weight:normal;color:black;height:20px">Edit Profile</div>'
-                                },
-                                 {
-                                     xtype: 'spacer'
-                                 },
-                                {
-                                    id: 'FloatPanel_MyAccountMaster_Menu_EditProfileSign',
-                                    margin: '0 0 0 0',
-                                    height: 20,
-                                    html: '<div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-size: 22px;font-weight:normal;color:black;height:20px">></div>'
-                                },
-                            {
-                                xtype: 'spacer',
-                                width:20
+        {
+            xtype: 'container',
+            width: '100%',
+            margin: '20 0 0 0',
+            height: 30,
+           // id:'containerFloatPanel_MyAccountMasterMaster_General',
+            layout: {
+                type: 'hbox',
+                pack: 'left',
+                align: 'left'
+            },
+            items:[
+                {
+                    xtype: 'spacer',
+                    width: 20
+                },
+                {
+                    html: '<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 14px;font-weight:bold;color:black;height:23px">Profile</div>'
+                },
+            ]
+        },
+
+
+
+
+{
+
+    xtype: 'container',
+    width: '95%',
+    height: 60,
+    margin: '0 0 0 0',
+    name: 'nameContainerFloatPanel_MyAccountMaster_EditProfile',
+    //style: 'background-color:rgba(255, 255, 255, 0.3);border-radius: 40px 40px 40px 40px;',
+    style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:1px solid #ECF0F1;border-top:1px solid #ECF0F1 ;background: transparent;',
+    //style: 'background-color:red;border-radius: 10px 10px 10px 10px;',
+    layout: {
+        type: 'hbox',
+        pack: 'center',
+        align: 'center'
+    },
+    items: [
+        {
+            xtype: 'spacer',
+            width: 20
+        },
+        {
+            height: 22,
+            width: 22,
+            html: '<img src="resources/icons/editProfile.png" alt="Image" style="width:22px;height:22px;">',
+        },
+        {
+            xtype: 'spacer',
+            width: 20
+        },
+        {
+            id: 'FloatPanel_MyAccountMaster_Menu_EditProfile',
+            margin: '5 0 0 0',
+            height: 20,
+            html: '<div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-size: 12px;font-weight:normal;color:black;height:20px">Edit Profile</div>'
+        },
+         {
+             xtype: 'spacer'
+         },
+        {
+            id: 'FloatPanel_MyAccountMaster_Menu_EditProfileSign',
+            margin: '0 0 0 0',
+            height: 20,
+            html: '<div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-size: 22px;font-weight:normal;color:black;height:20px">></div>'
+        },
+    {
+        xtype: 'spacer',
+        width:20
 },
-                            ]
+    ]
 
-                        },
-                        {
+},
+{
 
-                            xtype: 'container',
-                            width: '95%',
-                            height: 60,
-                            margin: '10 0 0 0',
-                            name:'nameContainerFloatPanel_MyAccountMaster_ManagePassword',
-                            //style: 'background-color:rgba(255, 255, 255, 0.3);border-radius: 40px 40px 40px 40px;',
-                            style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px none #ECF0F1 ;background: transparent;',
-                            //style: 'background-color:red;border-radius: 10px 10px 10px 10px;',
-                            layout: {
-                                type: 'hbox',
-                                pack: 'center',
-                                align: 'center'
-                            },
-                            items: [
-                                {
-                                    xtype: 'spacer',
-                                    width: 20
-                                },
-                                {
-                                    height: 28,
-                                    width: 28,
-                                    html: '<img src="resources/icons/managepassword.png" alt="Image" style="width:28px;height:28px;">',
-                                },
-                                {
-                                    xtype: 'spacer',
-                                    width: 10
-                                },
-                                {
-                                    id: 'FloatPanel_MyAccountMaster_Menu_ManagePassword',
-                                    margin: '5 0 0 0',
-                                    height: 20,
-                                    html: '<div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-size: 14px;font-weight:normal;color:black;height:20px">Change Password</div>'
-                                },
-                                 {
-                                     xtype: 'spacer'
-                                 },
-                                {
-                                    id: 'FloatPanel_MyAccountMaster_Menu_ManagePasswordSign',
-                                    margin: '0 0 0 0',
-                                    height: 20,
-                                    html: '<div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-size: 22px;font-weight:normal;color:black;height:20px">></div>'
-                                },
-                            {
-                                xtype: 'spacer',
-                                width: 20
-                            },
-                            ]
+    xtype: 'container',
+    width: '95%',
+    height: 60,
+    margin: '0 0 0 0',
+    name:'nameContainerFloatPanel_MyAccountMaster_ManagePassword',
+    //style: 'background-color:rgba(255, 255, 255, 0.3);border-radius: 40px 40px 40px 40px;',
+    style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:1px solid #ECF0F1;border-top:2px none #ECF0F1 ;background: transparent;',
+    //style: 'background-color:red;border-radius: 10px 10px 10px 10px;',
+    layout: {
+        type: 'hbox',
+        pack: 'center',
+        align: 'center'
+    },
+    items: [
+        {
+            xtype: 'spacer',
+            width: 20
+        },
+        {
+            height: 22,
+                width: 22,
+            html: '<img src="resources/icons/managepassword.png" alt="Image" style="width:22px;height:22px;">',
+        },
+        {
+            xtype: 'spacer',
+            width: 20
+        },
+        {
+            id: 'FloatPanel_MyAccountMaster_Menu_ManagePassword',
+            margin: '5 0 0 0',
+            height: 20,
+            html: '<div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-size: 12px;font-weight:normal;color:black;height:20px">Change Password</div>'
+        },
+         {
+             xtype: 'spacer'
+         },
+        {
+            id: 'FloatPanel_MyAccountMaster_Menu_ManagePasswordSign',
+            margin: '0 0 0 0',
+            height: 20,
+            html: '<div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-size: 22px;font-weight:normal;color:black;height:20px">></div>'
+        },
+    {
+        xtype: 'spacer',
+        width: 20
+    },
+    ]
 
-                        },
-                        {
+},
 
-                            xtype: 'container',
-                            width: '95%',
-                            hidden:true,
-                            height: 60,
-                            margin: '10 0 0 0',
-                            name: 'nameContainerFloatPanel_MyAccountMaster_AccountVerification',
-                            //style: 'background-color:rgba(255, 255, 255, 0.3);border-radius: 40px 40px 40px 40px;',
-                            style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px none #ECF0F1 ;background: transparent;',
-                            //style: 'background-color:red;border-radius: 10px 10px 10px 10px;',
-                            layout: {
-                                type: 'hbox',
-                                pack: 'center',
-                                align: 'center'
-                            },
-                            items: [
-                                {
-                                    xtype: 'spacer',
-                                    width: 20
-                                },
-                                {
-                                    height: 28,
-                                    width: 28,
-                                    html: '<img src="resources/icons/AccountVerification.png" alt="Image" style="width:28px;height:28px;">',
-                                },
-                                {
-                                    xtype: 'spacer',
-                                    width: 10
-                                },
-                                {
-                                    id: 'FloatPanel_MyAccountMaster_Menu_AccountVerification',
-                                    margin: '5 0 0 0',
-                                    height: 20,
-                                    html: '<div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-size: 14px;font-weight:normal;color:black;height:20px">Account Verification</div>'
-                                },
-                                 {
-                                     xtype: 'spacer'
-                                 },
-                                {
-                                    id: 'FloatPanel_MyAccountMaster_Menu_AccountVerificationSign',
-                                    margin: '0 0 0 0',
-                                    height: 20,
-                                    html: '<div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-size: 22px;font-weight:normal;color:black;height:20px">></div>'
-                                },
-                            {
-                                xtype: 'spacer',
-                                width: 20
-                            },
-                            ]
 
-                        },
-                        {
 
-                            xtype: 'container',
-                            width: '95%',
-                            height: 60,
-                            margin: '10 0 0 0',
-                            name: 'nameContainerFloatPanel_MyAccountMaster_TermAndCondition',
-                            //style: 'background-color:rgba(255, 255, 255, 0.3);border-radius: 40px 40px 40px 40px;',
-                            style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px none #ECF0F1 ;background: transparent;',
-                            //style: 'background-color:red;border-radius: 10px 10px 10px 10px;',
-                            layout: {
-                                type: 'hbox',
-                                pack: 'center',
-                                align: 'center'
-                            },
-                            items: [
-                                {
-                                    xtype: 'spacer',
-                                    width: 20
-                                },
-                                {
-                                    height: 28,
-                                    width: 28,
-                                    html: '<img src="resources/icons/TermAndCondition.png" alt="Image" style="width:28px;height:28px;">',
-                                },
-                                {
-                                    xtype: 'spacer',
-                                    width: 10
-                                },
-                                {
-                                    id: 'FloatPanel_MyAccountMaster_Menu_TermAndCondition',
-                                    margin: '5 0 0 0',
-                                    height: 20,
-                                    html: '<div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-size: 14px;font-weight:normal;color:black;height:20px">Term And Conditions</div>'
-                                },
-                                 {
-                                     xtype: 'spacer'
-                                 },
-                                {
-                                    id: 'FloatPanel_MyAccountMaster_Menu_TermAndConditionSign',
-                                    margin: '0 0 0 0',
-                                    height: 20,
-                                    html: '<div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-size: 22px;font-weight:normal;color:black;height:20px">></div>'
-                                },
-                            {
-                                xtype: 'spacer',
-                                width: 20
-                            },
-                            ]
 
-                        },
-                            {
+{
 
-                                xtype: 'container',
-                                width: '95%',
-                                height: 60,
-                                margin: '10 0 0 0',
-                                //style: 'background-color:rgba(255, 255, 255, 0.3);border-radius: 40px 40px 40px 40px;',
-                                style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px none #ECF0F1 ;background: transparent;',
-                                name: 'nameContainerFloatPanel_MyAccountMaster_LogOut',
-                                //style: 'background-color:red;border-radius: 10px 10px 10px 10px;',
-                                layout: {
-                                    type: 'hbox',
-                                    pack: 'center',
-                                    align: 'center'
-                                },
-                                items: [
-                                    {
-                                        xtype: 'spacer',
-                                        width: 20
-                                    },
-                                    {
-                                        height: 28,
-                                        width: 28,
-                                        html: '<img src="resources/icons/logoutPurpleOne.png" alt="Image" style="width:28px;height:28px;">',
-                                    },
-                                    {
-                                        xtype: 'spacer',
-                                        width: 10
-                                    },
-                                    {
-                                        id: 'FloatPanel_MyAccountMaster_Menu_LogOut',
-                                        margin: '5 0 0 0',
-                                        height: 20,
-                                        html: '<div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-size: 14px;font-weight:normal;color:black;height:20px">LogOut</div>'
-                                    },
-                                     {
-                                         xtype: 'spacer'
-                                     },
-                                    {
-                                        id: 'FloatPanel_MyAccountMaster_Menu_LogOutSign',
-                                        margin: '0 0 0 0',
-                                        height: 20,
-                                        html: '<div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-size: 22px;font-weight:normal;color:black;height:20px">></div>'
-                                    },
-                                {
-                                    xtype: 'spacer',
-                                    width: 20
-                                },
-                                ]
+    xtype: 'container',
+    width: '95%',
+    height: 60,
+    margin: '0 0 0 0',
+    //style: 'background-color:rgba(255, 255, 255, 0.3);border-radius: 40px 40px 40px 40px;',
+    style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:1px solid #ECF0F1;border-top:2px none #ECF0F1 ;background: transparent;',
+    name: 'nameContainerFloatPanel_MyAccountMaster_LogOut',
+    //style: 'background-color:red;border-radius: 10px 10px 10px 10px;',
+    layout: {
+        type: 'hbox',
+        pack: 'center',
+        align: 'center'
+    },
+    items: [
+        {
+            xtype: 'spacer',
+            width: 20
+        },
+        {
+            height: 22,
+            width: 22,
+            html: '<img src="resources/icons/logoutPurpleOne.png" alt="Image" style="width:22px;height:22px;">',
+        },
+        {
+            xtype: 'spacer',
+            width: 20
+        },
+        {
+            id: 'FloatPanel_MyAccountMaster_Menu_LogOut',
+            margin: '5 0 0 0',
+            height: 20,
+            html: '<div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-size: 12px;font-weight:normal;color:black;height:20px">Log Out</div>'
+        },
+         {
+             xtype: 'spacer'
+         },
+        {
+            id: 'FloatPanel_MyAccountMaster_Menu_MyVoucherSign',
+            margin: '0 0 0 0',
+            height: 20,
+            html: '<div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-size: 22px;font-weight:normal;color:black;height:20px">></div>'
+        },
+    {
+        xtype: 'spacer',
+        width: 20
+    },
+    ]
 
-                            },
+},
+    ]
+},
+
+
+
+{
+    xtype: 'container',
+    width: '100%',
+    height: 440,
+    id:'containerFloatPanel_MyAccountMasterMaster_Rewards',
+    layout: {
+        type: 'vbox',
+        pack: 'start',
+        align: 'center'
+    },
+    items:[
+
+        {
+            xtype: 'container',
+            width: '100%',
+            height: 30,
+           // id:'containerFloatPanel_MyAccountMasterMaster_General',
+            layout: {
+                type: 'hbox',
+                pack: 'left',
+                align: 'left'
+            },
+            items:[
+                {
+                    xtype: 'spacer',
+                    width: 20
+                },
+                {
+                    html: '<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 14px;font-weight:bold;color:black;height:23px">Rewarding</div>'
+                },
+            ]
+        },
+       
+        
+        {
+
+            xtype: 'container',
+            width: '95%',
+            height: 60,
+            margin: '0 0 0 0',
+            name: 'nameContainerFloatPanel_MyAccountMaster_MyMerchantPerks',
+            //style: 'background-color:rgba(255, 255, 255, 0.3);border-radius: 40px 40px 40px 40px;',
+            style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:1px solid #ECF0F1;border-top:1px solid #ECF0F1 ;background: transparent;',
+            //style: 'background-color:red;border-radius: 10px 10px 10px 10px;',
+            layout: {
+                type: 'hbox',
+                pack: 'center',
+                align: 'center'
+            },
+            items: [
+                {
+                    xtype: 'spacer',
+                    width: 20
+                },
+                {
+                    height: 22,
+                    width: 22,
+                    html: '<img src="resources/icons/TermAndCondition.png" alt="Image" style="width:22px;height:22px;">',
+                },
+                {
+                    xtype: 'spacer',
+                    width: 20
+                },
+                {
+                    id: 'FloatPanel_MyAccountMaster_Menu_MyMerchantPerks',
+                    margin: '5 0 0 0',
+                    height: 20,
+                    html: '<div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-size: 12px;font-weight:normal;color:black;height:20px">My Merchant Perks</div>'
+                },
+                 {
+                     xtype: 'spacer'
+                 },
+                {
+                    id: 'FloatPanel_MyAccountMaster_Menu_MyMerchantPerksSign',
+                    margin: '0 0 0 0',
+                    height: 20,
+                    html: '<div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-size: 22px;font-weight:normal;color:black;height:20px">></div>'
+                },
+            {
+                xtype: 'spacer',
+                width: 20
+            },
+            ]
+
+        },
+
+
+        {
+
+            xtype: 'container',
+            width: '95%',
+            height: 60,
+            margin: '0 0 0 0',
+            name: 'nameContainerFloatPanel_MyAccountMaster_MyAyohaPointAndPrize',
+            //style: 'background-color:rgba(255, 255, 255, 0.3);border-radius: 40px 40px 40px 40px;',
+            style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:1px solid #ECF0F1;border-top:1px solid #ECF0F1 ;background: transparent;',
+            //style: 'background-color:red;border-radius: 10px 10px 10px 10px;',
+            layout: {
+                type: 'hbox',
+                pack: 'center',
+                align: 'center'
+            },
+            items: [
+                {
+                    xtype: 'spacer',
+                    width: 20
+                },
+                {
+                    height: 22,
+                    width: 22,
+                    html: '<img src="resources/icons/TermAndCondition.png" alt="Image" style="width:22px;height:22px;">',
+                },
+                {
+                    xtype: 'spacer',
+                    width: 20
+                },
+                {
+                    id: 'FloatPanel_MyAccountMaster_Menu_MyAyohaPointAndPrize',
+                    margin: '5 0 0 0',
+                    height: 20,
+                    html: '<div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-size: 12px;font-weight:normal;color:black;height:20px">My Ayoha Point & Prize</div>'
+                },
+                 {
+                     xtype: 'spacer'
+                 },
+                {
+                    id: 'FloatPanel_MyAccountMaster_Menu_MyAyohaPointAndPrizeSign',
+                    margin: '0 0 0 0',
+                    height: 20,
+                    html: '<div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-size: 22px;font-weight:normal;color:black;height:20px">></div>'
+                },
+            {
+                xtype: 'spacer',
+                width: 20
+            },
+            ]
+
+        },
+
+
+        {
+
+            xtype: 'container',
+            width: '95%',
+            height: 60,
+            margin: '0 0 0 0',
+            name: 'nameContainerFloatPanel_MyAccountMaster_PointHistoryAndTransaction',
+            //style: 'background-color:rgba(255, 255, 255, 0.3);border-radius: 40px 40px 40px 40px;',
+            style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:1px solid #ECF0F1;border-top:1px solid #ECF0F1 ;background: transparent;',
+            //style: 'background-color:red;border-radius: 10px 10px 10px 10px;',
+            layout: {
+                type: 'hbox',
+                pack: 'center',
+                align: 'center'
+            },
+            items: [
+                {
+                    xtype: 'spacer',
+                    width: 20
+                },
+                {
+                    height: 22,
+                    width: 22,
+                    html: '<img src="resources/icons/TermAndCondition.png" alt="Image" style="width:22px;height:22px;">',
+                },
+                {
+                    xtype: 'spacer',
+                    width: 20
+                },
+                {
+                    id: 'FloatPanel_MyAccountMaster_Menu_PointHistoryAndTransaction',
+                    margin: '5 0 0 0',
+                    height: 20,
+                    html: '<div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-size: 12px;font-weight:normal;color:black;height:20px">Point History & Transaction</div>'
+                },
+                 {
+                     xtype: 'spacer'
+                 },
+                {
+                    id: 'FloatPanel_MyAccountMaster_Menu_PointHistoryAndTransactionSign',
+                    margin: '0 0 0 0',
+                    height: 20,
+                    html: '<div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-size: 22px;font-weight:normal;color:black;height:20px">></div>'
+                },
+            {
+                xtype: 'spacer',
+                width: 20
+            },
+            ]
+
+        },
+
+
+
+
+
+
+        
+            {
+
+                xtype: 'container',
+                width: '95%',
+                height: 60,
+                margin: '0 0 0 0',
+                //style: 'background-color:rgba(255, 255, 255, 0.3);border-radius: 40px 40px 40px 40px;',
+                style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:1px solid #ECF0F1;border-top:2px none #ECF0F1 ;background: transparent;',
+                name: 'nameContainerFloatPanel_MyAccountMaster_DoubleRewardTracker',
+                //style: 'background-color:red;border-radius: 10px 10px 10px 10px;',
+                layout: {
+                    type: 'hbox',
+                    pack: 'center',
+                    align: 'center'
+                },
+                items: [
+                    {
+                        xtype: 'spacer',
+                        width: 20
+                    },
+                    {
+                        height: 22,
+                        width: 22,
+                        html: '<img src="resources/icons/logoutPurpleOne.png" alt="Image" style="width:22px;height:22px;">',
+                    },
+                    {
+                        xtype: 'spacer',
+                        width: 20
+                    },
+                    {
+                        id: 'FloatPanel_MyAccountMaster_Menu_DoubleRewardTracker',
+                        margin: '5 0 0 0',
+                        height: 20,
+                        html: '<div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-size: 12px;font-weight:normal;color:black;height:20px">Reward Tracker</div>'
+                    },
+                     {
+                         xtype: 'spacer'
+                     },
+                    {
+                        id: 'FloatPanel_MyAccountMaster_Menu_DoubleRewardTrackerSign',
+                        margin: '0 0 0 0',
+                        height: 20,
+                        html: '<div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-size: 22px;font-weight:normal;color:black;height:20px">></div>'
+                    },
+                {
+                    xtype: 'spacer',
+                    width: 20
+                },
+                ]
+
+            },
+
+            {
+
+                xtype: 'container',
+                width: '95%',
+                height: 60,
+                margin: '0 0 0 0',
+                //style: 'background-color:rgba(255, 255, 255, 0.3);border-radius: 40px 40px 40px 40px;',
+                style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:1px solid #ECF0F1;border-top:2px none #ECF0F1 ;background: transparent;',
+                name: 'nameContainerFloatPanel_MyAccountMaster_SpecialCampaign',
+                //style: 'background-color:red;border-radius: 10px 10px 10px 10px;',
+                layout: {
+                    type: 'hbox',
+                    pack: 'center',
+                    align: 'center'
+                },
+                items: [
+                    {
+                        xtype: 'spacer',
+                        width: 20
+                    },
+                    {
+                        height: 22,
+                        width: 22,
+                        html: '<img src="resources/icons/logoutPurpleOne.png" alt="Image" style="width:22px;height:22px;">',
+                    },
+                    {
+                        xtype: 'spacer',
+                        width: 20
+                    },
+                    {
+                        id: 'FloatPanel_MyAccountMaster_Menu_SpecialCampaign',
+                        margin: '5 0 0 0',
+                        height: 20,
+                        html: '<div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-size: 12px;font-weight:normal;color:black;height:20px">Special Campaign</div>'
+                    },
+                     {
+                         xtype: 'spacer'
+                     },
+                    {
+                        id: 'FloatPanel_MyAccountMaster_Menu_SpecialCampaignSign',
+                        margin: '0 0 0 0',
+                        height: 20,
+                        html: '<div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-size: 22px;font-weight:normal;color:black;height:20px">></div>'
+                    },
+                {
+                    xtype: 'spacer',
+                    width: 20
+                },
+                ]
+
+            },
+            {
+
+                xtype: 'container',
+                width: '95%',
+                height: 60,
+                margin: '0 0 0 0',
+                //style: 'background-color:rgba(255, 255, 255, 0.3);border-radius: 40px 40px 40px 40px;',
+                style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:1px solid #ECF0F1;border-top:2px none #ECF0F1 ;background: transparent;',
+                name: 'nameContainerFloatPanel_MyAccountMaster_ReferAndEarn',
+                //style: 'background-color:red;border-radius: 10px 10px 10px 10px;',
+                layout: {
+                    type: 'hbox',
+                    pack: 'center',
+                    align: 'center'
+                },
+                items: [
+                    {
+                        xtype: 'spacer',
+                        width: 20
+                    },
+                    {
+                        height: 22,
+                        width: 22,
+                        html: '<img src="resources/icons/logoutPurpleOne.png" alt="Image" style="width:22px;height:22px;">',
+                    },
+                    {
+                        xtype: 'spacer',
+                        width: 20
+                    },
+                    {
+                        id: 'FloatPanel_MyAccountMaster_Menu_ReferAndEarn',
+                        margin: '5 0 0 0',
+                        height: 20,
+                        html: '<div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-size: 12px;font-weight:normal;color:black;height:20px">Refer & Earn</div>'
+                    },
+                     {
+                         xtype: 'spacer'
+                     },
+                    {
+                        id: 'FloatPanel_MyAccountMaster_Menu_ReferAndEarnSign',
+                        margin: '0 0 0 0',
+                        height: 20,
+                        html: '<div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-size: 22px;font-weight:normal;color:black;height:20px">></div>'
+                    },
+                {
+                    xtype: 'spacer',
+                    width: 20
+                },
+                ]
+
+            },
+    ]
+},
+
+
+{
+    xtype: 'container',
+    width: '100%',
+    height: 260,
+    id:'containerFloatPanel_MyAccountMasterMaster_AyohaStore',
+    layout: {
+        type: 'vbox',
+        pack: 'start',
+        align: 'center'
+    },
+    items:[
+
+        {
+            xtype: 'container',
+            width: '100%',
+            height: 30,
+           // id:'containerFloatPanel_MyAccountMasterMaster_General',
+            layout: {
+                type: 'hbox',
+                pack: 'left',
+                align: 'left'
+            },
+            items:[
+                {
+                    xtype: 'spacer',
+                    width: 20
+                },
+                {
+                    html: '<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 14px;font-weight:bold;color:black;height:23px">Ayoha Store</div>'
+                },
+            ]
+        },
+       
+        {
+
+            xtype: 'container',
+            width: '95%',
+            height: 60,
+            margin: '0 0 0 0',
+            name: 'nameContainerFloatPanel_MyAccountMaster_PurchaseHistory',
+            //style: 'background-color:rgba(255, 255, 255, 0.3);border-radius: 40px 40px 40px 40px;',
+            style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:1px solid #ECF0F1;border-top:1px solid #ECF0F1 ;background: transparent;',
+            //style: 'background-color:red;border-radius: 10px 10px 10px 10px;',
+            layout: {
+                type: 'hbox',
+                pack: 'center',
+                align: 'center'
+            },
+            items: [
+                {
+                    xtype: 'spacer',
+                    width: 20
+                },
+                {
+                    height: 22,
+                        width: 22,
+                    html: '<img src="resources/icons/AccountVerification.png" alt="Image" style="width:22px;height:22px;">',
+                },
+                {
+                    xtype: 'spacer',
+                    width: 20
+                },
+                {
+                    id: 'FloatPanel_MyAccountMaster_Menu_PurchaseHistory',
+                    margin: '5 0 0 0',
+                    height: 20,
+                    html: '<div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-size: 12px;font-weight:normal;color:black;height:20px">Purchase History</div>'
+                },
+                 {
+                     xtype: 'spacer'
+                 },
+                {
+                    id: 'FloatPanel_MyAccountMaster_Menu_PurchaseHistorySign',
+                    margin: '0 0 0 0',
+                    height: 20,
+                    html: '<div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-size: 22px;font-weight:normal;color:black;height:20px">></div>'
+                },
+            {
+                xtype: 'spacer',
+                width: 20
+            },
+            ]
+
+        },
+        {
+
+            xtype: 'container',
+            width: '95%',
+            height: 60,
+            margin: '0 0 0 0',
+            name: 'nameContainerFloatPanel_MyAccountMaster_AyohaStoreCart',
+            //style: 'background-color:rgba(255, 255, 255, 0.3);border-radius: 40px 40px 40px 40px;',
+            style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:1px solid #ECF0F1;border-top:1px none #ECF0F1 ;background: transparent;',
+            //style: 'background-color:red;border-radius: 10px 10px 10px 10px;',
+            layout: {
+                type: 'hbox',
+                pack: 'center',
+                align: 'center'
+            },
+            items: [
+                {
+                    xtype: 'spacer',
+                    width: 20
+                },
+                {
+                    height: 22,
+                    width: 22,
+                    html: '<img src="resources/icons/TermAndCondition.png" alt="Image" style="width:22px;height:22px;">',
+                },
+                {
+                    xtype: 'spacer',
+                    width: 20
+                },
+                {
+                    id: 'FloatPanel_MyAccountMaster_Menu_AyohaStoreCart',
+                    margin: '5 0 0 0',
+                    height: 20,
+                    html: '<div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-size: 12px;font-weight:normal;color:black;height:20px">Ayoha Store Cart</div>'
+                },
+                 {
+                     xtype: 'spacer'
+                 },
+                {
+                    id: 'FloatPanel_MyAccountMaster_Menu_AyohaStoreCartSign',
+                    margin: '0 0 0 0',
+                    height: 20,
+                    html: '<div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-size: 22px;font-weight:normal;color:black;height:20px">></div>'
+                },
+            {
+                xtype: 'spacer',
+                width: 20
+            },
+            ]
+
+        },
+            {
+
+                xtype: 'container',
+                width: '95%',
+                height: 60,
+                margin: '0 0 0 0',
+                //style: 'background-color:rgba(255, 255, 255, 0.3);border-radius: 40px 40px 40px 40px;',
+                style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:1px solid #ECF0F1;border-top:2px none #ECF0F1 ;background: transparent;',
+                name: 'nameContainerFloatPanel_MyAccountMaster_MyVoucher',
+                //style: 'background-color:red;border-radius: 10px 10px 10px 10px;',
+                layout: {
+                    type: 'hbox',
+                    pack: 'center',
+                    align: 'center'
+                },
+                items: [
+                    {
+                        xtype: 'spacer',
+                        width: 20
+                    },
+                    {
+                        height: 22,
+                        width: 22,
+                        html: '<img src="resources/icons/logoutPurpleOne.png" alt="Image" style="width:22px;height:22px;">',
+                    },
+                    {
+                        xtype: 'spacer',
+                        width: 20
+                    },
+                    {
+                        id: 'FloatPanel_MyAccountMaster_Menu_MyVoucher',
+                        margin: '5 0 0 0',
+                        height: 20,
+                        html: '<div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-size: 12px;font-weight:normal;color:black;height:20px">My Voucher</div>'
+                    },
+                     {
+                         xtype: 'spacer'
+                     },
+                    {
+                        id: 'FloatPanel_MyAccountMaster_Menu_MyVoucherSign',
+                        margin: '0 0 0 0',
+                        height: 20,
+                        html: '<div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-size: 22px;font-weight:normal;color:black;height:20px">></div>'
+                    },
+                {
+                    xtype: 'spacer',
+                    width: 20
+                },
+                ]
+
+            },
+    ]
+},
+                       
+{
+    xtype: 'container',
+    width: '100%',
+    height: 300,
+    id:'containerFloatPanel_MyAccountMasterMaster_General',
+    layout: {
+        type: 'vbox',
+        pack: 'start',
+        align: 'center'
+    },
+    items:[
+
+        {
+            xtype: 'container',
+            width: '100%',
+            height: 30,
+           // id:'containerFloatPanel_MyAccountMasterMaster_General',
+            layout: {
+                type: 'hbox',
+                pack: 'left',
+                align: 'left'
+            },
+            items:[
+                {
+                    xtype: 'spacer',
+                    width: 20
+                },
+                {
+                    html: '<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 14px;font-weight:bold;color:black;height:23px">General</div>'
+                },
+            ]
+        },
+       
+        {
+
+            xtype: 'container',
+            width: '95%',
+            height: 60,
+            margin: '0 0 0 0',
+            name: 'nameContainerFloatPanel_MyAccountMaster_TermAndCondition',
+            //style: 'background-color:rgba(255, 255, 255, 0.3);border-radius: 40px 40px 40px 40px;',
+            style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:1px solid #ECF0F1;border-top:1px solid #ECF0F1 ;background: transparent;',
+            //style: 'background-color:red;border-radius: 10px 10px 10px 10px;',
+            layout: {
+                type: 'hbox',
+                pack: 'center',
+                align: 'center'
+            },
+            items: [
+                {
+                    xtype: 'spacer',
+                    width: 20
+                },
+                {
+                    height: 22,
+                        width: 22,
+                    html: '<img src="resources/icons/AccountVerification.png" alt="Image" style="width:22px;height:22px;">',
+                },
+                {
+                    xtype: 'spacer',
+                    width: 20
+                },
+                {
+                    id: 'FloatPanel_MyAccountMaster_Menu_TermAndCondition',
+                    margin: '5 0 0 0',
+                    height: 20,
+                    html: '<div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-size: 12px;font-weight:normal;color:black;height:20px">Term And Condition</div>'
+                },
+                 {
+                     xtype: 'spacer'
+                 },
+                {
+                    id: 'FloatPanel_MyAccountMaster_Menu_TermAndConditioSign',
+                    margin: '0 0 0 0',
+                    height: 20,
+                    html: '<div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-size: 22px;font-weight:normal;color:black;height:20px">></div>'
+                },
+            {
+                xtype: 'spacer',
+                width: 20
+            },
+            ]
+
+        },
+        
+            
+    ]
+},                   
 
                         {
 
                             xtype: 'container',
                             width: '100%',
-                            height: 150,
+                            height: 70,
+                            hidden:true,
                             margin: '0 0 0 0',
                             docked:'bottom',
                             //style: 'background-color:rgba(255, 255, 255, 0.3);border-radius: 40px 40px 40px 40px;',
-                            style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none black ;background: transparent;',
+                            style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:1px none #ECF0F1;border-top:2px none black ;background: transparent;',
                           //  style: 'background: transparent;',
                             layout: {
                                 type: 'vbox',
@@ -701,24 +1308,24 @@ function FloatPanel_MyAccountMaster() {
                             items: [
                                
                                 {
-                                    height: 110,
-                                    width: 110,
+                                    height: 40,
+                                    width: 40,
                                     margin:'0 0 0 -10',
                                     //html: '<img src="resources/icons/ayohaReward01.gif" alt="Image" style="width:110px;height:110px;">',
-                                    html: '<img src="resources/icons/Logo/LogoOrangeSimplifed.png" alt="Image" style="width:110px;height:110px;">',
+                                    html: '<img src="resources/icons/Logo/LogoOrangeSimplifed.png" alt="Image" style="width:40px;height:40px;">',
                                 },
                                
                                 {
                                     id: 'FloatPanel_MyAccountMaster_Menu_AyohaRewardv',
                                     margin: '0 0 0 0',
                                    // height: 20,
-                                    html: '<div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-size: 16px;font-weight:normal;color:black;">Ayoha Reward v 1.0</div>'
+                                    html: '<div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-size: 12px;font-weight:normal;color:black;">Ayoha Reward v 1.0</div>'
                                 },
                                 {
                                     id: 'FloatPanel_MyAccountMaster_Menu_DevBy',
                                     margin: '0 0 0 0',
                                     // height: 20,
-                                    html: '<div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-size: 9px;font-weight:normal;color:black;">We Double Your Reward!</div>'
+                                    html: '<div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-size: 9px;font-weight:normal;color:black;">One Hub, Double Reward!</div>'
                                 },
                                 
                             ]
@@ -824,14 +1431,14 @@ function FloatPanel_MyAccountMasterShow() {
       }
     );
 
-    var containerViewnameContainerFloatPanel_MyAccountMaster_AccountVerification = Ext.ComponentQuery.query('container[name=nameContainerFloatPanel_MyAccountMaster_AccountVerification]')[0];
-    var containerViewElnameContainerFloatPanel_MyAccountMaster_AccountVerification = containerViewnameContainerFloatPanel_MyAccountMaster_AccountVerification.element;
-    containerViewElnameContainerFloatPanel_MyAccountMaster_AccountVerification.on('tap',
-      function (event, node, options, eOpts) {
-          setSubscription();
+    // var containerViewnameContainerFloatPanel_MyAccountMaster_AccountVerification = Ext.ComponentQuery.query('container[name=nameContainerFloatPanel_MyAccountMaster_AccountVerification]')[0];
+    // var containerViewElnameContainerFloatPanel_MyAccountMaster_AccountVerification = containerViewnameContainerFloatPanel_MyAccountMaster_AccountVerification.element;
+    // containerViewElnameContainerFloatPanel_MyAccountMaster_AccountVerification.on('tap',
+    //   function (event, node, options, eOpts) {
+    //       setSubscription();
 
-      }
-    );
+    //   }
+    // );
 
     
     var containerViewnameFloatPanel_MyAccountMaster_VerificationStatusBox = Ext.ComponentQuery.query('container[name=nameFloatPanel_MyAccountMaster_VerificationStatusBox]')[0];
@@ -858,23 +1465,25 @@ function FloatPanel_MyAccountMasterShow() {
 
 
     Ext.getCmp('FloatPanel_MyAccountMaster_PicPicture').setHtml('<img src="' + GetAyohaUserPicProfile() + '" alt="Image" style="width:95px;height:95px;border-radius: 50%;border: 2px solid #ECF0F1;zIndex:400px;margin:0px 0px 0px -10px;">');
-    Ext.getCmp('FloatPanel_MyAccountMaster_AccountName').setHtml('<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 16px;font-weight:bold;color:white;height:20px">' + GetAyohaUserAccountNames() + '</div>');
+    Ext.getCmp('FloatPanel_MyAccountMaster_AccountName').setHtml('<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 12px;font-weight:bold;color:white;">' + GetAyohaUserAccountNames() + '</div>');
+    Ext.getCmp('FloatPanel_MyAccountMaster_emailAddress').setHtml('<div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-size: 12px;font-weight:bold;color:white;height:20px">'+GetAyohaUserEmail()+'</div>');
+   
     console.log(GetAyohaUserAccountNames().length);
 
     if (GetAyohaUserAccountNames().length > 24) {
 
         
-        Ext.getCmp('FloatPanel_MyAccountMaster_AccountName').setHeight(38);
-        Ext.getCmp('FloatPanel_MyAccountMaster_AccountName').setHtml('<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 16px;font-weight:bold;color:white;height:38px">' + GetAyohaUserAccountNames() + '</div>');
+      //  Ext.getCmp('FloatPanel_MyAccountMaster_AccountName').setHeight(38);
+        Ext.getCmp('FloatPanel_MyAccountMaster_AccountName').setHtml('<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 12px;font-weight:bold;color:white;">' + GetAyohaUserAccountNames() + '</div>');
     }
 
    
-    Ext.getCmp('FloatPanel_MyAccountMaster_AccountNo').setHtml('<div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-size: 11px;font-weight:bold;color:white;height:23px">' + id + '</div>');
+    Ext.getCmp('FloatPanel_MyAccountMaster_AccountNo').setHtml('<div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-size: 12px;font-weight:bold;color:white;height:23px">' + id + '</div>');
 
 
 
     if (isUserVerified == "NO") {
-        Ext.getCmp('FloatPanel_MyAccountMaster_AccountNo').setHtml('<div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-size: 11px;font-weight:bold;color:orange;height:23px">Not Ayoha Member</div>');
+        Ext.getCmp('FloatPanel_MyAccountMaster_AccountNo').setHtml('<div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-size: 12px;font-weight:bold;color:orange;height:23px">Not Ayoha Member</div>');
         Ext.getCmp('FloatPanel_MyAccountMaster_VerifyIcon').setHtml('<img src="resources/icons/NotVerify.png" alt="Image" style="width:32px;height:32px;zIndex:400px;margin:0px 0px 0px 0px;">');
         Ext.getCmp('FloatPanel_MyAccountMaster_VerificationStatusBox').setHtml('<div class="blink_me" style="width:auto;background-color: orange;text-align:center;border: 1px solid orange;font-size: 11px;font-weight:normal;color:white;height:21px;vertical-align:middle;border-radius: 5px 5px 5px 5px;padding:0px 15px;"><div style="margin:3px 0px 0px 0px;">Be Ayoha Member !</div></div>');
        
@@ -883,11 +1492,11 @@ function FloatPanel_MyAccountMasterShow() {
 
     }
     if (isUserVerified == "YES") {
-        Ext.getCmp('FloatPanel_MyAccountMaster_AccountNo').setHtml('<div onclick="FloatPanel_MyAccountRankDescriptionShow();" style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-size: 11px;font-weight:bold;color:white;height:23px">' + localStorage.getItem("AccountNoDisplay") + '</div>');
-
-        Ext.getCmp('FloatPanel_MyAccountMaster_AccountName').setHtml('<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 16px;font-weight:bold;color:white;height:20px">' + GetAyohaUserAccountNames() + '</div>');
+        Ext.getCmp('FloatPanel_MyAccountMaster_AccountNo').setHtml('<div onclick="FloatPanel_MyAccountRankDescriptionShow();" style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-size: 12px;font-weight:bold;color:white;height:23px">' + localStorage.getItem("AccountNoDisplay") + '</div>');
+        Ext.getCmp('FloatPanel_MyAccountMaster_emailAddress').setHtml('<div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-size: 12px;font-weight:bold;color:white;height:20px">'+GetAyohaUserEmail()+'</div>');
+        Ext.getCmp('FloatPanel_MyAccountMaster_AccountName').setHtml('<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 12px;font-weight:bold;color:white;">' + GetAyohaUserAccountNames() + '</div>');
         if (GetAyohaUserAccountNames().length > 24) {
-            Ext.getCmp('FloatPanel_MyAccountMaster_AccountName').setHtml('<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 16px;font-weight:bold;color:white;height:38px">' + GetAyohaUserAccountNames() + '</div>');
+            Ext.getCmp('FloatPanel_MyAccountMaster_AccountName').setHtml('<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 12px;font-weight:bold;color:white;">' + GetAyohaUserAccountNames() + '</div>');
         }
        
 
@@ -935,7 +1544,7 @@ function FloatPanel_MyAccountMasterShow() {
 
 
 
-        Ext.getCmp('FloatPanel_MyAccountMaster_VerificationStatusBox').setHtml('<div onclick="FloatPanel_MyAccountRankDescriptionShow();" style="width:auto;background-image: linear-gradient(#c800ffc9,#ff00de75);background-color: #fac;text-align:left;border: 1px solid #fac;font-size: 11px;font-weight:bold;color:white;height:21px;vertical-align:middle;border-radius: 5px 5px 5px 5px;margin:-15px 0px 0px 0px;padding:3px 10px;"><div style="margin:0px 0px 0px 0px;">Ranking : ' + localStorage.getItem("AyohaMember_Rank") + '</div></div>');
+        Ext.getCmp('FloatPanel_MyAccountMaster_VerificationStatusBox').setHtml('<div  onclick="FloatPanel_MyAccountRankDescriptionShow();" style="width:auto;height:25px;background-image: linear-gradient(#c800ffc9,#c800ffc9);background-color: #fac;border: 1px solid #fac;font-size: 12px;font-weight:bold;color:white;border-radius: 5px;display: flex;align-items: center;justify-content: center;padding:0px 7px ">Tier :' + localStorage.getItem("AyohaMember_Rank") + ' | Ayoha Point:'+globalDashboard_AyohaPoint+'</div>');
        
     }
 }

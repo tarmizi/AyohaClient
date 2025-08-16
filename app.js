@@ -123,7 +123,7 @@ Ext.application({
     'MyAccount.FloatPanel_MerchantDetailPage', 'AyohaMerchantInfo.FloatPanel_AyohaMerchantInfo_BusinessHour', 'MyAccount.Scan_QRCode_StampCard', 'MyAccount.FloatPanel_AyohaMembershipAdvantages', 'AyohaeWallet.FloatPanel_AyohaeWallet_CashOut',
     'AyohaeWallet.FloatPanel_AyohaeWallet_CashOutConfirm', 'Master.FloatPanel_BankAccountName', 'Master.FloatPanel_BankAccountType','AyohaRewardMerchantDiscountLoyalty.FloatPanel_MerchantDiscountLoyaltyDescription','Dashboard.FloatPanel_DashboardMerchantReward_UploadedReceipt',
     'Membership.FloatPanel_Membership_MembershipCardSaleDetail','Membership.FloatPanel_MembershipCardList_NotYetSubscribed','AyohaStoreSaleItem.FloatPanel_AyohaStore_CheckOut_MembershipCard','ianMizi.view.Config.CoreVariable','Membership.FloatPanel_Membership_MembershipCardHubs',
-'AyohaStoreSaleItem.FloatPanel_MainDashboard_PendingOrder','MyAccount.FloatPanel_ShoppingBagOrder','AyohaStoreSaleItem.FloatPanel_AyohaStore_OrderHistory_Single'],
+'AyohaStoreSaleItem.FloatPanel_MainDashboard_PendingOrder','MyAccount.FloatPanel_ShoppingBagOrder','AyohaStoreSaleItem.FloatPanel_AyohaStore_OrderHistory_Single','Menu.DrawerMenu'],
 
 
     icon: {

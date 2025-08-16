@@ -122,7 +122,7 @@ function FloatPanel_DashboardMerchantReward() {
                                     //  title: '<font size="3" color="white">Live Tracking Map</font>',
                                     //hidden: true,
 
-                                    id: 'containerFloatPanel_MembershipCardList_MyMembershipCardHeader',
+                                    id: 'containerFloatPanel_DashboardMerchantRewardHeader',
                                     style: {
                                         // background: '#D25959',
                                         background: 'transparent',

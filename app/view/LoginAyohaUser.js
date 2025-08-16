@@ -447,6 +447,8 @@ function loadAyohaUserProfile() {
 
 
 var globalLogginAyohaUser_AyohaUserPicProfile;
+var globalLogginAyohaUser_AyohaUserAccountNames;
+var globalLogginAyohaUser_AyohaUserAccountNames_DisplayName;
 function loadAyohaUserProfileLoginBody() {
 
 
@@ -519,6 +521,7 @@ function loadAyohaUserProfileLoginBody() {
                         //Ext.getCmp('htmlMyAccount_Dashboard_TitleHeaderTxt').setHtml('<font size=2 color=white><b>' + data.results[0].AyohaVersion + '</b></font>');
                         var AccountName = data.results[0].AccountName.substring(0, 9);
                        localStorage.setItem('AyohaUserAccountNameDisplay', AccountName);
+                       globalLogginAyohaUser_AyohaUserAccountNames_DisplayName=AccountName;
                         //Ext.getCmp('htmlMyAccount_DashboardHaiUser').setHtml('<font size=2 color=black><b>Hi ' + AccountName.toLowerCase() + '</b></font>');
                       //  Ext.getCmp('htmlMyAccount_Dashboard_ProfileTitle').setHtml('<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 11px;font-weight:normal;color:white;margin:0px 0px 0px 0px">Good Days!,</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 16px;font-weight:bold;color:white;margin:-25px 0px 0px 0px">' + AccountName.toUpperCase() + '</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 10px;font-weight:bold;color:white;margin:-27px 0px 0px 0px">Non-Ayoha Member</div>');
                         Ext.getCmp('htmlMyAccount_Dashboard_ProfileTitle').setHtml('<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 11px;font-weight:normal;color:white;margin:0px 0px 0px 0px">Good Days!,</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 14px;font-weight:bold;color:white;margin:-25px 0px 0px 0px">' + AccountName.toUpperCase() + '</div>');
@@ -533,7 +536,8 @@ function loadAyohaUserProfileLoginBody() {
                         localStorage.setItem('AyohaUserGroupCode',data.results[0].AyohaUserGroupCode);
                        // localStorage.setItem('AyohaUserPicProfile',data.results[0].Photo);
                         globalLogginAyohaUser_AyohaUserPicProfile = data.results[0].Photo;
-                        localStorage.setItem('AyohaUserAccountNames', data.results[0].AccountName);
+                       // localStorage.setItem('AyohaUserAccountNames', data.results[0].AccountName);
+                        globalLogginAyohaUser_AyohaUserAccountNames = data.results[0].AccountName;
                         localStorage.setItem('AyohaUserisUserVerified',data.results[0].isUserVerified);
                         localStorage.setItem('CurrPhoneNumber', data.results[0].PhoneNo);
                         localStorage.setItem('AyohaUserVerifiedString', data.results[0].VerifyString);

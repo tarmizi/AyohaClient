@@ -931,7 +931,8 @@ function GetCurrAyohaVersion() {
 
 
 function GetAyohaUserPicProfile() {
-    var _value = localStorage.getItem('AyohaUserPicProfile');
+    var _value = globalLogginAyohaUser_AyohaUserPicProfile;
+   // localStorage.getItem('AyohaUserPicProfile');
     return _value;
 }
 function GetAyohaUserAccountNames() {
@@ -939,9 +940,11 @@ function GetAyohaUserAccountNames() {
     //return _value;
 
     var _value;
-    var AccountName = localStorage.getItem('AyohaUserAccountNames');
-    var AccountNames = AccountName.toLowerCase();
-    _value = capitalize_Words(AccountNames);
+    var AccountName = globalLogginAyohaUser_AyohaUserAccountNames;
+  //  var AccountNames = AccountName.toLowerCase();
+  //  var AccountNames = AccountName.toLowerCase();
+   // _value = capitalize_Words(AccountNames);
+    _value = AccountName.toUpperCase();
     return _value;
 }
 
