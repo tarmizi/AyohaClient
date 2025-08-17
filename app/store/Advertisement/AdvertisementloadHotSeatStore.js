@@ -45,3 +45,26 @@ var _DataStore_AdvertisementloadHotSeatStore = Ext.create('Ext.data.Store', {
         }
     },
 });
+
+
+
+
+var _DataStore_AdvertisementloadPremiumAdvertisementStore = Ext.create('Ext.data.Store', {
+
+    model: 'ianMizi.model.Advertisement.AdvertisementModel',
+    id: '_AdvertisementloadPremiumAdvertisementStoreID',
+    proxy: {
+        type: 'ajax',
+        url: GetAPIurl() + '/Advertisement/AdvertisementloadPremiumAdvertisment',
+        actionMethods: {
+            read: 'GET'
+        },
+        reader: {
+            type: 'json',
+            rootProperty: 'results',
+            totalProperty: 'total',
+            successProperty: 'success',
+            messageProperty: 'message'
+        }
+    },
+});
