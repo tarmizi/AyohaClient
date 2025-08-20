@@ -1455,8 +1455,8 @@ html: '<div ><img src="resources/icons/reviewstarunrate.png" width="9" height="9
                  //height: '100%',
                 
                  width: '100%',
-              height: 480,
-              //  height: 500,
+             // height: 480,
+              height: 500,
                 // disable:true,
                  style: 'background-color:transparent',
               
@@ -1473,7 +1473,7 @@ html: '<div ><img src="resources/icons/reviewstarunrate.png" width="9" height="9
   name: 'namemainDashboardCarousel',
    width: '100%',
   //  height: 370,
-    height: 350,
+    height: 390,
      style: 'background-color:transparent',
       indicators: false,
       listeners:
@@ -1582,10 +1582,10 @@ html: '<div ><img src="resources/icons/reviewstarunrate.png" width="9" height="9
                            
                            //style: 'background-image: url("resources/icons/bgfront06.png"); background-size: 100% 400px;background-repeat: no-repeat;',
                           // style: 'background-image: url("resources/icons/AyohaHeader04.png"); background-size: 100% 400px;background-repeat: no-repeat;',
-                          style: 'background-image: url("resources/icons/bgfront15.png"); background-size: 100% 320px;background-repeat: no-repeat;',
+                          style: 'background-image: url("resources/icons/bgfront15.png"); background-size: 100% 360px;background-repeat: no-repeat;',
                            
                            width: '100%',
-                           height: 350,
+                           height: 360,
                            title: 'Dashboard_AyohaReward_AyohaMerchant',
                          // style: "background-color: transparent;",
                            layout: {
@@ -1644,6 +1644,7 @@ html: '<div ><img src="resources/icons/reviewstarunrate.png" width="9" height="9
                                                    {
                                                        xtype: 'container',
                                                        width: '100%',
+                                                       hidden: true,
                                                        layout: {
                                                            type: 'hbox',
                                                            pack: 'center',
@@ -1672,15 +1673,69 @@ html: '<div ><img src="resources/icons/reviewstarunrate.png" width="9" height="9
                                                    {
        
                                                        //  html: '<div  class="pulse" style="background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9); border-radius: 50%;border:2px solid #fac;text-align:center;margin:-30px 0px 0px 0px"><div style="color:black;text-align: center;font-size:48px;width:100%;margin:70px 0px 0px 0px;"><b>2560</b></div><br><div style="color:black;text-align: center;font-size:11px;width:100%;margin:-38px 0px 0px 0px"><b>Ayoha Point</b></div></div>'
+                                                     
                                                        id: 'Dashboard_AyohaRewardPoint',
+                                                       hidden: true,
                                                        html: '<div style="background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9); border-radius: 50%;border:2px solid #fac;text-align:center;margin:-30px 0px 0px 0px;height:230px;width:230px"><div style="color:white;text-align: center;font-size:48px;width:100%;margin:70px 0px 0px 0px;"><b>0</b></div><br><div style="color:white;text-align: center;font-size:11px;width:100%;margin:-38px 0px 0px 0px"><b>Fetching...</b></div></div>'
        
        
        
                                                    },
+
+
+                                                   {
+                                                    id: 'Dashboard_AyohaRewardPanel',
+                                                    margin: '20 0 0 0',
+                                                    html: '<div style="width: 300px; margin: 14px auto; padding: 15px;'+
+                                                          ' color:#fff; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;'+
+                                                          ' background: rgba(255,255,255,0.12);'+
+                                                          ' backdrop-filter: blur(14px) saturate(120%);'+
+                                                          ' -webkit-backdrop-filter: blur(14px) saturate(120%);'+
+                                                          //' border: 1px solid rgba(255,255,255,0.6);'+
+                                                          'border:2px solid #fac;'+
+                                                          ' border-radius: 18px;'+
+                                                          ' box-shadow: 0 12px 28px rgba(0,0,0,.28);">'+
+                                                
+                                                            // Header
+                                                            '<div style="display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:16px;">'+
+                                                              '<div>'+
+                                                                '<div style="font-size:11px; opacity:.9; margin-bottom:2px;">Membership No</div>'+
+                                                                '<div style="font-size:12px; font-weight:800;">12323</div>'+
+                                                              '</div>'+
+                                                              '<div style="text-align:right;">'+
+                                                                '<div style="font-size:11px; opacity:.9;">Membership Since:</div>'+
+                                                                '<div style="font-size:12px; font-weight:700;">Jan 2023</div>'+
+                                                              '</div>'+
+                                                            '</div>'+
+                                                
+                                                            // Two columns side by side
+                                                            '<div style="display:flex; justify-content:space-between; gap:16px; flex-wrap:nowrap;">'+
+                                                
+                                                              // Left box
+                                                              '<div style="flex:1; text-align:center; padding:14px 10px; border-radius:14px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.25);">'+
+                                                                '<div id="txtDashboard_AyohaPoint" style="font-size:28px; font-weight:800;margin:10px 0px 0px 0px;">2353</div>'+
+                                                                '<div style="font-size:11px; opacity:.9;margin:6px 0px 0px 0px">Ayoha Point</div>'+
+                                                              '</div>'+
+                                                
+                                                              // Right box
+                                                              '<div style="flex:1; text-align:center; padding:14px 10px; border-radius:14px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.25);">'+
+                                                                '<div style="margin-bottom:6px;">'+
+                                                                  '<img id="imgDashboard_RankingIcon" src="resources/icons/ayohaRankingIcon/Gold.png" alt="Gold Tier" style="width:44px; height:44px; display:block; margin:0 auto;">'+
+                                                                '</div>'+
+                                                                '<div id="txtDashboard_RankingIcon" style="font-size:12px; font-weight:800; margin:-7px 0px 0px 0px;">Gold</div>'+
+                                                                '<div style="font-size:11px; opacity:.9;margin:-2px 0px 0px 0px;">Membership Tier</div>'+
+                                                              
+                                                              '</div>'+
+                                                
+                                                            '</div>'+
+                                                          '</div>'
+                                                },
+                                                
+                                                
                                                      {
                                                          xtype: 'container',
                                                          width: '100%',
+                                                         hidden: true,
                                                          layout: {
                                                              type: 'hbox',
                                                              pack: 'center',
@@ -1737,7 +1792,7 @@ html: '<div ><img src="resources/icons/reviewstarunrate.png" width="9" height="9
                                             xtype: 'container',
                                             width: '100%',
                                             margin: '0 0 0 0',
-                                           height: 50,     
+                                           height: 60,     
                                            // height: 350,                                        
                                            
                                             style: 'background-color:transparent;',
@@ -1749,9 +1804,23 @@ html: '<div ><img src="resources/icons/reviewstarunrate.png" width="9" height="9
                                             }, 
                                             items:[
                                                 {
+                                                    width: '80%',
+                                                    margin: '10 0 0 0',
+html:'<div class="tier-head">'+
+'<span style="margin:20px 0px 0px 10px">Next Membership Tier</span>'+
+'<span style="margin:20px -65px 0px 0px"><strong>Platinum</strong></span><span style="margin:5px 15px 0px 0px"><img src="resources/icons/ayohaRankingIcon/Platinum.png" style="width: 30px; height: 30px;" /></span>'+
+'</div>'+
+
+'<div style="margin:0px 0px 0px 0px" class="progress" aria-label="Progress to next tier" role="progressbar" aria-valuemin="0" aria-valuemax="5000" aria-valuenow="2353">'+
+'<div  class="bar" id="tierBar"></div>'+
+'<div class="label" id="tierLabel"></div>'+
+'</div>',
+                                                },
+                                                {
                                                     xtype: 'container',
                                                     width: '100%',
-                                                    zIndex:50,
+                                                    hidden: true,
+                                                    //zIndex:50,
                                                     //hidden: true,
                                                     margin: '0 0 0 0',
                                                     style: 'background-color:transparent',
@@ -1772,8 +1841,8 @@ html: '<div ><img src="resources/icons/reviewstarunrate.png" width="9" height="9
                         xtype: 'container',
                         name:'btnNameMyAccount_DashboardRankIcon',
                        // style: 'background-color:yellow',
-                       // hidden: true,
-                        margin: '-40 0 0 0',
+                       hidden: true,
+                      //  margin: '-200 0 0 140',
                        style: 'background-color:transparent;',
                         height: 42,
                         width: 42,
@@ -1784,6 +1853,7 @@ html: '<div ><img src="resources/icons/reviewstarunrate.png" width="9" height="9
                         {
                             margin: '0 0 0 0',
                             width:'100%',
+                            hidden: true,
                             id: 'btnMyAccount_DashboardRankIconText',
                             html: '<div style="color:white;text-align: center;font-size:16px;width:100%;margin:0px 0px 0px 0px"><b>Non Ayoha Member</b></div>'
                           
@@ -1792,6 +1862,7 @@ html: '<div ><img src="resources/icons/reviewstarunrate.png" width="9" height="9
                         {
                             margin: '-5 0 0 0',
                             width:'100%',
+                            hidden: true,
                             html: '<div onclick="FloatPanel_MyAccountRankDescriptionShow();" style="color:white;text-align: center;font-size:10px;width:100%;margin:0px 0px 0px 0px">Your Ayoha Membership Tier</div>'
                          
                         },
@@ -2022,17 +2093,17 @@ html: '<div ><img src="resources/icons/reviewstarunrate.png" width="9" height="9
                     
                     
                      {
-                                margin: '0 0 0 14',
+                                margin: '20 0 0 14',
                                 width:'100%',
                                 //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
-                                html: '<div style="color:black;text-align: center;font-size:16px;width:100%;margin:0px 0px 0px 0px"><b>Quick Explore Ayoha Rewards</b></div><br><div  style="color:black;text-align: center;font-size:10px;width:100%;margin:-25px 0px 0px 0px;">- One hub. Double Reward. -</div>'
+                                html: '<div style="color:black;text-align: left;font-size:16px;width:100%;margin:0px 0px 0px 0px"><b>Quick Explore Ayoha Rewards</b></div><br><div  style="color:black;text-align: left;font-size:10px;width:100%;margin:-25px 0px 0px 0px;">- One hub. Double Reward. -</div>'
                                 // html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: 70%"><col style="width:30%"></colgroup><thead><tr><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:right;vertical-align:top;word-break:normal" rowspan="2"><div style="margin:0px 0px 0px -15px">TARMIZI RAHIM</div><br>Lagendary Card Mortal </th><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:middle;word-break:normal" rowspan="2">Medal</th></tr><tr></tr></thead></table>'
                             },
 
                             {
                                 xtype: 'container',
                                 width: '100%',
-                                height:80,
+                                height:90,
                                 hidden: false,
                                 margin: '10 0 0 0',
                                 style: 'background-color:transparent',
@@ -2329,6 +2400,7 @@ html:'<div style="display: flex; flex-direction: column; align-items: center; ju
              {
                 xtype: 'container',
                 width: '100%',
+                hidden: true,
                 height:4,               
                 style: 'background-color:transparent',
                 layout: {
@@ -2383,7 +2455,7 @@ html:'<div style="display: flex; flex-direction: column; align-items: center; ju
                                     width: '100%',
                                     hidden: false,
                                     id:'containerDashboard_AyohaPointRedemption',
-                                    margin: '0 0 0 0',
+                                    margin: '60 0 0 0',
                                     // style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1 ;background: white;border-radius: 0px 15px 15px 0px;',
                                     //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
                                     style: 'background-color:transparent',
@@ -2465,7 +2537,7 @@ html:'<div style="display: flex; flex-direction: column; align-items: center; ju
 
                                     // hidden: true,
                                     style: "background-color: transparent;",
-                                    margin: '25 0 0 0',
+                                    margin: '5 0 0 0',
                                     width: '100%',
                                     //height: 350,
                                     height: 380,
@@ -10033,45 +10105,47 @@ function DashboardAyohaUserMainStore() {
                 Ext.getCmp('htmlMyAccount_Dashboard_ProfileTitle').setHtml('<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 11px;font-weight:normal;color:white;margin:0px 0px 0px 0px">Good Days!,</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 14px;font-weight:bold;color:white;margin:-25px 0px 0px 0px">' + AccName.toUpperCase() + '</div>');
                // Ext.getCmp('btnMyAccount_DashboardRankIconText').setHtml('<div class="blink_me" style="color:white;text-align: center;font-size:16px;width:100%;margin:0px 0px 0px 10px"><b> ' + AyohaMember_Rank + '</b></div>');
                 Ext.getCmp('btnMyAccount_DashboardRankIconText').setHtml('<div onclick="FloatPanel_MyAccountRankDescriptionShow();" style="color:white;text-align: center;font-size:16px;width:100%;margin:0px 0px 0px 0px"><b> ' + AyohaMember_Rank + '</b></div>');
-               
-    
+                document.getElementById("txtDashboard_RankingIcon").textContent = AyohaMember_Rank;
+             
+                
+                
     
                 if (AyohaMember_Rank == "Black Iron") {
                     //  Ext.getCmp('btnMyAccount_DashboardRankIcon').setHtml('<div style="width:22px;height:22px;background-color:white;border-radius:50%;"><img src="resources/icons/Starter.png" alt="Image" style="width:15px;height:15px;margin:3px 0px 0px 4px;background-color:white;"></div>');
                    // Ext.getCmp('btnMyAccount_DashboardRankIcon').setHtml('<div class="blink_me" style="width:22px;height:22px;background-color:transparent;"><img src="resources/icons/ayohaRankingIcon/blackIron.png" alt="Image" style="width:42px;height:42px;margin:3px 0px 0px 14px;"></div>');
                     Ext.getCmp('btnMyAccount_DashboardRankIcon').setHtml('<div style="width:22px;height:22px;background-color:transparent"><img src="resources/icons/ayohaRankingIcon/blackIron.png" alt="Image" style="width:42px;height:42px;"></div>');
-               
+                    Ext.get('imgDashboard_RankingIcon').dom.src = "resources/icons/ayohaRankingIcon/blackIron.png";
                     // html: '<div style="width:22px;height:22px;background-color:transparent;"><img src="resources/icons/kingclubIcon.png" alt="Image" style="width:42px;height:42px;margin:3px 0px 0px 14px;"></div>',
                 }
                 if (AyohaMember_Rank == "Bronze") {
                     //  Ext.getCmp('btnMyAccount_DashboardRankIcon').setHtml('<div style="width:22px;height:22px;background-color:white;border-radius:50%;"><img src="resources/icons/nomembercard.png" alt="Image" style="width:15px;height:15px;margin:3px 0px 0px 4px;background-color:white;"></div>');
                    // Ext.getCmp('btnMyAccount_DashboardRankIcon').setHtml('<div class="blink_me" style="width:22px;height:22px;background-color:transparent;"><img src="resources/icons/ayohaRankingIcon/Bronze.png" alt="Image" style="width:42px;height:42px;margin:3px 0px 0px 14px;"></div>');
                     Ext.getCmp('btnMyAccount_DashboardRankIcon').setHtml('<div style="width:22px;height:22px;background-color:transparent"><img src="resources/icons/ayohaRankingIcon/Bronze.png" alt="Image" style="width:42px;height:42px;"></div>');
-               
+                    Ext.get('imgDashboard_RankingIcon').dom.src = "resources/icons/ayohaRankingIcon/Bronze.png";
                 }
                 if (AyohaMember_Rank == "Silver") {
                     // Ext.getCmp('btnMyAccount_DashboardRankIcon').setHtml('<div style="width:22px;height:22px;background-color:white;border-radius:50%;"><img src="resources/icons/vip.png" alt="Image" style="width:15px;height:15px;margin:3px 0px 0px 4px;background-color:white;"></div>');
                     //Ext.getCmp('btnMyAccount_DashboardRankIcon').setHtml('<div class="blink_me" style="width:22px;height:22px;background-color:transparent;"><img src="resources/icons/ayohaRankingIcon/Silver.png" alt="Image" style="width:42px;height:42px;margin:3px 0px 0px 14px;"></div>');
                     Ext.getCmp('btnMyAccount_DashboardRankIcon').setHtml('<div style="width:22px;height:22px;background-color:transparent"><img src="resources/icons/ayohaRankingIcon/Silver.png" alt="Image" style="width:42px;height:42px;"></div>');
-               
+                    Ext.get('imgDashboard_RankingIcon').dom.src = "resources/icons/ayohaRankingIcon/Silver.png";
                 }
                 if (AyohaMember_Rank == "Gold") {
                     //Ext.getCmp('btnMyAccount_DashboardRankIcon').setHtml('<div style="width:22px;height:22px;background-color:white;border-radius:50%;"><img src="resources/icons/vvip.png" alt="Image" style="width:15px;height:15px;margin:3px 0px 0px 4px;background-color:white;"></div>');
                     //Ext.getCmp('btnMyAccount_DashboardRankIcon').setHtml('<div class="blink_me" style="width:22px;height:22px;background-color:transparent;"><img src="resources/icons/ayohaRankingIcon/Gold.png" alt="Image" style="width:42px;height:42px;margin:3px 0px 0px 14px;"></div>');
                     Ext.getCmp('btnMyAccount_DashboardRankIcon').setHtml('<div style="width:22px;height:22px;background-color:transparent"><img src="resources/icons/ayohaRankingIcon/Gold.png" alt="Image" style="width:42px;height:42px;"></div>');
-               
+                    Ext.get('imgDashboard_RankingIcon').dom.src = "resources/icons/ayohaRankingIcon/Gold.png";
                 }
                 if (AyohaMember_Rank == "Platinum") {
                     // Ext.getCmp('btnMyAccount_DashboardRankIcon').setHtml('<div style="width:22px;height:22px;background-color:white;border-radius:50%;"><img src="resources/icons/goldmember.jpg" alt="Image" style="width:15px;height:15px;margin:3px 0px 0px 4px;background-color:white;"></div>');
                    // Ext.getCmp('btnMyAccount_DashboardRankIcon').setHtml('<div class="blink_me" style="width:22px;height:22px;background-color:transparent;"><img src="resources/icons/ayohaRankingIcon/Platinum.png" alt="Image" style="width:42px;height:42px;margin:3px 0px 0px 14px;"></div>');
                     Ext.getCmp('btnMyAccount_DashboardRankIcon').setHtml('<div style="width:22px;height:22px;background-color:transparent"><img src="resources/icons/ayohaRankingIcon/Platinum.png" alt="Image" style="width:42px;height:42px;"></div>');
-               
+                    Ext.get('imgDashboard_RankingIcon').dom.src = "resources/icons/ayohaRankingIcon/Platinum.png";
                 }
                 if (AyohaMember_Rank == "King Club") {
                     // Ext.getCmp('btnMyAccount_DashboardRankIcon').setHtml('<div style="width:22px;height:22px;background-color:white;border-radius:50%;"><img src="resources/icons/icons/kingclubIcon.png" alt="Image" style="width:15px;height:15px;margin:3px 0px 0px 4px;background-color:white;"></div>');
                     //Ext.getCmp('btnMyAccount_DashboardRankIcon').setHtml('<div class="blink_me" style="width:22px;height:22px;background-color:transparent"><img src="resources/icons/ayohaRankingIcon/kingclubIcon.png" alt="Image" style="width:42px;height:42px;margin:3px 0px 0px 14px;"></div>');
                     Ext.getCmp('btnMyAccount_DashboardRankIcon').setHtml('<div style="width:22px;height:22px;background-color:transparent"><img src="resources/icons/ayohaRankingIcon/kingclubIcon.png" alt="Image" style="width:42px;height:42px;"></div>');
-               
+                    Ext.get('imgDashboard_RankingIcon').dom.src = "resources/icons/ayohaRankingIcon/kingclubIcon.png";
                 }
             }
     
@@ -10130,7 +10204,7 @@ function DashboardAyohaUserMainStore() {
            // Ext.getCmp('Dashboard_AyohaRewardPoint').setHtml('<div  class="example-1"  style="background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9); border-radius: 50%;border:2px solid #fac;text-align:center;margin:-30px 0px 0px 0px;height:180px;width:180px"><div style="color:white;text-align: center;font-size:48px;width:100%;margin:50px 0px 0px 0px;"><b>' + AyohaPoint + '</b></div><br><div style="color:white;text-align: center;font-size:11px;width:100%;margin:-28px 0px 0px 0px"><b>Your Ayoha Points</b></div></div>');
            
            
-           
+           document.getElementById("txtDashboard_AyohaPoint").textContent = AyohaPoint;
             Ext.getCmp('Dashboard_AyohaRewardPoint').setHtml('<div  class="example-1"  style="background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9); border-radius: 50%;border:2px solid #fac;text-align:center;margin:-30px 0px 0px 0px;height:180px;width:180px"><div style="color:white;text-align: center;font-size:48px;width:100%;margin:50px 0px 0px 0px;"><b>' + AyohaPoint + '</b></div><br><div style="color:white;text-align: center;font-size:11px;width:100%;margin:-33px 0px 0px 0px"><b>Your Ayoha Points</b></div></div>');
            
             Ext.getCmp('htmlDashboard_User_AyohaRewardContest01_TapChanceLeftTxt').setHtml('<div class="example-2" style="border-right:2px solid #fac;border-left:2px solid #fac;border-bottom:2px solid #fac;border-top:2px solid #fac;background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);border-radius: 20px 20px 20px 20px;width:250px;height:50px;font-size: 12px;font-weight:bold;color:white;text-align:center;vertical-align:middle;" ><div style="margin:-8px 0px 0px 0px;">You Have <font size=6px>' + AyohaTaAndWin_TapBalance + '</font> Chance Left</div></div>');
@@ -10476,7 +10550,7 @@ var globalIsContestant = "N";
 
 function AyohaRewardContestantLoadByContestCodeStore() {
     globalIsContestant = "N";
-
+    NextRanking();
     //Ext.getStore('AyohaRewardContestantLoadByContestCodeStore').getProxy().setExtraParams({
     //    ContestCode: localStorage.getItem("ContestCode"),
     //    SubscriberAccNo: GetCurrAyohaUserAccountNo(),
@@ -11977,3 +12051,34 @@ function Dashboard_PreviewAdvertisementShow(Module, EnterpriseLogoPath, Enterpri
      
  
  }
+
+
+
+
+function updateProgress(current, target){
+  const pct = Math.max(0, Math.min(100, (current/target)*100));
+  const bar   = document.getElementById('tierBar');
+  const label = document.getElementById('tierLabel');
+  if (!bar || !label) return; // safety
+
+  bar.style.width = pct + '%';
+  label.textContent = `${current.toLocaleString()} / ${target.toLocaleString()}`;
+  const progressEl = document.querySelector('.progress');
+  if (progressEl) progressEl.setAttribute('aria-valuenow', String(current));
+}
+
+
+
+function NextRanking(){
+    const currentPoints = 2353;
+    const nextTierPoints = 5000;
+    updateProgress(currentPoints, nextTierPoints);
+
+    // Optional: animate count-up
+    let val = 0, step = Math.ceil(currentPoints / 60);
+    const timer = setInterval(() => {
+      val = Math.min(currentPoints, val + step);
+      updateProgress(val, nextTierPoints);
+      if (val >= currentPoints) clearInterval(timer);
+    }, 16);
+}
