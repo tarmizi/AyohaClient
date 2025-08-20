@@ -31,8 +31,10 @@ function FloatPanel_PreviewAdvertisement() {
        // zIndex:410,
         xtype: 'container',
         //height: 465,
-        height: '92%',
-        width: '95%',
+        // height: '82%',
+        // width: '95%',
+        height: '80%',
+        width: '90%',
         id: 'FloatPanel_PreviewAdvertisementID',
         draggable: false,
         styleHtmlContent: true,
@@ -61,8 +63,8 @@ function FloatPanel_PreviewAdvertisement() {
             easing: 'ease-out'
         },
         //style: 'border-bottom:1px solid;background-color:#353839;',
-       // style: 'background-color:black;',
-        style: 'background-color:rgba(0, 0, 0, 0.7);border-radius: 30px 30px 30px 30px;border:1px solid white;',
+        style: 'background-color:rgba(0, 0, 0, 0.7);border:2px solid white;border-radius: 30px 30px 30px 30px;',
+       // style: 'background-color:rgba(0, 0, 0, 0.7);border-radius: 30px 30px 30px 30px;border:1px solid white;',
        // style: ' background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);',
         //listeners: {
         //    initialize: function (c) {
@@ -272,8 +274,8 @@ function FloatPanel_PreviewAdvertisement() {
                                                     // xtype: 'button',
                                                      id: 'btnFloatPanel_PreviewAdvertisement_PicProfile',
                                                      margin: '0 0 0 20',
-                                                     height: 80,
-                                                     width: 80,
+                                                     height: 60,
+                                                     width: 60,
                                                      // iconCls: 'list',
                                                      //html: '<div style="border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 30px 30px 30px 30px;width:45px;height:45px;" ><img src="resources/icons/founder.jpg" width="25" height="25"  alt="Company Name" style="margin:7px 0px 0px 0px;border-radius: 50%;"></div>',
                                                      html: '<img src="resources/icons/founder.jpg" style="width: 50px; height: 50px; border:2px solid #ECF0F1; border-radius: 50%; max-width:200px;">',
@@ -908,6 +910,7 @@ function FloatPanel_PreviewAdvertisement() {
                                                     
                                                         {
                                                             margin: '-2 0 0 0',
+                                                            hidden: true,
                                                             id: 'htmlFloatPanel_PreviewAdvertisementbottom_eStoreNameTitle',
                                                             html: '<font size=2 color=white><b>Loading Online Store.....</b></font>',
                                                         },
@@ -953,11 +956,11 @@ function FloatPanel_PreviewAdvertisement() {
                                                                         margin: '0 0 0 0',
                                                                         id: 'btnFloatPanel_PreviewAdvertisementbottom_OnlineStoreIcon0',
                                                                         //badgeText: "2",
-                                                                        html: '<div class="blink_me"><img src="https://setkita.com/AyohaImgCard/eStoreLogo/kiahStoreLogo.png" width="32" height="32" alt="Company Name"></div>',
+                                                                        html: '<div ><img src="https://setkita.com/AyohaImgCard/eStoreLogo/kiahStoreLogo.png" width="32" height="32" alt="Company Name"></div>',
                                                                     },
                                                                     {
                                                                         id: 'btnFloatPanel_PreviewAdvertisementbottom_OnlineStoreName0',
-                                                                        html: '<div class="blink_me" style="color:white;text-align: center;font-size:10px;width:100%;font-weight:normal;margin:0px 0px 0px 0px;">Kiah</div>',
+                                                                        html: '<div  style="color:white;text-align: center;font-size:10px;width:100%;font-weight:normal;margin:0px 0px 0px 0px;">Kiah</div>',
                                                                     }
                                                                 ]
                                                             },
@@ -985,11 +988,11 @@ function FloatPanel_PreviewAdvertisement() {
                                                                            margin: '0 0 0 0',
                                                                            id: 'btnFloatPanel_PreviewAdvertisementbottom_OnlineStoreIcon1',
                                                                            //badgeText: "2",
-                                                                           html: '<div class="blink_me"><img src="https://setkita.com/AyohaImgCard/eStoreLogo/shoopeeLogo.png" width="32" height="32" alt="Company Name"></div>',
+                                                                           html: '<div ><img src="https://setkita.com/AyohaImgCard/eStoreLogo/shoopeeLogo.png" width="32" height="32" alt="Company Name"></div>',
                                                                        },
                                                                        {
                                                                            id: 'btnFloatPanel_PreviewAdvertisementbottom_OnlineStoreName1',
-                                                                           html: '<div class="blink_me" style="color:white;text-align: center;font-size:10px;width:100%;font-weight:normal;margin:0px 0px 0px 0px;">Shoope</div>',
+                                                                           html: '<div  style="color:white;text-align: center;font-size:10px;width:100%;font-weight:normal;margin:0px 0px 0px 0px;">Shoope</div>',
                                                                        }
                                                                    ]
                                                                },
@@ -1016,11 +1019,11 @@ function FloatPanel_PreviewAdvertisement() {
                                                                             width: 32,
                                                                             margin: '0 0 0 0',
                                                                             id: 'btnFloatPanel_PreviewAdvertisementbottom_OnlineStoreIcon2',
-                                                                            html: '<div class="blink_me"><img src="https://setkita.com/AyohaImgCard/eStoreLogo/AyohaStoreLogo.png" width="32" height="32" alt="Company Name"></div>',
+                                                                            html: '<div ><img src="https://setkita.com/AyohaImgCard/eStoreLogo/AyohaStoreLogo.png" width="32" height="32" alt="Company Name"></div>',
                                                                         },
                                                                         {
                                                                             id: 'btnFloatPanel_PreviewAdvertisementbottom_OnlineStoreName2',
-                                                                            html: '<div class="blink_me" style="color:white;text-align: center;font-size:10px;width:100%;font-weight:normal;margin:0px 0px 0px 0px;">Ayoha</div>',
+                                                                            html: '<div style="color:white;text-align: center;font-size:10px;width:100%;font-weight:normal;margin:0px 0px 0px 0px;">Ayoha</div>',
                                                                         }
                                                                     ]
                                                                 }
@@ -1643,7 +1646,7 @@ function FloatPanel_PreviewAdvertisementShow(Module, EnterpriseLogoPath, Enterpr
     //carousel.add({ xtype: 'image', src: 'image URL' });
     //carousel.add({ xtype: 'image', src: 'image URL' });
     //carousel.add({ xtype: 'image', src: 'image URL' });
-    Ext.getCmp('btnFloatPanel_PreviewAdvertisement_PicProfile').setHtml('<img src="' + EnterpriseLogoPath + '" style="background-color:white;width: 80px; height: 80px; border:2px solid #ECF0F1; border-radius: 50%; max-width:200px;">');
+    Ext.getCmp('btnFloatPanel_PreviewAdvertisement_PicProfile').setHtml('<img src="' + EnterpriseLogoPath + '" style="background-color:white;width: 60px; height: 60px; border:2px solid #ECF0F1; border-radius: 50%; max-width:200px;">');
   //  Ext.getCmp('htmlFloatPanel_PreviewAdvertisement_CompanyName').setHtml('<div style="color:white;text-align: left;font-size:16px;width:95%;font-weight:bold;border-bottom:1px none white;">' + EnterpriseName + '</div><br><div style="color:white;text-align: left;font-size:12px;width:100%;font-weight:normal;margin:-15px 0px 0px 0px;">' + AdvertisementTitle + '</div>')
     Ext.getCmp('htmlFloatPanel_PreviewAdvertisement_CompanyName').setHtml('<div style="color:white;text-align: left;font-size:16px;width:95%;font-weight:bold;border-bottom:1px none white;">' + EnterpriseName + '</div>');
     Ext.getCmp('htmlFloatPanel_PreviewAdvertisement_CompanyTagLine').setHtml('<div style="color:white;text-align: left;font-size:12px;width:100%;font-weight:normal;margin:0px 0px 0px 0px;">' + AdvertisementTitle + '</div>');
@@ -1693,7 +1696,7 @@ function FloatPanel_PreviewAdvertisementShow_FloatingAdvertisement(Module) {
    
    
 
-    Ext.getCmp('btnFloatPanel_PreviewAdvertisement_PicProfile').setHtml('<img src="' + globalFloatPanel_FloatingAdvertisement_CompanyLogo + '" style="background-color:white;width: 80px; height: 80px; border:2px solid #ECF0F1; border-radius: 50%; max-width:200px;">');
+    Ext.getCmp('btnFloatPanel_PreviewAdvertisement_PicProfile').setHtml('<img src="' + globalFloatPanel_FloatingAdvertisement_CompanyLogo + '" style="background-color:white;width: 60px; height: 60px; border:2px solid #ECF0F1; border-radius: 50%; max-width:200px;">');
     //  Ext.getCmp('htmlFloatPanel_PreviewAdvertisement_CompanyName').setHtml('<div style="color:white;text-align: left;font-size:16px;width:95%;font-weight:bold;border-bottom:1px none white;">' + EnterpriseName + '</div><br><div style="color:white;text-align: left;font-size:12px;width:100%;font-weight:normal;margin:-15px 0px 0px 0px;">' + AdvertisementTitle + '</div>')
     Ext.getCmp('htmlFloatPanel_PreviewAdvertisement_CompanyName').setHtml('<div style="color:white;text-align: left;font-size:16px;width:95%;font-weight:bold;border-bottom:1px none white;">' + globalFloatPanel_FloatingAdvertisement_CompanyName + '</div>');
     Ext.getCmp('htmlFloatPanel_PreviewAdvertisement_CompanyTagLine').setHtml('<div style="color:white;text-align: left;font-size:12px;width:100%;font-weight:normal;margin:0px 0px 0px 0px;">' + globalFloatPanel_FloatingAdvertisement_AdvertismentTitle + '</div>');
@@ -1739,7 +1742,7 @@ function FloatPanel_PreviewAdvertisementShow_VIAAdvertisement(Module) {
 
   
    
-    Ext.getCmp('btnFloatPanel_PreviewAdvertisement_PicProfile').setHtml('<img src="' + globalDashboardVIAAdvertisement_EnterpriseLogoPath + '" style="background-color:white;width: 80px; height: 80px; border:2px solid #ECF0F1; border-radius: 50%; max-width:200px;">');
+    Ext.getCmp('btnFloatPanel_PreviewAdvertisement_PicProfile').setHtml('<img src="' + globalDashboardVIAAdvertisement_EnterpriseLogoPath + '" style="background-color:white;width: 60px; height: 60px; border:2px solid #ECF0F1; border-radius: 50%; max-width:200px;">');
     //  Ext.getCmp('htmlFloatPanel_PreviewAdvertisement_CompanyName').setHtml('<div style="color:white;text-align: left;font-size:16px;width:95%;font-weight:bold;border-bottom:1px none white;">' + EnterpriseName + '</div><br><div style="color:white;text-align: left;font-size:12px;width:100%;font-weight:normal;margin:-15px 0px 0px 0px;">' + AdvertisementTitle + '</div>')
     Ext.getCmp('htmlFloatPanel_PreviewAdvertisement_CompanyName').setHtml('<div style="color:white;text-align: left;font-size:16px;width:95%;font-weight:bold;border-bottom:1px none white;">' + globalDashboardVIAAdvertisement_EnterpriseName + '</div>');
     Ext.getCmp('htmlFloatPanel_PreviewAdvertisement_CompanyTagLine').setHtml('<div style="color:white;text-align: left;font-size:12px;width:100%;font-weight:normal;margin:0px 0px 0px 0px;">' + globalDashboardVIAAdvertisement_AdvertisementTitle + '</div>');
@@ -1770,7 +1773,7 @@ function FloatPanel_PreviewAdvertisementShow_StampCard(Module) {
     AdvertismentTypeTag = 'StampCardAdvertisement';
    
 
-    Ext.getCmp('btnFloatPanel_PreviewAdvertisement_PicProfile').setHtml('<img src="' + globalStampCampaignEnterpriseLogo + '" style="background-color:white;width: 80px; height: 80px; border:2px solid #ECF0F1; border-radius: 50%; max-width:200px;">');
+    Ext.getCmp('btnFloatPanel_PreviewAdvertisement_PicProfile').setHtml('<img src="' + globalStampCampaignEnterpriseLogo + '" style="background-color:white;width: 60px; height: 60px; border:2px solid #ECF0F1; border-radius: 50%; max-width:200px;">');
     //  Ext.getCmp('htmlFloatPanel_PreviewAdvertisement_CompanyName').setHtml('<div style="color:white;text-align: left;font-size:16px;width:95%;font-weight:bold;border-bottom:1px none white;">' + EnterpriseName + '</div><br><div style="color:white;text-align: left;font-size:12px;width:100%;font-weight:normal;margin:-15px 0px 0px 0px;">' + AdvertisementTitle + '</div>')
     Ext.getCmp('htmlFloatPanel_PreviewAdvertisement_CompanyName').setHtml('<div style="color:white;text-align: left;font-size:16px;width:95%;font-weight:bold;border-bottom:1px none white;">' + globalStampCampaignEnterpriseName + '</div>');
    
@@ -1812,7 +1815,7 @@ function FloatPanel_PreviewAdvertisementShow_PointCard() {
     AdvertismentTypeTag = 'PointCardAdvertisement';
    
     
-    Ext.getCmp('btnFloatPanel_PreviewAdvertisement_PicProfile').setHtml('<img src="' + global_FloatPanel_MembershipCardList_Upgrade_EnterprisesLogo + '" style="background-color:white;width: 80px; height: 80px; border:2px solid #ECF0F1; border-radius: 50%; max-width:200px;">');
+    Ext.getCmp('btnFloatPanel_PreviewAdvertisement_PicProfile').setHtml('<img src="' + global_FloatPanel_MembershipCardList_Upgrade_EnterprisesLogo + '" style="background-color:white;width: 60px; height: 60px; border:2px solid #ECF0F1; border-radius: 50%; max-width:200px;">');
     // //  Ext.getCmp('htmlFloatPanel_PreviewAdvertisement_CompanyName').setHtml('<div style="color:white;text-align: left;font-size:16px;width:95%;font-weight:bold;border-bottom:1px none white;">' + EnterpriseName + '</div><br><div style="color:white;text-align: left;font-size:12px;width:100%;font-weight:normal;margin:-15px 0px 0px 0px;">' + AdvertisementTitle + '</div>')
     Ext.getCmp('htmlFloatPanel_PreviewAdvertisement_CompanyName').setHtml('<div style="color:white;text-align: left;font-size:16px;width:95%;font-weight:bold;border-bottom:1px none white;">' + global_FloatPanel_MembershipCardList_Upgrade_EnterprisesName + '</div>');
     
@@ -1834,7 +1837,7 @@ function FloatPanel_PreviewAdvertisementShow_RewardStore(Module) {
     AdvertismentTypeTag = 'RewardStoreAdvertisement';
 
 
-    Ext.getCmp('btnFloatPanel_PreviewAdvertisement_PicProfile').setHtml('<img src="' + globalFloatPanel_RewardStore_EnterpriseLogoPath + '" style="background-color:white;width: 80px; height: 80px; border:2px solid #ECF0F1; border-radius: 50%; max-width:200px;">');
+    Ext.getCmp('btnFloatPanel_PreviewAdvertisement_PicProfile').setHtml('<img src="' + globalFloatPanel_RewardStore_EnterpriseLogoPath + '" style="background-color:white;width: 60px; height: 60px; border:2px solid #ECF0F1; border-radius: 50%; max-width:200px;">');
     //  Ext.getCmp('htmlFloatPanel_PreviewAdvertisement_CompanyName').setHtml('<div style="color:white;text-align: left;font-size:16px;width:95%;font-weight:bold;border-bottom:1px none white;">' + EnterpriseName + '</div><br><div style="color:white;text-align: left;font-size:12px;width:100%;font-weight:normal;margin:-15px 0px 0px 0px;">' + AdvertisementTitle + '</div>')
     Ext.getCmp('htmlFloatPanel_PreviewAdvertisement_CompanyName').setHtml('<div style="color:white;text-align: left;font-size:16px;width:95%;font-weight:bold;border-bottom:1px none white;">' + globalFloatPanel_RewardStore_EnterpriseName + '</div>');
     Ext.getCmp('htmlFloatPanel_PreviewAdvertisement_CompanyTagLine').setHtml('<div style="color:white;text-align: left;font-size:12px;width:100%;font-weight:normal;margin:0px 0px 0px 0px;">' + globalFloatPanel_RewardStore_EnterpriseTagLine + '</div>');
@@ -1864,7 +1867,7 @@ function FloatPanel_PreviewAdvertisementShow_PushNotification(Module) {
     AdvertismentTypeTag = 'PushNotification';
 
 
-    Ext.getCmp('btnFloatPanel_PreviewAdvertisement_PicProfile').setHtml('<img src="' + globalFloatPanel_AyohaNotification_Notification_EnterpriseLogo + '" style="background-color:white;width: 80px; height: 80px; border:2px solid #ECF0F1; border-radius: 50%; max-width:200px;">');
+    Ext.getCmp('btnFloatPanel_PreviewAdvertisement_PicProfile').setHtml('<img src="' + globalFloatPanel_AyohaNotification_Notification_EnterpriseLogo + '" style="background-color:white;width: 60px; height: 60px; border:2px solid #ECF0F1; border-radius: 50%; max-width:200px;">');
     //  Ext.getCmp('htmlFloatPanel_PreviewAdvertisement_CompanyName').setHtml('<div style="color:white;text-align: left;font-size:16px;width:95%;font-weight:bold;border-bottom:1px none white;">' + EnterpriseName + '</div><br><div style="color:white;text-align: left;font-size:12px;width:100%;font-weight:normal;margin:-15px 0px 0px 0px;">' + AdvertisementTitle + '</div>')
     Ext.getCmp('htmlFloatPanel_PreviewAdvertisement_CompanyName').setHtml('<div style="color:white;text-align: left;font-size:16px;width:95%;font-weight:bold;border-bottom:1px none white;">' + globalFloatPanel_AyohaNotification_Notification_EnterpriseName + '</div>');
     Ext.getCmp('htmlFloatPanel_PreviewAdvertisement_CompanyTagLine').setHtml('<div style="color:white;text-align: left;font-size:12px;width:100%;font-weight:normal;margin:0px 0px 0px 0px;">' + globalFloatPanel_AyohaNotification_Notification_EnterpriseTagLine + '</div>');
@@ -1877,15 +1880,15 @@ function FloatPanel_PreviewAdvertisementShow_PushNotification(Module) {
 }
 
 
-
+var iCount_FloatPanel_PreviewAdvertisement=0;
 function FloatPanel_PreviewAdvertisement_EnterprisesContactUsLinkStore(EnterpriseAccNo) {
    
-   
+  // alert("FloatPanel_PreviewAdvertisement_EnterprisesContactUsLinkStore(EnterpriseAccNo): " + EnterpriseAccNo);
     _DataStore_EnterprisesContactUsLinkStore.getProxy().setExtraParam('EnterpriseHQAccNo', EnterpriseAccNo);
     _DataStore_EnterprisesContactUsLinkStore.getProxy().setUrl(GetAPIurl() + '/Enterprises/EnterprisesContactUsLink');
     _DataStore_EnterprisesContactUsLinkStore.load();
 
-
+    iCount_FloatPanel_PreviewAdvertisement=0;
     
 
 
@@ -1905,7 +1908,7 @@ function FloatPanel_PreviewAdvertisement_EnterprisesContactUsLinkStore(Enterpris
         globalFloatPanel_PreviewAdvertisement_eStoreName = Store.get('eStoreName');
       //  var checkisWebsiteOrEcommerce=globalFloatPanel_PreviewAdvertisement_MerchantLinkType;
 
-
+///alert("globalFloatPanel_PreviewAdvertisement_WhatsAppLink: " + globalFloatPanel_PreviewAdvertisement_WhatsAppLink);
         
       
         if (globalFloatPanel_PreviewAdvertisement_WhatsAppLink !="NA") {
@@ -1962,22 +1965,20 @@ function FloatPanel_PreviewAdvertisement_EnterprisesContactUsLinkStore(Enterpris
 
         var Stores;
         if (_DataStore_EnterprisesContactUsLinkStore.getCount() >= 1) {
-            Ext.getCmp('htmlFloatPanel_PreviewAdvertisementbottom_eStoreNameTitle').setHtml('<font class="blink_me" size=2 color=white><b>Visit Our Online Store</b></font>');
-            for (i = 0; i <= _DataStore_EnterprisesContactUsLinkStore.getCount() ; i++) {
-                Stores = _DataStore_EnterprisesContactUsLinkStore.getAt(i);
-              console.log(i)
+            Ext.getCmp('htmlFloatPanel_PreviewAdvertisementbottom_eStoreNameTitle').setHtml('<font size=2 color=white><b>Visit Our Online Store</b></font>');
+            for (iCount_FloatPanel_PreviewAdvertisement = 0; iCount_FloatPanel_PreviewAdvertisement <= _DataStore_EnterprisesContactUsLinkStore.getCount() ; iCount_FloatPanel_PreviewAdvertisement++) {
+                Stores = _DataStore_EnterprisesContactUsLinkStore.getAt(iCount_FloatPanel_PreviewAdvertisement);
+              console.log(iCount_FloatPanel_PreviewAdvertisement)
               console.log(_DataStore_EnterprisesContactUsLinkStore.getCount())
-              if (i == _DataStore_EnterprisesContactUsLinkStore.getCount()) { 
-                // _DataStore_EnterprisesContactUsLinkStore.removeAll();
-                // _DataStore_EnterprisesContactUsLinkStore.sync();
-               // _DataStore_EnterprisesContactUsLinkStore.syncAll();
+              if (iCount_FloatPanel_PreviewAdvertisement == _DataStore_EnterprisesContactUsLinkStore.getCount()) { 
                 break; }
                 if (Stores.get('eStoreName')) {
                     
-                   
-                    Ext.getCmp('containerFloatPanel_Advertisement_BottomPanel_OnlineShop_Icon_'+i).setHidden(false);
-                    Ext.getCmp('btnFloatPanel_PreviewAdvertisementbottom_OnlineStoreIcon' + i).setHtml('<div class="blink_me"><img src="' + Stores.get('eStoreIconPath') + '" width="32" height="32" alt="Company Name" onclick="FloatPanel_PreviewAdvertisement_OpenOnlineStore' + i + '()"></div>');
-                    Ext.getCmp('btnFloatPanel_PreviewAdvertisementbottom_OnlineStoreName' + i).setHtml('<div class="blink_me" style="color:white;text-align: center;font-size:10px;width:100%;font-weight:normal;margin:0px 0px 0px 0px;">' + Stores.get('eStoreName') + '</div>');
+                    if (iCount_FloatPanel_PreviewAdvertisement > 2) { 
+                        break; }
+                    Ext.getCmp('containerFloatPanel_Advertisement_BottomPanel_OnlineShop_Icon_'+iCount_FloatPanel_PreviewAdvertisement).setHidden(false);
+                    Ext.getCmp('btnFloatPanel_PreviewAdvertisementbottom_OnlineStoreIcon' + iCount_FloatPanel_PreviewAdvertisement).setHtml('<div ><img src="' + Stores.get('eStoreIconPath') + '" width="32" height="32" alt="Company Name" onclick="FloatPanel_PreviewAdvertisement_OpenOnlineStore' + i + '()"></div>');
+                    Ext.getCmp('btnFloatPanel_PreviewAdvertisementbottom_OnlineStoreName' + iCount_FloatPanel_PreviewAdvertisement).setHtml('<div  style="color:white;text-align: center;font-size:10px;width:100%;font-weight:normal;margin:0px 0px 0px 0px;">' + Stores.get('eStoreName') + '</div>');
                    
                    
                    
@@ -2254,6 +2255,11 @@ function Load_FloatPanel_PreviewAdvertisement_AdvertisementloadMediaPreviewStore
     if (Module == "PushNotification") {
         // alert("Module:" + Module);
         AdvertismentCodes = globalFloatPanel_AyohaNotification_Notification_AdvertisementCode;
+    }
+    if (Module == "Dashboard_PremiumAdvertisement") {
+        // alert("Module:" + Module);
+        AdvertismentCodes =    localStorage.getItem("Dashboard_AdvertismentCode");
+        Ext.getCmp('htmlFloatPanel_PreviewAdvertisement_TitleHeaderTxt').setHtml('<font size=2 color=white><b>Premium Advertisement</b></font>');
     }
     globalFloatPanel_PreviewAdvertisement_AdvertismentCodes = AdvertismentCodes;
     globalFloatPanel_PreviewAdvertisement_EnterpriseAccNo = EnterpriseAccNo;

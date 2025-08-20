@@ -3494,7 +3494,7 @@ function FloatPanelMerchantDetailPage_EnterprisesStageLoad(EnterpriseAccNo) {
     //  Ext.Viewport.unmask();
 
     //   setDashBoardMerchantReviewRate(FiveStar, FourStar, ThreeStar, TwoStar, OneStar);
-    task.delay(500);
+    task.delay(100);
 
 
 }
