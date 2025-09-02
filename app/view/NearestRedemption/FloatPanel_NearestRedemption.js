@@ -119,6 +119,7 @@ function FloatPanel_NearestRedemption() {
                                 xtype: 'container',
                                 width: '100%',
                                 docked: 'top',
+                                height: 50,
                                 // width: 40,
 
                                 //  title: '<font size="3" color="white">Live Tracking Map</font>',
@@ -145,7 +146,7 @@ function FloatPanel_NearestRedemption() {
                                                      {
                                                          xtype: 'button',
                                                          id: 'btnFloatPanel_NearestRedemptionBack',
-                                                         margin: '0 0 0 5',
+                                                         margin: '20 0 0 5',
                                                          height: 30,
                                                          width: 35,
                                                          // iconCls: 'list',
@@ -175,9 +176,10 @@ function FloatPanel_NearestRedemption() {
 
 
                                                       {
-                                                          margin: '0 10 0 0',
+                                                          margin: '20 10 0 0',
                                                           id: 'htmlFloatPanel_NearestRedemption_TitleHeaderTxt',
-                                                          html: '<font size=2 color=black><b>Merchant Point&Stamp Redemptions</b></font>'
+
+                                                          html: '<div style="color:black;text-align: center;font-size:12px;width:100%;"><b>All Nearest Redemption</b></div>'
                                                       },
 
 

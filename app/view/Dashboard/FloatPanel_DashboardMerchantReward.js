@@ -194,7 +194,7 @@ function FloatPanel_DashboardMerchantReward() {
                                     xtype: 'container',
                                     width: '100%',
                                     /// hidden:true,
-                                    margin: '0 0 0 0',
+                                    margin: '20 0 0 0',
                                     style: {
                                        // background: '#D25959',
                                       background: 'transparent',
@@ -314,7 +314,7 @@ function FloatPanel_DashboardMerchantReward() {
                                                        width: '95%',
                                                        //hidden:true,
                                                        height: 345,
-                                                       margin: '30 0 0 0',
+                                                       margin: '60 0 0 0',
                                                        //style: {
                                                        //    // background: '#D25959',
                                                        //    background: 'rgba(76, 175, 80, 0.3);',
@@ -4532,7 +4532,7 @@ function FloatPanel_DashboardMerchantReward() {
                                       xtype: 'container',
                                       //  style: 'background-image: url("resources/icons/bgfront07.png"); background-size: 100% 400px;background-repeat: no-repeat;',
                                       width: '100%',
-                                      margin: '60 0 0 0',
+                                      margin: '50 0 0 0',
                                       height: 400,
                                       style: "background-color: transparent;",
                                       layout: {
@@ -4549,7 +4549,7 @@ function FloatPanel_DashboardMerchantReward() {
                                                xtype: 'container',
                                                width: '100%',
                                                // hidden: true,
-                                               margin: '10 0 0 0',
+                                               margin: '0 0 0 0',
                                                id: 'containerLoyaltMembershipEvent_Header',
                                                style: {
                                                    // background: '#D25959',
@@ -4597,7 +4597,7 @@ function FloatPanel_DashboardMerchantReward() {
                                                              xtype: 'container',
                                                              width: '100%',
                                                              height: 400,
-                                                             margin: '0 0 0 0',
+                                                             margin: '40 0 0 0',
                                                              //  hidden: true,
                                                              id: 'htmlFloatPanel_DashboardMerchantMembershipEvent',
                                                              style: "background-color: transparent;",
@@ -5616,7 +5616,7 @@ function FloatPanel_DashboardMerchantReward_AyohaUserDashBoardNearestRedeemItemS
                 var StampContent = modelRecord.get('StampContent').replace("width:70px", "width:80px");
                 var StampContentNote = modelRecord.get('StampContentNote');
                 var StampContentSequence = modelRecord.get('StampContentSequence');
-                var EnterpriseName = modelRecord.get('EnterpriseName');
+                var EnterpriseName = modelRecord.get('EnterpriseName').toUpperCase();
                 var CountRow = modelRecord.get('CountRow');
                 var EndDate = modelRecord.get('EndDate');
                 var StartDate = modelRecord.get('StartDate');
@@ -5636,38 +5636,38 @@ function FloatPanel_DashboardMerchantReward_AyohaUserDashBoardNearestRedeemItemS
              
                 if (i <= 8) {
                     Ext.getCmp('Dashboard_NearestRedeem_StampContent' + i).setHtml(StampContent.replace("-90px", "-50px"));
-                    Ext.getCmp('Dashboard_NearestRedeem_StampContentNote' + i).setHtml('<div style="color:black;text-align: center;font-size:15px;width:100%;font-weight:bold">' + StampContentNote + '</div>');
-                    Ext.getCmp('Dashboard_NearestRedeem_EnterpriseName' + i).setHtml('<div style="color:black;text-align: center;font-size:12px;width:100%;font-weight:bold">' + EnterpriseName + '</div>');
+                    Ext.getCmp('Dashboard_NearestRedeem_StampContentNote' + i).setHtml('<div style="color:black;text-align: center;font-size:12px;width:100%;font-weight:bold;margin:0px 0px 0px 2px;">' + StampContentNote + '</div>');
+                    Ext.getCmp('Dashboard_NearestRedeem_EnterpriseName' + i).setHtml('<div style="color:black;text-align: center;font-size:12px;width:100%;font-weight:normal;margin:5px 0px 0px 2px;">' + EnterpriseName + '</div>');
 
 
                     if (isCampaignExpired == "Expired") {
 
-                        Ext.getCmp('Dashboard_NearestRedeem_EndDate' + i).setHtml('<div style="color:red;text-align: center;font-size:12px;font-weight:normal;width:100%">End Date:' + EndDate + '</div><div  style="color:red;text-align: right;font-size:12px;font-weight:bold;margin:-19px -160px 0px 0px;">Campaign Expired !</div>');
+                        Ext.getCmp('Dashboard_NearestRedeem_EndDate' + i).setHtml('<div style="color:red;text-align: left;font-size:10px;font-weight:normal;width:100%;margin:3px 0px 0px 2px">End Date:' + EndDate + ' (Campaign Expired !)</div>');
                         //Ext.getCmp('Dashboard_NearestRedeem_EndDate' + i).setHtml('<div style="color:red;text-align: center;font-size:12px;font-weight:normal;width:50%">End Date:' + EndDate + '</div><div  style="color:red;text-align: right;font-size:12px;font-weight:bold;margin:-19px -160px 0px 0px;">Campaign Expired !</div>');
 
                     }
                     if (isCampaignExpired == "NotExpired") {
                            
                         //Ext.getCmp('Dashboard_NearestRedeem_EndDate' + i).setHtml('<div style="color:black;text-align: center;font-size:12px;font-weight:normal;width:100%">End Date:' + EndDate + '</div><div  style="color:purple;text-align: right;font-size:12px;font-weight:bold;margin:-19px -150px 0px 0px;">' + CampaignDayLeft + ' Day Left</div>');
-                        Ext.getCmp('Dashboard_NearestRedeem_EndDate' + i).setHtml('<div style="color:black;text-align: left;font-size:12px;font-weight:normal;width:60%;float:left;">End Date:' + EndDate + '</div><div  style="color:purple;text-align: left;font-size:10px;font-weight:bold;margin:0px 0px 0px 0px;float:left;width:40%;">' + CampaignDayLeft + ' Day Left</div>');
+                        Ext.getCmp('Dashboard_NearestRedeem_EndDate' + i).setHtml('<div style="color:black;text-align: left;font-size:10px;font-weight:normal;width:80%;float:left;margin:3px 0px 0px 2px">End Date:' + EndDate + ' - ('+ CampaignDayLeft +') Day Left</div>');
 
 
                         if (CampaignDayLeft >= 20 && CampaignDayLeft <= 30) {
                             // Ext.getCmp('Dashboard_NearestRedeem_EndDate' + i).setHtml('<div style="color:black;text-align: center;font-size:12px;font-weight:normal;width:100%">End Date:' + EndDate + '</div><div class="blink_me" style="color:green;text-align: right;font-size:12px;font-weight:bold;margin:-19px -160px 0px 0px;">(' + CampaignDayLeft + ') Days Left</div>');
-                            Ext.getCmp('Dashboard_NearestRedeem_EndDate' + i).setHtml('<div style="color:black;text-align: left;font-size:12px;font-weight:normal;width:60%;float:left;">End Date:' + EndDate + '</div><div class="blink_me" style="color:green;text-align: left;font-size:12px;font-weight:bold;margin:0px 0px 0px 0px;float:left;width:40%;">(' + CampaignDayLeft + ') Days Left</div>');
+                            Ext.getCmp('Dashboard_NearestRedeem_EndDate' + i).setHtml('<div style="color:black;text-align: left;font-size:10px;font-weight:normal;width:80%;float:left;margin:3px 0px 0px 2px">End Date:' + EndDate + ' - ('+ CampaignDayLeft +') Day Left</div>');
 
 
 
                         }
                         if (CampaignDayLeft >= 10 && CampaignDayLeft <= 19) {
                             // Ext.getCmp('Dashboard_NearestRedeem_EndDate' + i).setHtml('<div style="color:black;text-align: center;font-size:12px;font-weight:normal;width:100%">End Date:' + EndDate + '</div><div class="blink_me" style="color:orange;text-align: right;font-size:12px;font-weight:bold;margin:-19px -160px 0px 0px;">(' + CampaignDayLeft + ') Days Left</div>');
-                            Ext.getCmp('Dashboard_NearestRedeem_EndDate' + i).setHtml('<div style="color:black;text-align: left;font-size:12px;font-weight:normal;width:60%;float:left;">End Date:' + EndDate + '</div><div class="blink_me" style="color:orange;text-align: left;font-size:12px;font-weight:bold;margin:0px 0px 0px 0px;width:40%;float:left;">(' + CampaignDayLeft + ') Days Left</div>');
+                            Ext.getCmp('Dashboard_NearestRedeem_EndDate' + i).setHtml('<div style="color:black;text-align: left;font-size:10px;font-weight:normal;width:80%;float:left;margin:3px 0px 0px 2px">End Date:' + EndDate + ' - ('+ CampaignDayLeft +') Day Left</div>');
 
 
                         }
                         if (CampaignDayLeft >= 1 && CampaignDayLeft <= 9) {
                             //Ext.getCmp('Dashboard_NearestRedeem_EndDate' + i).setHtml('<div style="color:black;text-align: center;font-size:12px;font-weight:normal;width:100%">End Date:' + EndDate + '</div><div class="blink_me" style="color:red;text-align: right;font-size:12px;font-weight:bold;margin:-19px -160px 0px 0px;">(' + CampaignDayLeft + ') Days Left</div>');
-                            Ext.getCmp('Dashboard_NearestRedeem_EndDate' + i).setHtml('<div style="color:black;text-align: left;font-size:12px;font-weight:normal;width:60%;float:left;">End Date:' + EndDate + '</div><div class="blink_me" style="color:red;text-align: left;font-size:12px;font-weight:bold;margin:0px 0px 0px 0px;width:40%;float:left;">(' + CampaignDayLeft + ') Days Left</div>');
+                            Ext.getCmp('Dashboard_NearestRedeem_EndDate' + i).setHtml('<div style="color:black;text-align: left;font-size:10px;font-weight:normal;width:80%;float:left;margin:3px 0px 0px 2px">End Date:' + EndDate + ' - ('+ CampaignDayLeft +') Day Left</div>');
 
 
 
@@ -5676,7 +5676,7 @@ function FloatPanel_DashboardMerchantReward_AyohaUserDashBoardNearestRedeemItemS
                 }
 
                 if (isRequiredStartEndDate == "NO") {
-                    Ext.getCmp('Dashboard_NearestRedeem_EndDate' + i).setHtml('<div style="color:black;text-align: center;font-size:12px;width:100%;font-weight:normal">End Date:&nbsp;<i>No End Date,Valid LifeTime</i></div>');
+                    Ext.getCmp('Dashboard_NearestRedeem_EndDate' + i).setHtml('<div style="color:black;text-align: center;font-size:10px;width:100%;font-weight:normal;margin:5px 0px 0px 2px">End Date:&nbsp;<i>No End Date,Valid LifeTime</i></div>');
 
                 }
             

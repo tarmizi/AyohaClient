@@ -449,6 +449,8 @@ function loadAyohaUserProfile() {
 var globalLogginAyohaUser_AyohaUserPicProfile;
 var globalLogginAyohaUser_AyohaUserAccountNames;
 var globalLogginAyohaUser_AyohaUserAccountNames_DisplayName;
+var globalLogginAyohaUser_AccountNo_Display;
+var globalLogginAyohaUser_UserVerifiedDate;
 function loadAyohaUserProfileLoginBody() {
 
 
@@ -510,6 +512,7 @@ function loadAyohaUserProfileLoginBody() {
                      //   Ext.getCmp('tabpanelMyAccount_Dashboard').getTabBar().hide();
                         localStorage.setItem('AyohaUserAccountNo',data.results[0].AccountNo);
                         localStorage.setItem('AyohaUserKatalaluan', data.results[0].Katalaluan);
+                        globalLogginAyohaUser_UserVerifiedDate = data.results[0].UserVerifiedDate;
                        
                         //routeCurrPage = '15';
                         //routesArray.push("mainView,view,15");
@@ -545,7 +548,7 @@ function loadAyohaUserProfileLoginBody() {
 
                         var AccountNoDisplay = data.results[0].AccountNo.split('-');
                         localStorage.setItem('AccountNoDisplay', AccountNoDisplay[1] + '-' + AccountNoDisplay[2]);
-
+                        globalLogginAyohaUser_AccountNo_Display= AccountNoDisplay[1];
 
                         if (data.results[0].isUserVerified == "YES") {
                             Ext.getCmp('htmlMyAccount_Dashboard_ProfileTitle').setHtml('<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 11px;font-weight:normal;color:white;margin:0px 0px 0px 0px">Good Days!,</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 14px;font-weight:bold;color:white;margin:-25px 0px 0px 0px">' + AccountName.toLowerCase() + '</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 10px;font-weight:bold;color:white;margin:-27px 0px 0px 0px">' + AccountNoDisplay[1] + '-' + AccountNoDisplay[2] + '</div>');

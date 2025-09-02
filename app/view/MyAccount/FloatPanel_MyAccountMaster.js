@@ -32,7 +32,7 @@ function FloatPanel_MyAccountMaster() {
 
          centered: true,
          //bottom: 64,
-         zIndex: 300,
+         zIndex: 100,
          modal: true,
          hideOnMaskTap: true,
          layout: {
@@ -458,7 +458,7 @@ function FloatPanel_MyAccountMaster() {
 {
     xtype: 'container',
     width: '100%',
-    height: 270,
+    height: 350,
     id:'containerFloatPanel_MyAccountMasterMaster_Profile',
     layout: {
         type: 'vbox',
@@ -596,7 +596,57 @@ function FloatPanel_MyAccountMaster() {
 
 },
 
+{
 
+    xtype: 'container',
+    width: '95%',
+    height: 60,
+    margin: '0 0 0 0',
+    //style: 'background-color:rgba(255, 255, 255, 0.3);border-radius: 40px 40px 40px 40px;',
+    style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:1px solid #ECF0F1;border-top:2px none #ECF0F1 ;background: transparent;',
+    name: 'nameContainerFloatPanel_MyAccountMaster_AllTransactions',
+    //style: 'background-color:red;border-radius: 10px 10px 10px 10px;',
+    layout: {
+        type: 'hbox',
+        pack: 'center',
+        align: 'center'
+    },
+    items: [
+        {
+            xtype: 'spacer',
+            width: 20
+        },
+        {
+            height: 22,
+            width: 22,
+            html: '<img src="resources/icons/purchase01.png" alt="Image" style="width:22px;height:22px;">',
+        },
+        {
+            xtype: 'spacer',
+            width: 20
+        },
+        {
+            id: 'FloatPanel_MyAccountMaster_Menu_Alltransactions',
+            margin: '5 0 0 0',
+            height: 20,
+            html: '<div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-size: 12px;font-weight:normal;color:black;height:20px">Transaction History</div>'
+        },
+         {
+             xtype: 'spacer'
+         },
+        {
+            id: 'FloatPanel_MyAccountMaster_Menu_AlltransactionsSign',
+            margin: '0 0 0 0',
+            height: 20,
+            html: '<div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-size: 22px;font-weight:normal;color:black;height:20px">></div>'
+        },
+    {
+        xtype: 'spacer',
+        width: 20
+    },
+    ]
+
+},
 
 
 {
@@ -1421,6 +1471,21 @@ function FloatPanel_MyAccountMasterShow() {
       }
     );
 
+
+
+    var containerViewnameContainerFloatPanel_MyAccountMaster_AllTransactions = Ext.ComponentQuery.query('container[name=nameContainerFloatPanel_MyAccountMaster_AllTransactions]')[0];
+    var containerViewElnameContainerFloatPanel_MyAccountMaster_AllTransactions = containerViewnameContainerFloatPanel_MyAccountMaster_AllTransactions.element;
+    containerViewElnameContainerFloatPanel_MyAccountMaster_AllTransactions.on('tap',
+      function (event, node, options, eOpts) {
+          //FloatPanel_MyAccountMasterHide();
+          //Ext.getCmp('mainView').setActiveItem(0);
+          //VIAAdvertismentAutoSlideReset();
+          MyAccount_AllTransactionHistoryShow();
+
+      }
+    );
+
+    
 
     var containerViewnameContainerFloatPanel_MyAccountMaster_TermAndCondition = Ext.ComponentQuery.query('container[name=nameContainerFloatPanel_MyAccountMaster_TermAndCondition]')[0];
     var containerViewElnameContainerFloatPanel_MyAccountMaster_TermAndCondition = containerViewnameContainerFloatPanel_MyAccountMaster_TermAndCondition.element;

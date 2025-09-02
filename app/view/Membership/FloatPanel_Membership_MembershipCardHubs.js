@@ -51,7 +51,8 @@ function FloatPanel_Membership_MembershipCardHubs() {
             //duration: 250
         },
         //style: 'border-bottom:1px solid;background-color:#353839;',
-        style: 'background-color:white;',
+       // style: 'background-color:white;',
+        style:"background: linear-gradient(180deg, #FFF1F9 0%, #F3E8FF 100%);",
        // style: ' background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);',
        // style: ' background-color: #fac;background-image: linear-gradient(#c800ffc9,#ff00de75);',
         // listeners: {
@@ -98,7 +99,8 @@ function FloatPanel_Membership_MembershipCardHubs() {
                 xtype: 'container',
                 width: '100%',
                 height: '100%',
-               style: ' background-color:transparent;',
+              // style: ' background-color:transparent;',
+               style:"background: linear-gradient(180deg, #FFF1F9 0%, #F3E8FF 100%);",
                // style: ' background-color: #fac;background-image: linear-gradient(#c800ffc9,#ff00de75);',
                 layout: {
                     type: 'fit',

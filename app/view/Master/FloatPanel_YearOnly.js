@@ -407,6 +407,10 @@ function FloatPanel_YearOnly_Filter(Year) {
     if (isFloatPanel_AyohaeWallet_TransactionHistoryOpen == 'Y') {
         FloatPanel_AyohaeWallet_TransactionHistory_AyohaeWalletTransactionLoadByeWalletAccNoFilterTypeStore(Year);
     }
+
+    if(isMyAccount_AllTransactionHistoryOpen=='Y'){
+        MyAccount_AllTransactionHistory_AyohaeWalletTransactionLoadByeWalletAccNoFilterTypeStore(Year);
+    }
  
  
 }

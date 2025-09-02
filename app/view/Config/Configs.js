@@ -2541,3 +2541,241 @@ _DataStore_MembershipCardPaymentPlanLoadByPaymentPlanCodeStore.load({
     }
 });
 }
+
+
+function convertDateToDayMonthYearNo1(dateStr) {
+    // var date = new Date(dateString);
+    // var options = { day: '2-digit', month: '2-digit', year: 'numeric' };
+    // return date.toLocaleDateString('en-GB', options); // Use 'en-GB' for day/month/year format
+
+
+
+
+
+
+console.log('convertDateToDayMonthYear called with dateStr:', dateStr);
+    // Parse string tarikh
+  const date = new Date(dateStr);
+
+  // Pilih opsyen format
+  const options = { day: 'numeric', month: 'long', year: 'numeric' };
+
+  // Guna Intl.DateTimeFormat untuk format
+  return new Intl.DateTimeFormat('en-GB', options).format(date);
+}
+
+
+
+function convertDateToDayMonthYear(dateStr) {
+    console.log('convertDateToDayMonthYear called with dateStr:', dateStr);
+  
+    if (!dateStr || typeof dateStr !== "string" || !dateStr.includes("-")) {
+      return 'Non Ayoha Member';
+    }
+  
+    const [datePart] = dateStr.split(" ");
+    const parts = datePart.split("-");
+  
+    if (parts.length !== 3) {
+      return 'Non Ayoha Member';
+    }
+  
+    const [day, month, year] = parts;
+  
+    const months = [
+      "January", "February", "March", "April", "May", "June",
+      "July", "August", "September", "October", "November", "December"
+    ];
+  
+    const d = parseInt(day);
+    const m = parseInt(month);
+    
+    if (isNaN(d) || isNaN(m) || !year) {
+      return 'Non Ayoha Member';
+    }
+  
+    return `${d} ${months[m - 1]} ${year}`;
+  }
+
+
+// --- SLIDE UP (muncul dari bawah → ke tempat asal) ---
+function slideUpShow(cmpId, duration) {
+    var cmp = Ext.getCmp(cmpId);
+    cmp.show();
+    Ext.Animator.run({
+      element  : cmp.element,
+      duration : duration || 500,
+      easing   : 'ease-out',
+      from     : { translateY: 50, opacity: 0 },
+      to       : { translateY: 0,  opacity: 1 }
+    });
+    // if (cmp && cmp.isHidden()) {
+    //   cmp.show();
+    //   Ext.Animator.run({
+    //     element  : cmp.element,
+    //     duration : duration || 500,
+    //     easing   : 'ease-out',
+    //     from     : { translateY: 50, opacity: 0 },
+    //     to       : { translateY: 0,  opacity: 1 }
+    //   });
+    // }
+  }
+  
+  function slideUpHide(cmpId, duration) {
+    var cmp = Ext.getCmp(cmpId);
+    if (cmp && !cmp.isHidden()) {
+      Ext.Animator.run({
+        element  : cmp.element,
+        duration : duration || 500,
+        easing   : 'ease-in',
+        from     : { translateY: 0,  opacity: 1 },
+        to       : { translateY: -50, opacity: 0 },
+        listeners: {
+          animationend: function () {
+            cmp.hide();
+            // reset transform supaya layout normal bila show semula
+            cmp.element.setStyle('transform', '');
+            cmp.element.setStyle('opacity', '');
+          }
+        }
+      });
+    }
+  }
+  
+  // --- SLIDE DOWN (muncul dari atas → ke tempat asal) ---
+  function slideDownShow(cmpId, duration) {
+    var cmp = Ext.getCmp(cmpId);
+
+    cmp.show();
+    Ext.Animator.run({
+      element  : cmp.element,
+      duration : duration || 500,
+      easing   : 'ease-out',
+      from     : { translateY: -50, opacity: 0 },
+      to       : { translateY: 0,   opacity: 1 }
+    });
+
+
+
+
+
+    if (cmp && cmp.isHidden()) {
+      cmp.show();
+      Ext.Animator.run({
+        element  : cmp.element,
+        duration : duration || 500,
+        easing   : 'ease-out',
+        from     : { translateY: -50, opacity: 0 },
+        to       : { translateY: 0,   opacity: 1 }
+      });
+    }
+  }
+  
+
+
+  function slideDownHide(cmpId, duration) {
+    var cmp = Ext.getCmp(cmpId);
+   // if (!cmp || cmp.isHidden()) return;
+  
+    var el = cmp.element;
+    var dur = duration || 500;
+  
+    // kunci ketinggian semasa & enable transition
+    var h = el.getHeight(); // atau cmp.getHeight()
+    el.setStyle({
+      overflow: 'hidden',
+      height: h + 'px',
+      opacity: 1,
+      '-webkit-transition': 'height ' + dur + 'ms ease, opacity ' + dur + 'ms ease',
+      'transition'        : 'height ' + dur + 'ms ease, opacity ' + dur + 'ms ease'
+    });
+  
+    // force reflow supaya transition apply
+    el.dom.offsetHeight;
+  
+    // animate → collapse
+    el.setStyle({ height: '0px', opacity: 0 });
+  
+    Ext.defer(function () {
+      cmp.hide();
+      // bersihkan inline style
+      el.setStyle({ overflow:'', height:'', opacity:'', '-webkit-transition':'', 'transition':'' });
+    }, dur);
+  }
+  
+
+  function slideDownShow(cmpId, duration) {
+    var cmp = Ext.getCmp(cmpId);
+    if (!cmp || !cmp.isHidden()) return;
+  
+    var el = cmp.element;
+    var dur = duration || 500;
+  
+    cmp.show();                    // perlu appear dulu untuk kira scrollHeight
+    el.setStyle({ height: 'auto'}); // pastikan kita dapat tinggi sebenar
+    var target = el.dom.scrollHeight;
+  
+    // mula dari 0
+    el.setStyle({
+      overflow: 'hidden',
+      height: '0px',
+      opacity: 0,
+      '-webkit-transition': 'height ' + dur + 'ms ease, opacity ' + dur + 'ms ease',
+      'transition'        : 'height ' + dur + 'ms ease, opacity ' + dur + 'ms ease'
+    });
+  
+    // force reflow
+    el.dom.offsetHeight;
+  
+    // animate → expand ke tinggi sebenar
+    el.setStyle({ height: target + 'px', opacity: 1 });
+  
+    Ext.defer(function () {
+      // clear height supaya ikut content (auto)
+      el.setStyle({ overflow:'', height:'', '-webkit-transition':'', 'transition':'' });
+    }, dur);
+  }
+  
+
+
+
+
+  function slideDownHideOri(cmpId, duration) {
+    var cmp = Ext.getCmp(cmpId);
+
+    Ext.Animator.run({
+        element  : cmp.element,
+        duration : duration || 500,
+        easing   : 'ease-in',
+        from     : { translateY: 0,   opacity: 1 },
+        to       : { translateY: 50,  opacity: 0 },
+        listeners: {
+          animationend: function () {
+            cmp.hide();
+            cmp.element.setStyle('transform', '');
+            cmp.element.setStyle('opacity', '');
+          }
+        }
+      });
+
+
+
+
+    // if (cmp && !cmp.isHidden()) {
+    //   Ext.Animator.run({
+    //     element  : cmp.element,
+    //     duration : duration || 500,
+    //     easing   : 'ease-in',
+    //     from     : { translateY: 0,   opacity: 1 },
+    //     to       : { translateY: 50,  opacity: 0 },
+    //     listeners: {
+    //       animationend: function () {
+    //         cmp.hide();
+    //         cmp.element.setStyle('transform', '');
+    //         cmp.element.setStyle('opacity', '');
+    //       }
+    //     }
+    //   });
+    // }
+  }
+  

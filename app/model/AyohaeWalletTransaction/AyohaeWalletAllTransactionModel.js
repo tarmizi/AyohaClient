@@ -1,4 +1,4 @@
-﻿Ext.define('ianMizi.model.AyohaeWalletTransaction.AyohaeWalletTransactionModel', {
+Ext.define('ianMizi.model.AyohaeWalletTransaction.AyohaeWalletAllTransactionModel', {
     extend: 'Ext.data.Model',
     config: {
         fields: [
@@ -42,9 +42,9 @@
               var strCreditDebitType = record.get('CreditDebitType');
 
               if (strCreditDebitType == 'Credit') {
-                  _value = " +RM" + floatTransactionAmount.toFixed(2) + ""
+                  _value = "+ RM" + floatTransactionAmount.toFixed(2) + ""
               } else {
-                  _value = " -RM" + floatTransactionAmount.toFixed(2) + ""
+                  _value = "- RM" + floatTransactionAmount.toFixed(2) + ""
               }
 
 
@@ -53,6 +53,25 @@
               return _value;
           }
       },
+      {
+        name: 'ModifiedPaymentChannel',
+        convert: function (value, record) {
+            var _value;
+          //  var floatTransactionAmount = parseFloat(record.get('TransactionAmount'));
+            var strPaymentChannele = record.get('PaymentChannel');
+
+            if (strPaymentChannele) {
+                _value = strPaymentChannele
+            } else {
+                _value = "Ayoha eWallet"
+            }
+
+
+
+
+            return _value;
+        }
+    },
        //{
        //    name: 'isSpentOrIncome',
        //    convert: function (value, record) {
