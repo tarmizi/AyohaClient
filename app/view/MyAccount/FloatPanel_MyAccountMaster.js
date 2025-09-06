@@ -32,7 +32,7 @@ function FloatPanel_MyAccountMaster() {
 
          centered: true,
          //bottom: 64,
-         zIndex: 100,
+         zIndex: 50,
          modal: true,
          hideOnMaskTap: true,
          layout: {
@@ -1609,7 +1609,7 @@ function FloatPanel_MyAccountMasterShow() {
 
 
 
-        Ext.getCmp('FloatPanel_MyAccountMaster_VerificationStatusBox').setHtml('<div  onclick="FloatPanel_MyAccountRankDescriptionShow();" style="width:auto;height:25px;background-image: linear-gradient(#c800ffc9,#c800ffc9);background-color: #fac;border: 1px solid #fac;font-size: 12px;font-weight:bold;color:white;border-radius: 5px;display: flex;align-items: center;justify-content: center;padding:0px 7px ">Tier :' + localStorage.getItem("AyohaMember_Rank") + ' | Ayoha Point:'+globalDashboard_AyohaPoint+'</div>');
+        Ext.getCmp('FloatPanel_MyAccountMaster_VerificationStatusBox').setHtml('<div  onclick="FloatPanel_MyAccountRankDescriptionShow();" style="width:180px;height:40px;background-image: linear-gradient(#c800ffc9,#c800ffc9);background-color: #fac;border: 1px solid #fac;font-size: 12px;font-weight:bold;color:white;border-radius: 5px;display: flex;text-align: left;padding:5px 5px ">Tier :' + localStorage.getItem("AyohaMember_Rank") + ' <br> Ayoha Point:'+globalDashboard_AyohaPoint+'</div>');
        
     }
 }

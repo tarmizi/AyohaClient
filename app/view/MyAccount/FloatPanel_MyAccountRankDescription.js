@@ -15,7 +15,7 @@ function FloatPanel_MyAccountRankDescription() {
 
     _FloatPanel_MyAccountRankDescription =
     Ext.create('Ext.Panel', {
-        zIndex: 50,
+        zIndex: 80,
         xtype: 'container',
         //height: 465,
         //  height: '100%',

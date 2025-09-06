@@ -109,7 +109,7 @@ function FloatPanel_MembershipCardList_NotYetSubscribed() {
                 xtype: 'container',
                 width: '100%',
                 docked: 'bottom',
-                height: 40,
+                height: 60,
                 //hidden:true,
                 // width: 40,
 
@@ -123,13 +123,14 @@ function FloatPanel_MembershipCardList_NotYetSubscribed() {
                 //    background: 'transparent',
                 //    // border: '2px'
                 //},
-                //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
-                style: 'border-bottom:2px none #D25959;background-color:transparent',
+                style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px solid #ECF0F1 ;background: transparent;',
+               // style: 'border-bottom:2px none #D25959;background-color:transparent',
                 // style: 'background-image: url("resources/icons/border5.png"); background-size: 100% 100%;border-top:1px solid #d3d3d3;',
                 layout: {
-                    type: 'fit',
-                    //pack: 'center',
-                    //align: 'center',
+                    //type: 'fit',
+                    type: 'hbox',
+                    pack: 'center',
+                    align: 'center',
                 },
                 // hidden:true,
                 items:
@@ -140,13 +141,13 @@ function FloatPanel_MembershipCardList_NotYetSubscribed() {
                                 ////  align: 'stretch',
 
                                 //ui: 'plain',
-                                // width: '100%',
-                                margin:'2 0 0 0',
-                                height: 40,
+                                width: '85%',
+                                margin:'5 0 0 0',
+                                height: 50,
                                 id: 'btnFloatPanel_MembershipCardList_NotYetSubscribed_GetMembershipCard',
                                 //hidden: true,
                               
-                                html: '<div class="blink_me"><button class="button3viewloyaltycard">Get Membership Card NOW !</button></div>',
+                                html: '<button class="button3getMembershipCard">Get Membership Card NOW !</button>',
                                 //handler: function () {
                                 //    getMembershipCard();
                                 //    // FloatPanel_MembershipCardManagement_NewCardAdd_Save();

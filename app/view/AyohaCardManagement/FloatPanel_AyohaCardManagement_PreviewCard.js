@@ -2816,9 +2816,7 @@ function Load_FloatPanel_AyohaCardManagement_PreviewCard_AyohaUserStampCardLoadB
     localStorage.setItem('AyohaUserAccountNo', SubscriberAccNo)
 
 
-// alert(strStampCampaignCode)
-// alert(EnterpriseAccNo)
-//alert(MembershipTag)
+
 
 
 Ext.getCmp('htmlFloatPanel_AyohaCardManagement_PreviewCard_EnterpriseLogo').setHtml('<img src="' + EnterpriseLogo + '" style="width: 120px; height: 120px; border:2px none white; border-radius: 50%; max-width:150px;"/>');
@@ -2837,6 +2835,9 @@ if (MembershipTag=="NO"){
     _DataStore_AyohaUserStampCardLoadByStampCampaignCodeEnterpriseAccNoShowHideStore.load({
         callback: function(records, operation, success) {
             if (success && records.length > 0) {
+
+
+               
                 for (var i = 0; i < records.length; i++) {
                     var rec = records[i];
     

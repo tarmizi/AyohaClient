@@ -231,7 +231,8 @@ function animatedClickTab() {
         //height: "toggle",
         colour: 'rgba(0,0,0,1)',
     }, 500, function () {
-        FloatPanel_DashboardMerchantRewardShow();
+      
+      FloatPanel_DashboardMerchantRewardShow();
         $("#containerMyAccount_Dashboard_MenuBottom_MyStore").animate({
             opacity: 1,
             //left: "+=50",

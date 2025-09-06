@@ -2962,8 +2962,8 @@ html:'<div style="display: flex; flex-direction: column; align-items: center; ju
                                         '<img src="resources/icons/merchantreward01.png" style="width: 32px; height: 32px; margin-bottom: 5px;" />'+ 
                                             '</div>' + 
                                             '<div style="font-size: 10px; font-weight: normal; color: black; text-align: center;margin: 4px 0px 0px 0px;">' + 
-                                                'Merchant<br>' + 
-                                                '<span style="display: block; margin-top: -2px;">Reward</span>' +                                            
+                                                'Get Loyalty<br>' + 
+                                                '<span style="display: block; margin-top: -2px;">Perks</span>' +                                            
                                         '</div>' + 
                                     '</div>'
                                          
@@ -3066,7 +3066,7 @@ html:'<div style="display: flex; flex-direction: column; align-items: center; ju
                                         '<img src="resources/icons/onlineStore.jpg" style="width: 30px; height: 30px; margin-bottom: 5px;" />'+ 
                                         '</div>' + 
                                         '<div style="font-size: 10px; font-weight: normal; color: black; text-align: center;margin: 4px 0px 0px 0px;">'+ 
-                                        'Ayoha Merchant<br>'+ 
+                                        'Merchant<br>'+ 
                                         '<span style="display: block; margin-top: -2px;">Store</span>'+ 
                                         '</div>'+ 
                                         '</div>'
@@ -3129,7 +3129,7 @@ html:'<div style="display: flex; flex-direction: column; align-items: center; ju
                                         '<img src="resources/icons/shoppingbag03.png" style="width: 30px; height: 30px; margin-bottom: 5px;" ></img>'+ 
                                         '</div>' + 
                                         '<div style="font-size: 10px; font-weight: normal; color: black; text-align: center; margin: 4px 0px 0px 0px;">'+ 
-                                        'Ayoha Shopping<br>'+ 
+                                        'Shopping<br>'+ 
                                         '<span style="display: block; margin-top: -2px;">Bag</span>'+ 
                                         '</div>'+ 
                                         '</div>'
@@ -8369,7 +8369,7 @@ html:'<div style="display: flex; flex-direction: column; align-items: center; ju
 
                                                                      height: 22,
                                                                      width: 22,
-                                                                     html: '<img src="resources/icons/merchantreward02.png" width="22" height="22" alt="Company Name">',
+                                                                     html: '<img src="resources/icons/nearestredemptionpurple.png" width="22" height="22" alt="Company Name">',
                                                                      //ui: 'plain',
                                                                      //handler: function () {
                                                                      //  //  FloatPanel_RewardStoreShow();
@@ -10607,8 +10607,10 @@ function initializeContainerSingleTapEvent() {
     var containerViewElnameContainerMyAccount_Dashboard_AyohaMerchantReward = ContainernameContainerMyAccount_Dashboard_AyohaMerchantReward.element;
     containerViewElnameContainerMyAccount_Dashboard_AyohaMerchantReward.on('tap',
       function (event, node, options, eOpts) {
-        animatedClickTab();
-        LoadingPanelShow(getLoadingIcon(), 'Loading....');
+       // animatedClickTab();
+       LoadingPanelShow(getLoadingIcon(), 'Loading....');
+       FloatPanel_AyohaEnterpriseRewardItemShow();
+        
       }
     );
 
@@ -11507,7 +11509,7 @@ document.getElementById("txtDashboard_MembershipNo").textContent = globalLogginA
 
             Ext.getCmp('Dashboard_AyohaRewardPoint').setHtml('<div  class="example-1"  style="background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9); border-radius: 50%;border:2px solid #fac;text-align:center;margin:-30px 0px 0px 0px;height:180px;width:180px"><div style="color:white;text-align: center;font-size:48px;width:100%;margin:50px 0px 0px 0px;"><b>' + AyohaPoint + '</b></div><br><div style="color:white;text-align: center;font-size:11px;width:100%;margin:-33px 0px 0px 0px"><b>Your Ayoha Points</b></div></div>');
            
-            Ext.getCmp('htmlDashboard_User_AyohaRewardContest01_TapChanceLeftTxt').setHtml('<div class="example-2" style="border-right:2px solid #fac;border-left:2px solid #fac;border-bottom:2px solid #fac;border-top:2px solid #fac;background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);border-radius: 20px 20px 20px 20px;width:250px;height:50px;font-size: 12px;font-weight:bold;color:white;text-align:center;vertical-align:middle;" ><div style="margin:-8px 0px 0px 0px;">You Have <font size=6px>' + AyohaTaAndWin_TapBalance + '</font> Chance Left</div></div>');
+            Ext.getCmp('htmlDashboard_User_AyohaRewardContest01_TapChanceLeftTxt').setHtml('<div style="border-right:2px solid #fac;border-left:2px solid #fac;border-bottom:2px solid #fac;border-top:2px solid #fac;background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);border-radius: 20px 20px 20px 20px;width:250px;height:50px;font-size: 12px;font-weight:bold;color:white;text-align:center;vertical-align:middle;" ><div style="margin:-8px 0px 0px 0px;">You Have <font size=6px>' + AyohaTaAndWin_TapBalance + '</font> Chance Left</div></div>');
             //Ext.getCmp('htmlDashboard_User_AyohaRewardContest01_TapChanceLeftTxt').setHtml('<div class="example-2" style="border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1 ;background:white;border-radius: 20px 20px 20px 20px;width:250px;height:50px;font-size: 12px;font-weight:bold;color:black;text-align:center;vertical-align:middle;" ><div style="margin:-8px 0px 0px 0px;">You Have <font size=6px>(' + AyohaTaAndWin_TapBalance + ')</font> Chance Left</div></div>');
             AyohaPoint = 0;
     
