@@ -374,41 +374,67 @@ var _DataStore_EnterprisesLoadByMerchantCategory_temp;
 
 
 function Dashboard_SearchMerchantList_EnterprisesLoadAyohaMerchantListStore() {
-    //_DataStore_EnterprisesLoadAyohaMerchantListStore.getProxy().setExtraParam('RowStatus', 'Active');
-    //_DataStore_EnterprisesLoadAyohaMerchantListStore.getProxy().setUrl(GetAPIurl() + '/Enterprises/EnterprisesLoadAyohaMerchantList');
-    //_DataStore_EnterprisesLoadAyohaMerchantListStore.load();
+  
 
 
-    _DataStore_EnterprisesLoadByMerchantCategory.getProxy().setExtraParam('RowStatus', 'Active');
-    _DataStore_EnterprisesLoadByMerchantCategory.getProxy().setExtraParam('SubscriberAccNo', GetCurrAyohaUserAccountNo());
-    _DataStore_EnterprisesLoadByMerchantCategory.getProxy().setUrl(GetAPIurl() + '/Enterprises/EnterprisesLoadAyohaMerchantList');
-    _DataStore_EnterprisesLoadByMerchantCategory.load();
+    // _DataStore_EnterprisesLoadByMerchantCategory.getProxy().setExtraParam('RowStatus', 'Active');
+    // _DataStore_EnterprisesLoadByMerchantCategory.getProxy().setExtraParam('SubscriberAccNo', GetCurrAyohaUserAccountNo());
+    // _DataStore_EnterprisesLoadByMerchantCategory.getProxy().setUrl(GetAPIurl() + '/Enterprises/EnterprisesLoadAyohaMerchantList');
+    // _DataStore_EnterprisesLoadByMerchantCategory.load();
 
     
     _DataStore_EnterprisesLoadByMerchantCategory_temp.getProxy().setExtraParam('RowStatus', 'Active');
     _DataStore_EnterprisesLoadByMerchantCategory_temp.getProxy().setExtraParam('SubscriberAccNo', GetCurrAyohaUserAccountNo());
     _DataStore_EnterprisesLoadByMerchantCategory_temp.getProxy().setUrl(GetAPIurl() + '/Enterprises/EnterprisesLoadAyohaMerchantList');
-    _DataStore_EnterprisesLoadByMerchantCategory_temp.load();
+  //  _DataStore_EnterprisesLoadByMerchantCategory_temp.load();
+
+
+
+    _DataStore_EnterprisesLoadByMerchantCategory_temp.load({
+        callback: function (records, operation, success) {
+            if (success && records.length > 0) {
+                console.log('Store loaded successfully, total records: ' + records.length);
+    
+             
+               
+                LoadingPanelHide();
+            } else {
+                console.error('Failed to load store data or no record found.');
+                LoadingPanelHide();
+            }
+        }
+    });
+
+
+
+
+
+
+
+
+
+
+
     //var store = _DataStore_EnterprisesLoadByMerchantCategory.getAt(0);
     //store.get('RowNumber')
 
 
-    var task = Ext.create('Ext.util.DelayedTask', function () {
+    // var task = Ext.create('Ext.util.DelayedTask', function () {
        
 
-        //_DataStore_EnterprisesLoadByMerchantCategory.load();
-        var count = _DataStore_EnterprisesLoadByMerchantCategory.getCount();
-        var counted = _DataStore_EnterprisesLoadByMerchantCategory_temp.getCount();
-       // alert(count + ' - ' + counted);
-    //    setTimeout(function () {
-    //        document.getElementById('input-Dashboard_SearchMerchant').blur();
-    //    }, 1000);
-        //Ext.getCmp('FloatPanel_RewardStore_CountSearchTxt').setHtml('<font size=3 color=black><b>(' + _DataStore_EnterprisesLoadByMerchantCategory.getCount() + ')</b></font>')
-        LoadingPanelHide();
+    //     //_DataStore_EnterprisesLoadByMerchantCategory.load();
+    //     var count = _DataStore_EnterprisesLoadByMerchantCategory.getCount();
+    //     var counted = _DataStore_EnterprisesLoadByMerchantCategory_temp.getCount();
+    //    // alert(count + ' - ' + counted);
+    // //    setTimeout(function () {
+    // //        document.getElementById('input-Dashboard_SearchMerchant').blur();
+    // //    }, 1000);
+    //     //Ext.getCmp('FloatPanel_RewardStore_CountSearchTxt').setHtml('<font size=3 color=black><b>(' + _DataStore_EnterprisesLoadByMerchantCategory.getCount() + ')</b></font>')
+    //     LoadingPanelHide();
 
 
-    });
-    task.delay(500);
+    // });
+    // task.delay(500);
 
 
     Ext.Viewport.setMasked(false);

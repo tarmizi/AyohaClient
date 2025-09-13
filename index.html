@@ -13,6 +13,48 @@
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <title>Ayoha</title>
     <style>
+       /* outer list border/shadow */
+.list--flat,
+.list--flat .x-dock,
+.list--flat .x-dock-body,
+.list--flat .x-scroll-container{
+  border: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+/* per-item divider lines (different themes draw them differently) */
+.list--flat .x-list-item,
+.list--flat .x-list-item.x-list-item-tpl,
+.list--flat .x-list-item .x-inner{
+  border: 0 !important;
+  box-shadow: none !important;
+}
+.list--flat .x-list-item .x-inner:before,
+.list--flat .x-list-item:before,
+.list--flat .x-list-item:after{
+  display: none !important;
+  content: none !important;
+}
+
+/* grouped header (if any) */
+.list--flat .x-list-header{ border:0 !important; background:transparent !important; }
+
+
+/* center + responsive width */
+.list--centered{
+  width: 92%;
+  max-width: 520px;          /* tune for your phone/tablet */
+  margin: 0 auto !important; /* center */
+}
+
+/* light page background for nicer contrast */
+.card-list .x-scroll-container{
+  background: #f6f7fb !important;
+  padding: 12px 8px 60px;    /* gutters so shadows aren't clipped */
+}
+    </style>
+    <style>
         .tier-footer{padding:14px 16px;border-radius:16px;background:linear-gradient(180deg,#b833ff22,#ff41a822)}
         .tier-head{display:flex;justify-content:space-between; font-size:11px; padding:0px 0px;color:#fff; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;}
         .progress{

@@ -19,7 +19,7 @@ function FloatPanel_AyohaEnterpriseRewardItem() {
     Ext.create('Ext.Panel', {
       
         //zIndex: 310,
-        zIndex: 310,
+        zIndex: 20,
         xtype: 'container',
         //height: 465,
       //  height: '100%',
@@ -305,6 +305,10 @@ function FloatPanel_AyohaEnterpriseRewardItem() {
                                         height: '100%',
                                         variableHeights: true,
                                         mode: 'SINGLE',
+                                        ui: 'plain',        // removes theme borders
+  inset: false,       // make sure inset styling isn’t applied
+  //cls: 'list--flat',
+ // cls: 'card-list list--centered',
                                                          
                                                           //grouped: true,
                                                           disableSelection: true,
@@ -322,32 +326,33 @@ function FloatPanel_AyohaEnterpriseRewardItem() {
                                                           style: 'background-color:rgba(255,255,255, 0);border-radius: 0px 0px 0px 0px;',
                                 
                                         // Minimal inline store so you can see it render
-                                        store: {
-                                            fields: [
-                                                'image','title','merchant','channel',
-                                                'discount','rebate','price','oldPrice',
-                                                'tag1','tag2','viewHref'
-                                            ],
-                                            data: [
-                                                {
-                                                    image: 'https://setkita.com/AyohaImgCard/AdvertisementImage/95154-95943-258-NoEnterprise/KopiSuratCinta.jpg',
-                                                    merchant: 'Kopi Surat Cinta - Putrajaya',
-                                                    subtitle: 'makan kenangan lalu',
-                                                    rating: 5.0,
-                                                    reviews: 2,
-                                                    merchantIcon: 'https://…/merchant-badge.png',
-                                                    shopIcon: 'https://…/shop.png',
-                                                    discount: '-18%',
-                                                    title: '100 Point Untuk Teh ais Mantapppp percuma',
-                                                    oldPrice: 5.30,
-                                                    tag1: 'Food & Beverage',
-                                                    tag2: 'Kedai kopi Hipster',
-                                                    viewHref: '#'
-                                                  }
+                                        store:_DataStore_VIEW_merchantperk_View_LoadbySubscriberAccNoStore,
+                                        // store: {
+                                        //     fields: [
+                                        //         'image','title','merchant','channel',
+                                        //         'discount','rebate','price','oldPrice',
+                                        //         'tag1','tag2','viewHref'
+                                        //     ],
+                                        //     data: [
+                                        //         {
+                                        //             image: 'https://setkita.com/AyohaImgCard/AdvertisementImage/95154-95943-258-NoEnterprise/KopiSuratCinta.jpg',
+                                        //             merchant: 'Kopi Surat Cinta - Putrajaya',
+                                        //             subtitle: 'makan kenangan lalu',
+                                        //             rating: 5.0,
+                                        //             reviews: 2,
+                                        //             merchantIcon: 'https://…/merchant-badge.png',
+                                        //             shopIcon: 'https://…/shop.png',
+                                        //             discount: '-18%',
+                                        //             title: '100 Point Untuk Teh ais Mantapppp percuma',
+                                        //             oldPrice: 5.30,
+                                        //             tag1: 'Food & Beverage',
+                                        //             tag2: 'Kedai kopi Hipster',
+                                        //             viewHref: '#'
+                                        //           }
                                         
                                         
-                                        ]
-                                        },
+                                        // ]
+                                        // },
                                 
                                         // itemTpl: new Ext.XTemplate([
                                         //     '<div style="display:flex;justify-content:center;">',
@@ -396,37 +401,48 @@ function FloatPanel_AyohaEnterpriseRewardItem() {
                                         // Drop this into your list's itemTpl
 itemTpl: new Ext.XTemplate([
     '    <!-- Main Card Container -->',
-    '    <div style="background-color: #ffffff; width: 105%; border-radius: 5px; overflow: hidden;margin:0px 0px 0px -10px;border:1px solid #e9e9ee;">',
+   // '   <div style="background-color:#ffffff; width:105%; border-radius:5px; overflow:hidden; margin:0 0 0 -10px; border:0; -webkit-box-shadow:0 18px 48px rgba(0,0,0,.28), 0 8px 20px rgba(0,0,0,.22); box-shadow:0 18px 48px rgba(0,0,0,.28), 0 8px 20px rgba(0,0,0,.22);">',
+    '<div style="background:#fff; width:103%; border-radius:12px; overflow:hidden; margin:0px 0px 0px -5px; border:0; box-shadow:0 12px 30px rgba(24,39,75,.14), 0 3px 10px rgba(24,39,75,.10);">',
     '',
     '        <!-- Image Section -->',
     '        <div style="position: relative;">',
     '            <!-- Placeholder for the main image -->',
-    '            <img src="https://placehold.co/600x400/003366/FFFFFF?text=Kopi+Curahan+Hati" alt="Pandan Butter Latte" style="width: 100%; height: auto; display: block;">',
+  //  '            <img src="{ImagePath}" alt="Pandan Butter Latte" style="width: 100%; height: auto; display: block;">',
+    '{ModifiedImagePath}',
     '            ',
     '            <!-- Discount Tag -->',
-    '            <div style="position: absolute; top: 12px; left: 12px; background-color: #9b59b6; color: white; padding: 5px 12px; border-radius: 8px; font-size: 14px; font-weight: bold;">',
-    '                -18%',
+    '            <div style="display:block;position: absolute; top: 12px; left: 12px; background-color: {ModifiedCampaignColor}; color: white; padding: 5px 12px; border-radius: 8px; font-size: 12px; font-weight: bold;">',
+    '                {ItemType}',
     '            </div>',
     '            ',
     '            <!-- Price Tag -->',
-    '            <div style="position: absolute; bottom: -25px; right: 20px; background-color: #e74c3c; color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: bold; box-shadow: 0 4px 8px rgba(0,0,0,0.2); border: 2px solid white;">',
-    '                RM13',
-    '            </div>',
+
+    '<div style="display:{ModifiedVoucherDisplay}',
+  ';position:absolute; bottom:-25px; right:20px !important; left:auto !important',
+  'display:flex; flex-direction:column; align-items:center; justify-content:center;',
+  'width:50px; height:50px;',
+  'background:{ModifiedCampaignColor}; color:#fff; border-radius:50%;',
+  'box-shadow:0 4px 8px rgba(0,0,0,0.2); border:2px solid #fff;',
+ ' font-weight:bold; line-height:1; gap:2px;z-index:10;">{ModifiedAmount}</div>',
+
+    // '            <div style="display:{ModifiedVoucherDisplay};position: absolute; bottom: -25px; right: 20px; background-color: #e74c3c; color: white; width: 50px; height: 50px; border-radius: 50%;align-items: center; justify-content: center; font-size: 13px; font-weight: bold; box-shadow: 0 4px 8px rgba(0,0,0,0.2); border: 2px solid white;">',
+    // '                {ModifiedAmount}',
+    // '            </div>',
     '        </div>',
     '',
     '        <!-- Content Section -->',
     '        <div style="padding: 16px; margin-top: 10px;">',
     '            <!-- Store Info -->',
-    '            <div style="display: flex; align-items: center; margin-bottom: 12px; gap: 12px;">',
+    '            <div style="display: flex; align-items: center; margin-bottom: 12px; gap: 12px;border-bottom:1px solid #e9e9ee">',
     '                <!-- Store Icon -->',
     '                <div style="min-width: 48px; height: 48px; border-radius: 8px; border: 1px solid #eee; display:flex; align-items:center; justify-content:center; background-color: #f9f9f9;">',
-    '                    <img style="width: 28px; height: 28px;" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM3NzciIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNMjIgMTFIMm0xNyAwaC0zdi0xYTQtNCAwIDAgMC00LTFINmE0LTQgMCAwIDAgMCA4aDEyIiAvPjxwYXRoIGQ9Ik0xOCAxNUgyIiAvPjwvc3ZnPg==" alt="Store Icon">',
+    '                    <img style="width: 28px; height: 28px;" src="{EnterpriseLogo}" alt="Store Icon">',
     '                </div>',
     '                ',
     '                <!-- Store Name and Subtitle -->',
     '                <div style="flex-grow: 1;">',
-    '                    <p style="font-weight: 600; font-size: 15px; margin: 0; color: #333;">Kopi Surat Cinta - Putrajaya</p>',
-    '                    <p style="font-size: 12px; color: #777; margin: 2px 0 0 0;">makan kenangan lalu</p>',
+    '                    <p style="font-weight: 600; font-size: 15px; margin: 0; color: #333;">{EnterpriseName}</p>',
+    '                    <p style="font-size: 12px; color: #777; margin: 2px 0 0 0;">{EnterpriseTagLine}</p>',
     '                </div>',
     '                ',
     '                <!-- Rating and Reward Icon Container -->',
@@ -434,37 +450,41 @@ itemTpl: new Ext.XTemplate([
     '                    <!-- Rating -->',
     '                    <div style="text-align: right; white-space: nowrap;">',
     '                        <div style="font-size: 14px; display: flex; align-items: center; gap: 4px;">',
-    '                            <span style="font-weight: bold; color: #333;">5.0</span>',
+    '                            <span style="font-weight: bold; color: #333;">{EnterpriseCountStar}</span>',
     '                            <span style="color: #f1c40f;">★</span>',
     '                        </div>',
-    '                        <div style="font-size: 11px; color: #999;">2 Reviews</div>',
+    '                        <div style="font-size: 11px; color: #999;">{TotalReviewer} Reviews</div>',
     '                    </div>',    
     '                </div>',
     '            </div>',
     '',
-    '            <!-- Reward Title -->',
+    //'            <div style:border:1px solid #e9e9ee;width:100%;height:5px;background-color:#e9e9ee/>',
     '            <h2 style="font-size: 20px; font-weight: 700; margin: 16px 0 4px 0; color: #2c3e50; line-height: 1.4;">',
-    '                100 Point Untuk Teh ais Mantapppp percuma',
+    '                {Name}',
+    '            </h2>',
+    '            <h2 style="font-size: 14px; font-weight: 700; margin: 3px 0 4px 0; color: #2c3e50; line-height: 1.4;">',
+    '                {ModifiedTermAndDescription}',
     '            </h2>',
     '            ',
     '            <!-- Original Price -->',
-    '            <p style="margin: 0 0 16px 0; color: #95a5a6; text-decoration: line-through; font-size: 15px;">',
-    '                RM 5,30',
+    '            <p style="margin: 0 0 16px 0; color: #95a5a6; font-size: 12px;">',
+    '                End Date: {EndDate}',
     '            </p>',
     '',
     '            <!-- Tags -->',
     '            <div style="display: flex; gap: 8px; margin-bottom: 24px;">',
-    '                <span style="background-color: #ecf0f1; color: #7f8c8d; padding: 6px 14px; border-radius: 16px; font-size: 13px; font-weight: 500;">Food &amp; Beverage</span>',
-    '                <span style="background-color: #ecf0f1; color: #7f8c8d; padding: 6px 14px; border-radius: 16px; font-size: 13px; font-weight: 500;">Kedai kopi Hipster</span>',
+    '                <span style="background-color: #ecf0f1; color: #7f8c8d; padding: 6px 14px; border-radius: 16px; font-size: 13px; font-weight: 500;">{BusinessMode}</span>',
+    '                <span style="background-color: #ecf0f1; color: #7f8c8d; padding: 6px 14px; border-radius: 16px; font-size: 13px; font-weight: 500;">{EnterpriseDescription}</span>',
     '            </div>',
     '            ',
     '        </div>',
     '        ',
     '        <!-- Action Button -->',
     '        <div style="margin: -20px 0px 0px 10px;">',
-    '             <button style="width: 97%; background-image: linear-gradient(to right, #f8c65d, #f7971e); color: white; border: none; padding: 15px; border-radius: 12px; font-size: 16px; font-weight: bold; cursor: pointer; text-shadow: 0 1px 1px rgba(0,0,0,0.2); box-shadow: 0 4px 10px rgba(247, 151, 30, 0.4); transition: transform 0.2s ease, box-shadow 0.2s ease;" onmouseover="this.style.transform=\'translateY(-2px)\'; this.style.boxShadow=\'0 6px 12px rgba(247, 151, 30, 0.5)\';" onmouseout="this.style.transform=\'translateY(0)\'; this.style.boxShadow=\'0 4px 10px rgba(247, 151, 30, 0.4)\';">',
-    '                View Reward',
-    '            </button>',
+    '{ModifiedButtonBottomDisplay}',
+    // '             <button style="width: 97%; background-image: linear-gradient(#ff00de75, #c800ffc9);background-color: #fac; color: white; border: none; padding: 15px; border-radius: 12px; font-size: 14px; font-weight: bold; cursor: pointer; text-shadow: 0 1px 1px rgba(0,0,0,0.2); box-shadow: 0 4px 10px rgba(247, 151, 30, 0.4); transition: transform 0.2s ease, box-shadow 0.2s ease;" onmouseover="this.style.transform=\'translateY(-2px)\'; this.style.boxShadow=\'0 6px 12px rgba(247, 151, 30, 0.5)\';" onmouseout="this.style.transform=\'translateY(0)\'; this.style.boxShadow=\'0 4px 10px rgba(247, 151, 30, 0.4)\';">',
+    // '                View Membership Card',
+    // '            </button>',
     '        </div><br>',
     '',
     '    </div>'
@@ -511,7 +531,7 @@ itemTpl: new Ext.XTemplate([
                                       {
                                           xtype: 'button',
                                           id: 'btnFloatPanel_AyohaEnterpriseRewardItemListSearch',
-                                          // hidden: true,
+                                          hidden: true,
                                           //  badgeText: '1',
                                           margin: '2 0 0 -5',
                                           height: 40,
@@ -535,7 +555,7 @@ itemTpl: new Ext.XTemplate([
                                          margin: '0 0 0 -10',
                                          width: '78%',
                                          height: 20,
-                                         html: '<input type="text" id="input-FloatPanel_AyohaEnterpriseRewardItem_SearchTxt" placeHolder="Search Card" style="border-color:purple;color:black;width:100%;text-align: center;font-size:12px;">'
+                                         html: '<input type="text" id="input-FloatPanel_AyohaEnterpriseRewardItem_SearchTxt" placeHolder="Search Loyalty Campaign" style="border-color:purple;color:black;width:100%;text-align: center;font-size:12px;">'
                                      },
 
 
@@ -766,7 +786,10 @@ function FloatPanel_AyohaEnterpriseRewardItemShow() {
     //Ext.getCmp('htmlStampHistoryTxt').setHtml('<font size=1 color=grey><b>Stamp History</b></font>');
     //Ext.getCmp('htmlPointHistoryTxt').setHtml('<font size=1 color=grey><b>Point History</b></font>');
     //Ext.getCmp('htmlCustomerInfoTxt').setHtml('<font size=1 color=purple><b><u>Customer Info</u></b></font>');
-    document.getElementById("input-FloatPanel_AyohaEnterpriseRewardItem_SearchTxt").addEventListener("keyup", MembershipsLoadBySubscriberAccNoStoreOnKeyUp);
+   
+  
+    FloatPanel_AyohaEnterpriseRewardItem_VIEW_merchantperk_View_LoadbySubscriberAccNoStore();
+    document.getElementById("input-FloatPanel_AyohaEnterpriseRewardItem_SearchTxt").addEventListener("keyup", VIEW_merchantperk_View_LoadbySubscriberAccNoStoreOnKeyUp);
    // document.getElementById("ext-element-914").addEventListener("onclick", Dashboard_SearchMerchantListShow);
    
    // FloatPanel_AyohaEnterpriseRewardItem_MembershipsLoadBySubscriberAccNoStore();
@@ -802,6 +825,84 @@ function FloatPanel_AyohaEnterpriseRewardItemHide() {
     }
    
 }
+
+
+
+function FloatPanel_AyohaEnterpriseRewardItem_VIEW_merchantperk_View_LoadbySubscriberAccNoStore() {
+  
+
+
+
+    
+    _DataStore_VIEW_merchantperk_View_LoadbySubscriberAccNoStore.getProxy().setExtraParam('SubscriberAccNo', GetCurrAyohaUserAccountNo());
+    _DataStore_VIEW_merchantperk_View_LoadbySubscriberAccNoStore.getProxy().setUrl(GetAPIurl() + '/VIEW_merchantperk_View/VIEW_merchantperk_View_LoadbySubscriberAccNo');
+
+
+
+
+    _DataStore_VIEW_merchantperk_View_LoadbySubscriberAccNoStore.load({
+        callback: function (records, operation, success) {
+            if (success && records.length > 0) {
+                console.log('_DataStore_VIEW_merchantperk_View_LoadbySubscriberAccNoStore loaded successfully, total records: ' + records.length);
+    
+                count_DataStore_VIEW_merchantperk_View_LoadbySubscriberAccNoStoreFirst=records.length;
+               
+                LoadingPanelHide();
+            } else {
+                console.error('Failed to load store data or no record found.');
+                LoadingPanelHide();
+            }
+        }
+    });
+
+
+
+
+}
+
+
+
+
+
+
+
+function FloatPanel_AyohaEnterpriseRewardItem_VIEW_merchantperk_ViewStore() {
+  
+
+
+
+    
+ 
+    _DataStore_VIEW_merchantperk_ViewStore.getProxy().setUrl(GetAPIurl() + '/VIEW_merchantperk_View/VIEW_merchantperk_View');
+
+
+
+
+    _DataStore_VIEW_merchantperk_ViewStore.load({
+        callback: function (records, operation, success) {
+            if (success && records.length > 0) {
+                console.log('Store loaded successfully, total records: ' + records.length);
+    
+             
+               
+                LoadingPanelHide();
+            } else {
+                console.error('Failed to load store data or no record found.');
+                LoadingPanelHide();
+            }
+        }
+    });
+
+
+
+
+}
+
+
+
+
+
+
 
 
 //var _DataStore_MembershipsLoadBySubscriberAccNoStore;
@@ -889,8 +990,8 @@ function FloatPanel_AyohaEnterpriseRewardItem_MembershipsLoadBySubscriberAccNoSt
 
 }
 
-var countMembershipsLoadBySubscriberAccNoStoreFirst;
-function MembershipsLoadBySubscriberAccNoStoreOnKeyUp() {
+var count_DataStore_VIEW_merchantperk_View_LoadbySubscriberAccNoStoreFirst;
+function VIEW_merchantperk_View_LoadbySubscriberAccNoStoreOnKeyUp() {
 
 
 
@@ -901,7 +1002,7 @@ function MembershipsLoadBySubscriberAccNoStoreOnKeyUp() {
     var countMembershipsLoadBySubscriberAccNoStoreSequence = 0;
 
 
-    _DataStore_MembershipsLoadBySubscriberAccNoStore.clearFilter();
+    _DataStore_VIEW_merchantperk_View_LoadbySubscriberAccNoStore.clearFilter();
 
     var queryString = document.getElementById('input-FloatPanel_AyohaEnterpriseRewardItem_SearchTxt').value;
 
@@ -911,11 +1012,11 @@ function MembershipsLoadBySubscriberAccNoStoreOnKeyUp() {
         console.log(queryString.length);
 
         var thisRegEx = new RegExp(queryString, "i");
-        _DataStore_MembershipsLoadBySubscriberAccNoStore.filterBy(function (record) {
-            if (thisRegEx.test(record.get('EnterprisesName'))) {
+        _DataStore_VIEW_merchantperk_View_LoadbySubscriberAccNoStore.filterBy(function (record) {
+            if (thisRegEx.test(record.get('SearchCol'))) {
                 console.log('ada0');
 
-                countMembershipsLoadBySubscriberAccNoStoreSequence = _DataStore_MembershipsLoadBySubscriberAccNoStore.getCount();
+                countMembershipsLoadBySubscriberAccNoStoreSequence = _DataStore_VIEW_merchantperk_View_LoadbySubscriberAccNoStore.getCount();
                 Ext.getCmp('FloatPanel_AyohaEnterpriseRewardItem_CountSearchTxt').setHtml('<font size=3 color=black><b>(' + countMembershipsLoadBySubscriberAccNoStoreSequence + ')</b></font>');
                 // Ext.getCmp('htmlSubscriberListTypeLbl').setHtml('<font size="2" color="black"><b>All Cards(' + countEnterprise + ')</b></font>');
                 return true;
@@ -927,7 +1028,7 @@ function MembershipsLoadBySubscriberAccNoStoreOnKeyUp() {
             //  return false;
         });
         console.log('tiada3');
-        countMembershipsLoadBySubscriberAccNoStoreSequence = _DataStore_MembershipsLoadBySubscriberAccNoStore.getCount();
+        countMembershipsLoadBySubscriberAccNoStoreSequence = _DataStore_VIEW_merchantperk_View_LoadbySubscriberAccNoStore.getCount();
         Ext.getCmp('FloatPanel_AyohaEnterpriseRewardItem_CountSearchTxt').setHtml('<font size=3 color=black><b>(' + countMembershipsLoadBySubscriberAccNoStoreSequence + ')</b></font>');
 
         //  Ext.getCmp('htmlSubscriberListTypeLbl').setHtml('<font size="2" color="black"><b>All Cards(' + countEnterprise + ')</b></font>');
@@ -936,8 +1037,8 @@ function MembershipsLoadBySubscriberAccNoStoreOnKeyUp() {
 
     else {
         console.log('tiada2');
-        _DataStore_MembershipsLoadBySubscriberAccNoStore.clearFilter();
-        Ext.getCmp('FloatPanel_AyohaEnterpriseRewardItem_CountSearchTxt').setHtml('<font size=3 color=black><b>(' + countMembershipsLoadBySubscriberAccNoStoreFirst + ')</b></font>');
+        _DataStore_VIEW_merchantperk_View_LoadbySubscriberAccNoStore.clearFilter();
+        Ext.getCmp('FloatPanel_AyohaEnterpriseRewardItem_CountSearchTxt').setHtml('<font size=3 color=black><b>(' + count_DataStore_VIEW_merchantperk_View_LoadbySubscriberAccNoStoreFirst + ')</b></font>');
         // Ext.getCmp('htmlSubscriberListTypeLbl').setHtml('<font size="2" color="black"><b>All Cards(' + countEnterpriseSubscribedLoadFirst + ')</b></font>')
         // Ext.getCmp('lblSearchEnterpriseList').setHtml('<font size="2" color="black"><b>Enterprise List (' + countEnterpriseLoanFirst + ')</b></font>');
         return false;

@@ -19,7 +19,8 @@ function FloatPanel_AyohaRewardVoucherDetail() {
             id: 'FloatPanel_AyohaRewardVoucherDetailID',
             name: 'clickableContainerFloatPanel_AyohaRewardVoucherDetail',
             // xtype: 'panel',
-            zIndex: 550,
+          //  zIndex: 550,
+            zIndex: 50,
             xtype: 'container',
             //height: 475,
             height: '100%',
@@ -357,17 +358,19 @@ function FloatPanel_AyohaRewardVoucherDetail() {
                               xtype: 'container',
                               width: '100%',
                               docked: 'bottom',
-                               hidden:true,
+                               //hidden:true,
                               // width: 40,
+                              height: 60,
 
                               //  title: '<font size="3" color="white">Live Tracking Map</font>',
-                              //hidden: true,
+                              hidden: true,
 
                               id: 'containeFloatPanel_AyohaRewardVoucherDetailReedemVoucerBottom',
+                              name: 'clickableContainerFloatPanel_AyohaRewardVoucherDetailReedemVoucer',   
                               //    style: ' background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9)',
-                              style: 'background-color:transparent;',
+                             // style: 'background-color:transparent;',
 
-                              //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
+                              style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px solid #ECF0F1 ;background: white;',
                               // style: 'border-bottom:2px solid #D25959;background-color:transparent',
                               layout: {
                                   type: 'vbox',
@@ -384,9 +387,9 @@ function FloatPanel_AyohaRewardVoucherDetail() {
 
                                              xtype: 'container',
 
-                                             width: 210,
+                                             width: '80%',
                                              height: 40,
-                                             margin: '0 0 0 0',
+                                             margin: '9 0 0 0',
                                              name: 'containeFloatPanel_AyohaRewardVoucherDetailRedeemVoucher',
                                              //style: {
                                              //    // background: '#D25959',
@@ -414,8 +417,10 @@ function FloatPanel_AyohaRewardVoucherDetail() {
 
                                                  {
                                                      margin: '0 0 0 0',
+                                                     width: '100%',
+                                                     height: 40,
                                                      //  html: '<font size=2 color=white><b>Confirm and Join Contest</b></font>',
-                                                     html: '<div class="blink_me" style="background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9); border-radius: 20px 20px 20px 20px;border:2px solid #fac;text-align:center;margin:0px 0px 0px 0px;height:40px;width:200px"><div style="color:white;text-align: center;font-size:14px;width:100%;margin:8px 0px 0px 0px;"><b>Redeem Voucher</b></div></div>'
+                                                     html: '<div  style="background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9); border-radius: 10px 10px 10px 10px;border:2px solid #fac;text-align:center;margin:0px 0px 0px 0px;height:40px;width:100%"><div style="color:white;text-align: center;font-size:14px;width:100%;margin:8px 0px 0px 0px;"><b>Get Membership Card</b></div></div>'
 
                                                  },
                                                    //{
@@ -489,6 +494,8 @@ function FloatPanel_AyohaRewardVoucherDetailShow(VoucherName, VoucherImage, Vouc
         return;
     }
 
+   
+
     
     VoucherTermAndCondition = _DataStore_AyohaRewardVoucherEntitledUserLoadBySubscriberAccNoVoucherTypeStore.findRecord('VoucherCode', VoucherCode, 0, false, false, true);
    
@@ -543,6 +550,60 @@ function FloatPanel_AyohaRewardVoucherDetailShow(VoucherName, VoucherImage, Vouc
 
 
 }
+
+
+
+function FloatPanel_AyohaRewardVoucherDetailShow_MerchantPerks(VoucherName, VoucherImage, VoucherEndDate,
+    VoucherDayLeft, VoucherCode, VoucherAmount,VoucherTermAndCondition,MembershipCardCode,EnterpriseCountStar,EnterpriseAccNo,TotalReviewer) {
+  
+  
+  
+  
+    Ext.Viewport.remove(_FloatPanel_AyohaRewardVoucherDetail);
+    this.overlay = Ext.Viewport.add(FloatPanel_AyohaRewardVoucherDetail());
+    this.overlay.show();
+    AddRoutePages("FloatPanel_AyohaRewardVoucherDetailHide()");
+    is_FloatPanel_AyohaRewardVoucherDetailOpen = 'Y';
+
+
+    Ext.getCmp('htmlPanel_AyohaRewardVoucherDetailVoucherName').setHtml('<div style="color:black;text-align: center;font-size:16px;width:100%;font-weight:bold">' + VoucherName + '</div>');
+   // Ext.getCmp('htmlPanel_AyohaRewardVoucherDetailVoucherImage').setHtml('<div style="width:100%; height: 220px; border:3px none white;padding:0px 0px;margin:0px 0px 0px 0px;"><img src="' + VoucherImage + '" style="width:100%; height: 180px; border:2px dashed grey;"/><br><div style="margin:-4px 0px 0px 0px;text-align:left;color:black;font-family: Arial; font-size:12px;word-wrap: break-word;font-weight:normal;">Valid Until:' + VoucherEndDate + '</div><br><div style="margin:-26px 0px 0px 0px;text-align:left;color:#c800ffc9;font-family: Arial; font-size:10px;word-wrap: break-word;font-weight:bold;">Day Left:' + VoucherDayLeft + '</div></div>');
+    Ext.getCmp('htmlPanel_AyohaRewardVoucherDetailVoucherImage').setHtml('<div style="width:100%; height: 220px; border:3px none white;padding:0px 0px;margin:0px 0px 0px 0px;"><img src="' + VoucherImage + '" style="width:100%; height: 180px; border:2px dashed grey;"/><br><div style="margin:-4px 0px 0px 0px;text-align:left;color:black;font-family: Arial; font-size:12px;word-wrap: break-word;font-weight:normal;"><table style="border-collapse:collapse;border-spacing:0;width:100%;" class="tg"><thead><tr><th style="background-color:#ffffff;border-color:#ffffff;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:12px;font-weight:normal;overflow:hidden;padding:0px 1px;text-align:left;vertical-align:middle;word-break:normal">Valid Until:<b>' + VoucherEndDate + '</b></th><th style="background-color:#ffffff;border-color:#ffffff;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:12px;font-weight:normal;overflow:hidden;padding:0px 6px;text-align:right;vertical-align:middle;word-break:normal">Amount:<b>RM' + VoucherAmount + '</b></th></tr></thead><tbody><tr><td style="background-color:#ffffff;border-color:#ffffff;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:10px;overflow:hidden;padding:0px 1px;text-align:left;vertical-align:top;word-break:normal;color:purple;font-weight:bold;" colspan="2"><div style="margin:-3px 0px 0px 0px">Day Left:' + VoucherDayLeft + '</div></td></tr></tbody></table></div></div>');
+    Ext.getCmp('containeFloatPanel_AyohaRewardVoucherDetailReedemVoucerBottom').setHidden(false);
+    
+    
+   
+    document.getElementById('input-FloatPanel_AyohaRewardVoucherDetailVoucherDetailTextArea').value = VoucherTermAndCondition;
+
+  
+    var containerViewclickableContainerFloatPanel_AyohaRewardVoucherDetailReedemVoucer = Ext.ComponentQuery.query('container[name=clickableContainerFloatPanel_AyohaRewardVoucherDetailReedemVoucer]')[0];
+    var containerViewElclickableContainerFloatPanel_AyohaRewardVoucherDetailReedemVoucer = containerViewclickableContainerFloatPanel_AyohaRewardVoucherDetailReedemVoucer.element;
+    containerViewElclickableContainerFloatPanel_AyohaRewardVoucherDetailReedemVoucer.on('tap',
+      function (event, node, options, eOpts) {
+
+
+
+
+      var MembershipCardCode=  AppState.FloatPanel_AyohaRewardVoucherDetail.MembershipCardCode;
+      var EnterpriseCountStar=  AppState.FloatPanel_AyohaRewardVoucherDetail.EnterpriseCountStar;
+       var EnterpriseAccNo= AppState.FloatPanel_AyohaRewardVoucherDetail.EnterpriseAccNo;
+        var TotalReviewer=AppState.FloatPanel_AyohaRewardVoucherDetail.TotalReviewer;
+       var MembershipCardFeePaymentCycle =AppState.FloatPanel_AyohaRewardVoucherDetail.MembershipCardFeePaymentCycle;
+        FloatPanel_MembershipCardList_NotYetSubscribedShow_FromDashboard_Main(MembershipCardCode,EnterpriseAccNo,'NO',MembershipCardFeePaymentCycle,EnterpriseCountStar,TotalReviewer);
+      }
+    );
+
+    //alert(MembershipCardCode);
+
+    FloatPanel_AyohaRewardVoucherDetail_MembershipCardLoadByMembershipCardCodeStore(MembershipCardCode,EnterpriseCountStar,EnterpriseAccNo,TotalReviewer)
+
+}
+
+
+
+
+
+
 
 
 function FloatPanel_AyohaRewardVoucherDetailHide() {
@@ -618,3 +679,89 @@ function AyohaRewardContestantInsertUpdateXX() {
     });
 }
 
+
+
+
+
+
+function FloatPanel_AyohaRewardVoucherDetail_MembershipCardLoadByMembershipCardCodeStore(MembershipCardCode,EnterpriseCountStar,EnterpriseAccNo,TotalReviewer) {
+    var task = Ext.create('Ext.util.DelayedTask', function () {
+
+        var objn = {
+            "MembershipCardCode": MembershipCardCode,
+        };
+        // console.log(objn);
+        var _value = Ext.Ajax.request({
+
+            type: "POST",
+
+            url: GetAPIurl() + '/MembershipCard/MembershipCardLoadByMembershipCardCode',
+
+            dataType: "json",
+            data: JSON.stringify(objn),
+            headers: {
+                "Content-Type": "application/json; charset=utf-8"
+            },
+
+            success: function (result, request) {
+
+                //console.log(result.responseText);
+
+
+                data = Ext.decode(result.responseText.trim());
+
+                if (data.success == "true") {
+                    //var newData = JSON.parse(JSON.stringify(result.results.Email))
+                    //console.log(result.results.Email);
+                    //  //data.results[0];
+                    // console.log(data.total);
+                    if (data.total > 0) {
+                        MembershipCardName= data.results[0].MembershipCardName;
+                        MembershipCardFeePaymentCycle= data.results[0].MembershipCardFeePaymentCycle;
+                      
+                      //  '<div OnClick="FloatPanel_MembershipCardList_NotYetSubscribedShow_FromDashboard_Main(`{MembershipCardCode}`,`{EnterpriseAccNo}`,`{isMembershipCardSubscribed}`,`{MembershipCardFeePaymentCycle}`,`{CountStar}`,`{CountReviewer}`)" style="min-width:88vw; max-width:88vw; margin-right:5vw; box-sizing:border-box; border-radius:15px; overflow:hidden; box-shadow:0 4px 20px rgba(0,0,0,0.3); display:inline-block;">',
+
+
+                      AppState.FloatPanel_AyohaRewardVoucherDetail.MembershipCardCode=MembershipCardCode;
+AppState.FloatPanel_AyohaRewardVoucherDetail.EnterpriseCountStar=EnterpriseCountStar;
+AppState.FloatPanel_AyohaRewardVoucherDetail.EnterpriseAccNo=EnterpriseAccNo;
+AppState.FloatPanel_AyohaRewardVoucherDetail.TotalReviewer=TotalReviewer;
+AppState.FloatPanel_AyohaRewardVoucherDetail.MembershipCardName=MembershipCardName;
+AppState.FloatPanel_AyohaRewardVoucherDetail.MembershipCardFeePaymentCycle=MembershipCardFeePaymentCycle;
+                        Ext.Viewport.unmask();
+                    }
+                    if (data.total == 0) {
+                      
+                        Ext.Viewport.unmask();
+
+                    }
+
+
+
+
+
+                }
+                else {
+
+
+                    Ext.Viewport.unmask();
+                }
+
+
+            },
+
+            failure: function (result, request) {
+                Ext.Viewport.unmask();
+            }
+
+        });
+
+
+
+    });
+
+    //  Ext.Viewport.unmask();
+
+    //   setDashBoardMerchantReviewRate(FiveStar, FourStar, ThreeStar, TwoStar, OneStar);
+    task.delay(500);
+}
