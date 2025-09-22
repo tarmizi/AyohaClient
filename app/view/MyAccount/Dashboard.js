@@ -1265,49 +1265,103 @@ Ext.define('ianMizi.view.MyAccount.Dashboard', {
                                                    {
                                                     id: 'Dashboard_AyohaRewardPanel',
                                                     margin: '35 0 0 0',
-                                                    html: '<div style="width: 300px; margin: 14px auto; padding: 15px;'+
-                                                          ' color:#fff; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;'+
-                                                          ' background: rgba(255,255,255,0.12);'+
-                                                          ' backdrop-filter: blur(14px) saturate(120%);'+
-                                                          ' -webkit-backdrop-filter: blur(14px) saturate(120%);'+
-                                                          //' border: 1px solid rgba(255,255,255,0.6);'+
-                                                          'border:2px solid #fac;'+
-                                                          ' border-radius: 18px;'+
-                                                          ' box-shadow: 0 12px 28px rgba(0,0,0,.28);">'+
+                                                    // html: '<div style="width: 300px; margin: 14px auto; padding: 15px;'+
+                                                    //       ' color:#fff; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;'+
+                                                    //       ' background: rgba(255,255,255,0.12);'+
+                                                    //       ' backdrop-filter: blur(14px) saturate(120%);'+
+                                                    //       ' -webkit-backdrop-filter: blur(14px) saturate(120%);'+
+                                                    //       //' border: 1px solid rgba(255,255,255,0.6);'+
+                                                    //       'border:2px solid #fac;'+
+                                                    //       ' border-radius: 18px;'+
+                                                    //       ' box-shadow: 0 12px 28px rgba(0,0,0,.28);">'+
                                                 
-                                                            // Header
-                                                            '<div style="display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:16px;">'+
-                                                              '<div>'+
-                                                                '<div style="font-size:11px; opacity:.9; margin-bottom:2px;font-weight:700;">Membership No</div>'+
-                                                                '<div id="txtDashboard_MembershipNo" style="font-size:12px; font-weight:1000;">12323</div>'+
-                                                              '</div>'+
-                                                              '<div style="text-align:right;">'+
-                                                                '<div style="font-size:11px; opacity:.9;font-weight:700;">Membership Since:</div>'+
-                                                                '<div id="txtDashboard_MembershipSince" style="font-size:12px; font-weight:1000;">Jan 2023</div>'+
-                                                              '</div>'+
-                                                            '</div>'+
+                                                    //         // Header
+                                                    //         '<div style="display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:16px;">'+
+                                                    //           '<div>'+
+                                                    //             '<div style="font-size:11px; opacity:.9; margin-bottom:2px;font-weight:700;">Membership No</div>'+
+                                                    //             '<div id="txtDashboard_MembershipNo" style="font-size:12px; font-weight:1000;">12323</div>'+
+                                                    //           '</div>'+
+                                                    //           '<div style="text-align:right;">'+
+                                                    //             '<div style="font-size:11px; opacity:.9;font-weight:700;">Membership Since:</div>'+
+                                                    //             '<div id="txtDashboard_MembershipSince" style="font-size:12px; font-weight:1000;">Jan 2023</div>'+
+                                                    //           '</div>'+
+                                                    //         '</div>'+
                                                 
-                                                            // Two columns side by side
-                                                            '<div style="display:flex; justify-content:space-between; gap:16px; flex-wrap:nowrap;">'+
+                                                    //         // Two columns side by side
+                                                    //         '<div style="display:flex; justify-content:space-between; gap:16px; flex-wrap:nowrap;">'+
                                                 
-                                                              // Left box
-                                                              '<div onclick="FloatPanel_AyohaReward_PointTransactionsShow();" style="flex:1; text-align:center; padding:14px 10px; border-radius:14px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.25);">'+
-                                                                '<div id="txtDashboard_AyohaPoint" style="font-size:28px; font-weight:800;margin:10px 0px 0px 0px;">2353</div>'+
-                                                                '<div style="font-size:11px; opacity:.9;margin:6px 0px 0px 0px;font-weight:700;">Ayoha Point</div>'+
-                                                              '</div>'+
+                                                    //           // Left box
+                                                    //           '<div onclick="FloatPanel_AyohaReward_PointTransactionsShow();" style="flex:1; text-align:center; padding:14px 10px; border-radius:14px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.25);">'+
+                                                    //             '<div id="txtDashboard_AyohaPoint" style="font-size:28px; font-weight:800;margin:10px 0px 0px 0px;">2353</div>'+
+                                                    //             '<div style="font-size:11px; opacity:.9;margin:6px 0px 0px 0px;font-weight:700;">Ayoha Point</div>'+
+                                                    //           '</div>'+
                                                 
-                                                              // Right box
-                                                              '<div onclick="FloatPanel_MyAccountRankDescriptionShow();" style="flex:1; text-align:center; padding:14px 10px; border-radius:14px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.25);">'+
-                                                                '<div style="margin-bottom:6px;">'+
-                                                                  '<img id="imgDashboard_RankingIcon" src="resources/icons/Logo/LogoWhiteSimplifed.png" alt="Gold Tier" style="width:44px; height:44px; display:block; margin:0 auto;">'+
-                                                                '</div>'+
-                                                                '<div id="txtDashboard_RankingIcon" style="font-size:12px; font-weight:800; margin:-7px 0px 0px 0px;">Non Ayoha Member</div>'+
-                                                                '<div id="txtDashboard_MembershipTier" style="font-size:11px; opacity:.9;margin:-2px 0px 0px 0px;font-weight:700;">Membership Tier</div>'+
+                                                    //           // Right box
+                                                    //           '<div onclick="FloatPanel_MyAccountRankDescriptionShow();" style="flex:1; text-align:center; padding:14px 10px; border-radius:14px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.25);">'+
+                                                    //             '<div style="margin-bottom:6px;">'+
+                                                    //               '<img id="imgDashboard_RankingIcon" src="resources/icons/Logo/LogoWhiteSimplifed.png" alt="Gold Tier" style="width:44px; height:44px; display:block; margin:0 auto;">'+
+                                                    //             '</div>'+
+                                                    //             '<div id="txtDashboard_RankingIcon" style="font-size:12px; font-weight:800; margin:-7px 0px 0px 0px;">Non Ayoha Member</div>'+
+                                                    //             '<div id="txtDashboard_MembershipTier" style="font-size:11px; opacity:.9;margin:-2px 0px 0px 0px;font-weight:700;">Membership Tier</div>'+
                                                               
-                                                              '</div>'+
+                                                    //           '</div>'+
                                                 
-                                                            '</div>'+
-                                                          '</div>'
+                                                    //         '</div>'+
+                                                    //       '</div>'
+
+
+
+
+
+
+
+
+
+
+
+
+                                                          html: '<div style="width: min(82vw, 350px); max-width: 400px; margin: 14px auto; padding: 16px;'+
+      ' box-sizing:border-box; color:#fff; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;'+
+      ' background: rgba(255,255,255,0.12);'+
+      ' backdrop-filter: blur(14px) saturate(120%); -webkit-backdrop-filter: blur(14px) saturate(120%);'+
+      ' border:2px solid #fac; border-radius: 18px; box-shadow: 0 12px 28px rgba(0,0,0,.28);">'+
+
+        // Header
+        '<div style="display:flex; align-items:flex-end; justify-content:space-between; gap:12px; margin-bottom:14px;">'+
+          '<div style="min-width:0;">'+
+            '<div style="font-size:clamp(10px, 2.7vw, 12px); opacity:.9; margin-bottom:2px; font-weight:700; white-space:nowrap;">Membership No</div>'+
+            '<div id="txtDashboard_MembershipNo" style="font-size:clamp(12px, 3.4vw, 14px); font-weight:1000; overflow:hidden; text-overflow:ellipsis;">12323</div>'+
+          '</div>'+
+          '<div style="text-align:right; min-width:0;">'+
+            '<div style="font-size:clamp(10px, 2.7vw, 12px); opacity:.9; font-weight:700; white-space:nowrap;">Membership Since:</div>'+
+            '<div id="txtDashboard_MembershipSince" style="font-size:clamp(12px, 3.4vw, 14px); font-weight:1000; overflow:hidden; text-overflow:ellipsis;">Jan 2023</div>'+
+          '</div>'+
+        '</div>'+
+
+        // Two columns side by side
+        '<div style="display:flex; justify-content:space-between; gap:12px; flex-wrap:nowrap;">'+
+
+          // Left box
+          '<div onclick="FloatPanel_AyohaReward_PointTransactionsShow();" '+
+               'style="flex:1; text-align:center; padding:14px 10px; border-radius:14px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.25);">'+
+            '<div id="txtDashboard_AyohaPoint" style="font-size:clamp(22px, 6.4vw, 28px); font-weight:800; margin:8px 0 0 0;">2353</div>'+
+            '<div style="font-size:clamp(10px, 2.7vw, 12px); opacity:.9; margin:6px 0 0 0; font-weight:700;">Ayoha Point</div>'+
+          '</div>'+
+
+          // Right box
+          '<div onclick="FloatPanel_MyAccountRankDescriptionShow();" '+
+               'style="flex:1; text-align:center; padding:14px 10px; border-radius:14px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.25);">'+
+            '<div style="margin-bottom:6px;">'+
+              '<img id="imgDashboard_RankingIcon" src="resources/icons/Logo/LogoWhiteSimplifed.png" alt="Gold Tier" '+
+                   'style="width:44px; height:44px; display:block; margin:0 auto; object-fit:contain;">'+
+            '</div>'+
+            '<div id="txtDashboard_RankingIcon" style="font-size:clamp(11px, 3.2vw, 13px); font-weight:800; margin:-6px 0 0 0; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">Non Ayoha Member</div>'+
+            '<div id="txtDashboard_MembershipTier" style="font-size:clamp(10px, 2.7vw, 12px); opacity:.9; margin:-2px 0 0 0; font-weight:700;">Membership Tier</div>'+
+          '</div>'+
+
+        '</div>'+
+      '</div>'
+
                                                 },
                                                 
                                                 
@@ -9608,8 +9662,15 @@ function initializeContainerSingleTapEvent() {
     var containerViewElMenuBottom_QrCodeScanOutter = containerViewMenuBottom_QrCodeScanOutter.element;
     containerViewElMenuBottom_QrCodeScanOutter.on('tap',
       function (event, node, options, eOpts) {
-          Ext.getCmp('mainView').setHidden(true);
-          FloatPanel_QrCodeScanner_ScanCampaignShow();
+         
+        //working code on 15/9/2025 1:13am
+        //comment for testing new pag FloatPanel_ScannedMerchant 
+      Ext.getCmp('mainView').setHidden(true);
+      FloatPanel_QrCodeScanner_ScanCampaignShow();
+      // FloatPanel_ScannedMerchantShow();
+         
+         
+         
           //comment on 2/11/2022 10:45PM
           //Ext.getCmp('mainView').setHidden(true);
           //window.QRScanner.prepare(onDone);

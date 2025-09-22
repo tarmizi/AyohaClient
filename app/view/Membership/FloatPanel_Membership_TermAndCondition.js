@@ -166,26 +166,7 @@ function FloatPanel_Membership_TermAndCondition() {
                                                     width:5
                                                 }
 
-                                                 //{
-                                                 //    xtype: 'button',
-                                                 //    //  id: 'btnFloatPanel_MembershipCardManagement_CardIcon',
-                                                 //    height: 30,
-                                                 //    width: 35,
-                                                 //    // iconCls: 'list',
-                                                 //    html: '<div ><img src="resources/icons/AddNewMembershipCardWhite.png" width="25" height="20" alt="Company Name"></div>',
-                                                 //    ui: 'plain',
-                                                 //    handler: function () {
-                                                 //        _FloatPanel_Membership_TermAndCondition.hide(Ext.fx.Animation({
-                                                 //            type: 'slideOut',
-                                                 //            direction: 'right',
-                                                 //            easing: 'cubic-bezier(.7,0,.7,1)',
-                                                 //            duration: 250
-
-                                                 //        }));
-                                                 //        is_FloatPanel_Membership_TermAndConditionOpen = 'N';
-                                                 //    }
-                                                 //},
-
+                                               
 
 
 

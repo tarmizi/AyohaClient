@@ -420,7 +420,7 @@ function FloatPanel_AyohaRewardVoucherDetail() {
                                                      width: '100%',
                                                      height: 40,
                                                      //  html: '<font size=2 color=white><b>Confirm and Join Contest</b></font>',
-                                                     html: '<div  style="background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9); border-radius: 10px 10px 10px 10px;border:2px solid #fac;text-align:center;margin:0px 0px 0px 0px;height:40px;width:100%"><div style="color:white;text-align: center;font-size:14px;width:100%;margin:8px 0px 0px 0px;"><b>Get Membership Card</b></div></div>'
+                                                     html: '<div  style="background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9); border-radius: 10px 10px 10px 10px;border:2px solid #fac;text-align:center;margin:0px 0px 0px 0px;height:40px;width:100%"><div style="color:white;text-align: center;font-size:14px;width:100%;margin:8px 0px 0px 0px;"><b>Get This Voucher!</b></div></div>'
 
                                                  },
                                                    //{
@@ -565,7 +565,7 @@ function FloatPanel_AyohaRewardVoucherDetailShow_MerchantPerks(VoucherName, Vouc
     AddRoutePages("FloatPanel_AyohaRewardVoucherDetailHide()");
     is_FloatPanel_AyohaRewardVoucherDetailOpen = 'Y';
 
-
+    LoadingPanelShow(getLoadingIcon(), 'Loading....');
     Ext.getCmp('htmlPanel_AyohaRewardVoucherDetailVoucherName').setHtml('<div style="color:black;text-align: center;font-size:16px;width:100%;font-weight:bold">' + VoucherName + '</div>');
    // Ext.getCmp('htmlPanel_AyohaRewardVoucherDetailVoucherImage').setHtml('<div style="width:100%; height: 220px; border:3px none white;padding:0px 0px;margin:0px 0px 0px 0px;"><img src="' + VoucherImage + '" style="width:100%; height: 180px; border:2px dashed grey;"/><br><div style="margin:-4px 0px 0px 0px;text-align:left;color:black;font-family: Arial; font-size:12px;word-wrap: break-word;font-weight:normal;">Valid Until:' + VoucherEndDate + '</div><br><div style="margin:-26px 0px 0px 0px;text-align:left;color:#c800ffc9;font-family: Arial; font-size:10px;word-wrap: break-word;font-weight:bold;">Day Left:' + VoucherDayLeft + '</div></div>');
     Ext.getCmp('htmlPanel_AyohaRewardVoucherDetailVoucherImage').setHtml('<div style="width:100%; height: 220px; border:3px none white;padding:0px 0px;margin:0px 0px 0px 0px;"><img src="' + VoucherImage + '" style="width:100%; height: 180px; border:2px dashed grey;"/><br><div style="margin:-4px 0px 0px 0px;text-align:left;color:black;font-family: Arial; font-size:12px;word-wrap: break-word;font-weight:normal;"><table style="border-collapse:collapse;border-spacing:0;width:100%;" class="tg"><thead><tr><th style="background-color:#ffffff;border-color:#ffffff;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:12px;font-weight:normal;overflow:hidden;padding:0px 1px;text-align:left;vertical-align:middle;word-break:normal">Valid Until:<b>' + VoucherEndDate + '</b></th><th style="background-color:#ffffff;border-color:#ffffff;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:12px;font-weight:normal;overflow:hidden;padding:0px 6px;text-align:right;vertical-align:middle;word-break:normal">Amount:<b>RM' + VoucherAmount + '</b></th></tr></thead><tbody><tr><td style="background-color:#ffffff;border-color:#ffffff;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:10px;overflow:hidden;padding:0px 1px;text-align:left;vertical-align:top;word-break:normal;color:purple;font-weight:bold;" colspan="2"><div style="margin:-3px 0px 0px 0px">Day Left:' + VoucherDayLeft + '</div></td></tr></tbody></table></div></div>');
@@ -728,10 +728,11 @@ AppState.FloatPanel_AyohaRewardVoucherDetail.EnterpriseAccNo=EnterpriseAccNo;
 AppState.FloatPanel_AyohaRewardVoucherDetail.TotalReviewer=TotalReviewer;
 AppState.FloatPanel_AyohaRewardVoucherDetail.MembershipCardName=MembershipCardName;
 AppState.FloatPanel_AyohaRewardVoucherDetail.MembershipCardFeePaymentCycle=MembershipCardFeePaymentCycle;
+LoadingPanelHide();
                         Ext.Viewport.unmask();
                     }
                     if (data.total == 0) {
-                      
+                        LoadingPanelHide();
                         Ext.Viewport.unmask();
 
                     }
@@ -743,7 +744,7 @@ AppState.FloatPanel_AyohaRewardVoucherDetail.MembershipCardFeePaymentCycle=Membe
                 }
                 else {
 
-
+                    LoadingPanelHide();
                     Ext.Viewport.unmask();
                 }
 
@@ -751,6 +752,7 @@ AppState.FloatPanel_AyohaRewardVoucherDetail.MembershipCardFeePaymentCycle=Membe
             },
 
             failure: function (result, request) {
+                LoadingPanelHide();
                 Ext.Viewport.unmask();
             }
 
@@ -765,3 +767,9 @@ AppState.FloatPanel_AyohaRewardVoucherDetail.MembershipCardFeePaymentCycle=Membe
     //   setDashBoardMerchantReviewRate(FiveStar, FourStar, ThreeStar, TwoStar, OneStar);
     task.delay(500);
 }
+
+
+
+
+
+

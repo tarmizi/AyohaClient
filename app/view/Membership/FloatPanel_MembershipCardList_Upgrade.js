@@ -1530,7 +1530,7 @@ width:20
                                                              
                                                       
 
-
+                                                            FloatPanel_ScannedMerchantHide();
 
                                                             if (MembershipTag == 'YES') {
 
@@ -2038,7 +2038,7 @@ width:20
 
 
 //function FloatPanel_MembershipCardList_UpgradeShow(ID) {
-var MembershipTag;
+//var MembershipTag;
 function FloatPanel_MembershipCardList_UpgradeShow(MembershipCardCode, EnterpriseAccountNo) {
     Ext.Viewport.remove(_FloatPanel_MembershipCardList_Upgrade);
     this.overlay = Ext.Viewport.add(FloatPanel_MembershipCardList_Upgrade());
@@ -2154,7 +2154,12 @@ function FloatPanel_MembershipCardList_UpgradeShow_FromAyohaMerchant(MembershipC
 
 function FloatPanel_MembershipCardList_UpgradeShow_FromFloatPanel_MerchantDetailPage(MembershipCardCode, EnterpriseAccountNo, isMembershipCardSubscribed) {
    
-
+    if(isMembershipCardSubscribed=="NO"){
+        setMessage_NotYetMembershipMessage_WithJoinButton();
+   
+   
+       return
+   }
 
     _FloatPanel_MembershipCardList_Upgrade_EnterpriseAccNo = EnterpriseAccountNo;
 
@@ -2164,14 +2169,9 @@ function FloatPanel_MembershipCardList_UpgradeShow_FromFloatPanel_MerchantDetail
 
     globalFloatPanel_MembershipCardList_UpgradeShow_FromAyohaMerchant_isMembershipCardSubscribed = isMembershipCardSubscribed;
 
-   
+   MembershipTag=isMembershipCardSubscribed;
 
-    if(MembershipTag=="NO"){
-        setMessage_NotYetMembershipMessage_WithJoinButton();
-   
-   
-       return
-   }
+  
     
     
     
@@ -2328,7 +2328,47 @@ function FloatPanel_MembershipCardList_UpgradeShow_MyMembershipCard(EnterpriseHQ
 }
 
 
+function FloatPanel_MembershipCardList_UpgradeShow_MyMembershipCard_FromScannedQR(EnterpriseHQAccountNo, EnterpriseAccountNo, MembershipCardCode,isMembershipCardSubscribed) {
+    if(isMembershipCardSubscribed=="NO"){
+        setMessage_NotYetMembershipMessage_WithJoinButton();
+   
+   
+       return
+   }
+    Ext.Viewport.remove(_FloatPanel_MembershipCardList_Upgrade);
+    this.overlay = Ext.Viewport.add(FloatPanel_MembershipCardList_Upgrade());
+    this.overlay.show();
+    AddRoutePages("FloatPanel_MembershipCardList_UpgradeHide()");
+    FloatPanel_MembershipCardList_UpgradeAdjustHeight();
+    isFloatPanel_MembershipCardList_UpgradeOpen = 'Y';
+   
+   
+  //  _FloatPanel_MembershipCardList_Upgrade_EnterpriseAccNo = EnterpriseHQAccountNo;
 
+    _FloatPanel_MembershipCardList_Upgrade_EnterpriseAccNo = EnterpriseAccountNo;
+
+    _FloatPanel_MembershipCardList_Upgrade_MembershipCode = MembershipCardCode;
+    globalFloatPanelMerchantDetailPage_MembershipCardCode= MembershipCardCode;
+    globalFloatPanelMerchantDetailPage_EnterpriseAccNo = EnterpriseAccountNo;
+
+    globalFloatPanel_MembershipCardList_UpgradeShow_FromAyohaMerchant_isMembershipCardSubscribed = isMembershipCardSubscribed;
+    _FloatPanel_MembershipCardList_Upgrade_ID = 0;
+    MembershipTag = isMembershipCardSubscribed;
+    //Ext.getCmp('btnFloatPanel_MembershipCardList_Upgrade_GetMembershipCard').setHidden(true);
+    //Ext.getCmp('btnFloatPanel_MembershipCardList_Upgrade_DeleteMembershipCard').setHidden(false);
+
+   // Ext.getCmp('containerFloatPanel_MembershipCardList_UpgradeBottom').setHidden(true);
+   //// Ext.getCmp('containerFloatPanel_MembershipCardList_UpgradeBottom').setHidden(true);
+    
+   // Ext.getCmp('htmlFloatPanel_MembershipCardList_Upgrade_TitleHeaderTxt').setHtml('<font size=2 color=white><b>My Membership Card</b></font>');
+   // FloatPanel_MembershipCardList_Upgrade_MembershipCardLoadByEnterpriseAccNoStore(EnterpriseHQAccountNo, EnterpriseAccountNo);
+    FloatPanel_MembershipCardList_Upgrade_MembershipCardLoadByEnterpriseAccNoMembershipCardCodeStore(EnterpriseHQAccountNo, EnterpriseAccountNo, MembershipCardCode)
+    
+    FloatPanel_MerchantDetailPageHide();
+    Dashboard_SearchMerchantListHide();
+
+
+}
 
 
 

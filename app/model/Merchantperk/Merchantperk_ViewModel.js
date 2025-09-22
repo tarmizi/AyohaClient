@@ -37,13 +37,25 @@ Ext.define('ianMizi.model.Merchantperk.Merchantperk_ViewModel', {
                     convert: function (value, record) {
          
                         var _value1;
+                        var _value2;
+                        var _value3;
+                        var _value4;
+                        var _value5;
+                        var _value6;
                         var _value;
                         var str = record.get('ItemType');
                         var ImagePath = record.get('ImagePath');
                         if (str === "Stamp") {
                             _value1= ImagePath.replace("width:70px", "width:100%");
-                            _value=_value1.replace("height:70px", "height:170px");
-                         
+                            _value2=_value1.replace("height:70px", "height:250px");
+                            _value3 = _value2.replace("font-size: 35px;", "font-size: 60px;");
+                            _value4 = _value3.replace("margin:7px 0px 0px 0px", "margin:70px 0px 0px 0px")
+                            _value5 = _value4.replace("margin:-90px 0px 0px 0px", "margin:-150px 0px 0px 0px")
+                            _value6 = _value5.replace('size="3"', 'size="6"')
+                            _value = _value6.replace("border-radius: 50px", "border-radius: 0px")
+                            
+
+                            
                         }else
                         {
                             _value = '<img src="'+ImagePath+'" alt="Pandan Butter Latte" style="width: 100%; height: auto; display: block;">';
@@ -105,6 +117,11 @@ Ext.define('ianMizi.model.Merchantperk.Merchantperk_ViewModel', {
                     name: 'ModifiedButtonBottomDisplay',
                     convert: function (value, record) {
                       var str = record.get('ItemType');
+
+                     
+                
+                      // text hari berbaki
+                      var Text = (DayLeft == null) ? '-' : (DayLeft < 0 ? 'Expired' : (DayLeft + ' days left'));
                       if (str === "Voucher") {
                         var VoucherName = record.get('Name');
                         var VoucherImgPath = record.get('ImagePath');
@@ -117,9 +134,6 @@ Ext.define('ianMizi.model.Merchantperk.Merchantperk_ViewModel', {
                         var EnterpriseCountStar = record.get('EnterpriseCountStar');
                         var EnterpriseAccNo = record.get('EnterpriseAccNo');
                         var TotalReviewer = record.get('TotalReviewer');
-                  
-                        // text hari berbaki
-                        var Text = (DayLeft == null) ? '-' : (DayLeft < 0 ? 'Expired' : (DayLeft + ' days left'));
                   
                         // Kemas dalam payload dan encode — SELAMAT untuk attribute HTML
                         var payload = {
@@ -151,8 +165,29 @@ Ext.define('ianMizi.model.Merchantperk.Merchantperk_ViewModel', {
                           'View Membership Voucher' +
                           '</button>';
                       } else {
+
+                        var MembershipCardCode = record.get('MembershipCardCode');
+                        var EnterpriseCountStar = record.get('EnterpriseCountStar');
+                        var EnterpriseAccNo = record.get('EnterpriseAccNo');
+                        var TotalReviewer = record.get('TotalReviewer');
+
+ // Kemas dalam payload dan encode — SELAMAT untuk attribute HTML
+ var payload_perk = {    
+    MembershipCardCode,
+    EnterpriseCountStar,
+    EnterpriseAccNo,
+    TotalReviewer
+  };
+
+
+
+ 
+  var encoded_perk = encodeURIComponent(JSON.stringify(payload_perk));
+
+
                         return '' +
-                          '<button type="button" ' +
+                          '<button type="button" class="voucher-btn" ' +
+                          'data-perk="' + encoded_perk + '" ' +
                           'style="width:97%; background-image:linear-gradient(#ff00de75,#c800ffc9); background-color:#fac; color:white; border:none; padding:15px; border-radius:12px; font-size:14px; font-weight:bold; cursor:pointer; text-shadow:0 1px 1px rgba(0,0,0,0.2); box-shadow:0 4px 10px rgba(247,151,30,0.4); transition:transform 0.2s ease, box-shadow 0.2s ease;" ' +
                           'onmouseover="this.style.transform=\'translateY(-2px)\'; this.style.boxShadow=\'0 6px 12px rgba(247,151,30,0.5)\'" ' +
                           'onmouseout="this.style.transform=\'translateY(0)\'; this.style.boxShadow=\'0 4px 10px rgba(247,151,30,0.4)\'">' +
@@ -242,7 +277,8 @@ Ext.define('ianMizi.model.Merchantperk.Merchantperk_ViewModel', {
                            // _value = '<div style="margin:1px 0px 0px 0px;font-size:12px">'+noDecimals(Amount)+'</div><br><div style="margin:-5px 0px 0px 0px;font-size:10px">RM</div>';
                          
                         }else if (str === "Point") {
-                            _value =Points;
+                            _value='<span style="font-size:6px; margin:0;">Redeem</span><span style="font-size:12px; margin:0;">'+Points+'</span> <span style="font-size:6px; margin:0;">Points</span>';
+                           // _value =Points;
                          
                         }
                         return _value;
@@ -457,3 +493,23 @@ document.addEventListener('click', function (e) {
     }
   });
   
+
+
+    // Delegation: cari button yang ada data-voucher dan baca payloadnya
+document.addEventListener('click', function (e) {
+    const btn = e.target.closest('button[data-perk]');
+    if (!btn) return;
+    
+    try {
+      const payload = JSON.parse(decodeURIComponent(btn.dataset.perk));
+      // Call fungsi asal anda dengan data yang selamat
+      FloatPanel_AyohaEnterpriseRewardItem_MembershipCardLoadByMembershipCardCodeStore(       
+        payload.MembershipCardCode,
+        payload.EnterpriseCountStar,
+        payload.EnterpriseAccNo,
+        payload.TotalReviewer
+      );
+    } catch (err) {
+      console.error('Invalid membeship payload:', err, btn.dataset.perk);
+    }
+  });

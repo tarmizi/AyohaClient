@@ -124,7 +124,7 @@ Ext.application({
     'AyohaeWallet.FloatPanel_AyohaeWallet_CashOutConfirm', 'Master.FloatPanel_BankAccountName', 'Master.FloatPanel_BankAccountType','AyohaRewardMerchantDiscountLoyalty.FloatPanel_MerchantDiscountLoyaltyDescription','Dashboard.FloatPanel_DashboardMerchantReward_UploadedReceipt',
     'Membership.FloatPanel_Membership_MembershipCardSaleDetail','Membership.FloatPanel_MembershipCardList_NotYetSubscribed','AyohaStoreSaleItem.FloatPanel_AyohaStore_CheckOut_MembershipCard','ianMizi.view.Config.CoreVariable','Membership.FloatPanel_Membership_MembershipCardHubs',
 'AyohaStoreSaleItem.FloatPanel_MainDashboard_PendingOrder','MyAccount.FloatPanel_ShoppingBagOrder','AyohaStoreSaleItem.FloatPanel_AyohaStore_OrderHistory_Single','Menu.DrawerMenu','MyAccount.FloatPanel_MyAccount_AllTransactionHistory',
-'AyohaEnterpriseAccount.FloatPanel_AyohaEnterpriseRewardItem'],
+'AyohaEnterpriseAccount.FloatPanel_AyohaEnterpriseRewardItem','Menu.FloatPanel_ScannedMerchant'],
 
 
     icon: {

@@ -855,7 +855,7 @@ function sendNum(digit) {
     if (document.getElementById('input-FloatPanel_AyohaeWallet_Passcode_Amount').value.length == 6) {
         if (localStorage.getItem("AyohaeWalletPassCode") == document.getElementById('input-FloatPanel_AyohaeWallet_Passcode_Amount').value) {
          
-          
+          alert("globalFloatPanel_AyohaeWallet_Passcode_CheckingTaggingModule:"+globalFloatPanel_AyohaeWallet_Passcode_CheckingTaggingModule);
             FloatPanel_AyohaeWallet_PasscodeHide();
             if (globalFloatPanel_AyohaeWallet_Passcode_CheckingTaggingModule == "FloatPanel_AyohaStore_CheckOut_ConfirmPay") {
                 // alert("success")

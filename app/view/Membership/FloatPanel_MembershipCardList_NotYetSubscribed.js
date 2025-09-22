@@ -2973,6 +2973,7 @@ function FloatPanel_MembershipCardList_NotYetSubscribed_initEventContainer(){
         FloatPanelMerchantDetailPage_OpenMerchantReview();
       }
     );
+    LoadingPanelHide();
 }
 
 
@@ -4886,7 +4887,7 @@ function FloatPanel_MembershipCardList_NotYetSubscribed_RateAndReview(RateReview
     }
 
 
-
+    LoadingPanelHide();
 
 
 

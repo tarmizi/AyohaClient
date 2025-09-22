@@ -177,7 +177,7 @@ function FloatPanel_AyohaEnterpriseRewardItem() {
                                                       {
                                                           margin: '0 10 0 0',
                                                           id: 'htmlFloatPanel_AyohaEnterpriseRewardItem_TitleHeaderTxt',
-                                                          html: '<font size=2 color=black><b>Merchant Perks/Rewards</b></font>'
+                                                          html: '<font size=2 color=black><b>Merchant Loyalty Perks</b></font>'
                                                       },
 
 
@@ -555,7 +555,7 @@ itemTpl: new Ext.XTemplate([
                                          margin: '0 0 0 -10',
                                          width: '78%',
                                          height: 20,
-                                         html: '<input type="text" id="input-FloatPanel_AyohaEnterpriseRewardItem_SearchTxt" placeHolder="Search Loyalty Campaign" style="border-color:purple;color:black;width:100%;text-align: center;font-size:12px;">'
+                                         html: '<input type="text" id="input-FloatPanel_AyohaEnterpriseRewardItem_SearchTxt" placeHolder="Search Merchant Loyalty Perks" style="border-color:purple;color:black;width:100%;text-align: center;font-size:12px;">'
                                      },
 
 
@@ -846,6 +846,7 @@ function FloatPanel_AyohaEnterpriseRewardItem_VIEW_merchantperk_View_LoadbySubsc
                 console.log('_DataStore_VIEW_merchantperk_View_LoadbySubscriberAccNoStore loaded successfully, total records: ' + records.length);
     
                 count_DataStore_VIEW_merchantperk_View_LoadbySubscriberAccNoStoreFirst=records.length;
+                Ext.getCmp('FloatPanel_AyohaEnterpriseRewardItem_CountSearchTxt').setHtml('<font size=3 color=black><b>(' + count_DataStore_VIEW_merchantperk_View_LoadbySubscriberAccNoStoreFirst + ')</b></font>');
                
                 LoadingPanelHide();
             } else {
@@ -1101,4 +1102,92 @@ function FloatPanel_AyohaEnterpriseRewardItemOpenMembershiCardDetail(EnterpriseH
         Ext.getCmp('htmlFloatPanel_MembershipCardList_Upgrade_TitleHeaderTxt').setHtml('<font size=2 color=black><b>My Membership Card</b></font>');
     }, 2000);
 
+}
+
+
+
+function FloatPanel_AyohaEnterpriseRewardItem_MembershipCardLoadByMembershipCardCodeStore(MembershipCardCode,EnterpriseCountStar,EnterpriseAccNo,TotalReviewer) {
+    LoadingPanelShow(getLoadingIcon(), 'Loading....');
+    var task = Ext.create('Ext.util.DelayedTask', function () {
+
+        var objn = {
+            "MembershipCardCode": MembershipCardCode,
+        };
+        // console.log(objn);
+        var _value = Ext.Ajax.request({
+
+            type: "POST",
+
+            url: GetAPIurl() + '/MembershipCard/MembershipCardLoadByMembershipCardCode',
+
+            dataType: "json",
+            data: JSON.stringify(objn),
+            headers: {
+                "Content-Type": "application/json; charset=utf-8"
+            },
+
+            success: function (result, request) {
+
+                //console.log(result.responseText);
+
+
+                data = Ext.decode(result.responseText.trim());
+
+                if (data.success == "true") {
+                    //var newData = JSON.parse(JSON.stringify(result.results.Email))
+                    //console.log(result.results.Email);
+                    //  //data.results[0];
+                    // console.log(data.total);
+                    if (data.total > 0) {
+                       // MembershipCardName= data.results[0].MembershipCardName;
+                      //  MembershipCardFeePaymentCycle= data.results[0].MembershipCardFeePaymentCycle;
+
+                     FloatPanel_MembershipCardList_NotYetSubscribedShow_FromDashboard_Main(MembershipCardCode,EnterpriseAccNo
+                            ,`NO`,data.results[0].MembershipCardFeePaymentCycle,EnterpriseCountStar,TotalReviewer)
+                      
+                      //  '<div OnClick="FloatPanel_MembershipCardList_NotYetSubscribedShow_FromDashboard_Main(`{MembershipCardCode}`,`{EnterpriseAccNo}`,`{isMembershipCardSubscribed}`,`{MembershipCardFeePaymentCycle}`,`{CountStar}`,`{CountReviewer}`)" style="min-width:88vw; max-width:88vw; margin-right:5vw; box-sizing:border-box; border-radius:15px; overflow:hidden; box-shadow:0 4px 20px rgba(0,0,0,0.3); display:inline-block;">',
+
+
+//                       AppState.FloatPanel_AyohaRewardVoucherDetail.MembershipCardCode=MembershipCardCode;
+// AppState.FloatPanel_AyohaRewardVoucherDetail.EnterpriseCountStar=EnterpriseCountStar;
+// AppState.FloatPanel_AyohaRewardVoucherDetail.EnterpriseAccNo=EnterpriseAccNo;
+// AppState.FloatPanel_AyohaRewardVoucherDetail.TotalReviewer=TotalReviewer;
+// AppState.FloatPanel_AyohaRewardVoucherDetail.MembershipCardName=MembershipCardName;
+// AppState.FloatPanel_AyohaRewardVoucherDetail.MembershipCardFeePaymentCycle=MembershipCardFeePaymentCycle;
+                        Ext.Viewport.unmask();
+                    }
+                    if (data.total == 0) {
+                      
+                        Ext.Viewport.unmask();
+
+                    }
+
+
+
+
+
+                }
+                else {
+
+
+                    Ext.Viewport.unmask();
+                }
+
+
+            },
+
+            failure: function (result, request) {
+                Ext.Viewport.unmask();
+            }
+
+        });
+
+
+
+    });
+
+    //  Ext.Viewport.unmask();
+
+    //   setDashBoardMerchantReviewRate(FiveStar, FourStar, ThreeStar, TwoStar, OneStar);
+    task.delay(500);
 }

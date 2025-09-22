@@ -12,6 +12,108 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <title>Ayoha</title>
+
+
+
+<style>
+
+/* Main Panel Styling */
+.scanned-merchant-panel {
+    /* Purple gradient background */
+    background: linear-gradient(160deg, #8e44ad 0%, #c0392b 100%);
+    /* You can add a background-image for the confetti effect */
+    /* background-image: url('path/to/confetti.png'); */
+    padding: 20px 15px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* Top and Bottom Chips */
+.qr-verified-chip, .scanned-info-chip {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8em;
+    font-weight: bold;
+    text-align: center;
+    margin: 0 auto 15px auto;
+    width: fit-content;
+}
+.scanned-info-chip {
+    margin: 15px auto;
+}
+
+/* Merchant Header Section */
+.merchant-header {
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.merchant-icon-container {
+    width: 60px;
+    height: 60px;
+    background-color: white;
+    border-radius: 50%;
+    margin-right: 15px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="%238e44ad" d="M85.7,21.8c-5.3-5.3-12.3-8.2-19.8-8.2s-14.5,2.9-19.8,8.2L50,25.7l-3.9-3.9c-5.3-5.3-12.3-8.2-19.8-8.2S12,16.5,6.7,21.8C1.4,27.1,0,34.2,0,38.2c0,11.2,8.1,19,13.2,24.2L50,96.8l36.8-34.4c5.1-5.1,13.2-13,13.2-24.2C100,34.2,98.6,27.1,85.7,21.8z M87.5,58.8H12.5c-3.5,0-6.2-2.8-6.2-6.2v-25c0-3.5,2.8-6.2,6.2-6.2h75c3.5,0,6.2,2.8,6.2,6.2v25C93.8,56,91,58.8,87.5,58.8z"/></svg>');
+    background-size: 60%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.merchant-name {
+    color: white;
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+.merchant-tagline {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.1em;
+}
+
+/* Action Title */
+.action-title {
+    color: white;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* Action Buttons Styling */
+.action-button {
+    background-color: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 15px !important;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    height: 100px;
+}
+
+.action-button .x-button-label {
+    color: #444;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.action-button .x-button-icon {
+    color: #8e44ad; /* Icon Color */
+    font-size: 2em;
+}
+
+/* Footer Text */
+.footer-dev-text {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.8em;
+    text-align: center;
+    margin-top: 10px;
+}
+
+
+</style>
+
+
     <style>
        /* outer list border/shadow */
 .list--flat,
@@ -1431,8 +1533,8 @@ width: auto; height: auto;z-index: -100;
             border: 2px none white;
             border-radius: 20px;           
             /*width: 85%;*/
-            width:165px;
-              padding: 10px 0px 10px 0px;
+            width:300px;
+              padding: 12px 0px 12px 0px;
             font-size: 16px;
             font-weight:bold;          
             text-align: center;

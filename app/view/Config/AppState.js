@@ -26,6 +26,15 @@ var AppState = {
         MembershipCardName:null,
         MembershipCardFeePaymentCycle:null
     
+    },
+
+
+
+    FloatPanel_QrCodeScanner_Scanned: {
+        QRCodeResult: null,
+        QRCodeResult_PageType: null,
+        MerchantTagline: null,
+    
     }
   
 };

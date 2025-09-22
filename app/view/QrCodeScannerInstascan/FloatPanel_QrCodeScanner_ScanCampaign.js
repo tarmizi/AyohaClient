@@ -625,15 +625,26 @@ function FloatPanel_QrCodeScanner_ScanCampaignShow() {
         // }
         var text = QRCodeResult; 
 
+        AppState.FloatPanel_QrCodeScanner_Scanned.QRCodeResult = QRCodeResult;
+        AppState.FloatPanel_QrCodeScanner_Scanned.QRCodeResult_PageType = text.slice(-2);
+        FloatPanel_ScannedMerchantShow();
 
-        var newString = text.slice(-2);
-        if(newString=="EP"){
-            FloatPanel_QrCodeScanner_ScanCampaign_LoadEnterprisePage(QRCodeResult);
-        }
-        if(newString=="MC"){
-           // alert(newString);
-          FloatPanel_QrCodeScanner_ScanCampaign_LoadMembershipCardPage(QRCodeResult);
-        }
+
+
+
+
+
+
+//commented on 20/9/2025
+        // var newString = text.slice(-2);
+
+       
+        // if(newString=="EP"){
+        //     FloatPanel_QrCodeScanner_ScanCampaign_LoadEnterprisePage(QRCodeResult);
+        // }
+        // if(newString=="MC"){
+        //   FloatPanel_QrCodeScanner_ScanCampaign_LoadMembershipCardPage(QRCodeResult);
+        // }
         
      
         scanner.stop();
@@ -807,30 +818,89 @@ function FloatPanel_QrCodeScanner_ScanCampaign_LoadMembershipCardPage(ContentQR)
         _DataStore_MembershipCardLoadByEnterpriseAccNoStore.getProxy().setExtraParam('EnterpriseHQAccNo', result);
         _DataStore_MembershipCardLoadByEnterpriseAccNoStore.getProxy().setExtraParam('AyohaUserAccountNo', GetCurrAyohaUserAccountNo());
         _DataStore_MembershipCardLoadByEnterpriseAccNoStore.getProxy().setUrl(GetAPIurl() + '/MembershipCard/MembershipCardLoadByEnterpriseAccNo');
-        _DataStore_MembershipCardLoadByEnterpriseAccNoStore.load();
+       // _DataStore_MembershipCardLoadByEnterpriseAccNoStore.load();
     
-        var task = Ext.create('Ext.util.DelayedTask', function () {
-    
-            var count = parseInt(_DataStore_MembershipCardLoadByEnterpriseAccNoStore.getCount());
-            
-            //alert(count);
-            if(count==1){
-                var  Store = _DataStore_MembershipCardLoadByEnterpriseAccNoStore.getAt(0);
-                FloatPanel_MembershipCardList_UpgradeShow_FromFloatPanel_MerchantDetailPage(Store.get('MembershipCardCode'), result, Store.get('isMembershipCardSubscribed'));
-            }
-            if(count>1){
 
+
+        _DataStore_MembershipCardLoadByEnterpriseAccNoStore.load({
+            callback: function (records, operation, success) {
+                if (success && records.length > 0) {
+                  //  alert('Store loaded successfully, total records: ' + records.length);
+        
+                    var count = parseInt(_DataStore_MembershipCardLoadByEnterpriseAccNoStore.getCount());
+            
+                    var Store = records[0]; // Access only the first record
+                  //  var planCode = record.get('PaymentPlanCode');
+                var isMembershipCardSubscribed=Store.get('isMembershipCardSubscribed');
+                var MembershipCardCode=Store.get('MembershipCardCode');
+                    if(records.length==1){
+                       // var  Store = _DataStore_MembershipCardLoadByEnterpriseAccNoStore.getAt(0);
+                      //  FloatPanel_MembershipCardList_UpgradeShow_FromFloatPanel_MerchantDetailPage(Store.get('MembershipCardCode'), result, Store.get('isMembershipCardSubscribed'));
+                      //  FloatPanel_MembershipCardList_UpgradeShow_FromFloatPanel_MerchantDetailPage(MembershipCardCode, result, isMembershipCardSubscribed);
+                       
+                       if(isMembershipCardSubscribed=='NO'){
+                        FloatPanel_MembershipCardList_UpgradeShow_FromFloatPanel_MerchantDetailPage(MembershipCardCode,result,'NO');
+                       }else{
+                       // FloatPanel_MembershipCardList_UpgradeShow_MyMembershipCard_FromScannedQR(result, result, MembershipCardCode,isMembershipCardSubscribed);
+                      //  FloatPanel_MembershipCardList_MyMembershipCardOpenMembershiCardDetail
+                        FloatPanel_MembershipCardList_MyMembershipCardOpenMembershiCardDetail(result, result, MembershipCardCode,AppState.FloatPanel_QrCodeScanner_Scanned.MerchantTagline, 0);
+                       }
+                       
+                       
+                       
+                    }
+                    if(count>1){
+        
+                    }
+                    FloatPanel_QrCodeScanner_ScanCampaign_InsertScanActivity(ContentQR,result,"Scan_MembershipCardPage");
+                    // for (i = 0; i < count; i++) {
+                    //   var  Store = _DataStore_MembershipCardLoadByEnterpriseAccNoStore.getAt(i);
+                    //     ArrFloatPanelMerchantDetailPage_MembershipCardCode.push(Store.get('MembershipCardCode'))
+                    // }
+                   
+                    LoadingPanelHide();
+                } else {
+                    console.error('Failed to load store data or no record found.');
+                    LoadingPanelHide();
+                }
             }
-            FloatPanel_QrCodeScanner_ScanCampaign_InsertScanActivity(ContentQR,result,"Scan_MembershipCardPage");
-            // for (i = 0; i < count; i++) {
-            //   var  Store = _DataStore_MembershipCardLoadByEnterpriseAccNoStore.getAt(i);
-            //     ArrFloatPanelMerchantDetailPage_MembershipCardCode.push(Store.get('MembershipCardCode'))
-            // }
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // var task = Ext.create('Ext.util.DelayedTask', function () {
+    
+        //     var count = parseInt(_DataStore_MembershipCardLoadByEnterpriseAccNoStore.getCount());
+            
+        //     //alert(count);
+        //     if(count==1){
+        //         var  Store = _DataStore_MembershipCardLoadByEnterpriseAccNoStore.getAt(0);
+        //         FloatPanel_MembershipCardList_UpgradeShow_FromFloatPanel_MerchantDetailPage(Store.get('MembershipCardCode'), result, Store.get('isMembershipCardSubscribed'));
+        //     }
+        //     if(count>1){
+
+        //     }
+        //     FloatPanel_QrCodeScanner_ScanCampaign_InsertScanActivity(ContentQR,result,"Scan_MembershipCardPage");
+        //     // for (i = 0; i < count; i++) {
+        //     //   var  Store = _DataStore_MembershipCardLoadByEnterpriseAccNoStore.getAt(i);
+        //     //     ArrFloatPanelMerchantDetailPage_MembershipCardCode.push(Store.get('MembershipCardCode'))
+        //     // }
     
           
            
-        });
-        task.delay(500);
+        // });
+        // task.delay(500);
     
     
         Ext.Viewport.setMasked(false);

@@ -56,7 +56,7 @@ function FloatPanel_AyohaeWallet_ScanAndPay_PaymentConfirm() {
          //style: 'border-bottom:1px solid;background-color:#353839;',
          /// style: 'border-bottom:1px none;background-color:transparent;',
          // style: ' background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);',
-         style: 'background-color:rgba(0, 0, 0, 1);border-radius: 0px 0px 0px 0px;',
+         style: 'background-color:rgba(0, 0, 0, 0.9);border-radius: 0px 0px 0px 0px;',
          listeners: {
              initialize: function (c) {
                  this.element.on({

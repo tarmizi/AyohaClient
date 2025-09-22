@@ -112,13 +112,14 @@ function FloatPanel_AyohaeWallet_ScanAndPay_Payment() {
                          xtype: 'container',
                          width: '100%',
                          margin: '0 0 0 0',
-                         height: 80,
+                         height: 60,
                          docked:'bottom',
                          layout: {
                              type: 'hbox',
                              pack: 'center',
                              align: 'center'
                          },
+                         style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px solid #ECF0F1 ;background: transparent;',
                          items: [
                               
                                     {
@@ -183,8 +184,8 @@ function FloatPanel_AyohaeWallet_ScanAndPay_Payment() {
                                                       },
                                                       
                                                         {
-                                                            margin: '10 0 0 0',
-                                                            html: '<div style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;float:right;margin:-2px 0px 0px 0px;background-color:transparent;color:black">PAYMENT</div>'
+                                                            margin: '0 0 0 0',
+                                                            html: '<div style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;float:right;margin:-2px 0px 0px 0px;background-color:transparent;color:black">Scanned Ayoha eWallet</div>'
                                                         },
 
                                                            {
@@ -245,6 +246,7 @@ function FloatPanel_AyohaeWallet_ScanAndPay_Payment() {
                                  height: 20
                              },
 
+                           
 
 
                              {
@@ -281,6 +283,16 @@ function FloatPanel_AyohaeWallet_ScanAndPay_Payment() {
                                },
 
                                {
+                                xtype: 'container',
+                                width: '80%',
+                                margin: '0 0 0 0',
+                                height: 1,
+                                style: 'background-color:#D3D3D3;',
+                               }, {
+                                xtype: 'panel',
+                                height: 13
+                            },
+                               {
                                    xtype: 'container',
                                    //  id: 'containerlFloatPanel_AyohaeWallet_ScanAndPay_Payment_MasterNumber',
                                    id: 'containerFloatPanel_AyohaeWallet_ScanAndPay_PaymentMasterInner',
@@ -311,7 +323,7 @@ function FloatPanel_AyohaeWallet_ScanAndPay_Payment() {
                               },
                              {
 
-                                 margin: '20 0 0 5',
+                                 margin: '5 0 0 10',
                                  id: 'htmlFloatPanel_AyohaeWallet_ScanAndPay_Payment_PayTo',
                                  html: '<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 24px;font-weight:bold;color:black;margin:0px 0px 0px 0px;height:62;vertical-align:middle">Fareha Gold Agent Enterprise</div>',
                                 
@@ -322,9 +334,25 @@ function FloatPanel_AyohaeWallet_ScanAndPay_Payment() {
 
                                    ]
                                },
+
+                               {
+                                xtype: 'container',
+                                width: '100%',
+                                margin: '0 0 0 0',
+                                height: 15,
+                                style: 'background-color:transparent;',
+                               },
+
+                               {
+                                xtype: 'container',
+                                width: '80%',
+                                margin: '0 0 0 0',
+                                height: 1,
+                                style: 'background-color:#D3D3D3;',
+                               },
                                {
                                    xtype: 'panel',
-                                   height: 13
+                                   height: 30
                                },
 
 
@@ -374,8 +402,8 @@ function FloatPanel_AyohaeWallet_ScanAndPay_Payment() {
                                    // html: '<input type="text"  id="input-FloatPanel_AyohaStoreMerchant_AddEditItem_Descriptions"  style="border-color:black;color:black;width:100%;text-align: left;font-size:14px;font-weight:bold;width:90%;height:30px;">'
                                    // original background text box color----> #f0f2f5
                                  //  html: '<input  type="number" id="input-FloatPanel_AyohaeWallet_ScanAndPay_Payment_Amount"  value="0.00" style="width:100%;height: 60px;padding: 5px 5px;box-sizing: border-box;border-top: 1px none #ccc;border-bottom: 1px solid #ccc;border-left: 1px none #ccc;border-right: 1px none #ccc;border-radius: 0px;background-color: #f0f2f5;font-size: 24px;color: black;font-weight:bold;text-align:center;margin:0px 0px 0px 0px;box-shadow: 0 0 5pt 2pt #D3D3D3;outline-width: 0px;"  placeholder="00.00">',
-                                   html: '<input  type="number" id="input-FloatPanel_AyohaeWallet_ScanAndPay_Payment_Amount"  style="width:100%;height: 60px;padding: 5px 5px;box-sizing: border-box;border-top: 1px none #ccc;border-bottom: 1px solid #ccc;border-left: 1px none #ccc;border-right: 1px none #ccc;border-radius: 0px;background-color: #f0f2f5;font-size: 24px;color: black;font-weight:bold;text-align:left;margin:0px 0px 0px 0px;"  placeholder="00.00">',
-
+                                   html: '<input  type="number" id="input-FloatPanel_AyohaeWallet_ScanAndPay_Payment_Amount"  style="width:100%;height: 60px;padding: 5px 5px;box-sizing: border-box;border-top: 1px none #ccc;border-bottom: 1px solid #ccc;border-left: 1px none #ccc;border-right: 1px none #ccc;border-radius: 0px;background-color: #f0f2f5;font-size: 24px;color: black;font-weight:bold;text-align:left;margin:0px 0px 0px 0px;box-shadow: 0 0 5pt 2pt #D3D3D3;outline-width: 0px;"  placeholder="00.00">',
+                                 //  html: '<textarea  type="text" id="input-FloatPanel_AyohaeWallet_ScanAndPay_Payment_PaymentNote"   style="width:100%;height: 60px;padding: 5px 5px;box-sizing: border-box;border-top: 1px none #ccc;border-bottom: 1px solid #ccc;border-left: 1px none #ccc;border-right: 1px none #ccc;border-radius: 0px;background-color: #f0f2f5;font-size: 12px;color: black;font-weight:bold;text-align:left;margin:0px 0px 0px 0px;box-shadow: 0 0 5pt 2pt #D3D3D3;outline-width: 0px;" />',
                                        },
 
 
@@ -408,7 +436,7 @@ function FloatPanel_AyohaeWallet_ScanAndPay_Payment() {
                                            {
                                                margin: '0 0 0 0',
                                                id: 'htmlFloatPanel_AyohaeWallet_ScanAndPay_Payment_PayNoteTxt',
-                                               html: '<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 12px;font-weight:bold;color:black;margin:0px 0px 0px 0px;vertical-align:middle;color:black;">Payment Note/Refernece:</div>',
+                                               html: '<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 12px;font-weight:bold;color:black;margin:0px 0px 0px 0px;vertical-align:middle;color:black;">Payment Note/Reference:</div>',
 
 
                                            },
@@ -433,7 +461,7 @@ function FloatPanel_AyohaeWallet_ScanAndPay_Payment() {
                                    // html: '<textarea id="input-FloatPanel_AyohaStore_SearchProduct" style="width:97%;height: 30px;padding: 5px 5px;box-sizing: border-box;border: 1px solid #ccc;border-radius: 4px;background-color: #f8f8f8;font-size: 12px;resize: none;" placeholder="Search Product"></textarea>',
                                    // html: '<input type="text"  id="input-FloatPanel_AyohaStoreMerchant_AddEditItem_Descriptions"  style="border-color:black;color:black;width:100%;text-align: left;font-size:14px;font-weight:bold;width:90%;height:30px;">'
                                    // original background text box color----> #f0f2f5
-                                   html: '<textarea  type="text" id="input-FloatPanel_AyohaeWallet_ScanAndPay_Payment_PaymentNote"   style="width:100%;height: 60px;padding: 5px 5px;box-sizing: border-box;border-top: 1px none #ccc;border-bottom: 1px solid #ccc;border-left: 1px none #ccc;border-right: 1px none #ccc;border-radius: 0px;background-color: #f0f2f5;font-size: 12px;color: black;font-weight:bold;text-align:left;margin:0px 0px 0px 0px;box-shadow: 0 0 5pt 2pt #D3D3D3;outline-width: 0px;" />',
+                                   html: '<textarea  type="text" id="input-FloatPanel_AyohaeWallet_ScanAndPay_Payment_PaymentNote"   style="width:100%;height: 160px;padding: 5px 5px;box-sizing: border-box;border-top: 1px none #ccc;border-bottom: 1px solid #ccc;border-left: 1px none #ccc;border-right: 1px none #ccc;border-radius: 0px;background-color: #f0f2f5;font-size: 12px;color: black;font-weight:bold;text-align:left;margin:0px 0px 0px 0px;box-shadow: 0 0 5pt 2pt #D3D3D3;outline-width: 0px;" />',
                                   // html: '<input  type="number" id="input-FloatPanel_AyohaeWallet_ScanAndPay_Payment_Amount"  style="width:100%;height: 60px;padding: 5px 5px;box-sizing: border-box;border-top: 1px none #ccc;border-bottom: 1px solid #ccc;border-left: 1px none #ccc;border-right: 1px none #ccc;border-radius: 0px;background-color: #f0f2f5;font-size: 24px;color: black;font-weight:bold;text-align:left;margin:0px 0px 0px 0px;"  placeholder="00.00">',
 
                                },
@@ -651,8 +679,10 @@ function FloatPanel_AyohaeWallet_ScanAndPay_PaymentShow(EnterpriseLogoPath, Ente
 
    
 
-    Ext.getCmp('htmlFloatPanel_AyohaeWallet_ScanAndPay_Payment_PayTo').setHtml('<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 24px;font-weight:bold;color:black;margin:0px 0px 0px 0px;height:62;vertical-align:middle">' + EnterpriseName + '</div>');
-    Ext.getCmp('htmlFloatPanel_AyohaeWallet_ScanAndPay_Payment_PayToProfileImg').setHtml('<img src="' + EnterpriseLogoPath + '" width="72px" height="72px" style="border-radius:50%;border:1px solid grey;background-color:white;"/> ');
+    Ext.getCmp('htmlFloatPanel_AyohaeWallet_ScanAndPay_Payment_PayTo').setHtml('<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 14px;font-weight:bold;color:black;margin:0px 0px 0px 0px;height:20;vertical-align:middle">' + EnterpriseName + '</div>' +
+    '<br><div style="width:80%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 10px;font-weight:normal;color:black;margin:-21px 0px 0px 0px;height:20;vertical-align:middle;border-bottom:1px none #D3D3D3;border-top:1px none grey;border-left:1px none grey;border-right:1px none grey;padding:0px 0px 0px 0px">Makan Kenangan Lalu</div>'+
+    '<br><div style="width:80%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 8px;font-weight:normal;color:black;margin:-19px 0px 0px 0px;height:20;vertical-align:middle;border-bottom:1px none #D3D3D3;border-top:1px none grey;border-left:1px none grey;border-right:1px none grey;padding:0px 0px 0px 0px">lot 3830<br>ground floor,Kementerian Pembangunan Usahawan Dan Koperasi<br>62648.Wilayah Persekutuan Putra Jaya</div>');
+    Ext.getCmp('htmlFloatPanel_AyohaeWallet_ScanAndPay_Payment_PayToProfileImg').setHtml('<img src="' + EnterpriseLogoPath + '" width="82px" height="82px" style="border-radius:50%;border:1px solid grey;background-color:white;"/> ');
     if (isFloatPanel_AyohaStore_CheckOutOpen == 'Y') {
         Ext.getCmp('LoadingFloatPanel_AyohaeWallet_ScanAndPay_PaymentID').setZIndex(400);
     }
@@ -701,36 +731,17 @@ var globalFloatPanel_AyohaeWallet_ScanAndPay_Payment_ClientEmail;
 
 function FloatPanel_AyohaeWallet_ScanAndPay_Payment_ProcessQRCode(QrCode) {
     LoadingPanelShow(getLoadingIcon(), 'Loading...');
-    //var audio = document.getElementById("audioScanQRCodeSound");
-    //audio.play();
-    //var TempStampQRCode = GetCurrStampCardQrCode();
-
-    //Ext.getCmp('FloatPanel_QrCodeScanner_ProcessLbl').setHtml('<div style="color:white;text-align: center;border:3px none red;font-size:12px;width:100%;font-weight:bold;width:100%;">Processing...</div><br><div style="color:white;text-align: center;border:3px none red;font-size:12px;width:100%;font-weight:bold;width:100%;margin:-20px 0px 0px 0px">Verify QR Code:' + QrCode + '</div>');
-
-    //14955 - 25905 - 0193397961 - NoEnterprise - 25905 - 0193397961 - Custome
-    //41337-55462-01226543120-NoEnterprise-55462-01226543120-Point
-    //55462-01226543120-NoEnterprise
-    //56923-4468-0123456789-NoEnterprise-4468-0123456789-Point
-    var EntAccNo = QrCode.split('-');
-    var EnterpriseAccNo = EntAccNo[1] + '-' + EntAccNo[2] + '-' + EntAccNo[3];
-    var StampedCampaignCode = QrCode;
-    var SubscriberAccNo = GetCurrAyohaUserAccountNo();
-    globalFloatPanel_AyohaeWallet_ScanAndPay_Payment_EnterpriseAcNo = EnterpriseAccNo;
-   // console.log(QrCode);
     
-// alert(GetCurrAyohaUserAccountNo());
-// alert(EnterpriseAccNo);
-  
+    // var EntAccNo = QrCode.split('-');
+    // var EnterpriseAccNo = EntAccNo[1] + '-' + EntAccNo[2] + '-' + EntAccNo[3];
+    // var StampedCampaignCode = QrCode;
+    // var SubscriberAccNo = GetCurrAyohaUserAccountNo();
+    // globalFloatPanel_AyohaeWallet_ScanAndPay_Payment_EnterpriseAcNo = EnterpriseAccNo;
+ 
+    
 
-//Ext.getStore('MembershipsCheckIsMemberStore').getProxy().setExtraParams({
-    //CampaignCode: QrCode,
-    //SubscriberAccNo:GetCurrAyohaUserAccountNo(),
-    //EnterpriseAccNo:EnterpriseAccNo
-    //});
-
-    //Ext.StoreMgr.get('MembershipsCheckIsMemberStore').load();
-
-
+    var EnterpriseAccNo = QrCode.substring(0, QrCode.length-3);
+    globalFloatPanel_AyohaeWallet_ScanAndPay_Payment_EnterpriseAcNo = EnterpriseAccNo;
 
 
 
@@ -850,8 +861,8 @@ function FloatPanel_AyohaeWallet_ScanAndPay_Payment_AyohaStoreSaleItemloadByEnte
                 globalFloatPanelAyohaStore_CheckMembershipCardIsUsedStatus = "Not Select Any Card";
                 //Ext.getCmp('btn_FloatPanel_AyohaStoreMasterHeader_MembershipCardUsed').setHtml('<img class="blink_me" src="resources/icons/MembershipCardDetail.png" style="width:23px;height:20px;margin:0px 0px 0px -2px;border-radius:5px 5px 5px 5px;" alt="Company Name">');
                 // Ext.getCmp('btn_FloatPanel_AyohaStoreMasterHeader_MembershipCardUsed_Txt').setHtml('<div style="color:black;text-align: left;font-size:10px;width:100%;font-weight:bold;margin:0px 0px 0px 0px;color:black;">No Member Card!</div><br><div style="color:black;text-align: left;font-size:8px;width:100%;font-weight:normal;margin:-34px 0px 0px 0px;color:black;">Member Card Used</div>');
-                Ext.getCmp('btn_FloatPanel_AyohaeWallet_ScanAndPay_Payment_MembershipCardUsed').setHtml('<img class="blink_me_sendNow" src="resources/icons/MembershipCardDetail.png" style="width:60px;height:40px;margin:0px 0px 0px -2px;border-radius:5px 5px 5px 5px;" alt="Company Name">');
-                Ext.getCmp('btn_FloatPanel_AyohaeWallet_ScanAndPay_Payment_MembershipCardUsed_Txt').setHtml('<div class="blink_me_sendNow" style="color:black;text-align: left;font-size:12px;width:100%;font-weight:bold;margin:-8px 0px 0px 0px;color:black;">No Member Card!</div><br><div class="blink_me_sendNow" style="color:black;text-align: left;font-size:10px;width:100%;font-weight:normal;margin:-30px 0px 0px 0px;color:black;">' + globalFloatPanel_AyohaeWallet_ScanAndPay_Payment_MerchantPoint + '</div>');
+                Ext.getCmp('btn_FloatPanel_AyohaeWallet_ScanAndPay_Payment_MembershipCardUsed').setHtml('<img  src="resources/icons/MembershipCardDetail.png" style="width:60px;height:40px;margin:0px 0px 0px -2px;border-radius:5px 5px 5px 5px;" alt="Company Name">');
+                Ext.getCmp('btn_FloatPanel_AyohaeWallet_ScanAndPay_Payment_MembershipCardUsed_Txt').setHtml('<div  style="color:black;text-align: left;font-size:12px;width:100%;font-weight:bold;margin:-8px 0px 0px 0px;color:black;">No Member Card!</div><br><div  style="color:black;text-align: left;font-size:10px;width:100%;font-weight:normal;margin:-30px 0px 0px 0px;color:black;">' + globalFloatPanel_AyohaeWallet_ScanAndPay_Payment_MerchantPoint + '</div>');
 
 
             }
@@ -860,9 +871,9 @@ function FloatPanel_AyohaeWallet_ScanAndPay_Payment_AyohaStoreSaleItemloadByEnte
                 //Ext.getCmp('btn_FloatPanel_AyohaStoreMasterHeader_MembershipCardUsed').setHtml('<img src="' + globalFloatPanelAyohaStore_MembershipCardImage + '" style="width:23px;height:20px;margin:0px 0px 0px -2px;border-radius:5px 5px 5px 5px;" alt="Company Name">');
                 ////FloatPanel_AyohaStore_MembershipCardBeingUsed_FloatingShow(globalFloatPanelAyohaStore_MembershipCardImage);
                 //Ext.getCmp('btn_FloatPanel_AyohaStoreMasterHeader_MembershipCardUsed_Txt').setHtml('<div style="color:black;text-align: left;font-size:10px;width:100%;font-weight:bold;margin:0px 0px 0px 0px;color:black;">' + globalFloatPanelAyohaStore_MembershipCardName + '</div><br><div style="color:black;text-align: left;font-size:8px;width:100%;font-weight:normal;margin:-34px 0px 0px 0px;color:black;">Member Card Used</div>');
-                Ext.getCmp('btn_FloatPanel_AyohaeWallet_ScanAndPay_Payment_MembershipCardUsed').setHtml('<div class="blink_me_sendNow"><img src="' + globalFloatPanelAyohaStore_MembershipCardImage + '" style="width:60px;height:40px;margin:0px 0px 0px -2px;border-radius:5px 5px 5px 5px;" alt="Company Name"></div>');
+                Ext.getCmp('btn_FloatPanel_AyohaeWallet_ScanAndPay_Payment_MembershipCardUsed').setHtml('<div ><img src="' + globalFloatPanelAyohaStore_MembershipCardImage + '" style="width:60px;height:40px;margin:0px 0px 0px -2px;border-radius:5px 5px 5px 5px;" alt="Company Name"></div>');
                 //FloatPanel_AyohaStore_MembershipCardBeingUsed_FloatingShow(globalFloatPanelAyohaStore_MembershipCardImage);
-                Ext.getCmp('btn_FloatPanel_AyohaeWallet_ScanAndPay_Payment_MembershipCardUsed_Txt').setHtml('<div class="blink_me_sendNow" style="color:black;text-align: left;font-size:12px;width:100%;font-weight:bold;margin:-8px 0px 0px 0px;color:black;">' + globalFloatPanelAyohaStore_MembershipCardName + '</div><br><div class="blink_me_sendNow" style="color:black;text-align: left;font-size:12px;width:100%;font-weight:bold;margin:-30px 0px 0px 0px;color:black;">RM ' + globalFloatPanel_AyohaeWallet_ScanAndPay_Payment_MerchantPoint + ' = 1 Point</div>');
+                Ext.getCmp('btn_FloatPanel_AyohaeWallet_ScanAndPay_Payment_MembershipCardUsed_Txt').setHtml('<div style="color:black;text-align: left;font-size:12px;width:100%;font-weight:bold;margin:-8px 0px 0px 0px;color:black;">' + globalFloatPanelAyohaStore_MembershipCardName + '</div><br><div  style="color:black;text-align: left;font-size:12px;width:100%;font-weight:bold;margin:-30px 0px 0px 0px;color:black;">RM ' + globalFloatPanel_AyohaeWallet_ScanAndPay_Payment_MerchantPoint + ' = 1 Point</div>');
 
             }
             if (globalFloatPanelAyohaStore_MembershipCardCount == 1 && globalFloatPanelAyohaStore_AyohaUser_MembershipCardUsedCount == 0) {
@@ -870,9 +881,9 @@ function FloatPanel_AyohaeWallet_ScanAndPay_Payment_AyohaStoreSaleItemloadByEnte
                 //Ext.getCmp('btn_FloatPanel_AyohaStoreMasterHeader_MembershipCardUsed').setHtml('<img src="' + globalFloatPanelAyohaStore_MembershipCardImage + '" style="width:23px;height:20px;margin:0px 0px 0px -2px;border-radius:5px 5px 5px 5px;" alt="Company Name">');
                 ////FloatPanel_AyohaStore_MembershipCardBeingUsed_FloatingShow(globalFloatPanelAyohaStore_MembershipCardImage);
                 //Ext.getCmp('btn_FloatPanel_AyohaStoreMasterHeader_MembershipCardUsed_Txt').setHtml('<div style="color:black;text-align: left;font-size:10px;width:100%;font-weight:bold;margin:0px 0px 0px 0px;color:black;">' + globalFloatPanelAyohaStore_MembershipCardName + '</div><br><div style="color:black;text-align: left;font-size:8px;width:100%;font-weight:normal;margin:-34px 0px 0px 0px;color:black;">Member Card Used</div>');
-                Ext.getCmp('btn_FloatPanel_AyohaeWallet_ScanAndPay_Payment_MembershipCardUsed').setHtml('<img class="blink_me_sendNow" src="' + globalFloatPanelAyohaStore_MembershipCardImage + '" style="width:60px;height:40px;margin:0px 0px 0px -2px;border-radius:5px 5px 5px 5px;" alt="Company Name">');
+                Ext.getCmp('btn_FloatPanel_AyohaeWallet_ScanAndPay_Payment_MembershipCardUsed').setHtml('<img  src="' + globalFloatPanelAyohaStore_MembershipCardImage + '" style="width:60px;height:40px;margin:0px 0px 0px -2px;border-radius:5px 5px 5px 5px;" alt="Company Name">');
                 //FloatPanel_AyohaStore_MembershipCardBeingUsed_FloatingShow(globalFloatPanelAyohaStore_MembershipCardImage);
-                Ext.getCmp('btn_FloatPanel_AyohaeWallet_ScanAndPay_Payment_MembershipCardUsed_Txt').setHtml('<div class="blink_me_sendNow" style="color:black;text-align: left;font-size:12px;width:100%;font-weight:bold;margin:-8px 0px 0px 0px;color:black;">' + globalFloatPanelAyohaStore_MembershipCardName + '</div><br><div class="blink_me_sendNow" style="color:black;text-align: left;font-size:12px;width:100%;font-weight:bold;margin:-30px 0px 0px 0px;color:black;">RM ' + globalFloatPanel_AyohaeWallet_ScanAndPay_Payment_MerchantPoint + '= 1 Point</div>');
+                Ext.getCmp('btn_FloatPanel_AyohaeWallet_ScanAndPay_Payment_MembershipCardUsed_Txt').setHtml('<div  style="color:black;text-align: left;font-size:12px;width:100%;font-weight:bold;margin:-8px 0px 0px 0px;color:black;">' + globalFloatPanelAyohaStore_MembershipCardName + '</div><br><div  style="color:black;text-align: left;font-size:12px;width:100%;font-weight:bold;margin:-30px 0px 0px 0px;color:black;">RM ' + globalFloatPanel_AyohaeWallet_ScanAndPay_Payment_MerchantPoint + '= 1 Point</div>');
 
 
             }
@@ -880,8 +891,8 @@ function FloatPanel_AyohaeWallet_ScanAndPay_Payment_AyohaStoreSaleItemloadByEnte
                 globalFloatPanelAyohaStore_CheckMembershipCardIsUsedStatus = "NotMember_NoMembershipCard";
                 //Ext.getCmp('btn_FloatPanel_AyohaStoreMasterHeader_MembershipCardUsed').setHtml('<img class="blink_me" src="resources/icons/CancelMembershipCard.png" style="width:23px;height:20px;margin:0px 0px 0px -2px;border-radius:5px 5px 5px 5px;" alt="Company Name">');
                 //Ext.getCmp('btn_FloatPanel_AyohaStoreMasterHeader_MembershipCardUsed_Txt').setHtml('<div style="color:black;text-align: left;font-size:10px;width:100%;font-weight:bold;margin:0px 0px 0px 0px;color:black;">No Card!</div><br><div style="color:black;text-align: left;font-size:8px;width:100%;font-weight:normal;margin:-34px 0px 0px 0px;color:black;">Member Card Used</div>');
-                Ext.getCmp('btn_FloatPanel_AyohaeWallet_ScanAndPay_Payment_MembershipCardUsed').setHtml('<img class="blink_me_sendNow" src="resources/icons/MembershipCardDetail.png" style="width:50px;height:40px;margin:0px 0px 0px -2px;border-radius:5px 5px 5px 5px;" alt="Company Name">');
-                Ext.getCmp('btn_FloatPanel_AyohaeWallet_ScanAndPay_Payment_MembershipCardUsed_Txt').setHtml('<div class="blink_me_sendNow" style="color:black;text-align: left;font-size:12px;width:100%;font-weight:bold;margin:-8px 0px 0px 0px;color:black;">No Membership Card!</div><br><div class="blink_me_sendNow" style="color:black;text-align: left;font-size:10px;width:100%;font-weight:normal;margin:-34px 0px 0px 0px;color:red;">You need a membership card to continue purchasing</div>');
+                Ext.getCmp('btn_FloatPanel_AyohaeWallet_ScanAndPay_Payment_MembershipCardUsed').setHtml('<img  src="resources/icons/MembershipCardDetail.png" style="width:50px;height:40px;margin:0px 0px 0px -2px;border-radius:5px 5px 5px 5px;" alt="Company Name">');
+                Ext.getCmp('btn_FloatPanel_AyohaeWallet_ScanAndPay_Payment_MembershipCardUsed_Txt').setHtml('<div  style="color:black;text-align: left;font-size:12px;width:100%;font-weight:bold;margin:-8px 0px 0px 0px;color:black;">No Membership Card!</div><br><div  style="color:black;text-align: left;font-size:10px;width:100%;font-weight:normal;margin:-34px 0px 0px 0px;color:red;">You need a membership card to continue purchasing</div>');
                 Ext.getCmp('btn_FloatPanel_AyohaeWallet_ScanAndPay_Payment_MembershipCardUsed_Txt').setWidth(245);
             }
 

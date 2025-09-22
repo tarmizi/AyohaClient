@@ -24,6 +24,12 @@ function AddRoutePages(val) {
 
     }
 
+
+  //  alert(isFloatPanel_MembershipCardList_MyMembershipCardOpen);
+    // if(isFloatPanel_MembershipCardList_MyMembershipCardOpen=='Y'){
+    //     FloatPanel_ScannedMerchantHide()
+    // }
+    //FloatPanel_ScannedMerchantHide();
     //console.log(ArrappRouteisOpen.length);
 
     // console.log(ArrappRouteisOpen.length);
