@@ -34,6 +34,7 @@ var AppState = {
         QRCodeResult: null,
         QRCodeResult_PageType: null,
         MerchantTagline: null,
+        EnterpriseAddress: null,
     
     }
   

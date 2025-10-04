@@ -34,7 +34,37 @@ function FloatPanel_ScannedMerchant() {
             pack: 'start', // Center items vertically
             align: 'center'
         },
+        listeners: {
+            initialize: function (c) {
+                this.element.on({
+                    swipe: function (e, node, options) {
 
+                        if (e.direction == "left") {
+                            _FloatPanel_ScannedMerchant.hide(Ext.fx.Animation({
+                                type: 'slideOut',
+                                direction: 'left',
+                                easing: 'cubic-bezier(.7,0,.7,1)',
+                                duration: 250
+
+                            }));
+                            isFloatPanel_ScannedMerchantOpen = 'N';
+                            RemovePages("FloatPanel_ScannedMerchant()");
+                        } if (e.direction == "right") {
+                            _FloatPanel_ScannedMerchant.hide(Ext.fx.Animation({
+                                type: 'slideOut',
+                                direction: 'right',
+                                easing: 'cubic-bezier(.7,0,.7,1)',
+                                duration: 250
+
+                            }));
+                            isFloatPanel_ScannedMerchantOpen = 'N';
+                            RemovePages("FloatPanel_ScannedMerchant()");
+                        }
+                       
+                    }
+                });
+            }
+        },
         // All items inside the panel
         items: [
 
@@ -653,7 +683,7 @@ function FloatPanel_ScannedMerchantShow() {
     containerViewElnameFloatPanel_ScannedMerchant_reviewContainer.on('tap',
       function (event, node, options, eOpts) {
           
-
+        FloatPanelMerchantDetailPage_OpenMerchantReview();
       }
     );
 
@@ -717,6 +747,13 @@ function FloatPanel_ScannedMerchant_EnterprisesLoadByEnterpriseAccNoScannedQR() 
                     if (data.total > 0) {
 
                         AppState.FloatPanel_QrCodeScanner_Scanned.MerchantTagline= data.results[0].EnterpriseTagLine;
+                        AppState.FloatPanel_QrCodeScanner_Scanned.EnterpriseAddress= data.results[0].EnterpriseAddress;
+                       
+                        globalFloatPanelMerchantDetailPage_EnterpriseAccNo=data.results[0].EnterpriseAccNo;
+                        globalFloatPanelMerchantDetailPage_EnterpriseLogo= data.results[0].EnterpriseLogoPath;
+                        globalFloatPanelMerchantDetailPage_EnterpriseName= data.results[0].EnterpriseName;
+                       // globalEnterpriseAccNo_AyohaMerchantReview=result;
+                       
                         const img = document.getElementById('imgFloatPanel_ScannedMerchant_Merchantlogo');
 
                         // Tukar src / alt / style

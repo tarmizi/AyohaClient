@@ -252,7 +252,7 @@ function animatedClickTab() {
 
 function PlayAyohaSound(sound) {
     var audio = new Audio();
-    audio.src = 'https://42.1.63.57/AyohaSoundExternal/'+sound;
+    audio.src = 'https://setkita.com/AyohaSoundExternal/'+sound;
     audio.play();
 }
 
@@ -2340,8 +2340,57 @@ function swalFireFailLogin() {
       Ext.Viewport.unmask();
   }
 
+
+
+  var globalsetMessage_toBeAyohaMember_tag="NA";
   function setMessage_NotYetMembershipMessage() {
   
+// if(globalsetMessage_toBeAyohaMember_tag=="MerchantLoyaltyCampaign" && isFloatPanel_MembershipCardList_NotYetSubscribedOpen=='N'){
+//     Swal.fire({
+//         title: '',
+//         html: "<b>Hi!,! You are not member of " + FloatPanel_AyohaStore_getEnterpriseName() + "</b>."+setMessage_toBeAyohaMemberNotYetSubscribe(),
+//        // html: "<b>Hi!,! You are not member of " + FloatPanel_AyohaStore_getEnterpriseName() + "</b>.<br><br>every ayoha reward user required to be a member in every one of our online stores,we will give you more rewards for every purchase you make.<br><br>  Press JOIN to get a membership card and join the campaign!",
+//         //imageUrl: "resources/icons/membershipPurpleThree.png",
+//         imageUrl: FloatPanel_AyohaStore_getEnterpriseLogo(),
+//         imageWidth: 350,
+//         imageHeight: 200,
+//         showCloseButton: true,
+//         showCancelButton: false,
+//         //  confirmButtonColor: '#3085d6',
+//         confirmButtonColor: '#9932cc',
+//         cancelButtonColor: '#d33',
+//         confirmButtonText: 'JOIN',
+//         footer: '<img src="resources/icons/Logo/AyohaLogofullOrange.png" width="100" height="70" alt="Company Name"/>'
+//     }).then(function (result) {
+//         if (result.isConfirmed) {
+
+
+//             // if(isFloatPanel_MembershipCardList_NotYetSubscribedOpen=='Y'){
+
+                
+//             //  //   Ext.getCmp('FloatPanel_AyohaCardManagement_PreviewCardID').setZIndex(350);
+//             //     return
+//             // }
+
+
+//             FloatPanel_MembershipCardList_NotYetSubscribedShow_FromDashboard_Main(globalFloatPanelMerchantDetailPage_MembershipCardCode, globalFloatPanelMerchantDetailPage_EnterpriseAccNo, MembershipTag,'NA',globalFloatPanelMerchantDetailPage_CountStar,globalFloatPanelMerchantDetailPage_CountReviewer)
+//             localStorage.setItem("MembershipByMethod", "MerchantLoyaltyCampaign");
+//             FloatPanel_AyohaStore_SaleItemDetailHide();
+//            // var ent = FloatPanel_AyohaStore_getEnterpriseAccNo();
+//            // FloatPanel_RewardStoreMembershipCardShow_FromQrCode(ent, ent);
+//         }
+//     });
+// }
+
+
+
+
+
+
+
+
+
+
     Swal.fire({
         title: '',
         html: "<b>Hi!,! You are not member of " + FloatPanel_AyohaStore_getEnterpriseName() + "</b>."+setMessage_toBeAyohaMemberNotYetSubscribe(),
@@ -2359,13 +2408,27 @@ function swalFireFailLogin() {
         footer: '<img src="resources/icons/Logo/AyohaLogofullOrange.png" width="100" height="70" alt="Company Name"/>'
     }).then(function (result) {
         if (result.isConfirmed) {
-           // localStorage.setItem("MembershipByMethod", "AyohaStore");
-            // GetMembershipCardEnableClick_containerFloatPanel_MembershipCardList_UpgradeBottom()
-            FloatPanel_AyohaStore_SaleItemDetailHide();
-           // var ent = FloatPanel_AyohaStore_getEnterpriseAccNo();
-           // FloatPanel_RewardStoreMembershipCardShow_FromQrCode(ent, ent);
+            // if(isFloatPanel_MembershipCardList_NotYetSubscribedOpen=='Y'){
+
+            //     alert("Please close the existing membership panel first.");
+            //     if (isFloatPanel_AyohaCardManagement_PreviewCardOpen == "Y"){
+            //         //FloatPanel_AyohaCardManagement_PreviewCardHide();
+            //    Ext.getCmp('FloatPanel_AyohaCardManagement_PreviewCardID').setZIndex(350);
+            //     }
+            
+            //     return
+            // }
+            // FloatPanel_MembershipCardList_NotYetSubscribedShow_FromDashboard_Main(globalFloatPanelMerchantDetailPage_MembershipCardCode, globalFloatPanelMerchantDetailPage_EnterpriseAccNo, MembershipTag,'NA',globalFloatPanelMerchantDetailPage_CountStar,globalFloatPanelMerchantDetailPage_CountReviewer)
+            // localStorage.setItem("MembershipByMethod", "MerchantLoyaltyCampaign");
+            // FloatPanel_AyohaStore_SaleItemDetailHide();
+        
         }
     });
+
+
+
+
+   
 
 
 

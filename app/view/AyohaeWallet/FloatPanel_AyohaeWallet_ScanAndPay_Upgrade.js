@@ -274,13 +274,13 @@ function FloatPanel_AyohaeWallet_ScanAndPay_Upgrade() {
 
                                     margin: '-10 0 0 0',
                                     // height: 20,
-                                    html: '<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 25px;font-weight:bold;color:white;">Ayoha Rewards</div>'
+                                    html: '<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 25px;font-weight:bold;color:white;">Ayoha Reward</div>'
                                 },
                                 {
 
                                     margin: '-3 0 0 0',
                                     // height: 20,
-                                    html: '<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 11px;font-weight:normal;color:white;">We Double Your Reward !</div>'
+                                    html: '<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 11px;font-weight:normal;color:white;">One hub,Double Rewards !</div>'
                                 },
 
 

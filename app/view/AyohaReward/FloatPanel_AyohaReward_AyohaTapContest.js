@@ -842,6 +842,7 @@ function FloatPanel_AyohaReward_AyohaTapContestShow() {
     //task.delay(1000);
 
     FloatPanel_AyohaReward_AyohaTapContest_AyohaRewardContestTapAndWinPrizeAmountLoadContestRule();
+    FloatPanel_AyohaReward_AyohaTapContest_AyohaRewardContestTapAndWinSponsorload();
 }
 
 
@@ -1030,7 +1031,7 @@ var globalFloatPanel_AyohaReward_AyohaTapContest_MembershipGroupCode;
 var globalFloatPanel_AyohaReward_AyohaTapContest_TapBalance;
 
 function FloatPanel_AyohaReward_AyohaTapContest_AyohaRewardContestTapAndWinPrizeAmountLoadContestRule() {
-  //  alert(globalDashboard_AyohaTapContestCode);
+  
 
     var task = Ext.create('Ext.util.DelayedTask', function () {
 
@@ -1038,7 +1039,7 @@ function FloatPanel_AyohaReward_AyohaTapContest_AyohaRewardContestTapAndWinPrize
             "SubscriberAccNo": GetCurrAyohaUserAccountNo(),
             "ContestCode": globalDashboard_AyohaTapContestCode
         };
-        // console.log(objn);
+        console.log(objn);
         var _value = Ext.Ajax.request({
 
             type: "POST",
@@ -1053,8 +1054,7 @@ function FloatPanel_AyohaReward_AyohaTapContest_AyohaRewardContestTapAndWinPrize
 
             success: function (result, request) {
 
-                //console.log(result.responseText);
-
+                
 
                 data = Ext.decode(result.responseText.trim());             
                 if (data.success == "true") {
@@ -1062,7 +1062,7 @@ function FloatPanel_AyohaReward_AyohaTapContest_AyohaRewardContestTapAndWinPrize
                         globalFloatPanel_AyohaReward_AyohaTapContest_TapPrizeAmount = data.results[0].TapPrizeAmount;
                         globalFloatPanel_AyohaReward_AyohaTapContest_MembershipGroupCode = data.results[0].MembershipGroupCode;
                         globalFloatPanel_AyohaReward_AyohaTapContest_TapBalance = data.results[0].TapBalance;
-                        // console.log(globalFloatPanel_AyohaReward_AyohaTapContest_TapBalance);
+                     
                     
                        
                         if (globalFloatPanel_AyohaReward_AyohaTapContest_AyohaRewardContestTapAndWin_Status == "WIN") {
@@ -1086,7 +1086,7 @@ function FloatPanel_AyohaReward_AyohaTapContest_AyohaRewardContestTapAndWinPrize
                             //Ext.getCmp('htmlDashboard_User_AyohaRewardContest01_TapChanceLeftTxt').setHtml('<div class="example-2" style="border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1 ;background:white;border-radius: 20px 20px 20px 20px;width:250px;height:50px;font-size: 12px;font-weight:bold;color:black;text-align:center;vertical-align:middle;" ><div style="margin:-4px 0px 0px 0px;">You Have <font size=6px>(' + globalFloatPanel_AyohaReward_AyohaTapContest_TapBalance + ')</font> Chance Left</div></div>');
                             Ext.getCmp('htmlDashboard_User_AyohaRewardContest01_TapChanceLeftTxt').setHtml('<div class="example-2" style="border-right:2px solid #fac;border-left:2px solid #fac;border-bottom:2px solid #fac;border-top:2px solid #fac;background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);border-radius: 20px 20px 20px 20px;width:250px;height:50px;font-size: 12px;font-weight:bold;color:white;text-align:center;vertical-align:middle;" ><div style="margin:-8px 0px 0px 0px;">You Have <font size=6px>' + globalFloatPanel_AyohaReward_AyohaTapContest_TapBalance + '</font> Chance Left</div></div>');
                         }
-                        FloatPanel_AyohaReward_AyohaTapContest_AyohaRewardContestTapAndWinSponsorload();
+                      //  FloatPanel_AyohaReward_AyohaTapContest_AyohaRewardContestTapAndWinSponsorload();
                         Ext.Viewport.unmask();
                     }
                     if (data.total == 0) {
@@ -1122,7 +1122,7 @@ function FloatPanel_AyohaReward_AyohaTapContest_AyohaRewardContestTapAndWinPrize
     //  Ext.Viewport.unmask();
 
     //   setDashBoardMerchantReviewRate(FiveStar, FourStar, ThreeStar, TwoStar, OneStar);
-    task.delay(500);
+    task.delay(50);
 }
 
 
@@ -1181,7 +1181,7 @@ function FloatPanel_AyohaReward_AyohaTapContest_AyohaRewardContestTapAndWinLogIn
     });
 
 
-    task.delay(500);
+    task.delay(10);
 }
 
 function FloatPanel_AyohaReward_AyohaTapContest_Dashboard_LoadAyohaEwallet() {

@@ -677,11 +677,17 @@ function FloatPanel_AyohaeWallet_ScanAndPay_PaymentShow(EnterpriseLogoPath, Ente
     isFloatPanel_AyohaeWallet_ScanAndPay_PaymentOpen = 'Y';
 
 
-   
+    
+    const address = AppState.FloatPanel_QrCodeScanner_Scanned.EnterpriseAddress;
+
+// Replace every comma (and any spaces after it) with <br>
+const formatted = address.replace(/,\s*/g, "<br>");
+
+
 
     Ext.getCmp('htmlFloatPanel_AyohaeWallet_ScanAndPay_Payment_PayTo').setHtml('<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 14px;font-weight:bold;color:black;margin:0px 0px 0px 0px;height:20;vertical-align:middle">' + EnterpriseName + '</div>' +
-    '<br><div style="width:80%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 10px;font-weight:normal;color:black;margin:-21px 0px 0px 0px;height:20;vertical-align:middle;border-bottom:1px none #D3D3D3;border-top:1px none grey;border-left:1px none grey;border-right:1px none grey;padding:0px 0px 0px 0px">Makan Kenangan Lalu</div>'+
-    '<br><div style="width:80%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 8px;font-weight:normal;color:black;margin:-19px 0px 0px 0px;height:20;vertical-align:middle;border-bottom:1px none #D3D3D3;border-top:1px none grey;border-left:1px none grey;border-right:1px none grey;padding:0px 0px 0px 0px">lot 3830<br>ground floor,Kementerian Pembangunan Usahawan Dan Koperasi<br>62648.Wilayah Persekutuan Putra Jaya</div>');
+    '<br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 10px;font-weight:normal;color:black;margin:-21px 0px 0px 0px;height:20;vertical-align:middle;border-bottom:1px none #D3D3D3;border-top:1px none grey;border-left:1px none grey;border-right:1px none grey;padding:0px 0px 0px 0px">'+AppState.FloatPanel_QrCodeScanner_Scanned.MerchantTagline+'</div>'+
+    '<br><div style="width:80%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 8px;font-weight:normal;color:black;margin:-19px 0px 0px 0px;height:20;vertical-align:middle;border-bottom:1px none #D3D3D3;border-top:1px none grey;border-left:1px none grey;border-right:1px none grey;padding:0px 0px 0px 0px">'+formatted+'</div>');
     Ext.getCmp('htmlFloatPanel_AyohaeWallet_ScanAndPay_Payment_PayToProfileImg').setHtml('<img src="' + EnterpriseLogoPath + '" width="82px" height="82px" style="border-radius:50%;border:1px solid grey;background-color:white;"/> ');
     if (isFloatPanel_AyohaStore_CheckOutOpen == 'Y') {
         Ext.getCmp('LoadingFloatPanel_AyohaeWallet_ScanAndPay_PaymentID').setZIndex(400);
@@ -749,26 +755,20 @@ function FloatPanel_AyohaeWallet_ScanAndPay_Payment_ProcessQRCode(QrCode) {
     _DataStore_MembershipsCheckIsMemberScanAndPayStore.getProxy().setExtraParam('SubscriberAccNo', GetCurrAyohaUserAccountNo());
     _DataStore_MembershipsCheckIsMemberScanAndPayStore.getProxy().setExtraParam('CampaignEnterpriseAccNo', EnterpriseAccNo);
     _DataStore_MembershipsCheckIsMemberScanAndPayStore.getProxy().setUrl(GetAPIurl() + '/Memberships/MembershipsCheckIsMemberScanAndPay');
-    _DataStore_MembershipsCheckIsMemberScanAndPayStore.load();
+   // _DataStore_MembershipsCheckIsMemberScanAndPayStore.load();
 
 
-
-
-    var task = Ext.create('Ext.util.DelayedTask', function () {
-        //Ext.getStore('MembershipsCheckIsMemberStore').getProxy().setExtraParams({
-        //    CampaignCode: QrCode,
-        //    SubscriberAccNo: GetCurrAyohaUserAccountNo(),
-        //    EnterpriseAccNo: EnterpriseAccNo
-        //});
-
-        //Ext.StoreMgr.get('MembershipsCheckIsMemberStore').load();
-
-        //var myStore = Ext.getStore('MembershipsCheckIsMemberStore');
-
-        var count = _DataStore_MembershipsCheckIsMemberScanAndPayStore.getCount();
+    _DataStore_MembershipsCheckIsMemberScanAndPayStore.load({
+        callback: function (records, operation, success) {
+            if (success && records.length > 0) {
+                var count = records.length;
 
         if (count >0) {
-            var modelRecord = _DataStore_MembershipsCheckIsMemberScanAndPayStore.getAt(0)
+
+            // var record = records[0]; // Access only the first record
+            // var planCode = record.get('PaymentPlanCode');
+           
+            var modelRecord =records[0];
             var SubscriberAccNo = modelRecord.get('SubscriberAccNo');
             var MembershipApprovalStatus = modelRecord.get('MembershipApprovalStatus');
             var MembershipCardCode = modelRecord.get('MembershipCardCode');
@@ -788,8 +788,7 @@ function FloatPanel_AyohaeWallet_ScanAndPay_Payment_ProcessQRCode(QrCode) {
 
 
 
-            console.log(EnterpriseName);
-            console.log(EnterpriseLogoPath);
+          
           
             FloatPanel_AyohaeWallet_ScanAndPay_PaymentShow(EnterpriseLogoPath, EnterpriseName);
             FloatPanel_AyohaeWallet_ScanAndPay_Payment_AyohaStoreSaleItemloadByEnterpriseAccNoItemCategoryStore(EnterpriseAccNo);
@@ -823,8 +822,94 @@ function FloatPanel_AyohaeWallet_ScanAndPay_Payment_ProcessQRCode(QrCode) {
             // FloatPanel_QrCodeScanner_ScanCampaignHide();
         }
         LoadingPanelHide();
+                LoadingPanelHide();
+            } else {
+                console.error('Failed to load store data or no record found.');
+                LoadingPanelHide();
+            }
+        }
     });
-    task.delay(1500);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // var task = Ext.create('Ext.util.DelayedTask', function () {
+      
+    //     var count = _DataStore_MembershipsCheckIsMemberScanAndPayStore.getCount();
+
+    //     if (count >0) {
+    //         var modelRecord = _DataStore_MembershipsCheckIsMemberScanAndPayStore.getAt(0)
+    //         var SubscriberAccNo = modelRecord.get('SubscriberAccNo');
+    //         var MembershipApprovalStatus = modelRecord.get('MembershipApprovalStatus');
+    //         var MembershipCardCode = modelRecord.get('MembershipCardCode');
+    //         var AccountName = modelRecord.get('AccountName');
+    //         var PhoneNo = modelRecord.get('PhoneNo');
+    //         var Email = modelRecord.get('Email');
+    //         var HigherPoint = modelRecord.get('HigherPoint');
+    //         var EnterpriseName = modelRecord.get('EnterprisesName');
+    //         var EnterpriseLogoPath = modelRecord.get('EnterpriseLogoPath');
+    //         var EnterpriseEmail = modelRecord.get('EnterpriseEmail');
+    //         var PICContactNo = modelRecord.get('PICContactNo');
+    //         globalFloatPanel_AyohaeWallet_ScanAndPay_Payment_AccountName = EnterpriseName;
+    //         globalFloatPanel_AyohaeWallet_ScanAndPay_Payment_AccountNameImg = EnterpriseLogoPath;
+    //         globalFloatPanel_AyohaeWallet_ScanAndPay_Payment_EnterpriseEmail = EnterpriseEmail;
+    //         globalFloatPanel_AyohaeWallet_ScanAndPay_Payment_ClientEmail = Email;
+    //       //  globalFloatPanel_AyohaeWallet_ScanAndPay_Payment_membershipCardCode = MembershipCardCode;
+
+
+
+          
+          
+    //         FloatPanel_AyohaeWallet_ScanAndPay_PaymentShow(EnterpriseLogoPath, EnterpriseName);
+    //         FloatPanel_AyohaeWallet_ScanAndPay_Payment_AyohaStoreSaleItemloadByEnterpriseAccNoItemCategoryStore(EnterpriseAccNo);
+    //         return
+
+    //     } else {
+
+    //         Swal.fire({
+    //             title: 'Ayoha Reward v 1.0',
+    //             text: "Hi,! You are not participated in this campaign.Press JOIN to get a membership card and join the reward!",
+    //             imageUrl: "resources/icons/infoPurple.png",
+    //             imageWidth: 400,
+    //             imageHeight: 230,
+    //             showCloseButton: true,
+    //             showCancelButton: false,
+    //             //  confirmButtonColor: '#3085d6',
+    //             confirmButtonColor: '#9932cc',
+    //             cancelButtonColor: '#d33',
+    //             confirmButtonText: 'JOIN',
+    //             footer: '<img src="resources/icons/Logo/AyohaLogofullOrange.png" width="100" height="70" alt="Company Name"/>'
+    //         }).then(function (result) {
+    //             if (result.isConfirmed) {
+    //                 localStorage.setItem("MembershipByMethod", "QRCode");
+    //                 // GetMembershipCardEnableClick_containerFloatPanel_MembershipCardList_UpgradeBottom()
+
+
+    //                 FloatPanel_RewardStoreMembershipCardShow_FromQrCode(EnterpriseAccNo, EnterpriseAccNo);
+    //             }
+    //         });
+    //         // FloatPanel_AyohaeWallet_IconShow();
+    //         // FloatPanel_QrCodeScanner_ScanCampaignHide();
+    //     }
+    //     LoadingPanelHide();
+    // });
+    // task.delay(1500);
 
 }
 
@@ -839,72 +924,147 @@ function FloatPanel_AyohaeWallet_ScanAndPay_Payment_AyohaStoreSaleItemloadByEnte
     _DataStore_AyohaStoreSaleItemloadByEnterpriseAccNoItemCategoryStore.getProxy().setExtraParam('ItemCategoryCode', 'firstload');
     _DataStore_AyohaStoreSaleItemloadByEnterpriseAccNoItemCategoryStore.getProxy().setExtraParam('SubscriberAccNo', GetCurrAyohaUserAccountNo());
     _DataStore_AyohaStoreSaleItemloadByEnterpriseAccNoItemCategoryStore.getProxy().setUrl(GetAPIurl() + '/AyohaStore_SaleItem/AyohaStoreSaleItemloadByEnterpriseAccNoItemCategory');
-    _DataStore_AyohaStoreSaleItemloadByEnterpriseAccNoItemCategoryStore.load();
+  //  _DataStore_AyohaStoreSaleItemloadByEnterpriseAccNoItemCategoryStore.load();
 
   
-    var task = Ext.create('Ext.util.DelayedTask', function () {
 
-        var Count = _DataStore_AyohaStoreSaleItemloadByEnterpriseAccNoItemCategoryStore.getCount();
-        var Store = _DataStore_AyohaStoreSaleItemloadByEnterpriseAccNoItemCategoryStore.getAt(0);
-
-        if (Count > 0) {
-            globalFloatPanelAyohaStore_MembershipCardCount = parseInt(Store.get('AyohaUser_MembershipCardCount'));
-            globalFloatPanelAyohaStore_SaleItemCode = Store.get('SaleItemCode');
-            globalFloatPanelAyohaStore_MembershipCardImage = Store.get('MembershipCardImage');
-            globalFloatPanelAyohaStore_MembershipCardName = Store.get('MembershipCardName');
-            globalFloatPanelAyohaStore_AyohaUser_MembershipCardUsedCount = parseInt(Store.get('AyohaUser_MembershipCardUsedCount'));
-            globalFloatPanelAyohaStore_AyohaUser_MembershipCardCode = Store.get('MembershipCardCode');
-            globalFloatPanel_AyohaeWallet_ScanAndPay_Payment_MerchantPoint = Store.get('MerchantPoint');
-
-           // Ext.getCmp('htmlFloatPanel_AyohaStore_TotalProductCount').setHtml('<div style="color:black;text-align: center;font-size:16px;width:100%;font-weight:bold;margin:0px 0px 0px 0px;">' + Count + '</div>');
-            if (globalFloatPanelAyohaStore_MembershipCardCount >= 2 && globalFloatPanelAyohaStore_AyohaUser_MembershipCardUsedCount == 0) {
-                globalFloatPanelAyohaStore_CheckMembershipCardIsUsedStatus = "Not Select Any Card";
-                //Ext.getCmp('btn_FloatPanel_AyohaStoreMasterHeader_MembershipCardUsed').setHtml('<img class="blink_me" src="resources/icons/MembershipCardDetail.png" style="width:23px;height:20px;margin:0px 0px 0px -2px;border-radius:5px 5px 5px 5px;" alt="Company Name">');
-                // Ext.getCmp('btn_FloatPanel_AyohaStoreMasterHeader_MembershipCardUsed_Txt').setHtml('<div style="color:black;text-align: left;font-size:10px;width:100%;font-weight:bold;margin:0px 0px 0px 0px;color:black;">No Member Card!</div><br><div style="color:black;text-align: left;font-size:8px;width:100%;font-weight:normal;margin:-34px 0px 0px 0px;color:black;">Member Card Used</div>');
-                Ext.getCmp('btn_FloatPanel_AyohaeWallet_ScanAndPay_Payment_MembershipCardUsed').setHtml('<img  src="resources/icons/MembershipCardDetail.png" style="width:60px;height:40px;margin:0px 0px 0px -2px;border-radius:5px 5px 5px 5px;" alt="Company Name">');
-                Ext.getCmp('btn_FloatPanel_AyohaeWallet_ScanAndPay_Payment_MembershipCardUsed_Txt').setHtml('<div  style="color:black;text-align: left;font-size:12px;width:100%;font-weight:bold;margin:-8px 0px 0px 0px;color:black;">No Member Card!</div><br><div  style="color:black;text-align: left;font-size:10px;width:100%;font-weight:normal;margin:-30px 0px 0px 0px;color:black;">' + globalFloatPanel_AyohaeWallet_ScanAndPay_Payment_MerchantPoint + '</div>');
-
-
+    _DataStore_AyohaStoreSaleItemloadByEnterpriseAccNoItemCategoryStore.load({
+        callback: function (records, operation, success) {
+            if (success && records.length > 0) {
+                console.log('Store loaded successfully, total records: ' + records.length);
+                var Count = records.length;
+                var Store = records[0];
+                if (Count > 0) {
+                    globalFloatPanelAyohaStore_MembershipCardCount = parseInt(Store.get('AyohaUser_MembershipCardCount'));
+                    globalFloatPanelAyohaStore_SaleItemCode = Store.get('SaleItemCode');
+                    globalFloatPanelAyohaStore_MembershipCardImage = Store.get('MembershipCardImage');
+                    globalFloatPanelAyohaStore_MembershipCardName = Store.get('MembershipCardName');
+                    globalFloatPanelAyohaStore_AyohaUser_MembershipCardUsedCount = parseInt(Store.get('AyohaUser_MembershipCardUsedCount'));
+                    globalFloatPanelAyohaStore_AyohaUser_MembershipCardCode = Store.get('MembershipCardCode');
+                    globalFloatPanel_AyohaeWallet_ScanAndPay_Payment_MerchantPoint = Store.get('MerchantPoint');
+        
+                   // Ext.getCmp('htmlFloatPanel_AyohaStore_TotalProductCount').setHtml('<div style="color:black;text-align: center;font-size:16px;width:100%;font-weight:bold;margin:0px 0px 0px 0px;">' + Count + '</div>');
+                    if (globalFloatPanelAyohaStore_MembershipCardCount >= 2 && globalFloatPanelAyohaStore_AyohaUser_MembershipCardUsedCount == 0) {
+                        globalFloatPanelAyohaStore_CheckMembershipCardIsUsedStatus = "Not Select Any Card";
+                        //Ext.getCmp('btn_FloatPanel_AyohaStoreMasterHeader_MembershipCardUsed').setHtml('<img class="blink_me" src="resources/icons/MembershipCardDetail.png" style="width:23px;height:20px;margin:0px 0px 0px -2px;border-radius:5px 5px 5px 5px;" alt="Company Name">');
+                        // Ext.getCmp('btn_FloatPanel_AyohaStoreMasterHeader_MembershipCardUsed_Txt').setHtml('<div style="color:black;text-align: left;font-size:10px;width:100%;font-weight:bold;margin:0px 0px 0px 0px;color:black;">No Member Card!</div><br><div style="color:black;text-align: left;font-size:8px;width:100%;font-weight:normal;margin:-34px 0px 0px 0px;color:black;">Member Card Used</div>');
+                        Ext.getCmp('btn_FloatPanel_AyohaeWallet_ScanAndPay_Payment_MembershipCardUsed').setHtml('<img  src="resources/icons/MembershipCardDetail.png" style="width:60px;height:40px;margin:0px 0px 0px -2px;border-radius:5px 5px 5px 5px;" alt="Company Name">');
+                        Ext.getCmp('btn_FloatPanel_AyohaeWallet_ScanAndPay_Payment_MembershipCardUsed_Txt').setHtml('<div  style="color:black;text-align: left;font-size:12px;width:100%;font-weight:bold;margin:-8px 0px 0px 0px;color:black;">No Member Card!</div><br><div  style="color:black;text-align: left;font-size:10px;width:100%;font-weight:normal;margin:-30px 0px 0px 0px;color:black;">' + globalFloatPanel_AyohaeWallet_ScanAndPay_Payment_MerchantPoint + '</div>');
+        
+        
+                    }
+                    if (globalFloatPanelAyohaStore_MembershipCardCount >= 1 && globalFloatPanelAyohaStore_AyohaUser_MembershipCardUsedCount == 1) {
+                        globalFloatPanelAyohaStore_CheckMembershipCardIsUsedStatus = "Has Select One Card";
+                        //Ext.getCmp('btn_FloatPanel_AyohaStoreMasterHeader_MembershipCardUsed').setHtml('<img src="' + globalFloatPanelAyohaStore_MembershipCardImage + '" style="width:23px;height:20px;margin:0px 0px 0px -2px;border-radius:5px 5px 5px 5px;" alt="Company Name">');
+                        ////FloatPanel_AyohaStore_MembershipCardBeingUsed_FloatingShow(globalFloatPanelAyohaStore_MembershipCardImage);
+                        //Ext.getCmp('btn_FloatPanel_AyohaStoreMasterHeader_MembershipCardUsed_Txt').setHtml('<div style="color:black;text-align: left;font-size:10px;width:100%;font-weight:bold;margin:0px 0px 0px 0px;color:black;">' + globalFloatPanelAyohaStore_MembershipCardName + '</div><br><div style="color:black;text-align: left;font-size:8px;width:100%;font-weight:normal;margin:-34px 0px 0px 0px;color:black;">Member Card Used</div>');
+                        Ext.getCmp('btn_FloatPanel_AyohaeWallet_ScanAndPay_Payment_MembershipCardUsed').setHtml('<div ><img src="' + globalFloatPanelAyohaStore_MembershipCardImage + '" style="width:60px;height:40px;margin:0px 0px 0px -2px;border-radius:5px 5px 5px 5px;" alt="Company Name"></div>');
+                        //FloatPanel_AyohaStore_MembershipCardBeingUsed_FloatingShow(globalFloatPanelAyohaStore_MembershipCardImage);
+                        Ext.getCmp('btn_FloatPanel_AyohaeWallet_ScanAndPay_Payment_MembershipCardUsed_Txt').setHtml('<div style="color:black;text-align: left;font-size:12px;width:100%;font-weight:bold;margin:-8px 0px 0px 0px;color:black;">' + globalFloatPanelAyohaStore_MembershipCardName + '</div><br><div  style="color:black;text-align: left;font-size:12px;width:100%;font-weight:bold;margin:-30px 0px 0px 0px;color:black;">RM ' + globalFloatPanel_AyohaeWallet_ScanAndPay_Payment_MerchantPoint + ' = 1 Point</div>');
+        
+                    }
+                    if (globalFloatPanelAyohaStore_MembershipCardCount == 1 && globalFloatPanelAyohaStore_AyohaUser_MembershipCardUsedCount == 0) {
+                        globalFloatPanelAyohaStore_CheckMembershipCardIsUsedStatus = "DefaultCard";
+                        //Ext.getCmp('btn_FloatPanel_AyohaStoreMasterHeader_MembershipCardUsed').setHtml('<img src="' + globalFloatPanelAyohaStore_MembershipCardImage + '" style="width:23px;height:20px;margin:0px 0px 0px -2px;border-radius:5px 5px 5px 5px;" alt="Company Name">');
+                        ////FloatPanel_AyohaStore_MembershipCardBeingUsed_FloatingShow(globalFloatPanelAyohaStore_MembershipCardImage);
+                        //Ext.getCmp('btn_FloatPanel_AyohaStoreMasterHeader_MembershipCardUsed_Txt').setHtml('<div style="color:black;text-align: left;font-size:10px;width:100%;font-weight:bold;margin:0px 0px 0px 0px;color:black;">' + globalFloatPanelAyohaStore_MembershipCardName + '</div><br><div style="color:black;text-align: left;font-size:8px;width:100%;font-weight:normal;margin:-34px 0px 0px 0px;color:black;">Member Card Used</div>');
+                        Ext.getCmp('btn_FloatPanel_AyohaeWallet_ScanAndPay_Payment_MembershipCardUsed').setHtml('<img  src="' + globalFloatPanelAyohaStore_MembershipCardImage + '" style="width:60px;height:40px;margin:0px 0px 0px -2px;border-radius:5px 5px 5px 5px;" alt="Company Name">');
+                        //FloatPanel_AyohaStore_MembershipCardBeingUsed_FloatingShow(globalFloatPanelAyohaStore_MembershipCardImage);
+                        Ext.getCmp('btn_FloatPanel_AyohaeWallet_ScanAndPay_Payment_MembershipCardUsed_Txt').setHtml('<div  style="color:black;text-align: left;font-size:12px;width:100%;font-weight:bold;margin:-8px 0px 0px 0px;color:black;">' + globalFloatPanelAyohaStore_MembershipCardName + '</div><br><div  style="color:black;text-align: left;font-size:12px;width:100%;font-weight:bold;margin:-30px 0px 0px 0px;color:black;">RM ' + globalFloatPanel_AyohaeWallet_ScanAndPay_Payment_MerchantPoint + '= 1 Point</div>');
+        
+        
+                    }
+                    if (globalFloatPanelAyohaStore_MembershipCardCount == 0 && globalFloatPanelAyohaStore_AyohaUser_MembershipCardUsedCount == 0) {
+                        globalFloatPanelAyohaStore_CheckMembershipCardIsUsedStatus = "NotMember_NoMembershipCard";
+                        //Ext.getCmp('btn_FloatPanel_AyohaStoreMasterHeader_MembershipCardUsed').setHtml('<img class="blink_me" src="resources/icons/CancelMembershipCard.png" style="width:23px;height:20px;margin:0px 0px 0px -2px;border-radius:5px 5px 5px 5px;" alt="Company Name">');
+                        //Ext.getCmp('btn_FloatPanel_AyohaStoreMasterHeader_MembershipCardUsed_Txt').setHtml('<div style="color:black;text-align: left;font-size:10px;width:100%;font-weight:bold;margin:0px 0px 0px 0px;color:black;">No Card!</div><br><div style="color:black;text-align: left;font-size:8px;width:100%;font-weight:normal;margin:-34px 0px 0px 0px;color:black;">Member Card Used</div>');
+                        Ext.getCmp('btn_FloatPanel_AyohaeWallet_ScanAndPay_Payment_MembershipCardUsed').setHtml('<img  src="resources/icons/MembershipCardDetail.png" style="width:50px;height:40px;margin:0px 0px 0px -2px;border-radius:5px 5px 5px 5px;" alt="Company Name">');
+                        Ext.getCmp('btn_FloatPanel_AyohaeWallet_ScanAndPay_Payment_MembershipCardUsed_Txt').setHtml('<div  style="color:black;text-align: left;font-size:12px;width:100%;font-weight:bold;margin:-8px 0px 0px 0px;color:black;">No Membership Card!</div><br><div  style="color:black;text-align: left;font-size:10px;width:100%;font-weight:normal;margin:-34px 0px 0px 0px;color:red;">You need a membership card to continue purchasing</div>');
+                        Ext.getCmp('btn_FloatPanel_AyohaeWallet_ScanAndPay_Payment_MembershipCardUsed_Txt').setWidth(245);
+                    }
+        
+                }
+        
+               
+                LoadingPanelHide();
+               
+            } else {
+                console.error('Failed to load store data or no record found.');
+                LoadingPanelHide();
             }
-            if (globalFloatPanelAyohaStore_MembershipCardCount >= 1 && globalFloatPanelAyohaStore_AyohaUser_MembershipCardUsedCount == 1) {
-                globalFloatPanelAyohaStore_CheckMembershipCardIsUsedStatus = "Has Select One Card";
-                //Ext.getCmp('btn_FloatPanel_AyohaStoreMasterHeader_MembershipCardUsed').setHtml('<img src="' + globalFloatPanelAyohaStore_MembershipCardImage + '" style="width:23px;height:20px;margin:0px 0px 0px -2px;border-radius:5px 5px 5px 5px;" alt="Company Name">');
-                ////FloatPanel_AyohaStore_MembershipCardBeingUsed_FloatingShow(globalFloatPanelAyohaStore_MembershipCardImage);
-                //Ext.getCmp('btn_FloatPanel_AyohaStoreMasterHeader_MembershipCardUsed_Txt').setHtml('<div style="color:black;text-align: left;font-size:10px;width:100%;font-weight:bold;margin:0px 0px 0px 0px;color:black;">' + globalFloatPanelAyohaStore_MembershipCardName + '</div><br><div style="color:black;text-align: left;font-size:8px;width:100%;font-weight:normal;margin:-34px 0px 0px 0px;color:black;">Member Card Used</div>');
-                Ext.getCmp('btn_FloatPanel_AyohaeWallet_ScanAndPay_Payment_MembershipCardUsed').setHtml('<div ><img src="' + globalFloatPanelAyohaStore_MembershipCardImage + '" style="width:60px;height:40px;margin:0px 0px 0px -2px;border-radius:5px 5px 5px 5px;" alt="Company Name"></div>');
-                //FloatPanel_AyohaStore_MembershipCardBeingUsed_FloatingShow(globalFloatPanelAyohaStore_MembershipCardImage);
-                Ext.getCmp('btn_FloatPanel_AyohaeWallet_ScanAndPay_Payment_MembershipCardUsed_Txt').setHtml('<div style="color:black;text-align: left;font-size:12px;width:100%;font-weight:bold;margin:-8px 0px 0px 0px;color:black;">' + globalFloatPanelAyohaStore_MembershipCardName + '</div><br><div  style="color:black;text-align: left;font-size:12px;width:100%;font-weight:bold;margin:-30px 0px 0px 0px;color:black;">RM ' + globalFloatPanel_AyohaeWallet_ScanAndPay_Payment_MerchantPoint + ' = 1 Point</div>');
-
-            }
-            if (globalFloatPanelAyohaStore_MembershipCardCount == 1 && globalFloatPanelAyohaStore_AyohaUser_MembershipCardUsedCount == 0) {
-                globalFloatPanelAyohaStore_CheckMembershipCardIsUsedStatus = "DefaultCard";
-                //Ext.getCmp('btn_FloatPanel_AyohaStoreMasterHeader_MembershipCardUsed').setHtml('<img src="' + globalFloatPanelAyohaStore_MembershipCardImage + '" style="width:23px;height:20px;margin:0px 0px 0px -2px;border-radius:5px 5px 5px 5px;" alt="Company Name">');
-                ////FloatPanel_AyohaStore_MembershipCardBeingUsed_FloatingShow(globalFloatPanelAyohaStore_MembershipCardImage);
-                //Ext.getCmp('btn_FloatPanel_AyohaStoreMasterHeader_MembershipCardUsed_Txt').setHtml('<div style="color:black;text-align: left;font-size:10px;width:100%;font-weight:bold;margin:0px 0px 0px 0px;color:black;">' + globalFloatPanelAyohaStore_MembershipCardName + '</div><br><div style="color:black;text-align: left;font-size:8px;width:100%;font-weight:normal;margin:-34px 0px 0px 0px;color:black;">Member Card Used</div>');
-                Ext.getCmp('btn_FloatPanel_AyohaeWallet_ScanAndPay_Payment_MembershipCardUsed').setHtml('<img  src="' + globalFloatPanelAyohaStore_MembershipCardImage + '" style="width:60px;height:40px;margin:0px 0px 0px -2px;border-radius:5px 5px 5px 5px;" alt="Company Name">');
-                //FloatPanel_AyohaStore_MembershipCardBeingUsed_FloatingShow(globalFloatPanelAyohaStore_MembershipCardImage);
-                Ext.getCmp('btn_FloatPanel_AyohaeWallet_ScanAndPay_Payment_MembershipCardUsed_Txt').setHtml('<div  style="color:black;text-align: left;font-size:12px;width:100%;font-weight:bold;margin:-8px 0px 0px 0px;color:black;">' + globalFloatPanelAyohaStore_MembershipCardName + '</div><br><div  style="color:black;text-align: left;font-size:12px;width:100%;font-weight:bold;margin:-30px 0px 0px 0px;color:black;">RM ' + globalFloatPanel_AyohaeWallet_ScanAndPay_Payment_MerchantPoint + '= 1 Point</div>');
-
-
-            }
-            if (globalFloatPanelAyohaStore_MembershipCardCount == 0 && globalFloatPanelAyohaStore_AyohaUser_MembershipCardUsedCount == 0) {
-                globalFloatPanelAyohaStore_CheckMembershipCardIsUsedStatus = "NotMember_NoMembershipCard";
-                //Ext.getCmp('btn_FloatPanel_AyohaStoreMasterHeader_MembershipCardUsed').setHtml('<img class="blink_me" src="resources/icons/CancelMembershipCard.png" style="width:23px;height:20px;margin:0px 0px 0px -2px;border-radius:5px 5px 5px 5px;" alt="Company Name">');
-                //Ext.getCmp('btn_FloatPanel_AyohaStoreMasterHeader_MembershipCardUsed_Txt').setHtml('<div style="color:black;text-align: left;font-size:10px;width:100%;font-weight:bold;margin:0px 0px 0px 0px;color:black;">No Card!</div><br><div style="color:black;text-align: left;font-size:8px;width:100%;font-weight:normal;margin:-34px 0px 0px 0px;color:black;">Member Card Used</div>');
-                Ext.getCmp('btn_FloatPanel_AyohaeWallet_ScanAndPay_Payment_MembershipCardUsed').setHtml('<img  src="resources/icons/MembershipCardDetail.png" style="width:50px;height:40px;margin:0px 0px 0px -2px;border-radius:5px 5px 5px 5px;" alt="Company Name">');
-                Ext.getCmp('btn_FloatPanel_AyohaeWallet_ScanAndPay_Payment_MembershipCardUsed_Txt').setHtml('<div  style="color:black;text-align: left;font-size:12px;width:100%;font-weight:bold;margin:-8px 0px 0px 0px;color:black;">No Membership Card!</div><br><div  style="color:black;text-align: left;font-size:10px;width:100%;font-weight:normal;margin:-34px 0px 0px 0px;color:red;">You need a membership card to continue purchasing</div>');
-                Ext.getCmp('btn_FloatPanel_AyohaeWallet_ScanAndPay_Payment_MembershipCardUsed_Txt').setWidth(245);
-            }
-
         }
+    });
+
+
+
+
+
+
+
+
+    // var task = Ext.create('Ext.util.DelayedTask', function () {
+
+    //     var Count = _DataStore_AyohaStoreSaleItemloadByEnterpriseAccNoItemCategoryStore.getCount();
+    //     var Store = _DataStore_AyohaStoreSaleItemloadByEnterpriseAccNoItemCategoryStore.getAt(0);
+
+    //     if (Count > 0) {
+    //         globalFloatPanelAyohaStore_MembershipCardCount = parseInt(Store.get('AyohaUser_MembershipCardCount'));
+    //         globalFloatPanelAyohaStore_SaleItemCode = Store.get('SaleItemCode');
+    //         globalFloatPanelAyohaStore_MembershipCardImage = Store.get('MembershipCardImage');
+    //         globalFloatPanelAyohaStore_MembershipCardName = Store.get('MembershipCardName');
+    //         globalFloatPanelAyohaStore_AyohaUser_MembershipCardUsedCount = parseInt(Store.get('AyohaUser_MembershipCardUsedCount'));
+    //         globalFloatPanelAyohaStore_AyohaUser_MembershipCardCode = Store.get('MembershipCardCode');
+    //         globalFloatPanel_AyohaeWallet_ScanAndPay_Payment_MerchantPoint = Store.get('MerchantPoint');
+
+    //        // Ext.getCmp('htmlFloatPanel_AyohaStore_TotalProductCount').setHtml('<div style="color:black;text-align: center;font-size:16px;width:100%;font-weight:bold;margin:0px 0px 0px 0px;">' + Count + '</div>');
+    //         if (globalFloatPanelAyohaStore_MembershipCardCount >= 2 && globalFloatPanelAyohaStore_AyohaUser_MembershipCardUsedCount == 0) {
+    //             globalFloatPanelAyohaStore_CheckMembershipCardIsUsedStatus = "Not Select Any Card";
+    //             //Ext.getCmp('btn_FloatPanel_AyohaStoreMasterHeader_MembershipCardUsed').setHtml('<img class="blink_me" src="resources/icons/MembershipCardDetail.png" style="width:23px;height:20px;margin:0px 0px 0px -2px;border-radius:5px 5px 5px 5px;" alt="Company Name">');
+    //             // Ext.getCmp('btn_FloatPanel_AyohaStoreMasterHeader_MembershipCardUsed_Txt').setHtml('<div style="color:black;text-align: left;font-size:10px;width:100%;font-weight:bold;margin:0px 0px 0px 0px;color:black;">No Member Card!</div><br><div style="color:black;text-align: left;font-size:8px;width:100%;font-weight:normal;margin:-34px 0px 0px 0px;color:black;">Member Card Used</div>');
+    //             Ext.getCmp('btn_FloatPanel_AyohaeWallet_ScanAndPay_Payment_MembershipCardUsed').setHtml('<img  src="resources/icons/MembershipCardDetail.png" style="width:60px;height:40px;margin:0px 0px 0px -2px;border-radius:5px 5px 5px 5px;" alt="Company Name">');
+    //             Ext.getCmp('btn_FloatPanel_AyohaeWallet_ScanAndPay_Payment_MembershipCardUsed_Txt').setHtml('<div  style="color:black;text-align: left;font-size:12px;width:100%;font-weight:bold;margin:-8px 0px 0px 0px;color:black;">No Member Card!</div><br><div  style="color:black;text-align: left;font-size:10px;width:100%;font-weight:normal;margin:-30px 0px 0px 0px;color:black;">' + globalFloatPanel_AyohaeWallet_ScanAndPay_Payment_MerchantPoint + '</div>');
+
+
+    //         }
+    //         if (globalFloatPanelAyohaStore_MembershipCardCount >= 1 && globalFloatPanelAyohaStore_AyohaUser_MembershipCardUsedCount == 1) {
+    //             globalFloatPanelAyohaStore_CheckMembershipCardIsUsedStatus = "Has Select One Card";
+    //             //Ext.getCmp('btn_FloatPanel_AyohaStoreMasterHeader_MembershipCardUsed').setHtml('<img src="' + globalFloatPanelAyohaStore_MembershipCardImage + '" style="width:23px;height:20px;margin:0px 0px 0px -2px;border-radius:5px 5px 5px 5px;" alt="Company Name">');
+    //             ////FloatPanel_AyohaStore_MembershipCardBeingUsed_FloatingShow(globalFloatPanelAyohaStore_MembershipCardImage);
+    //             //Ext.getCmp('btn_FloatPanel_AyohaStoreMasterHeader_MembershipCardUsed_Txt').setHtml('<div style="color:black;text-align: left;font-size:10px;width:100%;font-weight:bold;margin:0px 0px 0px 0px;color:black;">' + globalFloatPanelAyohaStore_MembershipCardName + '</div><br><div style="color:black;text-align: left;font-size:8px;width:100%;font-weight:normal;margin:-34px 0px 0px 0px;color:black;">Member Card Used</div>');
+    //             Ext.getCmp('btn_FloatPanel_AyohaeWallet_ScanAndPay_Payment_MembershipCardUsed').setHtml('<div ><img src="' + globalFloatPanelAyohaStore_MembershipCardImage + '" style="width:60px;height:40px;margin:0px 0px 0px -2px;border-radius:5px 5px 5px 5px;" alt="Company Name"></div>');
+    //             //FloatPanel_AyohaStore_MembershipCardBeingUsed_FloatingShow(globalFloatPanelAyohaStore_MembershipCardImage);
+    //             Ext.getCmp('btn_FloatPanel_AyohaeWallet_ScanAndPay_Payment_MembershipCardUsed_Txt').setHtml('<div style="color:black;text-align: left;font-size:12px;width:100%;font-weight:bold;margin:-8px 0px 0px 0px;color:black;">' + globalFloatPanelAyohaStore_MembershipCardName + '</div><br><div  style="color:black;text-align: left;font-size:12px;width:100%;font-weight:bold;margin:-30px 0px 0px 0px;color:black;">RM ' + globalFloatPanel_AyohaeWallet_ScanAndPay_Payment_MerchantPoint + ' = 1 Point</div>');
+
+    //         }
+    //         if (globalFloatPanelAyohaStore_MembershipCardCount == 1 && globalFloatPanelAyohaStore_AyohaUser_MembershipCardUsedCount == 0) {
+    //             globalFloatPanelAyohaStore_CheckMembershipCardIsUsedStatus = "DefaultCard";
+    //             //Ext.getCmp('btn_FloatPanel_AyohaStoreMasterHeader_MembershipCardUsed').setHtml('<img src="' + globalFloatPanelAyohaStore_MembershipCardImage + '" style="width:23px;height:20px;margin:0px 0px 0px -2px;border-radius:5px 5px 5px 5px;" alt="Company Name">');
+    //             ////FloatPanel_AyohaStore_MembershipCardBeingUsed_FloatingShow(globalFloatPanelAyohaStore_MembershipCardImage);
+    //             //Ext.getCmp('btn_FloatPanel_AyohaStoreMasterHeader_MembershipCardUsed_Txt').setHtml('<div style="color:black;text-align: left;font-size:10px;width:100%;font-weight:bold;margin:0px 0px 0px 0px;color:black;">' + globalFloatPanelAyohaStore_MembershipCardName + '</div><br><div style="color:black;text-align: left;font-size:8px;width:100%;font-weight:normal;margin:-34px 0px 0px 0px;color:black;">Member Card Used</div>');
+    //             Ext.getCmp('btn_FloatPanel_AyohaeWallet_ScanAndPay_Payment_MembershipCardUsed').setHtml('<img  src="' + globalFloatPanelAyohaStore_MembershipCardImage + '" style="width:60px;height:40px;margin:0px 0px 0px -2px;border-radius:5px 5px 5px 5px;" alt="Company Name">');
+    //             //FloatPanel_AyohaStore_MembershipCardBeingUsed_FloatingShow(globalFloatPanelAyohaStore_MembershipCardImage);
+    //             Ext.getCmp('btn_FloatPanel_AyohaeWallet_ScanAndPay_Payment_MembershipCardUsed_Txt').setHtml('<div  style="color:black;text-align: left;font-size:12px;width:100%;font-weight:bold;margin:-8px 0px 0px 0px;color:black;">' + globalFloatPanelAyohaStore_MembershipCardName + '</div><br><div  style="color:black;text-align: left;font-size:12px;width:100%;font-weight:bold;margin:-30px 0px 0px 0px;color:black;">RM ' + globalFloatPanel_AyohaeWallet_ScanAndPay_Payment_MerchantPoint + '= 1 Point</div>');
+
+
+    //         }
+    //         if (globalFloatPanelAyohaStore_MembershipCardCount == 0 && globalFloatPanelAyohaStore_AyohaUser_MembershipCardUsedCount == 0) {
+    //             globalFloatPanelAyohaStore_CheckMembershipCardIsUsedStatus = "NotMember_NoMembershipCard";
+    //             //Ext.getCmp('btn_FloatPanel_AyohaStoreMasterHeader_MembershipCardUsed').setHtml('<img class="blink_me" src="resources/icons/CancelMembershipCard.png" style="width:23px;height:20px;margin:0px 0px 0px -2px;border-radius:5px 5px 5px 5px;" alt="Company Name">');
+    //             //Ext.getCmp('btn_FloatPanel_AyohaStoreMasterHeader_MembershipCardUsed_Txt').setHtml('<div style="color:black;text-align: left;font-size:10px;width:100%;font-weight:bold;margin:0px 0px 0px 0px;color:black;">No Card!</div><br><div style="color:black;text-align: left;font-size:8px;width:100%;font-weight:normal;margin:-34px 0px 0px 0px;color:black;">Member Card Used</div>');
+    //             Ext.getCmp('btn_FloatPanel_AyohaeWallet_ScanAndPay_Payment_MembershipCardUsed').setHtml('<img  src="resources/icons/MembershipCardDetail.png" style="width:50px;height:40px;margin:0px 0px 0px -2px;border-radius:5px 5px 5px 5px;" alt="Company Name">');
+    //             Ext.getCmp('btn_FloatPanel_AyohaeWallet_ScanAndPay_Payment_MembershipCardUsed_Txt').setHtml('<div  style="color:black;text-align: left;font-size:12px;width:100%;font-weight:bold;margin:-8px 0px 0px 0px;color:black;">No Membership Card!</div><br><div  style="color:black;text-align: left;font-size:10px;width:100%;font-weight:normal;margin:-34px 0px 0px 0px;color:red;">You need a membership card to continue purchasing</div>');
+    //             Ext.getCmp('btn_FloatPanel_AyohaeWallet_ScanAndPay_Payment_MembershipCardUsed_Txt').setWidth(245);
+    //         }
+
+    //     }
 
        
-        LoadingPanelHide();
-    });
-    task.delay(1000);
+    //     LoadingPanelHide();
+    // });
+    // task.delay(1000);
 
 
-    Ext.Viewport.setMasked(false);
+    //Ext.Viewport.setMasked(false);
 }
 
 

@@ -354,9 +354,11 @@ function AyohaMerchantReview() {
                                           items: [
 
                                                {
-                                                   margin: '-30 0 0 -37',
-                                                   html: '<div id="barchartAyohaMerchanReview" style="width: 300px; height: 140px;"></div>'
-                                               },
+                                                  // margin: '-30 0 0 -37',
+                                                   margin: '-10 0 0 0',
+                                                  // html: '<div id="barchartAyohaMerchanReview" style="width: 300px; height: 140px;"></div>'
+                                             html:'<canvas id="barchartAyohaMerchanReview" width="200" height="140"></canvas>'
+                                                },
 
                                           ]
 
@@ -514,7 +516,8 @@ function AyohaMerchantReview() {
                                         width: '100%',
                                         // height: '98%',
                                         // flex: 1,
-                                        store: 'AyohaMerchantReviewLoadByEnterpriseAccNoStore',
+                                       // store: 'AyohaMerchantReviewLoadByEnterpriseAccNoStore',
+                                        store:_DataStore_AyohaMerchantReviewLoadByEnterpriseAccNoStore,
                                         id: 'AyohaMerchantReviewListID',
                                         mode: 'SINGLE',
                                         // width: '100%',
@@ -882,7 +885,7 @@ function AyohaMerchantReviewAdjustHeight() {
 
 }
 
-var _DataStore_AyohaMerchantReviewLoadByEnterpriseAccNoStore;
+
 
 function AyohaMerchantReviewHide() {
     if (isAyohaMerchantReviewOpen == "Y") {
@@ -923,26 +926,48 @@ var globalAyohaMerchantReview_ItemCodeReview;
 
 function AyohaMerchantReview_AyohaMerchantReviewLoadByEnterpriseAccNoStore() {
 
-    Ext.getStore('AyohaMerchantReviewLoadByEnterpriseAccNoStore').getProxy().setExtraParams({
-        EnterpriseAccNo: globalEnterpriseAccNo_AyohaMerchantReview,
-        ItemCodeReview: 'AyohaStoreReview'
+//alert(globalEnterpriseAccNo_AyohaMerchantReview);
+    _DataStore_AyohaMerchantReviewLoadByEnterpriseAccNoStore.getProxy().setExtraParam('EnterpriseAccNo', globalEnterpriseAccNo_AyohaMerchantReview);
+    _DataStore_AyohaMerchantReviewLoadByEnterpriseAccNoStore.getProxy().setExtraParam('ItemCodeReview', 'AyohaStoreReview');
+    _DataStore_AyohaMerchantReviewLoadByEnterpriseAccNoStore.getProxy().setUrl(GetAPIurl() + '/AyohaMerchantReview/AyohaMerchantReviewLoadByEnterpriseAccNo');
+    
+    _DataStore_AyohaMerchantReviewLoadByEnterpriseAccNoStore.load({
+        callback: function (records, operation, success) {
+            if (success && records.length > 0) {
+               // alert('Store loaded successfully, total records: ' + records.length);
+    
+                AyohaMerchantReview_AyohaMerchantReview_CalculateRating();
+                LoadingPanelHide();
+            } else {
+                alert('Failed to load store data or no record found.');
+                LoadingPanelHide();
+            }
+        }
     });
-    Ext.StoreMgr.get('AyohaMerchantReviewLoadByEnterpriseAccNoStore').load();
-    var task = Ext.create('Ext.util.DelayedTask', function () {
-        Ext.getStore('AyohaMerchantReviewLoadByEnterpriseAccNoStore').getProxy().setExtraParams({
-            EnterpriseAccNo: globalEnterpriseAccNo_AyohaMerchantReview,
-            ItemCodeReview: 'AyohaStoreReview'
-        });
-        _DataStore_AyohaMerchantReviewLoadByEnterpriseAccNoStore=Ext.StoreMgr.get('AyohaMerchantReviewLoadByEnterpriseAccNoStore').load();
-        var myStore = Ext.getStore('AyohaMerchantReviewLoadByEnterpriseAccNoStore');
-        count = myStore.getCount();
-        AyohaMerchantReview_AyohaMerchantReview_CalculateRating();
-        Ext.Viewport.setMasked(false);
+
+
+
+
+    // Ext.getStore('AyohaMerchantReviewLoadByEnterpriseAccNoStore').getProxy().setExtraParams({
+    //     EnterpriseAccNo: globalEnterpriseAccNo_AyohaMerchantReview,
+    //     ItemCodeReview: 'AyohaStoreReview'
+    // });
+    // Ext.StoreMgr.get('AyohaMerchantReviewLoadByEnterpriseAccNoStore').load();
+    // var task = Ext.create('Ext.util.DelayedTask', function () {
+    //     Ext.getStore('AyohaMerchantReviewLoadByEnterpriseAccNoStore').getProxy().setExtraParams({
+    //         EnterpriseAccNo: globalEnterpriseAccNo_AyohaMerchantReview,
+    //         ItemCodeReview: 'AyohaStoreReview'
+    //     });
+    //     _DataStore_AyohaMerchantReviewLoadByEnterpriseAccNoStore=Ext.StoreMgr.get('AyohaMerchantReviewLoadByEnterpriseAccNoStore').load();
+    //     var myStore = Ext.getStore('AyohaMerchantReviewLoadByEnterpriseAccNoStore');
+    //     count = myStore.getCount();
+    //     AyohaMerchantReview_AyohaMerchantReview_CalculateRating();
+    //     Ext.Viewport.setMasked(false);
 
       
 
-    });
-    task.delay(500);
+    // });
+    // task.delay(500);
 
 
 }
@@ -1266,7 +1291,7 @@ function AyohaMerchantReview_AyohaMerchantReview_CalculateRating() {
                             setDashBoardMerchantReviewRate();
                         });
 
-                        task.delay(500);
+                        task.delay(100);
 
 
 
@@ -1314,7 +1339,7 @@ function AyohaMerchantReview_AyohaMerchantReview_CalculateRating() {
     //  Ext.Viewport.unmask();
 
  //   setDashBoardMerchantReviewRate(FiveStar, FourStar, ThreeStar, TwoStar, OneStar);
-    task.delay(500);
+    task.delay(100);
 
   
 }
@@ -1322,7 +1347,116 @@ function AyohaMerchantReview_AyohaMerchantReview_CalculateRating() {
 
 
 
-function setDashBoardMerchantReviewRate() {
+
+const valueLabels = {
+    id: 'valueLabels',
+    afterDatasetsDraw(chart) {
+      const { ctx } = chart;
+      const ds = chart.data.datasets[0];
+      const meta = chart.getDatasetMeta(0);
+  
+      ctx.save();
+      ctx.font = 'bold 10px system-ui, -apple-system, Segoe UI, Roboto, Arial';
+      ctx.textAlign = 'right';
+      ctx.textBaseline = 'middle';
+      ctx.fillStyle = '#000';
+  
+      meta.data.forEach((bar, i) => {
+        const v = ds.data[i];
+        if (!v) return;                 // skip zeros/nulls
+        const { x, y } = bar.tooltipPosition();
+        ctx.fillText(String(v), x - 6, y);
+      });
+      ctx.restore();
+    }
+  };
+  
+  function setDashBoardMerchantReviewRate() {
+    const labels = ['5', '4', '3', '2', '1'];
+  const values = [FiveStar, FourStar, ThreeStar, TwoStar, OneStar];
+
+  const el = document.getElementById('barchartAyohaMerchanReview');
+  const ctx = el.getContext('2d');
+
+  // Destroy previous instance if re-drawing
+  if (window.ayohaReviewChart) {
+    window.ayohaReviewChart.destroy();
+  }
+
+  window.ayohaReviewChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels,
+      datasets: [{
+        data: values,
+        backgroundColor: 'orange',
+        borderWidth: 0,
+        borderRadius: 8,
+        barPercentage: 0.8,
+        categoryPercentage: 0.8
+      }]
+    },
+    options: {
+      responsive: false,             // respect 320x185
+      maintainAspectRatio: false,
+      indexAxis: 'y',                // horizontal bars
+      animation: {
+        duration: 1200,
+        easing: 'easeOutCubic',
+        delay(ctx) {
+          return ctx.type === 'data' && ctx.mode === 'default'
+            ? ctx.dataIndex * 120    // staggered bar animation
+            : 0;
+        }
+      },
+      plugins: {
+        legend: { display: false },
+        tooltip: { enabled: true }
+      },
+      scales: {
+        x: {
+          beginAtZero: true,
+          grid: { display: false },
+          border: { display: false },
+          ticks: { display: false }   // <-- hides 0.5, 1, 1.5, 2, etc.
+        },
+        y: {
+          type: 'category',
+          offset: true,
+          grid: { display: false },
+          border: { display: false }
+        }
+      }
+    },
+    plugins: [valueLabels]
+  });
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    if (globalAyohaMerchantReview_AddEdit_PostReview_isSave === 'Y') {
+      AyohaMerchantReview_UpdateEnterpriseCountStar();
+    }
+  }
+
+
+
+
+
+
+function setDashBoardMerchantReviewRateOld() {
 
 
    // google.charts.load('current', { 'packages': ['bar'] });

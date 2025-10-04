@@ -17,7 +17,8 @@ function FloatPanel_AyohaCardManagement_PreviewCard() {
 
     _FloatPanel_AyohaCardManagement_PreviewCard =
     Ext.create('Ext.Panel', {
-        zIndex: 350,
+       zIndex: 350,
+       // zIndex: 60,
         xtype: 'container',
         //height: 465,
         height: '100%',
@@ -263,7 +264,7 @@ function FloatPanel_AyohaCardManagement_PreviewCard() {
 
 
                                                                    {
-                                                                       margin: '2 0 0 0',
+                                                                       margin: '20 0 0 0',
                                                                        id: 'htmlFloatPanel_AyohaCardManagement_PreviewCardHaiUser',
                                                                        html: '<font size=2 color=white><b>Loyalty Stamp Card</b></font>',
                                                                        //hidden: true,
@@ -363,7 +364,7 @@ function FloatPanel_AyohaCardManagement_PreviewCard() {
                                                                margin: '0 0 0 -8',
                                                                id: 'btnFloatPanel_AyohaCardManagement_PreviewCardPicProfile',
                                                                //badgeText: "2",
-                                                               html: '<div style="border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none white;background: transparent;border-radius: 0px 0px 0px 0px;width:30px;height:30px" ><img src="resources/icons/AyohaStampCardWhite.png"  style="width: 30px; height: 30px; border:2px none grey; border-radius: 0%;  margin:-1px 0px 0px 2px"></div>',
+                                                               html: '<div style="border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none white;background: transparent;border-radius: 0px 0px 0px 0px;width:30px;height:30px" ><img src="resources/icons/stampedFeatureWhite05.png"  style="width: 30px; height: 30px; border:2px none grey; border-radius: 0%;  margin:-1px 0px 0px 2px"></div>',
                                                                ui: 'plain',
                                                                handler: function () {
 
@@ -2014,7 +2015,7 @@ function FloatPanel_AyohaCardManagement_PreviewCard() {
                                                      xtype: 'button',
                                                      id: 'btnStampCard_FloatPanel_AyohaCardManagement_PreviewCard_CountStamp_Icon',
                                                      //  badgeText: '1',
-                                                     margin: '20 0 0 0',
+                                                     margin: '20 0 0 20',
                                                      height: 75,
                                                      width: 55,
                                                      html: '<img src="resources/icons/StampSuccessCount.gif" width="45" height="65" alt="Company Name">',
@@ -2029,6 +2030,7 @@ function FloatPanel_AyohaCardManagement_PreviewCard() {
                                                      xtype: 'button',
                                                      id: 'btnStampCard_FloatPanel_AyohaCardManagement_PreviewCard_CountStamp',
                                                      // margin: '0 0 0 -30',
+                                                     margin: '0 0 0 30',
                                                      height: 25,
                                                      width: 75,
                                                      html: '<font size=5 color=white><b>4/11</b></font>',
@@ -2373,7 +2375,10 @@ function FloatPanel_AyohaCardManagement_PreviewCardShow(strStampCampaignCode, En
     localStorage.setItem('EnterpriseAccNo', EnterpriseAccNo);
    // Load_FloatLoyaltyCard_LoyaltyStampLoadBySubscriberAccNoAndEnterpriseAccNoStore();
 
-  //  alert("FloatPanel_AyohaCardManagement_PreviewCardShow");
+  
+
+
+  
 }
 
 var globalStampCampaignisCampaignExpired = "NotExpired";
@@ -2391,6 +2396,13 @@ function FloatPanel_AyohaCardManagement_PreviewCard_AyohaUserCardShow(StampedCam
     globalStampCampaignisCampaignExpired = isCampaignExpired;
     globalFloatPanel_AyohaStore_ModuleTagging = "StampCard";
     //console.log(isRequiredStartEndDate + "," + isCampaignExpired + "," + CampaignDayLeft)
+ //   alert("FloatPanel_AyohaCardManagement_PreviewCard_AyohaUserCardShow");
+  
+
+    
+   
+
+
     if (isRequiredStartEndDate == "YES") {
         Ext.getCmp('htmlMyFloatPanel_AyohaCardManagement_EndDate_PreviewCard').setHidden(false);
         Ext.getCmp('htmlMyFloatPanel_AyohaCardManagement_CampaignDayLeft_PreviewCard').setHidden(true);
@@ -2824,6 +2836,7 @@ Ext.getCmp('htmlFloatPanel_AyohaCardManagement_PreviewCard_EnterpriseName').setH
 
 
 var No = 0;
+
 
 if (MembershipTag=="NO"){
     _DataStore_AyohaUserStampCardLoadByStampCampaignCodeEnterpriseAccNoShowHideStore.getProxy().setExtraParam('StampCampaignCode', strStampCampaignCode);

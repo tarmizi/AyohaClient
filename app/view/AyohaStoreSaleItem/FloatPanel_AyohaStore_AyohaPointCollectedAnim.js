@@ -193,8 +193,8 @@ function FloatPanel_AyohaStore_AyohaPointCollectedAnimHide() {
     if (isFloatPanel_AyohaStore_AyohaPointCollectedAnimOpen == 'Y') {
         _FloatPanel_AyohaStore_AyohaPointCollectedAnim.hide(); isFloatPanel_AyohaStore_AyohaPointCollectedAnimOpen = 'N';
         RemovePages("FloatPanel_AyohaStore_AyohaPointCollectedAnimHide()");
-
-        Ext.getCmp('Dashboard_AyohaRewardPoint').setHtml('<div  class="example-1"  style="background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9); border-radius: 50%;border:2px solid #fac;text-align:center;margin:-30px 0px 0px 0px;height:230px;width:230px"><div id="odometera" class="odometer" style="color:white;text-align: center;font-size:48px;width:100%;margin:70px 0px 0px 0px;"><b>' + globalFloatPanel_AyohaStore_AyohaPointCollectedAnim_LatestAyohaPoint + '</b></div><br><div style="color:white;text-align: center;font-size:11px;width:100%;margin:-38px 0px 0px 0px"><b>Collected Ayoha Points</b></div></div>');
+        document.getElementById("Dashboard_AyohaRewardPoint").textContent = globalFloatPanel_AyohaStore_AyohaPointCollectedAnim_LatestAyohaPoint;
+      //  Ext.getCmp('Dashboard_AyohaRewardPoint').setHtml('<div  class="example-1"  style="background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9); border-radius: 50%;border:2px solid #fac;text-align:center;margin:-30px 0px 0px 0px;height:230px;width:230px"><div id="odometera" class="odometer" style="color:white;text-align: center;font-size:48px;width:100%;margin:70px 0px 0px 0px;"><b>' + globalFloatPanel_AyohaStore_AyohaPointCollectedAnim_LatestAyohaPoint + '</b></div><br><div style="color:white;text-align: center;font-size:11px;width:100%;margin:-38px 0px 0px 0px"><b>Collected Ayoha Points</b></div></div>');
         FloatPanel_AyohaStore_AyohaPointCollectedAnim_startCounter();
     }
 
@@ -245,9 +245,9 @@ function FloatPanel_AyohaStore_AyohaPointCollectedAnim_LatestAyohaPoint() {
                         globalFloatPanel_AyohaStore_AyohaPointCollectedAnim_LatestAyohaPoint = parseInt(data.results[0].AyohaPoint);
                         PointCollected = globalFloatPanel_AyohaStore_AyohaPointCollectedAnim_LatestAyohaPoint - currentAyohaPoint;
                        
-
+                        document.getElementById("Dashboard_AyohaRewardPoint").textContent = PointCollected;
                         
-                        Ext.getCmp('Dashboard_AyohaRewardPoint').setHtml('<div  class="example-1"  style="background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9); border-radius: 50%;border:2px solid #fac;text-align:center;margin:-30px 0px 0px 0px;height:230px;width:230px"><div style="color:white;text-align: center;font-size:68px;width:100%;margin:45px 0px 0px 0px;"><b> +' + PointCollected + '</b></div><br><div style="color:white;text-align: center;font-size:11px;width:100%;margin:-46px 0px 0px 0px"><b>Earn New Ayoha Point</b></div><br><div class="blink_me" style="color:white;text-align: center;font-size:16px;width:100%;margin:-25px 0px 0px 0px"><b>Hooray!!</b></div></div>');
+                       // Ext.getCmp('Dashboard_AyohaRewardPoint').setHtml('<div  class="example-1"  style="background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9); border-radius: 50%;border:2px solid #fac;text-align:center;margin:-30px 0px 0px 0px;height:230px;width:230px"><div style="color:white;text-align: center;font-size:68px;width:100%;margin:45px 0px 0px 0px;"><b> +' + PointCollected + '</b></div><br><div style="color:white;text-align: center;font-size:11px;width:100%;margin:-46px 0px 0px 0px"><b>Earn New Ayoha Point</b></div><br><div class="blink_me" style="color:white;text-align: center;font-size:16px;width:100%;margin:-25px 0px 0px 0px"><b>Hooray!!</b></div></div>');
 
                        // console.log(AyohaPoint)
                        

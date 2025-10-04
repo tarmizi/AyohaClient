@@ -2522,6 +2522,7 @@ function FloatPanel_MembershipCardList_NotYetSubscribedShow(MembershipCardCode, 
     this.overlay.show();
     AddRoutePages("FloatPanel_MembershipCardList_NotYetSubscribedHide()");
     FloatPanel_MembershipCardList_NotYetSubscribedAdjustHeight();
+    
     isFloatPanel_MembershipCardList_NotYetSubscribedOpen = 'Y';
     globalFloatPanel_MembershipCardList_NotYetSubscribed_ItemCoverImg="";
 
@@ -2589,6 +2590,7 @@ function FloatPanel_MembershipCardList_NotYetSubscribedShow_FromAyohaMerchant(Me
     isFloatPanel_MembershipCardList_NotYetSubscribedOpen = 'Y';
     globalFloatPanel_MembershipCardList_NotYetSubscribed_ItemCoverImg="";
     FloatPanel_MembershipCardList_NotYetSubscribedAdjustHeight();
+   
     AddRoutePages("FloatPanel_MembershipCardList_NotYetSubscribedHide()");
     //var EnterpriseAccNo = _DataStore_EnterprisesLoadByRowStatusStore.findRecord('ID', ID, 0, false, false, true);
     //var EnterpriseHQAccNo = _DataStore_EnterprisesLoadByRowStatusStore.findRecord('ID', ID, 0, false, false, true);
@@ -2646,6 +2648,7 @@ function FloatPanel_MembershipCardList_NotYetSubscribedShow_FromFloatPanel_Merch
     globalFloatPanel_MembershipCardList_NotYetSubscribed_price = null;
     globalFloatPanel_MembershipCardList_NotYetSubscribedShow_FromAyohaMerchant_isMembershipCardSubscribed = isMembershipCardSubscribed;
     isFloatPanel_MembershipCardList_NotYetSubscribedOpen = 'Y';
+  
     globalFloatPanel_MembershipCardList_NotYetSubscribed_ItemCoverImg="";
     FloatPanel_MembershipCardList_NotYetSubscribedAdjustHeight();
     AddRoutePages("FloatPanel_MembershipCardList_NotYetSubscribedHide()");
@@ -2730,6 +2733,7 @@ function FloatPanel_MembershipCardList_NotYetSubscribedShow_FromDashboard_Main(M
     isFloatPanel_MembershipCardList_NotYetSubscribedOpen = 'Y';
     globalFloatPanel_MembershipCardList_NotYetSubscribed_ItemCoverImg="";
     FloatPanel_MembershipCardList_NotYetSubscribedAdjustHeight();
+  
     AddRoutePages("FloatPanel_MembershipCardList_NotYetSubscribedHide()");
     if(isFloatPanel_RewardStoreMembershipCardOpen == 'Y'){
         Ext.getCmp('FloatPanel_MembershipCardList_NotYetSubscribedID').setZIndex(185);
@@ -2807,6 +2811,7 @@ function FloatPanel_MembershipCardList_NotYetSubscribedShow_MyMembershipCard(Ent
     this.overlay.show();
     AddRoutePages("FloatPanel_MembershipCardList_NotYetSubscribedHide()");
     FloatPanel_MembershipCardList_NotYetSubscribedAdjustHeight();
+   
     isFloatPanel_MembershipCardList_NotYetSubscribedOpen = 'Y';
     globalFloatPanel_MembershipCardList_NotYetSubscribed_ItemCoverImg="";
     globalFloatPanel_MembershipCardList_NotYetSubscribed_price = null;

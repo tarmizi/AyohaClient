@@ -117,54 +117,115 @@ function Dashboard_SearchMerchantList() {
                      type: 'vbox',
                      pack: 'left',
                      align: 'left',
+                    
                  },
                  // hidden:true,
                  items:
                         [
+                            // {
+                            //     xtype: 'button',
+                            //   //  id: 'btnDashboard_SearchMerchantListBack',
+                            //     height: 30,
+                            //     width: 35,
+                            //     margin: '-38 0 0 10',
+                            //     // iconCls: 'list',
+                            //     html: '<div ><img src="resources/icons/backFullWhite.png" width="25" height="20" alt="Company Name"></div>',
+                            //     ui: 'plain',
+                            //     handler: function () {
+                            //         RemovePages("Dashboard_SearchMerchantListHide()");
+                            //         _Dashboard_SearchMerchantList.hide(Ext.fx.Animation({
+                            //             type: 'slideOut',
+                            //             direction: 'left',
+                            //             easing: 'cubic-bezier(.7,0,.7,1)',
+                            //             duration: 250
+    
+                            //         }));
+                                   
+    
+                            //     }
+                            // },
+                               
+                            {
+                                id: 'htmlDashboard_SearchMerchantList',
+                                margin: '15 0 0 10',
+
+                                // zIndex: -10,
+                                width: '94.5%',
+                                // html: '<textarea id="input-FloatPanel_AyohaStore_SearchProduct" style="width:97%;height: 30px;padding: 5px 5px;box-sizing: border-box;border: 1px solid #ccc;border-radius: 4px;background-color: #f8f8f8;font-size: 12px;resize: none;" placeholder="Search Product"></textarea>',
+                                // html: '<input type="text"  id="input-FloatPanel_AyohaStoreMerchant_AddEditItem_Descriptions"  style="border-color:black;color:black;width:100%;text-align: left;font-size:14px;font-weight:bold;width:90%;height:30px;">'
+                                // original background text box color----> #f0f2f5
+                                html: '<input  type="text" id="input-Dashboard_SearchMerchantList" style="width:100%;height: 50px;padding: 5px 45px;box-sizing: border-box;border: 1px solid #ccc;border-radius: 5px;background-color:#f0f2f5;font-size: 12px;color: black;font-weight:bold;text-align:left;margin:0px 0px 0px 0px;box-shadow: 0 0 5pt 2pt #D3D3D3;outline-width: 0px;"  placeholder="Search Ayoha Merchant">',
+                            },
+                         
 
 
-                                     
-                                       {
-                                           id: 'htmlDashboard_SearchMerchantList',
-                                           margin: '15 0 0 10',
 
-                                           // zIndex: -10,
-                                           width: '94.5%',
-                                           // html: '<textarea id="input-FloatPanel_AyohaStore_SearchProduct" style="width:97%;height: 30px;padding: 5px 5px;box-sizing: border-box;border: 1px solid #ccc;border-radius: 4px;background-color: #f8f8f8;font-size: 12px;resize: none;" placeholder="Search Product"></textarea>',
-                                           // html: '<input type="text"  id="input-FloatPanel_AyohaStoreMerchant_AddEditItem_Descriptions"  style="border-color:black;color:black;width:100%;text-align: left;font-size:14px;font-weight:bold;width:90%;height:30px;">'
-                                           // original background text box color----> #f0f2f5
-                                           html: '<input  type="text" id="input-Dashboard_SearchMerchantList" style="width:100%;height: 50px;padding: 5px 45px;box-sizing: border-box;border: 1px solid #ccc;border-radius: 5px;background-color:#f0f2f5;font-size: 12px;color: black;font-weight:bold;text-align:left;margin:0px 0px 0px 0px;box-shadow: 0 0 5pt 2pt #D3D3D3;outline-width: 0px;"  placeholder="Search Ayoha Merchant">',
-                                       },
-                                    
+                          {
+                              xtype: 'button',
+                              id: 'btnDashboard_SearchMerchantListBack',
+                              height: 30,
+                              width: 35,
+                              margin: '-38 0 0 10',
+                              // iconCls: 'list',
+                              html: '<div ><img src="resources/icons/backFullWhite.png" width="25" height="20" alt="Company Name"></div>',
+                              ui: 'plain',
+                              handler: function () {
+                                  RemovePages("Dashboard_SearchMerchantListHide()");
+                                  _Dashboard_SearchMerchantList.hide(Ext.fx.Animation({
+                                      type: 'slideOut',
+                                      direction: 'left',
+                                      easing: 'cubic-bezier(.7,0,.7,1)',
+                                      duration: 250
+
+                                  }));
+                                 
+
+                              }
+                          },
+                          
+                          {
+                            xtype: 'button',
+                         //   id: 'btnDashboard_SearchMerchantListBack',
+                            height: 42,
+                            width: 42,
+                            margin: '-35 0 0 305',
+                            // iconCls: 'list',
+                            html: '<div ><img src="resources/icons/scanQrCodePurple.png" width="32" height="32" alt="Company Name"></div>',
+                            ui: 'plain',
+                            
+                            handler: function () {
+                                Ext.getCmp('mainView').setHidden(true);
+                                Dashboard_SearchMerchantListHide();
+                                FloatPanel_QrCodeScanner_ScanAyohaStoreShow();
+                         
+                            }
+                        },
 
 
 
-                                     {
-                                         xtype: 'button',
-                                         id: 'btnDashboard_SearchMerchantListBack',
-                                         height: 30,
-                                         width: 35,
-                                         margin: '-38 0 0 10',
-                                         // iconCls: 'list',
-                                         html: '<div ><img src="resources/icons/backFullWhite.png" width="25" height="20" alt="Company Name"></div>',
-                                         ui: 'plain',
-                                         handler: function () {
-                                             RemovePages("Dashboard_SearchMerchantListHide()");
-                                             _Dashboard_SearchMerchantList.hide(Ext.fx.Animation({
-                                                 type: 'slideOut',
-                                                 direction: 'left',
-                                                 easing: 'cubic-bezier(.7,0,.7,1)',
-                                                 duration: 250
+                                    //  {
+                                    //      xtype: 'button',
+                                    //      id: 'btnDashboard_SearchMerchantListBack',
+                                    //      height: 30,
+                                    //      width: 35,
+                                    //      margin: '-38 -50 0 0',
+                                    //      zIndex: 10,
+                                    //      // iconCls: 'list',
+                                    //      html: '<div ><img src="resources/icons/backFullWhite.png" width="25" height="20" alt="Company Name"></div>',
+                                    //      ui: 'plain',
+                                    //      handler: function () {
+                                    //          RemovePages("Dashboard_SearchMerchantListHide()");
+                                    //          _Dashboard_SearchMerchantList.hide(Ext.fx.Animation({
+                                    //              type: 'slideOut',
+                                    //              direction: 'left',
+                                    //              easing: 'cubic-bezier(.7,0,.7,1)',
+                                    //              duration: 250
 
-                                             }));
+                                    //          }));
                                             
 
-                                         }
-                                     },
-
-
-
-
+                                    //      }
+                                    //  },
 
 
 

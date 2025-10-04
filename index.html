@@ -13,7 +13,47 @@
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <title>Ayoha</title>
 
+<style>
 
+/* Adds a vertical gap BETWEEN groups */
+.gapped-grouped-list .x-list-header-wrap:not(:first-child) {
+    margin-top: 25px; 
+}
+
+/* Styles the group header ITSELF (top of the card) */
+.gapped-grouped-list .x-list-header {
+    padding: 5px 10px;
+    font-size: 14px;
+    min-height: auto;
+    margin-left: 0px;
+    margin-right: 0px;
+    border-radius: 12px 12px 0 0; /* Top corners rounded */
+    
+  
+}
+
+/* Styles ALL items in the list (middle of the card) */
+.gapped-grouped-list .x-list-item {
+    margin-left: 0px;
+    margin-right: 0px;
+    
+    /* --- UPDATED box-shadow for right and bottom --- */
+    /* box-shadow: 0px 0px 10px rgba(0,0,0,0.3); */
+    
+    /* Remove default list borders */
+    /* border: none !important;  */
+}
+
+/* Styles the LAST item of each group (bottom of the card) */
+.gapped-grouped-list .x-list-item:last-child .myContent {
+    /* Round the bottom corners of the LAST item */
+    border-radius: 0 0 8px 8px; 
+}
+
+
+
+
+</style>
 
 <style>
 
@@ -632,8 +672,11 @@ width: auto; height: auto;z-index: -100;
             text-align: center;
         }.button3viewloyaltycard {
             /*background-color: #fac;*/
-            background-color: #fe21af;
-            background-image: linear-gradient(#ff00de75,  #fe21af);          
+            /* background-color: #fe21af;
+            background-image: linear-gradient(#ff00de75,  #fe21af); */
+            background-color: #fac;
+            background-image: linear-gradient(#ff00de75, #c800ffc9);      
+            
             color: white;
             /*icon:url("/resources/icons/membershicardwhite.png");*/
             border: 2px solid white;
@@ -645,8 +688,10 @@ width: auto; height: auto;z-index: -100;
             font-weight:bold;
         }.button3getMembershipCard {
             /*background-color: #fac;*/
-            background-color: #fe21af;
-            background-image: linear-gradient(#ff00de75,  #fe21af);          
+            /* background-color: #fe21af;
+            background-image: linear-gradient(#ff00de75,  #fe21af);      */
+            background-color: #fac;
+            background-image: linear-gradient(#ff00de75, #c800ffc9);          
             color: white;
             /*icon:url("/resources/icons/membershicardwhite.png");*/
             border: 2px solid white;

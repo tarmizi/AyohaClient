@@ -2138,6 +2138,7 @@ function FloatPanel_MerchantDetailPageHide() {
 
     if (is_FloatPanel_MerchantDetailPageOpen == 'Y') {
         _FloatPanel_MerchantDetailPage.hide();
+        FloatPanel_ScannedMerchantHide();
         is_FloatPanel_MerchantDetailPageOpen = 'N';
         RemovePages("FloatPanel_MerchantDetailPageHide()");
         FloatPanel_AyohaStore_LikeDislikeStore_Save();

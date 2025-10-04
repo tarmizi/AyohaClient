@@ -26,3 +26,34 @@
 
     }
 });
+
+
+
+
+
+
+
+var _DataStore_AyohaMerchantReviewLoadByEnterpriseAccNoStore = Ext.create('Ext.data.Store', {
+
+    model: 'ianMizi.model.AyohaMerchantReview.AyohaMerchantReviewModel',
+    id: '__AyohaMerchantReviewLoadByEnterpriseAccNoStoreID',
+    proxy: {
+        type: 'ajax',
+        url: GetAPIurl() + '/AyohaMerchantReview/AyohaMerchantReviewLoadByEnterpriseAccNo',
+        actionMethods: {
+            read: 'GET'
+        },
+        reader: {
+            type: 'json',
+            rootProperty: 'results',
+            totalProperty: 'total',
+            successProperty: 'success',
+            messageProperty: 'message'
+        }
+    },
+
+
+
+    //autoLoad: true
+
+});

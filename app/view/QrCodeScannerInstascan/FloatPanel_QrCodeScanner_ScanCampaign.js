@@ -314,13 +314,13 @@ function FloatPanel_QrCodeScanner_ScanCampaign() {
 
                                  margin: '-10 0 0 0',
                                  // height: 20,
-                                 html: '<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 25px;font-weight:bold;color:white;">Ayoha Rewards</div>'
+                                 html: '<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 25px;font-weight:bold;color:white;">Ayoha Reward</div>'
                              },
                               {
 
                                   margin: '-3 0 0 0',
                                   // height: 20,
-                                  html: '<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 11px;font-weight:normal;color:white;">We Double Your Reward !</div>'
+                                  html: '<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 11px;font-weight:normal;color:white;">One hub,Double Rewards !</div>'
                               },
 
 
@@ -530,6 +530,148 @@ function FloatPanel_QrCodeScanner_ScanCampaignShow_ORI() {
 }
 
 
+function FloatPanel_QrCodeScanner_ScanAyohaStoreShow() {
+    QRCodeResult = "";
+    Ext.Viewport.remove(_FloatPanel_QrCodeScanner_ScanCampaign);
+    this.overlay = Ext.Viewport.add(FloatPanel_QrCodeScanner_ScanCampaign());
+    this.overlay.show();
+    AddRoutePages("FloatPanel_QrCodeScanner_ScanCampaignHide()");
+    is_FloatPanel_QrCodeScanner_ScanCampaignOpen = 'Y';
+    FloatPanel_QrCodeScanner_CenterLineMessageShow();
+
+
+    var x = screen.width;
+    var y = screen.height;
+    var xx = x - 28;
+
+    console.log(y);
+    if (y < 700) {
+        Ext.getCmp('FloatPanel_QrCodeScanner_ScanCampaign_AyohaRewardLogo').setHeight(130);
+        Ext.getCmp('FloatPanel_QrCodeScanner_ScanCampaign_AyohaRewardLogo').setWidth(130);
+        Ext.getCmp('FloatPanel_QrCodeScanner_ScanCampaign_AyohaRewardLogo').setHtml('<img src="resources/icons/Logo/LogoOrangeSimplifed.png" alt="Image" style="width:130px;height:130px;">');
+    }
+
+    //Ext.getCmp('QrCodeInstaScan').setHtml('<video id="preview" style="width:' + x +'px;height:'+ y +'px;"></video>');
+
+    scanner = new Instascan.Scanner({
+        video: document.getElementById('preview_scan'),
+        mirror: false,
+       
+    });
+
+
+   
+
+    scanner.addListener('scan', function (content) {
+      
+        //QRCodeResult = content;
+        //Ext.getCmp('FloatPanel_QrCodeScanner_CenterLineMessageID').setStyle('background-color:black;');
+        //Ext.getCmp('FloatPanel_QrCodeScanner_RedCenterLine').setHidden(true);
+        //Ext.getCmp('FloatPanel_QrCodeScanner_ProcessImage').setHidden(false);
+        //Ext.getCmp('FloatPanel_QrCodeScanner_ProcessLbl').setHidden(false);
+        //var audio = new Audio();
+        //audio.src = 'http://42.1.63.57/AyohaSoundExternal/store-scanner-beep.mp3';
+        //audio.play();
+
+        //var n = QRCodeResult.includes("Point");
+        //if (n) {
+        //    Scan_QRCode_VerifyQRCode_PointCampaign(QRCodeResult);
+        //} else {
+        //    Scan_QRCode_VerifyQRCodeStampCampaign(QRCodeResult);
+        //}
+        
+        QRCodeResult = content;
+        var audio = new Audio();
+        audio.src = 'https://setkita.com/AyohaSoundExternal/store-scanner-beep.mp3';
+        audio.play();
+
+
+       
+        Ext.getCmp('mainView').setHidden(false);
+        FloatPanel_QrCodeScanner_CenterLineMessageHide();
+
+        _FloatPanel_QrCodeScanner_ScanCampaign.hide(Ext.fx.Animation({
+            type: 'popOut',
+            duration: 250,
+            easing: 'ease-out'
+
+        }));
+
+        is_FloatPanel_QrCodeScanner_ScanCampaignOpen = 'N';
+        RemovePages("FloatPanel_QrCodeScanner_ScanCampaignHide()");
+
+
+
+
+
+        //is_FloatPanel_QrCodeScanner_ScanCampaignOpen = 'N';
+        //RemovePages(_FloatPanel_QrCodeScanner_ScanCampaign, "is_FloatPanel_QrCodeScanner_ScanCampaignOpen");
+      
+
+
+
+
+
+//commented on 7/4/2024
+        // var n = QRCodeResult.includes("Point");
+        // if (n) {
+           
+        //     Scan_QRCode_VerifyQRCode_PointCampaign(QRCodeResult);
+        // } else {
+           
+        //     Scan_QRCode_VerifyQRCode_StampCampaign(QRCodeResult);
+        // }
+        var text = QRCodeResult; 
+
+        AppState.FloatPanel_QrCodeScanner_Scanned.QRCodeResult = QRCodeResult;
+        AppState.FloatPanel_QrCodeScanner_Scanned.QRCodeResult_PageType = text.slice(-2);
+        // FloatPanel_ScannedMerchantShow();
+
+
+
+
+
+
+
+//commented on 20/9/2025
+        var newString = text.slice(-2);
+
+       
+        if(newString=="EP"){
+            FloatPanel_QrCodeScanner_ScanCampaign_LoadEnterprisePage(QRCodeResult);
+           // FloatPanel_QrCodeScanner_ScanCampaign_LoadEnterprisePage(AppState.FloatPanel_QrCodeScanner_Scanned.QRCodeResult);
+        }
+        if(newString=="MC"){
+            FloatPanel_QrCodeScanner_ScanCampaign_LoadMembershipCardPage(QRCodeResult);
+        }
+        
+     
+        scanner.stop();
+
+
+       
+
+    });
+    //Instascan.Camera.getCameras().then(function (cameras) {
+    //    if (cameras.length > 0) {
+    //        scanner.start(cameras[1]);
+    //    } else {
+    //        console.error('No cameras found.');
+    //    }
+    //}).catch(function (e) {
+    //    console.error(e);
+    //});
+
+    Instascan.Camera.getCameras().then(function (cameras) {
+        if (cameras.length > 0) {
+            scanner.start(cameras[1]);
+        } else {
+            console.error('No cameras found.');
+        }
+    }).then(function (e) {
+        console.error(e);
+    });
+}
 
 
 function FloatPanel_QrCodeScanner_ScanCampaignShow() {
