@@ -2192,6 +2192,8 @@ html:'<div class="tier-head">'+
                         hidden: false,
                         margin: '0 0 0 0',
                         style: 'background-color:transparent',
+                        id:'containerMyAccount_Dashboard_DiscountCardLoyaltyID',
+                        name:'namecontainerMyAccount_Dashboard_DiscountCardLoyalty',
                         layout: {
                         type: 'hbox',
                         pack: 'center',
@@ -2246,11 +2248,13 @@ html:'<div class="tier-head">'+
                         height:80,
                         hidden: false,
                         margin: '0 0 0 0',
+                        id:'containerMyAccount_Dashboard_ContestCardLoyaltyID',
+                        name:'namecontainerMyAccount_Dashboard_ContestCardLoyalty',
                         style: 'background-color:transparent',
                         layout: {
                         type: 'hbox',
                         pack: 'center',
-                        align: 'center',
+                        align: 'center',                     
                         },items:[
                             {
                                 xtype: 'container',
@@ -2334,6 +2338,8 @@ html:'<div class="tier-head">'+
                        //width: 150,
                        width: '25%',
                         height:80,
+                        id:'containerMyAccount_Dashboard_VoucherCardLoyaltyID',
+                        name:'namecontainerMyAccount_Dashboard_VoucherCardLoyalty',
                         hidden: false,
                         margin: '0 0 0 0',
                         style: 'background-color:transparent',
@@ -2401,6 +2407,8 @@ html:'<div class="tier-head">'+
                         height:80,
                         hidden: false,
                         margin: '0 0 0 0',
+                        id:'containerMyAccount_Dashboard_EventCardLoyaltyID',
+                        name:'namecontainerMyAccount_Dashboard_EventCardLoyalty',
                         style: 'background-color:transparent',
                         layout: {
                         type: 'hbox',
@@ -10560,6 +10568,50 @@ function initializeContainerSingleTapEvent() {
       }
     );
 
+    var containerViewnamenamecontainerMyAccount_Dashboard_DiscountCardLoyalty = Ext.ComponentQuery.query('container[name=namecontainerMyAccount_Dashboard_DiscountCardLoyalty]')[0];
+    var containerViewElnamecontainerMyAccount_Dashboard_DiscountCardLoyalty = containerViewnamenamecontainerMyAccount_Dashboard_DiscountCardLoyalty.element;
+    containerViewElnamecontainerMyAccount_Dashboard_DiscountCardLoyalty.on('tap',
+      function (event, node, options, eOpts) {
+
+        FloatPanel_AyohaMerchantInfo_DiscountCardLoyaltyProgramShow();
+      }
+    );
+
+
+
+
+
+
+    var containerViewnamenamecontainerMyAccount_Dashboard_ContestCardLoyalty = Ext.ComponentQuery.query('container[name=namecontainerMyAccount_Dashboard_ContestCardLoyalty]')[0];
+    var containerViewElnamecontainerMyAccount_Dashboard_ContestCardLoyalty = containerViewnamenamecontainerMyAccount_Dashboard_ContestCardLoyalty.element;
+    containerViewElnamecontainerMyAccount_Dashboard_ContestCardLoyalty.on('tap',
+      function (event, node, options, eOpts) {
+
+        FloatPanel_AyohaMerchantInfo_ContestCardLoyaltyProgramShow();
+      }
+    );
+
+    var containerViewnamenamecontainerMyAccount_Dashboard_EventCardLoyalty = Ext.ComponentQuery.query('container[name=namecontainerMyAccount_Dashboard_EventCardLoyalty]')[0];
+    var containerViewElnamecontainerMyAccount_Dashboard_EventCardLoyalty = containerViewnamenamecontainerMyAccount_Dashboard_EventCardLoyalty.element;
+    containerViewElnamecontainerMyAccount_Dashboard_EventCardLoyalty.on('tap',
+      function (event, node, options, eOpts) {
+
+        FloatPanel_AyohaMerchantInfo_EventCardLoyaltyProgramShow();
+      }
+    );
+    
+
+
+
+    var containerViewnamenamecontainerMyAccount_Dashboard_VoucherCardLoyalty = Ext.ComponentQuery.query('container[name=namecontainerMyAccount_Dashboard_VoucherCardLoyalty]')[0];
+    var containerViewElnamecontainerMyAccount_Dashboard_VoucherCardLoyalty = containerViewnamenamecontainerMyAccount_Dashboard_VoucherCardLoyalty.element;
+    containerViewElnamecontainerMyAccount_Dashboard_VoucherCardLoyalty.on('tap',
+      function (event, node, options, eOpts) {
+
+        FloatPanel_AyohaMerchantInfo_VoucherCardLoyaltyProgramShow();
+      }
+    );
+    
 
 
 }

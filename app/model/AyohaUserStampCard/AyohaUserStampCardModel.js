@@ -46,7 +46,7 @@
                   'isRequiredStartEndDate',
                   'isCampaignExpired',
                   'CampaignDayLeft',
-                  'AdvertisementTitle',
+                  'AdvertisementTitle',                  
                      {
                          name: 'ModifiedStampContent',
                          convert: function (value, record) {

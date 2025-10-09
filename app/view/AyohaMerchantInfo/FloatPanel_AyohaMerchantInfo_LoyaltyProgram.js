@@ -155,17 +155,17 @@ function FloatPanel_AyohaMerchantInfo_LoyaltyProgram() {
                                         margin: '10 10 0 0',
                                         id: 'htmlFloatPanel_AyohaMerchantInfo_LoyaltyProgram_TitleHeaderTxt',
 
-                                        html: '<div style="color:black;text-align: center;font-size:14px;width:100%;"><b>Merchant Loyalty Stamp Card Campaign</b></div>'
+                                        html: '<div style="color:black;text-align: right;font-size:14px;width:100%;"><b>Membership Loyalty Stamp</b></div>'
                                     },
                                       {
                                         xtype: 'button',
                                         margin: '10 0 0 -10',
                                         id: 'btnFloatPanel_AyohaMerchantInfo_LoyaltyProgram_CardIcon',
-                                        height: 30,
+                                        height: 35,
                                         width: 35,
-                                        hidden:true,
+                                        //hidden:true,
                                         // iconCls: 'list',
-                                        html: '<div ><img src="resources/icons/stampedFeature01.png" width="25" height="20" alt="Company Name"></div>',
+                                        html: '<div ><img src="resources/icons/stampedFeature01.png" width="25" height="25" alt="Company Name"></div>',
                                         ui: 'plain',
                                         handler: function () {
 
@@ -250,47 +250,182 @@ function FloatPanel_AyohaMerchantInfo_LoyaltyProgram() {
                   // },
                     
                     
-                    {
-                        xtype: 'list',
-                        width: '93%',
-                        height: '100%',
-                        store: _DataStore_AyohaUserStampCard_MerchantLoyaltyCampaign_LoadStampStore,
-                        grouped:true,
-                        id: 'FloatPanel_AyohaMerchantInfo_LoyaltyProgramListListID',
-                        mode: 'SINGLE',
-                        pinHeaders: true,                 // optional: sticky header
-                       cls: 'gapped-grouped-list', // <-- ADD THIS CLASS             // <-- scope styles
-                        scrollable: {
-                            direction: 'vertical',
-                            indicators: {
-                                y: {
-                                    autoHide: true
-                                },
-                                x: {
-                                    autoHide: true
-                                }
-                            }
-                        },
-                        style: 'background-color:rgba(255,255,255, 0.9);border-radius: 0px 0px 0px 0px;',
-                        // width: '100%',
-                        disableSelection: true,
-                        itemTpl: '<div class="myContent" style="background-color:white;width:101%;height:100px;">' +
+                    // {
+                    //     xtype: 'list',
+                    //     width: '93%',
+                    //     height: '100%',
+                    //     store: _DataStore_AyohaUserStampCard_MerchantLoyaltyCampaign_LoadStampStore,
+                    //     grouped:true,
+                    //     id: 'FloatPanel_AyohaMerchantInfo_LoyaltyProgramListListID',
+                    //     mode: 'SINGLE',
+                    //     pinHeaders: true,                 // optional: sticky header
+                    //    cls: 'gapped-grouped-list', // <-- ADD THIS CLASS             // <-- scope styles
+                    //     scrollable: {
+                    //         direction: 'vertical',
+                    //         indicators: {
+                    //             y: {
+                    //                 autoHide: true
+                    //             },
+                    //             x: {
+                    //                 autoHide: true
+                    //             }
+                    //         }
+                    //     },
+                    //     style: 'background-color:rgba(255,255,255, 0.9);border-radius: 0px 0px 0px 0px;',
+                    //     // width: '100%',
+                    //     disableSelection: true,
+                    //     itemTpl: '<div class="myContent" style="background-color:white;width:101%;height:100px;">' +
 
 
-                         //'<table style="border-collapse:collapse;border-spacing:0;width:108%;background-color:white;margin:-37px 0px 0px -15px;height:100px; border-left: 2px solid rgba(0,0,0,0.3) ;border-right: 2px solid rgba(0,0,0,0.3);box-shadow: 0px 10px 10px rgba(0,0,0,0.5)"><tr onclick="FloatPanel_AyohaMerchantInfo_LoyaltyProgram_OpenMerchantLoyaltyProgram({ID})"><td style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:0px 7px;border-style:none;border-width:0px;overflow:hidden;word-break:normal;width:25%;vertical-align:center">{ModifiedStampContent}</td><td style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;padding:0px 0px;border-style:none;border-width:0px;overflow:hidden;word-break:normal;width:80%;vertical-align:center">{StampContentNote}</td></tr></table>'
-                         '<table style="border-collapse:collapse;border-spacing:0;width:108%;background-color:white;margin:-37px 0px 0px -15px;height:100px; border-left: 2px solid rgba(0,0,0,0.3) ;border-right: 2px solid rgba(0,0,0,0.3);box-shadow: 0px 10px 10px rgba(0,0,0,0.5)"><tr onclick="FloatPanel_AyohaMerchantInfo_LoyaltyProgram_OpenMerchantLoyaltyProgram_EnterpriseAccNo(`{EnterpriseAccNo}`)"><td style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:0px 7px;border-style:none;border-width:0px;overflow:hidden;word-break:normal;width:25%;vertical-align:center">{ModifiedStampContent}</td><td style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;padding:0px 0px;border-style:none;border-width:0px;overflow:hidden;word-break:normal;width:80%;vertical-align:center">{StampContentNote}</td></tr></table>'
+                    //      //'<table style="border-collapse:collapse;border-spacing:0;width:108%;background-color:white;margin:-37px 0px 0px -15px;height:100px; border-left: 2px solid rgba(0,0,0,0.3) ;border-right: 2px solid rgba(0,0,0,0.3);box-shadow: 0px 10px 10px rgba(0,0,0,0.5)"><tr onclick="FloatPanel_AyohaMerchantInfo_LoyaltyProgram_OpenMerchantLoyaltyProgram({ID})"><td style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:0px 7px;border-style:none;border-width:0px;overflow:hidden;word-break:normal;width:25%;vertical-align:center">{ModifiedStampContent}</td><td style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;padding:0px 0px;border-style:none;border-width:0px;overflow:hidden;word-break:normal;width:80%;vertical-align:center">{StampContentNote}</td></tr></table>'
+                    //      '<table style="border-collapse:collapse;border-spacing:0;width:108%;background-color:white;margin:-37px 0px 0px -15px;height:100px; border-left: 2px solid rgba(0,0,0,0.3) ;border-right: 2px solid rgba(0,0,0,0.3);box-shadow: 0px 10px 10px rgba(0,0,0,0.5)"><tr onclick="FloatPanel_AyohaMerchantInfo_LoyaltyProgram_OpenMerchantLoyaltyProgram({ID})"><td style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:0px 7px;border-style:none;border-width:0px;overflow:hidden;word-break:normal;width:25%;vertical-align:center">{ModifiedStampContent}</td><td style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;padding:0px 0px;border-style:none;border-width:0px;overflow:hidden;word-break:normal;width:80%;vertical-align:center">{StampContentNote}</td></tr></table>'
                         
                         
                          
                         
-                         + '</div>',
+                    //      + '</div>',
                       
                      
                       
-                        emptyText: '<div  style="background-color:transparent;width:100%;height100%;">Hai!, you have no redemption items yet.Go to Ayoha Mechant Menu ,get their Membership card and then collect your redemptions items!</div>',
+                    //     emptyText: '<div  style="background-color:transparent;width:100%;height100%;">Hai!, you have no redemption items yet.Go to Ayoha Mechant Menu ,get their Membership card and then collect your redemptions items!</div>',
                 
 
-                    },
+                    // },
+
+                  //  '<table style="border-collapse:collapse;border-spacing:0;width:108%;background-color:white;margin:-37px 0px 0px -15px;height:100px; border-left: 2px solid rgba(0,0,0,0.3) ;border-right: 2px solid rgba(0,0,0,0.3);box-shadow: 0px 10px 10px rgba(0,0,0,0.5)"><tr onclick="FloatPanel_AyohaMerchantInfo_LoyaltyProgram_OpenMerchantLoyaltyProgram({ID})"><td style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:0px 7px;border-style:none;border-width:0px;overflow:hidden;word-break:normal;width:25%;vertical-align:center">{ModifiedStampContent}</td><td style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;padding:0px 0px;border-style:none;border-width:0px;overflow:hidden;word-break:normal;width:80%;vertical-align:center">{StampContentNote}</td></tr></table>'
+                        
+
+                  {
+                    xtype: 'list',
+                    id: 'FloatPanel_AyohaMerchantInfo_LoyaltyProgramListListID',
+                    width: '100%',
+                    height: '100%',
+                    variableHeights: true,
+                    mode: 'SINGLE',
+                   // ui: 'plain',        // removes theme borders
+inset: false,       // make sure inset styling isn’t applied
+//cls: 'list--flat',
+// cls: 'card-list list--centered',
+                                     
+                                      grouped: true,
+                                      disableSelection: true,
+                                      scrollable: {
+                                          direction: 'vertical',
+                                          indicators: {
+                                              y: {
+                                                  autoHide: true
+                                              },
+                                              x: {
+                                                  autoHide: true
+                                              }
+                                          }
+                                      },
+                                      style: 'background-color:rgba(255,255,255, 0);border-radius: 0px 0px 0px 0px;',
+            
+                    // Minimal inline store so you can see it render
+                    store:_DataStore_AyohaUserStampCard_MerchantLoyaltyCampaign_LoadStampStore,
+                  
+
+
+
+
+
+
+
+                    // Drop this into your list's itemTpl
+itemTpl: new Ext.XTemplate([
+'    <!-- Main Card Container -->',
+// '   <div style="background-color:#ffffff; width:105%; border-radius:5px; overflow:hidden; margin:0 0 0 -10px; border:0; -webkit-box-shadow:0 18px 48px rgba(0,0,0,.28), 0 8px 20px rgba(0,0,0,.22); box-shadow:0 18px 48px rgba(0,0,0,.28), 0 8px 20px rgba(0,0,0,.22);">',
+'<div style="background:#fff; width:103%; border-radius:12px; overflow:hidden; margin:0px 0px 0px -5px; border:0; box-shadow:0 12px 30px rgba(24,39,75,.14), 0 3px 10px rgba(24,39,75,.10);">',
+'',
+'        <!-- Image Section -->',
+'        <div style="position: relative;">',
+'            <!-- Placeholder for the main image -->',
+//  '            <img src="{ImagePath}" alt="Pandan Butter Latte" style="width: 100%; height: auto; display: block;">',
+'{ModifiedStampContent}',
+'            ',
+'            <!-- Discount Tag -->',
+'            <div style="display:block;position: absolute; top: 12px; left: 12px; background-color: #808000; color: white; padding: 5px 12px; border-radius: 8px; font-size: 12px; font-weight: bold;">',
+'                Loyalty Stamp',
+'            </div>',
+'            ',
+'            <!-- Price Tag -->',
+
+'<div style="display:none',
+';position:absolute; bottom:-25px; right:20px !important; left:auto !important',
+'display:flex; flex-direction:column; align-items:center; justify-content:center;',
+'width:50px; height:50px;',
+'background:{ModifiedCampaignColor}; color:#fff; border-radius:50%;',
+'box-shadow:0 4px 8px rgba(0,0,0,0.2); border:2px solid #fff;',
+' font-weight:bold; line-height:1; gap:2px;z-index:10;">{ModifiedAmount}</div>',
+
+// '            <div style="display:{ModifiedVoucherDisplay};position: absolute; bottom: -25px; right: 20px; background-color: #e74c3c; color: white; width: 50px; height: 50px; border-radius: 50%;align-items: center; justify-content: center; font-size: 13px; font-weight: bold; box-shadow: 0 4px 8px rgba(0,0,0,0.2); border: 2px solid white;">',
+// '                {ModifiedAmount}',
+// '            </div>',
+'        </div>',
+'',
+'        <!-- Content Section -->',
+'        <div style="padding: 16px; margin-top: 10px;">',
+'            <!-- Store Info -->',
+'            <div style="display: flex; align-items: center; margin-bottom: 12px; gap: 12px;border-bottom:1px solid #e9e9ee">',
+'                <!-- Store Icon -->',
+'                <div style="min-width: 48px; height: 48px; border-radius: 8px; border: 1px solid #eee; display:flex; align-items:center; justify-content:center; background-color: #f9f9f9;">',
+'                    <img style="width: 28px; height: 28px;" src="{EnterpriseLogo}" alt="Store Icon">',
+'                </div>',
+'                ',
+'                <!-- Store Name and Subtitle -->',
+'                <div style="flex-grow: 1;">',
+'                    <p style="font-weight: 600; font-size: 15px; margin: 0; color: #333;">{EnterpriseName}</p>',
+'                    <p style="font-size: 12px; color: #777; margin: 2px 0 0 0;">{EnterpriseTagLine}</p>',
+'                </div>',
+'                ',
+'                <!-- Rating and Reward Icon Container -->',
+'                <div style="display: flex; align-items: center; gap: 12px;">',
+'                    <!-- Rating -->',
+'                    <div style="text-align: right; white-space: nowrap;">',
+'                        <div style="font-size: 14px; display: flex; align-items: center; gap: 4px;">',
+'                            <span style="font-weight: bold; color: #333;">{CountStar}</span>',
+'                            <span style="color: #f1c40f;">★</span>',
+'                        </div>',
+'                        <div style="font-size: 11px; color: #999;">{CountReviewer} Reviews</div>',
+'                    </div>',    
+'                </div>',
+'            </div>',
+'',
+//'            <div style:border:1px solid #e9e9ee;width:100%;height:5px;background-color:#e9e9ee/>',
+'            <h2 style="font-size: 20px; font-weight: 700; margin: 16px 0 4px 0; color: #2c3e50; line-height: 1.4;">',
+'                 {StampContentNote}',
+'            </h2>',
+// '            <h2 style="font-size: 12px; font-weight: 700; margin: 3px 0 4px 0; color: #2c3e50; line-height: 1.4;">',
+// '              Campaign Name:{StampCampaignName}',
+// '            </h2>',
+'            ',
+'            <!-- Original Price -->',
+'            <p style="margin: 0 0 16px 0; color: #95a5a6; font-size: 12px;">',
+'                End Date: {EndDate}',
+'            </p>',
+'',
+'            <!-- Tags -->',
+'            <div style="display: flex; gap: 8px; margin-bottom: 24px;">',
+'                <span style="background-color: #ecf0f1; color: #7f8c8d; padding: 6px 14px; border-radius: 16px; font-size: 13px; font-weight: 500;">{BusinessMode}</span>',
+'                <span style="background-color: #ecf0f1; color: #7f8c8d; padding: 6px 14px; border-radius: 16px; font-size: 13px; font-weight: 500;">{EnterpriseDescription}</span>',
+'            </div>',
+'            ',
+'        </div>',
+'        ',
+'        <!-- Action Button -->',
+'        <div onclick="FloatPanel_AyohaMerchantInfo_LoyaltyProgram_OpenMerchantLoyaltyProgram({ID})" style="margin: -20px 0px 0px 10px;">',
+//'{ModifiedButtonBottomDisplay}',
+'             <button style="width: 97%; background-image: linear-gradient(#ff00de75, #c800ffc9);background-color: #fac; color: white; border: none; padding: 15px; border-radius: 12px; font-size: 14px; font-weight: bold; cursor: pointer; text-shadow: 0 1px 1px rgba(0,0,0,0.2); box-shadow: 0 4px 10px rgba(247, 151, 30, 0.4); transition: transform 0.2s ease, box-shadow 0.2s ease;" onmouseover="this.style.transform=\'translateY(-2px)\'; this.style.boxShadow=\'0 6px 12px rgba(247, 151, 30, 0.5)\';" onmouseout="this.style.transform=\'translateY(0)\'; this.style.boxShadow=\'0 4px 10px rgba(247, 151, 30, 0.4)\';">',
+ '                View Loyalty Stamp Card',
+'            </button>',
+'        </div><br>',
+'',
+'    </div>'
+].join(''),
+
+)}
+
                 ]
             },
 
@@ -511,7 +646,7 @@ function FloatPanel_AyohaMerchantInfo_LoyaltyProgram_OpenMerchantLoyaltyProgram(
 
    // FloatPanel_AyohaMerchantInfo_LoyaltyProgram_NotificationShow(ID);
     //  FloatPanel_AyohaMerchantInfo_LoyaltyProgramHide();
-
+    globalsetMessage_toBeAyohaMember_tag="MerchantLoyaltyCampaign";
 
     var StampCampaignCode = _DataStore_AyohaUserStampCard_MerchantLoyaltyCampaign_LoadStampStore.findRecord('ID', val, 0, false, false, true);
     var StampContent = _DataStore_AyohaUserStampCard_MerchantLoyaltyCampaign_LoadStampStore.findRecord('ID', val, 0, false, false, true);
@@ -595,31 +730,34 @@ function FloatPanel_AyohaMerchantInfo_LoyaltyProgram_OpenMerchantLoyaltyProgram(
 }
 
 
-function FloatPanel_AyohaMerchantInfo_LoyaltyProgram_OpenMerchantLoyaltyProgram_EnterpriseAccNo(val) {
+function FloatPanel_AyohaMerchantInfo_LoyaltyProgram_OpenMerchantLoyaltyProgram_MembershipCardCode(val) {
 
     // FloatPanel_AyohaMerchantInfo_LoyaltyProgram_NotificationShow(ID);
      //  FloatPanel_AyohaMerchantInfo_LoyaltyProgramHide();
+
+
+    
      globalsetMessage_toBeAyohaMember_tag="MerchantLoyaltyCampaign";
  
-     var StampCampaignCode = _DataStore_AyohaUserStampCard_MerchantLoyaltyCampaign_LoadStampStore.findRecord('EnterpriseAccNo', val, 0, false, false, true);
-     var StampContent = _DataStore_AyohaUserStampCard_MerchantLoyaltyCampaign_LoadStampStore.findRecord('EnterpriseAccNo', val, 0, false, false, true);
-     var StampContentNote = _DataStore_AyohaUserStampCard_MerchantLoyaltyCampaign_LoadStampStore.findRecord('EnterpriseAccNo', val, 0, false, false, true);
-     var StampContentSequence = _DataStore_AyohaUserStampCard_MerchantLoyaltyCampaign_LoadStampStore.findRecord('EnterpriseAccNo', val, 0, false, false, true);
-     var EnterpriseName = _DataStore_AyohaUserStampCard_MerchantLoyaltyCampaign_LoadStampStore.findRecord('EnterpriseAccNo', val, 0, false, false, true);
-     var CountRow = _DataStore_AyohaUserStampCard_MerchantLoyaltyCampaign_LoadStampStore.findRecord('EnterpriseAccNo', val, 0, false, false, true);
-     var EndDate = _DataStore_AyohaUserStampCard_MerchantLoyaltyCampaign_LoadStampStore.findRecord('EnterpriseAccNo', val, 0, false, false, true);
-     var StartDate = _DataStore_AyohaUserStampCard_MerchantLoyaltyCampaign_LoadStampStore.findRecord('EnterpriseAccNo', val, 0, false, false, true);
-     var StampRuleRemarks = _DataStore_AyohaUserStampCard_MerchantLoyaltyCampaign_LoadStampStore.findRecord('EnterpriseAccNo', val, 0, false, false, true);
-     var IsStampRulePopUp = _DataStore_AyohaUserStampCard_MerchantLoyaltyCampaign_LoadStampStore.findRecord('EnterpriseAccNo', val, 0, false, false, true);
-     var StampCampaignName = _DataStore_AyohaUserStampCard_MerchantLoyaltyCampaign_LoadStampStore.findRecord('EnterpriseAccNo', val, 0, false, false, true);
-     var EnterpriseAccNo= _DataStore_AyohaUserStampCard_MerchantLoyaltyCampaign_LoadStampStore.findRecord('EnterpriseAccNo', val, 0, false, false, true);
-     var StampContentFinal = _DataStore_AyohaUserStampCard_MerchantLoyaltyCampaign_LoadStampStore.findRecord('EnterpriseAccNo', val, 0, false, false, true);
-     var CountStampYES = _DataStore_AyohaUserStampCard_MerchantLoyaltyCampaign_LoadStampStore.findRecord('EnterpriseAccNo', val, 0, false, false, true);
-     var EnterprisesLogo = _DataStore_AyohaUserStampCard_MerchantLoyaltyCampaign_LoadStampStore.findRecord('EnterpriseAccNo', val, 0, false, false, true);
-     var MembershipCardCode = _DataStore_AyohaUserStampCard_MerchantLoyaltyCampaign_LoadStampStore.findRecord('EnterpriseAccNo', val, 0, false, false, true);
-     var CountStar = _DataStore_AyohaUserStampCard_MerchantLoyaltyCampaign_LoadStampStore.findRecord('EnterpriseAccNo', val, 0, false, false, true);
-     var CountReviewer = _DataStore_AyohaUserStampCard_MerchantLoyaltyCampaign_LoadStampStore.findRecord('EnterpriseAccNo', val, 0, false, false, true);
-     var MembershipCardFeePaymentCycle = _DataStore_AyohaUserStampCard_MerchantLoyaltyCampaign_LoadStampStore.findRecord('EnterpriseAccNo', val, 0, false, false, true);
+     var StampCampaignCode = _DataStore_AyohaUserStampCard_MerchantLoyaltyCampaign_LoadStampStore.findRecord('MembershipCardCode', val, 0, false, false, true);
+     var StampContent = _DataStore_AyohaUserStampCard_MerchantLoyaltyCampaign_LoadStampStore.findRecord('MembershipCardCode', val, 0, false, false, true);
+     var StampContentNote = _DataStore_AyohaUserStampCard_MerchantLoyaltyCampaign_LoadStampStore.findRecord('MembershipCardCode', val, 0, false, false, true);
+     var StampContentSequence = _DataStore_AyohaUserStampCard_MerchantLoyaltyCampaign_LoadStampStore.findRecord('MembershipCardCode', val, 0, false, false, true);
+     var EnterpriseName = _DataStore_AyohaUserStampCard_MerchantLoyaltyCampaign_LoadStampStore.findRecord('MembershipCardCode', val, 0, false, false, true);
+     var CountRow = _DataStore_AyohaUserStampCard_MerchantLoyaltyCampaign_LoadStampStore.findRecord('MembershipCardCode', val, 0, false, false, true);
+     var EndDate = _DataStore_AyohaUserStampCard_MerchantLoyaltyCampaign_LoadStampStore.findRecord('MembershipCardCode', val, 0, false, false, true);
+     var StartDate = _DataStore_AyohaUserStampCard_MerchantLoyaltyCampaign_LoadStampStore.findRecord('MembershipCardCode', val, 0, false, false, true);
+     var StampRuleRemarks = _DataStore_AyohaUserStampCard_MerchantLoyaltyCampaign_LoadStampStore.findRecord('MembershipCardCode', val, 0, false, false, true);
+     var IsStampRulePopUp = _DataStore_AyohaUserStampCard_MerchantLoyaltyCampaign_LoadStampStore.findRecord('MembershipCardCode', val, 0, false, false, true);
+     var StampCampaignName = _DataStore_AyohaUserStampCard_MerchantLoyaltyCampaign_LoadStampStore.findRecord('MembershipCardCode', val, 0, false, false, true);
+     var EnterpriseAccNo= _DataStore_AyohaUserStampCard_MerchantLoyaltyCampaign_LoadStampStore.findRecord('MembershipCardCode', val, 0, false, false, true);
+     var StampContentFinal = _DataStore_AyohaUserStampCard_MerchantLoyaltyCampaign_LoadStampStore.findRecord('MembershipCardCode', val, 0, false, false, true);
+     var CountStampYES = _DataStore_AyohaUserStampCard_MerchantLoyaltyCampaign_LoadStampStore.findRecord('MembershipCardCode', val, 0, false, false, true);
+     var EnterprisesLogo = _DataStore_AyohaUserStampCard_MerchantLoyaltyCampaign_LoadStampStore.findRecord('MembershipCardCode', val, 0, false, false, true);
+     var MembershipCardCode = _DataStore_AyohaUserStampCard_MerchantLoyaltyCampaign_LoadStampStore.findRecord('MembershipCardCode', val, 0, false, false, true);
+     var CountStar = _DataStore_AyohaUserStampCard_MerchantLoyaltyCampaign_LoadStampStore.findRecord('MembershipCardCode', val, 0, false, false, true);
+     var CountReviewer = _DataStore_AyohaUserStampCard_MerchantLoyaltyCampaign_LoadStampStore.findRecord('MembershipCardCode', val, 0, false, false, true);
+     var MembershipCardFeePaymentCycle = _DataStore_AyohaUserStampCard_MerchantLoyaltyCampaign_LoadStampStore.findRecord('MembershipCardCode', val, 0, false, false, true);
 
 
      var StampCampaignCodes = StampCampaignCode.get('StampCampaignCode');
@@ -677,7 +815,7 @@ function FloatPanel_AyohaMerchantInfo_LoyaltyProgram_OpenMerchantLoyaltyProgram_
  
          localStorage.setItem('CountLoyaltyStamped', YESStamped);
          localStorage.setItem('CountStampCardRowShow', TotalRows);
-         FloatPanel_MembershipCardList_NotYetSubscribedShow_FromDashboard_Main(MembershipCardCodes, val, MembershipTag,MembershipCardFeePaymentCycles,CountStars,CountReviewers);
+         FloatPanel_MembershipCardList_NotYetSubscribedShow_FromDashboard_Main(MembershipCardCodes, EnterpriseAccNos, MembershipTag,MembershipCardFeePaymentCycles,CountStars,CountReviewers);
         
         
         

@@ -489,6 +489,8 @@ function FloatPanel_DashboardMerchantReward_MembershipEventDetailShow(Enterprise
     globalFloatPanel_DashboardMerchantReward_MembershipEventDetail_EnterpriseAccNo = EnterpriseAccNo;
     globalFloatPanel_DashboardMerchantReward_MembershipEventDetail_EventLocationCoordinate = EventLocationCoordinate;
     
+
+  //  alert(EnterpriseLogo);
     if (EventLocationCoordinate != "NA") {
         Ext.getCmp('htmlFloatPanel_DashboardMerchantReward_MembershipEventDetail').setHtml('<div class="myContent" style="background-color:white;width:100%;height:370px;">' +
                      '&nbsp;&nbsp;<div style="font-family:Arial, sans-serif;font-size:14px;color:black;font-weight:bold;text-align:left;"><img src="' + EnterpriseLogo + '" style="width:30px;height:30px;border-radius:50%;margin:0px 0px 0px 20px;"/><div style="margin:-28px 0px 0px 55px;">' + EnterpriseName + '</div></div>&nbsp;&nbsp;' +
@@ -537,6 +539,7 @@ function FloatPanel_DashboardMerchantReward_MembershipEventDetailShow(Enterprise
 
 function FloatPanel_DashboardMerchantReward_MembershipEventDetailShow_FromMembershipCardList_Upgrade(CampaignCode,EnterpriseLogo,EnterpriseName){
    
+   // alert(CampaignCode);
     var task = Ext.create('Ext.util.DelayedTask', function () {
 
         var objn = {
@@ -620,7 +623,7 @@ function FloatPanel_DashboardMerchantReward_MembershipEventDetailShow_FromMember
     this.overlay = Ext.Viewport.add(FloatPanel_DashboardMerchantReward_MembershipEventDetail());
     this.overlay.show();
    // AddRoutePages(_FloatPanel_DashboardMerchantReward_MembershipEventDetail, "is_FloatPanel_DashboardMerchantReward_MembershipEventDetailOpen");
-   
+  // alert(EnterpriseLogo);
    Ext.getCmp('FloatPanel_DashboardMerchantReward_MembershipEventDetailID').setZIndex(330);
     is_FloatPanel_DashboardMerchantReward_MembershipEventDetailOpen = 'Y';
     globalFloatPanel_DashboardMerchantReward_MembershipEventDetail_ID = ID;

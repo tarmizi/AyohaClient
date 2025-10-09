@@ -3019,25 +3019,58 @@ function FloatPanel_MembershipCardList_Upgrade_MembershipCardCampaingEntitledLoa
         _DataStore_MembershipCardCampaingEntitledLoadByMembershipCardCodeStore.getProxy().setExtraParam('MembershipCardCode', MMCCode);
         _DataStore_MembershipCardCampaingEntitledLoadByMembershipCardCodeStore.getProxy().setExtraParam('SubscriberAccNo', GetCurrAyohaUserAccountNo());
         _DataStore_MembershipCardCampaingEntitledLoadByMembershipCardCodeStore.getProxy().setUrl(GetAPIurl() + '/MembershipCardCampaingEntitled/MembershipCardCampaingEntitledLoadByMembershipCardCode');
-        _DataStore_MembershipCardCampaingEntitledLoadByMembershipCardCodeStore.load();
+      //  _DataStore_MembershipCardCampaingEntitledLoadByMembershipCardCodeStore.load();
 
 
-    var task = Ext.create('Ext.util.DelayedTask', function () {
-        //Ext.getStore('MembershipCardCampaingEntitledLoadByMembershipCardCodeStore').getProxy().setExtraParams({
-        //    MembershipCardCode: MMCCode,
-        //    SubscriberAccNo: GetCurrAyohaUserAccountNo(),
-        //});
-        //Ext.StoreMgr.get('MembershipCardCampaingEntitledLoadByMembershipCardCodeStore').load();
-        //var myStore = Ext.getStore('MembershipCardCampaingEntitledLoadByMembershipCardCodeStore');
-        var Count = _DataStore_MembershipCardCampaingEntitledLoadByMembershipCardCodeStore.getCount();
+        _DataStore_MembershipCardCampaingEntitledLoadByMembershipCardCodeStore.load({
+            callback: function (records, operation, success) {
+                if (success && records.length > 0) {
+                    console.log('Store loaded successfully, total records: ' + records.length);
+        
+                  
+                   
+                    LoadingPanelHide();
+                } else {
+                    console.error('Failed to load store data or no record found.');
+                    LoadingPanelHide();
+                }
+            }
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // var task = Ext.create('Ext.util.DelayedTask', function () {
+    //     //Ext.getStore('MembershipCardCampaingEntitledLoadByMembershipCardCodeStore').getProxy().setExtraParams({
+    //     //    MembershipCardCode: MMCCode,
+    //     //    SubscriberAccNo: GetCurrAyohaUserAccountNo(),
+    //     //});
+    //     //Ext.StoreMgr.get('MembershipCardCampaingEntitledLoadByMembershipCardCodeStore').load();
+    //     //var myStore = Ext.getStore('MembershipCardCampaingEntitledLoadByMembershipCardCodeStore');
+    //     var Count = _DataStore_MembershipCardCampaingEntitledLoadByMembershipCardCodeStore.getCount();
  
-      //  _DataStore_MembershipCardCampaingEntitledLoadByMembershipCardCodeStore = Ext.getStore('MembershipCardCampaingEntitledLoadByMembershipCardCodeStore');
-      LoadingPanelHide();
-      Ext.Viewport.setMasked(false);
+    //   //  _DataStore_MembershipCardCampaingEntitledLoadByMembershipCardCodeStore = Ext.getStore('MembershipCardCampaingEntitledLoadByMembershipCardCodeStore');
+    //   LoadingPanelHide();
+    //   Ext.Viewport.setMasked(false);
 
-    });
-    task.delay(1000);
-    }
+    // });
+    // task.delay(1000);
+   
+
+
+}
 }
 
 

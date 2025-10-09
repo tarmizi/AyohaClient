@@ -1,30 +1,29 @@
-Ext.define('ianMizi.model.MerchantLoyaltyCampaign.PointCardModel', {
+Ext.define('ianMizi.model.MerchantLoyaltyCampaign.EventCardModel', {
     extend: 'Ext.data.Model',
     config: {
         fields: [
             'ID',
-                 'PointCampaignCode',
-                  'ImgPath',
-                  'ItemName',
-                  'ItemPoint',
-                  'ItemPrizePriceCost',
-                  'Remarks',
-                  'StrEndDate',
+                 'EventCode',
+                  'EventCoverPhoto',
+                  'EventName',
+                  'EventType',
+                  'EventDescription',
+                  'EventStartDate',
+                  'EventEndDate',
+                  'CreatedDate',
+                  'EventLocationName',
+                  'EventStatus',
                   'EnterpriseName',
                   'EnterpriseLogo',
                   'EnterpriseTagLine',
-                  'EndDate',
-                  'StartDate',
                   'EnterpriseAccNo',
-                  'PointCampaignName',
                   'MembershipCardCode',
                   'CountStar',
                   'CountReviewer',
                   'SearchCol',
                   'MembershipCardFeePaymentCycle',
-                  'isCampaignExpired',
                   'BusinessMode',    
-                  'EnterpriseDescription',               
+                  'EnterpriseDescription',           
                     
                     
         ]

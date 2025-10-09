@@ -44,7 +44,8 @@ Ext.application({
     'AyohaHotMerchant.AyohaHotMerchantModel', 'AyohaRewardEvent.AyohaRewardEventModel', 'AyohaRewardContest.AyohaRewardContest_SelfieAndWinModel', 'EnterprisesCoverMedia.EnterprisesCoverMediaModel',
     'EnterprisesOnlineStore.EnterprisesOnlineStoreModel', 'EnterprisesWorkingHour.EnterprisesWorkingHourModel', 'AyohaMerchantInfoMembershipLoyaltyProgram.AyohaMerchantInfoMembershipLoyaltyProgramModel',
     'Master.BankAccountTypeModel', 'AyohaUserProfile.AyohaUserProfile_BankAccountModel','MembershipCardPaymentPlan.MembershipCardPaymentPlanModel','AyohaStoreOrder.AyohaStoreOrderPeding_MainDashboardModel',
-    'AyohaStoreCart.AyohaStoreCartReOrderModel','AyohaeWalletTransaction.AyohaeWalletAllTransactionModel','Merchantperk.Merchantperk_ViewModel','MerchantLoyaltyCampaign.StampCardModel','MerchantLoyaltyCampaign.PointCardModel'],
+    'AyohaStoreCart.AyohaStoreCartReOrderModel','AyohaeWalletTransaction.AyohaeWalletAllTransactionModel','Merchantperk.Merchantperk_ViewModel','MerchantLoyaltyCampaign.StampCardModel','MerchantLoyaltyCampaign.PointCardModel',
+'MerchantLoyaltyCampaign.DiscountCardModel','MerchantLoyaltyCampaign.ContestCardModel','MerchantLoyaltyCampaign.EventCardModel'],
 
     stores: ['Notifications.NotificationsCountTypeNNStore', 'Notifications.NotificationsCountTypeRStore', 'Enterprises.EnterprisesLoadByMerchantCategoryStore',
     'EnterpriseSubscriber.EnterpriseSubscribergetBySubcriberAccNoSearchReceiptStore','RedeemItem.RedeemItemgetByEnterpriseAccNoStore', 'LoyaltyStamp.LoyaltyStampLoadByEnterpriseAccNoStore', 'LoyaltyStamp.LoyaltyStampLoadBySubscriberAccNoAndEnterpriseAccNoStore',
@@ -124,7 +125,8 @@ Ext.application({
     'AyohaeWallet.FloatPanel_AyohaeWallet_CashOutConfirm', 'Master.FloatPanel_BankAccountName', 'Master.FloatPanel_BankAccountType','AyohaRewardMerchantDiscountLoyalty.FloatPanel_MerchantDiscountLoyaltyDescription','Dashboard.FloatPanel_DashboardMerchantReward_UploadedReceipt',
     'Membership.FloatPanel_Membership_MembershipCardSaleDetail','Membership.FloatPanel_MembershipCardList_NotYetSubscribed','AyohaStoreSaleItem.FloatPanel_AyohaStore_CheckOut_MembershipCard','ianMizi.view.Config.CoreVariable','Membership.FloatPanel_Membership_MembershipCardHubs',
 'AyohaStoreSaleItem.FloatPanel_MainDashboard_PendingOrder','MyAccount.FloatPanel_ShoppingBagOrder','AyohaStoreSaleItem.FloatPanel_AyohaStore_OrderHistory_Single','Menu.DrawerMenu','MyAccount.FloatPanel_MyAccount_AllTransactionHistory',
-'AyohaEnterpriseAccount.FloatPanel_AyohaEnterpriseRewardItem','Menu.FloatPanel_ScannedMerchant','AyohaMerchantInfo.FloatPanel_AyohaMerchantInfo_LoyaltyProgram','AyohaMerchantInfo.FloatPanel_AyohaMerchantInfo_PointCardLoyaltyProgram'],
+'AyohaEnterpriseAccount.FloatPanel_AyohaEnterpriseRewardItem','Menu.FloatPanel_ScannedMerchant','AyohaMerchantInfo.FloatPanel_AyohaMerchantInfo_LoyaltyProgram','AyohaMerchantInfo.FloatPanel_AyohaMerchantInfo_PointCardLoyaltyProgram',
+'AyohaMerchantInfo.FloatPanel_AyohaMerchantInfo_DiscountCardLoyaltyProgram','AyohaMerchantInfo.FloatPanel_AyohaMerchantInfo_ContestCardLoyaltyProgram','AyohaMerchantInfo.FloatPanel_AyohaMerchantInfo_EventCardLoyaltyProgram','AyohaMerchantInfo.FloatPanel_AyohaMerchantInfo_VoucherCardLoyaltyProgram'],
 
 
     icon: {

@@ -52,17 +52,35 @@ Ext.define('ianMizi.model.MerchantLoyaltyCampaign.StampCardModel', {
                   'CountStar',
                   'CountReviewer',
                   'SearchCol',
-                  'MembershipCardFeePaymentCycle',              
-                     {
-                         name: 'ModifiedStampContent',
-                         convert: function (value, record) {
-                             var _value;
-                           
-                             _value = record.get('StampContent');  
+                  'MembershipCardFeePaymentCycle',
+                  'BusinessMode',    
+                  'EnterpriseDescription', 
+                  {
+                    name: 'ModifiedStampContent',
+                    convert: function (value, record) {
+         
+                        var _value1;
+                        var _value2;
+                        var _value3;
+                        var _value4;
+                        var _value5;
+                        var _value6;
+                        var _value;                    
+                        var ImagePath = record.get('StampContent');                       
+                            _value1= ImagePath.replace("width:70px", "width:100%");
+                            _value2=_value1.replace("height:70px", "height:250px");
+                            _value3 = _value2.replace("font-size: 35px;", "font-size: 60px;");
+                            _value4 = _value3.replace("margin:7px 0px 0px 0px", "margin:70px 0px 0px 0px")
+                            _value5 = _value4.replace("margin:-90px 0px 0px 0px", "margin:-150px 0px 0px 0px")
+                            _value6 = _value5.replace('size="3"', 'size="6"')
+                            _value = _value6.replace("border-radius: 50px", "border-radius: 0px")
+                            
 
-                             return _value
-                         }
-                     },
+                         
+                        return _value;
+                    }
+                },
+                   
                      {
                          name: 'ModifiedCampaignType',
                          convert: function (value, record) {

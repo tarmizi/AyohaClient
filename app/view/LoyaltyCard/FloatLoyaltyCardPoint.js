@@ -716,7 +716,8 @@ function FloatLoyaltyCardPoint() {
 
                                            //hidden: true,
                                            id: 'carouselFloatLoyaltyCardPoint',
-                                           style: 'background-color:#f7f7f7',
+                                         //  style: 'background-color:#f7f7f7',
+                                           style: 'background-color:white',
                                            width: '100%',
                                            height: '100%',
                                            indicator: false,
@@ -783,6 +784,7 @@ function FloatLoyaltyCardPoint() {
                                                                //   flex: 2,
                                                                store: 'PointCampaignRedeemLoadByPointCampaignCodeStore',
                                                                id: 'List_FloatLoyaltyCardPoint_RedeemPrize',
+                                                               style: 'background-color:rgba(255,255,255, 0.9);border-radius: 0px 0px 0px 0px;',
                                                                mode: 'SINGLE',
                                                                disableSelection: true,
                                                                scrollable: {
@@ -859,6 +861,7 @@ function FloatLoyaltyCardPoint() {
                                                     //   flex: 2,
                                                     store: 'LoyaltyPointRedeemPrizeHistoryLoadRedeemHistoryStore',
                                                     id: 'List_FloatLoyaltyCardPoint_RedeemPrizeHistory',
+                                                    style: 'background-color:rgba(255,255,255, 0.9);border-radius: 0px 0px 0px 0px;',
                                                     mode: 'SINGLE',
                                                     disableSelection: true,
                                                     scrollable: {
@@ -936,6 +939,7 @@ function FloatLoyaltyCardPoint() {
                                                         //   flex: 2,
                                                         store: 'LoyaltyPointLoadByPointCampaignCodeUserStore',
                                                         id: 'List_FloatLoyaltyCardPoint_PointHistory',
+                                                        style: 'background-color:rgba(255,255,255, 0.9);border-radius: 0px 0px 0px 0px;',
                                                         mode: 'SINGLE',
                                                         disableSelection: true,
                                                         grouped: true,
@@ -1901,7 +1905,7 @@ function FloatLoyaltyCardPointShow(CampaingName, PointCampaignCode, EnterpriseLo
 
    // Ext.getCmp('htmlFloatLoyaltyCardPointPointTitle').setHtml('<div style="width:130px;border-radius: 10px 0px 0px 10px;background-color: transparent;text-align:center;border: 1px none white;font-size: 11px;font-weight:bold;color:white;height:20px">' + GetAyohaUserAccountNames() + '</div>');
     ////Ext.getCmp('htmlFloatLoyaltyCardPointPointTitle').setHtml('<div style="width:130px;border-radius: 0px 0px 0px 0px;background-color: transparent;text-align:right;border: 1px none white;font-size: 11px;font-weight:bold;color:white;height:20px">' + GetAyohaUserAccountNames() + '</div>');
-    Ext.getCmp('htmlFloatLoyaltyCardPointPointTitle').setHtml('<div style="width:130px;border-radius: 0px 0px 0px 0px;background-color: transparent;text-align:right;border: 1px none white;font-size: 11px;font-weight:bold;color:white;height:20px">Point Loyalty Card</div>');
+    Ext.getCmp('htmlFloatLoyaltyCardPointPointTitle').setHtml('<div style="width:130px;border-radius: 0px 0px 0px 0px;background-color: transparent;text-align:right;border: 1px none white;font-size: 11px;font-weight:bold;color:white;height:20px">Loyalty Point Card</div>');
 
 
 

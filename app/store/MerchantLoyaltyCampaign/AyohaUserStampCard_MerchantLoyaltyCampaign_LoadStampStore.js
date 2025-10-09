@@ -26,7 +26,7 @@ var _DataStore_AyohaUserStampCard_MerchantLoyaltyCampaign_LoadStampStore = Ext.c
     groupDir: "DESC",
     grouper: {
         groupFn: function (record) {
-            return  '<div onclick="FloatPanel_AyohaMerchantInfo_LoyaltyProgram_OpenMerchantLoyaltyProgram_EnterpriseAccNo(`'+record.get('EnterpriseAccNo')+'`)" style="display: flex; align-items: center; justify-content: space-between; width: 100%; max-width: 500px; font-family: Arial, sans-serif; padding: 2px 0px; box-sizing: border-box;">' +
+            return  '<div onclick="FloatPanel_AyohaMerchantInfo_LoyaltyProgram_OpenMerchantLoyaltyProgram_MembershipCardCode(`'+record.get('MembershipCardCode')+'`)" style="display: flex; align-items: center; justify-content: space-between; width: 100%; max-width: 500px; font-family: Arial, sans-serif; padding: 2px 0px; box-sizing: border-box;">' +
             '<div style="display: flex; align-items: center;">' +
               '<div style="width: 42px; height: 42px; border: 2px none #333; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 5px; flex-shrink: 0;">' +
                 '<img src='+record.get('EnterpriseLogo')+' style="width:42px;height:42px">' +
@@ -37,7 +37,7 @@ var _DataStore_AyohaUserStampCard_MerchantLoyaltyCampaign_LoadStampStore = Ext.c
                 '</h2>' +
                 '<p style="margin: 2px 0 0 0; font-size: 10px; color: white;">' +
                 // record.get('StampCampaignName') + ' - (End Date:' + record.get('EndDate') + ')' +
-                 record.get('StampCampaignName')+
+                 record.get('EnterpriseTagLine')+
                 '</p>' +
               '</div>' +
             '</div>' +

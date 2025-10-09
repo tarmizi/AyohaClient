@@ -64,55 +64,7 @@ Ext.define('ianMizi.model.Merchantperk.Merchantperk_ViewModel', {
                         return _value;
                     }
                 },
-                // {
-                //     name: 'ModifiedButtonBottomDisplay',
-                //     convert: function (value, record) {
-                //       var _value;
-                //       var str = record.get('ItemType');
-                  
-                //       if (str === "Voucher") {
-                //         var VoucherName = record.get('Name');
-                //         var VoucherImgPath = record.get('ImagePath');
-                //         var EntitledVoucherEndDate = record.get('EndDate');
-                //         var DayLeft = getDaysLeft(EntitledVoucherEndDate);
-                //         var VoucherCode = record.get('PrimaryCode');
-                //         var VoucherAmount = record.get('Amount');
-                //         var VoucherTermAndCondition = record.get('Terms');
-                  
-                //         var text = (DayLeft == null) ? '-' : (DayLeft < 0 ? 'Expired' : (DayLeft + ' days left'));
-                  
-                //         var onclickJs =
-                //           'FloatPanel_AyohaRewardVoucherDetailShow_MerchantPerks(' +
-                //             jsStr(VoucherName) + ',' +
-                //             jsStr(VoucherImgPath) + ',' +
-                //             jsStr(EntitledVoucherEndDate) + ',' +
-                //             jsStr(text) + ',' +
-                //             jsStr(VoucherCode) + ',' +
-                //             jsStr(VoucherAmount) + ',' +
-                //             jsStr(VoucherTermAndCondition) +
-                //           ');';
-                  
-                //         _value =
-                //           '<button onclick="' + onclickJs + '" ' +
-                //           'style="width:97%; background-image:linear-gradient(#ff00de75,#c800ffc9); background-color:#fac; color:white; border:none; padding:15px; border-radius:12px; font-size:14px; font-weight:bold; cursor:pointer; text-shadow:0 1px 1px rgba(0,0,0,0.2); box-shadow:0 4px 10px rgba(247,151,30,0.4); transition:transform 0.2s ease, box-shadow 0.2s ease;" ' +
-                //           'onmouseover="this.style.transform=\'translateY(-2px)\'; this.style.boxShadow=\'0 6px 12px rgba(247,151,30,0.5)\'" ' +
-                //           'onmouseout="this.style.transform=\'translateY(0)\'; this.style.boxShadow=\'0 4px 10px rgba(247,151,30,0.4)\'">' +
-                //           'View Membership Voucher' +
-                //           '</button>';
-                  
-                //       } else {
-                //         _value =
-                //           '<button style="width:97%; background-image:linear-gradient(#ff00de75,#c800ffc9); background-color:#fac; color:white; border:none; padding:15px; border-radius:12px; font-size:14px; font-weight:bold; cursor:pointer; text-shadow:0 1px 1px rgba(0,0,0,0.2); box-shadow:0 4px 10px rgba(247,151,30,0.4); transition:transform 0.2s ease, box-shadow 0.2s ease;" ' +
-                //           'onmouseover="this.style.transform=\'translateY(-2px)\'; this.style.boxShadow=\'0 6px 12px rgba(247,151,30,0.5)\'" ' +
-                //           'onmouseout="this.style.transform=\'translateY(0)\'; this.style.boxShadow=\'0 4px 10px rgba(247,151,30,0.4)\'">' +
-                //           'View Membership Card' +
-                //           '</button>';
-                //       }
-                  
-                //       return _value;
-                //     }
-                //   },
-                  
+               
                   {
                     name: 'ModifiedButtonBottomDisplay',
                     convert: function (value, record) {
@@ -126,7 +78,8 @@ Ext.define('ianMizi.model.Merchantperk.Merchantperk_ViewModel', {
                         var VoucherName = record.get('Name');
                         var VoucherImgPath = record.get('ImagePath');
                         var EntitledVoucherEndDate = record.get('EndDate');
-                        var DayLeft = getDaysLeft(EntitledVoucherEndDate);
+                       // var DayLeft = getDaysLeft(EntitledVoucherEndDate);
+                       var DayLeft  = record.get('DayLeft');
                         var VoucherCode = record.get('PrimaryCode');
                         var VoucherAmount = record.get('Amount');
                         var VoucherTermAndCondition = record.get('Terms');
@@ -140,7 +93,7 @@ Ext.define('ianMizi.model.Merchantperk.Merchantperk_ViewModel', {
                           VoucherName,
                           VoucherImgPath,
                           EntitledVoucherEndDate,
-                          Text,
+                          DayLeft,
                           VoucherCode,
                           VoucherAmount,
                           VoucherTermAndCondition,
@@ -479,7 +432,7 @@ document.addEventListener('click', function (e) {
         payload.VoucherName,
         payload.VoucherImgPath,
         payload.EntitledVoucherEndDate,
-        payload.Text,
+        payload.DayLeft,
         payload.VoucherCode,
         payload.VoucherAmount,
         payload.VoucherTermAndCondition,

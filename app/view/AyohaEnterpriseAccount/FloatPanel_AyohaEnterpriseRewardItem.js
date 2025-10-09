@@ -1107,6 +1107,9 @@ function FloatPanel_AyohaEnterpriseRewardItemOpenMembershiCardDetail(EnterpriseH
 
 
 function FloatPanel_AyohaEnterpriseRewardItem_MembershipCardLoadByMembershipCardCodeStore(MembershipCardCode,EnterpriseCountStar,EnterpriseAccNo,TotalReviewer) {
+   
+   //alert(MembershipCardCode)
+   
     LoadingPanelShow(getLoadingIcon(), 'Loading....');
     var task = Ext.create('Ext.util.DelayedTask', function () {
 

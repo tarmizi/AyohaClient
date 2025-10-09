@@ -1349,7 +1349,7 @@ items:[
         items: [
 {
     xtype: 'container',
-    width: '50%',
+    width: '33%',
     height:40,
     name:'namecontainerFloatPanel_MembershipCardList_NotYetSubscribed_MerchantPage',
     margin: '0 0 0 0',
@@ -1383,7 +1383,7 @@ items:[
 },
 {
     xtype: 'container',
-    width: '50%',
+    width: '33%',
     height:40,
     name:'namecontainerFloatPanel_MembershipCardList_NotYetSubscribed_OnlineStore',
     margin: '0 0 0 0',
@@ -1396,7 +1396,7 @@ items:[
     layout: {
     type: 'vbox',
     pack: 'center',
-    align: 'left',
+    align: 'center',
     },
     items:[
         {
@@ -1409,6 +1409,48 @@ items:[
                 '<div style="font-size: 10px; font-weight: normal; color: black; text-align: center;">'+ 
                 'Online<br>'+ 
                 '<span style="display: block; margin-top: -4px;">Store</span>'+ 
+                '</div>'+ 
+                '</div>'
+                 
+                        
+                      
+        }
+    ]
+},
+
+
+
+
+
+{
+    xtype: 'container',
+    width: '33%',
+    height:40,
+    id:'containerFloatPanel_MembershipCardList_NotYetSubscribed_MerchantVoucher',
+    name:'namecontainerFloatPanel_MembershipCardList_NotYetSubscribed_MerchantVoucher',
+    margin: '0 0 0 0',
+    style: 'background-color:transparent',
+    // scrollable: {
+    //     direction: 'horizontal',
+    //     directionLock: true,
+    //     indicators: false
+    // },
+    layout: {
+    type: 'vbox',
+    pack: 'center',
+    align: 'center',
+    },
+    items:[
+        {
+          
+            
+
+
+                html:'<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; font-family: sans-serif;">'+ 
+                '<img src="resources/icons/VoucherFeature02.png" style="width: 25px; height: 25px;" />'+ 
+                '<div style="font-size: 10px; font-weight: normal; color: black; text-align: center;">'+ 
+                'Loyalty<br>'+ 
+                '<span style="display: block; margin-top: -4px;">Voucher</span>'+ 
                 '</div>'+ 
                 '</div>'
                  
@@ -2714,7 +2756,7 @@ function FloatPanel_MembershipCardList_NotYetSubscribedShow_FromDashboard_Main(M
    
   
    
-   
+ 
    
    
    
@@ -2755,7 +2797,7 @@ function FloatPanel_MembershipCardList_NotYetSubscribedShow_FromDashboard_Main(M
 
 
     _FloatPanel_MembershipCardList_NotYetSubscribed_EnterpriseAccNo = EnterpriseAccountNo;
-
+   
     _FloatPanel_MembershipCardList_NotYetSubscribed_MembershipCode = MembershipCardCode;
     globalFloatPanelAyohaStore_AyohaUser_MembershipCardCode= MembershipCardCode;
     globalFloatPanelMerchantDetailPage_EnterpriseAccNo = EnterpriseAccountNo;
@@ -2927,6 +2969,24 @@ function FloatPanel_MembershipCardList_NotYetSubscribedAdjustHeight() {
     
 
  
+
+    var containerViewnamecontainerFloatPanel_MembershipCardList_NotYetSubscribed_MerchantVoucher = Ext.ComponentQuery.query('container[name=namecontainerFloatPanel_MembershipCardList_NotYetSubscribed_MerchantVoucher]')[0];
+    var containerViewElnamecontainerFloatPanel_MembershipCardList_NotYetSubscribed_MerchantVoucher = containerViewnamecontainerFloatPanel_MembershipCardList_NotYetSubscribed_MerchantVoucher.element;
+    containerViewElnamecontainerFloatPanel_MembershipCardList_NotYetSubscribed_MerchantVoucher.on('tap',
+      function (event, node, options, eOpts) {
+        FloatPanel_AyohaRewardVoucherList_MembershipCardShow();
+          //if (globalFloatPanel_AyohaStore_MembershipEventCount == 1) {
+          //    FloatPanel_AyohaStore_AyohaRewardEventLoadBySubscriberAccNoStore_Event1();
+          //}
+          //if (globalFloatPanel_AyohaStore_MembershipEventCount > 1) {
+          //    FloatPanel_AyohaStore_AyohaRewardEventLoadBySubscriberAccNoStore_Event2();
+          //}
+
+      }
+    );
+
+
+    
 
 }
 
@@ -3267,6 +3327,10 @@ function FloatPanel_MembershipCardList_NotYetSubscribed_MembershipCardAyohaUserM
     // _DataStore_MembershipCardAyohaUserMembershipCardStore.getProxy().setExtraParam('MembershipCardCode', MembershipCardCode);
     // _DataStore_MembershipCardAyohaUserMembershipCardStore.getProxy().setUrl(GetAPIurl() + '/MembershipCard/MembershipCardAyohaUserMembershipCard');
     // _DataStore_MembershipCardAyohaUserMembershipCardStore.load();
+
+
+
+
 
 
 
