@@ -94,8 +94,8 @@ Ext.application({
     'AyohaeWalletTransaction.AyohaeWalletTransactionLoadByeWalletAccNoRecentlyTransferToStore', 'AyohaStoreSaleItem.AyohaStoreSaleItemloadByEnterpriseAccNoHotItemStore', 'AyohaeWallet.AyohaeWalletAccountSettingHardCodedStore',
     'MembershipCard.MembershipCardLoadBySubscriberAccNoDashboardMainStore','Master.BankAccountTypeStore', 'AyohaeWallet.AyohaeWalletAccountRequestCashOutStore','AyohaRewardContest.AyohaRewardContestLoadBySubscriberAccNoAndContestCodeStore','MembershipCardPaymentPlan.MembershipCardPaymentPlanLoadByPaymentPlanCodeStore',
     'AyohaStoreOrder.AyohaStoreOrderPendingOrderMainDashbordStore','Merchantperk.VIEW_merchantperk_ViewStore','MembershipCard.MembershipCardLoadByMembershipCardCodeStore','MerchantLoyaltyCampaign.AyohaUserStampCard_MerchantLoyaltyCampaign_LoadStampStore','MerchantLoyaltyCampaign.MerchantLoyaltyCampaignStore'],
-
-    views: ['Config.AppState','MyAccount.Dashboard', 'MyAccount.FloatPanel_MyAccountMaster', 'Config.Configs', 'Config.QRcode', 'Main', 'LoginAyohaUser', 'Subscriber.FloatPanel_SubscriberMaster', 'AyohaNotification.FloatPanel_AyohaNotification',
+    //
+    views: ['ImageCarousel','Config.AppState','MyAccount.Dashboard', 'MyAccount.FloatPanel_MyAccountMaster', 'Config.Configs', 'Config.QRcode', 'Main', 'LoginAyohaUser', 'Subscriber.FloatPanel_SubscriberMaster', 'AyohaNotification.FloatPanel_AyohaNotification',
         'AyohaNotification.FloatPanel_AyohaNotification_Notification', 'AyohaReward.FloatPanel_AyohaReward_PointTransactions', 'AyohaReward.FloatPanel_AyohaReward_ContestHistory',
         'AyohaReward.FloatPanel_AyohaReward_ContestAdvertisement', 'AyohaReward.FloatPanel_AyohaReward_ViewMyRanking', 'AyohaReward.FloatPanel_AyohaReward_Congratulations',
         'NearestRedemption.FloatPanel_NearestRedemption', 'AyohaCardManagement.FloatPanel_AyohaCardManagement_PreviewCard', 'AyohaCardManagement.FloatPanel_AyohaCardManagement_PreviewCard_ContentNote',

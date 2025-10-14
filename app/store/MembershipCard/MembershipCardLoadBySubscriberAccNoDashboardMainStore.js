@@ -22,6 +22,18 @@ var _DataStore_MembershipCardLoadBySubscriberAccNoDashboardMainStore = Ext.creat
             messageProperty: 'message'
         }
     },
+    listeners: {
+        load: function(store, records, successful, operation, eOpts) {
+            // After the store loads data successfully...
+            if (successful) {
+                // Add the special "Load More" record at the end.
+                // It only needs the 'isLoadMore' flag.
+                store.add({
+                    isLoadMore: true
+                });
+            }
+        }
+    }
 });
 
 
@@ -47,3 +59,22 @@ var _DataStore_AyohaStore_CheckOut_LoadByMembershipCardCodeStore = Ext.create('E
         }
     },
 });
+
+
+
+// // Example: In your controller or view model where you define the store
+// var myStore_loadMoreMembershipCard = Ext.create('Ext.data.Store', {
+//     // ... your existing store configuration (model, proxy, etc.)
+//     listeners: {
+//         load: function(store, records, successful, operation, eOpts) {
+//             // After the store loads data successfully...
+//             if (successful) {
+//                 // Add the special "Load More" record at the end.
+//                 // It only needs the 'isLoadMore' flag.
+//                 store.add({
+//                     isLoadMore: true
+//                 });
+//             }
+//         }
+//     }
+// });

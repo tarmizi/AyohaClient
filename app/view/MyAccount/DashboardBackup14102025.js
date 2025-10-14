@@ -1,4 +1,4 @@
-﻿
+
 var detectIndex = [];
 var iseWalletButtonTap = "NO";
 var DashboardArrIndexmainDashboardCarousel = 0;
@@ -2073,50 +2073,12 @@ html:'<div class="tier-head">'+
 
 
   
-            
-
-            {
-                xtype: 'container',
-                width: '100%',
-                hidden: false,
-                id:'containerDashboard_AyohaMerchantMembershipCardList',
-                margin: '20 0 0 0',
-                // style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1 ;background: white;border-radius: 0px 15px 15px 0px;',
-                //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
-                style: 'background-color:transparent',
-                layout: {
-                    type: 'hbox',
-                    pack: 'center',
-                    align: 'center',
-                },
-                items: [
-                     {
-                         margin: '10 0 0 14',
-                         //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
-                         html: '<div style="color:black;text-align: left;font-size:14px;width:100%;margin:0px 0px 0px 0px"><b>Ayoha Merchant Membership Card !</b></div><br><div  style="color:black;text-align: left;font-size:10px;width:100%;margin:-25px 0px 0px 0px;">Tap the card to see what’s included and how it pays back</div>'
-                         // html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: 70%"><col style="width:30%"></colgroup><thead><tr><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:right;vertical-align:top;word-break:normal" rowspan="2"><div style="margin:0px 0px 0px -15px">TARMIZI RAHIM</div><br>Lagendary Card Mortal </th><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:middle;word-break:normal" rowspan="2">Medal</th></tr><tr></tr></thead></table>'
-                     },
-                     {
-                         xtype: 'spacer'
-                     },
-                      {
-                          xtype: 'button',
-                          id: 'btnMyDashboard_AyohaMerchantMembershipCardList',
-                          //hidden:true,
-                          //  badgeText: '1',
-                          margin: '0 10 0 0',
-                          height: 35,
-                          width: 35,
-                          html: '<img src="resources/icons/membershipPurpleThree.png" width="25" height="25" alt="Company Name">',
-                          ui: 'plain',
-                          handler: function () {
-                            FloatPanel_Membership_MembershipCardHubsShow();
-                          }
-                      },
-
-
-
-                ]
+             {
+                margin: '20 0 0 14',
+                width:'100%',
+                //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
+                html: '<div style="color:black;text-align: left;font-size:16px;width:100%;margin:0px 0px 0px 0px"><b>Ayoha Merchant Membership Card !</b></div><br><div  style="color:black;text-align: left;font-size:10px;width:100%;margin:-25px 0px 0px 0px;">-Get it Now!. -</div>'
+                // html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: 70%"><col style="width:30%"></colgroup><thead><tr><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:right;vertical-align:top;word-break:normal" rowspan="2"><div style="margin:0px 0px 0px -15px">TARMIZI RAHIM</div><br>Lagendary Card Mortal </th><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:middle;word-break:normal" rowspan="2">Medal</th></tr><tr></tr></thead></table>'
             },
 
             // {
@@ -2131,7 +2093,10 @@ html:'<div class="tier-head">'+
 
                 id: 'Dashboard_MyAccount_UnSubscribedMembershipCardList_front',
                 margin: '10 0 0 20',
+                //  store: _DataStore_AyohaRewardEventLoadBySubscriberAccNoStore,
+                // grouped: true,
                 xtype: 'dataview',
+                //xtype: 'list',
                 height: 250,
                 style: "background-color: transparent;",
                 inline: {
@@ -2142,47 +2107,35 @@ html:'<div class="tier-head">'+
                     indicators: false,
                 },
                 width: '90%',
-              
+
+                itemTpl: '<div class="myContent" style="background-color:transparent;width:320px;height:180px;"><div style="margin:0px 0px 0px 0px;width:300px;height:180px;background-color: #fac;background-image: url({MembershipCardBackgroundImg});background-size: 100% 100%;border-radius: 20px 20px 20px 20px;">' +
+              ////  itemTpl: '<div class="myContent" style="margin:0px 0px 0px 0px;width:100%;height:190px;background-color: #fac;background-image: url({MembershipCardBackgroundImg});background-size: 100% 100%;border-radius: 20px 20px 20px 20px;box-shadow: 5px 2px 18px #888888;">' +
+                             //  itemTpl: '<div class="myContent" style="margin:0px 0px 0px 0px;width:100%;height:190px;background-color: #fac;background-image: url({MembershipCardBackgroundImg});background-size: 100% 100%;border-radius: 20px 20px 20px 20px;">' +
 
 
-
-                itemTpl: new Ext.XTemplate(
-                    // TPL for the "View More" card
-                    '<tpl if="isLoadMore">',
-                        // Use the EXACT SAME outer structure as the regular card
-                        '<div class="myContent" style="background-color:transparent;width:320px;height:auto;">', // Matched width, auto height
-                            // This is the dashed box, replacing the regular card's visual part
-                            '<div style="margin:0px 0px 0px 0px;width:300px;height:180px; border: 2px dashed #b0b0b0; border-radius: 20px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; cursor: pointer; color: #444; font-family: Arial, sans-serif;" OnClick="FloatPanel_Membership_MembershipCardHubsShow()">',
-                                '<img src="resources/icons/membershipPurpleThree.png" width="32" height="32" alt="Company Name">',
-                                '<div style="margin-top: 10px; font-size: 15px; font-weight: bold;">View More <br> Membership Card</div>',
-                            '</div>',
+                             '<table style="border-collapse:collapse;border-spacing:0;border:none;width:100%;margin:0px 0px 0px 0px;" OnClick="FloatPanel_MembershipCardList_NotYetSubscribedShow_FromDashboard_Main(`{MembershipCardCode}`,`{EnterpriseAccNo}`,`{isMembershipCardSubscribed}`,`{MembershipCardFeePaymentCycle}`,`{CountStar}`,`{CountReviewer}`)" ><tr><td style="background-color:transparent;border-color:black;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 10px;text-align:left;vertical-align:middle;word-break:normal;width:100%;{ModifiedHeaderHeight}" colspan="3">{ModifiedEnterprisesLogo}{ModifiedEnterprisesName}</td></tr><tbody><tr><td style="border-color:black;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:{ModifiedPaddingHeight} 0px;text-align:left;vertical-align:top;word-break:normal;width:100%;" colspan="3"><div style="margin:-5px 0px 0px 10px;width:100%;text-align:left;font-family:Playball, cursive;font-size:20px;font-weight:normal;border-top: 1px none white;color:white;padding:0px 0px;">{MembershipCardType}</div><br><div style="margin:-34px 0px 0px 10px;width:100%;text-align:left;color:white;font-family:Orbitron;font-size:18px;font-weight:normal;border-top: 1px none white;padding:0px 0px">123 4567</div><br><div style="margin:-29px 0px 0px 10px;width:100%;text-align:left;color:white;font-family:Orbitron;font-size:12px;font-weight:normal;border-top: 1px none white;padding:0px 0px">MEMBER NAME</div></td><td style="border-color:black;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal;width:5%;"></td></tr><tr><td style="border-color:black;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:top;word-break:normal" colspan="2"><div style="margin:16px 0px 0px 15px;width:100%;text-align:left;color:white;font-family:Orbitron,sans-serif;font-size:7px;font-weight:normal;border-top: 1px none white;padding:0px 0px">Member Since</div><br><div style="margin:-23px 0px 0px 15px;width:100%;text-align:left;color:white;font-family:Orbitron,sans-serif;font-size:7px;font-weight:normal;border-top: 1px none white;padding:0px 0px">After Approved</div><br><div style="margin:-18px 0px 0px 0px;width:100%;text-align:left;color:transparent;font-family:Orbitron,sans-serif;font-size:7px;font-weight:normal;border-top: 1px none white;padding:0px 0px;height:5px">After Approved</div></td><td style="border-color:black;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:10px;overflow:hidden;padding:0px 0px;text-align:right;vertical-align:top;word-break:normal"><div style="margin:16px 0px 0px -15px;width:100%;text-align:right;color:white;font-family:Orbitron,sans-serif;font-size:7px;font-weight:normal;border-top: 1px none white;padding:0px 0px">Valid Until</div><br><div style="margin:-17px 0px 0px -15px;width:100%;text-align:right;color:white;font-family:Orbitron,sans-serif;font-size:7px;font-weight:normal;border-top: 1px none white;padding:0px 0px">{ModifiedStrExpiredDate}</div></td><br><div style="margin:-18px 0px 0px 0px;width:100%;text-align:left;color:transparent;font-family:Orbitron,sans-serif;font-size:11px;font-weight:normal;border-top: 1px none white;padding:0px 0px;height:5px">After Approved</div></tr></tbody></table>' +
+                                                           '</div></div>' +
                             
-                            // Replicate the space below the card using visibility:hidden
-                            '<div style="visibility:hidden; margin:5px 0px 0px 10px;width:100%;text-align:center;color:black;font-family:Arial, sans-serif;font-size:15px;font-weight:bold;border-top: 1px none white;padding:0px 0px"><div style="width:100%;text-align:left;">RM<br><div style="margin:-5px 0px 0px 0px;font-size:10px;font-weight:normal">Membership Fees</div></div><div style="width:100%;text-align:right;margin:-15px 0px 0px -20px"></div></div>',
-                            '<br>',
-                            '<div style="visibility:hidden; margin:-12px 0px 0px 10px;width:100%;text-align:center;color:black;font-family:Arial, sans-serif;font-size:10px;font-weight:normal;border-top: 1px none white;padding:0px 0px"><div style="width:100%;text-align:left;margin:-20px 0px 0px 0px;"></div><div style="width:100%;text-align:right;margin:-42px 0px 0px -20px;color:black;font-family:Arial, sans-serif;font-size:15px;font-weight:bold;"><div class="blink_me"><div style="margin:0px 25px 0px 0px;font-size:10px;font-weight:normal;"><img src="resources/icons/getItNow01.png" style="width:90px;height:25px;"></div></div></div></div>',
-                        '</div>',
-                    '</tpl>',
-                
-                    // TPL for the regular membership card (no changes here)
-                    '<tpl if="!isLoadMore">',
-                        '<div class="myContent" style="background-color:transparent;width:320px;height:auto;">',
-                            '<div style="margin:0px 0px 0px 0px;width:300px;height:180px;background-color: #fac;background-image: url({MembershipCardBackgroundImg});background-size: 100% 100%;border-radius: 20px 20px 20px 20px;">' +
-                            '<table style="border-collapse:collapse;border-spacing:0;border:none;width:100%;margin:0px 0px 0px 0px;" OnClick="FloatPanel_MembershipCardList_NotYetSubscribedShow_FromDashboard_Main(`{MembershipCardCode}`,`{EnterpriseAccNo}`,`{isMembershipCardSubscribed}`,`{MembershipCardFeePaymentCycle}`,`{CountStar}`,`{CountReviewer}`)" ><tr><td style="background-color:transparent;border-color:black;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 10px;text-align:left;vertical-align:middle;word-break:normal;width:100%;{ModifiedHeaderHeight}" colspan="3">{ModifiedEnterprisesLogo}{ModifiedEnterprisesName}</td></tr><tbody><tr><td style="border-color:black;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:{ModifiedPaddingHeight} 0px;text-align:left;vertical-align:top;word-break:normal;width:100%;" colspan="3"><div style="margin:-5px 0px 0px 10px;width:100%;text-align:left;font-family:Playball, cursive;font-size:20px;font-weight:normal;border-top: 1px none white;color:white;padding:0px 0px;">{MembershipCardType}</div><br><div style="margin:-34px 0px 0px 10px;width:100%;text-align:left;color:white;font-family:Orbitron;font-size:18px;font-weight:normal;border-top: 1px none white;padding:0px 0px">123 4567</div><br><div style="margin:-29px 0px 0px 10px;width:100%;text-align:left;color:white;font-family:Orbitron;font-size:12px;font-weight:normal;border-top: 1px none white;padding:0px 0px">MEMBER NAME</div></td><td style="border-color:black;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal;width:5%;"></td></tr><tr><td style="border-color:black;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:top;word-break:normal" colspan="2"><div style="margin:16px 0px 0px 15px;width:100%;text-align:left;color:white;font-family:Orbitron,sans-serif;font-size:7px;font-weight:normal;border-top: 1px none white;padding:0px 0px">Member Since</div><br><div style="margin:-23px 0px 0px 15px;width:100%;text-align:left;color:white;font-family:Orbitron,sans-serif;font-size:7px;font-weight:normal;border-top: 1px none white;padding:0px 0px">After Approved</div><br><div style="margin:-18px 0px 0px 0px;width:100%;text-align:left;color:transparent;font-family:Orbitron,sans-serif;font-size:7px;font-weight:normal;border-top: 1px none white;padding:0px 0px;height:5px">After Approved</div></td><td style="border-color:black;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:10px;overflow:hidden;padding:0px 0px;text-align:right;vertical-align:top;word-break:normal"><div style="margin:16px 0px 0px -15px;width:100%;text-align:right;color:white;font-family:Orbitron,sans-serif;font-size:7px;font-weight:normal;border-top: 1px none white;padding:0px 0px">Valid Until</div><br><div style="margin:-17px 0px 0px -15px;width:100%;text-align:right;color:white;font-family:Orbitron,sans-serif;font-size:7px;font-weight:normal;border-top: 1px none white;padding:0px 0px">{ModifiedStrExpiredDate}</div></td><br><div style="margin:-18px 0px 0px 0px;width:100%;text-align:left;color:transparent;font-family:Orbitron,sans-serif;font-size:11px;font-weight:normal;border-top: 1px none white;padding:0px 0px;height:5px">After Approved</div></tr></tbody></table>' +
-                            '</div>' + // Note: There was a missing closing </div> tag here in your original code
-                            '<div style="margin:5px 0px 0px 10px;width:100%;text-align:center;color:black;font-family:Arial, sans-serif;font-size:15px;font-weight:bold;border-top: 1px none white;padding:0px 0px"><div style="width:100%;text-align:left;">RM{MembershipCardFee}<br><div style="margin:-5px 0px 0px 0px;font-size:10px;font-weight:normal">Membership Fees</div></div><div style="width:100%;text-align:right;margin:-15px 0px 0px -20px"></div></div>' +
-                            '<br><div style="margin:-12px 0px 0px 10px;width:100%;text-align:center;color:black;font-family:Arial, sans-serif;font-size:10px;font-weight:normal;border-top: 1px none white;padding:0px 0px"><div style="width:100%;text-align:left;margin:-20px 0px 0px 0px;"></div><div style="width:100%;text-align:right;margin:-42px 0px 0px -20px;color:black;font-family:Arial, sans-serif;font-size:15px;font-weight:bold;"><div class="blink_me"><div style="margin:0px 25px 0px 0px;font-size:10px;font-weight:normal;"><img src="resources/icons/getItNow01.png" style="width:90px;height:25px;"></div></div></div></div>',
-                        '</div>', // Closing myContent
-                    '</tpl>'
-                ),
+              '<div style="margin:5px 0px 0px 10px;width:100%;text-align:center;color:black;font-family:Arial, sans-serif;font-size:15px;font-weight:bold;border-top: 1px none white;padding:0px 0px"><div style="width:100%;text-align:left;">RM{MembershipCardFee}<br><div style="margin:-5px 0px 0px 0px;font-size:10px;font-weight:normal">Membership Fees</div></div><div style="width:100%;text-align:right;margin:-15px 0px 0px -20px"></div></div>' +
+                                   //  '<br><div style="margin:-12px 0px 0px 10px;width:100%;text-align:center;color:black;font-family:Arial, sans-serif;font-size:10px;font-weight:normal;border-top: 1px none white;padding:0px 0px"><div style="width:100%;text-align:left;margin:-20px 0px 0px 0px;"></div><div style="width:100%;text-align:right;margin:-42px 0px 0px -20px;color:black;font-family:Arial, sans-serif;font-size:15px;font-weight:bold;"><div class="blink_me"><button id="btnDashboard_Membership_AyohaStore"  style="display:inline-block;background-color: Transparent;border: none;outline:none;margin:3px 0px 0px 0px;" onClick="FloatPanel_AyohaStoreShow_FromPushNotification();"><img src={EnterprisesLogo} style="float:right;margin-right:0.5em;width: 40px; height: 40px;border-radius:50%;border: 1px solid grey;"><div style="margin:15px 50px 0px 0px;font-size:10px;font-weight:bold;font-color:blue"><u>Visit Us</u></div></button></div></div></div>',
+                                        '<br><div style="margin:-12px 0px 0px 10px;width:100%;text-align:center;color:black;font-family:Arial, sans-serif;font-size:10px;font-weight:normal;border-top: 1px none white;padding:0px 0px"><div style="width:100%;text-align:left;margin:-20px 0px 0px 0px;"></div><div style="width:100%;text-align:right;margin:-42px 0px 0px -20px;color:black;font-family:Arial, sans-serif;font-size:15px;font-weight:bold;"><div class="blink_me"><div style="margin:0px 25px 0px 0px;font-size:10px;font-weight:normal;">Tap Card For Details Info</div></div></div></div>',
 
 
-            //     itemTpl: '<div class="myContent" style="background-color:transparent;width:320px;height:180px;"><div style="margin:0px 0px 0px 0px;width:300px;height:180px;background-color: #fac;background-image: url({MembershipCardBackgroundImg});background-size: 100% 100%;border-radius: 20px 20px 20px 20px;">' +           
-            //                  '<table style="border-collapse:collapse;border-spacing:0;border:none;width:100%;margin:0px 0px 0px 0px;" OnClick="FloatPanel_MembershipCardList_NotYetSubscribedShow_FromDashboard_Main(`{MembershipCardCode}`,`{EnterpriseAccNo}`,`{isMembershipCardSubscribed}`,`{MembershipCardFeePaymentCycle}`,`{CountStar}`,`{CountReviewer}`)" ><tr><td style="background-color:transparent;border-color:black;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 10px;text-align:left;vertical-align:middle;word-break:normal;width:100%;{ModifiedHeaderHeight}" colspan="3">{ModifiedEnterprisesLogo}{ModifiedEnterprisesName}</td></tr><tbody><tr><td style="border-color:black;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:{ModifiedPaddingHeight} 0px;text-align:left;vertical-align:top;word-break:normal;width:100%;" colspan="3"><div style="margin:-5px 0px 0px 10px;width:100%;text-align:left;font-family:Playball, cursive;font-size:20px;font-weight:normal;border-top: 1px none white;color:white;padding:0px 0px;">{MembershipCardType}</div><br><div style="margin:-34px 0px 0px 10px;width:100%;text-align:left;color:white;font-family:Orbitron;font-size:18px;font-weight:normal;border-top: 1px none white;padding:0px 0px">123 4567</div><br><div style="margin:-29px 0px 0px 10px;width:100%;text-align:left;color:white;font-family:Orbitron;font-size:12px;font-weight:normal;border-top: 1px none white;padding:0px 0px">MEMBER NAME</div></td><td style="border-color:black;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal;width:5%;"></td></tr><tr><td style="border-color:black;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:top;word-break:normal" colspan="2"><div style="margin:16px 0px 0px 15px;width:100%;text-align:left;color:white;font-family:Orbitron,sans-serif;font-size:7px;font-weight:normal;border-top: 1px none white;padding:0px 0px">Member Since</div><br><div style="margin:-23px 0px 0px 15px;width:100%;text-align:left;color:white;font-family:Orbitron,sans-serif;font-size:7px;font-weight:normal;border-top: 1px none white;padding:0px 0px">After Approved</div><br><div style="margin:-18px 0px 0px 0px;width:100%;text-align:left;color:transparent;font-family:Orbitron,sans-serif;font-size:7px;font-weight:normal;border-top: 1px none white;padding:0px 0px;height:5px">After Approved</div></td><td style="border-color:black;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:10px;overflow:hidden;padding:0px 0px;text-align:right;vertical-align:top;word-break:normal"><div style="margin:16px 0px 0px -15px;width:100%;text-align:right;color:white;font-family:Orbitron,sans-serif;font-size:7px;font-weight:normal;border-top: 1px none white;padding:0px 0px">Valid Until</div><br><div style="margin:-17px 0px 0px -15px;width:100%;text-align:right;color:white;font-family:Orbitron,sans-serif;font-size:7px;font-weight:normal;border-top: 1px none white;padding:0px 0px">{ModifiedStrExpiredDate}</div></td><br><div style="margin:-18px 0px 0px 0px;width:100%;text-align:left;color:transparent;font-family:Orbitron,sans-serif;font-size:11px;font-weight:normal;border-top: 1px none white;padding:0px 0px;height:5px">After Approved</div></tr></tbody></table>' +                                                           '</div></div>' +                            
-            //   '<div style="margin:5px 0px 0px 10px;width:100%;text-align:center;color:black;font-family:Arial, sans-serif;font-size:15px;font-weight:bold;border-top: 1px none white;padding:0px 0px"><div style="width:100%;text-align:left;">RM{MembershipCardFee}<br><div style="margin:-5px 0px 0px 0px;font-size:10px;font-weight:normal">Membership Fees</div></div><div style="width:100%;text-align:right;margin:-15px 0px 0px -20px"></div></div>' +                          
-            //                             '<br><div style="margin:-12px 0px 0px 10px;width:100%;text-align:center;color:black;font-family:Arial, sans-serif;font-size:10px;font-weight:normal;border-top: 1px none white;padding:0px 0px"><div style="width:100%;text-align:left;margin:-20px 0px 0px 0px;"></div><div style="width:100%;text-align:right;margin:-42px 0px 0px -20px;color:black;font-family:Arial, sans-serif;font-size:15px;font-weight:bold;"><div class="blink_me"><div style="margin:0px 25px 0px 0px;font-size:10px;font-weight:normal;">Tap Card For Details Info</div></div></div></div>',
 
 
+                //////itemTpl: '<div class="myContent" style="background-color:transparent;width:330px;height:190px;">&nbsp;&nbsp;&nbsp;<div style="margin:0px 0px 0px 0px;width:310px;height:190px;background-color: #fac;background-image: url({MembershipCardBackgroundImg});background-size: 100% 100%;border-radius: 20px 20px 20px 20px;box-shadow: 5px 2px 18px #888888;">' +
+                                 
+
+                //////                  '<table style="border-collapse:collapse;border-spacing:0;border:none;width:100%;margin:-15px 0px 0px 0px;" OnClick="FloatPanel_MembershipCardList_MyMembershipCardOpenMembershiCardDetail(' + "'" + '{CampaignEnterpriseHQAccNo}' + "'" + ',' + "'" + '{CampaignEnterpriseAccNo}' + "'" + ', ' + "'" + '{MembershipCardCode}' + "'" + ', {ID})" ><tr><td style="background-color:transparent;border-color:black;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 10px;text-align:left;vertical-align:middle;word-break:normal;width:100%;{ModifiedHeaderHeight}" colspan="3">{ModifiedEnterprisesLogo}{ModifiedEnterprisesName}</td></tr><tr><td style="border-color:black;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:top;word-break:normal;width:100%;" colspan="3"><div style="margin:-10px 0px 0px 10px;width:100%;text-align:left;font-family:Playball,cursive;font-size:24px;font-weight:normal;border-top: 1px none white;color:white;padding:0px 0px;">{MembershipLevel}</div><br><div style="margin:-34px 0px 0px 10px;width:100%;text-align:left;color:white;font-family:Orbitron;font-size:16px;font-weight:normal;border-top: 1px none white;padding:0px 0px">{ModifiedMembershipNo}</div><br><div style="margin:-28px 0px 0px 10px;width:100%;text-align:left;color:white;font-family:Orbitron;font-size:16px;font-weight:normal;border-top: 1px none white;padding:0px 0px">{ModifiedAccountName}</div></td><td style="border-color:black;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal;width:5%;"></td></tr><tr><td style="border-color:black;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:top;word-break:normal" colspan="2"><div style="margin:16px 0px 0px 15px;width:100%;text-align:left;color:white;font-family:Orbitron,sans-serif;font-size:7px;font-weight:normal;border-top: 1px none white;padding:0px 0px">Member Since</div><br><div style="margin:-21px 0px 0px 15px;width:100%;text-align:left;color:white;font-family:Orbitron,sans-serif;font-size:7px;font-weight:normal;border-top: 1px none white;padding:0px 0px">{ModifiedMemberSinceDate}</div><br><div style="margin:-18px 0px 0px 0px;width:100%;text-align:left;color:transparent;font-family:Orbitron,sans-serif;font-size:7px;font-weight:normal;border-top: 1px none white;padding:0px 0px;height:5px">02/2021</div></td><td style="border-color:black;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:10px;overflow:hidden;padding:0px 0px;text-align:right;vertical-align:top;word-break:normal"><div style="margin:16px 0px 0px -15px;width:100%;text-align:right;color:white;font-family:Orbitron,sans-serif;font-size:7px;font-weight:normal;border-top: 1px none white;padding:0px 0px">Valid Until</div><br><div style="margin:-15px 0px 0px -15px;width:100%;text-align:right;color:white;font-family:Orbitron,sans-serif;font-size:7px;font-weight:normal;border-top: 1px none white;padding:0px 0px">{ModifiedUntilDate}</div></td><br><div style="margin:-18px 0px 0px 0px;width:100%;text-align:left;color:transparent;font-family:Orbitron,sans-serif;font-size:11px;font-weight:normal;border-top: 1px none white;padding:0px 0px;height:5px">02/2021</div></tr></table>' +
+                //////                                                 '</div></div>' ,
+                                                              
+
+                                    //'<br><div style="margin:-18px 0px 0px 10px;width:100%;text-align:center;color:black;font-family:Arial, sans-serif;font-size:10px;font-weight:normal;border-top: 1px none white;padding:0px 0px"><div style="width:100%;text-align:left;">Card Name</div><div style="width:100%;text-align:right;margin:-15px 0px 0px -20px">Card Expired:</div></div>' +
+                                    // '<br><div style="margin:-24px 0px 0px 10px;width:100%;text-align:center;color:black;font-family:Arial, sans-serif;font-size:15px;font-weight:bold;border-top: 1px none white;padding:0px 0px"><div style="width:100%;text-align:left;">{MembershipCardName}</div><div style="width:100%;text-align:right;margin:-22px 0px 0px -20px;color:black;font-family:Arial, sans-serif;font-size:15px;font-weight:bold;">{ModifiedUntilDate}</div></div>' +
+                                  
+                                    // '<br><div style="margin:-15px 0px 0px 10px;width:100%;text-align:left;color:black;font-family:Arial, sans-serif;font-size:10px;font-weight:normal;border-top: 1px none white;padding:0px 0px"><div style="width:100%;text-align:left;">Membership Privilege</div><div style="width:100%;text-align:right;margin:-15px 0px 0px -20px">Membership Fees(RM)</div></div>' +
+                                    //   '<br><div style="margin:-24px 0px 0px 10px;width:100%;text-align:center;color:black;font-family:Arial, sans-serif;font-size:15px;font-weight:bold;border-top: 1px none white;padding:0px 0px"><div style="width:100%;text-align:left;">{LoyaltCampaignCount}</div><div style="width:100%;text-align:right;margin:-28px 0px 0px -20px;color:black;font-family:Arial, sans-serif;font-size:25px;font-weight:bold;">{MembershipFee}</div></div></div>',
+                                  
 
 
                 emptyText: '<div  style="background-color:transparent;width: 100%; height: 400px;margin:20px 0px 0px 0px;padding:5px 10px"><img src="resources/icons/NoMembershipEvent.jpg" style="width: 100%; height: 400px;"/></div>',
@@ -2191,72 +2144,20 @@ html:'<div class="tier-head">'+
 
 
 
-            // {
-            //     margin: '0 0 0 14',
-            //     width:'100%',
-            //     //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
-            //     html: '<div style="color:black;text-align: left;font-size:16px;width:100%;margin:0px 0px 0px 0px"><b>Ayoha Merchant Loyalty Campaign</b></div><br><div  style="color:transparent;text-align: left;font-size:10px;width:100%;margin:-25px 0px 0px 0px;">- One hub. Double Reward. -</div>'
-            //     // html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: 70%"><col style="width:30%"></colgroup><thead><tr><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:right;vertical-align:top;word-break:normal" rowspan="2"><div style="margin:0px 0px 0px -15px">TARMIZI RAHIM</div><br>Lagendary Card Mortal </th><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:middle;word-break:normal" rowspan="2">Medal</th></tr><tr></tr></thead></table>'
-            // },
-
-
             {
-                xtype: 'container',
-                width: '100%',
-                hidden: false,
-                id:'containerDashboard_AyohaMerchantLoyaltyCampaignList',
-                margin: '20 0 0 0',
-                // style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1 ;background: white;border-radius: 0px 15px 15px 0px;',
-                //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
-                style: 'background-color:transparent',
-                layout: {
-                    type: 'hbox',
-                    pack: 'center',
-                    align: 'center',
-                },
-                items: [
-                     {
-                         margin: '10 0 0 14',
-                         //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
-                         html: '<div style="color:black;text-align: left;font-size:14px;width:100%;margin:0px 0px 0px 0px"><b>Ayoha Merchant Loyalty Campaign</b></div><br><div  style="color:black;text-align: left;font-size:10px;width:100%;margin:-25px 0px 0px 0px;">Member only benefits,turn every dollar and cents into a reward</div>'
-                         // html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: 70%"><col style="width:30%"></colgroup><thead><tr><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:right;vertical-align:top;word-break:normal" rowspan="2"><div style="margin:0px 0px 0px -15px">TARMIZI RAHIM</div><br>Lagendary Card Mortal </th><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:middle;word-break:normal" rowspan="2">Medal</th></tr><tr></tr></thead></table>'
-                     },
-                     {
-                         xtype: 'spacer'
-                     },
-                      {
-                          xtype: 'button',
-                          id: 'btnMyDashboard_AyohaMerchantLoyaltyCampaign',
-                          //hidden:true,
-                          //  badgeText: '1',
-                          margin: '0 10 0 0',
-                          height: 35,
-                          width: 35,
-                          html: '<img src="resources/icons/merchantreward01.png" width="25" height="25" alt="Company Name">',
-                          ui: 'plain',
-                          handler: function () {
-                            LoadingPanelShow(getLoadingIcon(), 'Loading....');
-       FloatPanel_AyohaEnterpriseRewardItemShow();
-                          }
-                      },
-
-
-
-                ]
+                margin: '0 0 0 14',
+                width:'100%',
+                //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
+                html: '<div style="color:black;text-align: left;font-size:16px;width:100%;margin:0px 0px 0px 0px"><b>Ayoha Merchant Loyalty Campaign</b></div><br><div  style="color:transparent;text-align: left;font-size:10px;width:100%;margin:-25px 0px 0px 0px;">- One hub. Double Reward. -</div>'
+                // html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: 70%"><col style="width:30%"></colgroup><thead><tr><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:right;vertical-align:top;word-break:normal" rowspan="2"><div style="margin:0px 0px 0px -15px">TARMIZI RAHIM</div><br>Lagendary Card Mortal </th><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:middle;word-break:normal" rowspan="2">Medal</th></tr><tr></tr></thead></table>'
             },
-
-
-
-
-
-
 
             {
                 xtype: 'container',
                 width: '100%',
                 height:90,
                 hidden: false,
-                margin: '5 0 0 0',
+                margin: '-10 0 0 0',
                 style: 'background-color:transparent',
                 // scrollable: {
                 //     direction: 'horizontal',
@@ -2948,213 +2849,18 @@ html:'<div class="tier-head">'+
 
 
 
-            // {
-            //     margin: '50 0 0 14',
-            //     width:'100%',
-            //     //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
-            //     html: '<div style="color:black;text-align: left;font-size:16px;width:100%;margin:0px 0px 0px 0px"><b>Ayoha Merchant List</b></div><br><div  style="color:black;text-align: left;font-size:10px;width:100%;margin:-25px 0px 0px 0px;">-Collect Ayoha Point from our Ayoha Merchant. -</div>'
-            //     // html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: 70%"><col style="width:30%"></colgroup><thead><tr><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:right;vertical-align:top;word-break:normal" rowspan="2"><div style="margin:0px 0px 0px -15px">TARMIZI RAHIM</div><br>Lagendary Card Mortal </th><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:middle;word-break:normal" rowspan="2">Medal</th></tr><tr></tr></thead></table>'
-            // },
-
-
-
-
             {
-                xtype: 'container',
-                width: '100%',
-                hidden: false,
-                id:'containerDashboard_AyohaOnlineMerchantStoreList',
-                margin: '50 0 0 0',
-                // style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1 ;background: white;border-radius: 0px 15px 15px 0px;',
-                //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
-                style: 'background-color:transparent',
-                layout: {
-                    type: 'hbox',
-                    pack: 'center',
-                    align: 'center',
-                },
-                items: [
-                     {
-                         margin: '10 0 0 14',
-                         //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
-                         html: '<div style="color:black;text-align: left;font-size:14px;width:100%;margin:0px 0px 0px 0px"><b>Ayoha Merchant List</b></div><br><div  style="color:black;text-align: left;font-size:10px;width:100%;margin:-25px 0px 0px 0px;">From neighbourhood stalls to hidden gems,<br>enjoy more every visit</div>'
-                         // html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: 70%"><col style="width:30%"></colgroup><thead><tr><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:right;vertical-align:top;word-break:normal" rowspan="2"><div style="margin:0px 0px 0px -15px">TARMIZI RAHIM</div><br>Lagendary Card Mortal </th><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:middle;word-break:normal" rowspan="2">Medal</th></tr><tr></tr></thead></table>'
-                     },
-                     {
-                         xtype: 'spacer'
-                     },
-                     {
-                        xtype: 'container',
-                        zIndex: 50,
-                        height: 40,
-                        width: 35,
-                        //hidden:true,
-                       // hidden:true,
-                       // margin: '10 0 0 0',
-                        margin: '-3 0 0 0',
-                        // id: 'containerFloatPanel_AyohaStore_MyCartCountbadge',
-                        id: 'containerMyDashboard_AyohaOnlineMerchantStoreCheckout',
-                        name: 'nameMyDashboard_AyohaOnlineMerchantStoreCheckout',
-                        style: 'background-color:transparent;',
-                       //style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 50%;',
-                        layout: {
-                            type: 'vbox',
-                            pack: 'center',
-                            align: 'center'
-                    
-                        },
-                        items: [
-                    
-                            {
-                               // margin: '10 0 0 3',
-                                margin: '3 0 0 3',
-                                height: 20,
-                                width: 20,
-                               // hidden:true,
-                              //  zIndex:-1,
-                               // id:'txtDashboard_AyohaMerchantShoppingBagBadgeID',
-                              // id: '',
-                              html: '<div id="htmlMyDashboard_AyohaOnlineMerchantStoreChecout_CountbadgeText" style="text-align:center;font-size:10px;color:white;background-color:red;width:20px;height:20px;border-radius:50%;font-weight:bold;padding:2px 0px;">0</div>',
-                            },
-
-                    {
-                        margin: '-5 2 0 0',
-                       // hidden:true,
-                        width: 18,
-                        height: 18,
-                        html: '<img src="resources/icons/myCart02.png" alt="Image" style="width:20px;height:20px;">',
-                        // ui:'plain'
-                    },
-                    
-                    
-                        ]
-                    },
-
-
-                    {
-                        xtype: 'container',
-                        zIndex: 50,
-                        height: 40,
-                        width: 35,
-                        //hidden:true,
-                       // hidden:true,
-                       // margin: '10 0 0 0',
-                        margin: '-3 0 0 0',
-                        // id: 'containerFloatPanel_AyohaStore_MyCartCountbadge',
-                        id: 'containerMyDashboard_AyohaOnlineMerchantStoreShoppingBag',
-                        name: 'nameMyDashboard_AyohaOnlineMerchantStoreShoppingBag',
-                        style: 'background-color:transparent;',
-                       //style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 50%;',
-                        layout: {
-                            type: 'vbox',
-                            pack: 'center',
-                            align: 'center'
-                    
-                        },
-                        items: [
-                    
-                            {
-                               // margin: '10 0 0 3',
-                                margin: '3 0 0 3',
-                                height: 20,
-                                width: 20,
-                               hidden:false,
-                              //  zIndex:-1,
-                               // id:'txtDashboard_AyohaMerchantShoppingBagBadgeID',
-                               //id: 'htmlMyDashboard_AyohaOnlineMerchantStoreShoppingBag_CountbadgeText',
-                              html: '<div  id="htmlMyDashboard_AyohaOnlineMerchantStoreShoppingBag_CountbadgeText"  style="text-align:center;font-size:10px;color:white;background-color:red;width:20px;height:20px;border-radius:50%;font-weight:bold;padding:2px 0px;">0</div>',
-                            },
-
-                    {
-                        margin: '-5 2 0 0',
-                       // hidden:true,
-                        width: 18,
-                        height: 18,
-                        html: '<img src="resources/icons/shoppingbag03.png" alt="Image" style="width:20px;height:20px;">',
-                        // ui:'plain'
-                    },
-                    
-                    
-                        ]
-                    },
-
-
-                    // {
-                    //     xtype: 'container',
-                    //     zIndex: 50,
-                    //     height: 40,
-                    //     width: 35,
-                    //     //hidden:true,
-                    //    // hidden:true,
-                    //    // margin: '10 0 0 0',
-                    //     margin: '-3 0 0 0',
-                    //     // id: 'containerFloatPanel_AyohaStore_MyCartCountbadge',
-                    //     id: 'containerMyDashboard_AyohaOnlineMerchantStore',
-                    //     name: 'nameMyDashboard_AyohaOnlineMerchantStore',
-                    //     style: 'background-color:transparent;',
-                    //    //style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 50%;',
-                    //     layout: {
-                    //         type: 'vbox',
-                    //         pack: 'center',
-                    //         align: 'center'
-                    
-                    //     },
-                    //     items: [
-                    
-                    //         {
-                    //            // margin: '10 0 0 3',
-                    //             margin: '3 0 0 3',
-                    //             height: 20,
-                    //             width: 20,
-                    //             //hidden:true,
-                    //           //  zIndex:-1,
-                    //            // id:'txtDashboard_AyohaMerchantShoppingBagBadgeID',
-                    //            id: 'htmlMyDashboard_AyohaOnlineMerchantStore_CountbadgeText',
-                    //           html: '<div style="text-align:center;font-size:10px;color:white;background-color:red;width:20px;height:20px;border-radius:50%;font-weight:bold;padding:2px 0px;display:none;">0</div>',
-                    //         },
-
-                    // {
-                    //     margin: '-5 2 0 0',
-                    //    // hidden:true,
-                    //     width: 18,
-                    //     height: 18,
-                    //     html: '<img src="resources/icons/onlineStore.jpg" alt="Image" style="width:20px;height:20px;">',
-                    //     // ui:'plain'
-                    // },
-                    
-                    
-                    //     ]
-                    // },
-
-
-                   
-
-                    //   {
-                    //       xtype: 'button',
-                    //       id: 'btnMyDashboard_AyohaOnlineMerchantStore',
-                    //       //hidden:true,
-                    //       //  badgeText: '1',
-                    //       margin: '0 10 0 0',
-                    //       height: 35,
-                    //       width: 35,
-                    //       html: '<img src="resources/icons/onlineStore.jpg" width="25" height="25" alt="Company Name">',
-                    //       ui: 'plain',
-                    //       handler: function () {
-                    //         FloatPanel_Membership_MembershipCardHubsShow();
-                    //       }
-                    //   },
-
-
-
-                ]
+                margin: '40 0 0 14',
+                width:'100%',
+                //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
+                html: '<div style="color:black;text-align: left;font-size:16px;width:100%;margin:0px 0px 0px 0px"><b>Ayoha Merchant List</b></div><br><div  style="color:black;text-align: left;font-size:10px;width:100%;margin:-25px 0px 0px 0px;">-Collect Ayoha Point from our Ayoha Merchant. -</div>'
+                // html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: 70%"><col style="width:30%"></colgroup><thead><tr><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:right;vertical-align:top;word-break:normal" rowspan="2"><div style="margin:0px 0px 0px -15px">TARMIZI RAHIM</div><br>Lagendary Card Mortal </th><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:middle;word-break:normal" rowspan="2">Medal</th></tr><tr></tr></thead></table>'
             },
-
-
 
 
             {
                 xtype: 'list',
-margin: '20 0 0 0',
+
                 //  flex: 1,
                // store: _DataStore_EnterprisesLoadByMerchantCategory,
              // store: _DataStore_EnterprisesLoadByMerchantCategory_temp_front,
@@ -3173,48 +2879,21 @@ margin: '20 0 0 0',
                     }
                 },
                 style: 'background-color:rgba(255, 255, 255, 10);border-radius: 0px 0px 0px 0px;',
-             
-                // itemTpl: '<div class="myContent" style="background-color:transparent;width:103%;">' +
-                //     '{ModifiedIsMemberDashboardMerchantList}' +
-                //     '<div style="overflow:hidden;width:100%;margin:-45px 0px 0px 0px;background-color:transparent;height:60px;"><div style="font-family:Arial, sans-serif;font-size:18px;font-weight:normal;float:left;width:17%;margin:5px 0px 0px 0px;background-color:transparent;"><img src="{EnterpriseLogoPath}" style="border:1px none white; width:35px;height:35px;margin:3px 0px 0px 0px;" /></div><div style="font-family:Arial, sans-serif;font-size:16px;font-weight:normal;float:left;width:80%;margin:3px 0px 0px -20px;background-color:transparent;color:black"><b>{EnterpriseName}</b><br><div style="font-family:Arial, sans-serif;font-size:11px;font-weight:normal;float:left;margin:-2px 0px 0px 0px;background-color:transparent;color:black;width:73%;"><i>{EnterpriseTagLine}</i></div><br><div style="font-family:Arial, sans-serif;font-size:11px;font-weight:normal;float:left;margin:-5px 0px 0px 0px;background-color:transparent;color:black;width:73%;"><img src="resources/icons/locationThree.png" style="width:16px;height:12px;"/>{Bandar},{Negeri}</div><div style="font-family:Arial, sans-serif;font-size:12px;font-weight:normal;float:right;margin:-10px -25px 0px 0px;background-color:transparent;color:black;width:30%;">{ModifiedCountStar}</div></div>' +
+               
+                //itemTpl: '<div class="myContent" style="background-color:transparent;width:103%">' +
+                //    '{ModifiedIsMemberDashboardMerchantList}' +
+                //    '<div style="overflow:hidden;width:100%;margin:-45px 0px 0px 0px;background-color:transparent;height:60px;"><div style="font-family:Arial, sans-serif;font-size:18px;font-weight:normal;float:left;width:17%;margin:5px 0px 0px 0px;background-color:transparent;"><img src="{EnterpriseLogoPath}" style="border:1px none white; width:35px;height:35px;margin:3px 0px 0px 0px;" /></div><div style="font-family:Arial, sans-serif;font-size:16px;font-weight:normal;float:left;width:80%;margin:10px 0px 0px -20px;background-color:transparent;color:black"><b>{EnterpriseName}</b><br><div style="font-family:Arial, sans-serif;font-size:11px;font-weight:normal;float:left;margin:-2px 0px 0px 0px;background-color:transparent;color:black;width:73%;"><i>{EnterpriseTagLine}</i></div><div style="font-family:Arial, sans-serif;font-size:12px;font-weight:normal;float:right;margin:0px -25px 0px 0px;background-color:transparent;color:black;width:30%;">{ModifiedCountStar}</div></div>' +
 
-                //            '</div>' +
-                //            '<br><div style="width:100%;text-align:center;margin:-51px 0px 0px 0px;height: 23px;background-color:transparent;"></div>',
-
-
+                //           '</div>' +
+                //           '<br><div style="width:100%;text-align:center;margin:-51px 0px 0px 0px;height: 23px;background-color:transparent;"></div>',
 
 
-                           itemTpl: new Ext.XTemplate(
-                            // Check for the special 'isLoadMore' flag. If it's true, render the "Load More" button.
-                            '<tpl if="isLoadMore">',
-                                '<div class="myContent" style="padding: 10px 0; width: 103%;">',
-                                    '<div style="width: 100%; height: 50px; border: 1px none #b0b0b0; border-radius: 8px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; cursor: pointer; color: #444; font-family: Arial, sans-serif;" OnClick="Dashboard_SearchMerchantListShow();">',
-                                        // SVG Icon for a plus sign
-                                        '<img src="resources/icons/onlineStore.jpg" width="32" height="32" alt="Company Name">',
-                                        // Label
-                                        '<div style="margin-top: 8px; font-size: 14px; font-weight: bold;">',
-                                            'Load More Ayoha Merchant Store',
-                                        '</div>',
-                                    '</div>',
-                                '</div>',
-                            '</tpl>',
-                        
-                            // If 'isLoadMore' is not true, render the regular merchant item.
-                            '<tpl if="!isLoadMore">',
-                                // This is your original template for a merchant
-                                '<div class="myContent" style="background-color:transparent;width:103%;" onclick="FloatPanel_MerchantDetailPageShow({ID}, `{EnterpriseAccNo}`, `{EnterpriseLogoPath}`, `{EnterpriseName}`, `{EnterpriseTagLine}`,`{NamaJalan}`, `{Postkod}`, `{Bandar}`, `{Negeri}`, `{EnterpriseCoordinate}`,`{EnterpriseDescriptions}`, `{EnterprisePhoneNo}`,`{PICContactNo}`, `{`EnterpriseFacebook}`, `{EnterpriseWebsite}`, `{EnterpriseInstagram}`,`{EnterpriseTwiter}`, `{BusinessMode}`)";>',                                  
-                                    '{ModifiedIsMemberDashboardMerchantList}',
-                                    '<div style="overflow:hidden;width:100%;margin:-45px 0px 0px 0px;background-color:transparent;height:60px;"><div style="font-family:Arial, sans-serif;font-size:18px;font-weight:normal;float:left;width:17%;margin:5px 0px 0px 0px;background-color:transparent;"><img src="{EnterpriseLogoPath}" style="border:1px none white; width:35px;height:35px;margin:3px 0px 0px 0px;" /></div><div style="font-family:Arial, sans-serif;font-size:16px;font-weight:normal;float:left;width:80%;margin:3px 0px 0px -20px;background-color:transparent;color:black"><b>{EnterpriseName}</b><br><div style="font-family:Arial, sans-serif;font-size:11px;font-weight:normal;float:left;margin:-2px 0px 0px 0px;background-color:transparent;color:black;width:73%;"><i>{EnterpriseTagLine}</i></div><br><div style="font-family:Arial, sans-serif;font-size:11px;font-weight:normal;float:left;margin:-5px 0px 0px 0px;background-color:transparent;color:black;width:73%;"><img src="resources/icons/locationThree.png" style="width:16px;height:12px;"/>{Bandar},{Negeri}</div><div style="font-family:Arial, sans-serif;font-size:12px;font-weight:normal;float:right;margin:-10px -25px 0px 0px;background-color:transparent;color:black;width:30%;">{ModifiedCountStar}</div></div>',
-                                    '</div>',
-                                    '<br><div style="width:100%;text-align:center;margin:-51px 0px 0px 0px;height: 23px;background-color:transparent;"></div>',
-                                '</div>',
-                            '</tpl>'
-                        ),
+                itemTpl: '<div class="myContent" style="background-color:transparent;width:103%;">' +
+                    '{ModifiedIsMemberDashboardMerchantList}' +
+                    '<div style="overflow:hidden;width:100%;margin:-45px 0px 0px 0px;background-color:transparent;height:60px;"><div style="font-family:Arial, sans-serif;font-size:18px;font-weight:normal;float:left;width:17%;margin:5px 0px 0px 0px;background-color:transparent;"><img src="{EnterpriseLogoPath}" style="border:1px none white; width:35px;height:35px;margin:3px 0px 0px 0px;" /></div><div style="font-family:Arial, sans-serif;font-size:16px;font-weight:normal;float:left;width:80%;margin:3px 0px 0px -20px;background-color:transparent;color:black"><b>{EnterpriseName}</b><br><div style="font-family:Arial, sans-serif;font-size:11px;font-weight:normal;float:left;margin:-2px 0px 0px 0px;background-color:transparent;color:black;width:73%;"><i>{EnterpriseTagLine}</i></div><br><div style="font-family:Arial, sans-serif;font-size:11px;font-weight:normal;float:left;margin:-5px 0px 0px 0px;background-color:transparent;color:black;width:73%;"><img src="resources/icons/locationThree.png" style="width:16px;height:12px;"/>{Bandar},{Negeri}</div><div style="font-family:Arial, sans-serif;font-size:12px;font-weight:normal;float:right;margin:-10px -25px 0px 0px;background-color:transparent;color:black;width:30%;">{ModifiedCountStar}</div></div>' +
 
-
-
-
-
+                           '</div>' +
+                           '<br><div style="width:100%;text-align:center;margin:-51px 0px 0px 0px;height: 23px;background-color:transparent;"></div>',
 
 
 
@@ -3224,28 +2903,24 @@ margin: '20 0 0 0',
                         LoadingPanelShow(getLoadingIcon(),'Loading....');
                         MembershipTag= records.get('isMember');
                         glonbalDashboard_SearchMerchantList_FullCompanyAddress=records.get('NamaJalan')+',<br>'+records.get('Postkod')+' '+records.get('Bandar')+'.<br> '+records.get('Negeri')
-                  
-                        // FloatPanel_MerchantDetailPageShow(records.get('ID'), records.get('EnterpriseAccNo'), records.get('EnterpriseLogoPath'), records.get('EnterpriseName'), records.get('EnterpriseTagLine'),
-                        //     records.get('NamaJalan'), records.get('Postkod'), records.get('Bandar'), records.get('Negeri'), records.get('EnterpriseCoordinate'), records.get('EnterpriseDescriptions'), records.get('EnterprisePhoneNo')
-                        //     , records.get('PICContactNo'), records.get('EnterpriseFacebook'), records.get('EnterpriseWebsite'), records.get('EnterpriseInstagram'), records.get('EnterpriseTwiter'), records.get('BusinessMode')
-                        //     );
+                       // FloatPanel_RewardStore_OpenStore(records.get('ID'));
+                        FloatPanel_MerchantDetailPageShow(records.get('ID'), records.get('EnterpriseAccNo'), records.get('EnterpriseLogoPath'), records.get('EnterpriseName'), records.get('EnterpriseTagLine'),
+                            records.get('NamaJalan'), records.get('Postkod'), records.get('Bandar'), records.get('Negeri'), records.get('EnterpriseCoordinate'), records.get('EnterpriseDescriptions'), records.get('EnterprisePhoneNo')
+                            , records.get('PICContactNo'), records.get('EnterpriseFacebook'), records.get('EnterpriseWebsite'), records.get('EnterpriseInstagram'), records.get('EnterpriseTwiter'), records.get('BusinessMode')
+                            );
 
 
                     },
                     deselect: function (list, records) {
-                        // FloatPanel_MerchantDetailPageShow({ID}, {EnterpriseAccNo}, {EnterpriseLogoPath}, {EnterpriseName}, {EnterpriseTagLine},
-                        // {NamaJalan}, {Postkod}, {Bandar}, {Negeri}, {EnterpriseCoordinate},{EnterpriseDescriptions}, {EnterprisePhoneNo}
-                        // ,{PICContactNo}, {EnterpriseFacebook}, {EnterpriseWebsite}, {EnterpriseInstagram},{EnterpriseTwiter}, {BusinessMode});
-                        
+
                     }
                 },
 
 
                 width: '100%',
-                height: 480,
+                height: 360,
               //  height: '90%',
                 disableSelection: true,
-                scrollable:false,
 
 
 
@@ -3293,7 +2968,7 @@ margin: '20 0 0 0',
                          {
                              margin: '10 0 0 14',
                              //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
-                             html: '<div style="color:black;text-align: left;font-size:14px;width:100%;"><b>Ayoha Merchant Premium</b></div><br><div  style="color:black;text-align: left;font-size:10px;width:100%;margin:-25px 0px 0px 0px;">Popular with regulars. Better with membership</div>'
+                             html: '<div style="color:black;text-align: center;font-size:16px;width:100%;"><b>Ayoha Merchant Premium</b></div>'
                              // html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: 70%"><col style="width:30%"></colgroup><thead><tr><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:right;vertical-align:top;word-break:normal" rowspan="2"><div style="margin:0px 0px 0px -15px">TARMIZI RAHIM</div><br>Lagendary Card Mortal </th><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:middle;word-break:normal" rowspan="2">Medal</th></tr><tr></tr></thead></table>'
                          },
                          {
@@ -3766,7 +3441,6 @@ margin: '20 0 0 0',
             {
                 margin: '20 0 0 14',
                 width:'100%',
-                hidden: true,
                 //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
                 html: '<div style="color:black;text-align: left;font-size:16px;width:100%;margin:0px 0px 0px 0px"><b>Quick Explore Ayoha Rewards</b></div><br><div  style="color:transparent;text-align: left;font-size:10px;width:100%;margin:-25px 0px 0px 0px;">- One hub. Double Reward. -</div>'
                 // html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: 70%"><col style="width:30%"></colgroup><thead><tr><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:right;vertical-align:top;word-break:normal" rowspan="2"><div style="margin:0px 0px 0px -15px">TARMIZI RAHIM</div><br>Lagendary Card Mortal </th><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:middle;word-break:normal" rowspan="2">Medal</th></tr><tr></tr></thead></table>'
@@ -3776,7 +3450,7 @@ margin: '20 0 0 0',
                 xtype: 'container',
                 width: '100%',
                 height:90,
-                hidden: true,
+                hidden: false,
                 margin: '0 0 0 0',
                 style: 'background-color:transparent',
                 // scrollable: {
@@ -4109,7 +3783,7 @@ html:'<div style="display: flex; flex-direction: column; align-items: center; ju
                    {
                     xtype: 'container',
                     width: '100%',
-                  hidden: true,
+                  
                     height:3250,
                     id:'containerDashboard_AyohaRewardHomeMainContainer',
                   
@@ -4685,7 +4359,7 @@ html:'<div style="display: flex; flex-direction: column; align-items: center; ju
                                          {
                                              margin: '10 0 0 14',
                                              //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
-                                             html: '<div style="color:black;text-align: center;font-size:14px;width:100%;"><b>Ayoha Point Redemption</b></div>'
+                                             html: '<div style="color:black;text-align: center;font-size:16px;width:100%;"><b>Ayoha Point Redemption</b></div>'
                                              // html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: 70%"><col style="width:30%"></colgroup><thead><tr><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:right;vertical-align:top;word-break:normal" rowspan="2"><div style="margin:0px 0px 0px -15px">TARMIZI RAHIM</div><br>Lagendary Card Mortal </th><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:middle;word-break:normal" rowspan="2">Medal</th></tr><tr></tr></thead></table>'
                                          },
                                          {
@@ -11610,23 +11284,15 @@ function initializeContainerSingleTapEvent() {
     );
 
 
-    // var ContainernamecontainerDashbord_MyCart = Ext.ComponentQuery.query('container[name=namecontainerDashbord_MyCart]')[0];
-    // var containerViewElnamecontainerDashbord_MyCart = ContainernamecontainerDashbord_MyCart.element;
-    // containerViewElnamecontainerDashbord_MyCart.on('tap',
-    //   function (event, node, options, eOpts) {
-    //       FloatPanel_OrderCartShow();
-    //   }
-    // );
-
-
-
-    var ContainernamecontainerDashbord_MyCart = Ext.ComponentQuery.query('container[name=nameMyDashboard_AyohaOnlineMerchantStoreCheckout]')[0];
+    var ContainernamecontainerDashbord_MyCart = Ext.ComponentQuery.query('container[name=namecontainerDashbord_MyCart]')[0];
     var containerViewElnamecontainerDashbord_MyCart = ContainernamecontainerDashbord_MyCart.element;
     containerViewElnamecontainerDashbord_MyCart.on('tap',
       function (event, node, options, eOpts) {
           FloatPanel_OrderCartShow();
       }
     );
+
+
 
 
     var ContainernameContainerMyAccount_Dashboard_AyohaMerchantReward = Ext.ComponentQuery.query('container[name=nameContainerMyAccount_Dashboard_AyohaMerchantReward]')[0];
@@ -11665,28 +11331,15 @@ function initializeContainerSingleTapEvent() {
     
 
 
-    // var ContainernameMyAccount_Dashboard_AyohaMerchantShoppingBag = Ext.ComponentQuery.query('container[name=nameMyAccount_Dashboard_AyohaMerchantShoppingBag]')[0];
-    // var containerViewElnameMyAccount_Dashboard_AyohaMerchantShoppingBag = ContainernameMyAccount_Dashboard_AyohaMerchantShoppingBag.element;
-    // containerViewElnameMyAccount_Dashboard_AyohaMerchantShoppingBag.on('tap',
-    //   function (event, node, options, eOpts) {
-    //     FloatPanel_MainDashboard_PendingOrderShow();
-    //   }
-    // );
-
-    var ContainernameMyAccount_Dashboard_AyohaMerchantShoppingBag = Ext.ComponentQuery.query('container[name=nameMyDashboard_AyohaOnlineMerchantStoreShoppingBag]')[0];
+    var ContainernameMyAccount_Dashboard_AyohaMerchantShoppingBag = Ext.ComponentQuery.query('container[name=nameMyAccount_Dashboard_AyohaMerchantShoppingBag]')[0];
     var containerViewElnameMyAccount_Dashboard_AyohaMerchantShoppingBag = ContainernameMyAccount_Dashboard_AyohaMerchantShoppingBag.element;
     containerViewElnameMyAccount_Dashboard_AyohaMerchantShoppingBag.on('tap',
       function (event, node, options, eOpts) {
-       if(globalFloatPanel_MainDashboard_PendingOrder_Count>0){
         FloatPanel_MainDashboard_PendingOrderShow();
-       }{
-        swalFireShoppingBag('Shopping Bag (Paid Order) has been completed . You can check your order history in purchase history in My Account section.');
-       }
-       
-       
       }
     );
-    
+
+
 
 
     var containerViewnamecontainerDashbord_MyAyohaStore = Ext.ComponentQuery.query('container[name=namecontainerDashbord_MyAyohaStore]')[0];
@@ -12609,13 +12262,13 @@ function DashboardAyohaUserMainStore() {
             globalDashboard_TotalItemQuantityCart_fromAyohaNotification=globalDashboard_TotalItemQuantityCart;
           //  Ext.getCmp('htmlDashbord_OrderCart_CountbadgeText').setHtml('<div style="background: transparent;height:10px;font-size: 12px;font-weight:normal;color:black;text-align:center;" ><b>' + globalDashboard_TotalItemQuantityCart + '</b></div>');
             Ext.getCmp('htmlDashbord_OrderCart_CountbadgeText').setHtml('<div style="text-align:center;font-size:10px;color:white;background-color:red;width:20px;height:20px;border-radius:50%;font-weight:bold;padding:2px 0px;"><b>' + globalDashboard_TotalItemQuantityCart + '</b></div>');
-         
-            
-            Dashboard_updateBadge_AyohaMerchantList_CheckOutAndShoppingBag('htmlMyDashboard_AyohaOnlineMerchantStoreChecout_CountbadgeText', globalDashboard_TotalItemQuantityCart);
+          
+           
+          
             // Ext.getCmp('htmlDashbord_AyohaHotMerchant_CountbadgeText').setHtml('<div style="background: transparent;height:10px;font-size: 12px;font-weight:normal;color:black;text-align:center;" ><b>' + globalDashboard_TotalItemQuantityCart + '</b></div>');
     
     
-           globalDashboard_TotalItemQuantityCart = 0;
+            globalDashboard_TotalItemQuantityCart = 0;
     
             //Ext.getCmp('DashBoard_AyohaRewards_TotalPointsTypeLbl').setHtml('<div style="color:black;text-align: center;font-size:11px;width:100%;font-weight:bold"> (' + PointType + ')</div>');
     

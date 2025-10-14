@@ -25,6 +25,12 @@
                  'TotalItemQuantityCart',
                   'AyohaTaAndWin_TapBalance',
                  'AyohaMember_Rank',
+                 'BadgeCount_Stamp',
+                 'BadgeCount_Point',
+                 'BadgeCount_Discount',
+                 'BadgeCount_Contest',
+                  'BadgeCount_Event',
+                 'BadgeCount_Voucher',
         ]
     }
 });

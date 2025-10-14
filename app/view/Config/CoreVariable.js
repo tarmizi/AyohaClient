@@ -794,3 +794,100 @@ function FloatPanel_AyohaStoreShow_AyohaStore_CheckOut() {
 //     }
   
 // }
+
+
+
+/**
+ * Updates a UI badge's count and visibility.
+ * - If count > 0, it sets the number and makes the badge visible using 'flex'.
+ * - If count is 0 or less, it hides the badge.
+ *
+ * @param {string} elementId The ID of the badge div element.
+ * @param {number} count The number to display in the badge.
+ */
+// function Dashboard_updateBadge_AyohaMerchantLoyaltyCampaign(elementId, count) {
+//     // Find the badge element by its ID
+//     const badgeElement = document.getElementById(elementId);
+
+//     // Make sure the element was found before proceeding
+//     if (!badgeElement) {
+//         console.error("Badge element not found:", elementId);
+//         return;
+//     }
+
+//     // Check if the count is a positive number
+//     if (count > 0) {
+//         // Set the text inside the div to the new count
+//         badgeElement.innerText = count;
+
+//         // Change the display style to 'flex' to make it visible
+//         // This also enables the 'align-items' and 'justify-content' rules
+//         badgeElement.style.display = 'flex';
+//     } else {
+//         // If the count is 0 or less, hide the badge
+//         badgeElement.style.display = 'none';
+//     }
+// }
+
+
+function Dashboard_updateBadge_AyohaMerchantLoyaltyCampaign(elementId, count) {
+    // Find the badge element by its ID
+    const badgeElement = document.getElementById(elementId);
+
+    // Make sure the element was found before proceeding
+    if (!badgeElement) {
+        console.error("Badge element not found:", elementId);
+        return;
+    }
+
+    // --- IMPROVEMENT START ---
+    // First, attempt to convert the input to an integer.
+    const numericCount = parseInt(count);
+
+    // Check if the result is a valid number (not NaN) AND it's greater than 0.
+    if (!isNaN(numericCount) && numericCount > 0) {
+    // --- IMPROVEMENT END ---
+
+        // Set the text inside the div to the new count
+        badgeElement.innerText = numericCount;
+
+        // Change the display style to 'flex' to make it visible
+        badgeElement.style.display = 'flex';
+    } else {
+        // If the count is not a valid positive number, hide the badge
+        badgeElement.style.display = 'none';
+    }
+}
+
+
+
+
+function Dashboard_updateBadge_AyohaMerchantList_CheckOutAndShoppingBag(elementId, count) {
+    // Find the badge element by its ID
+    const badgeElement = document.getElementById(elementId);
+
+    // Make sure the element was found before proceeding
+    if (!badgeElement) {
+        console.error("Badge element not found:", elementId);
+        return;
+    }
+
+    // --- IMPROVEMENT START ---
+    // First, attempt to convert the input to an integer.
+    const numericCount = parseInt(count);
+
+    // Check if the result is a valid number (not NaN) AND it's greater than 0.
+    if (!isNaN(numericCount) && numericCount > 0) {
+    // --- IMPROVEMENT END ---
+
+        // Set the text inside the div to the new count
+        badgeElement.innerText = numericCount;
+
+        // Change the display style to 'flex' to make it visible
+        badgeElement.style.display = 'block';
+    } else {
+        // If the count is not a valid positive number, hide the badge
+        badgeElement.style.display = 'none';
+    }
+  
+}

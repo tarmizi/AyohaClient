@@ -531,6 +531,11 @@
                       return _value;
                   }
               },
+              {
+                name: 'isLoadMore',
+                type: 'boolean',
+                defaultValue: false // Important: defaults to false for real data
+            },
          'TotalReviews',
          'RateReviews'
       ]

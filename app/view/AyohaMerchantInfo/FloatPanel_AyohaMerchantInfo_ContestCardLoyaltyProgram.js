@@ -342,7 +342,7 @@ inset: false,       // make sure inset styling isn’t applied
     itemTpl: new Ext.XTemplate([
 '    <!-- Main Card Container -->',
 // '   <div style="background-color:#ffffff; width:105%; border-radius:5px; overflow:hidden; margin:0 0 0 -10px; border:0; -webkit-box-shadow:0 18px 48px rgba(0,0,0,.28), 0 8px 20px rgba(0,0,0,.22); box-shadow:0 18px 48px rgba(0,0,0,.28), 0 8px 20px rgba(0,0,0,.22);">',
-'<div style="background:#fff; width:107%; border-radius:12px; overflow:hidden; margin:0px 0px 0px -12px; border:0; box-shadow:0 12px 30px rgba(24,39,75,.14), 0 3px 10px rgba(24,39,75,.10);">',
+'<div onclick="FloatPanel_AyohaMerchantInfo_ContestCardLoyaltyProgram_OpenContestCard(`{ContestCode}`)" style="background:#fff; width:107%; border-radius:12px; overflow:hidden; margin:0px 0px 0px -12px; border:0; box-shadow:0 12px 30px rgba(24,39,75,.14), 0 3px 10px rgba(24,39,75,.10);">',
 '',
 '        <!-- Image Section -->',
 '        <div style="position: relative;">',
@@ -412,7 +412,7 @@ inset: false,       // make sure inset styling isn’t applied
 '            </p>',
 '',
 '            <!-- Tags -->',
-'            <div style="display: flex; gap: 8px; margin-bottom: 24px;">',
+'            <div style="display: flex; gap: 8px; margin-bottom: 4px;">',
 '                <span style="background-color: #ecf0f1; color: #7f8c8d; padding: 6px 14px; border-radius: 16px; font-size: 13px; font-weight: 500;">{BusinessMode}</span>',
 '                <span style="background-color: #ecf0f1; color: #7f8c8d; padding: 6px 14px; border-radius: 16px; font-size: 13px; font-weight: 500;">{EnterpriseDescription}</span>',
 '            </div>',
@@ -420,12 +420,12 @@ inset: false,       // make sure inset styling isn’t applied
 '        </div>',
 '        ',
 '        <!-- Action Button -->',
-'        <div style="margin: -20px 0px 0px 0px;" onclick="FloatPanel_AyohaMerchantInfo_ContestCardLoyaltyProgram_OpenContestCard(`{ContestCode}`)" >',
+'        <div style="margin: -20px 0px 0px 0px;display:none" >',
 //'{ButtonBottomDisplay}',
  '             <button  style="margin:0px 0px 0px 8px;width: 95%; background-image: linear-gradient(#ff00de75, #c800ffc9);background-color: #fac; color: white; border: none; padding: 15px; border-radius: 12px; font-size: 14px; font-weight: bold; cursor: pointer; text-shadow: 0 1px 1px rgba(0,0,0,0.2); box-shadow: 0 4px 10px rgba(247, 151, 30, 0.4); transition: transform 0.2s ease, box-shadow 0.2s ease;" onmouseover="this.style.transform=\'translateY(-2px)\'; this.style.boxShadow=\'0 6px 12px rgba(247, 151, 30, 0.5)\';" onmouseout="this.style.transform=\'translateY(0)\'; this.style.boxShadow=\'0 4px 10px rgba(247, 151, 30, 0.4)\';">',
  '                View Membership Contest',
 '            </button>',
-'        </div><br>',
+'        </div>',
 '',
 '    </div>'
 ].join(''),
@@ -774,7 +774,6 @@ function FloatPanel_AyohaMerchantInfo_ContestCardLoyaltyProgram_MerchantLoyaltyC
 
 
 }
-
 
 
 

@@ -433,7 +433,29 @@ function swalFireInfo(Msg) {
         }
     });
 }
-
+function swalFireShoppingBag(Msg) {
+    // event.preventDefault();
+     Swal.fire({
+         text: '<font size=5 color=white>Ayoha Reward v 1.0</font>',
+         text:  Msg ,
+         imageUrl: "resources/icons/Shoppingbag03.png",
+         imageWidth: 350,
+         imageHeight: 230,
+         showCloseButton: true,
+         showCancelButton: false,
+         //  confirmButtonColor: '#3085d6',
+         confirmButtonColor: '#9932cc',
+         cancelButtonColor: '#d33',
+         confirmButtonText: 'OK',
+         footer: '<img src="resources/icons/Logo/AyohaLogofullOrange.png" width="100" height="70" alt="Company Name"/>'
+     }).then(function (result) {
+         if (result.isConfirmed) {
+ 
+             
+             
+         }
+     });
+ }
 
 function swalFireInfo_NoRedemptionItem(Msg) {
     event.preventDefault();

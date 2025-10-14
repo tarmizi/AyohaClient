@@ -343,7 +343,7 @@ function FloatPanel_MainDashboard_PendingOrderAyohaStoreOrderPendingOrderMainDas
    _DataStore_AyohaStoreOrderPendingOrderMainDashbord_CountStore.load({
     callback: function (records, operation, success) {
         if (success && records.length > 0) {
-            var count = _DataStore_AyohaStoreOrderPendingOrderMainDashbord_CountStore.getCount();
+            var count =parseInt(_DataStore_AyohaStoreOrderPendingOrderMainDashbord_CountStore.getCount());
             if(count > 0) {
              //   var record = records[0]; // Access only the first record
                 // AppState.FloatPanel_MainDashboard_PendingOrder.OrderStatus=record.get('OrderStatus');
@@ -353,7 +353,12 @@ function FloatPanel_MainDashboard_PendingOrderAyohaStoreOrderPendingOrderMainDas
               if(globalFloatPanel_MainDashboard_PendingOrder_Count > 0) {
                 Ext.getCmp('txtDashboard_AyohaMerchantShoppingBagBadgeID').setHtml('<div style="text-align:center;font-size:12px;color:white;background-color:red;width:20px;height:20px;border-radius:50%;font-weight:bold;padding:2px 0px;">'+globalFloatPanel_MainDashboard_PendingOrder_Count+'</div>');
                 Ext.getCmp('txtDashboard_AyohaMerchantShoppingBagBadgeID').setHidden(false);
+              
                 Ext.getCmp('containerMyAccount_Dashboard_AyohaMerchantShoppingBagID').setMargin('0 0 0 0');
+
+               // alert('You have ' + globalFloatPanel_MainDashboard_PendingOrder_Count + ' pending orders. Please check your orders.');
+                Dashboard_updateBadge_AyohaMerchantList_CheckOutAndShoppingBag('htmlMyDashboard_AyohaOnlineMerchantStoreShoppingBag_CountbadgeText', globalFloatPanel_MainDashboard_PendingOrder_Count);
+
             
               }
               
@@ -362,6 +367,8 @@ function FloatPanel_MainDashboard_PendingOrderAyohaStoreOrderPendingOrderMainDas
             }           
         } else {
            // console.error('Failed to load store data or no record found.');
+           Dashboard_updateBadge_AyohaMerchantList_CheckOutAndShoppingBag('htmlMyDashboard_AyohaOnlineMerchantStoreShoppingBag_CountbadgeText', 0);
+
             LoadingPanelHide();
         }
     }

@@ -40,14 +40,24 @@
       'CountReviewer',
       'CountStar',
       {
+        name: 'isLoadMore',
+        type: 'boolean',
+        defaultValue: false // This is important!
+    },
+      {
         name: 'ModifiedEnterpriseAddress',
         convert: function (value, record) {
 
             var _value;
             var str = record.get('EnterpriseAddress');
 
-            let address = str;
-            _value = address.replaceAll(",", "<br>");
+            var address = str;
+            if(address){
+                _value = address.replaceAll(",", "<br>");
+            }else{
+                _value='NA';
+            }
+    
 
 
 
@@ -317,8 +327,12 @@
 
                   var _value;
                   var str = record.get('EnterprisesName');
-
-                  _value = str.toUpperCase();
+if(str){
+    _value = str.toUpperCase();
+}else{
+    _value='NA';
+}
+                 
 
 
 
@@ -335,7 +349,7 @@
                   
 if(str){
     if (str.length <= 16) {
-        _value = '<div style="margin:-51px 0px 0px 68px;font-family:Arial, sans-serif;font-size:22px;font-weight:bold;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:top;word-break:normal;color:white;width:100%;">' + str.toUpperCase() + '</div>';
+        _value = '<div style="margin:-51px 0px 0px 68px;font-family:Arial, sans-serif;font-size:18px;font-weight:bold;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:top;word-break:normal;color:white;width:100%;">' + str.toUpperCase() + '</div>';
       
         return _value;
     }
@@ -386,7 +400,7 @@ if(str){
                     var _value;
                     var str = record.get('EnterprisesName');
                     var logo = record.get('EnterprisesLogo');
-                  
+                  if(str){
                     if (str.length <= 13) {
                         _value = '<img src="' + logo + '" alt="Image" style="width:60px;height:60px;border-radius: 50%;border: 1px solid white;margin:-28px 0px 0px 0px">';
                         console.log(str.length);
@@ -397,6 +411,10 @@ if(str){
                         console.log(str.length);
                         return _value;
                     }
+                  }else{
+                    return 'NA';
+                  }
+                   
 
 
 
@@ -419,16 +437,23 @@ if(str){
                         var str = record.get('EnterprisesName');
                         var logo = record.get('EnterprisesLogo');
                       
-                        if (str.length <= 16) {
-                            _value = '<img src="' + logo + '" alt="Image" style="width:32px;height:32px;border-radius: 50%;border: 1px solid white;margin:-12px 0px 0px 0px">';
-                          //  console.log(str.length);
-                            return _value;
-                        }
-                        if (str.length >= 17) {
-                            _value = '<img src="' + logo + '" alt="Image" style="width:32px;height:32px;border-radius: 50%;border: 1px solid white;margin:0px 0px 0px 0px">';
-                          //  console.log(str.length);
-                            return _value;
-                        }
+
+                        if(str){
+                            if (str.length <= 16) {
+                                _value = '<img src="' + logo + '" alt="Image" style="width:32px;height:32px;border-radius: 50%;border: 1px solid white;margin:-12px 0px 0px 0px">';
+                              //  console.log(str.length);
+                                return _value;
+                            }
+                            if (str.length >= 17) {
+                                _value = '<img src="' + logo + '" alt="Image" style="width:32px;height:32px;border-radius: 50%;border: 1px solid white;margin:0px 0px 0px 0px">';
+                              //  console.log(str.length);
+                                return _value;
+                            }
+                        }else{
+                            return 'NA';
+                          }
+                           
+                       
     
 
 
@@ -442,18 +467,23 @@ if(str){
                       var _value;
                       var str = record.get('EnterprisesName');
 
-                      if (str.length <= 16) {
-                          _value = 'height:73px';
-                          console.log(str.length);
-                          return _value;
-                      }
-                      if (str.length >= 17) {
-                          _value = 'height:90px';
-                          console.log(str.length);
-                          return _value;
-                      }
-
-
+                      if(str){
+                        if (str.length <= 16) {
+                            _value = 'height:73px';
+                            console.log(str.length);
+                            return _value;
+                        }
+                        if (str.length >= 17) {
+                            _value = 'height:90px';
+                            console.log(str.length);
+                            return _value;
+                        }
+  
+  
+                      }else{
+                        return 'NA';
+                      }   
+                      
 
                   }
               }
@@ -466,22 +496,51 @@ if(str){
 
                       var _value;
                       var str = record.get('EnterprisesName');
-
-                      if (str.length <= 16) {
-                          _value = 'height:60px';
-                          console.log(str.length);
-                          return _value;
-                      }
-                      if (str.length >= 17) {
-                          _value = 'height:80px';
-                          console.log(str.length);
-                          return _value;
-                      }
+if(str){
+    if (str.length <= 16) {
+        _value = 'height:65px';
+        console.log(str.length);
+        return _value;
+    }
+    if (str.length >= 17) {
+        _value = 'height:80px';
+        console.log(str.length);
+        return _value;
+    }
+}else{
+    return 'NA';
+  }  
+                    
 
 
 
                   }
-              }
+              }    , {
+                name: 'ModifiedPaddingHeight',
+                convert: function (value, record) {
+
+                    var _value;
+                    var str = record.get('EnterprisesName');
+if(str){
+    if (str.length <= 16) {
+        _value = '8px';
+        console.log(str.length);
+        return _value;
+    }
+    if (str.length >= 17) {
+        _value = '0px';
+        console.log(str.length);
+        return _value;
+    }
+
+}{
+    return 'NA';
+  }  
+                    
+
+
+                }
+            }
                 , {
                     name: 'ModifiedAyohaUserAccountNo',
                     convert: function (value, record) {
