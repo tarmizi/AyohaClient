@@ -3763,6 +3763,1550 @@ margin: '20 0 0 0',
 
 
 
+//////////////////////////////////////////////////Start Hot seat merchant//////////////////////////////////////
+
+
+{
+    xtype: 'panel',
+    height: 70
+},
+
+{
+    xtype: 'container',
+    width: '100%',
+    id:'containerDashboard_HotSeatPromotion',
+    /// hidden:true,
+    margin: '0 0 0 0',
+    style: {
+        // background: '#D25959',
+        background: 'transparent',
+        // border: '2px'
+    },
+    //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
+    // style: 'border-bottom:2px solid #D25959;background-color:transparent',
+    layout: {
+        type: 'hbox',
+        pack: 'center',
+        align: 'center',
+    },
+    items: [
+         {
+             margin: '0 0 0 14',
+             //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
+             html: '<div style="color:black;text-align: left;font-size:14px;width:100%;"><b>Hot Seat Promotion!</b></div><br><div style="color:black;text-align: left;font-size:10px;width:100%;margin:-25px 0px 0px 0px;">Member price + bonus points,while it lasts.</div>'
+             // html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: 70%"><col style="width:30%"></colgroup><thead><tr><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:right;vertical-align:top;word-break:normal" rowspan="2"><div style="margin:0px 0px 0px -15px">TARMIZI RAHIM</div><br>Lagendary Card Mortal </th><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:middle;word-break:normal" rowspan="2">Medal</th></tr><tr></tr></thead></table>'
+         },
+         {
+             xtype: 'spacer'
+         },
+         {
+
+             margin: '0 14 0 0',
+             //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
+             html: '<div onclick="FloatPanel_FloatingAdvertisementShow();" style="color:black;text-align: center;font-size:12px;width:100%;"><u>View All</u></div>'
+             // html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: 70%"><col style="width:30%"></colgroup><thead><tr><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:right;vertical-align:top;word-break:normal" rowspan="2"><div style="margin:0px 0px 0px -15px">TARMIZI RAHIM</div><br>Lagendary Card Mortal </th><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:middle;word-break:normal" rowspan="2">Medal</th></tr><tr></tr></thead></table>'
+
+         }
+    ]
+},
+                {
+                    xtype: 'container',
+                    width: '100%',
+                    id:'containerDashboard_HotSeatPromotionImage',
+                    height: 280,
+                    margin: '20 0 0 0',
+                   // hidden:true,
+                    //style: {
+                    //    // background: '#D25959',
+                    //    background: 'rgba(76, 175, 80, 0.3);',
+                    //    // border: '2px'
+                    //},
+                    //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
+                    style: 'background-color:transparent',
+
+                    layout: {
+                        type: 'hbox',
+                        pack: 'center',
+                        align: 'center',
+                    },
+                    items: [
+                        {
+                            xtype: 'spacer'
+                        },
+                        {
+                            xtype: 'container',
+                            width: '95%',
+                            height: 310,
+                            margin: '0 0 0 0',
+                            //style: {
+                            //    // background: '#D25959',
+                            //    background: 'rgba(76, 175, 80, 0.3);',
+                            //    // border: '2px'
+                            //},
+                            //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
+                            // style: 'background-color:rgba(255, 255, 255, 0);border-radius: 10px 10px 10px 10px;',
+                            style: 'background-color:transparent',
+                            layout: {
+                                type: 'hbox',
+                                pack: 'center',
+                                align: 'center',
+                            },
+                            scrollable: {
+                                direction: 'horizontal',
+                                directionLock: true,
+                                indicators: false
+                            },
+                            items: [
+                              {
+                                  xtype: 'panel',
+                                  width: 7
+                              },
+
+
+                                       {
+                                           xtype: 'container',
+                                           height: 300,
+                                           width: 230,
+                                           margin: '0 0 0 0',
+                                           style: 'background-color:transparent;',
+                                           layout: {
+                                               type: 'vbox',
+                                               pack: 'center',
+                                               align: 'center',
+                                           },
+                                           items: [
+
+
+                                               {
+                                                   xtype: 'container',
+                                                   width: '100%',
+                                                   height: 30,
+                                                   docked: 'bottom',
+                                                   hidden: true,
+                                                   margin: '-2 0 0 0',
+                                                   style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px none #ECF0F1 white;background: white;border-radius: 0px 0px 5px 5px;',
+                                                   layout: {
+                                                       type: 'vbox',
+                                                       pack: 'center',
+                                                       align: 'center',
+                                                   },
+                                                   items: [
+
+
+                                                           {
+                                                               xtype: 'container',
+                                                               id: 'DashboardHotSeatAdvertisementButton_bottom0',
+                                                               //hidden:true,
+                                                               width: '100%',
+                                                               style: "background-color: transparent",
+                                                               //style: "background-color: #F35B57;",
+                                                               margin: '0 0 0 0',
+                                                               layout: {
+                                                                   type: 'hbox',
+                                                                   pack: 'center',
+                                                                   align: 'center'
+
+                                                               },
+
+
+                                                               items: [
+
+                                                                   {
+                                                                       xtype: 'button',
+                                                                       margin: '0 0 0 0',
+                                                                       ui: 'plain',
+                                                                       width: '100%',
+                                                                       id: 'btn_DashboardAdvertisementButton_HotSeatAdvertisementTxt0',
+                                                                       //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
+                                                                       html: '<div style="color:black;text-align: center;font-size:12px;width:100%;"><b>Available Advertisement Space! >></b></div>',
+                                                                       handler: function () {
+
+
+                                                                       }
+
+
+                                                                   }
+
+                                                               ]
+
+                                                           },
+
+
+
+
+                                                   ]
+                                               },
+
+
+
+                                               {
+                                                   xtype: 'button',
+                                                   id: 'btnDashboard_HotSeatAdvertisement_PicProfile0',
+                                                   margin: '0 0 0 0',
+                                                   //docked:'top',
+                                                   height: 60,
+                                                   width: 60,
+                                                   // iconCls: 'list',
+                                                   //html: '<div style="border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 30px 30px 30px 30px;width:45px;height:45px;" ><img src="resources/icons/founder.jpg" width="25" height="25"  alt="Company Name" style="margin:7px 0px 0px 0px;border-radius: 50%;"></div>',
+                                                   html: '<img src="resources/icons/Logo/LogoOrangeSimplifed.png" style="width: 50px; height: 50px; border:3px solid #c800ffc9; border-radius: 50%; max-width:200px;">',
+
+
+                                                   // html: '<div ><img src="resources/icons/videoPurple.png" width="35" height="35" alt="Company Name"></div>',
+                                                   ui: 'plain',
+                                                   handler: function () {
+
+
+                                                   }
+                                               },
+
+
+                                                 {
+
+                                                     height: 260,
+                                                     width: 230,
+                                                     id: 'htmlPicture_Dashboard_HotSeatAdvertisement_HotSeat0',
+                                                     margin: '-30 0 0 0',
+                                                     html: '<img src="resources/icons/freeAdvertisingSpace.png"  style="width: 230px; height: 260px; border:2px solid #ECF0F1;border-radius: 10px 10px 10px 10px;">',
+
+                                                 },
+                                                     {
+                                                         xtype: 'container',
+                                                         // width: '91.1%',
+                                                         width: 228,
+                                                         height: 60,
+                                                         hidden: true,
+                                                         margin: '14 0 0 16',
+
+                                                         layout: {
+                                                             type: 'vbox',
+                                                             pack: 'center',
+                                                             align: 'center',
+                                                         },
+                                                         id: 'containerDashboard_HotSeatAdvertisement_ProfileText0',
+                                                         // hidden:true,
+
+                                                         style: 'background-color:rgba(0, 0, 0, 0.5);border-radius: 0px 0px 0px 0px;',
+                                                         items: [
+
+                                                         ]
+                                                     },
+
+                                               {
+                                                   xtype: 'container',
+                                                   id: 'btnDashboard_HotSeatAdvertisement_UserNameProfile0',
+                                                   margin: '-40 0 0 0',
+                                                   height: 40,
+                                                   zIndex: 200,
+                                                   //width: 228,
+                                                   width: '100%',
+                                                   style: 'background-color:rgba(0, 0, 0, 0.2);border-radius:0px 0px 10px 10px;border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1;',
+                                                   // iconCls: 'list',
+                                                   //html: '<div style="border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 30px 30px 30px 30px;width:45px;height:45px;" ><img src="resources/icons/founder.jpg" width="25" height="25"  alt="Company Name" style="margin:7px 0px 0px 0px;border-radius: 50%;"></div>',
+                                                   //html: '<div style="color:black;text-align: center;font-size:12px;width:100%;font-weight:bold;background-color:rgba(0, 0, 0, 0.5);">Unjun Restaurant Sdn Bhd</div><br><div style="color:black;text-align: center;font-size:10px;width:100%;font-weight:normal;margin:-15px 0px 0px 0px;">Date:28/12/2020 10:30:54PM</div>',
+                                                   // 
+                                                   layout: {
+                                                       type: 'vbox',
+                                                       pack: 'center',
+                                                       align: 'center',
+                                                   },
+                                                   items: [
+                                                       {
+                                                           id: 'htmlDasboard_HotSeatAdvertisement_EnterpriseName0',
+                                                           html: '<div style="color:white;text-align: center;font-size:12px;width:100%;font-weight:bold;background-color:transparent">MHSya Enterprise</div>',
+                                                       },
+                                                        {
+                                                            xtype: 'container',
+                                                            style: 'background-color:white;',
+                                                            height: 2,
+                                                            width: '80%',
+                                                            // html: '<div style="color:white;text-align: center;font-size:10px;width:90%;font-weight:normal;background-color:white;margin:0px 0px 0px 0px;height:5px"/>',
+                                                        },
+                                                         {
+                                                             id: 'htmlDasboard_HotSeatAdvertisement_Title0',
+                                                             html: '<div style="color:white;text-align: center;font-size:10px;width:100%;font-weight:bold;background-color:transparent;margin:0px 0px 0px 0px;">Penjahit baju Custome Made KL</div>',
+                                                         },
+                                                   ]
+
+                                               },
+                                           ]
+                                       },
+
+
+
+                                {
+                                    xtype: 'panel',
+                                    width: 15
+                                },
+
+
+
+                                  {
+                                      xtype: 'container',
+                                      height: 300,
+                                      width: 230,
+                                      margin: '0 0 0 0',
+                                      style: 'background-color:transparent;',
+                                      layout: {
+                                          type: 'vbox',
+                                          pack: 'center',
+                                          align: 'center',
+                                      },
+                                      items: [
+
+
+                                          {
+                                              xtype: 'container',
+                                              width: '100%',
+                                              height: 30,
+                                              docked: 'bottom',
+                                              hidden: true,
+                                              margin: '-2 0 0 0',
+                                              style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px none #ECF0F1 white;background: white;border-radius: 0px 0px 5px 5px;',
+                                              layout: {
+                                                  type: 'vbox',
+                                                  pack: 'center',
+                                                  align: 'center',
+                                              },
+                                              items: [
+
+
+                                                      {
+                                                          xtype: 'container',
+                                                          id: 'DashboardHotSeatAdvertisementButton_bottom1',
+                                                          //hidden:true,
+                                                          width: '100%',
+                                                          style: "background-color: transparent",
+                                                          //style: "background-color: #F35B57;",
+                                                          margin: '0 0 0 0',
+                                                          layout: {
+                                                              type: 'hbox',
+                                                              pack: 'center',
+                                                              align: 'center'
+
+                                                          },
+
+
+                                                          items: [
+
+                                                              {
+                                                                  xtype: 'button',
+                                                                  margin: '0 0 0 0',
+                                                                  ui: 'plain',
+                                                                  width: '100%',
+                                                                  id: 'btn_DashboardAdvertisementButton_HotSeatAdvertisementTxt1',
+                                                                  //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
+                                                                  html: '<div style="color:black;text-align: center;font-size:12px;width:100%;"><b>Available Advertisement Space! >></b></div>',
+                                                                  handler: function () {
+
+
+                                                                  }
+
+
+                                                              }
+
+                                                          ]
+
+                                                      },
+
+
+
+
+                                              ]
+                                          },
+
+
+
+                                          {
+                                              xtype: 'button',
+                                              id: 'btnDashboard_HotSeatAdvertisement_PicProfile1',
+                                              margin: '0 0 0 0',
+                                              //docked:'top',
+                                              height: 60,
+                                              width: 60,
+                                              // iconCls: 'list',
+                                              //html: '<div style="border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 30px 30px 30px 30px;width:45px;height:45px;" ><img src="resources/icons/founder.jpg" width="25" height="25"  alt="Company Name" style="margin:7px 0px 0px 0px;border-radius: 50%;"></div>',
+                                              html: '<img src="resources/icons/Logo/LogoOrangeSimplifed.png" style="width: 50px; height: 50px; border:3px solid #c800ffc9; border-radius: 50%; max-width:200px;">',
+
+
+                                              // html: '<div ><img src="resources/icons/videoPurple.png" width="35" height="35" alt="Company Name"></div>',
+                                              ui: 'plain',
+                                              handler: function () {
+
+
+                                              }
+                                          },
+
+
+                                            {
+
+                                                height: 260,
+                                                width: 230,
+                                                id: 'htmlPicture_Dashboard_HotSeatAdvertisement_HotSeat1',
+                                                margin: '-30 0 0 0',
+                                                html: '<img src="resources/icons/freeAdvertisingSpace.png"  style="width: 230px; height: 260px; border:2px solid #ECF0F1;border-radius: 10px 10px 10px 10px;">',
+
+                                            },
+                                                {
+                                                    xtype: 'container',
+                                                    // width: '91.1%',
+                                                    width: 228,
+                                                    height: 60,
+                                                    hidden: true,
+                                                    margin: '14 0 0 16',
+
+                                                    layout: {
+                                                        type: 'vbox',
+                                                        pack: 'center',
+                                                        align: 'center',
+                                                    },
+                                                    id: 'containerDashboard_HotSeatAdvertisement_ProfileText1',
+                                                    // hidden:true,
+
+                                                    style: 'background-color:rgba(0, 0, 0, 0.5);border-radius: 0px 0px 0px 0px;',
+                                                    items: [
+
+                                                    ]
+                                                },
+
+                                          {
+                                              xtype: 'container',
+                                              id: 'btnDashboard_HotSeatAdvertisement_UserNameProfile1',
+                                              margin: '-40 0 0 0',
+                                              height: 40,
+                                              zIndex: 200,
+                                              //width: 228,
+                                              width: '100%',
+                                              style: 'background-color:rgba(0, 0, 0, 0.2);border-radius:0px 0px 10px 10px;border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1;',
+                                              // iconCls: 'list',
+                                              //html: '<div style="border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 30px 30px 30px 30px;width:45px;height:45px;" ><img src="resources/icons/founder.jpg" width="25" height="25"  alt="Company Name" style="margin:7px 0px 0px 0px;border-radius: 50%;"></div>',
+                                              //html: '<div style="color:black;text-align: center;font-size:12px;width:100%;font-weight:bold;background-color:rgba(0, 0, 0, 0.5);">Unjun Restaurant Sdn Bhd</div><br><div style="color:black;text-align: center;font-size:10px;width:100%;font-weight:normal;margin:-15px 0px 0px 0px;">Date:28/12/2020 10:30:54PM</div>',
+                                              // 
+                                              layout: {
+                                                  type: 'vbox',
+                                                  pack: 'center',
+                                                  align: 'center',
+                                              },
+                                              items: [
+                                                  {
+                                                      id: 'htmlDasboard_HotSeatAdvertisement_EnterpriseName1',
+                                                      html: '<div style="color:white;text-align: center;font-size:12px;width:100%;font-weight:bold;background-color:transparent">MHSya Enterprise</div>',
+                                                  },
+                                                   {
+                                                       xtype: 'container',
+                                                       style: 'background-color:white;',
+                                                       height: 2,
+                                                       width: '80%',
+                                                       // html: '<div style="color:white;text-align: center;font-size:10px;width:90%;font-weight:normal;background-color:white;margin:0px 0px 0px 0px;height:5px"/>',
+                                                   },
+                                                    {
+                                                        id: 'htmlDasboard_HotSeatAdvertisement_Title1',
+                                                        html: '<div style="color:white;text-align: center;font-size:10px;width:100%;font-weight:bold;background-color:transparent;margin:0px 0px 0px 0px;">Penjahit baju Custome Made KL</div>',
+                                                    },
+                                              ]
+
+                                          },
+                                      ]
+                                  },
+
+
+                                  ////////////////hotseat 2
+
+                                {
+                                    xtype: 'panel',
+                                    width: 15
+                                },
+
+                                  {
+                                      xtype: 'container',
+                                      height: 300,
+                                      width: 230,
+                                      margin: '0 0 0 0',
+                                      style: 'background-color:transparent;',
+                                      layout: {
+                                          type: 'vbox',
+                                          pack: 'center',
+                                          align: 'center',
+                                      },
+                                      items: [
+
+
+                                          {
+                                              xtype: 'container',
+                                              width: '100%',
+                                              height: 30,
+                                              docked: 'bottom',
+                                              hidden: true,
+                                              margin: '-2 0 0 0',
+                                              style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px none #ECF0F1 white;background: white;border-radius: 0px 0px 5px 5px;',
+                                              layout: {
+                                                  type: 'vbox',
+                                                  pack: 'center',
+                                                  align: 'center',
+                                              },
+                                              items: [
+
+
+                                                      {
+                                                          xtype: 'container',
+                                                          id: 'DashboardHotSeatAdvertisementButton_bottom2',
+                                                          //hidden:true,
+                                                          width: '100%',
+                                                          style: "background-color: transparent",
+                                                          //style: "background-color: #F35B57;",
+                                                          margin: '0 0 0 0',
+                                                          layout: {
+                                                              type: 'hbox',
+                                                              pack: 'center',
+                                                              align: 'center'
+
+                                                          },
+
+
+                                                          items: [
+
+                                                              {
+                                                                  xtype: 'button',
+                                                                  margin: '0 0 0 0',
+                                                                  ui: 'plain',
+                                                                  width: '100%',
+                                                                  id: 'btn_DashboardAdvertisementButton_HotSeatAdvertisementTxt2',
+                                                                  //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
+                                                                  html: '<div style="color:black;text-align: center;font-size:12px;width:100%;"><b>Available Advertisement Space! >></b></div>',
+                                                                  handler: function () {
+
+
+                                                                  }
+
+
+                                                              }
+
+                                                          ]
+
+                                                      },
+
+
+
+
+                                              ]
+                                          },
+
+
+
+                                          {
+                                              xtype: 'button',
+                                              id: 'btnDashboard_HotSeatAdvertisement_PicProfile2',
+                                              margin: '0 0 0 0',
+                                              //docked:'top',
+                                              height: 60,
+                                              width: 60,
+                                              // iconCls: 'list',
+                                              //html: '<div style="border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 30px 30px 30px 30px;width:45px;height:45px;" ><img src="resources/icons/founder.jpg" width="25" height="25"  alt="Company Name" style="margin:7px 0px 0px 0px;border-radius: 50%;"></div>',
+                                              html: '<img src="resources/icons/Logo/LogoOrangeSimplifed.png" style="width: 50px; height: 50px; border:3px solid #c800ffc9; border-radius: 50%; max-width:200px;">',
+
+
+                                              // html: '<div ><img src="resources/icons/videoPurple.png" width="35" height="35" alt="Company Name"></div>',
+                                              ui: 'plain',
+                                              handler: function () {
+
+
+                                              }
+                                          },
+
+
+                                            {
+
+                                                height: 260,
+                                                width: 230,
+                                                id: 'htmlPicture_Dashboard_HotSeatAdvertisement_HotSeat2',
+                                                margin: '-30 0 0 0',
+                                                html: '<img src="resources/icons/freeAdvertisingSpace.png"  style="width: 230px; height: 260px; border:2px solid #ECF0F1;border-radius: 10px 10px 10px 10px;">',
+
+                                            },
+                                                {
+                                                    xtype: 'container',
+                                                    // width: '91.1%',
+                                                    width: 228,
+                                                    height: 60,
+                                                    hidden: true,
+                                                    margin: '14 0 0 16',
+
+                                                    layout: {
+                                                        type: 'vbox',
+                                                        pack: 'center',
+                                                        align: 'center',
+                                                    },
+                                                    id: 'containerDashboard_HotSeatAdvertisement_ProfileText2',
+                                                    // hidden:true,
+
+                                                    style: 'background-color:rgba(0, 0, 0, 0.5);border-radius: 0px 0px 0px 0px;',
+                                                    items: [
+
+                                                    ]
+                                                },
+
+                                          {
+                                              xtype: 'container',
+                                              id: 'btnDashboard_HotSeatAdvertisement_UserNameProfile2',
+                                              margin: '-40 0 0 0',
+                                              height: 40,
+                                              zIndex: 200,
+                                              //width: 228,
+                                              width: '100%',
+                                              style: 'background-color:rgba(0, 0, 0, 0.2);border-radius:0px 0px 10px 10px;border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1;',
+                                              // iconCls: 'list',
+                                              //html: '<div style="border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 30px 30px 30px 30px;width:45px;height:45px;" ><img src="resources/icons/founder.jpg" width="25" height="25"  alt="Company Name" style="margin:7px 0px 0px 0px;border-radius: 50%;"></div>',
+                                              //html: '<div style="color:black;text-align: center;font-size:12px;width:100%;font-weight:bold;background-color:rgba(0, 0, 0, 0.5);">Unjun Restaurant Sdn Bhd</div><br><div style="color:black;text-align: center;font-size:10px;width:100%;font-weight:normal;margin:-15px 0px 0px 0px;">Date:28/12/2020 10:30:54PM</div>',
+                                              // 
+                                              layout: {
+                                                  type: 'vbox',
+                                                  pack: 'center',
+                                                  align: 'center',
+                                              },
+                                              items: [
+                                                  {
+                                                      id: 'htmlDasboard_HotSeatAdvertisement_EnterpriseName2',
+                                                      html: '<div style="color:white;text-align: center;font-size:12px;width:100%;font-weight:bold;background-color:transparent">MHSya Enterprise</div>',
+                                                  },
+                                                   {
+                                                       xtype: 'container',
+                                                       style: 'background-color:white;',
+                                                       height: 2,
+                                                       width: '80%',
+                                                       // html: '<div style="color:white;text-align: center;font-size:10px;width:90%;font-weight:normal;background-color:white;margin:0px 0px 0px 0px;height:5px"/>',
+                                                   },
+                                                    {
+                                                        id: 'htmlDasboard_HotSeatAdvertisement_Title2',
+                                                        html: '<div style="color:white;text-align: center;font-size:10px;width:100%;font-weight:bold;background-color:transparent;margin:0px 0px 0px 0px;">Penjahit baju Custome Made KL</div>',
+                                                    },
+                                              ]
+
+                                          },
+                                      ]
+                                  },
+
+                                  ///////hotseat 3
+
+
+                                {
+                                    xtype: 'panel',
+                                    width: 15
+                                },
+                                  {
+                                      xtype: 'container',
+                                      height: 300,
+                                      width: 230,
+                                      margin: '0 0 0 0',
+                                      style: 'background-color:transparent;',
+                                      layout: {
+                                          type: 'vbox',
+                                          pack: 'center',
+                                          align: 'center',
+                                      },
+                                      items: [
+
+
+                                          {
+                                              xtype: 'container',
+                                              width: '100%',
+                                              height: 30,
+                                              docked: 'bottom',
+                                              hidden: true,
+                                              margin: '-2 0 0 0',
+                                              style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px none #ECF0F1 white;background: white;border-radius: 0px 0px 5px 5px;',
+                                              layout: {
+                                                  type: 'vbox',
+                                                  pack: 'center',
+                                                  align: 'center',
+                                              },
+                                              items: [
+
+
+                                                      {
+                                                          xtype: 'container',
+                                                          id: 'DashboardHotSeatAdvertisementButton_bottom3',
+                                                          //hidden:true,
+                                                          width: '100%',
+                                                          style: "background-color: transparent",
+                                                          //style: "background-color: #F35B57;",
+                                                          margin: '0 0 0 0',
+                                                          layout: {
+                                                              type: 'hbox',
+                                                              pack: 'center',
+                                                              align: 'center'
+
+                                                          },
+
+
+                                                          items: [
+
+                                                              {
+                                                                  xtype: 'button',
+                                                                  margin: '0 0 0 0',
+                                                                  ui: 'plain',
+                                                                  width: '100%',
+                                                                  id: 'btn_DashboardAdvertisementButton_HotSeatAdvertisementTxt3',
+                                                                  //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
+                                                                  html: '<div style="color:black;text-align: center;font-size:12px;width:100%;"><b>Available Advertisement Space! >></b></div>',
+                                                                  handler: function () {
+
+
+                                                                  }
+
+
+                                                              }
+
+                                                          ]
+
+                                                      },
+
+
+
+
+                                              ]
+                                          },
+
+
+
+                                          {
+                                              xtype: 'button',
+                                              id: 'btnDashboard_HotSeatAdvertisement_PicProfile3',
+                                              margin: '0 0 0 0',
+                                              //docked:'top',
+                                              height: 60,
+                                              width: 60,
+                                              // iconCls: 'list',
+                                              //html: '<div style="border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 30px 30px 30px 30px;width:45px;height:45px;" ><img src="resources/icons/founder.jpg" width="25" height="25"  alt="Company Name" style="margin:7px 0px 0px 0px;border-radius: 50%;"></div>',
+                                              html: '<img src="resources/icons/Logo/LogoOrangeSimplifed.png" style="width: 50px; height: 50px; border:3px solid #c800ffc9; border-radius: 50%; max-width:200px;">',
+
+
+                                              // html: '<div ><img src="resources/icons/videoPurple.png" width="35" height="35" alt="Company Name"></div>',
+                                              ui: 'plain',
+                                              handler: function () {
+
+
+                                              }
+                                          },
+
+
+                                            {
+
+                                                height: 260,
+                                                width: 230,
+                                                id: 'htmlPicture_Dashboard_HotSeatAdvertisement_HotSeat3',
+                                                margin: '-30 0 0 0',
+                                                html: '<img src="resources/icons/freeAdvertisingSpace.png"  style="width: 230px; height: 260px; border:2px solid #ECF0F1;border-radius: 10px 10px 10px 10px;">',
+
+                                            },
+                                                {
+                                                    xtype: 'container',
+                                                    // width: '91.1%',
+                                                    width: 228,
+                                                    height: 60,
+                                                    hidden: true,
+                                                    margin: '14 0 0 16',
+
+                                                    layout: {
+                                                        type: 'vbox',
+                                                        pack: 'center',
+                                                        align: 'center',
+                                                    },
+                                                    id: 'containerDashboard_HotSeatAdvertisement_ProfileText3',
+                                                    // hidden:true,
+
+                                                    style: 'background-color:rgba(0, 0, 0, 0.5);border-radius: 0px 0px 0px 0px;',
+                                                    items: [
+
+                                                    ]
+                                                },
+
+                                          {
+                                              xtype: 'container',
+                                              id: 'btnDashboard_HotSeatAdvertisement_UserNameProfile3',
+                                              margin: '-40 0 0 0',
+                                              height: 40,
+                                              zIndex: 200,
+                                              //width: 228,
+                                              width: '100%',
+                                              style: 'background-color:rgba(0, 0, 0, 0.2);border-radius:0px 0px 10px 10px;border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1;',
+                                              // iconCls: 'list',
+                                              //html: '<div style="border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 30px 30px 30px 30px;width:45px;height:45px;" ><img src="resources/icons/founder.jpg" width="25" height="25"  alt="Company Name" style="margin:7px 0px 0px 0px;border-radius: 50%;"></div>',
+                                              //html: '<div style="color:black;text-align: center;font-size:12px;width:100%;font-weight:bold;background-color:rgba(0, 0, 0, 0.5);">Unjun Restaurant Sdn Bhd</div><br><div style="color:black;text-align: center;font-size:10px;width:100%;font-weight:normal;margin:-15px 0px 0px 0px;">Date:28/12/2020 10:30:54PM</div>',
+                                              // 
+                                              layout: {
+                                                  type: 'vbox',
+                                                  pack: 'center',
+                                                  align: 'center',
+                                              },
+                                              items: [
+                                                  {
+                                                      id: 'htmlDasboard_HotSeatAdvertisement_EnterpriseName3',
+                                                      html: '<div style="color:white;text-align: center;font-size:12px;width:100%;font-weight:bold;background-color:transparent">MHSya Enterprise</div>',
+                                                  },
+                                                   {
+                                                       xtype: 'container',
+                                                       style: 'background-color:white;',
+                                                       height: 2,
+                                                       width: '80%',
+                                                       // html: '<div style="color:white;text-align: center;font-size:10px;width:90%;font-weight:normal;background-color:white;margin:0px 0px 0px 0px;height:5px"/>',
+                                                   },
+                                                    {
+                                                        id: 'htmlDasboard_HotSeatAdvertisement_Title3',
+                                                        html: '<div style="color:white;text-align: center;font-size:10px;width:100%;font-weight:bold;background-color:transparent;margin:0px 0px 0px 0px;">Penjahit baju Custome Made KL</div>',
+                                                    },
+                                              ]
+
+                                          },
+                                      ]
+                                  },
+
+
+
+
+
+
+
+
+                                ///////////////////hotseat 4
+                           {
+                               xtype: 'panel',
+                               width: 15
+                           },
+
+                                  {
+                                      xtype: 'container',
+                                      height: 300,
+                                      width: 230,
+                                      margin: '0 0 0 0',
+                                      style: 'background-color:transparent;',
+                                      layout: {
+                                          type: 'vbox',
+                                          pack: 'center',
+                                          align: 'center',
+                                      },
+                                      items: [
+
+
+                                          {
+                                              xtype: 'container',
+                                              width: '100%',
+                                              height: 30,
+                                              docked: 'bottom',
+                                              hidden: true,
+                                              margin: '-2 0 0 0',
+                                              style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px none #ECF0F1 white;background: white;border-radius: 0px 0px 5px 5px;',
+                                              layout: {
+                                                  type: 'vbox',
+                                                  pack: 'center',
+                                                  align: 'center',
+                                              },
+                                              items: [
+
+
+                                                      {
+                                                          xtype: 'container',
+                                                          id: 'DashboardHotSeatAdvertisementButton_bottom4',
+                                                          //hidden:true,
+                                                          width: '100%',
+                                                          style: "background-color: transparent",
+                                                          //style: "background-color: #F35B57;",
+                                                          margin: '0 0 0 0',
+                                                          layout: {
+                                                              type: 'hbox',
+                                                              pack: 'center',
+                                                              align: 'center'
+
+                                                          },
+
+
+                                                          items: [
+
+                                                              {
+                                                                  xtype: 'button',
+                                                                  margin: '0 0 0 0',
+                                                                  ui: 'plain',
+                                                                  width: '100%',
+                                                                  id: 'btn_DashboardAdvertisementButton_HotSeatAdvertisementTxt4',
+                                                                  //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
+                                                                  html: '<div style="color:black;text-align: center;font-size:12px;width:100%;"><b>Available Advertisement Space! >></b></div>',
+                                                                  handler: function () {
+
+
+                                                                  }
+
+
+                                                              }
+
+                                                          ]
+
+                                                      },
+
+
+
+
+                                              ]
+                                          },
+
+
+
+                                          {
+                                              xtype: 'button',
+                                              id: 'btnDashboard_HotSeatAdvertisement_PicProfile4',
+                                              margin: '0 0 0 0',
+                                              //docked:'top',
+                                              height: 60,
+                                              width: 60,
+                                              // iconCls: 'list',
+                                              //html: '<div style="border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 30px 30px 30px 30px;width:45px;height:45px;" ><img src="resources/icons/founder.jpg" width="25" height="25"  alt="Company Name" style="margin:7px 0px 0px 0px;border-radius: 50%;"></div>',
+                                              html: '<img src="resources/icons/Logo/LogoOrangeSimplifed.png" style="width: 50px; height: 50px; border:3px solid #c800ffc9; border-radius: 50%; max-width:200px;">',
+
+
+                                              // html: '<div ><img src="resources/icons/videoPurple.png" width="35" height="35" alt="Company Name"></div>',
+                                              ui: 'plain',
+                                              handler: function () {
+
+
+                                              }
+                                          },
+
+
+                                            {
+
+                                                height: 260,
+                                                width: 230,
+                                                id: 'htmlPicture_Dashboard_HotSeatAdvertisement_HotSeat4',
+                                                margin: '-30 0 0 0',
+                                                html: '<img src="resources/icons/freeAdvertisingSpace.png"  style="width: 230px; height: 260px; border:2px solid #ECF0F1;border-radius: 10px 10px 10px 10px;">',
+
+                                            },
+                                                {
+                                                    xtype: 'container',
+                                                    // width: '91.1%',
+                                                    width: 228,
+                                                    height: 60,
+                                                    hidden: true,
+                                                    margin: '14 0 0 16',
+
+                                                    layout: {
+                                                        type: 'vbox',
+                                                        pack: 'center',
+                                                        align: 'center',
+                                                    },
+                                                    id: 'containerDashboard_HotSeatAdvertisement_ProfileText4',
+                                                    // hidden:true,
+
+                                                    style: 'background-color:rgba(0, 0, 0, 0.5);border-radius: 0px 0px 0px 0px;',
+                                                    items: [
+
+                                                    ]
+                                                },
+
+                                          {
+                                              xtype: 'container',
+                                              id: 'btnDashboard_HotSeatAdvertisement_UserNameProfile4',
+                                              margin: '-40 0 0 0',
+                                              height: 40,
+                                              zIndex: 200,
+                                              //width: 228,
+                                              width: '100%',
+                                              style: 'background-color:rgba(0, 0, 0, 0.2);border-radius:0px 0px 10px 10px;border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1;',
+                                              // iconCls: 'list',
+                                              //html: '<div style="border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 30px 30px 30px 30px;width:45px;height:45px;" ><img src="resources/icons/founder.jpg" width="25" height="25"  alt="Company Name" style="margin:7px 0px 0px 0px;border-radius: 50%;"></div>',
+                                              //html: '<div style="color:black;text-align: center;font-size:12px;width:100%;font-weight:bold;background-color:rgba(0, 0, 0, 0.5);">Unjun Restaurant Sdn Bhd</div><br><div style="color:black;text-align: center;font-size:10px;width:100%;font-weight:normal;margin:-15px 0px 0px 0px;">Date:28/12/2020 10:30:54PM</div>',
+                                              // 
+                                              layout: {
+                                                  type: 'vbox',
+                                                  pack: 'center',
+                                                  align: 'center',
+                                              },
+                                              items: [
+                                                  {
+                                                      id: 'htmlDasboard_HotSeatAdvertisement_EnterpriseName4',
+                                                      html: '<div style="color:white;text-align: center;font-size:12px;width:100%;font-weight:bold;background-color:transparent">MHSya Enterprise</div>',
+                                                  },
+                                                   {
+                                                       xtype: 'container',
+                                                       style: 'background-color:white;',
+                                                       height: 2,
+                                                       width: '80%',
+                                                       // html: '<div style="color:white;text-align: center;font-size:10px;width:90%;font-weight:normal;background-color:white;margin:0px 0px 0px 0px;height:5px"/>',
+                                                   },
+                                                    {
+                                                        id: 'htmlDasboard_HotSeatAdvertisement_Title4',
+                                                        html: '<div style="color:white;text-align: center;font-size:10px;width:100%;font-weight:bold;background-color:transparent;margin:0px 0px 0px 0px;">Penjahit baju Custome Made KL</div>',
+                                                    },
+                                              ]
+
+                                          },
+                                      ]
+                                  },
+
+
+
+                                /////////////////hotseat 5
+
+
+                                  {
+                                      xtype: 'panel',
+                                      width: 15
+                                  },
+
+                                  {
+                                      xtype: 'container',
+                                      height: 300,
+                                      width: 230,
+                                      margin: '0 0 0 0',
+                                      style: 'background-color:transparent;',
+                                      layout: {
+                                          type: 'vbox',
+                                          pack: 'center',
+                                          align: 'center',
+                                      },
+                                      items: [
+
+
+                                          {
+                                              xtype: 'container',
+                                              width: '100%',
+                                              height: 30,
+                                              docked: 'bottom',
+                                              hidden: true,
+                                              margin: '-2 0 0 0',
+                                              style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px none #ECF0F1 white;background: white;border-radius: 0px 0px 5px 5px;',
+                                              layout: {
+                                                  type: 'vbox',
+                                                  pack: 'center',
+                                                  align: 'center',
+                                              },
+                                              items: [
+
+
+                                                      {
+                                                          xtype: 'container',
+                                                          id: 'DashboardHotSeatAdvertisementButton_bottom5',
+                                                          //hidden:true,
+                                                          width: '100%',
+                                                          style: "background-color: transparent",
+                                                          //style: "background-color: #F35B57;",
+                                                          margin: '0 0 0 0',
+                                                          layout: {
+                                                              type: 'hbox',
+                                                              pack: 'center',
+                                                              align: 'center'
+
+                                                          },
+
+
+                                                          items: [
+
+                                                              {
+                                                                  xtype: 'button',
+                                                                  margin: '0 0 0 0',
+                                                                  ui: 'plain',
+                                                                  width: '100%',
+                                                                  id: 'btn_DashboardAdvertisementButton_HotSeatAdvertisementTxt5',
+                                                                  //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
+                                                                  html: '<div style="color:black;text-align: center;font-size:12px;width:100%;"><b>Available Advertisement Space! >></b></div>',
+                                                                  handler: function () {
+
+
+                                                                  }
+
+
+                                                              }
+
+                                                          ]
+
+                                                      },
+
+
+
+
+                                              ]
+                                          },
+
+
+
+                                          {
+                                              xtype: 'button',
+                                              id: 'btnDashboard_HotSeatAdvertisement_PicProfile5',
+                                              margin: '0 0 0 0',
+                                              //docked:'top',
+                                              height: 60,
+                                              width: 60,
+                                              // iconCls: 'list',
+                                              //html: '<div style="border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 30px 30px 30px 30px;width:45px;height:45px;" ><img src="resources/icons/founder.jpg" width="25" height="25"  alt="Company Name" style="margin:7px 0px 0px 0px;border-radius: 50%;"></div>',
+                                              html: '<img src="resources/icons/Logo/LogoOrangeSimplifed.png" style="width: 50px; height: 50px; border:3px solid #c800ffc9; border-radius: 50%; max-width:200px;">',
+
+
+                                              // html: '<div ><img src="resources/icons/videoPurple.png" width="35" height="35" alt="Company Name"></div>',
+                                              ui: 'plain',
+                                              handler: function () {
+
+
+                                              }
+                                          },
+
+
+                                            {
+
+                                                height: 260,
+                                                width: 230,
+                                                id: 'htmlPicture_Dashboard_HotSeatAdvertisement_HotSeat5',
+                                                margin: '-30 0 0 0',
+                                                html: '<img src="resources/icons/freeAdvertisingSpace.png"  style="width: 230px; height: 260px; border:2px solid #ECF0F1;border-radius: 10px 10px 10px 10px;">',
+
+                                            },
+                                                {
+                                                    xtype: 'container',
+                                                    // width: '91.1%',
+                                                    width: 228,
+                                                    height: 60,
+                                                    hidden: true,
+                                                    margin: '14 0 0 16',
+
+                                                    layout: {
+                                                        type: 'vbox',
+                                                        pack: 'center',
+                                                        align: 'center',
+                                                    },
+                                                    id: 'containerDashboard_HotSeatAdvertisement_ProfileText5',
+                                                    // hidden:true,
+
+                                                    style: 'background-color:rgba(0, 0, 0, 0.5);border-radius: 0px 0px 0px 0px;',
+                                                    items: [
+
+                                                    ]
+                                                },
+
+                                          {
+                                              xtype: 'container',
+                                              id: 'btnDashboard_HotSeatAdvertisement_UserNameProfile5',
+                                              margin: '-40 0 0 0',
+                                              height: 40,
+                                              zIndex: 200,
+                                              //width: 228,
+                                              width: '100%',
+                                              style: 'background-color:rgba(0, 0, 0, 0.2);border-radius:0px 0px 10px 10px;border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1;',
+                                              // iconCls: 'list',
+                                              //html: '<div style="border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 30px 30px 30px 30px;width:45px;height:45px;" ><img src="resources/icons/founder.jpg" width="25" height="25"  alt="Company Name" style="margin:7px 0px 0px 0px;border-radius: 50%;"></div>',
+                                              //html: '<div style="color:black;text-align: center;font-size:12px;width:100%;font-weight:bold;background-color:rgba(0, 0, 0, 0.5);">Unjun Restaurant Sdn Bhd</div><br><div style="color:black;text-align: center;font-size:10px;width:100%;font-weight:normal;margin:-15px 0px 0px 0px;">Date:28/12/2020 10:30:54PM</div>',
+                                              // 
+                                              layout: {
+                                                  type: 'vbox',
+                                                  pack: 'center',
+                                                  align: 'center',
+                                              },
+                                              items: [
+                                                  {
+                                                      id: 'htmlDasboard_HotSeatAdvertisement_EnterpriseName5',
+                                                      html: '<div style="color:white;text-align: center;font-size:12px;width:100%;font-weight:bold;background-color:transparent">MHSya Enterprise</div>',
+                                                  },
+                                                   {
+                                                       xtype: 'container',
+                                                       style: 'background-color:white;',
+                                                       height: 2,
+                                                       width: '80%',
+                                                       // html: '<div style="color:white;text-align: center;font-size:10px;width:90%;font-weight:normal;background-color:white;margin:0px 0px 0px 0px;height:5px"/>',
+                                                   },
+                                                    {
+                                                        id: 'htmlDasboard_HotSeatAdvertisement_Title5',
+                                                        html: '<div style="color:white;text-align: center;font-size:10px;width:100%;font-weight:bold;background-color:transparent;margin:0px 0px 0px 0px;">Penjahit baju Custome Made KL</div>',
+                                                    },
+                                              ]
+
+                                          },
+                                      ]
+                                  },
+
+                        
+                                /////////////////////////hotseat 6
+
+
+                                  {
+                                      xtype: 'panel',
+                                      width: 15
+                                  },
+
+                                  {
+                                      xtype: 'container',
+                                      height: 300,
+                                      width: 230,
+                                      margin: '0 0 0 0',
+                                      style: 'background-color:transparent;',
+                                      layout: {
+                                          type: 'vbox',
+                                          pack: 'center',
+                                          align: 'center',
+                                      },
+                                      items: [
+
+
+                                          {
+                                              xtype: 'container',
+                                              width: '100%',
+                                              height: 30,
+                                              docked: 'bottom',
+                                              hidden: true,
+                                              margin: '-2 0 0 0',
+                                              style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px none #ECF0F1 white;background: white;border-radius: 0px 0px 5px 5px;',
+                                              layout: {
+                                                  type: 'vbox',
+                                                  pack: 'center',
+                                                  align: 'center',
+                                              },
+                                              items: [
+
+
+                                                      {
+                                                          xtype: 'container',
+                                                          id: 'DashboardHotSeatAdvertisementButton_bottom6',
+                                                          //hidden:true,
+                                                          width: '100%',
+                                                          style: "background-color: transparent",
+                                                          //style: "background-color: #F35B57;",
+                                                          margin: '0 0 0 0',
+                                                          layout: {
+                                                              type: 'hbox',
+                                                              pack: 'center',
+                                                              align: 'center'
+
+                                                          },
+
+
+                                                          items: [
+
+                                                              {
+                                                                  xtype: 'button',
+                                                                  margin: '0 0 0 0',
+                                                                  ui: 'plain',
+                                                                  width: '100%',
+                                                                  id: 'btn_DashboardAdvertisementButton_HotSeatAdvertisementTxt6',
+                                                                  //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
+                                                                  html: '<div style="color:black;text-align: center;font-size:12px;width:100%;"><b>Available Advertisement Space! >></b></div>',
+                                                                  handler: function () {
+
+
+                                                                  }
+
+
+                                                              }
+
+                                                          ]
+
+                                                      },
+
+
+
+
+                                              ]
+                                          },
+
+
+
+                                          {
+                                              xtype: 'button',
+                                              id: 'btnDashboard_HotSeatAdvertisement_PicProfile6',
+                                              margin: '0 0 0 0',
+                                              //docked:'top',
+                                              height: 60,
+                                              width: 60,
+                                              // iconCls: 'list',
+                                              //html: '<div style="border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 30px 30px 30px 30px;width:45px;height:45px;" ><img src="resources/icons/founder.jpg" width="25" height="25"  alt="Company Name" style="margin:7px 0px 0px 0px;border-radius: 50%;"></div>',
+                                              html: '<img src="resources/icons/Logo/LogoOrangeSimplifed.png" style="width: 50px; height: 50px; border:3px solid #c800ffc9; border-radius: 50%; max-width:200px;">',
+
+
+                                              // html: '<div ><img src="resources/icons/videoPurple.png" width="35" height="35" alt="Company Name"></div>',
+                                              ui: 'plain',
+                                              handler: function () {
+
+
+                                              }
+                                          },
+
+
+                                            {
+
+                                                height: 260,
+                                                width: 230,
+                                                id: 'htmlPicture_Dashboard_HotSeatAdvertisement_HotSeat6',
+                                                margin: '-30 0 0 0',
+                                                html: '<img src="resources/icons/freeAdvertisingSpace.png"  style="width: 230px; height: 260px; border:2px solid #ECF0F1;border-radius: 10px 10px 10px 10px;">',
+
+                                            },
+                                                {
+                                                    xtype: 'container',
+                                                    // width: '91.1%',
+                                                    width: 228,
+                                                    height: 60,
+                                                    hidden: true,
+                                                    margin: '14 0 0 16',
+
+                                                    layout: {
+                                                        type: 'vbox',
+                                                        pack: 'center',
+                                                        align: 'center',
+                                                    },
+                                                    id: 'containerDashboard_HotSeatAdvertisement_ProfileText6',
+                                                    // hidden:true,
+
+                                                    style: 'background-color:rgba(0, 0, 0, 0.5);border-radius: 0px 0px 0px 0px;',
+                                                    items: [
+
+                                                    ]
+                                                },
+
+                                          {
+                                              xtype: 'container',
+                                              id: 'btnDashboard_HotSeatAdvertisement_UserNameProfile6',
+                                              margin: '-40 0 0 0',
+                                              height: 40,
+                                              zIndex: 200,
+                                              //width: 228,
+                                              width: '100%',
+                                              style: 'background-color:rgba(0, 0, 0, 0.2);border-radius:0px 0px 10px 10px;border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1;',
+                                              // iconCls: 'list',
+                                              //html: '<div style="border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 30px 30px 30px 30px;width:45px;height:45px;" ><img src="resources/icons/founder.jpg" width="25" height="25"  alt="Company Name" style="margin:7px 0px 0px 0px;border-radius: 50%;"></div>',
+                                              //html: '<div style="color:black;text-align: center;font-size:12px;width:100%;font-weight:bold;background-color:rgba(0, 0, 0, 0.5);">Unjun Restaurant Sdn Bhd</div><br><div style="color:black;text-align: center;font-size:10px;width:100%;font-weight:normal;margin:-15px 0px 0px 0px;">Date:28/12/2020 10:30:54PM</div>',
+                                              // 
+                                              layout: {
+                                                  type: 'vbox',
+                                                  pack: 'center',
+                                                  align: 'center',
+                                              },
+                                              items: [
+                                                  {
+                                                      id: 'htmlDasboard_HotSeatAdvertisement_EnterpriseName6',
+                                                      html: '<div style="color:white;text-align: center;font-size:12px;width:100%;font-weight:bold;background-color:transparent">MHSya Enterprise</div>',
+                                                  },
+                                                   {
+                                                       xtype: 'container',
+                                                       style: 'background-color:white;',
+                                                       height: 2,
+                                                       width: '80%',
+                                                       // html: '<div style="color:white;text-align: center;font-size:10px;width:90%;font-weight:normal;background-color:white;margin:0px 0px 0px 0px;height:5px"/>',
+                                                   },
+                                                    {
+                                                        id: 'htmlDasboard_HotSeatAdvertisement_Title6',
+                                                        html: '<div style="color:white;text-align: center;font-size:10px;width:100%;font-weight:bold;background-color:transparent;margin:0px 0px 0px 0px;">Penjahit baju Custome Made KL</div>',
+                                                    },
+                                              ]
+
+                                          },
+                                      ]
+                                  },
+
+
+
+
+
+                                ////////////// hotseat 7
+
+
+
+                                        {
+                                            xtype: 'panel',
+                                            width: 15
+                                        },
+
+                                {
+                                    xtype: 'container',
+                                    height: 300,
+                                    width: 230,
+                                    margin: '0 0 0 0',
+                                    style: 'background-color:transparent;',
+                                    layout: {
+                                        type: 'vbox',
+                                        pack: 'center',
+                                        align: 'center',
+                                    },
+                                    items: [
+
+
+                                        {
+                                            xtype: 'container',
+                                            width: '100%',
+                                            height: 30,
+                                            docked: 'bottom',
+                                            hidden: true,
+                                            margin: '-2 0 0 0',
+                                            style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px none #ECF0F1 white;background: white;border-radius: 0px 0px 5px 5px;',
+                                            layout: {
+                                                type: 'vbox',
+                                                pack: 'center',
+                                                align: 'center',
+                                            },
+                                            items: [
+
+
+                                                    {
+                                                        xtype: 'container',
+                                                        id: 'DashboardHotSeatAdvertisementButton_bottom7',
+                                                        //hidden:true,
+                                                        width: '100%',
+                                                        style: "background-color: transparent",
+                                                        //style: "background-color: #F35B57;",
+                                                        margin: '0 0 0 0',
+                                                        layout: {
+                                                            type: 'hbox',
+                                                            pack: 'center',
+                                                            align: 'center'
+
+                                                        },
+
+
+                                                        items: [
+
+                                                            {
+                                                                xtype: 'button',
+                                                                margin: '0 0 0 0',
+                                                                ui: 'plain',
+                                                                width: '100%',
+                                                                id: 'btn_DashboardAdvertisementButton_HotSeatAdvertisementTxt7',
+                                                                //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
+                                                                html: '<div style="color:black;text-align: center;font-size:12px;width:100%;"><b>Available Advertisement Space! >></b></div>',
+                                                                handler: function () {
+
+
+                                                                }
+
+
+                                                            }
+
+                                                                 
+                                                        ]
+
+                                                    },
+
+
+
+
+                                            ]
+                                        },
+
+
+
+                                        {
+                                            xtype: 'button',
+                                            id: 'btnDashboard_HotSeatAdvertisement_PicProfile7',
+                                            margin: '0 0 0 0',
+                                            //docked:'top',
+                                            height: 60,
+                                            width: 60,
+                                            // iconCls: 'list',
+                                            //html: '<div style="border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 30px 30px 30px 30px;width:45px;height:45px;" ><img src="resources/icons/founder.jpg" width="25" height="25"  alt="Company Name" style="margin:7px 0px 0px 0px;border-radius: 50%;"></div>',
+                                            html: '<img src="resources/icons/Logo/LogoOrangeSimplifed.png" style="width: 50px; height: 50px; border:3px solid #c800ffc9; border-radius: 50%; max-width:200px;">',
+
+
+                                            // html: '<div ><img src="resources/icons/videoPurple.png" width="35" height="35" alt="Company Name"></div>',
+                                            ui: 'plain',
+                                            handler: function () {
+
+
+                                            }
+                                        },
+
+
+                                          {
+
+                                              height: 260,
+                                              width: 230,
+                                              id: 'htmlPicture_Dashboard_HotSeatAdvertisement_HotSeat7',
+                                              margin: '-30 0 0 0',
+                                              html: '<img src="resources/icons/freeAdvertisingSpace.png"  style="width: 230px; height: 260px; border:2px solid #ECF0F1;border-radius: 10px 10px 10px 10px;">',
+
+                                          },
+                                              {
+                                                  xtype: 'container',
+                                                  // width: '91.1%',
+                                                  width: 228,
+                                                  height: 60,
+                                                  hidden: true,
+                                                  margin: '14 0 0 16',
+
+                                                  layout: {
+                                                      type: 'vbox',
+                                                      pack: 'center',
+                                                      align: 'center',
+                                                  },
+                                                  id: 'containerDashboard_HotSeatAdvertisement_ProfileText7',
+                                                  // hidden:true,
+
+                                                  style: 'background-color:rgba(0, 0, 0, 0.5);border-radius: 0px 0px 0px 0px;',
+                                                  items: [
+
+                                                  ]
+                                              },
+
+                                        {
+                                            xtype: 'container',
+                                            id: 'btnDashboard_HotSeatAdvertisement_UserNameProfile7',
+                                            margin: '-40 0 0 0',
+                                            height: 40,
+                                            zIndex: 200,
+                                            //width: 228,
+                                            width: '100%',
+                                            style: 'background-color:rgba(0, 0, 0, 0.2);border-radius:0px 0px 10px 10px;border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1;',
+                                            // iconCls: 'list',
+                                            //html: '<div style="border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 30px 30px 30px 30px;width:45px;height:45px;" ><img src="resources/icons/founder.jpg" width="25" height="25"  alt="Company Name" style="margin:7px 0px 0px 0px;border-radius: 50%;"></div>',
+                                            //html: '<div style="color:black;text-align: center;font-size:12px;width:100%;font-weight:bold;background-color:rgba(0, 0, 0, 0.5);">Unjun Restaurant Sdn Bhd</div><br><div style="color:black;text-align: center;font-size:10px;width:100%;font-weight:normal;margin:-15px 0px 0px 0px;">Date:28/12/2020 10:30:54PM</div>',
+                                            // 
+                                            layout: {
+                                                type: 'vbox',
+                                                pack: 'center',
+                                                align: 'center',
+                                            },
+                                            items: [
+                                                {
+                                                    id: 'htmlDasboard_HotSeatAdvertisement_EnterpriseName7',
+                                                    html: '<div style="color:white;text-align: center;font-size:12px;width:100%;font-weight:bold;background-color:transparent">MHSya Enterprise</div>',
+                                                },
+                                                 {
+                                                     xtype: 'container',
+                                                     style: 'background-color:white;',
+                                                     height: 2,
+                                                     width: '80%',
+                                                     // html: '<div style="color:white;text-align: center;font-size:10px;width:90%;font-weight:normal;background-color:white;margin:0px 0px 0px 0px;height:5px"/>',
+                                                 },
+                                                  {
+                                                      id: 'htmlDasboard_HotSeatAdvertisement_Title7',
+                                                      html: '<div style="color:white;text-align: center;font-size:10px;width:100%;font-weight:bold;background-color:transparent;margin:0px 0px 0px 0px;">Penjahit baju Custome Made KL</div>',
+                                                  },
+                                            ]
+
+                                        },
+                                    ]
+                                },
+                                {
+                                    xtype: 'panel',
+                                    width: 15
+                                }
+
+                            ]
+                        },
+
+
+
+
+
+
+
+
+
+
+                        {
+                            xtype: 'spacer'
+                        },
+                    ]
+
+                },
+
+
+                {
+                    xtype: 'panel',
+                    height: 30
+                },
+////////////////////////////////////////////////////End Hot seat merchant//////////////////////////////////////
+
             {
                 margin: '20 0 0 14',
                 width:'100%',
@@ -6545,1919 +8089,1539 @@ html:'<div style="display: flex; flex-direction: column; align-items: center; ju
 
 
 
-{
-    xtype: 'panel',
-    height: 35
-},
-
-{
-    xtype: 'container',
-    width: '100%',
-    id:'containerDashboard_HotSeatPromotion',
-    /// hidden:true,
-    margin: '60 0 0 0',
-    style: {
-        // background: '#D25959',
-        background: 'transparent',
-        // border: '2px'
-    },
-    //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
-    // style: 'border-bottom:2px solid #D25959;background-color:transparent',
-    layout: {
-        type: 'hbox',
-        pack: 'center',
-        align: 'center',
-    },
-    items: [
-         {
-             margin: '0 0 0 14',
-             //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
-             html: '<div style="color:black;text-align: center;font-size:16px;width:100%;"><b>Hot Seat Promotion!</b></div>'
-             // html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: 70%"><col style="width:30%"></colgroup><thead><tr><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:right;vertical-align:top;word-break:normal" rowspan="2"><div style="margin:0px 0px 0px -15px">TARMIZI RAHIM</div><br>Lagendary Card Mortal </th><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:middle;word-break:normal" rowspan="2">Medal</th></tr><tr></tr></thead></table>'
-         },
-         {
-             xtype: 'spacer'
-         },
-         {
-
-             margin: '0 14 0 0',
-             //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
-             html: '<div onclick="FloatPanel_FloatingAdvertisementShow();" style="color:black;text-align: center;font-size:12px;width:100%;"><u>View All</u></div>'
-             // html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: 70%"><col style="width:30%"></colgroup><thead><tr><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:right;vertical-align:top;word-break:normal" rowspan="2"><div style="margin:0px 0px 0px -15px">TARMIZI RAHIM</div><br>Lagendary Card Mortal </th><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:middle;word-break:normal" rowspan="2">Medal</th></tr><tr></tr></thead></table>'
-
-         }
-    ]
-},
-                {
-                    xtype: 'container',
-                    width: '100%',
-                    id:'containerDashboard_HotSeatPromotionImage',
-                    height: 280,
-                    margin: '0 0 0 0',
-                   // hidden:true,
-                    //style: {
-                    //    // background: '#D25959',
-                    //    background: 'rgba(76, 175, 80, 0.3);',
-                    //    // border: '2px'
-                    //},
-                    //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
-                    style: 'background-color:transparent',
-
-                    layout: {
-                        type: 'hbox',
-                        pack: 'center',
-                        align: 'center',
-                    },
-                    items: [
-                        {
-                            xtype: 'spacer'
-                        },
-                        {
-                            xtype: 'container',
-                            width: '95%',
-                            height: 310,
-                            margin: '0 0 0 0',
-                            //style: {
-                            //    // background: '#D25959',
-                            //    background: 'rgba(76, 175, 80, 0.3);',
-                            //    // border: '2px'
-                            //},
-                            //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
-                            // style: 'background-color:rgba(255, 255, 255, 0);border-radius: 10px 10px 10px 10px;',
-                            style: 'background-color:transparent',
-                            layout: {
-                                type: 'hbox',
-                                pack: 'center',
-                                align: 'center',
-                            },
-                            scrollable: {
-                                direction: 'horizontal',
-                                directionLock: true,
-                                indicators: false
-                            },
-                            items: [
-                              {
-                                  xtype: 'panel',
-                                  width: 7
-                              },
-
-
-                                       {
-                                           xtype: 'container',
-                                           height: 300,
-                                           width: 230,
-                                           margin: '0 0 0 0',
-                                           style: 'background-color:transparent;',
-                                           layout: {
-                                               type: 'vbox',
-                                               pack: 'center',
-                                               align: 'center',
-                                           },
-                                           items: [
+// {
+//     xtype: 'panel',
+//     height: 35
+// },
+
+// {
+//     xtype: 'container',
+//     width: '100%',
+//     id:'containerDashboard_HotSeatPromotion',
+//     /// hidden:true,
+//     margin: '60 0 0 0',
+//     style: {
+//         // background: '#D25959',
+//         background: 'transparent',
+//         // border: '2px'
+//     },
+//     //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
+//     // style: 'border-bottom:2px solid #D25959;background-color:transparent',
+//     layout: {
+//         type: 'hbox',
+//         pack: 'center',
+//         align: 'center',
+//     },
+//     items: [
+//          {
+//              margin: '0 0 0 14',
+//              //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
+//              html: '<div style="color:black;text-align: center;font-size:16px;width:100%;"><b>Hot Seat Promotion!</b></div>'
+//              // html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: 70%"><col style="width:30%"></colgroup><thead><tr><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:right;vertical-align:top;word-break:normal" rowspan="2"><div style="margin:0px 0px 0px -15px">TARMIZI RAHIM</div><br>Lagendary Card Mortal </th><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:middle;word-break:normal" rowspan="2">Medal</th></tr><tr></tr></thead></table>'
+//          },
+//          {
+//              xtype: 'spacer'
+//          },
+//          {
+
+//              margin: '0 14 0 0',
+//              //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
+//              html: '<div onclick="FloatPanel_FloatingAdvertisementShow();" style="color:black;text-align: center;font-size:12px;width:100%;"><u>View All</u></div>'
+//              // html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: 70%"><col style="width:30%"></colgroup><thead><tr><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:right;vertical-align:top;word-break:normal" rowspan="2"><div style="margin:0px 0px 0px -15px">TARMIZI RAHIM</div><br>Lagendary Card Mortal </th><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:middle;word-break:normal" rowspan="2">Medal</th></tr><tr></tr></thead></table>'
+
+//          }
+//     ]
+// },
+//                 {
+//                     xtype: 'container',
+//                     width: '100%',
+//                     id:'containerDashboard_HotSeatPromotionImage',
+//                     height: 280,
+//                     margin: '0 0 0 0',
+//                    // hidden:true,
+//                     //style: {
+//                     //    // background: '#D25959',
+//                     //    background: 'rgba(76, 175, 80, 0.3);',
+//                     //    // border: '2px'
+//                     //},
+//                     //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
+//                     style: 'background-color:transparent',
+
+//                     layout: {
+//                         type: 'hbox',
+//                         pack: 'center',
+//                         align: 'center',
+//                     },
+//                     items: [
+//                         {
+//                             xtype: 'spacer'
+//                         },
+//                         {
+//                             xtype: 'container',
+//                             width: '95%',
+//                             height: 310,
+//                             margin: '0 0 0 0',
+//                             //style: {
+//                             //    // background: '#D25959',
+//                             //    background: 'rgba(76, 175, 80, 0.3);',
+//                             //    // border: '2px'
+//                             //},
+//                             //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
+//                             // style: 'background-color:rgba(255, 255, 255, 0);border-radius: 10px 10px 10px 10px;',
+//                             style: 'background-color:transparent',
+//                             layout: {
+//                                 type: 'hbox',
+//                                 pack: 'center',
+//                                 align: 'center',
+//                             },
+//                             scrollable: {
+//                                 direction: 'horizontal',
+//                                 directionLock: true,
+//                                 indicators: false
+//                             },
+//                             items: [
+//                               {
+//                                   xtype: 'panel',
+//                                   width: 7
+//                               },
+
+
+//                                        {
+//                                            xtype: 'container',
+//                                            height: 300,
+//                                            width: 230,
+//                                            margin: '0 0 0 0',
+//                                            style: 'background-color:transparent;',
+//                                            layout: {
+//                                                type: 'vbox',
+//                                                pack: 'center',
+//                                                align: 'center',
+//                                            },
+//                                            items: [
 
 
-                                               {
-                                                   xtype: 'container',
-                                                   width: '100%',
-                                                   height: 30,
-                                                   docked: 'bottom',
-                                                   hidden: true,
-                                                   margin: '-2 0 0 0',
-                                                   style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px none #ECF0F1 white;background: white;border-radius: 0px 0px 5px 5px;',
-                                                   layout: {
-                                                       type: 'vbox',
-                                                       pack: 'center',
-                                                       align: 'center',
-                                                   },
-                                                   items: [
+//                                                {
+//                                                    xtype: 'container',
+//                                                    width: '100%',
+//                                                    height: 30,
+//                                                    docked: 'bottom',
+//                                                    hidden: true,
+//                                                    margin: '-2 0 0 0',
+//                                                    style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px none #ECF0F1 white;background: white;border-radius: 0px 0px 5px 5px;',
+//                                                    layout: {
+//                                                        type: 'vbox',
+//                                                        pack: 'center',
+//                                                        align: 'center',
+//                                                    },
+//                                                    items: [
 
 
-                                                           {
-                                                               xtype: 'container',
-                                                               id: 'DashboardHotSeatAdvertisementButton_bottom0',
-                                                               //hidden:true,
-                                                               width: '100%',
-                                                               style: "background-color: transparent",
-                                                               //style: "background-color: #F35B57;",
-                                                               margin: '0 0 0 0',
-                                                               layout: {
-                                                                   type: 'hbox',
-                                                                   pack: 'center',
-                                                                   align: 'center'
-
-                                                               },
-
-
-                                                               items: [
-
-                                                                   {
-                                                                       xtype: 'button',
-                                                                       margin: '0 0 0 0',
-                                                                       ui: 'plain',
-                                                                       width: '100%',
-                                                                       id: 'btn_DashboardAdvertisementButton_HotSeatAdvertisementTxt0',
-                                                                       //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
-                                                                       html: '<div style="color:black;text-align: center;font-size:12px;width:100%;"><b>Available Advertisement Space! >></b></div>',
-                                                                       handler: function () {
-
-
-                                                                       }
-
-
-                                                                   }
-
-                                                               ]
-
-                                                           },
-
-
-
-
-                                                   ]
-                                               },
-
-
-
-                                               {
-                                                   xtype: 'button',
-                                                   id: 'btnDashboard_HotSeatAdvertisement_PicProfile0',
-                                                   margin: '0 0 0 0',
-                                                   //docked:'top',
-                                                   height: 60,
-                                                   width: 60,
-                                                   // iconCls: 'list',
-                                                   //html: '<div style="border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 30px 30px 30px 30px;width:45px;height:45px;" ><img src="resources/icons/founder.jpg" width="25" height="25"  alt="Company Name" style="margin:7px 0px 0px 0px;border-radius: 50%;"></div>',
-                                                   html: '<img src="resources/icons/Logo/LogoOrangeSimplifed.png" style="width: 50px; height: 50px; border:3px solid #c800ffc9; border-radius: 50%; max-width:200px;">',
-
-
-                                                   // html: '<div ><img src="resources/icons/videoPurple.png" width="35" height="35" alt="Company Name"></div>',
-                                                   ui: 'plain',
-                                                   handler: function () {
-
-
-                                                   }
-                                               },
-
-
-                                                 {
-
-                                                     height: 260,
-                                                     width: 230,
-                                                     id: 'htmlPicture_Dashboard_HotSeatAdvertisement_HotSeat0',
-                                                     margin: '-30 0 0 0',
-                                                     html: '<img src="resources/icons/freeAdvertisingSpace.png"  style="width: 230px; height: 260px; border:2px solid #ECF0F1;border-radius: 10px 10px 10px 10px;">',
-
-                                                 },
-                                                     {
-                                                         xtype: 'container',
-                                                         // width: '91.1%',
-                                                         width: 228,
-                                                         height: 60,
-                                                         hidden: true,
-                                                         margin: '14 0 0 16',
-
-                                                         layout: {
-                                                             type: 'vbox',
-                                                             pack: 'center',
-                                                             align: 'center',
-                                                         },
-                                                         id: 'containerDashboard_HotSeatAdvertisement_ProfileText0',
-                                                         // hidden:true,
-
-                                                         style: 'background-color:rgba(0, 0, 0, 0.5);border-radius: 0px 0px 0px 0px;',
-                                                         items: [
-
-                                                         ]
-                                                     },
-
-                                               {
-                                                   xtype: 'container',
-                                                   id: 'btnDashboard_HotSeatAdvertisement_UserNameProfile0',
-                                                   margin: '-40 0 0 0',
-                                                   height: 40,
-                                                   zIndex: 200,
-                                                   //width: 228,
-                                                   width: '100%',
-                                                   style: 'background-color:rgba(0, 0, 0, 0.2);border-radius:0px 0px 10px 10px;border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1;',
-                                                   // iconCls: 'list',
-                                                   //html: '<div style="border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 30px 30px 30px 30px;width:45px;height:45px;" ><img src="resources/icons/founder.jpg" width="25" height="25"  alt="Company Name" style="margin:7px 0px 0px 0px;border-radius: 50%;"></div>',
-                                                   //html: '<div style="color:black;text-align: center;font-size:12px;width:100%;font-weight:bold;background-color:rgba(0, 0, 0, 0.5);">Unjun Restaurant Sdn Bhd</div><br><div style="color:black;text-align: center;font-size:10px;width:100%;font-weight:normal;margin:-15px 0px 0px 0px;">Date:28/12/2020 10:30:54PM</div>',
-                                                   // 
-                                                   layout: {
-                                                       type: 'vbox',
-                                                       pack: 'center',
-                                                       align: 'center',
-                                                   },
-                                                   items: [
-                                                       {
-                                                           id: 'htmlDasboard_HotSeatAdvertisement_EnterpriseName0',
-                                                           html: '<div style="color:white;text-align: center;font-size:12px;width:100%;font-weight:bold;background-color:transparent">MHSya Enterprise</div>',
-                                                       },
-                                                        {
-                                                            xtype: 'container',
-                                                            style: 'background-color:white;',
-                                                            height: 2,
-                                                            width: '80%',
-                                                            // html: '<div style="color:white;text-align: center;font-size:10px;width:90%;font-weight:normal;background-color:white;margin:0px 0px 0px 0px;height:5px"/>',
-                                                        },
-                                                         {
-                                                             id: 'htmlDasboard_HotSeatAdvertisement_Title0',
-                                                             html: '<div style="color:white;text-align: center;font-size:10px;width:100%;font-weight:bold;background-color:transparent;margin:0px 0px 0px 0px;">Penjahit baju Custome Made KL</div>',
-                                                         },
-                                                   ]
-
-                                               },
-                                           ]
-                                       },
-
-
-                              //////original hotseat 0
-                                 ////////////////{
-                                 ////////////////    xtype: 'container',
-                                 ////////////////    height: 300,
-                                 ////////////////    width: 230,
-                                 ////////////////    margin: '0 0 0 0',
-                                 ////////////////    //style: {
-                                 ////////////////    //    // background: '#D25959',
-                                 ////////////////    //    background: 'rgba(76, 175, 80, 0.3);',
-                                 ////////////////    //    // border: '2px'
-                                 ////////////////    //},
-                                 ////////////////    //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
-                                 ////////////////    //style: 'background-color:rgba(255, 255, 255, 0.3);border-radius: 10px 10px 10px 10px;border:2px none #ECF0F1;',
-                                 ////////////////    style: 'background-color:transparent;',
-                                 ////////////////    layout: {
-                                 ////////////////        type: 'vbox',
-                                 ////////////////        pack: 'center',
-                                 ////////////////        align: 'center',
-                                 ////////////////    },
-                                 ////////////////    items: [
-
-
-                                 ////////////////        {
-                                 ////////////////            xtype: 'container',
-                                 ////////////////            width: '100%',
-                                 ////////////////            height: 30,
-                                 ////////////////            docked: 'bottom',
-                                 ////////////////            /// hidden:true,
-                                 ////////////////            margin: '-2 0 0 0',
-                                 ////////////////            style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px none #ECF0F1 white;background: white;border-radius: 0px 0px 5px 5px;',
-                                 ////////////////            //style: {
-                                 ////////////////            //    // background: '#D25959',
-                                 ////////////////            //    background: 'transparent',
-                                 ////////////////            //    // border: '2px'
-                                 ////////////////            //},
-                                 ////////////////            //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
-                                 ////////////////            //  style: 'border-bottom:2px solid #D25959;background-color:transparent',
-                                 ////////////////            layout: {
-                                 ////////////////                type: 'vbox',
-                                 ////////////////                pack: 'center',
-                                 ////////////////                align: 'center',
-                                 ////////////////            },
-                                 ////////////////            items: [
-                                 ////////////////                //{
-                                 ////////////////                //    margin: '-2 0 0 0',
-
-                                 ////////////////                //    html: '<font size=2 color=black><b>Contact Us</b></font>',
-                                 ////////////////                //},
-
-                                 ////////////////                    {
-                                 ////////////////                        xtype: 'container',
-                                 ////////////////                        id: 'DashboardHotSeatAdvertisementButton_bottom0',
-                                 ////////////////                        //hidden:true,
-                                 ////////////////                        width: '100%',
-                                 ////////////////                        style: "background-color: transparent",
-                                 ////////////////                        //style: "background-color: #F35B57;",
-                                 ////////////////                        margin: '0 0 0 0',
-                                 ////////////////                        layout: {
-                                 ////////////////                            type: 'hbox',
-                                 ////////////////                            pack: 'center',
-                                 ////////////////                            align: 'center'
-
-                                 ////////////////                        },
-
-
-
-                                 ////////////////                        items: [
-
-                                 ////////////////                            {
-                                 ////////////////                                xtype: 'button',
-                                 ////////////////                                margin: '0 0 0 0',
-                                 ////////////////                                ui: 'plain',
-                                 ////////////////                                id: 'btn_DashboardAdvertisementButton_HotSeatAdvertisementTxt0',
-                                 ////////////////                                width: '100%',
-                                 ////////////////                                //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
-                                 ////////////////                                html: '<div style="color:black;text-align: center;font-size:12px;width:100%;"><b>Car Wash Promotion! >></b></div>',
-                                 ////////////////                                handler: function () {
-
-                                 ////////////////                                }
-
-
-                                 ////////////////                            }
-
-                                 ////////////////                                    //{
-                                 ////////////////                                    //    xtype: 'button',
-                                 ////////////////                                    //    height: 28,
-                                 ////////////////                                    //    width: 28,
-                                 ////////////////                                    //    margin: '0 0 0 0',
-                                 ////////////////                                    //    id: 'btnDashboardAdvertisementbottom_Wassap',
-                                 ////////////////                                    //    //badgeText: "2",
-                                 ////////////////                                    //    html: '<a href="https://api.whatsapp.com/send?phone=+60133376958"><img src="resources/icons/wassap.png" width="18" height="18" alt="Company Name"/></a>',
-                                 ////////////////                                    //    ui: 'plain',
-                                 ////////////////                                    //    handler: function () {
-
-                                 ////////////////                                    //        //var ModifiedMediaFileName = globalMediaFileName.replace(".", "") + ".html?ImgId=" + globalMediaFileName;
-
-                                 ////////////////                                    //        //// window.open("https://api.whatsapp.com/send?phone=+60133376958&text=https://ianmizi.com/ayohaimg/"+ModifiedMediaFileName);
-
-                                 ////////////////                                    //        //window.open("https://api.whatsapp.com/send?phone=" + GetPICContactNo() + "&text=https://ianmizi.com/ayohaimg/" + ModifiedMediaFileName);
-
-                                 ////////////////                                    //    }
-                                 ////////////////                                    //},
-                                 ////////////////                        ]
-
-                                 ////////////////                    },
-
-
-
-
-                                 ////////////////            ]
-                                 ////////////////        },
-
-
-
-                                 ////////////////        {
-                                 ////////////////            xtype: 'button',
-                                 ////////////////            id: 'btnDashboard_HotSeatAdvertisement_PicProfile0',
-                                 ////////////////            margin: '-2 0 0 0',
-                                 ////////////////            //docked:'top',
-                                 ////////////////            height: 60,
-                                 ////////////////            width: 60,
-                                 ////////////////            // iconCls: 'list',
-                                 ////////////////            //html: '<div style="border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 30px 30px 30px 30px;width:45px;height:45px;" ><img src="resources/icons/founder.jpg" width="25" height="25"  alt="Company Name" style="margin:7px 0px 0px 0px;border-radius: 50%;"></div>',
-                                 ////////////////            html: '<img src="resources/icons/founder.jpg" style="width: 50px; height: 50px; border:3px solid #ECF0F1; border-radius: 50%; max-width:200px;">',
-
-
-                                 ////////////////            // html: '<div ><img src="resources/icons/videoPurple.png" width="35" height="35" alt="Company Name"></div>',
-                                 ////////////////            ui: 'plain',
-                                 ////////////////            handler: function () {
-
-
-                                 ////////////////            }
-                                 ////////////////        },
-                                 ////////////////        {
-                                 ////////////////            xtype: 'container',
-                                 ////////////////            // width: '91.1%',
-                                 ////////////////            width: 228,
-                                 ////////////////            height: 60,
-                                 ////////////////            hidden: true,
-                                 ////////////////            margin: '14 0 0 16',
-
-                                 ////////////////            layout: {
-                                 ////////////////                type: 'vbox',
-                                 ////////////////                pack: 'center',
-                                 ////////////////                align: 'center',
-                                 ////////////////            },
-                                 ////////////////            id: 'containerDashboard_HotSeatAdvertisement_ProfileText0',
-                                 ////////////////            // hidden:true,
-
-                                 ////////////////            style: 'background-color:rgba(0, 0, 0, 0.5);border-radius: 0px 0px 0px 0px;',
-                                 ////////////////            items: [
-
-                                 ////////////////            ]
-                                 ////////////////        },
-                                 ////////////////        {
-                                 ////////////////            xtype: 'button',
-                                 ////////////////            id: 'btnDashboard_HotSeatAdvertisement_UserNameProfile0',
-                                 ////////////////            margin: '-20 0 0 0',
-                                 ////////////////            height: 60,
-                                 ////////////////            //width: 228,
-                                 ////////////////            width: '100%',
-                                 ////////////////            // iconCls: 'list',
-                                 ////////////////            //html: '<div style="border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 30px 30px 30px 30px;width:45px;height:45px;" ><img src="resources/icons/founder.jpg" width="25" height="25"  alt="Company Name" style="margin:7px 0px 0px 0px;border-radius: 50%;"></div>',
-                                 ////////////////            //html: '<div style="color:black;text-align: center;font-size:12px;width:100%;font-weight:bold;background-color:rgba(0, 0, 0, 0.5);">Unjun Restaurant Sdn Bhd</div><br><div style="color:black;text-align: center;font-size:10px;width:100%;font-weight:normal;margin:-15px 0px 0px 0px;">Date:28/12/2020 10:30:54PM</div>',
-                                 ////////////////            html: '<div style="color:black;text-align: center;font-size:12px;width:100%;font-weight:bold;background-color:rgba(0, 0, 0, 0.5);">Murugan Car Wash</div><br>',
-
-                                 ////////////////            // html: '<div ><img src="resources/icons/videoPurple.png" width="35" height="35" alt="Company Name"></div>',
-                                 ////////////////            ui: 'plain',
-                                 ////////////////            handler: function () {
-
-
-                                 ////////////////            }
-                                 ////////////////        },
-                                 ////////////////                                 {
-
-                                 ////////////////                                     height: 210,
-                                 ////////////////                                     width: 230,
-                                 ////////////////                                     id: 'htmlPicture_Dashboard_HotSeatAdvertisement_HotSeat0',
-                                 ////////////////                                     margin: '-70 0 0 0',
-                                 ////////////////                                     html: '<img src="resources/icons/freeAdvertisingSpace.png"  style="width: 230px; height: 210px; border:2px solid #ECF0F1;border-radius: 10px 10px 0px 0px;">',
-
-                                 ////////////////                                 },
-                                 ////////////////         //{
-                                 ////////////////         //    xtype: 'container',
-                                 ////////////////         //    style: 'background-color:transparent;',
-                                 ////////////////         //    height: 210,
-                                 ////////////////         //    width: 230,
-                                 ////////////////         //    layout: {
-                                 ////////////////         //        type: 'vbox',
-                                 ////////////////         //    },
-                                 ////////////////         //    initialize: function (c) {
-                                 ////////////////         //        this.element.on({
-                                 ////////////////         //            tap: function (e, node, options) {
-
-                                 ////////////////         //            }
-                                 ////////////////         //        });
-                                 ////////////////         //    },
-                                 ////////////////         //    items: [
-
-                                 ////////////////         //    ]
-                                 ////////////////         //},
-
-                                 ////////////////    ]
-                                 ////////////////},
-
-                                {
-                                    xtype: 'panel',
-                                    width: 15
-                                },
-
-
-
-                                  {
-                                      xtype: 'container',
-                                      height: 300,
-                                      width: 230,
-                                      margin: '0 0 0 0',
-                                      style: 'background-color:transparent;',
-                                      layout: {
-                                          type: 'vbox',
-                                          pack: 'center',
-                                          align: 'center',
-                                      },
-                                      items: [
-
-
-                                          {
-                                              xtype: 'container',
-                                              width: '100%',
-                                              height: 30,
-                                              docked: 'bottom',
-                                              hidden: true,
-                                              margin: '-2 0 0 0',
-                                              style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px none #ECF0F1 white;background: white;border-radius: 0px 0px 5px 5px;',
-                                              layout: {
-                                                  type: 'vbox',
-                                                  pack: 'center',
-                                                  align: 'center',
-                                              },
-                                              items: [
-
-
-                                                      {
-                                                          xtype: 'container',
-                                                          id: 'DashboardHotSeatAdvertisementButton_bottom1',
-                                                          //hidden:true,
-                                                          width: '100%',
-                                                          style: "background-color: transparent",
-                                                          //style: "background-color: #F35B57;",
-                                                          margin: '0 0 0 0',
-                                                          layout: {
-                                                              type: 'hbox',
-                                                              pack: 'center',
-                                                              align: 'center'
-
-                                                          },
-
-
-                                                          items: [
-
-                                                              {
-                                                                  xtype: 'button',
-                                                                  margin: '0 0 0 0',
-                                                                  ui: 'plain',
-                                                                  width: '100%',
-                                                                  id: 'btn_DashboardAdvertisementButton_HotSeatAdvertisementTxt1',
-                                                                  //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
-                                                                  html: '<div style="color:black;text-align: center;font-size:12px;width:100%;"><b>Available Advertisement Space! >></b></div>',
-                                                                  handler: function () {
-
-
-                                                                  }
-
-
-                                                              }
-
-                                                          ]
-
-                                                      },
-
-
-
-
-                                              ]
-                                          },
-
-
-
-                                          {
-                                              xtype: 'button',
-                                              id: 'btnDashboard_HotSeatAdvertisement_PicProfile1',
-                                              margin: '0 0 0 0',
-                                              //docked:'top',
-                                              height: 60,
-                                              width: 60,
-                                              // iconCls: 'list',
-                                              //html: '<div style="border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 30px 30px 30px 30px;width:45px;height:45px;" ><img src="resources/icons/founder.jpg" width="25" height="25"  alt="Company Name" style="margin:7px 0px 0px 0px;border-radius: 50%;"></div>',
-                                              html: '<img src="resources/icons/Logo/LogoOrangeSimplifed.png" style="width: 50px; height: 50px; border:3px solid #c800ffc9; border-radius: 50%; max-width:200px;">',
-
-
-                                              // html: '<div ><img src="resources/icons/videoPurple.png" width="35" height="35" alt="Company Name"></div>',
-                                              ui: 'plain',
-                                              handler: function () {
-
-
-                                              }
-                                          },
-
-
-                                            {
-
-                                                height: 260,
-                                                width: 230,
-                                                id: 'htmlPicture_Dashboard_HotSeatAdvertisement_HotSeat1',
-                                                margin: '-30 0 0 0',
-                                                html: '<img src="resources/icons/freeAdvertisingSpace.png"  style="width: 230px; height: 260px; border:2px solid #ECF0F1;border-radius: 10px 10px 10px 10px;">',
-
-                                            },
-                                                {
-                                                    xtype: 'container',
-                                                    // width: '91.1%',
-                                                    width: 228,
-                                                    height: 60,
-                                                    hidden: true,
-                                                    margin: '14 0 0 16',
-
-                                                    layout: {
-                                                        type: 'vbox',
-                                                        pack: 'center',
-                                                        align: 'center',
-                                                    },
-                                                    id: 'containerDashboard_HotSeatAdvertisement_ProfileText1',
-                                                    // hidden:true,
-
-                                                    style: 'background-color:rgba(0, 0, 0, 0.5);border-radius: 0px 0px 0px 0px;',
-                                                    items: [
-
-                                                    ]
-                                                },
-
-                                          {
-                                              xtype: 'container',
-                                              id: 'btnDashboard_HotSeatAdvertisement_UserNameProfile1',
-                                              margin: '-40 0 0 0',
-                                              height: 40,
-                                              zIndex: 200,
-                                              //width: 228,
-                                              width: '100%',
-                                              style: 'background-color:rgba(0, 0, 0, 0.2);border-radius:0px 0px 10px 10px;border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1;',
-                                              // iconCls: 'list',
-                                              //html: '<div style="border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 30px 30px 30px 30px;width:45px;height:45px;" ><img src="resources/icons/founder.jpg" width="25" height="25"  alt="Company Name" style="margin:7px 0px 0px 0px;border-radius: 50%;"></div>',
-                                              //html: '<div style="color:black;text-align: center;font-size:12px;width:100%;font-weight:bold;background-color:rgba(0, 0, 0, 0.5);">Unjun Restaurant Sdn Bhd</div><br><div style="color:black;text-align: center;font-size:10px;width:100%;font-weight:normal;margin:-15px 0px 0px 0px;">Date:28/12/2020 10:30:54PM</div>',
-                                              // 
-                                              layout: {
-                                                  type: 'vbox',
-                                                  pack: 'center',
-                                                  align: 'center',
-                                              },
-                                              items: [
-                                                  {
-                                                      id: 'htmlDasboard_HotSeatAdvertisement_EnterpriseName1',
-                                                      html: '<div style="color:white;text-align: center;font-size:12px;width:100%;font-weight:bold;background-color:transparent">MHSya Enterprise</div>',
-                                                  },
-                                                   {
-                                                       xtype: 'container',
-                                                       style: 'background-color:white;',
-                                                       height: 2,
-                                                       width: '80%',
-                                                       // html: '<div style="color:white;text-align: center;font-size:10px;width:90%;font-weight:normal;background-color:white;margin:0px 0px 0px 0px;height:5px"/>',
-                                                   },
-                                                    {
-                                                        id: 'htmlDasboard_HotSeatAdvertisement_Title1',
-                                                        html: '<div style="color:white;text-align: center;font-size:10px;width:100%;font-weight:bold;background-color:transparent;margin:0px 0px 0px 0px;">Penjahit baju Custome Made KL</div>',
-                                                    },
-                                              ]
-
-                                          },
-                                      ]
-                                  },
-
-
-                                  ////////////////hotseat 2
-
-                                {
-                                    xtype: 'panel',
-                                    width: 15
-                                },
-
-                                  {
-                                      xtype: 'container',
-                                      height: 300,
-                                      width: 230,
-                                      margin: '0 0 0 0',
-                                      style: 'background-color:transparent;',
-                                      layout: {
-                                          type: 'vbox',
-                                          pack: 'center',
-                                          align: 'center',
-                                      },
-                                      items: [
-
-
-                                          {
-                                              xtype: 'container',
-                                              width: '100%',
-                                              height: 30,
-                                              docked: 'bottom',
-                                              hidden: true,
-                                              margin: '-2 0 0 0',
-                                              style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px none #ECF0F1 white;background: white;border-radius: 0px 0px 5px 5px;',
-                                              layout: {
-                                                  type: 'vbox',
-                                                  pack: 'center',
-                                                  align: 'center',
-                                              },
-                                              items: [
-
-
-                                                      {
-                                                          xtype: 'container',
-                                                          id: 'DashboardHotSeatAdvertisementButton_bottom2',
-                                                          //hidden:true,
-                                                          width: '100%',
-                                                          style: "background-color: transparent",
-                                                          //style: "background-color: #F35B57;",
-                                                          margin: '0 0 0 0',
-                                                          layout: {
-                                                              type: 'hbox',
-                                                              pack: 'center',
-                                                              align: 'center'
-
-                                                          },
-
-
-                                                          items: [
-
-                                                              {
-                                                                  xtype: 'button',
-                                                                  margin: '0 0 0 0',
-                                                                  ui: 'plain',
-                                                                  width: '100%',
-                                                                  id: 'btn_DashboardAdvertisementButton_HotSeatAdvertisementTxt2',
-                                                                  //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
-                                                                  html: '<div style="color:black;text-align: center;font-size:12px;width:100%;"><b>Available Advertisement Space! >></b></div>',
-                                                                  handler: function () {
-
-
-                                                                  }
-
-
-                                                              }
-
-                                                          ]
-
-                                                      },
-
-
-
-
-                                              ]
-                                          },
-
-
-
-                                          {
-                                              xtype: 'button',
-                                              id: 'btnDashboard_HotSeatAdvertisement_PicProfile2',
-                                              margin: '0 0 0 0',
-                                              //docked:'top',
-                                              height: 60,
-                                              width: 60,
-                                              // iconCls: 'list',
-                                              //html: '<div style="border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 30px 30px 30px 30px;width:45px;height:45px;" ><img src="resources/icons/founder.jpg" width="25" height="25"  alt="Company Name" style="margin:7px 0px 0px 0px;border-radius: 50%;"></div>',
-                                              html: '<img src="resources/icons/Logo/LogoOrangeSimplifed.png" style="width: 50px; height: 50px; border:3px solid #c800ffc9; border-radius: 50%; max-width:200px;">',
-
-
-                                              // html: '<div ><img src="resources/icons/videoPurple.png" width="35" height="35" alt="Company Name"></div>',
-                                              ui: 'plain',
-                                              handler: function () {
-
-
-                                              }
-                                          },
-
-
-                                            {
-
-                                                height: 260,
-                                                width: 230,
-                                                id: 'htmlPicture_Dashboard_HotSeatAdvertisement_HotSeat2',
-                                                margin: '-30 0 0 0',
-                                                html: '<img src="resources/icons/freeAdvertisingSpace.png"  style="width: 230px; height: 260px; border:2px solid #ECF0F1;border-radius: 10px 10px 10px 10px;">',
-
-                                            },
-                                                {
-                                                    xtype: 'container',
-                                                    // width: '91.1%',
-                                                    width: 228,
-                                                    height: 60,
-                                                    hidden: true,
-                                                    margin: '14 0 0 16',
-
-                                                    layout: {
-                                                        type: 'vbox',
-                                                        pack: 'center',
-                                                        align: 'center',
-                                                    },
-                                                    id: 'containerDashboard_HotSeatAdvertisement_ProfileText2',
-                                                    // hidden:true,
-
-                                                    style: 'background-color:rgba(0, 0, 0, 0.5);border-radius: 0px 0px 0px 0px;',
-                                                    items: [
-
-                                                    ]
-                                                },
-
-                                          {
-                                              xtype: 'container',
-                                              id: 'btnDashboard_HotSeatAdvertisement_UserNameProfile2',
-                                              margin: '-40 0 0 0',
-                                              height: 40,
-                                              zIndex: 200,
-                                              //width: 228,
-                                              width: '100%',
-                                              style: 'background-color:rgba(0, 0, 0, 0.2);border-radius:0px 0px 10px 10px;border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1;',
-                                              // iconCls: 'list',
-                                              //html: '<div style="border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 30px 30px 30px 30px;width:45px;height:45px;" ><img src="resources/icons/founder.jpg" width="25" height="25"  alt="Company Name" style="margin:7px 0px 0px 0px;border-radius: 50%;"></div>',
-                                              //html: '<div style="color:black;text-align: center;font-size:12px;width:100%;font-weight:bold;background-color:rgba(0, 0, 0, 0.5);">Unjun Restaurant Sdn Bhd</div><br><div style="color:black;text-align: center;font-size:10px;width:100%;font-weight:normal;margin:-15px 0px 0px 0px;">Date:28/12/2020 10:30:54PM</div>',
-                                              // 
-                                              layout: {
-                                                  type: 'vbox',
-                                                  pack: 'center',
-                                                  align: 'center',
-                                              },
-                                              items: [
-                                                  {
-                                                      id: 'htmlDasboard_HotSeatAdvertisement_EnterpriseName2',
-                                                      html: '<div style="color:white;text-align: center;font-size:12px;width:100%;font-weight:bold;background-color:transparent">MHSya Enterprise</div>',
-                                                  },
-                                                   {
-                                                       xtype: 'container',
-                                                       style: 'background-color:white;',
-                                                       height: 2,
-                                                       width: '80%',
-                                                       // html: '<div style="color:white;text-align: center;font-size:10px;width:90%;font-weight:normal;background-color:white;margin:0px 0px 0px 0px;height:5px"/>',
-                                                   },
-                                                    {
-                                                        id: 'htmlDasboard_HotSeatAdvertisement_Title2',
-                                                        html: '<div style="color:white;text-align: center;font-size:10px;width:100%;font-weight:bold;background-color:transparent;margin:0px 0px 0px 0px;">Penjahit baju Custome Made KL</div>',
-                                                    },
-                                              ]
-
-                                          },
-                                      ]
-                                  },
-
-                                  ///////hotseat 3
-
-
-                                {
-                                    xtype: 'panel',
-                                    width: 15
-                                },
-                                  {
-                                      xtype: 'container',
-                                      height: 300,
-                                      width: 230,
-                                      margin: '0 0 0 0',
-                                      style: 'background-color:transparent;',
-                                      layout: {
-                                          type: 'vbox',
-                                          pack: 'center',
-                                          align: 'center',
-                                      },
-                                      items: [
-
-
-                                          {
-                                              xtype: 'container',
-                                              width: '100%',
-                                              height: 30,
-                                              docked: 'bottom',
-                                              hidden: true,
-                                              margin: '-2 0 0 0',
-                                              style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px none #ECF0F1 white;background: white;border-radius: 0px 0px 5px 5px;',
-                                              layout: {
-                                                  type: 'vbox',
-                                                  pack: 'center',
-                                                  align: 'center',
-                                              },
-                                              items: [
-
-
-                                                      {
-                                                          xtype: 'container',
-                                                          id: 'DashboardHotSeatAdvertisementButton_bottom3',
-                                                          //hidden:true,
-                                                          width: '100%',
-                                                          style: "background-color: transparent",
-                                                          //style: "background-color: #F35B57;",
-                                                          margin: '0 0 0 0',
-                                                          layout: {
-                                                              type: 'hbox',
-                                                              pack: 'center',
-                                                              align: 'center'
-
-                                                          },
-
-
-                                                          items: [
-
-                                                              {
-                                                                  xtype: 'button',
-                                                                  margin: '0 0 0 0',
-                                                                  ui: 'plain',
-                                                                  width: '100%',
-                                                                  id: 'btn_DashboardAdvertisementButton_HotSeatAdvertisementTxt3',
-                                                                  //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
-                                                                  html: '<div style="color:black;text-align: center;font-size:12px;width:100%;"><b>Available Advertisement Space! >></b></div>',
-                                                                  handler: function () {
-
-
-                                                                  }
-
-
-                                                              }
-
-                                                          ]
-
-                                                      },
-
-
-
-
-                                              ]
-                                          },
-
-
-
-                                          {
-                                              xtype: 'button',
-                                              id: 'btnDashboard_HotSeatAdvertisement_PicProfile3',
-                                              margin: '0 0 0 0',
-                                              //docked:'top',
-                                              height: 60,
-                                              width: 60,
-                                              // iconCls: 'list',
-                                              //html: '<div style="border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 30px 30px 30px 30px;width:45px;height:45px;" ><img src="resources/icons/founder.jpg" width="25" height="25"  alt="Company Name" style="margin:7px 0px 0px 0px;border-radius: 50%;"></div>',
-                                              html: '<img src="resources/icons/Logo/LogoOrangeSimplifed.png" style="width: 50px; height: 50px; border:3px solid #c800ffc9; border-radius: 50%; max-width:200px;">',
-
-
-                                              // html: '<div ><img src="resources/icons/videoPurple.png" width="35" height="35" alt="Company Name"></div>',
-                                              ui: 'plain',
-                                              handler: function () {
-
-
-                                              }
-                                          },
-
-
-                                            {
-
-                                                height: 260,
-                                                width: 230,
-                                                id: 'htmlPicture_Dashboard_HotSeatAdvertisement_HotSeat3',
-                                                margin: '-30 0 0 0',
-                                                html: '<img src="resources/icons/freeAdvertisingSpace.png"  style="width: 230px; height: 260px; border:2px solid #ECF0F1;border-radius: 10px 10px 10px 10px;">',
-
-                                            },
-                                                {
-                                                    xtype: 'container',
-                                                    // width: '91.1%',
-                                                    width: 228,
-                                                    height: 60,
-                                                    hidden: true,
-                                                    margin: '14 0 0 16',
-
-                                                    layout: {
-                                                        type: 'vbox',
-                                                        pack: 'center',
-                                                        align: 'center',
-                                                    },
-                                                    id: 'containerDashboard_HotSeatAdvertisement_ProfileText3',
-                                                    // hidden:true,
-
-                                                    style: 'background-color:rgba(0, 0, 0, 0.5);border-radius: 0px 0px 0px 0px;',
-                                                    items: [
-
-                                                    ]
-                                                },
-
-                                          {
-                                              xtype: 'container',
-                                              id: 'btnDashboard_HotSeatAdvertisement_UserNameProfile3',
-                                              margin: '-40 0 0 0',
-                                              height: 40,
-                                              zIndex: 200,
-                                              //width: 228,
-                                              width: '100%',
-                                              style: 'background-color:rgba(0, 0, 0, 0.2);border-radius:0px 0px 10px 10px;border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1;',
-                                              // iconCls: 'list',
-                                              //html: '<div style="border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 30px 30px 30px 30px;width:45px;height:45px;" ><img src="resources/icons/founder.jpg" width="25" height="25"  alt="Company Name" style="margin:7px 0px 0px 0px;border-radius: 50%;"></div>',
-                                              //html: '<div style="color:black;text-align: center;font-size:12px;width:100%;font-weight:bold;background-color:rgba(0, 0, 0, 0.5);">Unjun Restaurant Sdn Bhd</div><br><div style="color:black;text-align: center;font-size:10px;width:100%;font-weight:normal;margin:-15px 0px 0px 0px;">Date:28/12/2020 10:30:54PM</div>',
-                                              // 
-                                              layout: {
-                                                  type: 'vbox',
-                                                  pack: 'center',
-                                                  align: 'center',
-                                              },
-                                              items: [
-                                                  {
-                                                      id: 'htmlDasboard_HotSeatAdvertisement_EnterpriseName3',
-                                                      html: '<div style="color:white;text-align: center;font-size:12px;width:100%;font-weight:bold;background-color:transparent">MHSya Enterprise</div>',
-                                                  },
-                                                   {
-                                                       xtype: 'container',
-                                                       style: 'background-color:white;',
-                                                       height: 2,
-                                                       width: '80%',
-                                                       // html: '<div style="color:white;text-align: center;font-size:10px;width:90%;font-weight:normal;background-color:white;margin:0px 0px 0px 0px;height:5px"/>',
-                                                   },
-                                                    {
-                                                        id: 'htmlDasboard_HotSeatAdvertisement_Title3',
-                                                        html: '<div style="color:white;text-align: center;font-size:10px;width:100%;font-weight:bold;background-color:transparent;margin:0px 0px 0px 0px;">Penjahit baju Custome Made KL</div>',
-                                                    },
-                                              ]
-
-                                          },
-                                      ]
-                                  },
-
-
-
-
-
-
-
-
-                                ///////////////////hotseat 4
-                           {
-                               xtype: 'panel',
-                               width: 15
-                           },
-
-                                  {
-                                      xtype: 'container',
-                                      height: 300,
-                                      width: 230,
-                                      margin: '0 0 0 0',
-                                      style: 'background-color:transparent;',
-                                      layout: {
-                                          type: 'vbox',
-                                          pack: 'center',
-                                          align: 'center',
-                                      },
-                                      items: [
-
-
-                                          {
-                                              xtype: 'container',
-                                              width: '100%',
-                                              height: 30,
-                                              docked: 'bottom',
-                                              hidden: true,
-                                              margin: '-2 0 0 0',
-                                              style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px none #ECF0F1 white;background: white;border-radius: 0px 0px 5px 5px;',
-                                              layout: {
-                                                  type: 'vbox',
-                                                  pack: 'center',
-                                                  align: 'center',
-                                              },
-                                              items: [
-
-
-                                                      {
-                                                          xtype: 'container',
-                                                          id: 'DashboardHotSeatAdvertisementButton_bottom4',
-                                                          //hidden:true,
-                                                          width: '100%',
-                                                          style: "background-color: transparent",
-                                                          //style: "background-color: #F35B57;",
-                                                          margin: '0 0 0 0',
-                                                          layout: {
-                                                              type: 'hbox',
-                                                              pack: 'center',
-                                                              align: 'center'
-
-                                                          },
-
-
-                                                          items: [
-
-                                                              {
-                                                                  xtype: 'button',
-                                                                  margin: '0 0 0 0',
-                                                                  ui: 'plain',
-                                                                  width: '100%',
-                                                                  id: 'btn_DashboardAdvertisementButton_HotSeatAdvertisementTxt4',
-                                                                  //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
-                                                                  html: '<div style="color:black;text-align: center;font-size:12px;width:100%;"><b>Available Advertisement Space! >></b></div>',
-                                                                  handler: function () {
-
-
-                                                                  }
-
-
-                                                              }
-
-                                                          ]
-
-                                                      },
-
-
-
-
-                                              ]
-                                          },
-
-
-
-                                          {
-                                              xtype: 'button',
-                                              id: 'btnDashboard_HotSeatAdvertisement_PicProfile4',
-                                              margin: '0 0 0 0',
-                                              //docked:'top',
-                                              height: 60,
-                                              width: 60,
-                                              // iconCls: 'list',
-                                              //html: '<div style="border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 30px 30px 30px 30px;width:45px;height:45px;" ><img src="resources/icons/founder.jpg" width="25" height="25"  alt="Company Name" style="margin:7px 0px 0px 0px;border-radius: 50%;"></div>',
-                                              html: '<img src="resources/icons/Logo/LogoOrangeSimplifed.png" style="width: 50px; height: 50px; border:3px solid #c800ffc9; border-radius: 50%; max-width:200px;">',
-
-
-                                              // html: '<div ><img src="resources/icons/videoPurple.png" width="35" height="35" alt="Company Name"></div>',
-                                              ui: 'plain',
-                                              handler: function () {
-
-
-                                              }
-                                          },
-
-
-                                            {
-
-                                                height: 260,
-                                                width: 230,
-                                                id: 'htmlPicture_Dashboard_HotSeatAdvertisement_HotSeat4',
-                                                margin: '-30 0 0 0',
-                                                html: '<img src="resources/icons/freeAdvertisingSpace.png"  style="width: 230px; height: 260px; border:2px solid #ECF0F1;border-radius: 10px 10px 10px 10px;">',
-
-                                            },
-                                                {
-                                                    xtype: 'container',
-                                                    // width: '91.1%',
-                                                    width: 228,
-                                                    height: 60,
-                                                    hidden: true,
-                                                    margin: '14 0 0 16',
-
-                                                    layout: {
-                                                        type: 'vbox',
-                                                        pack: 'center',
-                                                        align: 'center',
-                                                    },
-                                                    id: 'containerDashboard_HotSeatAdvertisement_ProfileText4',
-                                                    // hidden:true,
-
-                                                    style: 'background-color:rgba(0, 0, 0, 0.5);border-radius: 0px 0px 0px 0px;',
-                                                    items: [
-
-                                                    ]
-                                                },
-
-                                          {
-                                              xtype: 'container',
-                                              id: 'btnDashboard_HotSeatAdvertisement_UserNameProfile4',
-                                              margin: '-40 0 0 0',
-                                              height: 40,
-                                              zIndex: 200,
-                                              //width: 228,
-                                              width: '100%',
-                                              style: 'background-color:rgba(0, 0, 0, 0.2);border-radius:0px 0px 10px 10px;border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1;',
-                                              // iconCls: 'list',
-                                              //html: '<div style="border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 30px 30px 30px 30px;width:45px;height:45px;" ><img src="resources/icons/founder.jpg" width="25" height="25"  alt="Company Name" style="margin:7px 0px 0px 0px;border-radius: 50%;"></div>',
-                                              //html: '<div style="color:black;text-align: center;font-size:12px;width:100%;font-weight:bold;background-color:rgba(0, 0, 0, 0.5);">Unjun Restaurant Sdn Bhd</div><br><div style="color:black;text-align: center;font-size:10px;width:100%;font-weight:normal;margin:-15px 0px 0px 0px;">Date:28/12/2020 10:30:54PM</div>',
-                                              // 
-                                              layout: {
-                                                  type: 'vbox',
-                                                  pack: 'center',
-                                                  align: 'center',
-                                              },
-                                              items: [
-                                                  {
-                                                      id: 'htmlDasboard_HotSeatAdvertisement_EnterpriseName4',
-                                                      html: '<div style="color:white;text-align: center;font-size:12px;width:100%;font-weight:bold;background-color:transparent">MHSya Enterprise</div>',
-                                                  },
-                                                   {
-                                                       xtype: 'container',
-                                                       style: 'background-color:white;',
-                                                       height: 2,
-                                                       width: '80%',
-                                                       // html: '<div style="color:white;text-align: center;font-size:10px;width:90%;font-weight:normal;background-color:white;margin:0px 0px 0px 0px;height:5px"/>',
-                                                   },
-                                                    {
-                                                        id: 'htmlDasboard_HotSeatAdvertisement_Title4',
-                                                        html: '<div style="color:white;text-align: center;font-size:10px;width:100%;font-weight:bold;background-color:transparent;margin:0px 0px 0px 0px;">Penjahit baju Custome Made KL</div>',
-                                                    },
-                                              ]
-
-                                          },
-                                      ]
-                                  },
-
-
-
-                                /////////////////hotseat 5
-
-
-                                  {
-                                      xtype: 'panel',
-                                      width: 15
-                                  },
-
-                                  {
-                                      xtype: 'container',
-                                      height: 300,
-                                      width: 230,
-                                      margin: '0 0 0 0',
-                                      style: 'background-color:transparent;',
-                                      layout: {
-                                          type: 'vbox',
-                                          pack: 'center',
-                                          align: 'center',
-                                      },
-                                      items: [
-
-
-                                          {
-                                              xtype: 'container',
-                                              width: '100%',
-                                              height: 30,
-                                              docked: 'bottom',
-                                              hidden: true,
-                                              margin: '-2 0 0 0',
-                                              style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px none #ECF0F1 white;background: white;border-radius: 0px 0px 5px 5px;',
-                                              layout: {
-                                                  type: 'vbox',
-                                                  pack: 'center',
-                                                  align: 'center',
-                                              },
-                                              items: [
-
-
-                                                      {
-                                                          xtype: 'container',
-                                                          id: 'DashboardHotSeatAdvertisementButton_bottom5',
-                                                          //hidden:true,
-                                                          width: '100%',
-                                                          style: "background-color: transparent",
-                                                          //style: "background-color: #F35B57;",
-                                                          margin: '0 0 0 0',
-                                                          layout: {
-                                                              type: 'hbox',
-                                                              pack: 'center',
-                                                              align: 'center'
-
-                                                          },
-
-
-                                                          items: [
-
-                                                              {
-                                                                  xtype: 'button',
-                                                                  margin: '0 0 0 0',
-                                                                  ui: 'plain',
-                                                                  width: '100%',
-                                                                  id: 'btn_DashboardAdvertisementButton_HotSeatAdvertisementTxt5',
-                                                                  //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
-                                                                  html: '<div style="color:black;text-align: center;font-size:12px;width:100%;"><b>Available Advertisement Space! >></b></div>',
-                                                                  handler: function () {
-
-
-                                                                  }
-
-
-                                                              }
-
-                                                          ]
-
-                                                      },
-
-
-
-
-                                              ]
-                                          },
-
-
-
-                                          {
-                                              xtype: 'button',
-                                              id: 'btnDashboard_HotSeatAdvertisement_PicProfile5',
-                                              margin: '0 0 0 0',
-                                              //docked:'top',
-                                              height: 60,
-                                              width: 60,
-                                              // iconCls: 'list',
-                                              //html: '<div style="border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 30px 30px 30px 30px;width:45px;height:45px;" ><img src="resources/icons/founder.jpg" width="25" height="25"  alt="Company Name" style="margin:7px 0px 0px 0px;border-radius: 50%;"></div>',
-                                              html: '<img src="resources/icons/Logo/LogoOrangeSimplifed.png" style="width: 50px; height: 50px; border:3px solid #c800ffc9; border-radius: 50%; max-width:200px;">',
-
-
-                                              // html: '<div ><img src="resources/icons/videoPurple.png" width="35" height="35" alt="Company Name"></div>',
-                                              ui: 'plain',
-                                              handler: function () {
-
-
-                                              }
-                                          },
-
-
-                                            {
-
-                                                height: 260,
-                                                width: 230,
-                                                id: 'htmlPicture_Dashboard_HotSeatAdvertisement_HotSeat5',
-                                                margin: '-30 0 0 0',
-                                                html: '<img src="resources/icons/freeAdvertisingSpace.png"  style="width: 230px; height: 260px; border:2px solid #ECF0F1;border-radius: 10px 10px 10px 10px;">',
-
-                                            },
-                                                {
-                                                    xtype: 'container',
-                                                    // width: '91.1%',
-                                                    width: 228,
-                                                    height: 60,
-                                                    hidden: true,
-                                                    margin: '14 0 0 16',
-
-                                                    layout: {
-                                                        type: 'vbox',
-                                                        pack: 'center',
-                                                        align: 'center',
-                                                    },
-                                                    id: 'containerDashboard_HotSeatAdvertisement_ProfileText5',
-                                                    // hidden:true,
-
-                                                    style: 'background-color:rgba(0, 0, 0, 0.5);border-radius: 0px 0px 0px 0px;',
-                                                    items: [
-
-                                                    ]
-                                                },
-
-                                          {
-                                              xtype: 'container',
-                                              id: 'btnDashboard_HotSeatAdvertisement_UserNameProfile5',
-                                              margin: '-40 0 0 0',
-                                              height: 40,
-                                              zIndex: 200,
-                                              //width: 228,
-                                              width: '100%',
-                                              style: 'background-color:rgba(0, 0, 0, 0.2);border-radius:0px 0px 10px 10px;border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1;',
-                                              // iconCls: 'list',
-                                              //html: '<div style="border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 30px 30px 30px 30px;width:45px;height:45px;" ><img src="resources/icons/founder.jpg" width="25" height="25"  alt="Company Name" style="margin:7px 0px 0px 0px;border-radius: 50%;"></div>',
-                                              //html: '<div style="color:black;text-align: center;font-size:12px;width:100%;font-weight:bold;background-color:rgba(0, 0, 0, 0.5);">Unjun Restaurant Sdn Bhd</div><br><div style="color:black;text-align: center;font-size:10px;width:100%;font-weight:normal;margin:-15px 0px 0px 0px;">Date:28/12/2020 10:30:54PM</div>',
-                                              // 
-                                              layout: {
-                                                  type: 'vbox',
-                                                  pack: 'center',
-                                                  align: 'center',
-                                              },
-                                              items: [
-                                                  {
-                                                      id: 'htmlDasboard_HotSeatAdvertisement_EnterpriseName5',
-                                                      html: '<div style="color:white;text-align: center;font-size:12px;width:100%;font-weight:bold;background-color:transparent">MHSya Enterprise</div>',
-                                                  },
-                                                   {
-                                                       xtype: 'container',
-                                                       style: 'background-color:white;',
-                                                       height: 2,
-                                                       width: '80%',
-                                                       // html: '<div style="color:white;text-align: center;font-size:10px;width:90%;font-weight:normal;background-color:white;margin:0px 0px 0px 0px;height:5px"/>',
-                                                   },
-                                                    {
-                                                        id: 'htmlDasboard_HotSeatAdvertisement_Title5',
-                                                        html: '<div style="color:white;text-align: center;font-size:10px;width:100%;font-weight:bold;background-color:transparent;margin:0px 0px 0px 0px;">Penjahit baju Custome Made KL</div>',
-                                                    },
-                                              ]
-
-                                          },
-                                      ]
-                                  },
-
-                                /////////////////////hotseat 5 unused
-
-
-                                // {
-                                //     xtype: 'panel',
-                                //     width: 15
-                                // },
-                                //{
-                                //    xtype: 'container',
-                                //    height: 270,
-                                //    width: 230,
-                                //    margin: '0 0 0 0',
-                                //    style: 'background-color:transparent;',
-                                //    layout: {
-                                //        type: 'vbox',
-                                //        pack: 'center',
-                                //        align: 'center',
-                                //    },
-                                //    items: [
-
-
-                                //        {
-                                //            xtype: 'container',
-                                //            width: '100%',
-                                //            height: 30,
-                                //            docked: 'bottom',
-                                //            margin: '-2 0 0 0',
-                                //            style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px none #ECF0F1 white;background: white;border-radius: 0px 0px 5px 5px;',
-
-                                //            layout: {
-                                //                type: 'vbox',
-                                //                pack: 'center',
-                                //                align: 'center',
-                                //            },
-                                //            items: [
-
-                                //                    {
-                                //                        xtype: 'container',
-                                //                        id: 'DashboardHotSeatAdvertisementButton_bottom5',
-                                //                        //hidden:true,
-                                //                        width: '100%',
-                                //                        style: "background-color: transparent",
-                                //                        //style: "background-color: #F35B57;",
-                                //                        margin: '0 0 0 0',
-                                //                        layout: {
-                                //                            type: 'hbox',
-                                //                            pack: 'center',
-                                //                            align: 'center'
-
-                                //                        },
-
-
-                                //                        items: [
-
-                                //                            {
-                                //                                xtype: 'button',
-                                //                                margin: '0 0 0 0',
-                                //                                ui: 'plain',
-                                //                                width: '100%',
-                                //                                id: 'btn_DashboardAdvertisementButton_HotSeatAdvertisementTxt5',
-                                //                                //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
-                                //                                html: '<div style="color:black;text-align: center;font-size:12px;width:100%;"><b>Opening Restauran Promotion! >></b></div>',
-                                //                                handler: function () {
-
-
-                                //                                }
-
-
-                                //                            }
-
-                                //                        ]
-
-                                //                    },
-
-
-
-
-                                //            ]
-                                //        },
-
-
-
-                                //        {
-                                //            xtype: 'container',
-                                //            id: 'btnDashboard_HotSeatAdvertisement_PicProfile5',
-                                //            margin: '-2 0 0 0',
-                                //            //docked:'top',
-                                //            zIndex: 300,
-                                //            height: 60,
-                                //            width: '100%',
-                                //            layout:{
-                                //                type: 'hbox',
-                                //                pack: 'left',
-                                //                align: 'left'
-                                //            },
-
-                                //            items:[
-                                //                {
-                                //                    zIndex:300,
-                                //                    html: '<img src="resources/icons/founder.jpg" style="width: 50px; height: 50px; border:3px solid #ECF0F1; border-radius: 50%; max-width:200px;">',
-
-                                //                }
-                                //            ]
-
-                                //        },
-                                //        {
-                                //            xtype: 'container',
-                                //            // width: '91.1%',
-                                //            width: 228,
-                                //            height: 60,
-                                //            hidden: true,
-                                //            margin: '14 0 0 16',
-
-                                //            layout: {
-                                //                type: 'vbox',
-                                //                pack: 'center',
-                                //                align: 'center',
-                                //            },
-                                //            id: 'containerDashboard_HotSeatAdvertisement_ProfileText5',
-                                //            // hidden:true,
-
-                                //            style: 'background-color:rgba(0, 0, 0, 0.5);border-radius: 0px 0px 0px 0px;',
-                                //            items: [
-
-                                //            ]
-                                //        },
-
-                                //        {
-                                //            xtype: 'button',
-                                //            id: 'btnDashboard_HotSeatAdvertisement_UserNameProfile5',
-                                //            margin: '-20 0 0 0',
-                                //            height: 60,
-                                //            //width: 228,
-                                //            width: '100%',
-                                //            // iconCls: 'list',
-                                //            //html: '<div style="border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 30px 30px 30px 30px;width:45px;height:45px;" ><img src="resources/icons/founder.jpg" width="25" height="25"  alt="Company Name" style="margin:7px 0px 0px 0px;border-radius: 50%;"></div>',
-                                //            //html: '<div style="color:black;text-align: center;font-size:12px;width:100%;font-weight:bold;background-color:rgba(0, 0, 0, 0.5);">Unjun Restaurant Sdn Bhd</div><br><div style="color:black;text-align: center;font-size:10px;width:100%;font-weight:normal;margin:-15px 0px 0px 0px;">Date:28/12/2020 10:30:54PM</div>',
-                                //            html: '<div style="color:white;text-align: center;font-size:12px;width:100%;font-weight:bold;background-color:rgba(0, 0, 0, 0.5);">Murugan Car Wash</div><br>',
-
-                                //            // html: '<div ><img src="resources/icons/videoPurple.png" width="35" height="35" alt="Company Name"></div>',
-                                //            ui: 'plain',
-                                //            handler: function () {
-
-
-                                //            }
-                                //        },
-
-                                //          {
-
-                                //              height: 210,
-                                //              width: 230,
-                                //              id: 'htmlPicture_Dashboard_HotSeatAdvertisement_HotSeat5',
-                                //              margin: '-70 0 0 0',
-                                //              html: '<img src="resources/icons/toypromo.jpg"  style="width: 230px; height: 210px; border:2px solid #ECF0F1;border-radius: 10px 10px 0px 0px;">',
-
-                                //          },
-                                //    ]
-                                //},
-
-                                /////////////////////////hotseat 6
-
-
-                                  {
-                                      xtype: 'panel',
-                                      width: 15
-                                  },
-
-                                  {
-                                      xtype: 'container',
-                                      height: 300,
-                                      width: 230,
-                                      margin: '0 0 0 0',
-                                      style: 'background-color:transparent;',
-                                      layout: {
-                                          type: 'vbox',
-                                          pack: 'center',
-                                          align: 'center',
-                                      },
-                                      items: [
-
-
-                                          {
-                                              xtype: 'container',
-                                              width: '100%',
-                                              height: 30,
-                                              docked: 'bottom',
-                                              hidden: true,
-                                              margin: '-2 0 0 0',
-                                              style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px none #ECF0F1 white;background: white;border-radius: 0px 0px 5px 5px;',
-                                              layout: {
-                                                  type: 'vbox',
-                                                  pack: 'center',
-                                                  align: 'center',
-                                              },
-                                              items: [
-
-
-                                                      {
-                                                          xtype: 'container',
-                                                          id: 'DashboardHotSeatAdvertisementButton_bottom6',
-                                                          //hidden:true,
-                                                          width: '100%',
-                                                          style: "background-color: transparent",
-                                                          //style: "background-color: #F35B57;",
-                                                          margin: '0 0 0 0',
-                                                          layout: {
-                                                              type: 'hbox',
-                                                              pack: 'center',
-                                                              align: 'center'
-
-                                                          },
-
-
-                                                          items: [
-
-                                                              {
-                                                                  xtype: 'button',
-                                                                  margin: '0 0 0 0',
-                                                                  ui: 'plain',
-                                                                  width: '100%',
-                                                                  id: 'btn_DashboardAdvertisementButton_HotSeatAdvertisementTxt6',
-                                                                  //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
-                                                                  html: '<div style="color:black;text-align: center;font-size:12px;width:100%;"><b>Available Advertisement Space! >></b></div>',
-                                                                  handler: function () {
-
-
-                                                                  }
-
-
-                                                              }
-
-                                                          ]
-
-                                                      },
-
-
-
-
-                                              ]
-                                          },
-
-
-
-                                          {
-                                              xtype: 'button',
-                                              id: 'btnDashboard_HotSeatAdvertisement_PicProfile6',
-                                              margin: '0 0 0 0',
-                                              //docked:'top',
-                                              height: 60,
-                                              width: 60,
-                                              // iconCls: 'list',
-                                              //html: '<div style="border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 30px 30px 30px 30px;width:45px;height:45px;" ><img src="resources/icons/founder.jpg" width="25" height="25"  alt="Company Name" style="margin:7px 0px 0px 0px;border-radius: 50%;"></div>',
-                                              html: '<img src="resources/icons/Logo/LogoOrangeSimplifed.png" style="width: 50px; height: 50px; border:3px solid #c800ffc9; border-radius: 50%; max-width:200px;">',
-
-
-                                              // html: '<div ><img src="resources/icons/videoPurple.png" width="35" height="35" alt="Company Name"></div>',
-                                              ui: 'plain',
-                                              handler: function () {
-
-
-                                              }
-                                          },
-
-
-                                            {
-
-                                                height: 260,
-                                                width: 230,
-                                                id: 'htmlPicture_Dashboard_HotSeatAdvertisement_HotSeat6',
-                                                margin: '-30 0 0 0',
-                                                html: '<img src="resources/icons/freeAdvertisingSpace.png"  style="width: 230px; height: 260px; border:2px solid #ECF0F1;border-radius: 10px 10px 10px 10px;">',
-
-                                            },
-                                                {
-                                                    xtype: 'container',
-                                                    // width: '91.1%',
-                                                    width: 228,
-                                                    height: 60,
-                                                    hidden: true,
-                                                    margin: '14 0 0 16',
-
-                                                    layout: {
-                                                        type: 'vbox',
-                                                        pack: 'center',
-                                                        align: 'center',
-                                                    },
-                                                    id: 'containerDashboard_HotSeatAdvertisement_ProfileText6',
-                                                    // hidden:true,
-
-                                                    style: 'background-color:rgba(0, 0, 0, 0.5);border-radius: 0px 0px 0px 0px;',
-                                                    items: [
-
-                                                    ]
-                                                },
-
-                                          {
-                                              xtype: 'container',
-                                              id: 'btnDashboard_HotSeatAdvertisement_UserNameProfile6',
-                                              margin: '-40 0 0 0',
-                                              height: 40,
-                                              zIndex: 200,
-                                              //width: 228,
-                                              width: '100%',
-                                              style: 'background-color:rgba(0, 0, 0, 0.2);border-radius:0px 0px 10px 10px;border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1;',
-                                              // iconCls: 'list',
-                                              //html: '<div style="border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 30px 30px 30px 30px;width:45px;height:45px;" ><img src="resources/icons/founder.jpg" width="25" height="25"  alt="Company Name" style="margin:7px 0px 0px 0px;border-radius: 50%;"></div>',
-                                              //html: '<div style="color:black;text-align: center;font-size:12px;width:100%;font-weight:bold;background-color:rgba(0, 0, 0, 0.5);">Unjun Restaurant Sdn Bhd</div><br><div style="color:black;text-align: center;font-size:10px;width:100%;font-weight:normal;margin:-15px 0px 0px 0px;">Date:28/12/2020 10:30:54PM</div>',
-                                              // 
-                                              layout: {
-                                                  type: 'vbox',
-                                                  pack: 'center',
-                                                  align: 'center',
-                                              },
-                                              items: [
-                                                  {
-                                                      id: 'htmlDasboard_HotSeatAdvertisement_EnterpriseName6',
-                                                      html: '<div style="color:white;text-align: center;font-size:12px;width:100%;font-weight:bold;background-color:transparent">MHSya Enterprise</div>',
-                                                  },
-                                                   {
-                                                       xtype: 'container',
-                                                       style: 'background-color:white;',
-                                                       height: 2,
-                                                       width: '80%',
-                                                       // html: '<div style="color:white;text-align: center;font-size:10px;width:90%;font-weight:normal;background-color:white;margin:0px 0px 0px 0px;height:5px"/>',
-                                                   },
-                                                    {
-                                                        id: 'htmlDasboard_HotSeatAdvertisement_Title6',
-                                                        html: '<div style="color:white;text-align: center;font-size:10px;width:100%;font-weight:bold;background-color:transparent;margin:0px 0px 0px 0px;">Penjahit baju Custome Made KL</div>',
-                                                    },
-                                              ]
-
-                                          },
-                                      ]
-                                  },
-
-
-
-
-
-                                ////////////// hotseat 7
-
-
-
-                                        {
-                                            xtype: 'panel',
-                                            width: 15
-                                        },
-
-                                {
-                                    xtype: 'container',
-                                    height: 300,
-                                    width: 230,
-                                    margin: '0 0 0 0',
-                                    style: 'background-color:transparent;',
-                                    layout: {
-                                        type: 'vbox',
-                                        pack: 'center',
-                                        align: 'center',
-                                    },
-                                    items: [
-
-
-                                        {
-                                            xtype: 'container',
-                                            width: '100%',
-                                            height: 30,
-                                            docked: 'bottom',
-                                            hidden: true,
-                                            margin: '-2 0 0 0',
-                                            style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px none #ECF0F1 white;background: white;border-radius: 0px 0px 5px 5px;',
-                                            layout: {
-                                                type: 'vbox',
-                                                pack: 'center',
-                                                align: 'center',
-                                            },
-                                            items: [
-
-
-                                                    {
-                                                        xtype: 'container',
-                                                        id: 'DashboardHotSeatAdvertisementButton_bottom7',
-                                                        //hidden:true,
-                                                        width: '100%',
-                                                        style: "background-color: transparent",
-                                                        //style: "background-color: #F35B57;",
-                                                        margin: '0 0 0 0',
-                                                        layout: {
-                                                            type: 'hbox',
-                                                            pack: 'center',
-                                                            align: 'center'
-
-                                                        },
-
-
-                                                        items: [
-
-                                                            {
-                                                                xtype: 'button',
-                                                                margin: '0 0 0 0',
-                                                                ui: 'plain',
-                                                                width: '100%',
-                                                                id: 'btn_DashboardAdvertisementButton_HotSeatAdvertisementTxt7',
-                                                                //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
-                                                                html: '<div style="color:black;text-align: center;font-size:12px;width:100%;"><b>Available Advertisement Space! >></b></div>',
-                                                                handler: function () {
-
-
-                                                                }
-
-
-                                                            }
-
-                                                                    //{
-                                                                    //    xtype: 'button',
-                                                                    //    height: 28,
-                                                                    //    width: 28,
-                                                                    //    margin: '0 0 0 0',
-                                                                    //    id: 'btnDashboardAdvertisementbottom_Wassap',
-                                                                    //    //badgeText: "2",
-                                                                    //    html: '<a href="https://api.whatsapp.com/send?phone=+60133376958"><img src="resources/icons/wassap.png" width="18" height="18" alt="Company Name"/></a>',
-                                                                    //    ui: 'plain',
-                                                                    //    handler: function () {
-
-                                                                    //        //var ModifiedMediaFileName = globalMediaFileName.replace(".", "") + ".html?ImgId=" + globalMediaFileName;
-
-                                                                    //        //// window.open("https://api.whatsapp.com/send?phone=+60133376958&text=https://ianmizi.com/ayohaimg/"+ModifiedMediaFileName);
-
-                                                                    //        //window.open("https://api.whatsapp.com/send?phone=" + GetPICContactNo() + "&text=https://ianmizi.com/ayohaimg/" + ModifiedMediaFileName);
-
-                                                                    //    }
-                                                                    //},
-                                                        ]
-
-                                                    },
-
-
-
-
-                                            ]
-                                        },
-
-
-
-                                        {
-                                            xtype: 'button',
-                                            id: 'btnDashboard_HotSeatAdvertisement_PicProfile7',
-                                            margin: '0 0 0 0',
-                                            //docked:'top',
-                                            height: 60,
-                                            width: 60,
-                                            // iconCls: 'list',
-                                            //html: '<div style="border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 30px 30px 30px 30px;width:45px;height:45px;" ><img src="resources/icons/founder.jpg" width="25" height="25"  alt="Company Name" style="margin:7px 0px 0px 0px;border-radius: 50%;"></div>',
-                                            html: '<img src="resources/icons/Logo/LogoOrangeSimplifed.png" style="width: 50px; height: 50px; border:3px solid #c800ffc9; border-radius: 50%; max-width:200px;">',
-
-
-                                            // html: '<div ><img src="resources/icons/videoPurple.png" width="35" height="35" alt="Company Name"></div>',
-                                            ui: 'plain',
-                                            handler: function () {
-
-
-                                            }
-                                        },
-
-
-                                          {
-
-                                              height: 260,
-                                              width: 230,
-                                              id: 'htmlPicture_Dashboard_HotSeatAdvertisement_HotSeat7',
-                                              margin: '-30 0 0 0',
-                                              html: '<img src="resources/icons/freeAdvertisingSpace.png"  style="width: 230px; height: 260px; border:2px solid #ECF0F1;border-radius: 10px 10px 10px 10px;">',
-
-                                          },
-                                              {
-                                                  xtype: 'container',
-                                                  // width: '91.1%',
-                                                  width: 228,
-                                                  height: 60,
-                                                  hidden: true,
-                                                  margin: '14 0 0 16',
-
-                                                  layout: {
-                                                      type: 'vbox',
-                                                      pack: 'center',
-                                                      align: 'center',
-                                                  },
-                                                  id: 'containerDashboard_HotSeatAdvertisement_ProfileText7',
-                                                  // hidden:true,
-
-                                                  style: 'background-color:rgba(0, 0, 0, 0.5);border-radius: 0px 0px 0px 0px;',
-                                                  items: [
-
-                                                  ]
-                                              },
-
-                                        {
-                                            xtype: 'container',
-                                            id: 'btnDashboard_HotSeatAdvertisement_UserNameProfile7',
-                                            margin: '-40 0 0 0',
-                                            height: 40,
-                                            zIndex: 200,
-                                            //width: 228,
-                                            width: '100%',
-                                            style: 'background-color:rgba(0, 0, 0, 0.2);border-radius:0px 0px 10px 10px;border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1;',
-                                            // iconCls: 'list',
-                                            //html: '<div style="border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 30px 30px 30px 30px;width:45px;height:45px;" ><img src="resources/icons/founder.jpg" width="25" height="25"  alt="Company Name" style="margin:7px 0px 0px 0px;border-radius: 50%;"></div>',
-                                            //html: '<div style="color:black;text-align: center;font-size:12px;width:100%;font-weight:bold;background-color:rgba(0, 0, 0, 0.5);">Unjun Restaurant Sdn Bhd</div><br><div style="color:black;text-align: center;font-size:10px;width:100%;font-weight:normal;margin:-15px 0px 0px 0px;">Date:28/12/2020 10:30:54PM</div>',
-                                            // 
-                                            layout: {
-                                                type: 'vbox',
-                                                pack: 'center',
-                                                align: 'center',
-                                            },
-                                            items: [
-                                                {
-                                                    id: 'htmlDasboard_HotSeatAdvertisement_EnterpriseName7',
-                                                    html: '<div style="color:white;text-align: center;font-size:12px;width:100%;font-weight:bold;background-color:transparent">MHSya Enterprise</div>',
-                                                },
-                                                 {
-                                                     xtype: 'container',
-                                                     style: 'background-color:white;',
-                                                     height: 2,
-                                                     width: '80%',
-                                                     // html: '<div style="color:white;text-align: center;font-size:10px;width:90%;font-weight:normal;background-color:white;margin:0px 0px 0px 0px;height:5px"/>',
-                                                 },
-                                                  {
-                                                      id: 'htmlDasboard_HotSeatAdvertisement_Title7',
-                                                      html: '<div style="color:white;text-align: center;font-size:10px;width:100%;font-weight:bold;background-color:transparent;margin:0px 0px 0px 0px;">Penjahit baju Custome Made KL</div>',
-                                                  },
-                                            ]
-
-                                        },
-                                    ]
-                                },
-                                {
-                                    xtype: 'panel',
-                                    width: 15
-                                }
-
-                            ]
-                        },
-
-
-
-
-
-
-
-
-
-
-                        {
-                            xtype: 'spacer'
-                        },
-                    ]
-
-                },
+//                                                            {
+//                                                                xtype: 'container',
+//                                                                id: 'DashboardHotSeatAdvertisementButton_bottom0',
+//                                                                //hidden:true,
+//                                                                width: '100%',
+//                                                                style: "background-color: transparent",
+//                                                                //style: "background-color: #F35B57;",
+//                                                                margin: '0 0 0 0',
+//                                                                layout: {
+//                                                                    type: 'hbox',
+//                                                                    pack: 'center',
+//                                                                    align: 'center'
+
+//                                                                },
+
+
+//                                                                items: [
+
+//                                                                    {
+//                                                                        xtype: 'button',
+//                                                                        margin: '0 0 0 0',
+//                                                                        ui: 'plain',
+//                                                                        width: '100%',
+//                                                                        id: 'btn_DashboardAdvertisementButton_HotSeatAdvertisementTxt0',
+//                                                                        //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
+//                                                                        html: '<div style="color:black;text-align: center;font-size:12px;width:100%;"><b>Available Advertisement Space! >></b></div>',
+//                                                                        handler: function () {
+
+
+//                                                                        }
+
+
+//                                                                    }
+
+//                                                                ]
+
+//                                                            },
+
+
+
+
+//                                                    ]
+//                                                },
+
+
+
+//                                                {
+//                                                    xtype: 'button',
+//                                                    id: 'btnDashboard_HotSeatAdvertisement_PicProfile0',
+//                                                    margin: '0 0 0 0',
+//                                                    //docked:'top',
+//                                                    height: 60,
+//                                                    width: 60,
+//                                                    // iconCls: 'list',
+//                                                    //html: '<div style="border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 30px 30px 30px 30px;width:45px;height:45px;" ><img src="resources/icons/founder.jpg" width="25" height="25"  alt="Company Name" style="margin:7px 0px 0px 0px;border-radius: 50%;"></div>',
+//                                                    html: '<img src="resources/icons/Logo/LogoOrangeSimplifed.png" style="width: 50px; height: 50px; border:3px solid #c800ffc9; border-radius: 50%; max-width:200px;">',
+
+
+//                                                    // html: '<div ><img src="resources/icons/videoPurple.png" width="35" height="35" alt="Company Name"></div>',
+//                                                    ui: 'plain',
+//                                                    handler: function () {
+
+
+//                                                    }
+//                                                },
+
+
+//                                                  {
+
+//                                                      height: 260,
+//                                                      width: 230,
+//                                                      id: 'htmlPicture_Dashboard_HotSeatAdvertisement_HotSeat0',
+//                                                      margin: '-30 0 0 0',
+//                                                      html: '<img src="resources/icons/freeAdvertisingSpace.png"  style="width: 230px; height: 260px; border:2px solid #ECF0F1;border-radius: 10px 10px 10px 10px;">',
+
+//                                                  },
+//                                                      {
+//                                                          xtype: 'container',
+//                                                          // width: '91.1%',
+//                                                          width: 228,
+//                                                          height: 60,
+//                                                          hidden: true,
+//                                                          margin: '14 0 0 16',
+
+//                                                          layout: {
+//                                                              type: 'vbox',
+//                                                              pack: 'center',
+//                                                              align: 'center',
+//                                                          },
+//                                                          id: 'containerDashboard_HotSeatAdvertisement_ProfileText0',
+//                                                          // hidden:true,
+
+//                                                          style: 'background-color:rgba(0, 0, 0, 0.5);border-radius: 0px 0px 0px 0px;',
+//                                                          items: [
+
+//                                                          ]
+//                                                      },
+
+//                                                {
+//                                                    xtype: 'container',
+//                                                    id: 'btnDashboard_HotSeatAdvertisement_UserNameProfile0',
+//                                                    margin: '-40 0 0 0',
+//                                                    height: 40,
+//                                                    zIndex: 200,
+//                                                    //width: 228,
+//                                                    width: '100%',
+//                                                    style: 'background-color:rgba(0, 0, 0, 0.2);border-radius:0px 0px 10px 10px;border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1;',
+//                                                    // iconCls: 'list',
+//                                                    //html: '<div style="border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 30px 30px 30px 30px;width:45px;height:45px;" ><img src="resources/icons/founder.jpg" width="25" height="25"  alt="Company Name" style="margin:7px 0px 0px 0px;border-radius: 50%;"></div>',
+//                                                    //html: '<div style="color:black;text-align: center;font-size:12px;width:100%;font-weight:bold;background-color:rgba(0, 0, 0, 0.5);">Unjun Restaurant Sdn Bhd</div><br><div style="color:black;text-align: center;font-size:10px;width:100%;font-weight:normal;margin:-15px 0px 0px 0px;">Date:28/12/2020 10:30:54PM</div>',
+//                                                    // 
+//                                                    layout: {
+//                                                        type: 'vbox',
+//                                                        pack: 'center',
+//                                                        align: 'center',
+//                                                    },
+//                                                    items: [
+//                                                        {
+//                                                            id: 'htmlDasboard_HotSeatAdvertisement_EnterpriseName0',
+//                                                            html: '<div style="color:white;text-align: center;font-size:12px;width:100%;font-weight:bold;background-color:transparent">MHSya Enterprise</div>',
+//                                                        },
+//                                                         {
+//                                                             xtype: 'container',
+//                                                             style: 'background-color:white;',
+//                                                             height: 2,
+//                                                             width: '80%',
+//                                                             // html: '<div style="color:white;text-align: center;font-size:10px;width:90%;font-weight:normal;background-color:white;margin:0px 0px 0px 0px;height:5px"/>',
+//                                                         },
+//                                                          {
+//                                                              id: 'htmlDasboard_HotSeatAdvertisement_Title0',
+//                                                              html: '<div style="color:white;text-align: center;font-size:10px;width:100%;font-weight:bold;background-color:transparent;margin:0px 0px 0px 0px;">Penjahit baju Custome Made KL</div>',
+//                                                          },
+//                                                    ]
+
+//                                                },
+//                                            ]
+//                                        },
+
+
+
+//                                 {
+//                                     xtype: 'panel',
+//                                     width: 15
+//                                 },
+
+
+
+//                                   {
+//                                       xtype: 'container',
+//                                       height: 300,
+//                                       width: 230,
+//                                       margin: '0 0 0 0',
+//                                       style: 'background-color:transparent;',
+//                                       layout: {
+//                                           type: 'vbox',
+//                                           pack: 'center',
+//                                           align: 'center',
+//                                       },
+//                                       items: [
+
+
+//                                           {
+//                                               xtype: 'container',
+//                                               width: '100%',
+//                                               height: 30,
+//                                               docked: 'bottom',
+//                                               hidden: true,
+//                                               margin: '-2 0 0 0',
+//                                               style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px none #ECF0F1 white;background: white;border-radius: 0px 0px 5px 5px;',
+//                                               layout: {
+//                                                   type: 'vbox',
+//                                                   pack: 'center',
+//                                                   align: 'center',
+//                                               },
+//                                               items: [
+
+
+//                                                       {
+//                                                           xtype: 'container',
+//                                                           id: 'DashboardHotSeatAdvertisementButton_bottom1',
+//                                                           //hidden:true,
+//                                                           width: '100%',
+//                                                           style: "background-color: transparent",
+//                                                           //style: "background-color: #F35B57;",
+//                                                           margin: '0 0 0 0',
+//                                                           layout: {
+//                                                               type: 'hbox',
+//                                                               pack: 'center',
+//                                                               align: 'center'
+
+//                                                           },
+
+
+//                                                           items: [
+
+//                                                               {
+//                                                                   xtype: 'button',
+//                                                                   margin: '0 0 0 0',
+//                                                                   ui: 'plain',
+//                                                                   width: '100%',
+//                                                                   id: 'btn_DashboardAdvertisementButton_HotSeatAdvertisementTxt1',
+//                                                                   //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
+//                                                                   html: '<div style="color:black;text-align: center;font-size:12px;width:100%;"><b>Available Advertisement Space! >></b></div>',
+//                                                                   handler: function () {
+
+
+//                                                                   }
+
+
+//                                                               }
+
+//                                                           ]
+
+//                                                       },
+
+
+
+
+//                                               ]
+//                                           },
+
+
+
+//                                           {
+//                                               xtype: 'button',
+//                                               id: 'btnDashboard_HotSeatAdvertisement_PicProfile1',
+//                                               margin: '0 0 0 0',
+//                                               //docked:'top',
+//                                               height: 60,
+//                                               width: 60,
+//                                               // iconCls: 'list',
+//                                               //html: '<div style="border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 30px 30px 30px 30px;width:45px;height:45px;" ><img src="resources/icons/founder.jpg" width="25" height="25"  alt="Company Name" style="margin:7px 0px 0px 0px;border-radius: 50%;"></div>',
+//                                               html: '<img src="resources/icons/Logo/LogoOrangeSimplifed.png" style="width: 50px; height: 50px; border:3px solid #c800ffc9; border-radius: 50%; max-width:200px;">',
+
+
+//                                               // html: '<div ><img src="resources/icons/videoPurple.png" width="35" height="35" alt="Company Name"></div>',
+//                                               ui: 'plain',
+//                                               handler: function () {
+
+
+//                                               }
+//                                           },
+
+
+//                                             {
+
+//                                                 height: 260,
+//                                                 width: 230,
+//                                                 id: 'htmlPicture_Dashboard_HotSeatAdvertisement_HotSeat1',
+//                                                 margin: '-30 0 0 0',
+//                                                 html: '<img src="resources/icons/freeAdvertisingSpace.png"  style="width: 230px; height: 260px; border:2px solid #ECF0F1;border-radius: 10px 10px 10px 10px;">',
+
+//                                             },
+//                                                 {
+//                                                     xtype: 'container',
+//                                                     // width: '91.1%',
+//                                                     width: 228,
+//                                                     height: 60,
+//                                                     hidden: true,
+//                                                     margin: '14 0 0 16',
+
+//                                                     layout: {
+//                                                         type: 'vbox',
+//                                                         pack: 'center',
+//                                                         align: 'center',
+//                                                     },
+//                                                     id: 'containerDashboard_HotSeatAdvertisement_ProfileText1',
+//                                                     // hidden:true,
+
+//                                                     style: 'background-color:rgba(0, 0, 0, 0.5);border-radius: 0px 0px 0px 0px;',
+//                                                     items: [
+
+//                                                     ]
+//                                                 },
+
+//                                           {
+//                                               xtype: 'container',
+//                                               id: 'btnDashboard_HotSeatAdvertisement_UserNameProfile1',
+//                                               margin: '-40 0 0 0',
+//                                               height: 40,
+//                                               zIndex: 200,
+//                                               //width: 228,
+//                                               width: '100%',
+//                                               style: 'background-color:rgba(0, 0, 0, 0.2);border-radius:0px 0px 10px 10px;border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1;',
+//                                               // iconCls: 'list',
+//                                               //html: '<div style="border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 30px 30px 30px 30px;width:45px;height:45px;" ><img src="resources/icons/founder.jpg" width="25" height="25"  alt="Company Name" style="margin:7px 0px 0px 0px;border-radius: 50%;"></div>',
+//                                               //html: '<div style="color:black;text-align: center;font-size:12px;width:100%;font-weight:bold;background-color:rgba(0, 0, 0, 0.5);">Unjun Restaurant Sdn Bhd</div><br><div style="color:black;text-align: center;font-size:10px;width:100%;font-weight:normal;margin:-15px 0px 0px 0px;">Date:28/12/2020 10:30:54PM</div>',
+//                                               // 
+//                                               layout: {
+//                                                   type: 'vbox',
+//                                                   pack: 'center',
+//                                                   align: 'center',
+//                                               },
+//                                               items: [
+//                                                   {
+//                                                       id: 'htmlDasboard_HotSeatAdvertisement_EnterpriseName1',
+//                                                       html: '<div style="color:white;text-align: center;font-size:12px;width:100%;font-weight:bold;background-color:transparent">MHSya Enterprise</div>',
+//                                                   },
+//                                                    {
+//                                                        xtype: 'container',
+//                                                        style: 'background-color:white;',
+//                                                        height: 2,
+//                                                        width: '80%',
+//                                                        // html: '<div style="color:white;text-align: center;font-size:10px;width:90%;font-weight:normal;background-color:white;margin:0px 0px 0px 0px;height:5px"/>',
+//                                                    },
+//                                                     {
+//                                                         id: 'htmlDasboard_HotSeatAdvertisement_Title1',
+//                                                         html: '<div style="color:white;text-align: center;font-size:10px;width:100%;font-weight:bold;background-color:transparent;margin:0px 0px 0px 0px;">Penjahit baju Custome Made KL</div>',
+//                                                     },
+//                                               ]
+
+//                                           },
+//                                       ]
+//                                   },
+
+
+//                                   ////////////////hotseat 2
+
+//                                 {
+//                                     xtype: 'panel',
+//                                     width: 15
+//                                 },
+
+//                                   {
+//                                       xtype: 'container',
+//                                       height: 300,
+//                                       width: 230,
+//                                       margin: '0 0 0 0',
+//                                       style: 'background-color:transparent;',
+//                                       layout: {
+//                                           type: 'vbox',
+//                                           pack: 'center',
+//                                           align: 'center',
+//                                       },
+//                                       items: [
+
+
+//                                           {
+//                                               xtype: 'container',
+//                                               width: '100%',
+//                                               height: 30,
+//                                               docked: 'bottom',
+//                                               hidden: true,
+//                                               margin: '-2 0 0 0',
+//                                               style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px none #ECF0F1 white;background: white;border-radius: 0px 0px 5px 5px;',
+//                                               layout: {
+//                                                   type: 'vbox',
+//                                                   pack: 'center',
+//                                                   align: 'center',
+//                                               },
+//                                               items: [
+
+
+//                                                       {
+//                                                           xtype: 'container',
+//                                                           id: 'DashboardHotSeatAdvertisementButton_bottom2',
+//                                                           //hidden:true,
+//                                                           width: '100%',
+//                                                           style: "background-color: transparent",
+//                                                           //style: "background-color: #F35B57;",
+//                                                           margin: '0 0 0 0',
+//                                                           layout: {
+//                                                               type: 'hbox',
+//                                                               pack: 'center',
+//                                                               align: 'center'
+
+//                                                           },
+
+
+//                                                           items: [
+
+//                                                               {
+//                                                                   xtype: 'button',
+//                                                                   margin: '0 0 0 0',
+//                                                                   ui: 'plain',
+//                                                                   width: '100%',
+//                                                                   id: 'btn_DashboardAdvertisementButton_HotSeatAdvertisementTxt2',
+//                                                                   //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
+//                                                                   html: '<div style="color:black;text-align: center;font-size:12px;width:100%;"><b>Available Advertisement Space! >></b></div>',
+//                                                                   handler: function () {
+
+
+//                                                                   }
+
+
+//                                                               }
+
+//                                                           ]
+
+//                                                       },
+
+
+
+
+//                                               ]
+//                                           },
+
+
+
+//                                           {
+//                                               xtype: 'button',
+//                                               id: 'btnDashboard_HotSeatAdvertisement_PicProfile2',
+//                                               margin: '0 0 0 0',
+//                                               //docked:'top',
+//                                               height: 60,
+//                                               width: 60,
+//                                               // iconCls: 'list',
+//                                               //html: '<div style="border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 30px 30px 30px 30px;width:45px;height:45px;" ><img src="resources/icons/founder.jpg" width="25" height="25"  alt="Company Name" style="margin:7px 0px 0px 0px;border-radius: 50%;"></div>',
+//                                               html: '<img src="resources/icons/Logo/LogoOrangeSimplifed.png" style="width: 50px; height: 50px; border:3px solid #c800ffc9; border-radius: 50%; max-width:200px;">',
+
+
+//                                               // html: '<div ><img src="resources/icons/videoPurple.png" width="35" height="35" alt="Company Name"></div>',
+//                                               ui: 'plain',
+//                                               handler: function () {
+
+
+//                                               }
+//                                           },
+
+
+//                                             {
+
+//                                                 height: 260,
+//                                                 width: 230,
+//                                                 id: 'htmlPicture_Dashboard_HotSeatAdvertisement_HotSeat2',
+//                                                 margin: '-30 0 0 0',
+//                                                 html: '<img src="resources/icons/freeAdvertisingSpace.png"  style="width: 230px; height: 260px; border:2px solid #ECF0F1;border-radius: 10px 10px 10px 10px;">',
+
+//                                             },
+//                                                 {
+//                                                     xtype: 'container',
+//                                                     // width: '91.1%',
+//                                                     width: 228,
+//                                                     height: 60,
+//                                                     hidden: true,
+//                                                     margin: '14 0 0 16',
+
+//                                                     layout: {
+//                                                         type: 'vbox',
+//                                                         pack: 'center',
+//                                                         align: 'center',
+//                                                     },
+//                                                     id: 'containerDashboard_HotSeatAdvertisement_ProfileText2',
+//                                                     // hidden:true,
+
+//                                                     style: 'background-color:rgba(0, 0, 0, 0.5);border-radius: 0px 0px 0px 0px;',
+//                                                     items: [
+
+//                                                     ]
+//                                                 },
+
+//                                           {
+//                                               xtype: 'container',
+//                                               id: 'btnDashboard_HotSeatAdvertisement_UserNameProfile2',
+//                                               margin: '-40 0 0 0',
+//                                               height: 40,
+//                                               zIndex: 200,
+//                                               //width: 228,
+//                                               width: '100%',
+//                                               style: 'background-color:rgba(0, 0, 0, 0.2);border-radius:0px 0px 10px 10px;border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1;',
+//                                               // iconCls: 'list',
+//                                               //html: '<div style="border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 30px 30px 30px 30px;width:45px;height:45px;" ><img src="resources/icons/founder.jpg" width="25" height="25"  alt="Company Name" style="margin:7px 0px 0px 0px;border-radius: 50%;"></div>',
+//                                               //html: '<div style="color:black;text-align: center;font-size:12px;width:100%;font-weight:bold;background-color:rgba(0, 0, 0, 0.5);">Unjun Restaurant Sdn Bhd</div><br><div style="color:black;text-align: center;font-size:10px;width:100%;font-weight:normal;margin:-15px 0px 0px 0px;">Date:28/12/2020 10:30:54PM</div>',
+//                                               // 
+//                                               layout: {
+//                                                   type: 'vbox',
+//                                                   pack: 'center',
+//                                                   align: 'center',
+//                                               },
+//                                               items: [
+//                                                   {
+//                                                       id: 'htmlDasboard_HotSeatAdvertisement_EnterpriseName2',
+//                                                       html: '<div style="color:white;text-align: center;font-size:12px;width:100%;font-weight:bold;background-color:transparent">MHSya Enterprise</div>',
+//                                                   },
+//                                                    {
+//                                                        xtype: 'container',
+//                                                        style: 'background-color:white;',
+//                                                        height: 2,
+//                                                        width: '80%',
+//                                                        // html: '<div style="color:white;text-align: center;font-size:10px;width:90%;font-weight:normal;background-color:white;margin:0px 0px 0px 0px;height:5px"/>',
+//                                                    },
+//                                                     {
+//                                                         id: 'htmlDasboard_HotSeatAdvertisement_Title2',
+//                                                         html: '<div style="color:white;text-align: center;font-size:10px;width:100%;font-weight:bold;background-color:transparent;margin:0px 0px 0px 0px;">Penjahit baju Custome Made KL</div>',
+//                                                     },
+//                                               ]
+
+//                                           },
+//                                       ]
+//                                   },
+
+//                                   ///////hotseat 3
+
+
+//                                 {
+//                                     xtype: 'panel',
+//                                     width: 15
+//                                 },
+//                                   {
+//                                       xtype: 'container',
+//                                       height: 300,
+//                                       width: 230,
+//                                       margin: '0 0 0 0',
+//                                       style: 'background-color:transparent;',
+//                                       layout: {
+//                                           type: 'vbox',
+//                                           pack: 'center',
+//                                           align: 'center',
+//                                       },
+//                                       items: [
+
+
+//                                           {
+//                                               xtype: 'container',
+//                                               width: '100%',
+//                                               height: 30,
+//                                               docked: 'bottom',
+//                                               hidden: true,
+//                                               margin: '-2 0 0 0',
+//                                               style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px none #ECF0F1 white;background: white;border-radius: 0px 0px 5px 5px;',
+//                                               layout: {
+//                                                   type: 'vbox',
+//                                                   pack: 'center',
+//                                                   align: 'center',
+//                                               },
+//                                               items: [
+
+
+//                                                       {
+//                                                           xtype: 'container',
+//                                                           id: 'DashboardHotSeatAdvertisementButton_bottom3',
+//                                                           //hidden:true,
+//                                                           width: '100%',
+//                                                           style: "background-color: transparent",
+//                                                           //style: "background-color: #F35B57;",
+//                                                           margin: '0 0 0 0',
+//                                                           layout: {
+//                                                               type: 'hbox',
+//                                                               pack: 'center',
+//                                                               align: 'center'
+
+//                                                           },
+
+
+//                                                           items: [
+
+//                                                               {
+//                                                                   xtype: 'button',
+//                                                                   margin: '0 0 0 0',
+//                                                                   ui: 'plain',
+//                                                                   width: '100%',
+//                                                                   id: 'btn_DashboardAdvertisementButton_HotSeatAdvertisementTxt3',
+//                                                                   //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
+//                                                                   html: '<div style="color:black;text-align: center;font-size:12px;width:100%;"><b>Available Advertisement Space! >></b></div>',
+//                                                                   handler: function () {
+
+
+//                                                                   }
+
+
+//                                                               }
+
+//                                                           ]
+
+//                                                       },
+
+
+
+
+//                                               ]
+//                                           },
+
+
+
+//                                           {
+//                                               xtype: 'button',
+//                                               id: 'btnDashboard_HotSeatAdvertisement_PicProfile3',
+//                                               margin: '0 0 0 0',
+//                                               //docked:'top',
+//                                               height: 60,
+//                                               width: 60,
+//                                               // iconCls: 'list',
+//                                               //html: '<div style="border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 30px 30px 30px 30px;width:45px;height:45px;" ><img src="resources/icons/founder.jpg" width="25" height="25"  alt="Company Name" style="margin:7px 0px 0px 0px;border-radius: 50%;"></div>',
+//                                               html: '<img src="resources/icons/Logo/LogoOrangeSimplifed.png" style="width: 50px; height: 50px; border:3px solid #c800ffc9; border-radius: 50%; max-width:200px;">',
+
+
+//                                               // html: '<div ><img src="resources/icons/videoPurple.png" width="35" height="35" alt="Company Name"></div>',
+//                                               ui: 'plain',
+//                                               handler: function () {
+
+
+//                                               }
+//                                           },
+
+
+//                                             {
+
+//                                                 height: 260,
+//                                                 width: 230,
+//                                                 id: 'htmlPicture_Dashboard_HotSeatAdvertisement_HotSeat3',
+//                                                 margin: '-30 0 0 0',
+//                                                 html: '<img src="resources/icons/freeAdvertisingSpace.png"  style="width: 230px; height: 260px; border:2px solid #ECF0F1;border-radius: 10px 10px 10px 10px;">',
+
+//                                             },
+//                                                 {
+//                                                     xtype: 'container',
+//                                                     // width: '91.1%',
+//                                                     width: 228,
+//                                                     height: 60,
+//                                                     hidden: true,
+//                                                     margin: '14 0 0 16',
+
+//                                                     layout: {
+//                                                         type: 'vbox',
+//                                                         pack: 'center',
+//                                                         align: 'center',
+//                                                     },
+//                                                     id: 'containerDashboard_HotSeatAdvertisement_ProfileText3',
+//                                                     // hidden:true,
+
+//                                                     style: 'background-color:rgba(0, 0, 0, 0.5);border-radius: 0px 0px 0px 0px;',
+//                                                     items: [
+
+//                                                     ]
+//                                                 },
+
+//                                           {
+//                                               xtype: 'container',
+//                                               id: 'btnDashboard_HotSeatAdvertisement_UserNameProfile3',
+//                                               margin: '-40 0 0 0',
+//                                               height: 40,
+//                                               zIndex: 200,
+//                                               //width: 228,
+//                                               width: '100%',
+//                                               style: 'background-color:rgba(0, 0, 0, 0.2);border-radius:0px 0px 10px 10px;border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1;',
+//                                               // iconCls: 'list',
+//                                               //html: '<div style="border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 30px 30px 30px 30px;width:45px;height:45px;" ><img src="resources/icons/founder.jpg" width="25" height="25"  alt="Company Name" style="margin:7px 0px 0px 0px;border-radius: 50%;"></div>',
+//                                               //html: '<div style="color:black;text-align: center;font-size:12px;width:100%;font-weight:bold;background-color:rgba(0, 0, 0, 0.5);">Unjun Restaurant Sdn Bhd</div><br><div style="color:black;text-align: center;font-size:10px;width:100%;font-weight:normal;margin:-15px 0px 0px 0px;">Date:28/12/2020 10:30:54PM</div>',
+//                                               // 
+//                                               layout: {
+//                                                   type: 'vbox',
+//                                                   pack: 'center',
+//                                                   align: 'center',
+//                                               },
+//                                               items: [
+//                                                   {
+//                                                       id: 'htmlDasboard_HotSeatAdvertisement_EnterpriseName3',
+//                                                       html: '<div style="color:white;text-align: center;font-size:12px;width:100%;font-weight:bold;background-color:transparent">MHSya Enterprise</div>',
+//                                                   },
+//                                                    {
+//                                                        xtype: 'container',
+//                                                        style: 'background-color:white;',
+//                                                        height: 2,
+//                                                        width: '80%',
+//                                                        // html: '<div style="color:white;text-align: center;font-size:10px;width:90%;font-weight:normal;background-color:white;margin:0px 0px 0px 0px;height:5px"/>',
+//                                                    },
+//                                                     {
+//                                                         id: 'htmlDasboard_HotSeatAdvertisement_Title3',
+//                                                         html: '<div style="color:white;text-align: center;font-size:10px;width:100%;font-weight:bold;background-color:transparent;margin:0px 0px 0px 0px;">Penjahit baju Custome Made KL</div>',
+//                                                     },
+//                                               ]
+
+//                                           },
+//                                       ]
+//                                   },
+
+
+
+
+
+
+
+
+//                                 ///////////////////hotseat 4
+//                            {
+//                                xtype: 'panel',
+//                                width: 15
+//                            },
+
+//                                   {
+//                                       xtype: 'container',
+//                                       height: 300,
+//                                       width: 230,
+//                                       margin: '0 0 0 0',
+//                                       style: 'background-color:transparent;',
+//                                       layout: {
+//                                           type: 'vbox',
+//                                           pack: 'center',
+//                                           align: 'center',
+//                                       },
+//                                       items: [
+
+
+//                                           {
+//                                               xtype: 'container',
+//                                               width: '100%',
+//                                               height: 30,
+//                                               docked: 'bottom',
+//                                               hidden: true,
+//                                               margin: '-2 0 0 0',
+//                                               style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px none #ECF0F1 white;background: white;border-radius: 0px 0px 5px 5px;',
+//                                               layout: {
+//                                                   type: 'vbox',
+//                                                   pack: 'center',
+//                                                   align: 'center',
+//                                               },
+//                                               items: [
+
+
+//                                                       {
+//                                                           xtype: 'container',
+//                                                           id: 'DashboardHotSeatAdvertisementButton_bottom4',
+//                                                           //hidden:true,
+//                                                           width: '100%',
+//                                                           style: "background-color: transparent",
+//                                                           //style: "background-color: #F35B57;",
+//                                                           margin: '0 0 0 0',
+//                                                           layout: {
+//                                                               type: 'hbox',
+//                                                               pack: 'center',
+//                                                               align: 'center'
+
+//                                                           },
+
+
+//                                                           items: [
+
+//                                                               {
+//                                                                   xtype: 'button',
+//                                                                   margin: '0 0 0 0',
+//                                                                   ui: 'plain',
+//                                                                   width: '100%',
+//                                                                   id: 'btn_DashboardAdvertisementButton_HotSeatAdvertisementTxt4',
+//                                                                   //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
+//                                                                   html: '<div style="color:black;text-align: center;font-size:12px;width:100%;"><b>Available Advertisement Space! >></b></div>',
+//                                                                   handler: function () {
+
+
+//                                                                   }
+
+
+//                                                               }
+
+//                                                           ]
+
+//                                                       },
+
+
+
+
+//                                               ]
+//                                           },
+
+
+
+//                                           {
+//                                               xtype: 'button',
+//                                               id: 'btnDashboard_HotSeatAdvertisement_PicProfile4',
+//                                               margin: '0 0 0 0',
+//                                               //docked:'top',
+//                                               height: 60,
+//                                               width: 60,
+//                                               // iconCls: 'list',
+//                                               //html: '<div style="border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 30px 30px 30px 30px;width:45px;height:45px;" ><img src="resources/icons/founder.jpg" width="25" height="25"  alt="Company Name" style="margin:7px 0px 0px 0px;border-radius: 50%;"></div>',
+//                                               html: '<img src="resources/icons/Logo/LogoOrangeSimplifed.png" style="width: 50px; height: 50px; border:3px solid #c800ffc9; border-radius: 50%; max-width:200px;">',
+
+
+//                                               // html: '<div ><img src="resources/icons/videoPurple.png" width="35" height="35" alt="Company Name"></div>',
+//                                               ui: 'plain',
+//                                               handler: function () {
+
+
+//                                               }
+//                                           },
+
+
+//                                             {
+
+//                                                 height: 260,
+//                                                 width: 230,
+//                                                 id: 'htmlPicture_Dashboard_HotSeatAdvertisement_HotSeat4',
+//                                                 margin: '-30 0 0 0',
+//                                                 html: '<img src="resources/icons/freeAdvertisingSpace.png"  style="width: 230px; height: 260px; border:2px solid #ECF0F1;border-radius: 10px 10px 10px 10px;">',
+
+//                                             },
+//                                                 {
+//                                                     xtype: 'container',
+//                                                     // width: '91.1%',
+//                                                     width: 228,
+//                                                     height: 60,
+//                                                     hidden: true,
+//                                                     margin: '14 0 0 16',
+
+//                                                     layout: {
+//                                                         type: 'vbox',
+//                                                         pack: 'center',
+//                                                         align: 'center',
+//                                                     },
+//                                                     id: 'containerDashboard_HotSeatAdvertisement_ProfileText4',
+//                                                     // hidden:true,
+
+//                                                     style: 'background-color:rgba(0, 0, 0, 0.5);border-radius: 0px 0px 0px 0px;',
+//                                                     items: [
+
+//                                                     ]
+//                                                 },
+
+//                                           {
+//                                               xtype: 'container',
+//                                               id: 'btnDashboard_HotSeatAdvertisement_UserNameProfile4',
+//                                               margin: '-40 0 0 0',
+//                                               height: 40,
+//                                               zIndex: 200,
+//                                               //width: 228,
+//                                               width: '100%',
+//                                               style: 'background-color:rgba(0, 0, 0, 0.2);border-radius:0px 0px 10px 10px;border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1;',
+//                                               // iconCls: 'list',
+//                                               //html: '<div style="border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 30px 30px 30px 30px;width:45px;height:45px;" ><img src="resources/icons/founder.jpg" width="25" height="25"  alt="Company Name" style="margin:7px 0px 0px 0px;border-radius: 50%;"></div>',
+//                                               //html: '<div style="color:black;text-align: center;font-size:12px;width:100%;font-weight:bold;background-color:rgba(0, 0, 0, 0.5);">Unjun Restaurant Sdn Bhd</div><br><div style="color:black;text-align: center;font-size:10px;width:100%;font-weight:normal;margin:-15px 0px 0px 0px;">Date:28/12/2020 10:30:54PM</div>',
+//                                               // 
+//                                               layout: {
+//                                                   type: 'vbox',
+//                                                   pack: 'center',
+//                                                   align: 'center',
+//                                               },
+//                                               items: [
+//                                                   {
+//                                                       id: 'htmlDasboard_HotSeatAdvertisement_EnterpriseName4',
+//                                                       html: '<div style="color:white;text-align: center;font-size:12px;width:100%;font-weight:bold;background-color:transparent">MHSya Enterprise</div>',
+//                                                   },
+//                                                    {
+//                                                        xtype: 'container',
+//                                                        style: 'background-color:white;',
+//                                                        height: 2,
+//                                                        width: '80%',
+//                                                        // html: '<div style="color:white;text-align: center;font-size:10px;width:90%;font-weight:normal;background-color:white;margin:0px 0px 0px 0px;height:5px"/>',
+//                                                    },
+//                                                     {
+//                                                         id: 'htmlDasboard_HotSeatAdvertisement_Title4',
+//                                                         html: '<div style="color:white;text-align: center;font-size:10px;width:100%;font-weight:bold;background-color:transparent;margin:0px 0px 0px 0px;">Penjahit baju Custome Made KL</div>',
+//                                                     },
+//                                               ]
+
+//                                           },
+//                                       ]
+//                                   },
+
+
+
+//                                 /////////////////hotseat 5
+
+
+//                                   {
+//                                       xtype: 'panel',
+//                                       width: 15
+//                                   },
+
+//                                   {
+//                                       xtype: 'container',
+//                                       height: 300,
+//                                       width: 230,
+//                                       margin: '0 0 0 0',
+//                                       style: 'background-color:transparent;',
+//                                       layout: {
+//                                           type: 'vbox',
+//                                           pack: 'center',
+//                                           align: 'center',
+//                                       },
+//                                       items: [
+
+
+//                                           {
+//                                               xtype: 'container',
+//                                               width: '100%',
+//                                               height: 30,
+//                                               docked: 'bottom',
+//                                               hidden: true,
+//                                               margin: '-2 0 0 0',
+//                                               style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px none #ECF0F1 white;background: white;border-radius: 0px 0px 5px 5px;',
+//                                               layout: {
+//                                                   type: 'vbox',
+//                                                   pack: 'center',
+//                                                   align: 'center',
+//                                               },
+//                                               items: [
+
+
+//                                                       {
+//                                                           xtype: 'container',
+//                                                           id: 'DashboardHotSeatAdvertisementButton_bottom5',
+//                                                           //hidden:true,
+//                                                           width: '100%',
+//                                                           style: "background-color: transparent",
+//                                                           //style: "background-color: #F35B57;",
+//                                                           margin: '0 0 0 0',
+//                                                           layout: {
+//                                                               type: 'hbox',
+//                                                               pack: 'center',
+//                                                               align: 'center'
+
+//                                                           },
+
+
+//                                                           items: [
+
+//                                                               {
+//                                                                   xtype: 'button',
+//                                                                   margin: '0 0 0 0',
+//                                                                   ui: 'plain',
+//                                                                   width: '100%',
+//                                                                   id: 'btn_DashboardAdvertisementButton_HotSeatAdvertisementTxt5',
+//                                                                   //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
+//                                                                   html: '<div style="color:black;text-align: center;font-size:12px;width:100%;"><b>Available Advertisement Space! >></b></div>',
+//                                                                   handler: function () {
+
+
+//                                                                   }
+
+
+//                                                               }
+
+//                                                           ]
+
+//                                                       },
+
+
+
+
+//                                               ]
+//                                           },
+
+
+
+//                                           {
+//                                               xtype: 'button',
+//                                               id: 'btnDashboard_HotSeatAdvertisement_PicProfile5',
+//                                               margin: '0 0 0 0',
+//                                               //docked:'top',
+//                                               height: 60,
+//                                               width: 60,
+//                                               // iconCls: 'list',
+//                                               //html: '<div style="border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 30px 30px 30px 30px;width:45px;height:45px;" ><img src="resources/icons/founder.jpg" width="25" height="25"  alt="Company Name" style="margin:7px 0px 0px 0px;border-radius: 50%;"></div>',
+//                                               html: '<img src="resources/icons/Logo/LogoOrangeSimplifed.png" style="width: 50px; height: 50px; border:3px solid #c800ffc9; border-radius: 50%; max-width:200px;">',
+
+
+//                                               // html: '<div ><img src="resources/icons/videoPurple.png" width="35" height="35" alt="Company Name"></div>',
+//                                               ui: 'plain',
+//                                               handler: function () {
+
+
+//                                               }
+//                                           },
+
+
+//                                             {
+
+//                                                 height: 260,
+//                                                 width: 230,
+//                                                 id: 'htmlPicture_Dashboard_HotSeatAdvertisement_HotSeat5',
+//                                                 margin: '-30 0 0 0',
+//                                                 html: '<img src="resources/icons/freeAdvertisingSpace.png"  style="width: 230px; height: 260px; border:2px solid #ECF0F1;border-radius: 10px 10px 10px 10px;">',
+
+//                                             },
+//                                                 {
+//                                                     xtype: 'container',
+//                                                     // width: '91.1%',
+//                                                     width: 228,
+//                                                     height: 60,
+//                                                     hidden: true,
+//                                                     margin: '14 0 0 16',
+
+//                                                     layout: {
+//                                                         type: 'vbox',
+//                                                         pack: 'center',
+//                                                         align: 'center',
+//                                                     },
+//                                                     id: 'containerDashboard_HotSeatAdvertisement_ProfileText5',
+//                                                     // hidden:true,
+
+//                                                     style: 'background-color:rgba(0, 0, 0, 0.5);border-radius: 0px 0px 0px 0px;',
+//                                                     items: [
+
+//                                                     ]
+//                                                 },
+
+//                                           {
+//                                               xtype: 'container',
+//                                               id: 'btnDashboard_HotSeatAdvertisement_UserNameProfile5',
+//                                               margin: '-40 0 0 0',
+//                                               height: 40,
+//                                               zIndex: 200,
+//                                               //width: 228,
+//                                               width: '100%',
+//                                               style: 'background-color:rgba(0, 0, 0, 0.2);border-radius:0px 0px 10px 10px;border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1;',
+//                                               // iconCls: 'list',
+//                                               //html: '<div style="border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 30px 30px 30px 30px;width:45px;height:45px;" ><img src="resources/icons/founder.jpg" width="25" height="25"  alt="Company Name" style="margin:7px 0px 0px 0px;border-radius: 50%;"></div>',
+//                                               //html: '<div style="color:black;text-align: center;font-size:12px;width:100%;font-weight:bold;background-color:rgba(0, 0, 0, 0.5);">Unjun Restaurant Sdn Bhd</div><br><div style="color:black;text-align: center;font-size:10px;width:100%;font-weight:normal;margin:-15px 0px 0px 0px;">Date:28/12/2020 10:30:54PM</div>',
+//                                               // 
+//                                               layout: {
+//                                                   type: 'vbox',
+//                                                   pack: 'center',
+//                                                   align: 'center',
+//                                               },
+//                                               items: [
+//                                                   {
+//                                                       id: 'htmlDasboard_HotSeatAdvertisement_EnterpriseName5',
+//                                                       html: '<div style="color:white;text-align: center;font-size:12px;width:100%;font-weight:bold;background-color:transparent">MHSya Enterprise</div>',
+//                                                   },
+//                                                    {
+//                                                        xtype: 'container',
+//                                                        style: 'background-color:white;',
+//                                                        height: 2,
+//                                                        width: '80%',
+//                                                        // html: '<div style="color:white;text-align: center;font-size:10px;width:90%;font-weight:normal;background-color:white;margin:0px 0px 0px 0px;height:5px"/>',
+//                                                    },
+//                                                     {
+//                                                         id: 'htmlDasboard_HotSeatAdvertisement_Title5',
+//                                                         html: '<div style="color:white;text-align: center;font-size:10px;width:100%;font-weight:bold;background-color:transparent;margin:0px 0px 0px 0px;">Penjahit baju Custome Made KL</div>',
+//                                                     },
+//                                               ]
+
+//                                           },
+//                                       ]
+//                                   },
+
+                        
+//                                 /////////////////////////hotseat 6
+
+
+//                                   {
+//                                       xtype: 'panel',
+//                                       width: 15
+//                                   },
+
+//                                   {
+//                                       xtype: 'container',
+//                                       height: 300,
+//                                       width: 230,
+//                                       margin: '0 0 0 0',
+//                                       style: 'background-color:transparent;',
+//                                       layout: {
+//                                           type: 'vbox',
+//                                           pack: 'center',
+//                                           align: 'center',
+//                                       },
+//                                       items: [
+
+
+//                                           {
+//                                               xtype: 'container',
+//                                               width: '100%',
+//                                               height: 30,
+//                                               docked: 'bottom',
+//                                               hidden: true,
+//                                               margin: '-2 0 0 0',
+//                                               style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px none #ECF0F1 white;background: white;border-radius: 0px 0px 5px 5px;',
+//                                               layout: {
+//                                                   type: 'vbox',
+//                                                   pack: 'center',
+//                                                   align: 'center',
+//                                               },
+//                                               items: [
+
+
+//                                                       {
+//                                                           xtype: 'container',
+//                                                           id: 'DashboardHotSeatAdvertisementButton_bottom6',
+//                                                           //hidden:true,
+//                                                           width: '100%',
+//                                                           style: "background-color: transparent",
+//                                                           //style: "background-color: #F35B57;",
+//                                                           margin: '0 0 0 0',
+//                                                           layout: {
+//                                                               type: 'hbox',
+//                                                               pack: 'center',
+//                                                               align: 'center'
+
+//                                                           },
+
+
+//                                                           items: [
+
+//                                                               {
+//                                                                   xtype: 'button',
+//                                                                   margin: '0 0 0 0',
+//                                                                   ui: 'plain',
+//                                                                   width: '100%',
+//                                                                   id: 'btn_DashboardAdvertisementButton_HotSeatAdvertisementTxt6',
+//                                                                   //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
+//                                                                   html: '<div style="color:black;text-align: center;font-size:12px;width:100%;"><b>Available Advertisement Space! >></b></div>',
+//                                                                   handler: function () {
+
+
+//                                                                   }
+
+
+//                                                               }
+
+//                                                           ]
+
+//                                                       },
+
+
+
+
+//                                               ]
+//                                           },
+
+
+
+//                                           {
+//                                               xtype: 'button',
+//                                               id: 'btnDashboard_HotSeatAdvertisement_PicProfile6',
+//                                               margin: '0 0 0 0',
+//                                               //docked:'top',
+//                                               height: 60,
+//                                               width: 60,
+//                                               // iconCls: 'list',
+//                                               //html: '<div style="border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 30px 30px 30px 30px;width:45px;height:45px;" ><img src="resources/icons/founder.jpg" width="25" height="25"  alt="Company Name" style="margin:7px 0px 0px 0px;border-radius: 50%;"></div>',
+//                                               html: '<img src="resources/icons/Logo/LogoOrangeSimplifed.png" style="width: 50px; height: 50px; border:3px solid #c800ffc9; border-radius: 50%; max-width:200px;">',
+
+
+//                                               // html: '<div ><img src="resources/icons/videoPurple.png" width="35" height="35" alt="Company Name"></div>',
+//                                               ui: 'plain',
+//                                               handler: function () {
+
+
+//                                               }
+//                                           },
+
+
+//                                             {
+
+//                                                 height: 260,
+//                                                 width: 230,
+//                                                 id: 'htmlPicture_Dashboard_HotSeatAdvertisement_HotSeat6',
+//                                                 margin: '-30 0 0 0',
+//                                                 html: '<img src="resources/icons/freeAdvertisingSpace.png"  style="width: 230px; height: 260px; border:2px solid #ECF0F1;border-radius: 10px 10px 10px 10px;">',
+
+//                                             },
+//                                                 {
+//                                                     xtype: 'container',
+//                                                     // width: '91.1%',
+//                                                     width: 228,
+//                                                     height: 60,
+//                                                     hidden: true,
+//                                                     margin: '14 0 0 16',
+
+//                                                     layout: {
+//                                                         type: 'vbox',
+//                                                         pack: 'center',
+//                                                         align: 'center',
+//                                                     },
+//                                                     id: 'containerDashboard_HotSeatAdvertisement_ProfileText6',
+//                                                     // hidden:true,
+
+//                                                     style: 'background-color:rgba(0, 0, 0, 0.5);border-radius: 0px 0px 0px 0px;',
+//                                                     items: [
+
+//                                                     ]
+//                                                 },
+
+//                                           {
+//                                               xtype: 'container',
+//                                               id: 'btnDashboard_HotSeatAdvertisement_UserNameProfile6',
+//                                               margin: '-40 0 0 0',
+//                                               height: 40,
+//                                               zIndex: 200,
+//                                               //width: 228,
+//                                               width: '100%',
+//                                               style: 'background-color:rgba(0, 0, 0, 0.2);border-radius:0px 0px 10px 10px;border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1;',
+//                                               // iconCls: 'list',
+//                                               //html: '<div style="border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 30px 30px 30px 30px;width:45px;height:45px;" ><img src="resources/icons/founder.jpg" width="25" height="25"  alt="Company Name" style="margin:7px 0px 0px 0px;border-radius: 50%;"></div>',
+//                                               //html: '<div style="color:black;text-align: center;font-size:12px;width:100%;font-weight:bold;background-color:rgba(0, 0, 0, 0.5);">Unjun Restaurant Sdn Bhd</div><br><div style="color:black;text-align: center;font-size:10px;width:100%;font-weight:normal;margin:-15px 0px 0px 0px;">Date:28/12/2020 10:30:54PM</div>',
+//                                               // 
+//                                               layout: {
+//                                                   type: 'vbox',
+//                                                   pack: 'center',
+//                                                   align: 'center',
+//                                               },
+//                                               items: [
+//                                                   {
+//                                                       id: 'htmlDasboard_HotSeatAdvertisement_EnterpriseName6',
+//                                                       html: '<div style="color:white;text-align: center;font-size:12px;width:100%;font-weight:bold;background-color:transparent">MHSya Enterprise</div>',
+//                                                   },
+//                                                    {
+//                                                        xtype: 'container',
+//                                                        style: 'background-color:white;',
+//                                                        height: 2,
+//                                                        width: '80%',
+//                                                        // html: '<div style="color:white;text-align: center;font-size:10px;width:90%;font-weight:normal;background-color:white;margin:0px 0px 0px 0px;height:5px"/>',
+//                                                    },
+//                                                     {
+//                                                         id: 'htmlDasboard_HotSeatAdvertisement_Title6',
+//                                                         html: '<div style="color:white;text-align: center;font-size:10px;width:100%;font-weight:bold;background-color:transparent;margin:0px 0px 0px 0px;">Penjahit baju Custome Made KL</div>',
+//                                                     },
+//                                               ]
+
+//                                           },
+//                                       ]
+//                                   },
+
+
+
+
+
+//                                 ////////////// hotseat 7
+
+
+
+//                                         {
+//                                             xtype: 'panel',
+//                                             width: 15
+//                                         },
+
+//                                 {
+//                                     xtype: 'container',
+//                                     height: 300,
+//                                     width: 230,
+//                                     margin: '0 0 0 0',
+//                                     style: 'background-color:transparent;',
+//                                     layout: {
+//                                         type: 'vbox',
+//                                         pack: 'center',
+//                                         align: 'center',
+//                                     },
+//                                     items: [
+
+
+//                                         {
+//                                             xtype: 'container',
+//                                             width: '100%',
+//                                             height: 30,
+//                                             docked: 'bottom',
+//                                             hidden: true,
+//                                             margin: '-2 0 0 0',
+//                                             style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px none #ECF0F1 white;background: white;border-radius: 0px 0px 5px 5px;',
+//                                             layout: {
+//                                                 type: 'vbox',
+//                                                 pack: 'center',
+//                                                 align: 'center',
+//                                             },
+//                                             items: [
+
+
+//                                                     {
+//                                                         xtype: 'container',
+//                                                         id: 'DashboardHotSeatAdvertisementButton_bottom7',
+//                                                         //hidden:true,
+//                                                         width: '100%',
+//                                                         style: "background-color: transparent",
+//                                                         //style: "background-color: #F35B57;",
+//                                                         margin: '0 0 0 0',
+//                                                         layout: {
+//                                                             type: 'hbox',
+//                                                             pack: 'center',
+//                                                             align: 'center'
+
+//                                                         },
+
+
+//                                                         items: [
+
+//                                                             {
+//                                                                 xtype: 'button',
+//                                                                 margin: '0 0 0 0',
+//                                                                 ui: 'plain',
+//                                                                 width: '100%',
+//                                                                 id: 'btn_DashboardAdvertisementButton_HotSeatAdvertisementTxt7',
+//                                                                 //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
+//                                                                 html: '<div style="color:black;text-align: center;font-size:12px;width:100%;"><b>Available Advertisement Space! >></b></div>',
+//                                                                 handler: function () {
+
+
+//                                                                 }
+
+
+//                                                             }
+
+                                                                 
+//                                                         ]
+
+//                                                     },
+
+
+
+
+//                                             ]
+//                                         },
+
+
+
+//                                         {
+//                                             xtype: 'button',
+//                                             id: 'btnDashboard_HotSeatAdvertisement_PicProfile7',
+//                                             margin: '0 0 0 0',
+//                                             //docked:'top',
+//                                             height: 60,
+//                                             width: 60,
+//                                             // iconCls: 'list',
+//                                             //html: '<div style="border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 30px 30px 30px 30px;width:45px;height:45px;" ><img src="resources/icons/founder.jpg" width="25" height="25"  alt="Company Name" style="margin:7px 0px 0px 0px;border-radius: 50%;"></div>',
+//                                             html: '<img src="resources/icons/Logo/LogoOrangeSimplifed.png" style="width: 50px; height: 50px; border:3px solid #c800ffc9; border-radius: 50%; max-width:200px;">',
+
+
+//                                             // html: '<div ><img src="resources/icons/videoPurple.png" width="35" height="35" alt="Company Name"></div>',
+//                                             ui: 'plain',
+//                                             handler: function () {
+
+
+//                                             }
+//                                         },
+
+
+//                                           {
+
+//                                               height: 260,
+//                                               width: 230,
+//                                               id: 'htmlPicture_Dashboard_HotSeatAdvertisement_HotSeat7',
+//                                               margin: '-30 0 0 0',
+//                                               html: '<img src="resources/icons/freeAdvertisingSpace.png"  style="width: 230px; height: 260px; border:2px solid #ECF0F1;border-radius: 10px 10px 10px 10px;">',
+
+//                                           },
+//                                               {
+//                                                   xtype: 'container',
+//                                                   // width: '91.1%',
+//                                                   width: 228,
+//                                                   height: 60,
+//                                                   hidden: true,
+//                                                   margin: '14 0 0 16',
+
+//                                                   layout: {
+//                                                       type: 'vbox',
+//                                                       pack: 'center',
+//                                                       align: 'center',
+//                                                   },
+//                                                   id: 'containerDashboard_HotSeatAdvertisement_ProfileText7',
+//                                                   // hidden:true,
+
+//                                                   style: 'background-color:rgba(0, 0, 0, 0.5);border-radius: 0px 0px 0px 0px;',
+//                                                   items: [
+
+//                                                   ]
+//                                               },
+
+//                                         {
+//                                             xtype: 'container',
+//                                             id: 'btnDashboard_HotSeatAdvertisement_UserNameProfile7',
+//                                             margin: '-40 0 0 0',
+//                                             height: 40,
+//                                             zIndex: 200,
+//                                             //width: 228,
+//                                             width: '100%',
+//                                             style: 'background-color:rgba(0, 0, 0, 0.2);border-radius:0px 0px 10px 10px;border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1;',
+//                                             // iconCls: 'list',
+//                                             //html: '<div style="border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 30px 30px 30px 30px;width:45px;height:45px;" ><img src="resources/icons/founder.jpg" width="25" height="25"  alt="Company Name" style="margin:7px 0px 0px 0px;border-radius: 50%;"></div>',
+//                                             //html: '<div style="color:black;text-align: center;font-size:12px;width:100%;font-weight:bold;background-color:rgba(0, 0, 0, 0.5);">Unjun Restaurant Sdn Bhd</div><br><div style="color:black;text-align: center;font-size:10px;width:100%;font-weight:normal;margin:-15px 0px 0px 0px;">Date:28/12/2020 10:30:54PM</div>',
+//                                             // 
+//                                             layout: {
+//                                                 type: 'vbox',
+//                                                 pack: 'center',
+//                                                 align: 'center',
+//                                             },
+//                                             items: [
+//                                                 {
+//                                                     id: 'htmlDasboard_HotSeatAdvertisement_EnterpriseName7',
+//                                                     html: '<div style="color:white;text-align: center;font-size:12px;width:100%;font-weight:bold;background-color:transparent">MHSya Enterprise</div>',
+//                                                 },
+//                                                  {
+//                                                      xtype: 'container',
+//                                                      style: 'background-color:white;',
+//                                                      height: 2,
+//                                                      width: '80%',
+//                                                      // html: '<div style="color:white;text-align: center;font-size:10px;width:90%;font-weight:normal;background-color:white;margin:0px 0px 0px 0px;height:5px"/>',
+//                                                  },
+//                                                   {
+//                                                       id: 'htmlDasboard_HotSeatAdvertisement_Title7',
+//                                                       html: '<div style="color:white;text-align: center;font-size:10px;width:100%;font-weight:bold;background-color:transparent;margin:0px 0px 0px 0px;">Penjahit baju Custome Made KL</div>',
+//                                                   },
+//                                             ]
+
+//                                         },
+//                                     ]
+//                                 },
+//                                 {
+//                                     xtype: 'panel',
+//                                     width: 15
+//                                 }
+
+//                             ]
+//                         },
+
+
+
+
+
+
+
+
+
+
+//                         {
+//                             xtype: 'spacer'
+//                         },
+//                     ]
+
+//                 },
 
 /////////hot Seat Promotion END
 
