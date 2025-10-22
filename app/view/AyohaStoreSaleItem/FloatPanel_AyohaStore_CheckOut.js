@@ -6463,7 +6463,7 @@ else{
                     data = Ext.decode(result.responseText.trim());
     
                     if (data.success == "true") {
-                        FloatPanel_AyohaStore_CheckOut_PlayAyohaPointSound();
+                      //  FloatPanel_AyohaStore_CheckOut_PlayAyohaPointSound();
                         FloatPanel_AyohaStore_AyohaPointCollectedAnimShow();                   
                         FloatPanel_AyohaStore_CartHide();
                         FloatPanel_AyohaStore_CheckOutHide();

@@ -45,6 +45,10 @@
       'EnterpriseTagLine',
       'AdvertisementCode',
       'isMember',
+      'CheckInDateTime',
+      'RelativeCheckInTime',
+      'AyohaRewardPointCheckIn',
+      'CheckInCount',
       {
           name: 'ModifiedCountStar',
           convert: function (value, record) {
@@ -486,6 +490,31 @@
                   return _value;
               }
           },
+          {
+            name: 'ModifiedIsMemberDashboardMerchantListLastCheckIn',
+            convert: function (value, record) {
+                var _value;
+
+                // var MerchantLinkType = record.get('MerchantLinkType').split("-");
+                var isMember = record.get('isMember');
+                var ID = record.get('ID');
+
+
+
+                if (isMember == "NO") {
+                    //_value = '<div style="height:60px;text-align:center;margin:-14px 0px 0px 0px;text-align:center;" ><img style="margin:0px 0px 0px 130px" src="resources/icons/transparentbox.png" height="15px" width="45px"></div>';
+                    _value = '<div style="height:60px;text-align:center;margin:15px 0px 0px 0px;text-align:right;" ><img style="margin:0px 0px 0px 50px" src="resources/icons/transparentbox.png" height="15px" width="45px"></div>';
+
+                } else {
+                    //_value = '<div style="height:60px;text-align:center;margin:-14px 0px 0px 0px;text-align:center;" ><img style="margin:0px 0px 0px 130px" src="resources/icons/membershiptag001.png" height="15px" width="45px"></div>';
+                    _value = '<div style="height:60px;text-align:center;margin:15px 0px 0px 0px;text-align:right;" ><img style="margin:0px 0px 0px 50px" src="resources/icons/membershiptag002.png" height="15px" width="45px"></div>';
+                }
+
+
+
+                return _value;
+            }
+        },
               {
                   name: 'ModifiedIsMemeberBottomButton',
                   convert: function (value, record) {

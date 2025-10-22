@@ -2131,6 +2131,7 @@ function FloatPanel_MerchantDetailPageShow(ID,EnterpriseAccNo, EnterpriseLogoPat
     //    Ext.getCmp('containeFloatPanel_MerchantDetailPage_OnlineStore_Inner').setHidden(true);
     //});
     LoadingPanelHide();
+    FloatPanel_AyohaStore_EnterprisesCheckIn();
 }
 
 
@@ -2234,42 +2235,67 @@ function FloatPanel_MerchantDetailPage_OpenStore(eStoreName, eStoreURL) {
 
 function FloatPanelMerchantDetailPage_AyohaStore() {
     globalFloatPanel_AyohaStore_ModuleTagging = "FloatPanelMerchantDetailPage";
-    LoadingPanelShow(getLoadingIcon(), 'Loading....');
+
+ //  LoadingPanelShow(getLoadingIcon(), 'Loading....');
     _isFloatPanel_AyohaStore_SaleItemDetail_loadFirstTime = 'N';
 
 
 
 
 
-    _DataStore_EnterprisesLoadByMerchantCategory.getProxy().setExtraParam('EnterpriseAccNo', globalFloatPanelMerchantDetailPage_EnterpriseAccNo);
 
-    
-   // _DataStore_EnterprisesLoadByMerchantCategory.getProxy().setExtraParam('EnterpriseAccNo', globalFloatPanelMerchantDetailPage_EnterpriseAccNo);
+    _DataStore_EnterprisesLoadByMerchantCategory.getProxy().setExtraParam('EnterpriseAccNo', globalFloatPanelMerchantDetailPage_EnterpriseAccNo); 
     _DataStore_EnterprisesLoadByMerchantCategory.getProxy().setExtraParam('SubscriberAccNo', GetCurrAyohaUserAccountNo());
     _DataStore_EnterprisesLoadByMerchantCategory.getProxy().setUrl(GetAPIurl() + '/Enterprises/EnterprisesLoadByEnterpriseAccNoAndSubscriberAccNo');
-    _DataStore_EnterprisesLoadByMerchantCategory.load();
+    _DataStore_EnterprisesLoadByMerchantCategory.load({
+        callback: function (records, operation, success) {
+            if (success && records.length > 0) {
+                console.log('Store loaded successfully, total records: ' + records.length);
+                var Store = records[0]; // Access only the first record
+                var ID = Store.get('ID');
+                FloatPanel_RewardStore_OpenStore_FromFloatPanelMerchantDetailPage_OnlineStoreList(ID);
+            } else {
+                console.error('Failed to load store data or no record found.');
+                LoadingPanelHide();
+            }
+        }
+    });
 
-    console.log(globalFloatPanelMerchantDetailPage_EnterpriseAccNo)
-    console.log(GetCurrAyohaUserAccountNo())
 
 
-    var task = Ext.create('Ext.util.DelayedTask', function () {
 
-        //_DataStore_EnterprisesLoadByMerchantCategory.load();
-        var count = _DataStore_EnterprisesLoadByMerchantCategory.getCount();
-        var Store = _DataStore_EnterprisesLoadByMerchantCategory.getAt(0);
-        var ID = Store.get('ID');
-      //  FloatPanel_OrderCartHide();
-        FloatPanel_RewardStore_OpenStore_FromFloatPanelMerchantDetailPage_OnlineStoreList(ID);
+
+
+
+
+
+
+    // _DataStore_EnterprisesLoadByMerchantCategory.getProxy().setExtraParam('EnterpriseAccNo', globalFloatPanelMerchantDetailPage_EnterpriseAccNo); 
+    // _DataStore_EnterprisesLoadByMerchantCategory.getProxy().setExtraParam('SubscriberAccNo', GetCurrAyohaUserAccountNo());
+    // _DataStore_EnterprisesLoadByMerchantCategory.getProxy().setUrl(GetAPIurl() + '/Enterprises/EnterprisesLoadByEnterpriseAccNoAndSubscriberAccNo');
+    // _DataStore_EnterprisesLoadByMerchantCategory.load();
+
+    // console.log(globalFloatPanelMerchantDetailPage_EnterpriseAccNo)
+    // console.log(GetCurrAyohaUserAccountNo())
+
+
+    // var task = Ext.create('Ext.util.DelayedTask', function () {
+
+    //     //_DataStore_EnterprisesLoadByMerchantCategory.load();
+    //     var count = _DataStore_EnterprisesLoadByMerchantCategory.getCount();
+    //     var Store = _DataStore_EnterprisesLoadByMerchantCategory.getAt(0);
+    //     var ID = Store.get('ID');
+    //   //  FloatPanel_OrderCartHide();
+    //     FloatPanel_RewardStore_OpenStore_FromFloatPanelMerchantDetailPage_OnlineStoreList(ID);
     
-        LoadingPanelHide();
+    //     LoadingPanelHide();
         
 
-    });
-    task.delay(500);
+    // });
+    // task.delay(500);
 
 
-    Ext.Viewport.setMasked(false);
+    // Ext.Viewport.setMasked(false);
 }
 
 var globalFloatPanelMerchantDetailPage_CountMembershipCard;

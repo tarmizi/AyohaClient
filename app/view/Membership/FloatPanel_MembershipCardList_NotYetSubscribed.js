@@ -2205,7 +2205,8 @@ items: [
             //flex:1,
             scrollable:false,
             height: 300,
-            store: 'MembershipCardEnterprisesEntitledLoadByMembershipCardCodeStore',
+           // store: 'MembershipCardEnterprisesEntitledLoadByMembershipCardCodeStore',
+            store:_DataStore_MembershipCardEnterprisesEntitledLoadByMembershipCardCodeStore,
             id: 'FloatPanel_MembershipCardList_NotYetSubscribed_EnterpriseEntitledList',
             mode: 'SINGLE',
             //  grouped: true,
@@ -3027,6 +3028,8 @@ function FloatPanel_MembershipCardList_NotYetSubscribed_initEventContainer(){
     var containerViewElnamecontainerFloatPanel_MembershipCardList_NotYetSubscribed_OnlineStore = containerViewnamecontainerFloatPanel_MembershipCardList_NotYetSubscribed_OnlineStore.element;
     containerViewElnamecontainerFloatPanel_MembershipCardList_NotYetSubscribed_OnlineStore.on('tap',
       function (event, node, options, eOpts) {
+       
+      // alert(globalFloatPanel_AyohaStore_ModuleTagging);
         FloatPanelMerchantDetailPage_AyohaStore();
       }
     );
@@ -3035,6 +3038,7 @@ function FloatPanel_MembershipCardList_NotYetSubscribed_initEventContainer(){
     var containerViewEl = containerView.element;
     containerViewEl.on('tap',
       function (event, node, options, eOpts) {
+      
         FloatPanelMerchantDetailPage_OpenMerchantReview();
       }
     );
@@ -3310,7 +3314,7 @@ function FloatPanel_MembershipCardList_NotYetSubscribed_MembershipCardAyohaUserM
 
     MmcCode.length = 0;
     MembershipCardLevels.length = 0;
-  
+   
 
 
 
@@ -3348,6 +3352,7 @@ function FloatPanel_MembershipCardList_NotYetSubscribed_MembershipCardAyohaUserM
                    global_FloatPanel_MembershipCardList_NotYetSubscribed_EnterprisesName = modelRecorded.get('EnterprisesName');
                    global_FloatPanel_MembershipCardList_NotYetSubscribed_EnterprisesLogo = modelRecorded.get('EnterprisesLogo');
                    global_FloatPanel_MembershipCardList_NotYetSubscribed_EnterprisesTagLine = modelRecorded.get('EnterprisesTagLine');
+                   globalFloatPanelMerchantDetailPage_EnterpriseTagLine= modelRecorded.get('EnterprisesTagLine');
                    globalFloatPanelMerchantDetailPage_EnterpriseLogo= modelRecorded.get('EnterprisesLogo');
                    globalFloatPanelMerchantDetailPage_EnterpriseName= modelRecorded.get('EnterprisesName');
                    global_FloatPanel_MembershipCardList_NotYetSubscribed_EnterprisesName= modelRecorded.get('EnterprisesName');
@@ -3739,30 +3744,54 @@ function FloatPanel_MembershipCardList_NotYetSubscribed_MembershipCardCampaingEn
 
 
 function FloatPanel_MembershipCardList_NotYetSubscribed_MembershipCardEnterprisesEntitledLoadByMembershipCardCodeStore(MembershipCode, EnterpriseAccountNo) {
-   // Ext.getStore('MembershipCardEnterprisesEntitledLoadByMembershipCardCodeStore').removeAll();
-//alert(MembershipCode)
+   
+
     if (MembershipCode) {
-        Ext.getStore('MembershipCardEnterprisesEntitledLoadByMembershipCardCodeStore').getProxy().setExtraParams({
-            MembershipCardCode: MembershipCode,
-            EnterpriseHQAccNo: EnterpriseAccountNo,
-        });
-        Ext.StoreMgr.get('MembershipCardEnterprisesEntitledLoadByMembershipCardCodeStore').load();
-        var task = Ext.create('Ext.util.DelayedTask', function () {
-            Ext.getStore('MembershipCardEnterprisesEntitledLoadByMembershipCardCodeStore').getProxy().setExtraParams({
-                MembershipCardCode: MembershipCode,
-                EnterpriseHQAccNo: EnterpriseAccountNo,
-            });
-            Ext.StoreMgr.get('MembershipCardEnterprisesEntitledLoadByMembershipCardCodeStore').load();
-            var myStore = Ext.getStore('MembershipCardEnterprisesEntitledLoadByMembershipCardCodeStore');
-            var StampCount = myStore.getCount();
 
-            //Ext.getCmp('htmlSubscriberMaster_TotalStampCount').setHtml('<div style="color:white;text-align: center;font-size:28px;width:100%;font-weight:bold">' + StampCount + '</div>');
-            // adjustHeight();
-            Ext.Viewport.setMasked(false);
-
-        });
-        task.delay(2000);
+    _DataStore_MembershipCardEnterprisesEntitledLoadByMembershipCardCodeStore.getProxy().setExtraParam('MembershipCardCode', MembershipCode);
+    _DataStore_MembershipCardEnterprisesEntitledLoadByMembershipCardCodeStore.getProxy().setExtraParam('EnterpriseHQAccNo', EnterpriseAccountNo);
+    _DataStore_MembershipCardEnterprisesEntitledLoadByMembershipCardCodeStore.getProxy().setUrl(GetAPIurl() + '/MembershipCardEnterprisesEntitled/MembershipCardEnterprisesEntitledLoadByMembershipCardCode');
+    
+    _DataStore_MembershipCardEnterprisesEntitledLoadByMembershipCardCodeStore.load({
+        callback: function (records, operation, success) {
+            if (success && records.length > 0) {
+                console.log('Store loaded successfully, total records: ' + records.length);
+    
+              
+            } else {
+                console.error('Failed to load store data or no record found.');
+                LoadingPanelHide();
+            }
+        }
+    });
     }
+
+
+
+
+
+    // if (MembershipCode) {
+    //     Ext.getStore('MembershipCardEnterprisesEntitledLoadByMembershipCardCodeStore').getProxy().setExtraParams({
+    //         MembershipCardCode: MembershipCode,
+    //         EnterpriseHQAccNo: EnterpriseAccountNo,
+    //     });
+    //     Ext.StoreMgr.get('MembershipCardEnterprisesEntitledLoadByMembershipCardCodeStore').load();
+    //     var task = Ext.create('Ext.util.DelayedTask', function () {
+    //         Ext.getStore('MembershipCardEnterprisesEntitledLoadByMembershipCardCodeStore').getProxy().setExtraParams({
+    //             MembershipCardCode: MembershipCode,
+    //             EnterpriseHQAccNo: EnterpriseAccountNo,
+    //         });
+    //         Ext.StoreMgr.get('MembershipCardEnterprisesEntitledLoadByMembershipCardCodeStore').load();
+    //         var myStore = Ext.getStore('MembershipCardEnterprisesEntitledLoadByMembershipCardCodeStore');
+    //         var StampCount = myStore.getCount();
+
+    //         //Ext.getCmp('htmlSubscriberMaster_TotalStampCount').setHtml('<div style="color:white;text-align: center;font-size:28px;width:100%;font-weight:bold">' + StampCount + '</div>');
+    //         // adjustHeight();
+    //         Ext.Viewport.setMasked(false);
+
+    //     });
+    //     task.delay(2000);
+    // }
 }
 
 
@@ -4038,7 +4067,7 @@ function FloatPanel_MembershipCardList_NotYetSubscribed_AyohaRewardPointLoadBySu
 
 function FloatPanel_MembershipCardList_NotYetSubscribed_AyohaStore() {
     globalFloatPanel_AyohaStore_ModuleTagging = "FloatPanel_MembershipCardList_NotYetSubscribed";
-    LoadingPanelShow(getLoadingIcon(), 'Loading....');
+   // LoadingPanelShow(getLoadingIcon(), 'Loading....');
     _isFloatPanel_AyohaStore_SaleItemDetail_loadFirstTime = 'N';
 
 

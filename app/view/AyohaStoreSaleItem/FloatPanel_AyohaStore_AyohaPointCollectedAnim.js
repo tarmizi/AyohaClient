@@ -17,7 +17,8 @@ function FloatPanel_AyohaStore_AyohaPointCollectedAnim() {
 
     _FloatPanel_AyohaStore_AyohaPointCollectedAnim =
     Ext.create('Ext.Container', {
-        zIndex: 200,
+       zIndex: 200,
+       // zIndex: 1061,
         xtype: 'container',
         height: '100%',
         //  height: 350,

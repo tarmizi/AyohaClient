@@ -1894,6 +1894,7 @@ function FloatPanel_RewardStore_OpenStore_FromFloatPanelMerchantDetailPage_Onlin
     globalFloatPanel_RewardStore_MerchantLinkType = MerchantLinkType.get('MerchantLinkType');
     globalFloatPanel_RewardStore_EnterpriseDescriptions = EnterpriseDescriptions.get('EnterpriseDescriptions');
     globalFloatPanel_RewardStore_EnterpriseTagLine = EnterpriseTagLine.get('EnterpriseTagLine');
+    globalFloatPanelMerchantDetailPage_EnterpriseTagLine = EnterpriseTagLine.get('EnterpriseTagLine');
     globalFloatPanel_RewardStore_AdvertisementCode = AdvertisementCode.get('AdvertisementCode');
 
   

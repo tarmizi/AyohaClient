@@ -1369,7 +1369,8 @@ width:5
                                                                                 xtype: 'list',
                                                                                 //flex:1,
                                                                                 height: '100%',
-                                                                                store: 'MembershipCardEnterprisesEntitledLoadByMembershipCardCodeStore',
+                                                                              //  store: 'MembershipCardEnterprisesEntitledLoadByMembershipCardCodeStore',
+                                                                               store:_DataStore_MembershipCardEnterprisesEntitledLoadByMembershipCardCodeStore,
                                                                                 id: 'FloatPanel_Membership_MembershipCardSaleDetail_MembershipOutletList',
                                                                                 mode: 'SINGLE',
                                                                                 //  grouped: true,
@@ -3666,29 +3667,59 @@ function FloatPanel_Membership_MembershipCardSaleDetail_MembershipCardCampaingEn
 
   
 function  FloatPanel_Membership_MembershipCardSaleDetail_MembershipCardEnterprisesEntitledLoadByMembershipCardCodeStore(MembershipCode, EnterpriseAccountNo) {
-   
-     if (MembershipCode) {
-         Ext.getStore('MembershipCardEnterprisesEntitledLoadByMembershipCardCodeStore').getProxy().setExtraParams({
-             MembershipCardCode: MembershipCode,
-             EnterpriseHQAccNo: EnterpriseAccountNo,
-         });
-         Ext.StoreMgr.get('MembershipCardEnterprisesEntitledLoadByMembershipCardCodeStore').load();
-         var task = Ext.create('Ext.util.DelayedTask', function () {
-             Ext.getStore('MembershipCardEnterprisesEntitledLoadByMembershipCardCodeStore').getProxy().setExtraParams({
-                 MembershipCardCode: MembershipCode,
-                 EnterpriseHQAccNo: EnterpriseAccountNo,
-             });
-             Ext.StoreMgr.get('MembershipCardEnterprisesEntitledLoadByMembershipCardCodeStore').load();
-             var myStore = Ext.getStore('MembershipCardEnterprisesEntitledLoadByMembershipCardCodeStore');
-             var StampCount = myStore.getCount();
-             FloatPanel_Membership_MembershipCardSaleDetail_AyohaMerchantReviewLoadByEnterpriseAccNoAndItemCodeReviewMembershipCardSaleStore(EnterpriseAccountNo,MembershipCode);
-             //Ext.getCmp('htmlSubscriberMaster_TotalStampCount').setHtml('<div style="color:white;text-align: center;font-size:28px;width:100%;font-weight:bold">' + StampCount + '</div>');
-             // adjustHeight();
-             Ext.Viewport.setMasked(false);
+    if (MembershipCode) {
+
+    _DataStore_MembershipCardEnterprisesEntitledLoadByMembershipCardCodeStore.getProxy().setExtraParam('MembershipCardCode', MembershipCode);
+    _DataStore_MembershipCardEnterprisesEntitledLoadByMembershipCardCodeStore.getProxy().setExtraParam('EnterpriseHQAccNo', EnterpriseAccountNo);
+    _DataStore_MembershipCardEnterprisesEntitledLoadByMembershipCardCodeStore.getProxy().setUrl(GetAPIurl() + '/MembershipCardEnterprisesEntitled/MembershipCardEnterprisesEntitledLoadByMembershipCardCode');
+    
+    _DataStore_MembershipCardEnterprisesEntitledLoadByMembershipCardCodeStore.load({
+        callback: function (records, operation, success) {
+            if (success && records.length > 0) {
+                console.log('Store loaded successfully, total records: ' + records.length);
+    
+                FloatPanel_Membership_MembershipCardSaleDetail_AyohaMerchantReviewLoadByEnterpriseAccNoAndItemCodeReviewMembershipCardSaleStore(EnterpriseAccountNo,MembershipCode);
+            } else {
+                console.error('Failed to load store data or no record found.');
+                LoadingPanelHide();
+            }
+        }
+    });
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+    //  if (MembershipCode) {
+    //      Ext.getStore('MembershipCardEnterprisesEntitledLoadByMembershipCardCodeStore').getProxy().setExtraParams({
+    //          MembershipCardCode: MembershipCode,
+    //          EnterpriseHQAccNo: EnterpriseAccountNo,
+    //      });
+    //      Ext.StoreMgr.get('MembershipCardEnterprisesEntitledLoadByMembershipCardCodeStore').load();
+    //      var task = Ext.create('Ext.util.DelayedTask', function () {
+    //          Ext.getStore('MembershipCardEnterprisesEntitledLoadByMembershipCardCodeStore').getProxy().setExtraParams({
+    //              MembershipCardCode: MembershipCode,
+    //              EnterpriseHQAccNo: EnterpriseAccountNo,
+    //          });
+    //          Ext.StoreMgr.get('MembershipCardEnterprisesEntitledLoadByMembershipCardCodeStore').load();
+    //          var myStore = Ext.getStore('MembershipCardEnterprisesEntitledLoadByMembershipCardCodeStore');
+    //          var StampCount = myStore.getCount();
+    //          FloatPanel_Membership_MembershipCardSaleDetail_AyohaMerchantReviewLoadByEnterpriseAccNoAndItemCodeReviewMembershipCardSaleStore(EnterpriseAccountNo,MembershipCode);
+    //          //Ext.getCmp('htmlSubscriberMaster_TotalStampCount').setHtml('<div style="color:white;text-align: center;font-size:28px;width:100%;font-weight:bold">' + StampCount + '</div>');
+    //          // adjustHeight();
+    //          Ext.Viewport.setMasked(false);
  
-         });
-         task.delay(500);
-     }
+    //      });
+    //      task.delay(500);
+    //  }
  }
 
 

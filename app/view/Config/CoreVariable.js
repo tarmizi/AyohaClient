@@ -252,21 +252,24 @@ function FloatPanel_AyohaStore_getEnterpriseAccNo() {
        else if (globalFloatPanel_AyohaStore_ModuleTagging == "FloatPanelMerchantDetailPage") {
            EntTagLine = globalFloatPanelMerchantDetailPage_EnterpriseTagLine;
        }
-   
+       
        else if (globalFloatPanel_AyohaStore_ModuleTagging == "FloatPanel_MembershipCardList_Upgrade") {
            EntTagLine = global_FloatPanel_MembershipCardList_Upgrade_EnterprisesTagLine;
        }
    
    
        else if (globalFloatPanel_AyohaStore_ModuleTagging == "FloatPanel_MembershipCardList_NotYetSubscribed") {
-           EntTagLine = globalFloatPanel_RewardStore_EnterpriseTagLine;
+         //  EntTagLine = globalFloatPanel_RewardStore_EnterpriseTagLine;
+           EntTagLine = global_FloatPanel_MembershipCardList_NotYetSubscribed_EnterprisesTagLine;
        }
 
        else if (globalFloatPanel_AyohaStore_ModuleTagging == "FloatPanel_AyohaStore_CheckOut") {
         EntTagLine = globalFloatPanel_AyohaStore_CheckOut_EnterpriseTagLine;
     }
-
-       
+    else if (globalFloatPanel_AyohaStore_ModuleTagging == "FloatPanel_AyohaMerchantInfo_LoyaltyProgram") {
+        EntTagLine = globalFloatPanel_RewardStore_EnterpriseTagLine;
+    }
+    //  alert(globalFloatPanel_AyohaStore_ModuleTagging)
        return EntTagLine;
    }
 

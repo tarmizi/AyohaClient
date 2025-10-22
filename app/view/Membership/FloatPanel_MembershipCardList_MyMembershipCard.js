@@ -917,15 +917,33 @@ function FloatPanel_MembershipCardList_MyMembershipCardHide() {
 //var _DataStore_MembershipsLoadBySubscriberAccNoStore;
 function FloatPanel_MembershipCardList_MyMembershipCard_MembershipsLoadBySubscriberAccNoStore() {
 
+    _DataStore_MembershipsLoadBySubscriberAccNoStore.getProxy().setExtraParam('SubscriberAccNo', GetCurrAyohaUserAccountNo());
+    _DataStore_MembershipsLoadBySubscriberAccNoStore.getProxy().setUrl(GetAPIurl() + '/Memberships/MembershipsLoadBySubscriberAccNo');
+    _DataStore_MembershipsLoadBySubscriberAccNoStore.load({
+        callback: function (records, operation, success) {
+            if (success && records.length > 0) {
+                console.log('Store loaded successfully, total records: ' + records.length);
+                var count = parseInt(_DataStore_MembershipsLoadBySubscriberAccNoStore.getCount());
 
-    //console.log(GetCurrAyohaUserAccountNo());
+                if (count>0) {
+                    Ext.getCmp('container_FloatPanel_MembershipCardList_MyMembershipCardListID_no_membershipcard').setHidden(true);
+                    Ext.getCmp('FloatPanel_MembershipCardList_MyMembershipCardListID').setHidden(false);
+                }
+        
+                countMembershipsLoadBySubscriberAccNoStoreFirst = _DataStore_MembershipsLoadBySubscriberAccNoStore.getCount();
+                Ext.getCmp('FloatPanel_MembershipCardList_MyMembershipCard_CountSearchTxt').setHtml('<font size=3 color=black><b>(' + countMembershipsLoadBySubscriberAccNoStoreFirst + ')</b></font>');
+                LoadingPanelHide();
+            } else {
+                console.error('Failed to load store data or no record found.');
+                LoadingPanelHide();
+            }
+        }
+    });
+///////////////////////////////////////////////////////////////////////
+ 
 
-    //Ext.getStore('MembershipsLoadBySubscriberAccNoStore').getProxy().setExtraParams({
-    //    SubscriberAccNo: GetCurrAyohaUserAccountNo()
-    //});
-    //Ext.StoreMgr.get('MembershipsLoadBySubscriberAccNoStore').load();
 
-   // alert(GetCurrAyohaUserAccountNo())
+return
     _DataStore_MembershipsLoadBySubscriberAccNoStore.getProxy().setExtraParam('SubscriberAccNo', GetCurrAyohaUserAccountNo());
     _DataStore_MembershipsLoadBySubscriberAccNoStore.getProxy().setUrl(GetAPIurl() + '/Memberships/MembershipsLoadBySubscriberAccNo');
     _DataStore_MembershipsLoadBySubscriberAccNoStore.load();

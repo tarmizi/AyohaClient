@@ -2871,3 +2871,301 @@ function slideUpShow(cmpId, duration) {
     // }
   }
   
+
+
+
+function FloatPanel_Membership_CheckInPageShow(logoUrl,EnterpriseName,EnterpriseTagline,CheckInCount) {
+    // Create a new div element to hold our custom HTML
+    const popupContent = document.createElement('div');
+    // This HTML is unchanged
+    popupContent.innerHTML = `
+        <div class="checkin-popup">
+            <div class="checkin-icon-top">🎁</div>
+            <div class="checkin-header">Ayoha Reward Membership</div>
+            <h2 class="checkin-title">Check-In Point Loyalty</h2>
+            <hr class="checkin-divider">
+            <div class="checkin-stamp">
+               
+                <img src="${logoUrl}" alt="${EnterpriseName} Logo" style="width:78px;height:78px; object-fit: contain; border-radius: 10px;">
+            </div>
+            
+      
+            <p class="checkin-subtitle">${EnterpriseName}</p>
+           
+            <span class="checkin-subtitle-small">${EnterpriseTagline}</span>
+            <div class="checkin-info">
+                <p>Get <strong>10 FREE Ayoha Points</strong> just for visiting our ayoha merchant -<strong> ${EnterpriseName}</strong> today. You can collect this<strong>10 point </strong>up to <strong>2 times per day!</strong></p>
+            </div>
+        </div>
+    `;
+
+    // --- THIS IS THE UPDATED SweetAlert2 CODE ---
+    Swal.fire({
+        // Use 'html' to pass the DOM element
+        html: popupContent,
+
+        // Use 'customClass' to apply ALL our custom styles
+        customClass: {
+            popup: 'ayoha-checkin-swal', // The main modal
+            confirmButton: 'swal-button--confirm-custom', // The confirm button
+            cancelButton: 'swal-button--cancel-custom'   // The cancel button
+        },
+        allowOutsideClick: false, // Prevents closing on overlay click
+        allowEscapeKey: false,    // Prevents closing with the Esc key
+        // --- Button configuration ---
+        showCancelButton: true,
+        confirmButtonText: "Tap to Check-In",
+        cancelButtonText: "Maybe Later",
+
+        // --- Remove default SweetAlert2 elements ---
+        showCloseButton: false,
+        showConfirmButton: true,
+        title: ' ', // Hides the title but keeps the space
+        padding: 0, // We will control padding with CSS
+        
+    }).then((result) => {
+        // --- THIS IS THE UPDATED .then() LOGIC ---
+        // Handle the button clicks
+        if (result.isConfirmed) {
+            
+            // The "Tap to Check-In" popup has now closed automatically.
+            // Now, run your Sencha AJAX request to save the check-in.
+
+            var objn = {
+                "EnterpriseHQAccNo": FloatPanel_AyohaStore_getEnterpriseAccNo(),
+                "EnterpriseAccNo": FloatPanel_AyohaStore_getEnterpriseAccNo(),
+                "SubscriberAccNo": GetCurrAyohaUserAccountNo(),
+                "CheckInCode": "CIC-" + GenerateRandomNo() + '-' + GetCurrAyohaUserAccountNo(),
+                "CheckInMethod": "Online",
+                "CheckInPage": globalFloatPanel_AyohaStore_ModuleTagging
+            };
+            var _value = Ext.Ajax.request({
+                type: "POST",
+                url: GetAPIurl() + '/EnterprisesCheckIn/EnterprisesCheckIn_Insert',
+                dataType: "json",
+                data: JSON.stringify(objn),
+                headers: {
+                    "Content-Type": "application/json; charset=utf-8"
+                },
+                success: function (result, request) {
+                    data = Ext.decode(result.responseText.trim());
+
+                    if (data.success == "true") {
+                        
+                        // After the save is successful,
+                        // show your animation and the *new* "Confirmed" popup.
+                        FloatPanel_AyohaStore_AyohaPointCollectedAnimShow();
+                        FloatPanel_Membership_CheckInPage_ConfirmedShow(); // This is correct.
+
+                    } else {
+                        swalFireFail("Fail!->" + result.responseText.trim());
+                        LoadingPanelHide();
+                        Ext.Viewport.unmask();
+                    }
+                    Ext.Viewport.unmask();
+                },
+                failure: function (result, request) {
+                    swalFireFail("Fail!" + result.responseText.trim());
+                    Ext.Viewport.unmask();
+                    LoadingPanelHide();
+                }
+            });
+
+            // --- I HAVE REMOVED THE OLD PLACEHOLDER FUNCTION CALL FROM HERE ---
+
+        } else if (result.isDismissed) {
+            // User clicked "Maybe Later" or closed the modal
+            // The popup also closes automatically here.
+        }
+    });
+}
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+//     .then((result) => {
+//         // --- THIS IS THE UPDATED .then() LOGIC ---
+//         // Handle the button clicks
+//         if (result.isConfirmed) {
+
+
+
+// /////////////////
+
+
+
+
+// var objn = {
+   
+//      "EnterpriseHQAccNo": FloatPanel_AyohaStore_getEnterpriseAccNo(),
+//      "EnterpriseAccNo": FloatPanel_AyohaStore_getEnterpriseAccNo(),
+//      "SubscriberAccNo": GetCurrAyohaUserAccountNo(),
+//      "CheckInCode":"CIC-"+ GenerateRandomNo()+'-'+GetCurrAyohaUserAccountNo(),
+//      "CheckInMethod": "Online",
+//      "CheckInPage": globalFloatPanel_AyohaStore_ModuleTagging
+// };
+// var _value = Ext.Ajax.request({
+
+//     type: "POST",
+
+//     url: GetAPIurl() + '/EnterprisesCheckIn/EnterprisesCheckIn_Insert',
+
+//     dataType: "json",
+//     data: JSON.stringify(objn),
+//     headers: {
+//         "Content-Type": "application/json; charset=utf-8"
+//     },
+
+//     success: function (result, request) {
+
+//         //console.log(result.responseText);
+
+
+//         data = Ext.decode(result.responseText.trim());
+
+//         if (data.success == "true") {
+
+//             FloatPanel_AyohaStore_AyohaPointCollectedAnimShow();
+//             FloatPanel_Membership_CheckInPage_ConfirmedShow()
+          
+
+          
+
+
+//         }
+//         else {
+           
+//            swalFireFail("Fail!->" + result.responseText.trim());
+//            LoadingPanelHide();
+//             Ext.Viewport.unmask();
+          
+//         }
+//         Ext.Viewport.unmask();
+
+//     },
+
+//     failure: function (result, request) {
+       
+//         swalFireFail("Fail!" + result.responseText.trim());
+//         Ext.Viewport.unmask();
+//         LoadingPanelHide();
+//     }
+
+// });
+
+
+
+
+
+
+
+
+
+
+
+// //////
+
+
+
+
+
+
+
+
+
+
+//             // FloatPanel_CheckInConfirmedPageShow(
+//             //     10,         // pointsEarned
+//             //     CheckInCount,          // currentCheckIns (example, you'll get this dynamically)
+//             //     3           // maxCheckIns
+//             // );
+//             // ---
+//             // TODO: Add your Sencha Touch AJAX call here to save the check-in
+//             // ---
+
+//         } else if (result.isDismissed) {
+//             // User clicked "Maybe Later" or closed the modal
+//         }
+//     });
+// }
+
+
+
+
+// Function to show the Check-In Confirmation popup
+function FloatPanel_CheckInConfirmedPageShow(pointsEarned, currentCheckIns, maxCheckIns) {
+
+  
+    // Default values if not provided
+    // pointsEarned = pointsEarned || 10;
+    // currentCheckIns = currentCheckIns || 1;
+    // maxCheckIns = maxCheckIns || 3;
+
+    // Calculate progress for the bar
+    const progressPercentage = (currentCheckIns / maxCheckIns) * 100;
+
+    const confirmationPopupContent = document.createElement('div');
+    confirmationPopupContent.innerHTML = `
+        <div class="confirmation-popup">
+            <div class="confirmation-icon-top">
+                <img src="resources/icons/ayohapointcoint03.png" alt="Coins" class="coins-icon">
+            </div>
+            <h2 class="confirmation-title">Check-In Confirmed!</h2>
+            <p class="confirmation-subtitle">Thanks for visiting. Here are your points.</p>
+            
+            <div class="points-display">
+                <span class="points-value">+${pointsEarned}</span>
+                <span class="points-label">Ayoha Points Earned</span>
+            </div>
+
+            <div class="checkins-progress-text">
+                Today's Check-ins: ${currentCheckIns} of ${maxCheckIns}
+            </div>
+            <div class="progress-bar-container">
+                <div class="progress-bar" style="width: ${progressPercentage}%;"></div>
+            </div>
+        </div>
+    `;
+
+    Swal.fire({
+        html: confirmationPopupContent,
+        customClass: {
+            popup: 'ayoha-confirmation-swal', // Custom class for this specific popup
+            confirmButton: 'swal-button--awesome', // New custom class for "Awesome!" button
+            cancelButton: 'swal-button--continue-shopping' // New custom class for "Continue Shopping"
+        },
+        showCancelButton: true,
+        confirmButtonText: "View my Ayoha Point!",
+        cancelButtonText: "Continue Shopping",
+        showCloseButton: false,
+        title: ' ',
+        padding: 0,
+        allowOutsideClick: false,
+        allowEscapeKey: false,
+    }).then((result) => {
+        if (result.isConfirmed) {
+            // User clicked "Awesome!"
+            // Maybe navigate somewhere or close all popups
+            console.log("Awesome! button clicked.");
+        } else if (result.isDismissed) {
+            // User clicked "Continue Shopping" or closed the modal
+            console.log("Continue Shopping clicked or modal dismissed.");
+        }
+    });
+}

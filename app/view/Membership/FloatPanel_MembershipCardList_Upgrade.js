@@ -1703,7 +1703,8 @@ width:20
                                          xtype: 'list',
                                          //flex:1,
                                          height: '100%',
-                                         store: 'MembershipCardEnterprisesEntitledLoadByMembershipCardCodeStore',
+                                        // store: 'MembershipCardEnterprisesEntitledLoadByMembershipCardCodeStore',
+                                        store:_DataStore_MembershipCardEnterprisesEntitledLoadByMembershipCardCodeStore,
                                          id: 'FloatPanel_MembershipCardList_Upgrade_EnterpriseEntitledList',
                                          mode: 'SINGLE',
                                          //  grouped: true,
@@ -3077,28 +3078,57 @@ function FloatPanel_MembershipCardList_Upgrade_MembershipCardCampaingEntitledLoa
 function FloatPanel_MembershipCardList_Upgrade_MembershipCardEnterprisesEntitledLoadByMembershipCardCodeStore(MembershipCode, EnterpriseAccountNo) {
    // Ext.getStore('MembershipCardEnterprisesEntitledLoadByMembershipCardCodeStore').removeAll();
 
-    if (MembershipCode) {
-        Ext.getStore('MembershipCardEnterprisesEntitledLoadByMembershipCardCodeStore').getProxy().setExtraParams({
-            MembershipCardCode: MembershipCode,
-            EnterpriseHQAccNo: EnterpriseAccountNo,
-        });
-        Ext.StoreMgr.get('MembershipCardEnterprisesEntitledLoadByMembershipCardCodeStore').load();
-        var task = Ext.create('Ext.util.DelayedTask', function () {
-            Ext.getStore('MembershipCardEnterprisesEntitledLoadByMembershipCardCodeStore').getProxy().setExtraParams({
-                MembershipCardCode: MembershipCode,
-                EnterpriseHQAccNo: EnterpriseAccountNo,
-            });
-            Ext.StoreMgr.get('MembershipCardEnterprisesEntitledLoadByMembershipCardCodeStore').load();
-            var myStore = Ext.getStore('MembershipCardEnterprisesEntitledLoadByMembershipCardCodeStore');
-            var StampCount = myStore.getCount();
+   if (MembershipCode) {
+   _DataStore_MembershipCardEnterprisesEntitledLoadByMembershipCardCodeStore.getProxy().setExtraParam('MembershipCardCode', MembershipCode);
+   _DataStore_MembershipCardEnterprisesEntitledLoadByMembershipCardCodeStore.getProxy().setExtraParam('EnterpriseHQAccNo', EnterpriseAccountNo);
+   _DataStore_MembershipCardEnterprisesEntitledLoadByMembershipCardCodeStore.getProxy().setUrl(GetAPIurl() + '/MembershipCardEnterprisesEntitled/MembershipCardEnterprisesEntitledLoadByMembershipCardCode');
+   
+   _DataStore_MembershipCardEnterprisesEntitledLoadByMembershipCardCodeStore.load({
+       callback: function (records, operation, success) {
+           if (success && records.length > 0) {
+               console.log('Store loaded successfully, total records: ' + records.length);
+   
+              
+           } else {
+               console.error('Failed to load store data or no record found.');
+               LoadingPanelHide();
+           }
+       }
+   });
+   }
 
-            //Ext.getCmp('htmlSubscriberMaster_TotalStampCount').setHtml('<div style="color:white;text-align: center;font-size:28px;width:100%;font-weight:bold">' + StampCount + '</div>');
-            // adjustHeight();
-            Ext.Viewport.setMasked(false);
 
-        });
-        task.delay(2000);
-    }
+
+
+
+
+
+
+
+
+
+    // if (MembershipCode) {
+    //     Ext.getStore('MembershipCardEnterprisesEntitledLoadByMembershipCardCodeStore').getProxy().setExtraParams({
+    //         MembershipCardCode: MembershipCode,
+    //         EnterpriseHQAccNo: EnterpriseAccountNo,
+    //     });
+    //     Ext.StoreMgr.get('MembershipCardEnterprisesEntitledLoadByMembershipCardCodeStore').load();
+    //     var task = Ext.create('Ext.util.DelayedTask', function () {
+    //         Ext.getStore('MembershipCardEnterprisesEntitledLoadByMembershipCardCodeStore').getProxy().setExtraParams({
+    //             MembershipCardCode: MembershipCode,
+    //             EnterpriseHQAccNo: EnterpriseAccountNo,
+    //         });
+    //         Ext.StoreMgr.get('MembershipCardEnterprisesEntitledLoadByMembershipCardCodeStore').load();
+    //         var myStore = Ext.getStore('MembershipCardEnterprisesEntitledLoadByMembershipCardCodeStore');
+    //         var StampCount = myStore.getCount();
+
+    //         //Ext.getCmp('htmlSubscriberMaster_TotalStampCount').setHtml('<div style="color:white;text-align: center;font-size:28px;width:100%;font-weight:bold">' + StampCount + '</div>');
+    //         // adjustHeight();
+    //         Ext.Viewport.setMasked(false);
+
+    //     });
+    //     task.delay(2000);
+    // }
 }
 
 
