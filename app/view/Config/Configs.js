@@ -2894,7 +2894,7 @@ function FloatPanel_Membership_CheckInPageShow(logoUrl,EnterpriseName,Enterprise
            
             <span class="checkin-subtitle-small">${EnterpriseTagline}</span>
             <div class="checkin-info">
-                <p>Get <strong>10 FREE Ayoha Points</strong> just for visiting our ayoha merchant -<strong> ${EnterpriseName}</strong> today. You can collect this<strong>10 point </strong>up to <strong>2 times per day!</strong></p>
+                <p>Get <strong>10 FREE Ayoha Points</strong> just for visiting our ayoha merchant -<strong> ${EnterpriseName}</strong> today. You can collect this<strong>10 point </strong>up to <strong>3 times per day!</strong></p>
             </div>
         </div>
     `;
@@ -2955,7 +2955,7 @@ function FloatPanel_Membership_CheckInPageShow(logoUrl,EnterpriseName,Enterprise
                         // After the save is successful,
                         // show your animation and the *new* "Confirmed" popup.
                         FloatPanel_AyohaStore_AyohaPointCollectedAnimShow();
-                        FloatPanel_Membership_CheckInPage_ConfirmedShow(); // This is correct.
+                        FloatPanel_Membership_CheckInPage_ConfirmedShow(CheckInCount); // This is correct.
 
                     } else {
                         swalFireFail("Fail!->" + result.responseText.trim());

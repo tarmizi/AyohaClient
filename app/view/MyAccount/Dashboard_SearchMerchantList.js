@@ -288,6 +288,7 @@ function Dashboard_SearchMerchantList() {
                              MembershipTag= records.get('isMember');
                              glonbalDashboard_SearchMerchantList_FullCompanyAddress=records.get('NamaJalan')+',<br>'+records.get('Postkod')+' '+records.get('Bandar')+'.<br> '+records.get('Negeri')
                             // FloatPanel_RewardStore_OpenStore(records.get('ID'));
+                           
                              FloatPanel_MerchantDetailPageShow(records.get('ID'), records.get('EnterpriseAccNo'), records.get('EnterpriseLogoPath'), records.get('EnterpriseName'), records.get('EnterpriseTagLine'),
                                  records.get('NamaJalan'), records.get('Postkod'), records.get('Bandar'), records.get('Negeri'), records.get('EnterpriseCoordinate'), records.get('EnterpriseDescriptions'), records.get('EnterprisePhoneNo')
                                  , records.get('PICContactNo'), records.get('EnterpriseFacebook'), records.get('EnterpriseWebsite'), records.get('EnterpriseInstagram'), records.get('EnterpriseTwiter'), records.get('BusinessMode')

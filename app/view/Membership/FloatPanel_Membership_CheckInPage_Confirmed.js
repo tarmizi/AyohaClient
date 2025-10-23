@@ -395,6 +395,7 @@ function FloatPanel_Membership_CheckInPage_Confirmed() {
         height: '100%', // This is the FULL-SCREEN BACKDROP
         width: '100%',  // This is the FULL-SCREEN BACKDROP
         id: 'FloatPanel_Membership_CheckInPage_ConfirmedID',
+        name: 'nameFloatPanel_Membership_CheckInPage_Confirmed',
         styleHtmlContent: true,
         centered: true,
         
@@ -476,35 +477,74 @@ function FloatPanel_Membership_CheckInPage_Confirmed() {
                             }
                         ]
                     },
+                    // {
+                    //     xtype: 'component',
+                    //     id:'checkin-progress-text',
+                    //     cls: 'confirmation-progress-text', // New class for progress text
+                    //     html: 'Today\'s Check-ins: 2 of 3', // Dynamically update this
+                    //     margin: '20 0 10 0', // Space above progress bar
+                    // },
                     {
                         xtype: 'component',
-                        cls: 'confirmation-progress-text', // New class for progress text
-                        html: 'Today\'s Check-ins: 2 of 3', // Dynamically update this
-                        margin: '20 0 10 0', // Space above progress bar
-                    },
+                        itemId: 'checkinProgressTextCmp',          // <— not an HTML id
+                        cls: 'confirmation-progress-text',
+                        html: "Today's Check-ins: 0 of 0",
+                        margin: '20 0 10 0'
+                      },
+                      
                     {
                         xtype: 'container',
                         cls: 'confirmation-progress-bar-wrapper', // Wrapper for the progress bar
                         width: '80%', // 90% width *of the white box*
                         items: [
-                            {
+                            // {
+                            //     xtype: 'component',
+                            //     itemId: 'checkinProgressBar',
+                            //     cls: 'confirmation-progress-bar',
+                            //     html:
+                            //       '<div class="checkin-progress-container">'+
+                            //         '<div class="progress-text"></div>'+
+                            //         // Track
+                            //         '<div class="progress-bar-container" '+
+                            //               'style="position:relative;height:10px;width:100%;'+
+                            //                      'background:#e5e7eb;border-radius:999px;overflow:hidden;'+
+                            //                      'box-shadow:inset 0 1px 2px rgba(0,0,0,.06);">'+
+                            //           // Fill
+                            //           '<div class="progress-bar-fill" '+
+                            //                'style="position:absolute;left:0;top:0;height:100%;width:0;'+
+                            //                       'background:linear-gradient(90deg,#a855f7,#7c3aed);'+
+                            //                       'border-radius:999px;box-shadow:0 4px 10px rgba(124,58,237,.25);'+
+                            //                       'transition:width .6s ease;"></div>'+
+                            //         '</div>'+
+                            //       '</div>'
+                            //   },
+
+                              {
                                 xtype: 'component',
-                                cls: 'confirmation-progress-bar', // The actual progress bar
-                             //   html: '<div style="width: 66.6%;"></div>', // Example: 2 of 3
-
-
-
-
-                                html:'<div class="checkin-progress-container">'+
-                                '<div id="checkin-progress-text" class="progress-text"></div>'+
+                                itemId: 'checkinProgressBar',
+                                cls: 'confirmation-progress-bar',
+                                html:
+                                  '<div class="checkin-progress" style="width:100%;">' +
+                                    // Track
+                                    '<div class="checkin-progress-track" ' +
+                                         'style="position:relative;height:10px;width:100%;' +
+                                                'background:#e5e7eb;border-radius:9999px;overflow:hidden;' +
+                                                'box-shadow:inset 0 1px 2px rgba(0,0,0,.06);">' +
+                                      // Fill
+                                      '<div class="checkin-progress-fill" ' +
+                                           'style="position:absolute;left:0;top:0;height:100%;width:0;' +
+                                                  'background:linear-gradient(90deg,#a855f7,#7c3aed) !important;' +
+                                                  'border-radius:9999px;transition:width .6s ease;"></div>' +
+                                    '</div>' +
+                                  '</div>'
+                              },
+                              
                             
-                                '<div class="progress-bar-container">'+
-                                    '<div id="checkin-progress-fill" class="progress-bar-fill"></div>'+
-                                '</div>'+
-                            '</div>'
-                            }
                         ]
                     },
+
+                   
+                      
                     {
                         xtype: 'container', // Spacer container
                         height: 30, // Space below progress bar before buttons
@@ -512,13 +552,13 @@ function FloatPanel_Membership_CheckInPage_Confirmed() {
                     {
                         width: '80%', // 80% width *of the white box*
                         height: 50,
-                        html: '<button onclick="viewMyAyohaPoints()" class="confirmation-cta-button">View My Ayoha Point!</button>',
+                        html: '<button onclick="FloatPanel_AyohaRewardShow()" class="confirmation-cta-button">View My Ayoha Point!</button>',
                     },
                     {
                         xtype: 'component',
                         styleHtmlContent: true,
                         margin: '0 0 20 0', // Add some space at the bottom
-                        html: '<div onclick="FloatPanel_Membership_CheckInPage_ConfirmedHide()" class="confirmation-secondary-button">Continue Shopping</div>'
+                        html: '<div onclick="FloatPanel_Membership_CheckInPage_ConfirmedHide()" class="confirmation-secondary-button">Continue Shopping or Browse Product</div>'
                     }
                 ]
                 // --- End of original items ---
@@ -539,32 +579,97 @@ function FloatPanel_Membership_CheckInPage_Confirmed() {
 
 
 
+// function FloatPanel_Membership_CheckInPage_ConfirmedShow(CheckInCount){
+
+
+
+//     Ext.Viewport.remove(_FloatPanel_Membership_CheckInPage_Confirmed);
+//     this.overlay = Ext.Viewport.add(FloatPanel_Membership_CheckInPage_Confirmed());
+//     this.overlay.show();
+//     AddRoutePages("FloatPanel_Membership_CheckInPage_ConfirmedHide()");
+//     isFloatPanel_Membership_CheckInPage_ConfirmedOpen = 'Y';
+
+
+
+//    Ext.getCmp('checkin-progress-text').setHtml('Today\'s Check-ins: '+CheckInCount+' of 3');
+  
+//     const cmp = Ext.ComponentQuery.query('.confirmation-progress-bar')[0];
+//     updateCheckInProgress(cmp, CheckInCount, 3);
+  
+// }
+
+// function FloatPanel_Membership_CheckInPage_ConfirmedShow(CheckInCount){
+//     Ext.Viewport.remove(_FloatPanel_Membership_CheckInPage_Confirmed);
+//     this.overlay = Ext.Viewport.add(FloatPanel_Membership_CheckInPage_Confirmed());
+//     this.overlay.show();
+  
+//     AddRoutePages("FloatPanel_Membership_CheckInPage_ConfirmedHide()");
+//     isFloatPanel_Membership_CheckInPage_ConfirmedOpen = 'Y';
+  
+//     const textCmp = this.overlay.down('#checkinProgressTextCmp');
+//     const barCmp  = this.overlay.down('#checkinProgressBar');
+  
+//     if (textCmp) {
+//       textCmp.setHtml("Today's Check-ins: " + CheckInCount + " of 3");
+//     }
+  
+//     // ensure component is painted before reading its el
+//     const doUpdate = () => updateCheckInProgress(barCmp, CheckInCount, 3);
+  
+//     if (barCmp && barCmp.rendered && barCmp.getEl()) {
+//       doUpdate();
+//     } else if (barCmp) {
+//       barCmp.on('painted', doUpdate, { single: true });
+//     }
+//   }
 
 
 
 
-function FloatPanel_Membership_CheckInPage_ConfirmedShow(){
-
-
-
+  function FloatPanel_Membership_CheckInPage_ConfirmedShow(CheckInCount){
+    // (Re)create + show the modal
     Ext.Viewport.remove(_FloatPanel_Membership_CheckInPage_Confirmed);
-    this.overlay = Ext.Viewport.add(FloatPanel_Membership_CheckInPage_Confirmed());
-    this.overlay.show();
+    const overlay = Ext.Viewport.add(FloatPanel_Membership_CheckInPage_Confirmed());
+    overlay.show();
+  
     AddRoutePages("FloatPanel_Membership_CheckInPage_ConfirmedHide()");
     isFloatPanel_Membership_CheckInPage_ConfirmedOpen = 'Y';
 
 
 
 
+    
 
-   
+    var containerViewnameFloatPanel_Membership_CheckInPage_Confirmed = Ext.ComponentQuery.query('container[name=nameFloatPanel_Membership_CheckInPage_Confirmed]')[0];
+    var containerViewElnameFloatPanel_Membership_CheckInPage_Confirmed = containerViewnameFloatPanel_Membership_CheckInPage_Confirmed.element;
+    containerViewElnameFloatPanel_Membership_CheckInPage_Confirmed.on('tap',
+      function (event, node, options, eOpts) {
+        _FloatPanel_Membership_CheckInPage_Confirmed.hide(); isFloatPanel_Membership_CheckInPage_ConfirmedOpen = 'N';
+       // Dashboard_LoadLastCheckIn();
+        RemovePages("FloatPanel_Membership_CheckInPage_ConfirmedHide()");
+        FloatPanel_Membership_CheckInPage_Confirmed_EnterprisesCheckIn();
+      }
+    );
 
- 
-    // Ext.getCmp('htmlFloatPanel_Membership_CheckInPage_Confirmed_CompanyLogo').setHtml('<div><img src="' + FloatPanel_AyohaStore_getEnterpriseLogo() + '" style="width:78px;height:78px;background-color:transparent;border:2px none white" alt="Company Name"></div>');
-    // Ext.getCmp('htmlFloatPanel_Membership_CheckInPage_Confirmed_CompanyInfo_Name').setHtml('<div style="color:black;text-align: center;font-size:14px;width:100%;font-weight:bold">' + FloatPanel_AyohaStore_getEnterpriseName() + '</div>');
-    // Ext.getCmp('htmlFloatPanel_Membership_CheckInPage_Confirmed_CompanyInfo_Tagline').setHtml('<div style="color:black;text-align: center;font-size:10px;width:100%;font-weight:normal;margin:0px 0px 0px 0px;">' + FloatPanel_AyohaStore_getEnterpriseTagLine() + '</div>');
-}
 
+
+  
+    // Update the text label (optional separate component)
+    const textCmp = overlay.down('#checkinProgressTextCmp'); // if you created this itemId
+    if (textCmp) textCmp.setHtml("Today's Check-ins: " + CheckInCount + " of 3");
+  
+    // ⬇️ PLACE THE SNIPPET HERE
+    const barCmp = overlay.down('#checkinProgressBar'); // itemId on the bar component
+    if (barCmp && barCmp.rendered && barCmp.getEl()) {
+      updateCheckInProgress(barCmp, CheckInCount, 3);
+    } else if (barCmp) {
+      barCmp.on('painted', function () {
+        updateCheckInProgress(barCmp, CheckInCount, 3);
+      }, { single: true });
+    }
+  }
+  
+  
 
 
 function FloatPanel_Membership_CheckInPage_ConfirmedHide() {
@@ -572,46 +677,124 @@ function FloatPanel_Membership_CheckInPage_ConfirmedHide() {
    
     if (isFloatPanel_Membership_CheckInPage_ConfirmedOpen == "Y") {
         _FloatPanel_Membership_CheckInPage_Confirmed.hide(); isFloatPanel_Membership_CheckInPage_ConfirmedOpen = 'N';
+        Dashboard_LoadLastCheckIn();
         RemovePages("FloatPanel_Membership_CheckInPage_ConfirmedHide()");
+        FloatPanelMerchantDetailPage_AyohaStore();
     }
   
 }
 
+function updateCheckInProgress(cmp, current, max) {
+    if (!cmp) return;
+  
+    const run = () => {
+      const el = cmp.getEl();
+      if (!el) return;
+  
+      max = Math.max(0, Number(max || 0));
+      current = Math.max(0, Math.min(Number(current || 0), max));
+      const pct = max ? (current / max) * 100 : 0;
+  
+      const textEl = el.down('.progress-text');         // if you kept it
+      const fillEl = el.down('.checkin-progress-fill'); // <-- our fill
+  
+      if (textEl) {
+        textEl.setHtml(`Today's Check-ins: <b>${current}</b> / <b>${max}</b>`);
+      }
+      if (fillEl) {
+        // ensure visible even if some CSS elsewhere tried to override it
+        fillEl.applyStyles({
+          width: pct + '%',
+          height: '100%',
+          background: 'linear-gradient(90deg,#a855f7,#7c3aed) !important'
+        });
+  
+        const barEl = fillEl.parent();
+        if (barEl) {
+          barEl.dom.setAttribute('role', 'progressbar');
+          barEl.dom.setAttribute('aria-valuemin', '0');
+          barEl.dom.setAttribute('aria-valuemax', String(max));
+          barEl.dom.setAttribute('aria-valuenow', String(current));
+          barEl.dom.setAttribute('aria-label', `Today's check-ins: ${current} of ${max}`);
+        }
+      }
+    };
+  
+    // if not rendered yet, wait for paint
+    if (cmp.rendered && cmp.getEl()) run();
+    else cmp.on('painted', run, { single: true });
+  }
+  
 
 
+  function  FloatPanel_Membership_CheckInPage_Confirmed_EnterprisesCheckIn(){
+
+    var objn = {
+        "EnterpriseAccNo": FloatPanel_AyohaStore_getEnterpriseAccNo(),
+         "SubscriberAccNo":GetCurrAyohaUserAccountNo()
+    };
+    var _value = Ext.Ajax.request({
+
+        type: "POST",
+
+        url: GetAPIurl() + '/EnterprisesCheckIn/EnterprisesCheckIn_CanCheckIn',
+
+        dataType: "json",
+        data: JSON.stringify(objn),
+        headers: {
+            "Content-Type": "application/json; charset=utf-8"
+        },
+
+        success: function (result, request) {
+
+            //console.log(result.responseText);
 
 
+            data = Ext.decode(result.responseText.trim());
 
-/**
- * Updates the check-in progress bar and text.
- *
- * @param {number} currentCheckIns - The number of check-ins completed today.
- * @param {number} maxCheckIns - The maximum number of check-ins allowed per day.
- * @param {string} textElementId - The ID of the HTML element for the text.
- * @param {string} barElementId - The ID of the HTML element for the progress bar fill.
- */
-function updateCheckInProgress(currentCheckIns, maxCheckIns, textElementId, barElementId) {
-    
-    // 1. Find the HTML elements by their IDs
-    const textElement = document.getElementById(textElementId);
-    const barElement = document.getElementById(barElementId);
+            if (data.success == "true") {
 
-    if (!textElement || !barElement) {
-        console.error("Error: Could not find progress bar elements.");
-        return;
-    }
+              // var count=parseInt(data.results[0].CanCheckIn);
+              // var CheckInCount=parseInt(data.results[0].CheckInCount) + 1;
 
-    // 2. Sanitize inputs to prevent errors
-    let current = Math.max(0, currentCheckIns);
-    let max = Math.max(1, maxCheckIns); // Avoid division by zero
-    current = Math.min(current, max);   // Current can't be more than max
 
-    // 3. Calculate the percentage
-    const percentage = (current / max) * 100;
+              var RelativeCheckInTime=data.results[0].RelativeCheckInTime;
+              var AccumulateAyohaRewardPointCheckIn=parseInt(data.results[0].AccumulateAyohaRewardPointCheckIn);
+              var AccumulateTotalCheckIn=parseInt(data.results[0].AccumulateTotalCheckIn);
+             
 
-    // 4. Update the text content
-    textElement.textContent = `Today's Check-ins: ${current} of ${max}`;
+              
+      
 
-    // 5. Update the progress bar's width
-    barElement.style.width = percentage + '%';
+           // Ext.getCmp('htmlFloatPanel_MerchantDetailPage_EnterpriseCheckInDetails').setHtml('<div onclick="FloatPanel_MerchantDetailPage_EnterpriseCheckInDetails()" style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 14px;font-weight:bold;color:black;margin:0px 0px 0px 0px;padding:0px 6px;">'+ RelativeCheckInTime +'- Total Check-In Point('+AccumulateAyohaRewardPointCheckIn+')'+'- Total Check-In('+AccumulateTotalCheckIn+')</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 10px;font-weight:normal;color:black;margin:-27px 0px 0px 0px;padding:0px 6px;">Last Visited or Check-In</div>');     
+            Ext.getCmp('htmlFloatPanel_MerchantDetailPage_EnterpriseCheckInDetails').setHtml('<div  style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 12px;font-weight:bold;color:black;margin:0px 0px 0px 0px;padding:0px 6px;">'+ RelativeCheckInTime +'-Total Check-In ('+AccumulateTotalCheckIn+')X Times</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 10px;font-weight:normal;color:black;margin:-27px 0px 0px 0px;padding:0px 6px;">Last Check-In</div>');     
+            
+
+
+            }
+            else {
+               
+               swalFireFail("Fail!->" + result.responseText.trim());
+               LoadingPanelHide();
+                Ext.Viewport.unmask();
+              
+            }
+
+  // id: 'htmlFloatPanel_MerchantDetailPage_EnterpriseCheckInDetails',                                                             
+                // html: '<div onclick="FloatPanel_MerchantDetailPage_EnterpriseCheckInDetails()" style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 14px;font-weight:bold;color:black;margin:0px 0px 0px 0px;padding:0px 6px;">10.00AM - 10.00PM (Closed Now)</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 10px;font-weight:normal;color:black;margin:-27px 0px 0px 0px;padding:0px 6px;">Last Visited or Check-In</div>',
+
+              
+
+            Ext.Viewport.unmask();
+
+        },
+
+        failure: function (result, request) {
+           
+            swalFireFail("Fail!" + result.responseText.trim());
+            Ext.Viewport.unmask();
+            LoadingPanelHide();
+        }
+
+    });
 }

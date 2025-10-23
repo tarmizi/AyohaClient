@@ -36,8 +36,18 @@ var AppState = {
         MerchantTagline: null,
         EnterpriseAddress: null,
     
-    }
+    },
   
+
+
+    MainDashboard: {
+
+        MainDashboardRelativeCheckInTime : null,
+        MainDashboardAyohaRewardPointCheckIn :null,
+        MainDashboardCheckInCount : null,
+      
+    
+    }
 };
 
 

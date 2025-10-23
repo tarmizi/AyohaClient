@@ -16053,6 +16053,13 @@ function Dashboard_LoadLastCheckIn(){
                 var RelativeCheckInTime = record.get('RelativeCheckInTime');
                 var AyohaRewardPointCheckIn = record.get('AyohaRewardPointCheckIn');
                 var CheckInCount = record.get('CheckInCount');
+
+
+               AppState.MainDashboard.MainDashboardRelativeCheckInTime = record.get('RelativeCheckInTime');
+               AppState.MainDashboard.MainDashboardAyohaRewardPointCheckIn = record.get('AyohaRewardPointCheckIn');
+               AppState.MainDashboard.MainDashboardCheckInCount  = record.get('CheckInCount');
+
+
                 Ext.getCmp('DashboardMain_EnterprisesLoadLastCheckInStoreID').setStore(_DataStore_EnterprisesLoadLastCheckInStore);
                Ext.getCmp('labelDashboard_LastCheckInTimeStamp').setHtml('<div  style="background-color:transparent;color:black;text-align: left;font-size:10px;width:100%;margin:0px 0px 0px 0px;font-weight:normal;">'+CheckInCount+'-'+RelativeCheckInTime+'</div>');
              //   Ext.getCmp('labelDashboard_LastCheckInTimeStamp').setHtml('<div style="color:white;text-align: left;font-size:14px;width:100%;margin:0px 0px 0px 0px"><b>Last Check-In</b></div><br><div  style="color:white;text-align: left;font-size:10px;width:100%;margin:-25px 0px 0px 0px;">'+RelativeCheckInTime+'</div>');
@@ -16071,6 +16078,7 @@ function Dashboard_LoadLastCheckIn(){
                 Ext.getCmp('DashboardMain_EnterprisesLoadLastCheckInStoreID').setStyle('background-color:rgba(255, 255, 255, 10);border-radius: 10px 10px 0px 0px;');
                 Ext.getCmp('DashboardMain_EnterprisesLoadLastCheckInStoreID').setHidden(false); 
                 Ext.getCmp('DashboardMain_EnterprisesLoadCheckInEmptyID').setHidden(true); 
+
             
             } else {
                 console.error('Failed to load store data or no record found.');

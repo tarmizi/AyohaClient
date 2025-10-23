@@ -723,6 +723,77 @@ function FloatPanel_MerchantDetailPage() {
                                                height: 5,
                                                style: 'background-color: transparent;',
                                            },
+                                           {
+                                            xtype: 'container',
+                                            width: '95%',
+                                            height: 35,
+                                            style: 'background-color: transparent;',
+                                            id: 'containerFloatPanel_MerchantDetailPage_EnterpriseCheckIn',
+
+                                            //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
+                                            // style: 'border-bottom:2px solid #D25959;background-color:transparent',
+                                            layout: {
+                                                type: 'hbox',
+                                                pack: 'left',
+                                                align: 'left',
+                                            },
+                                            items: [
+                                                {
+                                                    xtype: 'container',
+                                                    width: '7%',
+                                                    height: 42,
+                                                    style: 'background-color: transparent;',
+                                                    id: 'containerFloatPanel_MerchantDetailPage_EnterpriseCheckInIcon',
+
+                                                    //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
+                                                    // style: 'border-bottom:2px solid #D25959;background-color:transparent',
+                                                    layout: {
+                                                        type: 'hbox',
+                                                        pack: 'left',
+                                                        align: 'left',
+                                                    },
+                                                    items: [
+                                                        {
+                                                            width: '100%',
+                                                            margin: '-6 0 0 -10',
+                                                            height: 42,
+                                                            html: '<div ><img src="resources/icons/ayoha_checkin_icon.png" width="40" height="40" alt="Company Name"></div>',
+                                                        }
+                                                    ]
+                                                },
+                                                 {
+                                                     xtype: 'container',
+                                                     width: '92%',
+                                                     height: 35,
+                                                     style: 'background-color: transparent;',
+                                                     id: 'containerFloatPanel_MerchantDetailPage_EnterpriseCheckInDetails',
+
+                                                     //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
+                                                     // style: 'border-bottom:2px solid #D25959;background-color:transparent',
+                                                     layout: {
+                                                         type: 'hbox',
+                                                         pack: 'left',
+                                                         align: 'left',
+                                                     },
+                                                     items: [
+                                                         {
+                                                             width: '100%',
+                                                             height: 35,
+                                                             margin: '-3 0 0 0',
+                                                             id: 'htmlFloatPanel_MerchantDetailPage_EnterpriseCheckInDetails',                                                             
+                                                             html: '<div onclick="FloatPanel_MerchantDetailPage_EnterpriseCheckInDetails()" style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 12px;font-weight:bold;color:black;margin:0px 0px 0px 0px;padding:0px 6px;">Loading..</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 10px;font-weight:normal;color:black;margin:-27px 0px 0px 0px;padding:0px 6px;">Last Check-In</div>',
+                                                         }
+                                                     ]
+                                                 }
+                                            ]
+
+                                        },
+                                        {
+                                            xtype: 'container',
+                                            width: '95%',
+                                            height: 7,
+                                            style: 'background-color: transparent;',
+                                        },
                                           {
                                               xtype: 'container',
                                               width: '95%',
@@ -2066,7 +2137,7 @@ function FloatPanel_MerchantDetailPageShow(ID,EnterpriseAccNo, EnterpriseLogoPat
         Ext.getCmp('htmlFloatPanel_MerchantDetailPage_TikTok').setHidden(false);
     }
   
-   // alert(BusinessMode)
+  
 
     if (BusinessMode == 'Online') {
         // Ext.getCmp('containerFloatPanel_MerchantDetailPage_EnterpriseInfo_OnlineStore').setHidden(true);
@@ -2130,8 +2201,10 @@ function FloatPanel_MerchantDetailPageShow(ID,EnterpriseAccNo, EnterpriseLogoPat
     //   // $('#containeFloatPanel_MerchantDetailPage_OnlineStore_Inner').hide();
     //    Ext.getCmp('containeFloatPanel_MerchantDetailPage_OnlineStore_Inner').setHidden(true);
     //});
-    LoadingPanelHide();
-    FloatPanel_AyohaStore_EnterprisesCheckIn();
+   
+   
+   // LoadingPanelHide();
+   
 }
 
 
@@ -2149,7 +2222,90 @@ function FloatPanel_MerchantDetailPageHide() {
 }
 
 
+function  FloatPanel_AyohaStore_EnterprisesCheckIn(){
 
+    var objn = {
+        "EnterpriseAccNo": FloatPanel_AyohaStore_getEnterpriseAccNo(),
+         "SubscriberAccNo":GetCurrAyohaUserAccountNo()
+    };
+    var _value = Ext.Ajax.request({
+
+        type: "POST",
+
+        url: GetAPIurl() + '/EnterprisesCheckIn/EnterprisesCheckIn_CanCheckIn',
+
+        dataType: "json",
+        data: JSON.stringify(objn),
+        headers: {
+            "Content-Type": "application/json; charset=utf-8"
+        },
+
+        success: function (result, request) {
+
+            //console.log(result.responseText);
+
+
+            data = Ext.decode(result.responseText.trim());
+
+            if (data.success == "true") {
+
+              var count=parseInt(data.results[0].CanCheckIn);
+              var CheckInCount=parseInt(data.results[0].CheckInCount) + 1;
+
+
+              var RelativeCheckInTime=data.results[0].RelativeCheckInTime;
+              var AccumulateAyohaRewardPointCheckIn=parseInt(data.results[0].AccumulateAyohaRewardPointCheckIn);
+              var AccumulateTotalCheckIn=parseInt(data.results[0].AccumulateTotalCheckIn);
+              if(count>=1){
+             // alert("You have checked in today already.   "+CheckInCount);
+                var logo =FloatPanel_AyohaStore_getEnterpriseLogo();
+                var eName =FloatPanel_AyohaStore_getEnterpriseName();
+                var etagline =FloatPanel_AyohaStore_getEnterpriseTagLine();
+
+                FloatPanel_Membership_CheckInPageShow(logo,eName,etagline,CheckInCount);
+
+               
+                // id: 'htmlFloatPanel_MerchantDetailPage_EnterpriseCheckInDetails',                                                             
+                // html: '<div onclick="FloatPanel_MerchantDetailPage_EnterpriseCheckInDetails()" style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 14px;font-weight:bold;color:black;margin:0px 0px 0px 0px;padding:0px 6px;">10.00AM - 10.00PM (Closed Now)</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 10px;font-weight:normal;color:black;margin:-27px 0px 0px 0px;padding:0px 6px;">Last Visited or Check-In</div>',
+
+              
+            }
+
+              
+      
+
+           // Ext.getCmp('htmlFloatPanel_MerchantDetailPage_EnterpriseCheckInDetails').setHtml('<div onclick="FloatPanel_MerchantDetailPage_EnterpriseCheckInDetails()" style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 14px;font-weight:bold;color:black;margin:0px 0px 0px 0px;padding:0px 6px;">'+ RelativeCheckInTime +'- Total Check-In Point('+AccumulateAyohaRewardPointCheckIn+')'+'- Total Check-In('+AccumulateTotalCheckIn+')</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 10px;font-weight:normal;color:black;margin:-27px 0px 0px 0px;padding:0px 6px;">Last Visited or Check-In</div>');     
+            Ext.getCmp('htmlFloatPanel_MerchantDetailPage_EnterpriseCheckInDetails').setHtml('<div  style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 12px;font-weight:bold;color:black;margin:0px 0px 0px 0px;padding:0px 6px;">'+ RelativeCheckInTime +'-Total Check-In ('+AccumulateTotalCheckIn+')X Times</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 10px;font-weight:normal;color:black;margin:-27px 0px 0px 0px;padding:0px 6px;">Last Check-In</div>');     
+            
+
+
+            }
+            else {
+               
+               swalFireFail("Fail!->" + result.responseText.trim());
+               LoadingPanelHide();
+                Ext.Viewport.unmask();
+              
+            }
+
+  // id: 'htmlFloatPanel_MerchantDetailPage_EnterpriseCheckInDetails',                                                             
+                // html: '<div onclick="FloatPanel_MerchantDetailPage_EnterpriseCheckInDetails()" style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 14px;font-weight:bold;color:black;margin:0px 0px 0px 0px;padding:0px 6px;">10.00AM - 10.00PM (Closed Now)</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 10px;font-weight:normal;color:black;margin:-27px 0px 0px 0px;padding:0px 6px;">Last Visited or Check-In</div>',
+
+              
+
+            Ext.Viewport.unmask();
+
+        },
+
+        failure: function (result, request) {
+           
+            swalFireFail("Fail!" + result.responseText.trim());
+            Ext.Viewport.unmask();
+            LoadingPanelHide();
+        }
+
+    });
+}
 
 
 function FloatPanelMerchantDetailPage_OpenDirection() {
@@ -2434,24 +2590,17 @@ console.log(GetCurrAyohaUserAccountNo())
             
                     
             
-                    LoadingPanelHide();
-            
+
+
+                    // Assuming your functions return a Promise (like fetch, axios, etc.)
+
+                  
             
             
                     FloatPanelMerchantDetailPage_CalculateRating(EnterpriseAccNo);
                     FloatPanelMerchantDetailPage_EnterprisesOnlineStoreLoadByEnterpriseAccNoStore();
                     FloatPanelMerchantDetailPage_MembershipCardLoadByEnterpriseAccNoStore();
-                  //  FloatPanelMerchantDetailPage_CartTotalItemQuantity();
-
-
-
-
-
-
-
-
-
-               
+                    FloatPanel_AyohaStore_EnterprisesCheckIn();                 
                 LoadingPanelHide();
             } else {
                 console.error('Failed to load store data or no record found.');
