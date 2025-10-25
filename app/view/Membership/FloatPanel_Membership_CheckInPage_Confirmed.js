@@ -634,7 +634,7 @@ function FloatPanel_Membership_CheckInPage_Confirmed() {
   
     AddRoutePages("FloatPanel_Membership_CheckInPage_ConfirmedHide()");
     isFloatPanel_Membership_CheckInPage_ConfirmedOpen = 'Y';
-
+    Dashboard_LoadLastCheckIn();
 
 
 
@@ -674,12 +674,14 @@ function FloatPanel_Membership_CheckInPage_Confirmed() {
 
 function FloatPanel_Membership_CheckInPage_ConfirmedHide() {
     // FloatPanel_AyohaMerchantInfo_PointCardLoyaltyProgram_AddCardHide();
-   
+ 
+  FloatPanelMerchantDetailPage_AyohaStore();
     if (isFloatPanel_Membership_CheckInPage_ConfirmedOpen == "Y") {
         _FloatPanel_Membership_CheckInPage_Confirmed.hide(); isFloatPanel_Membership_CheckInPage_ConfirmedOpen = 'N';
-        Dashboard_LoadLastCheckIn();
-        RemovePages("FloatPanel_Membership_CheckInPage_ConfirmedHide()");
+       // Dashboard_LoadLastCheckIn();
         FloatPanelMerchantDetailPage_AyohaStore();
+        RemovePages("FloatPanel_Membership_CheckInPage_ConfirmedHide()");
+       
     }
   
 }

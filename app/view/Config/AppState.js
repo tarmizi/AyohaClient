@@ -47,6 +47,34 @@ var AppState = {
         MainDashboardCheckInCount : null,
       
     
+    },
+
+
+    FloatPanel_AyohaReward:{
+        AyohaRewardPointBalance : null,
+        MembershipSince: null,
+        MembershipTier: null,
+        MembershipNo: null,
+        imgRankStar : null,
+        imgNextRankStar : null,
+        TextRankStar : null,
+        TextNextRankStar : null,        
+        AyohaMember_NextRankPoint : null,
+       
+    },
+
+    LoginAyohaUser:{
+        AyohaUserisUserVerified: null,
+        AyohaVersion: null,
+        AyohaUserGroupCode: null,
+        AyohaUserPicProfile: null,
+        AyohaUserAccountNames: null,
+        CurrPhoneNumber: null,
+        AyohaUserVerifiedString: null,
+        AyohaUserEmail: null,
+        AyohaUserKatalaluan: null,
+        AyohaUserAccountNo: null,
+        AccountNoDisplay: null,
     }
 };
 

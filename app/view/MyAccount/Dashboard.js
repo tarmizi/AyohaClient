@@ -1262,7 +1262,7 @@ itemTpl: '<div class="myContent" style="background-color:transparent;width:103%;
 
                 margin: '0 14 0 0',
              //hidden:true,
-                html: '<div style="background-color: rgba(26, 115, 232, 0.85); color: white; font-family: Arial, Helvetica, sans-serif; font-weight: normal; font-size: 10px; padding: 3px 6px; border-radius: 50px; display: inline-block; text-align: center; white-space: nowrap;margin:5px 0px 0px 0px;">Spend & Win Contest!</div>'
+                html: '<div onclick="FloatPanel_AyohaRewardShow()" style="background-color: rgba(26, 115, 232, 0.85); color: white; font-family: Arial, Helvetica, sans-serif; font-weight: normal; font-size: 10px; padding: 3px 6px; border-radius: 50px; display: inline-block; text-align: center; white-space: nowrap;margin:5px 0px 0px 0px;">Spend & Win Contest!</div>'
             
             },
            
@@ -13755,8 +13755,9 @@ function DashboardAyohaUserMainStore() {
              var parts = rank.split(",");
              var AyohaMember_Rank=parts[0];
              var AyohaMember_NextRank=parts[1];
-             DashboardAyohaMember_NextRankPoint=parts[2];            
-            localStorage.setItem("AyohaMember_Rank", AyohaMember_Rank);
+             DashboardAyohaMember_NextRankPoint=parts[2];
+             AppState.FloatPanel_AyohaReward.AyohaMember_NextRankPoint=parts[2];           
+           // localStorage.setItem("AyohaMember_Rank", AyohaMember_Rank);
     
     
             globalDashboard_TotalItemQuantityCart = modelRecord.get('TotalItemQuantityCart');
@@ -13883,14 +13884,18 @@ function DashboardAyohaUserMainStore() {
                // Ext.getCmp('btnMyAccount_DashboardRankIconText').setHtml('<div class="blink_me" style="color:white;text-align: center;font-size:16px;width:100%;margin:0px 0px 0px 10px"><b> ' + AyohaMember_Rank + '</b></div>');
                 Ext.getCmp('btnMyAccount_DashboardRankIconText').setHtml('<div onclick="FloatPanel_MyAccountRankDescriptionShow();" style="color:white;text-align: center;font-size:16px;width:100%;margin:0px 0px 0px 0px"><b> ' + AyohaMember_Rank + '</b></div>');
                 document.getElementById("txtDashboard_RankingIcon").textContent = AyohaMember_Rank;
+
+             
                 document.getElementById("txtNextRanking").textContent = AyohaMember_NextRank;
+                AppState.FloatPanel_AyohaReward.TextNextRankStar=AyohaMember_NextRank;
+                
                 const txtNextRanking = document.getElementById("txtNextRanking");
                 txtNextRanking.style.fontWeight = "bold";
                 // var AyohaMember_NextRank=parts[1];
                 // var AyohaMember_NextRankPoint=parts[2];    
 
 
-
+              AppState.FloatPanel_AyohaReward.TextRankStar=AyohaMember_Rank;
                 
     
                 if (AyohaMember_Rank == "Black Iron") {
@@ -13899,7 +13904,10 @@ function DashboardAyohaUserMainStore() {
                     Ext.getCmp('btnMyAccount_DashboardRankIcon').setHtml('<div style="width:22px;height:22px;background-color:transparent"><img src="resources/icons/ayohaRankingIcon/blackIron.png" alt="Image" style="width:42px;height:42px;"></div>');
                     Ext.get('imgDashboard_RankingIcon').dom.src = "resources/icons/ayohaRankingIcon/blackIron.png";
                     Ext.get('imgNextRanking').dom.src = "resources/icons/ayohaRankingIcon/Bronze.png";
-                   
+                    AppState.FloatPanel_AyohaReward.imgRankStar="resources/icons/ayohaRankingIcon/blackIron.png";
+                    AppState.FloatPanel_AyohaReward.imgNextRankStar="resources/icons/ayohaRankingIcon/Bronze.png";
+                    
+                                      
                     // Ubah margin
                      txtNextRanking.style.margin = "20px -100px 0px 0px";
                     // html: '<div style="width:22px;height:22px;background-color:transparent;"><img src="resources/icons/kingclubIcon.png" alt="Image" style="width:42px;height:42px;margin:3px 0px 0px 14px;"></div>',
@@ -13910,6 +13918,9 @@ function DashboardAyohaUserMainStore() {
                     Ext.getCmp('btnMyAccount_DashboardRankIcon').setHtml('<div style="width:22px;height:22px;background-color:transparent"><img src="resources/icons/ayohaRankingIcon/Bronze.png" alt="Image" style="width:42px;height:42px;"></div>');
                     Ext.get('imgDashboard_RankingIcon').dom.src = "resources/icons/ayohaRankingIcon/Bronze.png";
                     Ext.get('imgNextRanking').dom.src = "resources/icons/ayohaRankingIcon/Silver.png";
+                    AppState.FloatPanel_AyohaReward.imgRankStar="resources/icons/ayohaRankingIcon/Bronze.png";
+                    AppState.FloatPanel_AyohaReward.imgNextRankStar="resources/icons/ayohaRankingIcon/Silver.png"; 
+                  
                     txtNextRanking.style.margin = "20px -100px 0px 0px";
                 }
                 if (AyohaMember_Rank == "Silver") {
@@ -13918,6 +13929,9 @@ function DashboardAyohaUserMainStore() {
                     Ext.getCmp('btnMyAccount_DashboardRankIcon').setHtml('<div style="width:22px;height:22px;background-color:transparent"><img src="resources/icons/ayohaRankingIcon/Silver.png" alt="Image" style="width:42px;height:42px;"></div>');
                     Ext.get('imgDashboard_RankingIcon').dom.src = "resources/icons/ayohaRankingIcon/Silver.png";
                     Ext.get('imgNextRanking').dom.src = "resources/icons/ayohaRankingIcon/Gold.png";
+                    AppState.FloatPanel_AyohaReward.imgRankStar="resources/icons/ayohaRankingIcon/Silver.png";
+                    AppState.FloatPanel_AyohaReward.imgNextRankStar="resources/icons/ayohaRankingIcon/Gold.png";
+                 
                     txtNextRanking.style.margin = "20px -100px 0px 0px";
                 }
                 if (AyohaMember_Rank == "Gold") {
@@ -13926,6 +13940,9 @@ function DashboardAyohaUserMainStore() {
                     Ext.getCmp('btnMyAccount_DashboardRankIcon').setHtml('<div style="width:22px;height:22px;background-color:transparent"><img src="resources/icons/ayohaRankingIcon/Gold.png" alt="Image" style="width:42px;height:42px;"></div>');
                     Ext.get('imgDashboard_RankingIcon').dom.src = "resources/icons/ayohaRankingIcon/Gold.png";
                     Ext.get('imgNextRanking').dom.src = "resources/icons/ayohaRankingIcon/Platinum.png";
+                    AppState.FloatPanel_AyohaReward.imgRankStar="resources/icons/ayohaRankingIcon/Gold.png";
+                    AppState.FloatPanel_AyohaReward.imgNextRankStar="resources/icons/ayohaRankingIcon/Platinum.png";
+                  
                     txtNextRanking.style.margin = "20px -80px 0px 0px";
                 }
                 if (AyohaMember_Rank == "Platinum") {
@@ -13934,6 +13951,9 @@ function DashboardAyohaUserMainStore() {
                     Ext.getCmp('btnMyAccount_DashboardRankIcon').setHtml('<div style="width:22px;height:22px;background-color:transparent"><img src="resources/icons/ayohaRankingIcon/Platinum.png" alt="Image" style="width:42px;height:42px;"></div>');
                     Ext.get('imgDashboard_RankingIcon').dom.src = "resources/icons/ayohaRankingIcon/Platinum.png";
                     Ext.get('imgNextRanking').dom.src = "resources/icons/ayohaRankingIcon/kingclubIcon.png";
+                    AppState.FloatPanel_AyohaReward.imgRankStar="resources/icons/ayohaRankingIcon/Platinum.png";
+                    AppState.FloatPanel_AyohaReward.imgNextRankStar="resources/icons/ayohaRankingIcon/kingclubIcon.png";
+               
                     txtNextRanking.style.margin = "20px -80px 0px 0px";
                 }
                 if (AyohaMember_Rank == "King Club") {
@@ -13941,6 +13961,7 @@ function DashboardAyohaUserMainStore() {
                     //Ext.getCmp('btnMyAccount_DashboardRankIcon').setHtml('<div class="blink_me" style="width:22px;height:22px;background-color:transparent"><img src="resources/icons/ayohaRankingIcon/kingclubIcon.png" alt="Image" style="width:42px;height:42px;margin:3px 0px 0px 14px;"></div>');
                     Ext.getCmp('btnMyAccount_DashboardRankIcon').setHtml('<div style="width:22px;height:22px;background-color:transparent"><img src="resources/icons/ayohaRankingIcon/kingclubIcon.png" alt="Image" style="width:42px;height:42px;"></div>');
                     Ext.get('imgDashboard_RankingIcon').dom.src = "resources/icons/ayohaRankingIcon/kingclubIcon.png";
+                    AppState.FloatPanel_AyohaReward.imgRankStar="resources/icons/ayohaRankingIcon/kingclubIcon.png";                   
                 }
             }
     
@@ -14016,6 +14037,11 @@ if (convertDateToDayMonthYear(globalLogginAyohaUser_UserVerifiedDate)=="Non Ayoh
 document.getElementById("txtDashboard_MembershipTier").style.visibility = "visible";
 document.getElementById("txtDashboard_MembershipNo").textContent = globalLogginAyohaUser_AccountNo_Display;
 }
+AppState.FloatPanel_AyohaReward.AyohaRewardPointBalance=AyohaPoint;
+AppState.FloatPanel_AyohaReward.MembershipNo=globalLogginAyohaUser_AccountNo_Display;
+AppState.FloatPanel_AyohaReward.MembershipSince=convertDateToDayMonthYear(globalLogginAyohaUser_UserVerifiedDate);
+
+
 
 
 // Hide (element still takes space)
@@ -16035,7 +16061,8 @@ function Dashboard_SearchMerchantList_EnterprisesLoadAyohaMerchantListStore_Fron
 
 
 function Dashboard_ayoharedeem_page(){
-    Ext.getCmp('mainView').setActiveItem(2);
+    //FloatPanel_AyohaRewardShow();
+  Ext.getCmp('mainView').setActiveItem(2);
 }
 
 

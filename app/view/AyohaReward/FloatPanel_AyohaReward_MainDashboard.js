@@ -12,7 +12,7 @@ Ext.define('ianMizi.view.AyohaReward.FloatPanel_AyohaReward_MainDashboard', {
     extend: 'Ext.Container',
     //  extend: 'Ext.Panel',
     xtype: 'AyohaReward_MainDashboard',
-    id: 'AyohaReward_MainDashboardID',
+    //id: 'AyohaReward_MainDashboardID',
     //requires: [
     //     'ianMizi.view.Dashboard.DashboardMerchantReward',
     //],
@@ -2579,7 +2579,6 @@ initialize: function () {
 
 
 
-
 // function FloatPanel_AyohaReward_MainDashboard() {
 
 //     _FloatPanel_AyohaReward_MainDashboard =
@@ -2589,7 +2588,7 @@ initialize: function () {
 //         //height: 465,
 //         height: '100%',
 //         width: '100%',
-//         id: 'FloatPanel_AyohaReward_MainDashboardID',
+//         itemId: 'FloatPanel_AyohaReward_MainDashboardID',
 //         draggable: false,
 
 //         styleHtmlContent: true,
@@ -2670,7 +2669,7 @@ initialize: function () {
 //                 xtype: 'container',
 //                 width: '100%',
 //                 height: '100%',
-//                 id: 'FloatPanel_AyohaReward_MainDashboardListContentID',
+//                 itemId: 'FloatPanel_AyohaReward_MainDashboardListContentID',
 //                 layout: {
 //                     type: 'vbox',
 //                     pack: 'start',
@@ -2682,7 +2681,7 @@ initialize: function () {
 //                 items: [
 //                     {
 //                         xtype: 'container',
-//                         id: 'containerMyAccount_DashboardAyohaReward',
+//                         itemId: 'containerMyAccount_DashboardAyohaReward',
 //                         width: '100%',
 //                         height: '100%',
 //                         //style: "background-color: white;border-right:2px solid #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px #ECF0F1 white;border-radius: 50px 50px 50px 50px;",
@@ -2754,7 +2753,7 @@ initialize: function () {
 //                                //  title: '<font size="3" color="white">Live Tracking Map</font>',
 //                                //hidden: true,
               
-//                                id: 'containerMyAccount_DashboardHeader',
+//                                itemId: 'containerMyAccount_DashboardHeader',
 //                               /// style: 'background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);',
 //                               // style: 'background-color: #fac;background-image: linear-gradient(#c800ffc9,#ff00de75);',
 //                               style: 'background-color:transparent;',
@@ -2784,7 +2783,7 @@ initialize: function () {
 //                 //  title: '<font size="3" color="white">Live Tracking Map</font>',
 //                 //hidden: true,
 
-//                 id: 'containerFloatPanel_AyohaReward_MainDashboardHeader',
+//                 itemId: 'containerFloatPanel_AyohaReward_MainDashboardHeader',
 //                 style: {
 //                     // background: '#D25959',
 //                     background: 'transparent',
@@ -2804,7 +2803,7 @@ initialize: function () {
 
 //                                      {
 //                                          xtype: 'button',
-//                                          id: 'btnFloatPanel_AyohaReward_MainDashboardBack',
+//                                          itemId: 'btnFloatPanel_AyohaReward_MainDashboardBack',
 //                                          margin: '10 0 0 5',
 //                                          height: 30,
 //                                          width: 35,
@@ -2834,14 +2833,14 @@ initialize: function () {
 //                                       },
 //                                       {
 //                                         margin: '10 10 0 0',
-//                                         id: 'htmlFloatPanel_AyohaReward_MainDashboard_TitleHeaderTxt',
+//                                         itemId: 'htmlFloatPanel_AyohaReward_MainDashboard_TitleHeaderTxt',
 
 //                                         html: '<div style="color:black;text-align: right;font-size:14px;width:100%;"><b>Membership Loyalty Stamp</b></div>'
 //                                     },
 //                                       {
 //                                         xtype: 'button',
 //                                         margin: '10 0 0 -10',
-//                                         id: 'btnFloatPanel_AyohaReward_MainDashboard_CardIcon',
+//                                         itemId: 'btnFloatPanel_AyohaReward_MainDashboard_CardIcon',
 //                                         height: 35,
 //                                         width: 35,
 //                                         //hidden:true,
@@ -2898,7 +2897,7 @@ initialize: function () {
 //                           {
 //                                xtype: 'container',
                            
-//                                id: 'Dashboard_Carousel',
+//                                itemId: 'Dashboard_Carousel',
 //                                name: 'nameDashboard_Carousel',                
 //                                //width: '100%',
 //                                //height: '100%',
@@ -2915,7 +2914,7 @@ initialize: function () {
 //                                   {
 //                                      xtype: 'carousel',
 //                                      // xtype: 'container',
-//                                       id: 'mainDashboardCarousel',
+//                                       itemId: 'mainDashboardCarousel',
 //                                       name: 'namemainDashboardCarousel',
 //                                       height: 390,
 //                                       width: '100%',
@@ -2950,7 +2949,7 @@ initialize: function () {
 //                                           {
               
 //                                               xtype: 'container',
-//                                               id: 'containerAyohaRewards',
+//                                               itemId: 'containerAyohaRewards',
 //                                               //hidden: true,
 //                                               style: "background-color: transparent;",
 //                                               margin: '30 0 0 0',
@@ -2977,7 +2976,7 @@ initialize: function () {
                      
                      
 //                                                              margin: '0 0 0 0',
-//                                                              id: 'htmlDashboard_AyohaRewardLogos',
+//                                                              itemId: 'htmlDashboard_AyohaRewardLogos',
 //                                                              name: 'containerNameAyohaRewards',
 //                                                             // zIndex: 200,
 //                                                              width: 230,
@@ -2999,7 +2998,7 @@ initialize: function () {
 //                                                                      style: "background-color: transparent;",
 //               },
 //                                                                  {
-//                                                                   id: 'Dashboard_AyohaRewardPanel',
+//                                                                   itemId: 'Dashboard_AyohaRewardPanel',
                                                           
               
               
@@ -3114,7 +3113,7 @@ initialize: function () {
 //                                      //                                               // html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: 70%"><col style="width:30%"></colgroup><thead><tr><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:right;vertical-align:top;word-break:normal" rowspan="2"><div style="margin:0px 0px 0px -15px">TARMIZI RAHIM</div><br>Lagendary Card Mortal </th><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:middle;word-break:normal" rowspan="2">Medal</th></tr><tr></tr></thead></table>'
 //                                      //                                           },
 //                                      {
-//                                       id: 'btnMyAccount_DashboardRankIcon',
+//                                       itemId: 'btnMyAccount_DashboardRankIcon',
 //                                       xtype: 'container',
 //                                       name:'btnNameMyAccount_DashboardRankIcon',
 //                                      // style: 'background-color:yellow',
@@ -3131,7 +3130,7 @@ initialize: function () {
 //                                           margin: '0 0 0 0',
 //                                           width:'100%',
 //                                           hidden: true,
-//                                           id: 'btnMyAccount_DashboardRankIconText',
+//                                           itemId: 'btnMyAccount_DashboardRankIconText',
 //                                           html: '<div style="color:white;text-align: center;font-size:16px;width:100%;margin:0px 0px 0px 0px"><b>Non Ayoha Member</b></div>'
                                         
                                        

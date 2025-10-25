@@ -729,6 +729,7 @@ function FloatPanel_MerchantDetailPage() {
                                             height: 35,
                                             style: 'background-color: transparent;',
                                             id: 'containerFloatPanel_MerchantDetailPage_EnterpriseCheckIn',
+                                            name:'namecontainerFloatPanel_MerchantDetailPage_EnterpriseCheckIn',
 
                                             //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
                                             // style: 'border-bottom:2px solid #D25959;background-color:transparent',
@@ -924,7 +925,7 @@ function FloatPanel_MerchantDetailPage() {
                                                                height: 35,
                                                                margin: '-3 0 0 0',
                                                                id: 'htmlFloatPanel_MerchantDetailPage_EnterpriseContactDetails',                                                              
-                                                               html: '<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 14px;font-weight:bold;color:black;margin:0px 0px 0px 0px;padding:0px 6px;">03-663998765</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 10px;font-weight:normal;color:black;margin:-27px 0px 0px 0px;padding:0px 6px;">Business Contact No</div>',
+                                                               html: '<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 12px;font-weight:bold;color:black;margin:0px 0px 0px 0px;padding:0px 6px;">03-663998765</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 10px;font-weight:normal;color:black;margin:-27px 0px 0px 0px;padding:0px 6px;">Business Contact No</div>',
                                                            }
                                                        ]
                                                    }
@@ -996,7 +997,7 @@ function FloatPanel_MerchantDetailPage() {
                                                                height: 35,
                                                                margin: '-3 0 0 0',
                                                                id: 'htmlFloatPanel_MerchantDetailPage_EnterpriseWhatsAppDetails',                                                              
-                                                               html: '<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 14px;font-weight:bold;color:black;margin:0px 0px 0px 0px;padding:0px 6px;">013-3376958</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 10px;font-weight:normal;color:black;margin:-27px 0px 0px 0px;padding:0px 6px;">WhatsApp Contact No</div>',
+                                                               html: '<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 12px;font-weight:bold;color:black;margin:0px 0px 0px 0px;padding:0px 6px;">013-3376958</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 10px;font-weight:normal;color:black;margin:-27px 0px 0px 0px;padding:0px 6px;">WhatsApp Contact No</div>',
                                                            }
                                                        ]
                                                    }
@@ -1113,9 +1114,9 @@ function FloatPanel_MerchantDetailPage() {
                                                                        },
                                                                        items: [
                                                                            {
-                                                                               margin: '0 0 0 0',
+                                                                               margin: '0 0 0 5',
                                                                                id: 'htmlFloatPanel_MerchantDetailPage_ReviewAndRateCount',
-                                                                               html: '<div style="color:black;text-align: center;font-size:20px;width:100%;font-weight:bold;margin:0px 0px 0px 0px;">0.0</div>',
+                                                                               html: '<div style="color:black;text-align: center;font-size:14px;width:100%;font-weight:bold;margin:0px 0px 0px 0px;">0.0</div>',
 
                                                                            },
 
@@ -2112,8 +2113,8 @@ function FloatPanel_MerchantDetailPageShow(ID,EnterpriseAccNo, EnterpriseLogoPat
     Ext.getCmp('htmlFloatPanel_MerchantDetailPage_EnterpriseInfo_EnterpiseInfoExtended_EnterpriseName_TagLine').setHtml('<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 17px;font-weight:bold;color:black;margin:0px 0px 0px 0px;padding:0px 6px;">' + EnterpriseName + '</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 10px;font-weight:normal;color:black;margin:-27px 0px 0px 0px;padding:0px 6px;"><i>' + EnterpriseTagLine + '</i></div>');
     
     Ext.getCmp('htmlFloatPanel_MerchantDetailPage_EnterpriseDescription').setHtml('<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 12px;font-weight:normal;color:black;padding:0px 7px;">' + EnterpriseDescriptions + '</div>');
-    Ext.getCmp('htmlFloatPanel_MerchantDetailPage_EnterpriseContactDetails').setHtml('<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 14px;font-weight:bold;color:black;margin:0px 0px 0px 0px;padding:0px 6px;"><a href="tel:' + EnterprisePhoneNo + '">' + EnterprisePhoneNo + '</a></div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 10px;font-weight:normal;color:black;margin:-27px 0px 0px 0px;padding:0px 6px;">Business Contact No</div>');
-    Ext.getCmp('htmlFloatPanel_MerchantDetailPage_EnterpriseWhatsAppDetails').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenWhatsApp()" style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 14px;font-weight:bold;color:black;margin:0px 0px 0px 0px;padding:0px 6px;">' + PICContactNo + '</div><br><div onclick="FloatPanelMerchantDetailPage_OpenWhatsApp()" style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 10px;font-weight:normal;color:black;margin:-27px 0px 0px 0px;padding:0px 6px;">WhatsApp Contact No</div>');
+    Ext.getCmp('htmlFloatPanel_MerchantDetailPage_EnterpriseContactDetails').setHtml('<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 12px;font-weight:bold;color:black;margin:0px 0px 0px 0px;padding:0px 6px;"><a href="tel:' + EnterprisePhoneNo + '">' + EnterprisePhoneNo + '</a></div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 10px;font-weight:normal;color:black;margin:-27px 0px 0px 0px;padding:0px 6px;">Business Contact No</div>');
+    Ext.getCmp('htmlFloatPanel_MerchantDetailPage_EnterpriseWhatsAppDetails').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenWhatsApp()" style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 12px;font-weight:bold;color:black;margin:0px 0px 0px 0px;padding:0px 6px;">' + PICContactNo + '</div><br><div onclick="FloatPanelMerchantDetailPage_OpenWhatsApp()" style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 10px;font-weight:normal;color:black;margin:-27px 0px 0px 0px;padding:0px 6px;">WhatsApp Contact No</div>');
 
     Ext.getCmp('htmlFloatPanel_MerchantDetailPage_EnterpriseName').setHtml('<div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-family:Century Gothic;font-size: 17px;font-weight:bold;color:black;margin:5px 0px 0px 0px">' + EnterpriseName + '</div><br><div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-family:Century Gothic;font-size: 11px;font-weight:normal;color:black;margin:-27px 0px 0px 0px">' + EnterpriseTagLine + '</div>');
 
@@ -2221,8 +2222,105 @@ function FloatPanel_MerchantDetailPageHide() {
 
 }
 
+function FloatPanel_AyohaStore_EnterprisesCheckIn () {
+    var payload = {
+      EnterpriseAccNo: FloatPanel_AyohaStore_getEnterpriseAccNo(),
+      SubscriberAccNo: GetCurrAyohaUserAccountNo()
+    };
+  
+    Ext.Ajax.request({
+      method: 'POST',
+      url: GetAPIurl() + '/EnterprisesCheckIn/EnterprisesCheckIn_CanCheckIn',
+      jsonData: payload,
+      success: function (result) {
+        var data = Ext.decode(result.responseText.trim() || '{}');
+  
+        if (data.success === true || data.success === 'true') {
+          var count = parseInt(data.results[0].CanCheckIn, 10) || 0;
+          var CheckInCount = (parseInt(data.results[0].CheckInCount, 10) || 0) + 1;
+  
+          var RelativeCheckInTime = data.results[0].RelativeCheckInTime || '';
+          var AccumulateTotalCheckIn = parseInt(data.results[0].AccumulateTotalCheckIn, 10) || 0;
+  
+          var logo    = FloatPanel_AyohaStore_getEnterpriseLogo();
+          var eName   = FloatPanel_AyohaStore_getEnterpriseName();
+          var etagline= FloatPanel_AyohaStore_getEnterpriseTagLine();
+  
+          // If can check in now, open the panel immediately
+          if (count == 1) {
+            FloatPanel_Membership_CheckInPageShow(logo, eName, etagline, CheckInCount);
+            //Ext.getCmp('htmlFloatPanel_MerchantDetailPage_EnterpriseCheckInDetails').setHtml('<div  style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 12px;font-weight:bold;color:black;margin:0px 0px 0px 0px;padding:0px 6px;">'+ RelativeCheckInTime +'-Total Check-In ('+AccumulateTotalCheckIn+')X Times</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 10px;font-weight:normal;color:black;margin:-27px 0px 0px 0px;padding:0px 6px;">Last Check-In</div>');     
+                
+            var containerViewnamecontainerFloatPanel_MerchantDetailPage_EnterpriseCheckIn = Ext.ComponentQuery.query('container[name=namecontainerFloatPanel_MerchantDetailPage_EnterpriseCheckIn]')[0];
+            var containerViewElnamecontainerFloatPanel_MerchantDetailPage_EnterpriseCheckIn = containerViewnamecontainerFloatPanel_MerchantDetailPage_EnterpriseCheckIn.element;
+            containerViewElnamecontainerFloatPanel_MerchantDetailPage_EnterpriseCheckIn.on('tap',
+              function (event, node, options, eOpts) {
+           
+                FloatPanel_Membership_CheckInPageShow(logo, eName, etagline, CheckInCount);
+              }
+            );
+          }
+          if(count==0){
+           
 
-function  FloatPanel_AyohaStore_EnterprisesCheckIn(){
+            Ext.getCmp('htmlFloatPanel_MerchantDetailPage_EnterpriseCheckInDetails').setHtml('<div  style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 12px;font-weight:bold;color:black;margin:0px 0px 0px 0px;padding:0px 6px;">'+ RelativeCheckInTime +'-Total Check-In ('+AccumulateTotalCheckIn+')X Times</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 10px;font-weight:normal;color:black;margin:-27px 0px 0px 0px;padding:0px 6px;">Last Check-In</div>');     
+        
+
+           return
+         
+        }
+          var cmp = Ext.getCmp('htmlFloatPanel_MerchantDetailPage_EnterpriseCheckInDetails');
+  
+          if (RelativeCheckInTime) {
+            // Show last check-in info
+            cmp.setHtml(
+              '<div style="width:100%;text-align:left;font-family:Century Gothic;font-size:12px;font-weight:bold;color:#000;padding:0 6px;">'
+                + Ext.String.htmlEncode(RelativeCheckInTime) +
+                ' - Total Check-In (' + AccumulateTotalCheckIn + ') X Times</div>' +
+              '<br>' +
+              '<div style="width:100%;text-align:left;font-family:Century Gothic;font-size:10px;color:#000;margin:-27px 0 0 0;padding:0 6px;">Last Check-In</div>'
+            );
+          } else {
+            // Build a tappable "Check-In Now" button and delegate the tap
+            var checkInButtonId = Ext.id(null, 'checkin-btn-');
+            var buttonHtml =
+              '<div id="' + checkInButtonId + '" ' +
+                'class="example-5" style="display:inline-flex;align-items:center;gap:6px;padding:8px 12px;' +
+                       'background:linear-gradient(90deg,#c800ffc9,#ff00de75);color:#fff;border:2px solid #fac;' +
+                       'border-radius:18px;box-shadow:0 12px 28px rgba(0,0,0,.28);cursor:pointer;' +
+                       'font:600 10px/1 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;">' +
+                'Check-In Now!</div>' +
+              '<br><div style="height:6px;"></div>';
+  
+            cmp.setHtml(buttonHtml);
+  
+            // Delegate 'tap' (works better for Sencha Touch/modern builds; falls back to click on desktop)
+            Ext.defer(function () {
+              if (!cmp || !cmp.rendered) return;
+  
+              var evtName = (Ext && Ext.os && Ext.os.is && (Ext.os.is.Android || Ext.os.is.iOS)) ? 'tap' : 'click';
+              cmp.getEl().on(evtName, function () {
+                FloatPanel_Membership_CheckInPageShow(logo, eName, etagline, CheckInCount);
+              }, null, { delegate: '#' + checkInButtonId });
+            }, 10);
+          }
+  
+          Ext.Viewport.unmask();
+        } else {
+          swalFireFail('Fail! -> ' + (result.responseText || '').trim());
+          LoadingPanelHide();
+          Ext.Viewport.unmask();
+        }
+      },
+      failure: function (result) {
+        swalFireFail('Fail! ' + (result.responseText || '').trim());
+        LoadingPanelHide();
+        Ext.Viewport.unmask();
+      }
+    });
+  }
+  
+function  FloatPanel_AyohaStore_EnterprisesCheckInXX(){
 
     var objn = {
         "EnterpriseAccNo": FloatPanel_AyohaStore_getEnterpriseAccNo(),
@@ -2256,27 +2354,107 @@ function  FloatPanel_AyohaStore_EnterprisesCheckIn(){
               var RelativeCheckInTime=data.results[0].RelativeCheckInTime;
               var AccumulateAyohaRewardPointCheckIn=parseInt(data.results[0].AccumulateAyohaRewardPointCheckIn);
               var AccumulateTotalCheckIn=parseInt(data.results[0].AccumulateTotalCheckIn);
-              if(count>=1){
-             // alert("You have checked in today already.   "+CheckInCount);
-                var logo =FloatPanel_AyohaStore_getEnterpriseLogo();
-                var eName =FloatPanel_AyohaStore_getEnterpriseName();
-                var etagline =FloatPanel_AyohaStore_getEnterpriseTagLine();
-
+              var logo =FloatPanel_AyohaStore_getEnterpriseLogo();
+              var eName =FloatPanel_AyohaStore_getEnterpriseName();
+              var etagline =FloatPanel_AyohaStore_getEnterpriseTagLine();
+              if(count==1){
+           
+alert('Can Check In Now');
                 FloatPanel_Membership_CheckInPageShow(logo,eName,etagline,CheckInCount);
-
                
-                // id: 'htmlFloatPanel_MerchantDetailPage_EnterpriseCheckInDetails',                                                             
-                // html: '<div onclick="FloatPanel_MerchantDetailPage_EnterpriseCheckInDetails()" style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 14px;font-weight:bold;color:black;margin:0px 0px 0px 0px;padding:0px 6px;">10.00AM - 10.00PM (Closed Now)</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 10px;font-weight:normal;color:black;margin:-27px 0px 0px 0px;padding:0px 6px;">Last Visited or Check-In</div>',
-
-              
+                
+             
             }
+            if(count==0){
+           
 
+                Ext.getCmp('htmlFloatPanel_MerchantDetailPage_EnterpriseCheckInDetails').setHtml('<div  style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 12px;font-weight:bold;color:black;margin:0px 0px 0px 0px;padding:0px 6px;">'+ RelativeCheckInTime +'-Total Check-In ('+AccumulateTotalCheckIn+')X Times</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 10px;font-weight:normal;color:red;margin:-27px 0px 0px 0px;padding:0px 6px;">Last Check-In(Exceed Check-In Limit Today) Please Check-In Tommorow Okay!</div>');     
+            
+
+               return
+             
+            }
               
       
-
-           // Ext.getCmp('htmlFloatPanel_MerchantDetailPage_EnterpriseCheckInDetails').setHtml('<div onclick="FloatPanel_MerchantDetailPage_EnterpriseCheckInDetails()" style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 14px;font-weight:bold;color:black;margin:0px 0px 0px 0px;padding:0px 6px;">'+ RelativeCheckInTime +'- Total Check-In Point('+AccumulateAyohaRewardPointCheckIn+')'+'- Total Check-In('+AccumulateTotalCheckIn+')</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 10px;font-weight:normal;color:black;margin:-27px 0px 0px 0px;padding:0px 6px;">Last Visited or Check-In</div>');     
+           if(RelativeCheckInTime){
             Ext.getCmp('htmlFloatPanel_MerchantDetailPage_EnterpriseCheckInDetails').setHtml('<div  style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 12px;font-weight:bold;color:black;margin:0px 0px 0px 0px;padding:0px 6px;">'+ RelativeCheckInTime +'-Total Check-In ('+AccumulateTotalCheckIn+')X Times</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 10px;font-weight:normal;color:black;margin:-27px 0px 0px 0px;padding:0px 6px;">Last Check-In</div>');     
             
+          // ... inside your 'success' function ...
+
+       // ... inside your 'success' function ...
+
+    } else {
+
+        // -----------------
+        // --- REVISED FIX ---
+        // -----------------
+
+        // 1. Create a unique ID for your button
+        var checkInButtonId = 'my-check-in-button-' + Ext.id();
+
+        // 2. Create the HTML string. Note the "id" attribute and NO "onClick".
+        var buttonHtml = '<div id="' + checkInButtonId + '" class="example-5" style="display:inline-flex;align-items:center;gap:5px;padding:6px 9px;background-color: #fac;background-image: linear-gradient(#c800ffc9, #ff00de75);color:#fff;text-decoration:none;border-radius:999px;font:400 10px/1 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;letter-spacing:.2px;border:2px solid #fac; border-radius: 18px; box-shadow: 0 12px 28px rgba(0,0,0,.28); cursor:pointer;">Check-In Now!</div>' + 
+                         '<br>' + 
+                         '<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 10px;font-weight:normal;color:black;margin:-27px 0px 0px 0px;padding:0px 6px;"></div>';
+
+        
+        // 3. Get the component reference *first*
+        var panel = Ext.getCmp('htmlFloatPanel_MerchantDetailPage_EnterpriseCheckInDetails');
+        
+        // --- DEBUG: Check if panel exists ---
+        if (!panel) {
+           console.error("Could not find component 'htmlFloatPanel_MerchantDetailPage_EnterpriseCheckInDetails'");
+           return; // Stop if we can't find the panel
+        }
+        // --- End Debug ---
+
+        // 4. Set the HTML
+             panel.setHtml(buttonHtml); 
+        
+        // 5. Use Ext.Function.defer to wait for the DOM to be updated
+        //    (1000ms is very long, but I am keeping it from your code. 
+        //     You could try 100ms or 200ms here.)
+            Ext.Function.defer(function() {
+           
+           // 6. Get the component's main element
+           var panelEl = panel.getEl(); 
+
+           // --- DEBUG: Check if panel element is rendered ---
+           if (panelEl) {
+               // 7. Find the button *WITHIN* the panel's element
+               //    This is the key change! We use .down()
+               var checkInButtonEl = panelEl.down('#' + checkInButtonId); 
+
+               // --- DEBUG: Check if button was found ---
+               if (checkInButtonEl) {
+                   // 8. Add the click listener
+                   checkInButtonEl.on('click', function() {
+                       // The variables are passed safely
+                       FloatPanel_Membership_CheckInPageShow(logo, eName, etagline, CheckInCount);
+                   });
+               } else {
+                   console.warn("DEBUG: Could not find button #" + checkInButtonId + " *inside* the panel.");
+               }
+               // --- End Debug ---
+
+           } else {
+                console.warn("DEBUG: Panel 'htmlFloatPanel_MerchantDetailPage_EnterpriseCheckInDetails' has no element (getEl() returned null). Is it hidden or not rendered?");
+           }
+           // --- End Debug ---
+
+        }, 1000); // Using the 1000ms from your code.
+
+      }
+           
+           
+           
+           
+           
+           
+           
+           
+          
+          
 
 
             }
@@ -2287,9 +2465,6 @@ function  FloatPanel_AyohaStore_EnterprisesCheckIn(){
                 Ext.Viewport.unmask();
               
             }
-
-  // id: 'htmlFloatPanel_MerchantDetailPage_EnterpriseCheckInDetails',                                                             
-                // html: '<div onclick="FloatPanel_MerchantDetailPage_EnterpriseCheckInDetails()" style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 14px;font-weight:bold;color:black;margin:0px 0px 0px 0px;padding:0px 6px;">10.00AM - 10.00PM (Closed Now)</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 10px;font-weight:normal;color:black;margin:-27px 0px 0px 0px;padding:0px 6px;">Last Visited or Check-In</div>',
 
               
 
@@ -2512,9 +2687,9 @@ console.log(GetCurrAyohaUserAccountNo())
                     }
                 }
             
-            console.log(globalFloatPanelMerchantDetailPage_BusinessMode)
+          
                     if (globalFloatPanelMerchantDetailPage_BusinessMode == "Online") {
-                        Ext.getCmp('htmlFloatPanel_MerchantDetailPage_EnterpriseWorkingHourDetails').setHtml('<div onclick="FloatPanel_MerchantDetailPage_EnterpriseWorkingHourDetails()" style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 14px;font-weight:bold;color:black;margin:0px 0px 0px 0px;padding:0px 6px;">Open 24/7 (Open Now)</div><br><div onclick="FloatPanel_MerchantDetailPage_EnterpriseWorkingHourDetails()" style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 10px;font-weight:normal;color:black;margin:-27px 0px 0px 0px;padding:0px 6px;">Business Hour</div>');
+                        Ext.getCmp('htmlFloatPanel_MerchantDetailPage_EnterpriseWorkingHourDetails').setHtml('<div onclick="FloatPanel_MerchantDetailPage_EnterpriseWorkingHourDetails()" style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 12px;font-weight:bold;color:black;margin:0px 0px 0px 0px;padding:0px 6px;">Open 24/7 (Open Now)</div><br><div onclick="FloatPanel_MerchantDetailPage_EnterpriseWorkingHourDetails()" style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 10px;font-weight:normal;color:black;margin:-27px 0px 0px 0px;padding:0px 6px;">Business Hour</div>');
             
                     } else {
             
@@ -2544,11 +2719,11 @@ console.log(GetCurrAyohaUserAccountNo())
             
             
             
-                            Ext.getCmp('htmlFloatPanel_MerchantDetailPage_EnterpriseWorkingHourDetails').setHtml('<div onclick="FloatPanel_MerchantDetailPage_EnterpriseWorkingHourDetails()" style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 14px;font-weight:bold;color:black;margin:0px 0px 0px 0px;padding:0px 6px;">' + Store.get('WorkingHourStart') + Store.get('WorkingHourStartAMPM') + ' - ' + Store.get('WorkingHourEnd') + Store.get('WorkingHourEndAMPM') + ' (' + TutupBuka + ')</div><br><div onclick="FloatPanel_MerchantDetailPage_EnterpriseWorkingHourDetails()" style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 10px;font-weight:normal;color:black;margin:-27px 0px 0px 0px;padding:0px 6px;">Business Hour</div>');
+                            Ext.getCmp('htmlFloatPanel_MerchantDetailPage_EnterpriseWorkingHourDetails').setHtml('<div onclick="FloatPanel_MerchantDetailPage_EnterpriseWorkingHourDetails()" style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 12px;font-weight:bold;color:black;margin:0px 0px 0px 0px;padding:0px 6px;">' + Store.get('WorkingHourStart') + Store.get('WorkingHourStartAMPM') + ' - ' + Store.get('WorkingHourEnd') + Store.get('WorkingHourEndAMPM') + ' (' + TutupBuka + ')</div><br><div onclick="FloatPanel_MerchantDetailPage_EnterpriseWorkingHourDetails()" style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 10px;font-weight:normal;color:black;margin:-27px 0px 0px 0px;padding:0px 6px;">Business Hour</div>');
             
                         } else {
             
-                            Ext.getCmp('htmlFloatPanel_MerchantDetailPage_EnterpriseWorkingHourDetails').setHtml('<div onclick="FloatPanel_MerchantDetailPage_EnterpriseWorkingHourDetails()" style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 14px;font-weight:bold;color:black;margin:0px 0px 0px 0px;padding:0px 6px;">' + day + ' (Off Day/Holiday)</div><br><div onclick="FloatPanel_MerchantDetailPage_EnterpriseWorkingHourDetails()" style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 10px;font-weight:normal;color:black;margin:-27px 0px 0px 0px;padding:0px 6px;">Business Hour</div>');
+                            Ext.getCmp('htmlFloatPanel_MerchantDetailPage_EnterpriseWorkingHourDetails').setHtml('<div onclick="FloatPanel_MerchantDetailPage_EnterpriseWorkingHourDetails()" style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 12px;font-weight:bold;color:black;margin:0px 0px 0px 0px;padding:0px 6px;">' + day + ' (Off Day/Holiday)</div><br><div onclick="FloatPanel_MerchantDetailPage_EnterpriseWorkingHourDetails()" style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 10px;font-weight:normal;color:black;margin:-27px 0px 0px 0px;padding:0px 6px;">Business Hour</div>');
                         }
             
                        
@@ -2704,10 +2879,10 @@ globalFloatPanelMerchantDetailPage_CountStar=TotalAvg;
 globalFloatPanelMerchantDetailPage_CountReviewer=TotalVoter;
                         if (TotalAvg) {
 
-                            Ext.getCmp('htmlFloatPanel_MerchantDetailPage_ReviewAndRateCount').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();" style="color:black;text-align: center;font-size:20px;width:100%;font-weight:bold;margin:0px 0px 0px 0px;">' + TotalAvg.toFixed(1) + '</div>');
+                            Ext.getCmp('htmlFloatPanel_MerchantDetailPage_ReviewAndRateCount').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();" style="color:black;text-align: center;font-size:14px;width:100%;font-weight:bold;margin:0px 0px 0px 0px;">' + TotalAvg.toFixed(1) + '</div>');
 
                         } else {
-                            Ext.getCmp('htmlFloatPanel_MerchantDetailPage_ReviewAndRateCount').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();" style="color:black;text-align: center;font-size:20px;width:100%;font-weight:bold;margin:0px 0px 0px 0px;">0.0</div>');
+                            Ext.getCmp('htmlFloatPanel_MerchantDetailPage_ReviewAndRateCount').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();" style="color:black;text-align: center;font-size:14px;width:100%;font-weight:bold;margin:0px 0px 0px 0px;">0.0</div>');
                         }
 
                         Ext.getCmp('htmlFloatPanel_MerchantDetailPage_ReviewByCount').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();" style="width100%;text-align:right;background-color: transparent;font-family:Arial, sans-serif;font-size:8px;color:black;font-weight:bold;overflow:hidden;"><img src="resources/icons/myaccountwhite01.png" alt="Image" style="width:7px;height:7px;">&nbsp;' + TotalVoter + ' Reviews</div>');

@@ -15,7 +15,7 @@ function FloatPanel_MyAccountRankDescription() {
 
     _FloatPanel_MyAccountRankDescription =
     Ext.create('Ext.Panel', {
-        zIndex: 80,
+        zIndex: 115,
         xtype: 'container',
         //height: 465,
         //  height: '100%',
@@ -982,7 +982,7 @@ function FloatPanel_MyAccountRankDescriptionShow() {
     );
 
  
- 
+ //alert( FloatPanel_MyAccountRankDescription_AyohaUserisUserVerified);
    if( FloatPanel_MyAccountRankDescription_AyohaUserisUserVerified == 'NO') {
     Ext.getCmp('htmlFloatPanel_MyAccountRankDesc').setHtml('<div onclick="FloatPanel_AyohaMembershipAdvantagesShow();" id="input-htmlFloatPanel_MyAccountRankDesc" style="width:95%;height:100%;padding:5px;box-sizing:border-box;border-radius:4px;background-color:transparent;resize:none;text-align:center;font-family:Century Gothic;font-size: 25px;font-weight:bold;color:black"><br><br><img src="resources/icons/Logo/LogoOrangeSimplifed.png" style="width:100px;height:100px;"><br>Ayoha Reward<br><div style="width:100%;background-color: transparent;text-align:center;border: 1px none white;font-family:Century Gothic;font-size: 11px;font-weight:normal;color:black;">One hub, Double Rewards </div><br><div style="width:100%;background-color:transparent;display:flex;justify-content:center;align-items:center;height:40px;"><div class="blink_me" style="width:60%;background-color:orange;text-align:center;border:1px solid orange;font-size:12px;font-weight:bold;color:white;height:30px;border-radius:5px;display:flex;justify-content:center;align-items:center;margin:-40px 0px 0px 0px;">Be An Ayoha Member Now!</div></div></div>');
     Ext.getCmp('htmlFloatPanel_MyAccountRankDescriptionRangkingContestantImg').setMargin('15 0 0 0');
@@ -995,61 +995,61 @@ function FloatPanel_MyAccountRankDescriptionShow() {
    }
 
 
-    if (localStorage.getItem("AyohaMember_Rank") == "Black Iron") {
-       // Ext.getCmp('htmlFloatPanel_MyAccountRankDescriptionMyRankingHeader').setHtml('<div style="color:black;text-align: left;font-size:12px;width:100%;font-weight:bold;">' + localStorage.getItem("AyohaMember_Rank") + 'Level Reward</div>');
+    if (AppState.FloatPanel_AyohaReward.TextRankStar == "Black Iron") {
+       // Ext.getCmp('htmlFloatPanel_MyAccountRankDescriptionMyRankingHeader').setHtml('<div style="color:black;text-align: left;font-size:12px;width:100%;font-weight:bold;">' + AppState.FloatPanel_AyohaReward.TextRankStar + 'Level Reward</div>');
         Ext.getCmp('htmlFloatPanel_MyAccountRankDescriptionRangkingContestantImg').setHtml('<div style="border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none white;background: transparent;border-radius: 0px 0px 0px 0px;width:100px;height:100px;font-size: 10px;font-weight:normal;color:black;" ><img src="resources/icons/ayohaRankingIcon/blackIron.png"  style="width: 100px; height: 100px; border:2px none white; border-radius: 50%;  margin:-6px 0px 0px 0px"></div>');
-        Ext.getCmp('htmlFloatPanel_MyAccountRankDescriptionRangkingContestantName').setHtml('<font size=2 color=white><b>' + localStorage.getItem("AyohaMember_Rank").toUpperCase() + '</b></font>');
+        Ext.getCmp('htmlFloatPanel_MyAccountRankDescriptionRangkingContestantName').setHtml('<font size=2 color=white><b>' + AppState.FloatPanel_AyohaReward.TextRankStar.toUpperCase() + '</b></font>');
         Ext.getCmp('htmlFloatPanel_MyAccountRankDescriptionBottom_BlackIronIcon').setHtml('<img class="blink_me" src="resources/icons/ayohaRankingIcon/blackIron.png" alt="Image" style="width:20px;height:20px;">');
         Ext.getCmp('htmlFloatPanel_MyAccountRankDescriptionBottom_BlackIronTxt').setHtml('<div class="blink_me" style="color:black;text-align: center;font-size:12px;width:100%;font-weight:bold;">Black Iron</div>');
         Ext.getCmp('htmlFloatPanel_MyAccountRankDescriptionYourRangking').setHtml('<div style="color:white;text-align: center;font-size:70px;width:100%;"><b>1</b></div>');
 
     }
-    if (localStorage.getItem("AyohaMember_Rank") == "Bronze") {       
-       // Ext.getCmp('htmlFloatPanel_MyAccountRankDescriptionMyRankingHeader').setHtml('<div style="color:black;text-align: left;font-size:12px;width:100%;font-weight:bold;">' + localStorage.getItem("AyohaMember_Rank") + 'Level Reward</div>');
+    if (AppState.FloatPanel_AyohaReward.TextRankStar == "Bronze") {       
+       // Ext.getCmp('htmlFloatPanel_MyAccountRankDescriptionMyRankingHeader').setHtml('<div style="color:black;text-align: left;font-size:12px;width:100%;font-weight:bold;">' + AppState.FloatPanel_AyohaReward.TextRankStar + 'Level Reward</div>');
         Ext.getCmp('htmlFloatPanel_MyAccountRankDescriptionRangkingContestantImg').setHtml('<div style="border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none white;background: transparent;border-radius: 0px 0px 0px 0px;width:100px;height:100px;font-size: 10px;font-weight:normal;color:black;" ><img src="resources/icons/ayohaRankingIcon/Bronze.png"  style="width: 100px; height: 100px; border:2px none white; border-radius: 50%;  margin:-6px 0px 0px 0px"></div>');
-        Ext.getCmp('htmlFloatPanel_MyAccountRankDescriptionRangkingContestantName').setHtml('<font size=2 color=white><b>' + localStorage.getItem("AyohaMember_Rank").toUpperCase() + '</b></font>');
+        Ext.getCmp('htmlFloatPanel_MyAccountRankDescriptionRangkingContestantName').setHtml('<font size=2 color=white><b>' + AppState.FloatPanel_AyohaReward.TextRankStar.toUpperCase() + '</b></font>');
         Ext.getCmp('htmlFloatPanel_MyAccountRankDescriptionBottom_BronzeIcon').setHtml('<img class="blink_me" src="resources/icons/ayohaRankingIcon/Bronze.png" alt="Image" style="width:25px;height:25px;">');
-        Ext.getCmp('htmlFloatPanel_MyAccountRankDescriptionBottom_BronzeTxt').setHtml('<div class="blink_me" style="color:black;text-align: center;font-size:12px;width:100%;font-weight:bold;">' + localStorage.getItem("AyohaMember_Rank") + '</div>');
+        Ext.getCmp('htmlFloatPanel_MyAccountRankDescriptionBottom_BronzeTxt').setHtml('<div class="blink_me" style="color:black;text-align: center;font-size:12px;width:100%;font-weight:bold;">' + AppState.FloatPanel_AyohaReward.TextRankStar + '</div>');
         Ext.getCmp('htmlFloatPanel_MyAccountRankDescriptionYourRangking').setHtml('<div style="color:white;text-align: center;font-size:70px;width:100%;"><b>2</b></div>');
     }
-    if (localStorage.getItem("AyohaMember_Rank") == "Silver") {
-       // Ext.getCmp('htmlFloatPanel_MyAccountRankDescriptionMyRankingHeader').setHtml('<div style="color:black;text-align: left;font-size:12px;width:100%;font-weight:bold;">' + localStorage.getItem("AyohaMember_Rank") + 'Level Reward</div>');
-        Ext.getCmp('htmlFloatPanel_MyAccountRankDescriptionRangkingContestantName').setHtml('<font size=2 color=white><b>' + localStorage.getItem("AyohaMember_Rank").toUpperCase() + '</b></font>');
+    if (AppState.FloatPanel_AyohaReward.TextRankStar == "Silver") {
+       // Ext.getCmp('htmlFloatPanel_MyAccountRankDescriptionMyRankingHeader').setHtml('<div style="color:black;text-align: left;font-size:12px;width:100%;font-weight:bold;">' + AppState.FloatPanel_AyohaReward.TextRankStar + 'Level Reward</div>');
+        Ext.getCmp('htmlFloatPanel_MyAccountRankDescriptionRangkingContestantName').setHtml('<font size=2 color=white><b>' + AppState.FloatPanel_AyohaReward.TextRankStar.toUpperCase() + '</b></font>');
         Ext.getCmp('htmlFloatPanel_MyAccountRankDescriptionRangkingContestantImg').setHtml('<div style="border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none white;background: transparent;border-radius: 0px 0px 0px 0px;width:100px;height:100px;font-size: 10px;font-weight:normal;color:black;" ><img src="resources/icons/ayohaRankingIcon/Silver.png"  style="width: 100px; height: 100px; border:2px none white; border-radius: 50%;  margin:-6px 0px 0px 0px"></div>');
 
         Ext.getCmp('htmlFloatPanel_MyAccountRankDescriptionBottom_SilverIcon').setHtml('<img class="blink_me" src="resources/icons/ayohaRankingIcon/Silver.png" alt="Image" style="width:30px;height:30px;">');
-        Ext.getCmp('htmlFloatPanel_MyAccountRankDescriptionBottom_SilverTxt').setHtml('<div class="blink_me" style="color:black;text-align: center;font-size:12px;width:100%;font-weight:bold;">' + localStorage.getItem("AyohaMember_Rank") + '</div>');
+        Ext.getCmp('htmlFloatPanel_MyAccountRankDescriptionBottom_SilverTxt').setHtml('<div class="blink_me" style="color:black;text-align: center;font-size:12px;width:100%;font-weight:bold;">' + AppState.FloatPanel_AyohaReward.TextRankStar + '</div>');
         Ext.getCmp('htmlFloatPanel_MyAccountRankDescriptionYourRangking').setHtml('<div style="color:white;text-align: center;font-size:70px;width:100%;"><b>3</b></div>');
 
 
     }
-    if (localStorage.getItem("AyohaMember_Rank") == "Gold") {
-       // Ext.getCmp('htmlFloatPanel_MyAccountRankDescriptionMyRankingHeader').setHtml('<div style="color:black;text-align: left;font-size:12px;width:100%;font-weight:bold;">' + localStorage.getItem("AyohaMember_Rank") + 'Level Reward</div>');
-        Ext.getCmp('htmlFloatPanel_MyAccountRankDescriptionRangkingContestantName').setHtml('<font size=2 color=white><b>' + localStorage.getItem("AyohaMember_Rank").toUpperCase() + '</b></font>');
+    if (AppState.FloatPanel_AyohaReward.TextRankStar == "Gold") {
+       // Ext.getCmp('htmlFloatPanel_MyAccountRankDescriptionMyRankingHeader').setHtml('<div style="color:black;text-align: left;font-size:12px;width:100%;font-weight:bold;">' + AppState.FloatPanel_AyohaReward.TextRankStar + 'Level Reward</div>');
+        Ext.getCmp('htmlFloatPanel_MyAccountRankDescriptionRangkingContestantName').setHtml('<font size=2 color=white><b>' + AppState.FloatPanel_AyohaReward.TextRankStar.toUpperCase() + '</b></font>');
         Ext.getCmp('htmlFloatPanel_MyAccountRankDescriptionRangkingContestantImg').setHtml('<div style="border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none white;background: transparent;border-radius: 0px 0px 0px 0px;width:100px;height:100px;font-size: 10px;font-weight:normal;color:black;" ><img src="resources/icons/ayohaRankingIcon/Gold.png"  style="width: 100px; height: 100px; border:2px none white; border-radius: 50%;  margin:-6px 0px 0px 0px"></div>');
         Ext.getCmp('htmlFloatPanel_MyAccountRankDescriptionYourRangking').setHtml('<div style="color:white;text-align: center;font-size:70px;width:100%;"><b>4</b></div>');
         Ext.getCmp('htmlFloatPanel_MyAccountRankDescriptionRangkingContestantName').setHtml('<img class="blink_me" src="resources/icons/ayohaRankingIcon/Gold.png" alt="Image" style="width:35px;height:35px;">');
-        Ext.getCmp('htmlFloatPanel_MyAccountRankDescriptionBottom_GoldTxt').setHtml('<div class="blink_me" style="color:black;text-align: center;font-size:12px;width:100%;font-weight:bold;">' + localStorage.getItem("AyohaMember_Rank") + '</div>');
+        Ext.getCmp('htmlFloatPanel_MyAccountRankDescriptionBottom_GoldTxt').setHtml('<div class="blink_me" style="color:black;text-align: center;font-size:12px;width:100%;font-weight:bold;">' + AppState.FloatPanel_AyohaReward.TextRankStar + '</div>');
     }
-    if (localStorage.getItem("AyohaMember_Rank") == "Platinum") {
-        //Ext.getCmp('htmlFloatPanel_MyAccountRankDescriptionMyRankingHeader').setHtml('<div style="color:black;text-align: left;font-size:12px;width:100%;font-weight:bold;">' + localStorage.getItem("AyohaMember_Rank") + 'Level Reward</div>');
-        Ext.getCmp('htmlFloatPanel_MyAccountRankDescriptionRangkingContestantName').setHtml('<font size=2 color=white><b>' + localStorage.getItem("AyohaMember_Rank").toUpperCase() + '</b></font>');
+    if (AppState.FloatPanel_AyohaReward.TextRankStar == "Platinum") {
+        //Ext.getCmp('htmlFloatPanel_MyAccountRankDescriptionMyRankingHeader').setHtml('<div style="color:black;text-align: left;font-size:12px;width:100%;font-weight:bold;">' + AppState.FloatPanel_AyohaReward.TextRankStar + 'Level Reward</div>');
+        Ext.getCmp('htmlFloatPanel_MyAccountRankDescriptionRangkingContestantName').setHtml('<font size=2 color=white><b>' + AppState.FloatPanel_AyohaReward.TextRankStar.toUpperCase() + '</b></font>');
         Ext.getCmp('htmlFloatPanel_MyAccountRankDescriptionRangkingContestantImg').setHtml('<div style="border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none white;background: transparent;border-radius: 0px 0px 0px 0px;width:100px;height:100px;font-size: 10px;font-weight:normal;color:black;" ><img src="resources/icons/ayohaRankingIcon/Platinum.png"  style="width: 100px; height: 100px; border:2px none white; border-radius: 50%;  margin:-6px 0px 0px 0px"></div>');
         Ext.getCmp('htmlFloatPanel_MyAccountRankDescriptionBottom_PlatinumIcon').setHtml('<img class="blink_me" src="resources/icons/ayohaRankingIcon/Platinum.png" alt="Image" style="width:40px;height:40px;">');
-        Ext.getCmp('htmlFloatPanel_MyAccountRankDescriptionBottom_PlatinumTxt').setHtml('<div class="blink_me" style="color:black;text-align: center;font-size:12px;width:100%;font-weight:bold;">' + localStorage.getItem("AyohaMember_Rank") + '</div>');
+        Ext.getCmp('htmlFloatPanel_MyAccountRankDescriptionBottom_PlatinumTxt').setHtml('<div class="blink_me" style="color:black;text-align: center;font-size:12px;width:100%;font-weight:bold;">' + AppState.FloatPanel_AyohaReward.TextRankStar + '</div>');
         Ext.getCmp('htmlFloatPanel_MyAccountRankDescriptionYourRangking').setHtml('<div style="color:white;text-align: center;font-size:70px;width:100%;"><b>5</b></div>');
     }
 
-    if (localStorage.getItem("AyohaMember_Rank") == "King Club") {
-        //Ext.getCmp('htmlFloatPanel_MyAccountRankDescriptionMyRankingHeader').setHtml('<div style="color:black;text-align: left;font-size:12px;width:100%;font-weight:bold;">' + localStorage.getItem("AyohaMember_Rank") + 'Level Reward</div>');
-        Ext.getCmp('htmlFloatPanel_MyAccountRankDescriptionRangkingContestantName').setHtml('<font size=2 color=white><b>' + localStorage.getItem("AyohaMember_Rank").toUpperCase() + '</b></font>');
+    if (AppState.FloatPanel_AyohaReward.TextRankStar == "King Club") {
+        //Ext.getCmp('htmlFloatPanel_MyAccountRankDescriptionMyRankingHeader').setHtml('<div style="color:black;text-align: left;font-size:12px;width:100%;font-weight:bold;">' + AppState.FloatPanel_AyohaReward.TextRankStar + 'Level Reward</div>');
+        Ext.getCmp('htmlFloatPanel_MyAccountRankDescriptionRangkingContestantName').setHtml('<font size=2 color=white><b>' + AppState.FloatPanel_AyohaReward.TextRankStar.toUpperCase() + '</b></font>');
         Ext.getCmp('htmlFloatPanel_MyAccountRankDescriptionRangkingContestantImg').setHtml('<div style="border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none white;background: transparent;border-radius: 0px 0px 0px 0px;width:100px;height:100px;font-size: 10px;font-weight:normal;color:black;" ><img src="resources/icons/ayohaRankingIcon/kingclubIcon.png"  style="width: 100px; height: 100px; border:2px none white; border-radius: 50%;  margin:-6px 0px 0px 0px"></div>');
         Ext.getCmp('htmlFloatPanel_MyAccountRankDescriptionYourRangking').setHtml('<div style="color:white;text-align: center;font-size:70px;width:100%;"><b>6</b></div>');
         Ext.getCmp('htmlFloatPanel_MyAccountRankDescriptionBottom_KingClubIcon').setHtml('<img class="blink_me" src="resources/icons/ayohaRankingIcon/kingclubIcon.png" alt="Image" style="width:55px;height:55px;margin:-12px 0px 0px 0px;">');
-        Ext.getCmp('htmlFloatPanel_MyAccountRankDescriptionBottom_KingClubTxt').setHtml('<div class="blink_me" style="color:black;text-align: center;font-size:12px;width:100%;font-weight:bold;margin:-14px 0px 0px 0px;">' + localStorage.getItem("AyohaMember_Rank") + '</div>');
+        Ext.getCmp('htmlFloatPanel_MyAccountRankDescriptionBottom_KingClubTxt').setHtml('<div class="blink_me" style="color:black;text-align: center;font-size:12px;width:100%;font-weight:bold;margin:-14px 0px 0px 0px;">' + AppState.FloatPanel_AyohaReward.TextRankStar + '</div>');
     }
 
-    FloatPanel_MyAccountRankDescription_AyohaMembershipLevelDescLoadbyMembershipCode(localStorage.getItem("AyohaMember_Rank"));
+    FloatPanel_MyAccountRankDescription_AyohaMembershipLevelDescLoadbyMembershipCode(AppState.FloatPanel_AyohaReward.TextRankStar);
 
 
 

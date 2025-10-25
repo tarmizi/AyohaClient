@@ -392,7 +392,7 @@ function loadAyohaUserProfile() {
             //routesArray.push("mainView,view,15");
             Ext.getCmp('mainView').setActiveItem(1);
 
-           
+      
             //Ext.getCmp('htmlMyAccount_Dashboard_TitleHeaderTxt').setHtml('<font size=2 color=white><b>' + modelRecord.get('AyohaVersion') + '</b></font>');
             Ext.getCmp('btnMyAccount_DashboardRankIcon').setHidden(false);
             var AccountName = modelRecord.get('AccountName').substring(0, 7);
@@ -404,6 +404,8 @@ function loadAyohaUserProfile() {
             localStorage.setItem('AyohaUserAccountNames', modelRecord.get('AccountName'));
             localStorage.setItem('AyohaUserisUserVerified', modelRecord.get('isUserVerified'));
 
+
+         
 
           
             if (AccountName == "Muhamma")
@@ -514,6 +516,8 @@ function loadAyohaUserProfileLoginBody() {
                         localStorage.setItem('AyohaUserKatalaluan', data.results[0].Katalaluan);
                         globalLogginAyohaUser_UserVerifiedDate = data.results[0].UserVerifiedDate;
                        
+
+                    
                         //routeCurrPage = '15';
                         //routesArray.push("mainView,view,15");
                       //  ArrappRoute.push("MainDashBoard");
@@ -546,10 +550,27 @@ function loadAyohaUserProfileLoginBody() {
                         localStorage.setItem('AyohaUserVerifiedString', data.results[0].VerifyString);
                         localStorage.setItem('AyohaUserEmail', data.results[0].Email);
 
+                        AppState.LoginAyohaUser.CurrPhoneNumber = data.results[0].CurrPhoneNumber;
+                        AppState.LoginAyohaUser.AyohaUserVerifiedString = data.results[0].AyohaUserVerifiedString;
+                        AppState.LoginAyohaUser.AyohaUserEmail = data.results[0].AyohaUserEmail;
+                        AppState.LoginAyohaUser.AyohaUserAccountNo = data.results[0].AccountName;
+                        AppState.LoginAyohaUser.AyohaUserKatalaluan = data.results[0].Katalaluan;
+                        AppState.LoginAyohaUser.AyohaVersion = data.results[0].AyohaVersion;
+                        AppState.LoginAyohaUser.AyohaUserGroupCode = data.results[0].AyohaUserGroupCode;
+                        AppState.LoginAyohaUser.AyohaUserPicProfile = data.results[0].Photo;
+                        AppState.LoginAyohaUser.AyohaUserAccountNames = data.results[0].AccountName;
+                        AppState.LoginAyohaUser.AyohaUserisUserVerified = data.results[0].isUserVerified;
+
+
+
+
+
+
+
                         var AccountNoDisplay = data.results[0].AccountNo.split('-');
                         localStorage.setItem('AccountNoDisplay', AccountNoDisplay[1] + '-' + AccountNoDisplay[2]);
                         globalLogginAyohaUser_AccountNo_Display= AccountNoDisplay[1];
-
+                        AppState.LoginAyohaUser.AccountNoDisplay = AccountNoDisplay[1];
                         if (data.results[0].isUserVerified == "YES") {
                             Ext.getCmp('htmlMyAccount_Dashboard_ProfileTitle').setHtml('<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 11px;font-weight:normal;color:white;margin:0px 0px 0px 0px">Good Days!,</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 14px;font-weight:bold;color:white;margin:-25px 0px 0px 0px">' + AccountName.toLowerCase() + '</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 10px;font-weight:bold;color:white;margin:-27px 0px 0px 0px">' + AccountNoDisplay[1] + '-' + AccountNoDisplay[2] + '</div>');
                         }
