@@ -15,7 +15,7 @@ function FloatPanel_AyohaReward_ViewMyRanking() {
 
     _FloatPanel_AyohaReward_ViewMyRanking =
     Ext.create('Ext.Panel', {
-        zIndex: 100,
+        zIndex: 111,
         xtype: 'container',
         //height: 465,
         //  height: '100%',

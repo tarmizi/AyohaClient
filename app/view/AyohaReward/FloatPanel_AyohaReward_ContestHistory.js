@@ -17,7 +17,7 @@ function FloatPanel_AyohaReward_ContestHistory() {
 
     _FloatPanel_AyohaReward_ContestHistory =
     Ext.create('Ext.Panel', {
-        zIndex: 50,
+        zIndex: 111,
         xtype: 'container',
         //height: 465,
         //  height: '100%',
@@ -702,32 +702,22 @@ function FloatPanel_AyohaReward_ContestHistoryHide() {
 //var _DataStore_AyohaRewardContestantLoadBySubscriberAccNoStore;
 function FloatPanel_AyohaReward_AyohaRewardContestantLoadBySubscriberAccNoStore() {
 
-    //Ext.getStore('AyohaRewardContestantLoadBySubscriberAccNoStore').getProxy().setExtraParams({
-    //    SubscriberAccNo: GetCurrAyohaUserAccountNo()
-    //});
-    //Ext.StoreMgr.get('AyohaRewardContestantLoadBySubscriberAccNoStore').load();
     _DataStore_AyohaRewardContestantLoadBySubscriberAccNoStore.getProxy().setExtraParam('SubscriberAccNo', GetCurrAyohaUserAccountNo());
     _DataStore_AyohaRewardContestantLoadBySubscriberAccNoStore.getProxy().setUrl(GetAPIurl() + '/AyohaRewardContestant/AyohaRewardContestantLoadBySubscriberAccNo');
-   // _DataStore_AyohaRewardContestantLoadBySubscriberAccNoStore.load();
+    _DataStore_AyohaRewardContestantLoadBySubscriberAccNoStore.load({
+    callback: function (records, operation, success) {
+        if (success && records.length > 0) {
+            console.log('Store loaded successfully, total records: ' + records.length);
 
-    var task = Ext.create('Ext.util.DelayedTask', function () {
-      _DataStore_AyohaRewardContestantLoadBySubscriberAccNoStore.load();
-        //Ext.getStore('AyohaRewardContestantLoadBySubscriberAccNoStore').getProxy().setExtraParams({
-        //    SubscriberAccNo: GetCurrAyohaUserAccountNo()
-        //});
-
-
-        //_DataStore_AyohaRewardContestantLoadBySubscriberAccNoStore = Ext.StoreMgr.get('AyohaRewardContestantLoadBySubscriberAccNoStore').load();
-
-        //var myStore = Ext.getStore('AyohaRewardContestantLoadBySubscriberAccNoStore');
-        //  _DataStore_AyohaNotificationLoadBySubscriberAccNoStore = Ext.getStore('AyohaNotificationLoadBySubscriberAccNoStore');
-
-        //countAyohaNotificationLoadBySubscriberAccNoFirst = _DataStore_AyohaRewardContestantLoadBySubscriberAccNoStore.getCount();
-        //alert(countAyohaNotificationLoadBySubscriberAccNoFirst);
-        //Ext.getCmp('FloatPanel_AyohaReward_ContestHistory_CountSearchTxt').setHtml('<font size=3 color=black><b>(' + countAyohaNotificationLoadBySubscriberAccNoFirst + ')</b></font>');
-
-
-        Ext.Viewport.setMasked(false);
+          
+           
+            LoadingPanelHide();
+        } else {
+            console.error('Failed to load store data or no record found.');
+            LoadingPanelHide();
+        }
+    }
+});
 
 
 
@@ -738,8 +728,46 @@ function FloatPanel_AyohaReward_AyohaRewardContestantLoadBySubscriberAccNoStore(
 
 
 
-    });
-    task.delay(500);
+
+
+//     //Ext.getStore('AyohaRewardContestantLoadBySubscriberAccNoStore').getProxy().setExtraParams({
+//     //    SubscriberAccNo: GetCurrAyohaUserAccountNo()
+//     //});
+//     //Ext.StoreMgr.get('AyohaRewardContestantLoadBySubscriberAccNoStore').load();
+//     _DataStore_AyohaRewardContestantLoadBySubscriberAccNoStore.getProxy().setExtraParam('SubscriberAccNo', GetCurrAyohaUserAccountNo());
+//     _DataStore_AyohaRewardContestantLoadBySubscriberAccNoStore.getProxy().setUrl(GetAPIurl() + '/AyohaRewardContestant/AyohaRewardContestantLoadBySubscriberAccNo');
+//    // _DataStore_AyohaRewardContestantLoadBySubscriberAccNoStore.load();
+
+//     var task = Ext.create('Ext.util.DelayedTask', function () {
+//       _DataStore_AyohaRewardContestantLoadBySubscriberAccNoStore.load();
+//         //Ext.getStore('AyohaRewardContestantLoadBySubscriberAccNoStore').getProxy().setExtraParams({
+//         //    SubscriberAccNo: GetCurrAyohaUserAccountNo()
+//         //});
+
+
+//         //_DataStore_AyohaRewardContestantLoadBySubscriberAccNoStore = Ext.StoreMgr.get('AyohaRewardContestantLoadBySubscriberAccNoStore').load();
+
+//         //var myStore = Ext.getStore('AyohaRewardContestantLoadBySubscriberAccNoStore');
+//         //  _DataStore_AyohaNotificationLoadBySubscriberAccNoStore = Ext.getStore('AyohaNotificationLoadBySubscriberAccNoStore');
+
+//         //countAyohaNotificationLoadBySubscriberAccNoFirst = _DataStore_AyohaRewardContestantLoadBySubscriberAccNoStore.getCount();
+//         //alert(countAyohaNotificationLoadBySubscriberAccNoFirst);
+//         //Ext.getCmp('FloatPanel_AyohaReward_ContestHistory_CountSearchTxt').setHtml('<font size=3 color=black><b>(' + countAyohaNotificationLoadBySubscriberAccNoFirst + ')</b></font>');
+
+
+//         Ext.Viewport.setMasked(false);
+
+
+
+
+
+
+
+
+
+
+//     });
+//     task.delay(500);
 
 
 

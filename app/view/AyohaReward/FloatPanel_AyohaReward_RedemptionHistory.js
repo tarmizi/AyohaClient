@@ -28,7 +28,7 @@ function FloatPanel_AyohaReward_RedemptionHistory() {
          width: '100%',
          id: 'FloatPanel_AyohaReward_RedemptionHistoryID',
          draggable: false,
-         zIndex: 100,
+         zIndex: 111,
 
 
          centered: true,

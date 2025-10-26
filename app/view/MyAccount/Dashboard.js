@@ -14122,7 +14122,7 @@ AppState.FloatPanel_AyohaReward.MembershipSince=convertDateToDayMonthYear(global
     
     
     
-    
+           
     
             // var containerView2 = Ext.ComponentQuery.query('container[name=containerDashboard_User_AyohaRewardRankingViewMyRankingBtn]')[0];
             var containerView2 = Ext.ComponentQuery.query('container[name=containerContestYourRankingName]')[0];
@@ -14263,7 +14263,7 @@ function AyohaRewardPointRewardRankingStore() {
 
             if (SubscriberAccNo == GetCurrAyohaUserAccountNo()) {
 
-                myRankingNo = ii;
+               myRankingNo = ii;
                 // alert(JoinDate);
 
                 globalJoinDate = JoinDate_DateOnly + ' ' + JoinDate_TimeOnly;
@@ -14439,6 +14439,7 @@ function AyohaRewardContestantLoadByContestCodeStore() {
         console.log(count);
         //var modelRecord = myStore.getAt(0);
         //var ID = modelRecord.get('ID');
+        AppState.FloatPanel_AyohaReward.isButtonEnterContestOrViewMyRanking="EnterContest";
         Ext.getCmp('containerDashboard_User_AyohaRewardRankingEnterContestBtnID').setHidden(false);
         Ext.getCmp('containerDashboard_User_AyohaRewardRankingViewMyRankingBtnID').setHidden(true);
 
@@ -14452,6 +14453,7 @@ function AyohaRewardContestantLoadByContestCodeStore() {
         // Ext.getCmp('containerDashboard_MerchantRedemption').setMargin('90 0 0 0');
         if (count >= 1) {
             globalIsContestant = "Y";
+            AppState.FloatPanel_AyohaReward.isButtonEnterContestOrViewMyRanking="ViewMyRanking";
             Ext.getCmp('containerDashboard_User_AyohaRewardRankingEnterContestBtnID').setHidden(true);
             Ext.getCmp('containerDashboard_User_AyohaRewardRankingViewMyRankingBtnID').setHidden(false);
 

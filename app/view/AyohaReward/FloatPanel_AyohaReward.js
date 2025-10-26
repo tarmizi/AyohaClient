@@ -619,7 +619,6 @@ function FloatPanel_AyohaReward() {
                                 {
                                     xtype: 'container',
                                     width: '100%',
-                                    hidden: false,
                                     id:'containerFloatPanel_AyohaReward_MainContainerRedemption',
                                     margin: '0 0 0 0',
                                     // style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1 ;background: white;border-radius: 0px 15px 15px 0px;',
@@ -747,7 +746,7 @@ function FloatPanel_AyohaReward() {
                                                              //Ext.getCmp('carousel_containerAyohaRewardRedemption').setShowAnimation('slideIn');
                                                              // Ext.getCmp('carousel_containerAyohaRewardRedemption').setShowAnimation('slideIn');
 
-                                                             var crsl = Ext.getCmp('carousel_containerAyohaRewardRedemption');
+                                                             var crsl = Ext.getCmp('carouselFloatPanel_AyohaReward_MainContainerAyohaRewardRedemption');
                                                              crsl.previous();
                                                          }
                                                      },
@@ -761,7 +760,6 @@ function FloatPanel_AyohaReward() {
 
   {
       xtype: 'carousel',
-      hidden: false,
       //width: '95%',
       //height: 80,
       margin: '-2 0 0 0',
@@ -778,7 +776,6 @@ function FloatPanel_AyohaReward() {
 {
     xtype: 'container',
     // xtype: 'carousel',
-    hidden: false,
     //width: '95%',
     //height: 80,
     margin: '5 0 0 0',
@@ -818,12 +815,12 @@ function FloatPanel_AyohaReward() {
 
                  {
                      margin: '-10 0 0 0',
-                     id: 'containerFloatPanel_AyohaReward_MainContainerAyohaRewardRedemption_carosel_APoint0',
+                     id: 'htmlFloatPanel_AyohaReward_MainContainerAyohaRewardRedemption_carosel_APoint0',
                      html: '<div style="color:purple;text-align: center;font-size:30px;width:100%;font-weight:bold">150000</div>',
                  },
                 {
                     margin: '-12 0 0 3',
-                    id: 'containerFloatPanel_AyohaReward_MainContainerAyohaRewardRedemption_carosel_APointTxt0',
+                    id: 'htmlFloatPanel_AyohaReward_MainContainerAyohaRewardRedemption_carosel_APointTxt0',
                     html: '<div style="color:purple;text-align: center;font-size:14px;width:100%;font-weight:bold">Ayoha Point</div>',
                 },
 
@@ -844,8 +841,8 @@ function FloatPanel_AyohaReward() {
             width: '100%',
             margin: '-2 0 0 0',
             //zIndex: 400,
-            id: 'containerFloatPanel_AyohaReward_MainContainerAyohaRewardRedemption_carosel_APointImg0',
-            name: 'namecontainerFloatPanel_AyohaReward_MainContainerAyohaRewardRedemption_carosel_APointImg0',
+            id: 'htmlFloatPanel_AyohaReward_MainContainerAyohaRewardRedemption_carosel_APointImg0',
+            name: 'nameContainerFloatPanel_AyohaReward_MainContainerAyohaRewardRedemption_carosel_APointImg0',
             html: '<div style="color:black;text-align: center;font-size:10px;width:100%;font-weight:bold"><img src="resources/icons/Samsung Galaxy.png" alt="Image" style="width:70%;height:230px;"></div>',
 
             //ui: 'plain',
@@ -860,19 +857,19 @@ function FloatPanel_AyohaReward() {
 
     {
         margin: '-20 0 0 0',
-        id: 'containerFloatPanel_AyohaReward_MainContainerAyohaRewardRedemption_carosel_APointNameItemTxt0',
+        id: 'htmlFloatPanel_AyohaReward_MainContainerAyohaRewardRedemption_carosel_APointNameItemTxt0',
         html: '<div style="color:black;text-align: center;font-size:18px;width:100%;font-weight:bold">HP Pavillion Notebook</div>',
     },
      {
          margin: '-2 0 0 0',
-         id: 'containerFloatPanel_AyohaReward_MainContainerAyohaRewardRedemption_carosel_APointNameItemPriceTxt0',
+         id: 'htmlFloatPanel_AyohaReward_MainContainerAyohaRewardRedemption_carosel_APointNameItemPriceTxt0',
          html: '<div style="color:black;text-align: center;font-size:12px;width:100%;font-weight:normal">Worth RM2500.00</div>',
      },
 
     {
         margin: '5 0 0 0',
         width: '100%',
-        id: 'containerFloatPanel_AyohaReward_MainContainerAyohaRewardRedemption_carosel_APointNameItemRedeemButton0',
+        id: 'htmlFloatPanel_AyohaReward_MainContainerAyohaRewardRedemption_carosel_APointNameItemRedeemButton0',
         html: '<div style="width:100%;background-color: transparent;text-align:center;border: 1px none white;font-family:Century Gothic;font-size: 12px;font-weight:normal;color:grey;"><button OnClick="DashboardAyohaPointRedemption_openRedeemItem(0)" class="buttonRedeemDashboard" style="margin:0px 0px 0px 0px;">🎉 Redeem Now</button></div>'
     },
 
@@ -954,8 +951,8 @@ function FloatPanel_AyohaReward() {
             width: '100%',
             margin: '-2 0 0 0',
             //zIndex: 400,
-            id: 'htmlFloatPanel_AyohaReward_MainContainerAyohaRewardRedemption_carosel_APointImg1',
-            name: 'nameFloatPanel_AyohaReward_MainContainerHtmlAyohaRewardRedemption_carosel_APointImg1',
+            id: 'htmlFloatPanel_AyohaReward_MainContainerAyohaRewardRedemption_carosel_APointImg1',          
+            name: 'nameContainerFloatPanel_AyohaReward_MainContainerAyohaRewardRedemption_carosel_APointImg1',
             html: '<div style="color:black;text-align: center;font-size:10px;width:100%;font-weight:bold"><img src="resources/icons/Samsung Galaxy.png" alt="Image" style="width:70%;height:230px;"></div>',
 
             //ui: 'plain',
@@ -1063,7 +1060,7 @@ function FloatPanel_AyohaReward() {
             margin: '-2 0 0 0',
             //zIndex: 400,
             id: 'htmlFloatPanel_AyohaReward_MainContainerAyohaRewardRedemption_carosel_APointImg2',
-            name: 'nameFloatPanel_AyohaReward_MainContainerHtmlAyohaRewardRedemption_carosel_APointImg2',
+            name: 'nameContainerFloatPanel_AyohaReward_MainContainerAyohaRewardRedemption_carosel_APointImg2',
             html: '<div style="color:black;text-align: center;font-size:10px;width:100%;font-weight:bold"><img src="resources/icons/Samsung Galaxy.png" alt="Image" style="width:70%;height:230px;"></div>',
 
             //ui: 'plain',
@@ -1170,8 +1167,8 @@ function FloatPanel_AyohaReward() {
             width: '100%',
             margin: '-2 0 0 0',
             //zIndex: 400,
-            id: 'htmlFloatPanel_AyohaReward_MainContainerAyohaRewardRedemption_carosel_APointImg3',
-            name: 'nameFloatPanel_AyohaReward_MainContainerHtmlAyohaRewardRedemption_carosel_APointImg3',
+            id: 'htmlFloatPanel_AyohaReward_MainContainerAyohaRewardRedemption_carosel_APointImg3',           
+            name: 'nameContainerFloatPanel_AyohaReward_MainContainerAyohaRewardRedemption_carosel_APointImg3',
             html: '<div style="color:black;text-align: center;font-size:10px;width:100%;font-weight:bold"><img src="resources/icons/Samsung Galaxy.png" alt="Image" style="width:70%;height:230px;"></div>',
 
             //ui: 'plain',
@@ -1282,7 +1279,7 @@ function FloatPanel_AyohaReward() {
                      margin: '-2 0 0 0',
                      //zIndex: 400,
                      id: 'htmlFloatPanel_AyohaReward_MainContainerAyohaRewardRedemption_carosel_APointImg4',
-                     name: 'htmlFloatPanel_AyohaReward_MainContainerHtmlAyohaRewardRedemption_carosel_APointImg4',
+                     name: 'nameContainerFloatPanel_AyohaReward_MainContainerAyohaRewardRedemption_carosel_APointImg4',
                      html: '<div style="color:black;text-align: center;font-size:10px;width:100%;font-weight:bold"><img src="resources/icons/Samsung Galaxy.png" alt="Image" style="width:70%;height:230px;"></div>',
 
                      //ui: 'plain',
@@ -1351,7 +1348,7 @@ function FloatPanel_AyohaReward() {
                         html: '<div ><img src="resources/icons/nextPurple2.png" width="25" height="20" alt="Company Name"></div>',
                         ui: 'plain',
                         handler: function () {
-                            var crsl = Ext.getCmp('carousel_containerAyohaRewardRedemption');
+                            var crsl = Ext.getCmp('carouselFloatPanel_AyohaReward_MainContainerAyohaRewardRedemption');
                             crsl.next();
                         }
                     },
@@ -1649,7 +1646,7 @@ function FloatPanel_AyohaReward() {
                                               height: 130,
                                               margin: '0 0 0 0',
                                               zIndex: 50,
-                                              name: 'containerFloatPanel_AyohaReward_MainContainer_User_AyohaRewardRankingBar02_Bar',
+                                              name: 'nameContainerFloatPanel_AyohaReward_MainContainer_User_AyohaRewardRankingBar02_Bar',
                                               //style: {
                                               //    // background: '#D25959',
                                               //    background: 'rgba(76, 175, 80, 0.3);',
@@ -1874,7 +1871,7 @@ function FloatPanel_AyohaReward() {
                                                   height: 90,
                                                   zIndex: 50,
                                                   margin: '0 0 0 0',
-                                                  name: 'containerFloatPanel_AyohaReward_MainContainer_User_AyohaRewardRankingBar03_Bar',
+                                                  name: 'nameContainerFloatPanel_AyohaReward_MainContainer_User_AyohaRewardRankingBar03_Bar',
                                                   //style: {
                                                   //    // background: '#D25959',
                                                   //    background: 'rgba(76, 175, 80, 0.3);',
@@ -2684,14 +2681,139 @@ if (AppState.FloatPanel_AyohaReward.TextNextRankStar == "Platinum") {
 
   
   
-   FloatPanel_AyohaReward_NextRanking();
-   FloatPanel_AyohaReward_SetupRewardRedemptionCarosel();
+   
 
 
 
 }
-
+FloatPanel_AyohaReward_NextRanking();
+   FloatPanel_AyohaReward_SetupRewardRedemptionCarosel();
+   FloatPanel_AyohaReward_AyohaRewardPointRewardRankingStore();
+   FloatPanel_AyohaReward_AyohaRewardContestantLoadByContestCodeStore();
     
+
+
+
+
+
+   var containerViewnameContainerFloatPanel_AyohaReward_MainContainerAyohaRewardRedemption_carosel_APointImg0 = Ext.ComponentQuery.query('container[name=nameContainerFloatPanel_AyohaReward_MainContainerAyohaRewardRedemption_carosel_APointImg0]')[0];
+    var containerViewElnameContainerFloatPanel_AyohaReward_MainContainerAyohaRewardRedemption_carosel_APointImg0 = containerViewnameContainerFloatPanel_AyohaReward_MainContainerAyohaRewardRedemption_carosel_APointImg0.element;
+    containerViewElnameContainerFloatPanel_AyohaReward_MainContainerAyohaRewardRedemption_carosel_APointImg0.on('tap',
+      function (event, node, options, eOpts) {
+          DashboardAyohaPointRedemption_openRedeemItem(0);
+      }
+    );
+
+
+    var containerViewnameContainerFloatPanel_AyohaReward_MainContainerAyohaRewardRedemption_carosel_APointImg1 = Ext.ComponentQuery.query('container[name=nameContainerFloatPanel_AyohaReward_MainContainerAyohaRewardRedemption_carosel_APointImg1]')[0];
+    var containerViewElnameContainerFloatPanel_AyohaReward_MainContainerAyohaRewardRedemption_carosel_APointImg1 = containerViewnameContainerFloatPanel_AyohaReward_MainContainerAyohaRewardRedemption_carosel_APointImg1.element;
+    containerViewElnameContainerFloatPanel_AyohaReward_MainContainerAyohaRewardRedemption_carosel_APointImg1.on('tap',
+      function (event, node, options, eOpts) {
+          DashboardAyohaPointRedemption_openRedeemItem(1);
+      }
+    );
+
+
+    var containerViewnameContainerFloatPanel_AyohaReward_MainContainerAyohaRewardRedemption_carosel_APointImg2 = Ext.ComponentQuery.query('container[name=nameContainerFloatPanel_AyohaReward_MainContainerAyohaRewardRedemption_carosel_APointImg2]')[0];
+    var containerViewElnameContainerFloatPanel_AyohaReward_MainContainerAyohaRewardRedemption_carosel_APointImg2 = containerViewnameContainerFloatPanel_AyohaReward_MainContainerAyohaRewardRedemption_carosel_APointImg2.element;
+    containerViewElnameContainerFloatPanel_AyohaReward_MainContainerAyohaRewardRedemption_carosel_APointImg2.on('tap',
+      function (event, node, options, eOpts) {
+          DashboardAyohaPointRedemption_openRedeemItem(2);
+      }
+    );
+
+    var containerViewnameContainerFloatPanel_AyohaReward_MainContainerAyohaRewardRedemption_carosel_APointImg3 = Ext.ComponentQuery.query('container[name=nameContainerFloatPanel_AyohaReward_MainContainerAyohaRewardRedemption_carosel_APointImg3]')[0];
+    var containerViewElnameContainerFloatPanel_AyohaReward_MainContainerAyohaRewardRedemption_carosel_APointImg3 = containerViewnameContainerFloatPanel_AyohaReward_MainContainerAyohaRewardRedemption_carosel_APointImg3.element;
+    containerViewElnameContainerFloatPanel_AyohaReward_MainContainerAyohaRewardRedemption_carosel_APointImg3.on('tap',
+      function (event, node, options, eOpts) {
+          DashboardAyohaPointRedemption_openRedeemItem(3);
+      }
+    );
+
+
+
+    var containerViewnameContainerFloatPanel_AyohaReward_MainContainerAyohaRewardRedemption_carosel_APointImg4 = Ext.ComponentQuery.query('container[name=nameContainerFloatPanel_AyohaReward_MainContainerAyohaRewardRedemption_carosel_APointImg4]')[0];
+    var containerViewElnameContainerFloatPanel_AyohaReward_MainContainerAyohaRewardRedemption_carosel_APointImg4 = containerViewnameContainerFloatPanel_AyohaReward_MainContainerAyohaRewardRedemption_carosel_APointImg4.element;
+    containerViewElnameContainerFloatPanel_AyohaReward_MainContainerAyohaRewardRedemption_carosel_APointImg4.on('tap',
+      function (event, node, options, eOpts) {
+          DashboardAyohaPointRedemption_openRedeemItem(4);
+      }
+    );
+
+
+
+
+
+    var containerViewnameContainerFloatPanel_AyohaReward_MainContainer_User_AyohaRewardRankingEnterContestBtn = Ext.ComponentQuery.query('container[name=nameContainerFloatPanel_AyohaReward_MainContainer_User_AyohaRewardRankingEnterContestBtn]')[0];
+    var containerViewElnameContainerFloatPanel_AyohaReward_MainContainer_User_AyohaRewardRankingEnterContestBtn = containerViewnameContainerFloatPanel_AyohaReward_MainContainer_User_AyohaRewardRankingEnterContestBtn.element;
+    containerViewElnameContainerFloatPanel_AyohaReward_MainContainer_User_AyohaRewardRankingEnterContestBtn.on('tap',
+      function (event, node, options, eOpts) {
+
+          FloatPanel_AyohaReward_ContestAdvertisementShow();
+      }
+    );
+
+
+
+
+
+    var containerViewnameContainerFloatPanel_AyohaReward_MainContainer_User_AyohaRewardRankingViewMyRankingBtn = Ext.ComponentQuery.query('container[name=nameContainerFloatPanel_AyohaReward_MainContainer_User_AyohaRewardRankingViewMyRankingBtn]')[0];
+    var containerViewElnameContainerFloatPanel_AyohaReward_MainContainer_User_AyohaRewardRankingViewMyRankingBtn = containerViewnameContainerFloatPanel_AyohaReward_MainContainer_User_AyohaRewardRankingViewMyRankingBtn.element;
+    containerViewElnameContainerFloatPanel_AyohaReward_MainContainer_User_AyohaRewardRankingViewMyRankingBtn.on('tap',
+      function (event, node, options, eOpts) {
+
+        FloatPanel_AyohaReward_ViewMyRankingShow();
+      }
+    );
+
+
+
+
+    var containerViewnameFloatPanel_AyohaReward_MainContainerContestYourRanking = Ext.ComponentQuery.query('container[name=nameFloatPanel_AyohaReward_MainContainerContestYourRanking]')[0];
+    var containerViewElnameFloatPanel_AyohaReward_MainContainerContestYourRanking = containerViewnameFloatPanel_AyohaReward_MainContainerContestYourRanking.element;
+    containerViewElnameFloatPanel_AyohaReward_MainContainerContestYourRanking.on('tap',
+      function (event, node, options, eOpts) {
+
+          FloatPanel_AyohaReward_ViewMyRankingShow();
+      }
+    );
+
+
+
+
+
+
+    var containerViewnameContainerFloatPanel_AyohaReward_MainContainer_User_AyohaRewardRankingBar01_Bar = Ext.ComponentQuery.query('container[name=nameContainerFloatPanel_AyohaReward_MainContainer_User_AyohaRewardRankingBar01_Bar]')[0];
+    //var containerView3 = Ext.ComponentQuery.query('container[name=containerContestYourRankingName]')[0];
+    var containerViewElnameContainerFloatPanel_AyohaReward_MainContainer_User_AyohaRewardRankingBar01_Bar = containerViewnameContainerFloatPanel_AyohaReward_MainContainer_User_AyohaRewardRankingBar01_Bar.element;
+    containerViewElnameContainerFloatPanel_AyohaReward_MainContainer_User_AyohaRewardRankingBar01_Bar.on('tap',
+      function (event, node, options, eOpts) {
+
+          FloatPanel_AyohaReward_ViewMyRankingShow();
+      }
+    );
+
+    var containerViewnameContainerFloatPanel_AyohaReward_MainContainer_User_AyohaRewardRankingBar02_Bar = Ext.ComponentQuery.query('container[name=nameContainerFloatPanel_AyohaReward_MainContainer_User_AyohaRewardRankingBar02_Bar]')[0];
+    //var containerView3 = Ext.ComponentQuery.query('container[name=containerContestYourRankingName]')[0];
+    var containerViewElnameContainerFloatPanel_AyohaReward_MainContainer_User_AyohaRewardRankingBar02_Bar = containerViewnameContainerFloatPanel_AyohaReward_MainContainer_User_AyohaRewardRankingBar02_Bar.element;
+    containerViewElnameContainerFloatPanel_AyohaReward_MainContainer_User_AyohaRewardRankingBar02_Bar.on('tap',
+      function (event, node, options, eOpts) {
+
+          FloatPanel_AyohaReward_ViewMyRankingShow();
+      }
+    );
+
+
+    var containerViewnameContainerFloatPanel_AyohaReward_MainContainer_User_AyohaRewardRankingBar03_Bar = Ext.ComponentQuery.query('container[name=nameContainerFloatPanel_AyohaReward_MainContainer_User_AyohaRewardRankingBar03_Bar]')[0];
+    //var containerView3 = Ext.ComponentQuery.query('container[name=containerContestYourRankingName]')[0];
+    var containerViewElnameContainerFloatPanel_AyohaReward_MainContainer_User_AyohaRewardRankingBar03_Bar = containerViewnameContainerFloatPanel_AyohaReward_MainContainer_User_AyohaRewardRankingBar03_Bar.element;
+    containerViewElnameContainerFloatPanel_AyohaReward_MainContainer_User_AyohaRewardRankingBar03_Bar.on('tap',
+      function (event, node, options, eOpts) {
+
+          FloatPanel_AyohaReward_ViewMyRankingShow();
+      }
+    );
+
 
 }
 
@@ -2732,27 +2854,144 @@ function FloatPanel_AyohaReward_updateProgress(current, target){
 
 function FloatPanel_AyohaReward_SetupRewardRedemptionCarosel() {
 
-    alert("FloatPanel_AyohaReward_SetupRewardRedemptionCarosel");
-    for (var i = 1; i <= 6; i++) {
-        console.log('htmlFloatPanel_AyohaReward_MainContainerAyohaRewardRedemption_carosel_APoint' + i);
-        // console.log('htmlFloatPanel_AyohaReward_MainContainerAyohaRewardRedemption_carosel_APoint Valau' + arrAyohaRedeemPrizeLoadByAyohaUserGroupCode_Point[i]);
+ 
+    console.log(arrAyohaRedeemPrizeLoadByAyohaUserGroupCode_Point.length);
+    for (var i = 0; i < arrAyohaRedeemPrizeLoadByAyohaUserGroupCode_Point.length; i++) {        
         Ext.getCmp('htmlFloatPanel_AyohaReward_MainContainerAyohaRewardRedemption_carosel_APoint' + i).setHtml('<div style="color:purple;text-align: center;font-size:15px;width:100%;font-weight:bold">🎁' + arrAyohaRedeemPrizeLoadByAyohaUserGroupCode_Point[i] + '- </div>');
-        // Ext.getCmp('htmlFloatPanel_AyohaReward_MainContainerAyohaRewardRedemption_carosel_APointImg' + i).setHtml('<div style="color:black;text-align: center;font-size:10px;width:100%;font-weight:bold"><img src="' + arrAyohaRedeemPrizeLoadByAyohaUserGroupCode_ItemImage[i] + '" alt="Image" style="width:70%;height:230px;"></div>');
-        // Ext.getCmp('htmlFloatPanel_AyohaReward_MainContainerAyohaRewardRedemption_carosel_APointNameItemTxt' + i).setHtml('<div style="color:black;text-align: center;font-size:15px;width:100%;font-weight:bold">' + arrAyohaRedeemPrizeLoadByAyohaUserGroupCode_ItemName[i] + '</div>');
-        // Ext.getCmp('htmlFloatPanel_AyohaReward_MainContainerAyohaRewardRedemption_carosel_APointNameItemPriceTxt' + i).setHtml('<div style="color:black;text-align: center;font-size:12px;width:100%;font-weight:normal">Worth RM' + arrAyohaRedeemPrizeLoadByAyohaUserGroupCode_ItemPrice[i] + '</div>');
-    
+        Ext.getCmp('htmlFloatPanel_AyohaReward_MainContainerAyohaRewardRedemption_carosel_APointImg' + i).setHtml('<div style="color:black;text-align: center;font-size:10px;width:100%;font-weight:bold"><img src="' + arrAyohaRedeemPrizeLoadByAyohaUserGroupCode_ItemImage[i] + '" alt="Image" style="width:70%;height:230px;"></div>');
+        Ext.getCmp('htmlFloatPanel_AyohaReward_MainContainerAyohaRewardRedemption_carosel_APointNameItemTxt' + i).setHtml('<div style="color:black;text-align: center;font-size:15px;width:100%;font-weight:bold">' + arrAyohaRedeemPrizeLoadByAyohaUserGroupCode_ItemName[i] + '</div>');
+        Ext.getCmp('htmlFloatPanel_AyohaReward_MainContainerAyohaRewardRedemption_carosel_APointNameItemPriceTxt' + i).setHtml('<div style="color:black;text-align: center;font-size:12px;width:100%;font-weight:normal">Worth RM' + arrAyohaRedeemPrizeLoadByAyohaUserGroupCode_ItemPrice[i] + '</div>');
     }
-    
-    
-    // arrAyohaRedeemPrizeLoadByAyohaUserGroupCode_Point.push(ItemPoint);
-    // arrAyohaRedeemPrizeLoadByAyohaUserGroupCode_ItemImage.push(ImgPath);
-    // arrAyohaRedeemPrizeLoadByAyohaUserGroupCode_ItemName.push(ItemName);
-    // arrAyohaRedeemPrizeLoadByAyohaUserGroupCode_ItemPrice.push(ItemPrizePriceCost);
-    // arrAyohaRedeemPrizeLoadByAyohaUserGroupCode_ItemCode.push(ItemCode);
+}
 
+
+
+function FloatPanel_AyohaReward_AyohaRewardPointRewardRankingStore() {
+
+
+    var ii = 1;
+    // _DataStore_AyohaRewardPointRewardRankingStore.getProxy().setExtraParam('RankingLevel', "ALL");
+    // _DataStore_AyohaRewardPointRewardRankingStore.getProxy().setUrl(GetAPIurl() + '/AyohaRewardPoint/AyohaRewardPointRewardRanking');
+    // _DataStore_AyohaRewardPointRewardRankingStore.load();
+
+
+    var task = Ext.create('Ext.util.DelayedTask', function () {
+        var count = _DataStore_AyohaRewardPointRewardRankingStore.getCount();
+        for (i = 0; i < count; i++) {
+            var modelRecord = _DataStore_AyohaRewardPointRewardRankingStore.getAt(i);
+            var AccountName = modelRecord.get('AccountName');
+            var Photo = modelRecord.get('Photo');
+            var AyohaPoint = modelRecord.get('AyohaPoint');
+            var SubscriberAccNo = modelRecord.get('SubscriberAccNo');
+            var JoinDate_DateOnly = modelRecord.get('JoinDate_DateOnly');
+            var JoinDate_TimeOnly = modelRecord.get('JoinDate_TimeOnly');
+
+
+
+            if (ii < 4 && i < 3) {
+                if (ii == 1) {
+
+                   
+                    Ext.getCmp('imgFloatPanel_AyohaReward_MainContainer_User_AyohaRewardRanking0' + ii).setHtml('<img src="' + Photo + '"  style="width: 80px; height: 80px; border:1px solid white; border-radius: 50%;  margin:0px 0px 0px 0px;">');
+                    Ext.getCmp('htmlFloatPanel_AyohaReward_MainContainer_User_AyohaRewardRanking0' + ii + '_Name').setHtml('<div style="color:black;text-align: center;font-size:12px;width:100%;"><b>' + AccountName + '</b></div>');
+                    Ext.getCmp('htmlFloatPanel_AyohaReward_MainContainer_User_AyohaRewardRanking0' + ii + '_AyohaPoint').setHtml('<div style="color:black;text-align: center;font-size:10px;width:100%;"><b>' + AyohaPoint + ' Point</b></div>');
+                } else {
+                    Ext.getCmp('imgFloatPanel_AyohaReward_MainContainer_User_AyohaRewardRanking0' + ii).setHtml('<img src="' + Photo + '"  style="width: 70px; height: 70px; border:1px solid white; border-radius: 50%;  margin:0px 0px 0px 0px;">');
+                    Ext.getCmp('htmlFloatPanel_AyohaReward_MainContainer_User_AyohaRewardRanking0' + ii + '_Name').setHtml('<div style="color:black;text-align: center;font-size:12px;width:100%;"><b>' + AccountName + '</b></div>');
+                    Ext.getCmp('htmlFloatPanel_AyohaReward_MainContainer_User_AyohaRewardRanking0' + ii + '_AyohaPoint').setHtml('<div style="color:black;text-align: center;font-size:10px;width:100%;"><b>' + AyohaPoint + ' Point</b></div>');
+                }
+
+
+            }
+
+
+
+            if (SubscriberAccNo == GetCurrAyohaUserAccountNo()) {
+
+              myRankingNo = ii;
+                // alert(JoinDate);
+
+                globalJoinDate = JoinDate_DateOnly + ' ' + JoinDate_TimeOnly;
+                //Ext.getCmp('htmlJoinContestDate').setHtml('<div style="color:black;text-align: center;font-size:10px;width:100%;">Joined Date:' + JoinDate_DateOnly + '' + JoinDate_TimeOnly + '</div>');
+
+
+                if (myRankingNo <= 10) {
+
+                    if (myRankingNo == 1) {
+                        //Ext.getCmp('imgDashboard_User_AyohaRewardRanking01').setHtml('<img src="' + Photo + '"  style="width: 80px; height: 80px; border:1px solid white; border-radius: 50%;  margin:0px 0px 0px 0px;" class="example-1">');
+                        Ext.getCmp('imgFloatPanel_AyohaReward_MainContainer_User_AyohaRewardRanking01').setHtml('<img src="' + Photo + '"  style="width: 80px; height: 80px; border:2px solid grey; border-radius: 50%;  margin:0px 0px 0px 0px;" >');
+                    }
+
+                    if (myRankingNo == 2) {
+                        //Ext.getCmp('imgDashboard_User_AyohaRewardRanking02').setHtml('<img src="' + Photo + '"  style="width: 70px; height: 70px; border:1px solid white; border-radius: 50%;  margin:0px 0px 0px 0px;" class="example-1">');
+                        Ext.getCmp('imgFloatPanel_AyohaReward_MainContainer_User_AyohaRewardRanking02').setHtml('<img src="' + Photo + '"  style="width: 70px; height: 70px; border:2px grey; border-radius: 50%;  margin:0px 0px 0px 0px;">');
+                    }
+                    if (myRankingNo == 3) {
+                        // Ext.getCmp('imgDashboard_User_AyohaRewardRanking03').setHtml('<img src="' + Photo + '"  style="width: 70px; height: 70px; border:1px solid white; border-radius: 50%;  margin:0px 0px 0px 0px;"  class="example-1">');
+                        Ext.getCmp('imgFloatPanel_AyohaReward_MainContainer_User_AyohaRewardRanking03').setHtml('<img src="' + Photo + '"  style="width: 70px; height: 70px; border:2px solid grey; border-radius: 50%;  margin:0px 0px 0px 0px;">');
+                    }
+                    Ext.getCmp('htmlFloatPanel_AyohaReward_MainContainerContestYourRanking').setHtml('<div  class="blink_me" style="color:black;text-align: center;font-size:10px;width:100%;margin:70px 0px 0px 0px;">Hooray You in Ranking !</div>');
+                    Ext.getCmp('htmlFloatPanel_AyohaReward_MainContainerContestYourRankingNo').setHtml('<div class="blink_me" style="color:black;text-align: center;font-size:40px;font-weight:bold;width:100%;margin:-10px 0px 0px 0px;">' + myRankingNo + '</div>');
+
+                } else {
+                    Ext.getCmp('htmlFloatPanel_AyohaReward_MainContainerContestYourRankingNo').setHtml('<div style="color:black;text-align: center;font-size:40px;font-weight:bold;width:100%;margin:-10px 0px 0px 0px;">' + myRankingNo + '</div>');
+                    Ext.getCmp('htmlFloatPanel_AyohaReward_MainContainerContestYourRanking').setHtml('<div style="color:black;text-align: center;font-size:10px;width:100%;margin:70px 0px 0px 0px;">Your Ranking !</div>');
+                }
+
+
+            }
+
+            ii++;
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        Ext.Viewport.setMasked(false);
+
+    });
+    task.delay(1000);
 
 }
 
 
+
+
+function FloatPanel_AyohaReward_AyohaRewardContestantLoadByContestCodeStore() {
+
+    if(AppState.FloatPanel_AyohaReward.isButtonEnterContestOrViewMyRanking=="EnterContest"){
+        Ext.getCmp('containeFloatPanel_AyohaReward_MainContainer_User_AyohaRewardRankingEnterContestBtnID').setHidden(false);
+        Ext.getCmp('containerFloatPanel_AyohaReward_MainContainer_User_AyohaRewardRankingViewMyRankingBtnID').setHidden(true);
+
+       
+        Ext.getCmp('imgFloatPanel_AyohaReward_MainContainer_AyohaRewardRankingContest').setHidden(false);
+        Ext.getCmp('imgFloatPanel_AyohaReward_MainContainer_AyohaRewardRankingContestShining').setHidden(true);
+        Ext.getCmp('containerFloatPanel_AyohaReward_MainContainerContestEndDate').setHidden(false);
+    }
+    if(AppState.FloatPanel_AyohaReward.isButtonEnterContestOrViewMyRanking=="ViewMyRanking"){
+        Ext.getCmp('containeFloatPanel_AyohaReward_MainContainer_User_AyohaRewardRankingEnterContestBtnID').setHidden(true);
+            Ext.getCmp('containerFloatPanel_AyohaReward_MainContainer_User_AyohaRewardRankingViewMyRankingBtnID').setHidden(false);
+
+          
+            Ext.getCmp('imgFloatPanel_AyohaReward_MainContainer_AyohaRewardRankingContest').setHidden(true);
+            Ext.getCmp('imgFloatPanel_AyohaReward_MainContainer_AyohaRewardRankingContestShining').setHidden(false);
+            Ext.getCmp('containerFloatPanel_AyohaReward_MainContainerContestEndDate').setHidden(false);
+    }
+
+
+}
 
 

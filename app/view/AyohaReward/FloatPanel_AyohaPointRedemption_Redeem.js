@@ -18,7 +18,7 @@ function FloatPanel_AyohaPointRedemption_Redeem() {
         {
             id: 'FloatPanel_AyohaPointRedemption_RedeemID',
             // xtype: 'panel',
-            zIndex: 100,
+            zIndex: 111,
             xtype: 'container',
             //height: 475,
             height: '100%',
