@@ -2956,6 +2956,7 @@ function FloatPanel_Membership_CheckInPageShow(logoUrl,EnterpriseName,Enterprise
                         // show your animation and the *new* "Confirmed" popup.
                         FloatPanel_AyohaStore_AyohaPointCollectedAnimShow();
                         FloatPanel_Membership_CheckInPage_ConfirmedShow(CheckInCount); // This is correct.
+                        CoreFunction_DashboardAyohaUser();
 
                     } else {
                         swalFireFail("Fail!->" + result.responseText.trim());

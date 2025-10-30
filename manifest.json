@@ -3,8 +3,8 @@
     "short_name": "Ayoha",
     "start_url": "/ayohaclient/index.html",
     "display": "standalone",
-    "background_color": "#c800ffc9",
-    "theme_color": "#ff00cc",
+    "background_color": "#ff00de75",
+    "theme_color": "#ff00de75",
     "orientation": "portrait",
     "gcm_sender_id": "482941778795",
     "icons": [

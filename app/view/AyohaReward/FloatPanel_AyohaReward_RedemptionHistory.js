@@ -53,7 +53,7 @@ function FloatPanel_AyohaReward_RedemptionHistory() {
          // style: 'border-bottom:1px solid;background-color:#353839;',
          // style: 'border-bottom:1px solid;background-color:white;',
         // style: ' background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);',
-         style: ' background-color: #fac;background-image: linear-gradient(#c800ffc9,#ff00de75);',
+         style: 'background-color: #fac;background-image: linear-gradient(#c800ffc9,#ff00de75);',
 
          listeners: {
              initialize: function (c) {

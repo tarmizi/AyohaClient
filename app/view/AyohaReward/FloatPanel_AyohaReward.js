@@ -118,114 +118,114 @@ function FloatPanel_AyohaReward() {
               
       
         
-                   {
+    //                {
       
-                       xtype: 'container',
-                       width: '100%',
-                       height: 60,
-                       // width: 40,
-                       // docked: 'top',
+    //                    xtype: 'container',
+    //                    width: '100%',
+    //                    height: 60,
+    //                    // width: 40,
+    //                    // docked: 'top',
       
-                       //  title: '<font size="3" color="white">Live Tracking Map</font>',
-                       //hidden: true,
+    //                    //  title: '<font size="3" color="white">Live Tracking Map</font>',
+    //                    //hidden: true,
       
-                       id: 'containerFloatPanel_AyohaReward_DashboardHeader',
-                      /// style: 'background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);',
-                      // style: 'background-color: #fac;background-image: linear-gradient(#c800ffc9,#ff00de75);',
-                      style: 'background-color:transparent;',
-                      // style: ' background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);',style: ' background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);',
-                       layout: {
-                           type: 'hbox',
-                           pack: 'center',
-                           align: 'center',
-                       },
-      
-      
+    //                    id: 'containerFloatPanel_AyohaReward_DashboardHeader',
+    //                   /// style: 'background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);',
+    //                   // style: 'background-color: #fac;background-image: linear-gradient(#c800ffc9,#ff00de75);',
+    //                   style: 'background-color:transparent;',
+    //                   // style: ' background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);',style: ' background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);',
+    //                    layout: {
+    //                        type: 'hbox',
+    //                        pack: 'center',
+    //                        align: 'center',
+    //                    },
       
       
-                       // hidden:true,
-                       items:
-                              [
+      
+      
+    //                    // hidden:true,
+    //                    items:
+    //                           [
       
                          
-    {
+    // {
 
-        xtype: 'container',
-        width: '100%',
-        docked: 'top',
-        height: 40,
-        // width: 40,
+    //     xtype: 'container',
+    //     width: '100%',
+    //     docked: 'top',
+    //     height: 40,
+    //     // width: 40,
 
-        //  title: '<font size="3" color="white">Live Tracking Map</font>',
-        //hidden: true,
+    //     //  title: '<font size="3" color="white">Live Tracking Map</font>',
+    //     //hidden: true,
 
-        id: 'containerFloatPanel_AyohaRewardTopHeader',
-        style: {
-            // background: '#D25959',
-            background: 'transparent',
-            // border: '2px'
-        },
-        //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
-        // style: 'border-bottom:2px solid #D25959;background-color:transparent',
-        layout: {
-            type: 'hbox',
-            pack: 'center',
-            align: 'center',
-        },
-        // hidden:true,
-        items:
-               [
+    //     id: 'containerFloatPanel_AyohaRewardTopHeader',
+    //     style: {
+    //         // background: '#D25959',
+    //         background: 'transparent',
+    //         // border: '2px'
+    //     },
+    //     //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
+    //     // style: 'border-bottom:2px solid #D25959;background-color:transparent',
+    //     layout: {
+    //         type: 'hbox',
+    //         pack: 'center',
+    //         align: 'center',
+    //     },
+    //     // hidden:true,
+    //     items:
+    //            [
 
 
-                             {
-                                 xtype: 'button',
-                                 id: 'btnFloatPanel_AyohaRewardBack',
-                                 margin: '10 0 0 5',
-                                 height: 30,
-                                 width: 35,
-                                 // iconCls: 'list',
-                                 html: '<div ><img src="resources/icons/backwhite03Ori.png" width="25" height="20" alt="Company Name"></div>',
-                                 ui: 'plain',
-                                 handler: function () {
-                                    FloatPanel_AyohaRewardHide();
-                                     // FloatPanel_AyohaRewardHide();
-                                     // FloatPanel_AyohaReward_AddCardHide();
+    //                          {
+    //                              xtype: 'button',
+    //                              id: 'btnFloatPanel_AyohaRewardBack',
+    //                              margin: '10 0 0 5',
+    //                              height: 30,
+    //                              width: 35,
+    //                              // iconCls: 'list',
+    //                              html: '<div ><img src="resources/icons/backwhite03Ori.png" width="25" height="20" alt="Company Name"></div>',
+    //                              ui: 'plain',
+    //                              handler: function () {
+    //                                 FloatPanel_AyohaRewardHide();
+    //                                  // FloatPanel_AyohaRewardHide();
+    //                                  // FloatPanel_AyohaReward_AddCardHide();
                                      
-                                     //  FloatPanel_AyohaReward_AddCardHide();
+    //                                  //  FloatPanel_AyohaReward_AddCardHide();
 
-                                 }
-                             },
+    //                              }
+    //                          },
 
-                              {
-                                  xtype: 'spacer',
+    //                           {
+    //                               xtype: 'spacer',
 
-                              },
-                              {
-                                margin: '10 10 0 0',
-                                id: 'htmlFloatPanel_AyohaReward_TitleHeaderTxt',
+    //                           },
+    //                           {
+    //                             margin: '10 10 0 0',
+    //                             id: 'htmlFloatPanel_AyohaReward_TitleHeaderTxt',
 
-                                html: '<div style="color:black;text-align: right;font-size:14px;width:100%;"><b>Membership Loyalty Stamp</b></div>'
-                            },
-                              {
-                                xtype: 'button',
-                                margin: '10 0 0 -10',
-                                id: 'btnFloatPanel_AyohaReward_CardIcon',
-                                height: 35,
-                                width: 35,
-                                //hidden:true,
-                                // iconCls: 'list',
-                                html: '<div ><img src="resources/icons/stampedFeature01.png" width="25" height="25" alt="Company Name"></div>',
-                                ui: 'plain',
-                                handler: function () {
+    //                             html: '<div style="color:black;text-align: right;font-size:14px;width:100%;"><b>Membership Loyalty Stamp</b></div>'
+    //                         },
+    //                           {
+    //                             xtype: 'button',
+    //                             margin: '10 0 0 -10',
+    //                             id: 'btnFloatPanel_AyohaReward_CardIcon',
+    //                             height: 35,
+    //                             width: 35,
+    //                             //hidden:true,
+    //                             // iconCls: 'list',
+    //                             html: '<div ><img src="resources/icons/stampedFeature01.png" width="25" height="25" alt="Company Name"></div>',
+    //                             ui: 'plain',
+    //                             handler: function () {
 
-                                }
-                            },
+    //                             }
+    //                         },
                               
 
-                            {
-                                xtype: 'spacer',
-                                width: 10,
-                            },
+    //                         {
+    //                             xtype: 'spacer',
+    //                             width: 10,
+    //                         },
                                   
 
 
@@ -236,17 +236,17 @@ function FloatPanel_AyohaReward() {
 
 
 
-               ]
+    //            ]
 
-    },
+    // },
       
       
       
       
       
-                              ]
+    //                           ]
       
-                   },
+    //                },
                    
                    
                 
@@ -277,7 +277,7 @@ function FloatPanel_AyohaReward() {
                       // disable:true,
                        style: 'background-color:transparent',
                     
-                     margin: '-60 0 0 0',
+                     margin: '0 0 0 0',
                     //margin: '-322 0 0 0',
                        items: [
                           {
@@ -300,7 +300,9 @@ function FloatPanel_AyohaReward() {
                                  
                                  //style: 'background-image: url("resources/icons/bgfront06.png"); background-size: 100% 400px;background-repeat: no-repeat;',
                                 // style: 'background-image: url("resources/icons/AyohaHeader04.png"); background-size: 100% 400px;background-repeat: no-repeat;',
-                                style: 'background-image: url("resources/icons/bgfront15.png"); background-size: 100% 390px;background-repeat: no-repeat;',
+                               
+                                style: 'background-color: #fac;background-image: linear-gradient(#c800ffc9,#ff00de75);',
+                               // style: 'background-image: url("resources/icons/bgfront15.png"); background-size: 100% 390px;background-repeat: no-repeat;',
                                  
                                  width: '100%',
                                  height: 390,
@@ -314,6 +316,107 @@ function FloatPanel_AyohaReward() {
                                  },
                                  items: [
       
+////// head
+{
+          
+    xtype: 'container',
+    width: '100%',
+ // height: 100,
+    // width: 40,
+    // docked: 'top',
+
+    //  title: '<font size="3" color="white">Live Tracking Map</font>',
+    //hidden: true,
+
+    id: 'containerFloatPanel_AyohaReward_DashboardHeader',
+   /// style: 'background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);',
+   // style: 'background-color: #fac;background-image: linear-gradient(#c800ffc9,#ff00de75);',
+   style: 'background-color:transparent;',
+   // style: ' background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);',style: ' background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);',
+    layout: {
+        type: 'hbox',
+        pack: 'center',
+        align: 'center',
+    },
+
+
+
+
+    // hidden:true,
+    items:
+           [
+
+
+
+             {
+                 xtype: 'button',
+                 id: 'btnFloatPanel_AyohaRewardDashboardBack',
+                 margin: '10 0 0 5',
+                 height: 30,
+                 width: 35,
+                 // iconCls: 'list',
+                 html: '<div ><img src="resources/icons/backwhite03Ori.png" width="25" height="20" alt="Company Name"></div>',
+                 ui: 'plain',
+                 handler: function () {
+                    FloatPanel_AyohaRewardHide();
+
+                 }
+             },
+
+              {
+                  xtype: 'spacer',
+
+              },
+              {
+                margin: '10 10 0 0',
+                id: 'htmlFloatPanel_AyohaRewardDashboard_TitleHeaderTxt',
+               // html: '<div style="color:white;text-align: left;font-size:14px;width:100%;"><b>My Ayoha Reward Membership</b></div>'
+                html: '<font size="2" color="white"><b>Ayoha Reward Membership</b></font>'
+            },
+        
+              
+              {
+                xtype: 'button',
+                margin: '10 0 0 -10',
+                id: 'btnFloatPanel_AyohaReward_MainDashboard_CardIcon',
+                height: 35,
+                width: 35,
+                //hidden:true,
+                // iconCls: 'list',
+                html: '<div><img src="resources/icons/Logo/LogoWhiteSimplifed.png" width="25" height="25" alt="Company Name"></div>',
+                ui: 'plain',
+                handler: function () {
+
+                }
+            },
+              
+
+            {
+                xtype: 'spacer',
+                width: 10,
+            },
+                
+
+
+
+
+
+
+
+
+
+
+
+
+           ]
+
+},
+
+///
+
+
+
+
                               
                                   {
       
@@ -321,7 +424,7 @@ function FloatPanel_AyohaReward() {
                                       id: 'containerFloatPanel_AyohaReward_MembershipInfo_main',
                                       //hidden: true,
                                       style: "background-color: transparent;",
-                                      margin: '30 0 0 0',
+                                      margin: '-10 0 0 0',
                                      // margin: '50 0 0 0',
                                       width: '100%',
                                       height: 320,  
@@ -349,7 +452,7 @@ function FloatPanel_AyohaReward() {
                                                      name: 'namecontainerFloatPanel_AyohaReward_MembershipInfo',
                                                     // zIndex: 200,
                                                      width: 230,
-                                                     height: 240,
+                                                     height: 230,
                                                      layout: {
                                                          type: 'vbox',
                                                          pack: 'center',
@@ -363,7 +466,7 @@ function FloatPanel_AyohaReward() {
       {
                 xtype: 'container',
                                                              width: '100%',
-                                                             height: '10%',
+                                                             height: 10,
                                                              style: "background-color: transparent;",
       },
                                                          {
@@ -405,7 +508,7 @@ function FloatPanel_AyohaReward() {
                      'style="flex:1; text-align:center; padding:14px 10px; border-radius:14px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.25);">'+
                 //  '<div id="txtDashboard_AyohaPoint" style="font-size:clamp(22px, 6.4vw, 28px); font-weight:800; margin:8px 0 0 0;">2353</div>'+
                   '<div id="txtFloatPanel_AyohaReward_AyohaRewardPoint" class="odometer" style="font-size:clamp(22px, 6.4vw, 28px); font-weight:800; margin:8px 0 0 0;">2353</div>'+
-                  '<div style="font-size:clamp(10px, 2.7vw, 12px); opacity:.9; margin:6px 0 0 0; font-weight:700;">Ayoha Point</div>'+
+                  '<div style="font-size:clamp(14px, 2.7vw, 12px); opacity:.9; margin:-2px 0 0 0; font-weight:800;">Ayoha Point</div>'+
                 '</div>'+
       
                 // Right box
@@ -415,7 +518,7 @@ function FloatPanel_AyohaReward() {
                     '<img id="imgFloatPanel_AyohaReward_RankingIcon" src="resources/icons/Logo/LogoWhiteSimplifed.png" alt="Gold Tier" '+
                          'style="width:44px; height:44px; display:block; margin:0 auto; object-fit:contain;">'+
                   '</div>'+
-                  '<div id="txtFloatPanel_AyohaReward_RankingIcon" style="font-size:clamp(11px, 3.2vw, 13px); font-weight:800; margin:-6px 0 0 0; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">Non Ayoha Member</div>'+
+                  '<div id="txtFloatPanel_AyohaReward_RankingIcon" style="font-size:clamp(14px, 3.2vw, 13px); font-weight:800; margin:-6px 0 0 0; white-space:wrap; overflow:hidden; text-overflow:ellipsis;">Non Ayoha Member</div>'+
                   '<div id="txtFloatPanel_AyohaReward_MembershipTier" style="font-size:clamp(10px, 2.7vw, 12px); opacity:.9; margin:-2px 0 0 0; font-weight:700;">Membership Tier</div>'+
                 '</div>'+
       
@@ -2357,7 +2460,7 @@ function FloatPanel_AyohaReward() {
                      html: '<div class="buttonRedeemDashboard" >Enter Contest</div>'
                      // html: '<div  style="border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1 ;background: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);border-radius: 20px 20px 20px 20px;width:160px;height:40px;font-size: 12px;font-weight:bold;color:white;text-align:center;vertical-align:middle;" ><div style="margin:10px 0px 0px -30px;">Enter Contest</div></div>'
 
-
+                     
 
                  },
                    //{
@@ -2690,6 +2793,8 @@ FloatPanel_AyohaReward_NextRanking();
    FloatPanel_AyohaReward_SetupRewardRedemptionCarosel();
    FloatPanel_AyohaReward_AyohaRewardPointRewardRankingStore();
    FloatPanel_AyohaReward_AyohaRewardContestantLoadByContestCodeStore();
+   FloatPanel_AyohaReward_AyohaRewardTapAndWin();
+   FloatPanel_AyohaReward_AyohaRewardAyohaVoucher();
     
 
 
@@ -2815,6 +2920,29 @@ FloatPanel_AyohaReward_NextRanking();
     );
 
 
+
+
+    var containerViewnameContainerFloatPanel_AyohaReward_MainContainer_containerAyohaRewardContest01 = Ext.ComponentQuery.query('container[name=nameContainerFloatPanel_AyohaReward_MainContainer_containerAyohaRewardContest01]')[0];
+    var containerViewElnameContainerFloatPanel_AyohaReward_MainContainer_containerAyohaRewardContest01 = containerViewnameContainerFloatPanel_AyohaReward_MainContainer_containerAyohaRewardContest01.element;
+    containerViewElnameContainerFloatPanel_AyohaReward_MainContainer_containerAyohaRewardContest01.on('tap',
+      function (event, node, options, eOpts) {
+
+          FloatPanel_AyohaReward_AyohaTapContestShow();
+
+      }
+    );
+
+
+
+    var containerViewnameContainerFloatPanel_AyohaReward_MainContainer_User_AyohaRewardContest01Btn = Ext.ComponentQuery.query('container[name=nameContainerFloatPanel_AyohaReward_MainContainer_User_AyohaRewardContest01Btn]')[0];
+    var containerViewElnameContainerFloatPanel_AyohaReward_MainContainer_User_AyohaRewardContest01Btn = containerViewnameContainerFloatPanel_AyohaReward_MainContainer_User_AyohaRewardContest01Btn.element;
+    containerViewElnameContainerFloatPanel_AyohaReward_MainContainer_User_AyohaRewardContest01Btn.on('tap',
+      function (event, node, options, eOpts) {
+
+          FloatPanel_AyohaReward_AyohaTapContestShow();
+
+      }
+    );
 }
 
 
@@ -2969,7 +3097,7 @@ function FloatPanel_AyohaReward_AyohaRewardPointRewardRankingStore() {
 
 
 
-
+//contest spend and win
 function FloatPanel_AyohaReward_AyohaRewardContestantLoadByContestCodeStore() {
 
     if(AppState.FloatPanel_AyohaReward.isButtonEnterContestOrViewMyRanking=="EnterContest"){
@@ -2993,5 +3121,43 @@ function FloatPanel_AyohaReward_AyohaRewardContestantLoadByContestCodeStore() {
 
 
 }
+
+function FloatPanel_AyohaReward_AyohaRewardTapAndWin(){
+    Ext.getCmp('htmlFloatPanel_AyohaReward_MainContainerAyohaRewardContest1').setHtml('<img style="width:100%;height:198px;border-radius: 10px 10px 10px 10px;" src="' + AppState.FloatPanel_AyohaReward.TapAndWinMainImg + '"/>');
+    Ext.getCmp('htmlFloatPanel_AyohaReward_MainContainer_User_AyohaRewardContest01_TapChanceLeftTxt').setHtml('<div style="border-right:2px solid #fac;border-left:2px solid #fac;border-bottom:2px solid #fac;border-top:2px solid #fac;background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);border-radius: 20px 20px 20px 20px;width:250px;height:50px;font-size: 12px;font-weight:bold;color:white;text-align:center;vertical-align:middle;" ><div style="margin:-8px 0px 0px 0px;">You Have <font size=6px>' + AppState.FloatPanel_AyohaReward.AyohaTaAndWinTapBalance + '</font> Chance Left</div></div>');
+
+    // Ext.getCmp('containerFloatPanel_AyohaReward_MainContainer_containerAyohaRewardContest01').setHeight(270);
+    // Ext.getCmp('containeFloatPanel_AyohaReward_MainContainer_User_AyohaRewardRankingEnterContestBtnID').setHidden(false);
+    if(AppState.FloatPanel_AyohaReward.isContestTapAndWinActive>0){
+        Ext.getCmp('containerFloatPanel_AyohaReward_MainContainer_containerAyohaRewardContest01').setHeight(210);
+        Ext.getCmp('containeFloatPanel_AyohaReward_MainContainer_User_AyohaRewardRankingEnterContestBtnID').setHidden(true);
+    }
+
+   
+}
+
+
+
+
+function FloatPanel_AyohaReward_AyohaRewardAyohaVoucher(){
+    var count =AppState.FloatPanel_AyohaReward.AyohaVoucherCount;
+    
+    Ext.getCmp('listFloatPanel_AyohaReward_MainContainer_AyohaVoucherListID').setStore(_DataStore_AyohaRewardVoucherEntitledUserLoadBySubscriberAccNoVoucherTypeStore);
+
+    if (count < 1) {
+        Ext.getCmp('htmlFloatPanel_AyohaReward_MainContainer_AyohaVaucherTxt').setHtml('<div style="color:black;text-align: center;font-size:16px;width:100%;font-weight:bold">(0) Ayoha Vocher Left!</div>');
+    }
+
+    if (count == 1) {
+        Ext.getCmp('htmlFloatPanel_AyohaReward_MainContainer_AyohaVaucherTxt').setHtml('<div style="color:black;text-align: center;font-size:16px;width:100%;font-weight:bold"><font class="blink_me" size=4x>(' + count + ')</font> Redeemable Ayoha Voucher!</div>');
+    }
+
+    if (count > 1) {
+        Ext.getCmp('htmlFloatPanel_AyohaReward_MainContainer_AyohaVaucherTxt').setHtml('<div style="color:black;text-align: center;font-size:16px;width:100%;font-weight:bold"><font class="blink_me" size=4x>(' + count + ')</font> Redeemable Ayoha Voucher!</div>');
+    }
+}
+
+
+
 
 

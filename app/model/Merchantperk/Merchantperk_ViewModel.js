@@ -33,6 +33,25 @@ Ext.define('ianMizi.model.Merchantperk.Merchantperk_ViewModel', {
                  'EnterpriseDescription',
                  'SearchCol',
                  {
+                  name: 'ModifiedName',
+                  convert: function (value, record) {
+       
+                      var _value;
+                      var str = record.get('Name');
+                      if(str){
+                        if(str.length > 18){
+                          _value = str.substring(0, 15) + '...';
+                        }else{
+                          _value = str;
+                        }
+                      }else{
+                        _value = 'No Name';
+                      }
+                    
+                      return _value;
+                  }
+              },
+                 {
                     name: 'ModifiedImagePath',
                     convert: function (value, record) {
          
@@ -64,7 +83,38 @@ Ext.define('ianMizi.model.Merchantperk.Merchantperk_ViewModel', {
                         return _value;
                     }
                 },
-               
+                {
+                  name: 'ModifiedImagePath_Dashboard',
+                  convert: function (value, record) {
+       
+                      var _value1;
+                      var _value2;
+                      var _value3;
+                      var _value4;
+                      var _value5;
+                      var _value6;
+                      var _value;
+                      var str = record.get('ItemType');
+                      var ImagePath = record.get('ImagePath');
+                      if (str === "Stamp") {
+                          _value1= ImagePath.replace("width:70px", "width:100%");
+                          _value2=_value1.replace("height:70px", "height:100%");
+                          _value3 = _value2.replace("font-size: 35px;", "font-size: 45px;");
+                          _value4 = _value3.replace("margin:7px 0px 0px 0px", "margin:-8px 0px 0px 0px")
+                          _value5 = _value4.replace("margin:-90px 0px 0px 0px", "margin:-120px 0px 0px 0px")
+                          _value6 = _value5.replace('size="3"', 'size="4"')
+                          _value = _value6.replace("border-radius: 50px", "border-radius: 0px")
+                          
+
+                          
+                      }else
+                      {
+                          _value = '<img src="'+ImagePath+'" alt="Hari Malaysia Banner" style="width:100%; height:100%; object-fit:cover; display:block;" />';
+                        
+                      }
+                      return _value;
+                  }
+              },
                   {
                     name: 'ModifiedButtonBottomDisplay',
                     convert: function (value, record) {
@@ -189,6 +239,30 @@ Ext.define('ianMizi.model.Merchantperk.Merchantperk_ViewModel', {
                     }
                 },
                 {
+                  name: 'ModifiedCampaignName',
+                  convert: function (value, record) {
+       
+                      var _value;
+                      var str = record.get('ItemType');
+                      _value = 'none';
+                      if (str === "Discount") {
+                          _value = '#9b59b6';
+                      } if (str === "Voucher") {
+                          _value = '#FF8C00';
+                      }if (str === "Point") {
+                          _value = '#1E90FF';
+                      }if (str === "Stamp") {
+                          _value = '#808000';
+                      }if (str === "Contest") {
+                          _value = '#5F9EA0';
+                      }if (str === "Event") {
+                          _value = '#32CD32';
+                      }
+       
+                      return _value;
+                  }
+              },
+                {
                     name: 'ModifiedVoucherDisplay',
                     convert: function (value, record) {
          
@@ -214,37 +288,127 @@ Ext.define('ianMizi.model.Merchantperk.Merchantperk_ViewModel', {
                     }
                 },
                 {
-                    name: 'ModifiedAmount',
-                    convert: function (value, record) {
-         
-                        var _value;
-                        var Amount = record.get('Amount');
-                        var Percentage = record.get('Percentage');
-                        var Points = record.get('Points');
-                        var str = record.get('ItemType');                     
-                        if (str === "Discount") {
-                            _value = noDecimals(Percentage)+'%';
-                            
-                        }else if (str === "Voucher") {
-                            _value='<span style="font-size:14px; margin:0;">'+noDecimals(Amount)+'</span> <span style="font-size:12px; margin:0;">RM</span>';
-                           // _value = '<div style="margin:1px 0px 0px 0px;font-size:12px">'+noDecimals(Amount)+'</div><br><div style="margin:-5px 0px 0px 0px;font-size:10px">RM</div>';
-                         
-                        }else if (str === "Point") {
-                            _value='<span style="font-size:6px; margin:0;">Redeem</span><span style="font-size:12px; margin:0;">'+Points+'</span> <span style="font-size:6px; margin:0;">Points</span>';
-                           // _value =Points;
-                         
-                        }
-                        return _value;
-
-
-
-
-
-                      
-         
+                  name: 'ModifiedAmount',
+                  convert: function (value, record) {
+       
+                      var _value;
+                      var Amount = record.get('Amount');
+                      var Percentage = record.get('Percentage');
+                      var Points = record.get('Points');
+                      var str = record.get('ItemType');                     
+                      if (str === "Discount") {
+                          _value = noDecimals(Percentage)+'%';
+                          
+                      }else if (str === "Voucher") {
+                          _value='<span style="font-size:14px; margin:0;">'+noDecimals(Amount)+'</span> <span style="font-size:12px; margin:0;">RM</span>';
+                         // _value = '<div style="margin:1px 0px 0px 0px;font-size:12px">'+noDecimals(Amount)+'</div><br><div style="margin:-5px 0px 0px 0px;font-size:10px">RM</div>';
                        
+                      }else if (str === "Point") {
+                          _value='<span style="font-size:6px; margin:0;">Redeem</span><span style="font-size:12px; margin:0;">'+Points+'</span> <span style="font-size:6px; margin:0;">Points</span>';
+                         // _value =Points;
+                       
+                      }
+                      return _value;
+
+
+
+
+
+                    
+       
+                     
+                  }
+              },
+                {
+                  name: 'ModifiedAmount_Dashboard',
+                  convert: function (value, record) {
+       
+                      var _value='';
+                      var Amount = record.get('Amount');
+                      var Percentage = record.get('Percentage');
+                      var Points = record.get('Points');
+                      var str = record.get('ItemType');                     
+                      if (str === "Discount") {
+                         
+                          _value = '<span style="font-size:10px; line-height:1;">'+noDecimals(Percentage)+'</span><span style="font-size:10px; line-height:1;">%</span>';
+                          
+                      }else if (str === "Voucher") {
+                          //_value='<span style="font-size:14px; margin:0;">'+noDecimals(Amount)+'</span> <span style="font-size:12px; margin:0;">RM</span>';
+                          _value = '<span style="font-size:10px; line-height:1;">'+noDecimals(Amount)+'</span><span style="font-size:10px; line-height:1;">RM</span>';
+                       
+                      }else if (str === "Point") {
+                         // _value='<span style="font-size:6px; margin:0;">Redeem</span><span style="font-size:12px; margin:0;">'+Points+'</span> <span style="font-size:6px; margin:0;">Points</span>';
+                          _value = '<span style="font-size:10px; line-height:1;">'+Points+'</span><span style="font-size:10px; line-height:1;">Redeem</span>';
+                       
+                      }
+                      return _value;
+
+
+
+
+
+                    
+       
+                     
+                  }
+              },
+
+              {
+                name: 'ModifiedtagMargin',
+                convert: function (value, record) {
+     
+                    var _value;
+                    var str = record.get('ItemType');
+                    _value = 'margin:0px 0px 0px 0px';
+                    if (str === "Stamp") {
+                        _value = 'margin:-2px 0px 0px 0px';
+                    }if (str === "Contest") {
+                        _value = 'margin:-2px 0px 0px 0px';
+                    }if (str === "Event") {
+                        _value = 'margin:-2px 0px 0px 0px';
                     }
-                },
+     
+                    return _value;
+                }
+            },
+
+              {
+                name: 'Modified_DashboardHeight',
+                convert: function (value, record) {
+     
+                    var _value='height:20px';
+                    var Amount = record.get('Amount');
+                    var Percentage = record.get('Percentage');
+                    var Points = record.get('Points');
+                    var str = record.get('ItemType');                     
+                    if (str === "Discount") {
+                       
+                        _value = 'height:40px';
+                        
+                    }else if (str === "Voucher") {
+                        //_value='<span style="font-size:14px; margin:0;">'+noDecimals(Amount)+'</span> <span style="font-size:12px; margin:0;">RM</span>';
+                        _value = 'height:40px';
+                     
+                    }else if (str === "Point") {
+                       // _value='<span style="font-size:6px; margin:0;">Redeem</span><span style="font-size:12px; margin:0;">'+Points+'</span> <span style="font-size:6px; margin:0;">Points</span>';
+                        _value = 'height:40px';
+                     
+                    }
+                    return _value;
+
+
+
+
+
+                  
+     
+                   
+                }
+            },
+
+
+
+
                 {
                     name: 'ModifiedTermAndDescription',
                     convert: function (value, record) {

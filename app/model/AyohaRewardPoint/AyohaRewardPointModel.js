@@ -59,7 +59,11 @@
                       _value = '<div style="font-family:Arial, sans-serif;font-size:15px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;text-align:right;color:black"><font size=4 color=black><b>+</b></font>' + AyohaPoint + ' Point</div><br><div style="font-family:Arial, sans-serif;font-size:10px;font-weight:bold;word-break:normal;margin:-16px 0px 0px 0px;text-align:right;color:black">Point Refund</div><br><div style="font-family:Arial, sans-serif;font-size:10px;font-weight:bold;word-break:normal;margin:-13px 0px 0px 0px;text-align:right;color:black;">' + CreatedDate_DateOnly + ' ' + CreatedDate_TimeOnly + '</div>';
 
                   }
-                 
+                  if (CampaignCode == "001-AP_CheckIn") {
+
+                    _value = '<div style="font-family:Arial, sans-serif;font-size:15px;font-weight:bold;word-break:normal;margin:0px 0px 0px 0px;text-align:right"><font size=2 color=black><b>+</b></font>' + AyohaPoint + ' Point</div>';
+
+                }
 
               }
 
@@ -250,7 +254,7 @@
 
                  
                  if (OrderNo) {
-                    _value = '<div style="font-family:Arial, sans-serif;font-size:15px;font-weight:bold;word-break:normal;margin:5px 0px 0px 0px;color:black">' + EnterpriseName + '</div>'
+                    _value = '<div style="font-family:Arial, sans-serif;font-size:12px;font-weight:normal;word-break:normal;margin:5px 0px 0px 0px;color:black">' + EnterpriseName + '</div>'
                  } else {
                    // method = "-<img src=resources/icons/Logo/LogoOrangeSimplifed.png width=25 height=20 alt=Company Name><font size=1 color=black>-Complementary Point</font>";
 
@@ -264,12 +268,12 @@
                         method = "-<img src=resources/icons/Logo/LogoOrangeSimplifed.png width=25 height=20 alt=Company Name><font size=1 color=black>-Complementary Point</font>";
                     }
                  }
-                 _value = _value = '<div style="font-family:Arial, sans-serif;font-size:15px;font-weight:bold;word-break:normal;margin:-1px 0px 0px 0px;color:black">' + EnterpriseName +  method + '</div>'
+                 _value = _value = '<div style="font-family:Arial, sans-serif;font-size:12px;font-weight:normal;word-break:normal;margin:-1px 0px 0px 0px;color:black">' + EnterpriseName +  method + '</div>'
 
                  if (str == "Cancel") {
                  //    _value = '<font color=red>' + EnterpriseName + '</font>';
 
-                     _value = '<div style="font-family:Arial, sans-serif;font-size:15px;font-weight:bold;word-break:normal;margin:5px 0px 0px 0px;color:red">' + EnterpriseName + '</div>'
+                     _value = '<div style="font-family:Arial, sans-serif;font-size:12px;font-weight:normal;word-break:normal;margin:5px 0px 0px 0px;color:red">' + EnterpriseName + '</div>'
                     
                  } else
                  {
@@ -279,21 +283,21 @@ console.log(CampaignCode);
 
                          if (CampaignCode == "AyohaPointRedemption" || CampaignCode == "AyohaPointRedemptionCancel") {
                              //  _value = '<font color=purple>' + EnterpriseName + '</font>';
-                             _value = '<div style="font-family:Arial, sans-serif;font-size:15px;font-weight:bold;word-break:normal;margin:10px 0px 0px 0px;color:black">' + EnterpriseName + '</div>'
+                             _value = '<div style="font-family:Arial, sans-serif;font-size:12px;font-weight:normal;word-break:normal;margin:10px 0px 0px 0px;color:black">' + EnterpriseName + '</div>'
 
 
 
                          }
                          if (CampaignCode == "AyohaPointGreetingPoint") {
                              //  _value = '<font color=purple>' + EnterpriseName + '</font>';
-                             _value = '<div style="font-family:Arial, sans-serif;font-size:15px;font-weight:bold;word-break:normal;margin:-5px 0px 0px 0px;color:black">' + EnterpriseName + '</div>'
+                             _value = '<div style="font-family:Arial, sans-serif;font-size:12px;font-weight:normal;word-break:normal;margin:0px 0px 0px 0px;color:black">' + EnterpriseName + '</div>'
 
 
 
                          }
                          if (CampaignCode == "AyohaPointToken-eWalletOpeningAccount") {
                             //  _value = '<font color=purple>' + EnterpriseName + '</font>';
-                            _value = '<div style="font-family:Arial, sans-serif;font-size:15px;font-weight:bold;word-break:normal;margin:-5px 0px 0px 0px;color:black">' + EnterpriseName + '</div>'
+                            _value = '<div style="font-family:Arial, sans-serif;font-size:12px;font-weight:normal;word-break:normal;margin:0px 0px 0px 0px;color:black">' + EnterpriseName + '</div>'
 
 
 
@@ -336,14 +340,22 @@ console.log(CampaignCode);
                 var MembershipCardName = record.get('MembershipCardName');
                 var CampaignCode = record.get('CampaignCode');
                 if (CampaignCode == "AyohaPointGreetingPoint") {
-                    _value= "Opening Ayoha Account!-<img src=resources/icons/Logo/LogoOrangeSimplifed.png width=25 height=20 alt=Company Name><font size=1 color=black>-Complementary Point</font>"
+                    _value= "Opening Ayoha Account!-<img src=resources/icons/Logo/LogoOrangeSimplifed.png width=25 height=20 alt=Company Name>"
                     return _value;
 
                 }if (CampaignCode == "AyohaPointToken-eWalletOpeningAccount") {
-                    _value= "Ayoha eWalllet Account!-<img src=resources/icons/AyohaeWallet02.png width=25 height=20 alt=Company Name><font size=1 color=black>-Complementary Point</font>"
+                    _value= "Ayoha eWalllet Account!-<img src=resources/icons/AyohaeWallet02.png width=25 height=20 alt=Company Name>"
+                   // _value= "Ayoha eWalllet Account"
+                    return _value;
+
+                }if (CampaignCode == "001-AP_CheckIn") {
+                    _value= "Ayoha Merchant Check-In Point"
                     return _value;
 
                 }
+
+
+                
                 else
                 {
                     _value= MembershipCardName;

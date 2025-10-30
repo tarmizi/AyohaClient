@@ -19,7 +19,7 @@ function FloatPanel_AyohaRewardVoucherDetail() {
             id: 'FloatPanel_AyohaRewardVoucherDetailID',
             name: 'clickableContainerFloatPanel_AyohaRewardVoucherDetail',
             // xtype: 'panel',
-          zIndex: 50,
+          zIndex: 111,
            // zIndex: 105,
             xtype: 'container',
             //height: 475,

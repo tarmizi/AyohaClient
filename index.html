@@ -7,6 +7,7 @@
     <meta charset="UTF-8">
     <link rel="manifest" href="/ayohaclient/manifest.json">
     <link rel="icon" href="/ayohaclient/resources/icons/Logo/favicon.ico" type="image/x-icon">
+    <meta name="theme-color" content="#D627F2">
     <meta content='yes' name='apple-mobile-web-app-capable' />
     <meta content='yes' name='mobile-web-app-capable' />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -2530,7 +2531,8 @@ width: auto; height: auto;z-index: -100;
             overscroll-behavior-y: none; /* Prevent pull-to-refresh */
     overflow: hidden;            /* Hide all scrollbars */
     height: 100%;
-    background-color: #C72CB4;
+    /* background-color: #C72CB4; */
+    background-color: #fac;background-image: linear-gradient(#c800ffc9,#ff00de75);
         }
 
         /*#appLoadingIndicator {
@@ -2571,7 +2573,8 @@ width: auto; height: auto;z-index: -100;
                }*/
 
         .peeek-loading {
-            background-color: #C72CB4;
+            /* background-color: #C72CB4; */
+            background-color: #fac;background-image: linear-gradient(#c800ffc9,#ff00de75);
             overflow: hidden;
             position: absolute;
             top: 0;
@@ -3004,7 +3007,7 @@ function open_a_window()
 
     </head>
 
-    <body onload="noBack(); closeAyoha('notquit')">
+    <body>
        
         <!--<input type="button" onclick="return open_a_window();" value="Open New Window/Tab" />-->
 

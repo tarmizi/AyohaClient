@@ -17,7 +17,7 @@ function FloatPanel_AyohaRewardVoucherList_AyohaRewardHome() {
 
     _FloatPanel_AyohaRewardVoucherList_AyohaRewardHome =
     Ext.create('Ext.Panel', {
-        zIndex: 100,
+        zIndex: 111,
         xtype: 'container',
         //height: 465,
         //  height: '100%',

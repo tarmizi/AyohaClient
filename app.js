@@ -128,7 +128,7 @@ Ext.application({
 'AyohaStoreSaleItem.FloatPanel_MainDashboard_PendingOrder','MyAccount.FloatPanel_ShoppingBagOrder','AyohaStoreSaleItem.FloatPanel_AyohaStore_OrderHistory_Single','Menu.DrawerMenu','MyAccount.FloatPanel_MyAccount_AllTransactionHistory',
 'AyohaEnterpriseAccount.FloatPanel_AyohaEnterpriseRewardItem','Menu.FloatPanel_ScannedMerchant','AyohaMerchantInfo.FloatPanel_AyohaMerchantInfo_LoyaltyProgram','AyohaMerchantInfo.FloatPanel_AyohaMerchantInfo_PointCardLoyaltyProgram',
 'AyohaMerchantInfo.FloatPanel_AyohaMerchantInfo_DiscountCardLoyaltyProgram','AyohaMerchantInfo.FloatPanel_AyohaMerchantInfo_ContestCardLoyaltyProgram','AyohaMerchantInfo.FloatPanel_AyohaMerchantInfo_EventCardLoyaltyProgram','AyohaMerchantInfo.FloatPanel_AyohaMerchantInfo_VoucherCardLoyaltyProgram',
-'AyohaReward.FloatPanel_AyohaReward_MainDashboard','Membership.FloatPanel_Membership_CheckInPage','Membership.FloatPanel_Membership_CheckInPage_Confirmed','AyohaReward.FloatPanel_AyohaReward'],
+'AyohaReward.FloatPanel_AyohaReward_MainDashboard','Membership.FloatPanel_Membership_CheckInPage','Membership.FloatPanel_Membership_CheckInPage_Confirmed','AyohaReward.FloatPanel_AyohaReward','Config.CoreFunction'],
 
 
     icon: {

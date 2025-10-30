@@ -44,7 +44,7 @@ function FloatPanel_AyohaStore_AyohaPointCollectedAnim() {
             direction: 'down',
             easing: 'ease-in',
             //easing: 'cubic-bezier(1.97,0,1.97,1.97)',
-            duration: 2500
+            duration: 1500
         },
         hideAnimation: {
             //type: 'popOut',
@@ -181,7 +181,7 @@ function FloatPanel_AyohaStore_AyohaPointCollectedAnimShow() {
           FloatPanel_AyohaStore_AyohaPointCollectedAnimHide();
       }
     );
-    FloatPanel_AyohaStore_AyohaPointCollectedAnim_LatestAyohaPoint();
+  //  FloatPanel_AyohaStore_AyohaPointCollectedAnim_LatestAyohaPoint();
 }
 
 
@@ -194,7 +194,7 @@ function FloatPanel_AyohaStore_AyohaPointCollectedAnimHide() {
     if (isFloatPanel_AyohaStore_AyohaPointCollectedAnimOpen == 'Y') {
         _FloatPanel_AyohaStore_AyohaPointCollectedAnim.hide(); isFloatPanel_AyohaStore_AyohaPointCollectedAnimOpen = 'N';
         RemovePages("FloatPanel_AyohaStore_AyohaPointCollectedAnimHide()");
-        document.getElementById("Dashboard_AyohaRewardPoint").textContent = globalFloatPanel_AyohaStore_AyohaPointCollectedAnim_LatestAyohaPoint;
+      //document.getElementById("Dashboard_AyohaRewardPoint").textContent = globalFloatPanel_AyohaStore_AyohaPointCollectedAnim_LatestAyohaPoint;
       //  Ext.getCmp('Dashboard_AyohaRewardPoint').setHtml('<div  class="example-1"  style="background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9); border-radius: 50%;border:2px solid #fac;text-align:center;margin:-30px 0px 0px 0px;height:230px;width:230px"><div id="odometera" class="odometer" style="color:white;text-align: center;font-size:48px;width:100%;margin:70px 0px 0px 0px;"><b>' + globalFloatPanel_AyohaStore_AyohaPointCollectedAnim_LatestAyohaPoint + '</b></div><br><div style="color:white;text-align: center;font-size:11px;width:100%;margin:-38px 0px 0px 0px"><b>Collected Ayoha Points</b></div></div>');
         FloatPanel_AyohaStore_AyohaPointCollectedAnim_startCounter();
     }
@@ -206,7 +206,7 @@ function FloatPanel_AyohaStore_AyohaPointCollectedAnimHide() {
 
 var PointCollected;
 var globalFloatPanel_AyohaStore_AyohaPointCollectedAnim_LatestAyohaPoint;
-function FloatPanel_AyohaStore_AyohaPointCollectedAnim_LatestAyohaPoint() {
+function FloatPanel_AyohaStore_AyohaPointCollectedAnim_LatestAyohaPoint_NotUsed() {
     PointCollected = 0;
 
 

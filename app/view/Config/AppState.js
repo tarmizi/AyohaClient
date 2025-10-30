@@ -61,6 +61,10 @@ var AppState = {
         TextNextRankStar : null,        
         AyohaMember_NextRankPoint : null,
         isButtonEnterContestOrViewMyRanking : null,
+        TapAndWinMainImg : null,
+        isContestTapAndWinActive : null,
+        AyohaTaAndWinTapBalance: null,
+        AyohaVoucherCount : null,
        
     },
 

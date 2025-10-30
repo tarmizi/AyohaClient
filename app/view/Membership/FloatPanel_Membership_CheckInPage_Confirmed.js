@@ -552,7 +552,7 @@ function FloatPanel_Membership_CheckInPage_Confirmed() {
                     {
                         width: '80%', // 80% width *of the white box*
                         height: 50,
-                        html: '<button onclick="FloatPanel_AyohaRewardShow()" class="confirmation-cta-button">View My Ayoha Point!</button>',
+                        html: '<button onclick="FloatPanel_AyohaRewardShow();FloatPanel_AyohaStore_AyohaPointCollectedAnim_startCounter();" class="confirmation-cta-button">View My Ayoha Point!</button>',
                     },
                     {
                         xtype: 'component',
