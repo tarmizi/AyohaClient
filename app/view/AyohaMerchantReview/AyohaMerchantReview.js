@@ -26,7 +26,7 @@ function AyohaMerchantReview() {
         zIndex: 300,
         xtype: 'container',
         //height: 465,
-       // height: '100%',
+       height: '100%',
         width: '100%',
         id: 'AyohaMerchantReviewID',
         draggable: false,
@@ -57,8 +57,8 @@ function AyohaMerchantReview() {
         },
         //style: 'border-bottom:1px solid;background-color:#353839;',
         // style: 'border-bottom:1px solid;background-color:white;',
-       style: 'background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);',
-       // style: 'background-color: #fac;background-image: linear-gradient(#c800ffc9,#ff00de75);',
+       //style: 'background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);',
+       style: 'background-color: #fac;background-image: linear-gradient(#c800ffc9,#ff00de75);',
         listeners: {
             initialize: function (c) {
                 this.element.on({
@@ -110,9 +110,9 @@ function AyohaMerchantReview() {
                         width: '100%',
                         height: '100%',
                         //    margin: '0 0 0 0',
-                        //  style: 'background-color: transparent',
-                        style: ' background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);',
-                        //style: 'background-color: #fac;background-image: linear-gradient(#c800ffc9,#ff00de75);',
+                       // style: 'background-color: transparent',
+                        //style: ' background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);',
+                        style: 'background-color: #fac;background-image: linear-gradient(#c800ffc9,#ff00de75);',
                         layout: {
                             type: 'vbox',
                             pack: 'start',

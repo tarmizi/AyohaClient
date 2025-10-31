@@ -1300,8 +1300,8 @@ function FloatPanel_MembershipCardList_NotYetSubscribed() {
 
 {
 xtype: 'container',
-width: '95%',
-margin: '15 0 0 0',
+width: '93%',
+margin: '10 0 0 0',
 height: 40,
 // style: 'background-color:rgba(255, 255, 255, 0.3);border-radius: 10px 10px 10px 10px;',
 style: "background-color: transparent;",
@@ -1317,13 +1317,13 @@ xtype: 'container',
 width: '50%',
 // name:'namecontainerFloatPanel_MembershipCardList_NotYetSubscribed_StarOutterMaster',
 margin: '0 0 0 0',
-height: 40,
+height: 23,
 // style: 'background-color:rgba(255, 255, 255, 0.3);border-radius: 10px 10px 10px 10px;',
 style: "background-color: transparent;",
 layout: {
     type: 'hbox',
     pack: 'center',
-    align: 'center'
+    align: 'left'
     
     },
 items:[
@@ -1332,7 +1332,7 @@ items:[
     {
         xtype: 'container',
         width: '100%',
-        height:40,
+        height:23,
         hidden: false,
         margin: '0 0 0 0',
         style: 'background-color:transparent',
@@ -1344,13 +1344,13 @@ items:[
         layout: {
         type: 'hbox',
         pack: 'center',
-        align: 'center',
+        align: 'left',
         },
         items: [
 {
     xtype: 'container',
-    width: '33%',
-    height:40,
+    width: '25%',
+    height:23,
     name:'namecontainerFloatPanel_MembershipCardList_NotYetSubscribed_MerchantPage',
     margin: '0 0 0 0',
     style: 'background-color:transparent',
@@ -1370,8 +1370,8 @@ items:[
 
 
             html:'<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; font-family: sans-serif;">'+ 
-            '<img src="resources/icons/Enterprisepage.png" style="width: 28px; height: 28px;" />'+ 
-            '<div style="font-size: 10px; font-weight: normal; color: black; text-align: center;">'+ 
+            '<img src="resources/icons/Enterprisepage.png" style="width: 22px; height: 22px;" />'+ 
+            '<div style="font-size: 8px; font-weight: normal; color: black; text-align: center;">'+ 
             'Merchant<br>'+ 
             '<span style="display: block; margin-top: -4px;">Page</span>'+ 
             '</div>'+ 
@@ -1383,8 +1383,8 @@ items:[
 },
 {
     xtype: 'container',
-    width: '33%',
-    height:40,
+    width: '25%',
+    height:23,
     name:'namecontainerFloatPanel_MembershipCardList_NotYetSubscribed_OnlineStore',
     margin: '0 0 0 0',
     style: 'background-color:transparent',
@@ -1405,8 +1405,8 @@ items:[
 
 
                 html:'<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; font-family: sans-serif;">'+ 
-                '<img src="resources/icons/onlineStore.jpg" style="width: 28px; height: 28px;" />'+ 
-                '<div style="font-size: 10px; font-weight: normal; color: black; text-align: center;">'+ 
+                '<img src="resources/icons/onlineStore.jpg" style="width: 22px; height: 22px;" />'+ 
+                '<div style="font-size: 8px; font-weight: normal; color: black; text-align: center;">'+ 
                 'Online<br>'+ 
                 '<span style="display: block; margin-top: -4px;">Store</span>'+ 
                 '</div>'+ 
@@ -1424,8 +1424,8 @@ items:[
 
 {
     xtype: 'container',
-    width: '33%',
-    height:40,
+    width: '25%',
+    height:23,
     id:'containerFloatPanel_MembershipCardList_NotYetSubscribed_MerchantVoucher',
     name:'namecontainerFloatPanel_MembershipCardList_NotYetSubscribed_MerchantVoucher',
     margin: '0 0 0 0',
@@ -1447,8 +1447,8 @@ items:[
 
 
                 html:'<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; font-family: sans-serif;">'+ 
-                '<img src="resources/icons/VoucherFeature02.png" style="width: 25px; height: 25px;" />'+ 
-                '<div style="font-size: 10px; font-weight: normal; color: black; text-align: center;">'+ 
+                '<img src="resources/icons/VoucherFeature02.png" style="width: 22px; height: 22px;" />'+ 
+                '<div style="font-size: 8px; font-weight: normal; color: black; text-align: center;">'+ 
                 'Loyalty<br>'+ 
                 '<span style="display: block; margin-top: -4px;">Voucher</span>'+ 
                 '</div>'+ 
@@ -1459,6 +1459,14 @@ items:[
         }
     ]
 },
+
+{
+    xtype: 'container',
+    width: '25%',
+    height:23,
+    margin: '0 0 0 0',
+    style: 'background-color:transparent',
+}
         ]
 
 
@@ -1467,6 +1475,7 @@ items:[
  
 ]
 },
+
 {
 xtype: 'container',
 width: '50%',
@@ -1480,15 +1489,17 @@ layout: {
 // type: 'fit',
 type: 'vbox',
 pack: 'center',
-align: 'right'
+align: 'center'
 
 },
 items:[
+   
 {
 xtype: 'container',
 width: 130,
+//width: '100%',
 name:'namecontainerFloatPanel_MembershipCardList_NotYetSubscribed_StarOutterMaster',
-margin: '0 0 0 0',
+margin: '0 0 0 80',
 height: 35,
 // style: 'background-color:rgba(255, 255, 255, 0.3);border-radius: 10px 10px 10px 10px;',
 style: "background-color: transparent;",
@@ -1499,12 +1510,18 @@ layout: {
 
 },
 items: [
-   
+    {  width: 120,
+        height: 14,
+        margin: '3 0 0 0',
+        id: 'htmlFloatPanel_MembershipCardList_NotYetSubscribed_ReviewAndRateCountOutter',
+        html: '<div  style="color:black;text-align: center;font-size:16px;width:100%;font-weight:bold;margin:0px 0px 0px 0px;">0.0</div>',
+        
+        },
     {
         xtype: 'container',
         width: 120,
         margin: '0 0 0 0',
-        height: 17,
+        height: 15,
         // style: 'background-color:rgba(255, 255, 255, 0.3);border-radius: 10px 10px 10px 10px;',
         style: "background-color: transparent;",
         layout: {
@@ -1517,54 +1534,49 @@ items: [
 
             {
                 id: 'htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star1Outter',
-                height: 17,
-                width: 17,
-                html: '<div ><img src="resources/icons/reviewstarunrate.png" width="17" height="17" alt="Company Name"></div>',
+                height: 13,
+                width: 13,
+                html: '<div ><img src="resources/icons/reviewstarunrate.png" width="12" height="12" alt="Company Name"></div>',
             },
 {
 id: 'htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star2Outter',
 
-height: 17,
-width: 17,
-html: '<div ><img src="resources/icons/reviewstarunrate.png" width="17" height="17" alt="Company Name"></div>',
+height: 13,
+width: 13,
+html: '<div ><img src="resources/icons/reviewstarunrate.png" width="12" height="12" alt="Company Name"></div>',
 },
 {
 id: 'htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star3Outter',
 
-height: 17,
-width: 17,
-html: '<div ><img src="resources/icons/reviewstarunrate.png" width="17" height="17" alt="Company Name"></div>',
+height: 13,
+width: 13,
+html: '<div ><img src="resources/icons/reviewstarunrate.png" width="12" height="12" alt="Company Name"></div>',
 },
 {
 id: 'htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star4Outter',
 
-height: 17,
-width: 17,
-html: '<div ><img src="resources/icons/reviewstarunrate.png" width="17" height="17" alt="Company Name"></div>',
+height: 13,
+width: 13,
+html: '<div ><img src="resources/icons/reviewstarunrate.png" width="12" height="12" alt="Company Name"></div>',
 },
 {
 id: 'htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star5Outter',
 
-height: 17,
-width: 17,
-html: '<div ><img src="resources/icons/reviewstarunrate.png" width="17" height="17" alt="Company Name"></div>',
+height: 13,
+width: 13,
+html: '<div ><img src="resources/icons/reviewstarunrate.png" width="12" height="12" alt="Company Name"></div>',
 
 },
-{
-xtype: 'panel',
-width:7
-},{
-margin: '0 0 0 0',
-id: 'htmlFloatPanel_MembershipCardList_NotYetSubscribed_ReviewAndRateCountOutter',
-html: '<div  style="color:black;text-align: center;font-size:16px;width:100%;font-weight:bold;margin:0px 0px 0px 0px;">0.0</div>',
-
-},
+// {
+// xtype: 'panel',
+// width:7
+// },
 
         ]
     },
     
     {
-     margin: '15 0 0 0',
+     margin: '17 0 0 0',
      id: 'htmlFloatPanel_MembershipCardList_NotYetSubscribed_TotalReviewsOutter',
      html: '<div  style="width100%;text-align:right;background-color: transparent;font-family:Arial, sans-serif;font-size:10px;color:black;font-weight:bold;overflow:hidden;margin:-13px 10px 10px 0px;"><img src="resources/icons/merchantrateusAccountImg.png" alt="Image" style="width:10px;height:10px;">&nbsp;&nbsp;&nbsp;0 Reviews</div>'
  },
@@ -1583,6 +1595,120 @@ html: '<div  style="color:black;text-align: center;font-size:16px;width:100%;fon
 }
 ]
 },
+
+///////////////////////Merchant Info
+
+{
+    xtype: 'container',
+    width: '95%',
+    margin:'30 0 0 0',
+    style: 'background-color:white',
+  //  hidden:true,
+  //  style: 'background-image: url("resources/icons/border7.png"); background-size: 100% 100%;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-radius: 10px 10px 0px 0px;',
+    layout: {
+        type: 'hbox',
+        pack: 'left',
+        align: 'left'
+
+    },
+    //height: 50,
+    // margin:'10 0 0 0',
+    items: [
+
+            //html: '<div class="x-list-item x-stretched x-list-item-tpl x-list-item-relative x-item-selected;background-color:black; color: floralwhite;"><div class="x-innerhtml" style="padding: 12px;"><div style="overfl' +
+            //    'ow:auto;width:100%;height:100%;font-size:50%;background-color:black; color: floralwhite;"><span style="font-family: Arial; text-transform:uppercase;">' +
+            //    '<div style="float:left;width:10%"><span style="font-family: Arial; text-transform:uppercase;">Date</div>' +
+            //    '<div style="float:left;width:20%"><span style="font-family: Arial; text-transform:uppercase;">Stamped By</div >' +
+
+
+            //    '</div></div></div>'
+            {
+xtype:'spacer',
+width:10
+            },
+            {
+             //   id: 'btnFloatPanel_MembershipCardList_NotYetSubscribed_EntitiledReward',
+                html: '<div style="width:100%;text-align:left;color:purple;font-family: Arial; font-size:13px;font-weight:bold;">Merchant</div>',
+            },
+
+        
+
+    ]
+},
+
+
+{
+xtype:'container',
+width:'90%',
+height:1,
+style: 'background-color:grey',
+},
+{
+xtype: 'container',
+id: 'containerFloatPanel_MembershipCardList_NotYetSubscribed_EnterpriseInfolist',
+style: ' background-color: transparent',
+height: 190,
+width: '100%',
+layout: {
+type: 'vbox',
+pack: 'start',
+align: 'center'
+
+},
+items: [
+{
+xtype: 'list',
+//flex:1,
+scrollable:false,
+height: 190,
+// store: 'MembershipCardEnterprisesEntitledLoadByMembershipCardCodeStore',
+store:_DataStore_MembershipCardEnterprisesEntitledLoadByMembershipCardCodeStore,
+id: 'FloatPanel_MembershipCardList_NotYetSubscribed_EnterpriseInfoList',
+mode: 'SINGLE',
+//  grouped: true,
+disableSelection: true,
+style: 'background-color:rgba(255,255,255, 10);border-radius: 0px 0px 0px 0px;',
+// scrollable: {
+// direction: 'vertical',
+// indicators: {
+// y: {
+// autoHide: true
+// },
+// x: {
+// autoHide: true
+// }
+// }
+// },
+itemTpl: '<div class="myContent"  style="background-color:white;width:104%">' +
+//'<table style="border-collapse:collapse;border-spacing:10;width:99%;background-color:white;" ><thead><tr><th style="background-color:transparent;border-radius: 10px 0px 0px 10px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;font-color:white;overflow:hidden;padding:5px 5px;text-align:center;vertical-align:middle;word-break:normal" rowspan="2"><img src="{EnterpriseLogoPath}"style="width: 60px; height: 60px; margin-top: 5px; border:1px none #A2CDF5; border-radius: 50%; max-width:100px; " /></th><th style="background-color:transparent;border-color:transparent;border-right:1px none grey;font-family:Arial, sans-serif;font-size:11px;font-weight:normal;color:black;overflow:hidden;padding:5px 5px;text-align:left;vertical-align:top;word-break:normal" rowspan="2"><font size=3><b>{EnterpriseName}</b></font><br>{EnterpriseAddress}<br><br>Current Campaign:RAMADHAN 2021</div><br>Start:01/10/2020<div style="width:100%;text-align:right;margin:-16px 0px 0px 0px">End:01/10/2021</div></th></tr><tr></tr></thead></table>' +
+'<table style="border-collapse:collapse;border-spacing:0;width:100%;background-color:white;margin:3px 0px 0px -13px;" ><thead><tr><th style="background-color:transparent;border-radius: 0px 0px 0px 0px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;font-color:white;overflow:hidden;padding:5px 5px;text-align:center;vertical-align:middle;word-break:normal" rowspan="2"><img src="{EnterpriseLogo}"style="width: 80px; height: 80px; margin-top: 5px; border:1px none #A2CDF5; border-radius: 50%; max-width:100px; " /></th><th style="background-color:transparent;border-color:transparent;border-right:1px none grey;font-family:Arial, sans-serif;font-size:10px;font-weight:normal;color:black;overflow:hidden;padding:5px 5px;text-align:left;vertical-align:top;word-break:normal" rowspan="2"><font size=3><b>{EnterpriseName}</b></font><br><div style="width:100%;text-align:left;margin:-3px 0px 0px 0px"><font size=1><b>({EnterpriseRegistrationNo})-{EnterpriseType}</b></font></div><br><div style="width:100%;text-align:left;margin:-15px 0px 0px 0px;font-family:Arial, sans-serif;font-size:10px;font-weight:normal;">{EnterpriseAddress}<br>Phone No:{EnterprisePhoneNo}<br>Email:{EnterpriseEmail}</div></div></th></tr><tr></tr></thead></table>' +
+
+
+'</div>',
+width: '90%',
+listeners: {
+itemsingletap: function (list, idx, target, records, evt) {
+
+
+
+
+
+},
+deselect: function (list, records) {
+
+}
+},
+
+},
+
+]
+
+},
+
+
+
+
+////////////////////
 {
 xtype: 'container',
 width: '100%',
@@ -1626,7 +1752,7 @@ width:10
                 },
                 {
                  //   id: 'btnFloatPanel_MembershipCardList_NotYetSubscribed_EntitiledReward',
-                    html: '<div style="width:100%;text-align:left;color:purple;font-family: Arial; font-size:13px;font-weight:bold;">Membership Card Info</div>',
+                    html: '<div style="width:100%;text-align:left;color:purple;font-family: Arial; font-size:13px;font-weight:bold;">Membership Card Offered</div>',
                 },
 
             
@@ -4682,14 +4808,14 @@ function FloatPanel_MembershipCardList_NotYetSubscribed_RateAndReview(RateReview
     
 
    
-    Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_TotalReviewsOutter').setHtml('<div  style="width100%;text-align:right;background-color: transparent;font-family:Arial, sans-serif;font-size:10px;color:black;font-weight:bold;overflow:hidden;margin:-13px 10px 10px 0px;"><img src="resources/icons/merchantrateusAccountImg.png" alt="Image" style="width:10px;height:10px;">&nbsp;&nbsp;&nbsp;'+Reviewer+' Reviews</div>');
-    Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_ReviewAndRateCountOutter').setHtml('<div  style="color:black;text-align: center;font-size:16px;width:100%;font-weight:bold;margin:0px 0px 0px 0px;">'+RateReviews+'</div>');
+    Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_TotalReviewsOutter').setHtml('<div  style="width100%;text-align:right;background-color: transparent;font-family:Arial, sans-serif;font-size:8px;color:black;font-weight:normal;overflow:hidden;margin:-13px 10px 10px 0px;"><img src="resources/icons/merchantrateusAccountImg.png" alt="Image" style="width:8px;height:8px;">&nbsp;&nbsp;&nbsp;'+Reviewer+' Reviews</div>');
+    Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_ReviewAndRateCountOutter').setHtml('<div  style="color:black;text-align: center;font-size:14px;width:100%;font-weight:normal;margin:0px 0px 0px 0px;">'+RateReviews+'</div>');
     if (RateReviews == 5) {                           
-        Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star1Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-        Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star2Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-        Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star3Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-        Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star4Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-        Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star5Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
+        Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star1Outter').setHtml('<div ><img src="resources/icons/star.png" width="12" height="12" alt="Company Name"></div>');
+        Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star2Outter').setHtml('<div ><img src="resources/icons/star.png" width="12" height="12" alt="Company Name"></div>');
+        Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star3Outter').setHtml('<div ><img src="resources/icons/star.png" width="12" height="12" alt="Company Name"></div>');
+        Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star4Outter').setHtml('<div ><img src="resources/icons/star.png" width="12" height="12" alt="Company Name"></div>');
+        Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star5Outter').setHtml('<div ><img src="resources/icons/star.png" width="12" height="12" alt="Company Name"></div>');
        
         // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star1').setHtml('<div ><img src="resources/icons/star.png" width="18" height="18" alt="Company Name"></div>');
         // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star2').setHtml('<div ><img src="resources/icons/star.png" width="18" height="18" alt="Company Name"></div>');
@@ -4702,11 +4828,11 @@ function FloatPanel_MembershipCardList_NotYetSubscribed_RateAndReview(RateReview
 
     }
     if ((RateReviews >= 4) && (RateReviews < 5)) {
-        Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star1Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-        Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star2Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-        Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star3Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-        Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star4Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-        Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star5Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="17" height="17" alt="Company Name"></div>');
+        Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star1Outter').setHtml('<div ><img src="resources/icons/star.png" width="12" height="12" alt="Company Name"></div>');
+        Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star2Outter').setHtml('<div ><img src="resources/icons/star.png" width="12" height="12" alt="Company Name"></div>');
+        Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star3Outter').setHtml('<div ><img src="resources/icons/star.png" width="12" height="12" alt="Company Name"></div>');
+        Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star4Outter').setHtml('<div ><img src="resources/icons/star.png" width="12" height="12" alt="Company Name"></div>');
+        Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star5Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="12" height="12" alt="Company Name"></div>');
 
         // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star1').setHtml('<div ><img src="resources/icons/star.png" width="18" height="18" alt="Company Name"></div>');
         // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star2').setHtml('<div ><img src="resources/icons/star.png" width="18" height="18" alt="Company Name"></div>');
@@ -4718,11 +4844,11 @@ function FloatPanel_MembershipCardList_NotYetSubscribed_RateAndReview(RateReview
 
         if ((RateReviews >= 4.2) && (RateReviews <= 4.4)) {
 
-            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star1Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star2Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star3Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star4Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star5Outter').setHtml('<div ><img src="resources/icons/StarpointThree.png" width="17" height="17" alt="Company Name"></div>');
+            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star1Outter').setHtml('<div ><img src="resources/icons/star.png" width="12" height="12" alt="Company Name"></div>');
+            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star2Outter').setHtml('<div ><img src="resources/icons/star.png" width="12" height="12" alt="Company Name"></div>');
+            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star3Outter').setHtml('<div ><img src="resources/icons/star.png" width="12" height="12" alt="Company Name"></div>');
+            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star4Outter').setHtml('<div ><img src="resources/icons/star.png" width="12" height="12" alt="Company Name"></div>');
+            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star5Outter').setHtml('<div ><img src="resources/icons/StarpointThree.png" width="12" height="12" alt="Company Name"></div>');
 
 
 
@@ -4734,11 +4860,11 @@ function FloatPanel_MembershipCardList_NotYetSubscribed_RateAndReview(RateReview
         }
         if (RateReviews == 4.5) {
 
-            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star1Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star2Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star3Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star4Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star5Outter').setHtml('<div ><img src="resources/icons/StarpointFive.png" width="17" height="17" alt="Company Name"></div>');
+            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star1Outter').setHtml('<div ><img src="resources/icons/star.png" width="12" height="12" alt="Company Name"></div>');
+            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star2Outter').setHtml('<div ><img src="resources/icons/star.png" width="12" height="12" alt="Company Name"></div>');
+            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star3Outter').setHtml('<div ><img src="resources/icons/star.png" width="12" height="12" alt="Company Name"></div>');
+            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star4Outter').setHtml('<div ><img src="resources/icons/star.png" width="12" height="12" alt="Company Name"></div>');
+            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star5Outter').setHtml('<div ><img src="resources/icons/StarpointFive.png" width="12" height="12" alt="Company Name"></div>');
        
             // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star1').setHtml('<div ><img src="resources/icons/star.png" width="18" height="18" alt="Company Name"></div>');
             // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star2').setHtml('<div ><img src="resources/icons/star.png" width="18" height="18" alt="Company Name"></div>');
@@ -4750,11 +4876,11 @@ function FloatPanel_MembershipCardList_NotYetSubscribed_RateAndReview(RateReview
         }
         if ((RateReviews >= 4.6) && (RateReviews <= 4.8)) {
 
-            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star1Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star2Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star3Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star4Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star5Outter').setHtml('<div ><img src="resources/icons/StarpointSeven.png" width="17" height="17" alt="Company Name"></div>');
+            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star1Outter').setHtml('<div ><img src="resources/icons/star.png" width="12" height="12" alt="Company Name"></div>');
+            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star2Outter').setHtml('<div ><img src="resources/icons/star.png" width="12" height="12" alt="Company Name"></div>');
+            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star3Outter').setHtml('<div ><img src="resources/icons/star.png" width="12" height="12" alt="Company Name"></div>');
+            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star4Outter').setHtml('<div ><img src="resources/icons/star.png" width="12" height="12" alt="Company Name"></div>');
+            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star5Outter').setHtml('<div ><img src="resources/icons/StarpointSeven.png" width="12" height="12" alt="Company Name"></div>');
        
             // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star1').setHtml('<div ><img src="resources/icons/star.png" width="18" height="18" alt="Company Name"></div>');
             // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star2').setHtml('<div ><img src="resources/icons/star.png" width="18" height="18" alt="Company Name"></div>');
@@ -4766,11 +4892,11 @@ function FloatPanel_MembershipCardList_NotYetSubscribed_RateAndReview(RateReview
        
         }
         if (RateReviews == 4.9) {
-            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star1Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star2Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star3Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star4Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star5Outter').setHtml('<div ><img src="resources/icons/StarpointNine.png" width="17" height="17" alt="Company Name"></div>');
+            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star1Outter').setHtml('<div ><img src="resources/icons/star.png" width="12" height="12" alt="Company Name"></div>');
+            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star2Outter').setHtml('<div ><img src="resources/icons/star.png" width="12" height="12" alt="Company Name"></div>');
+            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star3Outter').setHtml('<div ><img src="resources/icons/star.png" width="12" height="12" alt="Company Name"></div>');
+            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star4Outter').setHtml('<div ><img src="resources/icons/star.png" width="12" height="12" alt="Company Name"></div>');
+            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star5Outter').setHtml('<div ><img src="resources/icons/StarpointNine.png" width="12" height="12" alt="Company Name"></div>');
        
                                   
             // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star1').setHtml('<div ><img src="resources/icons/star.png" width="18" height="18" alt="Company Name"></div>');
@@ -4787,11 +4913,11 @@ function FloatPanel_MembershipCardList_NotYetSubscribed_RateAndReview(RateReview
     }
     if ((RateReviews >= 3) && (RateReviews < 4)) {
 
-        Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star1Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-        Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star2Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-        Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star3Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-        Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star4Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="17" height="17" alt="Company Name"></div>');
-        Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star5Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="17" height="17" alt="Company Name"></div>');
+        Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star1Outter').setHtml('<div ><img src="resources/icons/star.png" width="12" height="12" alt="Company Name"></div>');
+        Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star2Outter').setHtml('<div ><img src="resources/icons/star.png" width="12" height="12" alt="Company Name"></div>');
+        Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star3Outter').setHtml('<div ><img src="resources/icons/star.png" width="12" height="12" alt="Company Name"></div>');
+        Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star4Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="12" height="12" alt="Company Name"></div>');
+        Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star5Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="12" height="12" alt="Company Name"></div>');
 
 
         // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star1').setHtml('<div ><img src="resources/icons/star.png" width="18" height="18" alt="Company Name"></div>');
@@ -4804,11 +4930,11 @@ function FloatPanel_MembershipCardList_NotYetSubscribed_RateAndReview(RateReview
 
         if ((RateReviews >= 3.2) && (RateReviews <= 3.4)) {
 
-            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star1Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star2Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star3Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star4Outter').setHtml('<div ><img src="resources/icons/StarpointThree.png" width="17" height="17" alt="Company Name"></div>');
-            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star5Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="17" height="17" alt="Company Name"></div>');
+            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star1Outter').setHtml('<div ><img src="resources/icons/star.png" width="12" height="12" alt="Company Name"></div>');
+            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star2Outter').setHtml('<div ><img src="resources/icons/star.png" width="12" height="12" alt="Company Name"></div>');
+            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star3Outter').setHtml('<div ><img src="resources/icons/star.png" width="12" height="12" alt="Company Name"></div>');
+            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star4Outter').setHtml('<div ><img src="resources/icons/StarpointThree.png" width="12" height="12" alt="Company Name"></div>');
+            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star5Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="12" height="12" alt="Company Name"></div>');
 
 
             
@@ -4820,11 +4946,11 @@ function FloatPanel_MembershipCardList_NotYetSubscribed_RateAndReview(RateReview
         }
         if (RateReviews == 3.5) {
 
-            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star1Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star2Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star3Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star4Outter').setHtml('<div ><img src="resources/icons/StarpointFive.png" width="17" height="17" alt="Company Name"></div>');
-            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star5Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="17" height="17" alt="Company Name"></div>');
+            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star1Outter').setHtml('<div ><img src="resources/icons/star.png" width="12" height="12" alt="Company Name"></div>');
+            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star2Outter').setHtml('<div ><img src="resources/icons/star.png" width="12" height="12" alt="Company Name"></div>');
+            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star3Outter').setHtml('<div ><img src="resources/icons/star.png" width="12" height="12" alt="Company Name"></div>');
+            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star4Outter').setHtml('<div ><img src="resources/icons/StarpointFive.png" width="12" height="12" alt="Company Name"></div>');
+            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star5Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="12" height="12" alt="Company Name"></div>');
 
 
             
@@ -4838,11 +4964,11 @@ function FloatPanel_MembershipCardList_NotYetSubscribed_RateAndReview(RateReview
         }
         if ((RateReviews >= 3.6) && (RateReviews <= 3.8)) {
 
-            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star1Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star2Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star3Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star4Outter').setHtml('<div ><img src="resources/icons/StarpointSeven.png" width="17" height="17" alt="Company Name"></div>');
-            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star5Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="17" height="17" alt="Company Name"></div>');
+            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star1Outter').setHtml('<div ><img src="resources/icons/star.png" width="12" height="12" alt="Company Name"></div>');
+            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star2Outter').setHtml('<div ><img src="resources/icons/star.png" width="12" height="12" alt="Company Name"></div>');
+            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star3Outter').setHtml('<div ><img src="resources/icons/star.png" width="12" height="12" alt="Company Name"></div>');
+            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star4Outter').setHtml('<div ><img src="resources/icons/StarpointSeven.png" width="12" height="12" alt="Company Name"></div>');
+            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star5Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="12" height="12" alt="Company Name"></div>');
         
         
             
@@ -4855,11 +4981,11 @@ function FloatPanel_MembershipCardList_NotYetSubscribed_RateAndReview(RateReview
         
         }
         if (RateReviews == 3.9) {
-            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star1Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star2Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star3Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star4Outter').setHtml('<div ><img src="resources/icons/StarpointNine.png" width="17" height="17" alt="Company Name"></div>');
-            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star5Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="17" height="17" alt="Company Name"></div>');
+            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star1Outter').setHtml('<div ><img src="resources/icons/star.png" width="12" height="12" alt="Company Name"></div>');
+            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star2Outter').setHtml('<div ><img src="resources/icons/star.png" width="12" height="12" alt="Company Name"></div>');
+            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star3Outter').setHtml('<div ><img src="resources/icons/star.png" width="12" height="12" alt="Company Name"></div>');
+            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star4Outter').setHtml('<div ><img src="resources/icons/StarpointNine.png" width="12" height="12" alt="Company Name"></div>');
+            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star5Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="12" height="12" alt="Company Name"></div>');
         
         
                                         
@@ -4877,11 +5003,11 @@ function FloatPanel_MembershipCardList_NotYetSubscribed_RateAndReview(RateReview
     if ((RateReviews >= 2) && (RateReviews < 3)) {
 
 
-        Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star1Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-        Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star2Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-        Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star3Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="17" height="17" alt="Company Name"></div>');
-        Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star4Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="17" height="17" alt="Company Name"></div>');
-        Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star5Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="17" height="17" alt="Company Name"></div>');
+        Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star1Outter').setHtml('<div ><img src="resources/icons/star.png" width="12" height="12" alt="Company Name"></div>');
+        Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star2Outter').setHtml('<div ><img src="resources/icons/star.png" width="12" height="12" alt="Company Name"></div>');
+        Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star3Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="12" height="12" alt="Company Name"></div>');
+        Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star4Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="12" height="12" alt="Company Name"></div>');
+        Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star5Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="12" height="12" alt="Company Name"></div>');
 
                                         
         // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star1').setHtml('<div ><img src="resources/icons/star.png" width="18" height="18" alt="Company Name"></div>');
@@ -4894,11 +5020,11 @@ function FloatPanel_MembershipCardList_NotYetSubscribed_RateAndReview(RateReview
 
         if ((RateReviews >= 2.2) && (RateReviews <= 2.4)) {
 
-            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star1Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star2Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star3Outter').setHtml('<div ><img src="resources/icons/StarpointThree.png" width="17" height="17" alt="Company Name"></div>');
-            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star4Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="17" height="17" alt="Company Name"></div>');
-            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star5Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="17" height="17" alt="Company Name"></div>');
+            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star1Outter').setHtml('<div ><img src="resources/icons/star.png" width="12" height="12" alt="Company Name"></div>');
+            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star2Outter').setHtml('<div ><img src="resources/icons/star.png" width="12" height="12" alt="Company Name"></div>');
+            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star3Outter').setHtml('<div ><img src="resources/icons/StarpointThree.png" width="12" height="12" alt="Company Name"></div>');
+            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star4Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="12" height="12" alt="Company Name"></div>');
+            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star5Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="12" height="12" alt="Company Name"></div>');
       
       
                                         
@@ -4912,11 +5038,11 @@ function FloatPanel_MembershipCardList_NotYetSubscribed_RateAndReview(RateReview
         }
         if (RateReviews == 2.5) {
 
-            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star1Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star2Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star3Outter').setHtml('<div ><img src="resources/icons/StarpointFive.png" width="17" height="17" alt="Company Name"></div>');
-            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star4Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="17" height="17" alt="Company Name"></div>');
-            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star5Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="17" height="17" alt="Company Name"></div>');
+            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star1Outter').setHtml('<div ><img src="resources/icons/star.png" width="12" height="12" alt="Company Name"></div>');
+            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star2Outter').setHtml('<div ><img src="resources/icons/star.png" width="12" height="12" alt="Company Name"></div>');
+            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star3Outter').setHtml('<div ><img src="resources/icons/StarpointFive.png" width="12" height="12" alt="Company Name"></div>');
+            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star4Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="12" height="12" alt="Company Name"></div>');
+            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star5Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="12" height="12" alt="Company Name"></div>');
        
                                        
             // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star1').setHtml('<div ><img src="resources/icons/star.png" width="18" height="18" alt="Company Name"></div>');
@@ -4928,11 +5054,11 @@ function FloatPanel_MembershipCardList_NotYetSubscribed_RateAndReview(RateReview
        
         }
         if ((RateReviews >= 2.6) && (RateReviews <= 2.8)) {
-            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star1Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star2Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star3Outter').setHtml('<div ><img src="resources/icons/StarpointSeven.png" width="17" height="17" alt="Company Name"></div>');
-            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star4Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="17" height="17" alt="Company Name"></div>');
-            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star5Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="17" height="17" alt="Company Name"></div>');
+            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star1Outter').setHtml('<div ><img src="resources/icons/star.png" width="12" height="12" alt="Company Name"></div>');
+            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star2Outter').setHtml('<div ><img src="resources/icons/star.png" width="12" height="12" alt="Company Name"></div>');
+            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star3Outter').setHtml('<div ><img src="resources/icons/StarpointSeven.png" width="12" height="12" alt="Company Name"></div>');
+            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star4Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="12" height="12" alt="Company Name"></div>');
+            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star5Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="12" height="12" alt="Company Name"></div>');
        
        
             // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star1').setHtml('<div ><img src="resources/icons/star.png" width="18" height="18" alt="Company Name"></div>');
@@ -4944,11 +5070,11 @@ function FloatPanel_MembershipCardList_NotYetSubscribed_RateAndReview(RateReview
        
         }
         if (RateReviews == 2.9) {
-            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star1Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star2Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star3Outter').setHtml('<div ><img src="resources/icons/StarpointNine.png" width="17" height="17" alt="Company Name"></div>');
-            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star4Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="17" height="17" alt="Company Name"></div>');
-            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star5Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="17" height="17" alt="Company Name"></div>');
+            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star1Outter').setHtml('<div ><img src="resources/icons/star.png" width="12" height="12" alt="Company Name"></div>');
+            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star2Outter').setHtml('<div ><img src="resources/icons/star.png" width="12" height="12" alt="Company Name"></div>');
+            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star3Outter').setHtml('<div ><img src="resources/icons/StarpointNine.png" width="12" height="12" alt="Company Name"></div>');
+            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star4Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="12" height="12" alt="Company Name"></div>');
+            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star5Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="12" height="12" alt="Company Name"></div>');
 
        
                                   
@@ -4967,11 +5093,11 @@ function FloatPanel_MembershipCardList_NotYetSubscribed_RateAndReview(RateReview
     }
     if ((RateReviews >= 1) && (RateReviews < 2)) {
 
-        Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star1Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-        Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star2Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="17" height="17" alt="Company Name"></div>');
-        Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star3Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="17" height="17" alt="Company Name"></div>');
-        Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star4Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="17" height="17" alt="Company Name"></div>');
-        Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star5Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="17" height="17" alt="Company Name"></div>');
+        Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star1Outter').setHtml('<div ><img src="resources/icons/star.png" width="12" height="12" alt="Company Name"></div>');
+        Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star2Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="12" height="12" alt="Company Name"></div>');
+        Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star3Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="12" height="12" alt="Company Name"></div>');
+        Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star4Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="12" height="12" alt="Company Name"></div>');
+        Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star5Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="12" height="12" alt="Company Name"></div>');
 
 
         // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star1').setHtml('<div ><img src="resources/icons/star.png" width="18" height="18" alt="Company Name"></div>');
@@ -4985,11 +5111,11 @@ function FloatPanel_MembershipCardList_NotYetSubscribed_RateAndReview(RateReview
         if ((RateReviews >= 1.2) && (RateReviews <= 1.4)) {
 
 
-            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star1Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star2Outter').setHtml('<div ><img src="resources/icons/StarpointThree.png" width="17" height="17" alt="Company Name"></div>');
-            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star3Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="17" height="17" alt="Company Name"></div>');
-            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star4Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="17" height="17" alt="Company Name"></div>');
-            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star5Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="17" height="17" alt="Company Name"></div>');
+            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star1Outter').setHtml('<div ><img src="resources/icons/star.png" width="12" height="12" alt="Company Name"></div>');
+            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star2Outter').setHtml('<div ><img src="resources/icons/StarpointThree.png" width="12" height="12" alt="Company Name"></div>');
+            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star3Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="12" height="12" alt="Company Name"></div>');
+            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star4Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="12" height="12" alt="Company Name"></div>');
+            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star5Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="12" height="12" alt="Company Name"></div>');
 
 
             // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star1').setHtml('<div ><img src="resources/icons/star.png" width="18" height="18" alt="Company Name"></div>');
@@ -5000,11 +5126,11 @@ function FloatPanel_MembershipCardList_NotYetSubscribed_RateAndReview(RateReview
 
         }
         if (RateReviews == 1.5) {
-            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star1Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star2Outter').setHtml('<div ><img src="resources/icons/StarpointFive.png" width="17" height="17" alt="Company Name"></div>');
-            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star3Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="17" height="17" alt="Company Name"></div>');
-            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star4Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="17" height="17" alt="Company Name"></div>');
-            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star5Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="17" height="17" alt="Company Name"></div>');
+            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star1Outter').setHtml('<div ><img src="resources/icons/star.png" width="12" height="12" alt="Company Name"></div>');
+            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star2Outter').setHtml('<div ><img src="resources/icons/StarpointFive.png" width="12" height="12" alt="Company Name"></div>');
+            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star3Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="12" height="12" alt="Company Name"></div>');
+            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star4Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="12" height="12" alt="Company Name"></div>');
+            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star5Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="12" height="12" alt="Company Name"></div>');
 
      
             // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star1').setHtml('<div ><img src="resources/icons/star.png" width="18" height="18" alt="Company Name"></div>');
@@ -5015,11 +5141,11 @@ function FloatPanel_MembershipCardList_NotYetSubscribed_RateAndReview(RateReview
      
         }
         if ((RateReviews >= 1.6) && (RateReviews <= 1.8)) {
-            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star1Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star2Outter').setHtml('<div ><img src="resources/icons/StarpointSeven.png" width="17" height="17" alt="Company Name"></div>');
-            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star3Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="17" height="17" alt="Company Name"></div>');
-            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star4Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="17" height="17" alt="Company Name"></div>');
-            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star5Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="17" height="17" alt="Company Name"></div>');
+            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star1Outter').setHtml('<div ><img src="resources/icons/star.png" width="12" height="12" alt="Company Name"></div>');
+            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star2Outter').setHtml('<div ><img src="resources/icons/StarpointSeven.png" width="12" height="12" alt="Company Name"></div>');
+            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star3Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="12" height="12" alt="Company Name"></div>');
+            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star4Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="12" height="12" alt="Company Name"></div>');
+            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star5Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="12" height="12" alt="Company Name"></div>');
       
             // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star1').setHtml('<div ><img src="resources/icons/star.png" width="18" height="18" alt="Company Name"></div>');
             // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star2').setHtml('<div ><img src="resources/icons/StarpointSeven.png" width="18" height="18" alt="Company Name"></div>');
@@ -5030,11 +5156,11 @@ function FloatPanel_MembershipCardList_NotYetSubscribed_RateAndReview(RateReview
       
         }
         if (RateReviews == 1.9) {
-            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star1Outter').setHtml('<div ><img src="resources/icons/star.png" width="17" height="17" alt="Company Name"></div>');
-            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star2Outter').setHtml('<div ><img src="resources/icons/StarpointNine.png" width="17" height="17" alt="Company Name"></div>');
-            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star3Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="17" height="17" alt="Company Name"></div>');
-            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star4Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="17" height="17" alt="Company Name"></div>');
-            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star5Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="17" height="17" alt="Company Name"></div>');
+            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star1Outter').setHtml('<div ><img src="resources/icons/star.png" width="12" height="12" alt="Company Name"></div>');
+            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star2Outter').setHtml('<div ><img src="resources/icons/StarpointNine.png" width="12" height="12" alt="Company Name"></div>');
+            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star3Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="12" height="12" alt="Company Name"></div>');
+            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star4Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="12" height="12" alt="Company Name"></div>');
+            Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star5Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="12" height="12" alt="Company Name"></div>');
        
        
             // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star1').setHtml('<div ><img src="resources/icons/star.png" width="18" height="18" alt="Company Name"></div>');
@@ -5048,11 +5174,11 @@ function FloatPanel_MembershipCardList_NotYetSubscribed_RateAndReview(RateReview
     }
     if ((RateReviews >= 0) && (RateReviews < 1)) {
 
-        Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star1Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="17" height="17" alt="Company Name"></div>');
-        Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star2Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="17" height="17" alt="Company Name"></div>');
-        Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star3Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="17" height="17" alt="Company Name"></div>');
-        Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star4Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="17" height="17" alt="Company Name"></div>');
-        Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star5Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="17" height="17" alt="Company Name"></div>');
+        Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star1Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="12" height="12" alt="Company Name"></div>');
+        Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star2Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="12" height="12" alt="Company Name"></div>');
+        Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star3Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="12" height="12" alt="Company Name"></div>');
+        Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star4Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="12" height="12" alt="Company Name"></div>');
+        Ext.getCmp('htmlFloatPanel_MembershipCardList_NotYetSubscribed_Star5Outter').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="12" height="12" alt="Company Name"></div>');
 
                                    
         // Ext.getCmp('btnFloatPanel_Membership_MembershipCardSaleDetail_Star1').setHtml('<div ><img src="resources/icons/reviewstarunrate.png" width="18" height="18" alt="Company Name"></div>');
