@@ -340,33 +340,66 @@ if(str){
                   return _value;
               }
           }
-          , {
-              name: 'ModifiedEnterprisesName',
-              convert: function (value, record) {
 
-                  var _value;
-                  var str = record.get('EnterprisesName');
+//  ORI 1/11/2025         , {
+//               name: 'ModifiedEnterprisesName',
+//               convert: function (value, record) {
+
+//                   var _value;
+//                   var str = record.get('EnterprisesName');
                   
-if(str){
-    if (str.length <= 16) {
-        _value = '<div style="margin:-51px 0px 0px 68px;font-family:Arial, sans-serif;font-size:18px;font-weight:bold;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:top;word-break:normal;color:white;width:100%;">' + str.toUpperCase() + '</div>';
+// if(str){
+//     if (str.length <= 16) {
+//         _value = '<div style="margin:-51px 0px 0px 68px;font-family:Arial, sans-serif;font-size:18px;font-weight:bold;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:top;word-break:normal;color:white;width:100%;">' + str.toUpperCase() + '</div>';
       
-        return _value;
-    }
-    if (str.length >= 17) {
-        var str0 = str.substring(0, 16);
-        var str1 = str.substring(16, str.length);
-        _value = '<div style="margin:-61px 0px 0px 68px;font-family:Arial, sans-serif;font-size:18px;font-weight:bold;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:top;word-break:normal;color:white;width:100%;">' + str0.toUpperCase() + '-</div><br>' +
-                 '<div style="margin:-26px 0px 0px 68px;font-family:Arial, sans-serif;font-size:18px;font-weight:bold;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:top;word-break:normal;color:white;width:100%;">' + str1.toUpperCase() + '</div>';
-        return _value;
-    }
-}
+//         return _value;
+//     }
+//     if (str.length >= 17) {
+//         var str0 = str.substring(0, 16);
+//         var str1 = str.substring(16, str.length);
+//         _value = '<div style="margin:-61px 0px 0px 68px;font-family:Arial, sans-serif;font-size:18px;font-weight:bold;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:top;word-break:normal;color:white;width:100%;">' + str0.toUpperCase() + '-</div><br>' +
+//                  '<div style="margin:-26px 0px 0px 68px;font-family:Arial, sans-serif;font-size:18px;font-weight:bold;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:top;word-break:normal;color:white;width:100%;">' + str1.toUpperCase() + '</div>';
+//         return _value;
+//     }
+// }
                  
 
 
 
-              }
-          }  , {
+//               }
+//           } 
+          ,{
+            name: 'ModifiedEnterprisesName',
+            convert: function (value, record) {
+
+                var _value;
+                var str = record.get('EnterprisesName');
+                
+if(str){
+  if (str.length <= 16) {
+      _value = '<div style="margin:-51px 0px 0px 68px;font-family:Arial, sans-serif;font-size:18px;font-weight:bold;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:top;word-break:normal;color:white;width:100%;">' + str.toUpperCase() + '</div>';
+    
+      return _value;
+  }
+  if (str.length >= 17) {
+      var str0 = str.substring(0, 16);
+      var str1 = str.substring(16, str.length);
+      _value = '<div style="margin:-53px 0px 0px 60px;font-family:Arial, sans-serif;font-size:18px;font-weight:bold;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:top;word-break:normal;color:white;width:100%;">' + str0.toUpperCase() + '-</div><br>' +
+               '<div style="margin:-26px 0px 0px 68px;font-family:Arial, sans-serif;font-size:18px;font-weight:bold;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:top;word-break:normal;color:white;width:100%;">' + str1.toUpperCase() + '</div>';
+      return _value;
+  }
+}
+               
+
+
+
+            }
+        } 
+          
+          
+          
+          
+          , {
             name: 'ModifiedEnterprisesNameDesignOneTwo',
             convert: function (value, record) {
 
@@ -393,7 +426,36 @@ if(str){
 
             }
         }
-            , {
+            , 
+            // ORI 1/11/2025 {
+            //     name: 'ModifiedEnterprisesLogo',
+            //     convert: function (value, record) {
+
+            //         var _value;
+            //         var str = record.get('EnterprisesName');
+            //         var logo = record.get('EnterprisesLogo');
+            //       if(str){
+            //         if (str.length <= 13) {
+            //             _value = '<img src="' + logo + '" alt="Image" style="width:60px;height:60px;border-radius: 50%;border: 1px solid white;margin:-28px 0px 0px 0px">';
+            //             console.log(str.length);
+            //             return _value;
+            //         }
+            //         if (str.length >= 14) {
+            //             _value = '<img src="' + logo + '" alt="Image" style="width:60px;height:60px;border-radius: 50%;border: 1px solid white;margin:-28px 0px 0px 0px">';
+            //             console.log(str.length);
+            //             return _value;
+            //         }
+            //       }else{
+            //         return 'NA';
+            //       }
+                   
+
+
+
+            //     }
+            // } ,
+            
+            {
                 name: 'ModifiedEnterprisesLogo',
                 convert: function (value, record) {
 
@@ -402,12 +464,12 @@ if(str){
                     var logo = record.get('EnterprisesLogo');
                   if(str){
                     if (str.length <= 13) {
-                        _value = '<img src="' + logo + '" alt="Image" style="width:60px;height:60px;border-radius: 50%;border: 1px solid white;margin:-28px 0px 0px 0px">';
+                        _value = '<img src="' + logo + '" alt="Image" style="width:50px;height:50px;border-radius: 50%;border: 1px solid white;margin:0px 0px 0px 0px">';
                         console.log(str.length);
                         return _value;
                     }
                     if (str.length >= 14) {
-                        _value = '<img src="' + logo + '" alt="Image" style="width:60px;height:60px;border-radius: 50%;border: 1px solid white;margin:-28px 0px 0px 0px">';
+                        _value = '<img src="' + logo + '" alt="Image" style="width:50px;height:50px;border-radius: 50%;border: 1px solid white;margin:0px 0px 0px 0px">';
                         console.log(str.length);
                         return _value;
                     }
@@ -419,7 +481,11 @@ if(str){
 
 
                 }
-            } , {
+            },
+            
+            
+            
+            {
                 name: 'ModifiedEnterprisesLogoDesignOneTwo',
                 convert: function (value, record) {
 
@@ -460,33 +526,33 @@ if(str){
 
                 }
             }
-              , {
-                  name: 'ModifiedHeaderHeight',
-                  convert: function (value, record) {
+            //   , {
+            //       name: 'ModifiedHeaderHeight',
+            //       convert: function (value, record) {
 
-                      var _value;
-                      var str = record.get('EnterprisesName');
+            //           var _value;
+            //           var str = record.get('EnterprisesName');
 
-                      if(str){
-                        if (str.length <= 16) {
-                            _value = 'height:73px';
-                            console.log(str.length);
-                            return _value;
-                        }
-                        if (str.length >= 17) {
-                            _value = 'height:90px';
-                            console.log(str.length);
-                            return _value;
-                        }
+            //           if(str){
+            //             if (str.length <= 16) {
+            //                 _value = 'height:73px';
+            //                 console.log(str.length);
+            //                 return _value;
+            //             }
+            //             if (str.length >= 17) {
+            //                 _value = 'height:90px';
+            //                 console.log(str.length);
+            //                 return _value;
+            //             }
   
   
-                      }else{
-                        return 'NA';
-                      }   
+            //           }else{
+            //             return 'NA';
+            //           }   
                       
 
-                  }
-              }
+            //       }
+            //   }
   
 
 
@@ -498,12 +564,14 @@ if(str){
                       var str = record.get('EnterprisesName');
 if(str){
     if (str.length <= 16) {
-        _value = 'height:65px';
+        //_value = 'height:65px';
+        _value = 'height:50px';
         console.log(str.length);
         return _value;
     }
     if (str.length >= 17) {
-        _value = 'height:80px';
+        //_value = 'height:80px';
+        _value = 'height:63px';
         console.log(str.length);
         return _value;
     }

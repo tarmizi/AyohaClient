@@ -1,4 +1,4 @@
-﻿
+
 var detectIndex = [];
 var iseWalletButtonTap = "NO";
 var DashboardArrIndexmainDashboardCarousel = 0;
@@ -2129,7 +2129,6 @@ itemTpl:'<div onclick="FloatPanel_AyohaEnterpriseRewardItem_MembershipCardLoadBy
                 margin: '3 0 0 20',
                 xtype: 'dataview',
                 height: 220,
-                //height: 180,
                 style: "background-color: transparent;",
                 inline: {
                     wrap: false
@@ -2147,9 +2146,9 @@ itemTpl:'<div onclick="FloatPanel_AyohaEnterpriseRewardItem_MembershipCardLoadBy
                     // TPL for the "View More" card
                     '<tpl if="isLoadMore">',
                         // Use the EXACT SAME outer structure as the regular card
-                        '<div class="myContent" style="background-color:transparent;width:300px;height:auto;">', // Matched width, auto height
+                        '<div class="myContent" style="background-color:transparent;width:320px;height:auto;">', // Matched width, auto height
                             // This is the dashed box, replacing the regular card's visual part
-                            '<div style="margin:0px 0px 0px 0px;width:280px;height:160px; border: 2px dashed #b0b0b0; border-radius: 20px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; cursor: pointer; color: #444; font-family: Arial, sans-serif;" OnClick="FloatPanel_Membership_MembershipCardHubsShow()">',
+                            '<div style="margin:0px 0px 0px 0px;width:300px;height:180px; border: 2px dashed #b0b0b0; border-radius: 20px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; cursor: pointer; color: #444; font-family: Arial, sans-serif;" OnClick="FloatPanel_Membership_MembershipCardHubsShow()">',
                                 '<img src="resources/icons/membershipPurpleThree.png" width="32" height="32" alt="Company Name">',
                                 '<div style="margin-top: 10px; font-size: 15px; font-weight: bold;">View More <br> Membership Card</div>',
                             '</div>',
@@ -2163,9 +2162,9 @@ itemTpl:'<div onclick="FloatPanel_AyohaEnterpriseRewardItem_MembershipCardLoadBy
                 
                     // TPL for the regular membership card (no changes here)
                     '<tpl if="!isLoadMore">',
-                        '<div class="myContent" style="background-color:transparent;width:300px;height:auto;">',
-                            '<div style="margin:0px 0px 0px 0px;width:280px;height:160px;background-color: #fac;background-image: url({MembershipCardBackgroundImg});background-size: 100% 100%;border-radius: 20px 20px 20px 20px;">' +
-                            '<table style="border-collapse:collapse;border-spacing:0;border:none;width:100%;margin:0px 0px 0px 0px;" OnClick="FloatPanel_MembershipCardList_NotYetSubscribedShow_FromDashboard_Main(`{MembershipCardCode}`,`{EnterpriseAccNo}`,`{isMembershipCardSubscribed}`,`{MembershipCardFeePaymentCycle}`,`{CountStar}`,`{CountReviewer}`)" ><tr><td style="background-color:transparent;border-color:black;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 10px;text-align:left;vertical-align:middle;word-break:normal;width:100%;{ModifiedHeaderHeight}" colspan="3">{ModifiedEnterprisesLogo}{ModifiedEnterprisesName}</td></tr><tbody><tr><td style="border-color:black;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:{ModifiedPaddingHeight} 0px;text-align:left;vertical-align:top;word-break:normal;width:100%;" colspan="3"><div style="margin:5px 0px 0px 10px;width:100%;text-align:left;font-family:Playball, cursive;font-size:18px;font-weight:normal;border-top: 1px none white;color:white;padding:0px 0px;">{MembershipCardType}</div><br><div style="margin:-32px 0px 0px 10px;width:100%;text-align:left;color:white;font-family:Orbitron;font-size:16px;font-weight:normal;border-top: 1px none white;padding:0px 0px">123 4567</div><br><div style="margin:-27px 0px 0px 10px;width:100%;text-align:left;color:white;font-family:Orbitron;font-size:10px;font-weight:normal;border-top: 1px none white;padding:0px 0px">MEMBER NAME</div></td><td style="border-color:black;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal;width:5%;"></td></tr><tr><td style="border-color:black;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:top;word-break:normal" colspan="2"><div style="margin:16px 0px 0px 15px;width:100%;text-align:left;color:white;font-family:Orbitron,sans-serif;font-size:7px;font-weight:normal;border-top: 1px none white;padding:0px 0px">Member Since</div><br><div style="margin:-23px 0px 0px 15px;width:100%;text-align:left;color:white;font-family:Orbitron,sans-serif;font-size:7px;font-weight:normal;border-top: 1px none white;padding:0px 0px">After Approved</div><br><div style="margin:-18px 0px 0px 0px;width:100%;text-align:left;color:transparent;font-family:Orbitron,sans-serif;font-size:7px;font-weight:normal;border-top: 1px none white;padding:0px 0px;height:5px">After Approved</div></td><td style="border-color:black;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:10px;overflow:hidden;padding:0px 0px;text-align:right;vertical-align:top;word-break:normal"><div style="margin:16px 0px 0px -15px;width:100%;text-align:right;color:white;font-family:Orbitron,sans-serif;font-size:7px;font-weight:normal;border-top: 1px none white;padding:0px 0px">Valid Until</div><br><div style="margin:-17px 0px 0px -15px;width:100%;text-align:right;color:white;font-family:Orbitron,sans-serif;font-size:7px;font-weight:normal;border-top: 1px none white;padding:0px 0px">{ModifiedStrExpiredDate}</div></td></tr></tbody></table>' +
+                        '<div class="myContent" style="background-color:transparent;width:320px;height:auto;">',
+                            '<div style="margin:0px 0px 0px 0px;width:300px;height:180px;background-color: #fac;background-image: url({MembershipCardBackgroundImg});background-size: 100% 100%;border-radius: 20px 20px 20px 20px;">' +
+                            '<table style="border-collapse:collapse;border-spacing:0;border:none;width:100%;margin:0px 0px 0px 0px;" OnClick="FloatPanel_MembershipCardList_NotYetSubscribedShow_FromDashboard_Main(`{MembershipCardCode}`,`{EnterpriseAccNo}`,`{isMembershipCardSubscribed}`,`{MembershipCardFeePaymentCycle}`,`{CountStar}`,`{CountReviewer}`)" ><tr><td style="background-color:transparent;border-color:black;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 10px;text-align:left;vertical-align:middle;word-break:normal;width:100%;{ModifiedHeaderHeight}" colspan="3">{ModifiedEnterprisesLogo}{ModifiedEnterprisesName}</td></tr><tbody><tr><td style="border-color:black;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:{ModifiedPaddingHeight} 0px;text-align:left;vertical-align:top;word-break:normal;width:100%;" colspan="3"><div style="margin:-5px 0px 0px 10px;width:100%;text-align:left;font-family:Playball, cursive;font-size:20px;font-weight:normal;border-top: 1px none white;color:white;padding:0px 0px;">{MembershipCardType}</div><br><div style="margin:-34px 0px 0px 10px;width:100%;text-align:left;color:white;font-family:Orbitron;font-size:18px;font-weight:normal;border-top: 1px none white;padding:0px 0px">123 4567</div><br><div style="margin:-29px 0px 0px 10px;width:100%;text-align:left;color:white;font-family:Orbitron;font-size:12px;font-weight:normal;border-top: 1px none white;padding:0px 0px">MEMBER NAME</div></td><td style="border-color:black;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal;width:5%;"></td></tr><tr><td style="border-color:black;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:top;word-break:normal" colspan="2"><div style="margin:16px 0px 0px 15px;width:100%;text-align:left;color:white;font-family:Orbitron,sans-serif;font-size:7px;font-weight:normal;border-top: 1px none white;padding:0px 0px">Member Since</div><br><div style="margin:-23px 0px 0px 15px;width:100%;text-align:left;color:white;font-family:Orbitron,sans-serif;font-size:7px;font-weight:normal;border-top: 1px none white;padding:0px 0px">After Approved</div><br><div style="margin:-18px 0px 0px 0px;width:100%;text-align:left;color:transparent;font-family:Orbitron,sans-serif;font-size:7px;font-weight:normal;border-top: 1px none white;padding:0px 0px;height:5px">After Approved</div></td><td style="border-color:black;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:10px;overflow:hidden;padding:0px 0px;text-align:right;vertical-align:top;word-break:normal"><div style="margin:16px 0px 0px -15px;width:100%;text-align:right;color:white;font-family:Orbitron,sans-serif;font-size:7px;font-weight:normal;border-top: 1px none white;padding:0px 0px">Valid Until</div><br><div style="margin:-17px 0px 0px -15px;width:100%;text-align:right;color:white;font-family:Orbitron,sans-serif;font-size:7px;font-weight:normal;border-top: 1px none white;padding:0px 0px">{ModifiedStrExpiredDate}</div></td><br><div style="margin:-18px 0px 0px 0px;width:100%;text-align:left;color:transparent;font-family:Orbitron,sans-serif;font-size:11px;font-weight:normal;border-top: 1px none white;padding:0px 0px;height:5px">After Approved</div></tr></tbody></table>' +
                             '</div>' + // Note: There was a missing closing </div> tag here in your original code
                             '<div style="margin:5px 0px 0px 10px;width:100%;text-align:center;color:black;font-family:Arial, sans-serif;font-size:15px;font-weight:bold;border-top: 1px none white;padding:0px 0px"><div style="width:100%;text-align:left;">RM{MembershipCardFee}<br><div style="margin:-5px 0px 0px 0px;font-size:10px;font-weight:normal">Membership Fees</div></div><div style="width:100%;text-align:right;margin:-15px 0px 0px -20px"></div></div>' +
                             '<br><div style="margin:-12px 0px 0px 10px;width:100%;text-align:center;color:black;font-family:Arial, sans-serif;font-size:10px;font-weight:normal;border-top: 1px none white;padding:0px 0px"><div style="width:100%;text-align:left;margin:-20px 0px 0px 0px;"></div><div style="width:100%;text-align:right;margin:-42px 0px 0px -20px;color:black;font-family:Arial, sans-serif;font-size:15px;font-weight:bold;"><div class="blink_me"><div style="margin:0px 25px 0px 0px;font-size:10px;font-weight:normal;"><img src="resources/icons/getItNow01.png" style="width:90px;height:25px;"></div></div></div></div>',
@@ -2202,7 +2201,7 @@ itemTpl:'<div onclick="FloatPanel_AyohaEnterpriseRewardItem_MembershipCardLoadBy
                 width: '100%',
                 hidden: false,
                 id:'containerDashboard_AyohaMerchantLoyaltyCampaignList',
-                margin: '0 0 0 0',
+                margin: '20 0 0 0',
                 // style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1 ;background: white;border-radius: 0px 15px 15px 0px;',
                 //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
                 style: 'background-color:transparent',
@@ -2250,30 +2249,15 @@ itemTpl:'<div onclick="FloatPanel_AyohaEnterpriseRewardItem_MembershipCardLoadBy
                 ]
             },
 
-            ////////////////////// main conteiner for loyalty campaign items ////////////////////////
-            {
-                xtype: 'container',
-                width: '100%',
-                height:300,
-                hidden: false,
-                margin: '10 0 0 0',
-                style: 'background-color:transparent',
-                // scrollable: {
-                //     direction: 'horizontal',
-                //     directionLock: true,
-                //     indicators: false
-                // },
-                layout: {
-                type: 'vbox',
-                pack: 'center',
-                align: 'center',
-                },
-                items:[
-                    //////////////////////////////////line 1 start -NEW///////////////////////////////
+
+
+
+
+
 
             {
                 xtype: 'container',
-                width: '90%',
+                width: '100%',
                 height:90,
                 hidden: false,
                 margin: '0 0 0 0',
@@ -2296,7 +2280,7 @@ itemTpl:'<div onclick="FloatPanel_AyohaEnterpriseRewardItem_MembershipCardLoadBy
                         xtype: 'container',
                        // width: '33.3%',
                        //width: 150,
-                       width: '33.33%',
+                       width: '25%',
                         height:80,
                         hidden: false,
                         margin: '0 0 0 0',
@@ -2308,17 +2292,15 @@ itemTpl:'<div onclick="FloatPanel_AyohaEnterpriseRewardItem_MembershipCardLoadBy
                         },items:[
                             {
                                 xtype: 'container',
-                              
-                               // width: '100%',
+                               // width: '90%',
+                                width: '100%',
                                 height:80,
                                 hidden: false,
                                 margin: '19 0 0 0',
                                 id:'containerMyAccount_Dashboard_StampCardLoyaltyID',
                                 name:'namecontainerMyAccount_Dashboard_StampCardLoyalty',
-                                //style: 'background-color:transparent',
-                                width: '80%',
-                                style: 'border:2px solid #E5E7EB;background: white;border-radius: 10px 10px 10px 10px;',
-                               // style: 'border-right:2px solid #E5E7EB;border-left:2px solid #E5E7EB;border-bottom:2px solid #E5E7EB;border-top:2px solid #E5E7EB;background: white;border-radius: 10px 10px 10px 10px;',
+                                style: 'background-color:transparent',
+                                //style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 10px 10px 10px 10px;',
                                 layout: {
                                 type: 'vbox',
                                 pack: 'center',
@@ -2389,7 +2371,7 @@ itemTpl:'<div onclick="FloatPanel_AyohaEnterpriseRewardItem_MembershipCardLoadBy
                     {
                         xtype: 'container',
                        // width: '33.3%',
-                       width: '33.33%',
+                       width: '25%',
                      //  width: 150,
                         // id:'containerMyAccount_Dashboard_MembershipCardHub',
                         // name:'nameContainerMyAccount_Dashboard_MembershipCardHub',
@@ -2406,13 +2388,12 @@ itemTpl:'<div onclick="FloatPanel_AyohaEnterpriseRewardItem_MembershipCardLoadBy
                         },items:[
                             {
                                 xtype: 'container',
-                                //width: '100%',
+                                width: '100%',
                                 height:80,
                                 hidden: false,
                                 margin: '19 0 0 0',
-                               // style: 'background-color:transparent',
-                               width: '80%',
-                                style: 'border:2px solid #E5E7EB;background: white;border-radius: 10px 10px 10px 10px;',
+                                style: 'background-color:transparent',
+                               // style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 10px 10px 10px 10px;',
                                 layout: {
                                 type: 'vbox',
                                 pack: 'center',
@@ -2474,7 +2455,7 @@ itemTpl:'<div onclick="FloatPanel_AyohaEnterpriseRewardItem_MembershipCardLoadBy
                         xtype: 'container',
                        // width: '33.3%',
                       // width: 150,
-                      width: '33.33%',
+                      width: '25%',
                         height:80,
                         hidden: false,
                         margin: '0 0 0 0',
@@ -2488,13 +2469,14 @@ itemTpl:'<div onclick="FloatPanel_AyohaEnterpriseRewardItem_MembershipCardLoadBy
                         },items:[
                             {
                                 xtype: 'container',
-                              //  width: '100%',
+                                width: '100%',
                                 height:80,
                                 hidden: false,
                                 margin: '19 0 0 0',
-                                //style: 'background-color:transparent',
-                                width: '80%',
-                                style: 'border:2px solid #E5E7EB;background: white;border-radius: 10px 10px 10px 10px;',
+                                style: 'background-color:transparent',
+                                // id:'containerMyAccount_Dashboard_AyohaMerchantStoreID',
+                                // name:'nameContainerMyAccount_Dashboard_AyohaMerchantStore',
+                                //style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 10px 10px 10px 10px;',
                                 layout: {
                                 type: 'vbox',
                                 pack: 'center',
@@ -2556,296 +2538,11 @@ itemTpl:'<div onclick="FloatPanel_AyohaEnterpriseRewardItem_MembershipCardLoadBy
 
 
 
-                    // {
-                    //     xtype: 'container',
-                    //    // width: '33.3%',
-                    //   // width: 150,
-                    //   width: '25%',
-                    //     height:80,
-                    //     hidden: false,
-                    //     margin: '0 0 0 0',
-                    //     id:'containerMyAccount_Dashboard_ContestCardLoyaltyID',
-                    //     name:'namecontainerMyAccount_Dashboard_ContestCardLoyalty',
-                    //     style: 'background-color:transparent',
-                    //     layout: {
-                    //     type: 'hbox',
-                    //     pack: 'center',
-                    //     align: 'center',                     
-                    //     },items:[
-                    //         {
-                    //             xtype: 'container',
-                    //             width: '100%',
-                    //             height:80,
-                    //             hidden: false,
-                    //             margin: '19 0 0 0',
-                    //             style: 'background-color:transparent',
-                    //             // id:'containerMyAccount_Dashboard_AyohaMerchantShoppingBagID',
-                    //             // name:'nameMyAccount_Dashboard_AyohaMerchantShoppingBag',
-                    //             //style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 10px 10px 10px 10px;',
-                    //             layout: {
-                    //             type: 'vbox',
-                    //             pack: 'center',
-                    //             align: 'center',
-                    //             },items:[
-                    //                 {
-                    //                     margin: '0 0 0 28',
-                    //                     height: 20,
-                    //                     width: 20,
-                    //                    // hidden: true,
-                    //                     zIndex:10,
-                    //                    // id:'txtMyAccount_Dashboard_ContestCardLoyaltyBadgeID',
-                    //                  // html: '<div style="text-align:center;font-size:12px;color:white;background-color:red;width:20px;height:20px;border-radius:50%;font-weight:bold;padding:2px 0px;">0</div>',
-                    //               html:' <div id="txtMyAccount_Dashboard_ContestCardLoyaltyBadgeID" style="'+
-                    //               'position: absolute;display:none;'+
-                    //               'top: -10px;'+
-                    //               'right: -5px;'+
-                    //                //'background-color: #FF1493;'+
-                    //                'background-color: #fac;background-image: linear-gradient(#c800ffc9,#ff00de75);'+
-                    //               'color: white;'+
-                    //               'border-radius: 50%;'+ 
-                    //               'width: 28px;'+
-                    //               'height: 28px;'+
-                    //               'font-size: 12px;'+
-                    //               'font-weight: bold;'+
-                    //              // 'display: flex;'+
-                    //               'align-items: center;'+
-                    //               'justify-content: center;'+
-                    //               'border: 2px solid white; '+
-                    //               '">'+
-                    //               '3'+
-                    //               '</div>',
-                                  
-                                  
-                    //                 },
-                    //                 {
-
-
-                    //                     margin: '-15 0 0 0',
-                    //                     html:'<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; font-family: sans-serif;">'+ 
-                    //                     //'<div style="background: linear-gradient(135deg, rgba(238,130,238,0.3), rgba(255,182,193,0.3)); border-radius: 12px; padding: 10px 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">' + 
-                    //                     '<img src="resources/icons/ContestFeature01.png" style="width: 30px; height: 30px; margin-bottom: 5px;" ></img>'+ 
-                    //                    // '</div>' + 
-                    //                     '<div style="font-size: 10px; font-weight: normal; color: black; text-align: center; margin: 4px 0px 0px 0px;">'+ 
-                    //                     'Membership<br>'+ 
-                    //                     '<span style="display: block; margin-top: -2px;">Contest</span>'+ 
-                    //                     '</div>'+ 
-                    //                     '</div>'
-                                         
-                                                
-                    //                             },
-                                               
-                                   
-                                   
-                    //             ]
-                    //         }
-                    //     ]
-                    // },
-                ]
-            },
-
-//////////////////////////////////line 1 end -NEW///////////////////////////////
-
-
-//////////////////////////////////line 2 start -NEW///////////////////////////////
-{
-    xtype: 'container',
-    width: '90%',
-    height:90,
-    hidden: false,
-    margin: '20 0 0 0',
-    style: 'background-color:transparent',
-    // scrollable: {
-    //     direction: 'horizontal',
-    //     directionLock: true,
-    //     indicators: false
-    // },
-    layout: {
-    type: 'hbox',
-    pack: 'center',
-    align: 'center',
-    },
-    items:[
-      
-        
-
-        {
-            xtype: 'container',
-            width: '33.33%',
-            height:80,
-            id:'containerMyAccount_Dashboard_VoucherCardLoyaltyID',
-            name:'namecontainerMyAccount_Dashboard_VoucherCardLoyalty',
-            hidden: false,
-            margin: '0 0 0 0',
-            style: 'background-color:transparent',
-            layout: {
-            type: 'hbox',
-            pack: 'center',
-            align: 'center',
-            },items:[
-                {
-                    xtype: 'container',
-                    width: '80%',
-                    style: 'border:2px solid #E5E7EB;background: white;border-radius: 10px 10px 10px 10px;',
-                    height:80,
-                    hidden: false,
-                    margin: '0 0 0 0',
-                    // id:'containerMyAccount_Dashboard_AyohaMerchantRewardID',
-                    // name:'nameContainerMyAccount_Dashboard_AyohaMerchantReward',
-                   // style: 'background-color:transparent',
-                    //style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 10px 10px 10px 10px;',
-                    layout: {
-                    type: 'vbox',
-                    pack: 'center',
-                    align: 'center',
-                    },items:[
-                        {
-                            margin: '0 0 0 28',
-                            height: 20,
-                            width: 20,
-                           // hidden: true,
-                            zIndex:10,
-                           // id:'txtMyAccount_Dashboard_VoucherCardLoyaltyBadgeID',
-                         // html: '<div style="text-align:center;font-size:12px;color:white;background-color:red;width:20px;height:20px;border-radius:50%;font-weight:bold;padding:2px 0px;">0</div>',
-                      html:' <div id="txtMyAccount_Dashboard_VoucherCardLoyaltyBadgeID" style="'+
-                      'position: absolute;display:none;'+
-                      'top: -10px;'+
-                      'right: -5px;'+
-                      //'background-color: #FF1493;'+
-                      'background-color: #fac;background-image: linear-gradient(#c800ffc9,#ff00de75);'+
-                      'color: white;'+
-                      'border-radius: 50%;'+ 
-                      'width: 28px;'+
-                      'height: 28px;'+
-                      'font-size: 12px;'+
-                      'font-weight: bold;'+
-                      //'display: flex;'+
-                      'align-items: center;'+
-                      'justify-content: center;'+
-                      'border: 2px solid white; '+
-                      '">'+
-                      '0'+
-                      '</div>',
-                      
-                      
-                        },
-                        {
-
-
-
-                            // html:'<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; font-family: sans-serif;">'+ 
-                            // '<img src="resources/icons/merchantreward01.png" style="width: 30px; height: 30px; margin-bottom: 5px;" />'+ 
-                            // '<div style="font-size: 10px; font-weight: normal; color: black; text-align: center;">'+ 
-                            // 'Merchant<br>'+ 
-                            // '<span style="display: block; margin-top: -4px;">Reward</span>'+ 
-                            // '</div>'+ 
-                            // '</div>'
-
-                            margin: '-15 0 0 0',
-                            html:'<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; font-family: sans-serif;">' + 
-                          //  '<div style="background: linear-gradient(135deg, rgba(238,130,238,0.3), rgba(255,182,193,0.3)); border-radius: 12px; padding: 10px 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">' + 
-                         
-                            '<img src="resources/icons/VoucherFeature01.png" style="width: 32px; height: 32px; margin-bottom: 5px;" />'+ 
-                              //  '</div>' + 
-                                '<div style="font-size: 10px; font-weight: normal; color: black; text-align: center;margin: 4px 0px 0px 0px;">' + 
-                                    'Voucher<br>' + 
-                                    '<span style="display: block; margin-top: -2px;">Loyalty</span>' +                                            
-                           '</div>' + 
-                        '</div>'
-                             
-                                    
-                                    },
-                       
-                       
-                    ]
-                }
-            ]
-        },
-        {
-            xtype: 'container',
-            width: '33.33%',
-            height:80,
-            hidden: false,
-            margin: '0 0 0 0',
-            id:'containerMyAccount_Dashboard_EventCardLoyaltyID',
-            name:'namecontainerMyAccount_Dashboard_EventCardLoyalty',
-            style: 'background-color:transparent',
-            layout: {
-            type: 'hbox',
-            pack: 'center',
-            align: 'center',
-            },items:[
-                {
-                    xtype: 'container',
-                    width: '80%',
-                    style: 'border:2px solid #E5E7EB;background: white;border-radius: 10px 10px 10px 10px;',
-                    height:80,
-                    hidden: false,
-                    margin: '0 0 0 0',
-                    //style: 'background-color:transparent',
-                   // style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 10px 10px 10px 10px;',
-                    layout: {
-                    type: 'vbox',
-                    pack: 'center',
-                    align: 'center',
-                    },items:[
-                        {
-                            margin: '0 0 0 28',
-                            height: 20,
-                            width: 20,
-                           // hidden: true,
-                            zIndex:10,
-                            //id:'txtMyAccount_Dashboard_EventCardLoyaltyBadgeID',
-                         // html: '<div style="text-align:center;font-size:12px;color:white;background-color:red;width:20px;height:20px;border-radius:50%;font-weight:bold;padding:2px 0px;">0</div>',
-                      html:'<div id="txtMyAccount_Dashboard_EventCardLoyaltyBadgeID" style="'+
-                      'position: absolute;display:none;'+
-                      'top: -10px;'+
-                      'right: -5px;'+
-                      //'background-color: #FF1493;'+
-                      'background-color: #fac;background-image: linear-gradient(#c800ffc9,#ff00de75);'+
-                      'color: white;'+
-                      'border-radius: 50%;'+ 
-                      'width: 28px;'+
-                      'height: 28px;'+
-                      'font-size: 12px;'+
-                      'font-weight: bold;'+
-                      //'display: flex;'+
-                      'align-items: center;'+
-                      'justify-content: center;'+
-                      'border: 2px solid white; '+
-                      '">'+
-                      '0'+
-                      '</div>',
-                      
-                      
-                        },
-                        {
-
-
-                            margin: '-15 0 0 0',
-                            html:'<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; font-family: sans-serif;">'+ 
-                           // '<div style="background: linear-gradient(135deg, rgba(238,130,238,0.3), rgba(255,182,193,0.3)); border-radius: 12px; padding: 10px 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">' + 
-                            '<img src="resources/icons/EventFeature01.png" style="width: 32px; height: 32px; margin-bottom: 5px;" />'+ 
-                           // '</div>' + 
-                            '<div style="font-size: 10px; font-weight: normal; color: black; text-align: center;margin: 4px 0px 0px 0px;">'+ 
-                            'Membership<br>'+ 
-                            '<span style="display: block; margin-top: -2px;">Event</span>'+ 
-                            '</div>'+ 
-                            '</div>'
-                             
-                                    
-                                    },
-                       
-                       
-                    ]
-                }
-            ]
-        },
-
-  {
+                    {
                         xtype: 'container',
                        // width: '33.3%',
                       // width: 150,
-                      width: '33.33%',
+                      width: '25%',
                         height:80,
                         hidden: false,
                         margin: '0 0 0 0',
@@ -2859,12 +2556,11 @@ itemTpl:'<div onclick="FloatPanel_AyohaEnterpriseRewardItem_MembershipCardLoadBy
                         },items:[
                             {
                                 xtype: 'container',
-                                width: '80%',
-                                style: 'border:2px solid #E5E7EB;background: white;border-radius: 10px 10px 10px 10px;',
+                                width: '100%',
                                 height:80,
                                 hidden: false,
-                               // margin: '19 0 0 0',
-                               // style: 'background-color:transparent',
+                                margin: '19 0 0 0',
+                                style: 'background-color:transparent',
                                 // id:'containerMyAccount_Dashboard_AyohaMerchantShoppingBagID',
                                 // name:'nameMyAccount_Dashboard_AyohaMerchantShoppingBag',
                                 //style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 10px 10px 10px 10px;',
@@ -2926,174 +2622,387 @@ itemTpl:'<div onclick="FloatPanel_AyohaEnterpriseRewardItem_MembershipCardLoadBy
                             }
                         ]
                     },
+                ]
+            },
+
+
+
+
+
+
+            {
+                xtype: 'container',
+                width: '100%',
+                height:90,
+                hidden: false,
+                margin: '20 0 0 0',
+                style: 'background-color:transparent',
+                // scrollable: {
+                //     direction: 'horizontal',
+                //     directionLock: true,
+                //     indicators: false
+                // },
+                layout: {
+                type: 'hbox',
+                pack: 'center',
+                align: 'center',
+                },
+                items:[
+                  
+                    
+
+                    {
+                        xtype: 'container',
+                       // width: '33.3%',
+                       //width: 150,
+                       width: '25%',
+                        height:80,
+                        id:'containerMyAccount_Dashboard_VoucherCardLoyaltyID',
+                        name:'namecontainerMyAccount_Dashboard_VoucherCardLoyalty',
+                        hidden: false,
+                        margin: '0 0 0 0',
+                        style: 'background-color:transparent',
+                        layout: {
+                        type: 'hbox',
+                        pack: 'center',
+                        align: 'center',
+                        },items:[
+                            {
+                                xtype: 'container',
+                               // width: '90%',
+                                width: '100%',
+                                height:80,
+                                hidden: false,
+                                margin: '0 0 0 0',
+                                // id:'containerMyAccount_Dashboard_AyohaMerchantRewardID',
+                                // name:'nameContainerMyAccount_Dashboard_AyohaMerchantReward',
+                                style: 'background-color:transparent',
+                                //style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 10px 10px 10px 10px;',
+                                layout: {
+                                type: 'vbox',
+                                pack: 'center',
+                                align: 'center',
+                                },items:[
+                                    {
+                                        margin: '0 0 0 28',
+                                        height: 20,
+                                        width: 20,
+                                       // hidden: true,
+                                        zIndex:10,
+                                       // id:'txtMyAccount_Dashboard_VoucherCardLoyaltyBadgeID',
+                                     // html: '<div style="text-align:center;font-size:12px;color:white;background-color:red;width:20px;height:20px;border-radius:50%;font-weight:bold;padding:2px 0px;">0</div>',
+                                  html:' <div id="txtMyAccount_Dashboard_VoucherCardLoyaltyBadgeID" style="'+
+                                  'position: absolute;display:none;'+
+                                  'top: -10px;'+
+                                  'right: -5px;'+
+                                  //'background-color: #FF1493;'+
+                                  'background-color: #fac;background-image: linear-gradient(#c800ffc9,#ff00de75);'+
+                                  'color: white;'+
+                                  'border-radius: 50%;'+ 
+                                  'width: 28px;'+
+                                  'height: 28px;'+
+                                  'font-size: 12px;'+
+                                  'font-weight: bold;'+
+                                  //'display: flex;'+
+                                  'align-items: center;'+
+                                  'justify-content: center;'+
+                                  'border: 2px solid white; '+
+                                  '">'+
+                                  '0'+
+                                  '</div>',
+                                  
+                                  
+                                    },
+                                    {
+
+
+
+                                        // html:'<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; font-family: sans-serif;">'+ 
+                                        // '<img src="resources/icons/merchantreward01.png" style="width: 30px; height: 30px; margin-bottom: 5px;" />'+ 
+                                        // '<div style="font-size: 10px; font-weight: normal; color: black; text-align: center;">'+ 
+                                        // 'Merchant<br>'+ 
+                                        // '<span style="display: block; margin-top: -4px;">Reward</span>'+ 
+                                        // '</div>'+ 
+                                        // '</div>'
+
+                                        margin: '-15 0 0 0',
+                                        html:'<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; font-family: sans-serif;">' + 
+                                      //  '<div style="background: linear-gradient(135deg, rgba(238,130,238,0.3), rgba(255,182,193,0.3)); border-radius: 12px; padding: 10px 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">' + 
+                                     
+                                        '<img src="resources/icons/VoucherFeature01.png" style="width: 32px; height: 32px; margin-bottom: 5px;" />'+ 
+                                          //  '</div>' + 
+                                            '<div style="font-size: 10px; font-weight: normal; color: black; text-align: center;margin: 4px 0px 0px 0px;">' + 
+                                                'Voucher<br>' + 
+                                                '<span style="display: block; margin-top: -2px;">Loyalty</span>' +                                            
+                                       '</div>' + 
+                                    '</div>'
+                                         
+                                                
+                                                },
+                                   
+                                   
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        xtype: 'container',
+                       // width: '33.3%',
+                       width: '25%',
+                     //  width: 150,
+                        // id:'containerMyAccount_Dashboard_MembershipCardHub',
+                        // name:'nameContainerMyAccount_Dashboard_MembershipCardHub',
+                        height:80,
+                        hidden: false,
+                        margin: '0 0 0 0',
+                        id:'containerMyAccount_Dashboard_EventCardLoyaltyID',
+                        name:'namecontainerMyAccount_Dashboard_EventCardLoyalty',
+                        style: 'background-color:transparent',
+                        layout: {
+                        type: 'hbox',
+                        pack: 'center',
+                        align: 'center',
+                        },items:[
+                            {
+                                xtype: 'container',
+                                width: '100%',
+                                height:80,
+                                hidden: false,
+                                margin: '0 0 0 0',
+                                style: 'background-color:transparent',
+                               // style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 10px 10px 10px 10px;',
+                                layout: {
+                                type: 'vbox',
+                                pack: 'center',
+                                align: 'center',
+                                },items:[
+                                    {
+                                        margin: '0 0 0 28',
+                                        height: 20,
+                                        width: 20,
+                                       // hidden: true,
+                                        zIndex:10,
+                                        //id:'txtMyAccount_Dashboard_EventCardLoyaltyBadgeID',
+                                     // html: '<div style="text-align:center;font-size:12px;color:white;background-color:red;width:20px;height:20px;border-radius:50%;font-weight:bold;padding:2px 0px;">0</div>',
+                                  html:'<div id="txtMyAccount_Dashboard_EventCardLoyaltyBadgeID" style="'+
+                                  'position: absolute;display:none;'+
+                                  'top: -10px;'+
+                                  'right: -5px;'+
+                                  //'background-color: #FF1493;'+
+                                  'background-color: #fac;background-image: linear-gradient(#c800ffc9,#ff00de75);'+
+                                  'color: white;'+
+                                  'border-radius: 50%;'+ 
+                                  'width: 28px;'+
+                                  'height: 28px;'+
+                                  'font-size: 12px;'+
+                                  'font-weight: bold;'+
+                                  //'display: flex;'+
+                                  'align-items: center;'+
+                                  'justify-content: center;'+
+                                  'border: 2px solid white; '+
+                                  '">'+
+                                  '0'+
+                                  '</div>',
+                                  
+                                  
+                                    },
+                                    {
+
+
+                                        margin: '-15 0 0 0',
+                                        html:'<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; font-family: sans-serif;">'+ 
+                                       // '<div style="background: linear-gradient(135deg, rgba(238,130,238,0.3), rgba(255,182,193,0.3)); border-radius: 12px; padding: 10px 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">' + 
+                                        '<img src="resources/icons/EventFeature01.png" style="width: 32px; height: 32px; margin-bottom: 5px;" />'+ 
+                                       // '</div>' + 
+                                        '<div style="font-size: 10px; font-weight: normal; color: black; text-align: center;margin: 4px 0px 0px 0px;">'+ 
+                                        'Membership<br>'+ 
+                                        '<span style="display: block; margin-top: -2px;">Event</span>'+ 
+                                        '</div>'+ 
+                                        '</div>'
+                                         
+                                                
+                                                },
+                                   
+                                   
+                                ]
+                            }
+                        ]
+                    },
+
+
 /////////////////////////////////gamification
 
-// {
-// xtype: 'container',
-// width: '33.33%',
-// //  width: 150,
-// // id:'containerMyAccount_Dashboard_MembershipCardHub',
-// // name:'nameContainerMyAccount_Dashboard_MembershipCardHub',
-// height:80,
-// hidden: false,
-// margin: '0 0 0 0',
-// id:'containerMyAccount_Dashboard_GamificationCardLoyaltyID',
-// name:'namecontainerMyAccount_Dashboard_GamificationCardLoyalty',
-// style: 'background-color:transparent',
-// layout: {
-// type: 'hbox',
-// pack: 'center',
-// align: 'center',
-// },items:[
-// {
-// xtype: 'container',
-// width: '100%',
-// height:80,
-// hidden: false,
-// margin: '0 0 0 0',
-// style: 'background-color:transparent',
-// // style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 10px 10px 10px 10px;',
-// layout: {
-// type: 'vbox',
-// pack: 'center',
-// align: 'center',
-// },items:[
-//     {
-//         margin: '0 0 0 28',
-//         height: 20,
-//         width: 20,
-//        // hidden: true,
-//         zIndex:10,
-//         //id:'txtMyAccount_Dashboard_EventCardLoyaltyBadgeID',
-//      // html: '<div style="text-align:center;font-size:12px;color:white;background-color:red;width:20px;height:20px;border-radius:50%;font-weight:bold;padding:2px 0px;">0</div>',
-//   html:'<div id="txtMyAccount_Dashboard_GamificationCardLoyaltyBadgeID" style="'+
-//   'position: absolute;display:none;'+
-//   'top: -10px;'+
-//   'right: -5px;'+
-//   //'background-color: #FF1493;'+
-//   'background-color: #fac;background-image: linear-gradient(#c800ffc9,#ff00de75);'+
-//   'color: white;'+
-//   'border-radius: 50%;'+ 
-//   'width: 28px;'+
-//   'height: 28px;'+
-//   'font-size: 12px;'+
-//   'font-weight: bold;'+
-//   //'display: flex;'+
-//   'align-items: center;'+
-//   'justify-content: center;'+
-//   'border: 2px solid white; '+
-//   '">'+
-//   '0'+
-//   '</div>',
-  
-  
-//     },
-//     {
+{
+    xtype: 'container',
+   // width: '33.3%',
+   width: '25%',
+ //  width: 150,
+    // id:'containerMyAccount_Dashboard_MembershipCardHub',
+    // name:'nameContainerMyAccount_Dashboard_MembershipCardHub',
+    height:80,
+    hidden: false,
+    margin: '0 0 0 0',
+    id:'containerMyAccount_Dashboard_GamificationCardLoyaltyID',
+    name:'namecontainerMyAccount_Dashboard_GamificationCardLoyalty',
+    style: 'background-color:transparent',
+    layout: {
+    type: 'hbox',
+    pack: 'center',
+    align: 'center',
+    },items:[
+        {
+            xtype: 'container',
+            width: '100%',
+            height:80,
+            hidden: false,
+            margin: '0 0 0 0',
+            style: 'background-color:transparent',
+           // style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 10px 10px 10px 10px;',
+            layout: {
+            type: 'vbox',
+            pack: 'center',
+            align: 'center',
+            },items:[
+                {
+                    margin: '0 0 0 28',
+                    height: 20,
+                    width: 20,
+                   // hidden: true,
+                    zIndex:10,
+                    //id:'txtMyAccount_Dashboard_EventCardLoyaltyBadgeID',
+                 // html: '<div style="text-align:center;font-size:12px;color:white;background-color:red;width:20px;height:20px;border-radius:50%;font-weight:bold;padding:2px 0px;">0</div>',
+              html:'<div id="txtMyAccount_Dashboard_GamificationCardLoyaltyBadgeID" style="'+
+              'position: absolute;display:none;'+
+              'top: -10px;'+
+              'right: -5px;'+
+              //'background-color: #FF1493;'+
+              'background-color: #fac;background-image: linear-gradient(#c800ffc9,#ff00de75);'+
+              'color: white;'+
+              'border-radius: 50%;'+ 
+              'width: 28px;'+
+              'height: 28px;'+
+              'font-size: 12px;'+
+              'font-weight: bold;'+
+              //'display: flex;'+
+              'align-items: center;'+
+              'justify-content: center;'+
+              'border: 2px solid white; '+
+              '">'+
+              '0'+
+              '</div>',
+              
+              
+                },
+                {
 
 
-//         margin: '-15 0 0 0',
-//         html:'<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; font-family: sans-serif;">'+ 
-//        // '<div style="background: linear-gradient(135deg, rgba(238,130,238,0.3), rgba(255,182,193,0.3)); border-radius: 12px; padding: 10px 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">' + 
-//         '<img src="resources/icons/gameficationIcon_9CA3AF.png" style="width: 32px; height: 32px; margin-bottom: 5px;" />'+ 
-//        // '</div>' + 
-//         '<div style="font-size: 10px; font-weight: normal; color: #9CA3AF; text-align: center;margin: 4px 0px 0px 0px;">'+ 
-//         'Game<br>'+ 
-//         '<span style="display: block; margin-top: -2px;">Quests</span>'+ 
-//         '</div>'+ 
-//         '</div>'
-         
-                
-//                 },
-   
-   
-// ]
-// }
-// ]
-// },
+                    margin: '-15 0 0 0',
+                    html:'<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; font-family: sans-serif;">'+ 
+                   // '<div style="background: linear-gradient(135deg, rgba(238,130,238,0.3), rgba(255,182,193,0.3)); border-radius: 12px; padding: 10px 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">' + 
+                    '<img src="resources/icons/gameficationIcon_9CA3AF.png" style="width: 32px; height: 32px; margin-bottom: 5px;" />'+ 
+                   // '</div>' + 
+                    '<div style="font-size: 10px; font-weight: normal; color: #9CA3AF; text-align: center;margin: 4px 0px 0px 0px;">'+ 
+                    'Game<br>'+ 
+                    '<span style="display: block; margin-top: -2px;">Quests</span>'+ 
+                    '</div>'+ 
+                    '</div>'
+                     
+                            
+                            },
+               
+               
+            ]
+        }
+    ]
+},
 
 /////////////////////////////////
 
 /////////////////////////////////Referral
 
-// {
-// xtype: 'container',
-// width: '33.33%',
-// height:80,
-// hidden: false,
-// margin: '0 0 0 0',
-// id:'containerMyAccount_Dashboard_AnniverseryCardLoyaltyID',
-// name:'namecontainerMyAccount_Dashboard_AnniverseryCardLoyalty',
-// style: 'background-color:transparent',
-// layout: {
-// type: 'hbox',
-// pack: 'center',
-// align: 'center',
-// },items:[
-// {
-// xtype: 'container',
-// width: '100%',
-// height:80,
-// hidden: false,
-// margin: '0 0 0 0',
-// style: 'background-color:transparent',
-// // style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 10px 10px 10px 10px;',
-// layout: {
-// type: 'vbox',
-// pack: 'center',
-// align: 'center',
-// },items:[
-//     {
-//         margin: '0 0 0 28',
-//         height: 20,
-//         width: 20,
-//        // hidden: true,
-//         zIndex:10,
-//         //id:'txtMyAccount_Dashboard_EventCardLoyaltyBadgeID',
-//      // html: '<div style="text-align:center;font-size:12px;color:white;background-color:red;width:20px;height:20px;border-radius:50%;font-weight:bold;padding:2px 0px;">0</div>',
-//   html:'<div id="txtMyAccount_Dashboard_AnniverseryCardLoyaltyBadgeID" style="'+
-//   'position: absolute;display:none;'+
-//   'top: -10px;'+
-//   'right: -5px;'+
-//   //'background-color: #FF1493;'+
-//   'background-color: #fac;background-image: linear-gradient(#c800ffc9,#ff00de75);'+
-//   'color: white;'+
-//   'border-radius: 50%;'+ 
-//   'width: 28px;'+
-//   'height: 28px;'+
-//   'font-size: 12px;'+
-//   'font-weight: bold;'+
-//   //'display: flex;'+
-//   'align-items: center;'+
-//   'justify-content: center;'+
-//   'border: 2px solid white; '+
-//   '">'+
-//   '0'+
-//   '</div>',
-  
-  
-//     },
-//     {
+{
+    xtype: 'container',
+   // width: '33.3%',
+   width: '25%',
+ //  width: 150,
+    // id:'containerMyAccount_Dashboard_MembershipCardHub',
+    // name:'nameContainerMyAccount_Dashboard_MembershipCardHub',
+    height:80,
+    hidden: false,
+    margin: '0 0 0 0',
+    id:'containerMyAccount_Dashboard_AnniverseryCardLoyaltyID',
+    name:'namecontainerMyAccount_Dashboard_AnniverseryCardLoyalty',
+    style: 'background-color:transparent',
+    layout: {
+    type: 'hbox',
+    pack: 'center',
+    align: 'center',
+    },items:[
+        {
+            xtype: 'container',
+            width: '100%',
+            height:80,
+            hidden: false,
+            margin: '0 0 0 0',
+            style: 'background-color:transparent',
+           // style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 10px 10px 10px 10px;',
+            layout: {
+            type: 'vbox',
+            pack: 'center',
+            align: 'center',
+            },items:[
+                {
+                    margin: '0 0 0 28',
+                    height: 20,
+                    width: 20,
+                   // hidden: true,
+                    zIndex:10,
+                    //id:'txtMyAccount_Dashboard_EventCardLoyaltyBadgeID',
+                 // html: '<div style="text-align:center;font-size:12px;color:white;background-color:red;width:20px;height:20px;border-radius:50%;font-weight:bold;padding:2px 0px;">0</div>',
+              html:'<div id="txtMyAccount_Dashboard_AnniverseryCardLoyaltyBadgeID" style="'+
+              'position: absolute;display:none;'+
+              'top: -10px;'+
+              'right: -5px;'+
+              //'background-color: #FF1493;'+
+              'background-color: #fac;background-image: linear-gradient(#c800ffc9,#ff00de75);'+
+              'color: white;'+
+              'border-radius: 50%;'+ 
+              'width: 28px;'+
+              'height: 28px;'+
+              'font-size: 12px;'+
+              'font-weight: bold;'+
+              //'display: flex;'+
+              'align-items: center;'+
+              'justify-content: center;'+
+              'border: 2px solid white; '+
+              '">'+
+              '0'+
+              '</div>',
+              
+              
+                },
+                {
 
 
-//         margin: '-15 0 0 0',
-//         html:'<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; font-family: sans-serif;">'+ 
-//        // '<div style="background: linear-gradient(135deg, rgba(238,130,238,0.3), rgba(255,182,193,0.3)); border-radius: 12px; padding: 10px 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">' + 
-//         '<img src="resources/icons/disableAnniverseryIcon.png" style="width: 32px; height: 32px; margin-bottom: 5px;" />'+ 
-//        // '</div>' + 
-//         '<div style="font-size: 10px; font-weight: normal; color: #9CA3AF; text-align: center;margin: 4px 0px 0px 0px;">'+ 
-//         'Anniversary<br>'+ 
-//         '<span style="display: block; margin-top: -2px;">Perks</span>'+ 
-//         '</div>'+ 
-//         '</div>'
-         
-                
-//                 },
-   
-   
-// ]
-// }
-// ]
-// },
+                    margin: '-15 0 0 0',
+                    html:'<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; font-family: sans-serif;">'+ 
+                   // '<div style="background: linear-gradient(135deg, rgba(238,130,238,0.3), rgba(255,182,193,0.3)); border-radius: 12px; padding: 10px 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">' + 
+                    '<img src="resources/icons/disableAnniverseryIcon.png" style="width: 32px; height: 32px; margin-bottom: 5px;" />'+ 
+                   // '</div>' + 
+                    '<div style="font-size: 10px; font-weight: normal; color: #9CA3AF; text-align: center;margin: 4px 0px 0px 0px;">'+ 
+                    'Anniversary<br>'+ 
+                    '<span style="display: block; margin-top: -2px;">Perks</span>'+ 
+                    '</div>'+ 
+                    '</div>'
+                     
+                            
+                            },
+               
+               
+            ]
+        }
+    ]
+},
 
 /////////////////////////////////
 
@@ -3101,19 +3010,20 @@ itemTpl:'<div onclick="FloatPanel_AyohaEnterpriseRewardItem_MembershipCardLoadBy
 
 
 
-       
-    ]
-},
+                   
+                ]
+            },
 
-//////////////////////////////////line 2 end -NEW///////////////////////////////
 
-//////////////////////////////////line 3 start -NEW///////////////////////////////
+//////////////////////////////////line 3 start
+
+
 {
     xtype: 'container',
-    width: '90%',
+    width: '100%',
     height:90,
     hidden: false,
-    margin: '20 0 0 0',
+    margin: '10 0 0 0',
     style: 'background-color:transparent',
     // scrollable: {
     //     direction: 'horizontal',
@@ -3131,7 +3041,9 @@ itemTpl:'<div onclick="FloatPanel_AyohaEnterpriseRewardItem_MembershipCardLoadBy
 
         {
             xtype: 'container',
-            width: '33.33%',
+           // width: '33.3%',
+           //width: 150,
+           width: '25%',
             height:80,
             id:'containerMyAccount_Dashboard_FamilyTeamRewardCardLoyaltyID',
             name:'namecontainerMyAccount_Dashboard_FamilyTeamRewardCardLoyalty',
@@ -3145,14 +3057,14 @@ itemTpl:'<div onclick="FloatPanel_AyohaEnterpriseRewardItem_MembershipCardLoadBy
             },items:[
                 {
                     xtype: 'container',
-                    width: '80%',
-                    style: 'border:2px solid #E5E7EB;background: white;border-radius: 10px 10px 10px 10px;',
+                   // width: '90%',
+                    width: '100%',
                     height:80,
                     hidden: false,
                     margin: '0 0 0 0',
                     // id:'containerMyAccount_Dashboard_AyohaMerchantRewardID',
                     // name:'nameContainerMyAccount_Dashboard_AyohaMerchantReward',
-                   // style: 'background-color:transparent',
+                    style: 'background-color:transparent',
                     //style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 10px 10px 10px 10px;',
                     layout: {
                     type: 'vbox',
@@ -3193,6 +3105,13 @@ itemTpl:'<div onclick="FloatPanel_AyohaEnterpriseRewardItem_MembershipCardLoadBy
 
 
 
+                            // html:'<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; font-family: sans-serif;">'+ 
+                            // '<img src="resources/icons/merchantreward01.png" style="width: 30px; height: 30px; margin-bottom: 5px;" />'+ 
+                            // '<div style="font-size: 10px; font-weight: normal; color: black; text-align: center;">'+ 
+                            // 'Merchant<br>'+ 
+                            // '<span style="display: block; margin-top: -4px;">Reward</span>'+ 
+                            // '</div>'+ 
+                            // '</div>'
 
                             margin: '-15 0 0 0',
                             html:'<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; font-family: sans-serif;">' + 
@@ -3216,12 +3135,16 @@ itemTpl:'<div onclick="FloatPanel_AyohaEnterpriseRewardItem_MembershipCardLoadBy
         },
         {
             xtype: 'container',
-            width: '33.33%',
+           // width: '33.3%',
+           width: '25%',
+         //  width: 150,
+            // id:'containerMyAccount_Dashboard_MembershipCardHub',
+            // name:'nameContainerMyAccount_Dashboard_MembershipCardHub',
             height:80,
             hidden: false,
             margin: '0 0 0 0',
             id:'containerMyAccount_Dashboard_MembershipCheckInCardLoyaltyID',
-            name:'namecontainerMyAccount_Dashboard_MembershipCheckInCardLoyaltyy',
+            name:'namecontainerMyAccount_Dashboard_MembershipCheckInCardLoyalty',
             style: 'background-color:transparent',
             layout: {
             type: 'hbox',
@@ -3230,19 +3153,17 @@ itemTpl:'<div onclick="FloatPanel_AyohaEnterpriseRewardItem_MembershipCardLoadBy
             },items:[
                 {
                     xtype: 'container',
-                    width: '80%',
-                    style: 'border:2px solid #E5E7EB;background: white;border-radius: 10px 10px 10px 10px;',
+                    width: '100%',
                     height:80,
                     hidden: false,
                     margin: '0 0 0 0',
-                    //style: 'background-color:transparent',
+                    style: 'background-color:transparent',
                    // style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 10px 10px 10px 10px;',
                     layout: {
                     type: 'vbox',
                     pack: 'center',
                     align: 'center',
                     },items:[
-                        
                         {
                             margin: '0 0 0 28',
                             height: 20,
@@ -3296,347 +3217,190 @@ itemTpl:'<div onclick="FloatPanel_AyohaEnterpriseRewardItem_MembershipCardLoadBy
             ]
         },
 
-  {
-                        xtype: 'container',
-                       // width: '33.3%',
-                      // width: 150,
-                      width: '33.33%',
-                        height:80,
-                        hidden: false,
-                        margin: '0 0 0 0',
-                        id:'containerMyAccount_Dashboard_MsteryboxCardLoyaltyID',
-                        name:'namecontainerMyAccount_Dashboard_MsteryboxCardLoyalty',
-                        style: 'background-color:transparent',
-                        layout: {
-                        type: 'hbox',
-                        pack: 'center',
-                        align: 'center',                     
-                        },items:[
-                            {
-                                xtype: 'container',
-                                width: '80%',
-                                style: 'border:2px solid #E5E7EB;background: white;border-radius: 10px 10px 10px 10px;',
-                                height:80,
-                                hidden: false,
-                               // margin: '19 0 0 0',
-                               // style: 'background-color:transparent',
-                                // id:'containerMyAccount_Dashboard_AyohaMerchantShoppingBagID',
-                                // name:'nameMyAccount_Dashboard_AyohaMerchantShoppingBag',
-                                //style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 10px 10px 10px 10px;',
-                                layout: {
-                                type: 'vbox',
-                                pack: 'center',
-                                align: 'center',
-                                },items:[
-                                    
-                                    {
-                                        margin: '0 0 0 28',
-                                        height: 20,
-                                        width: 20,
-                                       // hidden: true,
-                                        zIndex:10,
-                                        //id:'txtMyAccount_Dashboard_EventCardLoyaltyBadgeID',
-                                     // html: '<div style="text-align:center;font-size:12px;color:white;background-color:red;width:20px;height:20px;border-radius:50%;font-weight:bold;padding:2px 0px;">0</div>',
-                                  html:'<div id="txtMyAccount_Dashboard_MsteryboxCardLoyaltyBadgeID" style="'+
-                                  'position: absolute;display:none;'+
-                                  'top: -10px;'+
-                                  'right: -5px;'+
-                                  //'background-color: #FF1493;'+
-                                  'background-color: #fac;background-image: linear-gradient(#c800ffc9,#ff00de75);'+
-                                  'color: white;'+
-                                  'border-radius: 50%;'+ 
-                                  'width: 28px;'+
-                                  'height: 28px;'+
-                                  'font-size: 12px;'+
-                                  'font-weight: bold;'+
-                                  //'display: flex;'+
-                                  'align-items: center;'+
-                                  'justify-content: center;'+
-                                  'border: 2px solid white; '+
-                                  '">'+
-                                  '0'+
-                                  '</div>',
-                                  
-                                  
-                                    },
-                                    {
-                                
-                                
-                                        margin: '-15 0 0 0',
-                                        html:'<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; font-family: sans-serif;">'+ 
-                                       // '<div style="background: linear-gradient(135deg, rgba(238,130,238,0.3), rgba(255,182,193,0.3)); border-radius: 12px; padding: 10px 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">' + 
-                                        '<img src="resources/icons/MsteryboxIcon_9CA3AF.png" style="width: 32px; height: 32px; margin-bottom: 5px;" />'+ 
-                                       // '</div>' + 
-                                        '<div style="font-size: 10px; font-weight: normal; color: #9CA3AF; text-align: center;margin: 4px 0px 0px 0px;">'+ 
-                                        'Mystery Box<br>'+ 
-                                        '<span style="display: block; margin-top: -2px;">Reward</span>'+ 
-                                        '</div>'+ 
-                                        '</div>'
-                                         
-                                                
-                                                },
-                                               
-                                   
-                                   
-                                ]
-                            }
-                        ]
-                    },
+
+/////////////////////////////////
+
+{
+xtype: 'container',
+// width: '33.3%',
+width: '25%',
+//  width: 150,
+// id:'containerMyAccount_Dashboard_MembershipCardHub',
+// name:'nameContainerMyAccount_Dashboard_MembershipCardHub',
+height:80,
+hidden: false,
+margin: '0 0 0 0',
+id:'containerMyAccount_Dashboard_MsteryboxCardLoyaltyID',
+name:'namecontainerMyAccount_Dashboard_MsteryboxCardLoyalty',
+style: 'background-color:transparent',
+layout: {
+type: 'hbox',
+pack: 'center',
+align: 'center',
+},items:[
+{
+xtype: 'container',
+width: '100%',
+height:80,
+hidden: false,
+margin: '0 0 0 0',
+style: 'background-color:transparent',
+// style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 10px 10px 10px 10px;',
+layout: {
+type: 'vbox',
+pack: 'center',
+align: 'center',
+},items:[
+    {
+        margin: '0 0 0 28',
+        height: 20,
+        width: 20,
+       // hidden: true,
+        zIndex:10,
+        //id:'txtMyAccount_Dashboard_EventCardLoyaltyBadgeID',
+     // html: '<div style="text-align:center;font-size:12px;color:white;background-color:red;width:20px;height:20px;border-radius:50%;font-weight:bold;padding:2px 0px;">0</div>',
+  html:'<div id="txtMyAccount_Dashboard_MsteryboxCardLoyaltyBadgeID" style="'+
+  'position: absolute;display:none;'+
+  'top: -10px;'+
+  'right: -5px;'+
+  //'background-color: #FF1493;'+
+  'background-color: #fac;background-image: linear-gradient(#c800ffc9,#ff00de75);'+
+  'color: white;'+
+  'border-radius: 50%;'+ 
+  'width: 28px;'+
+  'height: 28px;'+
+  'font-size: 12px;'+
+  'font-weight: bold;'+
+  //'display: flex;'+
+  'align-items: center;'+
+  'justify-content: center;'+
+  'border: 2px solid white; '+
+  '">'+
+  '0'+
+  '</div>',
+  
+  
+    },
+    {
+
+
+        margin: '-15 0 0 0',
+        html:'<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; font-family: sans-serif;">'+ 
+       // '<div style="background: linear-gradient(135deg, rgba(238,130,238,0.3), rgba(255,182,193,0.3)); border-radius: 12px; padding: 10px 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">' + 
+        '<img src="resources/icons/MsteryboxIcon_9CA3AF.png" style="width: 32px; height: 32px; margin-bottom: 5px;" />'+ 
+       // '</div>' + 
+        '<div style="font-size: 10px; font-weight: normal; color: #9CA3AF; text-align: center;margin: 4px 0px 0px 0px;">'+ 
+        'Mystery Box<br>'+ 
+        '<span style="display: block; margin-top: -2px;">Reward</span>'+ 
+        '</div>'+ 
+        '</div>'
+         
+                
+                },
+   
+   
+]
+}
+]
+},
+
+/////////////////////////////////
+
+/////////////////////////////////
+
+{
+xtype: 'container',
+// width: '33.3%',
+width: '25%',
+//  width: 150,
+// id:'containerMyAccount_Dashboard_MembershipCardHub',
+// name:'nameContainerMyAccount_Dashboard_MembershipCardHub',
+height:80,
+hidden: false,
+margin: '0 0 0 0',
+id:'containerMyAccount_Dashboard_ReferralCardLoyaltyID',
+name:'namecontainerMyAccount_Dashboard_ReferralCardLoyalty',
+style: 'background-color:transparent',
+layout: {
+type: 'hbox',
+pack: 'center',
+align: 'center',
+},items:[
+{
+xtype: 'container',
+width: '100%',
+height:80,
+hidden: false,
+margin: '0 0 0 0',
+style: 'background-color:transparent',
+// style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 10px 10px 10px 10px;',
+layout: {
+type: 'vbox',
+pack: 'center',
+align: 'center',
+},items:[
+    {
+        margin: '0 0 0 28',
+        height: 20,
+        width: 20,
+       // hidden: true,
+        zIndex:10,
+        //id:'txtMyAccount_Dashboard_EventCardLoyaltyBadgeID',
+     // html: '<div style="text-align:center;font-size:12px;color:white;background-color:red;width:20px;height:20px;border-radius:50%;font-weight:bold;padding:2px 0px;">0</div>',
+  html:'<div id="txtMyAccount_Dashboard_ReferralCardLoyaltyBadgeID" style="'+
+  'position: absolute;display:none;'+
+  'top: -10px;'+
+  'right: -5px;'+
+  //'background-color: #FF1493;'+
+  'background-color: #fac;background-image: linear-gradient(#c800ffc9,#ff00de75);'+
+  'color: white;'+
+  'border-radius: 50%;'+ 
+  'width: 28px;'+
+  'height: 28px;'+
+  'font-size: 12px;'+
+  'font-weight: bold;'+
+  //'display: flex;'+
+  'align-items: center;'+
+  'justify-content: center;'+
+  'border: 2px solid white; '+
+  '">'+
+  '0'+
+  '</div>',
+  
+  
+    },
+    {
+
+
+        margin: '-15 0 0 0',
+        html:'<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; font-family: sans-serif;">'+ 
+       // '<div style="background: linear-gradient(135deg, rgba(238,130,238,0.3), rgba(255,182,193,0.3)); border-radius: 12px; padding: 10px 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">' + 
+        '<img src="resources/icons/refferalIcon_9CA3AF.png" style="width: 32px; height: 32px; margin-bottom: 5px;" />'+ 
+       // '</div>' + 
+        '<div style="font-size: 10px; font-weight: normal; color: #9CA3AF; text-align: center;margin: 4px 0px 0px 0px;">'+ 
+        'Referral Code<br>'+ 
+        '<span style="display: block; margin-top: -2px;">Reward</span>'+ 
+        '</div>'+ 
+        '</div>'
+         
+                
+                },
+   
+   
+]
+}
+]
+},
+
+/////////////////////////////////
+
+
+
+
+
        
     ]
 },
-
-
-
-//////////////////////////////////line 3 end -NEW///////////////////////////////
-                ]
-            },
-
-
-
-
-
-//////////////////////////////////line 3 start
-
-
-// {
-//     xtype: 'container',
-//     width: '100%',
-//     height:90,
-//     hidden: false,
-//     margin: '10 0 0 0',
-//     style: 'background-color:transparent',
-//     // scrollable: {
-//     //     direction: 'horizontal',
-//     //     directionLock: true,
-//     //     indicators: false
-//     // },
-//     layout: {
-//     type: 'hbox',
-//     pack: 'center',
-//     align: 'center',
-//     },
-//     items:[
-      
-        
-
-//         {
-//             xtype: 'container',
-//            // width: '33.3%',
-//            //width: 150,
-//            width: '25%',
-//             height:80,
-//             id:'containerMyAccount_Dashboard_FamilyTeamRewardCardLoyaltyID',
-//             name:'namecontainerMyAccount_Dashboard_FamilyTeamRewardCardLoyalty',
-//             hidden: false,
-//             margin: '0 0 0 0',
-//             style: 'background-color:transparent',
-//             layout: {
-//             type: 'hbox',
-//             pack: 'center',
-//             align: 'center',
-//             },items:[
-//                 {
-//                     xtype: 'container',
-//                    // width: '90%',
-//                     width: '100%',
-//                     height:80,
-//                     hidden: false,
-//                     margin: '0 0 0 0',
-//                     // id:'containerMyAccount_Dashboard_AyohaMerchantRewardID',
-//                     // name:'nameContainerMyAccount_Dashboard_AyohaMerchantReward',
-//                     style: 'background-color:transparent',
-//                     //style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 10px 10px 10px 10px;',
-//                     layout: {
-//                     type: 'vbox',
-//                     pack: 'center',
-//                     align: 'center',
-//                     },items:[
-                    
-                       
-                       
-//                     ]
-//                 }
-//             ]
-//         },
-//         {
-//             xtype: 'container',
-//            // width: '33.3%',
-//            width: '25%',
-//          //  width: 150,
-//             // id:'containerMyAccount_Dashboard_MembershipCardHub',
-//             // name:'nameContainerMyAccount_Dashboard_MembershipCardHub',
-//             height:80,
-//             hidden: false,
-//             margin: '0 0 0 0',
-//             id:'containerMyAccount_Dashboard_MembershipCheckInCardLoyaltyID',
-//             name:'namecontainerMyAccount_Dashboard_MembershipCheckInCardLoyalty',
-//             style: 'background-color:transparent',
-//             layout: {
-//             type: 'hbox',
-//             pack: 'center',
-//             align: 'center',
-//             },items:[
-//                 {
-//                     xtype: 'container',
-//                     width: '100%',
-//                     height:80,
-//                     hidden: false,
-//                     margin: '0 0 0 0',
-//                     style: 'background-color:transparent',
-//                    // style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 10px 10px 10px 10px;',
-//                     layout: {
-//                     type: 'vbox',
-//                     pack: 'center',
-//                     align: 'center',
-//                     },items:[
-                      
-                       
-                       
-//                     ]
-//                 }
-//             ]
-//         },
-
-
-// /////////////////////////////////
-
-// {
-// xtype: 'container',
-// // width: '33.3%',
-// width: '25%',
-// //  width: 150,
-// // id:'containerMyAccount_Dashboard_MembershipCardHub',
-// // name:'nameContainerMyAccount_Dashboard_MembershipCardHub',
-// height:80,
-// hidden: false,
-// margin: '0 0 0 0',
-// id:'containerMyAccount_Dashboard_MsteryboxCardLoyaltyID',
-// name:'namecontainerMyAccount_Dashboard_MsteryboxCardLoyalty',
-// style: 'background-color:transparent',
-// layout: {
-// type: 'hbox',
-// pack: 'center',
-// align: 'center',
-// },items:[
-// {
-// xtype: 'container',
-// width: '100%',
-// height:80,
-// hidden: false,
-// margin: '0 0 0 0',
-// style: 'background-color:transparent',
-// // style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 10px 10px 10px 10px;',
-// layout: {
-// type: 'vbox',
-// pack: 'center',
-// align: 'center',
-// },items:[
-  
-   
-   
-// ]
-// }
-// ]
-// },
-
-// /////////////////////////////////
-
-// /////////////////////////////////
-
-// {
-// xtype: 'container',
-// // width: '33.3%',
-// width: '25%',
-// //  width: 150,
-// // id:'containerMyAccount_Dashboard_MembershipCardHub',
-// // name:'nameContainerMyAccount_Dashboard_MembershipCardHub',
-// height:80,
-// hidden: false,
-// margin: '0 0 0 0',
-// id:'containerMyAccount_Dashboard_ReferralCardLoyaltyID',
-// name:'namecontainerMyAccount_Dashboard_ReferralCardLoyalty',
-// style: 'background-color:transparent',
-// layout: {
-// type: 'hbox',
-// pack: 'center',
-// align: 'center',
-// },items:[
-// {
-// xtype: 'container',
-// width: '100%',
-// height:80,
-// hidden: false,
-// margin: '0 0 0 0',
-// style: 'background-color:transparent',
-// // style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 10px 10px 10px 10px;',
-// layout: {
-// type: 'vbox',
-// pack: 'center',
-// align: 'center',
-// },items:[
-//     {
-//         margin: '0 0 0 28',
-//         height: 20,
-//         width: 20,
-//        // hidden: true,
-//         zIndex:10,
-//         //id:'txtMyAccount_Dashboard_EventCardLoyaltyBadgeID',
-//      // html: '<div style="text-align:center;font-size:12px;color:white;background-color:red;width:20px;height:20px;border-radius:50%;font-weight:bold;padding:2px 0px;">0</div>',
-//   html:'<div id="txtMyAccount_Dashboard_ReferralCardLoyaltyBadgeID" style="'+
-//   'position: absolute;display:none;'+
-//   'top: -10px;'+
-//   'right: -5px;'+
-//   //'background-color: #FF1493;'+
-//   'background-color: #fac;background-image: linear-gradient(#c800ffc9,#ff00de75);'+
-//   'color: white;'+
-//   'border-radius: 50%;'+ 
-//   'width: 28px;'+
-//   'height: 28px;'+
-//   'font-size: 12px;'+
-//   'font-weight: bold;'+
-//   //'display: flex;'+
-//   'align-items: center;'+
-//   'justify-content: center;'+
-//   'border: 2px solid white; '+
-//   '">'+
-//   '0'+
-//   '</div>',
-  
-  
-//     },
-//     {
-
-
-//         margin: '-15 0 0 0',
-//         html:'<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; font-family: sans-serif;">'+ 
-//        // '<div style="background: linear-gradient(135deg, rgba(238,130,238,0.3), rgba(255,182,193,0.3)); border-radius: 12px; padding: 10px 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">' + 
-//         '<img src="resources/icons/refferalIcon_9CA3AF.png" style="width: 32px; height: 32px; margin-bottom: 5px;" />'+ 
-//        // '</div>' + 
-//         '<div style="font-size: 10px; font-weight: normal; color: #9CA3AF; text-align: center;margin: 4px 0px 0px 0px;">'+ 
-//         'Referral Code<br>'+ 
-//         '<span style="display: block; margin-top: -2px;">Reward</span>'+ 
-//         '</div>'+ 
-//         '</div>'
-         
-                
-//                 },
-   
-   
-// ]
-// }
-// ]
-// },
-
-// /////////////////////////////////
-
-
-
-
-
-       
-//     ]
-// },
 
 
 
@@ -3909,7 +3673,7 @@ width: 80,
                 margin: '25 0 0 0',
                 width: '100%',
             // height: 480,
-             height: 370,
+             height: 430,
                // disable:true,
                style: 'background-color:transparent',
              
@@ -3926,8 +3690,8 @@ width: 80,
                        xtype: 'carousel',
                        id: 'mainDashboardCarousel_PremiumAdvertisement',
                        name: 'namemainDashboardCarousel_PremiumAdvertisement',
-                       height: 340,
-                       width: '90%',
+                       height: 400,
+                       width: '95%',
                        style: 'background-color:transparent',
                        listeners: {
                            activeitemchange: function (container, newCard, oldCard, index) {
@@ -3998,7 +3762,7 @@ width: 80,
               //margin: '170 0 0 0',
                margin: '0 0 0 0',
             //  docked:'bottom',
-             margin: '-92 0 0 0',
+             margin: '-90 0 0 0',
             //hidden:true,
               zIndex: 200,
                id: 'containerMyAccount_DashboardAdvertisementPremium_PremiumAdvertisement',
@@ -4010,7 +3774,7 @@ width: 80,
                // style: 'border-right:2px solid #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px #ECF0F1 white;background: white;border-radius: 20px 20px 20px 20px;',
            
                height: 50,
-               width: '90%',
+               width: '95%',
                layout: {
            
                    type: 'hbox',
@@ -13623,7 +13387,7 @@ function initializeContainerSingleTapEvent() {
 
 
 
-//01-11-2025 comment
+
     var containerViewnamenamecontainerMyAccount_Dashboard_ContestCardLoyalty = Ext.ComponentQuery.query('container[name=namecontainerMyAccount_Dashboard_ContestCardLoyalty]')[0];
     var containerViewElnamecontainerMyAccount_Dashboard_ContestCardLoyalty = containerViewnamenamecontainerMyAccount_Dashboard_ContestCardLoyalty.element;
     containerViewElnamecontainerMyAccount_Dashboard_ContestCardLoyalty.on('tap',
@@ -13632,9 +13396,6 @@ function initializeContainerSingleTapEvent() {
         FloatPanel_AyohaMerchantInfo_ContestCardLoyaltyProgramShow();
       }
     );
-
-
-
 
     var containerViewnamenamecontainerMyAccount_Dashboard_EventCardLoyalty = Ext.ComponentQuery.query('container[name=namecontainerMyAccount_Dashboard_EventCardLoyalty]')[0];
     var containerViewElnamecontainerMyAccount_Dashboard_EventCardLoyalty = containerViewnamenamecontainerMyAccount_Dashboard_EventCardLoyalty.element;
@@ -15948,12 +15709,12 @@ function loadAdvertisementloadPremiumAdvertisment() {
         
                     
                     if (MediaType == "Image") {
-                        carouselDasboardPremiumAdvertisement.add({ xtype: 'image', src: AdvertismentMediaUrl, height: '95%', width: '100%', mode: 'image', margin: '-10 0 0 0' });
+                        carouselDasboardPremiumAdvertisement.add({ xtype: 'image', src: AdvertismentMediaUrl, height: 370, width: '100%', mode: 'image', margin: '-10 0 0 0' });
                        // myCarousel.add({ xtype: 'pinchzoomimage', src: AdvertismentMediaUrl, height: 670, width: '100%', mode: 'image' });
                     }
                     //margin: '-10 0 0 0'
                     if (MediaType == "Video") {
-                        carouselDasboardPremiumAdvertisement.add({ xtype: 'video', src: AdvertismentMediaUrl, height:'95%', width: '100%', mode: 'video', posterUrl: 'resources/icons/videoPurple.png', loop: true, enableControls: true, margin: '7 0 0 0' });
+                        carouselDasboardPremiumAdvertisement.add({ xtype: 'video', src: AdvertismentMediaUrl, height: 370, width: '100%', mode: 'video', posterUrl: 'resources/icons/videoPurple.png', loop: true, enableControls: true, margin: '7 0 0 0' });
         
                     }
         
