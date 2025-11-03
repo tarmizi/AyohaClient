@@ -511,7 +511,7 @@ function loadAyohaUserProfileLoginBody() {
                 if (data.success == "true") {
 
                     if (data.total > 0) {
-                     //   Ext.getCmp('tabpanelMyAccount_Dashboard').getTabBar().hide();
+                        Ext.getCmp('tabpanelMyAccount_Dashboard').getTabBar().hide();
                         localStorage.setItem('AyohaUserAccountNo',data.results[0].AccountNo);
                         localStorage.setItem('AyohaUserKatalaluan', data.results[0].Katalaluan);
                         globalLogginAyohaUser_UserVerifiedDate = data.results[0].UserVerifiedDate;

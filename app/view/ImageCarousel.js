@@ -17,11 +17,11 @@ Ext.define('ianMizi.view.ImageCarousel', {
         html: '<div class="carousel-container" style="padding: 0px 0;">' +
             '<div class="carousel-wrapper">' +
            // '<div class="carousel-item" style="background-color: #ffdde1;"><img src="resources/icons/MembershipCardsample.png" style="width:95%;height:150px;margin:-20px 0px 15px 0px"/><div style="color:white;text-align: left;font-size:12px;width:100%;margin:0px 0px 0px 0px;font-weight:bold">🚀 Free Membership </div></div>' +
-           '<div class="carousel-item" style="background-color: #ffdde1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 0px;"><img src="resources/icons/MembershipCardsample.png" style="width:95%;height:140px;margin:-70px 0px 0px 0px"/><div style="color: #444; text-align: center; font-size:12px; width:100%; font-weight:bold">🚀 Free Membership</div></div>' +
-           '<div class="carousel-item" style="background-color: #ddf1ff;">Card 2</div>' +
-            '<div class="carousel-item" style="background-color: #d1ffd3;">Card 3</div>' +
-            '<div class="carousel-item" style="background-color: #fffdd1;">Card 4</div>' +
-            '<div class="carousel-item" style="background-color: #f1d1ff;">Card 5</div>' +
+           '<div class="carousel-item" style="background-color: #fac;background-image: linear-gradient(#c800ffc9,#ff00de75); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 0px;"><img src="resources/icons/Modenas_Kriss08.png" style="width:80%;height:100%;margin:0px 0px 0px 0px"/></div>' +
+           '<div class="carousel-item" style="background-color: #fac;background-image: linear-gradient(#c800ffc9,#ff00de75); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 0px;"><img src="resources/icons/iPhone17_01.png" style="width:80%;height:100%;margin:0px 0px 0px 0px"/></div>' +
+           '<div class="carousel-item" style="background-color: #fac;background-image: linear-gradient(#c800ffc9,#ff00de75); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 0px;"><img src="resources/icons/FarehaGold01.png" style="width:80%;height:100%;margin:0px 0px 0px 0px"/></div>' +
+           '<div class="carousel-item" style="background-color: #fac;background-image: linear-gradient(#c800ffc9,#ff00de75); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 0px;"><img src="resources/icons/monsterChicken02.png" style="width:80%;height:100%;margin:0px 0px 0px 0px"/></div>' +
+           // '<div class="carousel-item" style="background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);">Card 5</div>' +
             '</div>' +
             '<div class="carousel-nav">' +
             '<button id="prevBtn" class="nav-btn">❮</button>' +
