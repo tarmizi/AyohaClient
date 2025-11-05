@@ -499,7 +499,7 @@ Ext.define('ianMizi.view.MyAccount.Dashboard', {
 
                       {
                           xtype: 'tabpanel',
-                         style: "background-color: transparent;",
+                         style: "background-color: transparent;",                        
                         //  style: 'background-color: #fac;background-image: linear-gradient(#c800ffc9,#ff00de75);',
                         // margin: '-60 0 0 0',
                         margin: '0 0 0 0',
@@ -1280,7 +1280,8 @@ itemTpl: '<div class="myContent" style="background-color:transparent;width:103%;
 {
     xtype: 'container',
     id: 'MainMaincontainerDashbord',
-    style: 'background: white;',
+   // style: 'background: white;',
+    style:"background: linear-gradient(180deg, #FFF1F9 0%, #F3E8FF 100%);",
     height:2100,
     width:'100%',
     margin: '0 0 0 0',
@@ -5094,6 +5095,26 @@ itemTpl: '<div class="myContent" style="background-color:transparent;width:103%;
       
 /////////////////////////////// END MAIN PAGE DASH BOARD
 
+{
+    layout: 'fit',
+    title: 'Home',  
+    xtype: 'AyohaReward_MainDashboard',
+},
+{
+    layout: 'fit',
+    title: 'AyohaRewards_Merchant',  
+    xtype: 'AyohaMerchantReward',
+},
+
+{
+    layout: 'fit',
+    title: 'MembershipCard_List',  
+    xtype: 'MembershipCardList',
+}
+
+
+
+
                           ]
                         },
 
@@ -5320,7 +5341,7 @@ itemTpl: '<div class="myContent" style="background-color:transparent;width:103%;
                                                      },
                                                         {
                                                             xtype: 'container',
-                                                            id: 'containerMyAccount_Dashboard_MenuBottom_AyohaReward',
+                                                            id: 'containerMyAccount_Dashboard_MenuBottom_Home',
                                                             name: 'namecontainerMyAccount_Dashboard_MenuBottom_AyohaReward',
                                                             // hidden: true,
                                                             // width: '19%',
@@ -5342,11 +5363,11 @@ itemTpl: '<div class="myContent" style="background-color:transparent;width:103%;
                                                                      //xtype: 'button',
                                                                      id: 'btn_MyAccount_Dashboard_MenuBottom_AyohaReward',
                                                                      //  badgeText: '1',
-                                                                     margin: '-2 0 0 0',
+                                                                     margin: '0 0 0 0',
 
-                                                                     height: 30,
-                                                                     width: 30,
-                                                                     html: '<img src="resources/icons/Logo/LogoOrangeSimplifed.png" width="30" height="30" alt="Company Name">',
+                                                                     height: 22,
+                                                                     width: 22,
+                                                                     html: '<img src="resources/icons/ayohaHome01.png" width="20" height="20" alt="Company Name">',
                                                                      //ui: 'plain',
                                                                      //handler: function () {
                                                                      //    SingleTap_Dashboard_AyohaRewards();
@@ -5367,7 +5388,7 @@ itemTpl: '<div class="myContent" style="background-color:transparent;width:103%;
                                                                             margin: '1 0 0 0',
                                                                             // id: 'htmlStampHistoryTxt',
                                                                             //html: '<font size=1 color=grey>My Membership</font>',
-                                                                            html: '<div style="color:purple;text-align: center;font-size:9px;width:100%;font-weight:bold"><u>Home</u></div>',
+                                                                            html: '<div style="color:purple;text-align: center;font-size:8px;width:100%;font-weight:bold">Home</div>',
 
                                                                         },
                                                                      ]
@@ -5379,7 +5400,7 @@ itemTpl: '<div class="myContent" style="background-color:transparent;width:103%;
                                                         },
                                                         {
                                                             xtype: 'container',
-                                                            id: 'containerMyAccount_Dashboard_MenuBottom_MyStore',
+                                                            id: 'containerMyAccount_Dashboard_MenuBottom_AyohaReward',
                                                             name: 'namecontainerMyAccount_Dashboard_MenuBottom_MyStore',
                                                             // width: '19%',
                                                             //height: 30,
@@ -5404,7 +5425,7 @@ itemTpl: '<div class="myContent" style="background-color:transparent;width:103%;
 
                                                                      height: 22,
                                                                      width: 22,
-                                                                     html: '<img src="resources/icons/nearestredemptionpurple.png" width="22" height="22" alt="Company Name">',
+                                                                     html: '<img src="resources/icons/Logo/icon_ayoha_gradient_diagonal.png" width="22" height="22" alt="Company Name">',
                                                                      //ui: 'plain',
                                                                      //handler: function () {
                                                                      //  //  FloatPanel_RewardStoreShow();
@@ -5425,7 +5446,7 @@ itemTpl: '<div class="myContent" style="background-color:transparent;width:103%;
                                                                               margin: '0 0 0 0',
                                                                               // id: 'htmlStampHistoryTxt',
                                                                               //html: '<font size=1 color=grey>My Membership</font>',
-                                                                              html: '<div style="color:grey;text-align: center;font-size:8px;width:100%;">Merchant</div><br><div style="color:grey;text-align: center;font-size:8px;width:100%;margin:-25px 0px 0px 0px">Reward</div>',
+                                                                              html: '<div style="color:grey;text-align: center;font-size:8px;width:100%;">Ayoha</div><br><div style="color:grey;text-align: center;font-size:8px;width:100%;margin:-25px 0px 0px 0px">Reward</div>',
 
                                                                           },
 
@@ -5503,7 +5524,77 @@ itemTpl: '<div class="myContent" style="background-color:transparent;width:103%;
                                                          ]
                                                      },
 
+////////merchant reward
+{
+    xtype: 'container',
+    id: 'containerMyAccount_Dashboard_MenuBottom_MerchantperkBottom',
+    name: 'namecontainerMyAccount_Dashboard_MenuBottom_MerchantperkBottom',
+    // width: '19%',
+    //height: 30,
+    margin: '0 0 0 0',
+    flex: 1,
+    style: "background-color: transparent",
+    //style: "background-color: #F35B57;",
 
+    layout: {
+        type: 'vbox',
+        pack: 'center',
+        align: 'center'
+
+    },
+    items: [
+
+         {
+             //xtype: 'button',
+             id: 'btn_MyAccount_Dashboard_MenuBottom_MerchantperkBottom',
+             // badgeText: '10',
+             margin: '0 0 0 0',
+
+             height: 22,
+             width: 22,
+             html: '<img src="resources/icons/merchantReward03.png" width="22" height="22" alt="Company Name">',
+             //ui: 'plain',
+             //handler: function () {
+             //    // FloatLoyaltyCardStampShow();
+             //    //  NotificationIndividualPanelShow();
+             //    FloatPanel_AyohaNotificationShow();
+             //}
+         },
+         {
+             xtype: 'container',
+             id: 'containerMyAccount_Dashboard_MenuBottom_MerchantperkTxtBottom',
+             width: '100%',
+             layout: {
+                 type: 'vbox',
+                 pack: 'center',
+                 align: 'center'
+
+             },
+             items: [
+                  {
+                      margin: '0 0 0 0',
+                      // id: 'htmlStampHistoryTxt',
+                      //html: '<font size=1 color=grey>My Membership</font>',
+                      html: '<div style="color:grey;text-align: center;font-size:8px;width:100%;">Merchant</div><br><div style="color:grey;text-align: center;font-size:8px;width:100%;margin:-27px 0px 0px 0px">Perks</div>',
+
+                  },
+                 //{
+                 //    margin: '-12 0 0 0',
+                 //    // id: 'htmlStampHistoryTxt',
+                 //    html: '<font size=1 color=grey>Notification</font>'
+                 //},
+                 //{
+                 //    margin: '-12 0 0 0',
+                 //    // id: 'htmlStampHistoryTxt',
+                 //    html: '<font size=1 color=white>.</font>'
+                 //},
+             ]
+
+         },
+
+
+    ]
+},
 
 
                                                      //////////////////////////my membership card
@@ -5535,7 +5626,7 @@ itemTpl: '<div class="myContent" style="background-color:transparent;width:103%;
 
                                                                   height: 20,
                                                                   width: 20,
-                                                                  html: '<img src="resources/icons/MyMembershipCard03.png" width="20" height="20" alt="Company Name">',
+                                                                  html: '<img src="resources/icons/MembershipCardIcon01.png" width="20" height="20" alt="Company Name">',
                                                                   //ui: 'plain',
                                                                   //handler: function () {
 
@@ -5584,76 +5675,7 @@ itemTpl: '<div class="myContent" style="background-color:transparent;width:103%;
 
 
 
-                                               {
-                                                   xtype: 'container',
-                                                   id: 'containerMyAccount_Dashboard_MenuBottom_NotificationBottom',
-                                                   name: 'namecontainerMyAccount_Dashboard_MenuBottom_NotificationBottom',
-                                                   // width: '19%',
-                                                   //height: 30,
-                                                   margin: '0 0 0 0',
-                                                   flex: 1,
-                                                   style: "background-color: transparent",
-                                                   //style: "background-color: #F35B57;",
-
-                                                   layout: {
-                                                       type: 'vbox',
-                                                       pack: 'center',
-                                                       align: 'center'
-
-                                                   },
-                                                   items: [
-
-                                                        {
-                                                            //xtype: 'button',
-                                                            id: 'btn_MyAccount_Dashboard_MenuBottom_NotificationBottom',
-                                                            // badgeText: '10',
-                                                            margin: '0 0 0 0',
-
-                                                            height: 20,
-                                                            width: 20,
-                                                            html: '<img src="resources/icons/NotificationPurple.png" width="20" height="20" alt="Company Name">',
-                                                            //ui: 'plain',
-                                                            //handler: function () {
-                                                            //    // FloatLoyaltyCardStampShow();
-                                                            //    //  NotificationIndividualPanelShow();
-                                                            //    FloatPanel_AyohaNotificationShow();
-                                                            //}
-                                                        },
-                                                        {
-                                                            xtype: 'container',
-                                                            id: 'containerMyAccount_Dashboard_MenuBottom_NotificationTxtBottom',
-                                                            width: '100%',
-                                                            layout: {
-                                                                type: 'vbox',
-                                                                pack: 'center',
-                                                                align: 'center'
-
-                                                            },
-                                                            items: [
-                                                                 {
-                                                                     margin: '0 0 0 0',
-                                                                     // id: 'htmlStampHistoryTxt',
-                                                                     //html: '<font size=1 color=grey>My Membership</font>',
-                                                                     html: '<div style="color:grey;text-align: center;font-size:8px;width:100%;">Notification</div><br><div style="color:transparent;text-align: center;font-size:9px;width:100%;margin:-27px 0px 0px 0px">Account</div>',
-
-                                                                 },
-                                                                //{
-                                                                //    margin: '-12 0 0 0',
-                                                                //    // id: 'htmlStampHistoryTxt',
-                                                                //    html: '<font size=1 color=grey>Notification</font>'
-                                                                //},
-                                                                //{
-                                                                //    margin: '-12 0 0 0',
-                                                                //    // id: 'htmlStampHistoryTxt',
-                                                                //    html: '<font size=1 color=white>.</font>'
-                                                                //},
-                                                            ]
-
-                                                        },
-
-
-                                                   ]
-                                               },
+                                               
 
 
 
@@ -7368,8 +7390,11 @@ function initializeContainerSingleTapEvent() {
     var containerViewElMenuBottom_MyMembershipCard = containerViewMenuBottom_MyMembershipCard.element;
     containerViewElMenuBottom_MyMembershipCard.on('tap',
       function (event, node, options, eOpts) {
+        AyohaMerchantReward_Reset();
           animatedClickTabExt('containerMyAccount_Dashboard_MenuBottom_MyMembershipCard');
-          FloatPanel_MembershipCardList_MyMembershipCardShow();
+          MembershipCardListLoad();
+          Ext.getCmp('tabpanelMyAccount_Dashboard').setActiveItem(3);
+         // FloatPanel_MembershipCardList_MyMembershipCardShow();
       }
     );
 
@@ -7394,7 +7419,8 @@ function initializeContainerSingleTapEvent() {
     containerViewElMenuBottom_AyohaReward.on('tap',
       function (event, node, options, eOpts) {
 
-          //SingleTap_Dashboard_AyohaRewards();
+        AyohaMerchantReward_Reset();
+          animatedClickTabExt('containerMyAccount_Dashboard_MenuBottom_Home');
           Ext.getCmp('tabpanelMyAccount_Dashboard').setActiveItem(0);
       }
     );
@@ -7420,8 +7446,14 @@ function initializeContainerSingleTapEvent() {
     var containerViewElMenuBottom_MyStore = containerViewMenuBottom_MyStore.element;
     containerViewElMenuBottom_MyStore.on('tap',
       function (event, node, options, eOpts) {
-          animatedClickTab();
-          LoadingPanelShow(getLoadingIcon(), 'Loading....');
+      
+        AyohaMerchantReward_Reset();
+        animatedClickTabExt('containerMyAccount_Dashboard_MenuBottom_AyohaReward');
+        Ext.getCmp('tabpanelMyAccount_Dashboard').setActiveItem(1);
+        
+       // animatedClickTab();
+
+          //LoadingPanelShow(getLoadingIcon(), 'Loading....');
 
           //var task = Ext.create('Ext.util.DelayedTask', function () {
           //    FloatPanel_DashboardMerchantRewardShow();
@@ -7434,12 +7466,42 @@ function initializeContainerSingleTapEvent() {
 
 
 
+
+   
+
+
+    var containerViewnamecontainerMyAccount_Dashboard_MenuBottom_MerchantperkBottom = Ext.ComponentQuery.query('container[name=namecontainerMyAccount_Dashboard_MenuBottom_MerchantperkBottom]')[0];
+    var containerViewElnamecontainerMyAccount_Dashboard_MenuBottom_MerchantperkBottom = containerViewnamecontainerMyAccount_Dashboard_MenuBottom_MerchantperkBottom.element;
+    containerViewElnamecontainerMyAccount_Dashboard_MenuBottom_MerchantperkBottom.on('tap',
+      function (event, node, options, eOpts) {
+       // FloatPanel_DashboardMerchantRewardShow();
+      // FloatPanel_DashboardMerchantRewardShow();
+      is_FloatPanel_DashboardMerchantRewardHide = 'Y';
+      LoadingPanelShow(getLoadingIcon(), 'Loading....');
+      AyohaMerchant_AyohaMerchantRewardLoad();
+       Ext.getCmp('tabpanelMyAccount_Dashboard').setActiveItem(2);
+       animatedClickTabExt('containerMyAccount_Dashboard_MenuBottom_MerchantperkBottom');
+    //    id: 'containerMyAccount_Dashboard_MenuBottom_MerchantperkBottom',
+    //    name: 'namecontainerMyAccount_Dashboard_MenuBottom_MerchantperkBottom',
+    //    // containerMyAccount_Dashboard_MenuBottom_MerchantperksBottom
+         // animatedClickTabExt('containerMyAccount_Dashboard_MenuBottom_Notification');
+       // FloatPanel_AyohaNotificationShow();
+      }
+    );
+
+
+
+
     var containerViewMenuBottom_Notification = Ext.ComponentQuery.query('container[name=namecontainerMyAccount_Dashboard_MenuBottom_Notification]')[0];
     var containerViewElMenuBottom_Notification = containerViewMenuBottom_Notification.element;
     containerViewElMenuBottom_Notification.on('tap',
       function (event, node, options, eOpts) {
+       // 
+
+       AyohaMerchantReward_Reset();
+       // containerMyAccount_Dashboard_MenuBottom_MerchantperksBottom
          // animatedClickTabExt('containerMyAccount_Dashboard_MenuBottom_Notification');
-          FloatPanel_AyohaNotificationShow();
+         FloatPanel_AyohaNotificationShow();
       }
     );
 
@@ -7452,7 +7514,7 @@ function initializeContainerSingleTapEvent() {
     var containerViewElMenuBottom_QrCodeScanOutter = containerViewMenuBottom_QrCodeScanOutter.element;
     containerViewElMenuBottom_QrCodeScanOutter.on('tap',
       function (event, node, options, eOpts) {
-         
+        AyohaMerchantReward_Reset();
         //working code on 15/9/2025 1:13am
         //comment for testing new pag FloatPanel_ScannedMerchant 
       Ext.getCmp('mainView').setHidden(true);
@@ -8575,7 +8637,7 @@ function DashboardAyohaUserMainStore() {
                     
                                       
                     // Ubah margin
-                     txtNextRanking.style.margin = "20px -100px 0px 0px";
+                   //  txtNextRanking.style.margin = "20px -100px 0px 0px";
                     // html: '<div style="width:22px;height:22px;background-color:transparent;"><img src="resources/icons/kingclubIcon.png" alt="Image" style="width:42px;height:42px;margin:3px 0px 0px 14px;"></div>',
                 }
                 if (AyohaMember_Rank == "Bronze") {
@@ -8587,7 +8649,7 @@ function DashboardAyohaUserMainStore() {
                     AppState.FloatPanel_AyohaReward.imgRankStar="resources/icons/ayohaRankingIcon/Bronze.png";
                     AppState.FloatPanel_AyohaReward.imgNextRankStar="resources/icons/ayohaRankingIcon/Silver.png"; 
                   
-                    txtNextRanking.style.margin = "20px -100px 0px 0px";
+                   // txtNextRanking.style.margin = "20px -100px 0px 0px";
                 }
                 if (AyohaMember_Rank == "Silver") {
                     // Ext.getCmp('btnMyAccount_DashboardRankIcon').setHtml('<div style="width:22px;height:22px;background-color:white;border-radius:50%;"><img src="resources/icons/vip.png" alt="Image" style="width:15px;height:15px;margin:3px 0px 0px 4px;background-color:white;"></div>');
@@ -8598,7 +8660,7 @@ function DashboardAyohaUserMainStore() {
                     AppState.FloatPanel_AyohaReward.imgRankStar="resources/icons/ayohaRankingIcon/Silver.png";
                     AppState.FloatPanel_AyohaReward.imgNextRankStar="resources/icons/ayohaRankingIcon/Gold.png";
                  
-                    txtNextRanking.style.margin = "20px -100px 0px 0px";
+                    //txtNextRanking.style.margin = "20px -100px 0px 0px";
                 }
                 if (AyohaMember_Rank == "Gold") {
                     //Ext.getCmp('btnMyAccount_DashboardRankIcon').setHtml('<div style="width:22px;height:22px;background-color:white;border-radius:50%;"><img src="resources/icons/vvip.png" alt="Image" style="width:15px;height:15px;margin:3px 0px 0px 4px;background-color:white;"></div>');
@@ -8609,7 +8671,7 @@ function DashboardAyohaUserMainStore() {
                     AppState.FloatPanel_AyohaReward.imgRankStar="resources/icons/ayohaRankingIcon/Gold.png";
                     AppState.FloatPanel_AyohaReward.imgNextRankStar="resources/icons/ayohaRankingIcon/Platinum.png";
                   
-                    txtNextRanking.style.margin = "20px -80px 0px 0px";
+                    //txtNextRanking.style.margin = "20px -80px 0px 0px";
                 }
                 if (AyohaMember_Rank == "Platinum") {
                     // Ext.getCmp('btnMyAccount_DashboardRankIcon').setHtml('<div style="width:22px;height:22px;background-color:white;border-radius:50%;"><img src="resources/icons/goldmember.jpg" alt="Image" style="width:15px;height:15px;margin:3px 0px 0px 4px;background-color:white;"></div>');
@@ -8620,7 +8682,7 @@ function DashboardAyohaUserMainStore() {
                     AppState.FloatPanel_AyohaReward.imgRankStar="resources/icons/ayohaRankingIcon/Platinum.png";
                     AppState.FloatPanel_AyohaReward.imgNextRankStar="resources/icons/ayohaRankingIcon/kingclubIcon.png";
                
-                    txtNextRanking.style.margin = "20px -80px 0px 0px";
+                   // txtNextRanking.style.margin = "20px -80px 0px 0px";
                 }
                 if (AyohaMember_Rank == "King Club") {
                     // Ext.getCmp('btnMyAccount_DashboardRankIcon').setHtml('<div style="width:22px;height:22px;background-color:white;border-radius:50%;"><img src="resources/icons/icons/kingclubIcon.png" alt="Image" style="width:15px;height:15px;margin:3px 0px 0px 4px;background-color:white;"></div>');
@@ -10772,7 +10834,8 @@ function Dashboard_SearchMerchantList_EnterprisesLoadAyohaMerchantListStore_Fron
 
 function Dashboard_ayoharedeem_page(){
     //FloatPanel_AyohaRewardShow();
-  Ext.getCmp('mainView').setActiveItem(2);
+    AyohaMerchantReward_Reset();
+    Ext.getCmp('tabpanelMyAccount_Dashboard').setActiveItem(1);
 }
 
 

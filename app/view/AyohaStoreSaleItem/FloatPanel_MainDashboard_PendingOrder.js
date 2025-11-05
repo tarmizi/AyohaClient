@@ -351,10 +351,10 @@ function FloatPanel_MainDashboard_PendingOrderAyohaStoreOrderPendingOrderMainDas
              // alert('You have ' + globalFloatPanel_MainDashboard_PendingOrder_Count + ' pending orders. Please check your orders.');
               
               if(globalFloatPanel_MainDashboard_PendingOrder_Count > 0) {
-                Ext.getCmp('txtDashboard_AyohaMerchantShoppingBagBadgeID').setHtml('<div style="text-align:center;font-size:12px;color:white;background-color:red;width:20px;height:20px;border-radius:50%;font-weight:bold;padding:2px 0px;">'+globalFloatPanel_MainDashboard_PendingOrder_Count+'</div>');
-                Ext.getCmp('txtDashboard_AyohaMerchantShoppingBagBadgeID').setHidden(false);
+                //Ext.getCmp('txtDashboard_AyohaMerchantShoppingBagBadgeID').setHtml('<div style="text-align:center;font-size:12px;color:white;background-color:red;width:20px;height:20px;border-radius:50%;font-weight:bold;padding:2px 0px;">'+globalFloatPanel_MainDashboard_PendingOrder_Count+'</div>');
+               // Ext.getCmp('txtDashboard_AyohaMerchantShoppingBagBadgeID').setHidden(false);
               
-                Ext.getCmp('containerMyAccount_Dashboard_AyohaMerchantShoppingBagID').setMargin('0 0 0 0');
+             //   Ext.getCmp('containerMyAccount_Dashboard_AyohaMerchantShoppingBagID').setMargin('0 0 0 0');
 
                // alert('You have ' + globalFloatPanel_MainDashboard_PendingOrder_Count + ' pending orders. Please check your orders.');
                 Dashboard_updateBadge_AyohaMerchantList_CheckOutAndShoppingBag('htmlMyDashboard_AyohaOnlineMerchantStoreShoppingBag_CountbadgeText', globalFloatPanel_MainDashboard_PendingOrder_Count);

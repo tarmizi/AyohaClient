@@ -75,7 +75,9 @@ function FloatPanel_DashboardMerchantReward() {
 
             //style: 'background-image: url("resources/icons/ConfetiFour.gif"); background-size: 100% 100%;background-repeat: no-repeat;',
 
-            items: {
+            items: 
+            
+            {
 
                 xtype: 'container',
                 // style: 'background-image: url("resources/icons/pointbackdrop.png"); background-size: 100% 30%;background-repeat: no-repeat;',

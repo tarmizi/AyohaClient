@@ -595,10 +595,10 @@ function  FloatPanel_Membership_MembershipCardHubsUpgrade_MembershipCardLoadBySu
    
         globalOpenMembershipCardList_Upgrade_From = 'DashboardMain';
         globalFloatPanel_MembershipCardList_UpgradeShow_FromAyohaMerchant_isMembershipCardSubscribed = 'NO';
-        _DataStore_MembershipCardLoadBySubscriberAccNoDashboardMainStore.getProxy().setExtraParam('SubscriberAccNo', GetCurrAyohaUserAccountNo());
-        _DataStore_MembershipCardLoadBySubscriberAccNoDashboardMainStore.getProxy().setUrl(GetAPIurl() + '/MembershipCard/MembershipCardLoadBySubscriberAccNoDashboardMain');
+        _DataStore_MembershipCard_LoadforCheck_InStore.getProxy().setExtraParam('SubscriberAccNo', GetCurrAyohaUserAccountNo());
+        _DataStore_MembershipCard_LoadforCheck_InStore.getProxy().setUrl(GetAPIurl() + '/MembershipCard/MembershipCard_LoadforCheck_In');
         
-        _DataStore_MembershipCardLoadBySubscriberAccNoDashboardMainStore.load({
+        _DataStore_MembershipCard_LoadforCheck_InStore.load({
             callback: function (records, operation, success) {
                 if (success && records.length > 0) {
                     // var allData = records;
@@ -634,7 +634,7 @@ function  FloatPanel_Membership_MembershipCardHubsUpgrade_MembershipCardLoadBySu
         
                     // Set stores to list components
                  
-                    Ext.getCmp('FloatPanel_Membership_MembershipCardHubsUpgradeList').setStore(_DataStore_MembershipCardLoadBySubscriberAccNoDashboardMainStore);
+                    Ext.getCmp('FloatPanel_Membership_MembershipCardHubsUpgradeList').setStore(_DataStore_MembershipCard_LoadforCheck_InStore);
 
         
                     console.log('Stores updated based on loaded membership card data.');

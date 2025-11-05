@@ -104,9 +104,9 @@ Ext.define('ianMizi.view.Main', {
              //15
              xtype: 'Dashboard'
          },
-         {//16
-            xtype: 'AyohaReward_MainDashboard'
-         },
+        //  {//16
+        //     xtype: 'AyohaReward_MainDashboard'
+        //  },
         
         ]
     }

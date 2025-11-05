@@ -167,7 +167,7 @@ if(animatedClickTabExtComponant){
         //left: "+=50",
         //height: "toggle",
         colour: 'rgba(220,220,220,0.25)',
-    }, 250, function () {
+    }, 200, function () {
         $("#" + Componant).animate({
             opacity: 1,
             //left: "+=50",

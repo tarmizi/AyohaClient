@@ -377,7 +377,7 @@ Ext.define('ianMizi.view.AyohaReward.FloatPanel_AyohaReward_MainDashboard', {
                           
                            width: '100%',
                        // height: 480,
-                        height: 380,
+                        height: 300,
                           // disable:true,
                            style: 'background-color:transparent',
                         
@@ -389,7 +389,7 @@ Ext.define('ianMizi.view.AyohaReward.FloatPanel_AyohaReward_MainDashboard', {
                                  xtype: 'container',
                                   id: 'mainDashboardCarousel',
                                   name: 'namemainDashboardCarousel',
-                                  height: 390,
+                                  height: 300,
                                   width: '100%',
                                   indicator: true,
                                   style: 'background-color:transparent',
@@ -409,7 +409,7 @@ Ext.define('ianMizi.view.AyohaReward.FloatPanel_AyohaReward_MainDashboard', {
                                    // style: 'background-image: url("resources/icons/bgfront15.png"); background-size: 100% 390px;background-repeat: no-repeat;',
                                      
                                      width: '100%',
-                                     height: 390,
+                                     height: 300,
                                      title: 'Dashboard_AyohaReward_AyohaMerchant',
                                    // style: "background-color: transparent;",
                                      layout: {
@@ -439,8 +439,8 @@ Ext.define('ianMizi.view.AyohaReward.FloatPanel_AyohaReward_MainDashboard', {
                                            // style: ' background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);',style: ' background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);',
                                             layout: {
                                                 type: 'hbox',
-                                                pack: 'center',
-                                                align: 'center',
+                                                pack: 'left',
+                                                align: 'left',
                                             },
                            
                            
@@ -449,60 +449,30 @@ Ext.define('ianMizi.view.AyohaReward.FloatPanel_AyohaReward_MainDashboard', {
                                             // hidden:true,
                                             items:
                                                    [
-                           
-                        
-                        
-                                                     {
-                                                         xtype: 'button',
-                                                         id: 'btnFloatPanel_AyohaReward_MainDashboardBack',
-                                                         margin: '10 0 0 5',
-                                                         height: 30,
-                                                         width: 35,
-                                                         // iconCls: 'list',
-                                                         html: '<div ><img src="resources/icons/backwhite03Ori.png" width="25" height="20" alt="Company Name"></div>',
-                                                         ui: 'plain',
-                                                         handler: function () {
-                                                             // FloatPanel_AyohaReward_MainDashboardHide();
-                                                             // FloatPanel_AyohaReward_MainDashboard_AddCardHide();
-                                                             isFloatPanel_AyohaReward_MainDashboardOpen = 'N';
-                                                             Ext.getCmp('mainView').setActiveItem(1);
-                                                             //  FloatPanel_AyohaReward_MainDashboard_AddCardHide();
-                        
-                                                         }
-                                                     },
-                        
-                                                      {
-                                                          xtype: 'spacer',
-                        
-                                                      },
-                                                      {
-                                                        margin: '10 10 0 0',
-                                                        id: 'htmlFloatPanel_AyohaReward_MainDashboard_TitleHeaderTxt',
-                                                       // html: '<div style="color:white;text-align: left;font-size:14px;width:100%;"><b>My Ayoha Reward Membership</b></div>'
-                                                        html: '<font size="2" color="white"><b>Ayoha Reward Membership</b></font>'
-                                                    },
-                                                
-                                                      
-                                                      {
-                                                        xtype: 'button',
-                                                        margin: '10 0 0 -10',
-                                                        id: 'btnFloatPanel_AyohaReward_MainDashboard_CardIcon',
-                                                        height: 35,
-                                                        width: 35,
-                                                        //hidden:true,
-                                                        // iconCls: 'list',
-                                                        html: '<div><img src="resources/icons/Logo/LogoWhiteSimplifed.png" width="25" height="25" alt="Company Name"></div>',
-                                                        ui: 'plain',
-                                                        handler: function () {
-                        
-                                                        }
-                                                    },
-                                                      
+                                                   
                         
                                                     {
-                                                        xtype: 'spacer',
-                                                        width: 10,
+                                                        margin: '10 0 0 14',
+                                                        id: 'htmlFloatPanel_AyohaReward_MainDashboard_TitleHeaderTxt',
+                                                       // id: 'labelDashboard_LastCheckInTimeStamp',    
+                                                       // html: '<div  style="color:white;text-align: left;font-size:10px;width:100%;margin:0px 0px 0px 0px;">00:00:00</div>'
+                                                     //   html: '<div style="display:inline-flex;align-items:center;gap:10px;padding:2px 5px;border-radius:999px;border:2px solid transparent;background:linear-gradient(#ffffff,#ffffff) padding-box,linear-gradient(90deg,#ff00de,#c800ff) border-box;box-shadow:0 10px 24px rgba(200,0,255,.28);color:#111827;font-size:10px;font-weight:bold;"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="ayohaGrad1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff00de"/><stop offset="1" stop-color="#c800ff"/></linearGradient></defs><rect x="3" y="9" width="18" height="11" rx="3" fill="url(#ayohaGrad1)"/><rect x="11" y="9" width="2" height="11" fill="#fff" opacity=".9"/><rect x="3" y="13" width="18" height="2" fill="#fff" opacity=".9"/><rect x="11" y="6.6" width="2" height="2.4" fill="url(#ayohaGrad1)"/><circle cx="8" cy="7" r="3" fill="url(#ayohaGrad1)"/><circle cx="16" cy="7" r="3" fill="url(#ayohaGrad1)"/></svg><span>My Ayoha Reward Membership</span></div>'
+                                                   
+                                                       // id: 'labelDashboard_LastCheckInTimeStamp',    
+                                                       // html: '<div  style="color:white;text-align: left;font-size:10px;width:100%;margin:0px 0px 0px 0px;">00:00:00</div>'
+                                                        html: '<div style="color:white;text-align: left;font-size:14px;width:100%;margin:0px 0px 0px 0px"><span style="font-size:10px;color:black;background:gold;border:1px solid #fac;padding:3px 6px;border-radius:999px;white-space:nowrap;">My Ayoha Reward Membership</span><br><b>Ayoha Reward</b></div><br><div  style="color:white;text-align: left;font-size:10px;width:100%;margin:-20px 0px 0px 0px;">One Hub,Double Reward</div>'
+                                                       
+                                                   
                                                     },
+                                                     
+                                                
+                                                    
+                                                    
+                        
+                                                    // {
+                                                    //     xtype: 'spacer',
+                                                    //     width: 10,
+                                                    // },
                                                         
                         
                         
@@ -531,10 +501,10 @@ Ext.define('ianMizi.view.AyohaReward.FloatPanel_AyohaReward_MainDashboard', {
                                           id: 'containerAyohaRewards',
                                           //hidden: true,
                                           style: "background-color: transparent;",
-                                          margin: '-10 0 0 0',
+                                         // margin: '-10 0 0 0',
                                          // margin: '50 0 0 0',
                                           width: '100%',
-                                          height: 320,  
+                                          height: 200,  
                                           //  style: 'border-right:2px solid #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px #ECF0F1 white;background: transparent;border-radius: 20px 20px 20px 20px;box-shadow: 5px 10px 18px #888888;',
                                           layout: {
                                               type: 'vbox',
@@ -558,8 +528,8 @@ Ext.define('ianMizi.view.AyohaReward.FloatPanel_AyohaReward_MainDashboard', {
                                                          id: 'htmlDashboard_AyohaRewardLogos',
                                                          name: 'containerNameAyohaRewards',
                                                         // zIndex: 200,
-                                                         width: 230,
-                                                         height: 230,
+                                                         //width: 230,
+                                                         height: 180,
                                                          layout: {
                                                              type: 'vbox',
                                                              pack: 'center',
@@ -570,12 +540,7 @@ Ext.define('ianMizi.view.AyohaReward.FloatPanel_AyohaReward_MainDashboard', {
                  
                  
           
-          {
-                   xtype: 'container',
-                                                                width: '100%',
-                                                                height: 10,
-                                                                style: "background-color: transparent;",
-         },
+       
                                                              {
                                                               id: 'Dashboard_AyohaRewardPanel',
                                                       
@@ -589,19 +554,22 @@ Ext.define('ianMizi.view.AyohaReward.FloatPanel_AyohaReward_MainDashboard', {
           
           
           
-                                                                    html: '<div style="width: min(82vw, 350px); max-width: 400px; margin: 14px auto; padding: 16px;'+
+                                                                    html: '<div style="width: min(80vw, 350px); max-width: 400px; margin: 14px auto; padding: 16px;'+
                 ' box-sizing:border-box; color:#fff; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;'+
-                ' background: rgba(255,255,255,0.12);'+
-                ' backdrop-filter: blur(14px) saturate(120%); -webkit-backdrop-filter: blur(14px) saturate(120%);'+
-                ' border:2px solid #fac; border-radius: 18px; box-shadow: 0 12px 28px rgba(0,0,0,.28);">'+
-          
+                // 'background: rgba(255,255,255,0.12);'+
+                 'background: rgba(255,255,255,0.1);'+
+                 'box-shadow: 0 12px 28px rgba(0,0,0,.28);'+
+                // 'background-color: #fac;background-image: linear-gradient(#ff00de75,#ff00de75);'+
+               // ' backdrop-filter: blur(14px) saturate(120%); -webkit-backdrop-filter: blur(14px) saturate(120%);'+
+                'border:2px solid #fac; border-radius: 18px;">'+
+                //box-shadow: 0 12px 28px rgba(0,0,0,.28);
                   // Header
                   '<div style="display:flex; align-items:flex-end; justify-content:space-between; gap:12px; margin-bottom:14px;">'+
-                    '<div style="min-width:0;">'+
+                    '<div style="min-width:0; margin:-10px 0px">'+
                       '<div style="font-size:clamp(10px, 2.7vw, 12px); opacity:.9; margin-bottom:2px; font-weight:700; white-space:nowrap;">Membership No</div>'+
                       '<div id="txtDashboard_MembershipNo" style="font-size:clamp(12px, 3.4vw, 14px); font-weight:1000; overflow:hidden; text-overflow:ellipsis;">12323</div>'+
                     '</div>'+
-                    '<div style="text-align:right; min-width:0;">'+
+                    '<div style="text-align:right; min-width:0; margin:-10px 0px">'+
                       '<div style="font-size:clamp(10px, 2.7vw, 12px); opacity:.9; font-weight:700; white-space:nowrap;">Membership Since:</div>'+
                       '<div id="txtDashboard_MembershipSince" style="font-size:clamp(12px, 3.4vw, 14px); font-weight:1000; overflow:hidden; text-overflow:ellipsis;">Jan 2023</div>'+
                     '</div>'+
@@ -612,22 +580,26 @@ Ext.define('ianMizi.view.AyohaReward.FloatPanel_AyohaReward_MainDashboard', {
           
                     // Left box
                     '<div onclick="FloatPanel_AyohaReward_PointTransactionsShow();" '+
-                         'style="flex:1; text-align:center; padding:14px 10px; border-radius:14px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.25);">'+
-                    //  '<div id="txtDashboard_AyohaPoint" style="font-size:clamp(22px, 6.4vw, 28px); font-weight:800; margin:8px 0 0 0;">2353</div>'+
-                      '<div id="Dashboard_AyohaRewardPoint" class="odometer" style="font-size:clamp(22px, 6.4vw, 28px); font-weight:800; margin:8px 0 0 0;">2353</div>'+
-                      '<div style="font-size:clamp(14px, 2.7vw, 10px); opacity:.9; margin:-2px 0 0 0; font-weight:800;">Ayoha Point</div>'+
+                         'style="flex:1; text-align:center; padding:5px 5px; border-radius:14px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.25);">'+
+                 
+                    //  '<div id="Dashboard_AyohaRewardPoint" class="odometer" style="font-size:clamp(22px, 6.4vw, 28px); font-weight:800; margin:8px 0 0 0;">2353</div>'+
+                    '<div id="Dashboard_AyohaRewardPoint" class="odometer" style="font-size:24px; font-weight:bold; margin:10px 0 0 0;">2353</div>'+
+                    //'<div style="font-size:clamp(14px, 2.7vw, 10px); opacity:.9; margin:-2px 0 0 0; font-weight:800;">Ayoha Point</div>'+
+                    '<div style="font-size:10px; opacity:.9; margin:-2px 0 0 0; font-weight:bold;">Ayoha Point</div>'+
                     '</div>'+
           
                     // Right box
                     '<div onclick="FloatPanel_MyAccountRankDescriptionShow();" '+
-                         'style="flex:1; text-align:center; padding:14px 10px; border-radius:14px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.25);">'+
+                         'style="flex:1; text-align:center; padding:5px 5px; border-radius:14px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.25);">'+
                       '<div style="margin-bottom:6px;">'+
                         '<img id="imgDashboard_RankingIcon" src="resources/icons/Logo/LogoWhiteSimplifed.png" alt="Gold Tier" '+
-                             'style="width:44px; height:44px; display:block; margin:0 auto; object-fit:contain;">'+
+                             'style="width:40px; height:40px; display:block; margin:0 auto; object-fit:contain;">'+
                       '</div>'+
-                      '<div id="txtDashboard_RankingIcon" style="font-size:clamp(14px, 3.2vw, 13px); font-weight:800; margin:-6px 0 0 0; white-space:wrap; overflow:hidden; text-overflow:ellipsis;">Non Ayoha Member</div>'+
-                     // '<div id="txtDashboard_RankingIcon" style="font-size:clamp(11px, 3.2vw, 13px); font-weight:800; margin:-6px 0 0 0; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">Non Ayoha Member</div>'+
-                      '<div id="txtDashboard_MembershipTier" style="font-size:clamp(10px, 2.7vw, 12px); opacity:.9; margin:-2px 0 0 0; font-weight:700;">Membership Tier</div>'+
+                     // '<div id="txtDashboard_RankingIcon" style="font-size:clamp(14px, 3.2vw, 13px); font-weight:800; margin:-6px 0 0 0; white-space:wrap; overflow:hidden; text-overflow:ellipsis;">Non Ayoha Member</div>'+                   
+                      '<div id="txtDashboard_RankingIcon" style="font-size:10px; font-weight:bold;opacity:.9; margin:-2px 0 0 0; white-space:wrap; overflow:hidden; text-overflow:ellipsis;">Non Ayoha Member</div>'+
+                                      
+                     // '<div id="txtDashboard_MembershipTier" style="font-size:clamp(10px, 2.7vw, 12px); opacity:.9; margin:-2px 0 0 0; font-weight:700;">Membership Tier</div>'+
+                      '<div id="txtDashboard_MembershipTier" style="font-size:10px; opacity:.9; margin:-2px 0 0 0; font-weight:bold;">Membership Tier</div>'+
                     '</div>'+
           
                   '</div>'+
@@ -648,7 +620,7 @@ Ext.define('ianMizi.view.AyohaReward.FloatPanel_AyohaReward_MainDashboard', {
                                                       xtype: 'container',
                                                       width: '100%',
                                                       margin: '0 0 0 0',
-                                                     height: 60,     
+                                                     height: 20,     
                                                      // height: 350,                                        
                                                      
                                                       style: 'background-color:transparent;',
@@ -661,16 +633,39 @@ Ext.define('ianMizi.view.AyohaReward.FloatPanel_AyohaReward_MainDashboard', {
                                                       items:[
                                                           {
                                                               width: '80%',
-                                                              margin: '10 0 0 0',
-          html:'<div onclick="FloatPanel_AyohaReward_MainDashboardShow();" class="tier-head">'+
-          '<span style="margin:20px 0px 0px 10px">Next Membership Tier</span>'+
-          '<span id="txtNextRanking" style="margin:20px -80px 0px 0px"><b>Black Iron</b></span><span style="margin:5px 5px 0px 0px"><img  id="imgNextRanking" src="resources/icons/ayohaRankingIcon/blackIron.png" style="width: 30px; height: 30px;" /></span>'+
-          '</div>'+
+                                                              margin: '0 0 0 0',
+        //   html:'<div onclick="FloatPanel_AyohaReward_MainDashboardShow();" class="tier-head">'+
+        //   '<span style="margin:0px 0px 0px 10px">Next Membership Tier</span>'+
+        //   '<span id="txtNextRanking" style="margin:0px -80px 0px 0px"><b>Black Iron</b></span><span style="margin:0px 5px 0px 0px"><img  id="imgNextRanking" src="resources/icons/ayohaRankingIcon/blackIron.png" style="width: 20px; height: 20px;" /></span>'+
+        //   '</div>'+
           
-          '<div style="margin:0px 0px 0px 0px" class="progress" aria-label="Progress to next tier" role="progressbar" aria-valuemin="0" aria-valuemax="5000" aria-valuenow="2353">'+
-          '<div  class="bar" id="tierBar"></div>'+
-          '<div class="label" id="tierLabel"></div>'+
-          '</div>',
+        //   '<div style="margin:-18px 0px 0px 0px" class="progress" aria-label="Progress to next tier" role="progressbar" aria-valuemin="0" aria-valuemax="5000" aria-valuenow="2353">'+
+        //   '<div  class="bar" id="tierBar"></div>'+
+        //   '<div class="label" id="tierLabel"></div>'+
+        //   '</div>',
+
+
+
+
+
+          html:
+  '<div onclick="FloatPanel_AyohaReward_MainDashboardShow();" class="tier-head" ' +
+      'style="display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;padding:6px 10px;box-sizing:border-box;">' +
+      // Left: label (responsive)
+      '<span style="flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-left:10px;">Next Membership Tier</span>' +
+      // Right: Bronze + icon (keeps IDs)
+      '<div style="display:flex;align-items:center;gap:8px;flex-shrink:0;white-space:nowrap;">' +
+        '<span id="txtNextRanking" style="font-weight:800;">Bronze</span>' +
+        '<img id="imgNextRanking" src="resources/icons/ayohaRankingIcon/bronze.png" alt="Bronze badge" ' +
+             'style="width:20px;height:20px;object-fit:contain;margin:-5px 0px 0px 0px" />' +
+      '</div>' +
+  '</div>' +
+
+  '<div style="margin:-7px 0 0 0" class="progress" aria-label="Progress to next tier" role="progressbar" aria-valuemin="0" aria-valuemax="5000" aria-valuenow="2353">' +
+    '<div class="bar" id="tierBar"></div>' +
+    '<div class="label" id="tierLabel"></div>' +
+  '</div>',
+
                                                           },
                                                           {
                                                               xtype: 'container',

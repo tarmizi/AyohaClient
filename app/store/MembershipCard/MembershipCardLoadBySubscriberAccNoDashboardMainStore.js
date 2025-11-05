@@ -38,6 +38,26 @@ var _DataStore_MembershipCardLoadBySubscriberAccNoDashboardMainStore = Ext.creat
 
 
 
+var _DataStore_MembershipCard_LoadforCheck_InStore = Ext.create('Ext.data.Store', {
+
+    model: 'ianMizi.model.MembershipCard.MembershipCardModel',
+    id: '_MembershipCard_MembershipCard_LoadforCheck_InlID',
+    proxy: {
+        type: 'ajax',
+        url: GetAPIurl() + '/MembershipCard/MembershipCard_LoadforCheck_In',
+        actionMethods: {
+            read: 'POST'
+        },
+        reader: {
+            type: 'json',
+            rootProperty: 'results',
+            totalProperty: 'total',
+            successProperty: 'success',
+            messageProperty: 'message'
+        }
+    },
+});
+
 
 
 var _DataStore_AyohaStore_CheckOut_LoadByMembershipCardCodeStore = Ext.create('Ext.data.Store', {
