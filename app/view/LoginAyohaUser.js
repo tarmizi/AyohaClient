@@ -522,7 +522,7 @@ function loadAyohaUserProfileLoginBody() {
                         //routesArray.push("mainView,view,15");
                       //  ArrappRoute.push("MainDashBoard");
                         Ext.getCmp('mainView').setActiveItem(1);
-                        
+                        animatedClickTabExt('containerMyAccount_Dashboard_MenuBottom_Home');
                       //  Ext.getCmp('htmlMyAccount_Dashboard_TitleHeaderTxt').setHtml('<font size=2 color=white><b>Ayoha-Reward</b></font><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 10px;font-weight:normal;color:white;margin:-5px 0px 0px 0px">' + data.results[0].AyohaVersion + '</div>');
 
                         //Ext.getCmp('htmlMyAccount_Dashboard_TitleHeaderTxt').setHtml('<font size=2 color=white><b>' + data.results[0].AyohaVersion + '</b></font>');

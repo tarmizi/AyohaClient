@@ -5348,8 +5348,8 @@ itemTpl: '<div class="myContent" style="background-color:transparent;width:103%;
                                                             //height: 30,
                                                             margin: '0 0 0 0',
                                                             flex: 1,
-                                                            style: "background-color: transparent",
-                                                            //style: "background-color: #F35B57;",
+                                                           style: "background-color: transparent",
+                                                            //style: "background-color:transparent;border-bottom:3px solid purple",
 
                                                             layout: {
                                                                 type: 'vbox',
@@ -7394,6 +7394,11 @@ function initializeContainerSingleTapEvent() {
     var containerViewElMenuBottom_MyMembershipCard = containerViewMenuBottom_MyMembershipCard.element;
     containerViewElMenuBottom_MyMembershipCard.on('tap',
       function (event, node, options, eOpts) {
+
+        Ext.getCmp('htmlDashboardMenuBottom_HomeTxt').setHtml('<div style="color:grey;text-align: center;font-size:8px;width:100%;font-weight:normal">Home</div>');
+        Ext.getCmp('htmlDashboardMenuBottom_AyohaRewardTxt').setHtml('<div style="color:grey;text-align: center;font-size:8px;width:100%;font-weight:normal">Ayoha</div><br><div style="color:grey;text-align: center;font-size:8px;width:100%;margin:-25px 0px 0px 0px;font-weight:normal">Reward</div>');
+        Ext.getCmp('htmlDashboardMenuBottom_MerchantPerkTxt').setHtml('<div style="color:grey;text-align: center;font-size:8px;width:100%;font-weight:normal">Merchant</div><br><div style="color:grey;text-align: center;font-size:8px;width:100%;margin:-27px 0px 0px 0px;font-weight:normal">Perks</div>');
+        Ext.getCmp('htmlDashboardMenuBottom_MyMembershipCardTxt').setHtml('<div style="color:purple;text-align: center;font-size:8px;width:100%;font-weight:bold">My Membership</div><br><div style="color:purple;text-align: center;font-size:8px;width:100%;margin:-25px 0px 0px 0px;font-weight:bold">Card</div>');
         AyohaMerchantReward_Reset();
           animatedClickTabExt('containerMyAccount_Dashboard_MenuBottom_MyMembershipCard');
           MembershipCardListLoad();
@@ -7422,8 +7427,11 @@ function initializeContainerSingleTapEvent() {
     var containerViewElMenuBottom_AyohaReward = containerViewMenuBottom_AyohaReward.element;
     containerViewElMenuBottom_AyohaReward.on('tap',
       function (event, node, options, eOpts) {
-
-        AyohaMerchantReward_Reset();
+          Ext.getCmp('htmlDashboardMenuBottom_HomeTxt').setHtml('<div style="color:purple;text-align: center;font-size:8px;width:100%;font-weight:bold">Home</div>');
+          Ext.getCmp('htmlDashboardMenuBottom_AyohaRewardTxt').setHtml('<div style="color:grey;text-align: center;font-size:8px;width:100%;">Ayoha</div><br><div style="color:grey;text-align: center;font-size:8px;width:100%;margin:-25px 0px 0px 0px">Reward</div>');
+          Ext.getCmp('htmlDashboardMenuBottom_MerchantPerkTxt').setHtml('<div style="color:grey;text-align: center;font-size:8px;width:100%;">Merchant</div><br><div style="color:grey;text-align: center;font-size:8px;width:100%;margin:-27px 0px 0px 0px">Perks</div>');
+          Ext.getCmp('htmlDashboardMenuBottom_MyMembershipCardTxt').setHtml('<div style="color:grey;text-align: center;font-size:8px;width:100%;">My Membership</div><br><div style="color:grey;text-align: center;font-size:8px;width:100%;margin:-25px 0px 0px 0px">Card</div>');
+          AyohaMerchantReward_Reset();
           animatedClickTabExt('containerMyAccount_Dashboard_MenuBottom_Home');
           Ext.getCmp('tabpanelMyAccount_Dashboard').setActiveItem(0);
       }
@@ -7451,6 +7459,11 @@ function initializeContainerSingleTapEvent() {
     containerViewElMenuBottom_MyStore.on('tap',
       function (event, node, options, eOpts) {
       
+
+        Ext.getCmp('htmlDashboardMenuBottom_HomeTxt').setHtml('<div style="color:grey;text-align: center;font-size:8px;width:100%;font-weight:normal">Home</div>');
+        Ext.getCmp('htmlDashboardMenuBottom_AyohaRewardTxt').setHtml('<div style="color:purple;text-align: center;font-size:8px;width:100%;font-weight:bold">Ayoha</div><br><div style="color:purple;text-align: center;font-size:8px;width:100%;margin:-25px 0px 0px 0px;font-weight:bold">Reward</div>');
+        Ext.getCmp('htmlDashboardMenuBottom_MerchantPerkTxt').setHtml('<div style="color:grey;text-align: center;font-size:8px;width:100%;font-weight:normal">Merchant</div><br><div style="color:grey;text-align: center;font-size:8px;width:100%;margin:-27px 0px 0px 0px;font-weight:normal">Perks</div>');
+        Ext.getCmp('htmlDashboardMenuBottom_MyMembershipCardTxt').setHtml('<div style="color:grey;text-align: center;font-size:8px;width:100%;font-weight:normal">My Membership</div><br><div style="color:grey;text-align: center;font-size:8px;width:100%;margin:-25px 0px 0px 0px;font-weight:normal">Card</div>');
         AyohaMerchantReward_Reset();
         animatedClickTabExt('containerMyAccount_Dashboard_MenuBottom_AyohaReward');
         Ext.getCmp('tabpanelMyAccount_Dashboard').setActiveItem(1);
@@ -7478,10 +7491,12 @@ function initializeContainerSingleTapEvent() {
     var containerViewElnamecontainerMyAccount_Dashboard_MenuBottom_MerchantperkBottom = containerViewnamecontainerMyAccount_Dashboard_MenuBottom_MerchantperkBottom.element;
     containerViewElnamecontainerMyAccount_Dashboard_MenuBottom_MerchantperkBottom.on('tap',
       function (event, node, options, eOpts) {
-       // FloatPanel_DashboardMerchantRewardShow();
-      // FloatPanel_DashboardMerchantRewardShow();
+        Ext.getCmp('htmlDashboardMenuBottom_HomeTxt').setHtml('<div style="color:grey;text-align: center;font-size:8px;width:100%;font-weight:normal">Home</div>');
+        Ext.getCmp('htmlDashboardMenuBottom_AyohaRewardTxt').setHtml('<div style="color:grey;text-align: center;font-size:8px;width:100%;font-weight:normal">Ayoha</div><br><div style="color:grey;text-align: center;font-size:8px;width:100%;margin:-25px 0px 0px 0px;font-weight:normal">Reward</div>');
+        Ext.getCmp('htmlDashboardMenuBottom_MerchantPerkTxt').setHtml('<div style="color:purple;text-align: center;font-size:8px;width:100%;font-weight:bold">Merchant</div><br><div style="color:purple;text-align: center;font-size:8px;width:100%;margin:-27px 0px 0px 0px;font-weight:bold">Perks</div>');
+        Ext.getCmp('htmlDashboardMenuBottom_MyMembershipCardTxt').setHtml('<div style="color:grey;text-align: center;font-size:8px;width:100%;font-weight:normal">My Membership</div><br><div style="color:grey;text-align: center;font-size:8px;width:100%;margin:-25px 0px 0px 0px;font-weight:normal">Card</div>');
       is_FloatPanel_DashboardMerchantRewardHide = 'Y';
-      LoadingPanelShow(getLoadingIcon(), 'Loading....');
+     
       AyohaMerchant_AyohaMerchantRewardLoad();
        Ext.getCmp('tabpanelMyAccount_Dashboard').setActiveItem(2);
        animatedClickTabExt('containerMyAccount_Dashboard_MenuBottom_MerchantperkBottom');

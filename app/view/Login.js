@@ -1122,7 +1122,7 @@ function loadUserAccountLatest() {
             routeCurrPage = '15';
             routesArray.push("mainView,view,15");
             Ext.getCmp('mainView').setActiveItem(15);
-
+     
             Ext.getCmp('htmlDashboard_EnterpriseLogo').setHtml('<img src="' + modelRecord.get('EnterpriseLogoPath') + '" style="width: 160px; height: 160px; border:2px solid grey; border-radius: 50%; max-width:250px; " />');
             Ext.getCmp('htmlDashboard_EnterpriseName').setHtml('<div style="color:white;text-align: center;font-size:14px;width:100%;"><b>'+modelRecord.get('EnterpriseName')+'</b></div>');
             Ext.getCmp('htmlDashboard_EnterpriseAddress').setHtml('<div style="color:white;text-align: center;font-size:12px;width:100%;">' + modelRecord.get('EnterpriseAddress') + '</div>');
