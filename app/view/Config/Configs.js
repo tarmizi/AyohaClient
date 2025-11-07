@@ -183,6 +183,15 @@ if(animatedClickTabExtComponant){
     
 }
 
+var highlightedTextComponant=null;
+function highlightedText(Componant,TextVal1,TextVal2) {  
+    if(highlightedTextComponant){
+        if(TextVal1=='Home'){
+
+        }
+        Ext.getCmp(highlightedTextComponant).setStyle('background-color:transparent;border-bottom:3px none purple');
+    }
+ }
 
 function animatedAccordian() {
 

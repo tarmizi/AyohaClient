@@ -916,7 +916,7 @@ function FloatPanel_MembershipCardList_MyMembershipCardHide() {
 
 //var _DataStore_MembershipsLoadBySubscriberAccNoStore;
 function FloatPanel_MembershipCardList_MyMembershipCard_MembershipsLoadBySubscriberAccNoStore() {
-
+return;
     _DataStore_MembershipsLoadBySubscriberAccNoStore.getProxy().setExtraParam('SubscriberAccNo', GetCurrAyohaUserAccountNo());
     _DataStore_MembershipsLoadBySubscriberAccNoStore.getProxy().setUrl(GetAPIurl() + '/Memberships/MembershipsLoadBySubscriberAccNo');
     _DataStore_MembershipsLoadBySubscriberAccNoStore.load({

@@ -5388,6 +5388,7 @@ itemTpl: '<div class="myContent" style="background-color:transparent;width:103%;
                                                                             margin: '1 0 0 0',
                                                                             // id: 'htmlStampHistoryTxt',
                                                                             //html: '<font size=1 color=grey>My Membership</font>',
+                                                                            id:'htmlDashboardMenuBottom_HomeTxt',
                                                                             html: '<div style="color:purple;text-align: center;font-size:8px;width:100%;font-weight:bold">Home</div>',
 
                                                                         },
@@ -5446,6 +5447,7 @@ itemTpl: '<div class="myContent" style="background-color:transparent;width:103%;
                                                                               margin: '0 0 0 0',
                                                                               // id: 'htmlStampHistoryTxt',
                                                                               //html: '<font size=1 color=grey>My Membership</font>',
+                                                                              id:'htmlDashboardMenuBottom_AyohaRewardTxt',
                                                                               html: '<div style="color:grey;text-align: center;font-size:8px;width:100%;">Ayoha</div><br><div style="color:grey;text-align: center;font-size:8px;width:100%;margin:-25px 0px 0px 0px">Reward</div>',
 
                                                                           },
@@ -5575,6 +5577,7 @@ itemTpl: '<div class="myContent" style="background-color:transparent;width:103%;
                       margin: '0 0 0 0',
                       // id: 'htmlStampHistoryTxt',
                       //html: '<font size=1 color=grey>My Membership</font>',
+                      id:'htmlDashboardMenuBottom_MerchantPerkTxt',
                       html: '<div style="color:grey;text-align: center;font-size:8px;width:100%;">Merchant</div><br><div style="color:grey;text-align: center;font-size:8px;width:100%;margin:-27px 0px 0px 0px">Perks</div>',
 
                   },
@@ -5649,6 +5652,7 @@ itemTpl: '<div class="myContent" style="background-color:transparent;width:103%;
                                                                           margin: '0 0 0 0',
                                                                           // id: 'htmlStampHistoryTxt',
                                                                           //html: '<font size=1 color=grey>My Membership</font>',
+                                                                          id:'htmlDashboardMenuBottom_MyMembershipCardTxt',
                                                                           html: '<div style="color:grey;text-align: center;font-size:8px;width:100%;">My Membership</div><br><div style="color:grey;text-align: center;font-size:8px;width:100%;margin:-25px 0px 0px 0px">Card</div>',
 
                                                                       },

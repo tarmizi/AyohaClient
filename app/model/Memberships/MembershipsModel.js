@@ -70,7 +70,7 @@
                   console.log(str);
 
                   if (str.length <= 16) {
-                      _value = '<div style="margin:-51px 0px 0px 68px;font-family:Arial, sans-serif;font-size:22px;font-weight:bold;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:top;word-break:normal;color:white;width:100%;">' + str.toUpperCase() + '</div>';
+                      _value = '<div style="margin:-51px 0px 0px 68px;font-family:Arial, sans-serif;font-size:18px;font-weight:bold;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:top;word-break:normal;color:white;width:100%;">' + str.toUpperCase() + '</div>';
                       console.log(str);
                       return _value;
                   }
@@ -97,13 +97,13 @@
                     var logo = record.get('EnterprisesLogo');
                     console.log(str);
 
-                    if (str.length <= 13) {
-                        _value = '<img src="' + logo + '" alt="Image" style="width:60px;height:60px;border-radius: 50%;border: 1px solid white;margin:-36px 0px 0px 0px">';
+                    if (str.length <= 16) {
+                        _value = '<img src="' + logo + '" alt="Image" style="width:60px;height:60px;border-radius: 50%;border: 1px solid white;margin:-10px 0px 0px 0px">';
                         console.log(str.length);
                         return _value;
                     }
-                    if (str.length >= 14) {
-                        _value = '<img src="' + logo + '" alt="Image" style="width:60px;height:60px;border-radius: 50%;border: 1px solid white;margin:-36px 0px 0px 0px">';
+                    if (str.length >= 17) {
+                        _value = '<img src="' + logo + '" alt="Image" style="width:60px;height:60px;border-radius: 50%;border: 1px solid white;margin:0px 0px 0px 0px">';
                         console.log(str.length);
                         return _value;
                     }
@@ -122,12 +122,12 @@
                       console.log(str);
 
                       if (str.length <= 16) {
-                          _value = 'height:73px';
+                          _value = 'height:70px';
                           console.log(str.length);
                           return _value;
                       }
                       if (str.length >= 17) {
-                          _value = 'height:90px';
+                          _value = 'height:70px';
                           console.log(str.length);
                           return _value;
                       }
@@ -189,7 +189,7 @@
                        var isValidLifeTime = record.get('isValidLifeTime');
                        var StrExpiredDate = record.get('StrExpiredDate');
                        if (isValidLifeTime == "YES") {
-                           _value = "No Expired";
+                           _value = "No Expiry";
                        }
                        if (isValidLifeTime == "NO") {
                            if (ValidUntilDateMonthYearOnly == "02/1983") {
@@ -288,7 +288,55 @@
 
                              return _value;
                          }
-                     }
+                     },
+                     {
+                        name: 'ModifiedMembershipFee',
+                        convert: function (value, record) {
+
+                            var _value;
+                            var str =parseInt(record.get('MembershipFee'));
+if(str>0){
+   // _value = (record.get('MembershipFee'));
+    _value = '<div style="display:inline-flex;align-items:center;gap:5px;padding:4px 10px;border-radius:999px;border:2px solid transparent;background:linear-gradient(#ffffff,#ffffff) padding-box,linear-gradient(180deg,#ff00de,#c800ff) border-box;color:#111827;font:800 14px/1.1 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;"><img src="resources/icons/MembershipCardIcon01.png" width="18" height="18" alt="Company Name"><span>RM'+record.get('MembershipFee')+'</span></div>';
+}
+if(str<=0){
+   
+    _value = '<div style="font-size:14px;color:black">Free Membership</div>';
+  
+}
+
+                       
+
+
+
+
+                            return _value;
+                        }
+                    },
+                    {
+                        name: 'ModifiedMembershipFeeLabel',
+                        convert: function (value, record) {
+
+                            var _value;
+                            var str =parseInt(record.get('MembershipFee'));
+if(str>0){
+   // _value = (record.get('MembershipFee'));
+    _value = '<div style="width:100%;text-align:right;margin:-15px 0px 0px -20px">Membership Fees(RM)</div>';
+}
+if(str<=0){
+   
+    _value = '<div style="width:100%;text-align:right;margin:-15px 0px 0px -20px">No Membership Fee </div>';
+  
+}
+
+                       
+
+
+
+
+                            return _value;
+                        }
+                    }
         ]
     }
 });
