@@ -13,7 +13,35 @@
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1" /> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-    <title>Ayoha</title>    
+    <title>Ayoha</title>
+    <style>
+        #AyohaSearchStrong1 .pill{
+          position:relative;display:flex;align-items:center;width:100%;
+          padding:5px 44px 5px 44px;border-radius:999px;border:2px solid transparent;
+          background:
+            linear-gradient(#ffffff,#ffffff) padding-box,
+            linear-gradient(90deg,#ff00de,#c800ff) border-box;      /* Ayoha gradient ring */
+          /* White outline + deep shadow for separation from header */
+          box-shadow:0 0 0 3px rgba(255,255,255,.85),0 12px 28px rgba(0,0,0,.28);
+        }
+        #AyohaSearchStrong1 .ico{
+          position:absolute;left:14px;top:50%;transform:translateY(-50%);display:inline-flex;
+          width:28px;height:28px;border-radius:999px;
+          background:radial-gradient(rgba(200,0,255,.18),rgba(200,0,255,0)); /* soft halo */
+          align-items:center;justify-content:center;
+        }
+        #AyohaSearchStrong1 input[type="text"]{
+          flex:1;min-width:0;border:0;background:transparent;outline:none;height:28px;
+          font-weight:normal 12px/1.1 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:#111827;
+        }
+        #AyohaSearchStrong1 input::placeholder{color:#4b5563;font-weight:normal;opacity:.9;}
+        #AyohaSearchStrong1 .clear{
+          position:absolute;right:8px;top:50%;transform:translateY(-50%);display:none;
+          width:32px;height:32px;border-radius:999px;border:0;cursor:pointer;
+          background:#111827;color:#fff;box-shadow:0 6px 14px rgba(0,0,0,.25);
+        }
+        #AyohaSearchStrong1 .clear svg{display:block}
+      </style>
     <style>
         #membershipStatusDonut { background-color: transparent !important; }
       </style>

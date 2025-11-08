@@ -952,64 +952,7 @@ return
 
 }
 
-var countMembershipsLoadBySubscriberAccNoStoreFirst;
-function MembershipsLoadBySubscriberAccNoStoreOnKeyUp() {
 
-
-
-
-
-
-    console.log('SearchEnterpriseOnKeyUp');
-    var countMembershipsLoadBySubscriberAccNoStoreSequence = 0;
-
-
-    _DataStore_MembershipsLoadBySubscriberAccNoStore.clearFilter();
-
-    var queryString = document.getElementById('input-FloatPanel_MembershipCardList_MyMembershipCard_SearchTxt').value;
-
-
-
-    if (queryString) {
-        console.log(queryString.length);
-
-        var thisRegEx = new RegExp(queryString, "i");
-        _DataStore_MembershipsLoadBySubscriberAccNoStore.filterBy(function (record) {
-            if (thisRegEx.test(record.get('EnterprisesName'))) {
-                console.log('ada0');
-
-                countMembershipsLoadBySubscriberAccNoStoreSequence = _DataStore_MembershipsLoadBySubscriberAccNoStore.getCount();
-                Ext.getCmp('FloatPanel_MembershipCardList_MyMembershipCard_CountSearchTxt').setHtml('<font size=3 color=black><b>(' + countMembershipsLoadBySubscriberAccNoStoreSequence + ')</b></font>');
-                // Ext.getCmp('htmlSubscriberListTypeLbl').setHtml('<font size="2" color="black"><b>All Cards(' + countEnterprise + ')</b></font>');
-                return true;
-
-            };
-            return false;
-            console.log('tiada1');
-
-            //  return false;
-        });
-        console.log('tiada3');
-        countMembershipsLoadBySubscriberAccNoStoreSequence = _DataStore_MembershipsLoadBySubscriberAccNoStore.getCount();
-        Ext.getCmp('FloatPanel_MembershipCardList_MyMembershipCard_CountSearchTxt').setHtml('<font size=3 color=black><b>(' + countMembershipsLoadBySubscriberAccNoStoreSequence + ')</b></font>');
-
-        //  Ext.getCmp('htmlSubscriberListTypeLbl').setHtml('<font size="2" color="black"><b>All Cards(' + countEnterprise + ')</b></font>');
-    }
-
-
-    else {
-        console.log('tiada2');
-        _DataStore_MembershipsLoadBySubscriberAccNoStore.clearFilter();
-        Ext.getCmp('FloatPanel_MembershipCardList_MyMembershipCard_CountSearchTxt').setHtml('<font size=3 color=black><b>(' + countMembershipsLoadBySubscriberAccNoStoreFirst + ')</b></font>');
-        // Ext.getCmp('htmlSubscriberListTypeLbl').setHtml('<font size="2" color="black"><b>All Cards(' + countEnterpriseSubscribedLoadFirst + ')</b></font>')
-        // Ext.getCmp('lblSearchEnterpriseList').setHtml('<font size="2" color="black"><b>Enterprise List (' + countEnterpriseLoanFirst + ')</b></font>');
-        return false;
-    }
-
-
-
-
-}
 
 
 

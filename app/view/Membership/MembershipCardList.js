@@ -150,7 +150,7 @@ Ext.define('ianMizi.view.Membership.MembershipCardList', {
                                                
                                                    // id: 'labelDashboard_LastCheckInTimeStamp',    
                                                    // html: '<div  style="color:white;text-align: left;font-size:10px;width:100%;margin:0px 0px 0px 0px;">00:00:00</div>'
-                                                    html: '<div style="color:white;text-align: left;font-size:14px;width:100%;margin:0px 0px 0px 0px"><span style="font-size:10px;color:black;background:gold;border:1px solid #fac;padding:3px 6px;border-radius:999px;white-space:nowrap;">Centralised membership cards</span><br><b>My Membership Cards</b></div><br><div  style="color:white;text-align: left;font-size:10px;width:100%;margin:-20px 0px 0px 0px;">All merchant cards you joined</div>'
+                                                    html: '<div style="color:white;text-align: left;font-size:14px;width:100%;margin:0px 0px 0px 0px"><span style="font-size:10px;color:black;background:gold;border:1px solid #fac;padding:3px 6px;border-radius:999px;white-space:nowrap;">All merchant cards you have joined</span><br><b>My Membership Cards</b></div><br><div  style="color:white;text-align: left;font-size:10px;width:100%;margin:-20px 0px 0px 0px;">Access cards easily in one place</div>'
                                                    
                                                
                                                 },
@@ -473,6 +473,61 @@ Ext.define('ianMizi.view.Membership.MembershipCardList', {
                             ]
                         },
                         {
+                            xtype: 'container',
+                            height: 62,
+                            width: '95%',
+                            style: 'background-color:transparent;',
+                                           // style: ' background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);',style: ' background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);',
+                                            layout: {
+                                                type: 'hbox',
+                                                pack: 'center',
+                                                align: 'center',
+                                            },
+                                            items:[
+                                                {  height: 62,
+                                                    width: '90%',
+                                                    html: '<div id="AyohaSearchStrong1" style="max-width:560px;margin:8px auto 14px;">' +
+                                                    '<div class="pill">' +
+                                                      '<span class="ico" aria-hidden="true">' +
+                                                        '<svg width="20" height="20" viewBox="0 0 24 24">' +
+                                                          '<defs><linearGradient id="ayohaGradS1" x1="0" y1="0" x2="0" y2="1">' +
+                                                            '<stop offset="0" stop-color="#ff00de"/><stop offset="1" stop-color="#c800ff"/>' +
+                                                          '</linearGradient></defs>' +
+                                                          '<circle cx="10" cy="10" r="7" stroke="url(#ayohaGradS1)" stroke-width="2" fill="none"/>' +
+                                                          '<line x1="15" y1="15" x2="21" y2="21" stroke="url(#ayohaGradS1)" stroke-width="2" stroke-linecap="round"/>' +
+                                                        '</svg>' +
+                                                      '</span>' +
+                                                
+                                                      '<input type="text" id="txtSearchMembershipCardList" placeholder="Search cards, merchants, perks…" autocapitalize="none" autocorrect="off" ' +
+                                                      'oninput="this.parentNode.querySelector(\\\'.clear\\\').style.display=this.value?\\\'inline-flex\\\':\\\'none\\\';">' +
+                                                
+                                                      /* Result count chip */
+                                                    //   '<span id="txtSearchMembershipCardListCount" ' +
+                                                    //         'style="margin-left:8px;display:inline-flex;align-items:center;padding:4px 8px;' +                                                                  
+                                                    //                'font-weight:bold;font-size:12px;color:#111827;">0</span>' +
+
+                                                                   '<span id="txtSearchMembershipCardListCount" ' +
+                                                                   'style="position:absolute;right:16px;top:50%;transform:translateY(-50%);' +
+                                                                          'font-weight:bold;color:#111827;min-width:18px;text-align:right;font-size:14px">0</span>' +
+                                                
+                                                    //   '<button class="clear" type="button" aria-label="Clear search" ' +
+                                                    //     'onclick="var i=this.parentNode.querySelector(\\\'input\\\');i.value=\\\'\\\';i.focus();this.style.display=\\\'none\\\';' +
+                                                    //              'var c=document.getElementById(\\\'txtSearchMembershipCardListCount\\\'); if(c){c.textContent=\\\'0 results\\\';}">' +
+                                                    //     '<svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true">' +
+                                                    //       '<path d="M8 8 L16 16 M16 8 L8 16" stroke="#fff" stroke-width="2" stroke-linecap="round"/>' +
+                                                    //     '</svg>' +
+                                                    //   '</button>' +
+                                                    '</div>' +
+                                                  '</div>',
+                                                  // html:  '<div id="AyohaSearchStrong1" style="max-width:560px;margin:10px auto 14px;"><div class="pill"><span class="ico" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24"><defs><linearGradient id="ayohaGradS1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff00de"/><stop offset="1" stop-color="#c800ff"/></linearGradient></defs><circle cx="10" cy="10" r="7" stroke="url(#ayohaGradS1)" stroke-width="2" fill="none"/><line x1="15" y1="15" x2="21" y2="21" stroke="url(#ayohaGradS1)" stroke-width="2" stroke-linecap="round"/></svg></span><input type="text" id="txtSearchMembershipCardList" placeholder="Search cards, merchants, perks…" autocapitalize="none" autocorrect="off" oninput="this.parentNode.querySelector(\\\'.clear\\\').style.display=this.value?\\\'inline-flex\\\':\\\'none\\\'"><button class="clear" type="button" aria-label="Clear search" onclick="var i=this.parentNode.querySelector(\\\'input\\\');i.value=\\\'\\\';i.focus();this.style.display=\\\'none\\\';"><svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 8 L16 16 M16 8 L8 16" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></button></div></div>',
+                                                },
+                                                // {  height: 60,
+                                                //     width: '5%',
+                                                //     html:  '<div  style="font-size:12px;font-weight:bold;color:black;text-align:center">0</div>',
+                                                // }
+                                            ]
+                        },
+                        {
                             xtype: 'list',
                             height: 100,
                             width: '95%',
@@ -484,8 +539,8 @@ Ext.define('ianMizi.view.Membership.MembershipCardList', {
                             scrollable:false,
 
 
-
-                            itemTpl: '<div class="myContent" style="margin:0px 0px 0px 0px;width:100%;height:196px;background-color: #fac;background-image: url({MembershipCardBackgroundImg});background-size: 100% 100%;border-radius: 20px 20px 20px 20px;box-shadow: 5px 2px 18px #888888;">' +                        
+                            //box-shadow: 5px 2px 18px #888888;
+                            itemTpl: '<div class="myContent" style="margin:0px 0px 0px 0px;width:100%;height:196px;background-color: #fac;background-image: url({MembershipCardBackgroundImg});background-size: 100% 100%;border-radius: 20px 20px 20px 20px;border:2px solid  #fac">' +                        
                             '{ModifiedMembershipApprovalStatus}' +
                        '<table style="border-collapse:collapse;border-spacing:0;border:none;width:100%;margin:-15px 0px 0px 0px;" OnClick="FloatPanel_MembershipCardList_MyMembershipCardOpenMembershiCardDetail(' + "'" + '{CampaignEnterpriseHQAccNo}' + "'" + ',' + "'" + '{CampaignEnterpriseAccNo}' + "'" + ', ' + "'" + '{MembershipCardCode}' + "'" + ',' + "'" + '{EnterpriseTagLine}' + "'" + ', {ID})" ><tr><td style="background-color:transparent;border-color:black;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 10px;text-align:left;vertical-align:middle;word-break:normal;width:100%;{ModifiedHeaderHeight}" colspan="3">{ModifiedEnterprisesLogo}{ModifiedEnterprisesName}</td></tr><tr><td style="border-color:black;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:top;word-break:normal;width:100%;" colspan="3"><div style="margin:8px 0px 0px 10px;width:100%;text-align:left;font-family:Playball,cursive;font-size:24px;font-weight:normal;border-top: 1px none white;color:white;padding:0px 0px;">{MembershipLevel}</div><br><div style="margin:-30px 0px 0px 10px;width:100%;text-align:left;color:white;font-family:Orbitron;font-size:16px;font-weight:normal;border-top: 1px none white;padding:0px 0px">{ModifiedMembershipNo}</div><br><div style="margin:-28px 0px 0px 10px;width:100%;text-align:left;color:white;font-family:Orbitron;font-size:16px;font-weight:normal;border-top: 1px none white;padding:0px 0px">{ModifiedAccountName}</div></td><td style="border-color:black;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal;width:5%;"></td></tr><tr><td style="border-color:black;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:top;word-break:normal" colspan="2"><div style="margin:16px 0px 0px 15px;width:100%;text-align:left;color:white;font-family:Orbitron,sans-serif;font-size:7px;font-weight:normal;border-top: 1px none white;padding:0px 0px">Member Since</div><br><div style="margin:-21px 0px 0px 15px;width:100%;text-align:left;color:white;font-family:Orbitron,sans-serif;font-size:7px;font-weight:normal;border-top: 1px none white;padding:0px 0px">{ModifiedMemberSinceDate}</div><br><div style="margin:-18px 0px 0px 0px;width:100%;text-align:left;color:transparent;font-family:Orbitron,sans-serif;font-size:7px;font-weight:normal;border-top: 1px none white;padding:0px 0px;height:5px">02/2021</div></td><td style="border-color:black;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:10px;overflow:hidden;padding:0px 0px;text-align:right;vertical-align:top;word-break:normal"><div style="margin:16px 0px 0px -15px;width:100%;text-align:right;color:white;font-family:Orbitron,sans-serif;font-size:7px;font-weight:normal;border-top: 1px none white;padding:0px 0px">Valid Until</div><br><div style="margin:-15px 0px 0px -15px;width:100%;text-align:right;color:white;font-family:Orbitron,sans-serif;font-size:7px;font-weight:normal;border-top: 1px none white;padding:0px 0px">{ModifiedUntilDate}</div></td><br><div style="margin:-18px 0px 0px 0px;width:100%;text-align:left;color:transparent;font-family:Orbitron,sans-serif;font-size:11px;font-weight:normal;border-top: 1px none white;padding:0px 0px;height:5px">02/2021</div></tr></table>' +
                          '</div>' +                                                      
@@ -533,7 +588,7 @@ initialize: function () {
 function MembershipCardListLoad(){
     //LoadingPanelShow(getLoadingIcon(), 'Loading....');
     AddRoutePages("FloatPanel_MembershipCardList_MyMembershipCardHide()");
-   // document.getElementById("input-FloatPanel_MembershipCardList_MyMembershipCard_SearchTxt").addEventListener("keyup", MembershipsLoadBySubscriberAccNoStoreOnKeyUp);
+   document.getElementById("txtSearchMembershipCardList").addEventListener("keyup", MembershipCardList_MembershipsLoadBySubscriberAccNoStoreOnKeyUp);
    
 
 
@@ -552,7 +607,67 @@ function MembershipCardListLoad(){
 
 
 
+var countMembershipsLoadBySubscriberAccNoStoreFirst;
+function MembershipCardList_MembershipsLoadBySubscriberAccNoStoreOnKeyUp() {
 
+
+
+
+
+
+    console.log('SearchEnterpriseOnKeyUp');
+    var countMembershipsLoadBySubscriberAccNoStoreSequence = 0;
+
+
+    _DataStore_MembershipsLoadBySubscriberAccNoStore.clearFilter();
+
+    var queryString = document.getElementById('txtSearchMembershipCardList').value;
+
+
+
+    if (queryString) {
+        console.log(queryString.length);
+
+        var thisRegEx = new RegExp(queryString, "i");
+        _DataStore_MembershipsLoadBySubscriberAccNoStore.filterBy(function (record) {
+            if (thisRegEx.test(record.get('EnterprisesName'))) {
+                console.log('ada0');
+
+                countMembershipsLoadBySubscriberAccNoStoreSequence = _DataStore_MembershipsLoadBySubscriberAccNoStore.getCount();
+                document.getElementById('txtSearchMembershipCardListCount').textContent ='('+ countMembershipsLoadBySubscriberAccNoStoreSequence+'-Found)';
+                //  Ext.getCmp('FloatPanel_MembershipCardList_MyMembershipCard_CountSearchTxt').setHtml('<font size=3 color=black><b>(' + countMembershipsLoadBySubscriberAccNoStoreSequence + ')</b></font>');
+                // Ext.getCmp('htmlSubscriberListTypeLbl').setHtml('<font size="2" color="black"><b>All Cards(' + countEnterprise + ')</b></font>');
+                return true;
+
+            };
+            return false;
+            console.log('tiada1');
+
+            //  return false;
+        });
+        console.log('tiada3');
+        countMembershipsLoadBySubscriberAccNoStoreSequence = _DataStore_MembershipsLoadBySubscriberAccNoStore.getCount();
+        document.getElementById('txtSearchMembershipCardListCount').textContent = '('+ countMembershipsLoadBySubscriberAccNoStoreSequence+')';
+       // Ext.getCmp('FloatPanel_MembershipCardList_MyMembershipCard_CountSearchTxt').setHtml('<font size=3 color=black><b>(' + countMembershipsLoadBySubscriberAccNoStoreSequence + ')</b></font>');
+
+        //  Ext.getCmp('htmlSubscriberListTypeLbl').setHtml('<font size="2" color="black"><b>All Cards(' + countEnterprise + ')</b></font>');
+    }
+
+
+    else {
+        console.log('tiada2');
+        _DataStore_MembershipsLoadBySubscriberAccNoStore.clearFilter();
+        document.getElementById('txtSearchMembershipCardListCount').textContent = '('+ countMembershipsLoadBySubscriberAccNoStoreSequence+')';
+       // Ext.getCmp('FloatPanel_MembershipCardList_MyMembershipCard_CountSearchTxt').setHtml('<font size=3 color=black><b>(' + countMembershipsLoadBySubscriberAccNoStoreFirst + ')</b></font>');
+        // Ext.getCmp('htmlSubscriberListTypeLbl').setHtml('<font size="2" color="black"><b>All Cards(' + countEnterpriseSubscribedLoadFirst + ')</b></font>')
+        // Ext.getCmp('lblSearchEnterpriseList').setHtml('<font size="2" color="black"><b>Enterprise List (' + countEnterpriseLoanFirst + ')</b></font>');
+        return false;
+    }
+
+
+
+
+}
 
 
 function MembershipCardList_MyMembershipCard_MembershipsLoadBySubscriberAccNoStore() {
@@ -564,6 +679,7 @@ function MembershipCardList_MyMembershipCard_MembershipsLoadBySubscriberAccNoSto
             if (success && records.length > 0) {
                 console.log('Store loaded successfully, total records: ' + records.length);
                 var count = parseInt(_DataStore_MembershipsLoadBySubscriberAccNoStore.getCount());
+                countMembershipsLoadBySubscriberAccNoStoreFirst = count;
 var extraHeight=80;
 var cardHeight=308;
 var totalHeight= (count * cardHeight) + extraHeight;
