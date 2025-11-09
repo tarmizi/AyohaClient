@@ -158,7 +158,7 @@ Ext.define('ianMizi.view.Membership.MembershipCardList', {
                                                     xtype: 'container',
                                                     style:"background-color:transparent",
                                                     width: '100%',
-                                                    height:15,
+                                                    height:18,
                                                 },
                                                 {
                                                     xtype: 'container',
@@ -498,7 +498,7 @@ Ext.define('ianMizi.view.Membership.MembershipCardList', {
                                                         '</svg>' +
                                                       '</span>' +
                                                 
-                                                      '<input type="text" id="txtSearchMembershipCardList" placeholder="Search cards, merchants, perks…" autocapitalize="none" autocorrect="off" ' +
+                                                      '<input type="text" id="txtSearchMembershipCardList" placeholder="Search cards name, merchant name, loyalty type campaign" autocapitalize="none" autocorrect="off" ' +
                                                       'oninput="this.parentNode.querySelector(\\\'.clear\\\').style.display=this.value?\\\'inline-flex\\\':\\\'none\\\';">' +
                                                 
                                                       /* Result count chip */
@@ -630,7 +630,7 @@ function MembershipCardList_MembershipsLoadBySubscriberAccNoStoreOnKeyUp() {
 
         var thisRegEx = new RegExp(queryString, "i");
         _DataStore_MembershipsLoadBySubscriberAccNoStore.filterBy(function (record) {
-            if (thisRegEx.test(record.get('EnterprisesName'))) {
+            if (thisRegEx.test(record.get('SearchCol'))) {
                 console.log('ada0');
 
                 countMembershipsLoadBySubscriberAccNoStoreSequence = _DataStore_MembershipsLoadBySubscriberAccNoStore.getCount();
@@ -680,7 +680,7 @@ function MembershipCardList_MyMembershipCard_MembershipsLoadBySubscriberAccNoSto
                 console.log('Store loaded successfully, total records: ' + records.length);
                 var count = parseInt(_DataStore_MembershipsLoadBySubscriberAccNoStore.getCount());
                 countMembershipsLoadBySubscriberAccNoStoreFirst = count;
-var extraHeight=80;
+var extraHeight=180;
 var cardHeight=308;
 var totalHeight= (count * cardHeight) + extraHeight;
                 if (count>0) {

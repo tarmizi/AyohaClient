@@ -46,6 +46,7 @@
       'MerchantPoint',
       'LoyaltCampaignCount',
       'EnterpriseTagLine',
+      'SearchCol',
        {
            name: 'ModifiedEnterprisesNameUpperCase',
            convert: function (value, record) {
