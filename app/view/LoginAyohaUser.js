@@ -515,7 +515,7 @@ function loadAyohaUserProfileLoginBody() {
                         localStorage.setItem('AyohaUserAccountNo',data.results[0].AccountNo);
                         localStorage.setItem('AyohaUserKatalaluan', data.results[0].Katalaluan);
                         globalLogginAyohaUser_UserVerifiedDate = data.results[0].UserVerifiedDate;
-                       
+                        
 
                     
                         //routeCurrPage = '15';
@@ -605,6 +605,7 @@ function loadAyohaUserProfileLoginBody() {
                         //loadEnterprisesContactUsLinkStore();
                         loadAdvertisementloadHotSeatStore();
                         Dashboard_AyohaRewardVoucherEntitledUserLoadBySubscriberAccNoVoucherTypeStore();
+                        AyohaMerchantReward_loadVIAAdvertisement();
                        // TestRoutePanelShow();
                     }
                     if (data.total <= 0) {
