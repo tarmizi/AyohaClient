@@ -1984,7 +1984,7 @@ items: [
                 
                 '</div>'+
                 '<div class="membership-body">'+
-                '<div class="membership-price">RM{MembershipCardFee}</div>'+
+                '<div class="membership-price">RM{ModifiedMembershipCardFee}</div>'+
                 '<div class="membership-duration">Billed {MembershipCardFeePaymentCycle}</div>'+
                 '</div>'+
                
@@ -2873,7 +2873,7 @@ function FloatPanel_MembershipCardList_NotYetSubscribedShow_FromFloatPanel_Merch
 
 function FloatPanel_MembershipCardList_NotYetSubscribedShow_FromDashboard_Main(MembershipCardCode, EnterpriseAccountNo, isMembershipCardSubscribed,MembershipCardFeePaymentCycle,CountStar,CountReviewer) {
    
- 
+
    
 //    if(MembershipCardFeePaymentCycle !='FOC'){
 //     FloatPanel_MembershipCardList_NotYetSubscribedShow(EnterpriseAccountNo,MembershipCardCode);
@@ -4331,11 +4331,11 @@ function FloatPanel_MembershipCardList_NotYetSubscribed_MembershipCardPaymentPla
                 // Loop through all records
                 records.forEach(function (record) {
                     var planCode = record.get('PaymentPlanCode');
-                    var fee = record.get('MembershipCardFee');
+                    var fee = record.get('ModifiedMembershipCardFee');
                     var cycle = record.get('MembershipCardFeePaymentCycle');
     
                     console.log('Plan Code:', planCode);
-                    console.log('Fee:', fee);
+                   //alert('Fee:'+ fee);
                     console.log('Cycle:', cycle);
                     globalFloatPanel_MembershipCardList_NotYetSubscribed_price = parseFloat(fee);
                     globalFloatPanel_MembershipCardList_NotYetSubscribed_plan = cycle;

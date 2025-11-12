@@ -500,6 +500,29 @@ function CoreFunction_DashboardLoadByEnterpriseAccNoStorePerk() {
 
 
 
+function CoreFunction_TabToMyMembershipCard() {
+
+    if(AppState.MainDashboard.MainDashboardBottomkMenuTabTag != "MyMembershipCard"){
+        SideMenuMembershipCardListShow();
+        Ext.getCmp('htmlDashboardMenuBottom_HomeTxt').setHtml('<div style="color:grey;text-align: center;font-size:8px;width:100%;font-weight:normal">Home</div>');
+        Ext.getCmp('htmlDashboardMenuBottom_AyohaRewardTxt').setHtml('<div style="color:grey;text-align: center;font-size:8px;width:100%;font-weight:normal">Ayoha</div><br><div style="color:grey;text-align: center;font-size:8px;width:100%;margin:-25px 0px 0px 0px;font-weight:normal">Reward</div>');
+        Ext.getCmp('htmlDashboardMenuBottom_MerchantPerkTxt').setHtml('<div style="color:grey;text-align: center;font-size:8px;width:100%;font-weight:normal">Merchant</div><br><div style="color:grey;text-align: center;font-size:8px;width:100%;margin:-27px 0px 0px 0px;font-weight:normal">Perks</div>');
+        Ext.getCmp('htmlDashboardMenuBottom_MyMembershipCardTxt').setHtml('<div style="color:purple;text-align: center;font-size:8px;width:100%;font-weight:bold">My Membership</div><br><div style="color:purple;text-align: center;font-size:8px;width:100%;margin:-25px 0px 0px 0px;font-weight:bold">Card</div>');
+       // AyohaMerchantReward_Reset();
+          animatedClickTabExt('containerMyAccount_Dashboard_MenuBottom_MyMembershipCard');
+          MembershipCardListLoad();
+          Ext.getCmp('tabpanelMyAccount_Dashboard').setActiveItem(3);
+          return
+    }
+    if(AppState.MainDashboard.MainDashboardBottomkMenuTabTag == "MyMembershipCard"){
+        SideMenuMembershipCardListShow();        
+          MembershipCardListLoad();
+          return
+    }
+
+}
+
+
 
 // FloatPanel_AyohaRewardVoucherDetailShow_MerchantPerks(
 //     payload.VoucherName,

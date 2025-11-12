@@ -45,6 +45,7 @@ var AppState = {
         MainDashboardRelativeCheckInTime : null,
         MainDashboardAyohaRewardPointCheckIn :null,
         MainDashboardCheckInCount : null,
+        MainDashboardBottomkMenuTabTag : null,
       
     
     },
@@ -80,6 +81,17 @@ var AppState = {
         AyohaUserKatalaluan: null,
         AyohaUserAccountNo: null,
         AccountNoDisplay: null,
+    },
+
+
+
+    AyohaMerchantReward:{
+        StampPerks: 0,
+        PointPerks: 0,
+        VoucherPerks: 0,
+        ContestPerks: 0,
+        EventPerks: 0,
+        DiscountPerks: 0
     }
 };
 

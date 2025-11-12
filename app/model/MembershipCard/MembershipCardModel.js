@@ -64,6 +64,26 @@
             return _value;
         }
     },
+    {
+        name: 'ModifiedMembershipCardFee',
+        convert: function (value, record) {
+
+            var _value;
+            var str = record.get('MembershipCardFeePaymentCycle');
+
+            var address = str;
+            if(str=="FOC"){
+                _value ="0.00";
+            }else{
+                _value=record.get('MembershipCardFee');
+            }
+    
+
+
+
+            return _value;
+        }
+    },
 
     {
         name: 'ModifiedMarketingTagline',

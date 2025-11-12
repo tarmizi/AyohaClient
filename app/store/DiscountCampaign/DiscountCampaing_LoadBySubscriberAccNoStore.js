@@ -1,0 +1,28 @@
+
+Ext.define('ianMizi.store.DiscountCampaign.DiscountCampaing_LoadBySubscriberAccNoStore', {
+});
+
+var _DataStore_DiscountCampaing_LoadBySubscriberAccNoStore = Ext.create('Ext.data.Store', {
+
+    model: 'ianMizi.model.DiscountCampaign.DiscountCampaignModel',
+    id: '_DiscountCampaing_LoadBySubscriberAccNoStore',
+    proxy: {
+        type: 'ajax',
+        url: GetAPIurl() + '/DiscountCampaign/DiscountCampaing_LoadBySubscriberAccNo',
+        actionMethods: {
+            read: 'POST'
+        },
+        reader: {
+            type: 'json',
+            rootProperty: 'results',
+            totalProperty: 'total',
+            successProperty: 'success',
+            messageProperty: 'message'
+        }
+    },
+
+
+
+    //autoLoad: true
+
+});
