@@ -424,12 +424,14 @@ function FloatPanel_MerchantDiscountLoyaltyDescriptionHide() {
 }
 
 function FloatPanel_MerchantDiscountLoyaltyDescription_DiscountCampaingLoadByDiscountCode(DiscountCode,EnterpriseAccNo){
-    var task = Ext.create('Ext.util.DelayedTask', function () {
+    // var task = Ext.create('Ext.util.DelayedTask', function () {
+    // });
+   // task.delay(10);
         var objn = {
             "DiscountCode": DiscountCode,
             "EnterpriseAccNo": EnterpriseAccNo,           
         };
-        console.log(objn);
+       // console.log(objn);
         var _value = Ext.Ajax.request({
 
             type: "POST",
@@ -460,9 +462,13 @@ function FloatPanel_MerchantDiscountLoyaltyDescription_DiscountCampaingLoadByDis
                         DiscountEndDate = data.results[0].DiscountEndDate;
                         DiscountType = data.results[0].DiscountType;
 
+                        if(isRequireDiscountEndDate=="No"){
+                            DiscountEndDate="Valid Life Time";
+                        }
 
 
-                        Ext.getCmp('htmlPanel_MerchantDiscountLoyaltyDescriptionImage').setHtml('<div style="width:100%; height: 220px; border:3px none white;padding:0px 0px;margin:0px 0px 0px 0px;"><img src="'+DiscountImgPath+'" style="width:100%; height: 180px; border:2px dashed grey;"/><br><div style="margin:-4px 0px 0px 0px;text-align:left;color:black;font-family: Arial; font-size:12px;word-wrap: break-word;font-weight:normal;"><table style="border-collapse:collapse;border-spacing:0;width:100%;" class="tg"><thead><tr><th style="background-color:#ffffff;border-color:#ffffff;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:12px;font-weight:normal;overflow:hidden;padding:0px 1px;text-align:left;vertical-align:middle;word-break:normal">Valid Until:<b>'+DiscountEndDate+'</b></th><th style="background-color:#ffffff;border-color:#ffffff;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:12px;font-weight:normal;overflow:hidden;padding:0px 6px;text-align:right;vertical-align:middle;word-break:normal">Discount Entitled:<b>'+DiscountPercent+'%</b></th></tr></thead><tbody><tr><td style="background-color:#ffffff;border-color:#ffffff;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:10px;overflow:hidden;padding:0px 1px;text-align:left;vertical-align:top;word-break:normal;color:purple;font-weight:bold;" colspan="2"><div style="margin:0px 0px 0px 0px">is Required end Date?:'+isRequireDiscountEndDate+'</div></td></tr></tbody></table></div></div>'); 
+
+                        Ext.getCmp('htmlPanel_MerchantDiscountLoyaltyDescriptionImage').setHtml('<div style="width:100%; height: 220px; border:3px none white;padding:0px 0px;margin:0px 0px 0px 0px;"><img src="'+DiscountImgPath+'" style="width:100%; height: 180px; border:2px dashed grey;"/><br><div style="margin:-4px 0px 0px 0px;text-align:left;color:black;font-family: Arial; font-size:12px;word-wrap: break-word;font-weight:normal;"><table style="border-collapse:collapse;border-spacing:0;width:100%;" class="tg"><thead><tr><th style="background-color:#ffffff;border-color:#ffffff;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:12px;font-weight:normal;overflow:hidden;padding:0px 1px;text-align:left;vertical-align:middle;word-break:normal">Valid Until:<b>'+DiscountEndDate+'</b></th><th style="background-color:#ffffff;border-color:#ffffff;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:12px;font-weight:normal;overflow:hidden;padding:0px 6px;text-align:right;vertical-align:middle;word-break:normal">Discount Entitled:<b>'+DiscountPercent+'%</b></th></tr></thead><tbody><tr><td style="background-color:#ffffff;border-color:#ffffff;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:10px;overflow:hidden;padding:0px 1px;text-align:left;vertical-align:top;word-break:normal;color:purple;font-weight:bold;" colspan="2"><div style="margin:0px 0px 0px 0px;display:none;">is Required end Date?:'+isRequireDiscountEndDate+'</div></td></tr></tbody></table></div></div>'); 
                         Ext.getCmp('htmlFloatPanel_MerchantDiscountLoyaltyDescriptionDiscountName').setHtml('<div style="color:black;text-align: center;font-size:16px;width:100%;font-weight:bold">'+DiscountName+'</div>');
                         document.getElementById('input-FloatPanel_MerchantDiscountLoyaltyDescriptionDetailTextArea').value = DiscountTermAndCondition;
                     }
@@ -487,8 +493,7 @@ function FloatPanel_MerchantDiscountLoyaltyDescription_DiscountCampaingLoadByDis
         });
         LoadingPanelHide();
         Ext.Viewport.unmask();
-    });
-    task.delay(1000);
+   
 }
 
 

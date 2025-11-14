@@ -754,7 +754,7 @@ function FloatPanel_MerchantReward_MembershipEventDetail_RespondStatus(RespondSt
 
                 if (data.success == "true") {
                     FloatPanel_DashboardMerchantReward_MembershipEventDetailHide();
-                    swalFireDynamicIconWithMessage_NoPreventDefault("resources/icons/follow-up.png", "Your Respond Has Been Saved!", "Purple", "Purple");
+                    swalFireDynamicIconWithMessage_NoPreventDefault("resources/icons/respondEvent.png", "Your Respond Has Been Submitted!", "Purple", "Purple");
                     FloatPanel_DashboardMerchantReward_AyohaRewardEventLoadBySubscriberAccNoStore();
                 }
                 else {

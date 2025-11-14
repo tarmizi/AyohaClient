@@ -7063,7 +7063,7 @@ xtype: 'spacer'
 
                           xtype: 'container',
                           width: '100%',
-                         zIndex:20,
+                         zIndex:10,
                           // width: 40,
                           docked: 'bottom',
                           height: 55,

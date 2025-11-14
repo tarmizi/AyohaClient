@@ -832,7 +832,7 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
                             xtype: 'container',
                             style:"background-color:transparent",
                             width: '100%',
-                            height:20,
+                            height:15,
                             layout: {
                                 type: 'vbox',
                                 pack: 'center',
@@ -843,11 +843,24 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
                                 {
                                     margin: '0 0 0 14',
                                    // hidden:true, 
-                                    html: '<div  style="color:white;text-align: left;font-size:10px;width:100%;margin:0px 0px 0px 0px;">Dashboard Summary</div>'
+                                    html: '<div  style="color:white;text-align: left;font-size:10px;width:100%;margin:0px 0px 0px 0px;font-weight:bold;">Perks Summary</div>'
                                        
                                 }
                             ]
                         },
+                        {
+                            xtype: 'container',
+                            style:"background-color:transparent",
+                            width: '100%',
+                            height:3,
+                        },
+                        // {
+                        //     width: 120,
+                        //     height: 120,
+                        //     html:'<div style="width:100px;height:100px;margin:0 auto;background:transparent;">'+
+                        //     '<canvas id="perksEligibleTotalDonut"></canvas>'+
+                        //     '</div>'
+                        // },
                        
                         {
                             xtype: 'container',
@@ -892,14 +905,14 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
                                             },
                                             items:[
                                                 {
-                                                  //  id:'htmlMembershipCardList_paidMembershipCount',
-                                                    html: '<div  style="color:black;text-align: center;font-size:14px;width:100%;margin:0px 0px 0px 0px;font-weight:bold">0</div>'
+                                                    id:'htmlAyohaMerchantReward_ContestJointCount',
+                                                    html: '<div  style="color:black;text-align: center;font-size:14px;width:100%;margin:0px 0px 0px 0px;font-weight:bold">18</div>'
                                                 },
                                                 {
-                                                    html: '<div  style="color:black;text-align: center;font-size:6px;width:100%;margin:-4px 0px 0px 0px;">Contest</div>'
+                                                    html: '<div  style="color:black;text-align: center;font-size:6px;width:100%;margin:-4px 0px 0px 0px;">Total</div>'
                                                 },
                                                 {
-                                                    html: '<div  style="color:black;text-align: center;font-size:6px;width:100%;margin:-2px 0px 0px 0px;">Joined</div>'
+                                                    html: '<div  style="color:black;text-align: center;font-size:6px;width:100%;margin:-2px 0px 0px 0px;">Eligible</div>'
                                                 },
                                             ]
                                         }
@@ -933,14 +946,14 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
                                             },
                                             items:[
                                                 {
-                                                  //  id:'htmlMembershipCardList_freeMembershipCount',
+                                                    id:'htmlAyohaMerchantReward_EventRespondCount',
                                                     html: '<div  style="color:black;text-align: center;font-size:14px;width:100%;margin:0px 0px 0px 0px;font-weight:bold">0</div>'
                                                 },
                                                 {
-                                                    html: '<div  style="color:black;text-align: center;font-size:6px;width:100%;margin:-4px 0px 0px 0px;">Event</div>'
+                                                    html: '<div  style="color:black;text-align: center;font-size:6px;width:100%;margin:-4px 0px 0px 0px;">Total</div>'
                                                 },
                                                 {
-                                                    html: '<div  style="color:black;text-align: center;font-size:6px;width:100%;margin:-2px 0px 0px 0px;">Respond</div>'
+                                                    html: '<div  style="color:black;text-align: center;font-size:6px;width:100%;margin:-2px 0px 0px 0px;">Redeem</div>'
                                                 },
                                             ]
                                         }
@@ -955,118 +968,118 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
 
 
 
-{
-    xtype: 'container',
-    style:"background-color:transparent",
-    width: '100%',
-    height:5,
-},
+// {
+//     xtype: 'container',
+//     style:"background-color:transparent",
+//     width: '100%',
+//     height:5,
+// },
 
-
-
-                        {
-                            xtype: 'container',
-                            style:"background-color:transparent",
-                            width: '100%',
-                            height:40,
-                            layout: {
-                                type: 'hbox',
-                                pack: 'left',
-                                align: 'left'
+//                         {
+//                             xtype: 'container',
+//                             style:"background-color:transparent",
+//                             width: '100%',
+//                             height:40,
+//                             layout: {
+//                                 type: 'hbox',
+//                                 pack: 'left',
+//                                 align: 'left'
                 
-                            },
-                            items:[
-                                {
-                                    xtype: 'container',
-                                    width: '3%',
-                                    height:40,
-                                },
-                                {
-                                    xtype: 'container',
-                                    width: '31%',
-                                    style:"background-color:transparent",
-                                    height:40,
-                                    layout: {
-                                        type: 'vbox',
-                                        pack: 'center',
-                                        align: 'center'
+//                             },
+//                             items:[
+//                                 {
+//                                     xtype: 'container',
+//                                     width: '3%',
+//                                     height:40,
+//                                 },
+//                                 {
+//                                     xtype: 'container',
+//                                     width: '31%',
+//                                     style:"background-color:transparent",
+//                                     height:40,
+//                                     layout: {
+//                                         type: 'vbox',
+//                                         pack: 'center',
+//                                         align: 'center'
                         
-                                    },
-                                    items:[
-                                        {
-                                            xtype: 'container',
-                                            width: '90%',
-                                            style: 'border:2px solid #fac;background-color: white;border-radius: 10px 10px 10px 10px;',
-                                           // style: 'border-right:1px solid #ECF0F1;border-left:1px solid #ECF0F1;border-bottom:1px solid #ECF0F1;border-top:1px solid #ECF0F1 ;background-color: white;border-radius: 10px 10px 10px 10px;box-shadow: 5px 10px 18px #888888;',
-                                           height:40,
-                                            layout: {
-                                                type: 'vbox',
-                                                pack: 'center',
-                                                align: 'center'
+//                                     },
+//                                     items:[
+//                                         {
+//                                             xtype: 'container',
+//                                             width: '90%',
+//                                             style: 'border:2px solid #fac;background-color: white;border-radius: 10px 10px 10px 10px;',
+//                                            // style: 'border-right:1px solid #ECF0F1;border-left:1px solid #ECF0F1;border-bottom:1px solid #ECF0F1;border-top:1px solid #ECF0F1 ;background-color: white;border-radius: 10px 10px 10px 10px;box-shadow: 5px 10px 18px #888888;',
+//                                            height:40,
+//                                             layout: {
+//                                                 type: 'vbox',
+//                                                 pack: 'center',
+//                                                 align: 'center'
                                 
-                                            },
-                                            items:[
-                                                {
-                                                  //  id:'htmlMembershipCardList_paidMembershipCount',
-                                                    html: '<div  style="color:black;text-align: center;font-size:14px;width:100%;margin:0px 0px 0px 0px;font-weight:bold">0</div>'
-                                                },
-                                                {
-                                                    html: '<div  style="color:black;text-align: center;font-size:6px;width:100%;margin:-4px 0px 0px 0px;">Point</div>'
-                                                },
-                                                {
-                                                    html: '<div  style="color:black;text-align: center;font-size:6px;width:100%;margin:-2px 0px 0px 0px;">Redeem</div>'
-                                                },
-                                            ]
-                                        }
-                                    ]
+//                                             },
+//                                             items:[
+//                                                 {
+//                                                     id:'htmlAyohaMerchantReward_RedeemSubmittedCount',
+//                                                     html: '<div  style="color:black;text-align: center;font-size:14px;width:100%;margin:0px 0px 0px 0px;font-weight:bold">0</div>'
+//                                                 },
+//                                                 {
+//                                                     html: '<div  style="color:black;text-align: center;font-size:6px;width:100%;margin:-4px 0px 0px 0px;">Redemptions</div>'
+//                                                 },
+//                                                 {
+//                                                     html: '<div  style="color:black;text-align: center;font-size:6px;width:100%;margin:-2px 0px 0px 0px;">Submitted</div>'
+//                                                 },
+//                                             ]
+//                                         }
+//                                     ]
                                    
                                        
-                                },
-                                {
-                                    xtype: 'container',
-                                    width: '31%',
-                                    style:"background-color:transparent",
-                                    height:40,
-                                    layout: {
-                                        type: 'vbox',
-                                        pack: 'center',
-                                        align: 'center'
+//                                 },
+//                                 {
+//                                     xtype: 'container',
+//                                     width: '31%',
+//                                     style:"background-color:transparent",
+//                                     height:40,
+//                                     layout: {
+//                                         type: 'vbox',
+//                                         pack: 'center',
+//                                         align: 'center'
                         
-                                    },
-                                    items:[
-                                        {
-                                            xtype: 'container',
-                                            width: '90%',
-                                            style: 'border:2px solid #fac;background-color: white;border-radius: 10px 10px 10px 10px;',
-                                           // style: 'border-right:1px solid #ECF0F1;border-left:1px solid #ECF0F1;border-bottom:1px solid #ECF0F1;border-top:1px solid #ECF0F1 ;background-color: white;border-radius: 10px 10px 10px 10px;box-shadow: 5px 10px 18px #888888;',
-                                           height:40,
-                                            layout: {
-                                                type: 'vbox',
-                                                pack: 'center',
-                                                align: 'center'
+//                                     },
+//                                     items:[
+//                                         {
+//                                             xtype: 'container',
+//                                             width: '90%',
+//                                             style: 'border:2px solid #fac;background-color: white;border-radius: 10px 10px 10px 10px;',
+//                                            // style: 'border-right:1px solid #ECF0F1;border-left:1px solid #ECF0F1;border-bottom:1px solid #ECF0F1;border-top:1px solid #ECF0F1 ;background-color: white;border-radius: 10px 10px 10px 10px;box-shadow: 5px 10px 18px #888888;',
+//                                            height:40,
+//                                             layout: {
+//                                                 type: 'vbox',
+//                                                 pack: 'center',
+//                                                 align: 'center'
                                 
-                                            },
-                                            items:[
-                                                {
-                                                  //  id:'htmlMembershipCardList_freeMembershipCount',
-                                                    html: '<div  style="color:black;text-align: center;font-size:14px;width:100%;margin:0px 0px 0px 0px;font-weight:bold">0</div>'
-                                                },
-                                                {
-                                                    html: '<div  style="color:black;text-align: center;font-size:6px;width:100%;margin:-4px 0px 0px 0px;">Redeem</div>'
-                                                },
-                                                {
-                                                    html: '<div  style="color:black;text-align: center;font-size:6px;width:100%;margin:-2px 0px 0px 0px;">Approved</div>'
-                                                },
-                                            ]
-                                        }
-                                    ]
+//                                             },
+//                                             items:[
+//                                                 {
+//                                                     id:'htmlAyohaMerchantReward_RedeemApprovedCount',
+//                                                     html: '<div  style="color:black;text-align: center;font-size:14px;width:100%;margin:0px 0px 0px 0px;font-weight:bold">0</div>'
+//                                                 },
+//                                                 {
+//                                                     html: '<div  style="color:black;text-align: center;font-size:6px;width:100%;margin:-4px 0px 0px 0px;">Redemptions</div>'
+//                                                 },
+//                                                 {
+//                                                     html: '<div  style="color:black;text-align: center;font-size:6px;width:100%;margin:-2px 0px 0px 0px;">Approved</div>'
+//                                                 },
+//                                             ]
+//                                         }
+//                                     ]
                                    
                                        
-                                },
+//                                 },
                                 
                                 
-                            ]
-                        }
+//                             ]
+//                         }
+                   
+                   
                     ]
                 
                    },
@@ -1086,12 +1099,12 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
                         {
                             xtype: 'container',
                             width: '100%',
-                            height: 20,
+                            height: 30,
                         },
                         {
                             xtype: 'container',
                             width: '100%',
-                            height: 10,
+                            height: 5,
                             layout: {
                                 type: 'vbox',
                                 pack: 'center',
@@ -1099,20 +1112,20 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
                             },
                             items:[
                                 { 
-                                    html: '<div  style="color:white;text-align: center;font-size:10px;width:100%;margin:0px 0px 0px 0px;font-weight:bold">Perks Eligible</div>'
+                                    html: '<div  style="color:white;text-align: center;font-size:10px;width:100%;margin:0px 0px 0px 0px;font-weight:bold">Perks Details</div>'
                                 },
 
-                                { 
-                                    html: '<div  style="color:white;text-align: center;font-size:12px;width:100%;margin:0px 0px 0px 0px;font-weight:bold">Total:12</div>'
-                                },
+                                // { 
+                                //     html: '<div  style="color:white;text-align: center;font-size:12px;width:100%;margin:0px 0px 0px 0px;font-weight:bold">Total:12</div>'
+                                // },
                             ]
 
                         },
                        
                         {
                             width: 200,
-                            height: 160,
-                            html:'<div style="max-width:200px;height:160px;margin:5px 0px 0px 0px;background:transparent;">'+
+                            height: 200,
+                            html:'<div style="max-width:200px;height:190px;margin:0px 0px 0px 0px;background:transparent;">'+
                             '<canvas id="loyaltyHBar"></canvas>'+
                             '</div>'
                         }
@@ -4194,7 +4207,7 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
                                                     margin: '8 0 0 14',
                                                     id: 'htmlLoyaltyMembershipEvent_Header',
                                                     //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
-                                                    html: '<div style="color:black;text-align: center;font-size:16px;width:100%;font-weight:bold">Membership Events</div>'
+                                                    html: '<div style="color:black;text-align: center;font-size:14px;width:100%;font-weight:bold">Membership Events</div>'
                                                     // html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: 70%"><col style="width:30%"></colgroup><thead><tr><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:right;vertical-align:top;word-break:normal" rowspan="2"><div style="margin:0px 0px 0px -15px">TARMIZI RAHIM</div><br>Lagendary Card Mortal </th><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:middle;word-break:normal" rowspan="2">Medal</th></tr><tr></tr></thead></table>'
                                                 },
 
@@ -4266,7 +4279,7 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
 
 
                                                                  itemTpl: '<div class="myContent" style="background-color:transparent;width:100%;height:400px;">' +
-                                                                  '&nbsp;&nbsp;<div style="font-family:Arial, sans-serif;font-size:14px;color:black;font-weight:bold;text-align:left;"><img src="{EnterpriseLogo}" style="width:30px;height:30px;border-radius:50%;margin:0px 0px 0px 20px;"/><div style="margin:-28px 0px 0px 55px;">{EnterpriseName}</div><div style="margin:-17px 0px 0px 0px;text-align:right">{ModifiedRespondStatusImg}</div></div>&nbsp;&nbsp;<br>' +
+                                                                  '&nbsp;&nbsp;<div style="font-family:Arial, sans-serif;font-size:12px;color:black;font-weight:bold;text-align:left;"><img src="{EnterpriseLogo}" style="width:30px;height:30px;border-radius:50%;margin:0px 0px 0px 20px;"/><div style="margin:-28px 0px 0px 55px;">{EnterpriseName}</div><div style="margin:-17px 0px 0px 0px;text-align:right">{ModifiedRespondStatusImg}</div></div>&nbsp;&nbsp;<br>' +
 
                                                                   // '&nbsp;&nbsp;<div style="width: 200px; float:left; height:30px; background:white;text-align:left;font-size:12px;"><img src="{EnterpriseLogo}" style="width:30px;height:30px;border-radius:50%;margin:0px 0px 0px 20px;"/><div style="margin:-28px 0px 0px 55px;">{EnterpriseName}</div></div><div style="width:200px; float:left; height:30px; background:white;text-align:right;font-size:12px;"><img src="resources/icons/like01.png" style="width:20px;height:20px;margin:8px 0px 0px 0px;"/></div>&nbsp;&nbsp;<br>' +
                                                                   '&nbsp;&nbsp;<img  onclick="FloatPanel_DashboardMerchantReward_MembershipEventDetailShow(' + "'" + '{EnterpriseLogo}' + "'" + ',' + "'" + '{EnterpriseName}' + "'" + ',' + "'" + '{EventCoverPhoto}' + "'" + ',' + "'" + '{EventName}' + "'" + ',' + "'" + '{EventStartDate_Day}' + "'" + ',' + "'" + '{EventStartDate_Month}' + "'" + ',' + "'" + '{EventStartTime}' + "'" + ',' + "'" + '{EventEndDate_Day}' + "'" + ',' + "'" + '{EventEndDate_Month}' + "'" + ',' + "'" + '{EventEndTime}' + "'" + ',' + "'" + '{EventLocationName}' + "'" + ',' + "'" + '{ModifiedWidth}' + "'" + ',' + "'" + '{EventDescription}' + "'" + ',' + "'" + '{EventLocationCoordinate}' + "'" + ',' + "'" + '{EventUrlTicket}' + "'" + ',' + "'" + '{EventCode}' + "'" + ',' + "'" + '{EnterpriseAccNo}' + "'" + ',' + "'" + '{RespondStatus}' + "'" + ',{ID});"   src="{EventCoverPhoto}" style="width:{ModifiedWidth}px;height:200px;margin:-15px 0px 0px 0px;"/>&nbsp;&nbsp;<br>' +
@@ -4302,8 +4315,8 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
     xtype: 'container',
     //  style: 'background-image: url("resources/icons/bgfront07.png"); background-size: 100% 400px;background-repeat: no-repeat;',
     width: '100%',
-    margin: '30 0 0 0',
-    height: 260,
+    margin: '70 0 0 0',
+    height: 600,
     style: "background-color: transparent;",
     layout: {
         type: 'vbox',
@@ -4317,6 +4330,7 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
          {
              xtype: 'container',
              width: '100%',
+             height: 30,
              // hidden: true,
              margin: '0 0 0 0',
              id: 'containerLoyaltMembershipDiscount_Header',
@@ -4336,8 +4350,9 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
                   {
                       margin: '8 0 0 14',
                       id: 'htmlLoyaltyMembershipDiscount_Header',
+
                       //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
-                      html: '<div style="color:black;text-align: center;font-size:16px;width:100%;font-weight:bold">Membership Discount</div>'
+                      html: '<div style="color:black;text-align: center;font-size:14px;width:100%;font-weight:bold">Membership Discount</div>'
                       // html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: 70%"><col style="width:30%"></colgroup><thead><tr><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:right;vertical-align:top;word-break:normal" rowspan="2"><div style="margin:0px 0px 0px -15px">TARMIZI RAHIM</div><br>Lagendary Card Mortal </th><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:middle;word-break:normal" rowspan="2">Medal</th></tr><tr></tr></thead></table>'
                   },
 
@@ -4362,58 +4377,149 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
          },
 
 
+
+
+         
+
          {
             xtype: 'container',
-            width: '98%',
-            /// hidden:true,
-            margin: '10 0 0 0',
-            height: 222,
-            style: 'background-color: transparent;',
-            //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
-            //  style: 'background-color: white;border-left: 1px solid #D0D3D4;border-right: 1px solid #D0D3D4;border-bottom: 1px solid #D0D3D4;border-top: 1px solid #D0D3D4;box-shadow: 5px 10px 18px #888888;border-radius: 10px 10px 10px 10px;',
+            width: '100%',
+            height: 600,
+            margin: '-15 0 0 0',
+            //  hidden: true,
+            id: 'containerAyohaMerchantRewardDiscountListt',
+            style: "background-color: transparent;",
+            // style: "background-color: transparent;border-right:1px solid #ECF0F1;border-left:1px solid #ECF0F1;border-bottom:1px solid #ECF0F1;border-top:1px solid #ECF0F1;border-radius: 10px 10px 10px 10px;",
             layout: {
                 type: 'vbox',
                 pack: 'center',
-                align: 'center',
+                align: 'center'
+
             },
             items: [
-                 {
-        
-                     id: 'AyohaMerchantRewardDiscountList',
-                     // margin: '-4 0 0 14',
-                     // margin: '-5 0 0 0',
-                     // store: _DataStore_AyohaRewardVoucherEntitledUserLoadBySubscriberAccNoVoucherTypeStore,
-                     // grouped: true,
-                     xtype: 'dataview',
-                     // xtype: 'list',
-                     height: 200,
-                     //scrollable: true,
-                     // scrollable: 'horizontal',
-                     // indicators: false,
-                     //inline: true,
-                     inline: {
-                         wrap: false
-                     },
-                     scrollable: {
-                         direction: 'horizontal',
-                         indicators: false,
-                     },
-                     width: '100%',
-                     cls: 'dataview-item',
-                     //itemTpl: '<div onclick="FloatPanel_AyohaRewardVoucherDetailShow(' + "'" + '{VoucherName}' + "'" + ',' + "'" + '{VoucherImgPath}' + "'" + ',' + "'" + '{EntitledVoucherEndDate}' + "'" + ',' + "'" + '{DayLeft}' + "'" + ',' + "'" + '{VoucherCode}' + "'" + ');" style="width:{ModifiedWidth}px; height: 200px; border:3px none white;padding:0px 0px;margin:0px 0px 0px 10px;"><img src="{VoucherImgPath}" style="width:99%; height: 160px; border:2px dashed grey;"/><br><div style="margin:-4px 0px 0px 0px;text-align:left;color:black;font-family: Arial; font-size:12px;word-wrap: break-word;font-weight:normal;">Valid Until:{EntitledVoucherEndDate}</div><br><div style="margin:-26px 0px 0px 0px;text-align:left;color:#c800ffc9;font-family: Arial; font-size:10px;word-wrap: break-word;font-weight:bold;">Day Left:{DayLeft}</div></div>',
-                     itemTpl: '<div onclick="FloatPanel_AyohaRewardVoucherDetailShow(' + "'" + '{VoucherName}' + "'" + ',' + "'" + '{VoucherImgPath}' + "'" + ',' + "'" + '{EntitledVoucherEndDate}' + "'" + ',' + "'" + '{DayLeft}' + "'" + ',' + "'" + '{VoucherCode}' + "'" + ',' + "'" + '{VoucherAmount}' + "'" + ');" style="width:100%; height: 200px; border:3px none white;padding:0px 0px;margin:0px 0px 0px 10px;"><img src="{DiscountImgPath}" style="width:95%; height: 160px; border:2px dashed grey;"/><br><div style="margin:-4px 0px 0px 0px;text-align:left;color:black;font-family: Arial; font-size:12px;word-wrap: break-word;font-weight:normal;width:95%"><table style="border-collapse:collapse;border-spacing:0;width:100%;" class="tg"><thead><tr><th style="background-color:transparent;border-color:transparent;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:12px;font-weight:normal;overflow:hidden;padding:0px 1px;text-align:left;vertical-align:middle;word-break:normal">Valid Until:<b>{DiscountEndDate}</b></th><th style="background-color:transparent;border-color:transparent;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:12px;font-weight:normal;overflow:hidden;padding:0px 6px;text-align:right;vertical-align:middle;word-break:normal">Discount:<b>{DiscountPercent}%</b></th></tr></thead><tbody><tr><td style="background-color:transparent;border-color:transparent;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:10px;overflow:hidden;padding:0px 1px;text-align:left;vertical-align:top;word-break:normal;color:purple;font-weight:bold;" colspan="2"><div style="margin:-1px 0px 0px 0px">Discount Name:{DiscountName}</div></td></tr></tbody></table></div></div>',
-                     emptyText: '<div style="width:100%; height: 200px; border:3px none white;padding:0px 0px;margin:0px 0px 0px 10px;"><img src="resources/icons/NotAvailableVoucher.png" style="width:99%; height: 160px; border:2px dashed grey;"/><br><div style="margin:-5px 0px 0px 0px;text-align:left;color:black;font-family: Arial; font-size:9px;word-wrap: break-word;font-weight:normal;width:100%">*Vouchers will be given by ayoha reward to users when users reach a certain level of spending in the ayoha merchant online store and also certain special days such as religious days, national independence day, birthdays and so on.</div></div>',
-                 },
-                 //{
-                 //    height: 198,
-                 //    width: '100%',
-                 //    // margin: '0 0 0 14',
-                 //    //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
-                 //    html: '<img style="width:100%;height:198px;border-radius: 10px 10px 10px 10px;" src="resources/icons/AyohaVoucher.png"/>'
-                 //    // html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: 70%"><col style="width:30%"></colgroup><thead><tr><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:right;vertical-align:top;word-break:normal" rowspan="2"><div style="margin:0px 0px 0px -15px">TARMIZI RAHIM</div><br>Lagendary Card Mortal </th><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:middle;word-break:normal" rowspan="2">Medal</th></tr><tr></tr></thead></table>'
-                 //},
+                {
+
+                    id: 'AyohaMerchantRewardDiscountList',
+                    xtype: 'dataview',
+                    // xtype: 'list',
+                    height: 600,
+                    //scrollable: true,
+                    // scrollable: 'horizontal',
+                    // indicators: false,
+                    //inline: true,
+                    inline: {
+                        wrap: false
+                    },
+                    scrollable: {
+                        direction: 'horizontal',
+                        indicators: false,
+                    },
+                    width: '100%',
+                    cls: 'dataview-item',
+
+
+                    //  itemTpl: '<div class="myContent" style="background-color:transparent;width:100%;height:500px;">' +
+                    //   '&nbsp;&nbsp;<div style="font-family:Arial, sans-serif;font-size:14px;color:black;font-weight:bold;text-align:left;width:100%;"><img src="{EnterpriseLogo}" style="width:30px;height:30px;border-radius:50%;margin:0px 0px 0px 20px;"/><div style="margin:-28px 0px 0px 55px;">{EnterpriseName}</div></div>&nbsp;&nbsp;<br>' +
+                    //   '&nbsp;&nbsp;<img  onclick="FloatPanel_DashboardMerchantReward_MembershipEventDetailShow(' + "'" + '{EnterpriseLogo}' + "'" + ',' + "'" + '{EnterpriseName}' + "'" + ',' + "'" + '{EventCoverPhoto}' + "'" + ',' + "'" + '{EventName}' + "'" + ',' + "'" + '{EventStartDate_Day}' + "'" + ',' + "'" + '{EventStartDate_Month}' + "'" + ',' + "'" + '{EventStartTime}' + "'" + ',' + "'" + '{EventEndDate_Day}' + "'" + ',' + "'" + '{EventEndDate_Month}' + "'" + ',' + "'" + '{EventEndTime}' + "'" + ',' + "'" + '{EventLocationName}' + "'" + ',' + "'" + '{ModifiedWidth}' + "'" + ',' + "'" + '{EventDescription}' + "'" + ',' + "'" + '{EventLocationCoordinate}' + "'" + ',' + "'" + '{EventUrlTicket}' + "'" + ',' + "'" + '{EventCode}' + "'" + ',' + "'" + '{EnterpriseAccNo}' + "'" + ',' + "'" + '{RespondStatus}' + "'" + ',{ID});"   src="{AdvertisementImgPath}" style="width:{ModifiedWidth}px;height:400px;margin:-15px 0px 0px 0px;"/>&nbsp;&nbsp;<br>' +
+                    //  '<div onclick="FloatPanel_DashboardMerchantReward_MembershipEventDetailShow(' + "'" + '{EnterpriseLogo}' + "'" + ',' + "'" + '{EnterpriseName}' + "'" + ',' + "'" + '{EventCoverPhoto}' + "'" + ',' + "'" + '{EventName}' + "'" + ',' + "'" + '{EventStartDate_Day}' + "'" + ',' + "'" + '{EventStartDate_Month}' + "'" + ',' + "'" + '{EventStartTime}' + "'" + ',' + "'" + '{EventEndDate_Day}' + "'" + ',' + "'" + '{EventEndDate_Month}' + "'" + ',' + "'" + '{EventEndTime}' + "'" + ',' + "'" + '{EventLocationName}' + "'" + ',' + "'" + '{ModifiedWidth}' + "'" + ',' + "'" + '{EventDescription}' + "'" + ',' + "'" + '{EventLocationCoordinate}' + "'" + ',' + "'" + '{EventUrlTicket}' + "'" + ',' + "'" + '{EventCode}' + "'" + ',' + "'" + '{EnterpriseAccNo}' + "'" + ',' + "'" + '{RespondStatus}' + "'" + ',{ID});" style="width: 50%; float:left; height:50px; background:white; margin:0px"><div style="font-family:Arial, sans-serif;font-size:10px;color:black;font-weight:normal;text-align:left;padding:0px 10px;">Contest Period:</div><br><div style="font-family:Arial, sans-serif;font-size:14px;color:black;font-weight:bold;margin:-22px 0px 0px 0px;text-align:left;padding:0px 10px;">{StartDate_DateOnly} - {EndDate_DateOnly}</div></div><div style="width: 50%; float:left; height:50px; background:white; margin:0px;word-break: break-all;"><div style="margin:0px 0px 0px 0px;text-align:right;color:black;font-family: Arial; font-size:10px;word-wrap: break-word;word-break: break-all;white-space: break-spaces;font-weight:normal;width:100%;height:30px;padding:0px 7px;">Contest Status<br><div style="margin:0px 0px 0px 0px;text-align:right;color:black;font-family: Arial; font-size:12px;word-wrap: break-word;word-break: break-all;white-space: break-spaces;font-weight:bold;width:100%;padding:0px 0px;">{ContestStatus_ContestStatus}</div></div></div><br>' +
+
+
+                    //'</div>',
+
+
+                    itemTpl: '<div onclick="FloatPanel_MerchantDiscountLoyaltyDescriptionShow(`{DiscountCode}`,`{EnterpriseAccNo}`);" class="myContent" style="background-color:transparent;width:100%;height:500px;">' +
+                  '&nbsp;&nbsp;&nbsp;<div style="font-family:Arial, sans-serif;font-size:12px;color:black;font-weight:bold;text-align:left;width:100%;"><img src="{EnterpriseLogo}" style="width:30px;height:30px;border-radius:50%;margin:0px 0px 0px 20px;"/><div style="margin:-28px 0px 0px 55px;">{EnterpriseName}</div></div>&nbsp;&nbsp;&nbsp;<br><br>' +
+                  '&nbsp;&nbsp;&nbsp;<img  onclick="FloatPanel_MerchantDiscountLoyaltyDescriptionShow(`{DiscountCode}`,`{EnterpriseAccNo}`);"   src="{DiscountImgPath}" style="width:{ModifiedWidth}px; height: 280px;margin:-25px 0px 0px 0px;"/>&nbsp;&nbsp;&nbsp;<br>' +
+                // '<div onclick="FloatPanel_DashboardMerchantReward_MembershipContestDetailShow({ID});" style="width: 50%; float:left; height:30px; background:white; margin:0px"><div style="font-family:Arial, sans-serif;font-size:10px;color:black;font-weight:normal;text-align:left;padding:0px 10px;">Contest Name:</div><br><div style="font-family:Arial, sans-serif;font-size:14px;color:black;font-weight:bold;margin:-22px 0px 0px 0px;text-align:left;padding:0px 10px;">{ContestName}</div></div><br>' +
+                 '<div onclick="FloatPanel_MerchantDiscountLoyaltyDescriptionShow(`{DiscountCode}`,`{EnterpriseAccNo}`);" style="width: 50%; float:left; height:30px; background:transparent; margin:0px 0px 0px 0px;"><div style="font-family:Arial, sans-serif;font-size:10px;color:black;font-weight:normal;text-align:left;padding:0px 10px;"  onclick="FloatPanel_MerchantDiscountLoyaltyDescriptionShow(`{DiscountCode}`,`{EnterpriseAccNo}`);">Discount Name:</div><br><div onclick="FloatPanel_MerchantDiscountLoyaltyDescriptionShow(`{DiscountCode}`,`{EnterpriseAccNo}`);" style="font-family:Arial, sans-serif;font-size:14px;color:black;font-weight:bold;margin:-17px 0px 0px 0px;text-align:left;padding:0px 10px;">{DiscountName}</div></div><div style="width: 50%; float:left; height:30px; background:transparent; margin:0px 0px 0px 0px;word-break: break-all;" onclick="FloatPanel_MerchantDiscountLoyaltyDescriptionShow(`{DiscountCode}`,`{EnterpriseAccNo}`);"><div style="margin:0px 0px 0px 0px;text-align:right;color:black;font-family: Arial; font-size:10px;word-wrap: break-word;word-break: break-all;white-space: break-spaces;font-weight:normal;width:100%;height:30px;padding:0px 7px;"><br><div style="margin:0px 0px 0px 0px;text-align:right;color:black;font-family: Arial; font-size:12px;word-wrap: break-word;word-break: break-all;white-space: break-spaces;font-weight:bold;width:100%;padding:0px 0px;" onclick="FloatPanel_MerchantDiscountLoyaltyDescriptionShow(`{DiscountCode}`,`{EnterpriseAccNo}`);"><div style="font-family:Arial, sans-serif;font-size:14px;color:black;font-weight:bold;text-align:right;width:100%;"><div style="margin:0px 0px 0px 0px;"></div></div></div></div></div><br>' +
+
+                 '<div onclick="FloatPanel_MerchantDiscountLoyaltyDescriptionShow(`{DiscountCode}`,`{EnterpriseAccNo}`);" style="width: 50%; float:left; height:30px; background:transparent; margin:15px 0px 0px 0px;"><div style="font-family:Arial, sans-serif;font-size:10px;color:black;font-weight:normal;text-align:left;padding:0px 10px;"  onclick="FloatPanel_MerchantDiscountLoyaltyDescriptionShow(`{DiscountCode}`,`{EnterpriseAccNo}`);">Discount Rate:</div><br><div onclick="FloatPanel_MerchantDiscountLoyaltyDescriptionShow(`{DiscountCode}`,`{EnterpriseAccNo}`);" style="font-family:Arial, sans-serif;font-size:14px;color:black;font-weight:bold;margin:-17px 0px 0px 0px;text-align:left;padding:0px 10px;">{DiscountPercent}%</div></div><div style="width: 50%; float:left; height:30px; background:transparent; margin:15px 0px 0px 0px;word-break: break-all;" onclick="FloatPanel_MerchantDiscountLoyaltyDescriptionShow(`{DiscountCode}`,`{EnterpriseAccNo}`);"><div style="margin:0px 0px 0px 0px;text-align:right;color:black;font-family: Arial; font-size:10px;word-wrap: break-word;word-break: break-all;white-space: break-spaces;font-weight:normal;width:100%;height:30px;padding:0px 7px;" onclick="FloatPanel_MerchantDiscountLoyaltyDescriptionShow(`{DiscountCode}`,`{EnterpriseAccNo}`);">Valid Until<br><div style="margin:0px 0px 0px 0px;text-align:right;color:black;font-family: Arial; font-size:14px;word-wrap: break-word;word-break: break-all;white-space: break-spaces;font-weight:bold;width:100%;padding:0px 0px;" onclick="FloatPanel_MerchantDiscountLoyaltyDescriptionShow(`{DiscountCode}`,`{EnterpriseAccNo}`);">{ModifiedDiscountEndDate}</div></div></div><br>' +
+
+
+               '</div>',
+
+
+                    emptyText: '<div  style="background-color:transparent;width:100%; height: 280px;margin:20px 0px 0px 0px;text-align:center"><img src="resources/icons/NoMembershipEventContest01.jpg" style="width: 95%; height: 500px;"/></div>',
+
+                },
             ]
         },
+
+
+
+
+
+
+
+
+        //  {
+        //     xtype: 'container',
+        //     width: '98%',
+        //     /// hidden:true,
+        //     margin: '10 0 0 0',
+        //     height: 222,
+        //     style: 'background-color: transparent;',
+        //     //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
+        //     //  style: 'background-color: white;border-left: 1px solid #D0D3D4;border-right: 1px solid #D0D3D4;border-bottom: 1px solid #D0D3D4;border-top: 1px solid #D0D3D4;box-shadow: 5px 10px 18px #888888;border-radius: 10px 10px 10px 10px;',
+        //     layout: {
+        //         type: 'vbox',
+        //         pack: 'center',
+        //         align: 'center',
+        //     },
+        //     items: [
+
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //          {
+        
+        //              id: 'AyohaMerchantRewardDiscountList',
+        //              // margin: '-4 0 0 14',
+        //              // margin: '-5 0 0 0',
+        //              // store: _DataStore_AyohaRewardVoucherEntitledUserLoadBySubscriberAccNoVoucherTypeStore,
+        //              // grouped: true,
+        //              xtype: 'dataview',
+        //              // xtype: 'list',
+        //              height: 200,
+        //              //scrollable: true,
+        //              // scrollable: 'horizontal',
+        //              // indicators: false,
+        //              //inline: true,
+        //              inline: {
+        //                  wrap: false
+        //              },
+        //              scrollable: {
+        //                  direction: 'horizontal',
+        //                  indicators: false,
+        //              },
+        //              width: '100%',
+        //              cls: 'dataview-item',
+        //              //itemTpl: '<div onclick="FloatPanel_AyohaRewardVoucherDetailShow(' + "'" + '{VoucherName}' + "'" + ',' + "'" + '{VoucherImgPath}' + "'" + ',' + "'" + '{EntitledVoucherEndDate}' + "'" + ',' + "'" + '{DayLeft}' + "'" + ',' + "'" + '{VoucherCode}' + "'" + ');" style="width:{ModifiedWidth}px; height: 200px; border:3px none white;padding:0px 0px;margin:0px 0px 0px 10px;"><img src="{VoucherImgPath}" style="width:99%; height: 160px; border:2px dashed grey;"/><br><div style="margin:-4px 0px 0px 0px;text-align:left;color:black;font-family: Arial; font-size:12px;word-wrap: break-word;font-weight:normal;">Valid Until:{EntitledVoucherEndDate}</div><br><div style="margin:-26px 0px 0px 0px;text-align:left;color:#c800ffc9;font-family: Arial; font-size:10px;word-wrap: break-word;font-weight:bold;">Day Left:{DayLeft}</div></div>',
+        //              itemTpl: '<div onclick="FloatPanel_AyohaRewardVoucherDetailShow(' + "'" + '{VoucherName}' + "'" + ',' + "'" + '{VoucherImgPath}' + "'" + ',' + "'" + '{EntitledVoucherEndDate}' + "'" + ',' + "'" + '{DayLeft}' + "'" + ',' + "'" + '{VoucherCode}' + "'" + ',' + "'" + '{VoucherAmount}' + "'" + ');" style="width:100%; height: 200px; border:3px none white;padding:0px 0px;margin:0px 0px 0px 10px;"><img src="{DiscountImgPath}" style="width:95%; height: 160px; border:2px dashed grey;"/><br><div style="margin:-4px 0px 0px 0px;text-align:left;color:black;font-family: Arial; font-size:12px;word-wrap: break-word;font-weight:normal;width:95%"><table style="border-collapse:collapse;border-spacing:0;width:100%;" class="tg"><thead><tr><th style="background-color:transparent;border-color:transparent;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:12px;font-weight:normal;overflow:hidden;padding:0px 1px;text-align:left;vertical-align:middle;word-break:normal">Valid Until:<b>{DiscountEndDate}</b></th><th style="background-color:transparent;border-color:transparent;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:12px;font-weight:normal;overflow:hidden;padding:0px 6px;text-align:right;vertical-align:middle;word-break:normal">Discount:<b>{DiscountPercent}%</b></th></tr></thead><tbody><tr><td style="background-color:transparent;border-color:transparent;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:10px;overflow:hidden;padding:0px 1px;text-align:left;vertical-align:top;word-break:normal;color:purple;font-weight:bold;" colspan="2"><div style="margin:-1px 0px 0px 0px">Discount Name:{DiscountName}</div></td></tr></tbody></table></div></div>',
+        //              emptyText: '<div style="width:100%; height: 200px; border:3px none white;padding:0px 0px;margin:0px 0px 0px 10px;"><img src="resources/icons/NotAvailableVoucher.png" style="width:99%; height: 160px; border:2px dashed grey;"/><br><div style="margin:-5px 0px 0px 0px;text-align:left;color:black;font-family: Arial; font-size:9px;word-wrap: break-word;font-weight:normal;width:100%">*Vouchers will be given by ayoha reward to users when users reach a certain level of spending in the ayoha merchant online store and also certain special days such as religious days, national independence day, birthdays and so on.</div></div>',
+        //          },
+        //          //{
+        //          //    height: 198,
+        //          //    width: '100%',
+        //          //    // margin: '0 0 0 14',
+        //          //    //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
+        //          //    html: '<img style="width:100%;height:198px;border-radius: 10px 10px 10px 10px;" src="resources/icons/AyohaVoucher.png"/>'
+        //          //    // html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: 70%"><col style="width:30%"></colgroup><thead><tr><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:right;vertical-align:top;word-break:normal" rowspan="2"><div style="margin:0px 0px 0px -15px">TARMIZI RAHIM</div><br>Lagendary Card Mortal </th><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:middle;word-break:normal" rowspan="2">Medal</th></tr><tr></tr></thead></table>'
+        //          //},
+        //     ]
+        // },
 
 
     ]
@@ -4942,11 +5048,11 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
                               
 
 
-                                   {
-                                       xtype: 'container',
-                                       width: '100%',
-                                       height: 500,
-                                   }
+                                //    {
+                                //        xtype: 'container',
+                                //        width: '100%',
+                                //        height: 500,
+                                //    }
 
 
 
@@ -6113,10 +6219,10 @@ function AyohaMerchantReward_AyohaRewardEventLoadBySubscriberAccNoStore() {
     function AyohaMerchantReward_AyohaRewardDiscountCampaing_LoadBySubscriberAccNo() {
 
         _DataStore_DiscountCampaing_LoadBySubscriberAccNoStore.getProxy().setExtraParam('SubscriberAccNo', GetCurrAyohaUserAccountNo());
-        _DataStore_DiscountCampaing_LoadBySubscriberAccNoStore.getProxy().setUrl(GetAPIurl() + '/DiscountCampaign/DiscountCampaing_LoadBySubscriberAccNo');
+        _DataStore_DiscountCampaing_LoadBySubscriberAccNoStore.getProxy().setUrl(GetAPIurl() + 'DiscountCampaing/DiscountCampaing_LoadBySubscriberAccNo');
     
       
-    
+    console.log('Loading Discount Campaign for SubscriberAccNo: ' + GetCurrAyohaUserAccountNo());
       
         _DataStore_DiscountCampaing_LoadBySubscriberAccNoStore.load({
             callback: function (records, operation, success) {
@@ -6124,10 +6230,12 @@ function AyohaMerchantReward_AyohaRewardEventLoadBySubscriberAccNoStore() {
                     AppState.AyohaMerchantReward.DiscountPerks=records.length;
                     Ext.getCmp('AyohaMerchantRewardDiscountList').setStore(_DataStore_DiscountCampaing_LoadBySubscriberAccNoStore);
                     AyohaMerchantReward_LoadDashboard();
+                   // Load_TotalEligible_vs_Used_Doughnut();
                 } else {
                     console.log('jemmm not founfd.');
                     AppState.AyohaMerchantReward.DiscountPerks=0;
                     AyohaMerchantReward_LoadDashboard();
+                    //Load_TotalEligible_vs_Used_Doughnut();
                    
                 }
                
@@ -6147,124 +6255,225 @@ function AyohaMerchantReward_AyohaRewardEventLoadBySubscriberAccNoStore() {
 
 
 
+// Global chart handler
+window._EligibleVsUsedChart = window._EligibleVsUsedChart || null;
+window._EligibleVsUsed_DatalabelsRegistered =
+  window._EligibleVsUsed_DatalabelsRegistered || false;
 
-// keep a handle globally (optional but handy)
-window.membershipStatusChart = window.membershipStatusChart || null;
-window._datalabelsRegistered = window._datalabelsRegistered || false;
+  function AyohaMerchantReward_LoadDashboard() {
+    var canvas = document.getElementById('loyaltyHBar');
+    if (!canvas) return;
 
-// keep a handle globally (optional but handy)
-// window.membershipStatusChart = window.membershipStatusChart || null;
-// window._datalabelsRegistered = window._datalabelsRegistered || false;
+    var ctx = canvas.getContext('2d');
 
-function AyohaMerchantReward_LoadDashboard() {
-const counts = { Stamped: AppState.AyohaMerchantReward.StampPerks,Points: AppState.AyohaMerchantReward.PointPerks,Voucher: AppState.AyohaMerchantReward.VoucherPerks,Contest:AppState.AyohaMerchantReward.ContestPerks,Event:AppState.AyohaMerchantReward.EventPerks,Discount:AppState.AyohaMerchantReward.DiscountPerks};
- 
- // const counts = { Stamped: 2,Points: 2,Voucher: 3,Contest:2,Event:0,Discount:1};
- 
-  const total  = (counts.Stamped || 0) + (counts.Points || 0);
-
-  const canvas = document.getElementById('loyaltyHBar'); // keep same ID
-  if (!canvas) return; // canvas not in DOM yet
-
-  // ✅ Destroy any existing chart on this canvas
-  const existing = Chart.getChart(canvas);
-  if (existing) existing.destroy();
-  if (window.membershipStatusChart) { 
-    window.membershipStatusChart.destroy(); 
-    window.membershipStatusChart = null; 
-  }
-
-  const ctx = canvas.getContext('2d');
-
-  // Register plugin once
-  if (!window._datalabelsRegistered && typeof ChartDataLabels !== 'undefined') {
-    Chart.register(ChartDataLabels);
-    window._datalabelsRegistered = true;
-  }
-
-  // Build chart (horizontal bar)
-  window.membershipStatusChart = new Chart(ctx, {
-    type: 'bar',
-    data: {
-    //  labels: ['Active', 'Expired'],
-      labels : ['Stamped','Points','Voucher','Contest','Event','Discount'],
-      datasets: [{
-        data: [counts.Stamped, counts.Points, counts.Voucher, counts.Contest, counts.Event, counts.Discount],
-        backgroundColor: [
-          'rgba(46, 204, 113, 0.95)',   // Stamped
-          'rgba(231, 76, 60, 0.70)' ,    // Points
-          'rgb(255, 99, 71)',   // Voucher
-          'rgb(255, 165, 0)' ,    // Contest
-          'rgba(100, 249, 71, 0.5)',   // Event
-          'rgba(160, 0, 255, 0.7)' ,    // Discount
-        ],
-        borderColor: '#ffffff',
-        borderWidth: 2,
-        borderSkipped: false,
-        borderRadius: 20,
-       // barThickness: 18,
-        barThickness: 20,
-        categoryPercentage: 0.9,
-        barPercentage: 0.9,
-        hoverBorderWidth: 1
-      }]
-    },
-    options: {
-      indexAxis: 'y',                 // ← horizontal bars
-      responsive: true,
-      maintainAspectRatio: false,
-      //layout: { padding: { top: 8, right: 12, bottom: 12, left: 12 } },
-      layout: { padding: { top: 4, right: 8, bottom:8, left: 8 } },
-      scales: {
-        x: {
-          grid: { color: 'rgba(255,255,255,0.15)' },
-          ticks: { color: '#fff', font: { size: 6, weight: '600' } },
-          beginAtZero: true,
-          precision: 0,
-          display: false // bars are already labeled on Y axis
-        },
-        y: {
-          grid: { display: false },
-          ticks: { color: '#fff', font: { size: 9, weight: '500' } }
-        }
-      },
-      plugins: {
-        title: {
-          display: false,
-          text: `Total: ${total}`,
-          color: '#fff',
-          font: { size: 10, weight: '800' },
-          padding: { top: 2, bottom: 2 }
-        },
-        legend: {
-          display: false // bars are already labeled on Y axis
-        },
-        tooltip: {
-          callbacks: {
-            label: (ctx) => `${ctx.label}: ${ctx.parsed.x}`
-          }
-        },
-        datalabels: {
-          display: true,
-          color: '#fff',
-          anchor: 'center',  // centered inside the bar
-          align: 'center',
-          offset: 0,
-          clip: true,
-          clamp: true,
-          formatter: (v) => `${v}`,
-          font: (ctx) => {
-            const data = ctx.dataset.data, v = data[ctx.dataIndex] || 0;
-            const sum = data.reduce((a,b)=>a+(b||0),0) || 1;
-            const pct = (v / sum) * 100;
-            const base = ctx.chart.width < 360 ? 11 : 13;
-            return { weight: '800', size: pct < 14 ? base - 2 : base, family: 'system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif' };
-          }
-        }
-      },
-      animation: { duration: 1000 }
+    // Register datalabels plugin sekali sahaja
+    if (!window._EligibleVsUsed_DatalabelsRegistered && window.ChartDataLabels) {
+        Chart.register(ChartDataLabels);
+        window._EligibleVsUsed_DatalabelsRegistered = true;
     }
-  });
+
+    // Destroy chart lama (elak "Canvas is already in use")
+    if (window._EligibleVsUsedChart) {
+        window._EligibleVsUsedChart.destroy();
+        window._EligibleVsUsedChart = null;
+    }
+
+    // ⚠️ MESTI sama panjang: 6 item
+    var labels   = ['Stamped', 'Points', 'Voucher', 'Contest', 'Event', 'Discount'];
+    var eligible = [7,          4,       1,         2,         2,       2];
+    var used     = [0,          2,       0,         1,         1,       1];
+
+    window._EligibleVsUsedChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: labels,
+            datasets: [
+                {
+                    label: 'Eligible',
+                    data: eligible,
+                    stack: 'perks',
+                    backgroundColor: 'rgba(255,255,255,0.55)',
+                    borderRadius: 12,
+                    borderSkipped: false,
+                    barThickness: 16,
+                    categoryPercentage: 1,
+                    barPercentage: 1
+                },
+                {
+                    label: 'Used',
+                    data: used,
+                    stack: 'perks',
+                    backgroundColor: '#f97316',
+                    borderRadius: 12,
+                    borderSkipped: false,
+                    barThickness: 16,
+    categoryPercentage: 1,
+    barPercentage: 1
+                }
+            ]
+        },
+        options: {
+            indexAxis: 'y',            // horizontal bar
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                x: {
+                    stacked: true,
+                    beginAtZero: true,
+                    ticks: {
+                        stepSize: 1,
+                        precision: 0,
+                        color: '#ffffff',   // tulisan axis X putih
+                        font: {
+                            size: 10
+                        }
+                    },
+                    suggestedMax: 7,
+                    grid: {
+                        color: 'rgba(255,255,255,0.15)'
+                    },
+                    display: false
+                },
+                y: {
+                    stacked: true,
+                    ticks: {
+                        color: '#ffffff',   // tulisan axis Y putih
+                        font: {
+                            size: 10
+                        }
+                    },
+                    grid: {
+                        display: false
+                    }
+                }
+            },
+            plugins: {
+                legend: {
+                    position: 'top',
+                    labels: {
+                        usePointStyle: true,
+                        boxWidth: 10,
+                        color: '#ffffff',   // tulisan legend putih
+                        font: {
+                            size: 10
+                        }
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function (ctx) {
+                            var label = ctx.dataset.label || '';
+                            var value = ctx.parsed.x;
+                            return label + ': ' + value;
+                        }
+                    }
+                },
+                datalabels: {
+                    color: '#ffffff',       // nombor atas bar putih
+                    anchor: 'center',
+                    align: 'center',
+                    formatter: function (v) {
+                        return v > 0 ? v : ''; // kalau 0, jangan tulis
+                    },
+                    font: {
+                        weight: '600',
+                        size: 10              // font size 8px
+                    }
+                }
+            }
+        }
+    });
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+// Global handler
+window._TotalEligibleVsUsedChart = window._TotalEligibleVsUsedChart || null;
+
+// Guna flag register plugin yang sama (kalau dah ada dari chart bar, tak apa)
+window._EligibleVsUsed_DatalabelsRegistered =
+  window._EligibleVsUsed_DatalabelsRegistered || false;
+
+function Load_TotalEligible_vs_Used_Doughnut() {
+    var canvas = document.getElementById('perksEligibleTotalDonut');
+    if (!canvas) return;
+
+    var ctx = canvas.getContext('2d');
+
+    // Register datalabels sekali sahaja
+    if (!window._EligibleVsUsed_DatalabelsRegistered && window.ChartDataLabels) {
+        Chart.register(ChartDataLabels);
+        window._EligibleVsUsed_DatalabelsRegistered = true;
+    }
+
+    // Destroy lama kalau ada
+    if (window._TotalEligibleVsUsedChart) {
+        _TotalEligibleVsUsedChart.destroy();
+        _TotalEligibleVsUsedChart = null;
+    }
+
+    // Data ikut perks (boleh juga kira dari array)
+    var totalEligible = 18;
+    var totalUsed     = 5;
+
+    _TotalEligibleVsUsedChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: ['Eligible', 'Used'],
+            datasets: [{
+                data: [totalEligible, totalUsed],
+                backgroundColor: [
+                    'rgba(255,255,255,0.5)', // Eligible
+                    '#f97316'                // Used (oren)
+                ],
+                borderWidth: 0
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            cutout: '60%',   // lubang tengah (donut)
+            plugins: {
+                legend: {
+                    display: false   // kalau nak legend, tukar kepada true
+                },
+                datalabels: {
+                    color: '#ffffff',
+                    formatter: function (value, ctx) {
+                        // tunjuk angka (18 / 5)
+                        return value;
+                    },
+                    font: {
+                        weight: '700',
+                        size: 10
+                    }
+                }
+            }
+        }
+    });
 }
 
 

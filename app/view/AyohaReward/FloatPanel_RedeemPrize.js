@@ -732,7 +732,7 @@ function FloatPanel_RedeemPrize() {
                                             title: 'Insufficient Ayoha Point',
                                             text: "Unable to redeem prize!!",
                                             showConfirmButton: false,
-                                            imageUrl: "resources/icons/insufficientRedeem.png",
+                                            imageUrl: "resources/icons/UnableRedeem01.png",
                                             imageWidth: 300,
                                             imageHeight: 200,
                                             //   imageAlt: 'Cloud-Reward Pro v 1.0',

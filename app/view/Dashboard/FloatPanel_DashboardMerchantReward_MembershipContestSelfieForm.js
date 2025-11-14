@@ -597,7 +597,7 @@ height:150,
                                                    width: '100%',
                                                    height: 40,
                                                    id: 'htmlFloatPanel_DashboardMerchantReward_MembershipContestSelfieForm_SubmitMyAnswer',
-                                                   html: '<div onclick="FloatPanel_DashboardMerchantReward_MembershipContestSelfieForm_SubmitMyAnswer();" class="example-2" style="border-right:2px solid #fac;border-left:2px solid #fac;border-bottom:2px solid #fac;border-top:2px solid #fac;background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);border-radius: 20px 20px 20px 20px;width:100%;height:40px;font-size: 12px;font-weight:bold;color:white;text-align:center;vertical-align:middle;"><div style="font-size: 16px;font-weight:bold;color:white;margin:6px 0px 0px 0px;">Submit My Answer</div></div>'
+                                                   html: '<div onclick="FloatPanel_DashboardMerchantReward_MembershipContestSelfieForm_SubmitMyAnswer();" style="border-right:2px solid #fac;border-left:2px solid #fac;border-bottom:2px solid #fac;border-top:2px solid #fac;background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);border-radius: 20px 20px 20px 20px;width:100%;height:40px;font-size: 12px;font-weight:bold;color:white;text-align:center;vertical-align:middle;"><div style="font-size: 16px;font-weight:bold;color:white;margin:6px 0px 0px 0px;">Submit My Answer</div></div>'
                                                },
                                               
 
@@ -1460,7 +1460,7 @@ function FloatPanel_DashboardMerchantReward_MembershipContestSelfieForm_SubmitMy
     
                         if (data.success == "true") {
                             FloatPanel_DashboardMerchantReward_MembershipContestSelfieFormHide();
-                            swalFireDynamicIconWithMessage_NoPreventDefault("resources/icons/follow-up.png", "Your Answer Has Been Submitted!", "Purple", "Purple");
+                            swalFireDynamicIconWithMessage_NoPreventDefault("resources/icons/AnswerSubmittedIcon.png", "Your Answer Has Been Submitted!", "Purple", "Purple");
                             Ext.getCmp('htmlFloatPanel_DashboardMerchantReward_MembershipContestDetail_Register').setHtml('<div onclick="FloatPanel_DashboardMerchantReward_MembershipContestSelfieFormShow_Edit();"  style="border-right:2px solid #fac;border-left:2px solid #fac;border-bottom:2px solid #fac;border-top:2px solid #fac;background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);border-radius: 20px 20px 20px 20px;width:100%;height:40px;font-size: 12px;font-weight:bold;color:white;text-align:center;vertical-align:middle;"><div style="font-size: 16px;font-weight:bold;color:white;margin:6px 0px 0px 0px;">View My Submitted Answer</div></div>');
                             FloatPanel_DashboardMerchantReward_AyohaRewardContestLoadBySubscriberAccNoStore();
                         }

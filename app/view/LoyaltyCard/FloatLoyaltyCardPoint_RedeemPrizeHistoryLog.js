@@ -51,7 +51,7 @@ function FloatLoyaltyCardPoint_RedeemPrizeHistoryLog() {
          },
          //style: 'border-bottom:1px solid;background-color:#353839;',
          // style: 'border-bottom:1px solid;background-color:white;',
-         style: ' background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);',
+         style: 'background-color: #fac;background-image: linear-gradient(#c800ffc9,#ff00de75);',
          listeners: {
              initialize: function (c) {
                  this.element.on({
@@ -94,7 +94,7 @@ function FloatLoyaltyCardPoint_RedeemPrizeHistoryLog() {
              // style: 'border-bottom:0px solid;background-color:#353839;',
              //  style: 'border-bottom:0px solid;background-color:white;',
 
-             style: ' background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);',
+             style: 'background-color: #fac;background-image: linear-gradient(#c800ffc9,#ff00de75);',
              layout: {
                  type: 'vbox',
                  pack: 'center',
@@ -139,10 +139,11 @@ function FloatLoyaltyCardPoint_RedeemPrizeHistoryLog() {
                                           {
                                               xtype: 'button',
                                               id: 'btnFloatLoyaltyCardPoint_RedeemPrizeHistoryLogBack',
+                                              margin: '5 0 0 0',
                                               height: 30,
                                               width: 35,
                                               // iconCls: 'list',
-                                              html: '<div ><img src="resources/icons/backFullWhite.png" width="25" height="20" alt="Company Name"></div>',
+                                              html: '<div ><img src="resources/icons/backwhite03Ori.png" width="25" height="20" alt="Company Name"></div>',
                                               ui: 'plain',
                                               handler: function () {
 
@@ -167,10 +168,14 @@ function FloatLoyaltyCardPoint_RedeemPrizeHistoryLog() {
 
                                            {
                                                margin: '0 0 0 0',
-                                               html: '<font size=2 color=white><b>Status Log</b></font>'
+                                               html: '<font size=2 color=white><b>Redemptions Status Log</b></font>'
                                            },
 
+                                           {
+                                            xtype: 'spacer',
+                                            width: 10
 
+                                        },
 
 
 
@@ -195,7 +200,7 @@ function FloatLoyaltyCardPoint_RedeemPrizeHistoryLog() {
                 margin: '10 0 0 0',
                 id: 'FloatLoyaltyCardPoint_RedeemPrizeHistoryLogBorderBg',
                 //   style: 'background-image: url("resources/icons/mileageClaimBorder2.png"); background-size: 100% 100%;background-repeat:no-repeat',
-                style: ' background-color:transparent;',
+                style: ' background-color:white;',
                 height: 290,
                 width: '100%',
                 // style: 'border:2px solid #D25959;',
@@ -219,7 +224,7 @@ function FloatLoyaltyCardPoint_RedeemPrizeHistoryLog() {
                         id: 'FloatLoyaltyCardPoint_RedeemPrizeHistoryLogListID',
                         mode: 'SINGLE',
                         disableSelection: false,
-
+                        style: 'background-color:rgba(255,255,255, 0.9);border-radius: 0px 0px 0px 0px;',
                         //itemTpl: '<div class="myContent">' +
                         //   '<div><b>{ID}</b></div>' +
                         //   '<div>{ReceiptName}</div>' +
@@ -228,7 +233,7 @@ function FloatLoyaltyCardPoint_RedeemPrizeHistoryLog() {
                         //    '<div style="display: none;">{ID}</div>' +
                         //   '</div>',
 
-                        itemTpl: '<div class="myContent">' +
+                        itemTpl: '<div class="myContent" style="background-color:white">' +
 
 
                                   // '<table style="border-collapse:collapse;border-spacing:0;width:100%"><tr><th style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:0px 0px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;width:20px">{No}</th><th style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:0px 0px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;width:120px">{SubscriberAccountName}</th><th style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:0px 0px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;width:70px">{SubscriberPhoneNumber}</th><th style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:0px 0px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;width:70px">{SubscriberEmail}</th><th style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:0px 0px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;width:100px">{SubscribedDate}</th><th style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:0px 0px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;width:50px">{PhonePlatform}</th></tr></table>' +
@@ -236,7 +241,7 @@ function FloatLoyaltyCardPoint_RedeemPrizeHistoryLog() {
 
                               //jadi// '<div style="overflow:auto;width:100%;height:100%;font-size: 65%"><div style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;float:left;width:13%"><b>{ID}</b></div><div style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;float:left;width:67.5%"><b>{ReceiptName}</b><br>{CreatedDate}</div><div style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;float:left;width:17%"><b>{Amount}</b></div></div>' +
 
-                            '<div style="overflow:auto;width:100%;height:100%;font-size: 65%;margin:0px 0px 0px -10px"><div style="font-family:Arial, sans-serif;font-size:18px;font-weight:normal;float:left;width:98%;"><b>{RedeemHistoryStatus}</b><br><font size=2>Remarks:{Remarks}</font><br><font size=2>Created By:{AccountName}</font><br><font size=2>Created Date:{RedeemHistoryStatusDate}</font></div>' +
+                            '<div style="overflow:auto;width:100%;height:100%;font-size: 65%;margin:0px 0px 0px -10px;background-color:transparent;"><div style="font-family:Arial, sans-serif;font-size:18px;font-weight:normal;float:left;width:98%;"><b>{RedeemHistoryStatus}</b><br><font size=2>Remarks:{Remarks}</font><br><font size=2>Created By:{AccountName}</font><br><font size=2>Created Date:{RedeemHistoryStatusDate}</font></div>' +
 
                              //edit only/ '<div style="overflow:auto;width:100%;height:100%;font-size: 65%;margin:0px 0px 0px -10px"><div style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;float:left;width:67.5%;"><b>{ReceiptName}</b><br><font size=1>Upload Date:{CreatedDate}</font></div><div style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;float:left;width:17%"><b>{Amount}</b></div></div><div style="float:right;width:5%;margin:-45px 0px 0px 0px"><button class="buttonssDelete button14" OnClick="MovementClaimReceiptImageShowEdit({ID});"><img src="resources/icons/editresititem.png" height="30" width="30"></button></div>' +
 

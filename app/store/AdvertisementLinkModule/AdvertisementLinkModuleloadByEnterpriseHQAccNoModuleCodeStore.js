@@ -1,28 +1,53 @@
 ﻿Ext.define('ianMizi.store.AdvertisementLinkModule.AdvertisementLinkModuleloadByEnterpriseHQAccNoModuleCodeStore', {
-    extend: 'Ext.data.Store',
-    //  alias: 'store.ResponderAlertGetByAcc',
-    config: {
-        model: 'ianMizi.model.AdvertisementLinkModule.AdvertisementLinkModuleModel',
-        autoLoad: false,
+    // extend: 'Ext.data.Store',
+    // //  alias: 'store.ResponderAlertGetByAcc',
+    // config: {
+    //     model: 'ianMizi.model.AdvertisementLinkModule.AdvertisementLinkModuleModel',
+    //     autoLoad: false,
 
-        proxy: {
+    //     proxy: {
 
-            type: 'ajax',
-            //   url: document.location.protocol + '//' + document.location.host + '/API/AutoFenceTimer/GetAutoFenceTimerByID',
-            url: GetAPIurl() + '/AdvertisementLinkModule/AdvertisementLinkModuleloadByEnterpriseHQAccNoModuleCode',
-            reader: {
-                type: 'json',
-                rootProperty: 'results',
-                totalProperty: 'total',
-                successProperty: 'success',
-                messageProperty: 'message'
-            },
-
-
-
-        }
+    //         type: 'ajax',
+    //         //   url: document.location.protocol + '//' + document.location.host + '/API/AutoFenceTimer/GetAutoFenceTimerByID',
+    //         url: GetAPIurl() + '/AdvertisementLinkModule/AdvertisementLinkModuleloadByEnterpriseHQAccNoModuleCode',
+    //         reader: {
+    //             type: 'json',
+    //             rootProperty: 'results',
+    //             totalProperty: 'total',
+    //             successProperty: 'success',
+    //             messageProperty: 'message'
+    //         },
 
 
-    }
+
+    //     }
+
+
+    // }
 });
 
+
+
+
+var _DataStore_AdvertisementLinkModuleloadByEnterpriseHQAccNoModuleCodeStore = Ext.create('Ext.data.Store', {
+
+    model: 'ianMizi.model.AdvertisementLinkModule.AdvertisementLinkModuleModel',
+    id: '_LoyaltyPointLoadByPointCampaignCodeUserStoreID',
+    proxy: {
+        type: 'ajax',
+        url: GetAPIurl() + '/AdvertisementLinkModule/AdvertisementLinkModuleloadByEnterpriseHQAccNoModuleCode',
+        actionMethods: {
+            read: 'GET'
+          //  read: AyohaStoreCartRouteMethod
+        },
+        reader: {
+            type: 'json',
+            rootProperty: 'results',
+            totalProperty: 'total',
+            successProperty: 'success',
+            messageProperty: 'message'
+        }
+    },
+  
+
+});

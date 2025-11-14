@@ -46,23 +46,23 @@
                  var ModifiedBy = record.get('ModifiedBy');
                  if (str == "Credit") {
                      //_value = '<font size=5 color=black><b>+</b>' + AyohaPoint + ' </font>'
-                     _value = '<div style="font-family:Arial, sans-serif;font-size:20px;font-weight:bold;word-break:normal;margin:-6px 0px 0px 0px;text-align:right"><font size=6 color=black><b>+</b>' + AyohaPoint + ' </font></div><br><div style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;word-break:normal;margin:-35px 0px 0px 0px;text-align:right">Points</div>';
+                     _value = '<div style="font-family:Arial, sans-serif;font-size:14px;font-weight:bold;word-break:normal;margin:-6px 0px 0px 0px;text-align:right"><font size=5 color=black><b>+</b>' + AyohaPoint + ' </font></div><br><div style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;word-break:normal;margin:-30px 0px 0px 0px;text-align:right">Points</div>';
                      // return;
                  }
 
                  if (str == "Debit" && JenisPoint == "Cancel")  {
                    //  _value = '<font size=6 color=red><b>-</b><strike>' + AyohaPoint + ' </strike></font>'
-                     _value = '<div style="font-family:Arial, sans-serif;font-size:20px;font-weight:bold;word-break:normal;margin:-12px 0px 0px 0px;text-align:right"><font size=6 color=red><b>-</b><strike>' + AyohaPoint + ' </strike></font></div><br><div style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;word-break:normal;margin:-30px 0px 0px 0px;text-align:right;color:red">Points</div><br><div style="font-family:Arial, sans-serif;font-size:9px;font-weight:normal;word-break:normal;margin:-20px 0px 0px 0px;text-align:right;color:red">' + ModifiedBy + '</div>';
+                     _value = '<div style="font-family:Arial, sans-serif;font-size:14px;font-weight:bold;word-break:normal;margin:-12px 0px 0px 0px;text-align:right"><font size=5 color=red><b>-</b><strike>' + AyohaPoint + ' </strike></font></div><br><div style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;word-break:normal;margin:-30px 0px 0px 0px;text-align:right;color:red">Points</div><br><div style="font-family:Arial, sans-serif;font-size:9px;font-weight:normal;word-break:normal;margin:-20px 0px 0px 0px;text-align:right;color:red">' + ModifiedBy + '</div>';
                  }
                 
                  if (str == "Debit" && JenisPoint != "Cancel") {
                     // _value = '<font size=6 color=black><b>-</b>' + AyohaPoint + ' </font>'
-                     _value = '<div style="font-family:Arial, sans-serif;font-size:20px;font-weight:bold;word-break:normal;margin:-6px 0px 0px 0px;text-align:right"><font size=6 color=black><b>+</b>' + AyohaPoint + ' </font></div><br><div style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;word-break:normal;margin:-35px 0px 0px 0px;text-align:right">Points</div>';
+                     _value = '<div style="font-family:Arial, sans-serif;font-size:14px;font-weight:bold;word-break:normal;margin:-6px 0px 0px 0px;text-align:right"><font size=5 color=black><b>+</b>' + AyohaPoint + ' </font></div><br><div style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;word-break:normal;margin:-30px 0px 0px 0px;text-align:right">Points</div>';
                  }
 
                  if (str == "Debit" && JenisPoint == "Redeem")  {
-                    //  _value = '<font size=6 color=red><b>-</b><strike>' + AyohaPoint + ' </strike></font>'
-                      _value = '<div style="font-family:Arial, sans-serif;font-size:20px;font-weight:bold;word-break:normal;margin:-12px 0px 0px 0px;text-align:right"><font size=6 color=red><b>-</b>' + AyohaPoint + '</font></div><br><div style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;word-break:normal;margin:-30px 0px 0px 0px;text-align:right;color:red">Points</div><br><div style="font-family:Arial, sans-serif;font-size:9px;font-weight:normal;word-break:normal;margin:-20px 0px 0px 0px;text-align:right;color:red">' + ModifiedBy + '</div>';
+                    _value = '<div style="font-family:Arial, sans-serif;font-size:14px;font-weight:bold;word-break:normal;margin:-12px 0px 0px 0px;text-align:right"><font size=5 color=red><b>-</b>' + AyohaPoint + '</font></div><br><div style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;word-break:normal;margin:-30px 0px 0px 0px;text-align:right;color:red">Points</div>';
+                      //_value = '<div style="font-family:Arial, sans-serif;font-size:20px;font-weight:bold;word-break:normal;margin:-12px 0px 0px 0px;text-align:right"><font size=6 color=red><b>-</b>' + AyohaPoint + '</font></div><br><div style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;word-break:normal;margin:-30px 0px 0px 0px;text-align:right;color:red">Points</div><br><div style="font-family:Arial, sans-serif;font-size:9px;font-weight:normal;word-break:normal;margin:-20px 0px 0px 0px;text-align:right;color:red">' + ModifiedBy + '</div>';
                   }
                  return _value;
                  //var _value;

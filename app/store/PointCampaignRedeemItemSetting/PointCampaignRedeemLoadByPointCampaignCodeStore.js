@@ -1,28 +1,63 @@
 ﻿Ext.define('ianMizi.store.PointCampaignRedeemItemSetting.PointCampaignRedeemLoadByPointCampaignCodeStore', {
-    extend: 'Ext.data.Store',
-    //  alias: 'store.ResponderAlertGetByAcc',
-    config: {
-        model: 'ianMizi.model.PointCampaignRedeemItemSetting.PointCampaignRedeemItemSettingModel',
-        autoLoad: false,
-
-        proxy: {
-
-            type: 'ajax',
-            //   url: document.location.protocol + '//' + document.location.host + '/API/AutoFenceTimer/GetAutoFenceTimerByID',
-            //  url: 'http://192.168.0.103:9019/FlatBill/FlatBillgetFlatBill',
-            url: GetAPIurl() + '/PointCampaignRedeemItemSetting/PointCampaignRedeemLoadByPointCampaignCode',
-            reader: {
-                type: 'json',
-                rootProperty: 'results',
-                totalProperty: 'total',
-                successProperty: 'success',
-                messageProperty: 'message'
-            },
+   
+});
 
 
 
+
+
+// Ext.define('ianMizi.store.PointCampaignRedeemItemSetting.PointCampaignRedeemLoadByPointCampaignCodeStore', {
+//     extend: 'Ext.data.Store',
+//     //  alias: 'store.ResponderAlertGetByAcc',
+//     config: {
+//         model: 'ianMizi.model.PointCampaignRedeemItemSetting.PointCampaignRedeemItemSettingModel',
+//         autoLoad: false,
+
+//         proxy: {
+
+//             type: 'ajax',          
+//             url: GetAPIurl() + '/PointCampaignRedeemItemSetting/PointCampaignRedeemLoadByPointCampaignCode',
+//             reader: {
+//                 type: 'json',
+//                 rootProperty: 'results',
+//                 totalProperty: 'total',
+//                 successProperty: 'success',
+//                 messageProperty: 'message'
+//             },
+
+
+
+//         }
+
+
+//     }
+// });
+
+
+
+
+
+var _DataStore_PointCampaignRedeemLoadByPointCampaignCodeStore = Ext.create('Ext.data.Store', {
+
+    model: 'ianMizi.model.PointCampaignRedeemItemSetting.PointCampaignRedeemItemSettingModel',
+    id: '_PointCampaignRedeemLoadByPointCampaignCodeStoreID',
+    proxy: {
+        type: 'ajax',
+       url: GetAPIurl() + '/PointCampaignRedeemItemSetting/PointCampaignRedeemLoadByPointCampaignCode',
+      //  url: GetAPIurl() + '/AyohaStore_Cart/'+AyohaStoreCartRouteFunction,
+        actionMethods: {
+            read: 'GET'
+          //  read: AyohaStoreCartRouteMethod
+        },
+        reader: {
+            type: 'json',
+            rootProperty: 'results',
+            totalProperty: 'total',
+            successProperty: 'success',
+            messageProperty: 'message'
         }
+    },
 
 
-    }
+
 });

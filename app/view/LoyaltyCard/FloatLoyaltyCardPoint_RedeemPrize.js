@@ -23,9 +23,9 @@ function FloatLoyaltyCardPoint_RedeemPrize() {
      Ext.create('Ext.Panel', {
 
          xtype: 'container',
-         //height: 465,
-         height: '70%',
-         width: '95%',
+         height: 492,
+         //height: '70%',
+         width: '90%',
          id: 'LoadingFloatLoyaltyCardPoint_RedeemPrizeID',
          draggable: false,
          zIndex: 450,
@@ -52,7 +52,7 @@ function FloatLoyaltyCardPoint_RedeemPrize() {
          },
          // style: 'border-bottom:1px solid;background-color:#353839;',
          // style: 'border-bottom:1px solid;background-color:white;',
-         style: ' background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);',
+         style: 'background-color: #fac;background-image: linear-gradient(#c800ffc9,#ff00de75);',
 
          listeners: {
              initialize: function (c) {
@@ -96,8 +96,8 @@ function FloatLoyaltyCardPoint_RedeemPrize() {
                  xtype: 'container',
                  width: '100%',
                  height: '100%',
-                 //  style: "background-color: transparent;",
-                 style: ' background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);',
+                // style: 'background-color: #fac;background-image: linear-gradient(#c800ffc9,#ff00de75);',
+                style: 'background-color: #fac;background-image: linear-gradient( #c800ffc9, #c800ffc9);',
                  // style: 'background-image: url("resources/icons/pointbackdrop.png"); background-size: 100% 30%;background-repeat: no-repeat;',
                  layout: {
                      type: 'vbox',
@@ -146,7 +146,7 @@ function FloatLoyaltyCardPoint_RedeemPrize() {
                                         width: 35,
                                         margin: '0 0 0 0',
                                         // iconCls: 'list',
-                                        html: '<div ><img src="resources/icons/backFullWhite.png" width="25" height="20" alt="Company Name"></div>',
+                                        html: '<div ><img src="resources/icons/backwhite03Ori.png" width="25" height="20" alt="Company Name"></div>',
                                         ui: 'plain',
                                         handler: function () {
                                             _FloatLoyaltyCardPoint_RedeemPrize.hide(Ext.fx.Animation({
@@ -557,7 +557,8 @@ function FloatLoyaltyCardPoint_RedeemPrize() {
             },
             scrollable: {
                 direction: 'vertical',
-                directionLock: true
+                directionLock: true,
+                indicators: false,
             },
             items: [
                   {
@@ -624,16 +625,18 @@ function FloatLoyaltyCardPoint_RedeemPrize() {
                                xtype: 'container',
                                width: '100%',
                                zIndex: 100,
-                               margin: '-100 0 0 0',
+                               height: 150,
+                               margin: '-150 0 0 0',
+                               style: 'background-color: rgba(0, 0, 0, 0.5);border-radius: 0px 0px 0px 0px;',
                                layout: {
                                    type: 'vbox',
-                                   pack: 'start',
+                                   pack: 'center',
                                    align: 'left',
                                },
                                items: [
                                    {
 
-                                       id: 'FloatLoyaltyCardPoint_RedeemPrize_PrizeLbl',
+                                       id: 'FloatLoyaltyCardPoint_RedeemPrize_PrizeLbl',                                       
                                        html: '<div style="font-family:Arial, sans-serif;font-size:10px;font-weight:normal;word-break:normal;margin:5px 0px 0px 0px;width:100%;color:white;text-align:left;">Item Name:</div><br><div style="font-family:Arial, sans-serif;font-size:17px;font-weight:normal;word-break:normal;margin:-16px 0px 0px 0px;;width:100%;color:white;text-align:left;"><b>Sony External Hardisk 1TB</b></div><br><div style="font-family:Arial, sans-serif;font-size:10px;font-weight:normal;word-break:normal;margin:-15px 0px 0px 0px;;width:100%;color:white;text-align:left;">Item Code:</div><br><div style="font-family:Arial, sans-serif;font-size:17px;font-weight:normal;word-break:normal;margin:-16px 0px 0px 0px;;width:100%;color:white;text-align:left;"><b>79957-02</b></div><br><div style="font-family:Arial, sans-serif;font-size:10px;font-weight:normal;word-break:normal;margin:-15px 0px 0px 0px;;width:100%;color:white;text-align:left;">Entitled Point:</div><br><div style="font-family:Arial, sans-serif;font-size:19px;font-weight:normal;word-break:normal;margin:-16px 0px 0px 0px;;width:100%;color:white;text-align:left;"><b>2000</b></div>'
 
                                        // html: '<div style="color:white;text-align: center;font-size:38px;width:100%;font-weight:bold">5621</div>',
@@ -659,13 +662,13 @@ function FloatLoyaltyCardPoint_RedeemPrize() {
     width: '100%',
     // width: 40,
     docked: 'bottom',
-    height: 45,
+    height: 50,
     //  title: '<font size="3" color="white">Live Tracking Map</font>',
     //hidden: true,
 
     id: 'containerFloatLoyaltyCardPoint_RedeemPrize_MenuBottom',
-    // style: "background-color: transparent",
-    style: 'background-color:rgba(255, 255, 255, 0.3);border-radius: 0px 0px 0px 0px;',
+    //style: "background-color: transparent",
+   // style: 'background-color:rgba(255, 255, 255, 0.3);border-radius: 0px 0px 0px 0px;',
     // style: 'background-image: url("resources/icons/border5.png"); background-size: 100% 100%;',
     //style: {
     //    // background: '#D25959',
@@ -673,7 +676,7 @@ function FloatLoyaltyCardPoint_RedeemPrize() {
     //    // border: '2px'
     //},
     //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
-    // style: 'border-bottom:2px solid #D25959;background-color:transparent',
+    style: 'border-top:1px solid #D25959;background-color:white',
     layout: {
         type: 'hbox',
         pack: 'start',
@@ -709,13 +712,13 @@ function FloatLoyaltyCardPoint_RedeemPrize() {
                                 ////  align: 'stretch',
 
                                 ui: 'plain',
-                                width: '100%',
-                                margin: '-5 0 0 0',
-                                height: 40,
+                                width: '95%',
+                                margin: '0 0 0 0',
+                                height: 45,
                                 id: 'btnFloatPanel_MembershipCardList_Upgrade_GetMembershipCardss',
                                 //hidden: true,
 
-                                html: '<div class="blink_me"><button class="button3viewloyaltycard">Redeem Now!!!</button></div>',
+                                html: '<div><button class="button3viewloyaltycard">Redeem Now</button></div>',
                                 handler: function () {
                                     FloatLoyaltyCardPoint_RedeemPrize_RedeemNow();
                                    
@@ -827,7 +830,7 @@ function FloatLoyaltyCardPoint_RedeemPrizeShow(val) {
     globalItemPointFloatLoyaltyCardPoint_RedeemPrize = ItemPoint.get('ItemPoint');
     globalRemarksFloatLoyaltyCardPoint_RedeemPrize = Remarks.get('Remarks');
     Ext.getCmp('FloatLoyaltyCardPoint_RedeemPrize_PrizeImg').setHtml('<img src="' + ImgPath.get('ImgPath') + '"   style="width:100%;height:400px;zIndex:-100px;">');
-    Ext.getCmp('FloatLoyaltyCardPoint_RedeemPrize_PrizeLbl').setHtml('<div style="font-family:Arial, sans-serif;font-size:10px;font-weight:normal;word-break:normal;margin:5px 0px 0px 0px;width:100%;color:white;text-align:left;">Item Name:</div><br><div style="font-family:Arial, sans-serif;font-size:17px;font-weight:normal;word-break:normal;margin:-16px 0px 0px 0px;;width:100%;color:white;text-align:left;"><b>' + ItemName.get('ItemName') + '</b></div><br><div style="font-family:Arial, sans-serif;font-size:10px;font-weight:normal;word-break:normal;margin:-15px 0px 0px 0px;;width:100%;color:white;text-align:left;">Item Code:</div><br><div style="font-family:Arial, sans-serif;font-size:17px;font-weight:normal;word-break:normal;margin:-16px 0px 0px 0px;;width:100%;color:white;text-align:left;"><b>' + ModifiedItemCode.get('ModifiedItemCode') + '</b></div><br><div style="font-family:Arial, sans-serif;font-size:10px;font-weight:normal;word-break:normal;margin:-15px 0px 0px 0px;;width:100%;color:white;text-align:left;">Entitled Point:</div><br><div style="font-family:Arial, sans-serif;font-size:19px;font-weight:normal;word-break:normal;margin:-16px 0px 0px 0px;;width:100%;color:white;text-align:left;"><b>' + ItemPoint.get('ItemPoint') + '</b></div>');
+    Ext.getCmp('FloatLoyaltyCardPoint_RedeemPrize_PrizeLbl').setHtml('<div style="font-family:Arial, sans-serif;font-size:10px;font-weight:normal;word-break:normal;margin:5px 0px 0px 0px;width:100%;color:white;text-align:left;">Item Name:</div><br><div style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;word-break:normal;margin:-16px 0px 0px 0px;;width:100%;color:white;text-align:left;"><b>' + ItemName.get('ItemName') + '</b></div><br><div style="font-family:Arial, sans-serif;font-size:10px;font-weight:normal;word-break:normal;margin:-15px 0px 0px 0px;;width:100%;color:white;text-align:left;">Item Code:</div><br><div style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;word-break:normal;margin:-16px 0px 0px 0px;;width:100%;color:white;text-align:left;"><b>' + ModifiedItemCode.get('ModifiedItemCode') + '</b></div><br><div style="font-family:Arial, sans-serif;font-size:10px;font-weight:normal;word-break:normal;margin:-15px 0px 0px 0px;;width:100%;color:white;text-align:left;">Entitled Point:</div><br><div style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;word-break:normal;margin:-16px 0px 0px 0px;;width:100%;color:white;text-align:left;"><b>' + ItemPoint.get('ItemPoint') + '</b></div>');
 
 
 

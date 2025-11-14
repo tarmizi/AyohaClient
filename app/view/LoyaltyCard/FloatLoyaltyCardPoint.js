@@ -778,11 +778,9 @@ function FloatLoyaltyCardPoint() {
 
 
                                                                xtype: 'list',
-                                                               // height: '64%',
-                                                               height: '100%',
-                                                               // height: 200,
-                                                               //   flex: 2,
-                                                               store: 'PointCampaignRedeemLoadByPointCampaignCodeStore',
+                                                               height: '100%',                                                              
+                                                               //store: 'PointCampaignRedeemLoadByPointCampaignCodeStore',
+                                                               store: _DataStore_PointCampaignRedeemLoadByPointCampaignCodeStore ,
                                                                id: 'List_FloatLoyaltyCardPoint_RedeemPrize',
                                                                style: 'background-color:rgba(255,255,255, 0.9);border-radius: 0px 0px 0px 0px;',
                                                                mode: 'SINGLE',
@@ -859,7 +857,8 @@ function FloatLoyaltyCardPoint() {
                                                     height: '100%',
                                                     // height: 200,
                                                     //   flex: 2,
-                                                    store: 'LoyaltyPointRedeemPrizeHistoryLoadRedeemHistoryStore',
+                                                    //store: 'LoyaltyPointRedeemPrizeHistoryLoadRedeemHistoryStore',
+                                                    store:_DataStore_LoyaltyPointRedeemPrizeHistoryLoadRedeemHistoryStore,
                                                     id: 'List_FloatLoyaltyCardPoint_RedeemPrizeHistory',
                                                     style: 'background-color:rgba(255,255,255, 0.9);border-radius: 0px 0px 0px 0px;',
                                                     mode: 'SINGLE',
@@ -937,7 +936,8 @@ function FloatLoyaltyCardPoint() {
                                                         height: '100%',
                                                         // height: 200,
                                                         //   flex: 2,
-                                                        store: 'LoyaltyPointLoadByPointCampaignCodeUserStore',
+                                                        //store: 'LoyaltyPointLoadByPointCampaignCodeUserStore',
+                                                        store:_DataStore_LoyaltyPointLoadByPointCampaignCodeUserStore,
                                                         id: 'List_FloatLoyaltyCardPoint_PointHistory',
                                                         style: 'background-color:rgba(255,255,255, 0.9);border-radius: 0px 0px 0px 0px;',
                                                         mode: 'SINGLE',
@@ -1927,38 +1927,38 @@ function FloatLoyaltyCardPointShow(CampaingName, PointCampaignCode, EnterpriseLo
 function Load_FloatLoyaltyCardPoint_AdvertisementLinkModuleloadByEnterpriseHQAccNoModuleCodeStore(EnterpriseAccNo) {
 
    
-    Ext.getStore('AdvertisementLinkModuleloadByEnterpriseHQAccNoModuleCodeStore').getProxy().setExtraParams({
-        EnterpriseHQAccNo: EnterpriseAccNo,
-        ModuleCode:3,
-    });
 
-    Ext.StoreMgr.get('AdvertisementLinkModuleloadByEnterpriseHQAccNoModuleCodeStore').load();
-    var task = Ext.create('Ext.util.DelayedTask', function () {
-        Ext.getStore('AdvertisementLinkModuleloadByEnterpriseHQAccNoModuleCodeStore').getProxy().setExtraParams({
-            EnterpriseHQAccNo: EnterpriseAccNo,
-            ModuleCode: 3,
-        });
 
-        Ext.StoreMgr.get('AdvertisementLinkModuleloadByEnterpriseHQAccNoModuleCodeStore').load();
-        var myStore = Ext.getStore('AdvertisementLinkModuleloadByEnterpriseHQAccNoModuleCodeStore');
-        count = myStore.getCount();
-//alert(count)
-        if (count >= 1) {
-            var modelRecord = myStore.getAt(0);         
-            localStorage.setItem('FloatPanel_AyohaCardManagement_PreviewCard_AyohaUserCardShow_AdvertismentCode', modelRecord.get('AdvertisementCode'));
-            FloatPanel_Advertisement_FloatAdvertisementShow();
-          
-           // Ext.getCmp('btnStampCard_FloatPanel_AyohaCardManagement_PreviewCard_AdvertisementButton').setHidden(false);
-            //Ext.getCmp('btnStampCard_FloatPanel_AyohaCardManagement_PreviewCard_AdvertisementButton_TransparentBox').setHidden(true);
-           // FloatPanel_AyohaCardManagement_AdvertisementButtonShow();
-        } else {
-           // Ext.getCmp('btnStampCard_FloatPanel_AyohaCardManagement_PreviewCard_AdvertisementButton').setHidden(true);
-           // Ext.getCmp('btnStampCard_FloatPanel_AyohaCardManagement_PreviewCard_AdvertisementButton_TransparentBox').setHidden(false);
+
+
+
+    _DataStore_AdvertisementLinkModuleloadByEnterpriseHQAccNoModuleCodeStore.getProxy().setExtraParam('EnterpriseHQAccNo', EnterpriseAccNo);
+    _DataStore_AdvertisementLinkModuleloadByEnterpriseHQAccNoModuleCodeStore.getProxy().setExtraParam('ModuleCode', 3);
+    _DataStore_AdvertisementLinkModuleloadByEnterpriseHQAccNoModuleCodeStore.getProxy().setUrl(GetAPIurl() + '/AdvertisementLinkModule/AdvertisementLinkModuleloadByEnterpriseHQAccNoModuleCode');
+    
+    _DataStore_AdvertisementLinkModuleloadByEnterpriseHQAccNoModuleCodeStore.load({
+        callback: function (records, operation, success) {
+            if (success && records.length > 0) {
+                console.log('Store loaded successfully, total records: ' + records.length);
+                var record = records[0]; // Access only the first record              
+                localStorage.setItem('FloatPanel_AyohaCardManagement_PreviewCard_AyohaUserCardShow_AdvertismentCode', record.get('AdvertisementCode'));
+                FloatPanel_Advertisement_FloatAdvertisementShow();
+               LoadingPanelHide();
+               
+               
+            } else {
+                LoadingPanelHide();
+                console.error('Failed to load store data or no record found.');
+               
+            }
         }
-
-       // LoadingPanelHide();
     });
-    task.delay(500);
+
+
+
+
+
+
 
 }
 
@@ -2042,7 +2042,7 @@ function FloatLoyaltyCardPointCheckRedeemEntitle(val) {
             title: 'Insufficient Point',
             text: "Unable to redeem prize!",
             showConfirmButton: false,
-            imageUrl: "resources/icons/attention1.png",
+            imageUrl: "resources/icons/UnableRedeem01.png",
             imageWidth: 300,
             imageHeight: 200,
             //   imageAlt: 'Cloud-Reward Pro v 1.0',
@@ -2162,96 +2162,107 @@ function FloatLoyaltyCardPoint_MoveCarousel(Idx) {
 
 
 }
-var _DataStore_PointCampaignRedeemLoadByPointCampaignCodeStore;
+//var _DataStore_PointCampaignRedeemLoadByPointCampaignCodeStore;
 var _FloatLoyaltyCardPoint_PointCampaignCode;
 function Load_FloatLoyaltyCardPoint_PointCampaignRedeemLoadByPointCampaignCodeStore(PointCampaignCode, EnterpriseAccNo) {
 
-    Ext.getStore('PointCampaignRedeemLoadByPointCampaignCodeStore').getProxy().setExtraParams({
 
-        PointCampaignCode: PointCampaignCode,
-        EnterpriseAccNo: EnterpriseAccNo,
+
+
+
+    _DataStore_PointCampaignRedeemLoadByPointCampaignCodeStore.getProxy().setExtraParam('PointCampaignCode', PointCampaignCode);
+    _DataStore_PointCampaignRedeemLoadByPointCampaignCodeStore.getProxy().setExtraParam('EnterpriseAccNo', EnterpriseAccNo);
+    _DataStore_PointCampaignRedeemLoadByPointCampaignCodeStore.getProxy().setUrl(GetAPIurl() + '/PointCampaignRedeemItemSetting/PointCampaignRedeemLoadByPointCampaignCode');
+    _DataStore_PointCampaignRedeemLoadByPointCampaignCodeStore.load({
+        callback: function (records, operation, success) {
+            if (success && records.length > 0) {
+                console.log('record found.'+ records.length);
+                _FloatLoyaltyCardPoint_PointCampaignCode = PointCampaignCode;
+                Load_FloatLoyaltyCardPoint_LoyaltyPointRedeemPrizeHistoryLoadRedeemHistoryStore(PointCampaignCode,EnterpriseAccNo);
+            } else {
+                console.error('Failed to load store data or no record found.');
+                Load_FloatLoyaltyCardPoint_LoyaltyPointRedeemPrizeHistoryLoadRedeemHistoryStore(PointCampaignCode,EnterpriseAccNo);
+                
+            }
+        }
     });
-    Ext.StoreMgr.get('PointCampaignRedeemLoadByPointCampaignCodeStore').load();
-    var task = Ext.create('Ext.util.DelayedTask', function () {
-        Ext.getStore('PointCampaignRedeemLoadByPointCampaignCodeStore').getProxy().setExtraParams({
 
-            PointCampaignCode: PointCampaignCode,
-            EnterpriseAccNo: EnterpriseAccNo,
-        });
-        _DataStore_PointCampaignRedeemLoadByPointCampaignCodeStore = Ext.StoreMgr.get('PointCampaignRedeemLoadByPointCampaignCodeStore').load();
-        var myStore = Ext.getStore('PointCampaignRedeemLoadByPointCampaignCodeStore');
-        //var modelRecord = myStore.getAt(0);
-        //var TotalItemPoint = modelRecord.get('TotalItemPoint');
-        //var TotalItemPrizePriceCost = modelRecord.get('TotalItemPrizePriceCost');
-        //var result01 = TotalItemPrizePriceCost / TotalItemPoint;
 
-        //var num = result01;
-        //var n = num.toFixed(2);
 
-        //document.getElementById('input-FloatPanel_AyohaCardManagement_EditCard_Point_TotalItemPoint').value = TotalItemPoint;
-        //document.getElementById('input-FloatPanel_AyohaCardManagement_EditCard_Point_TotalItemCost').value = TotalItemPrizePriceCost;
-        //document.getElementById('input-FloatPanel_AyohaCardManagement_EditCard_Point_CalculationMethod').value = "Total Item Cost=(" + TotalItemPrizePriceCost + ") /" + "Total Item Point=(" + TotalItemPoint + ")";
-        //document.getElementById('input-FloatPanel_AyohaCardManagement_EditCard_Point_CalculationResult01').value = n;
 
-        //PointCount = myStore.getCount();
-        //Ext.getCmp('htmlSubscriberMaster_TotalPointCount').setHtml('<div style="color:white;text-align: center;font-size:28px;width:100%;font-weight:bold">' + PointCount + '</div>');
-        // adjustHeight();
-        _FloatLoyaltyCardPoint_PointCampaignCode = PointCampaignCode;
-        Load_FloatLoyaltyCardPoint_LoyaltyPointRedeemPrizeHistoryLoadRedeemHistoryStore(PointCampaignCode,EnterpriseAccNo);
-        Ext.Viewport.setMasked(false);
 
-    });
-    task.delay(500);
+
+
 }
-var _DataStore_LoyaltyPointRedeemPrizeHistoryLoadRedeemHistoryStore;
+//var _DataStore_LoyaltyPointRedeemPrizeHistoryLoadRedeemHistoryStore;
 function Load_FloatLoyaltyCardPoint_LoyaltyPointRedeemPrizeHistoryLoadRedeemHistoryStore(PointCampaignCode,EnterpriseAccNo) {
+
+    _DataStore_LoyaltyPointRedeemPrizeHistoryLoadRedeemHistoryStore.getProxy().setExtraParam('RedeemHistoryStatusBy', GetCurrAyohaUserAccountNo());
+    _DataStore_LoyaltyPointRedeemPrizeHistoryLoadRedeemHistoryStore.getProxy().setExtraParam('EnterpriseAccNo', EnterpriseAccNo);
+    _DataStore_LoyaltyPointRedeemPrizeHistoryLoadRedeemHistoryStore.getProxy().setUrl(GetAPIurl() + '/LoyaltyPointRedeemPrizeHistory/LoyaltyPointRedeemPrizeHistoryLoadRedeemHistory');
+    _DataStore_LoyaltyPointRedeemPrizeHistoryLoadRedeemHistoryStore.load({
+        callback: function (records, operation, success) {
+            if (success && records.length > 0) {
+              //  console.log('record found.'+ records.length);
+                Load_FloatLoyaltyCardPoint_LoyaltyPointLoadByPointCampaignCodeUserStore(PointCampaignCode, EnterpriseAccNo);
+                        } else {
+               // console.error('Failed to load store data or no record found.');
+                Load_FloatLoyaltyCardPoint_LoyaltyPointLoadByPointCampaignCodeUserStore(PointCampaignCode, EnterpriseAccNo);
+                
+            }
+        }
+    });
+
+
+
+
 
 
     
-    Ext.getStore('LoyaltyPointRedeemPrizeHistoryLoadRedeemHistoryStore').getProxy().setExtraParams({
-        RedeemHistoryStatusBy: GetCurrAyohaUserAccountNo(),
-        EnterpriseAccNo: EnterpriseAccNo
-    });
-    Ext.StoreMgr.get('LoyaltyPointRedeemPrizeHistoryLoadRedeemHistoryStore').load();
-    var task = Ext.create('Ext.util.DelayedTask', function () {
-        Ext.getStore('LoyaltyPointRedeemPrizeHistoryLoadRedeemHistoryStore').getProxy().setExtraParams({
-            RedeemHistoryStatusBy: GetCurrAyohaUserAccountNo(),
-            EnterpriseAccNo: EnterpriseAccNo
-        });
-        _DataStore_LoyaltyPointRedeemPrizeHistoryLoadRedeemHistoryStore = Ext.StoreMgr.get('LoyaltyPointRedeemPrizeHistoryLoadRedeemHistoryStore').load();
+    // Ext.getStore('LoyaltyPointRedeemPrizeHistoryLoadRedeemHistoryStore').getProxy().setExtraParams({
+    //     RedeemHistoryStatusBy: GetCurrAyohaUserAccountNo(),
+    //     EnterpriseAccNo: EnterpriseAccNo
+    // });
+    // Ext.StoreMgr.get('LoyaltyPointRedeemPrizeHistoryLoadRedeemHistoryStore').load();
+    // var task = Ext.create('Ext.util.DelayedTask', function () {
+    //     Ext.getStore('LoyaltyPointRedeemPrizeHistoryLoadRedeemHistoryStore').getProxy().setExtraParams({
+    //         RedeemHistoryStatusBy: GetCurrAyohaUserAccountNo(),
+    //         EnterpriseAccNo: EnterpriseAccNo
+    //     });
+    //     _DataStore_LoyaltyPointRedeemPrizeHistoryLoadRedeemHistoryStore = Ext.StoreMgr.get('LoyaltyPointRedeemPrizeHistoryLoadRedeemHistoryStore').load();
 
-        Ext.StoreMgr.get('LoyaltyPointRedeemPrizeHistoryLoadRedeemHistoryStore').load();
-        var myStore = Ext.getStore('LoyaltyPointRedeemPrizeHistoryLoadRedeemHistoryStore');
-        var count = myStore.getCount();
+    //     Ext.StoreMgr.get('LoyaltyPointRedeemPrizeHistoryLoadRedeemHistoryStore').load();
+    //     var myStore = Ext.getStore('LoyaltyPointRedeemPrizeHistoryLoadRedeemHistoryStore');
+    //     var count = myStore.getCount();
         
 
-        //if (count >= 1) {
-        //    var modelRecord = myStore.getAt(0);
-        //    var SumPoint = modelRecord.get('SumPoint');
-        //    Ext.getCmp('htmlFloatLoyaltyCardPoint_SumPoint').setHtml('<font size="15" color="white"><b>' + SumPoint + '</b></font>');
-        //}
+    //     //if (count >= 1) {
+    //     //    var modelRecord = myStore.getAt(0);
+    //     //    var SumPoint = modelRecord.get('SumPoint');
+    //     //    Ext.getCmp('htmlFloatLoyaltyCardPoint_SumPoint').setHtml('<font size="15" color="white"><b>' + SumPoint + '</b></font>');
+    //     //}
 
 
 
-        //var TotalItemPrizePriceCost = modelRecord.get('TotalItemPrizePriceCost');
-        //var result01 = TotalItemPrizePriceCost / TotalItemPoint;
+    //     //var TotalItemPrizePriceCost = modelRecord.get('TotalItemPrizePriceCost');
+    //     //var result01 = TotalItemPrizePriceCost / TotalItemPoint;
 
-        //var num = result01;
-        //var n = num.toFixed(2);
+    //     //var num = result01;
+    //     //var n = num.toFixed(2);
 
-        //document.getElementById('input-FloatPanel_AyohaCardManagement_EditCard_Point_TotalItemPoint').value = TotalItemPoint;
-        //document.getElementById('input-FloatPanel_AyohaCardManagement_EditCard_Point_TotalItemCost').value = TotalItemPrizePriceCost;
-        //document.getElementById('input-FloatPanel_AyohaCardManagement_EditCard_Point_CalculationMethod').value = "Total Item Cost=(" + TotalItemPrizePriceCost + ") /" + "Total Item Point=(" + TotalItemPoint + ")";
-        //document.getElementById('input-FloatPanel_AyohaCardManagement_EditCard_Point_CalculationResult01').value = n;
+    //     //document.getElementById('input-FloatPanel_AyohaCardManagement_EditCard_Point_TotalItemPoint').value = TotalItemPoint;
+    //     //document.getElementById('input-FloatPanel_AyohaCardManagement_EditCard_Point_TotalItemCost').value = TotalItemPrizePriceCost;
+    //     //document.getElementById('input-FloatPanel_AyohaCardManagement_EditCard_Point_CalculationMethod').value = "Total Item Cost=(" + TotalItemPrizePriceCost + ") /" + "Total Item Point=(" + TotalItemPoint + ")";
+    //     //document.getElementById('input-FloatPanel_AyohaCardManagement_EditCard_Point_CalculationResult01').value = n;
 
-        //PointCount = myStore.getCount();
-        //Ext.getCmp('htmlSubscriberMaster_TotalPointCount').setHtml('<div style="color:white;text-align: center;font-size:28px;width:100%;font-weight:bold">' + PointCount + '</div>');
-        // adjustHeight();
-        Load_FloatLoyaltyCardPoint_LoyaltyPointLoadByPointCampaignCodeUserStore(PointCampaignCode, EnterpriseAccNo);
-        Ext.Viewport.setMasked(false);
+    //     //PointCount = myStore.getCount();
+    //     //Ext.getCmp('htmlSubscriberMaster_TotalPointCount').setHtml('<div style="color:white;text-align: center;font-size:28px;width:100%;font-weight:bold">' + PointCount + '</div>');
+    //     // adjustHeight();
+    //     Load_FloatLoyaltyCardPoint_LoyaltyPointLoadByPointCampaignCodeUserStore(PointCampaignCode, EnterpriseAccNo);
+    //     Ext.Viewport.setMasked(false);
 
-    });
-    task.delay(500);
+    // });
+    // task.delay(500);
 }
 
 
@@ -2259,37 +2270,34 @@ var globalFloatLoyaltyCardPoint_SumPoint;
 //LoyaltyPoint History
 function Load_FloatLoyaltyCardPoint_LoyaltyPointLoadByPointCampaignCodeUserStore(PointCampaignCode, EnterpriseAccNo) {
 
-console.log(PointCampaignCode)
-console.log(GetCurrAyohaUserAccountNo())
-    Ext.getStore('LoyaltyPointLoadByPointCampaignCodeUserStore').getProxy().setExtraParams({
-        PointCampaignCode: PointCampaignCode,
-        SubscriberAccNo: GetCurrAyohaUserAccountNo()
-    });
-    Ext.StoreMgr.get('LoyaltyPointLoadByPointCampaignCodeUserStore').load();
-    var task = Ext.create('Ext.util.DelayedTask', function () {
-        Ext.getStore('LoyaltyPointLoadByPointCampaignCodeUserStore').getProxy().setExtraParams({
-            PointCampaignCode: PointCampaignCode,
-            SubscriberAccNo: GetCurrAyohaUserAccountNo()
-        });
-        //  _DataStore_PointCampaignRedeemLoadByPointCampaignCodeStore = Ext.StoreMgr.get('PointCampaignRedeemLoadByPointCampaignCodeStore').load();
 
-        Ext.StoreMgr.get('LoyaltyPointLoadByPointCampaignCodeUserStore').load();
-        var myStore = Ext.getStore('LoyaltyPointLoadByPointCampaignCodeUserStore');
-        var count = myStore.getCount();
+
+
+_DataStore_LoyaltyPointLoadByPointCampaignCodeUserStore.getProxy().setExtraParam('PointCampaignCode', PointCampaignCode);
+_DataStore_LoyaltyPointLoadByPointCampaignCodeUserStore.getProxy().setExtraParam('SubscriberAccNo', GetCurrAyohaUserAccountNo());
+_DataStore_LoyaltyPointLoadByPointCampaignCodeUserStore.getProxy().setUrl(GetAPIurl() + '/LoyaltyPoint/LoyaltyPointLoadByPointCampaignCodeUser');
+_DataStore_LoyaltyPointLoadByPointCampaignCodeUserStore.load({
+    callback: function (records, operation, success) {       
+        if (success && records.length > 0) {                       
+                var record = records[0]; // Access only the first record
+                var SumPoint = record.get('SumPoint');               
+                globalFloatLoyaltyCardPoint_SumPoint = SumPoint;
+                Ext.getCmp('htmlFloatLoyaltyCardPoint_SumPoint').setHtml('<font size="15" color="white"><b>' + SumPoint + '</b></font>');
+           
+            Load_FloatLoyaltyCardPoint_AdvertisementLinkModuleloadByEnterpriseHQAccNoModuleCodeStore(EnterpriseAccNo);
         
-        if (count >= 1) {
-            var modelRecord = myStore.getAt(0);
-            var SumPoint = modelRecord.get('SumPoint');
-            globalFloatLoyaltyCardPoint_SumPoint = SumPoint;
-            Ext.getCmp('htmlFloatLoyaltyCardPoint_SumPoint').setHtml('<font size="15" color="white"><b>' + SumPoint + '</b></font>');
+        } else {
+           // console.error('Failed to load store data or no record found.');
+           Load_FloatLoyaltyCardPoint_AdvertisementLinkModuleloadByEnterpriseHQAccNoModuleCodeStore(EnterpriseAccNo);
+            
         }
-      
-        LoadingPanelHide();
-        Load_FloatLoyaltyCardPoint_AdvertisementLinkModuleloadByEnterpriseHQAccNoModuleCodeStore(EnterpriseAccNo);
-        Ext.Viewport.setMasked(false);
+    }
+});
 
-    });
-    task.delay(500);
+
+
+
+
 }
 
 

@@ -216,7 +216,7 @@ function FloatPanel_AyohaPointRedemption_Cancel() {
                                                 width: 40,
                                                 // iconCls: 'list',
                                                 id: 'btnFloatPanel_AyohaPointRedemption_Cancel_PicProfile',
-                                                html: '<div ><img src="resources/icons/insufficientRedeem.png" width="30" height="30" alt="Company Name"></div>',
+                                                html: '<div ><img src="resources/icons/UnableRedeem01.png" width="30" height="30" alt="Company Name"></div>',
                                                 ui: 'plain',
                                                 handler: function () {
                                                     _FloatPanel_AyohaPointRedemption_Cancel.hide(Ext.fx.Animation({
