@@ -2396,7 +2396,7 @@ function FloatPanel_AyohaCardManagement_PreviewCard_AyohaUserCardShow(StampedCam
     globalStampCampaignisCampaignExpired = isCampaignExpired;
     globalFloatPanel_AyohaStore_ModuleTagging = "StampCard";
     //console.log(isRequiredStartEndDate + "," + isCampaignExpired + "," + CampaignDayLeft)
- //   alert("FloatPanel_AyohaCardManagement_PreviewCard_AyohaUserCardShow");
+    //alert("FloatPanel_AyohaCardManagement_PreviewCard_AyohaUserCardShow");
   
 
     

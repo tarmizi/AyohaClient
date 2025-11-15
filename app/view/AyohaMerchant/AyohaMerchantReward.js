@@ -759,7 +759,7 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
 {
     xtype: 'container',
     width: '100%',
-    height: 200,
+    height: 220,
     // style: 'background-image: url("resources/icons/pointbackdrop.png"); background-size: 100% 30%;background-repeat: no-repeat;',
     style:"background-color: #fac;background-image: linear-gradient(#c800ffc9,#ff00de75);",
     layout: {
@@ -773,7 +773,7 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
 
             xtype: 'container',
             width: '100%',  
-            height: 200,                                                  
+            height: 65,                                                  
            style: 'background-color:transparent;',
            // style: ' background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);',style: ' background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);',
             layout: {
@@ -792,7 +792,7 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
                     xtype: 'container',
                     width: '50%', 
                     hidden:false, 
-                    height: 200,                                          
+                    height: 40,                                             
                    style: 'background-color:transparent;',
                    // style: ' background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);',style: ' background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);',
                     layout: {
@@ -804,81 +804,77 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
                         {
                             margin: '10 0 0 14',
                         
-                           // id: 'labelDashboard_LastCheckInTimeStamp',    
-                           // html: '<div  style="color:white;text-align: left;font-size:10px;width:100%;margin:0px 0px 0px 0px;">00:00:00</div>'
-                         //   html: '<div style="display:inline-flex;align-items:center;gap:10px;padding:2px 5px;border-radius:999px;border:2px solid transparent;background:linear-gradient(#ffffff,#ffffff) padding-box,linear-gradient(90deg,#ff00de,#c800ff) border-box;box-shadow:0 10px 24px rgba(200,0,255,.28);color:#111827;font-size:10px;font-weight:bold;"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="ayohaGrad1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff00de"/><stop offset="1" stop-color="#c800ff"/></linearGradient></defs><rect x="3" y="9" width="18" height="11" rx="3" fill="url(#ayohaGrad1)"/><rect x="11" y="9" width="2" height="11" fill="#fff" opacity=".9"/><rect x="3" y="13" width="18" height="2" fill="#fff" opacity=".9"/><rect x="11" y="6.6" width="2" height="2.4" fill="url(#ayohaGrad1)"/><circle cx="8" cy="7" r="3" fill="url(#ayohaGrad1)"/><circle cx="16" cy="7" r="3" fill="url(#ayohaGrad1)"/></svg><span>My Ayoha Reward Membership</span></div>'
-                       
-                           // id: 'labelDashboard_LastCheckInTimeStamp',    
-                           // html: '<div  style="color:white;text-align: left;font-size:10px;width:100%;margin:0px 0px 0px 0px;">00:00:00</div>'
-                        //     html: '<div style="display:flex;align-items:center;margin:4px 0 8px 0;">'
-                        //     + '<span style="display:inline-block;padding:2px;background:#ffffff;border-radius:999px;box-shadow:0 8px 18px rgba(0,0,0,.22);">'
-                        //       + '<span style="display:inline-flex;align-items:center;gap:6px;color:#5B21B6;font:800 10px/1 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;padding:2px 4px;border-radius:999px;background:#ffffff;border:1px solid rgba(91,33,182,.18);">'
-                              
-                        //         + 'Perks from My Cards'
-                        //       + '</span>'
-                        //     + '</span>'
-                        //   + '</div><div style="color:white;text-align: left;font-size:14px;width:100%;margin:0px 0px 0px 0px"><b>My Merchant Reward</b></div><br><div  style="color:white;text-align: left;font-size:10px;width:100%;margin:-20px 0px 0px 0px;">Claim perks in one place</div>'
                          
                           html: '<div style="color:white;text-align: left;font-size:14px;width:100%;margin:0px 0px 0px 0px"><span style="font-size:10px;color:#16a34a;background:#ffffff;padding:3px 6px;border-radius:999px;white-space:nowrap;">Perks from My Cards</span><br><b>My Merchant Reward</b></div><br><div  style="color:white;text-align: left;font-size:10px;width:100%;margin:-20px 0px 0px 0px;">Claim perks in one place</div>'
                        
                         },
-                        {
-                            xtype: 'container',
-                            style:"background-color:transparent",
-                            width: '100%',
-                            height:18,
-                        },
-                        {
+                       
+                      
+
+
+                   
+                   
+                    ]
+                
+                   },
+
+                  {
+                    xtype: 'container',
+                    width: '50%', 
+                    hidden:false, 
+                    height: 65,                                             
+                   style: 'background-color:transparent;',
+                   // style: ' background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);',style: ' background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);',
+                    layout: {
+                        type: 'vbox',
+                        pack: 'start',
+                        align: 'center',
+                    },
+                    items:[
+
+                         {
                             xtype: 'container',
                             style:"background-color:transparent",
                             width: '100%',
                             height:15,
-                            layout: {
-                                type: 'vbox',
-                                pack: 'center',
-                                align: 'left'
-                
-                            },
-                            items:[
-                                {
-                                    margin: '0 0 0 14',
-                                   // hidden:true, 
-                                    html: '<div  style="color:white;text-align: left;font-size:10px;width:100%;margin:0px 0px 0px 0px;font-weight:bold;">Perks Summary</div>'
-                                       
-                                }
-                            ]
                         },
-                        {
-                            xtype: 'container',
-                            style:"background-color:transparent",
-                            width: '100%',
-                            height:3,
-                        },
-                        // {
-                        //     width: 120,
-                        //     height: 120,
-                        //     html:'<div style="width:100px;height:100px;margin:0 auto;background:transparent;">'+
-                        //     '<canvas id="perksEligibleTotalDonut"></canvas>'+
-                        //     '</div>'
-                        // },
                        
                         {
                             xtype: 'container',
                             style:"background-color:transparent",
                             width: '100%',
-                            height:40,
+                            height:5,
                             layout: {
-                                type: 'hbox',
-                                pack: 'left',
-                                align: 'left'
+                                type: 'vbox',
+                                pack: 'center',
+                                align: 'center'
                 
                             },
                             items:[
                                 {
-                                    xtype: 'container',
-                                    width: '3%',
-                                    height:40,
-                                },
+                                    margin: '0 0 0 0',
+                                   // hidden:true, 
+                                    html: '<div  style="color:white;text-align: center ;font-size:10px;width:100%;margin:0px 0px 0px 0px;font-weight:bold;">Perks Summary</div>'
+                                       
+                                }
+                            ]
+                        },
+                       
+                       
+                        {
+                            xtype: 'container',
+                            style:"background-color:transparent",
+                            width: '100%',
+                            margin: '10 0 0 0',
+                            height:40,
+                            layout: {
+                                type: 'hbox',
+                                pack: 'right',
+                                align: 'right'
+                
+                            },
+                            items:[
+                               
                                 {
                                     xtype: 'container',
                                     width: '31%',
@@ -893,7 +889,7 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
                                     items:[
                                         {
                                             xtype: 'container',
-                                            width: '90%',
+                                            width: '85%',
                                             style: 'border:2px solid #fac;background-color: white;border-radius: 10px 10px 10px 10px;',
                                            // style: 'border-right:1px solid #ECF0F1;border-left:1px solid #ECF0F1;border-bottom:1px solid #ECF0F1;border-top:1px solid #ECF0F1 ;background-color: white;border-radius: 10px 10px 10px 10px;box-shadow: 5px 10px 18px #888888;',
                                            height:40,
@@ -905,7 +901,7 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
                                             },
                                             items:[
                                                 {
-                                                    id:'htmlAyohaMerchantReward_ContestJointCount',
+                                                    id:'htmlAyohaMerchantReward_TotalPerkEligibleCount',
                                                     html: '<div  style="color:black;text-align: center;font-size:14px;width:100%;margin:0px 0px 0px 0px;font-weight:bold">18</div>'
                                                 },
                                                 {
@@ -934,7 +930,7 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
                                     items:[
                                         {
                                             xtype: 'container',
-                                            width: '90%',
+                                            width: '85%',
                                             style: 'border:2px solid #fac;background-color: white;border-radius: 10px 10px 10px 10px;',
                                            // style: 'border-right:1px solid #ECF0F1;border-left:1px solid #ECF0F1;border-bottom:1px solid #ECF0F1;border-top:1px solid #ECF0F1 ;background-color: white;border-radius: 10px 10px 10px 10px;box-shadow: 5px 10px 18px #888888;',
                                            height:40,
@@ -946,7 +942,7 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
                                             },
                                             items:[
                                                 {
-                                                    id:'htmlAyohaMerchantReward_EventRespondCount',
+                                                    id:'htmlAyohaMerchantReward_TotalRedeemCount',
                                                     html: '<div  style="color:black;text-align: center;font-size:14px;width:100%;margin:0px 0px 0px 0px;font-weight:bold">0</div>'
                                                 },
                                                 {
@@ -961,177 +957,58 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
                                    
                                        
                                 },
-                                
-                                
-                            ]
-                        },
-
-
-
-// {
-//     xtype: 'container',
-//     style:"background-color:transparent",
-//     width: '100%',
-//     height:5,
-// },
-
-//                         {
-//                             xtype: 'container',
-//                             style:"background-color:transparent",
-//                             width: '100%',
-//                             height:40,
-//                             layout: {
-//                                 type: 'hbox',
-//                                 pack: 'left',
-//                                 align: 'left'
-                
-//                             },
-//                             items:[
-//                                 {
-//                                     xtype: 'container',
-//                                     width: '3%',
-//                                     height:40,
-//                                 },
-//                                 {
-//                                     xtype: 'container',
-//                                     width: '31%',
-//                                     style:"background-color:transparent",
-//                                     height:40,
-//                                     layout: {
-//                                         type: 'vbox',
-//                                         pack: 'center',
-//                                         align: 'center'
+                                {
+                                    xtype: 'container',
+                                    width: '31%',
+                                    style:"background-color:transparent",
+                                    height:40,
+                                    layout: {
+                                        type: 'vbox',
+                                        pack: 'center',
+                                        align: 'center'
                         
-//                                     },
-//                                     items:[
-//                                         {
-//                                             xtype: 'container',
-//                                             width: '90%',
-//                                             style: 'border:2px solid #fac;background-color: white;border-radius: 10px 10px 10px 10px;',
-//                                            // style: 'border-right:1px solid #ECF0F1;border-left:1px solid #ECF0F1;border-bottom:1px solid #ECF0F1;border-top:1px solid #ECF0F1 ;background-color: white;border-radius: 10px 10px 10px 10px;box-shadow: 5px 10px 18px #888888;',
-//                                            height:40,
-//                                             layout: {
-//                                                 type: 'vbox',
-//                                                 pack: 'center',
-//                                                 align: 'center'
+                                    },
+                                    items:[
+                                        {
+                                            xtype: 'container',
+                                            width: '85%',
+                                            style: 'border:2px solid #fac;background-color: white;border-radius: 10px 10px 10px 10px;',
+                                           // style: 'border-right:1px solid #ECF0F1;border-left:1px solid #ECF0F1;border-bottom:1px solid #ECF0F1;border-top:1px solid #ECF0F1 ;background-color: white;border-radius: 10px 10px 10px 10px;box-shadow: 5px 10px 18px #888888;',
+                                           height:40,
+                                            layout: {
+                                                type: 'vbox',
+                                                pack: 'center',
+                                                align: 'center'
                                 
-//                                             },
-//                                             items:[
-//                                                 {
-//                                                     id:'htmlAyohaMerchantReward_RedeemSubmittedCount',
-//                                                     html: '<div  style="color:black;text-align: center;font-size:14px;width:100%;margin:0px 0px 0px 0px;font-weight:bold">0</div>'
-//                                                 },
-//                                                 {
-//                                                     html: '<div  style="color:black;text-align: center;font-size:6px;width:100%;margin:-4px 0px 0px 0px;">Redemptions</div>'
-//                                                 },
-//                                                 {
-//                                                     html: '<div  style="color:black;text-align: center;font-size:6px;width:100%;margin:-2px 0px 0px 0px;">Submitted</div>'
-//                                                 },
-//                                             ]
-//                                         }
-//                                     ]
+                                            },
+                                            items:[
+                                                {
+                                                    id:'htmlAyohaMerchantReward_TotalApprovedRedeemCount',
+                                                    html: '<div  style="color:black;text-align: center;font-size:14px;width:100%;margin:0px 0px 0px 0px;font-weight:bold">0</div>'
+                                                },
+                                                {
+                                                    html: '<div  style="color:black;text-align: center;font-size:6px;width:100%;margin:-4px 0px 0px 0px;">Total</div>'
+                                                },
+                                                {
+                                                    html: '<div  style="color:black;text-align: center;font-size:6px;width:100%;margin:-2px 0px 0px 0px;">Approved</div>'
+                                                },
+                                            ]
+                                        }
+                                    ]
                                    
                                        
-//                                 },
-//                                 {
-//                                     xtype: 'container',
-//                                     width: '31%',
-//                                     style:"background-color:transparent",
-//                                     height:40,
-//                                     layout: {
-//                                         type: 'vbox',
-//                                         pack: 'center',
-//                                         align: 'center'
-                        
-//                                     },
-//                                     items:[
-//                                         {
-//                                             xtype: 'container',
-//                                             width: '90%',
-//                                             style: 'border:2px solid #fac;background-color: white;border-radius: 10px 10px 10px 10px;',
-//                                            // style: 'border-right:1px solid #ECF0F1;border-left:1px solid #ECF0F1;border-bottom:1px solid #ECF0F1;border-top:1px solid #ECF0F1 ;background-color: white;border-radius: 10px 10px 10px 10px;box-shadow: 5px 10px 18px #888888;',
-//                                            height:40,
-//                                             layout: {
-//                                                 type: 'vbox',
-//                                                 pack: 'center',
-//                                                 align: 'center'
-                                
-//                                             },
-//                                             items:[
-//                                                 {
-//                                                     id:'htmlAyohaMerchantReward_RedeemApprovedCount',
-//                                                     html: '<div  style="color:black;text-align: center;font-size:14px;width:100%;margin:0px 0px 0px 0px;font-weight:bold">0</div>'
-//                                                 },
-//                                                 {
-//                                                     html: '<div  style="color:black;text-align: center;font-size:6px;width:100%;margin:-4px 0px 0px 0px;">Redemptions</div>'
-//                                                 },
-//                                                 {
-//                                                     html: '<div  style="color:black;text-align: center;font-size:6px;width:100%;margin:-2px 0px 0px 0px;">Approved</div>'
-//                                                 },
-//                                             ]
-//                                         }
-//                                     ]
-                                   
-                                       
-//                                 },
-                                
-                                
-//                             ]
-//                         }
-                   
-                   
-                    ]
-                
-                   },
-
-                   {
-                    xtype: 'container',
-                    width: '50%',  
-                    height: 200,                                               
-                   style: 'background-color:transparent;',
-                   // style: ' background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);',style: ' background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);',
-                    layout: {
-                        type: 'vbox',
-                        pack: 'center',
-                        align: 'right',
-                    },
-                    items:[
-                        {
-                            xtype: 'container',
-                            width: '100%',
-                            height: 30,
-                        },
-                        {
-                            xtype: 'container',
-                            width: '100%',
-                            height: 5,
-                            layout: {
-                                type: 'vbox',
-                                pack: 'center',
-                                align: 'center',
-                            },
-                            items:[
-                                { 
-                                    html: '<div  style="color:white;text-align: center;font-size:10px;width:100%;margin:0px 0px 0px 0px;font-weight:bold">Perks Details</div>'
                                 },
-
-                                // { 
-                                //     html: '<div  style="color:white;text-align: center;font-size:12px;width:100%;margin:0px 0px 0px 0px;font-weight:bold">Total:12</div>'
-                                // },
+                                {
+                                    xtype: 'container',
+                                    width: 10,
+                                    height:40,
+                                }
                             ]
-
                         },
-                       
-                        {
-                            width: 200,
-                            height: 200,
-                            html:'<div style="max-width:200px;height:190px;margin:0px 0px 0px 0px;background:transparent;">'+
-                            '<canvas id="loyaltyHBar"></canvas>'+
-                            '</div>'
-                        }
+
+
                     ]
-                
-                   },
+                  }
 
                   
 
@@ -1139,7 +1016,67 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
                    ]
 
         },
-       
+       {
+        xtype: 'container',
+        width: '100%',  
+        height: 15,  
+       },
+        {
+    xtype: 'container',
+    width: '100%',
+    height: 140,
+    style:"background-color: transparent;",
+    layout: {
+        type: 'vbox',
+        pack: 'start',
+        align: 'center'
+
+    },
+    items:[
+        {
+            xtype: 'container',
+            width: '100%',  
+            height: 140,                                             
+           style: 'background-color:transparent;',
+           // style: ' background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);',style: ' background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);',
+            layout: {
+                type: 'vbox',
+                pack: 'center',
+                align: 'center',
+            },
+            items:[
+              
+                // {
+                //     xtype: 'container',
+                //     width: '100%',
+                //     height: 5,
+                //     layout: {
+                //         type: 'vbox',
+                //         pack: 'center',
+                //         align: 'center',
+                //     },
+                //     items:[
+                //         { 
+                //             html: '<div  style="color:white;text-align: center;font-size:10px;width:100%;margin:0px 0px 0px 0px;font-weight:bold">Perks Details</div>'
+                //         },
+
+                //     ]
+
+                // },
+               
+                {
+                    width: '95%',
+                    height: 140,
+                    html:'<div style="width:100%;height:140px;margin:0;background:transparent;">'+
+                    '<canvas id="loyaltyHBar" style="width:100%;height:140px;"></canvas>'+
+                    '</div>'
+                }
+            ]
+        
+           },
+
+    ]
+        }
       
 
     ]
@@ -6280,9 +6217,172 @@ window._EligibleVsUsed_DatalabelsRegistered =
 
     // ⚠️ MESTI sama panjang: 6 item
     var labels   = ['Stamped', 'Points', 'Voucher', 'Contest', 'Event', 'Discount'];
-    var eligible = [7,          4,       1,         2,         2,       2];
-    var used     = [0,          2,       0,         1,         1,       1];
+    var eligible = [
+        AppState.AyohaMerchantReward.StampPerks,
+        AppState.AyohaMerchantReward.PointPerks,
+        AppState.AyohaMerchantReward.VoucherPerks,
+        AppState.AyohaMerchantReward.ContestPerks,
+        AppState.AyohaMerchantReward.EventPerks,
+        AppState.AyohaMerchantReward.DiscountPerks
+    ];
+    var used =    [2, 2, 1, 0, 0, 1];
+    var approved =[1, 1, 0, 0, 0, 0];
+    var joined =[0, 0, 0, 1, 1, 0];
 
+    window._EligibleVsUsedChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: labels,
+            datasets: [
+                {
+                    label: 'Eligible',
+                    data: eligible,
+                    stack: 'perks',
+                    backgroundColor: 'rgba(255,255,255,0.55)',
+                    borderRadius: 12,
+                    borderSkipped: false,
+                    barThickness: 25,
+                    categoryPercentage: 1,
+                    barPercentage: 1
+                },
+                {
+                    label: 'Redeem',
+                    data: used,
+                    stack: 'perks',
+                    backgroundColor: '#f97316',
+                    borderRadius: 12,
+                    borderSkipped: false,
+                    barThickness: 25,
+                    categoryPercentage: 1,
+                    barPercentage: 1
+                },
+                {
+                    label: 'Approved',
+                    data: approved,
+                    stack: 'perks',
+                    backgroundColor: 'green',
+                    borderRadius: 12,
+                    borderSkipped: false,
+                    barThickness: 25,
+                    categoryPercentage: 1,
+                    barPercentage: 1
+                },
+                {
+                    label: 'Joined',
+                    data: joined,
+                    stack: 'perks',
+                    backgroundColor: 'blue',
+                    borderRadius: 12,
+                    borderSkipped: false,
+                    barThickness: 25,
+                    categoryPercentage: 1,
+                    barPercentage: 1
+                }
+            ]
+        },
+        options: {
+            // indexAxis default = 'x', so boleh buang / biar kosong untuk vertical bar
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                x: {
+                    stacked: true,
+                    ticks: {
+                        color: '#ffffff',   // tulisan nama perks putih
+                        font: {
+                            size: 10
+                        }
+                    },
+                    grid: {
+                        color: 'rgba(255,255,255,0.15)'
+                    }
+                },
+                y: {
+                    stacked: true,
+                    beginAtZero: true,
+                    ticks: {
+                        stepSize: 1,
+                        precision: 0,
+                        color: '#ffffff',   // tulisan axis Y putih (0,1,2,…)
+                        font: {
+                            size: 10
+                        }
+                    },
+                    suggestedMax: 7,
+                    grid: {
+                        display: false
+                    }
+                }
+            },
+            plugins: {
+                legend: {
+                    position: 'top',   // atas
+                    align: 'end',    // align ke kiri (top-left)
+                    labels: {
+                        usePointStyle: true,
+                        boxWidth: 10,
+                        color: '#ffffff',
+                        font: {
+                            size: 10
+                        }
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function (ctx) {
+                            var label = ctx.dataset.label || '';
+                            var value = ctx.parsed.y; // vertical bar → guna nilai Y
+                            return label + ': ' + value;
+                        }
+                    }
+                },
+                datalabels: {
+                    color: '#ffffff',       // nombor atas bar putih
+                    anchor: 'center',
+                    align: 'center',
+                    formatter: function (v) {
+                        return v > 0 ? v : ''; // kalau 0, jangan tulis
+                    },
+                    font: {
+                        weight: '600',
+                        size: 8              // ikut komen: 8px
+                    }
+                }
+            }
+        }
+    });
+}
+
+
+
+
+
+
+
+
+  function AyohaMerchantReward_LoadDashboardHorizontal() {
+    var canvas = document.getElementById('loyaltyHBar');
+    if (!canvas) return;
+
+    var ctx = canvas.getContext('2d');
+
+    // Register datalabels plugin sekali sahaja
+    if (!window._EligibleVsUsed_DatalabelsRegistered && window.ChartDataLabels) {
+        Chart.register(ChartDataLabels);
+        window._EligibleVsUsed_DatalabelsRegistered = true;
+    }
+
+    // Destroy chart lama (elak "Canvas is already in use")
+    if (window._EligibleVsUsedChart) {
+        window._EligibleVsUsedChart.destroy();
+        window._EligibleVsUsedChart = null;
+    }
+
+    // ⚠️ MESTI sama panjang: 6 item
+    var labels   = ['Stamped', 'Points', 'Voucher', 'Contest', 'Event', 'Discount'];
+    var eligible = [AppState.AyohaMerchantReward.StampPerks,AppState.AyohaMerchantReward.PointPerks,AppState.AyohaMerchantReward.VoucherPerks,AppState.AyohaMerchantReward.ContestPerks,AppState.AyohaMerchantReward.EventPerks,AppState.AyohaMerchantReward.DiscountPerks];
+    var used     = [0,          2,       0,         1,         1,       1];
+    var approved     = [0,          1,       0,         1,         1,       1];
     window._EligibleVsUsedChart = new Chart(ctx, {
         type: 'bar',
         data: {
@@ -6300,10 +6400,21 @@ window._EligibleVsUsed_DatalabelsRegistered =
                     barPercentage: 1
                 },
                 {
-                    label: 'Used',
+                    label: 'Redeem',
                     data: used,
                     stack: 'perks',
                     backgroundColor: '#f97316',
+                    borderRadius: 12,
+                    borderSkipped: false,
+                    barThickness: 16,
+    categoryPercentage: 1,
+    barPercentage: 1
+                },
+                {
+                    label: 'Approved',
+                    data: approved,
+                    stack: 'perks',
+                    backgroundColor: 'green',
                     borderRadius: 12,
                     borderSkipped: false,
                     barThickness: 16,
@@ -6410,71 +6521,71 @@ window._EligibleVsUsed_DatalabelsRegistered =
     
 
 
-// Global handler
-window._TotalEligibleVsUsedChart = window._TotalEligibleVsUsedChart || null;
+// // Global handler
+// window._TotalEligibleVsUsedChart = window._TotalEligibleVsUsedChart || null;
 
-// Guna flag register plugin yang sama (kalau dah ada dari chart bar, tak apa)
-window._EligibleVsUsed_DatalabelsRegistered =
-  window._EligibleVsUsed_DatalabelsRegistered || false;
+// // Guna flag register plugin yang sama (kalau dah ada dari chart bar, tak apa)
+// window._EligibleVsUsed_DatalabelsRegistered =
+//   window._EligibleVsUsed_DatalabelsRegistered || false;
 
-function Load_TotalEligible_vs_Used_Doughnut() {
-    var canvas = document.getElementById('perksEligibleTotalDonut');
-    if (!canvas) return;
+// function Load_TotalEligible_vs_Used_Doughnut() {
+//     var canvas = document.getElementById('perksEligibleTotalDonut');
+//     if (!canvas) return;
 
-    var ctx = canvas.getContext('2d');
+//     var ctx = canvas.getContext('2d');
 
-    // Register datalabels sekali sahaja
-    if (!window._EligibleVsUsed_DatalabelsRegistered && window.ChartDataLabels) {
-        Chart.register(ChartDataLabels);
-        window._EligibleVsUsed_DatalabelsRegistered = true;
-    }
+//     // Register datalabels sekali sahaja
+//     if (!window._EligibleVsUsed_DatalabelsRegistered && window.ChartDataLabels) {
+//         Chart.register(ChartDataLabels);
+//         window._EligibleVsUsed_DatalabelsRegistered = true;
+//     }
 
-    // Destroy lama kalau ada
-    if (window._TotalEligibleVsUsedChart) {
-        _TotalEligibleVsUsedChart.destroy();
-        _TotalEligibleVsUsedChart = null;
-    }
+//     // Destroy lama kalau ada
+//     if (window._TotalEligibleVsUsedChart) {
+//         _TotalEligibleVsUsedChart.destroy();
+//         _TotalEligibleVsUsedChart = null;
+//     }
 
-    // Data ikut perks (boleh juga kira dari array)
-    var totalEligible = 18;
-    var totalUsed     = 5;
+//     // Data ikut perks (boleh juga kira dari array)
+//     var totalEligible = 18;
+//     var totalUsed     = 5;
 
-    _TotalEligibleVsUsedChart = new Chart(ctx, {
-        type: 'doughnut',
-        data: {
-            labels: ['Eligible', 'Used'],
-            datasets: [{
-                data: [totalEligible, totalUsed],
-                backgroundColor: [
-                    'rgba(255,255,255,0.5)', // Eligible
-                    '#f97316'                // Used (oren)
-                ],
-                borderWidth: 0
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            cutout: '60%',   // lubang tengah (donut)
-            plugins: {
-                legend: {
-                    display: false   // kalau nak legend, tukar kepada true
-                },
-                datalabels: {
-                    color: '#ffffff',
-                    formatter: function (value, ctx) {
-                        // tunjuk angka (18 / 5)
-                        return value;
-                    },
-                    font: {
-                        weight: '700',
-                        size: 10
-                    }
-                }
-            }
-        }
-    });
-}
+//     _TotalEligibleVsUsedChart = new Chart(ctx, {
+//         type: 'doughnut',
+//         data: {
+//             labels: ['Eligible', 'Used'],
+//             datasets: [{
+//                 data: [totalEligible, totalUsed],
+//                 backgroundColor: [
+//                     'rgba(255,255,255,0.5)', // Eligible
+//                     '#f97316'                // Used (oren)
+//                 ],
+//                 borderWidth: 0
+//             }]
+//         },
+//         options: {
+//             responsive: true,
+//             maintainAspectRatio: false,
+//             cutout: '60%',   // lubang tengah (donut)
+//             plugins: {
+//                 legend: {
+//                     display: false   // kalau nak legend, tukar kepada true
+//                 },
+//                 datalabels: {
+//                     color: '#ffffff',
+//                     formatter: function (value, ctx) {
+//                         // tunjuk angka (18 / 5)
+//                         return value;
+//                     },
+//                     font: {
+//                         weight: '700',
+//                         size: 10
+//                     }
+//                 }
+//             }
+//         }
+//     });
+// }
 
 
 
