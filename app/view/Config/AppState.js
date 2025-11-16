@@ -91,7 +91,19 @@ var AppState = {
         VoucherPerks: 0,
         ContestPerks: 0,
         EventPerks: 0,
-        DiscountPerks: 0
+        DiscountPerks: 0,
+        ContestJoined:0,
+        EventJoined:0,
+        PointPerksRedeemSubmitted:0,
+        PointPerksRedeemApproved:0,
+        StampedPerksRedeemSubmitted:0,
+        StampedPerksRedeemApproved:0,
+        StampedPerksRedeemRejected:0,
+        VoucherPerksRedeem:0,
+        DiscountRedeem:0,
+        TotalEligiblePerks:0,
+        TotalRedeemedPerks:0,
+        TotalApprovedRedeemedPerks:0,
     }
 };
 

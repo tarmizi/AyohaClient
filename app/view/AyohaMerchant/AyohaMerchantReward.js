@@ -902,7 +902,7 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
                                             items:[
                                                 {
                                                     id:'htmlAyohaMerchantReward_TotalPerkEligibleCount',
-                                                    html: '<div  style="color:black;text-align: center;font-size:14px;width:100%;margin:0px 0px 0px 0px;font-weight:bold">18</div>'
+                                                    html: '<div  style="color:black;text-align: center;font-size:14px;width:100%;margin:0px 0px 0px 0px;font-weight:bold">0</div>'
                                                 },
                                                 {
                                                     html: '<div  style="color:black;text-align: center;font-size:6px;width:100%;margin:-4px 0px 0px 0px;">Total</div>'
@@ -1098,7 +1098,7 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
                                   height: 800,
                                   /// hidden:true,
 
-                                  margin: '20 0 0 0',
+                                  margin: '0 0 0 0',
                                   id: 'containerDashboard_MerchantRedemptionMain',
                                   style: {
                                       // background: '#D25959',
@@ -1114,111 +1114,297 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
 
                                   },
                                   items: [
-                                      {
-                                          xtype: 'container',
-                                          width: '100%',
-                                          /// hidden:true,
-                                          margin: '0 0 0 0',
-                                          id: 'containerDashboard_MerchantRedemption',
-                                          style: {
-                                              // background: '#D25959',
-                                              background: 'transparent',
-                                              // border: '2px'
-                                          },
-                                          //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
-                                          // style: 'border-bottom:2px solid #D25959;background-color:transparent',
-                                          layout: {
-                                              type: 'hbox',
-                                              pack: 'center',
-                                              align: 'center',
-                                          },
-                                          items: [
-                                               {
-                                                   margin: '10 0 0 14',
-                                                   //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
-                                                   html: '<div style="color:black;text-align: center;font-size:14px;width:100%;"><b>Merchant Redemption</b></div>'
-                                                   // html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: 70%"><col style="width:30%"></colgroup><thead><tr><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:right;vertical-align:top;word-break:normal" rowspan="2"><div style="margin:0px 0px 0px -15px">TARMIZI RAHIM</div><br>Lagendary Card Mortal </th><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:middle;word-break:normal" rowspan="2">Medal</th></tr><tr></tr></thead></table>'
-                                               },
-                                               {
-                                                   xtype: 'spacer'
-                                               },
-                                                //{
-                                                //    xtype: 'button',
-                                                //    id: 'btnMyDashboard_AyohaRewardNearestRedeemInfo',
-                                                //    //  badgeText: '1',
-                                                //    margin: '0 10 0 0',
-                                                //    height: 35,
-                                                //    width: 35,
-                                                //    html: '<img src="resources/icons/AyohaStoreGrey.png" width="25" height="25" alt="Company Name">',
-                                                //    ui: 'plain',
-                                                //    handler: function () {
-                                                //        FloatPanel_NearestRedemptionShow();
-                                                //    }
-                                                //},
-                                                 {
-                                                     xtype: 'button',
-                                                     id: 'btnMyDashboard_AyohaRewardNearestRedeemInfo',
-                                                     //  badgeText: '1',
-                                                     margin: '10 -5 0 0',
-                                                     height: 35,
-                                                     width: 100,
-                                                     html: '<div style="color:black;text-align: center;font-size:12px;width:100%;font-weight:normal;"><u>View All</u></div>',
-                                                     // html: '<img src="resources/icons/AyohaStoreGrey.png" width="25" height="25" alt="Company Name">',
-                                                     ui: 'plain',
-                                                     handler: function () {
-                                                         FloatPanel_NearestRedemptionShow();
-                                                     }
-                                                 },
 
-                                          ]
-                                      },
+{
+    xtype: 'container',
+    width: '100%',
+    height: 40,
+    /// hidden:true,
+    margin: '0 0 0 0',
+    id: 'containerAyohaMerchantRedemptionHeader_ButtonPerks_Master',
+    style: 'border-bottom:2px none #D25959;background-color:transparent',
+    scrollable: {
+        direction: 'horizontal',
+        directionLock: true,
+        indicators: false
+    },
+    layout: {
+        type: 'hbox',
+        pack: 'start',
+        align: 'center',
+    },
+    items: [
+{
+    xtype: 'container',
+    width: 600,
+    height: 40,
+    /// hidden:true,
+    margin: '0 0 0 0',
+    id: 'containerAyohaMerchantRedemptionHeader_ButtonPerks_Scroll',
+    style: 'border-bottom:2px none #D25959;background-color:transparent',
+   
+    layout: {
+        type: 'hbox',
+        pack: 'start',
+        align: 'center',
+    },
+    items: [
+        {
+            xtype: 'container',
+            width: 100,
+            height: 30,
+            /// hidden:true,
+            margin: '0 0 0 0',
+            id: 'containerAyohaMerchantRedemptionHeader_ButtonPerks_Stamps',
+            style: 'border-bottom:2px solid #c800ffc9;border-top:2px none #D25959;background-color:transparent',
+            layout: {
+                type: 'vbox',
+                pack: 'center',
+                align: 'center',
+            },
+            items: [
+                {
+                   
+                    //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
+                    html: '<div style="color:black;text-align: center;font-size:12px;width:100%;font-weight:bold">Stamp Perks</div>'
+                    // html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: 70%"><col style="width:30%"></colgroup><thead><tr><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:right;vertical-align:top;word-break:normal" rowspan="2"><div style="margin:0px 0px 0px -15px">TARMIZI RAHIM</div><br>Lagendary Card Mortal </th><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:middle;word-break:normal" rowspan="2">Medal</th></tr><tr></tr></thead></table>'
+                },
+                
+            ]
+        },
+        {
+            xtype: 'container',
+            width: 100,
+            height: 30,
+            /// hidden:true,
+            margin: '0 0 0 0',
+            id: 'containerAyohaMerchantRedemptionHeader_ButtonPerks_Points',
+            style: 'border-bottom:2px none #D25959;border-bottom:2px none #D25959;background-color:transparent',
+            layout: {
+                type: 'vbox',
+                pack: 'center',
+                align: 'center',
+            },
+            items: [
+                {
+                   
+                    //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
+                    html: '<div style="color:#9CA3AF;text-align: center;font-size:12px;width:100%;font-weight:normal">Point Perks</div>'
+                    // html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: 70%"><col style="width:30%"></colgroup><thead><tr><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:right;vertical-align:top;word-break:normal" rowspan="2"><div style="margin:0px 0px 0px -15px">TARMIZI RAHIM</div><br>Lagendary Card Mortal </th><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:middle;word-break:normal" rowspan="2">Medal</th></tr><tr></tr></thead></table>'
+                },
+                
+            ]
+        },
+        {
+            xtype: 'container',
+            width: 100,
+            height: 30,
+            /// hidden:true,
+            margin: '0 0 0 0',
+            id: 'containerAyohaMerchantRedemptionHeader_ButtonPerks_Vouchers',
+            style: 'border-bottom:2px none #D25959;border-bottom:2px none #D25959;background-color:transparent',
+            layout: {
+                type: 'vbox',
+                pack: 'center',
+                align: 'center',
+            },
+            items: [
+                {
+                   
+                    //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
+                    //html: '<div style="color:#D1D5DB;text-align: center;font-size:12px;width:100%;font-weight:normal">Vouchers</div>'
+                    html: '<div style="color:#9CA3AF;text-align: center;font-size:12px;width:100%;font-weight:normal">Vouchers</div>'
+                },
+                
+            ]
+        },
+        {
+            xtype: 'container',
+            width: 100,
+            height: 30,
+            /// hidden:true,
+            margin: '0 0 0 0',
+            id: 'containerAyohaMerchantRedemptionHeader_ButtonPerks_Contests',
+            style: 'border-bottom:2px none #D25959;border-bottom:2px none #D25959;background-color:transparent',
+            layout: {
+                type: 'vbox',
+                pack: 'center',
+                align: 'center',
+            },
+            items: [
+                {
+                   
+                    //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
+                    html: '<div style="color:#9CA3AF;text-align: center;font-size:12px;width:100%;font-weight:normal">Contests</div>'
+                    // html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: 70%"><col style="width:30%"></colgroup><thead><tr><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:right;vertical-align:top;word-break:normal" rowspan="2"><div style="margin:0px 0px 0px -15px">TARMIZI RAHIM</div><br>Lagendary Card Mortal </th><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:middle;word-break:normal" rowspan="2">Medal</th></tr><tr></tr></thead></table>'
+                },
+                
+            ]
+        },
+        {
+            xtype: 'container',
+            width: 100,
+            height: 30,
+            /// hidden:true,
+            margin: '0 0 0 0',
+            id: 'containerAyohaMerchantRedemptionHeader_ButtonPerks_Events',
+            style: 'border-bottom:2px none #D25959;border-bottom:2px none #D25959;background-color:transparent',
+            layout: {
+                type: 'vbox',
+                pack: 'center',
+                align: 'center',
+            },
+            items: [
+                {
+                   
+                    //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
+                    html: '<div style="color:#9CA3AF;text-align: center;font-size:12px;width:100%;font-weight:normal">Events</div>'
+                    // html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: 70%"><col style="width:30%"></colgroup><thead><tr><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:right;vertical-align:top;word-break:normal" rowspan="2"><div style="margin:0px 0px 0px -15px">TARMIZI RAHIM</div><br>Lagendary Card Mortal </th><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:middle;word-break:normal" rowspan="2">Medal</th></tr><tr></tr></thead></table>'
+                },
+                
+            ]
+        },
+        {
+            xtype: 'container',
+            width: 100,
+            height: 30,
+            /// hidden:true,
+            margin: '0 0 0 0',
+            id: 'containerAyohaMerchantRedemptionHeader_ButtonPerks_Discounts',
+            style: 'border-bottom:2px none #D25959;border-bottom:2px none #D25959;background-color:transparent',
+            layout: {
+                type: 'vbox',
+                pack: 'center',
+                align: 'center',
+            },
+            items: [
+                {
+                   
+                    //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
+                    html: '<div style="color:#9CA3AF;text-align: center;font-size:12px;width:100%;font-weight:normal">Discounts</div>'
+                    // html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: 70%"><col style="width:30%"></colgroup><thead><tr><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:right;vertical-align:top;word-break:normal" rowspan="2"><div style="margin:0px 0px 0px -15px">TARMIZI RAHIM</div><br>Lagendary Card Mortal </th><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:middle;word-break:normal" rowspan="2">Medal</th></tr><tr></tr></thead></table>'
+                },
+                
+            ]
+        },
+    ]
+},
+       
+    ]
+},
 
-                                      {
-                                          xtype: 'container',
-                                          width: '100%',
-                                          // hidden: true,
-                                          margin: '7 0 0 0',
-                                          id: 'containerLoyaltyStampNearestRedeemItem_Header',
-                                          style: {
-                                              // background: '#D25959',
-                                              background: 'transparent',
-                                              // border: '2px'
-                                          },
-                                          //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
-                                          // style: 'border-bottom:2px solid #D25959;background-color:transparent',
-                                          layout: {
-                                              type: 'hbox',
-                                              pack: 'left',
-                                              align: 'left',
-                                          },
-                                          items: [
-                                               {
-                                                   margin: '6 0 0 14',
-                                                   id: 'htmlLoyaltyStampNearestRedeemItem_Header',
-                                                   //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
-                                                   html: '<div style="color:black;text-align: center;font-size:12px;width:100%;">1).-Stamp Loyalty Redemption</div>'
-                                                   // html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: 70%"><col style="width:30%"></colgroup><thead><tr><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:right;vertical-align:top;word-break:normal" rowspan="2"><div style="margin:0px 0px 0px -15px">TARMIZI RAHIM</div><br>Lagendary Card Mortal </th><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:middle;word-break:normal" rowspan="2">Medal</th></tr><tr></tr></thead></table>'
-                                               },
+////Stamp micropy button
 
-                                                {
-                                                    xtype: 'button',
-                                                    id: 'btnLoyaltyStampNearestRedeemItem_Header',
-                                                    // hidden: true,
-                                                    //  badgeText: '1',
-                                                    margin: '0 0 0 0',
-                                                    height: 30,
-                                                    width: 30,
-                                                    html: '<img src="resources/icons/AyohaStampCardWhite01.png" width="20" height="20" alt="Company Name">',
-                                                    ui: 'plain',
-                                                    handler: function () {
-                                                        //  FloatPanel_AyohaReward_ContestAdvertisementShow();
-                                                    }
-                                                },
+{
+    xtype: 'container',
+    width: '100%',
+    margin: '5 0 0 20',
+    height:25,
+    style: 'background-color:transparent',
+    layout: {
+        type: 'hbox',
+        pack: 'start',
+        align: 'center',
+    },
+    items: [
+{
+    xtype: 'container',
+    width: 80,
+    margin: '0 0 0 0',
+    height:17,
+    style: 'background-color:black;border-radius:30px',
+    layout: {
+        type: 'hbox',
+        pack: 'center',
+        align: 'center',
+    },
+    items:[
+        {
+            html: '<div  style="color:white;text-align: center;font-size:10px;width:100%;">Nearest Perks</div>'
+        }
+    ]
+},
+{
+    xtype: 'container',
+    width: 7,
+    margin: '0 0 0 0',
+    height:17,
+},
+{
+    xtype: 'container',
+    width: 95,
+    margin: '0 0 0 0',
+    height:17,
+    style: 'background-color:transparent;border-radius:30px;border:0.5px solid #9CA3AF',
+    layout: {
+        type: 'hbox',
+        pack: 'center',
+        align: 'center',
+    },
+    items:[
+        {
+            html: '<div  style="color:#9CA3AF;text-align: center;font-size:10px;width:100%;">Pending Approval</div>'
+        }
+    ]
+},
+{
+    xtype: 'container',
+    width: 7,
+    margin: '0 0 0 0',
+    height:17,
+},
+{
+    xtype: 'container',
+    width: 58,
+    margin: '0 0 0 0',
+    height:17,
+    style: 'background-color:transparent;border-radius:30px;border:0.5px solid  #9CA3AF',
+    layout: {
+        type: 'hbox',
+        pack: 'center',
+        align: 'center',
+    },
+    items:[
+        {
+            html: '<div  style="color: #9CA3AF;text-align: center;font-size:10px;width:100%;">Approved</div>'
+        }
+    ]
+},
+{
+    xtype: 'container',
+    width: 7,
+    margin: '0 0 0 0',
+    height:17,
+},
+{
+    xtype: 'container',
+    width: 85,
+    margin: '0 0 0 0',
+    height:17,
+    style: 'background-color:transparent;border-radius:30px;border:0.5px solid  #9CA3AF',
+    layout: {
+        type: 'hbox',
+        pack: 'center',
+        align: 'center',
+    },
+    items:[
+        {
+            html: '<div onclick="FloatPanel_NearestRedemptionShow()" style="color: #9CA3AF;text-align: center;font-size:10px;width:100%;">All Stamp Perks</div>'
+        }
+    ]
+}
+    ]
+},
 
 
 
-                                          ]
-                                      },
+
+////////
+
+
+
+
+                                      
 
 
 
@@ -1228,7 +1414,7 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
                                           hidden: false,
                                           //width: '95%',
                                           //height: 80,
-                                          margin: '-10 0 0 0',
+                                          margin: '0 0 0 0',
                                           width: '100%',
                                           id: 'container_Dashboard_NearestRedeemMembersMaster',
                                           height: 290,
@@ -1361,7 +1547,7 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
                                                   //width: '95%',
                                                   //height: 80,
                                                   margin: '2 0 0 0',
-                                                  width: '100%',
+                                                  width: '98%',
                                                   id: 'container_Dashboard_NearestRedeemMembers',
                                                   height: 320,
                                                   requires: [
@@ -6155,23 +6341,29 @@ function AyohaMerchantReward_AyohaRewardEventLoadBySubscriberAccNoStore() {
 
     function AyohaMerchantReward_AyohaRewardDiscountCampaing_LoadBySubscriberAccNo() {
 
+
+
+       
+
         _DataStore_DiscountCampaing_LoadBySubscriberAccNoStore.getProxy().setExtraParam('SubscriberAccNo', GetCurrAyohaUserAccountNo());
         _DataStore_DiscountCampaing_LoadBySubscriberAccNoStore.getProxy().setUrl(GetAPIurl() + 'DiscountCampaing/DiscountCampaing_LoadBySubscriberAccNo');
     
       
-    console.log('Loading Discount Campaign for SubscriberAccNo: ' + GetCurrAyohaUserAccountNo());
+   
       
         _DataStore_DiscountCampaing_LoadBySubscriberAccNoStore.load({
             callback: function (records, operation, success) {
                 if (success && records.length > 0) {
                     AppState.AyohaMerchantReward.DiscountPerks=records.length;
                     Ext.getCmp('AyohaMerchantRewardDiscountList').setStore(_DataStore_DiscountCampaing_LoadBySubscriberAccNoStore);
-                    AyohaMerchantReward_LoadDashboard();
+                   // AyohaMerchantReward_LoadDashboard();
                    // Load_TotalEligible_vs_Used_Doughnut();
+                   AyohaMerchantReward_LoadPerksChartBarData();
                 } else {
                     console.log('jemmm not founfd.');
                     AppState.AyohaMerchantReward.DiscountPerks=0;
-                    AyohaMerchantReward_LoadDashboard();
+                    AyohaMerchantReward_LoadPerksChartBarData();
+                    //AyohaMerchantReward_LoadDashboard();
                     //Load_TotalEligible_vs_Used_Doughnut();
                    
                 }
@@ -6198,6 +6390,38 @@ window._EligibleVsUsed_DatalabelsRegistered =
   window._EligibleVsUsed_DatalabelsRegistered || false;
 
   function AyohaMerchantReward_LoadDashboard() {
+
+    var TtlEligiblePerk=parseInt(AppState.AyohaMerchantReward.StampPerks +AppState.AyohaMerchantReward.PointPerks
+        +AppState.AyohaMerchantReward.VoucherPerks
+        +AppState.AyohaMerchantReward.ContestPerks
+        +AppState.AyohaMerchantReward.EventPerks
+        +AppState.AyohaMerchantReward.DiscountPerks);
+        AppState.AyohaMerchantReward.TotalEligiblePerks=TtlEligiblePerk;
+        
+        var TtlRedeemPerks=parseInt(AppState.AyohaMerchantReward.StampedPerksRedeemSubmitted
+            +AppState.AyohaMerchantReward.PointPerksRedeemSubmitted
+            +AppState.AyohaMerchantReward.VoucherPerksRedeem
+            +AppState.AyohaMerchantReward.DiscountRedeem);
+        AppState.AyohaMerchantReward.TotalRedeemedPerks=TtlRedeemPerks;
+        
+        
+        var TtlRedeemApprovePerks=parseInt(AppState.AyohaMerchantReward.PointPerksRedeemApproved
+            +AppState.AyohaMerchantReward.StampedPerksRedeemApproved)
+        AppState.AyohaMerchantReward.TotalApprovedRedeemedPerks=TtlRedeemApprovePerks;
+
+
+
+
+
+
+
+
+
+        Ext.getCmp('htmlAyohaMerchantReward_TotalPerkEligibleCount').setHtml('<div  style="color:black;text-align: center;font-size:14px;width:100%;margin:0px 0px 0px 0px;font-weight:bold">'+AppState.AyohaMerchantReward.TotalEligiblePerks+'</div>');
+        Ext.getCmp('htmlAyohaMerchantReward_TotalRedeemCount').setHtml('<div  style="color:black;text-align: center;font-size:14px;width:100%;margin:0px 0px 0px 0px;font-weight:bold">'+AppState.AyohaMerchantReward.TotalRedeemedPerks+'</div>');
+        Ext.getCmp('htmlAyohaMerchantReward_TotalApprovedRedeemCount').setHtml('<div  style="color:black;text-align: center;font-size:14px;width:100%;margin:0px 0px 0px 0px;font-weight:bold">'+AppState.AyohaMerchantReward.TotalApprovedRedeemedPerks+'</div>');
+
+
     var canvas = document.getElementById('loyaltyHBar');
     if (!canvas) return;
 
@@ -6225,9 +6449,29 @@ window._EligibleVsUsed_DatalabelsRegistered =
         AppState.AyohaMerchantReward.EventPerks,
         AppState.AyohaMerchantReward.DiscountPerks
     ];
-    var used =    [2, 2, 1, 0, 0, 1];
-    var approved =[1, 1, 0, 0, 0, 0];
-    var joined =[0, 0, 0, 1, 1, 0];
+    var used =    [
+        AppState.AyohaMerchantReward.StampedPerksRedeemSubmitted,
+        AppState.AyohaMerchantReward.PointPerksRedeemSubmitted,
+        AppState.AyohaMerchantReward.VoucherPerksRedeem,
+         0,
+         0,
+         AppState.AyohaMerchantReward.DiscountRedeem
+    ];
+   //  approved for offline voucher and discount will be in next released;
+    var approved =[
+        AppState.AyohaMerchantReward.StampedPerksRedeemApproved,
+        AppState.AyohaMerchantReward.PointPerksRedeemApproved,
+          0,
+          0,
+          0,
+          0];
+    var joined =[
+        0,
+        0,
+        0,
+        AppState.AyohaMerchantReward.ContestJoined,
+        AppState.AyohaMerchantReward.EventJoined,
+        0];
 
     window._EligibleVsUsedChart = new Chart(ctx, {
         type: 'bar',
@@ -6358,471 +6602,118 @@ window._EligibleVsUsed_DatalabelsRegistered =
 
 
 
+function AyohaMerchantReward_LoadPerksChartBarData() {
+    var task = Ext.create('Ext.util.DelayedTask', function () {
 
 
-  function AyohaMerchantReward_LoadDashboardHorizontal() {
-    var canvas = document.getElementById('loyaltyHBar');
-    if (!canvas) return;
 
-    var ctx = canvas.getContext('2d');
 
-    // Register datalabels plugin sekali sahaja
-    if (!window._EligibleVsUsed_DatalabelsRegistered && window.ChartDataLabels) {
-        Chart.register(ChartDataLabels);
-        window._EligibleVsUsed_DatalabelsRegistered = true;
-    }
+     
 
-    // Destroy chart lama (elak "Canvas is already in use")
-    if (window._EligibleVsUsedChart) {
-        window._EligibleVsUsedChart.destroy();
-        window._EligibleVsUsedChart = null;
-    }
 
-    // ⚠️ MESTI sama panjang: 6 item
-    var labels   = ['Stamped', 'Points', 'Voucher', 'Contest', 'Event', 'Discount'];
-    var eligible = [AppState.AyohaMerchantReward.StampPerks,AppState.AyohaMerchantReward.PointPerks,AppState.AyohaMerchantReward.VoucherPerks,AppState.AyohaMerchantReward.ContestPerks,AppState.AyohaMerchantReward.EventPerks,AppState.AyohaMerchantReward.DiscountPerks];
-    var used     = [0,          2,       0,         1,         1,       1];
-    var approved     = [0,          1,       0,         1,         1,       1];
-    window._EligibleVsUsedChart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: labels,
-            datasets: [
-                {
-                    label: 'Eligible',
-                    data: eligible,
-                    stack: 'perks',
-                    backgroundColor: 'rgba(255,255,255,0.55)',
-                    borderRadius: 12,
-                    borderSkipped: false,
-                    barThickness: 16,
-                    categoryPercentage: 1,
-                    barPercentage: 1
-                },
-                {
-                    label: 'Redeem',
-                    data: used,
-                    stack: 'perks',
-                    backgroundColor: '#f97316',
-                    borderRadius: 12,
-                    borderSkipped: false,
-                    barThickness: 16,
-    categoryPercentage: 1,
-    barPercentage: 1
-                },
-                {
-                    label: 'Approved',
-                    data: approved,
-                    stack: 'perks',
-                    backgroundColor: 'green',
-                    borderRadius: 12,
-                    borderSkipped: false,
-                    barThickness: 16,
-    categoryPercentage: 1,
-    barPercentage: 1
-                }
-            ]
-        },
-        options: {
-            indexAxis: 'y',            // horizontal bar
-            responsive: true,
-            maintainAspectRatio: false,
-            scales: {
-                x: {
-                    stacked: true,
-                    beginAtZero: true,
-                    ticks: {
-                        stepSize: 1,
-                        precision: 0,
-                        color: '#ffffff',   // tulisan axis X putih
-                        font: {
-                            size: 10
-                        }
-                    },
-                    suggestedMax: 7,
-                    grid: {
-                        color: 'rgba(255,255,255,0.15)'
-                    },
-                    display: false
-                },
-                y: {
-                    stacked: true,
-                    ticks: {
-                        color: '#ffffff',   // tulisan axis Y putih
-                        font: {
-                            size: 10
-                        }
-                    },
-                    grid: {
-                        display: false
-                    }
-                }
+
+
+
+
+
+
+
+
+
+        var objn = {
+            "SubscriberAccNo": GetCurrAyohaUserAccountNo()
+        };
+        // console.log(objn);
+        var _value = Ext.Ajax.request({
+
+            type: "POST",
+
+            url: GetAPIurl() + '/MerchantReward/MerchantRewardPerks_RedeemJoinedApproved',
+
+            dataType: "json",
+            data: JSON.stringify(objn),
+            headers: {
+                "Content-Type": "application/json; charset=utf-8"
             },
-            plugins: {
-                legend: {
-                    position: 'top',
-                    labels: {
-                        usePointStyle: true,
-                        boxWidth: 10,
-                        color: '#ffffff',   // tulisan legend putih
-                        font: {
-                            size: 10
-                        }
+
+            success: function (result, request) {
+
+                //console.log(result.responseText);
+
+
+                data = Ext.decode(result.responseText.trim());
+
+                if (data.success == "true") {
+                   
+                    if (data.total > 0) {
+
+               AppState.AyohaMerchantReward.ContestJoined= data.results[0].ContestJoined;
+               AppState.AyohaMerchantReward.EventJoined= data.results[0].EventJoined;
+               AppState.AyohaMerchantReward.PointPerksRedeemSubmitted= data.results[0].PointPerksRedeemSubmitted;
+               AppState.AyohaMerchantReward.PointPerksRedeemApproved= data.results[0].PointPerksRedeemApproved;
+               AppState.AyohaMerchantReward.StampedPerksRedeemSubmitted= data.results[0].StampedPerksRedeemSubmitted;
+               AppState.AyohaMerchantReward.StampedPerksRedeemApproved= data.results[0].StampedPerksRedeemApproved;
+               AppState.AyohaMerchantReward.StampedPerksRedeemRejected= data.results[0].StampedPerksRedeemRejected;
+               AppState.AyohaMerchantReward.VoucherPerksRedeem= data.results[0].VoucherPerksRedeem;
+               AppState.AyohaMerchantReward.DiscountRedeem= data.results[0].DiscountRedeem;
+                       
                     }
-                },
-                tooltip: {
-                    callbacks: {
-                        label: function (ctx) {
-                            var label = ctx.dataset.label || '';
-                            var value = ctx.parsed.x;
-                            return label + ': ' + value;
-                        }
+                    if (data.total == 0) {
+                        AppState.AyohaMerchantReward.ContestJoined= 0;
+                        AppState.AyohaMerchantReward.EventJoined= 0;
+                        AppState.AyohaMerchantReward.PointPerksRedeemSubmitted= 0;
+                        AppState.AyohaMerchantReward.PointPerksRedeemApproved= 0;
+                        AppState.AyohaMerchantReward.StampedPerksRedeemSubmitted=0;
+                        AppState.AyohaMerchantReward.StampedPerksRedeemApproved= 0;
+                        AppState.AyohaMerchantReward.StampedPerksRedeemRejected= 0;
+                        AppState.AyohaMerchantReward.VoucherPerksRedeem=0;
+                        AppState.AyohaMerchantReward.DiscountRedeem=0;
+
                     }
-                },
-                datalabels: {
-                    color: '#ffffff',       // nombor atas bar putih
-                    anchor: 'center',
-                    align: 'center',
-                    formatter: function (v) {
-                        return v > 0 ? v : ''; // kalau 0, jangan tulis
-                    },
-                    font: {
-                        weight: '600',
-                        size: 10              // font size 8px
-                    }
+
+
+
+
+
                 }
+                else {
+
+                    AppState.AyohaMerchantReward.ContestJoined= 0;
+                    AppState.AyohaMerchantReward.EventJoined= 0;
+                    AppState.AyohaMerchantReward.PointPerksRedeemSubmitted= 0;
+                    AppState.AyohaMerchantReward.PointPerksRedeemApproved= 0;
+                    AppState.AyohaMerchantReward.StampedPerksRedeemSubmitted=0;
+                    AppState.AyohaMerchantReward.StampedPerksRedeemApproved= 0;
+                    AppState.AyohaMerchantReward.StampedPerksRedeemRejected= 0;
+                    AppState.AyohaMerchantReward.VoucherPerksRedeem=0;
+                    AppState.AyohaMerchantReward.DiscountRedeem=0;
+
+                }
+
+                AyohaMerchantReward_LoadDashboard();
+            },
+
+            failure: function (result, request) {
+                AppState.AyohaMerchantReward.ContestJoined= 0;
+                AppState.AyohaMerchantReward.EventJoined= 0;
+                AppState.AyohaMerchantReward.PointPerksRedeemSubmitted= 0;
+                AppState.AyohaMerchantReward.PointPerksRedeemApproved= 0;
+                AppState.AyohaMerchantReward.StampedPerksRedeemSubmitted=0;
+                AppState.AyohaMerchantReward.StampedPerksRedeemApproved= 0;
+                AppState.AyohaMerchantReward.StampedPerksRedeemRejected= 0;
+                AppState.AyohaMerchantReward.VoucherPerksRedeem=0;
+                AppState.AyohaMerchantReward.DiscountRedeem=0;
+                AyohaMerchantReward_LoadDashboard();
             }
-        }
+
+        });
+
+
+
     });
-}
 
+    //  Ext.Viewport.unmask();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-
-// // Global handler
-// window._TotalEligibleVsUsedChart = window._TotalEligibleVsUsedChart || null;
-
-// // Guna flag register plugin yang sama (kalau dah ada dari chart bar, tak apa)
-// window._EligibleVsUsed_DatalabelsRegistered =
-//   window._EligibleVsUsed_DatalabelsRegistered || false;
-
-// function Load_TotalEligible_vs_Used_Doughnut() {
-//     var canvas = document.getElementById('perksEligibleTotalDonut');
-//     if (!canvas) return;
-
-//     var ctx = canvas.getContext('2d');
-
-//     // Register datalabels sekali sahaja
-//     if (!window._EligibleVsUsed_DatalabelsRegistered && window.ChartDataLabels) {
-//         Chart.register(ChartDataLabels);
-//         window._EligibleVsUsed_DatalabelsRegistered = true;
-//     }
-
-//     // Destroy lama kalau ada
-//     if (window._TotalEligibleVsUsedChart) {
-//         _TotalEligibleVsUsedChart.destroy();
-//         _TotalEligibleVsUsedChart = null;
-//     }
-
-//     // Data ikut perks (boleh juga kira dari array)
-//     var totalEligible = 18;
-//     var totalUsed     = 5;
-
-//     _TotalEligibleVsUsedChart = new Chart(ctx, {
-//         type: 'doughnut',
-//         data: {
-//             labels: ['Eligible', 'Used'],
-//             datasets: [{
-//                 data: [totalEligible, totalUsed],
-//                 backgroundColor: [
-//                     'rgba(255,255,255,0.5)', // Eligible
-//                     '#f97316'                // Used (oren)
-//                 ],
-//                 borderWidth: 0
-//             }]
-//         },
-//         options: {
-//             responsive: true,
-//             maintainAspectRatio: false,
-//             cutout: '60%',   // lubang tengah (donut)
-//             plugins: {
-//                 legend: {
-//                     display: false   // kalau nak legend, tukar kepada true
-//                 },
-//                 datalabels: {
-//                     color: '#ffffff',
-//                     formatter: function (value, ctx) {
-//                         // tunjuk angka (18 / 5)
-//                         return value;
-//                     },
-//                     font: {
-//                         weight: '700',
-//                         size: 10
-//                     }
-//                 }
-//             }
-//         }
-//     });
-// }
-
-
-
-// keep a handle globally (optional but handy)
-// window.membershipStatusChart = window.membershipStatusChart || null;
-// window._datalabelsRegistered = window._datalabelsRegistered || false;
-
-function AyohaMerchantReward_LoadDashboardDoughnut(activeCount, expiredCount) {
-  // Map your two inputs into the 6 categories you display
-  const counts = {
-    Stamped:  activeCount,
-    Points:   expiredCount,
-    Voucher:  2,
-    Contest:  3,
-    Event:    2,
-    Discount: 2
-  };
-
-  const labels = ['Stamped','Points','Voucher','Contest','Event','Discount'];
-  const dataArr = [
-    counts.Stamped, counts.Points, counts.Voucher,
-    counts.Contest, counts.Event, counts.Discount
-  ];
-  const total = dataArr.reduce((a,b)=>a + (b||0), 0);
-
-  const canvas = document.getElementById('loyaltyHBar'); // reuse same canvas id
-  if (!canvas) return;
-
-  // ✅ Destroy any existing chart on this canvas
-  const existing = Chart.getChart(canvas);
-  if (existing) existing.destroy();
-  if (window.membershipStatusChart) {
-    window.membershipStatusChart.destroy();
-    window.membershipStatusChart = null;
-  }
-
-  const ctx = canvas.getContext('2d');
-
-  // Register plugin once
-  if (!window._datalabelsRegistered && typeof ChartDataLabels !== 'undefined') {
-    Chart.register(ChartDataLabels);
-    window._datalabelsRegistered = true;
-  }
-
-  // Center "Total" text plugin
-  const centerText = {
-    id: 'centerText',
-    afterDraw(chart) {
-      const { ctx, chartArea } = chart;
-      // find center by first arc element or chart area mid
-      const arc = chart.getDatasetMeta(0).data?.[0];
-      const cx = arc?.x ?? (chartArea.left + chartArea.right) / 2;
-      const cy = arc?.y ?? (chartArea.top + chartArea.bottom) / 2;
-
-      ctx.save();
-      ctx.textAlign = 'center';
-      ctx.textBaseline = 'middle';
-      ctx.fillStyle = '#fff';
-
-      ctx.font = '700 12px system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif';
-      ctx.fillText('Total', cx, cy - 10);
-
-      ctx.font = '900 22px system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif';
-      ctx.fillText(total, cx, cy + 10);
-      ctx.restore();
-    }
-  };
-
-  // Build chart (DOUGHNUT)
-  window.membershipStatusChart = new Chart(ctx, {
-    type: 'doughnut',
-    data: {
-      labels,
-      datasets: [{
-        data: dataArr,
-        backgroundColor: [
-          'rgba(46, 204, 113, 0.95)',  // Stamped
-          'rgba(231, 76, 60, 0.70)',   // Points
-          'rgb(255, 99, 71)',          // Voucher
-          'rgb(255, 165, 0)',          // Contest
-          'rgba(100, 249, 71, 0.5)',   // Event
-          'rgba(160, 0, 255, 0.7)'     // Discount
-        ],
-        borderColor: '#ffffff',
-        borderWidth: 1,
-        borderAlign: 'inner',
-        hoverOffset: 6,
-        cutout: '62%'                  // donut thickness
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      layout: { padding: { top: 4, right: 8, bottom: 8, left: 8 } },
-      plugins: {
-        legend: {
-          position: 'bottom',
-          labels: { color: '#fff', usePointStyle: true, pointStyle: 'circle', font: { size: 10, weight: '700' } }
-        },
-        tooltip: {
-          callbacks: {
-            label: (ctx) => `${ctx.label}: ${ctx.parsed}` // parsed is the slice value
-          }
-        },
-        datalabels: {
-          display: true,
-          color: '#fff',
-          anchor: 'center',
-          align: 'center',
-          offset: 0,
-          clip: true,
-          clamp: true,
-          formatter: (v) => (v ? `${v}` : ''), // hide zeros
-          font: (ctx) => {
-            const data = ctx.dataset.data, v = data[ctx.dataIndex] || 0;
-            const sum = data.reduce((a,b)=>a+(b||0),0) || 1;
-            const pct = (v / sum) * 100;
-            const base = ctx.chart.width < 360 ? 11 : 13;
-            return { weight: '900', size: pct < 14 ? base - 2 : base, family: 'system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif' };
-          }
-        }
-      },
-      animation: { duration: 800, animateRotate: true, animateScale: false }
-    },
-    plugins: [centerText]
-  });
-}
-
-
-
-
-
-
-
-
-
-
-
-function AyohaMerchantReward_LoadDashboardVertical(activeCount, expiredCount) {
-  const counts = { Stamped: activeCount, Points: expiredCount, Voucher: 2, Contest: 3, Event: 2, Discount: 2 };
-  const total  = (counts.Stamped || 0) + (counts.Points || 0);
-
-  const canvas = document.getElementById('loyaltyHBar');
-  if (!canvas) return;
-
-  // ✅ Destroy any existing chart on this canvas
-  const existing = Chart.getChart(canvas);
-  if (existing) existing.destroy();
-  if (window.membershipStatusChart) { 
-    window.membershipStatusChart.destroy(); 
-    window.membershipStatusChart = null; 
-  }
-
-  const ctx = canvas.getContext('2d');
-
-  // Register plugin once
-  if (!window._datalabelsRegistered && typeof ChartDataLabels !== 'undefined') {
-    Chart.register(ChartDataLabels);
-    window._datalabelsRegistered = true;
-  }
-
-  // Build chart (VERTICAL bar)
-  window.membershipStatusChart = new Chart(ctx, {
-    type: 'bar',
-    data: {
-      labels : ['Stamped','Points','Voucher','Contest','Event','Discount'],
-      datasets: [{
-        data: [counts.Stamped, counts.Points, counts.Voucher, counts.Contest, counts.Event, counts.Discount],
-        backgroundColor: [
-          'rgba(46, 204, 113, 0.95)',   // Stamped
-          'rgba(231, 76, 60, 0.70)',    // Points
-          'rgb(255, 99, 71)',           // Voucher
-          'rgb(255, 165, 0)',           // Contest
-          'rgba(100, 249, 71, 0.5)',    // Event
-          'rgba(160, 0, 255, 0.7)',     // Discount
-        ],
-        borderColor: '#ffffff',
-        borderWidth: 1,
-        borderSkipped: false,
-        borderRadius: 0,          // set {topLeft:8, topRight:8} if you want rounded tops
-        barThickness: 14,
-        categoryPercentage: 0.9,
-        barPercentage: 0.9,
-        hoverBorderWidth: 1
-      }]
-    },
-    options: {
-      // indexAxis removed → defaults to vertical bars
-      responsive: true,
-      maintainAspectRatio: false,
-      layout: { padding: { top: 4, right: 8, bottom: 8, left: 8 } },
-      scales: {
-        x: {
-          grid: { display: false },
-          ticks: { color: '#fff', font: { size: 10, weight: '700' } }
-        },
-        y: {
-          grid: { color: 'rgba(255,255,255,0.15)' }, // value axis grid
-          ticks: { color: '#fff', font: { size: 8, weight: '700' } },
-          beginAtZero: true,
-          precision: 0
-        }
-      },
-      plugins: {
-        title: {
-          display: false,
-          text: `Total: ${total}`,
-          color: '#fff',
-          font: { size: 10, weight: '800' },
-          padding: { top: 2, bottom: 2 }
-        },
-        legend: { display: false },
-        tooltip: {
-          callbacks: {
-            // vertical bars → value is on Y
-            label: (ctx) => `${ctx.label}: ${ctx.parsed.y}`
-          }
-        },
-        datalabels: {
-          display: true,
-          color: '#fff',
-          anchor: 'end',     // position at end of bar
-          align: 'top',      // above the bar
-          offset: 2,
-          clip: false,
-          clamp: true,
-          formatter: (v) => `${v}`,
-          font: (ctx) => {
-            const data = ctx.dataset.data, v = data[ctx.dataIndex] || 0;
-            const sum = data.reduce((a,b)=>a+(b||0),0) || 1;
-            const pct = (v / sum) * 100;
-            const base = ctx.chart.width < 360 ? 11 : 13;
-            return { weight: '800', size: pct < 14 ? base - 2 : base, family: 'system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif' };
-          }
-        }
-      },
-      animation: { duration: 800 }
-    }
-  });
+    //   setDashBoardMerchantReviewRate(FiveStar, FourStar, ThreeStar, TwoStar, OneStar);
+    task.delay(100);
 }
