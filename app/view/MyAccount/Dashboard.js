@@ -9435,12 +9435,10 @@ function initializeContainerSingleTapEvent() {
        Ext.getCmp('tabpanelMyAccount_Dashboard').setActiveItem(2);
        animatedClickTabExt('containerMyAccount_Dashboard_MenuBottom_MerchantperkBottom');
        AppState.MainDashboard.MainDashboardBottomkMenuTabTag = "MerchantReward";
-      // AyohaMerchantReward_LoadDashboard();
-    //    id: 'containerMyAccount_Dashboard_MenuBottom_MerchantperkBottom',
-    //    name: 'namecontainerMyAccount_Dashboard_MenuBottom_MerchantperkBottom',
-    //    // containerMyAccount_Dashboard_MenuBottom_MerchantperksBottom
-         // animatedClickTabExt('containerMyAccount_Dashboard_MenuBottom_Notification');
-       // FloatPanel_AyohaNotificationShow();
+       Ext.getCmp('htmlAyohaMerchantRedemptionHeader_ButtonPerks_Stamps').setHtml('<div style="color:black;text-align: center;font-size:12px;width:100%;font-weight:bold">Stamp Perks</div>');
+       Ext.getCmp('htmlAyohaMerchantRedemptionHeader_ButtonPerks_Points').setHtml('<div style="color:#9CA3AF;text-align: center;font-size:12px;width:100%;font-weight:normal">Point Perks</div>');
+       Ext.getCmp('tabpanelAyohaMerchantRewards').setActiveItem(0);
+       animatedClickTabExt_AyohaMerchantReward('containerAyohaMerchantRedemptionHeader_ButtonPerks_Stamps');
       }
     );
 

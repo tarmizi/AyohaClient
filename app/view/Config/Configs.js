@@ -183,6 +183,37 @@ if(animatedClickTabExtComponant){
     
 }
 
+var animatedClickTabExtComponant_AyohaMerchantReward=null;
+function animatedClickTabExt_AyohaMerchantReward(Componant) {
+if(animatedClickTabExtComponant_AyohaMerchantReward){
+    Ext.getCmp(animatedClickTabExtComponant_AyohaMerchantReward).setStyle('background-color:transparent;border-bottom:3px none purple');
+}
+    
+
+    $("#"+Componant).animate({
+        opacity: 0.25,
+        //left: "+=50",
+        //height: "toggle",
+        colour: 'rgba(220,220,220,0.25)',
+    }, 200, function () {
+        $("#" + Componant).animate({
+            opacity: 1,
+            //left: "+=50",
+            //height: "toggle",
+            //colour: 'rgba(0,0,0,0.11)',
+        }, 100, function () {
+
+        });
+    });
+    Ext.getCmp(Componant).setStyle('background-color:transparent;border-bottom:3px solid #c800ffc9');
+    animatedClickTabExtComponant_AyohaMerchantReward = Componant;
+
+    
+}
+
+
+
+
 var highlightedTextComponant=null;
 function highlightedText(Componant,TextVal1,TextVal2) {  
     if(highlightedTextComponant){
