@@ -475,7 +475,7 @@ function setSubscription() {
 
 
 function getPlayerIDS() {
-    window.open('https://setkita.com/termandcondition.html', '_system'); return false;
+    window.open('https://versilani.com/termandcondition.html', '_system'); return false;
     //window.plugins.OneSignal.getIds(function (ids) {
     //   // alert("userId = " + ids.userId + "\npushToken = " + ids.pushToken);
     //    localStorage.setItem("player_id", ids.userId);

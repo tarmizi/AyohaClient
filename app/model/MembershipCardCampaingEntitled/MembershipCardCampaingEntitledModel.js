@@ -64,7 +64,7 @@
                var str = record.get('CampaignType');
 
                if (str == "Stamp Reward Loyalty Card") {
-                 //  _value = '<img style="margin:-10px 0px 0px 0px;width:65px;height:65px;" src=https://setkita.com/AyohaImgCard/AyohaRewardMembershipPrevillageIcon/StampTopImgOne.png>';
+                 //  _value = '<img style="margin:-10px 0px 0px 0px;width:65px;height:65px;" src=https://versilani.com/AyohaImgCard/AyohaRewardMembershipPrevillageIcon/StampTopImgOne.png>';
                    _value =GetDomainName()+'AyohaImgCard/AyohaRewardMembershipPrevillageIcon/stampicon.png';
               
               
@@ -72,23 +72,23 @@
                if (str == "Point Reward Loyalty Card") {
                 _value = GetDomainName()+'AyohaImgCard/AyohaRewardMembershipPrevillageIcon/loyaltypoint.png';
               
-                 //  _value = '<img style="margin:-10px 0px 0px 0px;width:65px;height:65px;" src=https://setkita.com/AyohaImgCard/AyohaRewardMembershipPrevillageIcon/PointAnimation03.gif>';
+                 //  _value = '<img style="margin:-10px 0px 0px 0px;width:65px;height:65px;" src=https://versilani.com/AyohaImgCard/AyohaRewardMembershipPrevillageIcon/PointAnimation03.gif>';
                }
                if (str == "Membership Card Discount") {
                
                 _value =GetDomainName()+'AyohaImgCard/AyohaRewardMembershipPrevillageIcon/discounticon.png';
               
-               // _value = '<img style="margin:-10px 0px 0px 0px;width:65px;height:65px;" src=https://setkita.com/AyohaImgCard/AyohaRewardMembershipPrevillageIcon/mypromotionThree.png>';
+               // _value = '<img style="margin:-10px 0px 0px 0px;width:65px;height:65px;" src=https://versilani.com/AyohaImgCard/AyohaRewardMembershipPrevillageIcon/mypromotionThree.png>';
             }
             if (str == "Membership Card Contest") {
                 _value =GetDomainName()+'AyohaImgCard/AyohaRewardMembershipPrevillageIcon/contesticon.png';
               
-               // _value = '<img style="margin:-10px 0px 0px 0px;width:65px;height:65px;" src=https://setkita.com/AyohaImgCard/AyohaRewardMembershipPrevillageIcon/contest-removebg-preview.png>';
+               // _value = '<img style="margin:-10px 0px 0px 0px;width:65px;height:65px;" src=https://versilani.com/AyohaImgCard/AyohaRewardMembershipPrevillageIcon/contest-removebg-preview.png>';
             }
             if (str == "Membership Card Event") {
                 _value =GetDomainName()+'AyohaImgCard/AyohaRewardMembershipPrevillageIcon/event.png';
               
-               // _value = '<img style="margin:-10px 0px 0px 0px;width:65px;height:65px;" src=https://setkita.com/AyohaImgCard/AyohaRewardMembershipPrevillageIcon/contest-removebg-preview.png>';
+               // _value = '<img style="margin:-10px 0px 0px 0px;width:65px;height:65px;" src=https://versilani.com/AyohaImgCard/AyohaRewardMembershipPrevillageIcon/contest-removebg-preview.png>';
             }
                
                if (str == "Privilege") {

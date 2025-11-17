@@ -476,7 +476,7 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
             //                                      id: 'htmlDashboard_AyohaStore_CompanyLogo_PremiumAdvertisement',
             //                                      //badgeText: "2",
             //                                      //  html: '<img src="resources/icons/MyAdvertisementDashboardOne.png" width="65" height="65" alt="Company Name">',
-            //                                      html: '<div style="width: 50px; height: 47px ; z-index: 200 !important;  border-width: 2px; border-style: solid; border-color: rgb(236, 240, 241); background: white; border-radius: 10%;" ><img src="https://setkita.com/AyohaImgCard/Logo/39259-0123214416-NoEnterprise/azmah01-removebg-preview.png" width="50" height="47" alt="Company Name"></div>',
+            //                                      html: '<div style="width: 50px; height: 47px ; z-index: 200 !important;  border-width: 2px; border-style: solid; border-color: rgb(236, 240, 241); background: white; border-radius: 10%;" ><img src="https://versilani.com/AyohaImgCard/Logo/39259-0123214416-NoEnterprise/azmah01-removebg-preview.png" width="50" height="47" alt="Company Name"></div>',
               
             //                                  },
               
@@ -1095,7 +1095,7 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
 
                                   xtype: 'container',
                                   width: '100%',
-                                  height: 800,
+                                  height: 600,
                                   /// hidden:true,
 
                                   margin: '0 0 0 0',
@@ -1168,7 +1168,7 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
                    
                     //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
                     id: 'htmlAyohaMerchantRedemptionHeader_ButtonPerks_Stamps',
-                    html: '<div style="color:black;text-align: center;font-size:12px;width:100%;font-weight:bold">Stamp Perks</div>'
+                    html: '<div style="color:black;text-align: center;font-size:12px;width:100%;font-weight:bold">Digital Stamps</div>'
                     // html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: 70%"><col style="width:30%"></colgroup><thead><tr><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:right;vertical-align:top;word-break:normal" rowspan="2"><div style="margin:0px 0px 0px -15px">TARMIZI RAHIM</div><br>Lagendary Card Mortal </th><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:middle;word-break:normal" rowspan="2">Medal</th></tr><tr></tr></thead></table>'
                 },
                 
@@ -1193,7 +1193,7 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
                    
                     //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
                     id: 'htmlAyohaMerchantRedemptionHeader_ButtonPerks_Points',
-                    html: '<div style="color:#9CA3AF;text-align: center;font-size:12px;width:100%;font-weight:normal">Point Perks</div>'
+                    html: '<div style="color:#9CA3AF;text-align: center;font-size:12px;width:100%;font-weight:normal">Point Rewards</div>'
                     // html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: 70%"><col style="width:30%"></colgroup><thead><tr><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:right;vertical-align:top;word-break:normal" rowspan="2"><div style="margin:0px 0px 0px -15px">TARMIZI RAHIM</div><br>Lagendary Card Mortal </th><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:middle;word-break:normal" rowspan="2">Medal</th></tr><tr></tr></thead></table>'
                 },
                 
@@ -1206,6 +1206,7 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
             /// hidden:true,
             margin: '0 0 0 0',
             id: 'containerAyohaMerchantRedemptionHeader_ButtonPerks_Vouchers',
+            name:'nameContainerAyohaMerchantRedemptionHeader_ButtonPerks_Vouchers',
             style: 'border-bottom:2px none #D25959;border-bottom:2px none #D25959;background-color:transparent',
             layout: {
                 type: 'vbox',
@@ -1217,6 +1218,7 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
                    
                     //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
                     //html: '<div style="color:#D1D5DB;text-align: center;font-size:12px;width:100%;font-weight:normal">Vouchers</div>'
+                    id:'htmlAyohaMerchantRedemptionHeader_ButtonPerks_Vouchers',
                     html: '<div style="color:#9CA3AF;text-align: center;font-size:12px;width:100%;font-weight:normal">Vouchers</div>'
                 },
                 
@@ -1229,6 +1231,7 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
             /// hidden:true,
             margin: '0 0 0 0',
             id: 'containerAyohaMerchantRedemptionHeader_ButtonPerks_Contests',
+            name:'nameContainerAyohaMerchantRedemptionHeader_ButtonPerks_Contests',
             style: 'border-bottom:2px none #D25959;border-bottom:2px none #D25959;background-color:transparent',
             layout: {
                 type: 'vbox',
@@ -1239,6 +1242,8 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
                 {
                    
                     //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
+                   
+                    id:'htmlAyohaMerchantRedemptionHeader_ButtonPerks_Contests',
                     html: '<div style="color:#9CA3AF;text-align: center;font-size:12px;width:100%;font-weight:normal">Contests</div>'
                     // html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: 70%"><col style="width:30%"></colgroup><thead><tr><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:right;vertical-align:top;word-break:normal" rowspan="2"><div style="margin:0px 0px 0px -15px">TARMIZI RAHIM</div><br>Lagendary Card Mortal </th><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:middle;word-break:normal" rowspan="2">Medal</th></tr><tr></tr></thead></table>'
                 },
@@ -1252,6 +1257,7 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
             /// hidden:true,
             margin: '0 0 0 0',
             id: 'containerAyohaMerchantRedemptionHeader_ButtonPerks_Events',
+            name:'nameContainerAyohaMerchantRedemptionHeader_ButtonPerks_Events',
             style: 'border-bottom:2px none #D25959;border-bottom:2px none #D25959;background-color:transparent',
             layout: {
                 type: 'vbox',
@@ -1262,6 +1268,7 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
                 {
                    
                     //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
+                    id:'htmlAyohaMerchantRedemptionHeader_ButtonPerks_Events',
                     html: '<div style="color:#9CA3AF;text-align: center;font-size:12px;width:100%;font-weight:normal">Events</div>'
                     // html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: 70%"><col style="width:30%"></colgroup><thead><tr><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:right;vertical-align:top;word-break:normal" rowspan="2"><div style="margin:0px 0px 0px -15px">TARMIZI RAHIM</div><br>Lagendary Card Mortal </th><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:middle;word-break:normal" rowspan="2">Medal</th></tr><tr></tr></thead></table>'
                 },
@@ -1275,6 +1282,7 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
             /// hidden:true,
             margin: '0 0 0 0',
             id: 'containerAyohaMerchantRedemptionHeader_ButtonPerks_Discounts',
+            name:'nameContainerAyohaMerchantRedemptionHeader_ButtonPerks_Discounts',
             style: 'border-bottom:2px none #D25959;border-bottom:2px none #D25959;background-color:transparent',
             layout: {
                 type: 'vbox',
@@ -1285,6 +1293,7 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
                 {
                    
                     //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
+                    id:'htmlAyohaMerchantRedemptionHeader_ButtonPerks_Discounts',
                     html: '<div style="color:#9CA3AF;text-align: center;font-size:12px;width:100%;font-weight:normal">Discounts</div>'
                     // html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: 70%"><col style="width:30%"></colgroup><thead><tr><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:right;vertical-align:top;word-break:normal" rowspan="2"><div style="margin:0px 0px 0px -15px">TARMIZI RAHIM</div><br>Lagendary Card Mortal </th><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:middle;word-break:normal" rowspan="2">Medal</th></tr><tr></tr></thead></table>'
                 },
@@ -1306,7 +1315,7 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
      id: 'tabpanelAyohaMerchantRewards',
      width: '100%',
      //height: '100%',
-     height: 400,
+     height: 500,
      tabBarPosition: 'top',
      ui: 'plain',
      items: [
@@ -1351,7 +1360,7 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
     },
     items:[
         {
-            html: '<div  style="color:white;text-align: center;font-size:10px;width:100%;">Nearest Perks</div>'
+            html: '<div  style="color:white;text-align: center;font-size:10px;width:100%;">Eligible Perks</div>'
         }
     ]
 },
@@ -1474,7 +1483,8 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
                     //// style: 'border-right:1px solid white;border-left:1px solid white;border-bottom:1px solid white;border-top:1px solid white;background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);border-radius: 10px 10px 10px 10px;',
                     //  style: 'background-color:transparent',
                     //style: 'border-right:0.1px solid #ECECEC;border-left:0.1px solid #ECECEC;border-bottom:0.1px solid #ECECEC;border-top:0.1px solid #ECECEC;background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);border-radius: 10px 10px 10px 10px;',
-                    style: 'border-right:0.1px solid #ECECEC;border-left:0.1px solid #ECECEC;border-bottom:0.1px solid #ECECEC;border-top:0.1px solid #ECECEC;background-color: white;border-radius: 10px 10px 10px 10px;box-shadow: 5px 10px 18px #888888;',
+                  //  style: 'border-right:0.1px solid #ECECEC;border-left:0.1px solid #ECECEC;border-bottom:0.1px solid #ECECEC;border-top:0.1px solid #ECECEC;background-color: white;border-radius: 10px 10px 10px 10px;',
+                    style: 'border:1px solid #fac;background-color: white;border-radius: 10px 10px 10px 10px;',
                     layout: {
                         type: 'hbox',
                         pack: 'center',
@@ -1605,8 +1615,9 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
                //style: 'border-right:1px solid white;border-left:1px solid white;border-bottom:1px solid white;border-top:1px solid white;background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);border-radius: 10px 10px 10px 10px;',
                // style: 'background-color:transparent',
                // style: 'border-right:1px solid white;border-left:1px solid white;border-bottom:1px solid white;border-top:1px solid white;background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);border-radius: 10px 10px 10px 10px;',
-               style: 'border-right:0.1px solid #ECECEC;border-left:0.1px solid #ECECEC;border-bottom:0.1px solid #ECECEC;border-top:0.1px solid #ECECEC;background-color: white;border-radius: 10px 10px 10px 10px;box-shadow: 5px 10px 18px #888888;',
+              ///////////// style: 'border-right:0.1px solid #ECECEC;border-left:0.1px solid #ECECEC;border-bottom:0.1px solid #ECECEC;border-top:0.1px solid #ECECEC;background-color: white;border-radius: 10px 10px 10px 10px;',
                //style: 'border-right:0.1px solid #ECECEC;border-left:0.1px solid #ECECEC;border-bottom:0.1px solid #ECECEC;border-top:0.1px solid #ECECEC;background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);border-radius: 10px 10px 10px 10px;',
+               style: 'border:1px solid #fac;background-color: white;border-radius: 10px 10px 10px 10px;',
                layout: {
                    type: 'hbox',
                    pack: 'center',
@@ -1734,9 +1745,9 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
                   margin: '12 0 0 0',
                   width: '95%',
                   height: 85,
-                  //style: 'border-right:1px solid white;border-left:1px solid white;border-bottom:1px solid white;border-top:1px solid white;background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);border-radius: 10px 10px 10px 10px;',
-                  // style: 'border-right:0.1px solid #ECECEC;border-left:0.1px solid #ECECEC;border-bottom:0.1px solid #ECECEC;border-top:0.1px solid #ECECEC;background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);border-radius: 10px 10px 10px 10px;',
-                  style: 'border-right:0.1px solid #ECECEC;border-left:0.1px solid #ECECEC;border-bottom:0.1px solid #ECECEC;border-top:0.1px solid #ECECEC;background-color: white;border-radius: 10px 10px 10px 10px;box-shadow: 5px 10px 18px #888888;',
+                 
+                 // style: 'border-right:0.1px solid #ECECEC;border-left:0.1px solid #ECECEC;border-bottom:0.1px solid #ECECEC;border-top:0.1px solid #ECECEC;background-color: white;border-radius: 10px 10px 10px 10px;',
+                  style: 'border:1px solid #fac;background-color: white;border-radius: 10px 10px 10px 10px;',
                   layout: {
                       type: 'hbox',
                       pack: 'center',
@@ -1886,11 +1897,9 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
                     margin: '12 0 0 0',
                     width: '95%',
                     height: 85,
-                    //style: 'border-right:2px solid #fac;border-left:2px solid #fac;border-bottom:2px solid #fac;border-top:2px solid #fac;background-color: transparent;border-radius: 10px 10px 10px 10px; box-shadow: 5px 10px 18px #888888;',
-                    //// style: 'border-right:1px solid white;border-left:1px solid white;border-bottom:1px solid white;border-top:1px solid white;background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);border-radius: 10px 10px 10px 10px;',
-                    //  style: 'background-color:transparent',
-                    // style: 'border-right:0.1px solid #ECECEC;border-left:0.1px solid #ECECEC;border-bottom:0.1px solid #ECECEC;border-top:0.1px solid #ECECEC;background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);border-radius: 10px 10px 10px 10px;',
-                    style: 'border-right:0.1px solid #ECECEC;border-left:0.1px solid #ECECEC;border-bottom:0.1px solid #ECECEC;border-top:0.1px solid #ECECEC;background-color: white;border-radius: 10px 10px 10px 10px;box-shadow: 5px 10px 18px #888888;',
+                   
+                    //style: 'border-right:0.1px solid #ECECEC;border-left:0.1px solid #ECECEC;border-bottom:0.1px solid #ECECEC;border-top:0.1px solid #ECECEC;background-color: white;border-radius: 10px 10px 10px 10px;box-shadow: 5px 10px 18px #888888;',
+                    style: 'border:1px solid #fac;background-color: white;border-radius: 10px 10px 10px 10px;',
                     layout: {
                         type: 'hbox',
                         pack: 'center',
@@ -2022,7 +2031,8 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
                // style: 'background-color:transparent',
                // style: 'border-right:1px solid white;border-left:1px solid white;border-bottom:1px solid white;border-top:1px solid white;background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);border-radius: 10px 10px 10px 10px;',
                // style: 'border-right:0.1px solid #ECECEC;border-left:0.1px solid #ECECEC;border-bottom:0.1px solid #ECECEC;border-top:0.1px solid #ECECEC;background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);border-radius: 10px 10px 10px 10px;',
-               style: 'border-right:0.1px solid #ECECEC;border-left:0.1px solid #ECECEC;border-bottom:0.1px solid #ECECEC;border-top:0.1px solid #ECECEC;background-color: white;border-radius: 10px 10px 10px 10px;box-shadow: 5px 10px 18px #888888;',
+              // style: 'border-right:0.1px solid #ECECEC;border-left:0.1px solid #ECECEC;border-bottom:0.1px solid #ECECEC;border-top:0.1px solid #ECECEC;background-color: white;border-radius: 10px 10px 10px 10px;box-shadow: 5px 10px 18px #888888;',
+               style: 'border:1px solid #fac;background-color: white;border-radius: 10px 10px 10px 10px;',
                layout: {
                    type: 'hbox',
                    pack: 'center',
@@ -2152,8 +2162,9 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
                   height: 85,
                   //style: 'border-right:1px solid white;border-left:1px solid white;border-bottom:1px solid white;border-top:1px solid white;background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);border-radius: 10px 10px 10px 10px;',
                   //style: 'border-right:0.1px solid #ECECEC;border-left:0.1px solid #ECECEC;border-bottom:0.1px solid #ECECEC;border-top:0.1px solid #ECECEC;background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);border-radius: 10px 10px 10px 10px;',
-                  style: 'border-right:0.1px solid #ECECEC;border-left:0.1px solid #ECECEC;border-bottom:0.1px solid #ECECEC;border-top:0.1px solid #ECECEC;background-color: white;border-radius: 10px 10px 10px 10px;box-shadow: 5px 10px 18px #888888;',
-                  layout: {
+                 // style: 'border-right:0.1px solid #ECECEC;border-left:0.1px solid #ECECEC;border-bottom:0.1px solid #ECECEC;border-top:0.1px solid #ECECEC;background-color: white;border-radius: 10px 10px 10px 10px;box-shadow: 5px 10px 18px #888888;',
+                 style: 'border:1px solid #fac;background-color: white;border-radius: 10px 10px 10px 10px;',
+                 layout: {
                       type: 'hbox',
                       pack: 'center',
                       align: 'center',
@@ -2308,8 +2319,9 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
                     //// style: 'border-right:1px solid white;border-left:1px solid white;border-bottom:1px solid white;border-top:1px solid white;background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);border-radius: 10px 10px 10px 10px;',
                     //  style: 'background-color:transparent',
                     //style: 'border-right:0.1px solid #ECECEC;border-left:0.1px solid #ECECEC;border-bottom:0.1px solid #ECECEC;border-top:0.1px solid #ECECEC;background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);border-radius: 10px 10px 10px 10px;',
-                    style: 'border-right:0.1px solid #ECECEC;border-left:0.1px solid #ECECEC;border-bottom:0.1px solid #ECECEC;border-top:0.1px solid #ECECEC;background-color: white;border-radius: 10px 10px 10px 10px;box-shadow: 5px 10px 18px #888888;',
-                    layout: {
+                   // style: 'border-right:0.1px solid #ECECEC;border-left:0.1px solid #ECECEC;border-bottom:0.1px solid #ECECEC;border-top:0.1px solid #ECECEC;background-color: white;border-radius: 10px 10px 10px 10px;box-shadow: 5px 10px 18px #888888;',
+                   style: 'border:1px solid #fac;background-color: white;border-radius: 10px 10px 10px 10px;',
+                   layout: {
                         type: 'hbox',
                         pack: 'center',
                         align: 'center',
@@ -2440,8 +2452,9 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
                // style: 'background-color:transparent',
                // style: 'border-right:1px solid white;border-left:1px solid white;border-bottom:1px solid white;border-top:1px solid white;background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);border-radius: 10px 10px 10px 10px;',
                // style: 'border-right:0.1px solid #ECECEC;border-left:0.1px solid #ECECEC;border-bottom:0.1px solid #ECECEC;border-top:0.1px solid #ECECEC;background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);border-radius: 10px 10px 10px 10px;',
-               style: 'border-right:0.1px solid #ECECEC;border-left:0.1px solid #ECECEC;border-bottom:0.1px solid #ECECEC;border-top:0.1px solid #ECECEC;background-color: white;border-radius: 10px 10px 10px 10px;box-shadow: 5px 10px 18px #888888;',
-               layout: {
+              // style: 'border-right:0.1px solid #ECECEC;border-left:0.1px solid #ECECEC;border-bottom:0.1px solid #ECECEC;border-top:0.1px solid #ECECEC;background-color: white;border-radius: 10px 10px 10px 10px;box-shadow: 5px 10px 18px #888888;',
+              style: 'border:1px solid #fac;background-color: white;border-radius: 10px 10px 10px 10px;',
+              layout: {
                    type: 'hbox',
                    pack: 'center',
                    align: 'center',
@@ -2570,8 +2583,9 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
                   height: 85,
                   //style: 'border-right:1px solid white;border-left:1px solid white;border-bottom:1px solid white;border-top:1px solid white;background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);border-radius: 10px 10px 10px 10px;',
                   // style: 'border-right:0.1px solid #ECECEC;border-left:0.1px solid #ECECEC;border-bottom:0.1px solid #ECECEC;border-top:0.1px solid #ECECEC;background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);border-radius: 10px 10px 10px 10px;',
-                  style: 'border-right:0.1px solid #ECECEC;border-left:0.1px solid #ECECEC;border-bottom:0.1px solid #ECECEC;border-top:0.1px solid #ECECEC;background-color: white;border-radius: 10px 10px 10px 10px;box-shadow: 5px 10px 18px #888888;',
-                  layout: {
+                 // style: 'border-right:0.1px solid #ECECEC;border-left:0.1px solid #ECECEC;border-bottom:0.1px solid #ECECEC;border-top:0.1px solid #ECECEC;background-color: white;border-radius: 10px 10px 10px 10px;box-shadow: 5px 10px 18px #888888;',
+                 style: 'border:1px solid #fac;background-color: white;border-radius: 10px 10px 10px 10px;',
+                 layout: {
                       type: 'hbox',
                       pack: 'center',
                       align: 'center',
@@ -2743,7 +2757,7 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
     },
     items:[
         {
-            html: '<div  style="color:white;text-align: center;font-size:10px;width:100%;">Nearest Perks</div>'
+            html: '<div  style="color:white;text-align: center;font-size:10px;width:100%;">Eligible Perks</div>'
         }
     ]
 },
@@ -2812,7 +2826,7 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
     },
     items:[
         {
-            html: '<div onclick="FloatPanel_NearestRedemptionShow()" style="color: #9CA3AF;text-align: center;font-size:10px;width:100%;">All Stamp Perks</div>'
+            html: '<div onclick="FloatPanel_NearestRedemptionShow()" style="color: #9CA3AF;text-align: center;font-size:10px;width:100%;">All Point Perks</div>'
         }
     ]
 }
@@ -2824,7 +2838,8 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
     //width: 1050,
     //height: 280,
     height: '100%',
-    margin: '-50 0 0 0',
+   // margin: '-150 0 0 0',
+    margin: '-100 0 0 0',
     //style: {
     //    // background: '#D25959',
     //    background: 'rgba(76, 175, 80, 0.3);',
@@ -2891,6 +2906,8 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
                                        width: 60,
                                        height: 40,
                                        zIndex: 100,
+                                         hidden: true,
+                                       id: 'containerLoyaltyPointNearestRedeemItem_ItemPoint0',
                                        margin: '0px 0px -23px -188px',
                                        style: 'border-right:1px solid #ECECEC;border-left:1px solid #ECECEC;border-bottom:1px solid #ECECEC;border-top:1px solid #ECECEC;background-color: purple;border-radius: 0px 0px 10px 10px;',
                                       // style: 'background-color:transparent;',
@@ -2903,6 +2920,7 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
                                           {
                                               width: '100%',
                                               zIndex: 100,
+                                              hidden: true,
                                               id: 'htmlLoyaltyPointNearestRedeemItem_ItemPoint0',
                                               html: '<div style="color:white;text-align: left;font-size:18px;width:100%;font-weight:bold;margin:10px 0px 0px 2px">0 <div style="color:white;text-align: left;font-size:9px;width:100%;font-weight:bold;margin:-7px 0px 0px 2px">Points</div></div>',
 
@@ -2984,6 +3002,8 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
                               width: 60,
                                        height: 40,
                                        zIndex: 100,
+                                       hidden: true,
+                                       id: 'containerLoyaltyPointNearestRedeemItem_ItemPoint1',
                                        margin: '0px 0px -23px -188px',
                                        style: 'border-right:1px solid #ECECEC;border-left:1px solid #ECECEC;border-bottom:1px solid #ECECEC;border-top:1px solid #ECECEC;background-color: purple;border-radius: 0px 0px 10px 10px;',
                               layout: {
@@ -2995,6 +3015,7 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
                                  {
                                      width: '100%',
                                      zIndex: 100,
+                                     hidden: true,
                                      id: 'htmlLoyaltyPointNearestRedeemItem_ItemPoint1',
                                      html: '<div style="color:purple;text-align: left;font-size:18px;width:100%;font-weight:bold;margin:10px 0px 0px 2px">0 <div style="color:purple;text-align: left;font-size:9px;width:100%;font-weight:bold;margin:-7px 0px 0px 2px">Points</div></div>',
 
@@ -3076,6 +3097,8 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
                     items: [
                           {
                               xtype: 'container',
+                              hidden: true,
+                              id: 'containerLoyaltyPointNearestRedeemItem_ItemPoint2',
                               width: 60,
                               height: 40,
                               zIndex: 100,
@@ -3090,6 +3113,7 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
                                  {
                                      width: '100%',
                                      zIndex: 100,
+                                     hidden: true,
                                      id: 'htmlLoyaltyPointNearestRedeemItem_ItemPoint2',
                                      html: '<div style="color:purple;text-align: left;font-size:18px;width:100%;font-weight:bold;margin:10px 0px 0px 2px">0 <div style="color:purple;text-align: left;font-size:9px;width:100%;font-weight:bold;margin:-7px 0px 0px 2px">Points</div></div>',
 
@@ -3168,6 +3192,8 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
                     items: [
                           {
                               xtype: 'container',
+                              hidden: true,
+                              id: 'containerLoyaltyPointNearestRedeemItem_ItemPoint3',
                               width: 60,
                               height: 40,
                               zIndex: 100,
@@ -3182,6 +3208,7 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
                                  {
                                      width: '100%',
                                      zIndex: 100,
+                                     hidden: true,
                                      id: 'htmlLoyaltyPointNearestRedeemItem_ItemPoint3',
                                      html: '<div style="color:purple;text-align: left;font-size:18px;width:100%;font-weight:bold;margin:10px 0px 0px 2px">0 <div style="color:purple;text-align: left;font-size:9px;width:100%;font-weight:bold;margin:-7px 0px 0px 2px">Points</div></div>',
 
@@ -3263,6 +3290,8 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
                     items: [
                           {
                               xtype: 'container',
+                              hidden: true,
+                              id: 'containerLoyaltyPointNearestRedeemItem_ItemPoint4',
                               width: 60,
                               height: 40,
                               zIndex: 100,
@@ -3277,6 +3306,7 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
                                  {
                                      width: '100%',
                                      zIndex: 100,
+                                     hidden: true,
                                      id: 'htmlLoyaltyPointNearestRedeemItem_ItemPoint4',
                                      html: '<div style="color:purple;text-align: left;font-size:18px;width:100%;font-weight:bold;margin:10px 0px 0px 2px">0 <div style="color:purple;text-align: left;font-size:9px;width:100%;font-weight:bold;margin:-7px 0px 0px 2px">Points</div></div>',
 
@@ -3359,6 +3389,8 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
                             items: [
                                   {
                                       xtype: 'container',
+                                      hidden: true,
+                                      id: 'containerLoyaltyPointNearestRedeemItem_ItemPoint5',
                                       width: 60,
                                       height: 40,
                                       zIndex: 100,
@@ -3373,6 +3405,7 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
                                          {
                                              width: '100%',
                                              zIndex: 100,
+                                             hidden: true,
                                              id: 'htmlLoyaltyPointNearestRedeemItem_ItemPoint5',
                                              html: '<div style="color:purple;text-align: left;font-size:18px;width:100%;font-weight:bold;margin:10px 0px 0px 2px">0 <div style="color:purple;text-align: left;font-size:9px;width:100%;font-weight:bold;margin:-7px 0px 0px 2px">Points</div></div>',
         
@@ -3462,6 +3495,8 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
                                       width: 60,
                                       height: 40,
                                       zIndex: 100,
+                                      hidden: true,
+                                      id: 'containerLoyaltyPointNearestRedeemItem_ItemPoint6',
                                       margin: '0px 0px -23px -188px',
                                       style: 'border-right:1px solid #ECECEC;border-left:1px solid #ECECEC;border-bottom:1px solid #ECECEC;border-top:1px solid #ECECEC;background-color: purple;border-radius: 0px 0px 10px 10px;',
                                       layout: {
@@ -3473,6 +3508,7 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
                                          {
                                              width: '100%',
                                              zIndex: 100,
+                                             hidden: true,
                                              id: 'htmlLoyaltyPointNearestRedeemItem_ItemPoint6',
                                              html: '<div style="color:purple;text-align: left;font-size:18px;width:100%;font-weight:bold;margin:10px 0px 0px 2px">0 <div style="color:purple;text-align: left;font-size:9px;width:100%;font-weight:bold;margin:-7px 0px 0px 2px">Points</div></div>',
         
@@ -3561,6 +3597,8 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
                                       width: 60,
                                       height: 40,
                                       zIndex: 100,
+                                      hidden: true,
+                                      id: 'containerLoyaltyPointNearestRedeemItem_ItemPoint7',
                                       margin: '0px 0px -23px -188px',
                                       style: 'border-right:1px solid #ECECEC;border-left:1px solid #ECECEC;border-bottom:1px solid #ECECEC;border-top:1px solid #ECECEC;background-color: purple;border-radius: 0px 0px 10px 10px;',
                                       layout: {
@@ -3572,6 +3610,7 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
                                          {
                                              width: '100%',
                                              zIndex: 100,
+                                             hidden: true,
                                              id: 'htmlLoyaltyPointNearestRedeemItem_ItemPoint7',
                                              html: '<div style="color:purple;text-align: left;font-size:18px;width:100%;font-weight:bold;margin:10px 0px 0px 2px">0 <div style="color:purple;text-align: left;font-size:9px;width:100%;font-weight:bold;margin:-7px 0px 0px 2px">Points</div></div>',
         
@@ -3657,6 +3696,8 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
                                       width: 60,
                                       height: 40,
                                       zIndex: 100,
+                                      hidden: true,
+                                      id: 'containerLoyaltyPointNearestRedeemItem_ItemPoint8',
                                       margin: '0px 0px -23px -188px',
                                       style: 'border-right:1px solid #ECECEC;border-left:1px solid #ECECEC;border-bottom:1px solid #ECECEC;border-top:1px solid #ECECEC;background-color: purple;border-radius: 0px 0px 10px 10px;',
                                       layout: {
@@ -3668,6 +3709,7 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
                                          {
                                              width: '100%',
                                              zIndex: 100,
+                                             hidden: true,
                                              id: 'htmlLoyaltyPointNearestRedeemItem_ItemPoint8',
                                              html: '<div style="color:purple;text-align: left;font-size:18px;width:100%;font-weight:bold;margin:10px 0px 0px 2px">0 <div style="color:purple;text-align: left;font-size:9px;width:100%;font-weight:bold;margin:-7px 0px 0px 2px">Points</div></div>',
         
@@ -3738,7 +3780,800 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
 
 },
             ]
+        },
+         /////////Voucher Tab
+        {
+            xtype: 'container',
+            width: '100%',
+            height: '100%',
+            style: "background-color: transparent;",
+            title: 'Vouchers',
+            id:'containerTabpanelAyohaMerchantRewards_Vouchers',
+            layout: {
+                type: 'vbox',
+                pack: 'start',
+                align: 'center',
+            },
+            items:[
+                {
+                    xtype: 'container',
+                    width: '100%',
+                    margin: '5 0 0 20',
+                    height:25,
+                    style: 'background-color:transparent',
+                    layout: {
+                        type: 'hbox',
+                        pack: 'start',
+                        align: 'center',
+                    },
+                    items: [
+                {
+                    xtype: 'container',
+                    width: 110,
+                    margin: '0 0 0 0',
+                    height:17,
+                    style: 'background-color:black;border-radius:30px',
+                    layout: {
+                        type: 'hbox',
+                        pack: 'center',
+                        align: 'center',
+                    },
+                    items:[
+                        {
+                            id: 'html_AyohaMerchantRewards_VoucherTab_ReadyVoucher',
+                            html: '<div  style="color:white;text-align: center;font-size:10px;width:100%;">Entitled Vouchers</div>'
+                        }
+                    ]
+                },
+             
+                {
+                    xtype: 'container',
+                    width: 7,
+                    margin: '0 0 0 0',
+                    height:17,
+                },
+                {
+                    xtype: 'container',
+                    width: 58,
+                    margin: '0 0 0 0',
+                    height:17,
+                    style: 'background-color:transparent;border-radius:30px;border:0.5px solid  #9CA3AF',
+                    layout: {
+                        type: 'hbox',
+                        pack: 'center',
+                        align: 'center',
+                    },
+                    items:[
+                        {
+                            html: '<div  style="color: #9CA3AF;text-align: center;font-size:10px;width:100%;">Redeem</div>'
+                        }
+                    ]
+                },
+                {
+                    xtype: 'container',
+                    width: 7,
+                    margin: '0 0 0 0',
+                    height:17,
+                },
+                {
+                    xtype: 'container',
+                    width: 58,
+                    margin: '0 0 0 0',
+                    height:17,
+                    style: 'background-color:transparent;border-radius:30px;border:0.5px solid  #9CA3AF',
+                    layout: {
+                        type: 'hbox',
+                        pack: 'center',
+                        align: 'center',
+                    },
+                    items:[
+                        {
+                            html: '<div  style="color: #9CA3AF;text-align: center;font-size:10px;width:100%;">Approved</div>'
+                        }
+                    ]
+                },
+                {
+                    xtype: 'container',
+                    width: 7,
+                    margin: '0 0 0 0',
+                    height:17,
+                },
+                {
+                    xtype: 'container',
+                    width: 75,
+                    margin: '0 0 0 0',
+                    height:17,
+                    style: 'background-color:transparent;border-radius:30px;border:0.5px solid  #9CA3AF',
+                    layout: {
+                        type: 'hbox',
+                        pack: 'center',
+                        align: 'center',
+                    },
+                    items:[
+                        {
+                            html: '<div onclick="FloatPanel_AyohaRewardVoucherList_DashboardShow();" style="color: #9CA3AF;text-align: center;font-size:10px;width:100%;">All Vouchers</div>'
+                        }
+                    ]
+                }
+                    ]
+                },
+                {
+                    xtype: 'container',
+                    width: '98%',
+                    /// hidden:true,
+                    margin: '15 0 0 0',
+                    height: '100%',
+                    style: 'background-color: transparent;',
+                    //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
+                    //  style: 'background-color: white;border-left: 1px solid #D0D3D4;border-right: 1px solid #D0D3D4;border-bottom: 1px solid #D0D3D4;border-top: 1px solid #D0D3D4;box-shadow: 5px 10px 18px #888888;border-radius: 10px 10px 10px 10px;',
+                    layout: {
+                        type: 'vbox',
+                        pack: 'start',
+                        align: 'center',
+                    },
+                    items: [
+                         {
+
+                             id: 'FloatPanel_DashboardMerchantRewardVoucherList',
+                             // margin: '-4 0 0 14',
+                             margin: '0 0 0 0',
+                             // store: _DataStore_AyohaRewardVoucherEntitledUserLoadBySubscriberAccNoVoucherTypeStore,
+                             // grouped: true,
+                             xtype: 'dataview',
+                             // xtype: 'list',
+                             height: '100%',
+                             //scrollable: true,
+                             // scrollable: 'horizontal',
+                             // indicators: false,
+                             //inline: true,
+                             inline: {
+                                 wrap: false
+                             },
+                             scrollable: {
+                                 direction: 'horizontal',
+                                 indicators: false,
+                             },
+                             width: '100%',
+                             cls: 'dataview-item',
+                             //itemTpl: '<div onclick="FloatPanel_AyohaRewardVoucherDetailShow(' + "'" + '{VoucherName}' + "'" + ',' + "'" + '{VoucherImgPath}' + "'" + ',' + "'" + '{EntitledVoucherEndDate}' + "'" + ',' + "'" + '{DayLeft}' + "'" + ',' + "'" + '{VoucherCode}' + "'" + ');" style="width:{ModifiedWidth}px; height: 200px; border:3px none white;padding:0px 0px;margin:0px 0px 0px 10px;"><img src="{VoucherImgPath}" style="width:99%; height: 160px; border:2px dashed grey;"/><br><div style="margin:-4px 0px 0px 0px;text-align:left;color:black;font-family: Arial; font-size:12px;word-wrap: break-word;font-weight:normal;">Valid Until:{EntitledVoucherEndDate}</div><br><div style="margin:-26px 0px 0px 0px;text-align:left;color:#c800ffc9;font-family: Arial; font-size:10px;word-wrap: break-word;font-weight:bold;">Day Left:{DayLeft}</div></div>',
+                             itemTpl: '<div onclick="FloatPanel_AyohaRewardVoucherDetailShow(' + "'" + '{VoucherName}' + "'" + ',' + "'" + '{VoucherImgPath}' + "'" + ',' + "'" + '{EntitledVoucherEndDate}' + "'" + ',' + "'" + '{DayLeft}' + "'" + ',' + "'" + '{VoucherCode}' + "'" + ',' + "'" + '{VoucherAmount}' + "'" + ');" style="width:{ModifiedWidth}px; height: 200px; border:3px none white;padding:0px 0px;margin:0px 0px 0px 10px;"><img src="{VoucherImgPath}" style="width:95%; height: 160px; border:2px dashed grey;"/><br><div style="margin:-4px 0px 0px 0px;text-align:left;color:black;font-family: Arial; font-size:12px;word-wrap: break-word;font-weight:normal;width:95%"><table style="border-collapse:collapse;border-spacing:0;width:100%;" class="tg"><thead><tr><th style="background-color:transparent;border-color:transparent;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:12px;font-weight:normal;overflow:hidden;padding:0px 1px;text-align:left;vertical-align:middle;word-break:normal">Valid Until:<b>{EntitledVoucherEndDate}</b></th><th style="background-color:transparent;border-color:transparent;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:12px;font-weight:normal;overflow:hidden;padding:0px 6px;text-align:right;vertical-align:middle;word-break:normal">Amount:<b>RM{VoucherAmount}</b></th></tr></thead><tbody><tr><td style="background-color:transparent;border-color:transparent;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:10px;overflow:hidden;padding:0px 1px;text-align:left;vertical-align:top;word-break:normal;color:purple;font-weight:bold;" colspan="2"><div style="margin:-1px 0px 0px 0px">Day Left:{DayLeft}</div></td></tr></tbody></table></div></div>',
+                             emptyText: '<div style="width:{ModifiedWidth}px; height: 200px; border:3px none white;padding:0px 0px;margin:0px 0px 0px 10px;"><img src="resources/icons/NotAvailableVoucher.png" style="width:99%; height: 160px; border:2px dashed grey;"/><br><div style="margin:-5px 0px 0px 0px;text-align:left;color:black;font-family: Arial; font-size:9px;word-wrap: break-word;font-weight:normal;width:100%">*Vouchers will be given by ayoha reward to users when users reach a certain level of spending in the ayoha merchant online store and also certain special days such as religious days, national independence day, birthdays and so on.</div></div>',
+                         },
+                         //{
+                         //    height: 198,
+                         //    width: '100%',
+                         //    // margin: '0 0 0 14',
+                         //    //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
+                         //    html: '<img style="width:100%;height:198px;border-radius: 10px 10px 10px 10px;" src="resources/icons/AyohaVoucher.png"/>'
+                         //    // html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: 70%"><col style="width:30%"></colgroup><thead><tr><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:right;vertical-align:top;word-break:normal" rowspan="2"><div style="margin:0px 0px 0px -15px">TARMIZI RAHIM</div><br>Lagendary Card Mortal </th><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:middle;word-break:normal" rowspan="2">Medal</th></tr><tr></tr></thead></table>'
+                         //},
+                    ]
+                },
+            ]
+        },
+        ////////Contest Tab
+        {
+            xtype: 'container',
+            width: '100%',
+            height: '100%',
+            style: "background-color: transparent;",
+            title: 'Contests',
+            id:'containerTabpanelAyohaMerchantRewards_Contests',
+            layout: {
+                type: 'vbox',
+                pack: 'start',
+                align: 'center',
+            },
+            items:[
+                {
+                    xtype: 'container',
+                    //  style: 'background-image: url("resources/icons/bgfront07.png"); background-size: 100% 400px;background-repeat: no-repeat;',
+                    width: '100%',
+                    margin: '0 0 0 0',
+                    height: '100%',
+                    style: "background-color: transparent;",
+                    layout: {
+                        type: 'vbox',
+                        pack: 'start',
+                        align: 'center'
+
+                    },
+                    items: [
+                        {
+                            xtype: 'container',
+                            width: '100%',
+                            margin: '5 0 0 20',
+                            height:25,
+                            style: 'background-color:transparent',
+                            layout: {
+                                type: 'hbox',
+                                pack: 'start',
+                                align: 'center',
+                            },
+                            items: [
+                        {
+                            xtype: 'container',
+                            width: 110,
+                            margin: '0 0 0 0',
+                            height:17,
+                            style: 'background-color:black;border-radius:30px',
+                            layout: {
+                                type: 'hbox',
+                                pack: 'center',
+                                align: 'center',
+                            },
+                            items:[
+                                {
+                                    id: 'html_AyohaMerchantRewards_VoucherTab_EntitledContests',
+                                    html: '<div  style="color:white;text-align: center;font-size:10px;width:100%;">Available Contest</div>'
+                                }
+                            ]
+                        },
+                     
+                        {
+                            xtype: 'container',
+                            width: 7,
+                            margin: '0 0 0 0',
+                            height:17,
+                        },
+                        {
+                            xtype: 'container',
+                            width: 58,
+                            margin: '0 0 0 0',
+                            height:17,
+                            style: 'background-color:transparent;border-radius:30px;border:0.5px solid  #9CA3AF',
+                            layout: {
+                                type: 'hbox',
+                                pack: 'center',
+                                align: 'center',
+                            },
+                            items:[
+                                {
+                                    html: '<div  style="color: #9CA3AF;text-align: center;font-size:10px;width:100%;">Joined</div>'
+                                }
+                            ]
+                        },
+                        {
+                            xtype: 'container',
+                            width: 7,
+                            margin: '0 0 0 0',
+                            height:17,
+                        },
+                        {
+                            xtype: 'container',
+                            width: 58,
+                            margin: '0 0 0 0',
+                            height:17,
+                            style: 'background-color:transparent;border-radius:30px;border:0.5px solid  #9CA3AF',
+                            layout: {
+                                type: 'hbox',
+                                pack: 'center',
+                                align: 'center',
+                            },
+                            items:[
+                                {
+                                    html: '<div  style="color: #9CA3AF;text-align: center;font-size:10px;width:100%;">Result</div>'
+                                }
+                            ]
+                        },
+                        {
+                            xtype: 'container',
+                            width: 7,
+                            margin: '0 0 0 0',
+                            height:17,
+                        },
+                        {
+                            xtype: 'container',
+                            width: 75,
+                            margin: '0 0 0 0',
+                            height:17,
+                            style: 'background-color:transparent;border-radius:30px;border:0.5px solid  #9CA3AF',
+                            layout: {
+                                type: 'hbox',
+                                pack: 'center',
+                                align: 'center',
+                            },
+                            items:[
+                                {
+                                    html: '<div onclick="FloatPanel_AyohaRewardVoucherList_DashboardShow();" style="color: #9CA3AF;text-align: center;font-size:10px;width:100%;">All Contests</div>'
+                                }
+                            ]
+                        }
+                            ]
+                        },
+
+
+                       
+
+
+                                       {
+                                           xtype: 'container',
+                                           width: '100%',
+                                           height: '100%',
+                                           margin: '-5 0 0 0',
+                                           //  hidden: true,
+                                           id: 'htmlFloatPanel_DashboardMerchantMembershipContest',
+                                           style: "background-color: transparent;",
+                                           // style: "background-color: transparent;border-right:1px solid #ECF0F1;border-left:1px solid #ECF0F1;border-bottom:1px solid #ECF0F1;border-top:1px solid #ECF0F1;border-radius: 10px 10px 10px 10px;",
+                                           layout: {
+                                               type: 'vbox',
+                                               pack: 'start',
+                                               align: 'center'
+
+                                           },
+                                           items: [
+                                               {
+
+                                                   id: 'FloatPanel_MerchantReward_MembershipContest',
+                                                  // margin: '-30 0 0 0',
+                                                   margin: '0 0 0 0',
+                                                   //  store: _DataStore_AyohaStoreCartLoadCartAyohaStore,
+                                                   // grouped: true,
+                                                   xtype: 'dataview',
+                                                   //xtype: 'list',
+                                                   height: '100%',
+                                                   style: "background-color: transparent;",
+                                                   inline: {
+                                                       wrap: false
+                                                   },
+                                                   scrollable: {
+                                                       direction: 'horizontal',
+                                                       indicators: false,
+                                                   },
+                                                   width: '100%',
+
+
+                                                   //  itemTpl: '<div class="myContent" style="background-color:transparent;width:100%;height:500px;">' +
+                                                   //   '&nbsp;&nbsp;<div style="font-family:Arial, sans-serif;font-size:14px;color:black;font-weight:bold;text-align:left;width:100%;"><img src="{EnterpriseLogo}" style="width:30px;height:30px;border-radius:50%;margin:0px 0px 0px 20px;"/><div style="margin:-28px 0px 0px 55px;">{EnterpriseName}</div></div>&nbsp;&nbsp;<br>' +
+                                                   //   '&nbsp;&nbsp;<img  onclick="FloatPanel_DashboardMerchantReward_MembershipEventDetailShow(' + "'" + '{EnterpriseLogo}' + "'" + ',' + "'" + '{EnterpriseName}' + "'" + ',' + "'" + '{EventCoverPhoto}' + "'" + ',' + "'" + '{EventName}' + "'" + ',' + "'" + '{EventStartDate_Day}' + "'" + ',' + "'" + '{EventStartDate_Month}' + "'" + ',' + "'" + '{EventStartTime}' + "'" + ',' + "'" + '{EventEndDate_Day}' + "'" + ',' + "'" + '{EventEndDate_Month}' + "'" + ',' + "'" + '{EventEndTime}' + "'" + ',' + "'" + '{EventLocationName}' + "'" + ',' + "'" + '{ModifiedWidth}' + "'" + ',' + "'" + '{EventDescription}' + "'" + ',' + "'" + '{EventLocationCoordinate}' + "'" + ',' + "'" + '{EventUrlTicket}' + "'" + ',' + "'" + '{EventCode}' + "'" + ',' + "'" + '{EnterpriseAccNo}' + "'" + ',' + "'" + '{RespondStatus}' + "'" + ',{ID});"   src="{AdvertisementImgPath}" style="width:{ModifiedWidth}px;height:400px;margin:-15px 0px 0px 0px;"/>&nbsp;&nbsp;<br>' +
+                                                   //  '<div onclick="FloatPanel_DashboardMerchantReward_MembershipEventDetailShow(' + "'" + '{EnterpriseLogo}' + "'" + ',' + "'" + '{EnterpriseName}' + "'" + ',' + "'" + '{EventCoverPhoto}' + "'" + ',' + "'" + '{EventName}' + "'" + ',' + "'" + '{EventStartDate_Day}' + "'" + ',' + "'" + '{EventStartDate_Month}' + "'" + ',' + "'" + '{EventStartTime}' + "'" + ',' + "'" + '{EventEndDate_Day}' + "'" + ',' + "'" + '{EventEndDate_Month}' + "'" + ',' + "'" + '{EventEndTime}' + "'" + ',' + "'" + '{EventLocationName}' + "'" + ',' + "'" + '{ModifiedWidth}' + "'" + ',' + "'" + '{EventDescription}' + "'" + ',' + "'" + '{EventLocationCoordinate}' + "'" + ',' + "'" + '{EventUrlTicket}' + "'" + ',' + "'" + '{EventCode}' + "'" + ',' + "'" + '{EnterpriseAccNo}' + "'" + ',' + "'" + '{RespondStatus}' + "'" + ',{ID});" style="width: 50%; float:left; height:50px; background:white; margin:0px"><div style="font-family:Arial, sans-serif;font-size:10px;color:black;font-weight:normal;text-align:left;padding:0px 10px;">Contest Period:</div><br><div style="font-family:Arial, sans-serif;font-size:14px;color:black;font-weight:bold;margin:-22px 0px 0px 0px;text-align:left;padding:0px 10px;">{StartDate_DateOnly} - {EndDate_DateOnly}</div></div><div style="width: 50%; float:left; height:50px; background:white; margin:0px;word-break: break-all;"><div style="margin:0px 0px 0px 0px;text-align:right;color:black;font-family: Arial; font-size:10px;word-wrap: break-word;word-break: break-all;white-space: break-spaces;font-weight:normal;width:100%;height:30px;padding:0px 7px;">Contest Status<br><div style="margin:0px 0px 0px 0px;text-align:right;color:black;font-family: Arial; font-size:12px;word-wrap: break-word;word-break: break-all;white-space: break-spaces;font-weight:bold;width:100%;padding:0px 0px;">{ContestStatus_ContestStatus}</div></div></div><br>' +
+
+
+                                                   //'</div>',
+
+
+                                                   itemTpl: '<div class="myContent" style="background-color:transparent;width:100%;height:400px;">' +
+                                                 '&nbsp;&nbsp;<div style="font-family:Arial, sans-serif;font-size:12px;color:black;font-weight:bold;text-align:left;width:100%;"><img src="{EnterpriseLogo}" style="width:30px;height:30px;border-radius:50%;margin:0px 0px 0px 20px;"/><div style="margin:-28px 0px 0px 55px;">{EnterpriseName}</div></div>&nbsp;&nbsp;<br><br>' +
+                                                 '&nbsp;&nbsp;<img  onclick="FloatPanel_DashboardMerchantReward_MembershipContestDetailShow({ID});"   src="{AdvertisementImgPath}" style="width:{ModifiedWidth}px;height:300px;margin:-25px 0px 0px 0px;"/>&nbsp;&nbsp;<br>' +
+                                               // '<div onclick="FloatPanel_DashboardMerchantReward_MembershipContestDetailShow({ID});" style="width: 50%; float:left; height:30px; background:white; margin:0px"><div style="font-family:Arial, sans-serif;font-size:10px;color:black;font-weight:normal;text-align:left;padding:0px 10px;">Contest Name:</div><br><div style="font-family:Arial, sans-serif;font-size:14px;color:black;font-weight:bold;margin:-22px 0px 0px 0px;text-align:left;padding:0px 10px;">{ContestName}</div></div><br>' +
+                                                '<div onclick="FloatPanel_DashboardMerchantReward_MembershipContestDetailShow({ID});" style="width: 50%; float:left; height:30px; background:transparent; margin:0px 0px 0px 0px;"><div style="font-family:Arial, sans-serif;font-size:10px;color:black;font-weight:normal;text-align:left;padding:0px 10px;">Contest Name:</div><br><div style="font-family:Arial, sans-serif;font-size:14px;color:black;font-weight:bold;margin:-17px 0px 0px 0px;text-align:left;padding:0px 10px;">{ContestName}</div></div><div style="width: 50%; float:left; height:30px; background:transparent; margin:0px 0px 0px 0px;word-break: break-all;"><div style="margin:0px 0px 0px 0px;text-align:right;color:black;font-family: Arial; font-size:10px;word-wrap: break-word;word-break: break-all;white-space: break-spaces;font-weight:normal;width:100%;height:30px;padding:0px 7px;">Contest Host:<br><div style="margin:0px 0px 0px 0px;text-align:right;color:black;font-family: Arial; font-size:12px;word-wrap: break-word;word-break: break-all;white-space: break-spaces;font-weight:bold;width:100%;padding:0px 0px;"><div style="font-family:Arial, sans-serif;font-size:14px;color:black;font-weight:bold;text-align:right;width:100%;"><div style="margin:0px 0px 0px 0px;">{EnterpriseName}</div></div></div></div></div><br>' +
+
+                                                '<div onclick="FloatPanel_DashboardMerchantReward_MembershipContestDetailShow({ID});" style="width: 50%; float:left; height:30px; background:transparent; margin:15px 0px 0px 0px;"><div style="font-family:Arial, sans-serif;font-size:10px;color:black;font-weight:normal;text-align:left;padding:0px 10px;">Contest Period:</div><br><div style="font-family:Arial, sans-serif;font-size:14px;color:black;font-weight:bold;margin:-17px 0px 0px 0px;text-align:left;padding:0px 10px;">{StartDate_DateOnly} - {EndDate_DateOnly}</div></div><div style="width: 50%; float:left; height:30px; background:transparent; margin:15px 0px 0px 0px;word-break: break-all;"><div style="margin:0px 0px 0px 0px;text-align:right;color:black;font-family: Arial; font-size:10px;word-wrap: break-word;word-break: break-all;white-space: break-spaces;font-weight:normal;width:100%;height:30px;padding:0px 7px;">Contest Status<br><div style="margin:0px 0px 0px 0px;text-align:right;color:black;font-family: Arial; font-size:14px;word-wrap: break-word;word-break: break-all;white-space: break-spaces;font-weight:bold;width:100%;padding:0px 0px;">{ContestStatus_ContestStatus}</div></div></div><br>' +
+
+
+                                              '</div>',
+
+
+                                                   emptyText: '<div  style="background-color:transparent;width:100%; height: 400px;margin:20px 0px 0px 0px;text-align:center"><img src="resources/icons/NoMembershipEventContest01.jpg" style="width: 95%; height: 500px;"/></div>',
+
+                                               },
+                                           ]
+                                       },
+
+
+                    ]
+                },
+            ]
+        },
+        ///////////Event Tab
+        {
+            xtype: 'container',
+            width: '100%',
+            height: '100%',
+            style: "background-color: transparent;",
+            title: 'Events',
+            id:'containerTabpanelAyohaMerchantRewards_Events',
+            layout: {
+                type: 'vbox',
+                pack: 'start',
+                align: 'center',
+            },
+            items:[
+                {
+                    xtype: 'container',
+                    //  style: 'background-image: url("resources/icons/bgfront07.png"); background-size: 100% 400px;background-repeat: no-repeat;',
+                    width: '100%',
+                    margin: '0 0 0 0',
+                    height: '100%',
+                    style: "background-color: transparent;",
+                    layout: {
+                        type: 'vbox',
+                        pack: 'start',
+                        align: 'center'
+
+                    },
+                    items: [
+                        {
+                            xtype: 'container',
+                            width: '100%',
+                            margin: '5 0 0 20',
+                            height:25,
+                            style: 'background-color:transparent',
+                            layout: {
+                                type: 'hbox',
+                                pack: 'start',
+                                align: 'center',
+                            },
+                            items: [
+                        {
+                            xtype: 'container',
+                            width: 100,
+                            margin: '0 0 0 0',
+                            height:17,
+                            style: 'background-color:black;border-radius:30px',
+                            layout: {
+                                type: 'hbox',
+                                pack: 'center',
+                                align: 'center',
+                            },
+                            items:[
+                                {
+                                    id: 'html_AyohaMerchantRewards_VoucherTab_InvitedEvents',
+                                    html: '<div  style="color:white;text-align: center;font-size:10px;width:100%;">Event Invitations</div>'
+                                }
+                            ]
+                        },
+                     
+                        {
+                            xtype: 'container',
+                            width: 7,
+                            margin: '0 0 0 0',
+                            height:17,
+                        },
+                        {
+                            xtype: 'container',
+                            width: 58,
+                            margin: '0 0 0 0',
+                            height:17,
+                            style: 'background-color:transparent;border-radius:30px;border:0.5px solid  #9CA3AF',
+                            layout: {
+                                type: 'hbox',
+                                pack: 'center',
+                                align: 'center',
+                            },
+                            items:[
+                                {
+                                    html: '<div  style="color: #9CA3AF;text-align: center;font-size:10px;width:100%;">Interested</div>'
+                                }
+                            ]
+                        },
+                        {
+                            xtype: 'container',
+                            width: 7,
+                            margin: '0 0 0 0',
+                            height:17,
+                        },
+                        {
+                            xtype: 'container',
+                            width: 68,
+                            margin: '0 0 0 0',
+                            height:17,
+                            style: 'background-color:transparent;border-radius:30px;border:0.5px solid  #9CA3AF',
+                            layout: {
+                                type: 'hbox',
+                                pack: 'center',
+                                align: 'center',
+                            },
+                            items:[
+                                {
+                                    html: '<div  style="color: #9CA3AF;text-align: center;font-size:10px;width:100%;">I Will Joined</div>'
+                                }
+                            ]
+                        },
+                        {
+                            xtype: 'container',
+                            width: 7,
+                            margin: '0 0 0 0',
+                            height:17,
+                        },
+                        {
+                            xtype: 'container',
+                            width: 65,
+                            margin: '0 0 0 0',
+                            height:17,
+                            style: 'background-color:transparent;border-radius:30px;border:0.5px solid  #9CA3AF',
+                            layout: {
+                                type: 'hbox',
+                                pack: 'center',
+                                align: 'center',
+                            },
+                            items:[
+                                {
+                                    html: '<div onclick="FloatPanel_AyohaRewardVoucherList_DashboardShow();" style="color: #9CA3AF;text-align: center;font-size:10px;width:100%;">All Events</div>'
+                                }
+                            ]
+                        }
+                            ]
+                        },
+
+
+                         
+
+
+                                       {
+                                           xtype: 'container',
+                                           width: '100%',
+                                           height: '100%',
+                                           margin: '-5 0 0 0',
+                                           //  hidden: true,
+                                           id: 'htmlFloatPanel_DashboardMerchantMembershipEvent',
+                                           style: "background-color: transparent;",
+                                           // style: "background-color: transparent;border-right:1px solid #ECF0F1;border-left:1px solid #ECF0F1;border-bottom:1px solid #ECF0F1;border-top:1px solid #ECF0F1;border-radius: 10px 10px 10px 10px;",
+                                           layout: {
+                                               type: 'vbox',
+                                               pack: 'start',
+                                               align: 'center'
+
+                                           },
+                                           items: [
+                                               {
+
+                                                   id: 'FloatPanel_MerchantReward_MembershipEvent',
+                                                   margin: '0 0 0 0',
+                                                   //  store: _DataStore_AyohaStoreCartLoadCartAyohaStore,
+                                                   // grouped: true,
+                                                   xtype: 'dataview',
+                                                   //xtype: 'list',
+                                                   height: '100%',
+                                                   style: "background-color: transparent;",
+                                                   inline: {
+                                                       wrap: false
+                                                   },
+                                                   scrollable: {
+                                                       direction: 'horizontal',
+                                                       indicators: false,
+                                                   },
+                                                   width: '100%',
+                                                   // cls: 'dataview-item',
+                                                   //itemTpl: '<table style="border-collapse:collapse;border-spacing:0;width:100%;background-color:white;margin:-10px 0px 0px -13px;height:158px;"><thead><tr><th style="background-color:transparent;border-color:transparent;border-bottom:2px none #F3F1F5;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:middle;word-break:normal;width:35%" rowspan="2"><img onclick="FloatPanel_AyohaStore_SaleItemDetailShow({ID},' + "'" + '{ItemCode}' + "'" + ',' + "'" + '{ItemCoverImg}' + "'" + ',' + "'" + '{ItemName}' + "'" + ',' + "'" + '{ItemPrice}' + "'" + ',' + "'" + '{MerchantPoint}' + "'" + ',' + "'" + '{AyohaPoint}' + "'" + ',' + "'" + '{CampaignType}' + "'" + ',' + "'" + '{MembershipCardCode}' + "'" + ',' + "'" + '{ProductCategoryName}' + "'" + ',' + "'" + '{ItemCategoryCode}' + "'" + ',' + "'" + '{MembershipCardName}' + "'" + ',' + "'" + '{ItemCoverImgName}' + "'" + ',' + "'" + '{Stock}' + "'" + ',' + "'" + '{ShowStock}' + "'" + ',' + "'" + '{StockAlert}' + "'" + ',' + "'" + '{ModifiedItemDescriptions_01}' + "'" + ',' + "'" + '{ItemPriceDiscount}' + "'" + ',' + "'" + '{ItemPriceDiscountRate}' + "'" + ')"  src="{ItemCoverImg}" style="width: 124.52px; height: 156px; border:1px none grey;border-radius:0px 0px 0px 0px;" /></th><th style="background-color:transparent;border-bottom:2px none #F3F1F5;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:top;word-break: break-all;width:65%" colspan="2"><div style="font-family:Arial, sans-serif;font-size:17px;font-weight:bold;word-break: break-all;margin:5px 0px 0px 0px;height:auto;width:100%;" onclick="FloatPanel_AyohaStore_SaleItemDetailShow({ID},' + "'" + '{ItemCode}' + "'" + ',' + "'" + '{ItemCoverImg}' + "'" + ',' + "'" + '{ItemName}' + "'" + ',' + "'" + '{ItemPrice}' + "'" + ',' + "'" + '{MerchantPoint}' + "'" + ',' + "'" + '{AyohaPoint}' + "'" + ',' + "'" + '{CampaignType}' + "'" + ',' + "'" + '{MembershipCardCode}' + "'" + ',' + "'" + '{ProductCategoryName}' + "'" + ',' + "'" + '{ItemCategoryCode}' + "'" + ',' + "'" + '{MembershipCardName}' + "'" + ',' + "'" + '{ItemCoverImgName}' + "'" + ',' + "'" + '{Stock}' + "'" + ',' + "'" + '{ShowStock}' + "'" + ',' + "'" + '{StockAlert}' + "'" + ',' + "'" + '{ModifiedItemDescriptions_01}' + "'" + ',' + "'" + '{ItemPriceDiscount}' + "'" + ',' + "'" + '{ItemPriceDiscountRate}' + "'" + ')">{EventName}</div><br><div  style="font-family:Arial, sans-serif;font-size:17px;font-weight:bold;word-break:normal;margin:-17px 0px 0px 0px;color:#c800ffc9;width:100%;text-align:left;">{ModifiedPrice}</div><br>{Pointlabel}<br><div style="font-family:Arial, sans-serif;font-size:10px;font-weight:normal;word-break:break-all;margin:-15px 0px 0px 0px;height:35px" onclick="FloatPanel_AyohaStore_SaleItemDetailShow({ID},' + "'" + '{ItemCode}' + "'" + ',' + "'" + '{ItemCoverImg}' + "'" + ',' + "'" + '{ItemName}' + "'" + ',' + "'" + '{ItemPrice}' + "'" + ',' + "'" + '{MerchantPoint}' + "'" + ',' + "'" + '{AyohaPoint}' + "'" + ',' + "'" + '{CampaignType}' + "'" + ',' + "'" + '{MembershipCardCode}' + "'" + ',' + "'" + '{ProductCategoryName}' + "'" + ',' + "'" + '{ItemCategoryCode}' + "'" + ',' + "'" + '{MembershipCardName}' + "'" + ',' + "'" + '{ItemCoverImgName}' + "'" + ',' + "'" + '{Stock}' + "'" + ',' + "'" + '{ShowStock}' + "'" + ',' + "'" + '{StockAlert}' + "'" + ',' + "'" + '{ModifiedItemDescriptions_01}' + "'" + ',' + "'" + '{ItemPriceDiscount}' + "'" + ',' + "'" + '{ItemPriceDiscountRate}' + "'" + ')">{ModifiedItemDescriptions}</div></th></tr></thead></table>',
+
+                                                   //itemTpl: '<div class="myContent" style="background-color:white;width:100%;height:400px;">' +
+                                                   //     '&nbsp;&nbsp;<div style="font-family:Arial, sans-serif;font-size:14px;color:black;font-weight:bold;text-align:left;"><img src="{EnterpriseLogo}" style="width:30px;height:30px;border-radius:50%;margin:0px 0px 0px 20px;"/><div style="margin:-28px 0px 0px 55px;">{EnterpriseName}</div></div>&nbsp;&nbsp;<br>' +
+                                                   //    '&nbsp;&nbsp;<img src="{EventCoverPhoto}" style="width:390px;height:200px;margin:-10px 0px 0px 0px;"/>&nbsp;&nbsp;<br>' +
+                                                   //   '&nbsp;&nbsp;<div style="width: 90px; float:left; height:70px; background:white; margin:0px"><div style="font-family:Arial, sans-serif;font-size:40px;color:black;font-weight:bold;text-align:center;">{EventStartDate_Day}</div><br><div style="font-family:Arial, sans-serif;font-size:16px;color:red;font-weight:bold;margin:-22px 0px 0px 0px;text-align:center;">{EventStartDate_Month}</div></div><div style="width: 270px; float:left; height:70px; background:white; margin:0px;word-break: break-all;"><div style="margin:-5px 0px 0px 0px;text-align:left;color:black;font-family: Arial; font-size:14px;word-wrap: break-word;word-break: break-all;white-space: break-spaces;font-weight:bold;width:100%;margin:5px 0px 0px 0px;">{EventName}</div><br><div style="margin:-21px 0px 0px 0px;text-align:left;color:black;font-family: Arial; font-size:11px;word-wrap: break-word;word-break: break-all;white-space: break-spaces;font-weight:normal;width:100%;">{EventStartDate_Day} {EventStartDate_Month},{EventStartTime} - {EventEndDate_Day} {EventEndDate_Month},{EventEndTime}.</div><br><div style="margin:-21px 0px 0px 0px;text-align:left;color:black;font-family: Arial; font-size:11px;word-wrap: break-word;word-break: break-all;white-space: break-spaces;font-weight:normal;width:100%;">{EventLocationName}.</div></div></div>&nbsp;&nbsp;' +
+                                                   //   '&nbsp;&nbsp;<div style="width: 90px; float:left; height:30px; background:red; margin:0px"></div><div style="width: 270px; float:left; height:30px; background:black; margin:0px;word-break: break-all;"></div>&nbsp;&nbsp;' +
+                                                   //   '</div>',
+
+
+
+                                                   itemTpl: '<div class="myContent" style="background-color:transparent;width:100%;height:400px;">' +
+                                                    '&nbsp;&nbsp;<div style="font-family:Arial, sans-serif;font-size:12px;color:black;font-weight:bold;text-align:left;"><img src="{EnterpriseLogo}" style="width:30px;height:30px;border-radius:50%;margin:0px 0px 0px 20px;"/><div style="margin:-28px 0px 0px 55px;">{EnterpriseName}</div><div style="margin:-17px 0px 0px 0px;text-align:right">{ModifiedRespondStatusImg}</div></div>&nbsp;&nbsp;<br>' +
+
+                                                    // '&nbsp;&nbsp;<div style="width: 200px; float:left; height:30px; background:white;text-align:left;font-size:12px;"><img src="{EnterpriseLogo}" style="width:30px;height:30px;border-radius:50%;margin:0px 0px 0px 20px;"/><div style="margin:-28px 0px 0px 55px;">{EnterpriseName}</div></div><div style="width:200px; float:left; height:30px; background:white;text-align:right;font-size:12px;"><img src="resources/icons/like01.png" style="width:20px;height:20px;margin:8px 0px 0px 0px;"/></div>&nbsp;&nbsp;<br>' +
+                                                    '&nbsp;&nbsp;<img  onclick="FloatPanel_DashboardMerchantReward_MembershipEventDetailShow(' + "'" + '{EnterpriseLogo}' + "'" + ',' + "'" + '{EnterpriseName}' + "'" + ',' + "'" + '{EventCoverPhoto}' + "'" + ',' + "'" + '{EventName}' + "'" + ',' + "'" + '{EventStartDate_Day}' + "'" + ',' + "'" + '{EventStartDate_Month}' + "'" + ',' + "'" + '{EventStartTime}' + "'" + ',' + "'" + '{EventEndDate_Day}' + "'" + ',' + "'" + '{EventEndDate_Month}' + "'" + ',' + "'" + '{EventEndTime}' + "'" + ',' + "'" + '{EventLocationName}' + "'" + ',' + "'" + '{ModifiedWidth}' + "'" + ',' + "'" + '{EventDescription}' + "'" + ',' + "'" + '{EventLocationCoordinate}' + "'" + ',' + "'" + '{EventUrlTicket}' + "'" + ',' + "'" + '{EventCode}' + "'" + ',' + "'" + '{EnterpriseAccNo}' + "'" + ',' + "'" + '{RespondStatus}' + "'" + ',{ID});"   src="{EventCoverPhoto}" style="width:{ModifiedWidth}px;height:200px;margin:-15px 0px 0px 0px;"/>&nbsp;&nbsp;<br>' +
+                                                   '<div onclick="FloatPanel_DashboardMerchantReward_MembershipEventDetailShow(' + "'" + '{EnterpriseLogo}' + "'" + ',' + "'" + '{EnterpriseName}' + "'" + ',' + "'" + '{EventCoverPhoto}' + "'" + ',' + "'" + '{EventName}' + "'" + ',' + "'" + '{EventStartDate_Day}' + "'" + ',' + "'" + '{EventStartDate_Month}' + "'" + ',' + "'" + '{EventStartTime}' + "'" + ',' + "'" + '{EventEndDate_Day}' + "'" + ',' + "'" + '{EventEndDate_Month}' + "'" + ',' + "'" + '{EventEndTime}' + "'" + ',' + "'" + '{EventLocationName}' + "'" + ',' + "'" + '{ModifiedWidth}' + "'" + ',' + "'" + '{EventDescription}' + "'" + ',' + "'" + '{EventLocationCoordinate}' + "'" + ',' + "'" + '{EventUrlTicket}' + "'" + ',' + "'" + '{EventCode}' + "'" + ',' + "'" + '{EnterpriseAccNo}' + "'" + ',' + "'" + '{RespondStatus}' + "'" + ',{ID});" style="width: 90px; float:left; height:70px; background:transparent; margin:0px"><div style="font-family:Arial, sans-serif;font-size:40px;color:black;font-weight:bold;text-align:center;">{EventStartDate_Day}</div><br><div style="font-family:Arial, sans-serif;font-size:16px;color:red;font-weight:bold;margin:-22px 0px 0px 0px;text-align:center;">{EventStartDate_Month}</div></div><div style="width: 230px; float:left; height:70px; background:transparent; margin:0px;word-break: break-all;"><div style="margin:5px 0px 0px 0px;text-align:left;color:black;font-family: Arial; font-size:14px;word-wrap: break-word;word-break: break-all;white-space: break-spaces;font-weight:bold;width:100%;height:30px;">{EventName}<br><br><div style="margin:-14px 0px 0px 0px;text-align:left;color:black;font-family: Arial; font-size:11px;word-wrap: break-word;word-break: break-all;white-space: break-spaces;font-weight:normal;width:100%;">{EventStartDate_Day} {EventStartDate_Month},{EventStartTime} - {EventEndDate_Day} {EventEndDate_Month},{EventEndTime}.</div><br><div style="margin:-14px 0px 0px 0px;text-align:left;color:black;font-family: Arial; font-size:11px;word-wrap: break-word;word-break: break-all;white-space: break-spaces;font-weight:normal;width:100%;">{EventLocationName}.</div><br><div style="margin:-14px 0px 0px 0px;text-align:left;color:black;font-family: Arial; font-size:11px;word-wrap: break-word;word-break: break-all;white-space: break-spaces;font-weight:normal;width:100%;"><b>({RespondStatus_IwillAttendCount})</b> Will Attend, <b>({RespondStatus_InterestedCount})</b> Interested</div></div></div><br>' +
+
+
+                                                //'{ModifiedRespondStatus}' +
+                                                 '</div>',
+
+
+                                                   //'<div style="width: 90px; float:left; height:70px; background:red; margin:0px"></div><div style="width: 230px; float:left; height:70px; background:black; margin:0px;"></div>' ,
+
+
+                                                   // itemTpl: '<table style="border-collapse:collapse;border-spacing:0;width:100%;"><tr><td style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 10px;text-align:center;vertical-align:middle;" colspan="2"><img src="{EventCoverPhoto}" style="width:400px;height:250px"/></td></tr><tr><td style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:5px 20px;text-align:center;vertical-align:middle;color:black;"><div style="font-family:Arial, sans-serif;font-size:40px;color:black;font-weight:bold;">{EventStartDate_Day}</div><br><div style="font-family:Arial, sans-serif;font-size:16px;color:red;font-weight:bold;margin:-17px 0px 0px 0px;">{EventStartDate_Month}</div></td><td style="background-color:#ffffff;border-color:#ffffff;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:16px;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:middle;word-wrap: break-word;word-break: break-all;white-space: break-spaces;"><div style="margin:-5px 0px 0px 0px;text-align:left;color:black;font-family: Arial; font-size:14px;word-wrap: break-word;word-break: break-all;white-space: break-spaces;font-weight:bold;width:100%;margin:5px 0px 0px 0px;">{EventName}</div></td></tr><tr><td style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:center;vertical-align:middle;word-break:normal" colspan="2">Berminat | Akan Hadir</td></tr></table>',
+                                                   emptyText: '<div  style="background-color:transparent;width: 100%; height: 400px;margin:20px 0px 0px 0px;padding:5px 10px"><img src="resources/icons/NoMembershipEvent.jpg" style="width: 100%; height: 400px;"/></div>',
+
+                                               },
+                                           ]
+                                       },
+
+
+                    ]
+                },
+            ]
+        },
+        ///////////Discount Tab
+        {
+            xtype: 'container',
+            width: '100%',
+            height: '100%',
+            style: "background-color: transparent;",
+            title: 'Discounts',
+            id:'containerTabpanelAyohaMerchantRewards_Discounts',
+            layout: {
+                type: 'vbox',
+                pack: 'start',
+                align: 'center',
+            },  
+            items:[
+                {
+                    xtype: 'container',
+                    //  style: 'background-image: url("resources/icons/bgfront07.png"); background-size: 100% 400px;background-repeat: no-repeat;',
+                    width: '100%',
+                    margin: '0 0 0 0',
+                    height: '100%',
+                    style: "background-color: transparent;",
+                    layout: {
+                        type: 'vbox',
+                        pack: 'start',
+                        align: 'center'
+                
+                    },
+                    items: [
+                          
+                        {
+                            xtype: 'container',
+                            width: '100%',
+                            margin: '5 0 0 20',
+                            height:25,
+                            style: 'background-color:transparent',
+                            layout: {
+                                type: 'hbox',
+                                pack: 'start',
+                                align: 'center',
+                            },
+                            items: [
+                        {
+                            xtype: 'container',
+                            width: 100,
+                            margin: '0 0 0 0',
+                            height:17,
+                            style: 'background-color:black;border-radius:30px',
+                            layout: {
+                                type: 'hbox',
+                                pack: 'center',
+                                align: 'center',
+                            },
+                            items:[
+                                {
+                                    id: 'html_AyohaMerchantRewards_VoucherTab_EligibleVoucher',
+                                    html: '<div  style="color:white;text-align: center;font-size:10px;width:100%;">Eligible Discounts</div>'
+                                }
+                            ]
+                        },
+                     
+                        {
+                            xtype: 'container',
+                            width: 7,
+                            margin: '0 0 0 0',
+                            height:17,
+                        },
+                        {
+                            xtype: 'container',
+                            width: 58,
+                            margin: '0 0 0 0',
+                            height:17,
+                            style: 'background-color:transparent;border-radius:30px;border:0.5px solid  #9CA3AF',
+                            layout: {
+                                type: 'hbox',
+                                pack: 'center',
+                                align: 'center',
+                            },
+                            items:[
+                                {
+                                    html: '<div  style="color: #9CA3AF;text-align: center;font-size:10px;width:100%;">Redeem</div>'
+                                }
+                            ]
+                        },
+                        {
+                            xtype: 'container',
+                            width: 7,
+                            margin: '0 0 0 0',
+                            height:17,
+                        },
+                        {
+                            xtype: 'container',
+                            width: 58,
+                            margin: '0 0 0 0',
+                            height:17,
+                            style: 'background-color:transparent;border-radius:30px;border:0.5px solid  #9CA3AF',
+                            layout: {
+                                type: 'hbox',
+                                pack: 'center',
+                                align: 'center',
+                            },
+                            items:[
+                                {
+                                    html: '<div  style="color: #9CA3AF;text-align: center;font-size:10px;width:100%;">Approved</div>'
+                                }
+                            ]
+                        },
+                        {
+                            xtype: 'container',
+                            width: 7,
+                            margin: '0 0 0 0',
+                            height:17,
+                        },
+                        {
+                            xtype: 'container',
+                            width: 75,
+                            margin: '0 0 0 0',
+                            height:17,
+                            style: 'background-color:transparent;border-radius:30px;border:0.5px solid  #9CA3AF',
+                            layout: {
+                                type: 'hbox',
+                                pack: 'center',
+                                align: 'center',
+                            },
+                            items:[
+                                {
+                                    html: '<div onclick="FloatPanel_AyohaRewardVoucherList_DashboardShow();" style="color: #9CA3AF;text-align: center;font-size:10px;width:100%;">All Discounts</div>'
+                                }
+                            ]
+                        }
+                            ]
+                        },
+                         
+                
+                
+                
+                         
+                
+                         {
+                            xtype: 'container',
+                            width: '100%',
+                            height:'100%',
+                            margin: '0 0 0 0',
+                            //  hidden: true,
+                            id: 'containerAyohaMerchantRewardDiscountListt',
+                            style: "background-color: transparent;",
+                            // style: "background-color: transparent;border-right:1px solid #ECF0F1;border-left:1px solid #ECF0F1;border-bottom:1px solid #ECF0F1;border-top:1px solid #ECF0F1;border-radius: 10px 10px 10px 10px;",
+                            layout: {
+                                type: 'vbox',
+                                pack: 'start',
+                                align: 'center'
+                
+                            },
+                            items: [
+                                {
+                
+                                    id: 'AyohaMerchantRewardDiscountList',
+                                    xtype: 'dataview',
+                                    margin: '-5 0 0 0',
+                                    // xtype: 'list',
+                                    height:'100%',
+                                    //scrollable: true,
+                                    // scrollable: 'horizontal',
+                                    // indicators: false,
+                                    //inline: true,
+                                    inline: {
+                                        wrap: false
+                                    },
+                                    scrollable: {
+                                        direction: 'horizontal',
+                                        indicators: false,
+                                    },
+                                    width: '100%',
+                                    cls: 'dataview-item',
+                
+                
+                                    //  itemTpl: '<div class="myContent" style="background-color:transparent;width:100%;height:500px;">' +
+                                    //   '&nbsp;&nbsp;<div style="font-family:Arial, sans-serif;font-size:14px;color:black;font-weight:bold;text-align:left;width:100%;"><img src="{EnterpriseLogo}" style="width:30px;height:30px;border-radius:50%;margin:0px 0px 0px 20px;"/><div style="margin:-28px 0px 0px 55px;">{EnterpriseName}</div></div>&nbsp;&nbsp;<br>' +
+                                    //   '&nbsp;&nbsp;<img  onclick="FloatPanel_DashboardMerchantReward_MembershipEventDetailShow(' + "'" + '{EnterpriseLogo}' + "'" + ',' + "'" + '{EnterpriseName}' + "'" + ',' + "'" + '{EventCoverPhoto}' + "'" + ',' + "'" + '{EventName}' + "'" + ',' + "'" + '{EventStartDate_Day}' + "'" + ',' + "'" + '{EventStartDate_Month}' + "'" + ',' + "'" + '{EventStartTime}' + "'" + ',' + "'" + '{EventEndDate_Day}' + "'" + ',' + "'" + '{EventEndDate_Month}' + "'" + ',' + "'" + '{EventEndTime}' + "'" + ',' + "'" + '{EventLocationName}' + "'" + ',' + "'" + '{ModifiedWidth}' + "'" + ',' + "'" + '{EventDescription}' + "'" + ',' + "'" + '{EventLocationCoordinate}' + "'" + ',' + "'" + '{EventUrlTicket}' + "'" + ',' + "'" + '{EventCode}' + "'" + ',' + "'" + '{EnterpriseAccNo}' + "'" + ',' + "'" + '{RespondStatus}' + "'" + ',{ID});"   src="{AdvertisementImgPath}" style="width:{ModifiedWidth}px;height:400px;margin:-15px 0px 0px 0px;"/>&nbsp;&nbsp;<br>' +
+                                    //  '<div onclick="FloatPanel_DashboardMerchantReward_MembershipEventDetailShow(' + "'" + '{EnterpriseLogo}' + "'" + ',' + "'" + '{EnterpriseName}' + "'" + ',' + "'" + '{EventCoverPhoto}' + "'" + ',' + "'" + '{EventName}' + "'" + ',' + "'" + '{EventStartDate_Day}' + "'" + ',' + "'" + '{EventStartDate_Month}' + "'" + ',' + "'" + '{EventStartTime}' + "'" + ',' + "'" + '{EventEndDate_Day}' + "'" + ',' + "'" + '{EventEndDate_Month}' + "'" + ',' + "'" + '{EventEndTime}' + "'" + ',' + "'" + '{EventLocationName}' + "'" + ',' + "'" + '{ModifiedWidth}' + "'" + ',' + "'" + '{EventDescription}' + "'" + ',' + "'" + '{EventLocationCoordinate}' + "'" + ',' + "'" + '{EventUrlTicket}' + "'" + ',' + "'" + '{EventCode}' + "'" + ',' + "'" + '{EnterpriseAccNo}' + "'" + ',' + "'" + '{RespondStatus}' + "'" + ',{ID});" style="width: 50%; float:left; height:50px; background:white; margin:0px"><div style="font-family:Arial, sans-serif;font-size:10px;color:black;font-weight:normal;text-align:left;padding:0px 10px;">Contest Period:</div><br><div style="font-family:Arial, sans-serif;font-size:14px;color:black;font-weight:bold;margin:-22px 0px 0px 0px;text-align:left;padding:0px 10px;">{StartDate_DateOnly} - {EndDate_DateOnly}</div></div><div style="width: 50%; float:left; height:50px; background:white; margin:0px;word-break: break-all;"><div style="margin:0px 0px 0px 0px;text-align:right;color:black;font-family: Arial; font-size:10px;word-wrap: break-word;word-break: break-all;white-space: break-spaces;font-weight:normal;width:100%;height:30px;padding:0px 7px;">Contest Status<br><div style="margin:0px 0px 0px 0px;text-align:right;color:black;font-family: Arial; font-size:12px;word-wrap: break-word;word-break: break-all;white-space: break-spaces;font-weight:bold;width:100%;padding:0px 0px;">{ContestStatus_ContestStatus}</div></div></div><br>' +
+                
+                
+                                    //'</div>',
+                
+                
+                                    itemTpl: '<div onclick="FloatPanel_MerchantDiscountLoyaltyDescriptionShow(`{DiscountCode}`,`{EnterpriseAccNo}`);" class="myContent" style="background-color:transparent;width:100%;height:500px;">' +
+                                  '&nbsp;&nbsp;&nbsp;<div style="font-family:Arial, sans-serif;font-size:12px;color:black;font-weight:bold;text-align:left;width:100%;"><img src="{EnterpriseLogo}" style="width:30px;height:30px;border-radius:50%;margin:0px 0px 0px 20px;"/><div style="margin:-28px 0px 0px 55px;">{EnterpriseName}</div></div>&nbsp;&nbsp;&nbsp;<br><br>' +
+                                  '&nbsp;&nbsp;&nbsp;<img  onclick="FloatPanel_MerchantDiscountLoyaltyDescriptionShow(`{DiscountCode}`,`{EnterpriseAccNo}`);"   src="{DiscountImgPath}" style="width:{ModifiedWidth}px; height: 280px;margin:-25px 0px 0px 0px;"/>&nbsp;&nbsp;&nbsp;<br>' +
+                                // '<div onclick="FloatPanel_DashboardMerchantReward_MembershipContestDetailShow({ID});" style="width: 50%; float:left; height:30px; background:white; margin:0px"><div style="font-family:Arial, sans-serif;font-size:10px;color:black;font-weight:normal;text-align:left;padding:0px 10px;">Contest Name:</div><br><div style="font-family:Arial, sans-serif;font-size:14px;color:black;font-weight:bold;margin:-22px 0px 0px 0px;text-align:left;padding:0px 10px;">{ContestName}</div></div><br>' +
+                                 '<div onclick="FloatPanel_MerchantDiscountLoyaltyDescriptionShow(`{DiscountCode}`,`{EnterpriseAccNo}`);" style="width: 50%; float:left; height:30px; background:transparent; margin:0px 0px 0px 0px;"><div style="font-family:Arial, sans-serif;font-size:10px;color:black;font-weight:normal;text-align:left;padding:0px 10px;"  onclick="FloatPanel_MerchantDiscountLoyaltyDescriptionShow(`{DiscountCode}`,`{EnterpriseAccNo}`);">Discount Name:</div><br><div onclick="FloatPanel_MerchantDiscountLoyaltyDescriptionShow(`{DiscountCode}`,`{EnterpriseAccNo}`);" style="font-family:Arial, sans-serif;font-size:14px;color:black;font-weight:bold;margin:-17px 0px 0px 0px;text-align:left;padding:0px 10px;">{DiscountName}</div></div><div style="width: 50%; float:left; height:30px; background:transparent; margin:0px 0px 0px 0px;word-break: break-all;" onclick="FloatPanel_MerchantDiscountLoyaltyDescriptionShow(`{DiscountCode}`,`{EnterpriseAccNo}`);"><div style="margin:0px 0px 0px 0px;text-align:right;color:black;font-family: Arial; font-size:10px;word-wrap: break-word;word-break: break-all;white-space: break-spaces;font-weight:normal;width:100%;height:30px;padding:0px 7px;"><br><div style="margin:0px 0px 0px 0px;text-align:right;color:black;font-family: Arial; font-size:12px;word-wrap: break-word;word-break: break-all;white-space: break-spaces;font-weight:bold;width:100%;padding:0px 0px;" onclick="FloatPanel_MerchantDiscountLoyaltyDescriptionShow(`{DiscountCode}`,`{EnterpriseAccNo}`);"><div style="font-family:Arial, sans-serif;font-size:14px;color:black;font-weight:bold;text-align:right;width:100%;"><div style="margin:0px 0px 0px 0px;"></div></div></div></div></div><br>' +
+                
+                                 '<div onclick="FloatPanel_MerchantDiscountLoyaltyDescriptionShow(`{DiscountCode}`,`{EnterpriseAccNo}`);" style="width: 50%; float:left; height:30px; background:transparent; margin:15px 0px 0px 0px;"><div style="font-family:Arial, sans-serif;font-size:10px;color:black;font-weight:normal;text-align:left;padding:0px 10px;"  onclick="FloatPanel_MerchantDiscountLoyaltyDescriptionShow(`{DiscountCode}`,`{EnterpriseAccNo}`);">Discount Rate:</div><br><div onclick="FloatPanel_MerchantDiscountLoyaltyDescriptionShow(`{DiscountCode}`,`{EnterpriseAccNo}`);" style="font-family:Arial, sans-serif;font-size:14px;color:black;font-weight:bold;margin:-17px 0px 0px 0px;text-align:left;padding:0px 10px;">{DiscountPercent}%</div></div><div style="width: 50%; float:left; height:30px; background:transparent; margin:15px 0px 0px 0px;word-break: break-all;" onclick="FloatPanel_MerchantDiscountLoyaltyDescriptionShow(`{DiscountCode}`,`{EnterpriseAccNo}`);"><div style="margin:0px 0px 0px 0px;text-align:right;color:black;font-family: Arial; font-size:10px;word-wrap: break-word;word-break: break-all;white-space: break-spaces;font-weight:normal;width:100%;height:30px;padding:0px 7px;" onclick="FloatPanel_MerchantDiscountLoyaltyDescriptionShow(`{DiscountCode}`,`{EnterpriseAccNo}`);">Valid Until<br><div style="margin:0px 0px 0px 0px;text-align:right;color:black;font-family: Arial; font-size:14px;word-wrap: break-word;word-break: break-all;white-space: break-spaces;font-weight:bold;width:100%;padding:0px 0px;" onclick="FloatPanel_MerchantDiscountLoyaltyDescriptionShow(`{DiscountCode}`,`{EnterpriseAccNo}`);">{ModifiedDiscountEndDate}</div></div></div><br>' +
+                
+                
+                               '</div>',
+                
+                
+                                    emptyText: '<div  style="background-color:transparent;width:100%; height: 280px;margin:20px 0px 0px 0px;text-align:center"><img src="resources/icons/NoMembershipEventContest01.jpg" style="width: 95%; height: 500px;"/></div>',
+                
+                                },
+                            ]
+                        },
+                
+                
+                
+                
+                
+                    ]
+                },
+            ]
         }
+
      ]
 },
 
@@ -3896,55 +4731,6 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
 
 
 
-                                                    ///////////////////////////////////////////////////////
-                                                    //Loyalty Point Nearest Redeem Item
-
-                                                                {
-                                                                    xtype: 'container',
-                                                                    width: '100%',
-                                                                    // hidden: true,
-                                                                    margin: '10 0 0 0',
-                                                                    id: 'containerLoyaltyPointNearestRedeemItem_Header',
-                                                                    style: {
-                                                                        // background: '#D25959',
-                                                                        background: 'transparent',
-                                                                        // border: '2px'
-                                                                    },
-                                                                    //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
-                                                                    // style: 'border-bottom:2px solid #D25959;background-color:transparent',
-                                                                    layout: {
-                                                                        type: 'hbox',
-                                                                        pack: 'left',
-                                                                        align: 'left',
-                                                                    },
-                                                                    items: [
-                                                                         {
-                                                                             margin: '8 0 0 14',
-                                                                             id: 'htmlLoyaltyPointNearestRedeemItem_Header',
-                                                                             //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
-                                                                             html: '<div style="color:black;text-align: center;font-size:12px;width:100%;">2).-Point Loyalty Redemption</div>'
-                                                                             // html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: 70%"><col style="width:30%"></colgroup><thead><tr><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:right;vertical-align:top;word-break:normal" rowspan="2"><div style="margin:0px 0px 0px -15px">TARMIZI RAHIM</div><br>Lagendary Card Mortal </th><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:middle;word-break:normal" rowspan="2">Medal</th></tr><tr></tr></thead></table>'
-                                                                         },
-
-                                                                          {
-                                                                              xtype: 'button',
-                                                                              id: 'btnLoyaltyPointNearestRedeemItem_Header',
-                                                                              // hidden: true,
-                                                                              //  badgeText: '1',
-                                                                              margin: '0 0 0 0',
-                                                                              height: 30,
-                                                                              width: 30,
-                                                                              html: '<img src="resources/icons/latestpoint03.png" width="20" height="20" alt="Company Name">',
-                                                                              ui: 'plain',
-                                                                              handler: function () {
-                                                                                  //  FloatPanel_AyohaReward_ContestAdvertisementShow();
-                                                                              }
-                                                                          },
-
-
-
-                                                                    ]
-                                                                },
 
 
                                                   
@@ -3954,106 +4740,55 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
 
                                                     //////////////////// voucher redemption
                                                   //////////////////Ayoha Voucher////
-                    {
-                        xtype: 'container',
-                        width: '100%',
-                        /// hidden:true,
-                        // margin: '120 0 0 0',
-                        style: {
-                            // background: '#D25959',
-                            background: 'transparent',
-                            // border: '2px'
-                        },
-                        //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
-                        // style: 'border-bottom:2px solid #D25959;background-color:transparent',
-                        layout: {
-                            type: 'hbox',
-                            pack: 'center',
-                            align: 'center',
-                        },
-                        items: [
-                             {
-                                 margin: '0 0 0 14',
-                                 //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
-                                 id: 'htmlFloatPanel_DashboardMerchantRewardTxt',
-                                 html: '<div style="color:black;text-align: center;font-size:12px;width:100%;"><b>Merchant Voucher</b></div>'
-                                 // html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: 70%"><col style="width:30%"></colgroup><thead><tr><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:right;vertical-align:top;word-break:normal" rowspan="2"><div style="margin:0px 0px 0px -15px">TARMIZI RAHIM</div><br>Lagendary Card Mortal </th><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:middle;word-break:normal" rowspan="2">Medal</th></tr><tr></tr></thead></table>'
-                             },
-                              {
-                                  xtype: 'spacer'
-                              },
-            {
+            //         {
+            //             xtype: 'container',
+            //             width: '100%',
+            //             /// hidden:true,
+            //             // margin: '120 0 0 0',
+            //             style: {
+            //                 // background: '#D25959',
+            //                 background: 'transparent',
+            //                 // border: '2px'
+            //             },
+            //             //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
+            //             // style: 'border-bottom:2px solid #D25959;background-color:transparent',
+            //             layout: {
+            //                 type: 'hbox',
+            //                 pack: 'center',
+            //                 align: 'center',
+            //             },
+            //             items: [
+            //                  {
+            //                      margin: '0 0 0 14',
+            //                      //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
+            //                      id: 'htmlFloatPanel_DashboardMerchantRewardTxt',
+            //                      html: '<div style="color:black;text-align: center;font-size:12px;width:100%;"><b>Merchant Voucher</b></div>'
+            //                      // html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: 70%"><col style="width:30%"></colgroup><thead><tr><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:right;vertical-align:top;word-break:normal" rowspan="2"><div style="margin:0px 0px 0px -15px">TARMIZI RAHIM</div><br>Lagendary Card Mortal </th><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:middle;word-break:normal" rowspan="2">Medal</th></tr><tr></tr></thead></table>'
+            //                  },
+            //                   {
+            //                       xtype: 'spacer'
+            //                   },
+            // {
 
-                margin: '0 14 0 0',
-                //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
-                html: '<div onclick="FloatPanel_AyohaRewardVoucherList_DashboardShow();" style="color:black;text-align: center;font-size:12px;width:100%;"><u>View All</u></div>'
-                // html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: 70%"><col style="width:30%"></colgroup><thead><tr><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:right;vertical-align:top;word-break:normal" rowspan="2"><div style="margin:0px 0px 0px -15px">TARMIZI RAHIM</div><br>Lagendary Card Mortal </th><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:middle;word-break:normal" rowspan="2">Medal</th></tr><tr></tr></thead></table>'
+            //     margin: '0 14 0 0',
+            //     //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
+            //     html: '<div onclick="FloatPanel_AyohaRewardVoucherList_DashboardShow();" style="color:black;text-align: center;font-size:12px;width:100%;"><u>View All</u></div>'
+            //     // html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: 70%"><col style="width:30%"></colgroup><thead><tr><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:right;vertical-align:top;word-break:normal" rowspan="2"><div style="margin:0px 0px 0px -15px">TARMIZI RAHIM</div><br>Lagendary Card Mortal </th><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:middle;word-break:normal" rowspan="2">Medal</th></tr><tr></tr></thead></table>'
 
-            }
+            // }
 
-                              //{
-                              //    margin: '-4 0 0 14',
-                              //    //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
-                              //    html: '<div style="color:black;text-align: center;font-size:12px;width:100%;">1.-Welcome/Opening Account Voucer</div>'
-                              //    // html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: 70%"><col style="width:30%"></colgroup><thead><tr><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:right;vertical-align:top;word-break:normal" rowspan="2"><div style="margin:0px 0px 0px -15px">TARMIZI RAHIM</div><br>Lagendary Card Mortal </th><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:middle;word-break:normal" rowspan="2">Medal</th></tr><tr></tr></thead></table>'
-                              //},
-                        ]
-                    },
+            //                   //{
+            //                   //    margin: '-4 0 0 14',
+            //                   //    //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
+            //                   //    html: '<div style="color:black;text-align: center;font-size:12px;width:100%;">1.-Welcome/Opening Account Voucer</div>'
+            //                   //    // html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: 70%"><col style="width:30%"></colgroup><thead><tr><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:right;vertical-align:top;word-break:normal" rowspan="2"><div style="margin:0px 0px 0px -15px">TARMIZI RAHIM</div><br>Lagendary Card Mortal </th><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:middle;word-break:normal" rowspan="2">Medal</th></tr><tr></tr></thead></table>'
+            //                   //},
+            //             ]
+            //         },
 
 
 
-                     {
-                         xtype: 'container',
-                         width: '98%',
-                         /// hidden:true,
-                         margin: '10 0 0 0',
-                         height: 222,
-                         style: 'background-color: transparent;',
-                         //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
-                         //  style: 'background-color: white;border-left: 1px solid #D0D3D4;border-right: 1px solid #D0D3D4;border-bottom: 1px solid #D0D3D4;border-top: 1px solid #D0D3D4;box-shadow: 5px 10px 18px #888888;border-radius: 10px 10px 10px 10px;',
-                         layout: {
-                             type: 'vbox',
-                             pack: 'center',
-                             align: 'center',
-                         },
-                         items: [
-                              {
-
-                                  id: 'FloatPanel_DashboardMerchantRewardVoucherList',
-                                  // margin: '-4 0 0 14',
-                                  // margin: '-5 0 0 0',
-                                  // store: _DataStore_AyohaRewardVoucherEntitledUserLoadBySubscriberAccNoVoucherTypeStore,
-                                  // grouped: true,
-                                  xtype: 'dataview',
-                                  // xtype: 'list',
-                                  height: 200,
-                                  //scrollable: true,
-                                  // scrollable: 'horizontal',
-                                  // indicators: false,
-                                  //inline: true,
-                                  inline: {
-                                      wrap: false
-                                  },
-                                  scrollable: {
-                                      direction: 'horizontal',
-                                      indicators: false,
-                                  },
-                                  width: '100%',
-                                  cls: 'dataview-item',
-                                  //itemTpl: '<div onclick="FloatPanel_AyohaRewardVoucherDetailShow(' + "'" + '{VoucherName}' + "'" + ',' + "'" + '{VoucherImgPath}' + "'" + ',' + "'" + '{EntitledVoucherEndDate}' + "'" + ',' + "'" + '{DayLeft}' + "'" + ',' + "'" + '{VoucherCode}' + "'" + ');" style="width:{ModifiedWidth}px; height: 200px; border:3px none white;padding:0px 0px;margin:0px 0px 0px 10px;"><img src="{VoucherImgPath}" style="width:99%; height: 160px; border:2px dashed grey;"/><br><div style="margin:-4px 0px 0px 0px;text-align:left;color:black;font-family: Arial; font-size:12px;word-wrap: break-word;font-weight:normal;">Valid Until:{EntitledVoucherEndDate}</div><br><div style="margin:-26px 0px 0px 0px;text-align:left;color:#c800ffc9;font-family: Arial; font-size:10px;word-wrap: break-word;font-weight:bold;">Day Left:{DayLeft}</div></div>',
-                                  itemTpl: '<div onclick="FloatPanel_AyohaRewardVoucherDetailShow(' + "'" + '{VoucherName}' + "'" + ',' + "'" + '{VoucherImgPath}' + "'" + ',' + "'" + '{EntitledVoucherEndDate}' + "'" + ',' + "'" + '{DayLeft}' + "'" + ',' + "'" + '{VoucherCode}' + "'" + ',' + "'" + '{VoucherAmount}' + "'" + ');" style="width:{ModifiedWidth}px; height: 200px; border:3px none white;padding:0px 0px;margin:0px 0px 0px 10px;"><img src="{VoucherImgPath}" style="width:95%; height: 160px; border:2px dashed grey;"/><br><div style="margin:-4px 0px 0px 0px;text-align:left;color:black;font-family: Arial; font-size:12px;word-wrap: break-word;font-weight:normal;width:95%"><table style="border-collapse:collapse;border-spacing:0;width:100%;" class="tg"><thead><tr><th style="background-color:transparent;border-color:transparent;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:12px;font-weight:normal;overflow:hidden;padding:0px 1px;text-align:left;vertical-align:middle;word-break:normal">Valid Until:<b>{EntitledVoucherEndDate}</b></th><th style="background-color:transparent;border-color:transparent;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:12px;font-weight:normal;overflow:hidden;padding:0px 6px;text-align:right;vertical-align:middle;word-break:normal">Amount:<b>RM{VoucherAmount}</b></th></tr></thead><tbody><tr><td style="background-color:transparent;border-color:transparent;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:10px;overflow:hidden;padding:0px 1px;text-align:left;vertical-align:top;word-break:normal;color:purple;font-weight:bold;" colspan="2"><div style="margin:-1px 0px 0px 0px">Day Left:{DayLeft}</div></td></tr></tbody></table></div></div>',
-                                  emptyText: '<div style="width:{ModifiedWidth}px; height: 200px; border:3px none white;padding:0px 0px;margin:0px 0px 0px 10px;"><img src="resources/icons/NotAvailableVoucher.png" style="width:99%; height: 160px; border:2px dashed grey;"/><br><div style="margin:-5px 0px 0px 0px;text-align:left;color:black;font-family: Arial; font-size:9px;word-wrap: break-word;font-weight:normal;width:100%">*Vouchers will be given by ayoha reward to users when users reach a certain level of spending in the ayoha merchant online store and also certain special days such as religious days, national independence day, birthdays and so on.</div></div>',
-                              },
-                              //{
-                              //    height: 198,
-                              //    width: '100%',
-                              //    // margin: '0 0 0 14',
-                              //    //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
-                              //    html: '<img style="width:100%;height:198px;border-radius: 10px 10px 10px 10px;" src="resources/icons/AyohaVoucher.png"/>'
-                              //    // html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: 70%"><col style="width:30%"></colgroup><thead><tr><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:right;vertical-align:top;word-break:normal" rowspan="2"><div style="margin:0px 0px 0px -15px">TARMIZI RAHIM</div><br>Lagendary Card Mortal </th><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:middle;word-break:normal" rowspan="2">Medal</th></tr><tr></tr></thead></table>'
-                              //},
-                         ]
-                     },
+                     
 
 
 
@@ -4111,137 +4846,7 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
 
                               ///////Membership Contest
 
-                              {
-                                  xtype: 'container',
-                                  //  style: 'background-image: url("resources/icons/bgfront07.png"); background-size: 100% 400px;background-repeat: no-repeat;',
-                                  width: '100%',
-                                  margin: '120 0 0 0',
-                                  height: 600,
-                                  style: "background-color: transparent;",
-                                  layout: {
-                                      type: 'vbox',
-                                      pack: 'start',
-                                      align: 'center'
-
-                                  },
-                                  items: [
-                                         //////////////////////////MembershipContest
-
-
-                                       {
-                                           xtype: 'container',
-                                           width: '100%',
-                                           // hidden: true,
-                                           margin: '10 0 0 0',
-                                           id: 'containerFloatPanel_DashboardMerchantMembershipContest_Header',
-                                           style: {
-                                               // background: '#D25959',
-                                               background: 'transparent',
-                                               // border: '2px'
-                                           },
-                                           //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
-                                           // style: 'border-bottom:2px solid #D25959;background-color:transparent',
-                                           layout: {
-                                               type: 'hbox',
-                                               pack: 'left',
-                                               align: 'left',
-                                           },
-                                           items: [
-                                                {
-                                                    margin: '8 0 0 14',
-                                                    id: 'htmlFloatPanel_DashboardMerchantMembershipContest_Header',
-                                                    //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
-                                                    html: '<div style="color:black;text-align: center;font-size:14px;width:100%;font-weight:bold">Membership Contest</div>'
-                                                    // html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: 70%"><col style="width:30%"></colgroup><thead><tr><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:right;vertical-align:top;word-break:normal" rowspan="2"><div style="margin:0px 0px 0px -15px">TARMIZI RAHIM</div><br>Lagendary Card Mortal </th><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:middle;word-break:normal" rowspan="2">Medal</th></tr><tr></tr></thead></table>'
-                                                },
-
-                                                 {
-                                                     xtype: 'button',
-                                                     id: 'btnFloatPanel_DashboardMerchantMembershipContest_Header',
-                                                     // hidden: true,
-                                                     //  badgeText: '1',
-                                                     margin: '0 0 0 0',
-                                                     height: 30,
-                                                     width: 30,
-                                                     html: '<img src="resources/icons/latestpoint03.png" width="20" height="20" alt="Company Name">',
-                                                     ui: 'plain',
-                                                     handler: function () {
-                                                         //  FloatPanel_AyohaReward_ContestAdvertisementShow();
-                                                     }
-                                                 },
-
-
-
-                                           ]
-                                       },
-
-
-                                                     {
-                                                         xtype: 'container',
-                                                         width: '100%',
-                                                         height: 600,
-                                                         margin: '0 0 0 0',
-                                                         //  hidden: true,
-                                                         id: 'htmlFloatPanel_DashboardMerchantMembershipContest',
-                                                         style: "background-color: transparent;",
-                                                         // style: "background-color: transparent;border-right:1px solid #ECF0F1;border-left:1px solid #ECF0F1;border-bottom:1px solid #ECF0F1;border-top:1px solid #ECF0F1;border-radius: 10px 10px 10px 10px;",
-                                                         layout: {
-                                                             type: 'vbox',
-                                                             pack: 'center',
-                                                             align: 'center'
-
-                                                         },
-                                                         items: [
-                                                             {
-
-                                                                 id: 'FloatPanel_MerchantReward_MembershipContest',
-                                                                 margin: '-30 0 0 0',
-                                                                 //  store: _DataStore_AyohaStoreCartLoadCartAyohaStore,
-                                                                 // grouped: true,
-                                                                 xtype: 'dataview',
-                                                                 //xtype: 'list',
-                                                                 height: 600,
-                                                                 style: "background-color: transparent;",
-                                                                 inline: {
-                                                                     wrap: false
-                                                                 },
-                                                                 scrollable: {
-                                                                     direction: 'horizontal',
-                                                                     indicators: false,
-                                                                 },
-                                                                 width: '100%',
-
-
-                                                                 //  itemTpl: '<div class="myContent" style="background-color:transparent;width:100%;height:500px;">' +
-                                                                 //   '&nbsp;&nbsp;<div style="font-family:Arial, sans-serif;font-size:14px;color:black;font-weight:bold;text-align:left;width:100%;"><img src="{EnterpriseLogo}" style="width:30px;height:30px;border-radius:50%;margin:0px 0px 0px 20px;"/><div style="margin:-28px 0px 0px 55px;">{EnterpriseName}</div></div>&nbsp;&nbsp;<br>' +
-                                                                 //   '&nbsp;&nbsp;<img  onclick="FloatPanel_DashboardMerchantReward_MembershipEventDetailShow(' + "'" + '{EnterpriseLogo}' + "'" + ',' + "'" + '{EnterpriseName}' + "'" + ',' + "'" + '{EventCoverPhoto}' + "'" + ',' + "'" + '{EventName}' + "'" + ',' + "'" + '{EventStartDate_Day}' + "'" + ',' + "'" + '{EventStartDate_Month}' + "'" + ',' + "'" + '{EventStartTime}' + "'" + ',' + "'" + '{EventEndDate_Day}' + "'" + ',' + "'" + '{EventEndDate_Month}' + "'" + ',' + "'" + '{EventEndTime}' + "'" + ',' + "'" + '{EventLocationName}' + "'" + ',' + "'" + '{ModifiedWidth}' + "'" + ',' + "'" + '{EventDescription}' + "'" + ',' + "'" + '{EventLocationCoordinate}' + "'" + ',' + "'" + '{EventUrlTicket}' + "'" + ',' + "'" + '{EventCode}' + "'" + ',' + "'" + '{EnterpriseAccNo}' + "'" + ',' + "'" + '{RespondStatus}' + "'" + ',{ID});"   src="{AdvertisementImgPath}" style="width:{ModifiedWidth}px;height:400px;margin:-15px 0px 0px 0px;"/>&nbsp;&nbsp;<br>' +
-                                                                 //  '<div onclick="FloatPanel_DashboardMerchantReward_MembershipEventDetailShow(' + "'" + '{EnterpriseLogo}' + "'" + ',' + "'" + '{EnterpriseName}' + "'" + ',' + "'" + '{EventCoverPhoto}' + "'" + ',' + "'" + '{EventName}' + "'" + ',' + "'" + '{EventStartDate_Day}' + "'" + ',' + "'" + '{EventStartDate_Month}' + "'" + ',' + "'" + '{EventStartTime}' + "'" + ',' + "'" + '{EventEndDate_Day}' + "'" + ',' + "'" + '{EventEndDate_Month}' + "'" + ',' + "'" + '{EventEndTime}' + "'" + ',' + "'" + '{EventLocationName}' + "'" + ',' + "'" + '{ModifiedWidth}' + "'" + ',' + "'" + '{EventDescription}' + "'" + ',' + "'" + '{EventLocationCoordinate}' + "'" + ',' + "'" + '{EventUrlTicket}' + "'" + ',' + "'" + '{EventCode}' + "'" + ',' + "'" + '{EnterpriseAccNo}' + "'" + ',' + "'" + '{RespondStatus}' + "'" + ',{ID});" style="width: 50%; float:left; height:50px; background:white; margin:0px"><div style="font-family:Arial, sans-serif;font-size:10px;color:black;font-weight:normal;text-align:left;padding:0px 10px;">Contest Period:</div><br><div style="font-family:Arial, sans-serif;font-size:14px;color:black;font-weight:bold;margin:-22px 0px 0px 0px;text-align:left;padding:0px 10px;">{StartDate_DateOnly} - {EndDate_DateOnly}</div></div><div style="width: 50%; float:left; height:50px; background:white; margin:0px;word-break: break-all;"><div style="margin:0px 0px 0px 0px;text-align:right;color:black;font-family: Arial; font-size:10px;word-wrap: break-word;word-break: break-all;white-space: break-spaces;font-weight:normal;width:100%;height:30px;padding:0px 7px;">Contest Status<br><div style="margin:0px 0px 0px 0px;text-align:right;color:black;font-family: Arial; font-size:12px;word-wrap: break-word;word-break: break-all;white-space: break-spaces;font-weight:bold;width:100%;padding:0px 0px;">{ContestStatus_ContestStatus}</div></div></div><br>' +
-
-
-                                                                 //'</div>',
-
-
-                                                                 itemTpl: '<div class="myContent" style="background-color:transparent;width:100%;height:500px;">' +
-                                                               '&nbsp;&nbsp;<div style="font-family:Arial, sans-serif;font-size:12px;color:black;font-weight:bold;text-align:left;width:100%;"><img src="{EnterpriseLogo}" style="width:30px;height:30px;border-radius:50%;margin:0px 0px 0px 20px;"/><div style="margin:-28px 0px 0px 55px;">{EnterpriseName}</div></div>&nbsp;&nbsp;<br><br>' +
-                                                               '&nbsp;&nbsp;<img  onclick="FloatPanel_DashboardMerchantReward_MembershipContestDetailShow({ID});"   src="{AdvertisementImgPath}" style="width:{ModifiedWidth}px;height:400px;margin:-25px 0px 0px 0px;"/>&nbsp;&nbsp;<br>' +
-                                                             // '<div onclick="FloatPanel_DashboardMerchantReward_MembershipContestDetailShow({ID});" style="width: 50%; float:left; height:30px; background:white; margin:0px"><div style="font-family:Arial, sans-serif;font-size:10px;color:black;font-weight:normal;text-align:left;padding:0px 10px;">Contest Name:</div><br><div style="font-family:Arial, sans-serif;font-size:14px;color:black;font-weight:bold;margin:-22px 0px 0px 0px;text-align:left;padding:0px 10px;">{ContestName}</div></div><br>' +
-                                                              '<div onclick="FloatPanel_DashboardMerchantReward_MembershipContestDetailShow({ID});" style="width: 50%; float:left; height:30px; background:transparent; margin:0px 0px 0px 0px;"><div style="font-family:Arial, sans-serif;font-size:10px;color:black;font-weight:normal;text-align:left;padding:0px 10px;">Contest Name:</div><br><div style="font-family:Arial, sans-serif;font-size:14px;color:black;font-weight:bold;margin:-17px 0px 0px 0px;text-align:left;padding:0px 10px;">{ContestName}</div></div><div style="width: 50%; float:left; height:30px; background:transparent; margin:0px 0px 0px 0px;word-break: break-all;"><div style="margin:0px 0px 0px 0px;text-align:right;color:black;font-family: Arial; font-size:10px;word-wrap: break-word;word-break: break-all;white-space: break-spaces;font-weight:normal;width:100%;height:30px;padding:0px 7px;">Contest Host:<br><div style="margin:0px 0px 0px 0px;text-align:right;color:black;font-family: Arial; font-size:12px;word-wrap: break-word;word-break: break-all;white-space: break-spaces;font-weight:bold;width:100%;padding:0px 0px;"><div style="font-family:Arial, sans-serif;font-size:14px;color:black;font-weight:bold;text-align:right;width:100%;"><div style="margin:0px 0px 0px 0px;">{EnterpriseName}</div></div></div></div></div><br>' +
-
-                                                              '<div onclick="FloatPanel_DashboardMerchantReward_MembershipContestDetailShow({ID});" style="width: 50%; float:left; height:30px; background:transparent; margin:15px 0px 0px 0px;"><div style="font-family:Arial, sans-serif;font-size:10px;color:black;font-weight:normal;text-align:left;padding:0px 10px;">Contest Period:</div><br><div style="font-family:Arial, sans-serif;font-size:14px;color:black;font-weight:bold;margin:-17px 0px 0px 0px;text-align:left;padding:0px 10px;">{StartDate_DateOnly} - {EndDate_DateOnly}</div></div><div style="width: 50%; float:left; height:30px; background:transparent; margin:15px 0px 0px 0px;word-break: break-all;"><div style="margin:0px 0px 0px 0px;text-align:right;color:black;font-family: Arial; font-size:10px;word-wrap: break-word;word-break: break-all;white-space: break-spaces;font-weight:normal;width:100%;height:30px;padding:0px 7px;">Contest Status<br><div style="margin:0px 0px 0px 0px;text-align:right;color:black;font-family: Arial; font-size:14px;word-wrap: break-word;word-break: break-all;white-space: break-spaces;font-weight:bold;width:100%;padding:0px 0px;">{ContestStatus_ContestStatus}</div></div></div><br>' +
-
-
-                                                            '</div>',
-
-
-                                                                 emptyText: '<div  style="background-color:transparent;width:100%; height: 500px;margin:20px 0px 0px 0px;text-align:center"><img src="resources/icons/NoMembershipEventContest01.jpg" style="width: 95%; height: 500px;"/></div>',
-
-                                                             },
-                                                         ]
-                                                     },
-
-
-                                  ]
-                              },
+                             
 
                               ////////////////////////////////////////////////////////
 
@@ -4250,142 +4855,7 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
                               //////membership event
 
 
-                              {
-                                  xtype: 'container',
-                                  //  style: 'background-image: url("resources/icons/bgfront07.png"); background-size: 100% 400px;background-repeat: no-repeat;',
-                                  width: '100%',
-                                  margin: '30 0 0 0',
-                                  height: 400,
-                                  style: "background-color: transparent;",
-                                  layout: {
-                                      type: 'vbox',
-                                      pack: 'start',
-                                      align: 'center'
-
-                                  },
-                                  items: [
-                                         //////////////////////////MembershipEvent
-
-
-                                       {
-                                           xtype: 'container',
-                                           width: '100%',
-                                           // hidden: true,
-                                           margin: '0 0 0 0',
-                                           id: 'containerLoyaltMembershipEvent_Header',
-                                           style: {
-                                               // background: '#D25959',
-                                               background: 'transparent',
-                                               // border: '2px'
-                                           },
-                                           //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
-                                           // style: 'border-bottom:2px solid #D25959;background-color:transparent',
-                                           layout: {
-                                               type: 'hbox',
-                                               pack: 'left',
-                                               align: 'left',
-                                           },
-                                           items: [
-                                                {
-                                                    margin: '8 0 0 14',
-                                                    id: 'htmlLoyaltyMembershipEvent_Header',
-                                                    //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
-                                                    html: '<div style="color:black;text-align: center;font-size:14px;width:100%;font-weight:bold">Membership Events</div>'
-                                                    // html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: 70%"><col style="width:30%"></colgroup><thead><tr><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:right;vertical-align:top;word-break:normal" rowspan="2"><div style="margin:0px 0px 0px -15px">TARMIZI RAHIM</div><br>Lagendary Card Mortal </th><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:middle;word-break:normal" rowspan="2">Medal</th></tr><tr></tr></thead></table>'
-                                                },
-
-                                                 {
-                                                     xtype: 'button',
-                                                     id: 'btnLoyaltyMembershipEventtNearestRedeemItem_Header',
-                                                     // hidden: true,
-                                                     //  badgeText: '1',
-                                                     margin: '0 0 0 0',
-                                                     height: 30,
-                                                     width: 30,
-                                                     html: '<img src="resources/icons/latestpoint03.png" width="20" height="20" alt="Company Name">',
-                                                     ui: 'plain',
-                                                     handler: function () {
-                                                         //  FloatPanel_AyohaReward_ContestAdvertisementShow();
-                                                     }
-                                                 },
-
-
-
-                                           ]
-                                       },
-
-
-                                                     {
-                                                         xtype: 'container',
-                                                         width: '100%',
-                                                         height: 400,
-                                                         margin: '40 0 0 0',
-                                                         //  hidden: true,
-                                                         id: 'htmlFloatPanel_DashboardMerchantMembershipEvent',
-                                                         style: "background-color: transparent;",
-                                                         // style: "background-color: transparent;border-right:1px solid #ECF0F1;border-left:1px solid #ECF0F1;border-bottom:1px solid #ECF0F1;border-top:1px solid #ECF0F1;border-radius: 10px 10px 10px 10px;",
-                                                         layout: {
-                                                             type: 'vbox',
-                                                             pack: 'center',
-                                                             align: 'center'
-
-                                                         },
-                                                         items: [
-                                                             {
-
-                                                                 id: 'FloatPanel_MerchantReward_MembershipEvent',
-                                                                 margin: '-15 0 0 0',
-                                                                 //  store: _DataStore_AyohaStoreCartLoadCartAyohaStore,
-                                                                 // grouped: true,
-                                                                 xtype: 'dataview',
-                                                                 //xtype: 'list',
-                                                                 height: 500,
-                                                                 style: "background-color: transparent;",
-                                                                 inline: {
-                                                                     wrap: false
-                                                                 },
-                                                                 scrollable: {
-                                                                     direction: 'horizontal',
-                                                                     indicators: false,
-                                                                 },
-                                                                 width: '100%',
-                                                                 // cls: 'dataview-item',
-                                                                 //itemTpl: '<table style="border-collapse:collapse;border-spacing:0;width:100%;background-color:white;margin:-10px 0px 0px -13px;height:158px;"><thead><tr><th style="background-color:transparent;border-color:transparent;border-bottom:2px none #F3F1F5;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:middle;word-break:normal;width:35%" rowspan="2"><img onclick="FloatPanel_AyohaStore_SaleItemDetailShow({ID},' + "'" + '{ItemCode}' + "'" + ',' + "'" + '{ItemCoverImg}' + "'" + ',' + "'" + '{ItemName}' + "'" + ',' + "'" + '{ItemPrice}' + "'" + ',' + "'" + '{MerchantPoint}' + "'" + ',' + "'" + '{AyohaPoint}' + "'" + ',' + "'" + '{CampaignType}' + "'" + ',' + "'" + '{MembershipCardCode}' + "'" + ',' + "'" + '{ProductCategoryName}' + "'" + ',' + "'" + '{ItemCategoryCode}' + "'" + ',' + "'" + '{MembershipCardName}' + "'" + ',' + "'" + '{ItemCoverImgName}' + "'" + ',' + "'" + '{Stock}' + "'" + ',' + "'" + '{ShowStock}' + "'" + ',' + "'" + '{StockAlert}' + "'" + ',' + "'" + '{ModifiedItemDescriptions_01}' + "'" + ',' + "'" + '{ItemPriceDiscount}' + "'" + ',' + "'" + '{ItemPriceDiscountRate}' + "'" + ')"  src="{ItemCoverImg}" style="width: 124.52px; height: 156px; border:1px none grey;border-radius:0px 0px 0px 0px;" /></th><th style="background-color:transparent;border-bottom:2px none #F3F1F5;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:top;word-break: break-all;width:65%" colspan="2"><div style="font-family:Arial, sans-serif;font-size:17px;font-weight:bold;word-break: break-all;margin:5px 0px 0px 0px;height:auto;width:100%;" onclick="FloatPanel_AyohaStore_SaleItemDetailShow({ID},' + "'" + '{ItemCode}' + "'" + ',' + "'" + '{ItemCoverImg}' + "'" + ',' + "'" + '{ItemName}' + "'" + ',' + "'" + '{ItemPrice}' + "'" + ',' + "'" + '{MerchantPoint}' + "'" + ',' + "'" + '{AyohaPoint}' + "'" + ',' + "'" + '{CampaignType}' + "'" + ',' + "'" + '{MembershipCardCode}' + "'" + ',' + "'" + '{ProductCategoryName}' + "'" + ',' + "'" + '{ItemCategoryCode}' + "'" + ',' + "'" + '{MembershipCardName}' + "'" + ',' + "'" + '{ItemCoverImgName}' + "'" + ',' + "'" + '{Stock}' + "'" + ',' + "'" + '{ShowStock}' + "'" + ',' + "'" + '{StockAlert}' + "'" + ',' + "'" + '{ModifiedItemDescriptions_01}' + "'" + ',' + "'" + '{ItemPriceDiscount}' + "'" + ',' + "'" + '{ItemPriceDiscountRate}' + "'" + ')">{EventName}</div><br><div  style="font-family:Arial, sans-serif;font-size:17px;font-weight:bold;word-break:normal;margin:-17px 0px 0px 0px;color:#c800ffc9;width:100%;text-align:left;">{ModifiedPrice}</div><br>{Pointlabel}<br><div style="font-family:Arial, sans-serif;font-size:10px;font-weight:normal;word-break:break-all;margin:-15px 0px 0px 0px;height:35px" onclick="FloatPanel_AyohaStore_SaleItemDetailShow({ID},' + "'" + '{ItemCode}' + "'" + ',' + "'" + '{ItemCoverImg}' + "'" + ',' + "'" + '{ItemName}' + "'" + ',' + "'" + '{ItemPrice}' + "'" + ',' + "'" + '{MerchantPoint}' + "'" + ',' + "'" + '{AyohaPoint}' + "'" + ',' + "'" + '{CampaignType}' + "'" + ',' + "'" + '{MembershipCardCode}' + "'" + ',' + "'" + '{ProductCategoryName}' + "'" + ',' + "'" + '{ItemCategoryCode}' + "'" + ',' + "'" + '{MembershipCardName}' + "'" + ',' + "'" + '{ItemCoverImgName}' + "'" + ',' + "'" + '{Stock}' + "'" + ',' + "'" + '{ShowStock}' + "'" + ',' + "'" + '{StockAlert}' + "'" + ',' + "'" + '{ModifiedItemDescriptions_01}' + "'" + ',' + "'" + '{ItemPriceDiscount}' + "'" + ',' + "'" + '{ItemPriceDiscountRate}' + "'" + ')">{ModifiedItemDescriptions}</div></th></tr></thead></table>',
-
-                                                                 //itemTpl: '<div class="myContent" style="background-color:white;width:100%;height:400px;">' +
-                                                                 //     '&nbsp;&nbsp;<div style="font-family:Arial, sans-serif;font-size:14px;color:black;font-weight:bold;text-align:left;"><img src="{EnterpriseLogo}" style="width:30px;height:30px;border-radius:50%;margin:0px 0px 0px 20px;"/><div style="margin:-28px 0px 0px 55px;">{EnterpriseName}</div></div>&nbsp;&nbsp;<br>' +
-                                                                 //    '&nbsp;&nbsp;<img src="{EventCoverPhoto}" style="width:390px;height:200px;margin:-10px 0px 0px 0px;"/>&nbsp;&nbsp;<br>' +
-                                                                 //   '&nbsp;&nbsp;<div style="width: 90px; float:left; height:70px; background:white; margin:0px"><div style="font-family:Arial, sans-serif;font-size:40px;color:black;font-weight:bold;text-align:center;">{EventStartDate_Day}</div><br><div style="font-family:Arial, sans-serif;font-size:16px;color:red;font-weight:bold;margin:-22px 0px 0px 0px;text-align:center;">{EventStartDate_Month}</div></div><div style="width: 270px; float:left; height:70px; background:white; margin:0px;word-break: break-all;"><div style="margin:-5px 0px 0px 0px;text-align:left;color:black;font-family: Arial; font-size:14px;word-wrap: break-word;word-break: break-all;white-space: break-spaces;font-weight:bold;width:100%;margin:5px 0px 0px 0px;">{EventName}</div><br><div style="margin:-21px 0px 0px 0px;text-align:left;color:black;font-family: Arial; font-size:11px;word-wrap: break-word;word-break: break-all;white-space: break-spaces;font-weight:normal;width:100%;">{EventStartDate_Day} {EventStartDate_Month},{EventStartTime} - {EventEndDate_Day} {EventEndDate_Month},{EventEndTime}.</div><br><div style="margin:-21px 0px 0px 0px;text-align:left;color:black;font-family: Arial; font-size:11px;word-wrap: break-word;word-break: break-all;white-space: break-spaces;font-weight:normal;width:100%;">{EventLocationName}.</div></div></div>&nbsp;&nbsp;' +
-                                                                 //   '&nbsp;&nbsp;<div style="width: 90px; float:left; height:30px; background:red; margin:0px"></div><div style="width: 270px; float:left; height:30px; background:black; margin:0px;word-break: break-all;"></div>&nbsp;&nbsp;' +
-                                                                 //   '</div>',
-
-
-
-                                                                 itemTpl: '<div class="myContent" style="background-color:transparent;width:100%;height:400px;">' +
-                                                                  '&nbsp;&nbsp;<div style="font-family:Arial, sans-serif;font-size:12px;color:black;font-weight:bold;text-align:left;"><img src="{EnterpriseLogo}" style="width:30px;height:30px;border-radius:50%;margin:0px 0px 0px 20px;"/><div style="margin:-28px 0px 0px 55px;">{EnterpriseName}</div><div style="margin:-17px 0px 0px 0px;text-align:right">{ModifiedRespondStatusImg}</div></div>&nbsp;&nbsp;<br>' +
-
-                                                                  // '&nbsp;&nbsp;<div style="width: 200px; float:left; height:30px; background:white;text-align:left;font-size:12px;"><img src="{EnterpriseLogo}" style="width:30px;height:30px;border-radius:50%;margin:0px 0px 0px 20px;"/><div style="margin:-28px 0px 0px 55px;">{EnterpriseName}</div></div><div style="width:200px; float:left; height:30px; background:white;text-align:right;font-size:12px;"><img src="resources/icons/like01.png" style="width:20px;height:20px;margin:8px 0px 0px 0px;"/></div>&nbsp;&nbsp;<br>' +
-                                                                  '&nbsp;&nbsp;<img  onclick="FloatPanel_DashboardMerchantReward_MembershipEventDetailShow(' + "'" + '{EnterpriseLogo}' + "'" + ',' + "'" + '{EnterpriseName}' + "'" + ',' + "'" + '{EventCoverPhoto}' + "'" + ',' + "'" + '{EventName}' + "'" + ',' + "'" + '{EventStartDate_Day}' + "'" + ',' + "'" + '{EventStartDate_Month}' + "'" + ',' + "'" + '{EventStartTime}' + "'" + ',' + "'" + '{EventEndDate_Day}' + "'" + ',' + "'" + '{EventEndDate_Month}' + "'" + ',' + "'" + '{EventEndTime}' + "'" + ',' + "'" + '{EventLocationName}' + "'" + ',' + "'" + '{ModifiedWidth}' + "'" + ',' + "'" + '{EventDescription}' + "'" + ',' + "'" + '{EventLocationCoordinate}' + "'" + ',' + "'" + '{EventUrlTicket}' + "'" + ',' + "'" + '{EventCode}' + "'" + ',' + "'" + '{EnterpriseAccNo}' + "'" + ',' + "'" + '{RespondStatus}' + "'" + ',{ID});"   src="{EventCoverPhoto}" style="width:{ModifiedWidth}px;height:200px;margin:-15px 0px 0px 0px;"/>&nbsp;&nbsp;<br>' +
-                                                                 '<div onclick="FloatPanel_DashboardMerchantReward_MembershipEventDetailShow(' + "'" + '{EnterpriseLogo}' + "'" + ',' + "'" + '{EnterpriseName}' + "'" + ',' + "'" + '{EventCoverPhoto}' + "'" + ',' + "'" + '{EventName}' + "'" + ',' + "'" + '{EventStartDate_Day}' + "'" + ',' + "'" + '{EventStartDate_Month}' + "'" + ',' + "'" + '{EventStartTime}' + "'" + ',' + "'" + '{EventEndDate_Day}' + "'" + ',' + "'" + '{EventEndDate_Month}' + "'" + ',' + "'" + '{EventEndTime}' + "'" + ',' + "'" + '{EventLocationName}' + "'" + ',' + "'" + '{ModifiedWidth}' + "'" + ',' + "'" + '{EventDescription}' + "'" + ',' + "'" + '{EventLocationCoordinate}' + "'" + ',' + "'" + '{EventUrlTicket}' + "'" + ',' + "'" + '{EventCode}' + "'" + ',' + "'" + '{EnterpriseAccNo}' + "'" + ',' + "'" + '{RespondStatus}' + "'" + ',{ID});" style="width: 90px; float:left; height:70px; background:transparent; margin:0px"><div style="font-family:Arial, sans-serif;font-size:40px;color:black;font-weight:bold;text-align:center;">{EventStartDate_Day}</div><br><div style="font-family:Arial, sans-serif;font-size:16px;color:red;font-weight:bold;margin:-22px 0px 0px 0px;text-align:center;">{EventStartDate_Month}</div></div><div style="width: 230px; float:left; height:70px; background:transparent; margin:0px;word-break: break-all;"><div style="margin:5px 0px 0px 0px;text-align:left;color:black;font-family: Arial; font-size:14px;word-wrap: break-word;word-break: break-all;white-space: break-spaces;font-weight:bold;width:100%;height:30px;">{EventName}<br><br><div style="margin:-14px 0px 0px 0px;text-align:left;color:black;font-family: Arial; font-size:11px;word-wrap: break-word;word-break: break-all;white-space: break-spaces;font-weight:normal;width:100%;">{EventStartDate_Day} {EventStartDate_Month},{EventStartTime} - {EventEndDate_Day} {EventEndDate_Month},{EventEndTime}.</div><br><div style="margin:-14px 0px 0px 0px;text-align:left;color:black;font-family: Arial; font-size:11px;word-wrap: break-word;word-break: break-all;white-space: break-spaces;font-weight:normal;width:100%;">{EventLocationName}.</div><br><div style="margin:-14px 0px 0px 0px;text-align:left;color:black;font-family: Arial; font-size:11px;word-wrap: break-word;word-break: break-all;white-space: break-spaces;font-weight:normal;width:100%;"><b>({RespondStatus_IwillAttendCount})</b> Will Attend, <b>({RespondStatus_InterestedCount})</b> Interested</div></div></div><br>' +
-
-
-                                                              //'{ModifiedRespondStatus}' +
-                                                               '</div>',
-
-
-                                                                 //'<div style="width: 90px; float:left; height:70px; background:red; margin:0px"></div><div style="width: 230px; float:left; height:70px; background:black; margin:0px;"></div>' ,
-
-
-                                                                 // itemTpl: '<table style="border-collapse:collapse;border-spacing:0;width:100%;"><tr><td style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 10px;text-align:center;vertical-align:middle;" colspan="2"><img src="{EventCoverPhoto}" style="width:400px;height:250px"/></td></tr><tr><td style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:5px 20px;text-align:center;vertical-align:middle;color:black;"><div style="font-family:Arial, sans-serif;font-size:40px;color:black;font-weight:bold;">{EventStartDate_Day}</div><br><div style="font-family:Arial, sans-serif;font-size:16px;color:red;font-weight:bold;margin:-17px 0px 0px 0px;">{EventStartDate_Month}</div></td><td style="background-color:#ffffff;border-color:#ffffff;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:16px;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:middle;word-wrap: break-word;word-break: break-all;white-space: break-spaces;"><div style="margin:-5px 0px 0px 0px;text-align:left;color:black;font-family: Arial; font-size:14px;word-wrap: break-word;word-break: break-all;white-space: break-spaces;font-weight:bold;width:100%;margin:5px 0px 0px 0px;">{EventName}</div></td></tr><tr><td style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:center;vertical-align:middle;word-break:normal" colspan="2">Berminat | Akan Hadir</td></tr></table>',
-                                                                 emptyText: '<div  style="background-color:transparent;width: 100%; height: 400px;margin:20px 0px 0px 0px;padding:5px 10px"><img src="resources/icons/NoMembershipEvent.jpg" style="width: 100%; height: 400px;"/></div>',
-
-                                                             },
-                                                         ]
-                                                     },
-
-
-                                  ]
-                              },
+                             
 
 
 
@@ -4394,219 +4864,7 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
 /////////////////////////////////////// Membership Discount Card Section//////////////////////////////////////////////////////////
 
 
-{
-    xtype: 'container',
-    //  style: 'background-image: url("resources/icons/bgfront07.png"); background-size: 100% 400px;background-repeat: no-repeat;',
-    width: '100%',
-    margin: '70 0 0 0',
-    height: 600,
-    style: "background-color: transparent;",
-    layout: {
-        type: 'vbox',
-        pack: 'start',
-        align: 'center'
 
-    },
-    items: [
-          
-
-         {
-             xtype: 'container',
-             width: '100%',
-             height: 30,
-             // hidden: true,
-             margin: '0 0 0 0',
-             id: 'containerLoyaltMembershipDiscount_Header',
-             style: {
-                 // background: '#D25959',
-                 background: 'transparent',
-                 // border: '2px'
-             },
-             //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
-             // style: 'border-bottom:2px solid #D25959;background-color:transparent',
-             layout: {
-                 type: 'hbox',
-                 pack: 'left',
-                 align: 'left',
-             },
-             items: [
-                  {
-                      margin: '8 0 0 14',
-                      id: 'htmlLoyaltyMembershipDiscount_Header',
-
-                      //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
-                      html: '<div style="color:black;text-align: center;font-size:14px;width:100%;font-weight:bold">Membership Discount</div>'
-                      // html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: 70%"><col style="width:30%"></colgroup><thead><tr><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:right;vertical-align:top;word-break:normal" rowspan="2"><div style="margin:0px 0px 0px -15px">TARMIZI RAHIM</div><br>Lagendary Card Mortal </th><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:middle;word-break:normal" rowspan="2">Medal</th></tr><tr></tr></thead></table>'
-                  },
-
-                   {
-                       xtype: 'button',
-                       id: 'btnLoyaltyMembershipDiscountItem_Header',
-                       // hidden: true,
-                       //  badgeText: '1',
-                       margin: '0 0 0 0',
-                       height: 30,
-                       width: 30,
-                       html: '<img src="resources/icons/latestpoint03.png" width="20" height="20" alt="Company Name">',
-                       ui: 'plain',
-                       handler: function () {
-                           //  FloatPanel_AyohaReward_ContestAdvertisementShow();
-                       }
-                   },
-
-
-
-             ]
-         },
-
-
-
-
-         
-
-         {
-            xtype: 'container',
-            width: '100%',
-            height: 600,
-            margin: '-15 0 0 0',
-            //  hidden: true,
-            id: 'containerAyohaMerchantRewardDiscountListt',
-            style: "background-color: transparent;",
-            // style: "background-color: transparent;border-right:1px solid #ECF0F1;border-left:1px solid #ECF0F1;border-bottom:1px solid #ECF0F1;border-top:1px solid #ECF0F1;border-radius: 10px 10px 10px 10px;",
-            layout: {
-                type: 'vbox',
-                pack: 'center',
-                align: 'center'
-
-            },
-            items: [
-                {
-
-                    id: 'AyohaMerchantRewardDiscountList',
-                    xtype: 'dataview',
-                    // xtype: 'list',
-                    height: 600,
-                    //scrollable: true,
-                    // scrollable: 'horizontal',
-                    // indicators: false,
-                    //inline: true,
-                    inline: {
-                        wrap: false
-                    },
-                    scrollable: {
-                        direction: 'horizontal',
-                        indicators: false,
-                    },
-                    width: '100%',
-                    cls: 'dataview-item',
-
-
-                    //  itemTpl: '<div class="myContent" style="background-color:transparent;width:100%;height:500px;">' +
-                    //   '&nbsp;&nbsp;<div style="font-family:Arial, sans-serif;font-size:14px;color:black;font-weight:bold;text-align:left;width:100%;"><img src="{EnterpriseLogo}" style="width:30px;height:30px;border-radius:50%;margin:0px 0px 0px 20px;"/><div style="margin:-28px 0px 0px 55px;">{EnterpriseName}</div></div>&nbsp;&nbsp;<br>' +
-                    //   '&nbsp;&nbsp;<img  onclick="FloatPanel_DashboardMerchantReward_MembershipEventDetailShow(' + "'" + '{EnterpriseLogo}' + "'" + ',' + "'" + '{EnterpriseName}' + "'" + ',' + "'" + '{EventCoverPhoto}' + "'" + ',' + "'" + '{EventName}' + "'" + ',' + "'" + '{EventStartDate_Day}' + "'" + ',' + "'" + '{EventStartDate_Month}' + "'" + ',' + "'" + '{EventStartTime}' + "'" + ',' + "'" + '{EventEndDate_Day}' + "'" + ',' + "'" + '{EventEndDate_Month}' + "'" + ',' + "'" + '{EventEndTime}' + "'" + ',' + "'" + '{EventLocationName}' + "'" + ',' + "'" + '{ModifiedWidth}' + "'" + ',' + "'" + '{EventDescription}' + "'" + ',' + "'" + '{EventLocationCoordinate}' + "'" + ',' + "'" + '{EventUrlTicket}' + "'" + ',' + "'" + '{EventCode}' + "'" + ',' + "'" + '{EnterpriseAccNo}' + "'" + ',' + "'" + '{RespondStatus}' + "'" + ',{ID});"   src="{AdvertisementImgPath}" style="width:{ModifiedWidth}px;height:400px;margin:-15px 0px 0px 0px;"/>&nbsp;&nbsp;<br>' +
-                    //  '<div onclick="FloatPanel_DashboardMerchantReward_MembershipEventDetailShow(' + "'" + '{EnterpriseLogo}' + "'" + ',' + "'" + '{EnterpriseName}' + "'" + ',' + "'" + '{EventCoverPhoto}' + "'" + ',' + "'" + '{EventName}' + "'" + ',' + "'" + '{EventStartDate_Day}' + "'" + ',' + "'" + '{EventStartDate_Month}' + "'" + ',' + "'" + '{EventStartTime}' + "'" + ',' + "'" + '{EventEndDate_Day}' + "'" + ',' + "'" + '{EventEndDate_Month}' + "'" + ',' + "'" + '{EventEndTime}' + "'" + ',' + "'" + '{EventLocationName}' + "'" + ',' + "'" + '{ModifiedWidth}' + "'" + ',' + "'" + '{EventDescription}' + "'" + ',' + "'" + '{EventLocationCoordinate}' + "'" + ',' + "'" + '{EventUrlTicket}' + "'" + ',' + "'" + '{EventCode}' + "'" + ',' + "'" + '{EnterpriseAccNo}' + "'" + ',' + "'" + '{RespondStatus}' + "'" + ',{ID});" style="width: 50%; float:left; height:50px; background:white; margin:0px"><div style="font-family:Arial, sans-serif;font-size:10px;color:black;font-weight:normal;text-align:left;padding:0px 10px;">Contest Period:</div><br><div style="font-family:Arial, sans-serif;font-size:14px;color:black;font-weight:bold;margin:-22px 0px 0px 0px;text-align:left;padding:0px 10px;">{StartDate_DateOnly} - {EndDate_DateOnly}</div></div><div style="width: 50%; float:left; height:50px; background:white; margin:0px;word-break: break-all;"><div style="margin:0px 0px 0px 0px;text-align:right;color:black;font-family: Arial; font-size:10px;word-wrap: break-word;word-break: break-all;white-space: break-spaces;font-weight:normal;width:100%;height:30px;padding:0px 7px;">Contest Status<br><div style="margin:0px 0px 0px 0px;text-align:right;color:black;font-family: Arial; font-size:12px;word-wrap: break-word;word-break: break-all;white-space: break-spaces;font-weight:bold;width:100%;padding:0px 0px;">{ContestStatus_ContestStatus}</div></div></div><br>' +
-
-
-                    //'</div>',
-
-
-                    itemTpl: '<div onclick="FloatPanel_MerchantDiscountLoyaltyDescriptionShow(`{DiscountCode}`,`{EnterpriseAccNo}`);" class="myContent" style="background-color:transparent;width:100%;height:500px;">' +
-                  '&nbsp;&nbsp;&nbsp;<div style="font-family:Arial, sans-serif;font-size:12px;color:black;font-weight:bold;text-align:left;width:100%;"><img src="{EnterpriseLogo}" style="width:30px;height:30px;border-radius:50%;margin:0px 0px 0px 20px;"/><div style="margin:-28px 0px 0px 55px;">{EnterpriseName}</div></div>&nbsp;&nbsp;&nbsp;<br><br>' +
-                  '&nbsp;&nbsp;&nbsp;<img  onclick="FloatPanel_MerchantDiscountLoyaltyDescriptionShow(`{DiscountCode}`,`{EnterpriseAccNo}`);"   src="{DiscountImgPath}" style="width:{ModifiedWidth}px; height: 280px;margin:-25px 0px 0px 0px;"/>&nbsp;&nbsp;&nbsp;<br>' +
-                // '<div onclick="FloatPanel_DashboardMerchantReward_MembershipContestDetailShow({ID});" style="width: 50%; float:left; height:30px; background:white; margin:0px"><div style="font-family:Arial, sans-serif;font-size:10px;color:black;font-weight:normal;text-align:left;padding:0px 10px;">Contest Name:</div><br><div style="font-family:Arial, sans-serif;font-size:14px;color:black;font-weight:bold;margin:-22px 0px 0px 0px;text-align:left;padding:0px 10px;">{ContestName}</div></div><br>' +
-                 '<div onclick="FloatPanel_MerchantDiscountLoyaltyDescriptionShow(`{DiscountCode}`,`{EnterpriseAccNo}`);" style="width: 50%; float:left; height:30px; background:transparent; margin:0px 0px 0px 0px;"><div style="font-family:Arial, sans-serif;font-size:10px;color:black;font-weight:normal;text-align:left;padding:0px 10px;"  onclick="FloatPanel_MerchantDiscountLoyaltyDescriptionShow(`{DiscountCode}`,`{EnterpriseAccNo}`);">Discount Name:</div><br><div onclick="FloatPanel_MerchantDiscountLoyaltyDescriptionShow(`{DiscountCode}`,`{EnterpriseAccNo}`);" style="font-family:Arial, sans-serif;font-size:14px;color:black;font-weight:bold;margin:-17px 0px 0px 0px;text-align:left;padding:0px 10px;">{DiscountName}</div></div><div style="width: 50%; float:left; height:30px; background:transparent; margin:0px 0px 0px 0px;word-break: break-all;" onclick="FloatPanel_MerchantDiscountLoyaltyDescriptionShow(`{DiscountCode}`,`{EnterpriseAccNo}`);"><div style="margin:0px 0px 0px 0px;text-align:right;color:black;font-family: Arial; font-size:10px;word-wrap: break-word;word-break: break-all;white-space: break-spaces;font-weight:normal;width:100%;height:30px;padding:0px 7px;"><br><div style="margin:0px 0px 0px 0px;text-align:right;color:black;font-family: Arial; font-size:12px;word-wrap: break-word;word-break: break-all;white-space: break-spaces;font-weight:bold;width:100%;padding:0px 0px;" onclick="FloatPanel_MerchantDiscountLoyaltyDescriptionShow(`{DiscountCode}`,`{EnterpriseAccNo}`);"><div style="font-family:Arial, sans-serif;font-size:14px;color:black;font-weight:bold;text-align:right;width:100%;"><div style="margin:0px 0px 0px 0px;"></div></div></div></div></div><br>' +
-
-                 '<div onclick="FloatPanel_MerchantDiscountLoyaltyDescriptionShow(`{DiscountCode}`,`{EnterpriseAccNo}`);" style="width: 50%; float:left; height:30px; background:transparent; margin:15px 0px 0px 0px;"><div style="font-family:Arial, sans-serif;font-size:10px;color:black;font-weight:normal;text-align:left;padding:0px 10px;"  onclick="FloatPanel_MerchantDiscountLoyaltyDescriptionShow(`{DiscountCode}`,`{EnterpriseAccNo}`);">Discount Rate:</div><br><div onclick="FloatPanel_MerchantDiscountLoyaltyDescriptionShow(`{DiscountCode}`,`{EnterpriseAccNo}`);" style="font-family:Arial, sans-serif;font-size:14px;color:black;font-weight:bold;margin:-17px 0px 0px 0px;text-align:left;padding:0px 10px;">{DiscountPercent}%</div></div><div style="width: 50%; float:left; height:30px; background:transparent; margin:15px 0px 0px 0px;word-break: break-all;" onclick="FloatPanel_MerchantDiscountLoyaltyDescriptionShow(`{DiscountCode}`,`{EnterpriseAccNo}`);"><div style="margin:0px 0px 0px 0px;text-align:right;color:black;font-family: Arial; font-size:10px;word-wrap: break-word;word-break: break-all;white-space: break-spaces;font-weight:normal;width:100%;height:30px;padding:0px 7px;" onclick="FloatPanel_MerchantDiscountLoyaltyDescriptionShow(`{DiscountCode}`,`{EnterpriseAccNo}`);">Valid Until<br><div style="margin:0px 0px 0px 0px;text-align:right;color:black;font-family: Arial; font-size:14px;word-wrap: break-word;word-break: break-all;white-space: break-spaces;font-weight:bold;width:100%;padding:0px 0px;" onclick="FloatPanel_MerchantDiscountLoyaltyDescriptionShow(`{DiscountCode}`,`{EnterpriseAccNo}`);">{ModifiedDiscountEndDate}</div></div></div><br>' +
-
-
-               '</div>',
-
-
-                    emptyText: '<div  style="background-color:transparent;width:100%; height: 280px;margin:20px 0px 0px 0px;text-align:center"><img src="resources/icons/NoMembershipEventContest01.jpg" style="width: 95%; height: 500px;"/></div>',
-
-                },
-            ]
-        },
-
-
-
-
-
-
-
-
-        //  {
-        //     xtype: 'container',
-        //     width: '98%',
-        //     /// hidden:true,
-        //     margin: '10 0 0 0',
-        //     height: 222,
-        //     style: 'background-color: transparent;',
-        //     //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
-        //     //  style: 'background-color: white;border-left: 1px solid #D0D3D4;border-right: 1px solid #D0D3D4;border-bottom: 1px solid #D0D3D4;border-top: 1px solid #D0D3D4;box-shadow: 5px 10px 18px #888888;border-radius: 10px 10px 10px 10px;',
-        //     layout: {
-        //         type: 'vbox',
-        //         pack: 'center',
-        //         align: 'center',
-        //     },
-        //     items: [
-
-                
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        //          {
-        
-        //              id: 'AyohaMerchantRewardDiscountList',
-        //              // margin: '-4 0 0 14',
-        //              // margin: '-5 0 0 0',
-        //              // store: _DataStore_AyohaRewardVoucherEntitledUserLoadBySubscriberAccNoVoucherTypeStore,
-        //              // grouped: true,
-        //              xtype: 'dataview',
-        //              // xtype: 'list',
-        //              height: 200,
-        //              //scrollable: true,
-        //              // scrollable: 'horizontal',
-        //              // indicators: false,
-        //              //inline: true,
-        //              inline: {
-        //                  wrap: false
-        //              },
-        //              scrollable: {
-        //                  direction: 'horizontal',
-        //                  indicators: false,
-        //              },
-        //              width: '100%',
-        //              cls: 'dataview-item',
-        //              //itemTpl: '<div onclick="FloatPanel_AyohaRewardVoucherDetailShow(' + "'" + '{VoucherName}' + "'" + ',' + "'" + '{VoucherImgPath}' + "'" + ',' + "'" + '{EntitledVoucherEndDate}' + "'" + ',' + "'" + '{DayLeft}' + "'" + ',' + "'" + '{VoucherCode}' + "'" + ');" style="width:{ModifiedWidth}px; height: 200px; border:3px none white;padding:0px 0px;margin:0px 0px 0px 10px;"><img src="{VoucherImgPath}" style="width:99%; height: 160px; border:2px dashed grey;"/><br><div style="margin:-4px 0px 0px 0px;text-align:left;color:black;font-family: Arial; font-size:12px;word-wrap: break-word;font-weight:normal;">Valid Until:{EntitledVoucherEndDate}</div><br><div style="margin:-26px 0px 0px 0px;text-align:left;color:#c800ffc9;font-family: Arial; font-size:10px;word-wrap: break-word;font-weight:bold;">Day Left:{DayLeft}</div></div>',
-        //              itemTpl: '<div onclick="FloatPanel_AyohaRewardVoucherDetailShow(' + "'" + '{VoucherName}' + "'" + ',' + "'" + '{VoucherImgPath}' + "'" + ',' + "'" + '{EntitledVoucherEndDate}' + "'" + ',' + "'" + '{DayLeft}' + "'" + ',' + "'" + '{VoucherCode}' + "'" + ',' + "'" + '{VoucherAmount}' + "'" + ');" style="width:100%; height: 200px; border:3px none white;padding:0px 0px;margin:0px 0px 0px 10px;"><img src="{DiscountImgPath}" style="width:95%; height: 160px; border:2px dashed grey;"/><br><div style="margin:-4px 0px 0px 0px;text-align:left;color:black;font-family: Arial; font-size:12px;word-wrap: break-word;font-weight:normal;width:95%"><table style="border-collapse:collapse;border-spacing:0;width:100%;" class="tg"><thead><tr><th style="background-color:transparent;border-color:transparent;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:12px;font-weight:normal;overflow:hidden;padding:0px 1px;text-align:left;vertical-align:middle;word-break:normal">Valid Until:<b>{DiscountEndDate}</b></th><th style="background-color:transparent;border-color:transparent;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:12px;font-weight:normal;overflow:hidden;padding:0px 6px;text-align:right;vertical-align:middle;word-break:normal">Discount:<b>{DiscountPercent}%</b></th></tr></thead><tbody><tr><td style="background-color:transparent;border-color:transparent;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:10px;overflow:hidden;padding:0px 1px;text-align:left;vertical-align:top;word-break:normal;color:purple;font-weight:bold;" colspan="2"><div style="margin:-1px 0px 0px 0px">Discount Name:{DiscountName}</div></td></tr></tbody></table></div></div>',
-        //              emptyText: '<div style="width:100%; height: 200px; border:3px none white;padding:0px 0px;margin:0px 0px 0px 10px;"><img src="resources/icons/NotAvailableVoucher.png" style="width:99%; height: 160px; border:2px dashed grey;"/><br><div style="margin:-5px 0px 0px 0px;text-align:left;color:black;font-family: Arial; font-size:9px;word-wrap: break-word;font-weight:normal;width:100%">*Vouchers will be given by ayoha reward to users when users reach a certain level of spending in the ayoha merchant online store and also certain special days such as religious days, national independence day, birthdays and so on.</div></div>',
-        //          },
-        //          //{
-        //          //    height: 198,
-        //          //    width: '100%',
-        //          //    // margin: '0 0 0 14',
-        //          //    //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
-        //          //    html: '<img style="width:100%;height:198px;border-radius: 10px 10px 10px 10px;" src="resources/icons/AyohaVoucher.png"/>'
-        //          //    // html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: 70%"><col style="width:30%"></colgroup><thead><tr><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:right;vertical-align:top;word-break:normal" rowspan="2"><div style="margin:0px 0px 0px -15px">TARMIZI RAHIM</div><br>Lagendary Card Mortal </th><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:middle;word-break:normal" rowspan="2">Medal</th></tr><tr></tr></thead></table>'
-        //          //},
-        //     ]
-        // },
-
-
-    ]
-},
 
 
 
@@ -5802,6 +6060,8 @@ function AyohaMerchantReward_AyohaRewardEventLoadBySubscriberAccNoStore() {
             
                                // Ext.getCmp('htmlLoyaltyPointNearestRedeemItem_ItemPoint' + i).setHtml('<div style="color:white;text-align: left;font-size:18px;width:100%;font-weight:bold;margin:10px 0px 0px 2px">' + StampContentSequence + ' <div style="color:white;text-align: left;font-size:9px;width:100%;font-weight:bold;margin:-7px 0px 0px 2px">Points</div></div>');
                                 Ext.getCmp('htmlLoyaltyPointNearestRedeemItem_ItemPoint' + i).setHtml('<div style="color:white;text-align: center;font-size:18px;width:100%;font-weight:bold;">' + StampContentSequence + ' <div style="color:white;text-align: center;font-size:10px;width:100%;font-weight:bold;margin:-7px 0px 0px 0px">Points</div></div>');
+                            Ext.getCmp('htmlLoyaltyPointNearestRedeemItem_ItemPoint' + i).setHidden(false);
+                            Ext.getCmp('containerLoyaltyPointNearestRedeemItem_ItemPoint' + i).setHidden(false);
                             }
             
             
@@ -6229,15 +6489,19 @@ function AyohaMerchantReward_AyohaRewardEventLoadBySubscriberAccNoStore() {
                     Ext.getCmp('FloatPanel_DashboardMerchantRewardVoucherList').setStore(_DataStore_AyohaRewardVoucherEntitledUserLoadBySubscriberAccNoMerchantRewardStore);
             
                     if (count < 1) {
-                        Ext.getCmp('htmlFloatPanel_DashboardMerchantRewardTxt').setHtml('<div style="color:black;text-align: center;font-size:12px;width:100%;font-weight:normal">3).Redeemable Merchant Vocher (0)</div>');
+
+                        Ext.getCmp('html_AyohaMerchantRewards_VoucherTab_ReadyVoucher').setHtml('<div  style="color:white;text-align: center;font-size:10px;width:100%;">Your Vouchers-(0)</div>');
+                    
                     }
             
                     if (count == 1) {
-                        Ext.getCmp('htmlFloatPanel_DashboardMerchantRewardTxt').setHtml('<div style="color:black;text-align: center;font-size:12px;width:100%;font-weight:normal">3).Redeemable Merchant Voucher-<font class="blink_me" size=3x>(' + count + ')</font> </div>');
+                        Ext.getCmp('html_AyohaMerchantRewards_VoucherTab_ReadyVoucher').setHtml('<div  style="color:white;text-align: center;font-size:10px;width:100%;">Your Vouchers-(' + count + ')</div>');
+                        //Ext.getCmp('htmlFloatPanel_DashboardMerchantRewardTxt').setHtml('<div style="color:black;text-align: center;font-size:12px;width:100%;font-weight:normal">3).Redeemable Merchant Voucher-<font class="blink_me" size=3x>(' + count + ')</font> </div>');
                     }
             
                     if (count > 1) {
-                        Ext.getCmp('htmlFloatPanel_DashboardMerchantRewardTxt').setHtml('<div style="color:black;text-align: center;font-size:12px;width:100%;font-weight:normal"> 3).Redeemable Merchant Voucher-<font class="blink_me" size=2x>(' + count + ')</font></div>');
+                        Ext.getCmp('html_AyohaMerchantRewards_VoucherTab_ReadyVoucher').setHtml('<div  style="color:white;text-align: center;font-size:10px;width:100%;">Your Vouchers-(' + count + ')</div>');
+                       // Ext.getCmp('htmlFloatPanel_DashboardMerchantRewardTxt').setHtml('<div style="color:black;text-align: center;font-size:12px;width:100%;font-weight:normal"> 3).Redeemable Merchant Voucher-<font class="blink_me" size=2x>(' + count + ')</font></div>');
                     }
                     AyohaMerchantReward_AyohaRewardContestLoadBySubscriberAccNoStore();
                    LoadingPanelHide();
@@ -6402,7 +6666,7 @@ window._EligibleVsUsed_DatalabelsRegistered =
     }
 
     // ⚠️ MESTI sama panjang: 6 item
-    var labels   = ['Stamped', 'Points', 'Voucher', 'Contest', 'Event', 'Discount'];
+    var labels   = ['Stamps', 'Points', 'Vouchers', 'Contests', 'Events', 'Discounts'];
     var eligible = [
         AppState.AyohaMerchantReward.StampPerks,
         AppState.AyohaMerchantReward.PointPerks,
@@ -6452,7 +6716,7 @@ window._EligibleVsUsed_DatalabelsRegistered =
                     barPercentage: 1
                 },
                 {
-                    label: 'Redeem',
+                    label: 'Redeemed',
                     data: used,
                     stack: 'perks',
                     backgroundColor: '#f97316',
@@ -6693,8 +6957,12 @@ function AyohaMerchantReward_InitializedTabEvent() {
       function (event, node, options, eOpts) {
        
 
-        Ext.getCmp('htmlAyohaMerchantRedemptionHeader_ButtonPerks_Stamps').setHtml('<div style="color:black;text-align: center;font-size:12px;width:100%;font-weight:bold">Stamp Perks</div>');
-        Ext.getCmp('htmlAyohaMerchantRedemptionHeader_ButtonPerks_Points').setHtml('<div style="color:#9CA3AF;text-align: center;font-size:12px;width:100%;font-weight:normal">Point Perks</div>');
+        Ext.getCmp('htmlAyohaMerchantRedemptionHeader_ButtonPerks_Stamps').setHtml('<div style="color:black;text-align: center;font-size:12px;width:100%;font-weight:bold">Digital Stamps</div>');
+        Ext.getCmp('htmlAyohaMerchantRedemptionHeader_ButtonPerks_Points').setHtml('<div style="color:#9CA3AF;text-align: center;font-size:12px;width:100%;font-weight:normal">Point Rewards</div>');
+        Ext.getCmp('htmlAyohaMerchantRedemptionHeader_ButtonPerks_Vouchers').setHtml('<div style="color:#9CA3AF;text-align: center;font-size:12px;width:100%;font-weight:normal">Vouchers</div>');
+        Ext.getCmp('htmlAyohaMerchantRedemptionHeader_ButtonPerks_Contests').setHtml('<div style="color:#9CA3AF;text-align: center;font-size:12px;width:100%;font-weight:normal">Contests</div>');
+        Ext.getCmp('htmlAyohaMerchantRedemptionHeader_ButtonPerks_Events').setHtml('<div style="color:#9CA3AF;text-align: center;font-size:12px;width:100%;font-weight:normal">Events</div>');
+        Ext.getCmp('htmlAyohaMerchantRedemptionHeader_ButtonPerks_Discounts').setHtml('<div style="color:#9CA3AF;text-align: center;font-size:12px;width:100%;font-weight:normal">Discounts</div>');
         Ext.getCmp('tabpanelAyohaMerchantRewards').setActiveItem(0);
         animatedClickTabExt_AyohaMerchantReward('containerAyohaMerchantRedemptionHeader_ButtonPerks_Stamps');
       
@@ -6709,12 +6977,93 @@ function AyohaMerchantReward_InitializedTabEvent() {
     var containerViewElnameContainerAyohaMerchantRedemptionHeader_ButtonPerks_Points = containerViewnameContainerAyohaMerchantRedemptionHeader_ButtonPerks_Points.element;
     containerViewElnameContainerAyohaMerchantRedemptionHeader_ButtonPerks_Points.on('tap',
       function (event, node, options, eOpts) {
-        Ext.getCmp('htmlAyohaMerchantRedemptionHeader_ButtonPerks_Stamps').setHtml('<div style="color:#9CA3AF;text-align: center;font-size:12px;width:100%;font-weight:normal">Stamp Perks</div>');
-        Ext.getCmp('htmlAyohaMerchantRedemptionHeader_ButtonPerks_Points').setHtml('<div style="color:black;text-align: center;font-size:12px;width:100%;font-weight:bold">Point Perks</div>');
-       Ext.getCmp('tabpanelAyohaMerchantRewards').setActiveItem(1);
+        Ext.getCmp('htmlAyohaMerchantRedemptionHeader_ButtonPerks_Stamps').setHtml('<div style="color:#9CA3AF;text-align: center;font-size:12px;width:100%;font-weight:normal">Digital Stamps</div>');
+        Ext.getCmp('htmlAyohaMerchantRedemptionHeader_ButtonPerks_Points').setHtml('<div style="color:black;text-align: center;font-size:12px;width:100%;font-weight:bold">Point Rewards</div>');
+        Ext.getCmp('htmlAyohaMerchantRedemptionHeader_ButtonPerks_Vouchers').setHtml('<div style="color:#9CA3AF;text-align: center;font-size:12px;width:100%;font-weight:normal">Vouchers</div>');
+        Ext.getCmp('htmlAyohaMerchantRedemptionHeader_ButtonPerks_Contests').setHtml('<div style="color:#9CA3AF;text-align: center;font-size:12px;width:100%;font-weight:normal">Contests</div>');
+        Ext.getCmp('htmlAyohaMerchantRedemptionHeader_ButtonPerks_Events').setHtml('<div style="color:#9CA3AF;text-align: center;font-size:12px;width:100%;font-weight:normal">Events</div>');
+        Ext.getCmp('htmlAyohaMerchantRedemptionHeader_ButtonPerks_Discounts').setHtml('<div style="color:#9CA3AF;text-align: center;font-size:12px;width:100%;font-weight:normal">Discounts</div>');
+        Ext.getCmp('tabpanelAyohaMerchantRewards').setActiveItem(1);
        animatedClickTabExt_AyohaMerchantReward('containerAyohaMerchantRedemptionHeader_ButtonPerks_Points');
       
       }
     );
 
+
+
+
+    
+    var containerViewnameContainerAyohaMerchantRedemptionHeader_ButtonPerks_Vouchers = Ext.ComponentQuery.query('container[name=nameContainerAyohaMerchantRedemptionHeader_ButtonPerks_Vouchers]')[0];
+    var containerViewElnameContainerAyohaMerchantRedemptionHeader_ButtonPerks_Vouchers = containerViewnameContainerAyohaMerchantRedemptionHeader_ButtonPerks_Vouchers.element;
+    containerViewElnameContainerAyohaMerchantRedemptionHeader_ButtonPerks_Vouchers.on('tap',
+      function (event, node, options, eOpts) {
+        Ext.getCmp('htmlAyohaMerchantRedemptionHeader_ButtonPerks_Stamps').setHtml('<div style="color:#9CA3AF;text-align: center;font-size:12px;width:100%;font-weight:normal">Digital Stamps</div>');
+        Ext.getCmp('htmlAyohaMerchantRedemptionHeader_ButtonPerks_Points').setHtml('<div style="color:#9CA3AF;text-align: center;font-size:12px;width:100%;font-weight:normal">Point Rewards</div>');
+        Ext.getCmp('htmlAyohaMerchantRedemptionHeader_ButtonPerks_Vouchers').setHtml('<div style="color:black;text-align: center;font-size:12px;width:100%;font-weight:bold">Vouchers</div>');
+        Ext.getCmp('htmlAyohaMerchantRedemptionHeader_ButtonPerks_Contests').setHtml('<div style="color:#9CA3AF;text-align: center;font-size:12px;width:100%;font-weight:normal">Contests</div>');
+        Ext.getCmp('htmlAyohaMerchantRedemptionHeader_ButtonPerks_Events').setHtml('<div style="color:#9CA3AF;text-align: center;font-size:12px;width:100%;font-weight:normal">Events</div>');
+        Ext.getCmp('htmlAyohaMerchantRedemptionHeader_ButtonPerks_Discounts').setHtml('<div style="color:#9CA3AF;text-align: center;font-size:12px;width:100%;font-weight:normal">Discounts</div>');
+        Ext.getCmp('tabpanelAyohaMerchantRewards').setActiveItem(2);
+       animatedClickTabExt_AyohaMerchantReward('containerAyohaMerchantRedemptionHeader_ButtonPerks_Vouchers');
+      
+      }
+    );
+
+
+
+
+
+
+    var containerViewnameContainerAyohaMerchantRedemptionHeader_ButtonPerks_Contests = Ext.ComponentQuery.query('container[name=nameContainerAyohaMerchantRedemptionHeader_ButtonPerks_Contests]')[0];
+    var containerViewElnameContainerAyohaMerchantRedemptionHeader_ButtonPerks_Contests = containerViewnameContainerAyohaMerchantRedemptionHeader_ButtonPerks_Contests.element;
+    containerViewElnameContainerAyohaMerchantRedemptionHeader_ButtonPerks_Contests.on('tap',
+      function (event, node, options, eOpts) {
+        Ext.getCmp('htmlAyohaMerchantRedemptionHeader_ButtonPerks_Stamps').setHtml('<div style="color:#9CA3AF;text-align: center;font-size:12px;width:100%;font-weight:normal">Digital Stamps</div>');
+        Ext.getCmp('htmlAyohaMerchantRedemptionHeader_ButtonPerks_Points').setHtml('<div style="color:#9CA3AF;text-align: center;font-size:12px;width:100%;font-weight:normal">Point Rewards</div>');
+        Ext.getCmp('htmlAyohaMerchantRedemptionHeader_ButtonPerks_Vouchers').setHtml('<div style="color:#9CA3AF;text-align: center;font-size:12px;width:100%;font-weight:normal">Vouchers</div>');
+        Ext.getCmp('htmlAyohaMerchantRedemptionHeader_ButtonPerks_Contests').setHtml('<div style="color:black;text-align: center;font-size:12px;width:100%;font-weight:bold">Contest</div>');
+        Ext.getCmp('htmlAyohaMerchantRedemptionHeader_ButtonPerks_Events').setHtml('<div style="color:#9CA3AF;text-align: center;font-size:12px;width:100%;font-weight:normal">Events</div>');
+        Ext.getCmp('htmlAyohaMerchantRedemptionHeader_ButtonPerks_Discounts').setHtml('<div style="color:#9CA3AF;text-align: center;font-size:12px;width:100%;font-weight:normal">Discounts</div>');
+        Ext.getCmp('tabpanelAyohaMerchantRewards').setActiveItem(3);
+       animatedClickTabExt_AyohaMerchantReward('containerAyohaMerchantRedemptionHeader_ButtonPerks_Contests');
+      
+      }
+    );
+
+
+
+
+
+
+    var containerViewnameContainerAyohaMerchantRedemptionHeader_ButtonPerks_Events = Ext.ComponentQuery.query('container[name=nameContainerAyohaMerchantRedemptionHeader_ButtonPerks_Events]')[0];
+    var containerViewElnameContainerAyohaMerchantRedemptionHeader_ButtonPerks_Events = containerViewnameContainerAyohaMerchantRedemptionHeader_ButtonPerks_Events.element;
+    containerViewElnameContainerAyohaMerchantRedemptionHeader_ButtonPerks_Events.on('tap',
+      function (event, node, options, eOpts) {
+        Ext.getCmp('htmlAyohaMerchantRedemptionHeader_ButtonPerks_Stamps').setHtml('<div style="color:#9CA3AF;text-align: center;font-size:12px;width:100%;font-weight:normal">Digital Stamps</div>');
+        Ext.getCmp('htmlAyohaMerchantRedemptionHeader_ButtonPerks_Points').setHtml('<div style="color:#9CA3AF;text-align: center;font-size:12px;width:100%;font-weight:normal">Point Rewards</div>');
+        Ext.getCmp('htmlAyohaMerchantRedemptionHeader_ButtonPerks_Vouchers').setHtml('<div style="color:#9CA3AF;text-align: center;font-size:12px;width:100%;font-weight:normal">Vouchers</div>');
+        Ext.getCmp('htmlAyohaMerchantRedemptionHeader_ButtonPerks_Contests').setHtml('<div style="color:#9CA3AF;text-align: center;font-size:12px;width:100%;font-weight:normal">Contests</div>');
+        Ext.getCmp('htmlAyohaMerchantRedemptionHeader_ButtonPerks_Events').setHtml('<div style="color:black;text-align: center;font-size:12px;width:100%;font-weight:bold">Events</div>');
+        Ext.getCmp('htmlAyohaMerchantRedemptionHeader_ButtonPerks_Discounts').setHtml('<div style="color:#9CA3AF;text-align: center;font-size:12px;width:100%;font-weight:normal">Discounts</div>');
+        Ext.getCmp('tabpanelAyohaMerchantRewards').setActiveItem(4);
+       animatedClickTabExt_AyohaMerchantReward('containerAyohaMerchantRedemptionHeader_ButtonPerks_Events');
+      
+      }
+    );
+
+    var containerViewnameContainerAyohaMerchantRedemptionHeader_ButtonPerks_Discounts = Ext.ComponentQuery.query('container[name=nameContainerAyohaMerchantRedemptionHeader_ButtonPerks_Discounts]')[0];
+    var containerViewElnameContainerAyohaMerchantRedemptionHeader_ButtonPerks_Discounts = containerViewnameContainerAyohaMerchantRedemptionHeader_ButtonPerks_Discounts.element;
+    containerViewElnameContainerAyohaMerchantRedemptionHeader_ButtonPerks_Discounts.on('tap',
+      function (event, node, options, eOpts) {
+        Ext.getCmp('htmlAyohaMerchantRedemptionHeader_ButtonPerks_Stamps').setHtml('<div style="color:#9CA3AF;text-align: center;font-size:12px;width:100%;font-weight:normal">Digital Stamps</div>');
+        Ext.getCmp('htmlAyohaMerchantRedemptionHeader_ButtonPerks_Points').setHtml('<div style="color:#9CA3AF;text-align: center;font-size:12px;width:100%;font-weight:normal">Point Rewards</div>');
+        Ext.getCmp('htmlAyohaMerchantRedemptionHeader_ButtonPerks_Vouchers').setHtml('<div style="color:#9CA3AF;text-align: center;font-size:12px;width:100%;font-weight:normal">Vouchers</div>');
+        Ext.getCmp('htmlAyohaMerchantRedemptionHeader_ButtonPerks_Contests').setHtml('<div style="color:#9CA3AF;text-align: center;font-size:12px;width:100%;font-weight:normal">Contests</div>');
+        Ext.getCmp('htmlAyohaMerchantRedemptionHeader_ButtonPerks_Events').setHtml('<div style="color:#9CA3AF;text-align: center;font-size:12px;width:100%;font-weight:normal">Events</div>');
+        Ext.getCmp('htmlAyohaMerchantRedemptionHeader_ButtonPerks_Discounts').setHtml('<div style="color:black;text-align: center;font-size:12px;width:100%;font-weight:bold">Discounts</div>');
+        Ext.getCmp('tabpanelAyohaMerchantRewards').setActiveItem(5);
+       animatedClickTabExt_AyohaMerchantReward('containerAyohaMerchantRedemptionHeader_ButtonPerks_Discounts');
+      
+      }
+    );
 }

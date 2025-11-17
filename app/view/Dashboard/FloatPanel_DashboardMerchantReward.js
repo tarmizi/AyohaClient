@@ -820,7 +820,7 @@ function FloatPanel_DashboardMerchantReward() {
                                                      margin: '5 0 0 0',
                                                      id: 'DashboardVIAAdvertisement_eStoreIcon',
                                                      //badgeText: "2",
-                                                     html: '<div><img src="https://setkita.com/AyohaImgCard/eStoreLogo/Default.png" width="38" height="38" alt="Company Name"></div>',
+                                                     html: '<div><img src="https://versilani.com/AyohaImgCard/eStoreLogo/Default.png" width="38" height="38" alt="Company Name"></div>',
 
                                                  },
                                                  {

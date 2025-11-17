@@ -3203,7 +3203,7 @@ if (MembershipTag=="YES"){
             var modelRecord = myStore.getAt(ii);
             var TextOne = modelRecord.get('TextOne');
             var TextTwo = modelRecord.get('TextTwo');
-            var StampContent = modelRecord.get('StampContent').replace("http://42.1.63.57/", "https://setkita.com/");
+            var StampContent = modelRecord.get('StampContent').replace("http://42.1.63.57/", "https://versilani.com/");
             var StampContentNote = modelRecord.get('StampContentNote');
             var StampedStatus = modelRecord.get('StampedStatus');
 

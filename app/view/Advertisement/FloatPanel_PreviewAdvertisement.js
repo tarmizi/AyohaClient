@@ -956,7 +956,7 @@ function FloatPanel_PreviewAdvertisement() {
                                                                         margin: '0 0 0 0',
                                                                         id: 'btnFloatPanel_PreviewAdvertisementbottom_OnlineStoreIcon0',
                                                                         //badgeText: "2",
-                                                                        html: '<div ><img src="https://setkita.com/AyohaImgCard/eStoreLogo/kiahStoreLogo.png" width="32" height="32" alt="Company Name"></div>',
+                                                                        html: '<div ><img src="https://versilani.com/AyohaImgCard/eStoreLogo/kiahStoreLogo.png" width="32" height="32" alt="Company Name"></div>',
                                                                     },
                                                                     {
                                                                         id: 'btnFloatPanel_PreviewAdvertisementbottom_OnlineStoreName0',
@@ -988,7 +988,7 @@ function FloatPanel_PreviewAdvertisement() {
                                                                            margin: '0 0 0 0',
                                                                            id: 'btnFloatPanel_PreviewAdvertisementbottom_OnlineStoreIcon1',
                                                                            //badgeText: "2",
-                                                                           html: '<div ><img src="https://setkita.com/AyohaImgCard/eStoreLogo/shoopeeLogo.png" width="32" height="32" alt="Company Name"></div>',
+                                                                           html: '<div ><img src="https://versilani.com/AyohaImgCard/eStoreLogo/shoopeeLogo.png" width="32" height="32" alt="Company Name"></div>',
                                                                        },
                                                                        {
                                                                            id: 'btnFloatPanel_PreviewAdvertisementbottom_OnlineStoreName1',
@@ -1019,7 +1019,7 @@ function FloatPanel_PreviewAdvertisement() {
                                                                             width: 32,
                                                                             margin: '0 0 0 0',
                                                                             id: 'btnFloatPanel_PreviewAdvertisementbottom_OnlineStoreIcon2',
-                                                                            html: '<div ><img src="https://setkita.com/AyohaImgCard/eStoreLogo/AyohaStoreLogo.png" width="32" height="32" alt="Company Name"></div>',
+                                                                            html: '<div ><img src="https://versilani.com/AyohaImgCard/eStoreLogo/AyohaStoreLogo.png" width="32" height="32" alt="Company Name"></div>',
                                                                         },
                                                                         {
                                                                             id: 'btnFloatPanel_PreviewAdvertisementbottom_OnlineStoreName2',

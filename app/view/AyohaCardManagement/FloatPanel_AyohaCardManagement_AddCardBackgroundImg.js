@@ -529,7 +529,7 @@ function SaveCardAddBackgroundImage() {
    
   
 
-    var ImgPaths = "https://setkita.com/AyohaImgCard/BackgroundImgCard/" + GetEnterpriseAccNo() + "/" + document.getElementById('inputName-FloatPanel_AyohaCardManagement_AddCardBackgroundImg_UploadedImage').value;
+    var ImgPaths = "https://versilani.com/AyohaImgCard/BackgroundImgCard/" + GetEnterpriseAccNo() + "/" + document.getElementById('inputName-FloatPanel_AyohaCardManagement_AddCardBackgroundImg_UploadedImage').value;
    // (CC.ID, CC.EnterpriseAccNo, CC.StampCampaignCode, CC.ImgName, CC.ImgPath, CC.RowStatus, CC.CreatedBy, CC.ImageBase64, CC.ShowHide);
     // alert(ContentCardImgNames);
     var obj = {

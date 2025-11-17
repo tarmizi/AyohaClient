@@ -1282,5 +1282,5 @@ function loadEnterprisesContactUsLinkStore() {
 
 function termandcondtionpage() {
    
-    window.open('https://setkita.com/termandcondition.html', '_system'); return false;
+    window.open('https://versilani.com/termandcondition.html', '_system'); return false;
 }

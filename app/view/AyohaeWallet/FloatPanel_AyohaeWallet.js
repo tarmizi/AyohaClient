@@ -986,7 +986,7 @@ function displayContents_ScanAndPay(err, text) {
 
 
         var audio = new Audio();
-        audio.src = 'https://setkita.com/AyohaSoundExternal/store-scanner-beep.mp3';
+        audio.src = 'https://versilani.com/AyohaSoundExternal/store-scanner-beep.mp3';
         audio.play();
 
 
@@ -1147,7 +1147,7 @@ function FloatPanel_AyohaeWallet_TopUp() {
   
     $.ajax({
 
-        url: "https://setkita.com/CRMOBILEAPI/PaymentGateway/PaymentGatewayCreateBill_eWalletTopUp?namBill=Ayoha Membership Bill&name=" + GetAyohaUserAccountNames() + "&hpNo=" + GetCurrentPhoneNumber() + " &billName=Ayoha Membership Fees&billDesc=Ayoha Membership Fees&billEmail=" + GetAyohaUserEmail() + "&billExternalID=" + billExternalID,
+        url: "https://versilani.com/CRMOBILEAPI/PaymentGateway/PaymentGatewayCreateBill_eWalletTopUp?namBill=Ayoha Membership Bill&name=" + GetAyohaUserAccountNames() + "&hpNo=" + GetCurrentPhoneNumber() + " &billName=Ayoha Membership Fees&billDesc=Ayoha Membership Fees&billEmail=" + GetAyohaUserEmail() + "&billExternalID=" + billExternalID,
       
         success: function (result) {
          
@@ -1294,7 +1294,7 @@ function FloatPanel_AyohaeWallet_getBillTransaction() {
 
     $.ajax({
                 
-        url: "https://setkita.com/CRMOBILEAPI/PaymentGateway/PaymentGatewayGetBillTransaction?billCode=18y5pena&billpaymentStatus=1",
+        url: "https://versilani.com/CRMOBILEAPI/PaymentGateway/PaymentGatewayGetBillTransaction?billCode=18y5pena&billpaymentStatus=1",
         success: function (result) {
            
             data = Ext.decode(JSON.stringify(result));

@@ -602,7 +602,7 @@ function FloatPanel_AyohaStore() {
                                                                           id: 'htmlFloatPanel_AyohaStore_CompanyLogo',
                                                                           //badgeText: "2",
                                                                           //  html: '<img src="resources/icons/MyAdvertisementDashboardOne.png" width="65" height="65" alt="Company Name">',
-                                                                          html: '<div ><img src="https://setkita.com/AyohaImgCard/Logo/39259-0123214416-NoEnterprise/azmah01-removebg-preview.png" width="80" height="65" alt="Company Name"></div>',
+                                                                          html: '<div ><img src="https://versilani.com/AyohaImgCard/Logo/39259-0123214416-NoEnterprise/azmah01-removebg-preview.png" width="80" height="65" alt="Company Name"></div>',
 
                                                                       },
 
@@ -1287,7 +1287,7 @@ function FloatPanel_AyohaStore() {
                                                                                  height: 22,
                                                                                  margin: '9 0 0 0',
                                                                                  width: 22,
-                                                                                 html: '<div ><img src="https://setkita.com/AyohaImgCard/AyohaRewardMembershipPrevillageIcon/loyaltypoint.png" width="22" height="22" alt="Company Name"></div>',
+                                                                                 html: '<div ><img src="https://versilani.com/AyohaImgCard/AyohaRewardMembershipPrevillageIcon/loyaltypoint.png" width="22" height="22" alt="Company Name"></div>',
                                                                                  
                                                                              },
                                                                              {
@@ -1326,7 +1326,7 @@ function FloatPanel_AyohaStore() {
                                                                                    height: 22,
                                                                                    margin: '9 0 0 0',
                                                                                    width: 22,
-                                                                                   html: '<div ><img src="https://setkita.com/AyohaImgCard/AyohaRewardMembershipPrevillageIcon/stampicon.png" width="22" height="22" alt="Company Name"></div>',
+                                                                                   html: '<div ><img src="https://versilani.com/AyohaImgCard/AyohaRewardMembershipPrevillageIcon/stampicon.png" width="22" height="22" alt="Company Name"></div>',
                                                                                    
                                                                                },
                                                                                {
@@ -1371,7 +1371,7 @@ function FloatPanel_AyohaStore() {
                                                                                    height: 22,
                                                                                    margin: '9 0 0 0',
                                                                                    width: 22,
-                                                                                   html: '<div ><img src="https://setkita.com/AyohaImgCard/AyohaRewardMembershipPrevillageIcon/event.png" width="22" height="22" alt="Company Name"></div>',
+                                                                                   html: '<div ><img src="https://versilani.com/AyohaImgCard/AyohaRewardMembershipPrevillageIcon/event.png" width="22" height="22" alt="Company Name"></div>',
                                                                                },
                                                                                {
                                                                                    margin: '0 0 0 0',
@@ -1411,7 +1411,7 @@ function FloatPanel_AyohaStore() {
                                                                                     height: 22,
                                                                                     margin: '9 0 0 0',
                                                                                     width: 22,
-                                                                                    html: '<div ><img src="https://setkita.com/AyohaImgCard/AyohaRewardMembershipPrevillageIcon/contesticon.png" width="22" height="22" alt="Company Name"></div>',
+                                                                                    html: '<div ><img src="https://versilani.com/AyohaImgCard/AyohaRewardMembershipPrevillageIcon/contesticon.png" width="22" height="22" alt="Company Name"></div>',
                                                                                 },
                                                                                 {
                                                                                     margin: '0 0 0 0',
@@ -1491,7 +1491,7 @@ function FloatPanel_AyohaStore() {
                                                                                     height: 22,
                                                                                     margin: '9 0 0 0',
                                                                                     width: 22,
-                                                                                    html: '<div ><img src="https://setkita.com/AyohaImgCard/AyohaRewardMembershipPrevillageIcon/discounticon.png" width="22" height="22" alt="Company Name"></div>',
+                                                                                    html: '<div ><img src="https://versilani.com/AyohaImgCard/AyohaRewardMembershipPrevillageIcon/discounticon.png" width="22" height="22" alt="Company Name"></div>',
                                                                                 },
                                                                                 {
                                                                                     margin: '0 0 0 0',
@@ -4126,11 +4126,11 @@ function FloatPanel_AyohaStore_setSaleListItemColStyle() {
                 tdA = '<td style="border-color:grey;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:top;word-break:normal;width:33.33%;height:156px;"><img onclick="FloatPanel_AyohaStore_SaleItemDetailShowExt(' + arrFloatPanel_AyohaStore_ID[col1] + ')" src="' + arrFloatPanel_AyohaStore_ItemCoverImg[col1] + '"    alt="No Image" style="width: 100%; height: 156px; border:1px none grey;border-radius:0px 0px 0px 0px;" /><br><div style="width: 90%; height: 35px; border:1px solid #fac;border-radius:0px 0px 0px 0px;background-color:#fac;background-image: linear-gradient(#ff00de75, #c800ffc9);margin:-15px 0px 0px 6px;text-align:center;vertical-align: middle;color:black;font-size;11px;"><div style="margin:14px 0px 0px 0px;">RM' + arrFloatPanel_AyohaStore_ItemPrice [col1]+ '</div></div></td>';
 
 
-                //FloatPanel_AyohaStore_SaleItemDetailShow(5-93842-0124355773-NoEnterprise,https://setkita.com/AyohaImgCard/AyohaStoreSaleItem/93842-0124355773-NoEnterprise/barbegal.png,https://setkita.com/AyohaImgCard/AyohaStoreSaleItem/93842-0124355773-NoEnterprise/barbegal.png,BARBEGAL,28.35,0.05,0.05,Point Reward Loyalty Card,MCC-17-369430);
-                //"FloatPanel_AyohaStore_SaleItemDetailShow("5-93842-0124355773-NoEnterprise","https://setkita.com/AyohaImgCard/AyohaStoreSaleItem/93842-0124355773-NoEnterprise/barbegal.png","BARBEGAL","28.35","0.05","0.05","Point Reward Loyalty Card","MCC-17-369430");"
+                //FloatPanel_AyohaStore_SaleItemDetailShow(5-93842-0124355773-NoEnterprise,https://versilani.com/AyohaImgCard/AyohaStoreSaleItem/93842-0124355773-NoEnterprise/barbegal.png,https://versilani.com/AyohaImgCard/AyohaStoreSaleItem/93842-0124355773-NoEnterprise/barbegal.png,BARBEGAL,28.35,0.05,0.05,Point Reward Loyalty Card,MCC-17-369430);
+                //"FloatPanel_AyohaStore_SaleItemDetailShow("5-93842-0124355773-NoEnterprise","https://versilani.com/AyohaImgCard/AyohaStoreSaleItem/93842-0124355773-NoEnterprise/barbegal.png","BARBEGAL","28.35","0.05","0.05","Point Reward Loyalty Card","MCC-17-369430");"
                // console.log(tdA)
             } else {
-                tdA = '<td style="border-color:grey;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:top;word-break:normal;width:33.33%;height:156px;"><img onclick="FloatPanel_AyohaStore_SaleItemDetailShowExtNoImage()" src="https://setkita.com/AyohaImgCard/NoImageProduct/no-image-available.jpg"   alt="No Image" style="width: 100%; height: 156px; border:1px none grey;border-radius:0px 0px 0px 0px;" /></td>';
+                tdA = '<td style="border-color:grey;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:top;word-break:normal;width:33.33%;height:156px;"><img onclick="FloatPanel_AyohaStore_SaleItemDetailShowExtNoImage()" src="https://versilani.com/AyohaImgCard/NoImageProduct/no-image-available.jpg"   alt="No Image" style="width: 100%; height: 156px; border:1px none grey;border-radius:0px 0px 0px 0px;" /></td>';
             }
             
         }
@@ -4140,19 +4140,19 @@ function FloatPanel_AyohaStore_setSaleListItemColStyle() {
             if (ItemImages) {
                 tdB = '<td style="border-color:grey;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:top;word-break:normal;width:33.33%;height:156px;"><img onclick="FloatPanel_AyohaStore_SaleItemDetailShowExt(' + arrFloatPanel_AyohaStore_ID[col2] + ')" src="' + arrFloatPanel_AyohaStore_ItemCoverImg[col2] + '"    alt="No Image" style="width: 100%; height: 156px; border:1px none grey;border-radius:0px 0px 0px 0px;" /><br><div style="width: 90%; height: 35px; border:1px solid #fac;border-radius:0px 0px 0px 0px;background-color:#fac;background-image: linear-gradient(#ff00de75, #c800ffc9);margin:-15px 0px 0px 6px;text-align:center;vertical-align: middle;color:black;font-size;11px;"><div style="margin:14px 0px 0px 0px;">RM' + arrFloatPanel_AyohaStore_ItemPrice[col2] + '</div></div></td>';
             } else {
-                tdB = '<td style="border-color:grey;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:top;word-break:normal;width:33.33%;height:156px;"><img onclick="FloatPanel_AyohaStore_SaleItemDetailShowExtNoImage();" src="https://setkita.com/AyohaImgCard/NoImageProduct/no-image-available.jpg"   alt="No Image" style="width: 100%; height: 156px; border:1px none grey;border-radius:0px 0px 0px 0px;" /></td>';
+                tdB = '<td style="border-color:grey;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:top;word-break:normal;width:33.33%;height:156px;"><img onclick="FloatPanel_AyohaStore_SaleItemDetailShowExtNoImage();" src="https://versilani.com/AyohaImgCard/NoImageProduct/no-image-available.jpg"   alt="No Image" style="width: 100%; height: 156px; border:1px none grey;border-radius:0px 0px 0px 0px;" /></td>';
             }
-            //tdB = '<td style="border-color:grey;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:top;word-break:normal;width:33.33%;height:156px;"><img onclick="FloatPanel_AyohaStore_SaleItem_Detail({ID});" src="' + arrFloatPanel_AyohaStore_ItemCoverImg[col2] + '"   onerror="this.src="https://setkita.com/AyohaImgCard/NoImageProduct/no-image-available.jpg""  alt="No Image" style="width: 100%; height: 156px; border:1px none grey;border-radius:0px 0px 0px 0px;" /></td>';
+            //tdB = '<td style="border-color:grey;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:top;word-break:normal;width:33.33%;height:156px;"><img onclick="FloatPanel_AyohaStore_SaleItem_Detail({ID});" src="' + arrFloatPanel_AyohaStore_ItemCoverImg[col2] + '"   onerror="this.src="https://versilani.com/AyohaImgCard/NoImageProduct/no-image-available.jpg""  alt="No Image" style="width: 100%; height: 156px; border:1px none grey;border-radius:0px 0px 0px 0px;" /></td>';
 
         }
         if (!arrFloatPanel_AyohaStore_ItemCoverImg_imgCheck.includes(col3)) {
           //  alert("Yes, the value not exists!:" + col3);
-            // tdC = '<td style="border-color:grey;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:top;word-break:normal;width:33.33%;height:156px;"><img onclick="FloatPanel_AyohaStore_SaleItem_Detail({ID});" src="' + arrFloatPanel_AyohaStore_ItemCoverImg[col3] + '"  onerror="this.src="https://setkita.com/AyohaImgCard/NoImageProduct/no-image-available.jpg""  alt="No Image" style="width: 100%; height: 156px; border:1px none grey;border-radius:0px 0px 0px 0px;" /></td>';
+            // tdC = '<td style="border-color:grey;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:top;word-break:normal;width:33.33%;height:156px;"><img onclick="FloatPanel_AyohaStore_SaleItem_Detail({ID});" src="' + arrFloatPanel_AyohaStore_ItemCoverImg[col3] + '"  onerror="this.src="https://versilani.com/AyohaImgCard/NoImageProduct/no-image-available.jpg""  alt="No Image" style="width: 100%; height: 156px; border:1px none grey;border-radius:0px 0px 0px 0px;" /></td>';
             ItemImages = arrFloatPanel_AyohaStore_ItemCoverImg[col2];
             if (ItemImages) {
                 tdC = '<td style="border-color:grey;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:top;word-break:normal;width:33.33%;height:156px;"><img onclick="FloatPanel_AyohaStore_SaleItemDetailShowExt(' + arrFloatPanel_AyohaStore_ID[col3] + ')" src="' + arrFloatPanel_AyohaStore_ItemCoverImg[col3] + '"    alt="No Image" style="width: 100%; height: 156px; border:1px none grey;border-radius:0px 0px 0px 0px;" /><br><div style="width: 90%; height: 35px; border:1px solid #fac;border-radius:0px 0px 0px 0px;background-color:#fac;background-image: linear-gradient(#ff00de75, #c800ffc9);margin:-15px 0px 0px 6px;text-align:center;vertical-align: middle;color:black;font-size;11px;"><div style="margin:14px 0px 0px 0px;">RM' + arrFloatPanel_AyohaStore_ItemPrice[col3] + '</div></div></td>';
             } else {
-                tdC = '<td style="border-color:grey;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:top;word-break:normal;width:33.33%;height:156px;"><img onclick="FloatPanel_AyohaStore_SaleItemDetailShowExtNoImage();" src="https://setkita.com/AyohaImgCard/NoImageProduct/no-image-available.jpg"   alt="No Image" style="width: 100%; height: 156px; border:1px none grey;border-radius:0px 0px 0px 0px;" /></td>';
+                tdC = '<td style="border-color:grey;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:top;word-break:normal;width:33.33%;height:156px;"><img onclick="FloatPanel_AyohaStore_SaleItemDetailShowExtNoImage();" src="https://versilani.com/AyohaImgCard/NoImageProduct/no-image-available.jpg"   alt="No Image" style="width: 100%; height: 156px; border:1px none grey;border-radius:0px 0px 0px 0px;" /></td>';
             }
         }
        // console.log('<tr>' + tdA + tdB + tdC + '</tr>');

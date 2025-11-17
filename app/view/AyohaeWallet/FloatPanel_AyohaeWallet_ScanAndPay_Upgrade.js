@@ -533,7 +533,7 @@ function FloatPanel_AyohaeWallet_ScanAndPay_UpgradeShow() {
 
         QRCodeResult = content;
         var audio = new Audio();
-        audio.src = 'https://setkita.com/AyohaSoundExternal/store-scanner_eWallet-beep.mp3';
+        audio.src = 'https://versilani.com/AyohaSoundExternal/store-scanner_eWallet-beep.mp3';
         audio.play();
 
 

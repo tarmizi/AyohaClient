@@ -335,7 +335,7 @@ function FloatPanel_AyohaEnterpriseRewardItem() {
                                         //     ],
                                         //     data: [
                                         //         {
-                                        //             image: 'https://setkita.com/AyohaImgCard/AdvertisementImage/95154-95943-258-NoEnterprise/KopiSuratCinta.jpg',
+                                        //             image: 'https://versilani.com/AyohaImgCard/AdvertisementImage/95154-95943-258-NoEnterprise/KopiSuratCinta.jpg',
                                         //             merchant: 'Kopi Surat Cinta - Putrajaya',
                                         //             subtitle: 'makan kenangan lalu',
                                         //             rating: 5.0,

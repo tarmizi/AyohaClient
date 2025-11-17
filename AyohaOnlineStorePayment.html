@@ -28,7 +28,7 @@
           
             $.ajax({
 
-                url: "https://setkita.com/CRMOBILEAPI/PaymentGateway/PaymentGatewayGetBillTransaction?billCode=" + billCode + "&billpaymentStatus=1",
+                url: "https://versilani.com/CRMOBILEAPI/PaymentGateway/PaymentGatewayGetBillTransaction?billCode=" + billCode + "&billpaymentStatus=1",
                 success: function (result) {
                     var jsonString = JSON.stringify(result);
                   
@@ -86,7 +86,7 @@ var SaleItemsCode=localStorage.getItem("SaleItemsCode");
 
 
                                 $.ajax({
-                                    url: 'https://setkita.com/CRMOBILEAPI/PaymentGateWayBillTransaction/PaymentGatewayCreateBillMakePaymentAyohaStoreOnline',
+                                    url: 'https://versilani.com/CRMOBILEAPI/PaymentGateWayBillTransaction/PaymentGatewayCreateBillMakePaymentAyohaStoreOnline',
                                     dataType: 'json',
                                     type: 'post',
                                     contentType: 'application/json',    

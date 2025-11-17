@@ -177,7 +177,7 @@ if(animatedClickTabExtComponant){
 
         });
     });
-    Ext.getCmp(Componant).setStyle('background-color:transparent;border-bottom:3px solid purple');
+    Ext.getCmp(Componant).setStyle('background-color:transparent;border-bottom:3px solid #c800ffc9');
     animatedClickTabExtComponant = Componant;
 
     
@@ -292,7 +292,7 @@ function animatedClickTab() {
 
 function PlayAyohaSound(sound) {
     var audio = new Audio();
-    audio.src = 'https://setkita.com/AyohaSoundExternal/'+sound;
+    audio.src = 'https://versilani.com/AyohaSoundExternal/'+sound;
     audio.play();
 }
 
@@ -1247,21 +1247,21 @@ function GetAPIurl() {
     // var _value = 'http://192.168.0.107:9018';
    // var _value = 'https://ianmizi.com/webapiresit/webapiresit/';
     //var _value = 'https://42.1.63.57/CRMOBILEAPI/';
-    var _value = 'https://setkita.com/CRMOBILEAPI/';
-   // var _value = 'https://192.168.0.101/CRMOBILEAPI/';
+    //var _value = 'https://versilani.com/CRMOBILEAPI/';
+    var _value = 'https://versilani.com/AyohaMobile/';
   //  var _value = 'http://tarmizi-004-site6.etempurl.com/webapiresit/webapiresit/';
   //  var _value = 'http://cloudreceipts.sytes.net:9018/'
     return _value;
 }
 
 function GetDomainName() {
-    var _value = 'https://setkita.com/';
+    var _value = 'https://versilani.com/';
     return _value;  
 }
 
 function GetAPIurl_Web() {
 
-    var _value = 'https://setkita.com/AYOHA_M_API/';
+    var _value = 'https://versilani.com/AYOHA_M_API/';
      return _value;
  }
 function GetCurrentOneSignalPlayerID() {

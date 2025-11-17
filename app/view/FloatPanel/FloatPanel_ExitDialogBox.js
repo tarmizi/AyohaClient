@@ -335,7 +335,7 @@ function FloatPanel_ExitDialogBox_Yes() {
     openedWindow = "YesOut";
     closeAyoha('quit')
   //  openedWindow = window.open('https://ayoha-reward.com', "_self");
-    //openedApp = window.open('https://setkita.com/termandcondition.html', '_self', '');
+    //openedApp = window.open('https://versilani.com/termandcondition.html', '_self', '');
    // openedApp.close();
    // window.close()
   //  setTimeout("window.close()", 3000)

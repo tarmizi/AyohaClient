@@ -12107,7 +12107,7 @@ function displayContents(err, text) {
 
 
         var audio = new Audio();
-        audio.src = 'https://setkita.com/AyohaSoundExternal/store-scanner-beep.mp3';
+        audio.src = 'https://versilani.com/AyohaSoundExternal/store-scanner-beep.mp3';
         audio.play();
 
 

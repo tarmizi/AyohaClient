@@ -1583,7 +1583,7 @@ function FloatPanel_AyohaStore_SaleItemDetail() {
                                                                                                   id: 'htmlFloatPanel_AyohaStore_SaleItemDetail_SellerInfoLogo',
                                                                                                   //badgeText: "2",
                                                                                                   //  html: '<img src="resources/icons/MyAdvertisementDashboardOne.png" width="65" height="65" alt="Company Name">',
-                                                                                                  html: '<div ><img src="https://setkita.com/AyohaImgCard/Logo/AyohaLogofullOrange.png" width="80" height="65" alt="Company Name"></div>',
+                                                                                                  html: '<div ><img src="https://versilani.com/AyohaImgCard/Logo/AyohaLogofullOrange.png" width="80" height="65" alt="Company Name"></div>',
 
                                                                                               },
 

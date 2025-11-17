@@ -25,7 +25,7 @@
 
             $.ajax({
 
-                url: "https://setkita.com/CRMOBILEAPI/PaymentGateway/PaymentGatewayGetBillTransaction?billCode=" + billCode + "&billpaymentStatus=1",
+                url: "https://versilani.com/CRMOBILEAPI/PaymentGateway/PaymentGatewayGetBillTransaction?billCode=" + billCode + "&billpaymentStatus=1",
                 success: function (result) {
                     var obj = JSON.stringify(result);
 
@@ -57,7 +57,7 @@
 
 
                                 $.ajax({
-                                    url: 'https://setkita.com/CRMOBILEAPI/PaymentGateWayBillTransaction/PaymentGatewayCreateBilleWalletTopUp',
+                                    url: 'https://versilani.com/CRMOBILEAPI/PaymentGateWayBillTransaction/PaymentGatewayCreateBilleWalletTopUp',
                                     dataType: 'json',
                                     type: 'post',
                                     contentType: 'application/json',                                   

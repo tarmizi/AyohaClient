@@ -5504,7 +5504,7 @@ FloatPanel_AyohaStore_CheckOut_MembershipCardLoadByMembershipCardCode();
     
     function FloatPanel_AyohaStore_CheckOut_MembershipCardPlayAyohaPointSound() {
         var audio = new Audio();
-        audio.src = 'https://setkita.com/AyohaSoundExternal/KidsCheering.mp3';
+        audio.src = 'https://versilani.com/AyohaSoundExternal/KidsCheering.mp3';
         audio.play();
     }
     

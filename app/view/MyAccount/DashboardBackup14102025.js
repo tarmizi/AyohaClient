@@ -1161,7 +1161,7 @@ Ext.define('ianMizi.view.MyAccount.Dashboard', {
 //     xtype: 'container',
     
 //     //style: 'background-image: url("resources/icons/bgfront06.png"); background-size: 100% 400px;background-repeat: no-repeat;',
-//    //style: 'background-image: url("https://setkita.com/AyohaImgCard/MembershipCardBackgroundImgBack/35158-71925-1855-NoEnterprise/MukaBelakang.png"); background-size: 100% 390px;background-repeat: no-repeat;',
+//    //style: 'background-image: url("https://versilani.com/AyohaImgCard/MembershipCardBackgroundImgBack/35158-71925-1855-NoEnterprise/MukaBelakang.png"); background-size: 100% 390px;background-repeat: no-repeat;',
 //  style: 'background-image: url("resources/icons/bgfront15.png"); background-size: 100% 390px;background-repeat: no-repeat;',
 //   //style: 'background-image: url("resources/icons/kopisuratcintabg.jpg"); background-size: 100% 390px;background-repeat: no-repeat;',
 //  //style: "background-color: transparent;",
@@ -1723,7 +1723,7 @@ html:'<div class="tier-head">'+
                                       id: 'htmlDashboard_AyohaStore_CompanyLogo',
                                       //badgeText: "2",
                                       //  html: '<img src="resources/icons/MyAdvertisementDashboardOne.png" width="65" height="65" alt="Company Name">',
-                                      html: '<div style="width: 50px; height: 47px ; z-index: 200 !important;  border-width: 2px; border-style: solid; border-color: rgb(236, 240, 241); background: white; border-radius: 10%;" ><img src="https://setkita.com/AyohaImgCard/Logo/39259-0123214416-NoEnterprise/azmah01-removebg-preview.png" width="50" height="47" alt="Company Name"></div>',
+                                      html: '<div style="width: 50px; height: 47px ; z-index: 200 !important;  border-width: 2px; border-style: solid; border-color: rgb(236, 240, 241); background: white; border-radius: 10%;" ><img src="https://versilani.com/AyohaImgCard/Logo/39259-0123214416-NoEnterprise/azmah01-removebg-preview.png" width="50" height="47" alt="Company Name"></div>',
 
                                   },
 
@@ -3152,7 +3152,7 @@ html:'<div class="tier-head">'+
                                          id: 'htmlDashboard_AyohaStore_CompanyLogo_PremiumAdvertisement',
                                          //badgeText: "2",
                                          //  html: '<img src="resources/icons/MyAdvertisementDashboardOne.png" width="65" height="65" alt="Company Name">',
-                                         html: '<div style="width: 50px; height: 47px ; z-index: 200 !important;  border-width: 2px; border-style: solid; border-color: rgb(236, 240, 241); background: white; border-radius: 10%;" ><img src="https://setkita.com/AyohaImgCard/Logo/39259-0123214416-NoEnterprise/azmah01-removebg-preview.png" width="50" height="47" alt="Company Name"></div>',
+                                         html: '<div style="width: 50px; height: 47px ; z-index: 200 !important;  border-width: 2px; border-style: solid; border-color: rgb(236, 240, 241); background: white; border-radius: 10%;" ><img src="https://versilani.com/AyohaImgCard/Logo/39259-0123214416-NoEnterprise/azmah01-removebg-preview.png" width="50" height="47" alt="Company Name"></div>',
    
                                      },
    
@@ -4029,7 +4029,7 @@ html:'<div style="display: flex; flex-direction: column; align-items: center; ju
 //                                          id: 'htmlDashboard_AyohaStore_CompanyLogo_PremiumAdvertisement',
 //                                          //badgeText: "2",
 //                                          //  html: '<img src="resources/icons/MyAdvertisementDashboardOne.png" width="65" height="65" alt="Company Name">',
-//                                          html: '<div style="width: 50px; height: 47px ; z-index: 200 !important;  border-width: 2px; border-style: solid; border-color: rgb(236, 240, 241); background: white; border-radius: 10%;" ><img src="https://setkita.com/AyohaImgCard/Logo/39259-0123214416-NoEnterprise/azmah01-removebg-preview.png" width="50" height="47" alt="Company Name"></div>',
+//                                          html: '<div style="width: 50px; height: 47px ; z-index: 200 !important;  border-width: 2px; border-style: solid; border-color: rgb(236, 240, 241); background: white; border-radius: 10%;" ><img src="https://versilani.com/AyohaImgCard/Logo/39259-0123214416-NoEnterprise/azmah01-removebg-preview.png" width="50" height="47" alt="Company Name"></div>',
    
 //                                      },
    
@@ -12812,7 +12812,7 @@ function displayContents(err, text) {
 
 
         var audio = new Audio();
-        audio.src = 'https://setkita.com/AyohaSoundExternal/store-scanner-beep.mp3';
+        audio.src = 'https://versilani.com/AyohaSoundExternal/store-scanner-beep.mp3';
         audio.play();
 
 
