@@ -582,7 +582,7 @@ function FloatPanel_QrCodeScanner_ScanAyohaStoreShow() {
         
         QRCodeResult = content;
         var audio = new Audio();
-        audio.src = 'https://versilani.com/AyohaSoundExternal/store-scanner-beep.mp3';
+        audio.src = 'https://setkita.com/AyohaSoundExternal/store-scanner-beep.mp3';
         audio.play();
 
 
@@ -726,7 +726,7 @@ function FloatPanel_QrCodeScanner_ScanCampaignShow() {
         
         QRCodeResult = content;
         var audio = new Audio();
-        audio.src = 'https://versilani.com/AyohaSoundExternal/store-scanner-beep.mp3';
+        audio.src = 'https://setkita.com/AyohaSoundExternal/store-scanner-beep.mp3';
         audio.play();
 
 

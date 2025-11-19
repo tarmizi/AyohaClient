@@ -513,6 +513,7 @@ function loadAyohaUserProfileLoginBody() {
                     if (data.total > 0) {
                         Ext.getCmp('tabpanelMyAccount_Dashboard').getTabBar().hide();
                         Ext.getCmp('tabpanelAyohaMerchantRewards').getTabBar().hide();
+                        Ext.getCmp('tabpanelAyohaMerchantRewards_StampStatus').getTabBar().hide();
                         AyohaMerchantReward_InitializedTabEvent();
                         localStorage.setItem('AyohaUserAccountNo',data.results[0].AccountNo);
                         localStorage.setItem('AyohaUserKatalaluan', data.results[0].Katalaluan);
@@ -1282,5 +1283,5 @@ function loadEnterprisesContactUsLinkStore() {
 
 function termandcondtionpage() {
    
-    window.open('https://versilani.com/termandcondition.html', '_system'); return false;
+    window.open('https://setkita.com/termandcondition.html', '_system'); return false;
 }

@@ -1258,7 +1258,7 @@ function SaveImageCardContent(ContentCardImg, EnterpriseAccNo, ContentCardImgNam
 
 
 
-    var ImgPaths = "https://versilani.com/AyohaImgCard/ContentCard/" + EnterpriseAccNo + "/" + ContentCardImgNames;
+    var ImgPaths = "https://setkita.com/AyohaImgCard/ContentCard/" + EnterpriseAccNo + "/" + ContentCardImgNames;
         var con = '<div style="border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none white;border-radius: 50px;width:70px;height:70px;color:white;vertical-align: bottom; text-align:center;font-family: Lucida Console, Courier, monospace;font-size: 35px;background-image: url(' + ImgPaths + '); background-size: 100% 100%;" id="' + globalDivContent + '" ></div>';
        // alert(ContentCardImgNames);
     var obj = {

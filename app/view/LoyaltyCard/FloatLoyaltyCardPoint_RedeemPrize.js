@@ -589,7 +589,7 @@ function FloatLoyaltyCardPoint_RedeemPrize() {
                                height: 400,
                                margin: '0 0 0 0',
                                id: 'FloatLoyaltyCardPoint_RedeemPrize_PrizeImg',
-                               html: '<img src="https://versilani.com/AyohaImgCard/AyohaRedeemPrize/01/externalhd-removebg-preview.png"   style="width:100%;height:400px;zIndex:-100px;">',
+                               html: '<img src="https://setkita.com/AyohaImgCard/AyohaRedeemPrize/01/externalhd-removebg-preview.png"   style="width:100%;height:400px;zIndex:-100px;">',
                            },
 
 

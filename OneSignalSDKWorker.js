@@ -4,7 +4,7 @@ self.addEventListener('notificationclick', function(event) {
   const data = event.notification?.data || {};
   alert('Custom Service Worker Click Data:', data);
 
-  let url = 'https://versilani.com/ayohaclient/index.html#notification';
+  let url = 'https://setkita.com/ayohaclient/index.html#notification';
 
   // Append params from data (if available)
   if (data.type && data.merchant) {

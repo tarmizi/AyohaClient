@@ -837,6 +837,9 @@ function FloatPanel_NearestRedemptionList_AyohaUserDashBoardNearestRedeemItemLis
         _DataStore_AyohaUserDashBoardNearestRedeemItemListStore.load();
         var count = _DataStore_AyohaUserDashBoardNearestRedeemItemListStore.getCount();
 
+        Ext.getCmp('listTabpanelAyohaMerchantRewards_StampsStatus_PendingApprovalOrRedeemed').setStore(_DataStore_AyohaUserDashBoardNearestRedeemItemListStore);
+        
+
 
         Ext.Viewport.setMasked(false);
         //  VIAAdvertismentAutoSlide();

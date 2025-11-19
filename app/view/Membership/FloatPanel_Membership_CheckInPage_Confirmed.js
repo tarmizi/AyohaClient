@@ -136,7 +136,7 @@ var isFloatPanel_Membership_CheckInPage_ConfirmedOpen = 'N';
 //                              id: 'htmlFloatPanel_Membership_CheckInPage_Confirmed_CompanyLogo',
 //                              //badgeText: "2",
 //                              //  html: '<img src="resources/icons/MyAdvertisementDashboardOne.png" width="65" height="65" alt="Company Name">',
-//                              html: '<div ><img src="https://versilani.com/AyohaImgCard/Logo/39259-0123214416-NoEnterprise/azmah01-removebg-preview.png" width="80" height="65" alt="Company Name"></div>',
+//                              html: '<div ><img src="https://setkita.com/AyohaImgCard/Logo/39259-0123214416-NoEnterprise/azmah01-removebg-preview.png" width="80" height="65" alt="Company Name"></div>',
 
 //                          },
 //                                {

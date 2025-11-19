@@ -6746,7 +6746,7 @@ else{
     
     function FloatPanel_AyohaStore_CheckOut_PlayAyohaPointSound() {
         var audio = new Audio();
-        audio.src = 'https://versilani.com/AyohaSoundExternal/KidsCheering.mp3';
+        audio.src = 'https://setkita.com/AyohaSoundExternal/KidsCheering.mp3';
         audio.play();
     }
     

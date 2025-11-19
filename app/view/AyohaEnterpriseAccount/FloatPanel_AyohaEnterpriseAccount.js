@@ -3113,7 +3113,7 @@ function SaveAyohaEnterpriseAccount() {
 
     var gile = document.getElementById('input-FloatPanel_AyohaEnterpriseAccount_BusinessType').value;
     console.log(gile);
-    var ImgPaths = "https://versilani.com/AyohaImgCard/Logo/" + GetEnterpriseAccNo() + "/" + document.getElementById('input-FloatPanel_AyohaEnterpriseAccount_EnterpriseLogoName').value;
+    var ImgPaths = "https://setkita.com/AyohaImgCard/Logo/" + GetEnterpriseAccNo() + "/" + document.getElementById('input-FloatPanel_AyohaEnterpriseAccount_EnterpriseLogoName').value;
     // (CC.ID, CC.EnterpriseAccNo, CC.StampCampaignCode, CC.ImgName, CC.ImgPath, CC.RowStatus, CC.CreatedBy, CC.ImageBase64, CC.ShowHide);
     // alert(ContentCardImgNames);
     var obj = {
