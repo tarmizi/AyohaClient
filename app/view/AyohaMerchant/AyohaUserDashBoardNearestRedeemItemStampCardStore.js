@@ -1,4 +1,4 @@
-﻿Ext.define('ianMizi.store.DashboardAyohaUser.AyohaUserDashBoardNearestRedeemItemStampCardStore', {
+Ext.define('ianMizi.store.DashboardAyohaUser.AyohaUserDashBoardNearestRedeemItemStampCardStore', {
     extend: 'Ext.data.Store',
     //  alias: 'store.ResponderAlertGetByAcc',
     config: {
@@ -38,7 +38,7 @@
 
 
 
-var _DataStore_AyohaUserDashBoardNearestRedeemItemStampCardStore = Ext.create('Ext.data.Store', {
+setkita.com = Ext.create('Ext.data.Store', {
 
     model: 'ianMizi.model.AyohaUserStampCard.AyohaUserStampCardModel',
     id: '_AyohaUserDashBoardNearestRedeemItemStampCardStoreID',
@@ -72,34 +72,6 @@ var _DataStore_AyohaUserDashBoard_StampCardLoadByStampedRedeemStatusStore = Ext.
     proxy: {
         type: 'ajax',
         url: GetAPIurl() + '/AyohaUserStampCard/AyohaUserDashBoardStampCardLoadByStampedRedeemStatus',
-        actionMethods: {
-            read: 'POST'
-        },
-        reader: {
-            type: 'json',
-            rootProperty: 'results',
-            totalProperty: 'total',
-            successProperty: 'success',
-            messageProperty: 'message'
-        }
-    },
-
-
-
-    //autoLoad: true
-
-});
-
-
-
-
-var _DataStore_AyohaUserDashBoardStampCardLoadByStampedRedeemExpiredStore = Ext.create('Ext.data.Store', {
-
-    model: 'ianMizi.model.AyohaUserStampCard.AyohaUserStampCardModel',
-    id: '_AyohaUserDashBoardStampCardLoadByStampedRedeemExpiredStoreID',
-    proxy: {
-        type: 'ajax',
-        url: GetAPIurl() + '/AyohaUserStampCard/AyohaUserDashBoardStampCardLoadByStampedRedeemExpired',
         actionMethods: {
             read: 'POST'
         },

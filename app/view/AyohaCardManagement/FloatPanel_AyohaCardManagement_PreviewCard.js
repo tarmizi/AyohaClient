@@ -3343,38 +3343,85 @@ if (MembershipTag=="YES"){
 function Load_FloatPanel_AyohaCardManagement_PreviewCard_AdvertisementLinkModuleloadByEnterpriseHQAccNoModuleCodeStore(EnterpriseAccNo) {
 
    
-    Ext.getStore('AdvertisementLinkModuleloadByEnterpriseHQAccNoModuleCodeStore').getProxy().setExtraParams({
-        EnterpriseHQAccNo: EnterpriseAccNo,
-        ModuleCode:2,
-    });
 
-    Ext.StoreMgr.get('AdvertisementLinkModuleloadByEnterpriseHQAccNoModuleCodeStore').load();
-    var task = Ext.create('Ext.util.DelayedTask', function () {
-        Ext.getStore('AdvertisementLinkModuleloadByEnterpriseHQAccNoModuleCodeStore').getProxy().setExtraParams({
-            EnterpriseHQAccNo: EnterpriseAccNo,
-            ModuleCode: 2,
+
+
+    _DataStore_AdvertisementLinkModuleloadByEnterpriseHQAccNoModuleCodeStore.getProxy().setExtraParam('EnterpriseHQAccNo', EnterpriseAccNo);
+    _DataStore_AdvertisementLinkModuleloadByEnterpriseHQAccNoModuleCodeStore.getProxy().setExtraParam('ModuleCode',2);
+    _DataStore_AdvertisementLinkModuleloadByEnterpriseHQAccNoModuleCodeStore.getProxy().setUrl(GetAPIurl() + '/AdvertisementLinkModule/AdvertisementLinkModuleloadByEnterpriseHQAccNoModuleCode'); 
+    _DataStore_AdvertisementLinkModuleloadByEnterpriseHQAccNoModuleCodeStore.load({
+            callback: function (records, operation, success) {
+
+                if (!success) {
+                    var err = operation.getError();   // boleh jadi string atau object
+                   // alert('Load FAILED: ' + JSON.stringify(err, null, 2));
+        
+                 
+        
+                    return; // keluar awal, jangan proses records
+                }
+
+
+
+                if (success && records.length > 0) {                  
+                    if (records.length >= 1) {  
+                                  
+                        var modelRecord = records[0]; // Access only the first record                        
+                        localStorage.setItem('FloatPanel_AyohaCardManagement_PreviewCard_AyohaUserCardShow_AdvertismentCode', modelRecord.get('AdvertisementCode'));
+                      
+                        Ext.getCmp('btnStampCard_FloatPanel_AyohaCardManagement_PreviewCard_AdvertisementButton').setHidden(false);
+                        Ext.getCmp('btnStampCard_FloatPanel_AyohaCardManagement_PreviewCard_AdvertisementButton_TransparentBox').setHidden(true);
+                       // FloatPanel_AyohaCardManagement_AdvertisementButtonShow();
+                    } else {
+                         
+                        Ext.getCmp('btnStampCard_FloatPanel_AyohaCardManagement_PreviewCard_AdvertisementButton').setHidden(true);
+                        Ext.getCmp('btnStampCard_FloatPanel_AyohaCardManagement_PreviewCard_AdvertisementButton_TransparentBox').setHidden(false);
+                    }
+                    
+                    // AyohaMerchantReward_AyohaRewardContestLoadBySubscriberAccNoStore();
+                } else {
+                   
+                }
+               // 
+            }
         });
 
-        Ext.StoreMgr.get('AdvertisementLinkModuleloadByEnterpriseHQAccNoModuleCodeStore').load();
-        var myStore = Ext.getStore('AdvertisementLinkModuleloadByEnterpriseHQAccNoModuleCodeStore');
-        count = myStore.getCount();
-//alert(count)
-        if (count >= 1) {
-            var modelRecord = myStore.getAt(0);         
-            localStorage.setItem('FloatPanel_AyohaCardManagement_PreviewCard_AyohaUserCardShow_AdvertismentCode', modelRecord.get('AdvertisementCode'));
-          //alert(modelRecord.get('AdvertisementCode'));
-          
-            Ext.getCmp('btnStampCard_FloatPanel_AyohaCardManagement_PreviewCard_AdvertisementButton').setHidden(false);
-            Ext.getCmp('btnStampCard_FloatPanel_AyohaCardManagement_PreviewCard_AdvertisementButton_TransparentBox').setHidden(true);
-           // FloatPanel_AyohaCardManagement_AdvertisementButtonShow();
-        } else {
-            Ext.getCmp('btnStampCard_FloatPanel_AyohaCardManagement_PreviewCard_AdvertisementButton').setHidden(true);
-            Ext.getCmp('btnStampCard_FloatPanel_AyohaCardManagement_PreviewCard_AdvertisementButton_TransparentBox').setHidden(false);
-        }
 
-        LoadingPanelHide();
-    });
-    task.delay(2000);
+
+
+
+//     Ext.getStore('AdvertisementLinkModuleloadByEnterpriseHQAccNoModuleCodeStore').getProxy().setExtraParams({
+//         EnterpriseHQAccNo: EnterpriseAccNo,
+//         ModuleCode:2,
+//     });
+
+//     Ext.StoreMgr.get('AdvertisementLinkModuleloadByEnterpriseHQAccNoModuleCodeStore').load();
+//     var task = Ext.create('Ext.util.DelayedTask', function () {
+//         Ext.getStore('AdvertisementLinkModuleloadByEnterpriseHQAccNoModuleCodeStore').getProxy().setExtraParams({
+//             EnterpriseHQAccNo: EnterpriseAccNo,
+//             ModuleCode: 2,
+//         });
+
+//         Ext.StoreMgr.get('AdvertisementLinkModuleloadByEnterpriseHQAccNoModuleCodeStore').load();
+//         var myStore = Ext.getStore('AdvertisementLinkModuleloadByEnterpriseHQAccNoModuleCodeStore');
+//         count = myStore.getCount();
+// //alert(count)
+//         if (count >= 1) {
+//             var modelRecord = myStore.getAt(0);         
+//             localStorage.setItem('FloatPanel_AyohaCardManagement_PreviewCard_AyohaUserCardShow_AdvertismentCode', modelRecord.get('AdvertisementCode'));
+//           //alert(modelRecord.get('AdvertisementCode'));
+          
+//             Ext.getCmp('btnStampCard_FloatPanel_AyohaCardManagement_PreviewCard_AdvertisementButton').setHidden(false);
+//             Ext.getCmp('btnStampCard_FloatPanel_AyohaCardManagement_PreviewCard_AdvertisementButton_TransparentBox').setHidden(true);
+//            // FloatPanel_AyohaCardManagement_AdvertisementButtonShow();
+//         } else {
+//             Ext.getCmp('btnStampCard_FloatPanel_AyohaCardManagement_PreviewCard_AdvertisementButton').setHidden(true);
+//             Ext.getCmp('btnStampCard_FloatPanel_AyohaCardManagement_PreviewCard_AdvertisementButton_TransparentBox').setHidden(false);
+//         }
+
+//         LoadingPanelHide();
+//     });
+//     task.delay(2000);
 
 }
 

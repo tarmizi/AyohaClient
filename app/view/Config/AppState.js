@@ -86,24 +86,53 @@ var AppState = {
 
 
     AyohaMerchantReward:{
-        StampPerks: 0,
-        PointPerks: 0,
-        VoucherPerks: 0,
-        ContestPerks: 0,
-        EventPerks: 0,
-        DiscountPerks: 0,
+
+        ContestEligible:0,
         ContestJoined:0,
+        ContestApproved:0,
+        ContestExpired:0,
+        
+        EventEligible:0,
         EventJoined:0,
+        EventExpired:0,
+        
+        PointPerksEligible:0,
         PointPerksRedeemSubmitted:0,
         PointPerksRedeemApproved:0,
+        PointPerksExpired:0,
+        
+        StampedPerksEligible:0,
         StampedPerksRedeemSubmitted:0,
         StampedPerksRedeemApproved:0,
         StampedPerksRedeemRejected:0,
+        StampedPerksRedeemExpired:0,
+        
+        VoucherPerksEligible:0,
         VoucherPerksRedeem:0,
+        VoucherPerksRedeemApproved:0,
+        VoucherExpired:0,
+        
+        
+        DiscountEligible:0,
+        DiscountExpired:0,
         DiscountRedeem:0,
+
+
+
+
+
+
+
+
+
+
+
+
+      
         TotalEligiblePerks:0,
         TotalRedeemedPerks:0,
         TotalApprovedRedeemedPerks:0,
+        TotalExpiredPerks:0,
     }
 };
 
