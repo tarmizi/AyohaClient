@@ -513,12 +513,12 @@ function loadAyohaUserProfileLoginBody() {
                     if (data.total > 0) {
                         Ext.getCmp('tabpanelMyAccount_Dashboard').getTabBar().hide();
                         Ext.getCmp('tabpanelAyohaMerchantRewards').getTabBar().hide();
-                        Ext.getCmp('tabpanelAyohaMerchantRewards_Points').getTabBar().hide();
+                       // Ext.getCmp('tabpanelAyohaMerchantRewards_Points').getTabBar().hide();
                         AyohaMerchantReward_InitializedTabEvent();
                         localStorage.setItem('AyohaUserAccountNo',data.results[0].AccountNo);
                         localStorage.setItem('AyohaUserKatalaluan', data.results[0].Katalaluan);
                         globalLogginAyohaUser_UserVerifiedDate = data.results[0].UserVerifiedDate;
-                        
+                       
 
                     
                         //routeCurrPage = '15';
@@ -609,6 +609,7 @@ function loadAyohaUserProfileLoginBody() {
                         loadAdvertisementloadHotSeatStore();
                         Dashboard_AyohaRewardVoucherEntitledUserLoadBySubscriberAccNoVoucherTypeStore();
                         AyohaMerchantReward_loadVIAAdvertisement();
+                       AyohaMerchantReward_containerDashboardMerchantRewardScroller();
                        // TestRoutePanelShow();
                     }
                     if (data.total <= 0) {

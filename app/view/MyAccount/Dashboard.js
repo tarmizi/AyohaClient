@@ -35,8 +35,9 @@ Ext.define('ianMizi.view.MyAccount.Dashboard', {
         //style: ' background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);',
         //style: 'background-image: url("resources/icons/kedaikopibg.jpg"); background-size: 100% 100%;border-bottom:1px none;',
 
-      //  style: "background-color:white;",
-        style: 'background-color: #fac;background-image: linear-gradient(#c800ffc9,#ff00de75);',
+      style: "background: linear-gradient(180deg, #FFF1F9 0%, #F3E8FF 100%);",
+       // style: 'background-color: #fac;background-image: linear-gradient(#c800ffc9,#ff00de75);',
+        
         items: [
 
 
@@ -48,7 +49,8 @@ Ext.define('ianMizi.view.MyAccount.Dashboard', {
             {
                 xtype: 'container',
                 // style: 'background-image: url("resources/icons/pointbackdrop.png"); background-size: 100% 30%;background-repeat: no-repeat;',
-                style: "background-color: transparent;",
+               // style: "background-color: transparent;",
+                style: 'background-color: #fac;background-image: linear-gradient(#c800ffc9,#ff00de75);',
               //  docked:'top',
                 layout: {
                     type: 'vbox',
@@ -108,7 +110,7 @@ Ext.define('ianMizi.view.MyAccount.Dashboard', {
                                       //margin: '30 0 0 0',
                                      margin: '10 0 0 0',
                                       // zIndex: 200,
-                                       // hidden:true,
+                                      // hidden:true,
                                        style: 'background-color:transparent;',
                                        id: 'containerMyAccount_DashboardHaiUser',
                                        name: 'namecontainerMyAccount_DashboardHaiUser',
@@ -147,7 +149,7 @@ Ext.define('ianMizi.view.MyAccount.Dashboard', {
                                                         id: 'btnMyAccount_DashboardPicProfileIcon',
                                                         height: 55,
                                                         width: 55,
-                                                        margin: '-3 0 0 0',
+                                                        margin: '-3 0 0 0',                                                       
                                                         // iconCls: 'list',
                                                         //  html: '<div ><img src="resources/icons/CloudRewardLogoWhiteSmallOne.png" width="25" height="25" alt="Company Name"></div>',
                                                         html: '<div ><img src="resources/icons/founderWayang02.jpg" style ="width:45px;height:45px;border-radius:50%;border:2px solid white;" alt="Company Name"></div>',
@@ -179,12 +181,42 @@ Ext.define('ianMizi.view.MyAccount.Dashboard', {
                                               },
                                            {
                                                margin: '4 0 0 0',
-                                               id: 'htmlMyAccount_Dashboard_ProfileTitle',
+                                               id: 'htmlMyAccount_Dashboard_ProfileTitle',                                              
                                                html: '<div onclick="FloatPanel_MyAccountMasterShow()" style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 11px;font-weight:normal;color:white;margin:3px 0px 0px 0px">Good Days!,</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 16px;font-weight:bold;color:white;margin:-25px 0px 0px 0px">Tarmizi Rahim</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 10px;font-weight:bold;color:white;margin:-27px 0px 0px 0px">Non-Ayoha Member</div>'
                                                // html: '<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 9px;font-weight:normal;color:black;margin:0px 0px 0px 0px">Ayoha Reward</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 9px;font-weight:normal;color:black;margin:-6px 0px 0px 0px">Client V 1.0</div>'
        
        
                                            },
+                                          
+                                        //    {
+                                        //     xtype: 'container',
+                                        //     width: '100%', 
+                                        //     hidden:false, 
+                                        //     height: 40,                                             
+                                        //    style: 'background-color:transparent;',
+                                        //    // style: ' background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);',style: ' background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);',
+                                        //     layout: {
+                                        //         type: 'vbox',
+                                        //         pack: 'start',
+                                        //         align: 'left',
+                                        //     },
+                                        //     items:[
+                                        //         {
+                                        //           //  margin: '10 0 0 14',
+                                                
+                                                 
+                                        //           html: '<div style="color:white;text-align: left;font-size:14px;width:100%;margin:0px 0px 0px 0px"><span style="font-size:10px;color:#16a34a;background:#ffffff;padding:3px 6px;border-radius:999px;white-space:nowrap;">Perks from My Cards</span><br><b>My Merchant Reward</b></div><br><div  style="color:white;text-align: left;font-size:10px;width:100%;margin:-20px 0px 0px 0px;">Claim perks in one place</div>'
+                                               
+                                        //         },
+                                               
+                                              
+                        
+                        
+                                           
+                                           
+                                        //     ]
+                                        
+                                        //    },
        
                                        ]
                                    },
@@ -7923,7 +7955,66 @@ xtype: 'spacer'
                       },
 
 
-
+                      {
+                        xtype: 'container',
+                        width: '100%',
+                        zIndex:10,
+                        height: 48,
+                        docked: 'bottom',    
+                        hidden:true,
+                        //margin: '0 0 0 0',
+                       id: 'containerAyohaMerchantRewardBottom_Search',
+                      // style: 'background-color:transparent',
+                       style:"background: linear-gradient(0deg, #FFF1F9 0%, #F3E8FF 0%);",
+                        // scrollable: {
+                        //     direction: 'horizontal',
+                        //     directionLock: true,
+                        //     indicators: false
+                        // },
+                        layout: {
+                            type: 'hbox',
+                            pack: 'center',
+                            align: 'center',
+                        },
+                        items: [
+                            {  height: 48,                              
+                                width: '100%',
+                                html:
+                                '<div id="AyohaSearchStrong2">' +
+                                  '<div class="search-wrapper">' +
+                                    '<span class="ico" aria-hidden="true">' +
+                                      '<svg width="18" height="18" viewBox="0 0 24 24">' +
+                                        '<circle cx="11" cy="11" r="6" stroke="#ff00de" stroke-width="2" fill="none"></circle>' +
+                                        '<line x1="15" y1="15" x2="20" y2="20" stroke="#ff00de" stroke-width="2" stroke-linecap="round"></line>' +
+                                      '</svg>' +
+                                    '</span>' +
+                                    '<input type="search" id="txtSearchMerchant" placeholder="Search merchant name,product" />' +
+                                  '</div>' +
+                                '</div>'
+                              // html:  '<div id="AyohaSearchStrong1" style="max-width:560px;margin:10px auto 14px;"><div class="pill"><span class="ico" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24"><defs><linearGradient id="ayohaGradS1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff00de"/><stop offset="1" stop-color="#c800ff"/></linearGradient></defs><circle cx="10" cy="10" r="7" stroke="url(#ayohaGradS1)" stroke-width="2" fill="none"/><line x1="15" y1="15" x2="21" y2="21" stroke="url(#ayohaGradS1)" stroke-width="2" stroke-linecap="round"/></svg></span><input type="text" id="txtSearchMembershipCardList" placeholder="Search cards, merchants, perks…" autocapitalize="none" autocorrect="off" oninput="this.parentNode.querySelector(\\\'.clear\\\').style.display=this.value?\\\'inline-flex\\\':\\\'none\\\'"><button class="clear" type="button" aria-label="Clear search" onclick="var i=this.parentNode.querySelector(\\\'input\\\');i.value=\\\'\\\';i.focus();this.style.display=\\\'none\\\';"><svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 8 L16 16 M16 8 L8 16" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></button></div></div>',
+                            },
+                            // {
+                            //     xtype: 'container',
+                            //     height: 40,
+                            //     width: 180,
+                            //     style: 'background-color:transparent;',
+                            //                    // style: ' background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);',style: ' background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);',
+                            //                     layout: {
+                            //                         type: 'hbox',
+                            //                         pack: 'center',
+                            //                         align: 'center',
+                            //                     },
+                            //                     items:[
+                                                 
+                            //                         // {  height: 60,
+                            //                         //     width: '5%',
+                            //                         //     html:  '<div  style="font-size:12px;font-weight:bold;color:black;text-align:center">0</div>',
+                            //                         // }
+                            //                     ]
+                            // },
+                           
+                        ]
+                    },
 
 
 
@@ -9322,6 +9413,7 @@ function initializeContainerSingleTapEvent() {
     var containerViewElMenuBottom_MyMembershipCard = containerViewMenuBottom_MyMembershipCard.element;
     containerViewElMenuBottom_MyMembershipCard.on('tap',
       function (event, node, options, eOpts) {
+        Ext.getCmp('containerAyohaMerchantRewardBottom_Search').setHidden(true);
         SideMenuMembershipCardListShow();
         Ext.getCmp('htmlDashboardMenuBottom_HomeTxt').setHtml('<div style="color:grey;text-align: center;font-size:8px;width:100%;font-weight:normal">Home</div>');
         Ext.getCmp('htmlDashboardMenuBottom_AyohaRewardTxt').setHtml('<div style="color:grey;text-align: center;font-size:8px;width:100%;font-weight:normal">Ayoha</div><br><div style="color:grey;text-align: center;font-size:8px;width:100%;margin:-25px 0px 0px 0px;font-weight:normal">Reward</div>');
@@ -9357,7 +9449,7 @@ function initializeContainerSingleTapEvent() {
     containerViewElMenuBottom_AyohaReward.on('tap',
       function (event, node, options, eOpts) {
         SideMenuMembershipCardListHide();
-      
+        Ext.getCmp('containerAyohaMerchantRewardBottom_Search').setHidden(true);
           Ext.getCmp('htmlDashboardMenuBottom_HomeTxt').setHtml('<div style="color:purple;text-align: center;font-size:8px;width:100%;font-weight:bold">Home</div>');
           Ext.getCmp('htmlDashboardMenuBottom_AyohaRewardTxt').setHtml('<div style="color:grey;text-align: center;font-size:8px;width:100%;">Ayoha</div><br><div style="color:grey;text-align: center;font-size:8px;width:100%;margin:-25px 0px 0px 0px">Reward</div>');
           Ext.getCmp('htmlDashboardMenuBottom_MerchantPerkTxt').setHtml('<div style="color:grey;text-align: center;font-size:8px;width:100%;">Merchant</div><br><div style="color:grey;text-align: center;font-size:8px;width:100%;margin:-27px 0px 0px 0px">Perks</div>');
@@ -9390,7 +9482,7 @@ function initializeContainerSingleTapEvent() {
     var containerViewElMenuBottom_MyStore = containerViewMenuBottom_MyStore.element;
     containerViewElMenuBottom_MyStore.on('tap',
       function (event, node, options, eOpts) {
-      
+        Ext.getCmp('containerAyohaMerchantRewardBottom_Search').setHidden(true);
         SideMenuMembershipCardListHide();
         Ext.getCmp('htmlDashboardMenuBottom_HomeTxt').setHtml('<div style="color:grey;text-align: center;font-size:8px;width:100%;font-weight:normal">Home</div>');
         Ext.getCmp('htmlDashboardMenuBottom_AyohaRewardTxt').setHtml('<div style="color:purple;text-align: center;font-size:8px;width:100%;font-weight:bold">Ayoha</div><br><div style="color:purple;text-align: center;font-size:8px;width:100%;margin:-25px 0px 0px 0px;font-weight:bold">Reward</div>');
@@ -9439,6 +9531,9 @@ function initializeContainerSingleTapEvent() {
       // Ext.getCmp('htmlAyohaMerchantRedemptionHeader_ButtonPerks_Points').setHtml('<div style="color:#9CA3AF;text-align: center;font-size:12px;width:100%;font-weight:normal">Point Perks</div>');
        Ext.getCmp('tabpanelAyohaMerchantRewards').setActiveItem(0);
        animatedClickTabExt_AyohaMerchantReward('containerAyohaMerchantRedemptionHeader_ButtonPerks_Stamps');
+       Ext.getCmp('containerAyohaMerchantRewardBottom_Search').setHidden(false);
+
+       
       }
     );
 
@@ -9473,6 +9568,7 @@ function initializeContainerSingleTapEvent() {
       Ext.getCmp('mainView').setHidden(true);
       FloatPanel_QrCodeScanner_ScanCampaignShow();
       AppState.MainDashboard.MainDashboardBottomkMenuTabTag = "QRScan";
+      Ext.getCmp('containerAyohaMerchantRewardBottom_Search').setHidden(true);
       // FloatPanel_ScannedMerchantShow();
          
          

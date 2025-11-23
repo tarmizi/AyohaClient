@@ -3,7 +3,11 @@ Ext.define('ianMizi.view.Config.CoreFunction', {
 
 
 
-
+function getViewportHeight() {
+    return window.innerHeight 
+        || document.documentElement.clientHeight 
+        || document.body.clientHeight;
+  }
 
 
 function CoreFunction_DashboardAyohaUser() {

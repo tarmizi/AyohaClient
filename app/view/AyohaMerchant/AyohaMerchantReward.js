@@ -36,20 +36,103 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
             height: '100%',
             items: [
 
-
+               
+                
 
                     {
                         xtype: 'container',
                         // style: 'background-image: url("resources/icons/AyohaHeaderLogin.png"); background-size: 100% 280px;background-repeat: no-repeat;',
                         style: "background-color: transparent;",
                         width: '100%',
-                        height: '100%',
+                        height:'100%',
                         title: 'DashboardMerchantReward',
+                        id: 'containerDashboardMerchantRewardScroller',
+
+
+                     
+                        
+                       
                         scrollable: {
                             direction: 'vertical',
                             directionLock: true,
-                            indicators: false
+                            indicators: false,
+                            bounces: false,
+                            outOfBoundRestrictFactor: 0,
+                            scroller: {
+                        
+                                
+                               
+                               
+                               
+                               
+                                listeners: {
+                                    scroll: function (scroller, x, y) {
+                                        var FREEZE_Y = AyohaMerchantReward_FREEZE_Y || 220;
+                                        var list     = Ext.getCmp('listcarouselAyohaMerchantRewards_Point_Eligible');
+                        
+                                        console.log('[scrollable][on scroll] x=' + x + ', y=' + y + ' (freeze=' + FREEZE_Y + ')');
+                        
+                                        // pastikan kita ada list
+                                        if (!list) {
+                                            return;
+                                        }
+                        
+                                        // 🔝 1) Di paling atas – parent scroll, list OFF
+                                        if (y <= 0) {
+                                            if (list.getScrollable()) {
+                                                list.setScrollable(true); 
+                                                // list.setScrollable({
+                                                //     direction     : 'vertical',
+                                                //     directionLock : true,
+                                                //     indicators    : false,
+                                                //     bounces       : true
+                                                // });  // bagi gesture jatuh ke parent
+                                            }
+                                            if (y < 0) {
+                                                scroller.scrollTo({ x: 0, y: 0 });
+                                            }
+                                            return;
+                                        }
+                        
+                                        // 🧷 2) Zon tengah (0 < y < FREEZE_Y) – parent scroll, list OFF
+                                        if (y < FREEZE_Y) {
+                                            if (list.getScrollable()) {
+                                              list.setScrollable(false);
+                                            
+                                            }
+                                            return;
+                                        }
+                        
+                                        // 🎯 3) Dah sampai FREEZE_Y – header sticky, list ON
+                                        if (y >= FREEZE_Y) {
+                        
+                                            // Clamp parent supaya header “melekat”
+                                            if (y > FREEZE_Y) {
+                                                scroller.scrollTo({ x: 0, y: FREEZE_Y });
+                                                list.setScrollable(true);
+                                            }
+                                          
+                                            // Baru hidupkan scroll untuk list
+                                            if (!list.getScrollable()) {                                               
+                                                list.setScrollable({
+                                                    direction     : 'vertical',
+                                                    directionLock : true,
+                                                    indicators    : false,
+                                                    bounces       : true
+                                                });
+                                            }
+                                            return;
+                                        }
+                                    }
+                                }
+                            }
                         },
+                        
+                        
+
+                   
+
+
                         layout: {
                             type: 'vbox',
                             //pack: 'start',
@@ -59,703 +142,7 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
                         items: [
                             
 
-                           
-
-
-                           ////// merchant store list container //////
-
-            //                {
-            //                 xtype: 'container',
-            //                 width: '100%',
-            //                 hidden: false,
-            //                 id:'containerDashboard_AyohaOnlineMerchantStoreList',
-            //                 margin: '40 0 0 0',
-            //                 // style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1 ;background: white;border-radius: 0px 15px 15px 0px;',
-            //                 //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
-            //                 style: 'background-color:transparent',
-            //                 layout: {
-            //                     type: 'hbox',
-            //                     pack: 'center',
-            //                     align: 'center',
-            //                 },
-            //                 items: [
-            //                      {
-            //                          margin: '0 0 0 14',
-            //                          //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
-            //                          html: '<div style="color:black;text-align: left;font-size:14px;width:100%;margin:0px 0px 0px 0px"><b>Merchant List</b></div><br><div  style="color:black;text-align: left;font-size:10px;width:100%;margin:-25px 0px 0px 0px;">From neighbourhood stalls to hidden gems,<br> explore and enjoy more every visit</div>'
-            //                          // html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: 70%"><col style="width:30%"></colgroup><thead><tr><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:right;vertical-align:top;word-break:normal" rowspan="2"><div style="margin:0px 0px 0px -15px">TARMIZI RAHIM</div><br>Lagendary Card Mortal </th><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:middle;word-break:normal" rowspan="2">Medal</th></tr><tr></tr></thead></table>'
-            //                      },
-            //                      {
-            //                          xtype: 'spacer'
-            //                      },
-            //                      {
-            //                         xtype: 'container',
-            //                         zIndex: 50,
-            //                         height: 40,
-            //                         width: 80,
-            //                         layout: {
-            //                             type: 'vbox',
-            //                             pack: 'center',
-            //                             align: 'center'
-                                
-            //                         },
-            //                         items:[
-            //                             {
-            //   xtype: 'container',
-            //   height: 25,
-            //   width: 80,
-            //                             },
-            //                             {
               
-            //                                 margin: '0 0 0 0',
-                                         
-            //                                 html: '<div onclick="Dashboard_SearchMerchantListShow();" style="color:black;text-align: center;font-size:12px;width:100%;"><u>View All</u></div>'
-                                        
-            //                             },
-            //                             {
-            //                                 xtype: 'container',
-            //                                 height: 10,
-            //                                 width: 80,
-            //                                                             },
-            //                             {
-            //                                 xtype: 'container',
-            //                                 zIndex: 50,
-            //                                 height: 40,
-            //                                 width: 80,
-            //                                 layout: {
-            //                                     type: 'hbox',
-            //                                     pack: 'center',
-            //                                     align: 'center'
-                                        
-            //                                 },
-            //                                 items:[
-                    
-                    
-                    
-                    
-                    
-                    
-            //                                     {
-            //                                         xtype: 'container',
-            //                                         zIndex: 50,
-            //                                         height: 40,
-            //                                         width: 35,
-            //                                         //hidden:true,
-            //                                        // hidden:true,
-            //                                        // margin: '10 0 0 0',
-            //                                         margin: '-3 0 0 0',
-            //                                         // id: 'containerFloatPanel_AyohaStore_MyCartCountbadge',
-            //                                         id: 'containerMyDashboard_AyohaOnlineMerchantStoreCheckout',
-            //                                         name: 'nameMyDashboard_AyohaOnlineMerchantStoreCheckout',
-            //                                         style: 'background-color:transparent;',
-            //                                        //style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 50%;',
-            //                                         layout: {
-            //                                             type: 'vbox',
-            //                                             pack: 'center',
-            //                                             align: 'center'
-                                                
-            //                                         },
-            //                                         items: [
-                                                       
-            //                                             {
-            //                                                // margin: '10 0 0 3',
-            //                                                 margin: '3 0 0 3',
-            //                                                 height: 20,
-            //                                                 width: 20,
-            //                                                // hidden:true,
-            //                                               //  zIndex:-1,
-            //                                                // id:'txtDashboard_AyohaMerchantShoppingBagBadgeID',
-            //                                               // id: '',
-            //                                               html: '<div id="htmlMyDashboard_AyohaOnlineMerchantStoreChecout_CountbadgeText" style="text-align:center;font-size:10px;color:white;background-color:red;width:20px;height:20px;border-radius:50%;font-weight:bold;padding:2px 0px;">0</div>',
-            //                                             },
-                            
-            //                                     {
-            //                                         margin: '-5 2 0 0',
-            //                                        // hidden:true,
-            //                                         width: 18,
-            //                                         height: 18,
-            //                                         html: '<img src="resources/icons/myCart02.png" alt="Image" style="width:20px;height:20px;">',
-            //                                         // ui:'plain'
-            //                                     },
-                                                
-                                                
-            //                                         ]
-            //                                     },
-                            
-                            
-            //                                     {
-            //                                         xtype: 'container',
-            //                                         zIndex: 50,
-            //                                         height: 40,
-            //                                         width: 35,
-            //                                         //hidden:true,
-            //                                        // hidden:true,
-            //                                        // margin: '10 0 0 0',
-            //                                         margin: '-3 0 0 0',
-            //                                         // id: 'containerFloatPanel_AyohaStore_MyCartCountbadge',
-            //                                         id: 'containerMyDashboard_AyohaOnlineMerchantStoreShoppingBag',
-            //                                         name: 'nameMyDashboard_AyohaOnlineMerchantStoreShoppingBag',
-            //                                         style: 'background-color:transparent;',
-            //                                        //style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 50%;',
-            //                                         layout: {
-            //                                             type: 'vbox',
-            //                                             pack: 'center',
-            //                                             align: 'center'
-                                                
-            //                                         },
-            //                                         items: [
-                                                
-            //                                             {
-            //                                                // margin: '10 0 0 3',
-            //                                                 margin: '3 0 0 3',
-            //                                                 height: 20,
-            //                                                 width: 20,
-            //                                                hidden:false,
-            //                                               //  zIndex:-1,
-            //                                                // id:'txtDashboard_AyohaMerchantShoppingBagBadgeID',
-            //                                                //id: 'htmlMyDashboard_AyohaOnlineMerchantStoreShoppingBag_CountbadgeText',
-            //                                               html: '<div  id="htmlMyDashboard_AyohaOnlineMerchantStoreShoppingBag_CountbadgeText"  style="text-align:center;font-size:10px;color:white;background-color:red;width:20px;height:20px;border-radius:50%;font-weight:bold;padding:2px 0px;">0</div>',
-            //                                             },
-                            
-            //                                     {
-            //                                         margin: '-5 2 0 0',
-            //                                        // hidden:true,
-            //                                         width: 18,
-            //                                         height: 18,
-            //                                         html: '<img src="resources/icons/shoppingbag03.png" alt="Image" style="width:20px;height:20px;">',
-            //                                         // ui:'plain'
-            //                                     },
-                                                
-                                                
-            //                                         ]
-            //                                     },
-            //                                 ]
-            //                              },
-            //                         ]
-            //                     },
-                                
-                               
-              
-              
-            //                     // {
-            //                     //     xtype: 'container',
-            //                     //     zIndex: 50,
-            //                     //     height: 40,
-            //                     //     width: 35,
-            //                     //     //hidden:true,
-            //                     //    // hidden:true,
-            //                     //    // margin: '10 0 0 0',
-            //                     //     margin: '-3 0 0 0',
-            //                     //     // id: 'containerFloatPanel_AyohaStore_MyCartCountbadge',
-            //                     //     id: 'containerMyDashboard_AyohaOnlineMerchantStore',
-            //                     //     name: 'nameMyDashboard_AyohaOnlineMerchantStore',
-            //                     //     style: 'background-color:transparent;',
-            //                     //    //style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 50%;',
-            //                     //     layout: {
-            //                     //         type: 'vbox',
-            //                     //         pack: 'center',
-            //                     //         align: 'center'
-                                
-            //                     //     },
-            //                     //     items: [
-                                
-            //                     //         {
-            //                     //            // margin: '10 0 0 3',
-            //                     //             margin: '3 0 0 3',
-            //                     //             height: 20,
-            //                     //             width: 20,
-            //                     //             //hidden:true,
-            //                     //           //  zIndex:-1,
-            //                     //            // id:'txtDashboard_AyohaMerchantShoppingBagBadgeID',
-            //                     //            id: 'htmlMyDashboard_AyohaOnlineMerchantStore_CountbadgeText',
-            //                     //           html: '<div style="text-align:center;font-size:10px;color:white;background-color:red;width:20px;height:20px;border-radius:50%;font-weight:bold;padding:2px 0px;display:none;">0</div>',
-            //                     //         },
-              
-            //                     // {
-            //                     //     margin: '-5 2 0 0',
-            //                     //    // hidden:true,
-            //                     //     width: 18,
-            //                     //     height: 18,
-            //                     //     html: '<img src="resources/icons/onlineStore.jpg" alt="Image" style="width:20px;height:20px;">',
-            //                     //     // ui:'plain'
-            //                     // },
-                                
-                                
-            //                     //     ]
-            //                     // },
-              
-              
-                               
-              
-            //                     //   {
-            //                     //       xtype: 'button',
-            //                     //       id: 'btnMyDashboard_AyohaOnlineMerchantStore',
-            //                     //       //hidden:true,
-            //                     //       //  badgeText: '1',
-            //                     //       margin: '0 10 0 0',
-            //                     //       height: 35,
-            //                     //       width: 35,
-            //                     //       html: '<img src="resources/icons/onlineStore.jpg" width="25" height="25" alt="Company Name">',
-            //                     //       ui: 'plain',
-            //                     //       handler: function () {
-            //                     //         FloatPanel_Membership_MembershipCardHubsShow();
-            //                     //       }
-            //                     //   },
-              
-              
-              
-            //                 ]
-            //   },
-            //   {
-            //                 xtype: 'container',
-                        
-            //                 id: 'Dashboard_Carousel_PremiumAdvertisement',
-            //                 name: 'nameDashboard_Carousel_PremiumAdvertisement',                
-            //                 //width: '100%',
-            //                 //height: '100%',
-            //                 margin: '25 0 0 0',
-            //                 width: '100%',
-            //             // height: 480,
-            //              height: 370,
-            //                // disable:true,
-            //                style: 'background-color:transparent',
-                         
-                        
-            //              //margin: '-322 0 0 0',
-            //                 //indicators: false,
-            //                 layout: {
-            //                     type: 'vbox',
-            //                     pack: 'start',
-            //                     align: 'center',
-            //                 },
-            //                 items: [
-            //                    {
-            //                        xtype: 'carousel',
-            //                        id: 'mainDashboardCarousel_PremiumAdvertisement',
-            //                        name: 'namemainDashboardCarousel_PremiumAdvertisement',
-            //                        height: 370,
-            //                        width: '95%',
-            //                        style: 'background-color:transparent',
-            //                        listeners: {
-            //                            activeitemchange: function (container, newCard, oldCard, index) {
-            //                                var index =parseInt(container.getActiveIndex());
-            //                                indexmainDashboardCarousel =parseInt(container.getActiveIndex());
-                                         
-                                          
-                                        
-            //                                    DashboardArrIndexmainDashboardCarousel =parseInt(index);
-                                              
-                                                        
-            //                                    Ext.getCmp('containerMyAccount_DashboardAdvertisementPremium_PremiumAdvertisement').setStyle('background-color: rgba(0, 0, 0, 0.4);display:block;');
-            //                                    Ext.getCmp('containerMyAccount_DashboardAdvertisementPremium_PremiumAdvertisement').setZIndex(100);
-            //                                    Ext.getCmp('containerMyAccount_DashboardAdvertisementPremium_PremiumAdvertisement').setHidden(false);
-              
-            //                                    slideUpShow('containerMyAccount_DashboardAdvertisementPremium_PremiumAdvertisement',500);
-              
-                                              
-                                              
-                                         
-                               
-                               
-            //                                 //    Ext.getCmp('containerDashbord_MyAyohaStoreRateReview_PremiumAdvertisement').setHidden(false);
-            //                                 //    Ext.getCmp('containerDashbord_MyAyohaStore_PremiumAdvertisement').setHidden(false);
-                                              
-                                             
-                                               
-                     
-                                               
-                                               
-                                             
-                               
-                               
-                               
-                               
-            //                                    Ext.getCmp('htmlDashboard_AyohaStore_CompanyLogo_PremiumAdvertisement').setHtml('<div style="width: 48px; height: 42px ; z-index: 100 !important;  border-width: 2px; border-style: solid; border-color: rgb(236, 240, 241); background: white; border-radius: 10%;" ><img src="'+ArrAdvertisementPremium_CompanyLogo[DashboardArrIndexmainDashboardCarousel]+'" width="44" height="39" alt="Company Name"></div>');
-            //                                    Ext.getCmp('htmlDashboard_AyohaStore_CompanyInfo_Name_PremiumAdvertisement').setHtml('<div style="color:white;text-align: left;font-size:12px;width:100%;font-weight:bold">'+ArrAdvertisementPremium_CompanyName[DashboardArrIndexmainDashboardCarousel]+'</div>');
-            //                                    Ext.getCmp('htmlDashboard_AyohaStore_CompanyInfo_Tagline_PremiumAdvertisement').setHtml('<div style="color:white;text-align: left;font-size:11px;width:100%;font-weight:bold;margin:0px 0px 0px 0px;">'+ArrAdvertisementPremium_AdvertisementTitle[DashboardArrIndexmainDashboardCarousel]+'</div>');
-                                               
-                               
-                               
-                               
-            //                                    Dashboard_CalculateRating(ArrAdvertisementPremium_EnterpriseAccNo[DashboardArrIndexmainDashboardCarousel],ArrAdvertisementPremium_CompanyLogo[DashboardArrIndexmainDashboardCarousel],ArrAdvertisementPremium_CompanyName[DashboardArrIndexmainDashboardCarousel]);
-                                          
-            //                                console.log("mainDashboardCarousel Index_PremiumAdvertisement:" + container.getActiveIndex());
-            //                            },
-                                      
-                                       
-            //                        },
-            //                                                          items:[
-              
-                              
-                              
-                              
-                              
-                              
-                              
-                              
-                              
-                              
-            //                    ]
-            //                    },
-                               
-                               
-                               
-            //             {
-            //                xtype: 'container',
-            //               //margin: '170 0 0 0',
-            //                margin: '0 0 0 0',
-            //             //  docked:'bottom',
-            //              margin: '-92 0 0 0',
-            //             //hidden:true,
-            //               zIndex: 200,
-            //                id: 'containerMyAccount_DashboardAdvertisementPremium_PremiumAdvertisement',
-            //               // name: 'namecontainerMyAccount_DashboardMyReward',
-                        
-            //              // style: 'background-color:yellow;',
-            //               style: 'background-color:transparent;',
-            //                //style: 'border-right:2px solid #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px #ECF0F1 white;background: white;border-radius: 10px 0px 0px 10px;box-shadow: 5px 10px 18px #888888;',
-            //                // style: 'border-right:2px solid #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px #ECF0F1 white;background: white;border-radius: 20px 20px 20px 20px;',
-                       
-            //                height: 50,
-            //                width: '95%',
-            //                layout: {
-                       
-            //                    type: 'hbox',
-            //                    pack: 'center',
-            //                    align: 'center'
-            //                },
-            //                items: [
-            //                    //{
-            //                    //    xtype: 'panel',
-            //                    //    width:1
-            //                    //},
-            //                    {
-            //                        xtype: 'container', 
-            //                        id: 'containerMyAccount_DashboardAdvertisementPremium_EnterpriseInfo_PremiumAdvertisement',
-            //                        name: 'namecontainerMyAccount_DashboardAdvertisementPremium_EnterpriseInfo_PremiumAdvertisement',                        
-            //                        width: '70%',
-            //                       height: 50,
-            //                       //hidden:true,
-            //                       style: 'background-color:transparent;',
-            //                       zIndex: 200,
-            //                       layout: {
-                       
-            //                        type: 'hbox',
-            //                        pack: 'start',
-            //                        align: 'center'
-            //                    },
-            //                       items:[
-                                  
-            //                        {
-            //                            xtype: 'container',
-            //                            width: '24%',
-            //                            id: 'containerDashboard_AyohaStore_Logo_PremiumAdvertisement',
-            //                            height: 50,
-            //                           // style: 'background-color:transparent;',
-            //                            margin: '0 0 0 0',
-            //                            //style: {
-            //                            //    // background: '#D25959',
-            //                            //    background: 'rgba(76, 175, 80, 0.3);',
-            //                            //    // border: '2px'
-            //                            //},
-            //                           //  style: 'border-right:1px solid #ECF0F1;border-left:1px solid #ECF0F1;border-bottom:1px solid #ECF0F1;border-top:1px solid #ECF0F1 ;background: white;',
-            //                          style: 'background-color:transparent',
-            //                            layout: {
-            //                                type: 'vbox',
-            //                                pack: 'center',
-            //                                align: 'center',
-            //                            },
-            //                            items: [
-            //                                  {
-            //                                      //xtype: 'button',
-            //                                      //height: 75,
-            //                                      //width: 75,
-            //                                    //   height: 50,
-            //                                    //   width: '100%',
-            //                                      margin: '0 0 0 16',
-            //                                      id: 'htmlDashboard_AyohaStore_CompanyLogo_PremiumAdvertisement',
-            //                                      //badgeText: "2",
-            //                                      //  html: '<img src="resources/icons/MyAdvertisementDashboardOne.png" width="65" height="65" alt="Company Name">',
-            //                                      html: '<div style="width: 50px; height: 47px ; z-index: 200 !important;  border-width: 2px; border-style: solid; border-color: rgb(236, 240, 241); background: white; border-radius: 10%;" ><img src="https://setkita.com/AyohaImgCard/Logo/39259-0123214416-NoEnterprise/azmah01-removebg-preview.png" width="50" height="47" alt="Company Name"></div>',
-              
-            //                                  },
-              
-            //                            ]
-            //                        },
-            //                        {
-            //                            xtype: 'spacer',
-            //                            width: 10
-            //                        },
-            //                           {
-            //                               xtype: 'container',
-            //                               width: '74%',
-            //                               id: 'containerDashboard_AyohaStore_CompanyInfo_PremiumAdvertisement',
-              
-              
-            //                               margin: '0 0 0 0',
-            //                               //style: {
-            //                               //    // background: '#D25959',
-            //                               //    background: 'rgba(76, 175, 80, 0.3);',
-            //                               //    // border: '2px'
-            //                               //},
-            //                               //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
-            //                               style: 'background-color:transparent',
-            //                               layout: {
-            //                                   type: 'vbox',
-            //                                   pack: 'center',
-            //                                   align: 'center',
-            //                               },
-            //                               items: [
-            //                                      {
-              
-            //                                          id: 'htmlDashboard_AyohaStore_CompanyInfo_Name_PremiumAdvertisement',
-            //                                          width: '100%',
-            //                                          html: '<div style="color:white;text-align: left;font-size:12px;width:100%;font-weight:bold">IanMizi Technology Sdn Bhd</div>',
-              
-              
-            //                                      },
-            //                                       {
-              
-            //                                           id: 'htmlDashboard_AyohaStore_CompanyInfo_Line_PremiumAdvertisement',
-            //                                           width: '100%',
-            //                                           margin: '0 0 0 0',
-            //                                           html: '<div style="background-color:white;text-align: left;font-size:16px;width:80%;font-weight:bold;height:1px"></div>',
-              
-              
-            //                                       },
-            //                                       {
-              
-            //                                           id: 'htmlDashboard_AyohaStore_CompanyInfo_Tagline_PremiumAdvertisement',
-              
-            //                                           width: '100%',
-            //                                           // iconCls: 'list',
-            //                                           //html: '<div style="border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 30px 30px 30px 30px;width:45px;height:45px;" ><img src="resources/icons/founder.jpg" width="25" height="25"  alt="Company Name" style="margin:7px 0px 0px 0px;border-radius: 50%;"></div>',
-            //                                           html: '<div style="color:white;text-align: left;font-size:10px;width:100%;font-weight:normal;margin:0px 0px 0px 0px;">Burger padu bak hang!</div>',
-              
-              
-            //                                       },
-                                                  
-              
-            //                               ]
-            //                           },
-            //                       ]
-              
-            //                    },
-              
-            //                    {
-            //                        xtype: 'container',
-            //                        zIndex: 100,
-            //                        width: '30%',
-            //                       height: 50,
-            //                       layout: {
-                       
-            //                        type: 'hbox',
-            //                        pack: 'end',
-            //                        align: 'center'
-            //                    },
-            //                       items:[
-              
-                                 
-              
-            //                        {
-              
-            //                            xtype: 'container',
-            //                          //  width: '30%',
-            //                          id: 'containerDashbord_MyAyohaStoreRateReview_PremiumAdvertisement',
-            //                          name: 'namecontainerDashbord_MyAyohaStoreRateReview_PremiumAdvertisement',
-            //                            width: '60%',
-            //                            //hidden: true,
-            //                            //margin:'0 0 0 0',
-            //                            height: 35,
-            //                            style: 'background-color: transparent;',
-            //                           // id: 'containerFloatPanel_MerchantDetailPage_EnterpriseReviewRateDetails',
-              
-            //                            //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
-            //                            // style: 'border-bottom:2px solid #D25959;background-color:transparent',
-            //                            layout: {
-            //                                type: 'vbox',
-            //                                pack: 'center',
-            //                                align: 'center',
-            //                            },
-            //                            items: [
-            //                                {
-            //                                    xtype: 'container',
-            //                                    width: '100%',
-            //                                   // flex: 1,
-            //                                    margin: '-5 0 0 0',
-            //                                    height: 50,
-            //                                    id: 'containerDashbord_ReviewAndRate_PremiumAdvertisement',
-            //                                   // name: 'namecontainerFloatPanel_AyohaStore_ReviewAndRate',
-            //                                    // style: 'background-color:rgba(255, 255, 255, 0.3);border-radius: 10px 10px 10px 10px;',
-            //                                    style: "background-color: transparent;",
-            //                                    layout: {
-            //                                        type: 'vbox',
-            //                                        pack: 'center',
-            //                                        align: 'center'
-              
-            //                                    },
-            //                                    items: [
-            //                                        {
-            //                                            margin: '0 0 0 0',
-            //                                            id: 'htmlDashbord_ReviewAndRateCount_PremiumAdvertisement',
-            //                                            html: '<div style="color:white;text-align: center;font-size:16px;width:100%;font-weight:bold;margin:0px 0px 0px 0px;">0.0</div>',
-              
-            //                                        },
-              
-            //                                        {
-            //                                            xtype: 'container',
-            //                                            width: '100%',
-            //                                            margin: '-12 0 0 0',
-            //                                            height: 9,
-            //                                            // style: 'background-color:rgba(255, 255, 255, 0.3);border-radius: 10px 10px 10px 10px;',
-            //                                            style: "background-color: transparent;",
-            //                                            layout: {
-            //                                                type: 'hbox',
-            //                                                pack: 'center',
-            //                                                align: 'center'
-              
-            //                                            },
-            //                                            items: [
-              
-            //                                                {
-            //                                                    id: 'htmlDashbord_Star1',
-            //                                                    height: 9,
-            //                                                    width: 9,
-            //                                                    html: '<div ><img src="resources/icons/reviewstarunrate.png" width="9" height="9" alt="Company Name"></div>',
-            //                                                },
-            //   {
-            //   id: 'htmlDashbord_Star2',
-            //   height: 9,
-            //   width: 9,
-            //   html: '<div ><img src="resources/icons/reviewstarunrate.png" width="9" height="9" alt="Company Name"></div>',
-            //   },
-            //   {
-            //   id: 'htmlDashbord_Star3',
-            //   height: 9,
-            //   width: 9,
-            //   html: '<div ><img src="resources/icons/reviewstarunrate.png" width="9" height="9" alt="Company Name"></div>',
-            //   },
-            //   {
-            //   id: 'htmlDashbord_Star4',
-            //   height: 9,
-            //   width: 9,
-            //   html: '<div ><img src="resources/icons/reviewstarunrate.png" width="9" height="9" alt="Company Name"></div>',
-            //   },
-            //   {
-            //   id: 'htmlDashbord_Star5',
-            //   height: 9,
-            //   width: 9,
-            //   html: '<div ><img src="resources/icons/reviewstarunrate.png" width="9" height="9" alt="Company Name"></div>',
-              
-            //   },
-            //                                            ]
-            //                                        },
-              
-            //                                        {
-            //                                            xtype: 'container',
-            //                                            width: '100%',
-            //                                            margin: '10 0 0 0',
-            //                                            height: 9,
-            //                                            layout: {
-            //                                                type: 'hbox',
-            //                                                pack: 'center',
-            //                                                align: 'center'
-            //                                            },
-            //                                            items: [
-            //                                                {
-            //                                                    id: 'htmlDashbord_ReviewByCount_PremiumAdvertisement',
-            //                                                    html: '<div style="width100%;text-align:right;background-color: transparent;font-family:Arial, sans-serif;font-size:8px;color:white;font-weight:bold;overflow:hidden;"><img src="resources/icons/myaccountwhite01.png" alt="Image" style="width:7px;height:7px;">&nbsp;0 Reviews</div>',
-            //                                                },
-            //                                            ]
-            //                                        },
-            //                                         //{
-            //                                         //    margin: '0 0 0 0',
-            //                                         //    height: 15,
-            //                                         //    id: 'htmlAyohaMerchantReview_TotalReviewsxx',
-            //                                         //    html: '<div style="width100%;text-align:right;background-color: transparent;font-family:Arial, sans-serif;font-size:10px;color:black;font-weight:bold;overflow:hidden;margin:-13px 10px 10px 0px;"><img src="resources/icons/merchantrateusAccountImg.png" alt="Image" style="width:10px;height:10px;">&nbsp;&nbsp;&nbsp;0 Reviews</div>'
-            //                                         //}
-            //                                    ]
-            //                                },
-            //                            ]
-            //                        },
-              
-              
-              
-              
-                                 
-            //                        {
-            //                            xtype: 'panel',
-            //                           width: 7
-            //                           // width: 3
-            //                        },
-              
-              
-                                   
-            //                        {
-            //                         xtype: 'container',
-            //                         id: 'containerDashbord_MyAyohaStore_PremiumAdvertisement',
-            //                         name: 'namecontainerDashbord_MyAyohaStore_PremiumAdvertisement',
-                                  
-            //                         style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 50%;',
-            //                         height: 40,
-            //                         width: 40,
-            //                         margin: '0 0 0 0',
-            //                         layout: {
-              
-            //                             type: 'vbox',
-            //                             pack: 'center',
-            //                             align: 'center'
-            //                         },
-            //                         items: [
-            //                             {
-            //                                 //xtype: 'button',
-            //                                 //id: 'btnMyAccount_DashboardEwalletIcon',
-            //                                 height: 20,
-            //                                 width: 20,
-            //                                 margin: '0 0 0 0',
-            //                                 // iconCls: 'list',
-            //                                 //  html: '<div ><img src="resources/icons/CloudRewardLogoWhiteSmallOne.png" width="25" height="25" alt="Company Name"></div>',
-            //                                 html: '<div ><img src="resources/icons/onlineStore.jpg" style ="width:20px;height:20px;" alt="Company Name"></div>',
-            //                                 // ui: 'plain',
-            //                                 //handler: function () {
-              
-            //                                 //    //_FloatPanel_AyohaEnterpriseAccount.hide(Ext.fx.Animation({
-            //                                 //    //    type: 'slideOut',
-            //                                 //    //    direction: 'left',
-            //                                 //    //    easing: 'cubic-bezier(.7,0,.7,1)',
-            //                                 //    //    duration: 250
-              
-            //                                 //    //}));
-            //                                 //    //isLoyaltyCardRedeemListOpen = 'N';
-            //                                 //}
-            //                             },
-            //                         ]
-            //                     },
-              
-              
-            //                       ]
-              
-            //                    },
-                             
-            //              {
-            //                       xtype: 'spacer',
-            //                       width:20
-            //                    },
-            //                ]
-            //            },
-                               
-              
-                                  
-              
-                              
-              
-            //                 ]
-            //   },
-            
-
-
-/////////////////////////////////////////hero section
-
 {
     xtype: 'container',
     width: '100%',
@@ -791,7 +178,7 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
                    {
                     xtype: 'container',
                     width: '50%', 
-                    hidden:false, 
+                   
                     height: 40,                                             
                    style: 'background-color:transparent;',
                    // style: ' background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);',style: ' background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);',
@@ -801,16 +188,22 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
                         align: 'left',
                     },
                     items:[
-                        {
-                            margin: '10 0 0 14',
-                        
+                        // {
+                        //     margin: '10 0 0 14',
+                        //     hidden:true, 
                          
-                          html: '<div style="color:white;text-align: left;font-size:14px;width:100%;margin:0px 0px 0px 0px"><span style="font-size:10px;color:#16a34a;background:#ffffff;padding:3px 6px;border-radius:999px;white-space:nowrap;">Perks from My Cards</span><br><b>My Merchant Reward</b></div><br><div  style="color:white;text-align: left;font-size:10px;width:100%;margin:-20px 0px 0px 0px;">Claim perks in one place</div>'
+                        //   html: '<div style="color:white;text-align: left;font-size:14px;width:100%;margin:0px 0px 0px 0px"><span style="font-size:10px;color:#16a34a;background:#ffffff;padding:3px 6px;border-radius:999px;white-space:nowrap;">Perks from My Cards</span><br><b>My Merchant Reward</b></div><br><div  style="color:white;text-align: left;font-size:10px;width:100%;margin:-20px 0px 0px 0px;">Claim perks in one place</div>'
                        
-                        },
+                        // },
                        
                       
-
+                        {
+                            margin: '10 0 0 14',
+                         
+                          
+                           html: '<div style="color:white;text-align: left;font-size:14px;width:100%;margin:0px 0px 0px 0px"><span style="font-size:10px;color:#16a34a;background:#ffffff;padding:3px 6px;border-radius:999px;white-space:nowrap;">Perks from My Membership</span><br><b>My Merchant Reward</b></div><br><div  style="color:white;text-align: left;font-size:10px;width:100%;margin:-22px 0px 0px 0px;">Claim perks in one place</div>'
+                        
+                         },
 
                    
                    
@@ -836,7 +229,7 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
                             xtype: 'container',
                             style:"background-color:transparent",
                             width: '100%',
-                            height:15,
+                            height:10,
                         },
                        
                         {
@@ -865,7 +258,7 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
                             xtype: 'container',
                             style:"background-color:transparent",
                             width: '100%',
-                            margin: '10 0 0 0',
+                            margin: '7 0 0 0',
                             height:40,
                             layout: {
                                 type: 'hbox',
@@ -874,10 +267,9 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
                 
                             },
                             items:[
-                               
                                 {
                                     xtype: 'container',
-                                    width: '31%',
+                                    width: '24%',
                                     style:"background-color:transparent",
                                     height:40,
                                     layout: {
@@ -887,6 +279,49 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
                         
                                     },
                                     items:[
+                                        
+                                        {
+                                            xtype: 'container',
+                                            width: '85%',
+                                            style: 'border:2px solid #fac;background-color: white;border-radius: 10px 10px 10px 10px;',
+                                           // style: 'border-right:1px solid #ECF0F1;border-left:1px solid #ECF0F1;border-bottom:1px solid #ECF0F1;border-top:1px solid #ECF0F1 ;background-color: white;border-radius: 10px 10px 10px 10px;box-shadow: 5px 10px 18px #888888;',
+                                           height:40,
+                                            layout: {
+                                                type: 'vbox',
+                                                pack: 'center',
+                                                align: 'center'
+                                
+                                            },
+                                            items:[
+                                                {
+                                                    id:'htmlAyohaMerchantReward_TotalPerkExpiredCount',
+                                                    html: '<div  style="color:black;text-align: center;font-size:14px;width:100%;margin:0px 0px 0px 0px;font-weight:bold">0</div>'
+                                                },
+                                                {
+                                                    html: '<div  style="color:black;text-align: center;font-size:6px;width:100%;margin:-4px 0px 0px 0px;">Total</div>'
+                                                },
+                                                {
+                                                    html: '<div  style="color:black;text-align: center;font-size:6px;width:100%;margin:-2px 0px 0px 0px;">Expired</div>'
+                                                },
+                                            ]
+                                        }
+                                    ]
+                                   
+                                       
+                                },
+                                {
+                                    xtype: 'container',
+                                    width: '24%',
+                                    style:"background-color:transparent",
+                                    height:40,
+                                    layout: {
+                                        type: 'vbox',
+                                        pack: 'center',
+                                        align: 'center'
+                        
+                                    },
+                                    items:[
+                                        
                                         {
                                             xtype: 'container',
                                             width: '85%',
@@ -918,7 +353,7 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
                                 },
                                 {
                                     xtype: 'container',
-                                    width: '31%',
+                                    width: '24%',
                                     style:"background-color:transparent",
                                     height:40,
                                     layout: {
@@ -959,7 +394,7 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
                                 },
                                 {
                                     xtype: 'container',
-                                    width: '31%',
+                                    width: '24%',
                                     style:"background-color:transparent",
                                     height:40,
                                     layout: {
@@ -1019,12 +454,12 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
        {
         xtype: 'container',
         width: '100%',  
-        height: 15,  
+        height: 5,  
        },
         {
     xtype: 'container',
     width: '100%',
-    height: 140,
+    height: 150,
     style:"background-color: transparent;",
     layout: {
         type: 'vbox',
@@ -1036,7 +471,7 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
         {
             xtype: 'container',
             width: '100%',  
-            height: 140,                                             
+            height: 150,                                             
            style: 'background-color:transparent;',
            // style: ' background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);',style: ' background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);',
             layout: {
@@ -1066,9 +501,9 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
                
                 {
                     width: '95%',
-                    height: 140,
-                    html:'<div style="width:100%;height:140px;margin:0;background:transparent;">'+
-                    '<canvas id="loyaltyHBar" style="width:100%;height:140px;"></canvas>'+
+                    height: 150,
+                    html:'<div style="width:100%;height:150px;margin:0;background:transparent;">'+
+                    '<canvas id="loyaltyHBar" style="width:100%;height:150px;"></canvas>'+
                     '</div>'
                 }
             ]
@@ -1084,7 +519,6 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
 
 
 
-
 //////////////////////
 
 
@@ -1095,7 +529,10 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
 
                                   xtype: 'container',
                                   width: '100%',
-                                  height: 600,
+                                // height: '100%',
+                                height:800,
+                                //height: 690,
+                               // height: Ext.getBody().getViewSize().height - 250,
                                   /// hidden:true,
 
                                   margin: '0 0 0 0',
@@ -1114,15 +551,16 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
 
                                   },
                                   items: [
-
+//original header button perks
 {
     xtype: 'container',
     width: '100%',
-    height: 40,
+    height: 40,    
     /// hidden:true,
     margin: '0 0 0 0',
     id: 'containerAyohaMerchantRedemptionHeader_ButtonPerks_Master',
-    style: 'border-bottom:2px none #D25959;background-color:transparent',
+   // style: 'border-bottom:2px none #D25959;background-colors:transparent',
+    style: 'border-bottom:2px none #D25959;border-top:3px solid #D25959;border-right:2px none #D25959;border-left:2px none #D25959;background-color:transparent',
     scrollable: {
         direction: 'horizontal',
         directionLock: true,
@@ -1137,7 +575,7 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
 {
     xtype: 'container',
     width: 600,
-    height: 40,
+    height: 37,
     /// hidden:true,
     margin: '0 0 0 0',
     id: 'containerAyohaMerchantRedemptionHeader_ButtonPerks_Scroll',
@@ -1311,6 +749,8 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
        
     ]
 },
+//////
+
 
 
 
@@ -1320,8 +760,9 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
    margin: '0 0 0 0',
      id: 'tabpanelAyohaMerchantRewards',
      width: '100%',
-     //height: '100%',
-     height: 500,
+     height: '100%',
+     //height: 500,
+    //height: 650,
      tabBarPosition: 'top',
      ui: 'plain',
      items: [
@@ -1344,24 +785,45 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
 {
     xtype: 'container',
     width: '100%',
-    margin: '5 0 0 20',
+    margin: '0 0 0 0',
     height:25,
     style: 'background-color:transparent',
     layout: {
         type: 'hbox',
-        pack: 'start',
+        pack: 'center',
         align: 'center',
     },
     items: [
 
 
 {
-    html:'<div class="perk-tabs">'+
-    '<button class="perk-btn active" onclick="switchPerkTab(this,\'NA\');">Eligible Perks</button>'+
-    '<button class="perk-btn" onclick="switchPerkTab(this,\'Submitted\');">Redeem</button>'+
-    '<button class="perk-btn" onclick="switchPerkTab(this,\'Approved\')">Approved</button>'+
-    '<button class="perk-btn" onclick="switchPerkTab(this,\'Expired\')">Expired</button>'+
-  '</div>'
+//     html:'<div class="perk-tabs">'+
+//     '<button class="perk-btn stamp active" onclick="switchPerkTab_Stamp(this,\'NA\');">Eligible Perks</button>'+
+//     '<button class="perk-btn stamp" onclick="switchPerkTab_Stamp(this,\'Submitted\');">Redeem</button>'+
+//     '<button class="perk-btn stamp" onclick="switchPerkTab_Stamp(this,\'Approved\')">Approved</button>'+
+//     '<button class="perk-btn stamp" onclick="switchPerkTab_Stamp(this,\'Expired\')">Expired</button>'+
+//   '</div>'
+
+
+html:
+'<div class="perk-tabs">'+
+  '<button class="perk-btn stamp active" onclick="switchPerkTab_Stamp(this,\'NA\');">' +
+    '<span class="perk-label">Eligible Perks</span>' +
+    '<span id="cntStampEligible" class="perk-count">(3)</span>' +
+  '</button>'+
+  '<button class="perk-btn stamp" onclick="switchPerkTab_Stamp(this,\'Submitted\');">' +
+    '<span class="perk-label">Redeem</span>' +
+    '<span id="cntStampRedeem" class="perk-count"></span>' +
+  '</button>'+
+  '<button class="perk-btn stamp" onclick="switchPerkTab_Stamp(this,\'Approved\');">' +
+    '<span class="perk-label">Approved</span>' +
+    '<span id="cntStampApproved" class="perk-count"></span>' +
+  '</button>'+
+  '<button class="perk-btn stamp" onclick="switchPerkTab_Stamp(this,\'Expired\');">' +
+    '<span class="perk-label">Expired</span>' +
+    '<span id="cntStampExpired" class="perk-count"></span>' +
+  '</button>'+
+'</div>'
 },
 
 
@@ -1480,1407 +942,7 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
         }
     ]
 },
-////////tabpanel Stamp Status/////
 
-// {
-//     xtype: 'tabpanel',
-//     style: "background-color: transparent;", 
-//    margin: '0 0 0 0',
-//      id: 'tabpanelAyohaMerchantRewards_StampStatus',
-//      width: '100%',
-//      //height: '100%',
-//      height: 400,
-//      tabBarPosition: 'top',
-//      ui: 'plain',
-//      items: [
-//         /////////StampsStatus_EligiblePerks
-//         {
-//             xtype: 'container',
-//             width: '100%',
-//             height: '100%',
-//             style: "background-color: transparent;",
-//             title: 'StampsStatus_EligiblePerks',
-//             id:'containerTabpanelAyohaMerchantRewards_StampsStatus_EligiblePerks',
-//             layout: {
-//                 type: 'vbox',
-//                 pack: 'start',
-//                 align: 'center',
-//             }, 
-//             items:[
-//                 {
-//                     xtype: 'carousel',
-//                     hidden: false,
-//                     //width: '95%',
-//                     //height: 80,
-//                     margin: '2 0 0 0',
-//                     width: '98%',
-//                     id: 'container_Dashboard_NearestRedeemMembers',
-//                     height: 320,
-//                     requires: [
-//                 'Ext.data.Store',
-//                 'Ext.carousel.Carousel',
-//                 'Ext.util.DelayedTask',
-//                     ],
-//                     items: [
-                
-//                         {
-//                             xtype: 'container',
-//                             // xtype: 'carousel',
-//                             hidden: false,
-//                             //width: '95%',
-//                             //height: 80,
-//                             margin: '-2 0 0 0',
-//                             width: '100%',
-//                             id: 'container_Dashboard_NearestRedeemMembers_carosel0',
-//                             height: 290,
-//                             // height: 440,
-//                             // style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1 ;background: transparent;border-radius: 10px 10px 10px 10px;',
-//                             style: 'background-color:transparent',
-//                             layout: {
-//                                 type: 'vbox',
-//                                 pack: 'start',
-//                                 align: 'center',
-//                             },
-//                             items: [
-//                                 {
-//                                     xtype: 'container',
-//                                     //width: '95%',
-//                                     //height: 80,
-//                                     margin: '12 0 0 0',
-//                                     width: '95%',
-//                                     height: 85,
-//                                     //style: 'border-right:2px solid #fac;border-left:2px solid #fac;border-bottom:2px solid #fac;border-top:2px solid #fac;background-color: transparent;border-radius: 10px 10px 10px 10px; box-shadow: 5px 10px 18px #888888;',
-//                                     //// style: 'border-right:1px solid white;border-left:1px solid white;border-bottom:1px solid white;border-top:1px solid white;background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);border-radius: 10px 10px 10px 10px;',
-//                                     //  style: 'background-color:transparent',
-//                                     //style: 'border-right:0.1px solid #ECECEC;border-left:0.1px solid #ECECEC;border-bottom:0.1px solid #ECECEC;border-top:0.1px solid #ECECEC;background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);border-radius: 10px 10px 10px 10px;',
-//                                   //  style: 'border-right:0.1px solid #ECECEC;border-left:0.1px solid #ECECEC;border-bottom:0.1px solid #ECECEC;border-top:0.1px solid #ECECEC;background-color: white;border-radius: 10px 10px 10px 10px;',
-//                                     style: 'border:1px solid #fac;background-color: white;border-radius: 10px 10px 10px 10px;',
-//                                     layout: {
-//                                         type: 'hbox',
-//                                         pack: 'center',
-//                                         align: 'center',
-//                                     },
-//                                     items: [
-//                                         {
-//                                             xtype: 'spacer'
-//                                         },
-//                                         {
-//                                             xtype: 'container',
-//                                             width: '92%',
-//                                             //height: 100,
-//                                             height: 80,
-//                                             margin: '10 0 0 0',
-//                                             name: 'container_Dashboard_NearestRedeem0',
-//                                             //style: {
-//                                             //    // background: '#D25959',
-//                                             //    background: 'rgba(76, 175, 80, 0.3);',
-//                                             //    // border: '2px'
-//                                             //},
-//                                             style: 'background-color:transparent',
-//                                             //style: 'background-color:rgba(255, 255, 255, 0.3);border-radius: 10px 10px 10px 10px;',
-                
-//                                             //style: 'background-color:transparent',
-//                                             layout: {
-//                                                 type: 'hbox',
-//                                                 pack: 'center',
-//                                                 align: 'center',
-//                                             },
-//                                             items: [
-//                                                 {
-//                                                     xtype: 'container',
-//                                                     width: '15%',
-                
-//                                                     margin: '0 0 0 0',
-//                                                     //style: {
-//                                                     //    // background: '#D25959',
-//                                                     //    background: 'rgba(76, 175, 80, 0.3);',
-//                                                     //    // border: '2px'
-//                                                     //},
-//                                                     //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
-//                                                     style: 'background-color:transparent',
-//                                                     layout: {
-//                                                         type: 'vbox',
-//                                                         pack: 'center',
-//                                                         align: 'center',
-//                                                     },
-//                                                     items: [
-//                                                           {
-                
-//                                                               //xtype: 'button',
-//                                                               //height: 90,
-//                                                               //width: 90,
-//                                                              // margin: '-18 0 0 -10',
-//                                                               margin: '-18 0 0 35',
-//                                                               //zIndex: 400,
-//                                                               id: 'Dashboard_NearestRedeem_StampContent0',
-//                                                               html: '<img src="resources/icons/AyohaRedeemPrize02.png" alt="Image" style="width:60px;height:60px;zIndex:400px">',
-                
-//                                                               //ui: 'plain',
-//                                                               //handler: function () {
-                
-//                                                               //}
-                
-//                                                           },
-                
-//                                                     ]
-//                                                 },
-//                                                   {
-//                                                       xtype: 'container',
-//                                                       width: '95%',
-//                                                      // width: '100%',
-//                                                       //zIndex: -99,
-//                                                       //margin: '-18 0 0 0',                                   
-//                                                       //height: 80,                                   
-//                                                       margin: '-14 0 0 0',
-//                                                       height: 80,
-//                                                       //style: 'background-color:rgba(255, 255, 255, 0.3);border-radius: 10px 10px 10px 10px;',
-//                                                       style: 'background-color:transparent',
-//                                                       layout: {
-//                                                           type: 'vbox',
-//                                                           pack: 'center',
-//                                                           align: 'left',
-//                                                       },
-//                                                       items: [
-//                                                            {
-//                                                                margin: '-8 0 0 33',
-//                                                                id: 'Dashboard_NearestRedeem_StampContentNote0',
-//                                                                html: '<div style="color:black;text-align: center;font-size:16px;width:100%;font-weight:bold">No stamp loyalty reward</div>',
-//                                                            },
-//                                                             {
-//                                                                 margin: '-2 0 0 33',
-//                                                                 id: 'Dashboard_NearestRedeem_EnterpriseName0',
-//                                                                 html: '<div style="color:black;text-align: center;font-size:12px;width:100%;font-weight:bold">Please go to Ayoha Merchant</div>',
-//                                                             },
-//                                                              {
-//                                                                  margin: '0 0 0 33',
-//                                                                  width: '100%',
-//                                                                  id: 'Dashboard_NearestRedeem_EndDate0',
-//                                                                  html: '<div style="color:black;text-align: left;font-size:12px;width:100%;font-weight:normal">and get the membership card to collect stamp!</div>',
-//                                                              },
-                
-//                                                       ]
-//                                                   },
-                
-                
-//                                             ]
-//                                         },
-                
-//                                         {
-//                                             xtype: 'spacer'
-//                                         },
-//                                     ]
-                
-//                                 },
-                
-                
-                
-//                            {
-//                                xtype: 'container',
-//                                //width: '95%',
-//                                //height: 80,
-//                                margin: '12 0 0 0',
-//                                width: '95%',
-//                                height: 85,
-//                                //  style: 'border-right:2px solid #fac;border-left:2px solid #fac;border-bottom:2px solid #fac;border-top:2px solid #fac;background-color: transparent;border-radius: 10px 10px 10px 10px; box-shadow: 5px 10px 18px #888888;',
-//                                //style: 'border-right:1px solid white;border-left:1px solid white;border-bottom:1px solid white;border-top:1px solid white;background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);border-radius: 10px 10px 10px 10px;',
-//                                // style: 'background-color:transparent',
-//                                // style: 'border-right:1px solid white;border-left:1px solid white;border-bottom:1px solid white;border-top:1px solid white;background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);border-radius: 10px 10px 10px 10px;',
-//                               ///////////// style: 'border-right:0.1px solid #ECECEC;border-left:0.1px solid #ECECEC;border-bottom:0.1px solid #ECECEC;border-top:0.1px solid #ECECEC;background-color: white;border-radius: 10px 10px 10px 10px;',
-//                                //style: 'border-right:0.1px solid #ECECEC;border-left:0.1px solid #ECECEC;border-bottom:0.1px solid #ECECEC;border-top:0.1px solid #ECECEC;background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);border-radius: 10px 10px 10px 10px;',
-//                                style: 'border:1px solid #fac;background-color: white;border-radius: 10px 10px 10px 10px;',
-//                                layout: {
-//                                    type: 'hbox',
-//                                    pack: 'center',
-//                                    align: 'center',
-//                                },
-//                                items: [
-//                                    {
-//                                        xtype: 'spacer'
-//                                    },
-//                                    {
-//                                        xtype: 'container',
-//                                        width: '92%',
-//                                        //height: 100,
-//                                        height: 80,
-//                                        margin: '10 0 0 0',
-//                                        name: 'container_Dashboard_NearestRedeem1',
-//                                        //style: {
-//                                        //    // background: '#D25959',
-//                                        //    background: 'rgba(76, 175, 80, 0.3);',
-//                                        //    // border: '2px'
-//                                        //},
-//                                        style: 'background-color:transparent',
-//                                        //style: 'background-color:rgba(255, 255, 255, 0.3);border-radius: 10px 10px 10px 10px;',
-                
-//                                        //style: 'background-color:transparent',
-//                                        layout: {
-//                                            type: 'hbox',
-//                                            pack: 'center',
-//                                            align: 'center',
-//                                        },
-//                                        items: [
-//                                            {
-//                                                xtype: 'container',
-//                                                width: '15%',
-//                                                //  zIndex: 400,
-//                                                margin: '0 0 0 0',
-//                                                //style: {
-//                                                //    // background: '#D25959',
-//                                                //    background: 'rgba(76, 175, 80, 0.3);',
-//                                                //    // border: '2px'
-//                                                //},
-//                                                //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
-//                                                style: 'background-color:transparent',
-//                                                layout: {
-//                                                    type: 'vbox',
-//                                                    pack: 'center',
-//                                                    align: 'center',
-//                                                },
-//                                                items: [
-//                                                      {
-                
-//                                                          //xtype: 'button',
-//                                                          //height: 90,
-//                                                          //width: 90,
-//                                                         // margin: '-18 0 0 -10',
-//                                                         margin: '-18 0 0 35',
-//                                                          //zIndex: 400,
-//                                                          id: 'Dashboard_NearestRedeem_StampContent1',
-//                                                          html: '<img src="resources/icons/AyohaRedeemPrize02.png" alt="Image" style="width:60px;height:60px;zIndex:400px">',
-                
-//                                                          //ui: 'plain',
-//                                                          //handler: function () {
-                
-//                                                          //}
-                
-//                                                      },
-                
-//                                                ]
-//                                            },
-//                                              {
-//                                                  xtype: 'container',
-//                                                  width: '95%',
-//                                                 // width: '100%',
-//                                                  // zIndex: -99,
-//                                                  //margin: '-18 0 0 0',                                   
-//                                                  //height: 80,                                   
-//                                                  margin: '-14 0 0 0',
-//                                                  height: 80,
-//                                                  //style: 'background-color:rgba(255, 255, 255, 0.3);border-radius: 10px 10px 10px 10px;',
-//                                                  style: 'background-color:transparent',
-//                                                  layout: {
-//                                                      type: 'vbox',
-//                                                      pack: 'center',
-//                                                      align: 'left',
-//                                                  },
-//                                                  items: [
-//                                                       {
-//                                                           margin: '-8 0 0 33',
-//                                                           id: 'Dashboard_NearestRedeem_StampContentNote1',
-//                                                           html: '<div style="color:black;text-align: center;font-size:16px;width:100%;font-weight:bold">No stamp loyalty reward</div>',
-//                                                       },
-//                                                        {
-//                                                            margin: '-2 0 0 33',
-//                                                            id: 'Dashboard_NearestRedeem_EnterpriseName1',
-//                                                            html: '<div style="color:black;text-align: center;font-size:12px;width:100%;font-weight:bold">Please go to Ayoha Merchant</div>',
-//                                                        },
-//                                                         {
-//                                                             margin: '0 0 0 33',
-//                                                             width: '100%',
-//                                                             id: 'Dashboard_NearestRedeem_EndDate1',
-//                                                             html: '<div style="color:black;text-align: left;font-size:12px;width:100%;font-weight:normal">and get the membership card to collect stamp!</div>',
-//                                                         },
-                
-//                                                  ]
-//                                              },
-                
-                
-//                                        ]
-//                                    },
-                
-//                                    {
-//                                        xtype: 'spacer'
-//                                    },
-//                                ]
-                
-//                            },
-                
-                
-                
-                
-//                               {
-//                                   xtype: 'container',
-//                                   //width: '95%',
-//                                   //height: 80,
-//                                   margin: '12 0 0 0',
-//                                   width: '95%',
-//                                   height: 85,
-                                 
-//                                  // style: 'border-right:0.1px solid #ECECEC;border-left:0.1px solid #ECECEC;border-bottom:0.1px solid #ECECEC;border-top:0.1px solid #ECECEC;background-color: white;border-radius: 10px 10px 10px 10px;',
-//                                   style: 'border:1px solid #fac;background-color: white;border-radius: 10px 10px 10px 10px;',
-//                                   layout: {
-//                                       type: 'hbox',
-//                                       pack: 'center',
-//                                       align: 'center',
-//                                   },
-//                                   items: [
-//                                       {
-//                                           xtype: 'spacer'
-//                                       },
-//                                       {
-//                                           xtype: 'container',
-//                                           width: '92%',
-//                                           //height: 100,
-//                                           height: 80,
-//                                           margin: '10 0 0 0',
-//                                           name: 'container_Dashboard_NearestRedeem2',
-//                                           //style: {
-//                                           //    // background: '#D25959',
-//                                           //    background: 'rgba(76, 175, 80, 0.3);',
-//                                           //    // border: '2px'
-//                                           //},
-//                                           style: 'background-color:transparent',
-//                                           //style: 'background-color:rgba(255, 255, 255, 0.3);border-radius: 10px 10px 10px 10px;',
-                
-//                                           //style: 'background-color:transparent',
-//                                           layout: {
-//                                               type: 'hbox',
-//                                               pack: 'center',
-//                                               align: 'center',
-//                                           },
-//                                           items: [
-//                                               {
-//                                                   xtype: 'container',
-//                                                   width: '15%',
-//                                                   //  zIndex: 400,
-//                                                   margin: '0 0 0 0',
-//                                                   //style: {
-//                                                   //    // background: '#D25959',
-//                                                   //    background: 'rgba(76, 175, 80, 0.3);',
-//                                                   //    // border: '2px'
-//                                                   //},
-//                                                   //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
-//                                                   style: 'background-color:transparent',
-//                                                   layout: {
-//                                                       type: 'vbox',
-//                                                       pack: 'center',
-//                                                       align: 'center',
-//                                                   },
-//                                                   items: [
-//                                                         {
-                
-//                                                             //xtype: 'button',
-//                                                             //height: 90,
-//                                                             //width: 90,
-//                                                           //  margin: '-18 0 0 -10',
-//                                                             margin: '-18 0 0 35',
-//                                                             //zIndex: 400,
-//                                                             id: 'Dashboard_NearestRedeem_StampContent2',
-//                                                             html: '<img src="resources/icons/AyohaRedeemPrize02.png" alt="Image" style="width:60px;height:60px;zIndex:400px">',
-                
-//                                                             //ui: 'plain',
-//                                                             //handler: function () {
-                
-//                                                             //}
-                
-//                                                         },
-                
-//                                                   ]
-//                                               },
-//                                                 {
-//                                                     xtype: 'container',
-//                                                     width: '95%',
-//                                                    // width: '100%',
-//                                                     // zIndex: -99,
-//                                                     //margin: '-18 0 0 0',                                   
-//                                                     //height: 80,                                   
-//                                                     margin: '-14 0 0 0',
-//                                                     height: 80,
-//                                                     //style: 'background-color:rgba(255, 255, 255, 0.3);border-radius: 10px 10px 10px 10px;',
-//                                                     style: 'background-color:transparent',
-//                                                     layout: {
-//                                                         type: 'vbox',
-//                                                         pack: 'center',
-//                                                         align: 'left',
-//                                                     },
-//                                                     items: [
-//                                                          {
-//                                                              margin: '-8 0 0 33',
-//                                                              id: 'Dashboard_NearestRedeem_StampContentNote2',
-//                                                              html: '<div style="color:black;text-align: center;font-size:16px;width:100%;font-weight:bold">No stamp loyalty reward</div>',
-//                                                          },
-//                                                           {
-//                                                               margin: '-2 0 0 33',
-//                                                               id: 'Dashboard_NearestRedeem_EnterpriseName2',
-//                                                               html: '<div style="color:black;text-align: center;font-size:12px;width:100%;font-weight:bold">Please go to Ayoha Merchant</div>',
-//                                                           },
-//                                                            {
-//                                                                margin: '0 0 0 33',
-//                                                                width: '100%',
-//                                                                id: 'Dashboard_NearestRedeem_EndDate2',
-//                                                                html: '<div style="color:black;text-align: left;font-size:12px;width:100%;font-weight:normal">and get the membership card to collect stamp!</div>',
-//                                                            },
-                
-//                                                     ]
-//                                                 },
-                
-                
-//                                           ]
-//                                       },
-                
-//                                       {
-//                                           xtype: 'spacer'
-//                                       },
-//                                   ]
-                
-//                               },
-                
-//                             ]
-                
-//                         },
-                
-//                         ///////////////////////////////////////////carosel-2
-                
-//                         {
-//                             xtype: 'container',
-//                             // xtype: 'carousel',
-//                             hidden: false,
-//                             //width: '95%',
-//                             //height: 80,
-//                             margin: '-2 0 0 0',
-//                             width: '100%',
-//                             id: 'container_Dashboard_NearestRedeemMembers_carosel1',
-//                             height: 290,
-//                             // height: 440,
-//                             // style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1 ;background: transparent;border-radius: 10px 10px 10px 10px;',
-//                             style: 'background-color:transparent',
-//                             layout: {
-//                                 type: 'vbox',
-//                                 pack: 'start',
-//                                 align: 'center',
-//                             },
-//                             items: [
-//                                 {
-//                                     xtype: 'container',
-//                                     //width: '95%',
-//                                     //height: 80,
-//                                     margin: '12 0 0 0',
-//                                     width: '95%',
-//                                     height: 85,
-                                   
-//                                     //style: 'border-right:0.1px solid #ECECEC;border-left:0.1px solid #ECECEC;border-bottom:0.1px solid #ECECEC;border-top:0.1px solid #ECECEC;background-color: white;border-radius: 10px 10px 10px 10px;box-shadow: 5px 10px 18px #888888;',
-//                                     style: 'border:1px solid #fac;background-color: white;border-radius: 10px 10px 10px 10px;',
-//                                     layout: {
-//                                         type: 'hbox',
-//                                         pack: 'center',
-//                                         align: 'center',
-//                                     },
-//                                     items: [
-//                                         {
-//                                             xtype: 'spacer'
-//                                         },
-//                                         {
-//                                             xtype: 'container',
-//                                             width: '92%',
-//                                             //height: 100,
-//                                             height: 80,
-//                                             margin: '10 0 0 0',
-//                                             name: 'container_Dashboard_NearestRedeem3',
-//                                             //style: {
-//                                             //    // background: '#D25959',
-//                                             //    background: 'rgba(76, 175, 80, 0.3);',
-//                                             //    // border: '2px'
-//                                             //},
-//                                             style: 'background-color:transparent',
-//                                             //style: 'background-color:rgba(255, 255, 255, 0.3);border-radius: 10px 10px 10px 10px;',
-                
-//                                             //style: 'background-color:transparent',
-//                                             layout: {
-//                                                 type: 'hbox',
-//                                                 pack: 'center',
-//                                                 align: 'center',
-//                                             },
-//                                             items: [
-//                                                 {
-//                                                     xtype: 'container',
-//                                                     width: '15%',
-                
-//                                                     margin: '0 0 0 0',
-//                                                     //style: {
-//                                                     //    // background: '#D25959',
-//                                                     //    background: 'rgba(76, 175, 80, 0.3);',
-//                                                     //    // border: '2px'
-//                                                     //},
-//                                                     //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
-//                                                     style: 'background-color:transparent',
-//                                                     layout: {
-//                                                         type: 'vbox',
-//                                                         pack: 'center',
-//                                                         align: 'center',
-//                                                     },
-//                                                     items: [
-//                                                           {
-                
-//                                                               //xtype: 'button',
-//                                                               //height: 90,
-//                                                               //width: 90,
-//                                                              // margin: '-18 0 0 -10',
-//                                                               margin: '-18 0 0 35',
-//                                                               //zIndex: 400,
-//                                                               id: 'Dashboard_NearestRedeem_StampContent3',
-//                                                               html: '<img src="resources/icons/AyohaRedeemPrize02.png" alt="Image" style="width:60px;height:60px;zIndex:400px">',
-                
-//                                                               //ui: 'plain',
-//                                                               //handler: function () {
-                
-//                                                               //}
-                
-//                                                           },
-                
-//                                                     ]
-//                                                 },
-//                                                   {
-//                                                       xtype: 'container',
-//                                                       width: '95%',
-//                                                     //  width: '100%',
-//                                                       //zIndex: -99,
-//                                                       //margin: '-18 0 0 0',                                   
-//                                                       //height: 80,                                   
-//                                                       margin: '-14 0 0 0',
-//                                                       height: 80,
-//                                                       //style: 'background-color:rgba(255, 255, 255, 0.3);border-radius: 10px 10px 10px 10px;',
-//                                                       style: 'background-color:transparent',
-//                                                       layout: {
-//                                                           type: 'vbox',
-//                                                           pack: 'center',
-//                                                           align: 'left',
-//                                                       },
-//                                                       items: [
-//                                                            {
-//                                                                margin: '-8 0 0 33',
-//                                                                id: 'Dashboard_NearestRedeem_StampContentNote3',
-//                                                                html: '<div style="color:black;text-align: center;font-size:16px;width:100%;font-weight:bold">No stamp loyalty reward</div>',
-//                                                            },
-//                                                             {
-//                                                                 margin: '-2 0 0 33',
-//                                                                 id: 'Dashboard_NearestRedeem_EnterpriseName3',
-//                                                                 html: '<div style="color:black;text-align: center;font-size:12px;width:100%;font-weight:bold">Please go to Ayoha Merchant</div>',
-//                                                             },
-//                                                              {
-//                                                                  margin: '0 0 0 33',
-//                                                                  width: '100%',
-//                                                                  id: 'Dashboard_NearestRedeem_EndDate3',
-//                                                                  html: '<div style="color:black;text-align: left;font-size:12px;width:100%;font-weight:normal">and get the membership card to collect stamp!</div>',
-//                                                              },
-                
-//                                                       ]
-//                                                   },
-                
-                
-//                                             ]
-//                                         },
-                
-//                                         {
-//                                             xtype: 'spacer'
-//                                         },
-//                                     ]
-                
-//                                 },
-                
-                
-                
-//                            {
-//                                xtype: 'container',
-//                                //width: '95%',
-//                                //height: 80,
-//                                margin: '12 0 0 0',
-//                                width: '95%',
-//                                height: 85,
-//                                //  style: 'border-right:2px solid #fac;border-left:2px solid #fac;border-bottom:2px solid #fac;border-top:2px solid #fac;background-color: transparent;border-radius: 10px 10px 10px 10px; box-shadow: 5px 10px 18px #888888;',
-//                                //style: 'border-right:1px solid white;border-left:1px solid white;border-bottom:1px solid white;border-top:1px solid white;background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);border-radius: 10px 10px 10px 10px;',
-//                                // style: 'background-color:transparent',
-//                                // style: 'border-right:1px solid white;border-left:1px solid white;border-bottom:1px solid white;border-top:1px solid white;background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);border-radius: 10px 10px 10px 10px;',
-//                                // style: 'border-right:0.1px solid #ECECEC;border-left:0.1px solid #ECECEC;border-bottom:0.1px solid #ECECEC;border-top:0.1px solid #ECECEC;background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);border-radius: 10px 10px 10px 10px;',
-//                               // style: 'border-right:0.1px solid #ECECEC;border-left:0.1px solid #ECECEC;border-bottom:0.1px solid #ECECEC;border-top:0.1px solid #ECECEC;background-color: white;border-radius: 10px 10px 10px 10px;box-shadow: 5px 10px 18px #888888;',
-//                                style: 'border:1px solid #fac;background-color: white;border-radius: 10px 10px 10px 10px;',
-//                                layout: {
-//                                    type: 'hbox',
-//                                    pack: 'center',
-//                                    align: 'center',
-//                                },
-//                                items: [
-//                                    {
-//                                        xtype: 'spacer'
-//                                    },
-//                                    {
-//                                        xtype: 'container',
-//                                        width: '92%',
-//                                        //height: 100,
-//                                        height: 80,
-//                                        margin: '10 0 0 0',
-//                                        name: 'container_Dashboard_NearestRedeem4',
-//                                        //style: {
-//                                        //    // background: '#D25959',
-//                                        //    background: 'rgba(76, 175, 80, 0.3);',
-//                                        //    // border: '2px'
-//                                        //},
-//                                        style: 'background-color:transparent',
-//                                        //style: 'background-color:rgba(255, 255, 255, 0.3);border-radius: 10px 10px 10px 10px;',
-                
-//                                        //style: 'background-color:transparent',
-//                                        layout: {
-//                                            type: 'hbox',
-//                                            pack: 'center',
-//                                            align: 'center',
-//                                        },
-//                                        items: [
-//                                            {
-//                                                xtype: 'container',
-//                                                width: '15%',
-//                                                //  zIndex: 400,
-//                                                margin: '0 0 0 0',
-//                                                //style: {
-//                                                //    // background: '#D25959',
-//                                                //    background: 'rgba(76, 175, 80, 0.3);',
-//                                                //    // border: '2px'
-//                                                //},
-//                                                //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
-//                                                style: 'background-color:transparent',
-//                                                layout: {
-//                                                    type: 'vbox',
-//                                                    pack: 'center',
-//                                                    align: 'center',
-//                                                },
-//                                                items: [
-//                                                      {
-                
-//                                                          //xtype: 'button',
-//                                                          //height: 90,
-//                                                          //width: 90,
-//                                                         // margin: '-18 0 0 -10',
-//                                                          margin: '-18 0 0 35',
-//                                                          //zIndex: 400,
-//                                                          id: 'Dashboard_NearestRedeem_StampContent4',
-//                                                          html: '<img src="resources/icons/AyohaRedeemPrize02.png" alt="Image" style="width:60px;height:60px;zIndex:400px">',
-                
-//                                                          //ui: 'plain',
-//                                                          //handler: function () {
-                
-//                                                          //}
-                
-//                                                      },
-                
-//                                                ]
-//                                            },
-//                                              {
-//                                                  xtype: 'container',
-//                                                  width: '95%',
-//                                                 // width: '100%',
-//                                                  // zIndex: -99,
-//                                                  //margin: '-18 0 0 0',                                   
-//                                                  //height: 80,                                   
-//                                                  margin: '-14 0 0 0',
-//                                                  height: 80,
-//                                                  //style: 'background-color:rgba(255, 255, 255, 0.3);border-radius: 10px 10px 10px 10px;',
-//                                                  style: 'background-color:transparent',
-//                                                  layout: {
-//                                                      type: 'vbox',
-//                                                      pack: 'center',
-//                                                      align: 'left',
-//                                                  },
-//                                                  items: [
-//                                                       {
-//                                                           margin: '-8 0 0 33',
-//                                                           id: 'Dashboard_NearestRedeem_StampContentNote4',
-//                                                           html: '<div style="color:black;text-align: center;font-size:16px;width:100%;font-weight:bold">No stamp loyalty reward</div>',
-//                                                       },
-//                                                        {
-//                                                            margin: '-2 0 0 33',
-//                                                            id: 'Dashboard_NearestRedeem_EnterpriseName4',
-//                                                            html: '<div style="color:black;text-align: center;font-size:12px;width:100%;font-weight:bold">Please go to Ayoha Merchant</div>',
-//                                                        },
-//                                                         {
-//                                                             margin: '0 0 0 33',
-//                                                             width: '100%',
-//                                                             id: 'Dashboard_NearestRedeem_EndDate4',
-//                                                             html: '<div style="color:black;text-align: left;font-size:12px;width:100%;font-weight:normal">and get the membership card to collect stamp!</div>',
-//                                                         },
-                
-//                                                  ]
-//                                              },
-                
-                
-//                                        ]
-//                                    },
-                
-//                                    {
-//                                        xtype: 'spacer'
-//                                    },
-//                                ]
-                
-//                            },
-                
-                
-                
-                
-//                               {
-//                                   xtype: 'container',
-//                                   //width: '95%',
-//                                   //height: 80,
-//                                   margin: '12 0 0 0',
-//                                   width: '95%',
-//                                   height: 85,
-//                                   //style: 'border-right:1px solid white;border-left:1px solid white;border-bottom:1px solid white;border-top:1px solid white;background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);border-radius: 10px 10px 10px 10px;',
-//                                   //style: 'border-right:0.1px solid #ECECEC;border-left:0.1px solid #ECECEC;border-bottom:0.1px solid #ECECEC;border-top:0.1px solid #ECECEC;background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);border-radius: 10px 10px 10px 10px;',
-//                                  // style: 'border-right:0.1px solid #ECECEC;border-left:0.1px solid #ECECEC;border-bottom:0.1px solid #ECECEC;border-top:0.1px solid #ECECEC;background-color: white;border-radius: 10px 10px 10px 10px;box-shadow: 5px 10px 18px #888888;',
-//                                  style: 'border:1px solid #fac;background-color: white;border-radius: 10px 10px 10px 10px;',
-//                                  layout: {
-//                                       type: 'hbox',
-//                                       pack: 'center',
-//                                       align: 'center',
-//                                   },
-//                                   items: [
-//                                       {
-//                                           xtype: 'spacer'
-//                                       },
-//                                       {
-//                                           xtype: 'container',
-//                                           width: '92%',
-//                                           //height: 100,
-//                                           height: 80,
-//                                           margin: '10 0 0 0',
-//                                           name: 'container_Dashboard_NearestRedeem5',
-//                                           //style: {
-//                                           //    // background: '#D25959',
-//                                           //    background: 'rgba(76, 175, 80, 0.3);',
-//                                           //    // border: '2px'
-//                                           //},
-//                                           style: 'background-color:transparent',
-//                                           //style: 'background-color:rgba(255, 255, 255, 0.3);border-radius: 10px 10px 10px 10px;',
-                
-//                                           //style: 'background-color:transparent',
-//                                           layout: {
-//                                               type: 'hbox',
-//                                               pack: 'center',
-//                                               align: 'center',
-//                                           },
-//                                           items: [
-//                                               {
-//                                                   xtype: 'container',
-//                                                   width: '15%',
-//                                                   //  zIndex: 400,
-//                                                   margin: '0 0 0 0',
-//                                                   //style: {
-//                                                   //    // background: '#D25959',
-//                                                   //    background: 'rgba(76, 175, 80, 0.3);',
-//                                                   //    // border: '2px'
-//                                                   //},
-//                                                   //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
-//                                                   style: 'background-color:transparent',
-//                                                   layout: {
-//                                                       type: 'vbox',
-//                                                       pack: 'center',
-//                                                       align: 'center',
-//                                                   },
-//                                                   items: [
-//                                                         {
-                
-//                                                             //xtype: 'button',
-//                                                             //height: 90,
-//                                                             //width: 90,
-//                                                            // margin: '-18 0 0 -10',
-//                                                             margin: '-18 0 0 35',
-//                                                             //zIndex: 400,
-//                                                             id: 'Dashboard_NearestRedeem_StampContent5',
-//                                                             html: '<img src="resources/icons/AyohaRedeemPrize02.png" alt="Image" style="width:60px;height:60px;zIndex:400px">',
-                
-//                                                             //ui: 'plain',
-//                                                             //handler: function () {
-                
-//                                                             //}
-                
-//                                                         },
-                
-//                                                   ]
-//                                               },
-//                                                 {
-//                                                     xtype: 'container',
-//                                                     width: '95%',
-//                                                    // width: '100%',
-//                                                     // zIndex: -99,
-//                                                     //margin: '-18 0 0 0',                                   
-//                                                     //height: 80,                                   
-//                                                     margin: '-14 0 0 0',
-//                                                     height: 80,
-//                                                     //style: 'background-color:rgba(255, 255, 255, 0.3);border-radius: 10px 10px 10px 10px;',
-//                                                     style: 'background-color:transparent',
-//                                                     layout: {
-//                                                         type: 'vbox',
-//                                                         pack: 'center',
-//                                                         align: 'left',
-//                                                     },
-//                                                     items: [
-//                                                          {
-//                                                              margin: '-8 0 0 33',
-//                                                              id: 'Dashboard_NearestRedeem_StampContentNote5',
-//                                                              html: '<div style="color:black;text-align: center;font-size:16px;width:100%;font-weight:bold">No stamp loyalty reward</div>',
-//                                                          },
-//                                                           {
-//                                                               margin: '-2 0 0 33',
-//                                                               id: 'Dashboard_NearestRedeem_EnterpriseName5',
-//                                                               html: '<div style="color:black;text-align: center;font-size:12px;width:100%;font-weight:bold">Please go to Ayoha Merchant</div>',
-//                                                           },
-//                                                            {
-//                                                                margin: '0 0 0 33',
-//                                                                width: '100%',
-//                                                                id: 'Dashboard_NearestRedeem_EndDate5',
-//                                                                html: '<div style="color:black;text-align: left;font-size:12px;width:100%;font-weight:normal">and get the membership card to collect stamp!</div>',
-//                                                            },
-                
-//                                                     ]
-//                                                 },
-                
-                
-//                                           ]
-//                                       },
-                
-//                                       {
-//                                           xtype: 'spacer'
-//                                       },
-//                                   ]
-                
-//                               },
-                
-                
-//                             ]
-                
-//                         },
-                
-                
-                
-//                         ///////////////////////////carosel-2
-//                         {
-//                             xtype: 'container',
-//                             // xtype: 'carousel',
-//                             hidden: false,
-//                             //width: '95%',
-//                             //height: 80,
-//                             margin: '-2 0 0 0',
-//                             width: '100%',
-//                             id: 'container_Dashboard_NearestRedeemMembers_carosel2',
-//                             height: 290,
-//                             // height: 440,
-//                             // style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1 ;background: transparent;border-radius: 10px 10px 10px 10px;',
-//                             style: 'background-color:transparent',
-//                             layout: {
-//                                 type: 'vbox',
-//                                 pack: 'start',
-//                                 align: 'center',
-//                             },
-//                             items: [
-//                                 {
-//                                     xtype: 'container',
-//                                     //width: '95%',
-//                                     //height: 80,
-//                                     margin: '12 0 0 0',
-//                                     width: '95%',
-//                                     height: 85,
-//                                     //style: 'border-right:2px solid #fac;border-left:2px solid #fac;border-bottom:2px solid #fac;border-top:2px solid #fac;background-color: transparent;border-radius: 10px 10px 10px 10px; box-shadow: 5px 10px 18px #888888;',
-//                                     //// style: 'border-right:1px solid white;border-left:1px solid white;border-bottom:1px solid white;border-top:1px solid white;background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);border-radius: 10px 10px 10px 10px;',
-//                                     //  style: 'background-color:transparent',
-//                                     //style: 'border-right:0.1px solid #ECECEC;border-left:0.1px solid #ECECEC;border-bottom:0.1px solid #ECECEC;border-top:0.1px solid #ECECEC;background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);border-radius: 10px 10px 10px 10px;',
-//                                    // style: 'border-right:0.1px solid #ECECEC;border-left:0.1px solid #ECECEC;border-bottom:0.1px solid #ECECEC;border-top:0.1px solid #ECECEC;background-color: white;border-radius: 10px 10px 10px 10px;box-shadow: 5px 10px 18px #888888;',
-//                                    style: 'border:1px solid #fac;background-color: white;border-radius: 10px 10px 10px 10px;',
-//                                    layout: {
-//                                         type: 'hbox',
-//                                         pack: 'center',
-//                                         align: 'center',
-//                                     },
-//                                     items: [
-//                                         {
-//                                             xtype: 'spacer'
-//                                         },
-//                                         {
-//                                             xtype: 'container',
-//                                             width: '92%',
-//                                             //height: 100,
-//                                             height: 80,
-//                                             margin: '10 0 0 0',
-//                                             name: 'container_Dashboard_NearestRedeem6',
-//                                             //style: {
-//                                             //    // background: '#D25959',
-//                                             //    background: 'rgba(76, 175, 80, 0.3);',
-//                                             //    // border: '2px'
-//                                             //},
-//                                             style: 'background-color:transparent',
-//                                             //style: 'background-color:rgba(255, 255, 255, 0.3);border-radius: 10px 10px 10px 10px;',
-                
-//                                             //style: 'background-color:transparent',
-//                                             layout: {
-//                                                 type: 'hbox',
-//                                                 pack: 'center',
-//                                                 align: 'center',
-//                                             },
-//                                             items: [
-//                                                 {
-//                                                     xtype: 'container',
-//                                                     width: '15%',
-                
-//                                                     margin: '0 0 0 0',
-//                                                     //style: {
-//                                                     //    // background: '#D25959',
-//                                                     //    background: 'rgba(76, 175, 80, 0.3);',
-//                                                     //    // border: '2px'
-//                                                     //},
-//                                                     //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
-//                                                     style: 'background-color:transparent',
-//                                                     layout: {
-//                                                         type: 'vbox',
-//                                                         pack: 'center',
-//                                                         align: 'center',
-//                                                     },
-//                                                     items: [
-//                                                           {
-                
-//                                                               //xtype: 'button',
-//                                                               //height: 90,
-//                                                               //width: 90,
-//                                                              // margin: '-18 0 0 -10',
-//                                                               margin: '-18 0 0 35',
-//                                                               //zIndex: 400,
-//                                                               id: 'Dashboard_NearestRedeem_StampContent6',
-//                                                               html: '<img src="resources/icons/AyohaRedeemPrize02.png" alt="Image" style="width:60px;height:60px;zIndex:400px">',
-                
-//                                                               //ui: 'plain',
-//                                                               //handler: function () {
-                
-//                                                               //}
-                
-//                                                           },
-                
-//                                                     ]
-//                                                 },
-//                                                   {
-//                                                       xtype: 'container',
-//                                                       width: '95%',
-//                                                      // width: '100%',
-//                                                       //zIndex: -99,
-//                                                       //margin: '-18 0 0 0',                                   
-//                                                       //height: 80,                                   
-//                                                       margin: '-14 0 0 0',
-//                                                       height: 80,
-//                                                       //style: 'background-color:rgba(255, 255, 255, 0.3);border-radius: 10px 10px 10px 10px;',
-//                                                       style: 'background-color:transparent',
-//                                                       layout: {
-//                                                           type: 'vbox',
-//                                                           pack: 'center',
-//                                                           align: 'left',
-//                                                       },
-//                                                       items: [
-//                                                            {
-//                                                                margin: '-8 0 0 33',
-//                                                                id: 'Dashboard_NearestRedeem_StampContentNote6',
-//                                                                html: '<div style="color:black;text-align: center;font-size:16px;width:100%;font-weight:bold">No stamp loyalty reward</div>',
-//                                                            },
-//                                                             {
-//                                                                 margin: '-2 0 0 33',
-//                                                                 id: 'Dashboard_NearestRedeem_EnterpriseName6',
-//                                                                 html: '<div style="color:black;text-align: center;font-size:12px;width:100%;font-weight:bold">Please go to Ayoha Merchant</div>',
-//                                                             },
-//                                                              {
-//                                                                  margin: '0 0 0 33',
-//                                                                  width: '100%',
-//                                                                  id: 'Dashboard_NearestRedeem_EndDate6',
-//                                                                  html: '<div style="color:black;text-align: left;font-size:12px;width:100%;font-weight:normal">and get the membership card to collect stamp!</div>',
-//                                                              },
-                
-//                                                       ]
-//                                                   },
-                
-                
-//                                             ]
-//                                         },
-                
-//                                         {
-//                                             xtype: 'spacer'
-//                                         },
-//                                     ]
-                
-//                                 },
-                
-                
-                
-//                            {
-//                                xtype: 'container',
-//                                //width: '95%',
-//                                //height: 80,
-//                                margin: '12 0 0 0',
-//                                width: '95%',
-//                                height: 85,
-//                                //  style: 'border-right:2px solid #fac;border-left:2px solid #fac;border-bottom:2px solid #fac;border-top:2px solid #fac;background-color: transparent;border-radius: 10px 10px 10px 10px; box-shadow: 5px 10px 18px #888888;',
-//                                //style: 'border-right:1px solid white;border-left:1px solid white;border-bottom:1px solid white;border-top:1px solid white;background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);border-radius: 10px 10px 10px 10px;',
-//                                // style: 'background-color:transparent',
-//                                // style: 'border-right:1px solid white;border-left:1px solid white;border-bottom:1px solid white;border-top:1px solid white;background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);border-radius: 10px 10px 10px 10px;',
-//                                // style: 'border-right:0.1px solid #ECECEC;border-left:0.1px solid #ECECEC;border-bottom:0.1px solid #ECECEC;border-top:0.1px solid #ECECEC;background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);border-radius: 10px 10px 10px 10px;',
-//                               // style: 'border-right:0.1px solid #ECECEC;border-left:0.1px solid #ECECEC;border-bottom:0.1px solid #ECECEC;border-top:0.1px solid #ECECEC;background-color: white;border-radius: 10px 10px 10px 10px;box-shadow: 5px 10px 18px #888888;',
-//                               style: 'border:1px solid #fac;background-color: white;border-radius: 10px 10px 10px 10px;',
-//                               layout: {
-//                                    type: 'hbox',
-//                                    pack: 'center',
-//                                    align: 'center',
-//                                },
-//                                items: [
-//                                    {
-//                                        xtype: 'spacer'
-//                                    },
-//                                    {
-//                                        xtype: 'container',
-//                                        width: '92%',
-//                                        //height: 100,
-//                                        height: 80,
-//                                        margin: '10 0 0 0',
-//                                        name: 'container_Dashboard_NearestRedeem7',
-//                                        //style: {
-//                                        //    // background: '#D25959',
-//                                        //    background: 'rgba(76, 175, 80, 0.3);',
-//                                        //    // border: '2px'
-//                                        //},
-//                                        style: 'background-color:transparent',
-//                                        //style: 'background-color:rgba(255, 255, 255, 0.3);border-radius: 10px 10px 10px 10px;',
-                
-//                                        //style: 'background-color:transparent',
-//                                        layout: {
-//                                            type: 'hbox',
-//                                            pack: 'center',
-//                                            align: 'center',
-//                                        },
-//                                        items: [
-//                                            {
-//                                                xtype: 'container',
-//                                                width: '15%',
-//                                                //  zIndex: 400,
-//                                                margin: '0 0 0 0',
-//                                                //style: {
-//                                                //    // background: '#D25959',
-//                                                //    background: 'rgba(76, 175, 80, 0.3);',
-//                                                //    // border: '2px'
-//                                                //},
-//                                                //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
-//                                                style: 'background-color:transparent',
-//                                                layout: {
-//                                                    type: 'vbox',
-//                                                    pack: 'center',
-//                                                    align: 'center',
-//                                                },
-//                                                items: [
-//                                                      {
-                
-//                                                          //xtype: 'button',
-//                                                          //height: 90,
-//                                                          //width: 90,
-//                                                         // margin: '-18 0 0 -10',
-//                                                          margin: '-18 0 0 35',
-//                                                          //zIndex: 400,
-//                                                          id: 'Dashboard_NearestRedeem_StampContent7',
-//                                                          html: '<img src="resources/icons/AyohaRedeemPrize02.png" alt="Image" style="width:60px;height:60px;zIndex:400px">',
-                
-//                                                          //ui: 'plain',
-//                                                          //handler: function () {
-                
-//                                                          //}
-                
-//                                                      },
-                
-//                                                ]
-//                                            },
-//                                              {
-//                                                  xtype: 'container',
-//                                                  width: '95%',
-//                                                 // width: '100%',
-//                                                  // zIndex: -99,
-//                                                  //margin: '-18 0 0 0',                                   
-//                                                  //height: 80,                                   
-//                                                  margin: '-14 0 0 0',
-//                                                  height: 80,
-//                                                  //style: 'background-color:rgba(255, 255, 255, 0.3);border-radius: 10px 10px 10px 10px;',
-//                                                  style: 'background-color:transparent',
-//                                                  layout: {
-//                                                      type: 'vbox',
-//                                                      pack: 'center',
-//                                                      align: 'left',
-//                                                  },
-//                                                  items: [
-//                                                       {
-//                                                           margin: '-8 0 0 33',
-//                                                           id: 'Dashboard_NearestRedeem_StampContentNote7',
-//                                                           html: '<div style="color:black;text-align: center;font-size:16px;width:100%;font-weight:bold">No stamp loyalty reward</div>',
-//                                                       },
-//                                                        {
-//                                                            margin: '-2 0 0 33',
-//                                                            id: 'Dashboard_NearestRedeem_EnterpriseName7',
-//                                                            html: '<div style="color:black;text-align: center;font-size:12px;width:100%;font-weight:bold">Please go to Ayoha Merchant</div>',
-//                                                        },
-//                                                         {
-//                                                             margin: '0 0 0 33',
-//                                                             width: '100%',
-//                                                             id: 'Dashboard_NearestRedeem_EndDate7',
-//                                                             html: '<div style="color:black;text-align: left;font-size:12px;width:100%;font-weight:normal">and get the membership card to collect stamp!</div>',
-//                                                         },
-                
-//                                                  ]
-//                                              },
-                
-                
-//                                        ]
-//                                    },
-                
-//                                    {
-//                                        xtype: 'spacer'
-//                                    },
-//                                ]
-                
-//                            },
-                
-                
-                
-                
-//                               {
-//                                   xtype: 'container',
-//                                   //width: '95%',
-//                                   //height: 80,
-//                                   margin: '12 0 0 0',
-//                                   width: '95%',
-//                                   height: 85,
-//                                   //style: 'border-right:1px solid white;border-left:1px solid white;border-bottom:1px solid white;border-top:1px solid white;background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);border-radius: 10px 10px 10px 10px;',
-//                                   // style: 'border-right:0.1px solid #ECECEC;border-left:0.1px solid #ECECEC;border-bottom:0.1px solid #ECECEC;border-top:0.1px solid #ECECEC;background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);border-radius: 10px 10px 10px 10px;',
-//                                  // style: 'border-right:0.1px solid #ECECEC;border-left:0.1px solid #ECECEC;border-bottom:0.1px solid #ECECEC;border-top:0.1px solid #ECECEC;background-color: white;border-radius: 10px 10px 10px 10px;box-shadow: 5px 10px 18px #888888;',
-//                                  style: 'border:1px solid #fac;background-color: white;border-radius: 10px 10px 10px 10px;',
-//                                  layout: {
-//                                       type: 'hbox',
-//                                       pack: 'center',
-//                                       align: 'center',
-//                                   },
-//                                   items: [
-//                                       {
-//                                           xtype: 'spacer'
-//                                       },
-//                                       {
-//                                           xtype: 'container',
-//                                           width: '92%',
-//                                           //height: 100,
-//                                           height: 80,
-//                                           margin: '10 0 0 0',
-//                                           name: 'container_Dashboard_NearestRedeem8',
-//                                           //style: {
-//                                           //    // background: '#D25959',
-//                                           //    background: 'rgba(76, 175, 80, 0.3);',
-//                                           //    // border: '2px'
-//                                           //},
-//                                           style: 'background-color:transparent',
-//                                           //style: 'background-color:rgba(255, 255, 255, 0.3);border-radius: 10px 10px 10px 10px;',
-                
-//                                           //style: 'background-color:transparent',
-//                                           layout: {
-//                                               type: 'hbox',
-//                                               pack: 'center',
-//                                               align: 'center',
-//                                           },
-//                                           items: [
-//                                               {
-//                                                   xtype: 'container',
-//                                                   width: '15%',
-//                                                   //  zIndex: 400,
-//                                                   margin: '0 0 0 0',
-//                                                   //style: {
-//                                                   //    // background: '#D25959',
-//                                                   //    background: 'rgba(76, 175, 80, 0.3);',
-//                                                   //    // border: '2px'
-//                                                   //},
-//                                                   //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
-//                                                   style: 'background-color:transparent',
-//                                                   layout: {
-//                                                       type: 'vbox',
-//                                                       pack: 'center',
-//                                                       align: 'center',
-//                                                   },
-//                                                   items: [
-//                                                         {
-                
-//                                                             //xtype: 'button',
-//                                                             //height: 90,
-//                                                             //width: 90,
-//                                                            // margin: '-18 0 0 -10',
-//                                                             margin: '-18 0 0 35',
-//                                                             //zIndex: 400,
-//                                                             id: 'Dashboard_NearestRedeem_StampContent8',
-//                                                             html: '<img src="resources/icons/AyohaRedeemPrize02.png" alt="Image" style="width:60px;height:60px;zIndex:400px">',
-                
-//                                                             //ui: 'plain',
-//                                                             //handler: function () {
-                
-//                                                             //}
-                
-//                                                         },
-                
-//                                                   ]
-//                                               },
-//                                                 {
-//                                                     xtype: 'container',
-//                                                     width: '95%',
-//                                                    // width: '100%',
-//                                                     // zIndex: -99,
-//                                                     //margin: '-18 0 0 0',                                   
-//                                                     //height: 80,                                   
-//                                                     margin: '-14 0 0 0',
-//                                                     height: 80,
-//                                                     //style: 'background-color:rgba(255, 255, 255, 0.3);border-radius: 10px 10px 10px 10px;',
-//                                                     style: 'background-color:transparent',
-//                                                     layout: {
-//                                                         type: 'vbox',
-//                                                         pack: 'center',
-//                                                         align: 'left',
-//                                                     },
-//                                                     items: [
-//                                                          {
-//                                                              margin: '-8 0 0 33',
-//                                                              id: 'Dashboard_NearestRedeem_StampContentNote8',
-//                                                              html: '<div style="color:black;text-align: center;font-size:16px;width:100%;font-weight:bold">No stamp loyalty reward</div>',
-//                                                          },
-//                                                           {
-//                                                               margin: '-2 0 0 33',
-//                                                               id: 'Dashboard_NearestRedeem_EnterpriseName8',
-//                                                               html: '<div style="color:black;text-align: center;font-size:12px;width:100%;font-weight:bold">Please go to Ayoha Merchant</div>',
-//                                                           },
-//                                                            {
-//                                                                margin: '0 0 0 33',
-//                                                                width: '100%',
-//                                                                id: 'Dashboard_NearestRedeem_EndDate8',
-//                                                                html: '<div style="color:black;text-align: left;font-size:12px;width:100%;font-weight:normal">and get the membership card to collect stamp!</div>',
-//                                                            },
-                
-//                                                     ]
-//                                                 },
-                
-                
-//                                           ]
-//                                       },
-                
-//                                       {
-//                                           xtype: 'spacer'
-//                                       },
-//                                   ]
-                
-//                               },
-                
-//                             ]
-                
-//                         },
-//                     ]
-//                 },
-//             ]
-//         },
-//         {
-//             xtype: 'container',
-//             width: '100%',
-//             height: '100%',
-//             style: "background-color: transparent;",
-//             title: 'StampsStatus_EligiblePerks',
-//             id:'containerTabpanelAyohaMerchantRewards_StampsStatus_Eligible_Redeem_Approved_Expired',
-//             layout: {
-//                 type: 'vbox',
-//                 pack: 'start',
-//                 align: 'center',
-//             }, 
-//             items:[
-                
-//                     {
-//                         xtype: 'list',
-//                         width: '95%',
-//                         height: 400,
-//                         margin: '5 0 0 0',
-//                         // height: '98%',
-//                         // flex: 1,
-//                       //  store: _DataStore_AyohaUserDashBoard_StampCardLoadByStampedRedeemStatusStore,
-//                         // store:'AyohaUserDashBoardNearestRedeemItemListStore',
-//                        // grouped:true,
-//                         id: 'listTabpanelAyohaMerchantRewards_StampsStatus',
-//                         mode: 'SINGLE',
-//                         scrollable: {
-//                             direction: 'vertical',
-//                             indicators: {
-//                                 y: {
-//                                     autoHide: true
-//                                 },
-//                                 x: {
-//                                     autoHide: true
-//                                 }
-//                             }
-//                         },
-//                         style: 'background-color:rgba(255,255,255, 0.1);',
-//                         // width: '100%',
-//                         disableSelection: true,
-//                         itemTpl: '<div class="myContent" style="background-color:white;width:100%;height:80px;border-radius: 10px 10px 10px 10px;">' +
-
-
-//                          '<table style="border-collapse:collapse;border-spacing:0;width:110%;background-color:white;margin:-10px 0px 0px -15px;height:90px;"><tr onclick="AyohaMerchantReward_openStampCardRedemption({ID})"><td style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:0px 7px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:20%;vertical-align:center">{ModifiedStampContent}</td><td style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;padding:0px 0px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:80%;vertical-align:center">{StampContentNote}<br><font style="font-family:Arial, sans-serif;font-size:12px;font-weight:normal;">{EnterpriseName}<br>End:{EndDate} - {CampaignDayLeft} Day Left</font></td></tr></table>'
-
-//                              + '</div>',
-                      
-//                         //height: '100%',
-                      
-//                         emptyText: '<div  style="background-color:transparent;width:100%;height100%;">Hai!, you have no redemption items yet.Go to Ayoha Mechant Menu ,get their Membership card and then collect your redemptions items!</div>',
-//                         //listeners: {
-//                         //    itemsingletap: function (list, idx, target, records, evt) {
-
-//                         //        //var EnterpriseHQAccountNo = records.get('CampaignEnterpriseHQAccNo');
-//                         //        //var EnterpriseAccountNo = records.get('CampaignEnterpriseAccNo');
-//                         //        //var MembershipCardCode = records.get('MembershipCardCode');
-//                         //        //var ID = records.get('ID');
-//                         //        ////FloatPanel_NearestRedemption_EditCardShow_Edit(ID);
-//                         //        //FloatPanel_MembershipCardList_UpgradeShow_MyMembershipCard(EnterpriseHQAccountNo, EnterpriseAccountNo, MembershipCardCode, ID);
-//                         //        //setTimeout(function () {
-//                         //        //    Ext.getCmp('containerFloatPanel_MembershipCardList_UpgradeBottom').setHidden(true);
-//                         //        //    // Ext.getCmp('containerFloatPanel_MembershipCardList_UpgradeBottom').setHidden(true);
-
-//                         //        //    Ext.getCmp('htmlFloatPanel_MembershipCardList_Upgrade_TitleHeaderTxt').setHtml('<font size=2 color=white><b>My Membership Card</b></font>');
-//                         //        //}, 2000);
-
-
-
-//                         //    },
-//                         //    deselect: function (list, records) {
-
-//                         //    }
-//                         //},
-//                         listeners: {
-//                             itemswipe: function (list, idx, target, record, evt) {
-//                                 //  To get the selection you should use getSelection() instead
-//                                 //////var selected = list.getActiveItem();
-//                                 //////alert(list.getActiveItem());
-//                                 //////if (!selected) { return; }
-
-//                                 //////var selectedIndex = selected[0];
-//                                 //////alert([selectedIndex, idx]);
-//                                 //Ext.Msg.alert('itemswipe', idx);
-
-
-//                             } // itemswipe
-//                         }
-
-//                     },
-                
-//             ]
-//         }
-//     ]
-// },
-//////////////////////
-
-
-
-
-
-
-/////// end
 
             ]
         },        
@@ -2888,10 +950,10 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
         {
             xtype: 'container',
             width: '100%',
-            height: '100%',
+            height:'100%',
             style: "background-color: transparent;",
             title: 'Points',
-            id:'containerTabpanelAyohaMerchantRewards_Points',
+            id:'containercarouselAyohaMerchantRewards_Points',
             layout: {
                 type: 'vbox',
                 pack: 'start',
@@ -2903,12 +965,12 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
                                 {
                                     xtype: 'container',
                                     width: '100%',
-                                    margin: '5 0 0 20',
+                                    margin: '0 0 0 0',
                                     height:25,
                                     style: 'background-color:transparent',
                                     layout: {
                                         type: 'hbox',
-                                        pack: 'start',
+                                        pack: 'center',
                                         align: 'center',
                                     },
                                     items: [
@@ -2916,10 +978,10 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
                                 
                                 {
                                     html:'<div class="perk-tabs">'+
-                                    '<button class="perk-btn active" onclick="switchPerkTab_Point(this,\'NA\');">Eligible Perks</button>'+
-                                    '<button class="perk-btn" onclick="switchPerkTab_Point(this,\'Submitted\');">Redeem</button>'+
-                                    '<button class="perk-btn" onclick="switchPerkTab_Point(this,\'Approved\')">Approved</button>'+
-                                    '<button class="perk-btn" onclick="switchPerkTab_Point(this,\'Expired\')">Expired</button>'+
+                                    '<button id="btnPointEligible" class="perk-btn point active" onclick="switchPerkTab_Point(this,\'Eligible\',0);">Eligible Perks</button>'+
+                                    '<button id="btnPointSubmitted" class="perk-btn point" onclick="switchPerkTab_Point(this,\'Submitted\',1);">Redeem</button>'+
+                                    '<button id="btnPointApproved" class="perk-btn point" onclick="switchPerkTab_Point(this,\'Approved\',2)">Approved</button>'+
+                                    '<button id="btnPointExpired" class="perk-btn point" onclick="switchPerkTab_Point(this,\'Expired\',3)">Expired</button>'+
                                   '</div>'
                                 },
                                 
@@ -2933,7 +995,9 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
     xtype: 'container',
     width: '100%',
     //width: 1050,
-    height: 280,
+    //height: 350,
+    height:'100%',
+    id: 'containerAyohaMerchantRewards_Points',
     //height: '100%',
    // margin: '-150 0 0 0',
    // margin: '-100 0 0 0',
@@ -2952,951 +1016,380 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
     },
     items: [
       {
-        xtype: 'tabpanel',
+       // xtype: 'tabpanel',
+        xtype: 'carousel',
         style: "background-color: transparent;", 
        margin: '0 0 0 0',
-         id: 'tabpanelAyohaMerchantRewards_Points',
+         id: 'carouselAyohaMerchantRewards_Points',
          width: '100%',
-         //height: '100%',
-         height: 280,
-         tabBarPosition: 'top',
-         ui: 'plain',
+         height:'100%',
+        // height: 350,
+        //// tabBarPosition: 'top',
+        // ui: 'plain',
+        listeners: {
+
+            activeitemchange: function (container, newCard, oldCard, index) {
+            
+
+         
+
+
+               // globalFloatLoyaltyCardPointCarouselIndex = container.getActiveIndex();
+                var eligibleBtn = document.getElementById('btnPointEligible');
+                var submittedBtn = document.getElementById('btnPointSubmitted');
+                var approvedBtn = document.getElementById('btnPointApproved');
+                var expiredBtn = document.getElementById('btnPointExpired');
+
+if(container.getActiveIndex()==0){
+    switchPerkTab_Point(eligibleBtn, 'Eligible', 0);
+}
+if(container.getActiveIndex()==1){
+    switchPerkTab_Point(submittedBtn, 'Submitted', 1);
+}if(container.getActiveIndex()==2){
+    switchPerkTab_Point(approvedBtn, 'Approved', 2);
+}if(container.getActiveIndex()==3){
+    switchPerkTab_Point(expiredBtn, 'Expired', 3);
+}
+                
+              
+                //switchPerkTab_Point(this,\'Eligible\',0);
+
+                // if (_FloatLoyaltyCardPoint_isFirstLoad == "Y") {
+                //     console.log("activeitemchange");
+                //     console.log("isFloatLoyaltyCardPointOpen:" + isFloatLoyaltyCardPointOpen);
+                //     if (isFloatLoyaltyCardPointOpen == 'Y') {
+                //         FloatLoyaltyCardPoint_MoveCarousel(globalFloatLoyaltyCardPointCarouselIndex);
+                //         return;
+                //     }
+                  
+                    
+                // }
+               
+
+            
+
+            },
+
+        },
          items: [
-/////Eligible Points////
+
+
+////// Point Eligible Corousel Tab
 {
     xtype: 'container',
-            width: '100%',
-            height: '100%',
-            style: "background-color: transparent;",
-            title: 'EligiblePointsMain',
+    flex : 1,                 // 🌟 akan ambil semua ruang tengah
+    layout: 'fit',
+    margin: '5 0 0 0',
+    style: "background-color: transparent;",
+    title: 'PointStatus_Eligible',
+    id:'containercarouselAyohaMerchantRewards_Point_Eligible',
+    listeners: {
+        painted: function(pnl) {
+            var h = pnl.getHeight(); // atau pnl.element.getHeight()
+            containerPerkListglobalHeight = h;
+           // alert('HEIGHT ZONE =', h);
+           // alert('HEIGHT ZONE = ' + h);   // ❗️ concat string + number
+            // di sini kalau nak, boleh call load store dan pass height
+          //  AyohaMerchantReward_PointCampaignRedeemLoadByPointRedeemStatusStore('Eligible', h);
+        }
+    },
     layout: {
         type: 'vbox',
         pack: 'start',
         align: 'center',
-    },
+    }, 
     items:[
-        {
-            xtype: 'container',
-            width: '95%',
-            //height: 230,
-            height: '100%',
-            margin: '0 0 0 0',
-            title:'EligiblePoints',
-            id:'containerAyohaMerchantRewards_EligiblePoints',
-            //style: {
-            //    // background: '#D25959',
-            //    background: 'rgba(76, 175, 80, 0.3);',
-            //    // border: '2px'
-            //},
-            //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
-            // style: 'background-color:rgba(255, 255, 255, 0);border-radius: 10px 10px 10px 10px;',
-            style: 'background-color:transparent',
-            layout: {
-                type: 'hbox',
-                pack: 'center',
-                align: 'center',
+        
+{
+    xtype: 'list',
+    width: '95%',
+   // height: 95,       
+    id: 'listcarouselAyohaMerchantRewards_Point_Eligible',
+    mode: 'SINGLE',
+    //scrollable:false,
+    scrollable: {                    
+        direction: 'vertical',
+        indicators: {
+            y: {
+                autoHide: true
             },
-            scrollable: {
-                direction: 'horizontal',
-                directionLock: true,
-                indicators: false
-            },
-            items: [
+            x: {
+                autoHide: true
+            }
+        }
+    },
+    style: 'background-color:rgba(255,255,255, 0.1);',
+    // width: '100%',
+    disableSelection: true,
+    itemTpl: '<div class="myContent" style="background-color:white;width:100%;height:80px;border-radius: 10px 10px 10px 10px;">' +
+
+
+     '<table style="border-collapse:collapse;border-spacing:0;width:110%;background-color:white;margin:-10px 0px 0px -15px;height:90px;"><tr onclick="AyohaMerchantReward_openPointCardRedemption({ID})"><td style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:0px 7px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:20%;vertical-align:center">{ModifiedItemImg}</td><td style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;padding:0px 0px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:80%;vertical-align:center">{ItemName}<br><font style="font-family:Arial, sans-serif;font-size:12px;font-weight:normal;">{EnterpriseName}<br>End:{EndDate} - {CampaignDayLeft} Day Left</font></td></tr></table>'
+
+         + '</div>',
+  
+    //height: '100%',
+  
+    emptyText: '<div  style="background-color:transparent;width:100%;height100%;">Hai!, you have no redemption items yet.Go to Ayoha Mechant Menu ,get their Membership card and then collect your redemptions items!</div>',
+    //listeners: {
+    //    itemsingletap: function (list, idx, target, records, evt) {
+
+   
+
+    //    },
+    //    deselect: function (list, records) {
+
+    //    }
+    //},
+    listeners: {
+        itemswipe: function (list, idx, target, record, evt) {
+            //  To get the selection you should use getSelection() instead
+            //////var selected = list.getActiveItem();
+            //////alert(list.getActiveItem());
+            //////if (!selected) { return; }
+
+            //////var selectedIndex = selected[0];
+            //////alert([selectedIndex, idx]);
+            //Ext.Msg.alert('itemswipe', idx);
+
+
+        } // itemswipe
+    }
+
+},     
         
-                         {
-                             xtype: 'panel',
-                             width: 5
-                         },
-        
-                         {
-                             xtype: 'container',
-                             name: 'nameLoyaltyPointNearestRedeemItem_ItemPicture0',
-                             height: 270,
-                             width: 250,                            
-                             margin: '0 0 0 0',
-                             style: 'border-right:0.1px solid #ECECEC;border-left:0.1px solid #ECECEC;border-bottom:0.1px solid #ECECEC;border-top:0.1px solid #ECECEC;background-color: white;border-radius: 10px 10px 10px 10px;',
-                             layout: {
-                                 type: 'vbox',
-                                 pack: 'center',
-                                 align: 'center',
-                             },
-                             items: [
-                                   {
-                                       xtype: 'container',
-                                       width: 60,
-                                       height: 40,
-                                       zIndex: 100,
-                                         hidden: true,
-                                       id: 'containerLoyaltyPointNearestRedeemItem_ItemPoint0',
-                                       margin: '0px 0px -23px -188px',
-                                       style: 'border-right:1px solid #ECECEC;border-left:1px solid #ECECEC;border-bottom:1px solid #ECECEC;border-top:1px solid #ECECEC;background-color: purple;border-radius: 0px 0px 10px 10px;',
-                                      // style: 'background-color:transparent;',
-                                       layout: {
-                                           type: 'vbox',
-                                           pack: 'start',
-                                           align: 'center',
-                                       },
-                                       items: [
-                                          {
-                                              width: '100%',
-                                              zIndex: 100,
-                                              hidden: true,
-                                              id: 'htmlLoyaltyPointNearestRedeemItem_ItemPoint0',
-                                              html: '<div style="color:white;text-align: left;font-size:18px;width:100%;font-weight:bold;margin:10px 0px 0px 2px">0 <div style="color:white;text-align: left;font-size:9px;width:100%;font-weight:bold;margin:-7px 0px 0px 2px">Points</div></div>',
-        
-                                          },
-                                         
-                                       ]
-        
-                                   },
-        
-                                  {
-        
-                                      height: 165,
-                                      width: 110,
-                                      id: 'htmlLoyaltyPointNearestRedeemItem_ItemPicture0',
-                                    //  margin: '0 0 0 -8',
-                                      html: '<img src="resources/icons/AyohaStoreGrey.png"  style="width: 120px; height: 120px;margin:50px 0px 0px 0px">',
-        
-                                  },
-                                 {
-                                     xtype: 'container',
-                                     width: '100%',
-                                     height: 38,
-                                     margin: '55 0 0 0',
-                                     style: 'border-right:0.5px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 white;background-color:rgba(0, 0, 0, 0.5);border-radius: 0px 0px 10px 10px;',
-                                     layout: {
-                                         type: 'vbox',
-                                         pack: 'start',
-                                         align: 'center',
-                                     },
-                                     items: [
-                                           {
-                                               margin: '-32 0 0 200',
-                                               zIndex: 100,
-                                               hidden: true,
-                                               id: 'htmlLoyaltyPointNearestRedeemItem_ItemPointDayLeft0',
-                                               html: '<div style="border: 2px solid purple;color:white;text-align: center;font-size:9px;width:100%;font-weight:bold;margin:0px 0px 0px 0px;border-radius: 50%;background-color: purple;height:30px;width:30px;padding:5px 0px">100<div style="color:white;text-align: center;font-size:5px;width:100%;font-weight:bold;margin:-4px 0px 0px 0px">Day Left</div></div>',
-        
-                                           },
-                                           {
-                                              
-                                               margin: '4 0 0 0',
-                                               id: 'html_LoyaltyPointNearestRedeemItem_ItemNameTxt0',
-                                               html: '<div style="color:white;text-align: center;font-size:14px;width:100%;font-weight:bold;">No Item Redemption</div>',
-                                           },
-                                           {
-        
-                                             id: 'html_LoyaltyPointNearestRedeemItem_EndDateTxt0',
-                                             margin: '-3 0 0 0',
-                                             html: '<div style="color:white;text-align: center;font-size:10px;width:100%;font-weight:normal">Go to Ayoha Merchant!</div>',
-                                         },
-        
-        
-        
-                                     ]
-                                 },
-        
-                             ]
-                         },
-        
-                {
-                    xtype: 'panel',
-                    width: 20
-                },
-                {
-                    xtype: 'container',
-                    name: 'nameLoyaltyPointNearestRedeemItem_ItemPicture1',
-                    height: 270,
-                    width: 250,                            
-                    margin: '0 0 0 0',
-                    style: 'border-right:0.1px solid #ECECEC;border-left:0.1px solid #ECECEC;border-bottom:0.1px solid #ECECEC;border-top:0.1px solid #ECECEC;background-color: white;border-radius: 10px 10px 10px 10px;',
-                    layout: {
-                        type: 'vbox',
-                        pack: 'center',
-                        align: 'center',
-                    },
-                    items: [
-                          {
-                              xtype: 'container',
-                              width: 60,
-                                       height: 40,
-                                       zIndex: 100,
-                                       hidden: true,
-                                       id: 'containerLoyaltyPointNearestRedeemItem_ItemPoint1',
-                                       margin: '0px 0px -23px -188px',
-                                       style: 'border-right:1px solid #ECECEC;border-left:1px solid #ECECEC;border-bottom:1px solid #ECECEC;border-top:1px solid #ECECEC;background-color: purple;border-radius: 0px 0px 10px 10px;',
-                              layout: {
-                                  type: 'vbox',
-                                  pack: 'start',
-                                  align: 'center',
-                              },
-                              items: [
-                                 {
-                                     width: '100%',
-                                     zIndex: 100,
-                                     hidden: true,
-                                     id: 'htmlLoyaltyPointNearestRedeemItem_ItemPoint1',
-                                     html: '<div style="color:purple;text-align: left;font-size:18px;width:100%;font-weight:bold;margin:10px 0px 0px 2px">0 <div style="color:purple;text-align: left;font-size:9px;width:100%;font-weight:bold;margin:-7px 0px 0px 2px">Points</div></div>',
-        
-                                 },
-                                
-                              ]
-        
-                          },
-        
-                         {
-        
-                             height: 165,
-                             width: 110,
-                             id: 'htmlLoyaltyPointNearestRedeemItem_ItemPicture1',
-                            // margin: '0 0 0 -8',
-                             html: '<img src="resources/icons/AyohaStoreGrey.png"  style="width: 120px; height: 120px;margin:50px 0px 0px 0px">',
-        
-                         },
-                        {
-                            xtype: 'container',
-                            width: '100%',
-                            height: 38,
-                            margin: '55 0 0 0',
-                            style: 'border-right:0.5px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 white;background-color:rgba(0, 0, 0, 0.5);border-radius: 0px 0px 10px 10px;',
-                            layout: {
-                                type: 'vbox',
-                                pack: 'start',
-                                align: 'center',
-                            },
-                            items: [
-                                  {
-                                    margin: '-32 0 0 200',
-                                      zIndex: 100,
-                                      hidden: true,
-                                      id: 'htmlLoyaltyPointNearestRedeemItem_ItemPointDayLeft1',
-                                      html: '<div style="border: 2px solid purple;color:white;text-align: center;font-size:9px;width:100%;font-weight:bold;margin:0px 0px 0px 0px;border-radius: 50%;background-color: purple;height:30px;width:30px;padding:5px 0px">100<div style="color:white;text-align: center;font-size:5px;width:100%;font-weight:bold;margin:-4px 0px 0px 0px">Day Left</div></div>',
-        
-                                  },
-                                  {
-                                     
-                                      margin: '4 0 0 0',
-                                      id: 'html_LoyaltyPointNearestRedeemItem_ItemNameTxt1',
-                                      html: '<div style="color:white;text-align: center;font-size:14px;width:100%;font-weight:bold;">No Item Redemption</div>',
-                                  },
-                                  {
-        
-                                    id: 'html_LoyaltyPointNearestRedeemItem_EndDateTxt1',
-                                    margin: '-3 0 0 0',
-                                    html: '<div style="color:white;text-align: center;font-size:10px;width:100%;font-weight:normal">Go to Ayoha Merchant!</div>',
-                                },
-        
-        
-        
-                            ]
-                        },
-        
-                    ]
-                },
-               
-        
-                {
-                    xtype: 'panel',
-                    width: 20
-                },
-        
-        
-                {
-                    xtype: 'container',
-                    name: 'nameLoyaltyPointNearestRedeemItem_ItemPicture2',
-                    height: 270,
-                    width: 250,                            
-                    margin: '0 0 0 0',
-                    style: 'border-right:0.1px solid #ECECEC;border-left:0.1px solid #ECECEC;border-bottom:0.1px solid #ECECEC;border-top:0.1px solid #ECECEC;background-color: white;border-radius: 10px 10px 10px 10px;',
-                    layout: {
-                        type: 'vbox',
-                        pack: 'center',
-                        align: 'center',
-                    },
-                    items: [
-                          {
-                              xtype: 'container',
-                              hidden: true,
-                              id: 'containerLoyaltyPointNearestRedeemItem_ItemPoint2',
-                              width: 60,
-                              height: 40,
-                              zIndex: 100,
-                              margin: '0px 0px -23px -188px',
-                              style: 'border-right:1px solid #ECECEC;border-left:1px solid #ECECEC;border-bottom:1px solid #ECECEC;border-top:1px solid #ECECEC;background-color: purple;border-radius: 0px 0px 10px 10px;',
-                              layout: {
-                                  type: 'vbox',
-                                  pack: 'start',
-                                  align: 'center',
-                              },
-                              items: [
-                                 {
-                                     width: '100%',
-                                     zIndex: 100,
-                                     hidden: true,
-                                     id: 'htmlLoyaltyPointNearestRedeemItem_ItemPoint2',
-                                     html: '<div style="color:purple;text-align: left;font-size:18px;width:100%;font-weight:bold;margin:10px 0px 0px 2px">0 <div style="color:purple;text-align: left;font-size:9px;width:100%;font-weight:bold;margin:-7px 0px 0px 2px">Points</div></div>',
-        
-                                 },
-                                
-                              ]
-        
-                          },
-        
-                         {
-        
-                             height: 165,
-                             width: 110,
-                             id: 'htmlLoyaltyPointNearestRedeemItem_ItemPicture2',
-                            // margin: '0 0 0 -8',
-                             html: '<img src="resources/icons/AyohaStoreGrey.png"  style="width: 120px; height: 120px;margin:50px 0px 0px 0px">',
-        
-                         },
-                        {
-                            xtype: 'container',
-                            width: '100%',
-                            height: 38,
-                            margin: '55 0 0 0',
-                                     style: 'border-right:0.5px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 white;background-color:rgba(0, 0, 0, 0.5);border-radius: 0px 0px 10px 10px;',
-                            layout: {
-                                type: 'vbox',
-                                pack: 'start',
-                                align: 'center',
-                            },
-                            items: [
-                                  {
-                                    margin: '-32 0 0 200',
-                                      zIndex: 100,
-                                      hidden: true,
-                                      id: 'htmlLoyaltyPointNearestRedeemItem_ItemPointDayLeft2',
-                                      html: '<div style="border: 2px solid purple;color:white;text-align: center;font-size:9px;width:100%;font-weight:bold;margin:0px 0px 0px 0px;border-radius: 50%;background-color: purple;height:30px;width:30px;padding:5px 0px">100<div style="color:white;text-align: center;font-size:5px;width:100%;font-weight:bold;margin:-4px 0px 0px 0px">Day Left</div></div>',
-        
-                                  },
-                                  {
-                                     
-                                      margin: '4 0 0 0',
-                                      id: 'html_LoyaltyPointNearestRedeemItem_ItemNameTxt2',
-                                      html: '<div style="color:white;text-align: center;font-size:14px;width:100%;font-weight:bold;">No Item Redemption</div>',
-                                  },
-                                  {
-        
-                                    id: 'html_LoyaltyPointNearestRedeemItem_EndDateTxt2',
-                                    margin: '-3 0 0 0',
-                                    html: '<div style="color:white;text-align: center;font-size:10px;width:100%;font-weight:normal">Go to Ayoha Merchant!</div>',
-                                },
-        
-        
-        
-                            ]
-                        },
-        
-                    ]
-                },
-        
-                {
-                    xtype: 'panel',
-                    width: 20
-                },
-                {
-                    xtype: 'container',
-                    name: 'nameLoyaltyPointNearestRedeemItem_ItemPicture3',
-                    height: 270,
-                    width: 250,                            
-                    margin: '0 0 0 0',
-                    style: 'border-right:0.1px solid #ECECEC;border-left:0.1px solid #ECECEC;border-bottom:0.1px solid #ECECEC;border-top:0.1px solid #ECECEC;background-color: white;border-radius: 10px 10px 10px 10px;',
-                    layout: {
-                        type: 'vbox',
-                        pack: 'center',
-                        align: 'center',
-                    },
-                    items: [
-                          {
-                              xtype: 'container',
-                              hidden: true,
-                              id: 'containerLoyaltyPointNearestRedeemItem_ItemPoint3',
-                              width: 60,
-                              height: 40,
-                              zIndex: 100,
-                              margin: '0px 0px -23px -188px',
-                              style: 'border-right:1px solid #ECECEC;border-left:1px solid #ECECEC;border-bottom:1px solid #ECECEC;border-top:1px solid #ECECEC;background-color: purple;border-radius: 0px 0px 10px 10px;',
-                              layout: {
-                                  type: 'vbox',
-                                  pack: 'start',
-                                  align: 'center',
-                              },
-                              items: [
-                                 {
-                                     width: '100%',
-                                     zIndex: 100,
-                                     hidden: true,
-                                     id: 'htmlLoyaltyPointNearestRedeemItem_ItemPoint3',
-                                     html: '<div style="color:purple;text-align: left;font-size:18px;width:100%;font-weight:bold;margin:10px 0px 0px 2px">0 <div style="color:purple;text-align: left;font-size:9px;width:100%;font-weight:bold;margin:-7px 0px 0px 2px">Points</div></div>',
-        
-                                 },
-                                
-                              ]
-        
-                          },
-        
-                         {
-        
-                             height: 165,
-                             width: 110,
-                             id: 'htmlLoyaltyPointNearestRedeemItem_ItemPicture3',
-                            // margin: '0 0 0 -8',
-                             html: '<img src="resources/icons/AyohaStoreGrey.png"  style="width: 120px; height: 120px;margin:50px 0px 0px 0px">',
-        
-                         },
-                        {
-                            xtype: 'container',
-                            width: '100%',
-                            height: 38,
-                            margin: '55 0 0 0',
-                            style: 'border-right:0.5px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 white;background-color:rgba(0, 0, 0, 0.5);border-radius: 0px 0px 10px 10px;',
-                            layout: {
-                                type: 'vbox',
-                                pack: 'start',
-                                align: 'center',
-                            },
-                            items: [
-                                  {
-                                    margin: '-32 0 0 200',
-                                      zIndex: 100,
-                                      hidden: true,
-                                      id: 'htmlLoyaltyPointNearestRedeemItem_ItemPointDayLeft3',
-                                      html: '<div style="border: 2px solid purple;color:white;text-align: center;font-size:9px;width:100%;font-weight:bold;margin:0px 0px 0px 0px;border-radius: 50%;background-color: purple;height:30px;width:30px;padding:5px 0px">100<div style="color:white;text-align: center;font-size:5px;width:100%;font-weight:bold;margin:-4px 0px 0px 0px">Day Left</div></div>',
-        
-                                  },
-                                  {
-                                     
-                                      margin: '4 0 0 0',
-                                      id: 'html_LoyaltyPointNearestRedeemItem_ItemNameTxt3',
-                                      html: '<div style="color:white;text-align: center;font-size:14px;width:100%;font-weight:bold;">No Item Redemption</div>',
-                                  },
-                                  {
-        
-                                    id: 'html_LoyaltyPointNearestRedeemItem_EndDateTxt3',
-                                    margin: '-3 0 0 0',
-                                    html: '<div style="color:white;text-align: center;font-size:10px;width:100%;font-weight:normal">Go to Ayoha Merchant!</div>',
-                                },
-        
-        
-        
-                            ]
-                        },
-        
-                    ]
-                },
-        
-              
-        
-                {
-                    xtype: 'panel',
-                    width: 20
-                },
-              
-                {
-                    xtype: 'container',
-                    name: 'nameLoyaltyPointNearestRedeemItem_ItemPicture4',
-                    height: 270,
-                    width: 250,                            
-                    margin: '0 0 0 0',
-                    style: 'border-right:0.1px solid #ECECEC;border-left:0.1px solid #ECECEC;border-bottom:0.1px solid #ECECEC;border-top:0.1px solid #ECECEC;background-color: white;border-radius: 10px 10px 10px 10px;',
-                    layout: {
-                        type: 'vbox',
-                        pack: 'center',
-                        align: 'center',
-                    },
-                    items: [
-                          {
-                              xtype: 'container',
-                              hidden: true,
-                              id: 'containerLoyaltyPointNearestRedeemItem_ItemPoint4',
-                              width: 60,
-                              height: 40,
-                              zIndex: 100,
-                              margin: '0px 0px -23px -188px',
-                              style: 'border-right:1px solid #ECECEC;border-left:1px solid #ECECEC;border-bottom:1px solid #ECECEC;border-top:1px solid #ECECEC;background-color: purple;border-radius: 0px 0px 10px 10px;',
-                              layout: {
-                                  type: 'vbox',
-                                  pack: 'start',
-                                  align: 'center',
-                              },
-                              items: [
-                                 {
-                                     width: '100%',
-                                     zIndex: 100,
-                                     hidden: true,
-                                     id: 'htmlLoyaltyPointNearestRedeemItem_ItemPoint4',
-                                     html: '<div style="color:purple;text-align: left;font-size:18px;width:100%;font-weight:bold;margin:10px 0px 0px 2px">0 <div style="color:purple;text-align: left;font-size:9px;width:100%;font-weight:bold;margin:-7px 0px 0px 2px">Points</div></div>',
-        
-                                 },
-                                
-                              ]
-        
-                          },
-        
-                         {
-        
-                             height: 165,
-                             width: 110,
-                             id: 'htmlLoyaltyPointNearestRedeemItem_ItemPicture4',
-                            // margin: '0 0 0 -8',
-                             html: '<img src="resources/icons/AyohaStoreGrey.png"  style="width: 120px; height: 120px;margin:50px 0px 0px 0px">',
-        
-                         },
-                        {
-                            xtype: 'container',
-                            width: '100%',
-                            height: 38,
-                            margin: '55 0 0 0',
-                            style: 'border-right:0.5px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 white;background-color:rgba(0, 0, 0, 0.5);border-radius: 0px 0px 10px 10px;',
-                            layout: {
-                                type: 'vbox',
-                                pack: 'start',
-                                align: 'center',
-                            },
-                            items: [
-                                  {
-                                    margin: '-32 0 0 200',
-                                      zIndex: 100,
-                                      hidden: true,
-                                      id: 'htmlLoyaltyPointNearestRedeemItem_ItemPointDayLeft4',
-                                      html: '<div style="border: 2px solid purple;color:white;text-align: center;font-size:9px;width:100%;font-weight:bold;margin:0px 0px 0px 0px;border-radius: 50%;background-color: purple;height:30px;width:30px;padding:5px 0px">100<div style="color:white;text-align: center;font-size:5px;width:100%;font-weight:bold;margin:-4px 0px 0px 0px">Day Left</div></div>',
-        
-                                  },
-                                  {
-                                     
-                                      margin: '4 0 0 0',
-                                      id: 'html_LoyaltyPointNearestRedeemItem_ItemNameTxt4',
-                                      html: '<div style="color:white;text-align: center;font-size:14px;width:100%;font-weight:bold;">No Item Redemption</div>',
-                                  },
-                                  {
-        
-                                    id: 'html_LoyaltyPointNearestRedeemItem_EndDateTxt4',
-                                    margin: '-3 0 0 0',
-                                    html: '<div style="color:white;text-align: center;font-size:10px;width:100%;font-weight:normal">Go to Ayoha Merchant!</div>',
-                                },
-        
-        
-        
-                            ]
-                        },
-        
-                    ]
-                },
-        
-        
-        
-        
-                        {
-                            xtype: 'panel',
-                            width: 20
-                        },
-        
-                        {
-                            xtype: 'container',
-                            name: 'nameLoyaltyPointNearestRedeemItem_ItemPicture5',
-                            height: 270,
-                            width: 250,                            
-                            margin: '0 0 0 0',
-                            style: 'border-right:0.1px solid #ECECEC;border-left:0.1px solid #ECECEC;border-bottom:0.1px solid #ECECEC;border-top:0.1px solid #ECECEC;background-color: white;border-radius: 10px 10px 10px 10px;',
-                            layout: {
-                                type: 'vbox',
-                                pack: 'center',
-                                align: 'center',
-                            },
-                            items: [
-                                  {
-                                      xtype: 'container',
-                                      hidden: true,
-                                      id: 'containerLoyaltyPointNearestRedeemItem_ItemPoint5',
-                                      width: 60,
-                                      height: 40,
-                                      zIndex: 100,
-                                      margin: '0px 0px -23px -188px',
-                                      style: 'border-right:1px solid #ECECEC;border-left:1px solid #ECECEC;border-bottom:1px solid #ECECEC;border-top:1px solid #ECECEC;background-color: purple;border-radius: 0px 0px 10px 10px;',
-                                      layout: {
-                                          type: 'vbox',
-                                          pack: 'start',
-                                          align: 'center',
-                                      },
-                                      items: [
-                                         {
-                                             width: '100%',
-                                             zIndex: 100,
-                                             hidden: true,
-                                             id: 'htmlLoyaltyPointNearestRedeemItem_ItemPoint5',
-                                             html: '<div style="color:purple;text-align: left;font-size:18px;width:100%;font-weight:bold;margin:10px 0px 0px 2px">0 <div style="color:purple;text-align: left;font-size:9px;width:100%;font-weight:bold;margin:-7px 0px 0px 2px">Points</div></div>',
-        
-                                         },
-                                        
-                                      ]
-        
-                                  },
-        
-                                 {
-        
-                                     height: 165,
-                                     width: 110,
-                                     id: 'htmlLoyaltyPointNearestRedeemItem_ItemPicture5',
-                                     ///margin: '0 0 0 -8',
-                                     html: '<img src="resources/icons/AyohaStoreGrey.png"  style="width: 120px; height: 120px;margin:50px 0px 0px 0px">',
-        
-                                 },
-                                {
-                                    xtype: 'container',
-                                    width: '100%',
-                                    height: 38,
-                                    margin: '55 0 0 0',
-                                     style: 'border-right:0.5px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 white;background-color:rgba(0, 0, 0, 0.5);border-radius: 0px 0px 10px 10px;',
-                                    layout: {
-                                        type: 'vbox',
-                                        pack: 'start',
-                                        align: 'center',
-                                    },
-                                    items: [
-                                          {
-                                            margin: '-32 0 0 200',
-                                              zIndex: 100,
-                                              hidden: true,
-                                              id: 'htmlLoyaltyPointNearestRedeemItem_ItemPointDayLeft5',
-                                              html: '<div style="border: 2px solid purple;color:white;text-align: center;font-size:9px;width:100%;font-weight:bold;margin:0px 0px 0px 0px;border-radius: 50%;background-color: purple;height:30px;width:30px;padding:5px 0px">100<div style="color:white;text-align: center;font-size:5px;width:100%;font-weight:bold;margin:-4px 0px 0px 0px">Day Left</div></div>',
-        
-                                          },
-                                          {
-                                             
-                                              margin: '4 0 0 0',
-                                              id: 'html_LoyaltyPointNearestRedeemItem_ItemNameTxt5',
-                                              html: '<div style="color:white;text-align: center;font-size:14px;width:100%;font-weight:bold;">No Item Redemption</div>',
-                                          },
-                                          {
-        
-                                            id: 'html_LoyaltyPointNearestRedeemItem_EndDateTxt5',
-                                            margin: '-3 0 0 0',
-                                            html: '<div style="color:white;text-align: center;font-size:10px;width:100%;font-weight:normal">Go to Ayoha Merchant!</div>',
-                                        },
-        
-        
-        
-                                    ]
-                                },
-        
-                            ]
-                        },
-        
-        
-        
-        
-        
-        
-        
-        
-                        {
-                            xtype: 'panel',
-                            width: 20
-                        },
-        
-                        {
-                            xtype: 'container',
-                            name: 'nameLoyaltyPointNearestRedeemItem_ItemPicture6',
-                            height: 270,
-                            width: 250,                            
-                            margin: '0 0 0 0',
-                            style: 'border-right:0.1px solid #ECECEC;border-left:0.1px solid #ECECEC;border-bottom:0.1px solid #ECECEC;border-top:0.1px solid #ECECEC;background-color: white;border-radius: 10px 10px 10px 10px;',
-                            layout: {
-                                type: 'vbox',
-                                pack: 'center',
-                                align: 'center',
-                            },
-                            items: [
-                                  {
-                                      xtype: 'container',
-                                      width: 60,
-                                      height: 40,
-                                      zIndex: 100,
-                                      hidden: true,
-                                      id: 'containerLoyaltyPointNearestRedeemItem_ItemPoint6',
-                                      margin: '0px 0px -23px -188px',
-                                      style: 'border-right:1px solid #ECECEC;border-left:1px solid #ECECEC;border-bottom:1px solid #ECECEC;border-top:1px solid #ECECEC;background-color: purple;border-radius: 0px 0px 10px 10px;',
-                                      layout: {
-                                          type: 'vbox',
-                                          pack: 'start',
-                                          align: 'center',
-                                      },
-                                      items: [
-                                         {
-                                             width: '100%',
-                                             zIndex: 100,
-                                             hidden: true,
-                                             id: 'htmlLoyaltyPointNearestRedeemItem_ItemPoint6',
-                                             html: '<div style="color:purple;text-align: left;font-size:18px;width:100%;font-weight:bold;margin:10px 0px 0px 2px">0 <div style="color:purple;text-align: left;font-size:9px;width:100%;font-weight:bold;margin:-7px 0px 0px 2px">Points</div></div>',
-        
-                                         },
-                                        
-                                      ]
-        
-                                  },
-        
-                                 {
-        
-                                     height: 165,
-                                     width: 110,
-                                     id: 'htmlLoyaltyPointNearestRedeemItem_ItemPicture6',
-                                    // margin: '0 0 0 -8',
-                                     html: '<img src="resources/icons/AyohaStoreGrey.png"  style="width: 120px; height: 120px;margin:50px 0px 0px 0px">',
-        
-                                 },
-                                {
-                                    xtype: 'container',
-                                    width: '100%',
-                                    height: 38,
-                                    margin: '55 0 0 0',
-                                    style: 'border-right:0.5px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 white;background-color:rgba(0, 0, 0, 0.5);border-radius: 0px 0px 10px 10px;',
-                                    layout: {
-                                        type: 'vbox',
-                                        pack: 'start',
-                                        align: 'center',
-                                    },
-                                    items: [
-                                          {
-                                            margin: '-32 0 0 200',
-                                              zIndex: 100,
-                                              hidden: true,
-                                              id: 'htmlLoyaltyPointNearestRedeemItem_ItemPointDayLeft6',
-                                              html: '<div style="border: 2px solid purple;color:white;text-align: center;font-size:9px;width:100%;font-weight:bold;margin:0px 0px 0px 0px;border-radius: 50%;background-color: purple;height:30px;width:30px;padding:5px 0px">100<div style="color:white;text-align: center;font-size:5px;width:100%;font-weight:bold;margin:-4px 0px 0px 0px">Day Left</div></div>',
-        
-                                          },
-                                          {
-                                             
-                                              margin: '4 0 0 0',
-                                              id: 'html_LoyaltyPointNearestRedeemItem_ItemNameTxt6',
-                                              html: '<div style="color:white;text-align: center;font-size:14px;width:100%;font-weight:bold;">No Item Redemption</div>',
-                                          },
-                                          {
-        
-                                            id: 'html_LoyaltyPointNearestRedeemItem_EndDateTxt6',
-                                            margin: '-3 0 0 0',
-                                            html: '<div style="color:white;text-align: center;font-size:10px;width:100%;font-weight:normal">Go to Ayoha Merchant!</div>',
-                                        },
-        
-        
-        
-                                    ]
-                                },
-        
-                            ]
-                        },
-        
-        
-        
-        
-        
-        
-        
-                        {
-                            xtype: 'panel',
-                            width: 20
-                        },
-        
-                        {
-                            xtype: 'container',
-                            name: 'nameLoyaltyPointNearestRedeemItem_ItemPicture7',
-                            height: 270,
-                            width: 250,                            
-                            margin: '0 0 0 0',
-                            style: 'border-right:0.1px solid #ECECEC;border-left:0.1px solid #ECECEC;border-bottom:0.1px solid #ECECEC;border-top:0.1px solid #ECECEC;background-color: white;border-radius: 10px 10px 10px 10px;',
-                            layout: {
-                                type: 'vbox',
-                                pack: 'center',
-                                align: 'center',
-                            },
-                            items: [
-                                  {
-                                      xtype: 'container',
-                                      width: 60,
-                                      height: 40,
-                                      zIndex: 100,
-                                      hidden: true,
-                                      id: 'containerLoyaltyPointNearestRedeemItem_ItemPoint7',
-                                      margin: '0px 0px -23px -188px',
-                                      style: 'border-right:1px solid #ECECEC;border-left:1px solid #ECECEC;border-bottom:1px solid #ECECEC;border-top:1px solid #ECECEC;background-color: purple;border-radius: 0px 0px 10px 10px;',
-                                      layout: {
-                                          type: 'vbox',
-                                          pack: 'start',
-                                          align: 'center',
-                                      },
-                                      items: [
-                                         {
-                                             width: '100%',
-                                             zIndex: 100,
-                                             hidden: true,
-                                             id: 'htmlLoyaltyPointNearestRedeemItem_ItemPoint7',
-                                             html: '<div style="color:purple;text-align: left;font-size:18px;width:100%;font-weight:bold;margin:10px 0px 0px 2px">0 <div style="color:purple;text-align: left;font-size:9px;width:100%;font-weight:bold;margin:-7px 0px 0px 2px">Points</div></div>',
-        
-                                         },
-                                        
-                                      ]
-        
-                                  },
-        
-                                 {
-        
-                                     height: 165,
-                                     width: 110,
-                                     id: 'htmlLoyaltyPointNearestRedeemItem_ItemPicture7',
-                                    // margin: '0 0 0 -8',
-                                     html: '<img src="resources/icons/AyohaStoreGrey.png"  style="width: 120px; height: 120px;margin:50px 0px 0px 0px">',
-        
-                                 },
-                                {
-                                    xtype: 'container',
-                                    width: '100%',
-                                    height: 38,
-                                    margin: '55 0 0 0',
-                                     style: 'border-right:0.5px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 white;background-color:rgba(0, 0, 0, 0.5);border-radius: 0px 0px 10px 10px;',
-                                    layout: {
-                                        type: 'vbox',
-                                        pack: 'start',
-                                        align: 'center',
-                                    },
-                                    items: [
-                                          {
-                                            margin: '-32 0 0 200',
-                                              zIndex: 100,
-                                              hidden: true,
-                                              id: 'htmlLoyaltyPointNearestRedeemItem_ItemPointDayLeft7',
-                                              html: '<div style="border: 2px solid purple;color:white;text-align: center;font-size:9px;width:100%;font-weight:bold;margin:0px 0px 0px 0px;border-radius: 50%;background-color: purple;height:30px;width:30px;padding:5px 0px">100<div style="color:white;text-align: center;font-size:5px;width:100%;font-weight:bold;margin:-4px 0px 0px 0px">Day Left</div></div>',
-        
-                                          },
-                                          {
-                                             
-                                              margin: '4 0 0 0',
-                                              id: 'html_LoyaltyPointNearestRedeemItem_ItemNameTxt7',
-                                              html: '<div style="color:white;text-align: center;font-size:14px;width:100%;font-weight:bold;">No Item Redemption</div>',
-                                          },
-                                          {
-        
-                                            id: 'html_LoyaltyPointNearestRedeemItem_EndDateTxt7',
-                                            margin: '-3 0 0 0',
-                                            html: '<div style="color:white;text-align: center;font-size:10px;width:100%;font-weight:normal">Go to Ayoha Merchant!</div>',
-                                        },
-        
-        
-        
-                                    ]
-                                },
-        
-                            ]
-                        },
-        
-        
-        
-        
-                        {
-                            xtype: 'panel',
-                            width: 20
-                        },
-        
-                        {
-                            xtype: 'container',
-                            name: 'nameLoyaltyPointNearestRedeemItem_ItemPicture8',
-                            height: 270,
-                            width: 250,                            
-                            margin: '0 0 0 0',
-                            style: 'border-right:0.1px solid #ECECEC;border-left:0.1px solid #ECECEC;border-bottom:0.1px solid #ECECEC;border-top:0.1px solid #ECECEC;background-color: white;border-radius: 10px 10px 10px 10px;',
-                            layout: {
-                                type: 'vbox',
-                                pack: 'center',
-                                align: 'center',
-                            },
-                            items: [
-                                  {
-                                      xtype: 'container',
-                                      width: 60,
-                                      height: 40,
-                                      zIndex: 100,
-                                      hidden: true,
-                                      id: 'containerLoyaltyPointNearestRedeemItem_ItemPoint8',
-                                      margin: '0px 0px -23px -188px',
-                                      style: 'border-right:1px solid #ECECEC;border-left:1px solid #ECECEC;border-bottom:1px solid #ECECEC;border-top:1px solid #ECECEC;background-color: purple;border-radius: 0px 0px 10px 10px;',
-                                      layout: {
-                                          type: 'vbox',
-                                          pack: 'start',
-                                          align: 'center',
-                                      },
-                                      items: [
-                                         {
-                                             width: '100%',
-                                             zIndex: 100,
-                                             hidden: true,
-                                             id: 'htmlLoyaltyPointNearestRedeemItem_ItemPoint8',
-                                             html: '<div style="color:purple;text-align: left;font-size:18px;width:100%;font-weight:bold;margin:10px 0px 0px 2px">0 <div style="color:purple;text-align: left;font-size:9px;width:100%;font-weight:bold;margin:-7px 0px 0px 2px">Points</div></div>',
-        
-                                         },
-                                        
-                                      ]
-        
-                                  },
-        
-                                 {
-        
-                                     height: 165,
-                                     width: 110,
-                                     id: 'htmlLoyaltyPointNearestRedeemItem_ItemPicture8',
-                                    // margin: '0 0 0 -8',
-                                     html: '<img src="resources/icons/AyohaStoreGrey.png"  style="width: 120px; height: 120px;margin:50px 0px 0px 0px">',
-        
-                                 },
-                                {
-                                    xtype: 'container',
-                                    width: '100%',
-                                    height: 38,
-                                    margin: '55 0 0 0',
-                                    style: 'border-right:0.5px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 white;background-color:rgba(0, 0, 0, 0.5);border-radius: 0px 0px 10px 10px;',
-                                    layout: {
-                                        type: 'vbox',
-                                        pack: 'start',
-                                        align: 'center',
-                                    },
-                                    items: [
-                                          {
-                                            margin: '-32 0 0 200',
-                                              zIndex: 100,
-                                              hidden: true,
-                                              id: 'htmlLoyaltyPointNearestRedeemItem_ItemPointDayLeft8',
-                                              html: '<div style="border: 2px solid purple;color:white;text-align: center;font-size:9px;width:100%;font-weight:bold;margin:0px 0px 0px 0px;border-radius: 50%;background-color: purple;height:30px;width:30px;padding:5px 0px">100<div style="color:white;text-align: center;font-size:5px;width:100%;font-weight:bold;margin:-4px 0px 0px 0px">Day Left</div></div>',
-        
-                                          },
-                                          {
-                                             
-                                              margin: '4 0 0 0',
-                                              id: 'html_LoyaltyPointNearestRedeemItem_ItemNameTxt8',
-                                              html: '<div style="color:white;text-align: center;font-size:14px;width:100%;font-weight:bold;">No Item Redemption</div>',
-                                          },
-                                          {
-        
-                                            id: 'html_LoyaltyPointNearestRedeemItem_EndDateTxt8',
-                                            margin: '-3 0 0 0',
-                                            html: '<div style="color:white;text-align: center;font-size:10px;width:100%;font-weight:normal">Go to Ayoha Merchant!</div>',
-                                        },
-        
-        
-        
-                                    ]
-                                },
-        
-                            ]
-                        },
-        
-        
-            ]
-        },
     ]
 },
-
-
 /////End Eligible Points/////
+////// Point Redeem Corousel Tab
+{
+    xtype: 'container',
+    width: '100%',
+    height: '100%',
+    margin: '5 0 0 0',
+    style: "background-color: transparent;",
+    title: 'PointStatus_Submitted',
+    id:'containercarouselAyohaMerchantRewards_Point_Submitted',
+    layout: {
+        type: 'vbox',
+        pack: 'start',
+        align: 'center',
+    }, 
+    items:[
+        
+            {
+                xtype: 'list',
+                width: '95%',
+                height: 400,               
+                id: 'listcarouselAyohaMerchantRewards_Point_Submitted',
+                mode: 'SINGLE',
+                scrollable: {
+                    direction: 'vertical',
+                    indicators: {
+                        y: {
+                            autoHide: true
+                        },
+                        x: {
+                            autoHide: true
+                        }
+                    }
+                },
+                style: 'background-color:rgba(255,255,255, 0.1);',
+                // width: '100%',
+                disableSelection: true,
+                itemTpl: '<div class="myContent" style="background-color:white;width:100%;height:80px;border-radius: 10px 10px 10px 10px;">' +
+
+
+                 '<table style="border-collapse:collapse;border-spacing:0;width:110%;background-color:white;margin:-10px 0px 0px -15px;height:90px;"><tr onclick="AyohaMerchantReward_openPointCardRedemption({ID})"><td style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:0px 7px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:20%;vertical-align:center">{ModifiedItemImg}</td><td style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;padding:0px 0px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:80%;vertical-align:center">{ItemName}<br><font style="font-family:Arial, sans-serif;font-size:12px;font-weight:normal;">{EnterpriseName}<br>End:{EndDate} - {CampaignDayLeft} Day Left</font></td></tr></table>'
+
+                     + '</div>',
+              
+                //height: '100%',
+              
+                emptyText: '<div  style="background-color:transparent;width:100%;height100%;">Hai!, you have no redemption items yet.Go to Ayoha Mechant Menu ,get their Membership card and then collect your redemptions items!</div>',
+                //listeners: {
+                //    itemsingletap: function (list, idx, target, records, evt) {
+
+               
+
+                //    },
+                //    deselect: function (list, records) {
+
+                //    }
+                //},
+                listeners: {
+                    itemswipe: function (list, idx, target, record, evt) {
+                        //  To get the selection you should use getSelection() instead
+                        //////var selected = list.getActiveItem();
+                        //////alert(list.getActiveItem());
+                        //////if (!selected) { return; }
+
+                        //////var selectedIndex = selected[0];
+                        //////alert([selectedIndex, idx]);
+                        //Ext.Msg.alert('itemswipe', idx);
+
+
+                    } // itemswipe
+                }
+
+            },
+        
+    ]
+},
+/////End Redeem Points/////
+
+////// Point Approved Corousel Tab
+{
+    xtype: 'container',
+    width: '100%',
+    height: '100%',
+    margin: '5 0 0 0',
+    style: "background-color: transparent;",
+    title: 'PointStatus_Approved',
+    id:'containercarouselAyohaMerchantRewards_Point_Approved',
+    layout: {
+        type: 'vbox',
+        pack: 'start',
+        align: 'center',
+    }, 
+    items:[
+        
+            {
+                xtype: 'list',
+                width: '95%',
+                height: 400,               
+                id: 'listcarouselAyohaMerchantRewards_Point_Approved',
+                mode: 'SINGLE',
+                scrollable: {
+                    direction: 'vertical',
+                    indicators: {
+                        y: {
+                            autoHide: true
+                        },
+                        x: {
+                            autoHide: true
+                        }
+                    }
+                },
+                style: 'background-color:rgba(255,255,255, 0.1);',
+                // width: '100%',
+                disableSelection: true,
+                itemTpl: '<div class="myContent" style="background-color:white;width:100%;height:80px;border-radius: 10px 10px 10px 10px;">' +
+
+
+                 '<table style="border-collapse:collapse;border-spacing:0;width:110%;background-color:white;margin:-10px 0px 0px -15px;height:90px;"><tr onclick="AyohaMerchantReward_openPointCardRedemption({ID})"><td style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:0px 7px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:20%;vertical-align:center">{ModifiedItemImg}</td><td style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;padding:0px 0px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:80%;vertical-align:center">{ItemName}<br><font style="font-family:Arial, sans-serif;font-size:12px;font-weight:normal;">{EnterpriseName}<br>End:{EndDate} - {CampaignDayLeft} Day Left</font></td></tr></table>'
+
+                     + '</div>',
+              
+                //height: '100%',
+              
+                emptyText: '<div  style="background-color:transparent;width:100%;height100%;">Hai!, you have no redemption items yet.Go to Ayoha Mechant Menu ,get their Membership card and then collect your redemptions items!</div>',
+                //listeners: {
+                //    itemsingletap: function (list, idx, target, records, evt) {
+
+               
+
+                //    },
+                //    deselect: function (list, records) {
+
+                //    }
+                //},
+                listeners: {
+                    itemswipe: function (list, idx, target, record, evt) {
+                        //  To get the selection you should use getSelection() instead
+                        //////var selected = list.getActiveItem();
+                        //////alert(list.getActiveItem());
+                        //////if (!selected) { return; }
+
+                        //////var selectedIndex = selected[0];
+                        //////alert([selectedIndex, idx]);
+                        //Ext.Msg.alert('itemswipe', idx);
+
+
+                    } // itemswipe
+                }
+
+            },
+        
+    ]
+},
+/////End Approved Points/////
+////// Point Expired Corousel Tab
+{
+    xtype: 'container',
+    width: '100%',
+    height: '100%',
+    margin: '5 0 0 0',
+    style: "background-color: transparent;",
+    title: 'PointStatus_Expired',
+    id:'containercarouselAyohaMerchantRewards_Point_Expired',
+    layout: {
+        type: 'vbox',
+        pack: 'start',
+        align: 'center',
+    }, 
+    items:[
+        
+            {
+                xtype: 'list',
+                width: '95%',
+                height: 400,               
+                id: 'listcarouselAyohaMerchantRewards_Point_Expired',
+                mode: 'SINGLE',
+                scrollable: {
+                    direction: 'vertical',
+                    indicators: {
+                        y: {
+                            autoHide: true
+                        },
+                        x: {
+                            autoHide: true
+                        }
+                    }
+                },
+                style: 'background-color:rgba(255,255,255, 0.1);',
+                // width: '100%',
+                disableSelection: true,
+                itemTpl: '<div class="myContent" style="background-color:white;width:100%;height:80px;border-radius: 10px 10px 10px 10px;">' +
+
+
+                 '<table style="border-collapse:collapse;border-spacing:0;width:110%;background-color:white;margin:-10px 0px 0px -15px;height:90px;"><tr onclick="AyohaMerchantReward_openPointCardRedemption({ID})"><td style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:0px 7px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:20%;vertical-align:center">{ModifiedItemImg}</td><td style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;padding:0px 0px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:80%;vertical-align:center">{ItemName}<br><font style="font-family:Arial, sans-serif;font-size:12px;font-weight:normal;">{EnterpriseName}<br>End:{EndDate} - {CampaignDayLeft} Day Left</font></td></tr></table>'
+
+                     + '</div>',
+              
+                //height: '100%',
+              
+                emptyText: '<div  style="background-color:transparent;width:100%;height100%;">Hai!, you have no redemption items yet.Go to Ayoha Mechant Menu ,get their Membership card and then collect your redemptions items!</div>',
+                //listeners: {
+                //    itemsingletap: function (list, idx, target, records, evt) {
+
+               
+
+                //    },
+                //    deselect: function (list, records) {
+
+                //    }
+                //},
+                listeners: {
+                    itemswipe: function (list, idx, target, record, evt) {
+                        //  To get the selection you should use getSelection() instead
+                        //////var selected = list.getActiveItem();
+                        //////alert(list.getActiveItem());
+                        //////if (!selected) { return; }
+
+                        //////var selectedIndex = selected[0];
+                        //////alert([selectedIndex, idx]);
+                        //Ext.Msg.alert('itemswipe', idx);
+
+
+                    } // itemswipe
+                }
+
+            },
+        
+    ]
+},
+/////End Expired Points/////
          ]
       },
         
@@ -4958,7 +2451,204 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
 
 
 
-
+                            //   {
+                            //     xtype: 'container',
+                            //     width: '100%',
+                            //     height: 40,
+                            //     docked: 'bottom',
+                            //     /// hidden:true,
+                            //     margin: '0 0 0 0',
+                            //     id: 'containerAyohaMerchantRedemptionHeader_ButtonPerks_Master',
+                            //     style: 'border-bottom:2px none #D25959;background-color:transparent',
+                            //     scrollable: {
+                            //         direction: 'horizontal',
+                            //         directionLock: true,
+                            //         indicators: false
+                            //     },
+                            //     layout: {
+                            //         type: 'hbox',
+                            //         pack: 'start',
+                            //         align: 'center',
+                            //     },
+                            //     items: [
+                            // {
+                            //     xtype: 'container',
+                            //     width: 600,
+                            //     height: 40,
+                            //     /// hidden:true,
+                            //     margin: '0 0 0 0',
+                            //     id: 'containerAyohaMerchantRedemptionHeader_ButtonPerks_Scroll',
+                            //     style: 'border-bottom:2px none #D25959;background-color:transparent',
+                               
+                            //     layout: {
+                            //         type: 'hbox',
+                            //         pack: 'start',
+                            //         align: 'center',
+                            //     },
+                            //     items: [
+                            //         {
+                            //             xtype: 'container',
+                            //             width: 100,
+                            //             height: 30,
+                            //             /// hidden:true,
+                            //             margin: '0 0 0 0',
+                            //             id: 'containerAyohaMerchantRedemptionHeader_ButtonPerks_Stamps',
+                            //             name:'nameContainerAyohaMerchantRedemptionHeader_ButtonPerks_Stamps',
+                            //             style: 'background-color:transparent',
+                            //             layout: {
+                            //                 type: 'vbox',
+                            //                 pack: 'center',
+                            //                 align: 'center',
+                            //             },
+                            //             items: [
+                            //                 {
+                                               
+                            //                     //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
+                            //                     id: 'htmlAyohaMerchantRedemptionHeader_ButtonPerks_Stamps',
+                            //                     html: '<div style="color:black;text-align: center;font-size:12px;width:100%;font-weight:bold">Digital Stamps</div>'
+                            //                     // html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: 70%"><col style="width:30%"></colgroup><thead><tr><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:right;vertical-align:top;word-break:normal" rowspan="2"><div style="margin:0px 0px 0px -15px">TARMIZI RAHIM</div><br>Lagendary Card Mortal </th><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:middle;word-break:normal" rowspan="2">Medal</th></tr><tr></tr></thead></table>'
+                            //                 },
+                                            
+                            //             ]
+                            //         },
+                            //         {
+                            //             xtype: 'container',
+                            //             width: 100,
+                            //             height: 30,
+                            //             /// hidden:true,
+                            //             margin: '0 0 0 0',
+                            //             id: 'containerAyohaMerchantRedemptionHeader_ButtonPerks_Points',
+                            //             name:'nameContainerAyohaMerchantRedemptionHeader_ButtonPerks_Points',
+                            //             style: 'background-color:transparent',
+                            //             layout: {
+                            //                 type: 'vbox',
+                            //                 pack: 'center',
+                            //                 align: 'center',
+                            //             },
+                            //             items: [
+                            //                 {
+                                               
+                            //                     //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
+                            //                     id: 'htmlAyohaMerchantRedemptionHeader_ButtonPerks_Points',
+                            //                     html: '<div style="color:#9CA3AF;text-align: center;font-size:12px;width:100%;font-weight:normal">Point Rewards</div>'
+                            //                     // html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: 70%"><col style="width:30%"></colgroup><thead><tr><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:right;vertical-align:top;word-break:normal" rowspan="2"><div style="margin:0px 0px 0px -15px">TARMIZI RAHIM</div><br>Lagendary Card Mortal </th><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:middle;word-break:normal" rowspan="2">Medal</th></tr><tr></tr></thead></table>'
+                            //                 },
+                                            
+                            //             ]
+                            //         },
+                            //         {
+                            //             xtype: 'container',
+                            //             width: 100,
+                            //             height: 30,
+                            //             /// hidden:true,
+                            //             margin: '0 0 0 0',
+                            //             id: 'containerAyohaMerchantRedemptionHeader_ButtonPerks_Vouchers',
+                            //             name:'nameContainerAyohaMerchantRedemptionHeader_ButtonPerks_Vouchers',
+                            //             style: 'background-color:transparent',
+                            //             layout: {
+                            //                 type: 'vbox',
+                            //                 pack: 'center',
+                            //                 align: 'center',
+                            //             },
+                            //             items: [
+                            //                 {
+                                               
+                            //                     //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
+                            //                     //html: '<div style="color:#D1D5DB;text-align: center;font-size:12px;width:100%;font-weight:normal">Vouchers</div>'
+                            //                     id:'htmlAyohaMerchantRedemptionHeader_ButtonPerks_Vouchers',
+                            //                     html: '<div style="color:#9CA3AF;text-align: center;font-size:12px;width:100%;font-weight:normal">Vouchers</div>'
+                            //                 },
+                                            
+                            //             ]
+                            //         },
+                            //         {
+                            //             xtype: 'container',
+                            //             width: 100,
+                            //             height: 30,
+                            //             /// hidden:true,
+                            //             margin: '0 0 0 0',
+                            //             id: 'containerAyohaMerchantRedemptionHeader_ButtonPerks_Contests',
+                            //             name:'nameContainerAyohaMerchantRedemptionHeader_ButtonPerks_Contests',
+                            //             style: 'background-color:transparent',
+                            //             layout: {
+                            //                 type: 'vbox',
+                            //                 pack: 'center',
+                            //                 align: 'center',
+                            //             },
+                            //             items: [
+                            //                 {
+                                               
+                            //                     //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
+                                               
+                            //                     id:'htmlAyohaMerchantRedemptionHeader_ButtonPerks_Contests',
+                            //                     html: '<div style="color:#9CA3AF;text-align: center;font-size:12px;width:100%;font-weight:normal">Contests</div>'
+                            //                     // html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: 70%"><col style="width:30%"></colgroup><thead><tr><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:right;vertical-align:top;word-break:normal" rowspan="2"><div style="margin:0px 0px 0px -15px">TARMIZI RAHIM</div><br>Lagendary Card Mortal </th><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:middle;word-break:normal" rowspan="2">Medal</th></tr><tr></tr></thead></table>'
+                            //                 },
+                                            
+                            //             ]
+                            //         },
+                            //         {
+                            //             xtype: 'container',
+                            //             width: 100,
+                            //             height: 30,
+                            //             /// hidden:true,
+                            //             margin: '0 0 0 0',
+                            //             id: 'containerAyohaMerchantRedemptionHeader_ButtonPerks_Events',
+                            //             name:'nameContainerAyohaMerchantRedemptionHeader_ButtonPerks_Events',
+                            //             style: 'background-color:transparent',
+                            //             layout: {
+                            //                 type: 'vbox',
+                            //                 pack: 'center',
+                            //                 align: 'center',
+                            //             },
+                            //             items: [
+                            //                 {
+                                               
+                            //                     //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
+                            //                     id:'htmlAyohaMerchantRedemptionHeader_ButtonPerks_Events',
+                            //                     html: '<div style="color:#9CA3AF;text-align: center;font-size:12px;width:100%;font-weight:normal">Events</div>'
+                            //                     // html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: 70%"><col style="width:30%"></colgroup><thead><tr><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:right;vertical-align:top;word-break:normal" rowspan="2"><div style="margin:0px 0px 0px -15px">TARMIZI RAHIM</div><br>Lagendary Card Mortal </th><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:middle;word-break:normal" rowspan="2">Medal</th></tr><tr></tr></thead></table>'
+                            //                 },
+                                            
+                            //             ]
+                            //         },
+                                 
+                                  
+                               
+                                  
+                                  
+                                    
+                            //         {
+                            //             xtype: 'container',
+                            //             width: 100,
+                            //             height: 30,
+                            //             /// hidden:true,
+                            //             margin: '0 0 0 0',
+                            //             id: 'containerAyohaMerchantRedemptionHeader_ButtonPerks_Discounts',
+                            //             name:'nameContainerAyohaMerchantRedemptionHeader_ButtonPerks_Discounts',
+                            //             style: 'background-color:transparent',
+                            //             layout: {
+                            //                 type: 'vbox',
+                            //                 pack: 'center',
+                            //                 align: 'center',
+                            //             },
+                            //             items: [
+                            //                 {
+                                               
+                            //                     //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
+                            //                     id:'htmlAyohaMerchantRedemptionHeader_ButtonPerks_Discounts',
+                            //                     html: '<div style="color:#9CA3AF;text-align: center;font-size:12px;width:100%;font-weight:normal">Discounts</div>'
+                            //                     // html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: 70%"><col style="width:30%"></colgroup><thead><tr><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:right;vertical-align:top;word-break:normal" rowspan="2"><div style="margin:0px 0px 0px -15px">TARMIZI RAHIM</div><br>Lagendary Card Mortal </th><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:middle;word-break:normal" rowspan="2">Medal</th></tr><tr></tr></thead></table>'
+                            //                 },
+                                            
+                            //             ]
+                            //         },
+                            //     ]
+                            // },
+                                   
+                            //     ]
+                            // },
+        
 
 
 
@@ -4970,588 +2660,13 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
 
                               /////////////////////////////////////////////////
 
-                              ///////Membership Contest
-
-                             
-
-                              ////////////////////////////////////////////////////////
-
-
-
-                              //////membership event
-
-
-                             
-
-
-
-
-
-/////////////////////////////////////// Membership Discount Card Section//////////////////////////////////////////////////////////
-
-
-
-
-
-
-
-
-
-                              //////////////////////////////////////////////////////////
-
-                              ///////Membership Weekly Summary
-
-
-                        //       {
-                        //           xtype: 'container',
-                        //           width: '100%',
-                        //           hidden: true,
-                        //           margin: '30 0 0 0',
-                        //           style: {
-                        //               // background: '#D25959',
-                        //               background: 'transparent',
-                        //               // border: '2px'
-                        //           },
-                        //           //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
-                        //           // style: 'border-bottom:2px solid #D25959;background-color:transparent',
-                        //           layout: {
-                        //               type: 'hbox',
-                        //               pack: 'left',
-                        //               align: 'left',
-                        //           },
-                        //           items: [
-                        //                {
-                        //                    margin: '0 0 0 14',
-                        //                    zIndex: 100,
-                        //                    //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
-                        //                    html: '<div style="color:black;text-align: center;font-size:14px;width:100%;"><b>Membership Weekly Summary</b></div>'
-                        //                    // html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: 70%"><col style="width:30%"></colgroup><thead><tr><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:right;vertical-align:top;word-break:normal" rowspan="2"><div style="margin:0px 0px 0px -15px">TARMIZI RAHIM</div><br>Lagendary Card Mortal </th><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:middle;word-break:normal" rowspan="2">Medal</th></tr><tr></tr></thead></table>'
-                        //                },
-                        //           ]
-                        //       },
-
-                        //  {
-                        //      xtype: 'container',
-                        //      width: '100%',
-                        //      margin: '0 0 0 0',
-                        //      hidden: true,
-                        //      style: {
-                        //          // background: '#D25959',
-                        //          background: 'transparent',
-                        //          // border: '2px'
-                        //      },
-                        //      height: 8,
-
-                        //  },
-
-
-                        //  {
-
-                        //      xtype: 'container',
-                        //      style: "background-color: transparent;",
-                        //      hidden: true,
-                        //      width: '100%',
-                        //      //  style: 'border-right:2px solid #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px #ECF0F1 white;background: transparent;border-radius: 20px 20px 20px 20px;box-shadow: 5px 10px 18px #888888;',
-                        //      layout: {
-                        //          type: 'hbox',
-                        //          pack: 'center',
-                        //          align: 'center'
-
-                        //      },
-                        //      items: [
-                        //           {
-                        //               xtype: 'spacer'
-                        //           },
-                        //          {
-                        //              xtype: 'container',
-                        //              width: '45%',
-                        //              height: 90,
-                        //              margin: '0 0 0 0',
-                        //              //style: 'background-color:black;border-radius: 10px 10px 10px 10px;',
-                        //              style: 'background-color: white;border-left: 1px solid #D0D3D4;border-right: 1px solid #D0D3D4;border-bottom: 1px solid #D0D3D4;border-top: 1px solid #D0D3D4;box-shadow: 5px 10px 18px #888888;border-radius: 10px 10px 10px 10px;',
-                        //              //style: 'background-color:rgba(255, 255, 255, 0.3);border-radius: 10px 10px 10px 10px;',
-                        //              layout: {
-                        //                  type: 'vbox',
-                        //                  pack: 'center',
-                        //                  align: 'center',
-                        //              },
-                        //              items: [
-                        //                    {
-                        //                        xtype: 'container',
-                        //                        width: '100%',
-
-                        //                        margin: '0 0 0 0',
-                        //                        //style: {
-                        //                        //    // background: '#D25959',
-                        //                        //    background: 'rgba(76, 175, 80, 0.3);',
-                        //                        //    // border: '2px'
-                        //                        //},
-                        //                        //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
-                        //                        style: 'background-color:transparent',
-                        //                        layout: {
-                        //                            type: 'vbox',
-
-                        //                        },
-                        //                        items: [
-                        //                             {
-                        //                                 margin: '0 0 0 0',
-                        //                                 html: '<div style="color:black;text-align: center;font-size:12px;width:100%;font-weight:bold">Stamps</div>',
-                        //                             },
-
-                        //                        ]
-                        //                    },
-                        //                       {
-                        //                           xtype: 'container',
-                        //                           width: '100%',
-
-                        //                           margin: '-5 0 0 0',
-                        //                           //style: {
-                        //                           //    // background: '#D25959',
-                        //                           //    background: 'rgba(76, 175, 80, 0.3);',
-                        //                           //    // border: '2px'
-                        //                           //},
-                        //                           //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
-                        //                           style: 'background-color:transparent',
-                        //                           layout: {
-                        //                               type: 'hbox',
-                        //                               pack: 'center',
-                        //                               align: 'center',
-                        //                           },
-                        //                           items: [
-                        //                                {
-
-                        //                                    xtype: 'button',
-                        //                                    height: 60,
-                        //                                    width: 60,
-
-                        //                                    margin: '0 0 0 0',
-                        //                                    id: 'btnMyAccount_Dashboard_Enterprise_Activity_Stamp',
-                        //                                    //badgeText: "2",
-                        //                                    html: '<img src="resources/icons/latestStampcardPurple.png" width="50" height="50" alt="Company Name">',
-                        //                                    ui: 'plain',
-                        //                                    handler: function () {
-
-                        //                                        //   MovementHistoryMapPanelCheckInShow(GetCurrentUserAccountNo(), globalMovementcode);
-                        //                                        //  setupMovementMap(2);
-
-
-
-
-
-                        //                                        //Ext.getCmp('mainView').setActiveItem(16);
-                        //                                        //loadNotificationSummary();
-                        //                                    }
-                        //                                },
-                        //                                    {
-                        //                                        margin: '0 0 0 0',
-                        //                                        id: 'Dashboard_AyohaActivity_ThisWeekStamp',
-                        //                                        html: '<div style="color:black;text-align: center;font-size:38px;width:100%;font-weight:bold">100</div>',
-                        //                                    },
-                        //                                    //margin: '10 0 0 0',
-                        //                                    //html: '<div style="color:black;text-align: center;font-size:12px;width:100%;font-weight:bold">Stamps</div>',
-
-                        //                           ]
-                        //                       },
-                        //                    {
-                        //                        margin: '-5 0 0 0',
-                        //                        html: '<div style="color:black;text-align: center;font-size:11px;width:100%;font-weight:normal">This Week Stamps</div>',
-                        //                    },
-                        //              ]
-                        //          },
-
-                        //          {
-                        //              xtype: 'spacer',
-                        //              // hidden: true
-                        //          },
-
-
-
-                        //            {
-                        //                xtype: 'container',
-                        //                width: '45%',
-                        //                // hidden: true,
-                        //                height: 90,
-                        //                margin: '0 0 0 0',
-                        //                //  style: 'background-color:black;border-radius: 10px 10px 10px 10px;',
-                        //                style: 'background-color: white;border-left: 1px solid #D0D3D4;border-right: 1px solid #D0D3D4;border-bottom: 1px solid #D0D3D4;border-top: 1px solid #D0D3D4;box-shadow: 5px 10px 18px #888888;border-radius: 10px 10px 10px 10px;',
-                        //                // style: 'background-color:rgba(255, 255, 255, 0.3);border-radius: 10px 10px 10px 10px;',
-                        //                layout: {
-                        //                    type: 'vbox',
-                        //                    pack: 'center',
-                        //                    align: 'center',
-                        //                },
-                        //                items: [
-                        //                      {
-                        //                          xtype: 'container',
-                        //                          width: '100%',
-
-                        //                          margin: '0 0 0 0',
-                        //                          //style: {
-                        //                          //    // background: '#D25959',
-                        //                          //    background: 'rgba(76, 175, 80, 0.3);',
-                        //                          //    // border: '2px'
-                        //                          //},
-                        //                          //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
-                        //                          style: 'background-color:transparent',
-                        //                          layout: {
-                        //                              type: 'vbox',
-
-                        //                          },
-                        //                          items: [
-                        //                               {
-                        //                                   margin: '0 0 0 0',
-                        //                                   html: '<div style="color:black;text-align: center;font-size:12px;width:100%;font-weight:bold">Stamp Card Redemption</div>',
-                        //                               },
-
-                        //                          ]
-                        //                      },
-                        //                         {
-                        //                             xtype: 'container',
-                        //                             width: '100%',
-
-                        //                             margin: '-5 0 0 0',
-                        //                             //style: {
-                        //                             //    // background: '#D25959',
-                        //                             //    background: 'rgba(76, 175, 80, 0.3);',
-                        //                             //    // border: '2px'
-                        //                             //},
-                        //                             //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
-                        //                             style: 'background-color:transparent',
-                        //                             layout: {
-                        //                                 type: 'hbox',
-                        //                                 pack: 'center',
-                        //                                 align: 'center',
-                        //                             },
-                        //                             items: [
-                        //                                  {
-
-                        //                                      xtype: 'button',
-                        //                                      height: 60,
-                        //                                      width: 60,
-
-                        //                                      margin: '0 0 0 0',
-                        //                                      id: 'btnMyAccount_Dashboard_Enterprise_Activity_Campaign',
-                        //                                      //badgeText: "2",
-                        //                                      html: '<img src="resources/icons/StampRedeemThisWeek03.png" width="50" height="50" alt="Company Name">',
-                        //                                      ui: 'plain',
-                        //                                      handler: function () {
-
-                        //                                          //   MovementHistoryMapPanelCheckInShow(GetCurrentUserAccountNo(), globalMovementcode);
-                        //                                          //  setupMovementMap(2);
-
-
-
-
-
-                        //                                          //Ext.getCmp('mainView').setActiveItem(16);
-                        //                                          //loadNotificationSummary();
-                        //                                      }
-                        //                                  },
-                        //                                      {
-                        //                                          margin: '0 0 0 0',
-                        //                                          id: 'Dashboard_AyohaActivity_ThisWeekRedeemStamp',
-                        //                                          html: '<div style="color:black;text-align: center;font-size:38px;width:100%;font-weight:bold">0</div>',
-                        //                                      },
-                        //                                      //margin: '10 0 0 0',
-                        //                                      //html: '<div style="color:black;text-align: center;font-size:12px;width:100%;font-weight:bold">Stamps</div>',
-
-                        //                             ]
-                        //                         },
-                        //                          {
-                        //                              margin: '-5 0 0 0',
-                        //                              html: '<div style="color:black;text-align: center;font-size:11px;width:100%;font-weight:normal">This Week Redeem</div>',
-                        //                          },
-
-                        //                ]
-                        //            },
-                        //             {
-                        //                 xtype: 'spacer',
-                        //                 // hidden: true,
-                        //             },
-                        //      ]
-
-
-                        //  },
-
-
-
-
-
-
-
-                        //  {
-
-                        //      xtype: 'container',
-                        //      style: "background-color: transparent;",
-                        //      width: '100%',
-                        //      margin: '15 0 0 0',
-                        //      hidden: true,
-                        //      //  style: 'border-right:2px solid #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px #ECF0F1 white;background: transparent;border-radius: 20px 20px 20px 20px;box-shadow: 5px 10px 18px #888888;',
-                        //      layout: {
-                        //          type: 'hbox',
-                        //          pack: 'center',
-                        //          align: 'center'
-
-                        //      },
-                        //      items: [
-                        //           {
-                        //               xtype: 'spacer'
-                        //           },
-                        //          {
-                        //              xtype: 'container',
-                        //              width: '45%',
-                        //              height: 90,
-                        //              margin: '0 0 0 0',
-                        //              style: 'background-color: white;border-left: 1px solid #D0D3D4;border-right: 1px solid #D0D3D4;border-bottom: 1px solid #D0D3D4;border-top: 1px solid #D0D3D4;box-shadow: 5px 10px 18px #888888;border-radius: 10px 10px 10px 10px;',
-                        //              //style: 'background-color:black;border-radius: 10px 10px 10px 10px;',
-                        //              //style: 'background-color:rgba(255, 255, 255, 0.3);border-radius: 10px 10px 10px 10px;',
-                        //              layout: {
-                        //                  type: 'vbox',
-                        //                  pack: 'center',
-                        //                  align: 'center',
-                        //              },
-                        //              items: [
-                        //                    {
-                        //                        xtype: 'container',
-                        //                        width: '100%',
-
-                        //                        margin: '0 0 0 0',
-                        //                        //style: {
-                        //                        //    // background: '#D25959',
-                        //                        //    background: 'rgba(76, 175, 80, 0.3);',
-                        //                        //    // border: '2px'
-                        //                        //},
-                        //                        //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
-                        //                        style: 'background-color:transparent',
-                        //                        layout: {
-                        //                            type: 'vbox',
-
-                        //                        },
-                        //                        items: [
-                        //                             {
-                        //                                 margin: '0 0 0 0',
-                        //                                 html: '<div style="color:black;text-align: center;font-size:12px;width:100%;font-weight:bold">Points</div>',
-                        //                             },
-
-                        //                        ]
-                        //                    },
-                        //                       {
-                        //                           xtype: 'container',
-                        //                           width: '100%',
-
-                        //                           margin: '-5 0 0 0',
-                        //                           //style: {
-                        //                           //    // background: '#D25959',
-                        //                           //    background: 'rgba(76, 175, 80, 0.3);',
-                        //                           //    // border: '2px'
-                        //                           //},
-                        //                           //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
-                        //                           style: 'background-color:transparent',
-                        //                           layout: {
-                        //                               type: 'hbox',
-                        //                               pack: 'center',
-                        //                               align: 'center',
-                        //                           },
-                        //                           items: [
-                        //                                {
-
-                        //                                    xtype: 'button',
-                        //                                    height: 60,
-                        //                                    width: 60,
-
-                        //                                    margin: '0 0 0 0',
-                        //                                    id: 'btnMyAccount_Dashboard_Enterprise_Activity_Point',
-                        //                                    //badgeText: "2",
-                        //                                    html: '<img src="resources/icons/ayoharedeeempoint01.png" width="50" height="50" alt="Company Name">',
-                        //                                    ui: 'plain',
-                        //                                    handler: function () {
-
-                        //                                        //   MovementHistoryMapPanelCheckInShow(GetCurrentUserAccountNo(), globalMovementcode);
-                        //                                        //  setupMovementMap(2);
-
-
-
-
-
-                        //                                        //Ext.getCmp('mainView').setActiveItem(16);
-                        //                                        //loadNotificationSummary();
-                        //                                    }
-                        //                                },
-                        //                                    {
-                        //                                        margin: '0 0 0 0',
-                        //                                        id: 'Dashboard_AyohaActivity_ThisWeekPoint',
-                        //                                        html: '<div style="color:black;text-align: center;font-size:38px;width:100%;font-weight:bold">0</div>',
-                        //                                    },
-                        //                                    //margin: '10 0 0 0',
-                        //                                    //html: '<div style="color:black;text-align: center;font-size:12px;width:100%;font-weight:bold">Stamps</div>',
-
-                        //                           ]
-                        //                       },
-                        //                    {
-                        //                        margin: '-5 0 0 0',
-                        //                        html: '<div style="color:black;text-align: center;font-size:11px;width:100%;font-weight:normal">This Week Points</div>',
-                        //                    },
-                        //              ]
-                        //          },
-
-                        //          {
-                        //              xtype: 'spacer'
-                        //          },
-
-
-
-                        //            {
-                        //                xtype: 'container',
-                        //                width: '45%',
-                        //                height: 90,
-                        //                margin: '0 0 0 0',
-                        //                style: 'background-color: white;border-left: 1px solid #D0D3D4;border-right: 1px solid #D0D3D4;border-bottom: 1px solid #D0D3D4;border-top: 1px solid #D0D3D4;box-shadow: 5px 10px 18px #888888;border-radius: 10px 10px 10px 10px;',
-                        //                //style: 'background-color:black;border-radius: 10px 10px 10px 10px;',
-                        //                // style: 'background-color:rgba(255, 255, 255, 0.3);border-radius: 10px 10px 10px 10px;',
-                        //                layout: {
-                        //                    type: 'vbox',
-                        //                    pack: 'center',
-                        //                    align: 'center',
-                        //                },
-                        //                items: [
-                        //                      {
-                        //                          xtype: 'container',
-                        //                          width: '100%',
-
-                        //                          margin: '0 0 0 0',
-                        //                          //style: {
-                        //                          //    // background: '#D25959',
-                        //                          //    background: 'rgba(76, 175, 80, 0.3);',
-                        //                          //    // border: '2px'
-                        //                          //},
-                        //                          //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
-                        //                          style: 'background-color:transparent',
-                        //                          layout: {
-                        //                              type: 'vbox',
-
-                        //                          },
-                        //                          items: [
-                        //                               {
-                        //                                   margin: '0 0 0 0',
-                        //                                   html: '<div style="color:black;text-align: center;font-size:12px;width:100%;font-weight:bold">Point Card Redemption</div>',
-                        //                               },
-
-                        //                          ]
-                        //                      },
-                        //                         {
-                        //                             xtype: 'container',
-                        //                             width: '100%',
-
-                        //                             margin: '-5 0 0 0',
-                        //                             //style: {
-                        //                             //    // background: '#D25959',
-                        //                             //    background: 'rgba(76, 175, 80, 0.3);',
-                        //                             //    // border: '2px'
-                        //                             //},
-                        //                             //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
-                        //                             style: 'background-color:transparent',
-                        //                             layout: {
-                        //                                 type: 'hbox',
-                        //                                 pack: 'center',
-                        //                                 align: 'center',
-                        //                             },
-                        //                             items: [
-                        //                                  {
-
-                        //                                      xtype: 'button',
-                        //                                      height: 60,
-                        //                                      width: 60,
-
-                        //                                      margin: '0 0 0 0',
-                        //                                      id: 'btnMyAccount_Dashboard_Enterprise_Activity_MembershipCards',
-                        //                                      //badgeText: "2",
-                        //                                      html: '<img src="resources/icons/thisweekpointredemption01.png" width="50" height="50" alt="Company Name">',
-                        //                                      ui: 'plain',
-                        //                                      handler: function () {
-
-                        //                                          //   MovementHistoryMapPanelCheckInShow(GetCurrentUserAccountNo(), globalMovementcode);
-                        //                                          //  setupMovementMap(2);
-
-
-
-                        //                                          //setDashBoardPushNotificationsQuota();
-                        //                                          //setDashBoardSMSQuota();
-                        //                                          //setDashBoardWhatAppQuota()
-
-                        //                                          //Ext.getCmp('mainView').setActiveItem(16);
-                        //                                          //loadNotificationSummary();
-                        //                                      }
-                        //                                  },
-                        //                                      {
-                        //                                          margin: '0 0 0 0',
-                        //                                          id: 'Dashboard_AyohaActivity_ThisWeekCountsPointRedeem',
-                        //                                          html: '<div style="color:black;text-align: center;font-size:38px;width:100%;font-weight:bold">0</div>',
-                        //                                      },
-                        //                                      //margin: '10 0 0 0',
-                        //                                      //html: '<div style="color:black;text-align: center;font-size:12px;width:100%;font-weight:bold">Stamps</div>',
-
-                        //                             ]
-                        //                         },
-                        //                          {
-                        //                              margin: '-5 0 0 0',
-                        //                              html: '<div style="color:black;text-align: center;font-size:11px;width:100%;font-weight:normal">This Week Redeem</div>',
-                        //                          },
-
-                        //                ]
-                        //            },
-                        //             {
-                        //                 xtype: 'spacer'
-                        //             },
-                        //      ]
-
-
-                        //  },
-
-
-
-
-
-
-                              
-
-
-                                //    {
-                                //        xtype: 'container',
-                                //        width: '100%',
-                                //        height: 500,
-                                //    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                            ////////
 
                         ]
                     },
 
 
 
-
-
+                
 
             ]
 
@@ -5723,94 +2838,94 @@ function AyohaMerchant_AyohaMerchantRewardLoad() {
 
 
 
-    var containerViewLoyaltyPointNearestRedeemItem_ItemPicture0 = Ext.ComponentQuery.query('container[name=nameLoyaltyPointNearestRedeemItem_ItemPicture0]')[0];
-    var containerViewElLoyaltyPointNearestRedeemItem_ItemPicture0 = containerViewLoyaltyPointNearestRedeemItem_ItemPicture0.element;
-    containerViewElLoyaltyPointNearestRedeemItem_ItemPicture0.on('tap',
-      function (event, node, options, eOpts) {
-          SingleTap_Dashboard_NearestRedeem_loyaltyPoint(0);
-          // SingleTap_Dashboard_NearestRedeem_loyaltyPoint3();
-      }
-    );
+    // var containerViewLoyaltyPointNearestRedeemItem_ItemPicture0 = Ext.ComponentQuery.query('container[name=nameLoyaltyPointNearestRedeemItem_ItemPicture0]')[0];
+    // var containerViewElLoyaltyPointNearestRedeemItem_ItemPicture0 = containerViewLoyaltyPointNearestRedeemItem_ItemPicture0.element;
+    // containerViewElLoyaltyPointNearestRedeemItem_ItemPicture0.on('tap',
+    //   function (event, node, options, eOpts) {
+    //       SingleTap_Dashboard_NearestRedeem_loyaltyPoint(0);
+    //       // SingleTap_Dashboard_NearestRedeem_loyaltyPoint3();
+    //   }
+    // );
 
 
 
-    var containerViewLoyaltyPointNearestRedeemItem_ItemPicture1 = Ext.ComponentQuery.query('container[name=nameLoyaltyPointNearestRedeemItem_ItemPicture1]')[0];
-    var containerViewElLoyaltyPointNearestRedeemItem_ItemPicture1 = containerViewLoyaltyPointNearestRedeemItem_ItemPicture1.element;
-    containerViewElLoyaltyPointNearestRedeemItem_ItemPicture1.on('tap',
-      function (event, node, options, eOpts) {
-          SingleTap_Dashboard_NearestRedeem_loyaltyPoint(1);
-          // SingleTap_Dashboard_NearestRedeem_loyaltyPoint3();
-      }
-    );
+    // var containerViewLoyaltyPointNearestRedeemItem_ItemPicture1 = Ext.ComponentQuery.query('container[name=nameLoyaltyPointNearestRedeemItem_ItemPicture1]')[0];
+    // var containerViewElLoyaltyPointNearestRedeemItem_ItemPicture1 = containerViewLoyaltyPointNearestRedeemItem_ItemPicture1.element;
+    // containerViewElLoyaltyPointNearestRedeemItem_ItemPicture1.on('tap',
+    //   function (event, node, options, eOpts) {
+    //       SingleTap_Dashboard_NearestRedeem_loyaltyPoint(1);
+    //       // SingleTap_Dashboard_NearestRedeem_loyaltyPoint3();
+    //   }
+    // );
 
 
 
-    var containerViewLoyaltyPointNearestRedeemItem_ItemPicture2 = Ext.ComponentQuery.query('container[name=nameLoyaltyPointNearestRedeemItem_ItemPicture2]')[0];
-    var containerViewElLoyaltyPointNearestRedeemItem_ItemPicture2 = containerViewLoyaltyPointNearestRedeemItem_ItemPicture2.element;
-    containerViewElLoyaltyPointNearestRedeemItem_ItemPicture2.on('tap',
-      function (event, node, options, eOpts) {
-          SingleTap_Dashboard_NearestRedeem_loyaltyPoint(2);
-          // SingleTap_Dashboard_NearestRedeem_loyaltyPoint3();
-      }
-    );
+    // var containerViewLoyaltyPointNearestRedeemItem_ItemPicture2 = Ext.ComponentQuery.query('container[name=nameLoyaltyPointNearestRedeemItem_ItemPicture2]')[0];
+    // var containerViewElLoyaltyPointNearestRedeemItem_ItemPicture2 = containerViewLoyaltyPointNearestRedeemItem_ItemPicture2.element;
+    // containerViewElLoyaltyPointNearestRedeemItem_ItemPicture2.on('tap',
+    //   function (event, node, options, eOpts) {
+    //       SingleTap_Dashboard_NearestRedeem_loyaltyPoint(2);
+    //       // SingleTap_Dashboard_NearestRedeem_loyaltyPoint3();
+    //   }
+    // );
 
-    var containerViewLoyaltyPointNearestRedeemItem_ItemPicture3 = Ext.ComponentQuery.query('container[name=nameLoyaltyPointNearestRedeemItem_ItemPicture3]')[0];
-    var containerViewElLoyaltyPointNearestRedeemItem_ItemPicture3 = containerViewLoyaltyPointNearestRedeemItem_ItemPicture3.element;
-    containerViewElLoyaltyPointNearestRedeemItem_ItemPicture3.on('tap',
-      function (event, node, options, eOpts) {
-          SingleTap_Dashboard_NearestRedeem_loyaltyPoint(3);
-          // SingleTap_Dashboard_NearestRedeem_loyaltyPoint3();
-      }
-    );
+    // var containerViewLoyaltyPointNearestRedeemItem_ItemPicture3 = Ext.ComponentQuery.query('container[name=nameLoyaltyPointNearestRedeemItem_ItemPicture3]')[0];
+    // var containerViewElLoyaltyPointNearestRedeemItem_ItemPicture3 = containerViewLoyaltyPointNearestRedeemItem_ItemPicture3.element;
+    // containerViewElLoyaltyPointNearestRedeemItem_ItemPicture3.on('tap',
+    //   function (event, node, options, eOpts) {
+    //       SingleTap_Dashboard_NearestRedeem_loyaltyPoint(3);
+    //       // SingleTap_Dashboard_NearestRedeem_loyaltyPoint3();
+    //   }
+    // );
 
-    var containerViewLoyaltyPointNearestRedeemItem_ItemPicture4 = Ext.ComponentQuery.query('container[name=nameLoyaltyPointNearestRedeemItem_ItemPicture4]')[0];
-    var containerViewElLoyaltyPointNearestRedeemItem_ItemPicture4 = containerViewLoyaltyPointNearestRedeemItem_ItemPicture4.element;
-    containerViewElLoyaltyPointNearestRedeemItem_ItemPicture4.on('tap',
-      function (event, node, options, eOpts) {
-          SingleTap_Dashboard_NearestRedeem_loyaltyPoint(4);
-          // SingleTap_Dashboard_NearestRedeem_loyaltyPoint4();
-      }
-    );
-
-
-    var containerViewLoyaltyPointNearestRedeemItem_ItemPicture5 = Ext.ComponentQuery.query('container[name=nameLoyaltyPointNearestRedeemItem_ItemPicture5]')[0];
-    var containerViewElLoyaltyPointNearestRedeemItem_ItemPicture5 = containerViewLoyaltyPointNearestRedeemItem_ItemPicture5.element;
-    containerViewElLoyaltyPointNearestRedeemItem_ItemPicture5.on('tap',
-      function (event, node, options, eOpts) {
-          SingleTap_Dashboard_NearestRedeem_loyaltyPoint(5);
-          // SingleTap_Dashboard_NearestRedeem_loyaltyPoint5();
-      }
-    );
-
-    var containerViewLoyaltyPointNearestRedeemItem_ItemPicture6 = Ext.ComponentQuery.query('container[name=nameLoyaltyPointNearestRedeemItem_ItemPicture6]')[0];
-    var containerViewElLoyaltyPointNearestRedeemItem_ItemPicture6 = containerViewLoyaltyPointNearestRedeemItem_ItemPicture6.element;
-    containerViewElLoyaltyPointNearestRedeemItem_ItemPicture6.on('tap',
-      function (event, node, options, eOpts) {
-
-          SingleTap_Dashboard_NearestRedeem_loyaltyPoint(6);
-      }
-    );
+    // var containerViewLoyaltyPointNearestRedeemItem_ItemPicture4 = Ext.ComponentQuery.query('container[name=nameLoyaltyPointNearestRedeemItem_ItemPicture4]')[0];
+    // var containerViewElLoyaltyPointNearestRedeemItem_ItemPicture4 = containerViewLoyaltyPointNearestRedeemItem_ItemPicture4.element;
+    // containerViewElLoyaltyPointNearestRedeemItem_ItemPicture4.on('tap',
+    //   function (event, node, options, eOpts) {
+    //       SingleTap_Dashboard_NearestRedeem_loyaltyPoint(4);
+    //       // SingleTap_Dashboard_NearestRedeem_loyaltyPoint4();
+    //   }
+    // );
 
 
+    // var containerViewLoyaltyPointNearestRedeemItem_ItemPicture5 = Ext.ComponentQuery.query('container[name=nameLoyaltyPointNearestRedeemItem_ItemPicture5]')[0];
+    // var containerViewElLoyaltyPointNearestRedeemItem_ItemPicture5 = containerViewLoyaltyPointNearestRedeemItem_ItemPicture5.element;
+    // containerViewElLoyaltyPointNearestRedeemItem_ItemPicture5.on('tap',
+    //   function (event, node, options, eOpts) {
+    //       SingleTap_Dashboard_NearestRedeem_loyaltyPoint(5);
+    //       // SingleTap_Dashboard_NearestRedeem_loyaltyPoint5();
+    //   }
+    // );
 
-    var containerViewLoyaltyPointNearestRedeemItem_ItemPicture7 = Ext.ComponentQuery.query('container[name=nameLoyaltyPointNearestRedeemItem_ItemPicture7]')[0];
-    var containerViewElLoyaltyPointNearestRedeemItem_ItemPicture7 = containerViewLoyaltyPointNearestRedeemItem_ItemPicture7.element;
-    containerViewElLoyaltyPointNearestRedeemItem_ItemPicture7.on('tap',
-      function (event, node, options, eOpts) {
+    // var containerViewLoyaltyPointNearestRedeemItem_ItemPicture6 = Ext.ComponentQuery.query('container[name=nameLoyaltyPointNearestRedeemItem_ItemPicture6]')[0];
+    // var containerViewElLoyaltyPointNearestRedeemItem_ItemPicture6 = containerViewLoyaltyPointNearestRedeemItem_ItemPicture6.element;
+    // containerViewElLoyaltyPointNearestRedeemItem_ItemPicture6.on('tap',
+    //   function (event, node, options, eOpts) {
 
-          SingleTap_Dashboard_NearestRedeem_loyaltyPoint(7);
-      }
-    );
+    //       SingleTap_Dashboard_NearestRedeem_loyaltyPoint(6);
+    //   }
+    // );
 
 
-    var containerViewLoyaltyPointNearestRedeemItem_ItemPicture8 = Ext.ComponentQuery.query('container[name=nameLoyaltyPointNearestRedeemItem_ItemPicture8]')[0];
-    var containerViewElLoyaltyPointNearestRedeemItem_ItemPicture8 = containerViewLoyaltyPointNearestRedeemItem_ItemPicture8.element;
-    containerViewElLoyaltyPointNearestRedeemItem_ItemPicture8.on('tap',
-      function (event, node, options, eOpts) {
 
-          SingleTap_Dashboard_NearestRedeem_loyaltyPoint(8);
-      }
-    );
+    // var containerViewLoyaltyPointNearestRedeemItem_ItemPicture7 = Ext.ComponentQuery.query('container[name=nameLoyaltyPointNearestRedeemItem_ItemPicture7]')[0];
+    // var containerViewElLoyaltyPointNearestRedeemItem_ItemPicture7 = containerViewLoyaltyPointNearestRedeemItem_ItemPicture7.element;
+    // containerViewElLoyaltyPointNearestRedeemItem_ItemPicture7.on('tap',
+    //   function (event, node, options, eOpts) {
+
+    //       SingleTap_Dashboard_NearestRedeem_loyaltyPoint(7);
+    //   }
+    // );
+
+
+    // var containerViewLoyaltyPointNearestRedeemItem_ItemPicture8 = Ext.ComponentQuery.query('container[name=nameLoyaltyPointNearestRedeemItem_ItemPicture8]')[0];
+    // var containerViewElLoyaltyPointNearestRedeemItem_ItemPicture8 = containerViewLoyaltyPointNearestRedeemItem_ItemPicture8.element;
+    // containerViewElLoyaltyPointNearestRedeemItem_ItemPicture8.on('tap',
+    //   function (event, node, options, eOpts) {
+
+    //       SingleTap_Dashboard_NearestRedeem_loyaltyPoint(8);
+    //   }
+    // );
 
 
 
@@ -7264,16 +4379,18 @@ function AyohaMerchantReward_AyohaUserDashBoard_StampCardLoadByStampedRedeemStat
     _DataStore_AyohaUserDashBoard_StampCardLoadByStampedRedeemStatusStore.load({
             callback: function (records, operation, success) {
                 if (success && records.length > 0) {
-                    var record = records[0]; // Access only the first record                 
-                 
-                    Ext.getCmp('listTabpanelAyohaMerchantRewards_StampsStatus').setStore(_DataStore_AyohaUserDashBoard_StampCardLoadByStampedRedeemStatusStore);
-                    AyohaMerchantReward_NearestRedeemItemPointCardStore();
+                   // var record = records[0]; // Access only the first record                 
                    
+                    switchPerkTab_Point(document.getElementById('btnPointEligible'), 'Eligible', 0);
+                    Ext.getCmp('listTabpanelAyohaMerchantRewards_StampsStatus').setStore(_DataStore_AyohaUserDashBoard_StampCardLoadByStampedRedeemStatusStore);
+                   // AyohaMerchantReward_NearestRedeemItemPointCardStore();
+                   AyohaMerchantReward_AyohaRewardVoucherEntitledUserLoadBySubscriberAccNoVoucherTypeStore();
                     
                     // AyohaMerchantReward_AyohaRewardContestLoadBySubscriberAccNoStore();
                 } else {
-                    
-                    AyohaMerchantReward_NearestRedeemItemPointCardStore();
+                    switchPerkTab_Point(document.getElementById('btnPointEligible'), 'Eligible', 0);
+                    AyohaMerchantReward_AyohaRewardVoucherEntitledUserLoadBySubscriberAccNoVoucherTypeStore();
+                    //AyohaMerchantReward_NearestRedeemItemPointCardStore();
                 }
                // 
             }
@@ -7305,7 +4422,8 @@ function AyohaMerchantReward_AyohaUserDashBoard_StampCardLoadByStampedRedeemStat
                     // AyohaMerchantReward_AyohaRewardContestLoadBySubscriberAccNoStore();
                 } else {
                     AppState.AyohaMerchantReward.StampPerks=0;
-                  
+                    Ext.getCmp('listTabpanelAyohaMerchantRewards_StampsStatus').setStore(_DataStore_AyohaUserDashBoard_StampCardLoadByStampedRedeemStatusStore);
+                   
                 }
                // 
             }
@@ -7329,7 +4447,7 @@ function AyohaMerchantReward_AyohaUserDashBoard_StampCardLoadByStampedRedeemStat
         _DataStore_AyohaUserDashBoardStampCardLoadByStampedRedeemExpiredStore.load({
                 callback: function (records, operation, success) {
                     if (success && records.length > 0) {
-                        var record = records[0]; // Access only the first record
+                        //var record = records[0]; // Access only the first record
                        
                         Ext.getCmp('listTabpanelAyohaMerchantRewards_StampsStatus').setStore(_DataStore_AyohaUserDashBoardStampCardLoadByStampedRedeemExpiredStore);
                        
@@ -7337,7 +4455,8 @@ function AyohaMerchantReward_AyohaUserDashBoard_StampCardLoadByStampedRedeemStat
                         
                         // AyohaMerchantReward_AyohaRewardContestLoadBySubscriberAccNoStore();
                     } else {
-                      
+                        Ext.getCmp('listTabpanelAyohaMerchantRewards_StampsStatus').setStore(_DataStore_AyohaUserDashBoardStampCardLoadByStampedRedeemExpiredStore);
+                       
                       
                     }
                    // 
@@ -7355,29 +4474,192 @@ function AyohaMerchantReward_AyohaUserDashBoard_StampCardLoadByStampedRedeemStat
     
 
 
-    function switchPerkTab(btn,StampedRedeemStatus) {
+
+      
+        var globalAyohaMerchantRewardlistZoneH;
+        function AyohaMerchantReward_PointCampaignRedeemLoadByPointRedeemStatusStore(RedeemPointStatus) {
+  
+            _DataStore_PointCampaignRedeemLoadByPointRedeemStatusStore.getProxy().setExtraParam('SubscriberAccNo', GetCurrAyohaUserAccountNo());
+            _DataStore_PointCampaignRedeemLoadByPointRedeemStatusStore.getProxy().setExtraParam('RedeemPointStatus',RedeemPointStatus);
+            _DataStore_PointCampaignRedeemLoadByPointRedeemStatusStore.getProxy().setUrl(GetAPIurl() + '/PointCampaignRedeemItemSetting/PointCampaignRedeemLoadByPointRedeemStatus');
+            
+            
+            
+            _DataStore_PointCampaignRedeemLoadByPointRedeemStatusStore.load({
+                    callback: function (records, operation, success) {
+                        if (success && records.length > 0) {
+                            var record = records[0]; // Access only the first record
+                           
+                            Ext.getCmp('listcarouselAyohaMerchantRewards_Point_'+RedeemPointStatus).setStore(_DataStore_PointCampaignRedeemLoadByPointRedeemStatusStore);
+                         // listHeight=records.length *95;
+                         // Ext.getCmp('listcarouselAyohaMerchantRewards_Point_'+RedeemPointStatus).setHeight(listHeight);
+                        // var pnl=Ext.getCmp('containercarouselAyohaMerchantRewards_Point_Eligible').getHeight();
+                     //   alert(containerPerkListglobalHeight);
+                           
+                            
+                            // AyohaMerchantReward_AyohaRewardContestLoadBySubscriberAccNoStore();
+
+
+
+
+                
+Ext.getCmp('listcarouselAyohaMerchantRewards_Point_'+RedeemPointStatus).setHeight(globalAyohaMerchantRewardlistZoneH);
+
+                            return;
+                        } else {
+                           
+                            Ext.getCmp('listcarouselAyohaMerchantRewards_Point_'+RedeemPointStatus).setStore(_DataStore_PointCampaignRedeemLoadByPointRedeemStatusStore);
+                           
+                        }
+                       // 
+                    }
+                });
+        
+        
+        
+        
+        
+            }
+
+
+
+
+
+
+    function switchPerkTab_Stamp(btn,RedeemStatus) {
         // reset semua button ke grey
-        var allBtns = document.querySelectorAll('.perk-btn');
+        var allBtns = document.querySelectorAll('.perk-btn.stamp');
         for (var i = 0; i < allBtns.length; i++) {
           allBtns[i].classList.remove('active');
         }
       
         // button yang ditekan jadi hitam/putih
         btn.classList.add('active');
-        if(StampedRedeemStatus!="Expired"){
-            AyohaMerchantReward_AyohaUserDashBoard_StampCardLoadByStampedRedeemStatusStore(StampedRedeemStatus);
+        if(RedeemStatus!="Expired"){
+            AyohaMerchantReward_AyohaUserDashBoard_StampCardLoadByStampedRedeemStatusStore(RedeemStatus);
         }else{
             AyohaMerchantReward_AyohaUserDashBoard_StampCardLoadByStampedRedeemExpiredStore();
         }
+       
       
        
       }
 
 
 
+      function switchPerkTab_Point(btn,RedeemStatus,Index) {
+      
+        // reset semua button ke grey
+        var allBtns = document.querySelectorAll('.perk-btn.point');
+        for (var i = 0; i < allBtns.length; i++) {
+          allBtns[i].classList.remove('active');
+        }
+      
+        // button yang ditekan jadi hitam/putih
+        btn.classList.add('active');
+        Ext.getCmp('carouselAyohaMerchantRewards_Points').setActiveItem(Index);
+        AyohaMerchantReward_PointCampaignRedeemLoadByPointRedeemStatusStore(RedeemStatus);
+        
+      
+       
+      }
 
 
-      function AyohaMerchantReward_openStampCardRedemption(val) {
+      function AyohaMerchantReward_openPointCardRedemption(val) {
+
+        // FloatPanel_NearestRedemption_NotificationShow(ID);
+         //  FloatPanel_NearestRedemptionHide();
+         //alert(val);
+     
+         var PointCampaignCode = _DataStore_PointCampaignRedeemLoadByPointRedeemStatusStore.findRecord('ID', val, 0, false, false, true);
+         var StampContent = _DataStore_PointCampaignRedeemLoadByPointRedeemStatusStore.findRecord('ID', val, 0, false, false, true);
+         var StampContentNote = _DataStore_PointCampaignRedeemLoadByPointRedeemStatusStore.findRecord('ID', val, 0, false, false, true);
+         var StampContentSequence = _DataStore_PointCampaignRedeemLoadByPointRedeemStatusStore.findRecord('ID', val, 0, false, false, true);
+         var EnterpriseName = _DataStore_PointCampaignRedeemLoadByPointRedeemStatusStore.findRecord('ID', val, 0, false, false, true);
+         var CountRow = _DataStore_PointCampaignRedeemLoadByPointRedeemStatusStore.findRecord('ID', val, 0, false, false, true);
+         var EndDate = _DataStore_PointCampaignRedeemLoadByPointRedeemStatusStore.findRecord('ID', val, 0, false, false, true);
+         var StartDate = _DataStore_PointCampaignRedeemLoadByPointRedeemStatusStore.findRecord('ID', val, 0, false, false, true);
+         var StampRuleRemarks = _DataStore_PointCampaignRedeemLoadByPointRedeemStatusStore.findRecord('ID', val, 0, false, false, true);
+         var IsStampRulePopUp = _DataStore_PointCampaignRedeemLoadByPointRedeemStatusStore.findRecord('ID', val, 0, false, false, true);
+         var PointCampaignName = _DataStore_PointCampaignRedeemLoadByPointRedeemStatusStore.findRecord('ID', val, 0, false, false, true);
+         var EnterpriseAccNo= _DataStore_PointCampaignRedeemLoadByPointRedeemStatusStore.findRecord('ID', val, 0, false, false, true);
+         var StampContentFinal = _DataStore_PointCampaignRedeemLoadByPointRedeemStatusStore.findRecord('ID', val, 0, false, false, true);
+         var CountStampYES = _DataStore_PointCampaignRedeemLoadByPointRedeemStatusStore.findRecord('ID', val, 0, false, false, true);
+         var EnterprisesLogo = _DataStore_PointCampaignRedeemLoadByPointRedeemStatusStore.findRecord('ID', val, 0, false, false, true);
+     
+         var PointCampaignCodes = PointCampaignCode.get('PointCampaignCode');
+        // var StampContents = StampContent.get('StampContent').replace("width:70px", "width:80px");
+        // var StampContentNotes = StampContentNote.get('StampContentNote');
+        // var StampContentSequences = StampContentSequence.get('StampContentSequence');
+         var EnterpriseNames = EnterpriseName.get('EnterpriseName');
+       //  var CountRows = CountRow.get('CountRow');
+       //  var EndDates = EndDate.get('EndDate');
+       //  var StartDates = StartDate.get('StartDate');
+       //  var StampRuleRemarkss = StampRuleRemarks.get('StampRuleRemarks');
+      //   var IsStampRulePopUps = IsStampRulePopUp.get('IsStampRulePopUp');
+         var PointCampaignNames = PointCampaignName.get('PointCampaignName');
+         var EnterpriseAccNos = EnterpriseAccNo.get('EnterpriseAccNo');
+         //var StampContentFinals = StampContents.replace("height:70px", "height:80px");
+        // var CountStampYESs = CountStampYES.get('CountStampYES');
+         var EnterprisesLogos = EnterprisesLogo.get('EnterprisesLogo');
+     
+     
+     
+         //var StampCampaignCode = ArrStampCampaignCode[0];
+         //var EnterpriseAccNo = ArrEnterpriseAccNo[0];
+         //var StartDate = ArrStartDate[0];
+         //var EndDate = ArrEndDate[0];
+         //var SubscriberAccNo = GetCurrAyohaUserAccountNo();
+         //var EnterpriseName = ArrEnterpriseName[0];
+         //var StampRuleRemarks = ArrStampRuleRemarks[0];
+         //var isStampRulePopUp = ArrIsStampRulePopUp[0];
+         //var StampCampaignName = ArrStampCampaignName[0];
+         //var CountLoyaltyStamped = ArrStampContentSequence[0];
+         //var CountStampCardRowShow = ArrStampTotalRow[0];
+         //var EnterprisesLogo = ArrEnterprisesLogo[0];
+     
+     
+     
+         globalLatestPointCampaignCode = PointCampaignCodes;
+         
+
+         FloatLoyaltyCardPointShow(PointCampaignNames, globalLatestPointCampaignCode, EnterprisesLogos, EnterpriseNames, EnterpriseAccNos);
+
+
+
+        //  var strStampedYES = CountStampYESs;
+        //  var StampedYES = strStampedYES.split("/");
+        //  var YESStamped = StampedYES[0];
+        //  var TotalRows = StampedYES[1];
+        //  localStorage.setItem('StampCampaignCode', StampCampaignCodes);
+ 
+        //  localStorage.setItem('CountLoyaltyStamped', YESStamped);
+        //  localStorage.setItem('CountStampCardRowShow', TotalRows);
+        //  FloatPanel_AyohaCardManagement_PreviewCard_AyohaUserCardShow(StampCampaignCodes, EnterpriseAccNos, StartDates, EndDates, SubscriberAccNo, EnterpriseNames, StampRuleRemarkss, StampCampaignNames, YESStamped, TotalRows, EnterprisesLogos);
+ 
+     
+     
+     
+        //  if (IsStampRulePopUps == "POINTLOYALTYCARD")
+        //  {
+        //      
+     
+        //  } else {
+            
+        //  }
+     
+        
+     
+     
+     
+     
+     
+        
+     }
+
+
+
+     function AyohaMerchantReward_openStampCardRedemption(val) {
 
         // FloatPanel_NearestRedemption_NotificationShow(ID);
          //  FloatPanel_NearestRedemptionHide();
@@ -7463,3 +4745,44 @@ function AyohaMerchantReward_AyohaUserDashBoard_StampCardLoadByStampedRedeemStat
      
         
      }
+    // var AyohaMerchantReward_FREEZE_Y = 220; // fallback
+
+    // Di global / controller scope
+var AyohaMerchantReward_FREEZE_Y        = 220;   // fallback
+var AyohaMerchantReward_ListModeInner   = false; // false = parent scroll, true = list scroll
+var AyohaMerchantReward_FREEZE_COMPUTED = false; // sudah kira offset atau belum
+
+     function AyohaMerchantReward_containerDashboardMerchantRewardScroller() {
+
+
+        var vh = Ext.Viewport.getWindowHeight();    // tinggi viewport semasa (CSS px)
+
+        // contoh kira tinggi untuk container hijau (list zone)
+        var headerH = Ext.getCmp('containerAyohaMerchantRedemptionHeader_ButtonPerks_Master').element.getHeight();
+        var searchH = Ext.getCmp('containerAyohaMerchantRewardBottom_Search').element.getHeight();
+        var bottomH = Ext.getCmp('containerMyAccount_Dashboard_MenuBottom').element.getHeight();
+        
+        var zoneH   = vh - headerH - searchH - bottomH;
+        globalAyohaMerchantRewardlistZoneH = zoneH - 170; // tolak padding 10px top & bottom
+
+        // var outer = Ext.getCmp('containerDashboardMerchantRewardScroller');
+        // var list  = Ext.getCmp('listcarouselAyohaMerchantRewards_Point_Eligible');
+    
+        // if (!outer || !outer.getScrollable) return;
+    
+        // // reset state
+        // AyohaMerchantReward_ListModeInner   = false;
+        // AyohaMerchantReward_FREEZE_COMPUTED = false;
+        // AyohaMerchantReward_FREEZE_Y        = 220;
+    
+        // // pastikan parent start di atas
+        // var s = outer.getScrollable().getScroller();
+        // s.scrollTo(0, 0);
+    
+        // // list: mula-mula JANGAN scroll
+        // if (list) {
+        //     list.setScrollable(false);
+        // }
+      
+    }
+    

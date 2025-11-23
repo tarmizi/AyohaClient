@@ -19,7 +19,41 @@
   display:flex;
   gap:7px;          /* ❗ inilah jarak 3px antara setiap button */
 }
-        .perk-btn{
+        /* .perk-btn.stamp{
+  padding:4px 12px;
+  border-radius:999px;
+  border:1px solid #eadcf7;
+  background:#f7f1ff;     
+  color:#9CA3AF;         
+  font-size:10px;
+  cursor:pointer;
+} */
+/* Button tab */
+.perk-btn.stamp{
+  display: inline-flex;          /* 🔥 supaya label + count dalam satu row */
+  align-items: center;
+  justify-content: center;
+  gap: 4px;                      /* jarak kecil antara teks & (0) */
+  white-space: nowrap;
+  border-radius:999px;
+  border:1px solid #eadcf7;
+  background:#f7f1ff;     
+  color:#9CA3AF;         
+  font-size:10px;           /* elak wrap ke line bawah */
+  padding:4px 6px;
+}
+
+/* Label */
+.perk-label{
+  font-size: 11px;
+}
+
+/* Count */
+.perk-count{
+  font-size: 10px;
+  opacity: .85;
+}
+.perk-btn.point{
   padding:4px 12px;
   border-radius:999px;
   border:1px solid #eadcf7;
@@ -28,7 +62,6 @@
   font-size:10px;
   cursor:pointer;
 }
-
 .perk-btn.active{
   background:#000;        /* hitam */
   color:#fff;             /* putih */
@@ -66,6 +99,79 @@
         }
         #AyohaSearchStrong1 .clear svg{display:block}
       </style>
+         <style>
+  /* Container */
+#AyohaSearchStrong2 {
+  padding: 6px 10px 8px;
+  background: transparent;
+}
+
+/* 🌈 PILL – putih di dalam, border gradient Ayoha */
+#AyohaSearchStrong2 .search-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+
+  /* putih di dalam, gradient di border */
+  background:
+    linear-gradient(#ffffff, #ffffff) padding-box,
+    linear-gradient(90deg, #ff00de, #c800ff) border-box;
+
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+}
+
+/* Buang underline lama (kalau ada rule ::after sebelum ni) */
+#AyohaSearchStrong2 .search-wrapper::after {
+  content: none !important;
+}
+
+/* Icon di kiri */
+#AyohaSearchStrong2 .ico {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 22px;
+  height: 22px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Input text – transparent, ikut background putih pill */
+#AyohaSearchStrong2 input[type="search"] {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  background: transparent;
+  outline: none;
+  padding-left: 30px;   /* ruang untuk icon */
+  padding-right: 4px;
+  height: 22px;
+  font: normal 13px/1.2 system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  color: #111827;
+}
+
+#AyohaSearchStrong2 input::placeholder {
+  color: #6b7280;
+  opacity: 0.95;
+}
+
+
+/* Buang default clear icon iOS kalau tak nak */
+#AyohaSearchStrong2 input[type="search"]::-webkit-search-decoration,
+#AyohaSearchStrong2 input[type="search"]::-webkit-search-cancel-button,
+#AyohaSearchStrong2 input[type="search"]::-webkit-search-results-button,
+#AyohaSearchStrong2 input[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
+
+          </style>
     <style>
         #membershipStatusDonut { background-color: transparent !important; }
       </style>
