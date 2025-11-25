@@ -11,7 +11,35 @@ var _DataStore_AyohaRewardVoucherEntitledUserLoadBySubscriberAccNoMerchantReward
         type: 'ajax',
         url: GetAPIurl() + '/AyohaRewardVoucher_EntitledUser/AyohaRewardVoucherEntitledUserLoadBySubscriberAccNoMerchantReward',
         actionMethods: {
-            read: 'GET'
+            read: 'POST'
+        },
+        reader: {
+            type: 'json',
+            rootProperty: 'results',
+            totalProperty: 'total',
+            successProperty: 'success',
+            messageProperty: 'message'
+        }
+    },
+
+   
+
+    //autoLoad: true
+
+});
+
+
+
+
+var _DataStore_VoucherCampaignRedeemLoadByVoucherRedeemStatusStore = Ext.create('Ext.data.Store', {
+
+    model: 'ianMizi.model.AyohaRewardVoucherEntitledUser.AyohaRewardVoucherEntitledUserModel',
+    id: '_VoucherCampaignRedeemLoadByVoucherRedeemStatusStoreID',
+    proxy: {
+        type: 'ajax',
+        url: GetAPIurl() + '/AyohaRewardVoucher_EntitledUser/VoucherCampaignRedeemLoadByVoucherRedeemStatus',
+        actionMethods: {
+            read: 'POST'
         },
         reader: {
             type: 'json',
