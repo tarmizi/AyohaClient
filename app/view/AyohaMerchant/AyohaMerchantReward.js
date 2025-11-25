@@ -2317,109 +2317,37 @@ switchPerkTab_Event(expiredBtn, 'Expired', 3);
                 
                     },
                     items: [
-                          
                         {
                             xtype: 'container',
                             width: '100%',
-                            margin: '5 0 0 20',
+                            margin: '0 0 0 0',
                             height:25,
                             style: 'background-color:transparent',
                             layout: {
                                 type: 'hbox',
-                                pack: 'start',
+                                pack: 'center',
                                 align: 'center',
                             },
                             items: [
+                        
+                        
                         {
-                            xtype: 'container',
-                            width: 100,
-                            margin: '0 0 0 0',
-                            height:17,
-                            style: 'background-color:black;border-radius:30px',
-                            layout: {
-                                type: 'hbox',
-                                pack: 'center',
-                                align: 'center',
-                            },
-                            items:[
-                                {
-                                    id: 'html_AyohaMerchantRewards_VoucherTab_EligibleVoucher',
-                                    html: '<div  style="color:white;text-align: center;font-size:10px;width:100%;">Eligible Discounts</div>'
-                                }
+                            html:'<div class="perk-tabs">'+
+                            '<button id="btnDiscountEligible" class="perk-btn discount active" onclick="switchPerkTab_Discount(this,\'Eligible\',0);">Eligible Discount</button>'+
+                            '<button id="btnDiscountRedeemOnline" class="perk-btn discount" onclick="switchPerkTab_Discount(this,\'Redeem_Online\',1);">Redeem Online</button>'+
+                            '<button id="btnDiscountRedeemOffline" class="perk-btn discount" onclick="switchPerkTab_Discount(this,\'Redeem_Offline\',2)">Redeem Offline</button>'+
+                            '<button id="btnDiscountExpired" class="perk-btn discount" onclick="switchPerkTab_Discount(this,\'Expired\',3)">Expired</button>'+
+                          '</div>'
+                        },
+                        
+                        
+                        
+                        
+                        
                             ]
                         },
-                     
-                        {
-                            xtype: 'container',
-                            width: 7,
-                            margin: '0 0 0 0',
-                            height:17,
-                        },
-                        {
-                            xtype: 'container',
-                            width: 58,
-                            margin: '0 0 0 0',
-                            height:17,
-                            style: 'background-color:transparent;border-radius:30px;border:0.5px solid  #9CA3AF',
-                            layout: {
-                                type: 'hbox',
-                                pack: 'center',
-                                align: 'center',
-                            },
-                            items:[
-                                {
-                                    html: '<div  style="color: #9CA3AF;text-align: center;font-size:10px;width:100%;">Redeem</div>'
-                                }
-                            ]
-                        },
-                        {
-                            xtype: 'container',
-                            width: 7,
-                            margin: '0 0 0 0',
-                            height:17,
-                        },
-                        {
-                            xtype: 'container',
-                            width: 58,
-                            margin: '0 0 0 0',
-                            height:17,
-                            style: 'background-color:transparent;border-radius:30px;border:0.5px solid  #9CA3AF',
-                            layout: {
-                                type: 'hbox',
-                                pack: 'center',
-                                align: 'center',
-                            },
-                            items:[
-                                {
-                                    html: '<div  style="color: #9CA3AF;text-align: center;font-size:10px;width:100%;">Approved</div>'
-                                }
-                            ]
-                        },
-                        {
-                            xtype: 'container',
-                            width: 7,
-                            margin: '0 0 0 0',
-                            height:17,
-                        },
-                        {
-                            xtype: 'container',
-                            width: 75,
-                            margin: '0 0 0 0',
-                            height:17,
-                            style: 'background-color:transparent;border-radius:30px;border:0.5px solid  #9CA3AF',
-                            layout: {
-                                type: 'hbox',
-                                pack: 'center',
-                                align: 'center',
-                            },
-                            items:[
-                                {
-                                    html: '<div onclick="FloatPanel_AyohaRewardVoucherList_DashboardShow();" style="color: #9CA3AF;text-align: center;font-size:10px;width:100%;">All Discounts</div>'
-                                }
-                            ]
-                        }
-                            ]
-                        },
+                          
+                        
                          
                 
                 
@@ -2442,121 +2370,211 @@ switchPerkTab_Event(expiredBtn, 'Expired', 3);
                 
                             },
                             items: [
-                            //     {
-                
-                            //         id: 'AyohaMerchantRewardDiscountList',
-                            //         xtype: 'dataview',
-                            //         margin: '-5 0 0 0',
-                            //         // xtype: 'list',
-                            //         height:'100%',
-                            //         //scrollable: true,
-                            //         // scrollable: 'horizontal',
-                            //         // indicators: false,
-                            //         //inline: true,
-                            //         inline: {
-                            //             wrap: false
-                            //         },
-                            //         scrollable: {
-                            //             direction: 'horizontal',
-                            //             indicators: false,
-                            //         },
-                            //         width: '100%',
-                            //         cls: 'dataview-item',
-                
-                
-                            //         //  itemTpl: '<div class="myContent" style="background-color:transparent;width:100%;height:500px;">' +
-                            //         //   '&nbsp;&nbsp;<div style="font-family:Arial, sans-serif;font-size:14px;color:black;font-weight:bold;text-align:left;width:100%;"><img src="{EnterpriseLogo}" style="width:30px;height:30px;border-radius:50%;margin:0px 0px 0px 20px;"/><div style="margin:-28px 0px 0px 55px;">{EnterpriseName}</div></div>&nbsp;&nbsp;<br>' +
-                            //         //   '&nbsp;&nbsp;<img  onclick="FloatPanel_DashboardMerchantReward_MembershipEventDetailShow(' + "'" + '{EnterpriseLogo}' + "'" + ',' + "'" + '{EnterpriseName}' + "'" + ',' + "'" + '{EventCoverPhoto}' + "'" + ',' + "'" + '{EventName}' + "'" + ',' + "'" + '{EventStartDate_Day}' + "'" + ',' + "'" + '{EventStartDate_Month}' + "'" + ',' + "'" + '{EventStartTime}' + "'" + ',' + "'" + '{EventEndDate_Day}' + "'" + ',' + "'" + '{EventEndDate_Month}' + "'" + ',' + "'" + '{EventEndTime}' + "'" + ',' + "'" + '{EventLocationName}' + "'" + ',' + "'" + '{ModifiedWidth}' + "'" + ',' + "'" + '{EventDescription}' + "'" + ',' + "'" + '{EventLocationCoordinate}' + "'" + ',' + "'" + '{EventUrlTicket}' + "'" + ',' + "'" + '{EventCode}' + "'" + ',' + "'" + '{EnterpriseAccNo}' + "'" + ',' + "'" + '{RespondStatus}' + "'" + ',{ID});"   src="{AdvertisementImgPath}" style="width:{ModifiedWidth}px;height:400px;margin:-15px 0px 0px 0px;"/>&nbsp;&nbsp;<br>' +
-                            //         //  '<div onclick="FloatPanel_DashboardMerchantReward_MembershipEventDetailShow(' + "'" + '{EnterpriseLogo}' + "'" + ',' + "'" + '{EnterpriseName}' + "'" + ',' + "'" + '{EventCoverPhoto}' + "'" + ',' + "'" + '{EventName}' + "'" + ',' + "'" + '{EventStartDate_Day}' + "'" + ',' + "'" + '{EventStartDate_Month}' + "'" + ',' + "'" + '{EventStartTime}' + "'" + ',' + "'" + '{EventEndDate_Day}' + "'" + ',' + "'" + '{EventEndDate_Month}' + "'" + ',' + "'" + '{EventEndTime}' + "'" + ',' + "'" + '{EventLocationName}' + "'" + ',' + "'" + '{ModifiedWidth}' + "'" + ',' + "'" + '{EventDescription}' + "'" + ',' + "'" + '{EventLocationCoordinate}' + "'" + ',' + "'" + '{EventUrlTicket}' + "'" + ',' + "'" + '{EventCode}' + "'" + ',' + "'" + '{EnterpriseAccNo}' + "'" + ',' + "'" + '{RespondStatus}' + "'" + ',{ID});" style="width: 50%; float:left; height:50px; background:white; margin:0px"><div style="font-family:Arial, sans-serif;font-size:10px;color:black;font-weight:normal;text-align:left;padding:0px 10px;">Contest Period:</div><br><div style="font-family:Arial, sans-serif;font-size:14px;color:black;font-weight:bold;margin:-22px 0px 0px 0px;text-align:left;padding:0px 10px;">{StartDate_DateOnly} - {EndDate_DateOnly}</div></div><div style="width: 50%; float:left; height:50px; background:white; margin:0px;word-break: break-all;"><div style="margin:0px 0px 0px 0px;text-align:right;color:black;font-family: Arial; font-size:10px;word-wrap: break-word;word-break: break-all;white-space: break-spaces;font-weight:normal;width:100%;height:30px;padding:0px 7px;">Contest Status<br><div style="margin:0px 0px 0px 0px;text-align:right;color:black;font-family: Arial; font-size:12px;word-wrap: break-word;word-break: break-all;white-space: break-spaces;font-weight:bold;width:100%;padding:0px 0px;">{ContestStatus_ContestStatus}</div></div></div><br>' +
-                
-                
-                            //         //'</div>',
-                
-                
-                            //         itemTpl: '<div onclick="FloatPanel_MerchantDiscountLoyaltyDescriptionShow(`{DiscountCode}`,`{EnterpriseAccNo}`);" class="myContent" style="background-color:transparent;width:100%;height:500px;">' +
-                            //       '&nbsp;&nbsp;&nbsp;<div style="font-family:Arial, sans-serif;font-size:12px;color:black;font-weight:bold;text-align:left;width:100%;"><img src="{EnterpriseLogo}" style="width:30px;height:30px;border-radius:50%;margin:0px 0px 0px 20px;"/><div style="margin:-28px 0px 0px 55px;">{EnterpriseName}</div></div>&nbsp;&nbsp;&nbsp;<br><br>' +
-                            //       '&nbsp;&nbsp;&nbsp;<img  onclick="FloatPanel_MerchantDiscountLoyaltyDescriptionShow(`{DiscountCode}`,`{EnterpriseAccNo}`);"   src="{DiscountImgPath}" style="width:{ModifiedWidth}px; height: 280px;margin:-25px 0px 0px 0px;"/>&nbsp;&nbsp;&nbsp;<br>' +
-                            //     // '<div onclick="FloatPanel_DashboardMerchantReward_MembershipContestDetailShow({ID});" style="width: 50%; float:left; height:30px; background:white; margin:0px"><div style="font-family:Arial, sans-serif;font-size:10px;color:black;font-weight:normal;text-align:left;padding:0px 10px;">Contest Name:</div><br><div style="font-family:Arial, sans-serif;font-size:14px;color:black;font-weight:bold;margin:-22px 0px 0px 0px;text-align:left;padding:0px 10px;">{ContestName}</div></div><br>' +
-                            //      '<div onclick="FloatPanel_MerchantDiscountLoyaltyDescriptionShow(`{DiscountCode}`,`{EnterpriseAccNo}`);" style="width: 50%; float:left; height:30px; background:transparent; margin:0px 0px 0px 0px;"><div style="font-family:Arial, sans-serif;font-size:10px;color:black;font-weight:normal;text-align:left;padding:0px 10px;"  onclick="FloatPanel_MerchantDiscountLoyaltyDescriptionShow(`{DiscountCode}`,`{EnterpriseAccNo}`);">Discount Name:</div><br><div onclick="FloatPanel_MerchantDiscountLoyaltyDescriptionShow(`{DiscountCode}`,`{EnterpriseAccNo}`);" style="font-family:Arial, sans-serif;font-size:14px;color:black;font-weight:bold;margin:-17px 0px 0px 0px;text-align:left;padding:0px 10px;">{DiscountName}</div></div><div style="width: 50%; float:left; height:30px; background:transparent; margin:0px 0px 0px 0px;word-break: break-all;" onclick="FloatPanel_MerchantDiscountLoyaltyDescriptionShow(`{DiscountCode}`,`{EnterpriseAccNo}`);"><div style="margin:0px 0px 0px 0px;text-align:right;color:black;font-family: Arial; font-size:10px;word-wrap: break-word;word-break: break-all;white-space: break-spaces;font-weight:normal;width:100%;height:30px;padding:0px 7px;"><br><div style="margin:0px 0px 0px 0px;text-align:right;color:black;font-family: Arial; font-size:12px;word-wrap: break-word;word-break: break-all;white-space: break-spaces;font-weight:bold;width:100%;padding:0px 0px;" onclick="FloatPanel_MerchantDiscountLoyaltyDescriptionShow(`{DiscountCode}`,`{EnterpriseAccNo}`);"><div style="font-family:Arial, sans-serif;font-size:14px;color:black;font-weight:bold;text-align:right;width:100%;"><div style="margin:0px 0px 0px 0px;"></div></div></div></div></div><br>' +
-                
-                            //      '<div onclick="FloatPanel_MerchantDiscountLoyaltyDescriptionShow(`{DiscountCode}`,`{EnterpriseAccNo}`);" style="width: 50%; float:left; height:30px; background:transparent; margin:15px 0px 0px 0px;"><div style="font-family:Arial, sans-serif;font-size:10px;color:black;font-weight:normal;text-align:left;padding:0px 10px;"  onclick="FloatPanel_MerchantDiscountLoyaltyDescriptionShow(`{DiscountCode}`,`{EnterpriseAccNo}`);">Discount Rate:</div><br><div onclick="FloatPanel_MerchantDiscountLoyaltyDescriptionShow(`{DiscountCode}`,`{EnterpriseAccNo}`);" style="font-family:Arial, sans-serif;font-size:14px;color:black;font-weight:bold;margin:-17px 0px 0px 0px;text-align:left;padding:0px 10px;">{DiscountPercent}%</div></div><div style="width: 50%; float:left; height:30px; background:transparent; margin:15px 0px 0px 0px;word-break: break-all;" onclick="FloatPanel_MerchantDiscountLoyaltyDescriptionShow(`{DiscountCode}`,`{EnterpriseAccNo}`);"><div style="margin:0px 0px 0px 0px;text-align:right;color:black;font-family: Arial; font-size:10px;word-wrap: break-word;word-break: break-all;white-space: break-spaces;font-weight:normal;width:100%;height:30px;padding:0px 7px;" onclick="FloatPanel_MerchantDiscountLoyaltyDescriptionShow(`{DiscountCode}`,`{EnterpriseAccNo}`);">Valid Until<br><div style="margin:0px 0px 0px 0px;text-align:right;color:black;font-family: Arial; font-size:14px;word-wrap: break-word;word-break: break-all;white-space: break-spaces;font-weight:bold;width:100%;padding:0px 0px;" onclick="FloatPanel_MerchantDiscountLoyaltyDescriptionShow(`{DiscountCode}`,`{EnterpriseAccNo}`);">{ModifiedDiscountEndDate}</div></div></div><br>' +
-                
-                
-                            //    '</div>',
-                
-                
-                            //         emptyText: '<div  style="background-color:transparent;width:100%; height: 280px;margin:20px 0px 0px 0px;text-align:center"><img src="resources/icons/NoMembershipEventContest01.jpg" style="width: 95%; height: 500px;"/></div>',
-                
-                            //     },
-
-
-
-
-
-
-
 
                                 {
-                
-                                    id: 'AyohaMerchantRewardDiscountList',
-                                    xtype: 'dataview',
-                                    xtype: 'list',
-                                height: 500,
-                                mode: 'SINGLE',
-                                width: '100%',
-                                disableSelection: true,
-                                //scrollable:false,
-                                scrollable: {                    
-                                    direction: 'vertical',
-                                    indicators: {
-                                        y: {
-                                            autoHide: true
+                                    xtype: 'carousel',
+                                    style: "background-color: transparent;", 
+                                   margin: '10 0 0 0',
+                                     id: 'carouselAyohaMerchantRewards_Discounts',
+                                     width: '100%',
+                                     height:'100%',
+                                     listeners: {
+                                
+                                        activeitemchange: function (container, newCard, oldCard, index) {
+                                            var eligibleBtn = document.getElementById('btnDiscountEligible');
+                                            var redeemOnlinedBtn = document.getElementById('btnDiscountRedeemOnline');
+                                            var redeemOfflinedBtn = document.getElementById('btnDiscountRedeemOffline');
+                                            var expiredBtn = document.getElementById('btnDiscountExpired');
+                                
+                                if(container.getActiveIndex()==0){
+                                switchPerkTab_Discount(eligibleBtn, 'Eligible', 0);
+                                }
+                                if(container.getActiveIndex()==1){
+                                switchPerkTab_Discount(redeemOnlinedBtn, 'Redeem_Online', 1);
+                                }if(container.getActiveIndex()==2){
+                                switchPerkTab_Discount(redeemOfflinedBtn, 'Redeem_Offline', 2);
+                                }if(container.getActiveIndex()==3){
+                                switchPerkTab_Discount(expiredBtn, 'Expired', 3);
+                                }
                                         },
-                                        x: {
-                                            autoHide: true
-                                        }
-                                    }
+                                    },
+                                    items:[
+                                        {
+                
+                                            id: 'AyohaMerchantRewardDiscountList_Eligible',
+                                            xtype: 'dataview',
+                                            xtype: 'list',
+                                        height: 500,
+                                        mode: 'SINGLE',
+                                        width: '100%',
+                                        disableSelection: true,
+                                        //scrollable:false,
+                                        scrollable: {                    
+                                            direction: 'vertical',
+                                            indicators: {
+                                                y: {
+                                                    autoHide: true
+                                                },
+                                                x: {
+                                                    autoHide: true
+                                                }
+                                            }
+                                        },
+                                        style: 'background-color:rgba(255,255,255, 0.1);',
+                        
+                        
+        
+        
+                                        itemTpl: 
+                                        '<div onclick="FloatPanel_MerchantDiscountLoyaltyDescriptionShow(`{DiscountCode}`,`{EnterpriseAccNo}`);" class="myContent" style="background-color:transparent;width:100%;height:380px;">' +
+                                     // '&nbsp;&nbsp;<div style="font-family:Arial, sans-serif;font-size:12px;color:black;font-weight:bold;text-align:left;width:100%;"><img src="{EnterpriseLogo}" style="width:30px;height:30px;border-radius:50%;margin:0px 0px 0px 20px;"/><div style="margin:-28px 0px 0px 55px;">{EnterpriseName}</div></div>&nbsp;&nbsp;<br><br>' +
+                                      '<img  onclick="FloatPanel_MerchantDiscountLoyaltyDescriptionShow(`{DiscountCode}`,`{EnterpriseAccNo}`);"   src="{DiscountImgPath}" style="width:100%;height:280px;margin:0px 0px 0px 0px;"/><br>' +
+                                    // '<div onclick="FloatPanel_DashboardMerchantReward_MembershipContestDetailShow({ID});" style="width: 50%; float:left; height:30px; background:white; margin:0px"><div style="font-family:Arial, sans-serif;font-size:10px;color:black;font-weight:normal;text-align:left;padding:0px 10px;">Contest Name:</div><br><div style="font-family:Arial, sans-serif;font-size:14px;color:black;font-weight:bold;margin:-22px 0px 0px 0px;text-align:left;padding:0px 10px;">{ContestName}</div></div><br>' +
+                                     '<div onclick="FloatPanel_MerchantDiscountLoyaltyDescriptionShow(`{DiscountCode}`,`{EnterpriseAccNo}`);" style="width: 60%; float:left; height:30px; background:transparent; margin:0px 0px 0px 0px;"><div style="font-family:Arial, sans-serif;font-size:10px;color:black;font-weight:normal;text-align:left;padding:0px 10px;">Discount Name:</div><br><div style="font-family:Arial, sans-serif;font-size:12px;color:black;font-weight:bold;margin:-17px 0px 0px 0px;text-align:left;padding:0px 10px;">{DiscountName}</div></div><div style="width: 40%; float:left; height:30px; background:transparent; margin:0px 0px 0px 0px;word-break: break-all;"><div style="margin:0px 0px 0px 0px;text-align:right;color:black;font-family: Arial; font-size:10px;word-wrap: break-word;word-break: break-all;white-space: break-spaces;font-weight:normal;width:100%;height:30px;padding:0px 7px;">Merchant:<br><div style="margin:0px 0px 0px 0px;text-align:right;color:black;font-family: Arial; font-size:12px;word-wrap: break-word;word-break: break-all;white-space: break-spaces;font-weight:bold;width:100%;padding:0px 0px;"><div style="font-family:Arial, sans-serif;font-size:12px;color:black;font-weight:bold;text-align:right;width:100%;"><div style="margin:0px 0px 0px 0px;">{EnterpriseName}</div></div></div></div></div><br>' +
+        
+                                     '<div onclick="FloatPanel_MerchantDiscountLoyaltyDescriptionShow(`{DiscountCode}`,`{EnterpriseAccNo}`);" style="width: 60%; float:left; height:30px; background:transparent; margin:15px 0px 0px 0px;"><div style="font-family:Arial, sans-serif;font-size:10px;color:black;font-weight:normal;text-align:left;padding:0px 10px;">Discount Rate:</div><br><div style="font-family:Arial, sans-serif;font-size:12px;color:black;font-weight:bold;margin:-17px 0px 0px 0px;text-align:left;padding:0px 10px;">{DiscountPercent}%</div></div><div style="width: 40%; float:left; height:30px; background:transparent; margin:15px 0px 0px 0px;word-break: break-all;"><div style="margin:0px 0px 0px 0px;text-align:right;color:black;font-family: Arial; font-size:10px;word-wrap: break-word;word-break: break-all;white-space: break-spaces;font-weight:normal;width:100%;height:30px;padding:0px 7px;">End Date:<br><div style="margin:0px 0px 0px 0px;text-align:right;color:black;font-family: Arial; font-size:12px;word-wrap: break-word;word-break: break-all;white-space: break-spaces;font-weight:bold;width:100%;padding:0px 0px;">{ModifiedDiscountEndDate}</div></div></div>' +
+        
+        
+                                   '</div>',
+        
+        
+                                       
+                                        },
+                                        {
+                                            xtype: 'list',
+                                            width: '100%',
+                                            //height: 300,
+                                            height: 500,
+                                            // flex: 1,
+                                            //store: _DataStore_AyohaeWalletTransactionLoadByeWalletAccNoFilterTypeAllTransactionStore,
+                                            // store:'AyohaUserDashBoardNearestRedeemItemListStore',
+                                            id: 'AyohaMerchantRewardDiscountList_Redeem_Online',
+                                            mode: 'SINGLE',
+                                            // width: '100%',
+                                           // grouped:true,
+                                            disableSelection: true,
+                                            scrollable: {
+                                                direction: 'vertical',
+                                                indicators: {
+                                                    y: {
+                                                        autoHide: true
+                                                    },
+                                                    x: {
+                                                        autoHide: true
+                                                    }
+                                                }
+                                            },
+                                            style: 'background-color:rgba(255,255,255, 0.1);',
+                                            itemTpl: '<div onclick="MyAccount_AllTransactionHistory_AyohaeWalletTransactionStaging({TotalStampEarn},' + "'" + '{CreatedDate}' + "'" + ',' + "'" + '{AccountName}' + "'" + ',' + "'" + '{UserProfileImg}' + "'" + ',' + "'" + '{PhoneNo}' + "'" + ',' + "'" + '{TransactionNote}' + "'" + ',' + "'" + '{TransactionAmount}' + "'" + ',' + "'" + '{TransactionType}' + "'" + ',' + "'" + '{MembershipCardCode}' + "'" + ',' + "'" + '{OrderNo}' + "'" + ',' + "'" + '{ItemCartCode}' + "'" + ',' + "'" + '{FullAccountName}' + "'" + ',' + "'" + '{TransactionReferenceNo}' + "'" + ','+ "'" + '{EnterpriseAddress}' + "'" + ','+ "'" + '{EnterpriseTagLine}' + "'" + ',`{CustomerAccNo}`,{ID},`{CreatedDate}`)" class="myContent" style="background-color:white;width:106%;height:70px;">' +
+                   
+                   
+                                            // '<table onclick="MyAccount_AllTransactionHistory_AyohaeWalletTransactionStaging({TotalStampEarn},' + "'" + '{CreatedDate}' + "'" + ',' + "'" + '{AccountName}' + "'" + ',' + "'" + '{UserProfileImg}' + "'" + ',' + "'" + '{PhoneNo}' + "'" + ',' + "'" + '{TransactionNote}' + "'" + ',' + "'" + '{TransactionAmount}' + "'" + ',' + "'" + '{TransactionType}' + "'" + ',' + "'" + '{MembershipCardCode}' + "'" + ',' + "'" + '{OrderNo}' + "'" + ',' + "'" + '{ItemCartCode}' + "'" + ',' + "'" + '{FullAccountName}' + "'" + ',' + "'" + '{TransactionReferenceNo}' + "'" + ',{ID})" style="border-collapse:collapse;border-spacing:0;width:106%;background-color:white;margin:-10px 0px 0px -18px;height:80px;"><tr><td style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:0px 10px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:20%;vertical-align:center"><div style="border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none white;border-radius: 50px;width:60px;height:60px;color:white;vertical-align: bottom; text-align:center;font-family: Lucida Console, Courier, monospace;font-size: 35px;background-image: url({AccountProfileImg}); background-size: 100% 100%;"></div></td><td style="font-family:Arial, sans-serif;font-size:14px;font-weight:bold;padding:0px 0px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:80%;vertical-align:center">{AccountName}<br><font style="font-family:Arial, sans-serif;font-size:10px;font-weight:normal;">{isSpentOrIncome} - {CreatedDate}</font></td></tr></table><br>'
+                                             '<table style="border-collapse:collapse;border-spacing:0;width:106%;background-color:white;margin:-10px 0px 0px -18px;height:80px;"><tr><td style="font-family:Arial, sans-serif;font-size:12px;font-weight:normal;padding:0px 10px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:20%;vertical-align:center"><div style="border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none white;border-radius: 50px;width:60px;height:60px;color:white;vertical-align: bottom; text-align:center;font-family: Lucida Console, Courier, monospace;font-size: 35px;background-image: url({AccountProfileImg}); background-size: 100% 100%;"></div></td><td style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;padding:0px 0px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:80%;vertical-align:center">{AccountName}<br><font style="font-family:Arial, sans-serif;font-size:10px;font-weight:normal;">{CreatedDate}<br>{ModifiedPaymentChannel}</font></td></tr></table><br>'
+                                           
+                                             + '<div style="width:96%;height:20px;margin:-80px 0px 0px 0px;color:black;vertical-align: top; text-align:right;font-family:Arial, sans-serif;font-size: 12px;font-weight:bold;">{ModifiedTransactionAmount}<br>({AyohaPoint})</div>'
+                                                 + '</div>',
+                   
+                   
+                                            //height: '100%',
+                   
+                                            emptyText: '<div  style="background-color:transparent;width:100%;height100%;">No Transaction!</div>',
+                   
+                   
+                                        },
+                                        {
+                                            xtype: 'list',
+                                            width: '100%',
+                                            //height: 300,
+                                            height: 500,
+                                            // flex: 1,
+                                            //store: _DataStore_AyohaeWalletTransactionLoadByeWalletAccNoFilterTypeAllTransactionStore,
+                                            // store:'AyohaUserDashBoardNearestRedeemItemListStore',
+                                            id: 'AyohaMerchantRewardDiscountList_Redeem_Offline',
+                                            mode: 'SINGLE',
+                                            // width: '100%',
+                                           // grouped:true,
+                                            disableSelection: true,
+                                            style: 'background-color:rgba(255,255,255, 0.1);',
+                                            scrollable: {
+                                                direction: 'vertical',
+                                                indicators: {
+                                                    y: {
+                                                        autoHide: true
+                                                    },
+                                                    x: {
+                                                        autoHide: true
+                                                    }
+                                                }
+                                            },
+                                            itemTpl: '<div onclick="MyAccount_AllTransactionHistory_AyohaeWalletTransactionStaging({TotalStampEarn},' + "'" + '{CreatedDate}' + "'" + ',' + "'" + '{AccountName}' + "'" + ',' + "'" + '{UserProfileImg}' + "'" + ',' + "'" + '{PhoneNo}' + "'" + ',' + "'" + '{TransactionNote}' + "'" + ',' + "'" + '{TransactionAmount}' + "'" + ',' + "'" + '{TransactionType}' + "'" + ',' + "'" + '{MembershipCardCode}' + "'" + ',' + "'" + '{OrderNo}' + "'" + ',' + "'" + '{ItemCartCode}' + "'" + ',' + "'" + '{FullAccountName}' + "'" + ',' + "'" + '{TransactionReferenceNo}' + "'" + ','+ "'" + '{EnterpriseAddress}' + "'" + ','+ "'" + '{EnterpriseTagLine}' + "'" + ',`{CustomerAccNo}`,{ID},`{CreatedDate}`)" class="myContent" style="background-color:white;width:106%;height:70px;">' +
+                   
+                   
+                                            // '<table onclick="MyAccount_AllTransactionHistory_AyohaeWalletTransactionStaging({TotalStampEarn},' + "'" + '{CreatedDate}' + "'" + ',' + "'" + '{AccountName}' + "'" + ',' + "'" + '{UserProfileImg}' + "'" + ',' + "'" + '{PhoneNo}' + "'" + ',' + "'" + '{TransactionNote}' + "'" + ',' + "'" + '{TransactionAmount}' + "'" + ',' + "'" + '{TransactionType}' + "'" + ',' + "'" + '{MembershipCardCode}' + "'" + ',' + "'" + '{OrderNo}' + "'" + ',' + "'" + '{ItemCartCode}' + "'" + ',' + "'" + '{FullAccountName}' + "'" + ',' + "'" + '{TransactionReferenceNo}' + "'" + ',{ID})" style="border-collapse:collapse;border-spacing:0;width:106%;background-color:white;margin:-10px 0px 0px -18px;height:80px;"><tr><td style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:0px 10px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:20%;vertical-align:center"><div style="border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none white;border-radius: 50px;width:60px;height:60px;color:white;vertical-align: bottom; text-align:center;font-family: Lucida Console, Courier, monospace;font-size: 35px;background-image: url({AccountProfileImg}); background-size: 100% 100%;"></div></td><td style="font-family:Arial, sans-serif;font-size:14px;font-weight:bold;padding:0px 0px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:80%;vertical-align:center">{AccountName}<br><font style="font-family:Arial, sans-serif;font-size:10px;font-weight:normal;">{isSpentOrIncome} - {CreatedDate}</font></td></tr></table><br>'
+                                             '<table style="border-collapse:collapse;border-spacing:0;width:106%;background-color:white;margin:-10px 0px 0px -18px;height:80px;"><tr><td style="font-family:Arial, sans-serif;font-size:12px;font-weight:normal;padding:0px 10px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:20%;vertical-align:center"><div style="border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none white;border-radius: 50px;width:60px;height:60px;color:white;vertical-align: bottom; text-align:center;font-family: Lucida Console, Courier, monospace;font-size: 35px;background-image: url({AccountProfileImg}); background-size: 100% 100%;"></div></td><td style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;padding:0px 0px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:80%;vertical-align:center">{AccountName}<br><font style="font-family:Arial, sans-serif;font-size:10px;font-weight:normal;">{CreatedDate}<br>{ModifiedPaymentChannel}</font></td></tr></table><br>'
+                                           
+                                             + '<div style="width:96%;height:20px;margin:-80px 0px 0px 0px;color:black;vertical-align: top; text-align:right;font-family:Arial, sans-serif;font-size: 12px;font-weight:bold;">{ModifiedTransactionAmount}<br>({AyohaPoint})</div>'
+                                                 + '</div>',
+                   
+                   
+                                            //height: '100%',
+                   
+                                            emptyText: '<div  style="background-color:transparent;width:100%;height100%;">No Transaction!</div>',
+                   
+                   
+                                        },
+                                        {
+                
+                                            id: 'AyohaMerchantRewardDiscountList_Expired',
+                                            xtype: 'dataview',
+                                            xtype: 'list',
+                                        height: 500,
+                                        mode: 'SINGLE',
+                                        width: '100%',
+                                        disableSelection: true,
+                                        //scrollable:false,
+                                        scrollable: {                    
+                                            direction: 'vertical',
+                                            indicators: {
+                                                y: {
+                                                    autoHide: true
+                                                },
+                                                x: {
+                                                    autoHide: true
+                                                }
+                                            }
+                                        },
+                                        style: 'background-color:rgba(255,255,255, 0.1);',
+                        
+                        
+        
+        
+                                        itemTpl: 
+                                        '<div onclick="FloatPanel_MerchantDiscountLoyaltyDescriptionShow(`{DiscountCode}`,`{EnterpriseAccNo}`);" class="myContent" style="background-color:transparent;width:100%;height:380px;">' +
+                                     // '&nbsp;&nbsp;<div style="font-family:Arial, sans-serif;font-size:12px;color:black;font-weight:bold;text-align:left;width:100%;"><img src="{EnterpriseLogo}" style="width:30px;height:30px;border-radius:50%;margin:0px 0px 0px 20px;"/><div style="margin:-28px 0px 0px 55px;">{EnterpriseName}</div></div>&nbsp;&nbsp;<br><br>' +
+                                      '<img  onclick="FloatPanel_MerchantDiscountLoyaltyDescriptionShow(`{DiscountCode}`,`{EnterpriseAccNo}`);"   src="{DiscountImgPath}" style="width:100%;height:280px;margin:0px 0px 0px 0px;"/><br>' +
+                                    // '<div onclick="FloatPanel_DashboardMerchantReward_MembershipContestDetailShow({ID});" style="width: 50%; float:left; height:30px; background:white; margin:0px"><div style="font-family:Arial, sans-serif;font-size:10px;color:black;font-weight:normal;text-align:left;padding:0px 10px;">Contest Name:</div><br><div style="font-family:Arial, sans-serif;font-size:14px;color:black;font-weight:bold;margin:-22px 0px 0px 0px;text-align:left;padding:0px 10px;">{ContestName}</div></div><br>' +
+                                     '<div onclick="FloatPanel_MerchantDiscountLoyaltyDescriptionShow(`{DiscountCode}`,`{EnterpriseAccNo}`);" style="width: 60%; float:left; height:30px; background:transparent; margin:0px 0px 0px 0px;"><div style="font-family:Arial, sans-serif;font-size:10px;color:black;font-weight:normal;text-align:left;padding:0px 10px;">Discount Name:</div><br><div style="font-family:Arial, sans-serif;font-size:12px;color:black;font-weight:bold;margin:-17px 0px 0px 0px;text-align:left;padding:0px 10px;">{DiscountName}</div></div><div style="width: 40%; float:left; height:30px; background:transparent; margin:0px 0px 0px 0px;word-break: break-all;"><div style="margin:0px 0px 0px 0px;text-align:right;color:black;font-family: Arial; font-size:10px;word-wrap: break-word;word-break: break-all;white-space: break-spaces;font-weight:normal;width:100%;height:30px;padding:0px 7px;">Merchant:<br><div style="margin:0px 0px 0px 0px;text-align:right;color:black;font-family: Arial; font-size:12px;word-wrap: break-word;word-break: break-all;white-space: break-spaces;font-weight:bold;width:100%;padding:0px 0px;"><div style="font-family:Arial, sans-serif;font-size:12px;color:black;font-weight:bold;text-align:right;width:100%;"><div style="margin:0px 0px 0px 0px;">{EnterpriseName}</div></div></div></div></div><br>' +
+        
+                                     '<div onclick="FloatPanel_MerchantDiscountLoyaltyDescriptionShow(`{DiscountCode}`,`{EnterpriseAccNo}`);" style="width: 60%; float:left; height:30px; background:transparent; margin:15px 0px 0px 0px;"><div style="font-family:Arial, sans-serif;font-size:10px;color:black;font-weight:normal;text-align:left;padding:0px 10px;">Discount Rate:</div><br><div style="font-family:Arial, sans-serif;font-size:12px;color:black;font-weight:bold;margin:-17px 0px 0px 0px;text-align:left;padding:0px 10px;">{DiscountPercent}%</div></div><div style="width: 40%; float:left; height:30px; background:transparent; margin:15px 0px 0px 0px;word-break: break-all;"><div style="margin:0px 0px 0px 0px;text-align:right;color:black;font-family: Arial; font-size:10px;word-wrap: break-word;word-break: break-all;white-space: break-spaces;font-weight:normal;width:100%;height:30px;padding:0px 7px;">End Date:<br><div style="margin:0px 0px 0px 0px;text-align:right;color:black;font-family: Arial; font-size:12px;word-wrap: break-word;word-break: break-all;white-space: break-spaces;font-weight:bold;width:100%;padding:0px 0px;">{ModifiedDiscountEndDate}</div></div></div>' +
+        
+        
+                                   '</div>',
+        
+        
+                                       
+                                        },
+                                    ]
                                 },
-                                style: 'background-color:rgba(255,255,255, 0.1);',
-                
-                
-
-
-                                itemTpl: 
-                                '<div onclick="FloatPanel_MerchantDiscountLoyaltyDescriptionShow(`{DiscountCode}`,`{EnterpriseAccNo}`);" class="myContent" style="background-color:transparent;width:100%;height:380px;">' +
-                             // '&nbsp;&nbsp;<div style="font-family:Arial, sans-serif;font-size:12px;color:black;font-weight:bold;text-align:left;width:100%;"><img src="{EnterpriseLogo}" style="width:30px;height:30px;border-radius:50%;margin:0px 0px 0px 20px;"/><div style="margin:-28px 0px 0px 55px;">{EnterpriseName}</div></div>&nbsp;&nbsp;<br><br>' +
-                              '<img  onclick="FloatPanel_MerchantDiscountLoyaltyDescriptionShow(`{DiscountCode}`,`{EnterpriseAccNo}`);"   src="{DiscountImgPath}" style="width:100%;height:280px;margin:0px 0px 0px 0px;"/><br>' +
-                            // '<div onclick="FloatPanel_DashboardMerchantReward_MembershipContestDetailShow({ID});" style="width: 50%; float:left; height:30px; background:white; margin:0px"><div style="font-family:Arial, sans-serif;font-size:10px;color:black;font-weight:normal;text-align:left;padding:0px 10px;">Contest Name:</div><br><div style="font-family:Arial, sans-serif;font-size:14px;color:black;font-weight:bold;margin:-22px 0px 0px 0px;text-align:left;padding:0px 10px;">{ContestName}</div></div><br>' +
-                             '<div onclick="FloatPanel_MerchantDiscountLoyaltyDescriptionShow(`{DiscountCode}`,`{EnterpriseAccNo}`);" style="width: 60%; float:left; height:30px; background:transparent; margin:0px 0px 0px 0px;"><div style="font-family:Arial, sans-serif;font-size:10px;color:black;font-weight:normal;text-align:left;padding:0px 10px;">Discount Name:</div><br><div style="font-family:Arial, sans-serif;font-size:12px;color:black;font-weight:bold;margin:-17px 0px 0px 0px;text-align:left;padding:0px 10px;">{DiscountName}</div></div><div style="width: 40%; float:left; height:30px; background:transparent; margin:0px 0px 0px 0px;word-break: break-all;"><div style="margin:0px 0px 0px 0px;text-align:right;color:black;font-family: Arial; font-size:10px;word-wrap: break-word;word-break: break-all;white-space: break-spaces;font-weight:normal;width:100%;height:30px;padding:0px 7px;">Merchant:<br><div style="margin:0px 0px 0px 0px;text-align:right;color:black;font-family: Arial; font-size:12px;word-wrap: break-word;word-break: break-all;white-space: break-spaces;font-weight:bold;width:100%;padding:0px 0px;"><div style="font-family:Arial, sans-serif;font-size:12px;color:black;font-weight:bold;text-align:right;width:100%;"><div style="margin:0px 0px 0px 0px;">{EnterpriseName}</div></div></div></div></div><br>' +
-
-                             '<div onclick="FloatPanel_MerchantDiscountLoyaltyDescriptionShow(`{DiscountCode}`,`{EnterpriseAccNo}`);" style="width: 60%; float:left; height:30px; background:transparent; margin:15px 0px 0px 0px;"><div style="font-family:Arial, sans-serif;font-size:10px;color:black;font-weight:normal;text-align:left;padding:0px 10px;">Discount Rate:</div><br><div style="font-family:Arial, sans-serif;font-size:12px;color:black;font-weight:bold;margin:-17px 0px 0px 0px;text-align:left;padding:0px 10px;">{DiscountPercent}%</div></div><div style="width: 40%; float:left; height:30px; background:transparent; margin:15px 0px 0px 0px;word-break: break-all;"><div style="margin:0px 0px 0px 0px;text-align:right;color:black;font-family: Arial; font-size:10px;word-wrap: break-word;word-break: break-all;white-space: break-spaces;font-weight:normal;width:100%;height:30px;padding:0px 7px;">End Date:<br><div style="margin:0px 0px 0px 0px;text-align:right;color:black;font-family: Arial; font-size:12px;word-wrap: break-word;word-break: break-all;white-space: break-spaces;font-weight:bold;width:100%;padding:0px 0px;">{ModifiedDiscountEndDate}</div></div></div>' +
-
-
-                           '</div>',
+                                
+                         
 
 
 
 
 
 
-                
-                            //         itemTpl: '<div onclick="FloatPanel_MerchantDiscountLoyaltyDescriptionShow(`{DiscountCode}`,`{EnterpriseAccNo}`);" class="myContent" style="background-color:transparent;width:100%;height:350px;">' +
-                            //       //'<div style="font-family:Arial, sans-serif;font-size:12px;color:black;font-weight:bold;text-align:left;width:100%;"><img src="{EnterpriseLogo}" style="width:30px;height:30px;border-radius:50%;margin:0px 0px 0px 20px;"/><div style="margin:-28px 0px 0px 55px;">{EnterpriseName}</div></div>&nbsp;&nbsp;&nbsp;<br><br>' +
-                            //       '<img  onclick="FloatPanel_MerchantDiscountLoyaltyDescriptionShow(`{DiscountCode}`,`{EnterpriseAccNo}`);"   src="{DiscountImgPath}" style="width:100%; height: 280px;margin:0px 0px 0px 0px;"/><br>' +
-                            //     // '<div onclick="FloatPanel_DashboardMerchantReward_MembershipContestDetailShow({ID});" style="width: 50%; float:left; height:30px; background:white; margin:0px"><div style="font-family:Arial, sans-serif;font-size:10px;color:black;font-weight:normal;text-align:left;padding:0px 10px;">Contest Name:</div><br><div style="font-family:Arial, sans-serif;font-size:14px;color:black;font-weight:bold;margin:-22px 0px 0px 0px;text-align:left;padding:0px 10px;">{ContestName}</div></div><br>' +
-                            //      '<div onclick="FloatPanel_MerchantDiscountLoyaltyDescriptionShow(`{DiscountCode}`,`{EnterpriseAccNo}`);" style="width: 50%; float:left; height:30px; background:transparent; margin:0px 0px 0px 0px;"><div style="font-family:Arial, sans-serif;font-size:10px;color:black;font-weight:normal;text-align:left;padding:0px 10px;"  onclick="FloatPanel_MerchantDiscountLoyaltyDescriptionShow(`{DiscountCode}`,`{EnterpriseAccNo}`);">Discount Name:</div><br><div onclick="FloatPanel_MerchantDiscountLoyaltyDescriptionShow(`{DiscountCode}`,`{EnterpriseAccNo}`);" style="font-family:Arial, sans-serif;font-size:14px;color:black;font-weight:bold;margin:-17px 0px 0px 0px;text-align:left;padding:0px 10px;">{DiscountName}</div></div><div style="width: 50%; float:left; height:30px; background:transparent; margin:0px 0px 0px 0px;word-break: break-all;" onclick="FloatPanel_MerchantDiscountLoyaltyDescriptionShow(`{DiscountCode}`,`{EnterpriseAccNo}`);">xxxxxxxxxxxxx<div style="margin:0px 0px 0px 0px;text-align:right;color:black;font-family: Arial; font-size:10px;word-wrap: break-word;word-break: break-all;white-space: break-spaces;font-weight:normal;width:100%;height:30px;padding:0px 7px;"><br><div style="margin:0px 0px 0px 0px;text-align:right;color:black;font-family: Arial; font-size:12px;word-wrap: break-word;word-break: break-all;white-space: break-spaces;font-weight:bold;width:100%;padding:0px 0px;" onclick="FloatPanel_MerchantDiscountLoyaltyDescriptionShow(`{DiscountCode}`,`{EnterpriseAccNo}`);"><div style="font-family:Arial, sans-serif;font-size:14px;color:black;font-weight:bold;text-align:right;width:100%;"><div style="margin:0px 0px 0px 0px;">xxxxx</div></div></div></div></div><br>' +
-                
-                            //      '<div onclick="FloatPanel_MerchantDiscountLoyaltyDescriptionShow(`{DiscountCode}`,`{EnterpriseAccNo}`);" style="width: 50%; float:left; height:30px; background:transparent; margin:15px 0px 0px 0px;"><div style="font-family:Arial, sans-serif;font-size:10px;color:black;font-weight:normal;text-align:left;padding:0px 10px;"  onclick="FloatPanel_MerchantDiscountLoyaltyDescriptionShow(`{DiscountCode}`,`{EnterpriseAccNo}`);">Discount Rate:</div><br><div onclick="FloatPanel_MerchantDiscountLoyaltyDescriptionShow(`{DiscountCode}`,`{EnterpriseAccNo}`);" style="font-family:Arial, sans-serif;font-size:14px;color:black;font-weight:bold;margin:-17px 0px 0px 0px;text-align:left;padding:0px 10px;">{DiscountPercent}%</div></div><div style="width: 50%; float:left; height:30px; background:transparent; margin:15px 0px 0px 0px;word-break: break-all;" onclick="FloatPanel_MerchantDiscountLoyaltyDescriptionShow(`{DiscountCode}`,`{EnterpriseAccNo}`);"><div style="margin:0px 0px 0px 0px;text-align:right;color:black;font-family: Arial; font-size:10px;word-wrap: break-word;word-break: break-all;white-space: break-spaces;font-weight:normal;width:100%;height:30px;padding:0px 7px;" onclick="FloatPanel_MerchantDiscountLoyaltyDescriptionShow(`{DiscountCode}`,`{EnterpriseAccNo}`);">Valid Until<br><div style="margin:0px 0px 0px 0px;text-align:right;color:black;font-family: Arial; font-size:14px;word-wrap: break-word;word-break: break-all;white-space: break-spaces;font-weight:bold;width:100%;padding:0px 0px;" onclick="FloatPanel_MerchantDiscountLoyaltyDescriptionShow(`{DiscountCode}`,`{EnterpriseAccNo}`);">{ModifiedDiscountEndDate}</div></div></div><br>' +
-                
-                
-                            //    '</div>',
-                
-                
-                            //         emptyText: '<div  style="background-color:transparent;width:100%; height: 280px;margin:20px 0px 0px 0px;text-align:center"><img src="resources/icons/NoMembershipEventContest01.jpg" style="width: 95%; height: 500px;"/></div>',
-                
-                               
-                               
-                                },
+
+                                
 
 
 
@@ -4245,9 +4263,75 @@ function AyohaMerchantReward_AyohaRewardEventLoadBySubscriberAccNoStore() {
         }
 
 
+        function AyohaMerchantReward_DiscountCampaignRedeem_LoadByDiscountRedeemStatusStore(RedeemStatus) {
+       _DataStore_DiscountCampaignRedeem_LoadByDiscountRedeemStatusStore.getProxy().setExtraParam('SubscriberAccNo', GetCurrAyohaUserAccountNo());
+       _DataStore_DiscountCampaignRedeem_LoadByDiscountRedeemStatusStore.getProxy().setExtraParam('RedeemStatus', RedeemStatus);
+       _DataStore_DiscountCampaignRedeem_LoadByDiscountRedeemStatusStore.getProxy().setUrl(GetAPIurl() + '/DiscountCampaing/DiscountCampaignRedeem_LoadByDiscountRedeemStatus');
+            
+            
+            
+            _DataStore_DiscountCampaignRedeem_LoadByDiscountRedeemStatusStore.load({
+                    callback: function (records, operation, success) {
+                        if (success && records.length > 0) {
+                            
+                            Ext.getCmp('AyohaMerchantRewardDiscountList_'+RedeemStatus).setStore(_DataStore_DiscountCampaignRedeem_LoadByDiscountRedeemStatusStore);
+                            //AyohaMerchantReward_AyohaRewardDiscountCampaing_LoadBySubscriberAccNo();
+                           
+                            
+                            // AyohaMerchantReward_AyohaRewardContestLoadBySubscriberAccNoStore();
+                        } else {
+                            console.error('Failed to load store data or no record found.');
+                           
+                           // AyohaMerchantReward_AyohaRewardDiscountCampaing_LoadBySubscriberAccNo();
+                          
+                            LoadingPanelHide();
+                        }
+                       // 
+                    }
+                });
+        
+        
+        
+        
+        
+            }
 
 
 
+
+            function AyohaMerchantReward_DiscountCampaignRedeemLoadByDiscountRedeemStatus_OnlineOfflineStore(RedeemStatus) {
+       
+                _DataStore_DiscountCampaignRedeemLoadByDiscountRedeemStatus_OnlineOfflineStore.getProxy().setExtraParam('SubscriberAccNo', GetCurrAyohaUserAccountNo());
+                _DataStore_DiscountCampaignRedeemLoadByDiscountRedeemStatus_OnlineOfflineStore.getProxy().setExtraParam('RedeemStatus', RedeemStatus);
+                _DataStore_DiscountCampaignRedeemLoadByDiscountRedeemStatus_OnlineOfflineStore.getProxy().setUrl(GetAPIurl() + '/AyohaeWalletTransaction/DiscountCampaignRedeemLoadByDiscountRedeemStatus_OnlineOffline');
+                
+                
+                
+                _DataStore_DiscountCampaignRedeemLoadByDiscountRedeemStatus_OnlineOfflineStore.load({
+                        callback: function (records, operation, success) {
+                            if (success && records.length > 0) {
+                                
+                                Ext.getCmp('AyohaMerchantRewardDiscountList_'+RedeemStatus).setStore(_DataStore_DiscountCampaignRedeemLoadByDiscountRedeemStatus_OnlineOfflineStore);
+                                //AyohaMerchantReward_AyohaRewardDiscountCampaing_LoadBySubscriberAccNo();
+                               
+                                
+                                // AyohaMerchantReward_AyohaRewardContestLoadBySubscriberAccNoStore();
+                            } else {
+                                console.error('Failed to load store data or no record found.');
+                               
+                               // AyohaMerchantReward_AyohaRewardDiscountCampaing_LoadBySubscriberAccNo();
+                              
+                                LoadingPanelHide();
+                            }
+                           // 
+                        }
+                    });
+            
+            
+            
+            
+            
+                }
 
 
     function AyohaMerchantReward_AyohaRewardContestLoadBySubscriberAccNoStore() {
@@ -4304,7 +4388,7 @@ function AyohaMerchantReward_AyohaRewardEventLoadBySubscriberAccNoStore() {
             callback: function (records, operation, success) {
                 if (success && records.length > 0) {
                     
-                    Ext.getCmp('AyohaMerchantRewardDiscountList').setStore(_DataStore_DiscountCampaing_LoadBySubscriberAccNoStore);
+                    Ext.getCmp('AyohaMerchantRewardDiscountList_Eligible').setStore(_DataStore_DiscountCampaing_LoadBySubscriberAccNoStore);
                    // AyohaMerchantReward_LoadDashboard();
                    // Load_TotalEligible_vs_Used_Doughnut();
                  
@@ -5103,6 +5187,33 @@ Ext.getCmp('listcarouselAyohaMerchantRewards_Point_'+RedeemPointStatus).setHeigh
       
        
       }
+
+
+
+
+      function switchPerkTab_Discount(btn,RedeemStatus,Index) {
+      
+        // reset semua button ke grey
+        var allBtns = document.querySelectorAll('.perk-btn.discount');
+        for (var i = 0; i < allBtns.length; i++) {
+          allBtns[i].classList.remove('active');
+        }
+      
+        // button yang ditekan jadi hitam/putih
+        btn.classList.add('active');
+        if(RedeemStatus=="Eligible" || RedeemStatus=="Expired"){
+        Ext.getCmp('carouselAyohaMerchantRewards_Discounts').setActiveItem(Index);
+        AyohaMerchantReward_DiscountCampaignRedeem_LoadByDiscountRedeemStatusStore(RedeemStatus);
+        return;
+        }
+        if(RedeemStatus=="Redeem_Online" || RedeemStatus=="Redeem_Offline"){
+            Ext.getCmp('carouselAyohaMerchantRewards_Discounts').setActiveItem(Index);
+            AyohaMerchantReward_DiscountCampaignRedeemLoadByDiscountRedeemStatus_OnlineOfflineStore(RedeemStatus);
+            return;
+            }
+      }
+
+      
 
       function AyohaMerchantReward_openPointCardRedemption(val) {
 

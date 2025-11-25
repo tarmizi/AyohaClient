@@ -26,3 +26,61 @@ var _DataStore_DiscountCampaing_LoadBySubscriberAccNoStore = Ext.create('Ext.dat
     //autoLoad: true
 
 });
+
+
+
+
+
+var _DataStore_DiscountCampaignRedeem_LoadByDiscountRedeemStatusStore = Ext.create('Ext.data.Store', {
+
+    model: 'ianMizi.model.DiscountCampaign.DiscountCampaignModel',
+    id: '_DiscountCampaignRedeem_LoadByDiscountRedeemStatusStoreID',
+    proxy: {
+        type: 'ajax',
+        url: GetAPIurl() + 'DiscountCampaign/DiscountCampaignRedeem_LoadByDiscountRedeemStatus',
+        actionMethods: {
+            read: 'POST'
+        },
+        reader: {
+            type: 'json',
+            rootProperty: 'results',
+            totalProperty: 'total',
+            successProperty: 'success',
+            messageProperty: 'message'
+        }
+    },
+
+
+
+    //autoLoad: true
+
+});
+
+
+
+
+
+var _DataStore_DiscountCampaignRedeemLoadByDiscountRedeemStatus_OnlineOfflineStore = Ext.create('Ext.data.Store', {
+
+    model: 'ianMizi.model.AyohaeWalletTransaction.AyohaeWalletAllTransactionModel',
+    id: '_DataStore_DiscountCampaignRedeemLoadByDiscountRedeemStatus_OnlineOfflineStoreID',
+    proxy: {
+        type: 'ajax',
+        url: GetAPIurl() + '/AyohaeWalletTransaction/DiscountCampaignRedeemLoadByDiscountRedeemStatus_OnlineOffline',
+        actionMethods: {
+            read: 'POST'
+        },
+        reader: {
+            type: 'json',
+            rootProperty: 'results',
+            totalProperty: 'total',
+            successProperty: 'success',
+            messageProperty: 'message'
+        }
+    },
+
+
+
+    //autoLoad: true
+
+});
