@@ -2396,8 +2396,7 @@ function FloatPanel_AyohaCardManagement_PreviewCard_AyohaUserCardShow(StampedCam
     globalStampCampaignisCampaignExpired = isCampaignExpired;
     globalFloatPanel_AyohaStore_ModuleTagging = "StampCard";
     //console.log(isRequiredStartEndDate + "," + isCampaignExpired + "," + CampaignDayLeft)
-    //alert("FloatPanel_AyohaCardManagement_PreviewCard_AyohaUserCardShow");
-  
+  //alert(isRequiredStartEndDate);
 
     
    
@@ -2838,6 +2837,8 @@ Ext.getCmp('htmlFloatPanel_AyohaCardManagement_PreviewCard_EnterpriseName').setH
 var No = 0;
 
 
+
+
 if (MembershipTag=="NO"){
     _DataStore_AyohaUserStampCardLoadByStampCampaignCodeEnterpriseAccNoShowHideStore.getProxy().setExtraParam('StampCampaignCode', strStampCampaignCode);
     _DataStore_AyohaUserStampCardLoadByStampCampaignCodeEnterpriseAccNoShowHideStore.getProxy().setExtraParam('EnterpriseAccNo',EnterpriseAccNo);
@@ -2849,7 +2850,7 @@ if (MembershipTag=="NO"){
         callback: function(records, operation, success) {
             if (success && records.length > 0) {
 
-
+           
                
                 for (var i = 0; i < records.length; i++) {
                     var rec = records[i];
@@ -2994,6 +2995,12 @@ if (MembershipTag=="NO"){
 }
 
 if (MembershipTag=="YES"){
+
+
+
+    // alert('strStampCampaignCode:'+strStampCampaignCode );
+    // alert('EnterpriseAccNo:'+EnterpriseAccNo );
+    // alert('SubscriberAccNo:'+SubscriberAccNo );
     _DataStore_AyohaUserStampCardLoadByStampCampaignCodeEnterpriseAccNoShowHideSubscriberAccNoStore.getProxy().setExtraParam('StampCampaignCode', strStampCampaignCode);
     _DataStore_AyohaUserStampCardLoadByStampCampaignCodeEnterpriseAccNoShowHideSubscriberAccNoStore.getProxy().setExtraParam('EnterpriseAccNo',EnterpriseAccNo);
     _DataStore_AyohaUserStampCardLoadByStampCampaignCodeEnterpriseAccNoShowHideSubscriberAccNoStore.getProxy().setExtraParam('SubscriberAccNo',SubscriberAccNo);
@@ -3004,7 +3011,9 @@ if (MembershipTag=="YES"){
     
     _DataStore_AyohaUserStampCardLoadByStampCampaignCodeEnterpriseAccNoShowHideSubscriberAccNoStore.load({
         callback: function(records, operation, success) {
+         
             if (success && records.length > 0) {
+              //  alert('Load Stamp Card Success'+records.length );
                 for (var i = 0; i < records.length; i++) {
                     var rec = records[i];
     

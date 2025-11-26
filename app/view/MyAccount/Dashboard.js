@@ -279,14 +279,49 @@ Ext.define('ianMizi.view.MyAccount.Dashboard', {
        
        
        
-       
+                               {
+                                xtype: 'container',
+                                margin: '0 10 0 0',
+                                // hidden: true,
+                                style: 'background-color: transparent;',
+                               // style: 'border-right:2px none grey;border-left:2px none grey;border-bottom:2px none grey;border-top:2px  none grey;background-color: #fac;background-image: linear-gradient(#c800ffc9,#c800ffc9);border-radius: 70px 70px 70px 70px;',
+                                height: 48,
+                                width: 48,
+                                // margin: '70 0 0 0',
+                              //  id: 'containerMyAccount_Dashboard_MenuBottom_QrCodeScanInner',
+                                layout: {
+
+                                    type: 'vbox',
+                                    pack: 'center',
+                                    align: 'center'
+                                },
+                                items: [
+                                    {
+                                        //xtype: 'button',
+                                        //height: 110,
+                                        //width: 110,
+                                        margin: '0 0 0 0',
+                                       // id: 'btnMyAccount_Dashboard_MenuBottom_QrCodeScan',
+                                        //html: '<img src="resources/icons/scanQRcodeGrey.png" width="30" height="30" alt="Company Name">',
+                                        html: '<img src="resources/icons/AiYoha01.png" width="26" height="30" alt="Company Name">',
+                                    },
+                                    {
+                                       margin: '-7 0 0 0',
+                                       html: '<div  style="color:white;text-align: center;font-size:10px;width:100%;margin:0px 0px 0px 0px;font-weight:bold">Ai-Yoha</div>'
+                                   },
+
+
+                                ]
+                            },
+
        
        
                                               /////////new EWALLEt
                                               {
                                                xtype: 'container',
-                                              // margin: '20 3 0 0',
-                                             
+                                          
+                                              //hide on 27-11-2025
+                                              hidden:true,
                                                margin: '-8px 10 0 0',                                        
                                                //zIndex: 100,
                                                id: 'containerMyAccount_DashboardAyohaeWallet',
@@ -338,13 +373,16 @@ Ext.define('ianMizi.view.MyAccount.Dashboard', {
                                                       },
                                                       {
                                                        margin: '0 0 0 0',
+                                                       //hide on 27-11-2025
+                                                       hidden:true,
                                                        id: 'htmlMyAccount_Dashboard_TitleHeaderTxtAyohapoint',
                                                       // html: '<div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-size: 8px;font-weight:normal;color:black;margin:0px 0px 0px 0px">Ayoha e-Wallet</div><br><div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-size: 16px;font-weight:bold;color:black;margin:-25px 0px 0px 0px">RM 00.00</div>'
                                                        html: '<div id="Dashboard_userPts" onclick="Dashboard_ayoharedeem_page();" style="width:100%;background-color: transparent;text-align:center;border: 1px none white;font-size: 12px;font-weight:bold;color:black;margin:0px 0px 0px 0px">2355 pts</div><br><div onclick="Dashboard_ayoharedeem_page();" style="width:100%;background-color: transparent;text-align:center;border: 1px none white;font-size: 10px;font-weight:normal;color:black;margin:-27px 0px 0px 0px">Redeem</div>'
                                                       
        
                                                    },
-       
+
+                                                   
                                                    // {
                                                    //     xtype: 'container',
                                                    //     id: 'containerMyAccount_Dashboard_AyohaEwalletIcon',
@@ -7421,70 +7459,113 @@ xtype: 'spacer'
                                                         },
 
 
+                                                        {
+                                                            xtype: 'container',
+                                                            margin: '0 0 0 0',
+                                                            //hidden: true,
+                                                            style: 'background-color: transparent;',
+                                                            //style: 'border-right:2px solid #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px #ECF0F1 white;background: white;border-radius: 40px 40px 40px 40px;box-shadow:inset 1px 0px 3px 3px #EEEDED ;',
+                                                            // width: '23%',
+                                                            flex: 1.5,
+                                                            // margin: '70 0 0 0',
+                                                            id: 'containerMyAccount_Dashboard_MenuBottom_QrCodeScanOutter',
+                                                            name: 'namecontainerMyAccount_Dashboard_MenuBottom_QrCodeScanOutter',
+                                                            layout: {
+   
+                                                                type: 'vbox',
+                                                                pack: 'start',
+                                                                align: 'center'
+                                                            },
+                                                            items: [
+                                                                {
+                                                                    xtype: 'container',
+                                                                    // margin: '-70 0 0 -100',
+                                                                    // hidden: true,
+                                                                    //style: 'background-color: white;',
+                                                                    style: 'border-right:2px none grey;border-left:2px none grey;border-bottom:2px none grey;border-top:2px  none grey;background-color: #fac;background-image: linear-gradient(#c800ffc9,#ff00de75);border-radius: 70px 70px 70px 70px;',
+                                                                    height: 48,
+                                                                    width: 87,
+                                                                    // margin: '70 0 0 0',
+                                                                    id: 'containerMyAccount_Dashboard_MenuBottom_QrCodeScanInner',
+                                                                    layout: {
+   
+                                                                        type: 'vbox',
+                                                                        pack: 'center',
+                                                                        align: 'center'
+                                                                    },
+                                                                    items: [
+                                                                        {
+                                                                            //xtype: 'button',
+                                                                            //height: 110,
+                                                                            //width: 110,
+                                                                            margin: '5 0 0 0',
+                                                                            id: 'btnMyAccount_Dashboard_MenuBottom_QrCodeScan',
+                                                                            html: '<img src="resources/icons/scanQRcodeGrey.png" width="30" height="30" alt="Company Name">',
+                                                                           // html: '<img src="resources/icons/AiYoha.png" width="30" height="30" alt="Company Name">',
+                                                                        },
+                                                                      
+   
+   
+                                                                    ]
+                                                                },
+                                                            ]
+                                                        },
 
 
+                                                    //  {
+                                                    //      xtype: 'container',
+                                                    //      margin: '0 0 0 0',
+                                                    //      //hidden: true,
+                                                    //      style: 'background-color: transparent;',
+                                                    //      //style: 'border-right:2px solid #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px #ECF0F1 white;background: white;border-radius: 40px 40px 40px 40px;box-shadow:inset 1px 0px 3px 3px #EEEDED ;',
+                                                    //      // width: '23%',
+                                                    //      flex: 1.5,
+                                                    //      // margin: '70 0 0 0',
+                                                    //      id: 'containerMyAccount_Dashboard_MenuBottom_QrCodeScanOutter',
+                                                    //      name: 'namecontainerMyAccount_Dashboard_MenuBottom_QrCodeScanOutter',
+                                                    //      layout: {
 
-                                                     {
-                                                         xtype: 'container',
-                                                         margin: '0 0 0 0',
-                                                         //hidden: true,
-                                                         style: 'background-color: transparent;',
-                                                         //style: 'border-right:2px solid #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px #ECF0F1 white;background: white;border-radius: 40px 40px 40px 40px;box-shadow:inset 1px 0px 3px 3px #EEEDED ;',
-                                                         // width: '23%',
-                                                         flex: 1.5,
-                                                         // margin: '70 0 0 0',
-                                                         id: 'containerMyAccount_Dashboard_MenuBottom_QrCodeScanOutter',
-                                                         name: 'namecontainerMyAccount_Dashboard_MenuBottom_QrCodeScanOutter',
-                                                         layout: {
+                                                    //          type: 'vbox',
+                                                    //          pack: 'start',
+                                                    //          align: 'center'
+                                                    //      },
+                                                    //      items: [
+                                                    //          {
+                                                    //              xtype: 'container',
+                                                    //              // margin: '-70 0 0 -100',
+                                                    //              // hidden: true,
+                                                    //              //style: 'background-color: white;',
+                                                    //              style: 'border-right:2px none grey;border-left:2px none grey;border-bottom:2px none grey;border-top:2px  none grey;background-color: #fac;background-image: linear-gradient(#c800ffc9,#c800ffc9);border-radius: 70px 70px 70px 70px;',
+                                                    //              height: 48,
+                                                    //              width: 87,
+                                                    //              // margin: '70 0 0 0',
+                                                    //              id: 'containerMyAccount_Dashboard_MenuBottom_QrCodeScanInner',
+                                                    //              layout: {
 
-                                                             type: 'vbox',
-                                                             pack: 'start',
-                                                             align: 'center'
-                                                         },
-                                                         items: [
-                                                             {
-                                                                 xtype: 'container',
-                                                                 // margin: '-70 0 0 -100',
-                                                                 // hidden: true,
-                                                                 //style: 'background-color: white;',
-                                                                 style: 'border-right:2px none grey;border-left:2px none grey;border-bottom:2px none grey;border-top:2px  none grey;background-color: #fac;background-image: linear-gradient(#c800ffc9,#ff00de75);border-radius: 70px 70px 70px 70px;',
-                                                                 height: 48,
-                                                                 width: 87,
-                                                                 // margin: '70 0 0 0',
-                                                                 id: 'containerMyAccount_Dashboard_MenuBottom_QrCodeScanInner',
-                                                                 layout: {
-
-                                                                     type: 'vbox',
-                                                                     pack: 'center',
-                                                                     align: 'center'
-                                                                 },
-                                                                 items: [
-                                                                     {
-                                                                         //xtype: 'button',
-                                                                         //height: 110,
-                                                                         //width: 110,
-                                                                         margin: '5 0 0 0',
-                                                                         id: 'btnMyAccount_Dashboard_MenuBottom_QrCodeScan',
-                                                                         html: '<img src="resources/icons/scanQRcodeGrey.png" width="30" height="30" alt="Company Name">',
-                                                                         //    html: '<div style="border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid white;background: white;border-radius: 20px 20px 20px 20px;width:70px;height:70px" ><img src="resources/icons/picprofile.png" width="30" height="30" alt="Company Name"></div>',
-                                                                         //ui: 'plain',
-                                                                         //handler: function () {
-
-
-                                                                         //    //Ext.getCmp('mainView').setHidden(true);
-                                                                         //    //FloatPanel_AyohaeWallet_IconHide();
-
-                                                                         //    //  FloatPanel_QrCodeScanner_ScanCampaignShow();
-
-                                                                         //}
-                                                                     },
+                                                    //                  type: 'vbox',
+                                                    //                  pack: 'center',
+                                                    //                  align: 'center'
+                                                    //              },
+                                                    //              items: [
+                                                    //                  {
+                                                    //                      //xtype: 'button',
+                                                    //                      //height: 110,
+                                                    //                      //width: 110,
+                                                    //                      margin: '0 0 0 0',
+                                                    //                      id: 'btnMyAccount_Dashboard_MenuBottom_QrCodeScan',
+                                                    //                      //html: '<img src="resources/icons/scanQRcodeGrey.png" width="30" height="30" alt="Company Name">',
+                                                    //                      html: '<img src="resources/icons/AiYoha.png" width="30" height="30" alt="Company Name">',
+                                                    //                  },
+                                                    //                  {
+                                                    //                     margin: '-7 0 0 0',
+                                                    //                     html: '<div  style="color:white;text-align: center;font-size:10px;width:100%;margin:0px 0px 0px 0px;">AiYoha Copilot</div>'
+                                                    //                 },
 
 
-
-                                                                 ]
-                                                             },
-                                                         ]
-                                                     },
+                                                    //              ]
+                                                    //          },
+                                                    //      ]
+                                                    //  },
 
 ////////merchant reward
 {
@@ -7955,66 +8036,66 @@ xtype: 'spacer'
                       },
 
 
-                      {
-                        xtype: 'container',
-                        width: '100%',
-                        zIndex:10,
-                        height: 48,
-                        docked: 'bottom',    
-                        hidden:true,
-                        //margin: '0 0 0 0',
-                       id: 'containerAyohaMerchantRewardBottom_Search',
-                      // style: 'background-color:transparent',
-                       style:"background: linear-gradient(0deg, #FFF1F9 0%, #F3E8FF 0%);",
-                        // scrollable: {
-                        //     direction: 'horizontal',
-                        //     directionLock: true,
-                        //     indicators: false
-                        // },
-                        layout: {
-                            type: 'hbox',
-                            pack: 'center',
-                            align: 'center',
-                        },
-                        items: [
-                            {  height: 48,                              
-                                width: '100%',
-                                html:
-                                '<div id="AyohaSearchStrong2">' +
-                                  '<div class="search-wrapper">' +
-                                    '<span class="ico" aria-hidden="true">' +
-                                      '<svg width="18" height="18" viewBox="0 0 24 24">' +
-                                        '<circle cx="11" cy="11" r="6" stroke="#ff00de" stroke-width="2" fill="none"></circle>' +
-                                        '<line x1="15" y1="15" x2="20" y2="20" stroke="#ff00de" stroke-width="2" stroke-linecap="round"></line>' +
-                                      '</svg>' +
-                                    '</span>' +
-                                    '<input type="search" id="txtSearchMerchant" placeholder="Search merchant name,product" />' +
-                                  '</div>' +
-                                '</div>'
-                              // html:  '<div id="AyohaSearchStrong1" style="max-width:560px;margin:10px auto 14px;"><div class="pill"><span class="ico" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24"><defs><linearGradient id="ayohaGradS1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff00de"/><stop offset="1" stop-color="#c800ff"/></linearGradient></defs><circle cx="10" cy="10" r="7" stroke="url(#ayohaGradS1)" stroke-width="2" fill="none"/><line x1="15" y1="15" x2="21" y2="21" stroke="url(#ayohaGradS1)" stroke-width="2" stroke-linecap="round"/></svg></span><input type="text" id="txtSearchMembershipCardList" placeholder="Search cards, merchants, perks…" autocapitalize="none" autocorrect="off" oninput="this.parentNode.querySelector(\\\'.clear\\\').style.display=this.value?\\\'inline-flex\\\':\\\'none\\\'"><button class="clear" type="button" aria-label="Clear search" onclick="var i=this.parentNode.querySelector(\\\'input\\\');i.value=\\\'\\\';i.focus();this.style.display=\\\'none\\\';"><svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 8 L16 16 M16 8 L8 16" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></button></div></div>',
-                            },
-                            // {
-                            //     xtype: 'container',
-                            //     height: 40,
-                            //     width: 180,
-                            //     style: 'background-color:transparent;',
-                            //                    // style: ' background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);',style: ' background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);',
-                            //                     layout: {
-                            //                         type: 'hbox',
-                            //                         pack: 'center',
-                            //                         align: 'center',
-                            //                     },
-                            //                     items:[
+                    //   {
+                    //     xtype: 'container',
+                    //     width: '100%',
+                    //     zIndex:10,
+                    //     height: 48,
+                    //     docked: 'bottom',    
+                    //     hidden:true,
+                    //     //margin: '0 0 0 0',
+                    //    id: 'containerAyohaMerchantRewardBottom_Search',
+                    //   // style: 'background-color:transparent',
+                    //    style:"background: linear-gradient(0deg, #FFF1F9 0%, #F3E8FF 0%);",
+                    //     // scrollable: {
+                    //     //     direction: 'horizontal',
+                    //     //     directionLock: true,
+                    //     //     indicators: false
+                    //     // },
+                    //     layout: {
+                    //         type: 'hbox',
+                    //         pack: 'center',
+                    //         align: 'center',
+                    //     },
+                    //     items: [
+                    //         {  height: 48,                              
+                    //             width: '100%',
+                    //             html:
+                    //             '<div id="AyohaSearchStrong2">' +
+                    //               '<div class="search-wrapper">' +
+                    //                 '<span class="ico" aria-hidden="true">' +
+                    //                   '<svg width="18" height="18" viewBox="0 0 24 24">' +
+                    //                     '<circle cx="11" cy="11" r="6" stroke="#ff00de" stroke-width="2" fill="none"></circle>' +
+                    //                     '<line x1="15" y1="15" x2="20" y2="20" stroke="#ff00de" stroke-width="2" stroke-linecap="round"></line>' +
+                    //                   '</svg>' +
+                    //                 '</span>' +
+                    //                 '<input type="search" id="txtSearchMerchant" placeholder="Search merchant name,product" />' +
+                    //               '</div>' +
+                    //             '</div>'
+                    //           // html:  '<div id="AyohaSearchStrong1" style="max-width:560px;margin:10px auto 14px;"><div class="pill"><span class="ico" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24"><defs><linearGradient id="ayohaGradS1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff00de"/><stop offset="1" stop-color="#c800ff"/></linearGradient></defs><circle cx="10" cy="10" r="7" stroke="url(#ayohaGradS1)" stroke-width="2" fill="none"/><line x1="15" y1="15" x2="21" y2="21" stroke="url(#ayohaGradS1)" stroke-width="2" stroke-linecap="round"/></svg></span><input type="text" id="txtSearchMembershipCardList" placeholder="Search cards, merchants, perks…" autocapitalize="none" autocorrect="off" oninput="this.parentNode.querySelector(\\\'.clear\\\').style.display=this.value?\\\'inline-flex\\\':\\\'none\\\'"><button class="clear" type="button" aria-label="Clear search" onclick="var i=this.parentNode.querySelector(\\\'input\\\');i.value=\\\'\\\';i.focus();this.style.display=\\\'none\\\';"><svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 8 L16 16 M16 8 L8 16" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></button></div></div>',
+                    //         },
+                    //         // {
+                    //         //     xtype: 'container',
+                    //         //     height: 40,
+                    //         //     width: 180,
+                    //         //     style: 'background-color:transparent;',
+                    //         //                    // style: ' background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);',style: ' background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);',
+                    //         //                     layout: {
+                    //         //                         type: 'hbox',
+                    //         //                         pack: 'center',
+                    //         //                         align: 'center',
+                    //         //                     },
+                    //         //                     items:[
                                                  
-                            //                         // {  height: 60,
-                            //                         //     width: '5%',
-                            //                         //     html:  '<div  style="font-size:12px;font-weight:bold;color:black;text-align:center">0</div>',
-                            //                         // }
-                            //                     ]
-                            // },
+                    //         //                         // {  height: 60,
+                    //         //                         //     width: '5%',
+                    //         //                         //     html:  '<div  style="font-size:12px;font-weight:bold;color:black;text-align:center">0</div>',
+                    //         //                         // }
+                    //         //                     ]
+                    //         // },
                            
-                        ]
-                    },
+                    //     ]
+                    // },
 
 
 
@@ -9413,7 +9494,7 @@ function initializeContainerSingleTapEvent() {
     var containerViewElMenuBottom_MyMembershipCard = containerViewMenuBottom_MyMembershipCard.element;
     containerViewElMenuBottom_MyMembershipCard.on('tap',
       function (event, node, options, eOpts) {
-        Ext.getCmp('containerAyohaMerchantRewardBottom_Search').setHidden(true);
+      //  Ext.getCmp('containerAyohaMerchantRewardBottom_Search').setHidden(true);
         SideMenuMembershipCardListShow();
         Ext.getCmp('htmlDashboardMenuBottom_HomeTxt').setHtml('<div style="color:grey;text-align: center;font-size:8px;width:100%;font-weight:normal">Home</div>');
         Ext.getCmp('htmlDashboardMenuBottom_AyohaRewardTxt').setHtml('<div style="color:grey;text-align: center;font-size:8px;width:100%;font-weight:normal">Ayoha</div><br><div style="color:grey;text-align: center;font-size:8px;width:100%;margin:-25px 0px 0px 0px;font-weight:normal">Reward</div>');
@@ -9449,7 +9530,8 @@ function initializeContainerSingleTapEvent() {
     containerViewElMenuBottom_AyohaReward.on('tap',
       function (event, node, options, eOpts) {
         SideMenuMembershipCardListHide();
-        Ext.getCmp('containerAyohaMerchantRewardBottom_Search').setHidden(true);
+       
+       // Ext.getCmp('containerAyohaMerchantRewardBottom_Search').setHidden(true);
           Ext.getCmp('htmlDashboardMenuBottom_HomeTxt').setHtml('<div style="color:purple;text-align: center;font-size:8px;width:100%;font-weight:bold">Home</div>');
           Ext.getCmp('htmlDashboardMenuBottom_AyohaRewardTxt').setHtml('<div style="color:grey;text-align: center;font-size:8px;width:100%;">Ayoha</div><br><div style="color:grey;text-align: center;font-size:8px;width:100%;margin:-25px 0px 0px 0px">Reward</div>');
           Ext.getCmp('htmlDashboardMenuBottom_MerchantPerkTxt').setHtml('<div style="color:grey;text-align: center;font-size:8px;width:100%;">Merchant</div><br><div style="color:grey;text-align: center;font-size:8px;width:100%;margin:-27px 0px 0px 0px">Perks</div>');
@@ -9482,7 +9564,7 @@ function initializeContainerSingleTapEvent() {
     var containerViewElMenuBottom_MyStore = containerViewMenuBottom_MyStore.element;
     containerViewElMenuBottom_MyStore.on('tap',
       function (event, node, options, eOpts) {
-        Ext.getCmp('containerAyohaMerchantRewardBottom_Search').setHidden(true);
+       // Ext.getCmp('containerAyohaMerchantRewardBottom_Search').setHidden(true);
         SideMenuMembershipCardListHide();
         Ext.getCmp('htmlDashboardMenuBottom_HomeTxt').setHtml('<div style="color:grey;text-align: center;font-size:8px;width:100%;font-weight:normal">Home</div>');
         Ext.getCmp('htmlDashboardMenuBottom_AyohaRewardTxt').setHtml('<div style="color:purple;text-align: center;font-size:8px;width:100%;font-weight:bold">Ayoha</div><br><div style="color:purple;text-align: center;font-size:8px;width:100%;margin:-25px 0px 0px 0px;font-weight:bold">Reward</div>');
@@ -9523,7 +9605,7 @@ function initializeContainerSingleTapEvent() {
         Ext.getCmp('htmlDashboardMenuBottom_MyMembershipCardTxt').setHtml('<div style="color:grey;text-align: center;font-size:8px;width:100%;font-weight:normal">My Membership</div><br><div style="color:grey;text-align: center;font-size:8px;width:100%;margin:-25px 0px 0px 0px;font-weight:normal">Card</div>');
       is_FloatPanel_DashboardMerchantRewardHide = 'Y';
       AyohaMerchant_AyohaMerchantRewardLoad();
-    
+      SideMenuAyohaMerchantRewardShow();
        Ext.getCmp('tabpanelMyAccount_Dashboard').setActiveItem(2);
        animatedClickTabExt('containerMyAccount_Dashboard_MenuBottom_MerchantperkBottom');
        AppState.MainDashboard.MainDashboardBottomkMenuTabTag = "MerchantReward";
@@ -9531,7 +9613,7 @@ function initializeContainerSingleTapEvent() {
       // Ext.getCmp('htmlAyohaMerchantRedemptionHeader_ButtonPerks_Points').setHtml('<div style="color:#9CA3AF;text-align: center;font-size:12px;width:100%;font-weight:normal">Point Perks</div>');
        Ext.getCmp('tabpanelAyohaMerchantRewards').setActiveItem(0);
        animatedClickTabExt_AyohaMerchantReward('containerAyohaMerchantRedemptionHeader_ButtonPerks_Stamps');
-       Ext.getCmp('containerAyohaMerchantRewardBottom_Search').setHidden(false);
+      // Ext.getCmp('containerAyohaMerchantRewardBottom_Search').setHidden(false);
 
        
       }
@@ -9568,7 +9650,7 @@ function initializeContainerSingleTapEvent() {
       Ext.getCmp('mainView').setHidden(true);
       FloatPanel_QrCodeScanner_ScanCampaignShow();
       AppState.MainDashboard.MainDashboardBottomkMenuTabTag = "QRScan";
-      Ext.getCmp('containerAyohaMerchantRewardBottom_Search').setHidden(true);
+      //Ext.getCmp('containerAyohaMerchantRewardBottom_Search').setHidden(true);
       // FloatPanel_ScannedMerchantShow();
          
          

@@ -757,7 +757,7 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
 {
     xtype: 'tabpanel',
     style: "background-color: transparent;", 
-   margin: '0 0 0 0',
+   margin: '10 0 0 0',
      id: 'tabpanelAyohaMerchantRewards',
      width: '100%',
      height: '100%',
@@ -797,29 +797,22 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
 
 
 {
-//     html:'<div class="perk-tabs">'+
-//     '<button class="perk-btn stamp active" onclick="switchPerkTab_Stamp(this,\'NA\');">Eligible Perks</button>'+
-//     '<button class="perk-btn stamp" onclick="switchPerkTab_Stamp(this,\'Submitted\');">Redeem</button>'+
-//     '<button class="perk-btn stamp" onclick="switchPerkTab_Stamp(this,\'Approved\')">Approved</button>'+
-//     '<button class="perk-btn stamp" onclick="switchPerkTab_Stamp(this,\'Expired\')">Expired</button>'+
-//   '</div>'
-
 
 html:
 '<div class="perk-tabs">'+
-  '<button class="perk-btn stamp active" onclick="switchPerkTab_Stamp(this,\'NA\');">' +
+  '<button id="btnStampEligible" class="perk-btn stamp active" onclick="switchPerkTab_Stamp(this,\'NA\',0);">' +
     '<span class="perk-label">Eligible Perks</span>' +
     '<span id="cntStampEligible" class="perk-count">(3)</span>' +
   '</button>'+
-  '<button class="perk-btn stamp" onclick="switchPerkTab_Stamp(this,\'Submitted\');">' +
+  '<button id="btnStampSubmitted" class="perk-btn stamp" onclick="switchPerkTab_Stamp(this,\'Submitted\',1);">' +
     '<span class="perk-label">Redeem</span>' +
     '<span id="cntStampRedeem" class="perk-count"></span>' +
   '</button>'+
-  '<button class="perk-btn stamp" onclick="switchPerkTab_Stamp(this,\'Approved\');">' +
+  '<button id="btnStampApproved" class="perk-btn stamp" onclick="switchPerkTab_Stamp(this,\'Approved\',2);">' +
     '<span class="perk-label">Approved</span>' +
     '<span id="cntStampApproved" class="perk-count"></span>' +
   '</button>'+
-  '<button class="perk-btn stamp" onclick="switchPerkTab_Stamp(this,\'Expired\');">' +
+  '<button id="btnStampExpired" class="perk-btn stamp" onclick="switchPerkTab_Stamp(this,\'Expired\',3);">' +
     '<span class="perk-label">Expired</span>' +
     '<span id="cntStampExpired" class="perk-count"></span>' +
   '</button>'+
@@ -835,18 +828,49 @@ html:
 
 {
     xtype: 'container',
-    style: "background-color: transparent;", 
-   margin: '0 0 0 0',
-     id: 'containerAyohaMerchantRewards_StampStatus',
-     width: '100%',
-     //height: '100%',
-     height: 400,
-     layout: {
+    width: '100%',
+    height: 47,  
+    style: 'background-color:transparent;',  
+    /// hidden:true,
+   
+    layout: {
         type: 'vbox',
         pack: 'start',
         align: 'center',
     },
     items:[
+        {
+            width: '100%',
+            height: 47,  
+            margin: '-5 0 0 0',  
+            html: '<div style="background-color:transparent; padding: 15px;">' +
+            '<input type="text" placeholder="Search Merchant or Perk..." ' +
+              'style="width: 100%; box-sizing: border-box; padding: 10px 20px 10px 45px; ' +
+                     'border-radius: 30px; border: 1px solid #e0e0e0; background-color: #ffffff; ' +
+                     'font-family: sans-serif; font-size: 12px; color: #333; outline: none; ' +
+                     'box-shadow: 0 2px 5px rgba(0,0,0,0.05); ' +
+                     'background-image: url(\'data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%23999999%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22><circle cx=%2211%22 cy=%2211%22 r=%228%22></circle><line x1=%2221%22 y1=%2221%22 x2=%2216.65%22 y2=%2216.65%22></line></svg>\'); ' +
+                     'background-repeat: no-repeat; background-position: 15px center; background-size: 18px;" ' +
+            '>' +
+          '</div>',
+        }
+    ]
+},
+
+// {
+//     xtype: 'container',
+//     style: "background-color: transparent;", 
+//    margin: '0 0 0 0',
+//      id: 'containerAyohaMerchantRewards_StampStatus',
+//      width: '100%',
+//      //height: '100%',
+//      height: 400,
+//      layout: {
+//         type: 'vbox',
+//         pack: 'start',
+//         align: 'center',
+//     },
+//     items:[
         {
             xtype: 'container',
             width: '100%',
@@ -862,84 +886,340 @@ html:
             }, 
             items:[
                 
-                    {
-                        xtype: 'list',
-                        width: '95%',
-                        height: 400,
-                       
-                        // height: '98%',
-                        // flex: 1,
-                      //  store: _DataStore_AyohaUserDashBoard_StampCardLoadByStampedRedeemStatusStore,
-                        // store:'AyohaUserDashBoardNearestRedeemItemListStore',
-                       // grouped:true,
-                        id: 'listTabpanelAyohaMerchantRewards_StampsStatus',
-                        mode: 'SINGLE',
-                        scrollable: {
-                            direction: 'vertical',
-                            indicators: {
-                                y: {
-                                    autoHide: true
-                                },
-                                x: {
-                                    autoHide: true
-                                }
+
+{
+    xtype: 'carousel',
+    style: "background-color: transparent;", 
+   margin: '0 0 0 0',
+     id: 'carouselAyohaMerchantRewards_Stamps',
+     width: '100%',
+     height:'100%',
+    // height: 350,
+    //// tabBarPosition: 'top',
+    // ui: 'plain',
+    listeners: {
+
+        activeitemchange: function (container, newCard, oldCard, index) {
+        
+
+     
+
+
+           // globalFloatLoyaltyCardPointCarouselIndex = container.getActiveIndex();
+            var eligibleBtn = document.getElementById('btnStampEligible');
+            var submittedBtn = document.getElementById('btnStampSubmitted');
+            var approvedBtn = document.getElementById('btnStampApproved');
+            var expiredBtn = document.getElementById('btnStampExpired');
+
+if(container.getActiveIndex()==0){
+switchPerkTab_Stamp(eligibleBtn, 'NA', 0);
+}
+if(container.getActiveIndex()==1){
+switchPerkTab_Stamp(submittedBtn, 'Submitted', 1);
+}if(container.getActiveIndex()==2){
+switchPerkTab_Stamp(approvedBtn, 'Approved', 2);
+}if(container.getActiveIndex()==3){
+switchPerkTab_Stamp(expiredBtn, 'Expired', 3);
+}
+            
+          
+        
+
+        },
+
+    },
+    items:[
+        ///////Eligible Stamp 
+        {
+            xtype: 'container',
+            flex : 1,                 // 🌟 akan ambil semua ruang tengah
+            layout: 'fit',
+            margin: '5 0 0 0',
+            style: "background-color: transparent;",
+            title: 'StamptStatus_Eligible',
+            id:'containercarouselAyohaMerchantRewards_Stamp_Eligible',
+            listeners: {
+                painted: function(pnl) {
+                    var h = pnl.getHeight(); // atau pnl.element.getHeight()
+                    containerPerkListglobalHeight = h;
+                  
+                }
+            },
+            layout: {
+                type: 'vbox',
+                pack: 'start',
+                align: 'center',
+            },
+            items:[
+                {
+                    xtype: 'list',
+                    width: '95%',
+                    height: 500,
+                   // margin: '0 0 0 0',
+                    // height: '98%',
+                    // flex: 1,
+                  //  store: _DataStore_AyohaUserDashBoard_StampCardLoadByStampedRedeemStatusStore,
+                    // store:'AyohaUserDashBoardNearestRedeemItemListStore',
+                   // grouped:true,
+                    id: 'listTabpanelAyohaMerchantRewards_StampsStatus_NA',
+                    mode: 'SINGLE',
+                    scrollable: {
+                        direction: 'vertical',
+                        indicators: {
+                            y: {
+                                autoHide: true
+                            },
+                            x: {
+                                autoHide: true
                             }
-                        },
-                        style: 'background-color:rgba(255,255,255, 0.1);',
-                        // width: '100%',
-                        disableSelection: true,
-                        itemTpl: '<div class="myContent" style="background-color:white;width:100%;height:80px;border-radius: 10px 10px 10px 10px;">' +
-
-
-                         '<table style="border-collapse:collapse;border-spacing:0;width:110%;background-color:white;margin:-10px 0px 0px -15px;height:90px;"><tr onclick="AyohaMerchantReward_openStampCardRedemption({ID})"><td style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:0px 7px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:20%;vertical-align:center">{ModifiedStampContent}</td><td style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;padding:0px 0px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:80%;vertical-align:center">{StampContentNote}<br><font style="font-family:Arial, sans-serif;font-size:12px;font-weight:normal;">{EnterpriseName}<br>End:{EndDate} - {CampaignDayLeft} Day Left</font></td></tr></table>'
-
-                             + '</div>',
-                      
-                        //height: '100%',
-                      
-                        emptyText: '<div  style="background-color:transparent;width:100%;height100%;">Hai!, you have no redemption items yet.Go to Ayoha Mechant Menu ,get their Membership card and then collect your redemptions items!</div>',
-                        //listeners: {
-                        //    itemsingletap: function (list, idx, target, records, evt) {
-
-                        //        //var EnterpriseHQAccountNo = records.get('CampaignEnterpriseHQAccNo');
-                        //        //var EnterpriseAccountNo = records.get('CampaignEnterpriseAccNo');
-                        //        //var MembershipCardCode = records.get('MembershipCardCode');
-                        //        //var ID = records.get('ID');
-                        //        ////FloatPanel_NearestRedemption_EditCardShow_Edit(ID);
-                        //        //FloatPanel_MembershipCardList_UpgradeShow_MyMembershipCard(EnterpriseHQAccountNo, EnterpriseAccountNo, MembershipCardCode, ID);
-                        //        //setTimeout(function () {
-                        //        //    Ext.getCmp('containerFloatPanel_MembershipCardList_UpgradeBottom').setHidden(true);
-                        //        //    // Ext.getCmp('containerFloatPanel_MembershipCardList_UpgradeBottom').setHidden(true);
-
-                        //        //    Ext.getCmp('htmlFloatPanel_MembershipCardList_Upgrade_TitleHeaderTxt').setHtml('<font size=2 color=white><b>My Membership Card</b></font>');
-                        //        //}, 2000);
-
-
-
-                        //    },
-                        //    deselect: function (list, records) {
-
-                        //    }
-                        //},
-                        listeners: {
-                            itemswipe: function (list, idx, target, record, evt) {
-                                //  To get the selection you should use getSelection() instead
-                                //////var selected = list.getActiveItem();
-                                //////alert(list.getActiveItem());
-                                //////if (!selected) { return; }
-
-                                //////var selectedIndex = selected[0];
-                                //////alert([selectedIndex, idx]);
-                                //Ext.Msg.alert('itemswipe', idx);
-
-
-                            } // itemswipe
                         }
-
                     },
-                
+                    style: 'background-color:rgba(255,255,255, 0.1);',
+                    // width: '100%',
+                    disableSelection: true,
+                   itemTpl: '<div class="myContent" style="background-color:white;width:100%;height:80px;border-radius: 10px 10px 10px 10px;;margin:0px 0px 0px 0px;">' +
+                 
+                   // '<table style="border-collapse:collapse;border-spacing:0;width:110%;background-color:white;margin:-10px 0px 0px -15px;height:90px;"><tr onclick="AyohaMerchantReward_openStampCardRedemption({ID})"><td style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:0px 7px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:20%;vertical-align:center">{ModifiedStampContent}</td><td style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;padding:0px 0px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:80%;vertical-align:center">{StampContentNote}<br><font style="font-family:Arial, sans-serif;font-size:12px;font-weight:normal;">{EnterpriseName}<br>End:{EndDate} - {CampaignDayLeft} Day Left</font></td></tr></table>'
+                    '<table style="border-collapse:collapse;border-spacing:0;width:110%;background-color:white;margin:-20px 0px 0px -15px;height:80px;"><tr onclick="AyohaMerchantReward_openStampCardRedemption({ID})"><td style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:0px 7px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:20%;vertical-align:center">{ModifiedStampContent}</td><td style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;padding:0px 0px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:80%;vertical-align:center">{StampContentNote}<br><font style="font-family:Arial, sans-serif;font-size:12px;font-weight:normal;">{EnterpriseName}<br>End:{EndDate} - {CampaignDayLeft} Day Left</font></td></tr></table>'
+        
+                         + '</div>',
+                  
+                    //height: '100%',
+                  
+                    emptyText: '<div  style="background-color:transparent;width:100%;height100%;">Hai!, you have no redemption items yet.Go to Ayoha Mechant Menu ,get their Membership card and then collect your redemptions items!</div>',
+                  
+                    listeners: {
+                        itemswipe: function (list, idx, target, record, evt) {
+                   
+        
+                        } // itemswipe
+                    }
+        
+                },
             ]
-        }
+        },
+       
+        ///////Submitted Stamp 
+        {
+            xtype: 'container',
+            flex : 1,                 // 🌟 akan ambil semua ruang tengah
+            layout: 'fit',
+            margin: '5 0 0 0',
+            style: "background-color: transparent;",
+            title: 'StamptStatus_Submitted',
+            id:'containercarouselAyohaMerchantRewards_Stamp_Submitted',
+            listeners: {
+                painted: function(pnl) {
+                    var h = pnl.getHeight(); // atau pnl.element.getHeight()
+                    containerPerkListglobalHeight = h;
+                  
+                }
+            },
+            layout: {
+                type: 'vbox',
+                pack: 'start',
+                align: 'center',
+            },
+            items:[
+                {
+                    xtype: 'list',
+                    width: '95%',
+                    height: 500,
+                   
+                    // height: '98%',
+                    // flex: 1,
+                  //  store: _DataStore_AyohaUserDashBoard_StampCardLoadByStampedRedeemStatusStore,
+                    // store:'AyohaUserDashBoardNearestRedeemItemListStore',
+                   // grouped:true,
+                    id: 'listTabpanelAyohaMerchantRewards_StampsStatus_Submitted',
+                    mode: 'SINGLE',
+                    scrollable: {
+                        direction: 'vertical',
+                        indicators: {
+                            y: {
+                                autoHide: true
+                            },
+                            x: {
+                                autoHide: true
+                            }
+                        }
+                    },
+                    style: 'background-color:rgba(255,255,255, 0.1);',
+                    // width: '100%',
+                    disableSelection: true,
+                    itemTpl: '<div class="myContent" style="background-color:white;width:100%;height:80px;border-radius: 10px 10px 10px 10px;">' +
+        
+        
+                     '<table style="border-collapse:collapse;border-spacing:0;width:110%;background-color:white;margin:-10px 0px 0px -15px;height:90px;"><tr onclick="AyohaMerchantReward_openStampCardRedemption({ID})"><td style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:0px 7px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:20%;vertical-align:center">{ModifiedStampContent}</td><td style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;padding:0px 0px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:80%;vertical-align:center">{StampContentNote}<br><font style="font-family:Arial, sans-serif;font-size:12px;font-weight:normal;">{EnterpriseName}<br>End:{EndDate} - {CampaignDayLeft} Day Left</font></td></tr></table>'
+        
+                         + '</div>',
+                  
+                    //height: '100%',
+                  
+                    emptyText: '<div  style="background-color:transparent;width:100%;height100%;">Hai!, you have no redemption items yet.Go to Ayoha Mechant Menu ,get their Membership card and then collect your redemptions items!</div>',
+                  
+                    listeners: {
+                        itemswipe: function (list, idx, target, record, evt) {
+                   
+        
+                        } // itemswipe
+                    }
+        
+                },
+            ]
+        },
+      
+         ///////Approved Stamp 
+         {
+            xtype: 'container',
+            flex : 1,                 // 🌟 akan ambil semua ruang tengah
+            layout: 'fit',
+            margin: '5 0 0 0',
+            style: "background-color: transparent;",
+            title: 'StamptStatusApproved',
+            id:'containercarouselAyohaMerchantRewards_Stamp_Approved',
+            listeners: {
+                painted: function(pnl) {
+                    var h = pnl.getHeight(); // atau pnl.element.getHeight()
+                    containerPerkListglobalHeight = h;
+                  
+                }
+            },
+            layout: {
+                type: 'vbox',
+                pack: 'start',
+                align: 'center',
+            },
+            items:[
+                {
+                    xtype: 'list',
+                    width: '95%',
+                    height: 500,
+                   
+                    // height: '98%',
+                    // flex: 1,
+                  //  store: _DataStore_AyohaUserDashBoard_StampCardLoadByStampedRedeemStatusStore,
+                    // store:'AyohaUserDashBoardNearestRedeemItemListStore',
+                   // grouped:true,
+                    id: 'listTabpanelAyohaMerchantRewards_StampsStatus_Approved',
+                    mode: 'SINGLE',
+                    scrollable: {
+                        direction: 'vertical',
+                        indicators: {
+                            y: {
+                                autoHide: true
+                            },
+                            x: {
+                                autoHide: true
+                            }
+                        }
+                    },
+                    style: 'background-color:rgba(255,255,255, 0.1);',
+                    // width: '100%',
+                    disableSelection: true,
+                    itemTpl: '<div class="myContent" style="background-color:white;width:100%;height:80px;border-radius: 10px 10px 10px 10px;">' +
+        
+        
+                     '<table style="border-collapse:collapse;border-spacing:0;width:110%;background-color:white;margin:-10px 0px 0px -15px;height:90px;"><tr onclick="AyohaMerchantReward_openStampCardRedemption({ID})"><td style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:0px 7px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:20%;vertical-align:center">{ModifiedStampContent}</td><td style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;padding:0px 0px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:80%;vertical-align:center">{StampContentNote}<br><font style="font-family:Arial, sans-serif;font-size:12px;font-weight:normal;">{EnterpriseName}<br>End:{EndDate} - {CampaignDayLeft} Day Left</font></td></tr></table>'
+        
+                         + '</div>',
+                  
+                    //height: '100%',
+                  
+                    emptyText: '<div  style="background-color:transparent;width:100%;height100%;">Hai!, you have no redemption items yet.Go to Ayoha Mechant Menu ,get their Membership card and then collect your redemptions items!</div>',
+                  
+                    listeners: {
+                        itemswipe: function (list, idx, target, record, evt) {
+                   
+        
+                        } // itemswipe
+                    }
+        
+                },
+            ]
+         },
+        
+         ///////Expired Stamp 
+         {
+            xtype: 'container',
+            flex : 1,                 // 🌟 akan ambil semua ruang tengah
+            layout: 'fit',
+            margin: '5 0 0 0',
+            style: "background-color: transparent;",
+            title: 'StamptStatusExpired',
+            id:'containercarouselAyohaMerchantRewards_Stamp_Expired',
+            listeners: {
+                painted: function(pnl) {
+                    var h = pnl.getHeight(); // atau pnl.element.getHeight()
+                    containerPerkListglobalHeight = h;
+                  
+                }
+            },
+            layout: {
+                type: 'vbox',
+                pack: 'start',
+                align: 'center',
+            },
+            items:[
+                {
+                    xtype: 'list',
+                    width: '95%',
+                    height: 500,
+                   
+                    // height: '98%',
+                    // flex: 1,
+                  //  store: _DataStore_AyohaUserDashBoard_StampCardLoadByStampedRedeemStatusStore,
+                    // store:'AyohaUserDashBoardNearestRedeemItemListStore',
+                   // grouped:true,
+                    id: 'listTabpanelAyohaMerchantRewards_StampsStatus_Expired',
+                    mode: 'SINGLE',
+                    scrollable: {
+                        direction: 'vertical',
+                        indicators: {
+                            y: {
+                                autoHide: true
+                            },
+                            x: {
+                                autoHide: true
+                            }
+                        }
+                    },
+                    style: 'background-color:rgba(255,255,255, 0.1);',
+                    // width: '100%',
+                    disableSelection: true,
+                    itemTpl: '<div class="myContent" style="background-color:white;width:100%;height:80px;border-radius: 10px 10px 10px 10px;">' +
+        
+        
+                     '<table style="border-collapse:collapse;border-spacing:0;width:110%;background-color:white;margin:-10px 0px 0px -15px;height:90px;"><tr onclick="AyohaMerchantReward_openStampCardRedemption({ID})"><td style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:0px 7px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:20%;vertical-align:center">{ModifiedStampContent}</td><td style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;padding:0px 0px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:80%;vertical-align:center">{StampContentNote}<br><font style="font-family:Arial, sans-serif;font-size:12px;font-weight:normal;">{EnterpriseName}<br>End:{EndDate} - {CampaignDayLeft} Day Left</font></td></tr></table>'
+        
+                         + '</div>',
+                  
+                    //height: '100%',
+                  
+                    emptyText: '<div  style="background-color:transparent;width:100%;height100%;">Hai!, you have no redemption items yet.Go to Ayoha Mechant Menu ,get their Membership card and then collect your redemptions items!</div>',
+                  
+                    listeners: {
+                        itemswipe: function (list, idx, target, record, evt) {
+                   
+        
+                        } // itemswipe
+                    }
+        
+                },
+            ]
+         }
+         
+    ]
+},
+
+
+
+
+
+                   
+                
+        //     ]
+        // }
     ]
 },
 
@@ -1019,6 +1299,7 @@ html:
     //height: 350,
     height:'100%',
     id: 'containerAyohaMerchantRewards_Points',
+    margin: '5 0 0 0',
     //height: '100%',
    // margin: '-150 0 0 0',
    // margin: '-100 0 0 0',
@@ -1073,20 +1354,6 @@ if(container.getActiveIndex()==1){
 }
                 
               
-                //switchPerkTab_Point(this,\'Eligible\',0);
-
-                // if (_FloatLoyaltyCardPoint_isFirstLoad == "Y") {
-                //     console.log("activeitemchange");
-                //     console.log("isFloatLoyaltyCardPointOpen:" + isFloatLoyaltyCardPointOpen);
-                //     if (isFloatLoyaltyCardPointOpen == 'Y') {
-                //         FloatLoyaltyCardPoint_MoveCarousel(globalFloatLoyaltyCardPointCarouselIndex);
-                //         return;
-                //     }
-                  
-                    
-                // }
-               
-
             
 
             },
@@ -1715,7 +1982,7 @@ if(container.getActiveIndex()==1){
                                            xtype: 'container',
                                            width: '100%',
                                            height: '100%',
-                                           margin: '-5 0 0 0',
+                                           margin: '0 0 0 0',
                                            //  hidden: true,
                                            id: 'htmlFloatPanel_DashboardMerchantMembershipContest',
                                            style: "background-color: transparent;",
@@ -2051,7 +2318,7 @@ switchPerkTab_Contest(expiredBtn, 'Expired', 3);
                                            xtype: 'container',
                                            width: '100%',
                                            height: '100%',
-                                           margin: '-5 0 0 0',
+                                           margin: '0 0 0 0',
                                            //  hidden: true,
                                            id: 'htmlFloatPanel_DashboardMerchantMembershipEvent',
                                            style: "background-color: transparent;",
@@ -2333,7 +2600,7 @@ switchPerkTab_Event(expiredBtn, 'Expired', 3);
                         
                         {
                             html:'<div class="perk-tabs">'+
-                            '<button id="btnDiscountEligible" class="perk-btn discount active" onclick="switchPerkTab_Discount(this,\'Eligible\',0);">Eligible Discount</button>'+
+                            '<button id="btnDiscountEligible" class="perk-btn discount active" onclick="switchPerkTab_Discount(this,\'Eligible\',0);">Eligible Perks</button>'+
                             '<button id="btnDiscountRedeemOnline" class="perk-btn discount" onclick="switchPerkTab_Discount(this,\'Redeem_Online\',1);">Redeem Online</button>'+
                             '<button id="btnDiscountRedeemOffline" class="perk-btn discount" onclick="switchPerkTab_Discount(this,\'Redeem_Offline\',2)">Redeem Offline</button>'+
                             '<button id="btnDiscountExpired" class="perk-btn discount" onclick="switchPerkTab_Discount(this,\'Expired\',3)">Expired</button>'+
@@ -4952,12 +5219,13 @@ function AyohaMerchantReward_AyohaUserDashBoard_StampCardLoadByStampedRedeemStat
                    // var record = records[0]; // Access only the first record                 
                    
                     switchPerkTab_Point(document.getElementById('btnPointEligible'), 'Eligible', 0);
-                    Ext.getCmp('listTabpanelAyohaMerchantRewards_StampsStatus').setStore(_DataStore_AyohaUserDashBoard_StampCardLoadByStampedRedeemStatusStore);
+                    Ext.getCmp('listTabpanelAyohaMerchantRewards_StampsStatus_NA').setStore(_DataStore_AyohaUserDashBoard_StampCardLoadByStampedRedeemStatusStore);
                    // AyohaMerchantReward_NearestRedeemItemPointCardStore();
                    AyohaMerchantReward_AyohaRewardVoucherEntitledUserLoadBySubscriberAccNoVoucherTypeStore();
                     
                     // AyohaMerchantReward_AyohaRewardContestLoadBySubscriberAccNoStore();
                 } else {
+                    Ext.getCmp('listTabpanelAyohaMerchantRewards_StampsStatus_NA').setStore(_DataStore_AyohaUserDashBoard_StampCardLoadByStampedRedeemStatusStore);
                     switchPerkTab_Point(document.getElementById('btnPointEligible'), 'Eligible', 0);
                     AyohaMerchantReward_AyohaRewardVoucherEntitledUserLoadBySubscriberAccNoVoucherTypeStore();
                     //AyohaMerchantReward_NearestRedeemItemPointCardStore();
@@ -4984,15 +5252,15 @@ function AyohaMerchantReward_AyohaUserDashBoard_StampCardLoadByStampedRedeemStat
             callback: function (records, operation, success) {
                 if (success && records.length > 0) {
                     var record = records[0]; // Access only the first record
-                    AppState.AyohaMerchantReward.StampPerks=parseInt(record.get('StampEligibleCount'));
-                    Ext.getCmp('listTabpanelAyohaMerchantRewards_StampsStatus').setStore(_DataStore_AyohaUserDashBoard_StampCardLoadByStampedRedeemStatusStore);
+                 
+                    Ext.getCmp('listTabpanelAyohaMerchantRewards_StampsStatus_'+StampedRedeemStatus).setStore(_DataStore_AyohaUserDashBoard_StampCardLoadByStampedRedeemStatusStore);
                    
                    
                     
                     // AyohaMerchantReward_AyohaRewardContestLoadBySubscriberAccNoStore();
                 } else {
-                    AppState.AyohaMerchantReward.StampPerks=0;
-                    Ext.getCmp('listTabpanelAyohaMerchantRewards_StampsStatus').setStore(_DataStore_AyohaUserDashBoard_StampCardLoadByStampedRedeemStatusStore);
+                  
+                    Ext.getCmp('listTabpanelAyohaMerchantRewards_StampsStatus_'+StampedRedeemStatus).setStore(_DataStore_AyohaUserDashBoard_StampCardLoadByStampedRedeemStatusStore);
                    
                 }
                // 
@@ -5007,7 +5275,7 @@ function AyohaMerchantReward_AyohaUserDashBoard_StampCardLoadByStampedRedeemStat
 
 
 
-    function AyohaMerchantReward_AyohaUserDashBoard_StampCardLoadByStampedRedeemExpiredStore() {
+    function AyohaMerchantReward_AyohaUserDashBoard_StampCardLoadByStampedRedeemExpiredStore(StampedRedeemStatus) {
   
         _DataStore_AyohaUserDashBoardStampCardLoadByStampedRedeemExpiredStore.getProxy().setExtraParam('SubscriberAccNo', GetCurrAyohaUserAccountNo());
         _DataStore_AyohaUserDashBoardStampCardLoadByStampedRedeemExpiredStore.getProxy().setUrl(GetAPIurl() + '/AyohaUserStampCard/AyohaUserDashBoardStampCardLoadByStampedRedeemExpired');
@@ -5019,13 +5287,13 @@ function AyohaMerchantReward_AyohaUserDashBoard_StampCardLoadByStampedRedeemStat
                     if (success && records.length > 0) {
                         //var record = records[0]; // Access only the first record
                        
-                        Ext.getCmp('listTabpanelAyohaMerchantRewards_StampsStatus').setStore(_DataStore_AyohaUserDashBoardStampCardLoadByStampedRedeemExpiredStore);
+                        Ext.getCmp('listTabpanelAyohaMerchantRewards_StampsStatus_'+StampedRedeemStatus).setStore(_DataStore_AyohaUserDashBoardStampCardLoadByStampedRedeemExpiredStore);
                        
                        
                         
                         // AyohaMerchantReward_AyohaRewardContestLoadBySubscriberAccNoStore();
                     } else {
-                        Ext.getCmp('listTabpanelAyohaMerchantRewards_StampsStatus').setStore(_DataStore_AyohaUserDashBoardStampCardLoadByStampedRedeemExpiredStore);
+                        Ext.getCmp('listTabpanelAyohaMerchantRewards_StampsStatus_'+StampedRedeemStatus).setStore(_DataStore_AyohaUserDashBoardStampCardLoadByStampedRedeemExpiredStore);
                        
                       
                     }
@@ -5048,7 +5316,7 @@ function AyohaMerchantReward_AyohaUserDashBoard_StampCardLoadByStampedRedeemStat
       
         var globalAyohaMerchantRewardlistZoneH;
         function AyohaMerchantReward_PointCampaignRedeemLoadByPointRedeemStatusStore(RedeemPointStatus) {
-  
+  //alert('RedeemPointStatus:'+RedeemPointStatus)
             _DataStore_PointCampaignRedeemLoadByPointRedeemStatusStore.getProxy().setExtraParam('SubscriberAccNo', GetCurrAyohaUserAccountNo());
             _DataStore_PointCampaignRedeemLoadByPointRedeemStatusStore.getProxy().setExtraParam('RedeemPointStatus',RedeemPointStatus);
             _DataStore_PointCampaignRedeemLoadByPointRedeemStatusStore.getProxy().setUrl(GetAPIurl() + '/PointCampaignRedeemItemSetting/PointCampaignRedeemLoadByPointRedeemStatus');
@@ -5096,7 +5364,7 @@ Ext.getCmp('listcarouselAyohaMerchantRewards_Point_'+RedeemPointStatus).setHeigh
 
 
 
-    function switchPerkTab_Stamp(btn,RedeemStatus) {
+    function switchPerkTab_Stamp(btn,RedeemStatus,Index) {
         // reset semua button ke grey
         var allBtns = document.querySelectorAll('.perk-btn.stamp');
         for (var i = 0; i < allBtns.length; i++) {
@@ -5107,8 +5375,11 @@ Ext.getCmp('listcarouselAyohaMerchantRewards_Point_'+RedeemPointStatus).setHeigh
         btn.classList.add('active');
         if(RedeemStatus!="Expired"){
             AyohaMerchantReward_AyohaUserDashBoard_StampCardLoadByStampedRedeemStatusStore(RedeemStatus);
+            
+            Ext.getCmp('carouselAyohaMerchantRewards_Stamps').setActiveItem(Index);
         }else{
-            AyohaMerchantReward_AyohaUserDashBoard_StampCardLoadByStampedRedeemExpiredStore();
+            AyohaMerchantReward_AyohaUserDashBoard_StampCardLoadByStampedRedeemExpiredStore(RedeemStatus);
+            Ext.getCmp('carouselAyohaMerchantRewards_Stamps').setActiveItem(Index);
         }
        
       
@@ -5409,7 +5680,8 @@ var AyohaMerchantReward_FREEZE_COMPUTED = false; // sudah kira offset atau belum
 
         // contoh kira tinggi untuk container hijau (list zone)
         var headerH = Ext.getCmp('containerAyohaMerchantRedemptionHeader_ButtonPerks_Master').element.getHeight();
-        var searchH = Ext.getCmp('containerAyohaMerchantRewardBottom_Search').element.getHeight();
+        //var searchH = Ext.getCmp('containerAyohaMerchantRewardBottom_Search').element.getHeight();
+        var searchH = 48;
         var bottomH = Ext.getCmp('containerMyAccount_Dashboard_MenuBottom').element.getHeight();
         
         var zoneH   = vh - headerH - searchH - bottomH;
