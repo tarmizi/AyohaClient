@@ -14,6 +14,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <title>Ayoha</title>
+
+    <style>
+     /* Buang padding container list */
+.perks-list-tight .x-list-inner {
+  padding: 0 !important;
+}
+
+/* Buang padding + border default item */
+.perks-list-tight .x-list-item {
+  padding: 0 !important;
+  margin: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+}
+
+/* Ini yang biasanya masih ada padding – wajib override */
+.perks-list-tight .x-list-item .x-innerhtml {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Kad sendiri – pastikan memang tak ada margin tambahan */
+.perks-list-tight .myContent {
+  margin: 0 !important;
+}
+
+/* Line kecik antara card (1px) */
+.perks-list-tight .x-list-item + .x-list-item .myContent {
+  border-top: 3px solid #E5E7EB; /* warna line nipis */
+}
+
+    </style>
     <style>
         .perk-tabs{
   display:flex;

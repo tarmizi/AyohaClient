@@ -47,7 +47,10 @@
                   'isCampaignExpired',
                   'CampaignDayLeft',
                   'AdvertisementTitle',
-                  'StampEligibleCount',                  
+                  'StampEligibleCount',
+                  'SearchCol',   
+                  'RowNumber',
+                  'StampedDate',                
                      {
                          name: 'ModifiedStampContent',
                          convert: function (value, record) {

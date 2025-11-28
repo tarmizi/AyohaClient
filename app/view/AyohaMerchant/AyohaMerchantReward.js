@@ -178,7 +178,7 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
                    {
                     xtype: 'container',
                     width: '50%', 
-                   
+                   //hidden:true,
                     height: 40,                                             
                    style: 'background-color:transparent;',
                    // style: ' background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);',style: ' background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);',
@@ -198,12 +198,15 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
                        
                       
                         {
-                            margin: '10 0 0 14',
+                            margin: '7 0 0 10',
                          
-                          
-                           html: '<div style="color:white;text-align: left;font-size:14px;width:100%;margin:0px 0px 0px 0px"><span style="font-size:10px;color:#16a34a;background:#ffffff;padding:3px 6px;border-radius:999px;white-space:nowrap;">Perks from My Membership</span><br><b>My Merchant Reward</b></div><br><div  style="color:white;text-align: left;font-size:10px;width:100%;margin:-22px 0px 0px 0px;">Claim perks in one place</div>'
+                           // html: '<div style="color:white;text-align: left;font-size:14px;width:100%;margin:0px 0px 0px 0px"><span style="font-size:10px;color:#16a34a;background:#ffffff;padding:3px 6px;border-radius:999px;white-space:nowrap;">Perks from My Membership</span><br><b>My Merchant Reward</b></div>'
+                          // html: '<div style="color:white;text-align: left;font-size:14px;width:100%;margin:0px 0px 0px 0px"><span style="font-size:10px;color:#16a34a;background:#ffffff;padding:3px 6px;border-radius:999px;white-space:nowrap;">Perks from My Membership Card</span><br><b>Merchant Perks</b></div><br><div  style="color:white;text-align: left;font-size:10px;width:100%;margin:-22px 0px 0px 0px;">Claim perks in one place</div>'
+                           html: '<div style="color:white;text-align: left;font-size:14px;width:100%;margin:0px 0px 0px 0px"><b>Merchant Perks</b></div><br><div  style="color:white;text-align: left;font-size:10px;width:90%;margin:-22px 0px 0px 0px;">All perks from your membership card in one place</div>'
+                          // html: '<div style="color:white;text-align: left;font-size:14px;width:100%;margin:0px 0px 0px 0px"><span style="font-size:14px;color:#16a34a;background:#ffffff;padding:3px 6px;border-radius:999px;white-space:nowrap;font-weight:normal;">Merchant Perks</span></div><br><div  style="color:white;text-align: left;font-size:10px;width:90%;margin:-22px 0px 0px 0px;">All perks from your membership card in one place</div>'
+                         
                         
-                         },
+                        },
 
                    
                    
@@ -267,48 +270,7 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
                 
                             },
                             items:[
-                                {
-                                    xtype: 'container',
-                                    width: '24%',
-                                    style:"background-color:transparent",
-                                    height:40,
-                                    layout: {
-                                        type: 'vbox',
-                                        pack: 'center',
-                                        align: 'center'
-                        
-                                    },
-                                    items:[
-                                        
-                                        {
-                                            xtype: 'container',
-                                            width: '85%',
-                                            style: 'border:2px solid #fac;background-color: white;border-radius: 10px 10px 10px 10px;',
-                                           // style: 'border-right:1px solid #ECF0F1;border-left:1px solid #ECF0F1;border-bottom:1px solid #ECF0F1;border-top:1px solid #ECF0F1 ;background-color: white;border-radius: 10px 10px 10px 10px;box-shadow: 5px 10px 18px #888888;',
-                                           height:40,
-                                            layout: {
-                                                type: 'vbox',
-                                                pack: 'center',
-                                                align: 'center'
                                 
-                                            },
-                                            items:[
-                                                {
-                                                    id:'htmlAyohaMerchantReward_TotalPerkExpiredCount',
-                                                    html: '<div  style="color:black;text-align: center;font-size:14px;width:100%;margin:0px 0px 0px 0px;font-weight:bold">0</div>'
-                                                },
-                                                {
-                                                    html: '<div  style="color:black;text-align: center;font-size:6px;width:100%;margin:-4px 0px 0px 0px;">Total</div>'
-                                                },
-                                                {
-                                                    html: '<div  style="color:black;text-align: center;font-size:6px;width:100%;margin:-2px 0px 0px 0px;">Expired</div>'
-                                                },
-                                            ]
-                                        }
-                                    ]
-                                   
-                                       
-                                },
                                 {
                                     xtype: 'container',
                                     width: '24%',
@@ -324,7 +286,7 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
                                         
                                         {
                                             xtype: 'container',
-                                            width: '85%',
+                                            width: '90%',
                                             style: 'border:2px solid #fac;background-color: white;border-radius: 10px 10px 10px 10px;',
                                            // style: 'border-right:1px solid #ECF0F1;border-left:1px solid #ECF0F1;border-bottom:1px solid #ECF0F1;border-top:1px solid #ECF0F1 ;background-color: white;border-radius: 10px 10px 10px 10px;box-shadow: 5px 10px 18px #888888;',
                                            height:40,
@@ -340,10 +302,10 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
                                                     html: '<div  style="color:black;text-align: center;font-size:14px;width:100%;margin:0px 0px 0px 0px;font-weight:bold">0</div>'
                                                 },
                                                 {
-                                                    html: '<div  style="color:black;text-align: center;font-size:6px;width:100%;margin:-4px 0px 0px 0px;">Total</div>'
+                                                    html: '<div  style="color:black;text-align: center;font-size:7px;width:100%;margin:-4px 0px 0px 0px;">Total</div>'
                                                 },
                                                 {
-                                                    html: '<div  style="color:black;text-align: center;font-size:6px;width:100%;margin:-2px 0px 0px 0px;">Eligible</div>'
+                                                    html: '<div  style="color:black;text-align: center;font-size:7px;width:100%;margin:-4px 0px 0px 0px;">Eligible</div>'
                                                 },
                                             ]
                                         }
@@ -365,7 +327,7 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
                                     items:[
                                         {
                                             xtype: 'container',
-                                            width: '85%',
+                                            width: '90%',
                                             style: 'border:2px solid #fac;background-color: white;border-radius: 10px 10px 10px 10px;',
                                            // style: 'border-right:1px solid #ECF0F1;border-left:1px solid #ECF0F1;border-bottom:1px solid #ECF0F1;border-top:1px solid #ECF0F1 ;background-color: white;border-radius: 10px 10px 10px 10px;box-shadow: 5px 10px 18px #888888;',
                                            height:40,
@@ -381,10 +343,10 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
                                                     html: '<div  style="color:black;text-align: center;font-size:14px;width:100%;margin:0px 0px 0px 0px;font-weight:bold">0</div>'
                                                 },
                                                 {
-                                                    html: '<div  style="color:black;text-align: center;font-size:6px;width:100%;margin:-4px 0px 0px 0px;">Total</div>'
+                                                    html: '<div  style="color:black;text-align: center;font-size:7px;width:100%;margin:-4px 0px 0px 0px;">Total</div>'
                                                 },
                                                 {
-                                                    html: '<div  style="color:black;text-align: center;font-size:6px;width:100%;margin:-2px 0px 0px 0px;">Redeem</div>'
+                                                    html: '<div  style="color:black;text-align: center;font-size:7px;width:100%;margin:-4px 0px 0px 0px;">Redeem</div>'
                                                 },
                                             ]
                                         }
@@ -406,7 +368,7 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
                                     items:[
                                         {
                                             xtype: 'container',
-                                            width: '85%',
+                                            width: '90%',
                                             style: 'border:2px solid #fac;background-color: white;border-radius: 10px 10px 10px 10px;',
                                            // style: 'border-right:1px solid #ECF0F1;border-left:1px solid #ECF0F1;border-bottom:1px solid #ECF0F1;border-top:1px solid #ECF0F1 ;background-color: white;border-radius: 10px 10px 10px 10px;box-shadow: 5px 10px 18px #888888;',
                                            height:40,
@@ -422,10 +384,10 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
                                                     html: '<div  style="color:black;text-align: center;font-size:14px;width:100%;margin:0px 0px 0px 0px;font-weight:bold">0</div>'
                                                 },
                                                 {
-                                                    html: '<div  style="color:black;text-align: center;font-size:6px;width:100%;margin:-4px 0px 0px 0px;">Total</div>'
+                                                    html: '<div  style="color:black;text-align: center;font-size:7px;width:100%;margin:-4px 0px 0px 0px;">Total</div>'
                                                 },
                                                 {
-                                                    html: '<div  style="color:black;text-align: center;font-size:6px;width:100%;margin:-2px 0px 0px 0px;">Approved</div>'
+                                                    html: '<div  style="color:black;text-align: center;font-size:7px;width:100%;margin:-4px 0px 0px 0px;">Approved</div>'
                                                 },
                                             ]
                                         }
@@ -435,7 +397,49 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
                                 },
                                 {
                                     xtype: 'container',
-                                    width: 10,
+                                    width: '24%',
+                                    style:"background-color:transparent",
+                                    height:40,
+                                    layout: {
+                                        type: 'vbox',
+                                        pack: 'center',
+                                        align: 'center'
+                        
+                                    },
+                                    items:[
+                                        
+                                        {
+                                            xtype: 'container',
+                                            width: '90%',
+                                            style: 'border:2px solid #fac;background-color: white;border-radius: 10px 10px 10px 10px;',
+                                           // style: 'border-right:1px solid #ECF0F1;border-left:1px solid #ECF0F1;border-bottom:1px solid #ECF0F1;border-top:1px solid #ECF0F1 ;background-color: white;border-radius: 10px 10px 10px 10px;box-shadow: 5px 10px 18px #888888;',
+                                           height:40,
+                                            layout: {
+                                                type: 'vbox',
+                                                pack: 'center',
+                                                align: 'center'
+                                
+                                            },
+                                            items:[
+                                                {
+                                                    id:'htmlAyohaMerchantReward_TotalPerkExpiredCount',
+                                                    html: '<div  style="color:black;text-align: center;font-size:14px;width:100%;margin:0px 0px 0px 0px;font-weight:bold">0</div>'
+                                                },
+                                                {
+                                                    html: '<div  style="color:black;text-align: center;font-size:7px;width:100%;margin:-4px 0px 0px 0px;">Total</div>'
+                                                },
+                                                {
+                                                    html: '<div  style="color:black;text-align: center;font-size:7px;width:100%;margin:-4px 0px 0px 0px;">Expired</div>'
+                                                },
+                                            ]
+                                        }
+                                    ]
+                                   
+                                       
+                                },
+                                {
+                                    xtype: 'container',
+                                    width: 5,
                                     height:40,
                                 }
                             ]
@@ -843,8 +847,8 @@ html:
             width: '100%',
             height: 47,  
             margin: '-5 0 0 0',  
-            html: '<div style="background-color:transparent; padding: 15px;">' +
-            '<input type="text" placeholder="Search Merchant or Perk..." ' +
+            html: '<div  style="background-color:transparent; padding: 15px;">' +
+            '<input type="text"  id="txtStampPerksSearch" placeholder="Search Merchant or Perk..." ' +
               'style="width: 100%; box-sizing: border-box; padding: 10px 20px 10px 45px; ' +
                      'border-radius: 30px; border: 1px solid #e0e0e0; background-color: #ffffff; ' +
                      'font-family: sans-serif; font-size: 12px; color: #333; outline: none; ' +
@@ -911,6 +915,9 @@ html:
             var approvedBtn = document.getElementById('btnStampApproved');
             var expiredBtn = document.getElementById('btnStampExpired');
 
+
+          
+
 if(container.getActiveIndex()==0){
 switchPerkTab_Stamp(eligibleBtn, 'NA', 0);
 }
@@ -954,7 +961,7 @@ switchPerkTab_Stamp(expiredBtn, 'Expired', 3);
                 {
                     xtype: 'list',
                     width: '95%',
-                    height: 500,
+                    height: 480,
                    // margin: '0 0 0 0',
                     // height: '98%',
                     // flex: 1,
@@ -977,17 +984,63 @@ switchPerkTab_Stamp(expiredBtn, 'Expired', 3);
                     style: 'background-color:rgba(255,255,255, 0.1);',
                     // width: '100%',
                     disableSelection: true,
-                   itemTpl: '<div class="myContent" style="background-color:white;width:100%;height:80px;border-radius: 10px 10px 10px 10px;;margin:0px 0px 0px 0px;">' +
-                 
-                   // '<table style="border-collapse:collapse;border-spacing:0;width:110%;background-color:white;margin:-10px 0px 0px -15px;height:90px;"><tr onclick="AyohaMerchantReward_openStampCardRedemption({ID})"><td style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:0px 7px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:20%;vertical-align:center">{ModifiedStampContent}</td><td style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;padding:0px 0px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:80%;vertical-align:center">{StampContentNote}<br><font style="font-family:Arial, sans-serif;font-size:12px;font-weight:normal;">{EnterpriseName}<br>End:{EndDate} - {CampaignDayLeft} Day Left</font></td></tr></table>'
-                    '<table style="border-collapse:collapse;border-spacing:0;width:110%;background-color:white;margin:-20px 0px 0px -15px;height:80px;"><tr onclick="AyohaMerchantReward_openStampCardRedemption({ID})"><td style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:0px 7px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:20%;vertical-align:center">{ModifiedStampContent}</td><td style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;padding:0px 0px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:80%;vertical-align:center">{StampContentNote}<br><font style="font-family:Arial, sans-serif;font-size:12px;font-weight:normal;">{EnterpriseName}<br>End:{EndDate} - {CampaignDayLeft} Day Left</font></td></tr></table>'
-        
-                         + '</div>',
+
                   
-                    //height: '100%',
-                  
-                    emptyText: '<div  style="background-color:transparent;width:100%;height100%;">Hai!, you have no redemption items yet.Go to Ayoha Mechant Menu ,get their Membership card and then collect your redemptions items!</div>',
-                  
+
+
+
+
+                    // itemTpl:
+                    // '<div class="myContent" style="background-color:white;width:100%;height:80px;border-radius:10px;">' +
+                    //   '<table style="border-collapse:collapse;border-spacing:0;width:110%;background-color:white;margin:-10px 0 0 -15px;height:90px;">' +
+                    //     '<tr onclick="AyohaMerchantReward_openStampCardRedemption({ID})">' +
+                    //       '<td style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:0 7px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:20%;vertical-align:center;">' +
+                    //         '{ModifiedStampContent}' +
+                    //       '</td>' +
+                    //       '<td style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;padding:0;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:80%;vertical-align:center;">' +
+                    //         '{StampContentNote}<br>' +
+                    //         '<font style="font-family:Arial, sans-serif;font-size:12px;font-weight:normal;">' +
+                    //           'Merchant:{EnterpriseName}<br>' +
+                    //           'End:{EndDate}' +
+                    //           '<span style="float:right; white-space:nowrap;color:green;margin:0px 10px 0px 0px">&#9679;&nbsp;{CampaignDayLeft} Day Left</span>' +
+                    //         '</font>' +
+                    //       '</td>' +
+                    //     '</tr>' +
+                    //   '</table>' +
+                    // '</div>',
+
+
+
+                    itemTpl:
+  '<div class="myContent" style="background-color:white;width:100%;height:80px;border-radius:10px;">' +
+    '<table style="border-collapse:collapse;border-spacing:0;width:110%;background-color:white;margin:-10px 0 0 -15px;height:90px;">' +
+      '<tr onclick="AyohaMerchantReward_openStampCardRedemption({ID})">' +
+        '<td style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:0 7px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:20%;vertical-align:center;">' +
+          '{ModifiedStampContent}' +
+        '</td>' +
+        '<td style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;padding:0;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:80%;vertical-align:center;">' +
+          '{StampContentNote}<br>' +
+          '<font style="font-family:Arial, sans-serif;font-size:12px;font-weight:normal;">' +
+            // 👇 added icon before Merchant:
+           // '<img src="{EnterprisesLogo}" style="width:14px;height:14px;margin:0 4px 0 0;vertical-align:middle;" />' +
+            'Merchant:&nbsp;{EnterpriseName}<br>' +
+            'End:{EndDate}' +
+            '<span style="float:right; white-space:nowrap;color:green;margin:0px 10px 0px 0px">&#9679;&nbsp;{CampaignDayLeft} Day Left</span>' +
+          '</font>' +
+        '</td>' +
+      '</tr>' +
+    '</table>' +
+  '</div>',
+
+  emptyText: '<div style="text-align:center;margin-top:-230px;font-family:Arial,sans-serif;">' +
+  '<div style="width:72px;height:72px;margin:0 auto 8px;' +
+              'border-radius:50%;background:#F3F4F6;' +
+              'display:flex;align-items:center;justify-content:center;">' +
+    '<img src="resources/icons/empty_expired.png" ' +
+         'style="width:70px;height:70px;opacity:0.8;" />' +
+  '</div>' +
+  '<div style="font-size:12px;color:#6B7280;">No active perks yet. Visit a merchant membership stamp loyalty program and start collecting!</div>' +
+'</div>',
                     listeners: {
                         itemswipe: function (list, idx, target, record, evt) {
                    
@@ -1047,17 +1100,38 @@ switchPerkTab_Stamp(expiredBtn, 'Expired', 3);
                     style: 'background-color:rgba(255,255,255, 0.1);',
                     // width: '100%',
                     disableSelection: true,
-                    itemTpl: '<div class="myContent" style="background-color:white;width:100%;height:80px;border-radius: 10px 10px 10px 10px;">' +
-        
-        
-                     '<table style="border-collapse:collapse;border-spacing:0;width:110%;background-color:white;margin:-10px 0px 0px -15px;height:90px;"><tr onclick="AyohaMerchantReward_openStampCardRedemption({ID})"><td style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:0px 7px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:20%;vertical-align:center">{ModifiedStampContent}</td><td style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;padding:0px 0px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:80%;vertical-align:center">{StampContentNote}<br><font style="font-family:Arial, sans-serif;font-size:12px;font-weight:normal;">{EnterpriseName}<br>End:{EndDate} - {CampaignDayLeft} Day Left</font></td></tr></table>'
-        
-                         + '</div>',
-                  
-                    //height: '100%',
-                  
-                    emptyText: '<div  style="background-color:transparent;width:100%;height100%;">Hai!, you have no redemption items yet.Go to Ayoha Mechant Menu ,get their Membership card and then collect your redemptions items!</div>',
-                  
+
+
+                    itemTpl:
+                    '<div class="myContent" style="background-color:white;width:100%;height:80px;border-radius:10px;">' +
+                      '<table style="border-collapse:collapse;border-spacing:0;width:110%;background-color:white;margin:-10px 0 0 -15px;height:90px;">' +
+                        '<tr onclick="AyohaMerchantReward_openStampCardRedemption({ID})">' +
+                          '<td style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:0 7px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:20%;vertical-align:center;">' +
+                            '{ModifiedStampContent}' +
+                          '</td>' +
+                          '<td style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;padding:0;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:80%;vertical-align:center;">' +
+                            '{StampContentNote}<br>' +
+                            '<font style="font-family:Arial, sans-serif;font-size:12px;font-weight:normal;">' +
+                              // 👇 added icon before Merchant:
+                             // '<img src="{EnterprisesLogo}" style="width:14px;height:14px;margin:0 4px 0 0;vertical-align:middle;" />' +
+                              'Merchant:&nbsp;{EnterpriseName}<br>' +
+                              'Redeem On:{StampedDate}' +
+                              '<span style="float:right; white-space:nowrap;color:green;margin:0px 10px 0px 0px">&#9679;&nbsp;{CampaignDayLeft} Day Left</span>' +
+                            '</font>' +
+                          '</td>' +
+                        '</tr>' +
+                      '</table>' +
+                    '</div>',
+
+                    emptyText: '<div style="text-align:center;margin-top:-230px;font-family:Arial,sans-serif;">' +
+                    '<div style="width:72px;height:72px;margin:0 auto 8px;' +
+                                'border-radius:50%;background:#F3F4F6;' +
+                                'display:flex;align-items:center;justify-content:center;">' +
+                      '<img src="resources/icons/empty_redeem01.png" ' +
+                           'style="width:70px;height:70px;opacity:0.8;" />' +
+                    '</div>' +
+                    '<div style="font-size:12px;color:#6B7280;">No redemptions yet.<br> Save up your stamps to claim a reward!</div>' +
+                  '</div>',
                     listeners: {
                         itemswipe: function (list, idx, target, record, evt) {
                    
@@ -1117,17 +1191,41 @@ switchPerkTab_Stamp(expiredBtn, 'Expired', 3);
                     style: 'background-color:rgba(255,255,255, 0.1);',
                     // width: '100%',
                     disableSelection: true,
-                    itemTpl: '<div class="myContent" style="background-color:white;width:100%;height:80px;border-radius: 10px 10px 10px 10px;">' +
-        
-        
-                     '<table style="border-collapse:collapse;border-spacing:0;width:110%;background-color:white;margin:-10px 0px 0px -15px;height:90px;"><tr onclick="AyohaMerchantReward_openStampCardRedemption({ID})"><td style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:0px 7px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:20%;vertical-align:center">{ModifiedStampContent}</td><td style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;padding:0px 0px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:80%;vertical-align:center">{StampContentNote}<br><font style="font-family:Arial, sans-serif;font-size:12px;font-weight:normal;">{EnterpriseName}<br>End:{EndDate} - {CampaignDayLeft} Day Left</font></td></tr></table>'
-        
-                         + '</div>',
+                    itemTpl:
+                    '<div class="myContent" style="background-color:white;width:100%;height:80px;border-radius:10px;">' +
+                      '<table style="border-collapse:collapse;border-spacing:0;width:110%;background-color:white;margin:-10px 0 0 -15px;height:90px;">' +
+                        '<tr onclick="AyohaMerchantReward_openStampCardRedemption({ID})">' +
+                          '<td style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:0 7px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:20%;vertical-align:center;">' +
+                            '{ModifiedStampContent}' +
+                          '</td>' +
+                          '<td style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;padding:0;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:80%;vertical-align:center;">' +
+                            '{StampContentNote}<br>' +
+                            '<font style="font-family:Arial, sans-serif;font-size:12px;font-weight:normal;">' +
+                              // 👇 added icon before Merchant:
+                             // '<img src="{EnterprisesLogo}" style="width:14px;height:14px;margin:0 4px 0 0;vertical-align:middle;" />' +
+                              'Merchant:&nbsp;{EnterpriseName}<br>' +
+                              'Approved On:{StampedDate}' +
+                             // '<span style="float:right; white-space:nowrap;color:green;margin:0px 10px 0px 0px">&#9679;&nbsp;{CampaignDayLeft} Day Left</span>' +
+                            '</font>' +
+                          '</td>' +
+                        '</tr>' +
+                      '</table>' +
+                    '</div>',
+                    // itemTpl: '<div class="myContent" style="background-color:white;width:100%;height:80px;border-radius: 10px 10px 10px 10px;">' +
+                    //  '<table style="border-collapse:collapse;border-spacing:0;width:110%;background-color:white;margin:-10px 0px 0px -15px;height:90px;"><tr onclick="AyohaMerchantReward_openStampCardRedemption({ID})"><td style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:0px 7px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:20%;vertical-align:center">{ModifiedStampContent}</td><td style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;padding:0px 0px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:80%;vertical-align:center">{StampContentNote}<br><font style="font-family:Arial, sans-serif;font-size:12px;font-weight:normal;">{EnterpriseName}<br>End:{EndDate} - {CampaignDayLeft} Day Left</font></td></tr></table>'        
+                    //      + '</div>',
                   
-                    //height: '100%',
+                   
                   
-                    emptyText: '<div  style="background-color:transparent;width:100%;height100%;">Hai!, you have no redemption items yet.Go to Ayoha Mechant Menu ,get their Membership card and then collect your redemptions items!</div>',
-                  
+                    emptyText: '<div style="text-align:center;margin-top:-230px;font-family:Arial,sans-serif;">' +
+                    '<div style="width:72px;height:72px;margin:0 auto 8px;' +
+                                'border-radius:50%;background:#F3F4F6;' +
+                                'display:flex;align-items:center;justify-content:center;">' +
+                      '<img src="resources/icons/empty_approved.png" ' +
+                           'style="width:70px;height:70px;opacity:0.8;" />' +
+                    '</div>' +
+                    '<div style="font-size:12px;color:#6B7280;">No approvals pending. All your perks are up to date</div>' +
+                  '</div>',
                     listeners: {
                         itemswipe: function (list, idx, target, record, evt) {
                    
@@ -1187,16 +1285,43 @@ switchPerkTab_Stamp(expiredBtn, 'Expired', 3);
                     style: 'background-color:rgba(255,255,255, 0.1);',
                     // width: '100%',
                     disableSelection: true,
-                    itemTpl: '<div class="myContent" style="background-color:white;width:100%;height:80px;border-radius: 10px 10px 10px 10px;">' +
+
+
+                   // cls: 'perks-list-tight',   // 👈 class khas list ini
+                    itemTpl:
+                    '<div class="myContent" style="position:relative;background:#fff;width:100%;height:83px;border-radius:0px;margin:0;">' +
+                      '<span style="position:absolute;top:6px;left:8px;font:700 11px/1 Arial, sans-serif;color:#111827;pointer-events:none;">{RowNumber}).</span>' +
+                      '<table style="border-collapse:collapse;width:100%;height:80px;background:#fff;">' +
+                        '<tr onclick="AyohaMerchantReward_openStampCardRedemption({ID})" style="cursor:pointer;">' +
+                          '<td style="width:20%;padding:0 8px 0 25px;vertical-align:middle;border:0;">{ModifiedStampContent}</td>' +
+                          '<td style="width:80%;padding:0;border:0;vertical-align:middle;font-family:Arial,sans-serif;">' +
+                            '<div style="font-size:12px;font-weight:bold;">{StampContentNote}</div>' +
+                            '<div style="font-size:12px;font-weight:normal;">{EnterpriseName}<br>End:{EndDate} &#9679;<span style="color:red">Expired {CampaignDayLeft} days ago</span></div>' +
+                          '</td>' +
+                        '</tr>' +
+                      '</table>' +
+                    '</div>',
+
+
+
+                    // itemTpl: '<div class="myContent" style="background-color:white;width:100%;height:80px;border-radius: 10px 10px 10px 10px;">' +
         
         
-                     '<table style="border-collapse:collapse;border-spacing:0;width:110%;background-color:white;margin:-10px 0px 0px -15px;height:90px;"><tr onclick="AyohaMerchantReward_openStampCardRedemption({ID})"><td style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:0px 7px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:20%;vertical-align:center">{ModifiedStampContent}</td><td style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;padding:0px 0px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:80%;vertical-align:center">{StampContentNote}<br><font style="font-family:Arial, sans-serif;font-size:12px;font-weight:normal;">{EnterpriseName}<br>End:{EndDate} - {CampaignDayLeft} Day Left</font></td></tr></table>'
+                    //  '<table style="border-collapse:collapse;border-spacing:0;width:110%;background-color:white;margin:-10px 0px 0px -15px;height:90px;"><tr onclick="AyohaMerchantReward_openStampCardRedemption({ID})"><td style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:0px 7px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:20%;vertical-align:center">{ModifiedStampContent}</td><td style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;padding:0px 0px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:80%;vertical-align:center">{StampContentNote}<br><font style="font-family:Arial, sans-serif;font-size:12px;font-weight:normal;">{EnterpriseName}<br>End:{EndDate} - {CampaignDayLeft} Day Left</font></td></tr></table>'
         
-                         + '</div>',
+                    //      + '</div>',
                   
-                    //height: '100%',
+                
                   
-                    emptyText: '<div  style="background-color:transparent;width:100%;height100%;">Hai!, you have no redemption items yet.Go to Ayoha Mechant Menu ,get their Membership card and then collect your redemptions items!</div>',
+                    emptyText: '<div style="text-align:center;margin-top:-230px;font-family:Arial,sans-serif;">' +
+                    '<div style="width:72px;height:72px;margin:0 auto 8px;' +
+                                'border-radius:50%;background:#F3F4F6;' +
+                                'display:flex;align-items:center;justify-content:center;">' +
+                      '<img src="resources/icons/empty_expired.png" ' +
+                           'style="width:70px;height:70px;opacity:0.8;" />' +
+                    '</div>' +
+                    '<div style="font-size:12px;color:#6B7280;">All clear! You haven`t let any rewards expire</div>' +
+                  '</div>',
                   
                     listeners: {
                         itemswipe: function (list, idx, target, record, evt) {
@@ -4938,7 +5063,8 @@ window._EligibleVsUsed_DatalabelsRegistered =
     });
 
 
-    AyohaMerchantReward_AyohaUserDashBoard_StampCardLoadByStampedRedeemStatusStore_Initialized();
+   // AyohaMerchantReward_AyohaUserDashBoard_StampCardLoadByStampedRedeemStatusStore_Initialized();
+    switchPerkTab_Stamp(document.getElementById('btnStampEligible'), 'NA', 0);
 }
 
 
@@ -5207,32 +5333,36 @@ function AyohaMerchantReward_SwitchTab(tabName,index,StampedRedeemStatus) {
 
 function AyohaMerchantReward_AyohaUserDashBoard_StampCardLoadByStampedRedeemStatusStore_Initialized() {
   
-    _DataStore_AyohaUserDashBoard_StampCardLoadByStampedRedeemStatusStore.getProxy().setExtraParam('SubscriberAccNo', GetCurrAyohaUserAccountNo());
-    _DataStore_AyohaUserDashBoard_StampCardLoadByStampedRedeemStatusStore.getProxy().setExtraParam('StampedRedeemStatus','NA');
-    _DataStore_AyohaUserDashBoard_StampCardLoadByStampedRedeemStatusStore.getProxy().setUrl(GetAPIurl() + '/AyohaUserStampCard/AyohaUserDashBoardStampCardLoadByStampedRedeemStatus');
+
+    switchPerkTab_Stamp(document.getElementById('btnStampEligible'), 'NA', 0);
+
+
+    // _DataStore_AyohaUserDashBoard_StampCardLoadByStampedRedeemStatusStore.getProxy().setExtraParam('SubscriberAccNo', GetCurrAyohaUserAccountNo());
+    // _DataStore_AyohaUserDashBoard_StampCardLoadByStampedRedeemStatusStore.getProxy().setExtraParam('StampedRedeemStatus','NA');
+    // _DataStore_AyohaUserDashBoard_StampCardLoadByStampedRedeemStatusStore.getProxy().setUrl(GetAPIurl() + '/AyohaUserStampCard/AyohaUserDashBoardStampCardLoadByStampedRedeemStatus');
     
     
     
-    _DataStore_AyohaUserDashBoard_StampCardLoadByStampedRedeemStatusStore.load({
-            callback: function (records, operation, success) {
-                if (success && records.length > 0) {
-                   // var record = records[0]; // Access only the first record                 
+    // _DataStore_AyohaUserDashBoard_StampCardLoadByStampedRedeemStatusStore.load({
+    //         callback: function (records, operation, success) {
+    //             if (success && records.length > 0) {
+    //                // var record = records[0]; // Access only the first record                 
                    
-                    switchPerkTab_Point(document.getElementById('btnPointEligible'), 'Eligible', 0);
-                    Ext.getCmp('listTabpanelAyohaMerchantRewards_StampsStatus_NA').setStore(_DataStore_AyohaUserDashBoard_StampCardLoadByStampedRedeemStatusStore);
-                   // AyohaMerchantReward_NearestRedeemItemPointCardStore();
-                   AyohaMerchantReward_AyohaRewardVoucherEntitledUserLoadBySubscriberAccNoVoucherTypeStore();
+    //                 switchPerkTab_Point(document.getElementById('btnPointEligible'), 'Eligible', 0);
+    //                 Ext.getCmp('listTabpanelAyohaMerchantRewards_StampsStatus_NA').setStore(_DataStore_AyohaUserDashBoard_StampCardLoadByStampedRedeemStatusStore);
+                
+    //               // AyohaMerchantReward_AyohaRewardVoucherEntitledUserLoadBySubscriberAccNoVoucherTypeStore();
                     
-                    // AyohaMerchantReward_AyohaRewardContestLoadBySubscriberAccNoStore();
-                } else {
-                    Ext.getCmp('listTabpanelAyohaMerchantRewards_StampsStatus_NA').setStore(_DataStore_AyohaUserDashBoard_StampCardLoadByStampedRedeemStatusStore);
-                    switchPerkTab_Point(document.getElementById('btnPointEligible'), 'Eligible', 0);
-                    AyohaMerchantReward_AyohaRewardVoucherEntitledUserLoadBySubscriberAccNoVoucherTypeStore();
-                    //AyohaMerchantReward_NearestRedeemItemPointCardStore();
-                }
-               // 
-            }
-        });
+    //                 // AyohaMerchantReward_AyohaRewardContestLoadBySubscriberAccNoStore();
+    //             } else {
+    //                 Ext.getCmp('listTabpanelAyohaMerchantRewards_StampsStatus_NA').setStore(_DataStore_AyohaUserDashBoard_StampCardLoadByStampedRedeemStatusStore);
+    //                 switchPerkTab_Point(document.getElementById('btnPointEligible'), 'Eligible', 0);
+    //                // AyohaMerchantReward_AyohaRewardVoucherEntitledUserLoadBySubscriberAccNoVoucherTypeStore();
+                    
+    //             }
+    //            // 
+    //         }
+    //     });
 
 
 
@@ -5370,7 +5500,7 @@ Ext.getCmp('listcarouselAyohaMerchantRewards_Point_'+RedeemPointStatus).setHeigh
         for (var i = 0; i < allBtns.length; i++) {
           allBtns[i].classList.remove('active');
         }
-      
+        globalAyohaMerchantReward_StampFilter=RedeemStatus;
         // button yang ditekan jadi hitam/putih
         btn.classList.add('active');
         if(RedeemStatus!="Expired"){
@@ -5708,3 +5838,78 @@ var AyohaMerchantReward_FREEZE_COMPUTED = false; // sudah kira offset atau belum
       
     }
     
+
+    function AyohaMerchantReward_Initialized_SearchText(){
+        document.getElementById("txtStampPerksSearch").addEventListener("keyup", AyohaMerchantReward_txtStampPerksSearch_DataStore_AyohaUserDashBoard_StampCardLoadByStampedRedeemStatusStoreOnKeyUp);
+    }
+
+
+var globalAyohaMerchantReward_StampFilter;
+    function AyohaMerchantReward_txtStampPerksSearch_DataStore_AyohaUserDashBoard_StampCardLoadByStampedRedeemStatusStoreOnKeyUp(){
+        _DataStore_AyohaUserDashBoard_StampCardLoadByStampedRedeemStatusStore.clearFilter();
+        _DataStore_AyohaUserDashBoardStampCardLoadByStampedRedeemExpiredStore.clearFilter();
+
+        var queryString = document.getElementById('txtStampPerksSearch').value;
+   
+    console.log('queryString: ' + queryString);
+    if(globalAyohaMerchantReward_StampFilter !="Expired"){
+        if (queryString) {
+            
+    
+            var thisRegEx = new RegExp(queryString, "i");
+            _DataStore_AyohaUserDashBoard_StampCardLoadByStampedRedeemStatusStore.filterBy(function (record) {
+                if (thisRegEx.test(record.get('SearchCol'))) {
+                    console.log('ada0');
+    
+                  
+                    return true;
+    
+                };
+                return false;
+                console.log('tiada1');
+    
+                //  return false;
+            });
+           // countEnterprisesLoadAyohaMerchantListStore = _DataStore_EnterprisesLoadByMerchantCategory_temp.getCount();
+            //  Ext.getCmp('htmlSubscriberListTypeLbl').setHtml('<font size="2" color="black"><b>All Cards(' + countEnterprise + ')</b></font>');
+        }
+    
+    
+        else {
+            _DataStore_AyohaUserDashBoard_StampCardLoadByStampedRedeemStatusStore.clearFilter();
+            return false;
+        }
+        return;
+    }else{
+
+        if (queryString) {
+            
+    
+            var thisRegEx = new RegExp(queryString, "i");
+            _DataStore_AyohaUserDashBoardStampCardLoadByStampedRedeemExpiredStore.filterBy(function (record) {
+                if (thisRegEx.test(record.get('SearchCol'))) {
+                    console.log('ada0');
+    
+                  
+                    return true;
+    
+                };
+                return false;
+                console.log('tiada1');
+    
+                //  return false;
+            });
+           // countEnterprisesLoadAyohaMerchantListStore = _DataStore_EnterprisesLoadByMerchantCategory_temp.getCount();
+            //  Ext.getCmp('htmlSubscriberListTypeLbl').setHtml('<font size="2" color="black"><b>All Cards(' + countEnterprise + ')</b></font>');
+        }
+    
+    
+        else {
+            _DataStore_AyohaUserDashBoardStampCardLoadByStampedRedeemExpiredStore.clearFilter();
+            return false;
+        }
+    }
+    
+       
+    
+    }

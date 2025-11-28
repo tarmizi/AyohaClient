@@ -103,14 +103,21 @@ Ext.define('ianMizi.view.MyAccount.Dashboard', {
                         items:
                                [
        
-                               
+                                // {
+                                //     margin: '10 0 0 14',
+                                 
+                                  
+                                //    html: '<div style="color:white;text-align: left;font-size:14px;width:100%;margin:0px 0px 0px 0px"><span style="font-size:10px;color:#16a34a;background:#ffffff;padding:3px 6px;border-radius:999px;white-space:nowrap;">Perks from My Membership</span><br><b>My Merchant Reward</b></div><br><div  style="color:white;text-align: left;font-size:10px;width:100%;margin:-22px 0px 0px 0px;">Claim perks in one place</div>'
+                                
+                                //  },
+        
        
                                    {
                                        xtype: 'container',
                                       //margin: '30 0 0 0',
                                      margin: '10 0 0 0',
                                       // zIndex: 200,
-                                      // hidden:true,
+                                     // hidden:true,
                                        style: 'background-color:transparent;',
                                        id: 'containerMyAccount_DashboardHaiUser',
                                        name: 'namecontainerMyAccount_DashboardHaiUser',
@@ -279,40 +286,7 @@ Ext.define('ianMizi.view.MyAccount.Dashboard', {
        
        
        
-                               {
-                                xtype: 'container',
-                                margin: '0 10 0 0',
-                                // hidden: true,
-                                style: 'background-color: transparent;',
-                               // style: 'border-right:2px none grey;border-left:2px none grey;border-bottom:2px none grey;border-top:2px  none grey;background-color: #fac;background-image: linear-gradient(#c800ffc9,#c800ffc9);border-radius: 70px 70px 70px 70px;',
-                                height: 48,
-                                width: 48,
-                                // margin: '70 0 0 0',
-                              //  id: 'containerMyAccount_Dashboard_MenuBottom_QrCodeScanInner',
-                                layout: {
-
-                                    type: 'vbox',
-                                    pack: 'center',
-                                    align: 'center'
-                                },
-                                items: [
-                                    {
-                                        //xtype: 'button',
-                                        //height: 110,
-                                        //width: 110,
-                                        margin: '0 0 0 0',
-                                       // id: 'btnMyAccount_Dashboard_MenuBottom_QrCodeScan',
-                                        //html: '<img src="resources/icons/scanQRcodeGrey.png" width="30" height="30" alt="Company Name">',
-                                        html: '<img src="resources/icons/AiYoha01.png" width="26" height="30" alt="Company Name">',
-                                    },
-                                    {
-                                       margin: '-7 0 0 0',
-                                       html: '<div  style="color:white;text-align: center;font-size:10px;width:100%;margin:0px 0px 0px 0px;font-weight:bold">Ai-Yoha</div>'
-                                   },
-
-
-                                ]
-                            },
+                            
 
        
        
@@ -321,7 +295,7 @@ Ext.define('ianMizi.view.MyAccount.Dashboard', {
                                                xtype: 'container',
                                           
                                               //hide on 27-11-2025
-                                              hidden:true,
+                                            
                                                margin: '-8px 10 0 0',                                        
                                                //zIndex: 100,
                                                id: 'containerMyAccount_DashboardAyohaeWallet',
@@ -374,7 +348,7 @@ Ext.define('ianMizi.view.MyAccount.Dashboard', {
                                                       {
                                                        margin: '0 0 0 0',
                                                        //hide on 27-11-2025
-                                                       hidden:true,
+                                                       
                                                        id: 'htmlMyAccount_Dashboard_TitleHeaderTxtAyohapoint',
                                                       // html: '<div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-size: 8px;font-weight:normal;color:black;margin:0px 0px 0px 0px">Ayoha e-Wallet</div><br><div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-size: 16px;font-weight:bold;color:black;margin:-25px 0px 0px 0px">RM 00.00</div>'
                                                        html: '<div id="Dashboard_userPts" onclick="Dashboard_ayoharedeem_page();" style="width:100%;background-color: transparent;text-align:center;border: 1px none white;font-size: 12px;font-weight:bold;color:black;margin:0px 0px 0px 0px">2355 pts</div><br><div onclick="Dashboard_ayoharedeem_page();" style="width:100%;background-color: transparent;text-align:center;border: 1px none white;font-size: 10px;font-weight:normal;color:black;margin:-27px 0px 0px 0px">Redeem</div>'

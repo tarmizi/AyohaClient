@@ -595,7 +595,7 @@ function loadAyohaUserProfileLoginBody() {
 
                       
                         initializeContainerSingleTapEvent();
-                        Dashboard_AyohaUserDashBoardNearestRedeemItemStampCardStore();
+                      //  Dashboard_AyohaUserDashBoardNearestRedeemItemStampCardStore();
                         DashboardAyohaUserMainStore();
                         //loadVIAAdvertisement();
                         
@@ -610,6 +610,7 @@ function loadAyohaUserProfileLoginBody() {
                         Dashboard_AyohaRewardVoucherEntitledUserLoadBySubscriberAccNoVoucherTypeStore();
                         AyohaMerchantReward_loadVIAAdvertisement();
                        AyohaMerchantReward_containerDashboardMerchantRewardScroller();
+                       AyohaMerchantReward_Initialized_SearchText();
                        // TestRoutePanelShow();
                     }
                     if (data.total <= 0) {
