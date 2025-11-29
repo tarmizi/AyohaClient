@@ -1032,15 +1032,16 @@ switchPerkTab_Stamp(expiredBtn, 'Expired', 3);
     '</table>' +
   '</div>',
 
-  emptyText: '<div style="text-align:center;margin-top:-230px;font-family:Arial,sans-serif;">' +
-  '<div style="width:72px;height:72px;margin:0 auto 8px;' +
-              'border-radius:50%;background:#F3F4F6;' +
-              'display:flex;align-items:center;justify-content:center;">' +
-    '<img src="resources/icons/empty_expired.png" ' +
-         'style="width:70px;height:70px;opacity:0.8;" />' +
-  '</div>' +
-  '<div style="font-size:12px;color:#6B7280;">No active perks yet. Visit a merchant membership stamp loyalty program and start collecting!</div>' +
-'</div>',
+  emptyText:CoreFunction_AyohaMerchantReward_listEmptyEligibleStore_TextMsg('Stamp'), 
+//   '<div style="text-align:center;margin-top:-230px;font-family:Arial,sans-serif;">' +
+//   '<div style="width:72px;height:72px;margin:0 auto 8px;' +
+//               'border-radius:50%;background:#F3F4F6;' +
+//               'display:flex;align-items:center;justify-content:center;">' +
+//     '<img src="resources/icons/empty_eligible.png" ' +
+//          'style="width:70px;height:70px;opacity:0.8;" />' +
+//   '</div>' +
+//   '<div style="font-size:12px;color:#6B7280;">No active perks yet. Visit a merchant membership stamp loyalty program and start collecting!</div>' +
+// '</div>',
                     listeners: {
                         itemswipe: function (list, idx, target, record, evt) {
                    
@@ -1123,15 +1124,17 @@ switchPerkTab_Stamp(expiredBtn, 'Expired', 3);
                       '</table>' +
                     '</div>',
 
-                    emptyText: '<div style="text-align:center;margin-top:-230px;font-family:Arial,sans-serif;">' +
-                    '<div style="width:72px;height:72px;margin:0 auto 8px;' +
-                                'border-radius:50%;background:#F3F4F6;' +
-                                'display:flex;align-items:center;justify-content:center;">' +
-                      '<img src="resources/icons/empty_redeem01.png" ' +
-                           'style="width:70px;height:70px;opacity:0.8;" />' +
-                    '</div>' +
-                    '<div style="font-size:12px;color:#6B7280;">No redemptions yet.<br> Save up your stamps to claim a reward!</div>' +
-                  '</div>',
+                   
+                    emptyText:CoreFunction_AyohaMerchantReward_listEmptyRedeemStore_TextMsg('Stamp'),
+                //      '<div style="text-align:center;margin-top:-230px;font-family:Arial,sans-serif;">' +
+                //     '<div style="width:72px;height:72px;margin:0 auto 8px;' +
+                //                 'border-radius:50%;background:#F3F4F6;' +
+                //                 'display:flex;align-items:center;justify-content:center;">' +
+                //       '<img src="resources/icons/empty_redeem01.png" ' +
+                //            'style="width:70px;height:70px;opacity:0.8;" />' +
+                //     '</div>' +
+                //     '<div style="font-size:12px;color:#6B7280;">No redemptions yet.<br> Save up your stamps to claim a reward!</div>' +
+                //   '</div>',
                     listeners: {
                         itemswipe: function (list, idx, target, record, evt) {
                    
@@ -1217,15 +1220,16 @@ switchPerkTab_Stamp(expiredBtn, 'Expired', 3);
                   
                    
                   
-                    emptyText: '<div style="text-align:center;margin-top:-230px;font-family:Arial,sans-serif;">' +
-                    '<div style="width:72px;height:72px;margin:0 auto 8px;' +
-                                'border-radius:50%;background:#F3F4F6;' +
-                                'display:flex;align-items:center;justify-content:center;">' +
-                      '<img src="resources/icons/empty_approved.png" ' +
-                           'style="width:70px;height:70px;opacity:0.8;" />' +
-                    '</div>' +
-                    '<div style="font-size:12px;color:#6B7280;">No approvals pending. All your perks are up to date</div>' +
-                  '</div>',
+                    emptyText:CoreFunction_AyohaMerchantReward_listEmptyApprovedStore_TextMsg('Stamp'),
+                //      '<div style="text-align:center;margin-top:-230px;font-family:Arial,sans-serif;">' +
+                //     '<div style="width:72px;height:72px;margin:0 auto 8px;' +
+                //                 'border-radius:50%;background:#F3F4F6;' +
+                //                 'display:flex;align-items:center;justify-content:center;">' +
+                //       '<img src="resources/icons/empty_approved.png" ' +
+                //            'style="width:70px;height:70px;opacity:0.8;" />' +
+                //     '</div>' +
+                //     '<div style="font-size:12px;color:#6B7280;">No approvals pending. All your perks are up to date</div>' +
+                //   '</div>',
                     listeners: {
                         itemswipe: function (list, idx, target, record, evt) {
                    
@@ -1288,40 +1292,45 @@ switchPerkTab_Stamp(expiredBtn, 'Expired', 3);
 
 
                    // cls: 'perks-list-tight',   // 👈 class khas list ini
+                    // itemTpl:
+                    // '<div class="myContent" style="position:relative;background:#fff;width:100%;height:83px;border-radius:0px;margin:0;">' +
+                    //   '<span style="position:absolute;top:6px;left:8px;font:700 11px/1 Arial, sans-serif;color:#111827;pointer-events:none;">{RowNumber}).</span>' +
+                    //   '<table style="border-collapse:collapse;width:100%;height:80px;background:#fff;">' +
+                    //     '<tr onclick="AyohaMerchantReward_openStampCardRedemption({ID})" style="cursor:pointer;">' +
+                    //       '<td style="width:20%;padding:0 8px 0 25px;vertical-align:middle;border:0;">{ModifiedStampContent}</td>' +
+                    //       '<td style="width:80%;padding:0;border:0;vertical-align:middle;font-family:Arial,sans-serif;">' +
+                    //         '<div style="font-size:12px;font-weight:bold;">{StampContentNote}</div>' +
+                    //         '<div style="font-size:12px;font-weight:normal;">{EnterpriseName}<br>End:{EndDate} &#9679;<span style="color:red">Expired {CampaignDayLeft} days ago</span></div>' +
+                    //       '</td>' +
+                    //     '</tr>' +
+                    //   '</table>' +
+                    // '</div>',
+
                     itemTpl:
-                    '<div class="myContent" style="position:relative;background:#fff;width:100%;height:83px;border-radius:0px;margin:0;">' +
-                      '<span style="position:absolute;top:6px;left:8px;font:700 11px/1 Arial, sans-serif;color:#111827;pointer-events:none;">{RowNumber}).</span>' +
-                      '<table style="border-collapse:collapse;width:100%;height:80px;background:#fff;">' +
-                        '<tr onclick="AyohaMerchantReward_openStampCardRedemption({ID})" style="cursor:pointer;">' +
-                          '<td style="width:20%;padding:0 8px 0 25px;vertical-align:middle;border:0;">{ModifiedStampContent}</td>' +
-                          '<td style="width:80%;padding:0;border:0;vertical-align:middle;font-family:Arial,sans-serif;">' +
-                            '<div style="font-size:12px;font-weight:bold;">{StampContentNote}</div>' +
-                            '<div style="font-size:12px;font-weight:normal;">{EnterpriseName}<br>End:{EndDate} &#9679;<span style="color:red">Expired {CampaignDayLeft} days ago</span></div>' +
+                    '<div class="myContent" style="background-color:white;width:100%;height:80px;border-radius:10px;">' +
+                      '<table style="border-collapse:collapse;border-spacing:0;width:110%;background-color:white;margin:-10px 0 0 -15px;height:90px;">' +
+                        '<tr onclick="AyohaMerchantReward_openStampCardRedemption({ID})">' +
+                          '<td style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:0 7px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:20%;vertical-align:center;">' +
+                            '{ModifiedStampContent}' +
+                          '</td>' +
+                          '<td style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;padding:0;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:80%;vertical-align:center;">' +
+                            '{StampContentNote}<br>' +
+                            '<font style="font-family:Arial, sans-serif;font-size:12px;font-weight:normal;">' +
+                              // 👇 added icon before Merchant:
+                             // '<img src="{EnterprisesLogo}" style="width:14px;height:14px;margin:0 4px 0 0;vertical-align:middle;" />' +
+                              'Merchant:&nbsp;{EnterpriseName}<br>' +
+                              'End:{EndDate} &#9679;<span style="color:red">Expired {CampaignDayLeft} days ago' +
+                             // '<span style="float:right; white-space:nowrap;color:green;margin:0px 10px 0px 0px">&#9679;&nbsp;{CampaignDayLeft} Day Left</span>' +
+                            '</font>' +
                           '</td>' +
                         '</tr>' +
                       '</table>' +
                     '</div>',
 
-
-
-                    // itemTpl: '<div class="myContent" style="background-color:white;width:100%;height:80px;border-radius: 10px 10px 10px 10px;">' +
-        
-        
-                    //  '<table style="border-collapse:collapse;border-spacing:0;width:110%;background-color:white;margin:-10px 0px 0px -15px;height:90px;"><tr onclick="AyohaMerchantReward_openStampCardRedemption({ID})"><td style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:0px 7px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:20%;vertical-align:center">{ModifiedStampContent}</td><td style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;padding:0px 0px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:80%;vertical-align:center">{StampContentNote}<br><font style="font-family:Arial, sans-serif;font-size:12px;font-weight:normal;">{EnterpriseName}<br>End:{EndDate} - {CampaignDayLeft} Day Left</font></td></tr></table>'
-        
-                    //      + '</div>',
-                  
                 
                   
-                    emptyText: '<div style="text-align:center;margin-top:-230px;font-family:Arial,sans-serif;">' +
-                    '<div style="width:72px;height:72px;margin:0 auto 8px;' +
-                                'border-radius:50%;background:#F3F4F6;' +
-                                'display:flex;align-items:center;justify-content:center;">' +
-                      '<img src="resources/icons/empty_expired.png" ' +
-                           'style="width:70px;height:70px;opacity:0.8;" />' +
-                    '</div>' +
-                    '<div style="font-size:12px;color:#6B7280;">All clear! You haven`t let any rewards expire</div>' +
-                  '</div>',
+                    emptyText:CoreFunction_AyohaMerchantReward_listEmptyExpiredStore_TextMsg('Stamp'), 
+              
                   
                     listeners: {
                         itemswipe: function (list, idx, target, record, evt) {
@@ -1534,26 +1543,37 @@ if(container.getActiveIndex()==1){
     style: 'background-color:rgba(255,255,255, 0.1);',
     // width: '100%',
     disableSelection: true,
-    itemTpl: '<div class="myContent" style="background-color:white;width:100%;height:80px;border-radius: 10px 10px 10px 10px;">' +
+    // itemTpl: '<div class="myContent" style="background-color:white;width:100%;height:80px;border-radius: 10px 10px 10px 10px;">' +
 
 
-     '<table style="border-collapse:collapse;border-spacing:0;width:110%;background-color:white;margin:-10px 0px 0px -15px;height:90px;"><tr onclick="AyohaMerchantReward_openPointCardRedemption({ID})"><td style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:0px 7px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:20%;vertical-align:center">{ModifiedItemImg}</td><td style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;padding:0px 0px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:80%;vertical-align:center">{ItemName}<br><font style="font-family:Arial, sans-serif;font-size:12px;font-weight:normal;">{EnterpriseName}<br>End:{EndDate} - {CampaignDayLeft} Day Left</font></td></tr></table>'
+    //  '<table style="border-collapse:collapse;border-spacing:0;width:110%;background-color:white;margin:-10px 0px 0px -15px;height:90px;"><tr onclick="AyohaMerchantReward_openPointCardRedemption({ID})"><td style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:0px 7px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:20%;vertical-align:center">{ModifiedItemImg}</td><td style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;padding:0px 0px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:80%;vertical-align:center">{ItemName}<br><font style="font-family:Arial, sans-serif;font-size:12px;font-weight:normal;">{EnterpriseName}<br>End:{EndDate} - {CampaignDayLeft} Day Left</font></td></tr></table>'
 
-         + '</div>',
+    //      + '</div>',
   
-    //height: '100%',
+         itemTpl:
+         '<div class="myContent" style="background-color:white;width:100%;height:80px;border-radius:10px;">' +
+           '<table style="border-collapse:collapse;border-spacing:0;width:110%;background-color:white;margin:-10px 0 0 -15px;height:90px;">' +
+             '<tr onclick="AyohaMerchantReward_openPointCardRedemption({ID})">' +
+               '<td style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:0 7px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:20%;vertical-align:center;">' +
+                 '{ModifiedItemImg}' +
+               '</td>' +
+               '<td style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;padding:0;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:80%;vertical-align:center;">' +
+                 '{ItemName}<br>' +
+                 '<font style="font-family:Arial, sans-serif;font-size:12px;font-weight:normal;">' +
+                   // 👇 added icon before Merchant:
+                  // '<img src="{EnterprisesLogo}" style="width:14px;height:14px;margin:0 4px 0 0;vertical-align:middle;" />' +
+                   'Merchant:&nbsp;{EnterpriseName}<br>' +
+                   'End:{EndDate}' +
+                   '<span style="float:right; white-space:nowrap;color:green;margin:0px 10px 0px 0px">&#9679;&nbsp;{CampaignDayLeft} Day Left</span>' +
+                 '</font>' +
+               '</td>' +
+             '</tr>' +
+           '</table>' +
+         '</div>',
   
-    emptyText: '<div  style="background-color:transparent;width:100%;height100%;">Hai!, you have no redemption items yet.Go to Ayoha Mechant Menu ,get their Membership card and then collect your redemptions items!</div>',
-    //listeners: {
-    //    itemsingletap: function (list, idx, target, records, evt) {
-
    
+  emptyText: CoreFunction_AyohaMerchantReward_listEmptyEligibleStore_TextMsg('Point'),
 
-    //    },
-    //    deselect: function (list, records) {
-
-    //    }
-    //},
     listeners: {
         itemswipe: function (list, idx, target, record, evt) {
             //  To get the selection you should use getSelection() instead
@@ -1610,16 +1630,37 @@ if(container.getActiveIndex()==1){
                 style: 'background-color:rgba(255,255,255, 0.1);',
                 // width: '100%',
                 disableSelection: true,
-                itemTpl: '<div class="myContent" style="background-color:white;width:100%;height:80px;border-radius: 10px 10px 10px 10px;">' +
+                // itemTpl: '<div class="myContent" style="background-color:white;width:100%;height:80px;border-radius: 10px 10px 10px 10px;">' +
 
 
-                 '<table style="border-collapse:collapse;border-spacing:0;width:110%;background-color:white;margin:-10px 0px 0px -15px;height:90px;"><tr onclick="AyohaMerchantReward_openPointCardRedemption({ID})"><td style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:0px 7px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:20%;vertical-align:center">{ModifiedItemImg}</td><td style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;padding:0px 0px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:80%;vertical-align:center">{ItemName}<br><font style="font-family:Arial, sans-serif;font-size:12px;font-weight:normal;">{EnterpriseName}<br>End:{EndDate} - {CampaignDayLeft} Day Left</font></td></tr></table>'
+                //  '<table style="border-collapse:collapse;border-spacing:0;width:110%;background-color:white;margin:-10px 0px 0px -15px;height:90px;"><tr onclick="AyohaMerchantReward_openPointCardRedemption({ID})"><td style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:0px 7px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:20%;vertical-align:center">{ModifiedItemImg}</td><td style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;padding:0px 0px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:80%;vertical-align:center">{ItemName}<br><font style="font-family:Arial, sans-serif;font-size:12px;font-weight:normal;">{EnterpriseName}<br>End:{EndDate} - {CampaignDayLeft} Day Left</font></td></tr></table>'
 
-                     + '</div>',
+                //      + '</div>',
               
-                //height: '100%',
+                     itemTpl:
+                     '<div class="myContent" style="background-color:white;width:100%;height:80px;border-radius:10px;">' +
+                       '<table style="border-collapse:collapse;border-spacing:0;width:110%;background-color:white;margin:-10px 0 0 -15px;height:90px;">' +
+                         '<tr onclick="AyohaMerchantReward_openPointCardRedemption({ID})">' +
+                           '<td style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:0 7px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:20%;vertical-align:center;">' +
+                             '{ModifiedItemImg}' +
+                           '</td>' +
+                           '<td style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;padding:0;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:80%;vertical-align:center;">' +
+                             '{ItemName}<br>' +
+                             '<font style="font-family:Arial, sans-serif;font-size:12px;font-weight:normal;">' +
+                               // 👇 added icon before Merchant:
+                              // '<img src="{EnterprisesLogo}" style="width:14px;height:14px;margin:0 4px 0 0;vertical-align:middle;" />' +
+                               'Merchant:&nbsp;{EnterpriseName}<br>' +
+                             //  'Redeemed On:{EndDate}' +
+                               '<span style="font-size:10px;color:#F97316;background:#FFEDD5;border:1px solid #FDBA74;padding:3px 6px;border-radius:999px;white-space:nowrap;">Redeemed On:{EndDate}</span>'+
+                               //'<span style="float:right; white-space:nowrap;color:green;margin:0px 10px 0px 0px">&#9679;&nbsp;{CampaignDayLeft} Day Left</span>' +
+                             '</font>' +
+                           '</td>' +
+                         '</tr>' +
+                       '</table>' +
+                     '</div>',
               
-                emptyText: '<div  style="background-color:transparent;width:100%;height100%;">Hai!, you have no redemption items yet.Go to Ayoha Mechant Menu ,get their Membership card and then collect your redemptions items!</div>',
+                emptyText:CoreFunction_AyohaMerchantReward_listEmptyRedeemStore_TextMsg('Point'),
+                // '<div  style="background-color:transparent;width:100%;height100%;">Hai!, you have no redemption items yet.Go to Ayoha Mechant Menu ,get their Membership card and then collect your redemptions items!</div>',
                 //listeners: {
                 //    itemsingletap: function (list, idx, target, records, evt) {
 
@@ -1687,16 +1728,29 @@ if(container.getActiveIndex()==1){
                 style: 'background-color:rgba(255,255,255, 0.1);',
                 // width: '100%',
                 disableSelection: true,
-                itemTpl: '<div class="myContent" style="background-color:white;width:100%;height:80px;border-radius: 10px 10px 10px 10px;">' +
-
-
-                 '<table style="border-collapse:collapse;border-spacing:0;width:110%;background-color:white;margin:-10px 0px 0px -15px;height:90px;"><tr onclick="AyohaMerchantReward_openPointCardRedemption({ID})"><td style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:0px 7px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:20%;vertical-align:center">{ModifiedItemImg}</td><td style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;padding:0px 0px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:80%;vertical-align:center">{ItemName}<br><font style="font-family:Arial, sans-serif;font-size:12px;font-weight:normal;">{EnterpriseName}<br>End:{EndDate} - {CampaignDayLeft} Day Left</font></td></tr></table>'
-
-                     + '</div>',
+                itemTpl:
+                '<div class="myContent" style="background-color:white;width:100%;height:80px;border-radius:10px;">' +
+                  '<table style="border-collapse:collapse;border-spacing:0;width:110%;background-color:white;margin:-10px 0 0 -15px;height:90px;">' +
+                    '<tr onclick="AyohaMerchantReward_openPointCardRedemption({ID})">' +
+                      '<td style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:0 7px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:20%;vertical-align:center;">' +
+                        '{ModifiedItemImg}' +
+                      '</td>' +
+                      '<td style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;padding:0;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:80%;vertical-align:center;">' +
+                        '{ItemName}<br>' +
+                        '<font style="font-family:Arial, sans-serif;font-size:12px;font-weight:normal;">' +
+                          // 👇 added icon before Merchant:
+                         // '<img src="{EnterprisesLogo}" style="width:14px;height:14px;margin:0 4px 0 0;vertical-align:middle;" />' +
+                          'Merchant:&nbsp;{EnterpriseName}<br>' +
+                          //'Approved On:{EndDate}' +
+                          '<span style="font-size:10px;color:#16a34a;background:#ecfdf5;border:1px solid #bbf7d0;padding:3px 6px;border-radius:999px;white-space:nowrap;">Approved On:{EndDate}</span>'+
+                          //'<span style="float:right; white-space:nowrap;color:green;margin:0px 10px 0px 0px">&#9679;&nbsp;{CampaignDayLeft} Day Left</span>' +
+                        '</font>' +
+                      '</td>' +
+                    '</tr>' +
+                  '</table>' +
+                '</div>',
               
-                //height: '100%',
-              
-                emptyText: '<div  style="background-color:transparent;width:100%;height100%;">Hai!, you have no redemption items yet.Go to Ayoha Mechant Menu ,get their Membership card and then collect your redemptions items!</div>',
+                emptyText:CoreFunction_AyohaMerchantReward_listEmptyApprovedStore_TextMsg('Point'),
                 //listeners: {
                 //    itemsingletap: function (list, idx, target, records, evt) {
 
@@ -1763,16 +1817,36 @@ if(container.getActiveIndex()==1){
                 style: 'background-color:rgba(255,255,255, 0.1);',
                 // width: '100%',
                 disableSelection: true,
-                itemTpl: '<div class="myContent" style="background-color:white;width:100%;height:80px;border-radius: 10px 10px 10px 10px;">' +
 
 
-                 '<table style="border-collapse:collapse;border-spacing:0;width:110%;background-color:white;margin:-10px 0px 0px -15px;height:90px;"><tr onclick="AyohaMerchantReward_openPointCardRedemption({ID})"><td style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:0px 7px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:20%;vertical-align:center">{ModifiedItemImg}</td><td style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;padding:0px 0px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:80%;vertical-align:center">{ItemName}<br><font style="font-family:Arial, sans-serif;font-size:12px;font-weight:normal;">{EnterpriseName}<br>End:{EndDate} - {CampaignDayLeft} Day Left</font></td></tr></table>'
 
-                     + '</div>',
+
+                itemTpl:
+                '<div class="myContent" style="background-color:white;width:100%;height:80px;border-radius:10px;">' +
+                  '<table style="border-collapse:collapse;border-spacing:0;width:110%;background-color:white;margin:-10px 0 0 -15px;height:90px;">' +
+                    '<tr onclick="AyohaMerchantReward_openPointCardRedemption({ID})">' +
+                      '<td style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:0 7px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:20%;vertical-align:center;">' +
+                        '{ModifiedItemImg}' +
+                      '</td>' +
+                      '<td style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;padding:0;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:80%;vertical-align:center;">' +
+                        '{ItemName}<br>' +
+                        '<font style="font-family:Arial, sans-serif;font-size:12px;font-weight:normal;">' +
+                          // 👇 added icon before Merchant:
+                         // '<img src="{EnterprisesLogo}" style="width:14px;height:14px;margin:0 4px 0 0;vertical-align:middle;" />' +
+                          'Merchant:&nbsp;{EnterpriseName}<br>' +
+                          'End:{EndDate} &#9679;<span style="color:red">Expired {CampaignDayLeft} days ago' +
+                          //'<span style="float:right; white-space:nowrap;color:green;margin:0px 10px 0px 0px">&#9679;&nbsp;{CampaignDayLeft} Day Left</span>' +
+                        '</font>' +
+                      '</td>' +
+                    '</tr>' +
+                  '</table>' +
+                '</div>',
+
+
+
+
               
-                //height: '100%',
-              
-                emptyText: '<div  style="background-color:transparent;width:100%;height100%;">Hai!, you have no redemption items yet.Go to Ayoha Mechant Menu ,get their Membership card and then collect your redemptions items!</div>',
+                emptyText:CoreFunction_AyohaMerchantReward_listEmptyExpiredStore_TextMsg('Point'),
                 //listeners: {
                 //    itemsingletap: function (list, idx, target, records, evt) {
 
@@ -1944,7 +2018,7 @@ if(container.getActiveIndex()==1){
     width: '100%',
    // itemTpl: '<div onclick="FloatPanel_AyohaRewardVoucherDetailShow(' + "'" + '{VoucherName}' + "'" + ',' + "'" + '{VoucherImgPath}' + "'" + ',' + "'" + '{EntitledVoucherEndDate}' + "'" + ',' + "'" + '{DayLeft}' + "'" + ',' + "'" + '{VoucherCode}' + "'" + ',' + "'" + '{VoucherAmount}' + "'" + ');" style="width:{ModifiedWidth}px; height: 200px; border:3px none white;padding:0px 0px;margin:0px 0px 0px 10px;"><img src="{VoucherImgPath}" style="width:95%; height: 160px; border:2px dashed grey;"/><br><div style="margin:-4px 0px 0px 0px;text-align:left;color:black;font-family: Arial; font-size:12px;word-wrap: break-word;font-weight:normal;width:95%"><table style="border-collapse:collapse;border-spacing:0;width:100%;" class="tg"><thead><tr><th style="background-color:transparent;border-color:transparent;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:12px;font-weight:normal;overflow:hidden;padding:0px 1px;text-align:left;vertical-align:middle;word-break:normal">Valid Until:<b>{EntitledVoucherEndDate}</b></th><th style="background-color:transparent;border-color:transparent;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:12px;font-weight:normal;overflow:hidden;padding:0px 6px;text-align:right;vertical-align:middle;word-break:normal">Amount:<b>RM{VoucherAmount}</b></th></tr></thead><tbody><tr><td style="background-color:transparent;border-color:transparent;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:10px;overflow:hidden;padding:0px 1px;text-align:left;vertical-align:top;word-break:normal;color:purple;font-weight:bold;" colspan="2"><div style="margin:-1px 0px 0px 0px">Day Left:{DayLeft}</div></td></tr></tbody></table></div></div>',
     itemTpl: '<div onclick="FloatPanel_AyohaRewardVoucherDetailShow(' + "'" + '{VoucherName}' + "'" + ',' + "'" + '{VoucherImgPath}' + "'" + ',' + "'" + '{EntitledVoucherEndDate}' + "'" + ',' + "'" + '{DayLeft}' + "'" + ',' + "'" + '{VoucherCode}' + "'" + ',' + "'" + '{VoucherAmount}' + "'" + ');" style="width:100%; height: 200px; border:3px none white;padding:0px 0px;margin:0px 0px 0px 0px;"><img src="{VoucherImgPath}" style="width:100%; height: 160px; border:2px dashed grey;"/><br><div style="margin:-4px 0px 0px 0px;text-align:left;color:black;font-family: Arial; font-size:12px;word-wrap: break-word;font-weight:normal;width:95%"><table style="border-collapse:collapse;border-spacing:0;width:100%;" class="tg"><thead><tr><th style="background-color:transparent;border-color:transparent;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:12px;font-weight:normal;overflow:hidden;padding:0px 1px;text-align:left;vertical-align:middle;word-break:normal">Valid Until:<b>{EntitledVoucherEndDate}</b></th><th style="background-color:transparent;border-color:transparent;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:12px;font-weight:normal;overflow:hidden;padding:0px 6px;text-align:right;vertical-align:middle;word-break:normal">Amount:<b>RM{VoucherAmount}</b></th></tr></thead><tbody><tr><td style="background-color:transparent;border-color:transparent;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:10px;overflow:hidden;padding:0px 1px;text-align:left;vertical-align:top;word-break:normal;color:purple;font-weight:bold;" colspan="2"><div style="margin:-1px 0px 0px 0px">Day Left:{DayLeft}</div></td></tr></tbody></table></div></div>',
-    emptyText: '<div style="width:{ModifiedWidth}px; height: 200px; border:3px none white;padding:0px 0px;margin:0px 0px 0px 10px;"><img src="resources/icons/NotAvailableVoucher.png" style="width:99%; height: 160px; border:2px dashed grey;"/><br><div style="margin:-5px 0px 0px 0px;text-align:left;color:black;font-family: Arial; font-size:9px;word-wrap: break-word;font-weight:normal;width:100%">*Vouchers will be given by ayoha reward to users when users reach a certain level of spending in the ayoha merchant online store and also certain special days such as religious days, national independence day, birthdays and so on.</div></div>',
+    emptyText:CoreFunction_AyohaMerchantReward_listEmptyEligibleStore_TextMsg('Voucher'),    
 },
 ///////VoucherList_Redeem
 {
@@ -1972,7 +2046,7 @@ if(container.getActiveIndex()==1){
     width: '100%',
    // itemTpl: '<div onclick="FloatPanel_AyohaRewardVoucherDetailShow(' + "'" + '{VoucherName}' + "'" + ',' + "'" + '{VoucherImgPath}' + "'" + ',' + "'" + '{EntitledVoucherEndDate}' + "'" + ',' + "'" + '{DayLeft}' + "'" + ',' + "'" + '{VoucherCode}' + "'" + ',' + "'" + '{VoucherAmount}' + "'" + ');" style="width:{ModifiedWidth}px; height: 200px; border:3px none white;padding:0px 0px;margin:0px 0px 0px 10px;"><img src="{VoucherImgPath}" style="width:95%; height: 160px; border:2px dashed grey;"/><br><div style="margin:-4px 0px 0px 0px;text-align:left;color:black;font-family: Arial; font-size:12px;word-wrap: break-word;font-weight:normal;width:95%"><table style="border-collapse:collapse;border-spacing:0;width:100%;" class="tg"><thead><tr><th style="background-color:transparent;border-color:transparent;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:12px;font-weight:normal;overflow:hidden;padding:0px 1px;text-align:left;vertical-align:middle;word-break:normal">Valid Until:<b>{EntitledVoucherEndDate}</b></th><th style="background-color:transparent;border-color:transparent;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:12px;font-weight:normal;overflow:hidden;padding:0px 6px;text-align:right;vertical-align:middle;word-break:normal">Amount:<b>RM{VoucherAmount}</b></th></tr></thead><tbody><tr><td style="background-color:transparent;border-color:transparent;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:10px;overflow:hidden;padding:0px 1px;text-align:left;vertical-align:top;word-break:normal;color:purple;font-weight:bold;" colspan="2"><div style="margin:-1px 0px 0px 0px">Day Left:{DayLeft}</div></td></tr></tbody></table></div></div>',
     itemTpl: '<div onclick="FloatPanel_AyohaRewardVoucherDetailShow(' + "'" + '{VoucherName}' + "'" + ',' + "'" + '{VoucherImgPath}' + "'" + ',' + "'" + '{EntitledVoucherEndDate}' + "'" + ',' + "'" + '{DayLeft}' + "'" + ',' + "'" + '{VoucherCode}' + "'" + ',' + "'" + '{VoucherAmount}' + "'" + ');" style="width:100%; height: 200px; border:3px none white;padding:0px 0px;margin:0px 0px 0px 0px;"><img src="{VoucherImgPath}" style="width:100%; height: 160px; border:2px dashed grey;"/><br><div style="margin:-4px 0px 0px 0px;text-align:left;color:black;font-family: Arial; font-size:12px;word-wrap: break-word;font-weight:normal;width:95%"><table style="border-collapse:collapse;border-spacing:0;width:100%;" class="tg"><thead><tr><th style="background-color:transparent;border-color:transparent;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:12px;font-weight:normal;overflow:hidden;padding:0px 1px;text-align:left;vertical-align:middle;word-break:normal">Valid Until:<b>{EntitledVoucherEndDate}</b></th><th style="background-color:transparent;border-color:transparent;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:12px;font-weight:normal;overflow:hidden;padding:0px 6px;text-align:right;vertical-align:middle;word-break:normal">Amount:<b>RM{VoucherAmount}</b></th></tr></thead><tbody><tr><td style="background-color:transparent;border-color:transparent;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:10px;overflow:hidden;padding:0px 1px;text-align:left;vertical-align:top;word-break:normal;color:purple;font-weight:bold;" colspan="2"><div style="margin:-1px 0px 0px 0px">Day Left:{DayLeft}</div></td></tr></tbody></table></div></div>',
-    emptyText: '<div style="width:{ModifiedWidth}px; height: 200px; border:3px none white;padding:0px 0px;margin:0px 0px 0px 10px;"><img src="resources/icons/NotAvailableVoucher.png" style="width:99%; height: 160px; border:2px dashed grey;"/><br><div style="margin:-5px 0px 0px 0px;text-align:left;color:black;font-family: Arial; font-size:9px;word-wrap: break-word;font-weight:normal;width:100%">*Vouchers will be given by ayoha reward to users when users reach a certain level of spending in the ayoha merchant online store and also certain special days such as religious days, national independence day, birthdays and so on.</div></div>',
+    emptyText:CoreFunction_AyohaMerchantReward_listEmptyRedeemStore_TextMsg('Voucher'),
 },
 ///////VoucherList_Approved
 {
@@ -2000,7 +2074,7 @@ if(container.getActiveIndex()==1){
     width: '100%',
    // itemTpl: '<div onclick="FloatPanel_AyohaRewardVoucherDetailShow(' + "'" + '{VoucherName}' + "'" + ',' + "'" + '{VoucherImgPath}' + "'" + ',' + "'" + '{EntitledVoucherEndDate}' + "'" + ',' + "'" + '{DayLeft}' + "'" + ',' + "'" + '{VoucherCode}' + "'" + ',' + "'" + '{VoucherAmount}' + "'" + ');" style="width:{ModifiedWidth}px; height: 200px; border:3px none white;padding:0px 0px;margin:0px 0px 0px 10px;"><img src="{VoucherImgPath}" style="width:95%; height: 160px; border:2px dashed grey;"/><br><div style="margin:-4px 0px 0px 0px;text-align:left;color:black;font-family: Arial; font-size:12px;word-wrap: break-word;font-weight:normal;width:95%"><table style="border-collapse:collapse;border-spacing:0;width:100%;" class="tg"><thead><tr><th style="background-color:transparent;border-color:transparent;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:12px;font-weight:normal;overflow:hidden;padding:0px 1px;text-align:left;vertical-align:middle;word-break:normal">Valid Until:<b>{EntitledVoucherEndDate}</b></th><th style="background-color:transparent;border-color:transparent;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:12px;font-weight:normal;overflow:hidden;padding:0px 6px;text-align:right;vertical-align:middle;word-break:normal">Amount:<b>RM{VoucherAmount}</b></th></tr></thead><tbody><tr><td style="background-color:transparent;border-color:transparent;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:10px;overflow:hidden;padding:0px 1px;text-align:left;vertical-align:top;word-break:normal;color:purple;font-weight:bold;" colspan="2"><div style="margin:-1px 0px 0px 0px">Day Left:{DayLeft}</div></td></tr></tbody></table></div></div>',
     itemTpl: '<div onclick="FloatPanel_AyohaRewardVoucherDetailShow(' + "'" + '{VoucherName}' + "'" + ',' + "'" + '{VoucherImgPath}' + "'" + ',' + "'" + '{EntitledVoucherEndDate}' + "'" + ',' + "'" + '{DayLeft}' + "'" + ',' + "'" + '{VoucherCode}' + "'" + ',' + "'" + '{VoucherAmount}' + "'" + ');" style="width:100%; height: 200px; border:3px none white;padding:0px 0px;margin:0px 0px 0px 0px;"><img src="{VoucherImgPath}" style="width:100%; height: 160px; border:2px dashed grey;"/><br><div style="margin:-4px 0px 0px 0px;text-align:left;color:black;font-family: Arial; font-size:12px;word-wrap: break-word;font-weight:normal;width:95%"><table style="border-collapse:collapse;border-spacing:0;width:100%;" class="tg"><thead><tr><th style="background-color:transparent;border-color:transparent;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:12px;font-weight:normal;overflow:hidden;padding:0px 1px;text-align:left;vertical-align:middle;word-break:normal">Valid Until:<b>{EntitledVoucherEndDate}</b></th><th style="background-color:transparent;border-color:transparent;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:12px;font-weight:normal;overflow:hidden;padding:0px 6px;text-align:right;vertical-align:middle;word-break:normal">Amount:<b>RM{VoucherAmount}</b></th></tr></thead><tbody><tr><td style="background-color:transparent;border-color:transparent;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:10px;overflow:hidden;padding:0px 1px;text-align:left;vertical-align:top;word-break:normal;color:purple;font-weight:bold;" colspan="2"><div style="margin:-1px 0px 0px 0px">Day Left:{DayLeft}</div></td></tr></tbody></table></div></div>',
-    emptyText: '<div style="width:{ModifiedWidth}px; height: 200px; border:3px none white;padding:0px 0px;margin:0px 0px 0px 10px;"><img src="resources/icons/NotAvailableVoucher.png" style="width:99%; height: 160px; border:2px dashed grey;"/><br><div style="margin:-5px 0px 0px 0px;text-align:left;color:black;font-family: Arial; font-size:9px;word-wrap: break-word;font-weight:normal;width:100%">*Vouchers will be given by ayoha reward to users when users reach a certain level of spending in the ayoha merchant online store and also certain special days such as religious days, national independence day, birthdays and so on.</div></div>',
+    emptyText: CoreFunction_AyohaMerchantReward_listEmptyApprovedStore_TextMsg('Voucher'),
 },
 ///////VoucherList_Expired
 {
@@ -2028,7 +2102,7 @@ if(container.getActiveIndex()==1){
     width: '100%',
    // itemTpl: '<div onclick="FloatPanel_AyohaRewardVoucherDetailShow(' + "'" + '{VoucherName}' + "'" + ',' + "'" + '{VoucherImgPath}' + "'" + ',' + "'" + '{EntitledVoucherEndDate}' + "'" + ',' + "'" + '{DayLeft}' + "'" + ',' + "'" + '{VoucherCode}' + "'" + ',' + "'" + '{VoucherAmount}' + "'" + ');" style="width:{ModifiedWidth}px; height: 200px; border:3px none white;padding:0px 0px;margin:0px 0px 0px 10px;"><img src="{VoucherImgPath}" style="width:95%; height: 160px; border:2px dashed grey;"/><br><div style="margin:-4px 0px 0px 0px;text-align:left;color:black;font-family: Arial; font-size:12px;word-wrap: break-word;font-weight:normal;width:95%"><table style="border-collapse:collapse;border-spacing:0;width:100%;" class="tg"><thead><tr><th style="background-color:transparent;border-color:transparent;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:12px;font-weight:normal;overflow:hidden;padding:0px 1px;text-align:left;vertical-align:middle;word-break:normal">Valid Until:<b>{EntitledVoucherEndDate}</b></th><th style="background-color:transparent;border-color:transparent;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:12px;font-weight:normal;overflow:hidden;padding:0px 6px;text-align:right;vertical-align:middle;word-break:normal">Amount:<b>RM{VoucherAmount}</b></th></tr></thead><tbody><tr><td style="background-color:transparent;border-color:transparent;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:10px;overflow:hidden;padding:0px 1px;text-align:left;vertical-align:top;word-break:normal;color:purple;font-weight:bold;" colspan="2"><div style="margin:-1px 0px 0px 0px">Day Left:{DayLeft}</div></td></tr></tbody></table></div></div>',
     itemTpl: '<div onclick="FloatPanel_AyohaRewardVoucherDetailShow(' + "'" + '{VoucherName}' + "'" + ',' + "'" + '{VoucherImgPath}' + "'" + ',' + "'" + '{EntitledVoucherEndDate}' + "'" + ',' + "'" + '{DayLeft}' + "'" + ',' + "'" + '{VoucherCode}' + "'" + ',' + "'" + '{VoucherAmount}' + "'" + ');" style="width:100%; height: 200px; border:3px none white;padding:0px 0px;margin:0px 0px 0px 0px;"><img src="{VoucherImgPath}" style="width:100%; height: 160px; border:2px dashed grey;"/><br><div style="margin:-4px 0px 0px 0px;text-align:left;color:black;font-family: Arial; font-size:12px;word-wrap: break-word;font-weight:normal;width:95%"><table style="border-collapse:collapse;border-spacing:0;width:100%;" class="tg"><thead><tr><th style="background-color:transparent;border-color:transparent;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:12px;font-weight:normal;overflow:hidden;padding:0px 1px;text-align:left;vertical-align:middle;word-break:normal">Valid Until:<b>{EntitledVoucherEndDate}</b></th><th style="background-color:transparent;border-color:transparent;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:12px;font-weight:normal;overflow:hidden;padding:0px 6px;text-align:right;vertical-align:middle;word-break:normal">Amount:<b>RM{VoucherAmount}</b></th></tr></thead><tbody><tr><td style="background-color:transparent;border-color:transparent;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:10px;overflow:hidden;padding:0px 1px;text-align:left;vertical-align:top;word-break:normal;color:purple;font-weight:bold;" colspan="2"><div style="margin:-1px 0px 0px 0px">Day Left:{DayLeft}</div></td></tr></tbody></table></div></div>',
-    emptyText: '<div style="width:{ModifiedWidth}px; height: 200px; border:3px none white;padding:0px 0px;margin:0px 0px 0px 10px;"><img src="resources/icons/NotAvailableVoucher.png" style="width:99%; height: 160px; border:2px dashed grey;"/><br><div style="margin:-5px 0px 0px 0px;text-align:left;color:black;font-family: Arial; font-size:9px;word-wrap: break-word;font-weight:normal;width:100%">*Vouchers will be given by ayoha reward to users when users reach a certain level of spending in the ayoha merchant online store and also certain special days such as religious days, national independence day, birthdays and so on.</div></div>',
+    emptyText:CoreFunction_AyohaMerchantReward_listEmptyExpiredStore_TextMsg('Voucher'),
 },
 
                         ]
@@ -2085,13 +2159,40 @@ if(container.getActiveIndex()==1){
                         
                         
                         {
-                            html:'<div class="perk-tabs">'+
-                            '<button id="btnContestEligible" class="perk-btn contest active" onclick="switchPerkTab_Contest(this,\'Eligible\',0);">Eligible Perks</button>'+
-                            '<button id="btnContestRedeem" class="perk-btn contest" onclick="switchPerkTab_Contest(this,\'Submitted\',1);">Joined</button>'+
-                            '<button id="btnContestApproved" class="perk-btn contest" onclick="switchPerkTab_Contest(this,\'Reviewed\',2)">Result</button>'+
-                            '<button id="btnContestExpired" class="perk-btn contest" onclick="switchPerkTab_Contest(this,\'Expired\',3)">Expired</button>'+
+                        //     html:'<div class="perk-tabs">'+
+                        //     '<button id="btnContestEligible" class="perk-btn contest active" onclick="switchPerkTab_Contest(this,\'Eligible\',0);">Eligible Perks</button>'+
+                        //     '<button id="btnContestRedeem" class="perk-btn contest" onclick="switchPerkTab_Contest(this,\'Submitted\',1);">Joined</button>'+
+                        //     '<button id="btnContestApproved" class="perk-btn contest" onclick="switchPerkTab_Contest(this,\'Reviewed\',2)">Result</button>'+
+                        //     '<button id="btnContestExpired" class="perk-btn contest" onclick="switchPerkTab_Contest(this,\'Expired\',3)">Expired</button>'+
+                        //   '</div>'
+
+
+
+
+
+
+
+                          html:
+                          '<div class="perk-tabs">'+
+                            '<button id="btnContestEligible" class="perk-btn contest active" onclick="switchPerkTab_Contest(this,\'Eligible\',0);">' +
+                              '<span class="perk-label">Eligible Perks</span>' +
+                              '<span id="cntContestEligible" class="perk-count">(3)</span>' +
+                            '</button>'+
+                            '<button id="btnContestRedeem" class="perk-btn contest" onclick="switchPerkTab_Contest(this,\'Submitted\',1);">' +
+                              '<span class="perk-label">Joined</span>' +
+                              '<span id="cntContestRedeem" class="perk-count"></span>' +
+                            '</button>'+
+                            '<button id="btnContestApproved" class="perk-btn contest" onclick="switchPerkTab_Contest(this,\'Reviewed\',2);">' +
+                              '<span class="perk-label">Result</span>' +
+                              '<span id="cntContestApproved" class="perk-count"></span>' +
+                            '</button>'+
+                            '<button id="btnContestExpired" class="perk-btn contest" onclick="switchPerkTab_Contest(this,\'Expired\',3);">' +
+                              '<span class="perk-label">Expired</span>' +
+                              '<span id="cntContestExpired" class="perk-count"></span>' +
+                            '</button>'+
                           '</div>'
-                        },
+                          },
+                        
                         
                         
                         
@@ -2195,7 +2296,7 @@ switchPerkTab_Contest(expiredBtn, 'Expired', 3);
        '</div>',
 
 
-            emptyText: '<div  style="background-color:transparent;width:100%; height: 400px;margin:20px 0px 0px 0px;text-align:center"><img src="resources/icons/NoMembershipEventContest01.jpg" style="width: 95%; height: 500px;"/></div>',
+            emptyText: CoreFunction_AyohaMerchantReward_listEmptyEligibleStore_TextMsg('Contest'),
 
         },
 ///////AyohaMerchantReward_ContestList_Joined
@@ -2244,7 +2345,7 @@ switchPerkTab_Contest(expiredBtn, 'Expired', 3);
 '</div>',
 
 
-    emptyText: '<div  style="background-color:transparent;width:100%; height: 400px;margin:20px 0px 0px 0px;text-align:center"><img src="resources/icons/NoMembershipEventContest01.jpg" style="width: 95%; height: 500px;"/></div>',
+    emptyText:CoreFunction_AyohaMerchantReward_listEmptyRedeemStore_TextMsg('Contest'),
 
 },
 ///////AyohaMerchantReward_ContestList_Result
@@ -2293,7 +2394,7 @@ switchPerkTab_Contest(expiredBtn, 'Expired', 3);
 '</div>',
 
 
-    emptyText: '<div  style="background-color:transparent;width:100%; height: 400px;margin:20px 0px 0px 0px;text-align:center"><img src="resources/icons/NoMembershipEventContest01.jpg" style="width: 95%; height: 500px;"/></div>',
+    emptyText: CoreFunction_AyohaMerchantReward_listEmptyApprovedStore_TextMsg('Contest'),
 
 },
 ///////AyohaMerchantReward_ContestList_Expired
@@ -2342,7 +2443,7 @@ switchPerkTab_Contest(expiredBtn, 'Expired', 3);
 '</div>',
 
 
-    emptyText: '<div  style="background-color:transparent;width:100%; height: 400px;margin:20px 0px 0px 0px;text-align:center"><img src="resources/icons/NoMembershipEventContest01.jpg" style="width: 95%; height: 500px;"/></div>',
+    emptyText: CoreFunction_AyohaMerchantReward_listEmptyExpiredStore_TextMsg('Contest'),
 
 },
     ]
@@ -2419,11 +2520,37 @@ switchPerkTab_Contest(expiredBtn, 'Expired', 3);
                         
                         
                         {
-                            html:'<div class="perk-tabs">'+
-                            '<button id="btnEventEligible" class="perk-btn event active" onclick="switchPerkTab_Event(this,\'Eligible\',0);">Event Invitation</button>'+
-                            '<button id="btnEventIwillAttend" class="perk-btn event" onclick="switchPerkTab_Event(this,\'IwillAttend\',1);">I will Attend</button>'+
-                            '<button id="btnEventInterested" class="perk-btn event" onclick="switchPerkTab_Event(this,\'Interested\',2)">Interested</button>'+
-                            '<button id="btnEventExpired" class="perk-btn event" onclick="switchPerkTab_Event(this,\'Expired\',3)">Expired</button>'+
+                        //     html:'<div class="perk-tabs">'+
+                        //     '<button id="btnEventEligible" class="perk-btn event active" onclick="switchPerkTab_Event(this,\'Eligible\',0);">Event Invitation</button>'+
+                        //     '<button id="btnEventIwillAttend" class="perk-btn event" onclick="switchPerkTab_Event(this,\'IwillAttend\',1);">I will Attend</button>'+
+                        //     '<button id="btnEventInterested" class="perk-btn event" onclick="switchPerkTab_Event(this,\'Interested\',2)">Interested</button>'+
+                        //     '<button id="btnEventExpired" class="perk-btn event" onclick="switchPerkTab_Event(this,\'Expired\',3)">Expired</button>'+
+                        //   '</div>'
+
+
+
+
+
+
+
+                          html:
+                          '<div class="perk-tabs">'+
+                            '<button id="btnEventEligible" class="perk-btn event active" onclick="switchPerkTab_Event(this,\'Eligible\',0);">' +
+                              '<span class="perk-label">Eligible Perks</span>' +
+                              '<span id="cntEventEligible" class="perk-count">(3)</span>' +
+                            '</button>'+
+                            '<button id="btnEventIwillAttend" class="perk-btn event" onclick="switchPerkTab_Event(this,\'IwillAttend\',1);">' +
+                              '<span class="perk-label">I will Attend</span>' +
+                              '<span id="cntEventRedeem" class="perk-count"></span>' +
+                            '</button>'+
+                            '<button id="btnEventInterested" class="perk-btn event" onclick="switchPerkTab_Event(this,\'Interested\',2);">' +
+                              '<span class="perk-label">Interested</span>' +
+                              '<span id="cntEventApproved" class="perk-count"></span>' +
+                            '</button>'+
+                            '<button id="btnEventExpired" class="perk-btn event" onclick="switchPerkTab_Event(this,\'Expired\',3);">' +
+                              '<span class="perk-label">Expired</span>' +
+                              '<span id="cntEventExpired" class="perk-count"></span>' +
+                            '</button>'+
                           '</div>'
                         },
                         
@@ -2525,7 +2652,7 @@ switchPerkTab_Event(expiredBtn, 'Expired', 3);
 
 
             // itemTpl: '<table style="border-collapse:collapse;border-spacing:0;width:100%;"><tr><td style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 10px;text-align:center;vertical-align:middle;" colspan="2"><img src="{EventCoverPhoto}" style="width:400px;height:250px"/></td></tr><tr><td style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:5px 20px;text-align:center;vertical-align:middle;color:black;"><div style="font-family:Arial, sans-serif;font-size:40px;color:black;font-weight:bold;">{EventStartDate_Day}</div><br><div style="font-family:Arial, sans-serif;font-size:16px;color:red;font-weight:bold;margin:-17px 0px 0px 0px;">{EventStartDate_Month}</div></td><td style="background-color:#ffffff;border-color:#ffffff;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:16px;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:middle;word-wrap: break-word;word-break: break-all;white-space: break-spaces;"><div style="margin:-5px 0px 0px 0px;text-align:left;color:black;font-family: Arial; font-size:14px;word-wrap: break-word;word-break: break-all;white-space: break-spaces;font-weight:bold;width:100%;margin:5px 0px 0px 0px;">{EventName}</div></td></tr><tr><td style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:center;vertical-align:middle;word-break:normal" colspan="2">Berminat | Akan Hadir</td></tr></table>',
-            emptyText: '<div  style="background-color:transparent;width: 100%; height: 400px;margin:20px 0px 0px 0px;padding:5px 10px"><img src="resources/icons/NoMembershipEvent.jpg" style="width: 100%; height: 400px;"/></div>',
+            emptyText:CoreFunction_AyohaMerchantReward_listEmptyEligibleStore_TextMsg('Event'),
 
         },
            ///// IwillAttend 
@@ -2567,7 +2694,7 @@ switchPerkTab_Event(expiredBtn, 'Expired', 3);
 
 
             // itemTpl: '<table style="border-collapse:collapse;border-spacing:0;width:100%;"><tr><td style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 10px;text-align:center;vertical-align:middle;" colspan="2"><img src="{EventCoverPhoto}" style="width:400px;height:250px"/></td></tr><tr><td style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:5px 20px;text-align:center;vertical-align:middle;color:black;"><div style="font-family:Arial, sans-serif;font-size:40px;color:black;font-weight:bold;">{EventStartDate_Day}</div><br><div style="font-family:Arial, sans-serif;font-size:16px;color:red;font-weight:bold;margin:-17px 0px 0px 0px;">{EventStartDate_Month}</div></td><td style="background-color:#ffffff;border-color:#ffffff;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:16px;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:middle;word-wrap: break-word;word-break: break-all;white-space: break-spaces;"><div style="margin:-5px 0px 0px 0px;text-align:left;color:black;font-family: Arial; font-size:14px;word-wrap: break-word;word-break: break-all;white-space: break-spaces;font-weight:bold;width:100%;margin:5px 0px 0px 0px;">{EventName}</div></td></tr><tr><td style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:center;vertical-align:middle;word-break:normal" colspan="2">Berminat | Akan Hadir</td></tr></table>',
-            emptyText: '<div  style="background-color:transparent;width: 100%; height: 400px;margin:20px 0px 0px 0px;padding:5px 10px"><img src="resources/icons/NoMembershipEvent.jpg" style="width: 100%; height: 400px;"/></div>',
+            emptyText: CoreFunction_AyohaMerchantReward_listEmptyRedeemStore_TextMsg('Event'),
 
         },
    ///// Interested 
@@ -2609,7 +2736,7 @@ switchPerkTab_Event(expiredBtn, 'Expired', 3);
 
 
     // itemTpl: '<table style="border-collapse:collapse;border-spacing:0;width:100%;"><tr><td style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 10px;text-align:center;vertical-align:middle;" colspan="2"><img src="{EventCoverPhoto}" style="width:400px;height:250px"/></td></tr><tr><td style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:5px 20px;text-align:center;vertical-align:middle;color:black;"><div style="font-family:Arial, sans-serif;font-size:40px;color:black;font-weight:bold;">{EventStartDate_Day}</div><br><div style="font-family:Arial, sans-serif;font-size:16px;color:red;font-weight:bold;margin:-17px 0px 0px 0px;">{EventStartDate_Month}</div></td><td style="background-color:#ffffff;border-color:#ffffff;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:16px;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:middle;word-wrap: break-word;word-break: break-all;white-space: break-spaces;"><div style="margin:-5px 0px 0px 0px;text-align:left;color:black;font-family: Arial; font-size:14px;word-wrap: break-word;word-break: break-all;white-space: break-spaces;font-weight:bold;width:100%;margin:5px 0px 0px 0px;">{EventName}</div></td></tr><tr><td style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:center;vertical-align:middle;word-break:normal" colspan="2">Berminat | Akan Hadir</td></tr></table>',
-    emptyText: '<div  style="background-color:transparent;width: 100%; height: 400px;margin:20px 0px 0px 0px;padding:5px 10px"><img src="resources/icons/NoMembershipEvent.jpg" style="width: 100%; height: 400px;"/></div>',
+    emptyText: CoreFunction_AyohaMerchantReward_listEmptyRedeemStore_TextMsg('Event'),
 
 },
  ///// Expired 
@@ -2651,7 +2778,7 @@ switchPerkTab_Event(expiredBtn, 'Expired', 3);
 
 
     // itemTpl: '<table style="border-collapse:collapse;border-spacing:0;width:100%;"><tr><td style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 10px;text-align:center;vertical-align:middle;" colspan="2"><img src="{EventCoverPhoto}" style="width:400px;height:250px"/></td></tr><tr><td style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:5px 20px;text-align:center;vertical-align:middle;color:black;"><div style="font-family:Arial, sans-serif;font-size:40px;color:black;font-weight:bold;">{EventStartDate_Day}</div><br><div style="font-family:Arial, sans-serif;font-size:16px;color:red;font-weight:bold;margin:-17px 0px 0px 0px;">{EventStartDate_Month}</div></td><td style="background-color:#ffffff;border-color:#ffffff;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:16px;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:middle;word-wrap: break-word;word-break: break-all;white-space: break-spaces;"><div style="margin:-5px 0px 0px 0px;text-align:left;color:black;font-family: Arial; font-size:14px;word-wrap: break-word;word-break: break-all;white-space: break-spaces;font-weight:bold;width:100%;margin:5px 0px 0px 0px;">{EventName}</div></td></tr><tr><td style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:center;vertical-align:middle;word-break:normal" colspan="2">Berminat | Akan Hadir</td></tr></table>',
-    emptyText: '<div  style="background-color:transparent;width: 100%; height: 400px;margin:20px 0px 0px 0px;padding:5px 10px"><img src="resources/icons/NoMembershipEvent.jpg" style="width: 100%; height: 400px;"/></div>',
+    emptyText:CoreFunction_AyohaMerchantReward_listEmptyExpiredStore_TextMsg('Event'),
 
 },
     ]
@@ -2724,12 +2851,33 @@ switchPerkTab_Event(expiredBtn, 'Expired', 3);
                         
                         
                         {
-                            html:'<div class="perk-tabs">'+
-                            '<button id="btnDiscountEligible" class="perk-btn discount active" onclick="switchPerkTab_Discount(this,\'Eligible\',0);">Eligible Perks</button>'+
-                            '<button id="btnDiscountRedeemOnline" class="perk-btn discount" onclick="switchPerkTab_Discount(this,\'Redeem_Online\',1);">Redeem Online</button>'+
-                            '<button id="btnDiscountRedeemOffline" class="perk-btn discount" onclick="switchPerkTab_Discount(this,\'Redeem_Offline\',2)">Redeem Offline</button>'+
-                            '<button id="btnDiscountExpired" class="perk-btn discount" onclick="switchPerkTab_Discount(this,\'Expired\',3)">Expired</button>'+
-                          '</div>'
+                        //     html:'<div class="perk-tabs">'+
+                        //     '<button id="btnDiscountEligible" class="perk-btn discount active" onclick="switchPerkTab_Discount(this,\'Eligible\',0);">Eligible Perks</button>'+
+                        //     '<button id="btnDiscountRedeemOnline" class="perk-btn discount" onclick="switchPerkTab_Discount(this,\'Redeem_Online\',1);">Redeem Online</button>'+
+                        //     '<button id="btnDiscountRedeemOffline" class="perk-btn discount" onclick="switchPerkTab_Discount(this,\'Redeem_Offline\',2)">Redeem Offline</button>'+
+                        //     '<button id="btnDiscountExpired" class="perk-btn discount" onclick="switchPerkTab_Discount(this,\'Expired\',3)">Expired</button>'+
+                        //   '</div>'
+
+
+
+                          html:'<div class="perk-tabs">'+
+                          '<button id="btnDiscountEligible" class="perk-btn discount active" onclick="switchPerkTab_Discount(this,\'Eligible\',0);">' +
+                            '<span class="perk-label">Eligible Perks</span>' +
+                            '<span id="cntDiscountEligible" class="perk-count">(3)</span>' +
+                          '</button>'+
+                          '<button id="btnDiscountRedeemOnline" class="perk-btn discount" onclick="switchPerkTab_Discount(this,\'Redeem_Online\',1);">' +
+                            '<span class="perk-label">Redeem Online</span>' +
+                            '<span id="cntDiscountRedeemOnline" class="perk-count"></span>' +
+                          '</button>'+
+                          '<button id="btnDiscountRedeemOffline" class="perk-btn discount" onclick="switchPerkTab_Discount(this,\'Redeem_Offline\',2);">' +
+                            '<span class="perk-label">Redeem Offline</span>' +
+                            '<span id="cntDiscountRedeemOffline" class="perk-count"></span>' +
+                          '</button>'+
+                          '<button id="btnDiscountExpired" class="perk-btn discount" onclick="switchPerkTab_Discount(this,\'Expired\',3);">' +
+                            '<span class="perk-label">Expired</span>' +
+                            '<span id="cntDiscountExpired" class="perk-count"></span>' +
+                          '</button>'+
+                        '</div>'
                         },
                         
                         
@@ -2829,7 +2977,7 @@ switchPerkTab_Event(expiredBtn, 'Expired', 3);
         
                                    '</div>',
         
-        
+                                   emptyText: CoreFunction_AyohaMerchantReward_listEmptyEligibleStore_TextMsg('Discounts'),
                                        
                                         },
                                         {
@@ -2869,7 +3017,7 @@ switchPerkTab_Event(expiredBtn, 'Expired', 3);
                    
                                             //height: '100%',
                    
-                                            emptyText: '<div  style="background-color:transparent;width:100%;height100%;">No Transaction!</div>',
+                                            emptyText: CoreFunction_AyohaMerchantReward_listEmptyRedeemOnline_TextMsg(),
                    
                    
                                         },
@@ -2910,7 +3058,7 @@ switchPerkTab_Event(expiredBtn, 'Expired', 3);
                    
                                             //height: '100%',
                    
-                                            emptyText: '<div  style="background-color:transparent;width:100%;height100%;">No Transaction!</div>',
+                                            emptyText: CoreFunction_AyohaMerchantReward_listEmptyRedeemOffline_TextMsg(),
                    
                    
                                         },
@@ -2951,7 +3099,7 @@ switchPerkTab_Event(expiredBtn, 'Expired', 3);
         
         
                                    '</div>',
-        
+                                   emptyText: CoreFunction_AyohaMerchantReward_listEmptyExpiredStore_TextMsg('Discounts'),
         
                                        
                                         },
@@ -4848,9 +4996,18 @@ window._EligibleVsUsed_DatalabelsRegistered =
             )
         AppState.AyohaMerchantReward.TotalApprovedRedeemedPerks=TtlRedeemApprovePerks;
 
+       
 
-
-
+        var TtlExpiredPerks=parseInt(
+            AppState.AyohaMerchantReward.StampedPerksRedeemExpired
+            + AppState.AyohaMerchantReward.PointPerksExpired
+            +AppState.AyohaMerchantReward.VoucherExpired
+            +AppState.AyohaMerchantReward.ContestExpired
+            +AppState.AyohaMerchantReward.EventExpired
+            +AppState.AyohaMerchantReward.DiscountExpired
+            
+            
+            )
 
 
 
@@ -4859,6 +5016,7 @@ window._EligibleVsUsed_DatalabelsRegistered =
         Ext.getCmp('htmlAyohaMerchantReward_TotalPerkEligibleCount').setHtml('<div  style="color:black;text-align: center;font-size:14px;width:100%;margin:0px 0px 0px 0px;font-weight:bold">'+AppState.AyohaMerchantReward.TotalEligiblePerks+'</div>');
         Ext.getCmp('htmlAyohaMerchantReward_TotalRedeemCount').setHtml('<div  style="color:black;text-align: center;font-size:14px;width:100%;margin:0px 0px 0px 0px;font-weight:bold">'+AppState.AyohaMerchantReward.TotalRedeemedPerks+'</div>');
         Ext.getCmp('htmlAyohaMerchantReward_TotalApprovedRedeemCount').setHtml('<div  style="color:black;text-align: center;font-size:14px;width:100%;margin:0px 0px 0px 0px;font-weight:bold">'+AppState.AyohaMerchantReward.TotalApprovedRedeemedPerks+'</div>');
+        Ext.getCmp('htmlAyohaMerchantReward_TotalPerkExpiredCount').setHtml('<div  style="color:black;text-align: center;font-size:14px;width:100%;margin:0px 0px 0px 0px;font-weight:bold">'+TtlExpiredPerks+'</div>');
 
 
     var canvas = document.getElementById('loyaltyHBar');
@@ -4895,7 +5053,7 @@ window._EligibleVsUsed_DatalabelsRegistered =
         AppState.AyohaMerchantReward.StampedPerksRedeemSubmitted,
         AppState.AyohaMerchantReward.PointPerksRedeemSubmitted,
         AppState.AyohaMerchantReward.VoucherPerksRedeem,
-        0,
+        AppState.AyohaMerchantReward.ContestJoined,
         AppState.AyohaMerchantReward.EventJoined,
          AppState.AyohaMerchantReward.DiscountRedeem
     ];
@@ -4913,8 +5071,8 @@ window._EligibleVsUsed_DatalabelsRegistered =
         0,
         0,
         0,
-        AppState.AyohaMerchantReward.ContestJoined,
-        AppState.AyohaMerchantReward.EventJoined,
+        0,
+        0,
         0
 ];
 
@@ -4977,17 +5135,17 @@ window._EligibleVsUsed_DatalabelsRegistered =
                     categoryPercentage: 1,
                     barPercentage: 1
                 },
-                {
-                    label: 'Joined',
-                    data: joined,
-                    stack: 'perks',
-                    backgroundColor: 'blue',
-                    borderRadius: 12,
-                    borderSkipped: false,
-                    barThickness: 25,
-                    categoryPercentage: 1,
-                    barPercentage: 1
-                }
+                // {
+                //     label: 'Joined',
+                //     data: joined,
+                //     stack: 'perks',
+                //     backgroundColor: 'blue',
+                //     borderRadius: 12,
+                //     borderSkipped: false,
+                //     barThickness: 25,
+                //     categoryPercentage: 1,
+                //     barPercentage: 1
+                // }
             ]
         },
         options: {
@@ -5122,33 +5280,59 @@ function AyohaMerchantReward_LoadPerksChartBarData() {
                         AppState.AyohaMerchantReward.ContestJoined= data.results[0].ContestJoined;
                         AppState.AyohaMerchantReward.ContestApproved= data.results[0].ContestApproved;
                         AppState.AyohaMerchantReward.ContestExpired= data.results[0].ContestExpired;
+
+
+                        setContestPerkCounts(data.results[0].ContestEligible, data.results[0].ContestJoined
+                            , data.results[0].ContestApproved, data.results[0].ContestExpired);
                         
                         AppState.AyohaMerchantReward.EventEligible= data.results[0].EventEligible;
                         AppState.AyohaMerchantReward.EventJoined= data.results[0].EventJoined;
                         AppState.AyohaMerchantReward.EventExpired= data.results[0].EventExpired;
+
+                        setEventPerkCounts(data.results[0].EventEligible, data.results[0].Event_IwillAttend
+                            , data.results[0].Event_Interested, data.results[0].EventExpired);
+
+
+
+
                         
                         AppState.AyohaMerchantReward.PointPerksEligible= data.results[0].PointPerksEligible;
                         AppState.AyohaMerchantReward.PointPerksRedeemSubmitted= data.results[0].PointPerksRedeemSubmitted;
                         AppState.AyohaMerchantReward.PointPerksRedeemApproved= data.results[0].PointPerksRedeemApproved;
                         AppState.AyohaMerchantReward.PointPerksExpired= data.results[0].PointPerksExpired;
+
+                        setPointPerkCounts(data.results[0].PointPerksEligible, data.results[0].PointPerksRedeemSubmitted
+                            , data.results[0].PointPerksRedeemApproved, data.results[0].PointPerksExpired);
+
+
+
+
                         
                         AppState.AyohaMerchantReward.StampedPerksEligible= data.results[0].StampedPerksEligible;
                         AppState.AyohaMerchantReward.StampedPerksRedeemSubmitted= data.results[0].StampedPerksRedeemSubmitted;
                         AppState.AyohaMerchantReward.StampedPerksRedeemApproved= data.results[0].StampedPerksRedeemApproved;
                         AppState.AyohaMerchantReward.StampedPerksRedeemRejected= data.results[0].StampedPerksRedeemRejected;
                         AppState.AyohaMerchantReward.StampedPerksRedeemExpired= data.results[0].StampedPerksRedeemExpired;
+                       
+                        setStampPerkCounts(data.results[0].StampedPerksEligible, data.results[0].StampedPerksRedeemSubmitted
+                            , data.results[0].StampedPerksRedeemApproved, data.results[0].StampedPerksRedeemExpired);
                         
                         AppState.AyohaMerchantReward.VoucherPerksEligible= data.results[0].VoucherPerksEligible;
                         AppState.AyohaMerchantReward.VoucherPerksRedeem= data.results[0].VoucherPerksRedeem;
                         AppState.AyohaMerchantReward.VoucherPerksRedeemApproved= data.results[0].VoucherPerksRedeemApproved;
                         AppState.AyohaMerchantReward.VoucherExpired= data.results[0].VoucherExpired;
+                        setVoucherPerkCounts(data.results[0].VoucherPerksEligible, data.results[0].VoucherPerksRedeem
+                            , data.results[0].VoucherPerksRedeemApproved, data.results[0].VoucherExpired);
+
+
                         
                         
                         AppState.AyohaMerchantReward.DiscountEligible= data.results[0].DiscountEligible;
                         AppState.AyohaMerchantReward.DiscountExpired= data.results[0].DiscountExpired;
                         AppState.AyohaMerchantReward.DiscountRedeem= data.results[0].DiscountRedeem;
 
-
+                        setDiscountPerkCounts(data.results[0].DiscountEligible, data.results[0].DiscountRedeem
+                            , 0, data.results[0].DiscountExpired);
 
                         AyohaMerchantReward_LoadDashboard();
 
@@ -5231,6 +5415,12 @@ function AyohaMerchantReward_InitializedTabEvent() {
         Ext.getCmp('htmlAyohaMerchantRedemptionHeader_ButtonPerks_Discounts').setHtml('<div style="color:#9CA3AF;text-align: center;font-size:12px;width:100%;font-weight:normal">Discounts</div>');
         Ext.getCmp('tabpanelAyohaMerchantRewards').setActiveItem(1);
        animatedClickTabExt_AyohaMerchantReward('containerAyohaMerchantRedemptionHeader_ButtonPerks_Points');
+
+       Ext.getCmp('carouselAyohaMerchantRewards_Points').setActiveItem(0);
+       AyohaMerchantReward_PointCampaignRedeemLoadByPointRedeemStatusStore('Eligible');
+
+
+
       
       }
     );
@@ -5251,7 +5441,9 @@ function AyohaMerchantReward_InitializedTabEvent() {
         Ext.getCmp('htmlAyohaMerchantRedemptionHeader_ButtonPerks_Discounts').setHtml('<div style="color:#9CA3AF;text-align: center;font-size:12px;width:100%;font-weight:normal">Discounts</div>');
         Ext.getCmp('tabpanelAyohaMerchantRewards').setActiveItem(2);
        animatedClickTabExt_AyohaMerchantReward('containerAyohaMerchantRedemptionHeader_ButtonPerks_Vouchers');
-      
+       Ext.getCmp('carouselAyohaMerchantRewards_Vouchers').setActiveItem(0);
+        AyohaMerchantReward_VoucherCampaignRedeemLoadByVoucherRedeemStatusStore('Eligible');
+
       }
     );
 
@@ -5272,7 +5464,8 @@ function AyohaMerchantReward_InitializedTabEvent() {
         Ext.getCmp('htmlAyohaMerchantRedemptionHeader_ButtonPerks_Discounts').setHtml('<div style="color:#9CA3AF;text-align: center;font-size:12px;width:100%;font-weight:normal">Discounts</div>');
         Ext.getCmp('tabpanelAyohaMerchantRewards').setActiveItem(3);
        animatedClickTabExt_AyohaMerchantReward('containerAyohaMerchantRedemptionHeader_ButtonPerks_Contests');
-      
+       Ext.getCmp('carouselAyohaMerchantRewards_Contests').setActiveItem(0);
+       AyohaMerchantReward_ContestCampaignRedeem_LoadByContestRedeemStatusStore('Eligible');
       }
     );
 
@@ -5293,7 +5486,9 @@ function AyohaMerchantReward_InitializedTabEvent() {
         Ext.getCmp('htmlAyohaMerchantRedemptionHeader_ButtonPerks_Discounts').setHtml('<div style="color:#9CA3AF;text-align: center;font-size:12px;width:100%;font-weight:normal">Discounts</div>');
         Ext.getCmp('tabpanelAyohaMerchantRewards').setActiveItem(4);
        animatedClickTabExt_AyohaMerchantReward('containerAyohaMerchantRedemptionHeader_ButtonPerks_Events');
-      
+       Ext.getCmp('carouselAyohaMerchantRewards_Events').setActiveItem(0);
+       // AyohaMerchantReward_PointCampaignRedeemLoadByPointRedeemStatusStore(RedeemStatus);
+      AyohaMerchantReward_EventCampaignRedeemLoadByEventRedeemStatusStore('Eligible');
       }
     );
 
@@ -5309,6 +5504,9 @@ function AyohaMerchantReward_InitializedTabEvent() {
         Ext.getCmp('htmlAyohaMerchantRedemptionHeader_ButtonPerks_Discounts').setHtml('<div style="color:black;text-align: center;font-size:12px;width:100%;font-weight:bold">Discounts</div>');
         Ext.getCmp('tabpanelAyohaMerchantRewards').setActiveItem(5);
        animatedClickTabExt_AyohaMerchantReward('containerAyohaMerchantRedemptionHeader_ButtonPerks_Discounts');
+
+       Ext.getCmp('carouselAyohaMerchantRewards_Discounts').setActiveItem(0);
+        AyohaMerchantReward_DiscountCampaignRedeem_LoadByDiscountRedeemStatusStore('Eligible');
       
       }
     );
@@ -5913,3 +6111,132 @@ var globalAyohaMerchantReward_StampFilter;
        
     
     }
+
+
+
+
+
+
+
+
+
+
+    // Call this after you get the counts from server/SQL
+function setStampPerkCounts(eligible, redeem, approved, expired) {
+    // Helper: set text "(n)" or empty if 0 / null
+    function applyCount(spanId, value) {
+      var el = document.getElementById(spanId);
+      if (!el) return;
+  
+      if (value && value > 0) {
+        el.textContent = '(' + value + ')';
+      } else {
+        el.textContent = ''; // no bracket if kosong
+      }
+    }
+  
+    applyCount('cntStampEligible', eligible);
+    applyCount('cntStampRedeem',   redeem);
+    applyCount('cntStampApproved', approved);
+    applyCount('cntStampExpired',  expired);
+  }
+
+  function setPointPerkCounts(eligible, redeem, approved, expired) {
+    // Helper: set text "(n)" or empty if 0 / null
+    function applyCount(spanId, value) {
+      var el = document.getElementById(spanId);
+      if (!el) return;
+  
+      if (value && value > 0) {
+        el.textContent = '(' + value + ')';
+      } else {
+        el.textContent = ''; // no bracket if kosong
+      }
+    }
+  
+    applyCount('cntPointEligible', eligible);
+    applyCount('cntPointRedeem',   redeem);
+    applyCount('cntPointApproved', approved);
+    applyCount('cntPointExpired',  expired);
+  }
+
+
+  function setVoucherPerkCounts(eligible, redeem, approved, expired) {
+    // Helper: set text "(n)" or empty if 0 / null
+    function applyCount(spanId, value) {
+      var el = document.getElementById(spanId);
+      if (!el) return;
+  
+      if (value && value > 0) {
+        el.textContent = '(' + value + ')';
+      } else {
+        el.textContent = ''; // no bracket if kosong
+      }
+    }
+  
+    applyCount('cntVoucherEligible', eligible);
+    applyCount('cntVoucherRedeem',   redeem);
+    applyCount('cntVoucherApproved', approved);
+    applyCount('cntVoucherExpired',  expired);
+  }
+
+  function setContestPerkCounts(eligible, redeem, approved, expired) {
+    // Helper: set text "(n)" or empty if 0 / null
+    function applyCount(spanId, value) {
+      var el = document.getElementById(spanId);
+      if (!el) return;
+  
+      if (value && value > 0) {
+        el.textContent = '(' + value + ')';
+      } else {
+        el.textContent = ''; // no bracket if kosong
+      }
+    }
+  
+    applyCount('cntContestEligible', eligible);
+    applyCount('cntContestRedeem',   redeem);
+    applyCount('cntContestApproved', approved);
+    applyCount('cntContestExpired',  expired);
+  }
+
+
+  function setDiscountPerkCounts(eligible, redeem, approved, expired) {
+    // Helper: set text "(n)" or empty if 0 / null
+    function applyCount(spanId, value) {
+      var el = document.getElementById(spanId);
+      if (!el) return;
+  
+      if (value && value > 0) {
+        el.textContent = '(' + value + ')';
+      } else {
+        el.textContent = ''; // no bracket if kosong
+      }
+    }
+  
+    applyCount('cntDiscountEligible', eligible);
+    applyCount('cntDiscountRedeemOnline',   redeem);
+    applyCount('cntDiscountRedeemOffline', approved);
+    applyCount('cntDiscountExpired',  expired);
+  }
+
+
+
+
+  function setEventPerkCounts(eligible, redeem, approved, expired) {
+    // Helper: set text "(n)" or empty if 0 / null
+    function applyCount(spanId, value) {
+      var el = document.getElementById(spanId);
+      if (!el) return;
+  
+      if (value && value > 0) {
+        el.textContent = '(' + value + ')';
+      } else {
+        el.textContent = ''; // no bracket if kosong
+      }
+    }
+  
+    applyCount('cntEventEligible', eligible);
+    applyCount('cntEventRedeem',   redeem);
+    applyCount('cntEventApproved', approved);
+    applyCount('cntEventExpired',  expired);
+  }

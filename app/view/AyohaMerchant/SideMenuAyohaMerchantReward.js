@@ -125,7 +125,7 @@ function SideMenuAyohaMerchantReward() {
     
     {
        margin: '5 0 0 0',
-    html:'<div onclick="FloatPanel_Membership_MembershipCardHubsUpgradeShow();" style="display:inline-flex;align-items:center;font-size:14px;color:white;font-weight:bold">'+
+    html:'<div onclick="FloatPanel_AyohaEnterpriseRewardItemShow();" style="display:inline-flex;align-items:center;font-size:14px;color:white;font-weight:bold">'+
     '<svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true">'+
     '<path d="M12 5v14M5 12h14" stroke="#fff" stroke-width="2" stroke-linecap="round"/>'+
   '</svg>'
