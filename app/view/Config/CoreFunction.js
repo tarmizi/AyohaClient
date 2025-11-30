@@ -547,15 +547,18 @@ function CoreFunction_TabToMyMembershipCard() {
 
 
 
-
+var TopMargin="-230px"
 
 function CoreFunction_AyohaMerchantReward_listEmptyEligibleStore_TextMsg(PerkType){
-    var value='<div onclick="FloatPanel_AyohaEnterpriseRewardItemShow();" style="text-align:center;margin-top:-230px;font-family:Arial,sans-serif;">' +
+    if(PerkType=="Point" ){
+        TopMargin="-310px"
+    }
+    var value='<div onclick="FloatPanel_AyohaEnterpriseRewardItemShow();" style="text-align:center;margin-top:'+TopMargin+';font-family:Arial,sans-serif;">' +
     '<div style="width:72px;height:72px;margin:0 auto 8px;' +
                 'border-radius:50%;background:#F3F4F6;' +
                 'display:flex;align-items:center;justify-content:center;">' +
       '<img src="resources/icons/empty_eligible.png" ' +
-           'style="width:70px;height:70px;opacity:0.8;" />' +
+           'style="width:42px;height:42px;opacity:0.8;" />' +
     '</div>' +
     '<div style="font-size:12px;color:#6B7280;">No perks unlocked yet. Browse merchant perks and join their membership cards to start enjoying <b>'+PerkType+'</b> rewards.</div>' +
   '</div>'
@@ -565,10 +568,17 @@ function CoreFunction_AyohaMerchantReward_listEmptyEligibleStore_TextMsg(PerkTyp
 
 function CoreFunction_AyohaMerchantReward_listEmptyRedeemStore_TextMsg(PerkType){
    var val="redeemed";
+
     if(PerkType=="Event" ||PerkType=="Contest" ){
         val="Joined";
     }
-    var value='<div style="text-align:center;margin-top:-230px;font-family:Arial,sans-serif;">' +
+    if(PerkType=="Point" ){
+        TopMargin="-310px"
+    }
+    if(PerkType=="Voucher" ){
+        TopMargin="-230px"
+    }
+    var value='<div style="text-align:center;margin-top:'+TopMargin+';font-family:Arial,sans-serif;">' +
     '<div style="width:72px;height:72px;margin:0 auto 8px;' +
                 'border-radius:50%;background:#F3F4F6;' +
                 'display:flex;align-items:center;justify-content:center;">' +
@@ -584,9 +594,12 @@ function CoreFunction_AyohaMerchantReward_listEmptyRedeemStore_TextMsg(PerkType)
 function CoreFunction_AyohaMerchantReward_listEmptyApprovedStore_TextMsg(PerkType){
     var val="No approvals pending. All your perks are up to date";
     if(PerkType=="Contest" ){
-        val="Your contest answer is still being reviewed by the merchant. Once the review is complete, your result will appear here.";
+        val="Your contest answer is still being reviewed by the merchant.<br> Once the review is complete,<br> your result will appear here.";
     }
-    var value='<div style="text-align:center;margin-top:-230px;font-family:Arial,sans-serif;">' +
+    if(PerkType=="Point" ){
+        TopMargin="-310px"
+    }
+    var value='<div style="text-align:center;margin-top:'+TopMargin+';font-family:Arial,sans-serif;">' +
     '<div style="width:72px;height:72px;margin:0 auto 8px;' +
                 'border-radius:50%;background:#F3F4F6;' +
                 'display:flex;align-items:center;justify-content:center;">' +
@@ -601,14 +614,14 @@ function CoreFunction_AyohaMerchantReward_listEmptyApprovedStore_TextMsg(PerkTyp
 
 
 function CoreFunction_AyohaMerchantReward_listEmptyExpiredStore_TextMsg(PerkType){
-var margintop='-230px';
-if(PerkType=="Point"){
-    margintop='-200px';
-}
+
+    if(PerkType=="Point" ){
+        TopMargin="-310px"
+    }
 
 
 
-    var value='<div style="text-align:center;margin-top:'+margintop+';font-family:Arial,sans-serif;">' +
+    var value='<div style="text-align:center;margin-top:'+TopMargin+';font-family:Arial,sans-serif;">' +
     '<div style="width:72px;height:72px;margin:0 auto 8px;' +
                 'border-radius:50%;background:#F3F4F6;' +
                 'display:flex;align-items:center;justify-content:center;">' +

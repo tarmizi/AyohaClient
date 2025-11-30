@@ -13,6 +13,8 @@
       'VoucherImgPath',
       'VoucherAmount',
       'VoucherTermAndCondition',
+      'EnterpriseName',
+      'EnterpriseLogo',
        {
            name: 'ModifiedWidth',
            convert: function (value, record) {
@@ -43,8 +45,7 @@
                 return _value;
             }
         },
-        'EnterpriseLogo',
-        'EnterpiseName'
+       
         ]
     }
 });

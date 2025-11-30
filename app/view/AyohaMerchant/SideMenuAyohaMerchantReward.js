@@ -30,7 +30,7 @@ function SideMenuAyohaMerchantReward() {
 
          centered: false,
          //bottom: 64,
-         bottom:80,
+         bottom:65,
          right:40,
          zIndex: 5,
         //  modal: true,

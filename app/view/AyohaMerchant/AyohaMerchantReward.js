@@ -1023,13 +1023,20 @@ switchPerkTab_Stamp(expiredBtn, 'Expired', 3);
           '<font style="font-family:Arial, sans-serif;font-size:12px;font-weight:normal;">' +
             // 👇 added icon before Merchant:
            // '<img src="{EnterprisesLogo}" style="width:14px;height:14px;margin:0 4px 0 0;vertical-align:middle;" />' +
-            'Merchant:&nbsp;{EnterpriseName}<br>' +
+            'Merchant:{EnterpriseName}</u><br>' +
             'End:{EndDate}' +
-            '<span style="float:right; white-space:nowrap;color:green;margin:0px 10px 0px 0px">&#9679;&nbsp;{CampaignDayLeft} Day Left</span>' +
+           // '<span style="float:right; white-space:nowrap;color:green;margin:0px 10px 0px 0px">&#9679;&nbsp;{CampaignDayLeft} Day Left</span>' +
           '</font>' +
         '</td>' +
       '</tr>' +
     '</table>' +
+    '<div style="position:absolute;bottom:10px;right:10px;' +
+    'background-color:transparent;' +
+    'color:green;' +
+    'font-size:10px;font-weight:normal;' +
+    'white-space:nowrap;">' +              // tutup style dengan ">
+    '&#9679;&nbsp;{CampaignDayLeft} Day Left' +  // ini jadi content
+  '</div>' +
   '</div>',
 
   emptyText:CoreFunction_AyohaMerchantReward_listEmptyEligibleStore_TextMsg('Stamp'), 
@@ -1116,8 +1123,9 @@ switchPerkTab_Stamp(expiredBtn, 'Expired', 3);
                               // 👇 added icon before Merchant:
                              // '<img src="{EnterprisesLogo}" style="width:14px;height:14px;margin:0 4px 0 0;vertical-align:middle;" />' +
                               'Merchant:&nbsp;{EnterpriseName}<br>' +
-                              'Redeem On:{StampedDate}' +
-                              '<span style="float:right; white-space:nowrap;color:green;margin:0px 10px 0px 0px">&#9679;&nbsp;{CampaignDayLeft} Day Left</span>' +
+                            //  'Redeem On:{StampedDate}' +
+                              '<span style="font-size:10px;color:#F97316;background:#FFEDD5;border:1px solid #FDBA74;padding:3px 6px;border-radius:999px;white-space:nowrap;">Redeemed On:{StampedDate}</span>'+
+                             // '<span style="float:right; white-space:nowrap;color:green;margin:0px 10px 0px 0px">&#9679;&nbsp;{CampaignDayLeft} Day Left</span>' +
                             '</font>' +
                           '</td>' +
                         '</tr>' +
@@ -1207,7 +1215,8 @@ switchPerkTab_Stamp(expiredBtn, 'Expired', 3);
                               // 👇 added icon before Merchant:
                              // '<img src="{EnterprisesLogo}" style="width:14px;height:14px;margin:0 4px 0 0;vertical-align:middle;" />' +
                               'Merchant:&nbsp;{EnterpriseName}<br>' +
-                              'Approved On:{StampedDate}' +
+                              //'Approved On:{StampedDate}' +
+                              '<span style="font-size:10px;color:#16a34a;background:#ecfdf5;border:1px solid #bbf7d0;padding:3px 6px;border-radius:999px;white-space:nowrap;">Approved On:{StampedDate}</span>'+
                              // '<span style="float:right; white-space:nowrap;color:green;margin:0px 10px 0px 0px">&#9679;&nbsp;{CampaignDayLeft} Day Left</span>' +
                             '</font>' +
                           '</td>' +
@@ -1426,6 +1435,36 @@ switchPerkTab_Stamp(expiredBtn, 'Expired', 3);
                                 
                                     ]
                                 },
+                                {
+                                    xtype: 'container',
+                                    width: '100%',
+                                    height: 47,  
+                                    style: 'background-color:transparent;',  
+                                    /// hidden:true,
+                                   
+                                    layout: {
+                                        type: 'vbox',
+                                        pack: 'start',
+                                        align: 'center',
+                                    },
+                                    items:[
+                                        {
+                                            width: '100%',
+                                            height: 47,  
+                                            margin: '-5 0 0 0',  
+                                            html: '<div  style="background-color:transparent; padding: 15px;">' +
+                                            '<input type="text"  id="txtPointPerksSearch" placeholder="Search Merchant or Perk..." ' +
+                                              'style="width: 100%; box-sizing: border-box; padding: 10px 20px 10px 45px; ' +
+                                                     'border-radius: 30px; border: 1px solid #e0e0e0; background-color: #ffffff; ' +
+                                                     'font-family: sans-serif; font-size: 12px; color: #333; outline: none; ' +
+                                                     'box-shadow: 0 2px 5px rgba(0,0,0,0.05); ' +
+                                                     'background-image: url(\'data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%23999999%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22><circle cx=%2211%22 cy=%2211%22 r=%228%22></circle><line x1=%2221%22 y1=%2221%22 x2=%2216.65%22 y2=%2216.65%22></line></svg>\'); ' +
+                                                     'background-repeat: no-repeat; background-position: 15px center; background-size: 18px;" ' +
+                                            '>' +
+                                          '</div>',
+                                        }
+                                    ]
+                                },
 {
     xtype: 'container',
     width: '100%',
@@ -1525,7 +1564,7 @@ if(container.getActiveIndex()==1){
 {
     xtype: 'list',
     width: '95%',
-   // height: 95,       
+   //height: 95,       
     id: 'listcarouselAyohaMerchantRewards_Point_Eligible',
     mode: 'SINGLE',
     //scrollable:false,
@@ -1543,33 +1582,67 @@ if(container.getActiveIndex()==1){
     style: 'background-color:rgba(255,255,255, 0.1);',
     // width: '100%',
     disableSelection: true,
-    // itemTpl: '<div class="myContent" style="background-color:white;width:100%;height:80px;border-radius: 10px 10px 10px 10px;">' +
+    itemTpl:
+    '<div class="myContent" style="position:relative;background-color:white;width:100%;height:80px;border-radius:10px;">' +
 
+    
+  '<div style="position:absolute;top:0;right:-3px;' +
+  'background-color:#4169E1;' +                     // color utama badge
+  'color:#FFFFFF;' +
+  'font-size:10px;font-weight:bold;' +
+  'padding:3px 7px;' +
+  'border-radius:0px 0px 10px 10px;' +
+  'border:1px none rgba(255,255,255,.25);' +               // garis luar sikit lebih gelap
+  'box-shadow:0 2px 4px rgba(0,0,0,0.15);">' +// bagi timbul sedikit
+  '{ItemPoint} points</div>' +
 
-    //  '<table style="border-collapse:collapse;border-spacing:0;width:110%;background-color:white;margin:-10px 0px 0px -15px;height:90px;"><tr onclick="AyohaMerchantReward_openPointCardRedemption({ID})"><td style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:0px 7px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:20%;vertical-align:center">{ModifiedItemImg}</td><td style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;padding:0px 0px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:80%;vertical-align:center">{ItemName}<br><font style="font-family:Arial, sans-serif;font-size:12px;font-weight:normal;">{EnterpriseName}<br>End:{EndDate} - {CampaignDayLeft} Day Left</font></td></tr></table>'
+      '<table style="border-collapse:collapse;border-spacing:0;width:110%;background-color:white;margin:-10px 0 0 -15px;height:90px;">' +
+        '<tr onclick="AyohaMerchantReward_openPointCardRedemption({ID})">' +
+          '<td style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:0 7px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:20%;vertical-align:center;">' +
+            '{ModifiedItemImg}' +
+          '</td>' +
+          '<td style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;padding:0;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:80%;vertical-align:center;">' +
+            '{ItemName}<br>' +
+            '<font style="font-family:Arial, sans-serif;font-size:12px;font-weight:normal;">' +
+              'Merchant:&nbsp;{EnterpriseName}<br>' +
+              'End:{EndDate}' +
+              
+            '</font>' +
+           // '<span style="float:right; white-space:nowrap;color:green;margin:10px 10px 0px 0px;font-size:10px">&#9679;&nbsp;{CampaignDayLeft} Day Left</span>' +
+          '</td>' +
+        '</tr>' +
+      '</table>' +
 
-    //      + '</div>',
   
-         itemTpl:
-         '<div class="myContent" style="background-color:white;width:100%;height:80px;border-radius:10px;">' +
-           '<table style="border-collapse:collapse;border-spacing:0;width:110%;background-color:white;margin:-10px 0 0 -15px;height:90px;">' +
-             '<tr onclick="AyohaMerchantReward_openPointCardRedemption({ID})">' +
-               '<td style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:0 7px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:20%;vertical-align:center;">' +
-                 '{ModifiedItemImg}' +
-               '</td>' +
-               '<td style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;padding:0;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:80%;vertical-align:center;">' +
-                 '{ItemName}<br>' +
-                 '<font style="font-family:Arial, sans-serif;font-size:12px;font-weight:normal;">' +
-                   // 👇 added icon before Merchant:
-                  // '<img src="{EnterprisesLogo}" style="width:14px;height:14px;margin:0 4px 0 0;vertical-align:middle;" />' +
-                   'Merchant:&nbsp;{EnterpriseName}<br>' +
-                   'End:{EndDate}' +
-                   '<span style="float:right; white-space:nowrap;color:green;margin:0px 10px 0px 0px">&#9679;&nbsp;{CampaignDayLeft} Day Left</span>' +
-                 '</font>' +
-               '</td>' +
-             '</tr>' +
-           '</table>' +
-         '</div>',
+
+    '<div style="position:absolute;bottom:-5px;right:0px;' +
+    'background-color:transparent;' +
+    'color:green;' +
+    'font-size:10px;font-weight:normal;' +
+    'white-space:nowrap;">' +              // tutup style dengan ">
+    '&#9679;&nbsp;{CampaignDayLeft} Day Left' +  // ini jadi content
+  '</div>' +
+'</div>',
+        //  itemTpl:
+        //  '<div class="myContent" style="background-color:white;width:100%;height:80px;border-radius:10px;">' +
+        //    '<table style="border-collapse:collapse;border-spacing:0;width:110%;background-color:white;margin:-10px 0 0 -15px;height:90px;">' +
+        //      '<tr onclick="AyohaMerchantReward_openPointCardRedemption({ID})">' +
+        //        '<td style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:0 7px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:20%;vertical-align:center;">' +
+        //          '{ModifiedItemImg}' +
+        //        '</td>' +
+        //        '<td style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;padding:0;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:80%;vertical-align:center;">' +
+        //          '{ItemName}<br>' +
+        //          '<font style="font-family:Arial, sans-serif;font-size:12px;font-weight:normal;">' +
+        //            // 👇 added icon before Merchant:
+        //           // '<img src="{EnterprisesLogo}" style="width:14px;height:14px;margin:0 4px 0 0;vertical-align:middle;" />' +
+        //            'Merchant:&nbsp;{EnterpriseName}<br>' +
+        //            'End:{EndDate}' +
+        //            '<span style="float:right; white-space:nowrap;color:green;margin:0px 10px 0px 0px">&#9679;&nbsp;{CampaignDayLeft} Day Left</span>' +
+        //          '</font>' +
+        //        '</td>' +
+        //      '</tr>' +
+        //    '</table>' +
+        //  '</div>',
   
    
   emptyText: CoreFunction_AyohaMerchantReward_listEmptyEligibleStore_TextMsg('Point'),
@@ -1638,8 +1711,18 @@ if(container.getActiveIndex()==1){
                 //      + '</div>',
               
                      itemTpl:
+                   
                      '<div class="myContent" style="background-color:white;width:100%;height:80px;border-radius:10px;">' +
-                       '<table style="border-collapse:collapse;border-spacing:0;width:110%;background-color:white;margin:-10px 0 0 -15px;height:90px;">' +
+                     '<div style="position:absolute;top:0;right:10px;' +
+                     'background-color:#4169E1;' +                     // color utama badge
+                     'color:#FFFFFF;' +
+                     'font-size:10px;font-weight:bold;' +
+                     'padding:3px 7px;' +
+                     'border-radius:0px 0px 10px 10px;' +
+                     'border:1px solid rgba(255,255,255,.25);' +               // garis luar sikit lebih gelap
+                     'box-shadow:0 2px 4px rgba(0,0,0,0.15);">' +// bagi timbul sedikit
+                     '{ItemPoint} points</div>' +
+                     '<table style="border-collapse:collapse;border-spacing:0;width:110%;background-color:white;margin:-10px 0 0 -15px;height:90px;">' +
                          '<tr onclick="AyohaMerchantReward_openPointCardRedemption({ID})">' +
                            '<td style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:0 7px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:20%;vertical-align:center;">' +
                              '{ModifiedItemImg}' +
@@ -1729,8 +1812,18 @@ if(container.getActiveIndex()==1){
                 // width: '100%',
                 disableSelection: true,
                 itemTpl:
+               
                 '<div class="myContent" style="background-color:white;width:100%;height:80px;border-radius:10px;">' +
-                  '<table style="border-collapse:collapse;border-spacing:0;width:110%;background-color:white;margin:-10px 0 0 -15px;height:90px;">' +
+                '<div style="position:absolute;top:0;right:10px;' +
+                'background-color:#4169E1;' +                     // color utama badge
+                'color:#FFFFFF;' +
+                'font-size:10px;font-weight:bold;' +
+                'padding:3px 7px;' +
+                'border-radius:0px 0px 10px 10px;' +
+                'border:1px solid rgba(255,255,255,.25);' +               // garis luar sikit lebih gelap
+                'box-shadow:0 2px 4px rgba(0,0,0,0.15);">' +// bagi timbul sedikit
+                '{ItemPoint} points</div>' +
+                '<table style="border-collapse:collapse;border-spacing:0;width:110%;background-color:white;margin:-10px 0 0 -15px;height:90px;">' +
                     '<tr onclick="AyohaMerchantReward_openPointCardRedemption({ID})">' +
                       '<td style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:0 7px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:20%;vertical-align:center;">' +
                         '{ModifiedItemImg}' +
@@ -1821,29 +1914,70 @@ if(container.getActiveIndex()==1){
 
 
 
+              
+
+
+
                 itemTpl:
+
                 '<div class="myContent" style="background-color:white;width:100%;height:80px;border-radius:10px;">' +
-                  '<table style="border-collapse:collapse;border-spacing:0;width:110%;background-color:white;margin:-10px 0 0 -15px;height:90px;">' +
-                    '<tr onclick="AyohaMerchantReward_openPointCardRedemption({ID})">' +
-                      '<td style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:0 7px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:20%;vertical-align:center;">' +
-                        '{ModifiedItemImg}' +
-                      '</td>' +
-                      '<td style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;padding:0;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:80%;vertical-align:center;">' +
-                        '{ItemName}<br>' +
-                        '<font style="font-family:Arial, sans-serif;font-size:12px;font-weight:normal;">' +
-                          // 👇 added icon before Merchant:
-                         // '<img src="{EnterprisesLogo}" style="width:14px;height:14px;margin:0 4px 0 0;vertical-align:middle;" />' +
-                          'Merchant:&nbsp;{EnterpriseName}<br>' +
-                          'End:{EndDate} &#9679;<span style="color:red">Expired {CampaignDayLeft} days ago' +
-                          //'<span style="float:right; white-space:nowrap;color:green;margin:0px 10px 0px 0px">&#9679;&nbsp;{CampaignDayLeft} Day Left</span>' +
-                        '</font>' +
-                      '</td>' +
-                    '</tr>' +
-                  '</table>' +
-                '</div>',
+                '<div style="position:absolute;top:5;right:8px;' +
+                'background-color:#4169E1;' +                     // color utama badge
+                'color:#FFFFFF;' +
+                'font-size:10px;font-weight:bold;' +
+                'padding:3px 7px;' +
+                'border-radius:0px 0px 10px 10px;' +
+                'border:1px none rgba(255,255,255,.25);' +               // garis luar sikit lebih gelap
+                'box-shadow:0 2px 4px rgba(0,0,0,0.15);">' +// bagi timbul sedikit
+                '{ItemPoint} points</div>' +
+                 
+
+              
+      '<table style="border-collapse:collapse;border-spacing:0;width:110%;background-color:white;margin:-10px 0 0 -15px;height:90px;">' +
+      '<tr onclick="AyohaMerchantReward_openPointCardRedemption({ID})">' +
+        '<td style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:0 7px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:20%;vertical-align:center;">' +
+          '{ModifiedItemImg}' +
+        '</td>' +
+        '<td style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;padding:0;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:80%;vertical-align:center;">' +
+          '{ItemName}<br>' +
+          '<font style="font-family:Arial, sans-serif;font-size:12px;font-weight:normal;">' +
+            'Merchant:&nbsp;{EnterpriseName}<br>' +
+            'End:{EndDate}' +
+            
+          '</font>' +
+         // '<span style="float:right; white-space:nowrap;color:green;margin:10px 10px 0px 0px;font-size:10px">&#9679;&nbsp;{CampaignDayLeft} Day Left</span>' +
+        '</td>' +
+      '</tr>' +
+    '</table>' +
 
 
-
+              '<div style="position:absolute;bottom:5px;right:12px;' +
+              'background-color:transparent;' +
+              'color:red;' +
+              'font-size:10px;font-weight:normal;' +
+              'white-space:nowrap;">' +              // tutup style dengan ">
+              'Expired&nbsp;&#9679;{ModifiedCampaignDayLeft} days ago' +  // ini jadi content
+            '</div>' +
+            '</div>',
+                
+                // '<table style="border-collapse:collapse;border-spacing:0;width:110%;background-color:white;margin:-10px 0 0 -15px;height:90px;">' +
+                //     '<tr onclick="AyohaMerchantReward_openPointCardRedemption({ID})">' +
+                //       '<td style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:0 7px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:20%;vertical-align:center;">' +
+                //         '{ModifiedItemImg}' +
+                //       '</td>' +
+                //       '<td style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;padding:0;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:80%;vertical-align:center;">' +
+                //         '{ItemName}<br>' +
+                //         '<font style="font-family:Arial, sans-serif;font-size:12px;font-weight:normal;">' +
+                //           // 👇 added icon before Merchant:
+                //          // '<img src="{EnterprisesLogo}" style="width:14px;height:14px;margin:0 4px 0 0;vertical-align:middle;" />' +
+                //           'Merchant:&nbsp;{EnterpriseName}<br>' +
+                //           'End:{EndDate}' +
+                //           '<span style="float:right; white-space:nowrap;color:red;margin:0px 10px 0px 0px;font-size:10px;">Expired&nbsp;&#9679;{ModifiedCampaignDayLeft} days ago</span>' +
+                //         '</font>' +
+                //       '</td>' +
+                //     '</tr>' +
+                //   '</table>' +
+                // '</div>',
 
               
                 emptyText:CoreFunction_AyohaMerchantReward_listEmptyExpiredStore_TextMsg('Point'),
@@ -1951,6 +2085,36 @@ if(container.getActiveIndex()==1){
                 },
                 {
                     xtype: 'container',
+                    width: '100%',
+                    height: 47,  
+                    style: 'background-color:transparent;',  
+                    /// hidden:true,
+                   
+                    layout: {
+                        type: 'vbox',
+                        pack: 'start',
+                        align: 'center',
+                    },
+                    items:[
+                        {
+                            width: '100%',
+                            height: 47,  
+                            margin: '-5 0 0 0',  
+                            html: '<div  style="background-color:transparent; padding: 15px;">' +
+                            '<input type="text"  id="txtVoucherPerksSearch" placeholder="Search Merchant or Perk..." ' +
+                              'style="width: 100%; box-sizing: border-box; padding: 10px 20px 10px 45px; ' +
+                                     'border-radius: 30px; border: 1px solid #e0e0e0; background-color: #ffffff; ' +
+                                     'font-family: sans-serif; font-size: 12px; color: #333; outline: none; ' +
+                                     'box-shadow: 0 2px 5px rgba(0,0,0,0.05); ' +
+                                     'background-image: url(\'data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%23999999%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22><circle cx=%2211%22 cy=%2211%22 r=%228%22></circle><line x1=%2221%22 y1=%2221%22 x2=%2216.65%22 y2=%2216.65%22></line></svg>\'); ' +
+                                     'background-repeat: no-repeat; background-position: 15px center; background-size: 18px;" ' +
+                            '>' +
+                          '</div>',
+                        }
+                    ]
+                },
+                {
+                    xtype: 'container',
                     width: '98%',
                     /// hidden:true,
                     margin: '10 0 0 0',
@@ -1983,7 +2147,7 @@ if(container.getActiveIndex()==1){
                     switchPerkTab_Voucher(eligibleBtn, 'Eligible', 0);
                 }
                 if(container.getActiveIndex()==1){
-                    switchPerkTab_Voucher(submittedBtn, 'Redeem', 1);
+                    switchPerkTab_Voucher(submittedBtn, 'Submitted', 1);
                 }if(container.getActiveIndex()==2){
                     switchPerkTab_Voucher(approvedBtn, 'Approved', 2);
                 }if(container.getActiveIndex()==3){
@@ -2017,13 +2181,34 @@ if(container.getActiveIndex()==1){
     style: 'background-color:rgba(255,255,255, 0.1);',
     width: '100%',
    // itemTpl: '<div onclick="FloatPanel_AyohaRewardVoucherDetailShow(' + "'" + '{VoucherName}' + "'" + ',' + "'" + '{VoucherImgPath}' + "'" + ',' + "'" + '{EntitledVoucherEndDate}' + "'" + ',' + "'" + '{DayLeft}' + "'" + ',' + "'" + '{VoucherCode}' + "'" + ',' + "'" + '{VoucherAmount}' + "'" + ');" style="width:{ModifiedWidth}px; height: 200px; border:3px none white;padding:0px 0px;margin:0px 0px 0px 10px;"><img src="{VoucherImgPath}" style="width:95%; height: 160px; border:2px dashed grey;"/><br><div style="margin:-4px 0px 0px 0px;text-align:left;color:black;font-family: Arial; font-size:12px;word-wrap: break-word;font-weight:normal;width:95%"><table style="border-collapse:collapse;border-spacing:0;width:100%;" class="tg"><thead><tr><th style="background-color:transparent;border-color:transparent;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:12px;font-weight:normal;overflow:hidden;padding:0px 1px;text-align:left;vertical-align:middle;word-break:normal">Valid Until:<b>{EntitledVoucherEndDate}</b></th><th style="background-color:transparent;border-color:transparent;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:12px;font-weight:normal;overflow:hidden;padding:0px 6px;text-align:right;vertical-align:middle;word-break:normal">Amount:<b>RM{VoucherAmount}</b></th></tr></thead><tbody><tr><td style="background-color:transparent;border-color:transparent;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:10px;overflow:hidden;padding:0px 1px;text-align:left;vertical-align:top;word-break:normal;color:purple;font-weight:bold;" colspan="2"><div style="margin:-1px 0px 0px 0px">Day Left:{DayLeft}</div></td></tr></tbody></table></div></div>',
-    itemTpl: '<div onclick="FloatPanel_AyohaRewardVoucherDetailShow(' + "'" + '{VoucherName}' + "'" + ',' + "'" + '{VoucherImgPath}' + "'" + ',' + "'" + '{EntitledVoucherEndDate}' + "'" + ',' + "'" + '{DayLeft}' + "'" + ',' + "'" + '{VoucherCode}' + "'" + ',' + "'" + '{VoucherAmount}' + "'" + ');" style="width:100%; height: 200px; border:3px none white;padding:0px 0px;margin:0px 0px 0px 0px;"><img src="{VoucherImgPath}" style="width:100%; height: 160px; border:2px dashed grey;"/><br><div style="margin:-4px 0px 0px 0px;text-align:left;color:black;font-family: Arial; font-size:12px;word-wrap: break-word;font-weight:normal;width:95%"><table style="border-collapse:collapse;border-spacing:0;width:100%;" class="tg"><thead><tr><th style="background-color:transparent;border-color:transparent;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:12px;font-weight:normal;overflow:hidden;padding:0px 1px;text-align:left;vertical-align:middle;word-break:normal">Valid Until:<b>{EntitledVoucherEndDate}</b></th><th style="background-color:transparent;border-color:transparent;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:12px;font-weight:normal;overflow:hidden;padding:0px 6px;text-align:right;vertical-align:middle;word-break:normal">Amount:<b>RM{VoucherAmount}</b></th></tr></thead><tbody><tr><td style="background-color:transparent;border-color:transparent;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:10px;overflow:hidden;padding:0px 1px;text-align:left;vertical-align:top;word-break:normal;color:purple;font-weight:bold;" colspan="2"><div style="margin:-1px 0px 0px 0px">Day Left:{DayLeft}</div></td></tr></tbody></table></div></div>',
+   // itemTpl: '<div onclick="FloatPanel_AyohaRewardVoucherDetailShow(' + "'" + '{VoucherName}' + "'" + ',' + "'" + '{VoucherImgPath}' + "'" + ',' + "'" + '{EntitledVoucherEndDate}' + "'" + ',' + "'" + '{DayLeft}' + "'" + ',' + "'" + '{VoucherCode}' + "'" + ',' + "'" + '{VoucherAmount}' + "'" + ');" style="width:100%; height: 200px; border:3px none white;padding:0px 0px;margin:0px 0px 0px 0px;"><img src="{VoucherImgPath}" style="width:100%; height: 160px; border:2px dashed grey;"/><br><div style="margin:-4px 0px 0px 0px;text-align:left;color:black;font-family: Arial; font-size:12px;word-wrap: break-word;font-weight:normal;width:95%"><table style="border-collapse:collapse;border-spacing:0;width:100%;" class="tg"><thead><tr><th style="background-color:transparent;border-color:transparent;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:12px;font-weight:normal;overflow:hidden;padding:0px 1px;text-align:left;vertical-align:middle;word-break:normal">Valid Until:<b>{EntitledVoucherEndDate}</b></th><th style="background-color:transparent;border-color:transparent;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:12px;font-weight:normal;overflow:hidden;padding:0px 6px;text-align:right;vertical-align:middle;word-break:normal">Amount:<b>RM{VoucherAmount}</b></th></tr></thead><tbody><tr><td style="background-color:transparent;border-color:transparent;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:10px;overflow:hidden;padding:0px 1px;text-align:left;vertical-align:top;word-break:normal;color:purple;font-weight:bold;" colspan="2"><div style="margin:-1px 0px 0px 0px">Day Left:{DayLeft}</div></td></tr></tbody></table></div></div>',
+   
+   
+    itemTpl: 
+            '<div onclick="FloatPanel_AyohaRewardVoucherDetailShow(' + "'" + '{VoucherName}' + "'" + ',' + "'" + '{VoucherImgPath}' + "'" + ',' + "'" + '{EntitledVoucherEndDate}' + "'" + ',' + "'" + '{DayLeft}' + "'" + ',' + "'" + '{VoucherCode}' + "'" + ',' + "'" + '{VoucherAmount}' + "'" + ');" class="myContent" style="background-color:transparent;width:100%;height:250px;">' +
+         // '&nbsp;&nbsp;<div style="font-family:Arial, sans-serif;font-size:12px;color:black;font-weight:bold;text-align:left;width:100%;"><img src="{EnterpriseLogo}" style="width:30px;height:30px;border-radius:50%;margin:0px 0px 0px 20px;"/><div style="margin:-28px 0px 0px 55px;">{EnterpriseName}</div></div>&nbsp;&nbsp;<br><br>' +
+          '<img  src="{VoucherImgPath}" style="width:100%;height:160px;margin:0px 0px 0px 0px;"/><br>' +
+        // '<div onclick="FloatPanel_DashboardMerchantReward_MembershipContestDetailShow({ID});" style="width: 50%; float:left; height:30px; background:white; margin:0px"><div style="font-family:Arial, sans-serif;font-size:10px;color:black;font-weight:normal;text-align:left;padding:0px 10px;">Contest Name:</div><br><div style="font-family:Arial, sans-serif;font-size:14px;color:black;font-weight:bold;margin:-22px 0px 0px 0px;text-align:left;padding:0px 10px;">{ContestName}</div></div><br>' +
+         '<div style="width: 60%; float:left; height:30px; background:transparent; margin:0px 0px 0px 0px;"><div style="font-family:Arial, sans-serif;font-size:10px;color:black;font-weight:normal;text-align:left;padding:0px 10px;">Voucher Name:</div><br><div style="font-family:Arial, sans-serif;font-size:12px;color:black;font-weight:bold;margin:-17px 0px 0px 0px;text-align:left;padding:0px 10px;">{VoucherName}</div></div><div style="width: 40%; float:left; height:30px; background:transparent; margin:0px 0px 0px 0px;word-break: break-all;"><div style="margin:0px 0px 0px 0px;text-align:right;color:black;font-family: Arial; font-size:10px;word-wrap: break-word;word-break: break-all;white-space: break-spaces;font-weight:normal;width:100%;height:30px;padding:0px 7px;">Merchant:<br><div style="margin:0px 0px 0px 0px;text-align:right;color:black;font-family: Arial; font-size:12px;word-wrap: break-word;word-break: break-all;white-space: break-spaces;font-weight:bold;width:100%;padding:0px 0px;"><div style="font-family:Arial, sans-serif;font-size:12px;color:black;font-weight:bold;text-align:right;width:100%;"><div style="margin:0px 0px 0px 0px;">{EnterpriseName}</div></div></div></div></div><br>' +
+
+         '<div  style="width: 60%; float:left; height:30px; background:transparent; margin:15px 0px 0px 0px;"><div style="font-family:Arial, sans-serif;font-size:10px;color:black;font-weight:normal;text-align:left;padding:0px 10px;">End:</div><br><div style="font-family:Arial, sans-serif;font-size:12px;color:black;font-weight:bold;margin:-17px 0px 0px 0px;text-align:left;padding:0px 10px;">{EntitledVoucherEndDate} &nbsp;&#9679;{DayLeft} Day Left</div></div><div style="width: 40%; float:left; height:30px; background:transparent; margin:15px 0px 0px 0px;word-break: break-all;"><div style="margin:0px 0px 0px 0px;text-align:right;color:black;font-family: Arial; font-size:10px;word-wrap: break-word;word-break: break-all;white-space: break-spaces;font-weight:normal;width:100%;height:30px;padding:0px 7px;">Voucher Amount(RM)<br><div style="margin:0px 0px 0px 0px;text-align:right;color:black;font-family: Arial; font-size:12px;word-wrap: break-word;word-break: break-all;white-space: break-spaces;font-weight:bold;width:100%;padding:0px 0px;">{VoucherAmount}</div></div></div>' +
+
+
+       '</div>',
+
+   
+   
+   
+   
+   
+   
+   
     emptyText:CoreFunction_AyohaMerchantReward_listEmptyEligibleStore_TextMsg('Voucher'),    
 },
 ///////VoucherList_Redeem
 {
 
-    id: 'AyohaMerchantReward_VoucherList_Redeem',
+    id: 'AyohaMerchantReward_VoucherList_Submitted',
     margin: '0 0 0 0',
    // xtype: 'dataview',
     xtype: 'list',
@@ -2201,7 +2386,36 @@ if(container.getActiveIndex()==1){
                             ]
                         },
 
-                       
+                        {
+                            xtype: 'container',
+                            width: '100%',
+                            height: 47,  
+                            style: 'background-color:transparent;',  
+                            /// hidden:true,
+                           
+                            layout: {
+                                type: 'vbox',
+                                pack: 'start',
+                                align: 'center',
+                            },
+                            items:[
+                                {
+                                    width: '100%',
+                                    height: 47,  
+                                    margin: '-5 0 0 0',  
+                                    html: '<div  style="background-color:transparent; padding: 15px;">' +
+                                    '<input type="text"  id="txtContestPerksSearch" placeholder="Search Merchant or Perk..." ' +
+                                      'style="width: 100%; box-sizing: border-box; padding: 10px 20px 10px 45px; ' +
+                                             'border-radius: 30px; border: 1px solid #e0e0e0; background-color: #ffffff; ' +
+                                             'font-family: sans-serif; font-size: 12px; color: #333; outline: none; ' +
+                                             'box-shadow: 0 2px 5px rgba(0,0,0,0.05); ' +
+                                             'background-image: url(\'data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%23999999%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22><circle cx=%2211%22 cy=%2211%22 r=%228%22></circle><line x1=%2221%22 y1=%2221%22 x2=%2216.65%22 y2=%2216.65%22></line></svg>\'); ' +
+                                             'background-repeat: no-repeat; background-position: 15px center; background-size: 18px;" ' +
+                                    '>' +
+                                  '</div>',
+                                }
+                            ]
+                        },
 
 
                                        {
@@ -2561,7 +2775,36 @@ switchPerkTab_Contest(expiredBtn, 'Expired', 3);
                             ]
                         },
                         
-
+                        {
+                            xtype: 'container',
+                            width: '100%',
+                            height: 47,  
+                            style: 'background-color:transparent;',  
+                            /// hidden:true,
+                           
+                            layout: {
+                                type: 'vbox',
+                                pack: 'start',
+                                align: 'center',
+                            },
+                            items:[
+                                {
+                                    width: '100%',
+                                    height: 47,  
+                                    margin: '-5 0 0 0',  
+                                    html: '<div  style="background-color:transparent; padding: 15px;">' +
+                                    '<input type="text"  id="txtEventPerksSearch" placeholder="Search Merchant or Perk..." ' +
+                                      'style="width: 100%; box-sizing: border-box; padding: 10px 20px 10px 45px; ' +
+                                             'border-radius: 30px; border: 1px solid #e0e0e0; background-color: #ffffff; ' +
+                                             'font-family: sans-serif; font-size: 12px; color: #333; outline: none; ' +
+                                             'box-shadow: 0 2px 5px rgba(0,0,0,0.05); ' +
+                                             'background-image: url(\'data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%23999999%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22><circle cx=%2211%22 cy=%2211%22 r=%228%22></circle><line x1=%2221%22 y1=%2221%22 x2=%2216.65%22 y2=%2216.65%22></line></svg>\'); ' +
+                                             'background-repeat: no-repeat; background-position: 15px center; background-size: 18px;" ' +
+                                    '>' +
+                                  '</div>',
+                                }
+                            ]
+                        },
 
                          
 
@@ -2890,7 +3133,36 @@ switchPerkTab_Event(expiredBtn, 'Expired', 3);
                         
                          
                 
-                
+                        {
+                            xtype: 'container',
+                            width: '100%',
+                            height: 47,  
+                            style: 'background-color:transparent;',  
+                            /// hidden:true,
+                           
+                            layout: {
+                                type: 'vbox',
+                                pack: 'start',
+                                align: 'center',
+                            },
+                            items:[
+                                {
+                                    width: '100%',
+                                    height: 47,  
+                                    margin: '-5 0 0 0',  
+                                    html: '<div  style="background-color:transparent; padding: 15px;">' +
+                                    '<input type="text"  id="txtDiscountPerksSearch" placeholder="Search Merchant or Perk..." ' +
+                                      'style="width: 100%; box-sizing: border-box; padding: 10px 20px 10px 45px; ' +
+                                             'border-radius: 30px; border: 1px solid #e0e0e0; background-color: #ffffff; ' +
+                                             'font-family: sans-serif; font-size: 12px; color: #333; outline: none; ' +
+                                             'box-shadow: 0 2px 5px rgba(0,0,0,0.05); ' +
+                                             'background-image: url(\'data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%23999999%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22><circle cx=%2211%22 cy=%2211%22 r=%228%22></circle><line x1=%2221%22 y1=%2221%22 x2=%2216.65%22 y2=%2216.65%22></line></svg>\'); ' +
+                                             'background-repeat: no-repeat; background-position: 15px center; background-size: 18px;" ' +
+                                    '>' +
+                                  '</div>',
+                                }
+                            ]
+                        },
                 
                          
                 
@@ -4680,7 +4952,7 @@ function AyohaMerchantReward_AyohaRewardEventLoadBySubscriberAccNoStore() {
                        // Ext.getCmp('html_AyohaMerchantRewards_VoucherTab_ReadyVoucher').setHtml('<div  style="color:white;text-align: center;font-size:10px;width:100%;">Your Vouchers-(' + count + ')</div>');
                        // Ext.getCmp('htmlFloatPanel_DashboardMerchantRewardTxt').setHtml('<div style="color:black;text-align: center;font-size:12px;width:100%;font-weight:normal"> 3).Redeemable Merchant Voucher-<font class="blink_me" size=2x>(' + count + ')</font></div>');
                     }
-                    AyohaMerchantReward_AyohaRewardContestLoadBySubscriberAccNoStore();
+                   // AyohaMerchantReward_AyohaRewardContestLoadBySubscriberAccNoStore();
                    LoadingPanelHide();
                 } else {
                     console.error('Failed to load store data or no record found.');
@@ -4721,10 +4993,10 @@ function AyohaMerchantReward_AyohaRewardEventLoadBySubscriberAccNoStore() {
                     var count = _DataStore_VoucherCampaignRedeemLoadByVoucherRedeemStatusStore.getCount();
                     Ext.getCmp('AyohaMerchantReward_VoucherList_'+RedeemStatus).setStore(_DataStore_VoucherCampaignRedeemLoadByVoucherRedeemStatusStore);
             
-                   LoadingPanelHide();
+
                 } else {
-                    console.error('Failed to load store data or no record found.');
                    
+                    Ext.getCmp('AyohaMerchantReward_VoucherList_'+RedeemStatus).setStore(_DataStore_VoucherCampaignRedeemLoadByVoucherRedeemStatusStore);
                   
                 }
             }
@@ -4756,7 +5028,8 @@ function AyohaMerchantReward_AyohaRewardEventLoadBySubscriberAccNoStore() {
                     Ext.getCmp('AyohaMerchantReward_ContestList_'+RedeemStatus).setStore(_DataStore_ContestCampaignRedeem_LoadByContestRedeemStatusStore);
                    
                 } else {
-                    console.error('Failed to load store data or no record found.');
+
+                    Ext.getCmp('AyohaMerchantReward_ContestList_'+RedeemStatus).setStore(_DataStore_ContestCampaignRedeem_LoadByContestRedeemStatusStore);
                    
                   
                 }
@@ -4786,11 +5059,7 @@ function AyohaMerchantReward_AyohaRewardEventLoadBySubscriberAccNoStore() {
                         
                         // AyohaMerchantReward_AyohaRewardContestLoadBySubscriberAccNoStore();
                     } else {
-                        console.error('Failed to load store data or no record found.');
-                       
-                       // AyohaMerchantReward_AyohaRewardDiscountCampaing_LoadBySubscriberAccNo();
-                      
-                        LoadingPanelHide();
+                        Ext.getCmp('AyohaMerchantReward_MembershipEvent_'+RedeemStatus).setStore(_DataStore_EventCampaignRedeemLoadByEventRedeemStatusStore);
                     }
                    // 
                 }
@@ -4820,11 +5089,7 @@ function AyohaMerchantReward_AyohaRewardEventLoadBySubscriberAccNoStore() {
                             
                             // AyohaMerchantReward_AyohaRewardContestLoadBySubscriberAccNoStore();
                         } else {
-                            console.error('Failed to load store data or no record found.');
-                           
-                           // AyohaMerchantReward_AyohaRewardDiscountCampaing_LoadBySubscriberAccNo();
-                          
-                            LoadingPanelHide();
+                            Ext.getCmp('AyohaMerchantRewardDiscountList_'+RedeemStatus).setStore(_DataStore_DiscountCampaignRedeem_LoadByDiscountRedeemStatusStore);
                         }
                        // 
                     }
@@ -4857,11 +5122,7 @@ function AyohaMerchantReward_AyohaRewardEventLoadBySubscriberAccNoStore() {
                                 
                                 // AyohaMerchantReward_AyohaRewardContestLoadBySubscriberAccNoStore();
                             } else {
-                                console.error('Failed to load store data or no record found.');
-                               
-                               // AyohaMerchantReward_AyohaRewardDiscountCampaing_LoadBySubscriberAccNo();
-                              
-                                LoadingPanelHide();
+                                Ext.getCmp('AyohaMerchantRewardDiscountList_'+RedeemStatus).setStore(_DataStore_DiscountCampaignRedeemLoadByDiscountRedeemStatus_OnlineOfflineStore);
                             }
                            // 
                         }
@@ -5673,7 +5934,8 @@ Ext.getCmp('listcarouselAyohaMerchantRewards_Point_'+RedeemPointStatus).setHeigh
 
                             return;
                         } else {
-                           
+                          // alert('fff'+RedeemPointStatus)
+                          Ext.getCmp('listcarouselAyohaMerchantRewards_Point_'+RedeemPointStatus).setHeight(globalAyohaMerchantRewardlistZoneH);
                             Ext.getCmp('listcarouselAyohaMerchantRewards_Point_'+RedeemPointStatus).setStore(_DataStore_PointCampaignRedeemLoadByPointRedeemStatusStore);
                            
                         }
