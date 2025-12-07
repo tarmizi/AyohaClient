@@ -32,6 +32,7 @@
       'ContestQuestion',
       'isRequiredReceipt',
       'ContestStatus_ContestStatus',
+      'SearchCol',
        {
            name: 'ModifiedWidth',
            convert: function (value, record) {

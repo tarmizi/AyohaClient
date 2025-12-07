@@ -30,6 +30,7 @@
       'RespondStatus',
       'RespondStatus_IwillAttendCount',
       'RespondStatus_InterestedCount',
+      'SearchCol',
       {
           name: 'ModifiedWidth',
           convert: function (value, record) {

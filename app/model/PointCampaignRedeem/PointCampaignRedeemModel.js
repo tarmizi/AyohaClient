@@ -30,6 +30,7 @@ Ext.define('ianMizi.model.PointCampaignRedeem.PointCampaignRedeemModel', {
       'isCampaignExpired',
       'CampaignDayLeft',
       'AdvertisementTitle',
+      'SearchCol',
       {
         name: 'ModifiedItemImg',
         convert: function (value, record) {

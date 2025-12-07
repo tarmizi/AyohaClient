@@ -445,8 +445,7 @@ function CoreFunction_DashboardAyohaUser() {
     _DataStore_VIEW_merchantperk_View_DashboardInitialLoadStore.load({
         callback: function (records, operation, success) {
             if (success && records.length > 0) {
-                console.log('_DataStore_VIEW_merchantperk_View_LoadbySubscriberAccNoStore loaded successfully, total records: ' + records.length);
-    
+               
               
                 Ext.getCmp('Dashboard_MyAccount_MembershipPerksList').setStore(_DataStore_VIEW_merchantperk_View_DashboardInitialLoadStore)
                 
@@ -481,15 +480,15 @@ function CoreFunction_DashboardLoadByEnterpriseAccNoStorePerk() {
     _DataStore_VIEW_merchantperk_View_DashboardLoadByEnterpriseAccNoStore.load({
         callback: function (records, operation, success) {
             if (success && records.length > 0) {
-                console.log('_DataStore_VIEW_merchantperk_View_LoadbySubscriberAccNoStore loaded successfully, total records: ' + records.length);
+               //alert('_DataStore_VIEW_merchantperk_View_LoadbySubscriberAccNoStore loaded successfully, total records: ' + records.length);
     
               
                 Ext.getCmp('Dashboard_MyAccount_MembershipPerksList').setStore(_DataStore_VIEW_merchantperk_View_DashboardLoadByEnterpriseAccNoStore)
                 
-                LoadingPanelHide();
+                //LoadingPanelHide();
             } else {
-                console.error('Failed to load store data or no record found.');
-                LoadingPanelHide();
+                //alert('Failed to load store data or no record found.');
+               // LoadingPanelHide();
             }
         }
     });
@@ -662,3 +661,47 @@ function CoreFunction_AyohaMerchantReward_listEmptyRedeemOffline_TextMsg(){
 
   return value;
 }
+
+
+
+
+function CoreFunction_SetProfieAndGreeting(AccountName,isUserVerified){
+    // id: 'htmlMyAccount_Dashboard_ProfileTitleUpgrade',                                              
+    
+    //  html: '<div onclick="FloatPanel_MyAccountMasterShow()"   style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 16px;font-weight:bold;color:white;margin:3px 0px 0px 0px" >Tarmizi Rahim</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 10px;font-weight:normal;color:white;margin:-25px 0px 0px 0px">Good After Noon!</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 10px;font-weight:bold;color:white;margin:-27px 0px 0px 0px">Non-Ayoha Member</div>'
+    //  Ext.getCmp('htmlMyAccount_Dashboard_ProfileTitle').setHtml('<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 11px;font-weight:normal;color:white;margin:0px 0px 0px 0px">Good Days!,</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 14px;font-weight:bold;color:white;margin:-25px 0px 0px 0px">' + AccountName.toUpperCase() + '</div>');
+    
+
+
+     if (isUserVerified == "YES") {
+        // Ext.getCmp('htmlMyAccount_Dashboard_ProfileTitle').setHtml('<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 11px;font-weight:normal;color:white;margin:0px 0px 0px 0px">Good Days!,</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 14px;font-weight:bold;color:white;margin:-25px 0px 0px 0px">' + AccountName.toLowerCase() + '</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 10px;font-weight:bold;color:white;margin:-27px 0px 0px 0px">' + AccountNoDisplay[1] + '-' + AccountNoDisplay[2] + '</div>');
+        // Ext.getCmp('htmlMyAccount_Dashboard_ProfileTitleUpgrade').setHtml('<div onclick="FloatPanel_MyAccountMasterShow()"   style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 16px;font-weight:bold;color:white;margin:3px 0px 0px 0px" >' + AccountName.toUpperCase() + '</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 10px;font-weight:normal;color:white;margin:-25px 0px 0px 0px">Good After Noon!</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 10px;font-weight:bold;color:white;margin:-27px 0px 0px 0px">Non-Ayoha Member</div>');                
+        
+        
+        Ext.getCmp('htmlMyAccount_Dashboard_ProfileTitleUpgrade').setHtml('<div onclick="FloatPanel_MyAccountMasterShow()"   style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 16px;font-weight:bold;color:white;margin:3px 0px 0px 0px" >' + AccountName.toUpperCase() + '</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 10px;font-weight:normal;color:white;margin:-25px 0px 0px 0px">'+getGreeting()+'</div>');                
+
+    }
+    if (isUserVerified == "NO") {
+        Ext.getCmp('htmlMyAccount_Dashboard_ProfileTitleUpgrade').setHtml('<div onclick="FloatPanel_MyAccountMasterShow()"   style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 16px;font-weight:bold;color:white;margin:3px 0px 0px 0px" >' + AccountName.toUpperCase() + '</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 10px;font-weight:normal;color:white;margin:-25px 0px 0px 0px">'+getGreeting()+'</div>');                
+
+       // Ext.getCmp('htmlMyAccount_Dashboard_ProfileTitle').setHtml('<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 11px;font-weight:normal;color:white;margin:0px 0px 0px 0px">Good Days!,</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 14px;font-weight:bold;color:white;margin:-25px 0px 0px 0px">' + AccountName.toUpperCase() + '</div>');
+    }
+
+}
+
+function getGreeting() {
+    const now = new Date();
+    const hour = now.getHours();
+  
+    let greeting;
+  
+    if (hour < 12) {
+      greeting = "Good morning";
+    } else if (hour < 18) {
+      greeting = "Good afternoon";
+    } else {
+      greeting = "Good evening";
+    }
+  
+    return greeting;
+  }

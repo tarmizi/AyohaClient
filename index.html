@@ -15,6 +15,118 @@
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <title>Ayoha</title>
 
+<style>
+/* The Main Card Container */
+.checkin-card {
+            background-color: #ffffff;
+            width: 100%;
+            max-width: 380px; /* Typical mobile width */
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            position: relative; /* Essential for mascot positioning */
+            margin-top: 40px; /* Space for the mascot's head */
+        }
+
+        /* The Mascot Image */
+        .mascot-img {
+            position: absolute;
+            top: -50px; /* Moves the mascot up to break the border */
+            right: 0px;
+            width: 140px; /* Adjust based on your actual image size */
+            height: auto;
+            z-index: 10;
+        }
+
+        /* Header Section (Text + Badge) */
+        .card-header {
+            margin-bottom: 20px;
+            padding-right: 120px; /* Space so text doesn't hit the mascot */
+        }
+
+        .card-title {
+            color: #2c0e38; /* Dark purple/black text */
+            font-size: 22px;
+            font-weight: 800;
+            margin: 0 0 8px 0;
+            line-height: 1.2;
+        }
+
+        /* The Green Pill Badge */
+        .points-badge {
+            display: inline-block;
+            background-color: #2e7d32; /* Green color */
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        /* The Action Button */
+        .btn-checkin {
+            width: 100%;
+            background-color: #aa00ff; /* The button purple */
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px; /* Space between text and icon */
+            box-shadow: 0 4px 6px rgba(170, 0, 255, 0.2);
+            transition: transform 0.1s ease;
+        }
+
+        .btn-checkin:active {
+            transform: scale(0.98); /* Click effect */
+        }
+
+        /* The Location Icon (using a simple shape for pure CSS) */
+        .icon-pin {
+            width: 14px;
+            height: 14px;
+            border: 2px solid white;
+            border-radius: 50% 50% 50% 0;
+            background-color: white;
+            transform: rotate(-45deg);
+            margin-top: -4px; /* Slight alignment fix */
+        }
+        /* Optional: Use dot inside pin if preferred */
+        .icon-pin::after {
+            content: '';
+            display: block;
+            width: 4px;
+            height: 4px;
+            background: #aa00ff;
+            border-radius: 50%;
+            position: relative;
+            top: 3px;
+            left: 3px;
+        }
+
+        /* Footer Text */
+        .last-visit {
+            text-align: center;
+            font-size: 13px;
+            color: #666;
+            margin-top: 15px;
+            margin-bottom: 0;
+        }
+
+        .last-visit strong {
+            color: #000;
+            font-weight: 700;
+        }
+
+
+
+</style>
+
     <style>
      /* Buang padding container list */
 .perks-list-tight .x-list-inner {

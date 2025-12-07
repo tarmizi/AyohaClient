@@ -175,48 +175,150 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
             // hidden:true,
             items:
                    [
-                   {
-                    xtype: 'container',
-                    width: '50%', 
-                   //hidden:true,
-                    height: 40,                                             
-                   style: 'background-color:transparent;',
-                   // style: ' background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);',style: ' background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);',
-                    layout: {
-                        type: 'vbox',
-                        pack: 'start',
-                        align: 'left',
-                    },
-                    items:[
-                        // {
-                        //     margin: '10 0 0 14',
-                        //     hidden:true, 
-                         
-                        //   html: '<div style="color:white;text-align: left;font-size:14px;width:100%;margin:0px 0px 0px 0px"><span style="font-size:10px;color:#16a34a;background:#ffffff;padding:3px 6px;border-radius:999px;white-space:nowrap;">Perks from My Cards</span><br><b>My Merchant Reward</b></div><br><div  style="color:white;text-align: left;font-size:10px;width:100%;margin:-20px 0px 0px 0px;">Claim perks in one place</div>'
-                       
-                        // },
-                       
+//                    {
+//                     xtype: 'container',
+//                     width: '60%', 
+//                    //hidden:true,
+//                     height: 40,                                             
+//                    style: 'background-color:transparent;',
+//                    // style: ' background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);',style: ' background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);',
+//                     layout: {
+//                         type: 'vbox',
+//                         pack: 'start',
+//                        // align: 'left',
+//                         align: 'center',
+//                     },
+//                     items:[
                       
-                        {
-                            margin: '7 0 0 10',
-                         
-                           // html: '<div style="color:white;text-align: left;font-size:14px;width:100%;margin:0px 0px 0px 0px"><span style="font-size:10px;color:#16a34a;background:#ffffff;padding:3px 6px;border-radius:999px;white-space:nowrap;">Perks from My Membership</span><br><b>My Merchant Reward</b></div>'
-                          // html: '<div style="color:white;text-align: left;font-size:14px;width:100%;margin:0px 0px 0px 0px"><span style="font-size:10px;color:#16a34a;background:#ffffff;padding:3px 6px;border-radius:999px;white-space:nowrap;">Perks from My Membership Card</span><br><b>Merchant Perks</b></div><br><div  style="color:white;text-align: left;font-size:10px;width:100%;margin:-22px 0px 0px 0px;">Claim perks in one place</div>'
-                           html: '<div style="color:white;text-align: left;font-size:14px;width:100%;margin:0px 0px 0px 0px"><b>Merchant Perks</b></div><br><div  style="color:white;text-align: left;font-size:10px;width:90%;margin:-22px 0px 0px 0px;">All perks from your membership card in one place</div>'
-                          // html: '<div style="color:white;text-align: left;font-size:14px;width:100%;margin:0px 0px 0px 0px"><span style="font-size:14px;color:#16a34a;background:#ffffff;padding:3px 6px;border-radius:999px;white-space:nowrap;font-weight:normal;">Merchant Perks</span></div><br><div  style="color:white;text-align: left;font-size:10px;width:90%;margin:-22px 0px 0px 0px;">All perks from your membership card in one place</div>'
+                      
+//                     {
+//                         height: 32,                        
+//                         xtype: 'container',
+//                         zIndex:10,
+//                         width: '100%',
+//                         layout: {
+//                             type: 'hbox',
+//                             pack: 'start',
+//                            // align: 'left',
+//                             align: 'center',
+//                         }, 
+//                         items:[
+// {
+//     margin:'0 0 0 25',
+   
+//     html:
+//                           '<div style="width:100%;height:32px;z-index:999px' +
+//                                 'display:flex;align-items:center;justify-content:flex-start;">' +
+//                             '<img src="resources/icons/ayohaReward01.gif" ' +
+//                                  'style="width:32px;height:32px;display:block;" ' +
+//                                  'alt="Company Name" />' +
+//                           '</div>'
+// }
+//                         ]
+                        
+//                     },
+
+//                     {
+//                         xtype: 'container',
+//                         width: '80%', 
+//                         zIndex:-1,
+//                        //hidden:true,
+//                        margin:'-8 0 0 0',
+//                         height: 40,
+//                         cls:'getMoreMembershipCard',                                             
+//                     // style: 'background:linear-gradient(90deg,#ff00de,#c800ff); box-shadow:0 16px 36px rgba(200,0,255,.38), 0 2px 0 rgba(255,255,255,.35) inset; border:2px solid rgba(255,255,255,.25);border-radius:30px 30px 30px 30px;',
+//                      style:'background:#ecfdf5;border:1px solid #bbf7d0;border-radius:999px;white-space:nowrap;',
+                    
+//                      //font-size:10px;color:#16a34a;background:#ecfdf5;border:1px solid #bbf7d0;padding:3px 6px;border-radius:999px;white-space:nowrap;
+//                        // style: 'background-color: #fac;background-image: linear-gradient(#c800ffc9,#ff00de75);border:1px solid #fac;border-radius:20px 20px 20px 20px',
+                       
+//                         layout: {
+//                             type: 'vbox',
+//                             pack: 'center',
+//                            // align: 'left',
+//                             align: 'center',
+//                         },
+//                         items:[
+//                             {
+//                                 margin: '-3 0 0 0',
+//                                 html: '<div style="font-size:14px;font-weight:700;color:#16a34a;">You got total 23</div>',
+//                             },
+//                             {
+//                                 margin: '-5 0 0 0',
+//                                 html: '<div style="font-size:10px;color:#16a34a;">Eligible perk to be claim today!</div>',
+//                             },
+//                         ]
+//                     },
+                   
+                      
+//                       {
+//                             margin: '7 0 0 10',
+//                             hidden:true,
+//                            // html: '<div style="color:white;text-align: left;font-size:14px;width:100%;margin:0px 0px 0px 0px"><span style="font-size:10px;color:#16a34a;background:#ffffff;padding:3px 6px;border-radius:999px;white-space:nowrap;">Perks from My Membership</span><br><b>My Merchant Reward</b></div>'
+//                           // html: '<div style="color:white;text-align: left;font-size:14px;width:100%;margin:0px 0px 0px 0px"><span style="font-size:10px;color:#16a34a;background:#ffffff;padding:3px 6px;border-radius:999px;white-space:nowrap;">Perks from My Membership Card</span><br><b>Merchant Perks</b></div><br><div  style="color:white;text-align: left;font-size:10px;width:100%;margin:-22px 0px 0px 0px;">Claim perks in one place</div>'
+//                            html: '<div style="color:white;text-align: left;font-size:14px;width:100%;margin:0px 0px 0px 0px"><b>Merchant Perks</b></div><br><div  style="color:white;text-align: left;font-size:10px;width:90%;margin:-22px 0px 0px 0px;">All perks from your membership card in one place</div>'
+//                           // html: '<div style="color:white;text-align: left;font-size:14px;width:100%;margin:0px 0px 0px 0px"><span style="font-size:14px;color:#16a34a;background:#ffffff;padding:3px 6px;border-radius:999px;white-space:nowrap;font-weight:normal;">Merchant Perks</span></div><br><div  style="color:white;text-align: left;font-size:10px;width:90%;margin:-22px 0px 0px 0px;">All perks from your membership card in one place</div>'
                          
                         
-                        },
+//                         },
 
                    
                    
-                    ]
+//                     ]
                 
-                   },
+//                    },
 
+
+                   {
+                    xtype : 'container',
+                    width : '60%',
+                    height: 40, 
+                    margin: '14 0 0 0',    
+                    style : 'position:relative;background-color:transparent;',
+                    items : [
+                        // 🎁 Icon, absolute di atas pill
+                        {
+                            xtype: 'component',
+                            html:
+                              '<div style="position:absolute;top:-9px;left:20px;' +
+                                     'width:37px;height:37px;z-index:10;">' +
+                                '<img src="resources/icons/ayohaReward01.gif" ' +
+                                     'style="width:37px;height:37px;display:block;" ' +
+                                     'alt="Company Name" />' +
+                              '</div>'
+                        },
+                
+                        // 🟢 Pill CTA
+                        {
+                            xtype : 'container',
+                            width : '80%',
+                            height: 40,
+                            margin: '8 0 0 20',   // align dengan icon
+                          //  cls   : 'getMoreMembershipCard',
+                            style : 'background:#ecfdf5;border:1px solid #bbf7d0;' +
+                                    'border-radius:999px;white-space:nowrap;' +
+                                    'position:relative;z-index:1;',
+                            layout: {
+                                type : 'vbox',
+                                pack : 'center',
+                                align: 'center'
+                            },
+                            items: [
+                                {
+                                    margin: '-3 0 0 0',
+                                    html  : '<div style="font-size:14px;font-weight:700;color:#16a34a;">You got total 23</div>'
+                                },
+                                {
+                                    margin: '-4 0 0 0',
+                                    html  : '<div style="font-size:10px;color:#16a34a;">Eligible perk to be claim today!</div>'
+                                }
+                            ]
+                        }
+                    ]
+                },
                   {
                     xtype: 'container',
-                    width: '50%', 
+                    width: '38%', 
                     hidden:false, 
                     height: 65,                                             
                    style: 'background-color:transparent;',
@@ -261,7 +363,8 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
                             xtype: 'container',
                             style:"background-color:transparent",
                             width: '100%',
-                            margin: '7 0 0 0',
+                            //margin: '7 0 0 0',
+                            margin: '7 0 0 5',
                             height:40,
                             layout: {
                                 type: 'hbox',
@@ -276,6 +379,7 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
                                     width: '24%',
                                     style:"background-color:transparent",
                                     height:40,
+                                    hidden:true,
                                     layout: {
                                         type: 'vbox',
                                         pack: 'center',
@@ -315,7 +419,8 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
                                 },
                                 {
                                     xtype: 'container',
-                                    width: '24%',
+                                   // width: '24%',
+                                    width: '33%',
                                     style:"background-color:transparent",
                                     height:40,
                                     layout: {
@@ -356,7 +461,7 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
                                 },
                                 {
                                     xtype: 'container',
-                                    width: '24%',
+                                    width: '33%',
                                     style:"background-color:transparent",
                                     height:40,
                                     layout: {
@@ -397,7 +502,7 @@ Ext.define('ianMizi.view.AyohaMerchant.AyohaMerchantReward', {
                                 },
                                 {
                                     xtype: 'container',
-                                    width: '24%',
+                                    width: '33%',
                                     style:"background-color:transparent",
                                     height:40,
                                     layout: {
@@ -3149,9 +3254,28 @@ switchPerkTab_Event(expiredBtn, 'Expired', 3);
                                 {
                                     width: '100%',
                                     height: 47,  
-                                    margin: '-5 0 0 0',  
+                                    margin: '-5 0 0 0',
+                                    id:'htmltxtDiscountPerksSearch',
+                                    hidden:false, 
                                     html: '<div  style="background-color:transparent; padding: 15px;">' +
                                     '<input type="text"  id="txtDiscountPerksSearch" placeholder="Search Merchant or Perk..." ' +
+                                      'style="width: 100%; box-sizing: border-box; padding: 10px 20px 10px 45px; ' +
+                                             'border-radius: 30px; border: 1px solid #e0e0e0; background-color: #ffffff; ' +
+                                             'font-family: sans-serif; font-size: 12px; color: #333; outline: none; ' +
+                                             'box-shadow: 0 2px 5px rgba(0,0,0,0.05); ' +
+                                             'background-image: url(\'data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%23999999%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22><circle cx=%2211%22 cy=%2211%22 r=%228%22></circle><line x1=%2221%22 y1=%2221%22 x2=%2216.65%22 y2=%2216.65%22></line></svg>\'); ' +
+                                             'background-repeat: no-repeat; background-position: 15px center; background-size: 18px;" ' +
+                                    '>' +
+                                  '</div>',
+                                },
+                                {
+                                    width: '100%',
+                                    height: 47,  
+                                    margin: '-5 0 0 0',
+                                    id:'htmltxtDiscountPerksSearch_OnlineOfflineDiscount',
+                                    hidden:true, 
+                                    html: '<div  style="background-color:transparent; padding: 15px;">' +
+                                    '<input type="text"  id="txtDiscountPerksSearch_OnlineOfflineDiscount" placeholder="Search Merchant or Perk..." ' +
                                       'style="width: 100%; box-sizing: border-box; padding: 10px 20px 10px 45px; ' +
                                              'border-radius: 30px; border: 1px solid #e0e0e0; background-color: #ffffff; ' +
                                              'font-family: sans-serif; font-size: 12px; color: #333; outline: none; ' +
@@ -3200,12 +3324,16 @@ switchPerkTab_Event(expiredBtn, 'Expired', 3);
                                 
                                 if(container.getActiveIndex()==0){
                                 switchPerkTab_Discount(eligibleBtn, 'Eligible', 0);
+                              
                                 }
                                 if(container.getActiveIndex()==1){
+                                  
                                 switchPerkTab_Discount(redeemOnlinedBtn, 'Redeem_Online', 1);
                                 }if(container.getActiveIndex()==2){
+                                  
                                 switchPerkTab_Discount(redeemOfflinedBtn, 'Redeem_Offline', 2);
                                 }if(container.getActiveIndex()==3){
+                                  
                                 switchPerkTab_Discount(expiredBtn, 'Expired', 3);
                                 }
                                         },
@@ -3253,87 +3381,121 @@ switchPerkTab_Event(expiredBtn, 'Expired', 3);
                                        
                                         },
                                         {
-                                            xtype: 'list',
+                                            xtype: 'container',
                                             width: '100%',
                                             //height: 300,
-                                            height: 500,
-                                            // flex: 1,
-                                            //store: _DataStore_AyohaeWalletTransactionLoadByeWalletAccNoFilterTypeAllTransactionStore,
-                                            // store:'AyohaUserDashBoardNearestRedeemItemListStore',
-                                            id: 'AyohaMerchantRewardDiscountList_Redeem_Online',
-                                            mode: 'SINGLE',
-                                            // width: '100%',
-                                           // grouped:true,
-                                            disableSelection: true,
-                                            scrollable: {
-                                                direction: 'vertical',
-                                                indicators: {
-                                                    y: {
-                                                        autoHide: true
-                                                    },
-                                                    x: {
-                                                        autoHide: true
-                                                    }
-                                                }
+                                            height: '100%',
+                                            layout: {
+                                                type: 'vbox',
+                                                pack: 'start',
+                                                align: 'center'
+                                
                                             },
-                                            style: 'background-color:rgba(255,255,255, 0.1);',
-                                            itemTpl: '<div onclick="MyAccount_AllTransactionHistory_AyohaeWalletTransactionStaging({TotalStampEarn},' + "'" + '{CreatedDate}' + "'" + ',' + "'" + '{AccountName}' + "'" + ',' + "'" + '{UserProfileImg}' + "'" + ',' + "'" + '{PhoneNo}' + "'" + ',' + "'" + '{TransactionNote}' + "'" + ',' + "'" + '{TransactionAmount}' + "'" + ',' + "'" + '{TransactionType}' + "'" + ',' + "'" + '{MembershipCardCode}' + "'" + ',' + "'" + '{OrderNo}' + "'" + ',' + "'" + '{ItemCartCode}' + "'" + ',' + "'" + '{FullAccountName}' + "'" + ',' + "'" + '{TransactionReferenceNo}' + "'" + ','+ "'" + '{EnterpriseAddress}' + "'" + ','+ "'" + '{EnterpriseTagLine}' + "'" + ',`{CustomerAccNo}`,{ID},`{CreatedDate}`)" class="myContent" style="background-color:white;width:106%;height:70px;">' +
-                   
-                   
-                                            // '<table onclick="MyAccount_AllTransactionHistory_AyohaeWalletTransactionStaging({TotalStampEarn},' + "'" + '{CreatedDate}' + "'" + ',' + "'" + '{AccountName}' + "'" + ',' + "'" + '{UserProfileImg}' + "'" + ',' + "'" + '{PhoneNo}' + "'" + ',' + "'" + '{TransactionNote}' + "'" + ',' + "'" + '{TransactionAmount}' + "'" + ',' + "'" + '{TransactionType}' + "'" + ',' + "'" + '{MembershipCardCode}' + "'" + ',' + "'" + '{OrderNo}' + "'" + ',' + "'" + '{ItemCartCode}' + "'" + ',' + "'" + '{FullAccountName}' + "'" + ',' + "'" + '{TransactionReferenceNo}' + "'" + ',{ID})" style="border-collapse:collapse;border-spacing:0;width:106%;background-color:white;margin:-10px 0px 0px -18px;height:80px;"><tr><td style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:0px 10px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:20%;vertical-align:center"><div style="border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none white;border-radius: 50px;width:60px;height:60px;color:white;vertical-align: bottom; text-align:center;font-family: Lucida Console, Courier, monospace;font-size: 35px;background-image: url({AccountProfileImg}); background-size: 100% 100%;"></div></td><td style="font-family:Arial, sans-serif;font-size:14px;font-weight:bold;padding:0px 0px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:80%;vertical-align:center">{AccountName}<br><font style="font-family:Arial, sans-serif;font-size:10px;font-weight:normal;">{isSpentOrIncome} - {CreatedDate}</font></td></tr></table><br>'
-                                             '<table style="border-collapse:collapse;border-spacing:0;width:106%;background-color:white;margin:-10px 0px 0px -18px;height:80px;"><tr><td style="font-family:Arial, sans-serif;font-size:12px;font-weight:normal;padding:0px 10px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:20%;vertical-align:center"><div style="border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none white;border-radius: 50px;width:60px;height:60px;color:white;vertical-align: bottom; text-align:center;font-family: Lucida Console, Courier, monospace;font-size: 35px;background-image: url({AccountProfileImg}); background-size: 100% 100%;"></div></td><td style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;padding:0px 0px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:80%;vertical-align:center">{AccountName}<br><font style="font-family:Arial, sans-serif;font-size:10px;font-weight:normal;">{CreatedDate}<br>{ModifiedPaymentChannel}</font></td></tr></table><br>'
-                                           
-                                             + '<div style="width:96%;height:20px;margin:-80px 0px 0px 0px;color:black;vertical-align: top; text-align:right;font-family:Arial, sans-serif;font-size: 12px;font-weight:bold;">{ModifiedTransactionAmount}<br>({AyohaPoint})</div>'
-                                                 + '</div>',
-                   
-                   
-                                            //height: '100%',
-                   
-                                            emptyText: CoreFunction_AyohaMerchantReward_listEmptyRedeemOnline_TextMsg(),
-                   
-                   
+                                            items:[
+                                                {
+                                                    xtype: 'list',
+                                                    width: '92%',
+                                                    //height: 300,
+                                                    height: 500,
+                                                    // flex: 1,
+                                                    //store: _DataStore_AyohaeWalletTransactionLoadByeWalletAccNoFilterTypeAllTransactionStore,
+                                                    // store:'AyohaUserDashBoardNearestRedeemItemListStore',
+                                                    id: 'AyohaMerchantRewardDiscountList_Redeem_Online',
+                                                    mode: 'SINGLE',
+                                                    // width: '100%',
+                                                   // grouped:true,
+                                                    disableSelection: true,
+                                                    scrollable: {
+                                                        direction: 'vertical',
+                                                        indicators: {
+                                                            y: {
+                                                                autoHide: true
+                                                            },
+                                                            x: {
+                                                                autoHide: true
+                                                            }
+                                                        }
+                                                    },
+                                                    style: 'background-color:rgba(255,255,255, 0.1);',
+                                                    itemTpl: '<div onclick="MyAccount_AllTransactionHistory_AyohaeWalletTransactionStaging({TotalStampEarn},' + "'" + '{CreatedDate}' + "'" + ',' + "'" + '{AccountName}' + "'" + ',' + "'" + '{UserProfileImg}' + "'" + ',' + "'" + '{PhoneNo}' + "'" + ',' + "'" + '{TransactionNote}' + "'" + ',' + "'" + '{TransactionAmount}' + "'" + ',' + "'" + '{TransactionType}' + "'" + ',' + "'" + '{MembershipCardCode}' + "'" + ',' + "'" + '{OrderNo}' + "'" + ',' + "'" + '{ItemCartCode}' + "'" + ',' + "'" + '{FullAccountName}' + "'" + ',' + "'" + '{TransactionReferenceNo}' + "'" + ','+ "'" + '{EnterpriseAddress}' + "'" + ','+ "'" + '{EnterpriseTagLine}' + "'" + ',`{CustomerAccNo}`,{ID},`{CreatedDate}`)" class="myContent" style="background-color:white;width:106%;height:70px;">' +
+                           
+                           
+                                                    // '<table onclick="MyAccount_AllTransactionHistory_AyohaeWalletTransactionStaging({TotalStampEarn},' + "'" + '{CreatedDate}' + "'" + ',' + "'" + '{AccountName}' + "'" + ',' + "'" + '{UserProfileImg}' + "'" + ',' + "'" + '{PhoneNo}' + "'" + ',' + "'" + '{TransactionNote}' + "'" + ',' + "'" + '{TransactionAmount}' + "'" + ',' + "'" + '{TransactionType}' + "'" + ',' + "'" + '{MembershipCardCode}' + "'" + ',' + "'" + '{OrderNo}' + "'" + ',' + "'" + '{ItemCartCode}' + "'" + ',' + "'" + '{FullAccountName}' + "'" + ',' + "'" + '{TransactionReferenceNo}' + "'" + ',{ID})" style="border-collapse:collapse;border-spacing:0;width:106%;background-color:white;margin:-10px 0px 0px -18px;height:80px;"><tr><td style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:0px 10px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:20%;vertical-align:center"><div style="border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none white;border-radius: 50px;width:60px;height:60px;color:white;vertical-align: bottom; text-align:center;font-family: Lucida Console, Courier, monospace;font-size: 35px;background-image: url({AccountProfileImg}); background-size: 100% 100%;"></div></td><td style="font-family:Arial, sans-serif;font-size:14px;font-weight:bold;padding:0px 0px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:80%;vertical-align:center">{AccountName}<br><font style="font-family:Arial, sans-serif;font-size:10px;font-weight:normal;">{isSpentOrIncome} - {CreatedDate}</font></td></tr></table><br>'
+                                                     '<table style="border-collapse:collapse;border-spacing:0;width:106%;background-color:white;margin:-10px 0px 0px -18px;height:80px;"><tr><td style="font-family:Arial, sans-serif;font-size:12px;font-weight:normal;padding:0px 10px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:20%;vertical-align:center"><div style="border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none white;border-radius: 50px;width:60px;height:60px;color:white;vertical-align: bottom; text-align:center;font-family: Lucida Console, Courier, monospace;font-size: 35px;background-image: url({AccountProfileImg}); background-size: 100% 100%;"></div></td><td style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;padding:0px 0px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:80%;vertical-align:center">{AccountName}<br><font style="font-family:Arial, sans-serif;font-size:10px;font-weight:normal;">{CreatedDate}<br>{ModifiedPaymentChannel}</font></td></tr></table><br>'
+                                                   
+                                                     + '<div style="width:96%;height:20px;margin:-80px 0px 0px 0px;color:black;vertical-align: top; text-align:right;font-family:Arial, sans-serif;font-size: 12px;font-weight:bold;">RM{TransactionAmount}<br><span style="color:purple">(A.Pts: {AyohaPoint})</span></div>'
+                                                         + '</div>',
+                           
+                           
+                                                    //height: '100%',
+                           
+                                                    emptyText: CoreFunction_AyohaMerchantReward_listEmptyRedeemOnline_TextMsg(),
+                           
+                           
+                                                },
+                                            ]
+
                                         },
+                                      
+
+
                                         {
-                                            xtype: 'list',
+                                            xtype: 'container',
                                             width: '100%',
                                             //height: 300,
-                                            height: 500,
-                                            // flex: 1,
-                                            //store: _DataStore_AyohaeWalletTransactionLoadByeWalletAccNoFilterTypeAllTransactionStore,
-                                            // store:'AyohaUserDashBoardNearestRedeemItemListStore',
-                                            id: 'AyohaMerchantRewardDiscountList_Redeem_Offline',
-                                            mode: 'SINGLE',
-                                            // width: '100%',
-                                           // grouped:true,
-                                            disableSelection: true,
-                                            style: 'background-color:rgba(255,255,255, 0.1);',
-                                            scrollable: {
-                                                direction: 'vertical',
-                                                indicators: {
-                                                    y: {
-                                                        autoHide: true
-                                                    },
-                                                    x: {
-                                                        autoHide: true
-                                                    }
-                                                }
+                                            height: '100%',
+                                            layout: {
+                                                type: 'vbox',
+                                                pack: 'start',
+                                                align: 'center'
+                                
                                             },
-                                            itemTpl: '<div onclick="MyAccount_AllTransactionHistory_AyohaeWalletTransactionStaging({TotalStampEarn},' + "'" + '{CreatedDate}' + "'" + ',' + "'" + '{AccountName}' + "'" + ',' + "'" + '{UserProfileImg}' + "'" + ',' + "'" + '{PhoneNo}' + "'" + ',' + "'" + '{TransactionNote}' + "'" + ',' + "'" + '{TransactionAmount}' + "'" + ',' + "'" + '{TransactionType}' + "'" + ',' + "'" + '{MembershipCardCode}' + "'" + ',' + "'" + '{OrderNo}' + "'" + ',' + "'" + '{ItemCartCode}' + "'" + ',' + "'" + '{FullAccountName}' + "'" + ',' + "'" + '{TransactionReferenceNo}' + "'" + ','+ "'" + '{EnterpriseAddress}' + "'" + ','+ "'" + '{EnterpriseTagLine}' + "'" + ',`{CustomerAccNo}`,{ID},`{CreatedDate}`)" class="myContent" style="background-color:white;width:106%;height:70px;">' +
-                   
-                   
-                                            // '<table onclick="MyAccount_AllTransactionHistory_AyohaeWalletTransactionStaging({TotalStampEarn},' + "'" + '{CreatedDate}' + "'" + ',' + "'" + '{AccountName}' + "'" + ',' + "'" + '{UserProfileImg}' + "'" + ',' + "'" + '{PhoneNo}' + "'" + ',' + "'" + '{TransactionNote}' + "'" + ',' + "'" + '{TransactionAmount}' + "'" + ',' + "'" + '{TransactionType}' + "'" + ',' + "'" + '{MembershipCardCode}' + "'" + ',' + "'" + '{OrderNo}' + "'" + ',' + "'" + '{ItemCartCode}' + "'" + ',' + "'" + '{FullAccountName}' + "'" + ',' + "'" + '{TransactionReferenceNo}' + "'" + ',{ID})" style="border-collapse:collapse;border-spacing:0;width:106%;background-color:white;margin:-10px 0px 0px -18px;height:80px;"><tr><td style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:0px 10px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:20%;vertical-align:center"><div style="border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none white;border-radius: 50px;width:60px;height:60px;color:white;vertical-align: bottom; text-align:center;font-family: Lucida Console, Courier, monospace;font-size: 35px;background-image: url({AccountProfileImg}); background-size: 100% 100%;"></div></td><td style="font-family:Arial, sans-serif;font-size:14px;font-weight:bold;padding:0px 0px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:80%;vertical-align:center">{AccountName}<br><font style="font-family:Arial, sans-serif;font-size:10px;font-weight:normal;">{isSpentOrIncome} - {CreatedDate}</font></td></tr></table><br>'
-                                             '<table style="border-collapse:collapse;border-spacing:0;width:106%;background-color:white;margin:-10px 0px 0px -18px;height:80px;"><tr><td style="font-family:Arial, sans-serif;font-size:12px;font-weight:normal;padding:0px 10px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:20%;vertical-align:center"><div style="border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none white;border-radius: 50px;width:60px;height:60px;color:white;vertical-align: bottom; text-align:center;font-family: Lucida Console, Courier, monospace;font-size: 35px;background-image: url({AccountProfileImg}); background-size: 100% 100%;"></div></td><td style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;padding:0px 0px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:80%;vertical-align:center">{AccountName}<br><font style="font-family:Arial, sans-serif;font-size:10px;font-weight:normal;">{CreatedDate}<br>{ModifiedPaymentChannel}</font></td></tr></table><br>'
-                                           
-                                             + '<div style="width:96%;height:20px;margin:-80px 0px 0px 0px;color:black;vertical-align: top; text-align:right;font-family:Arial, sans-serif;font-size: 12px;font-weight:bold;">{ModifiedTransactionAmount}<br>({AyohaPoint})</div>'
-                                                 + '</div>',
-                   
-                   
-                                            //height: '100%',
-                   
-                                            emptyText: CoreFunction_AyohaMerchantReward_listEmptyRedeemOffline_TextMsg(),
-                   
-                   
+                                            items:[
+                                                {
+                                                    xtype: 'list',
+                                                    width: '92%',
+                                                    //height: 300,
+                                                    height: 500,
+                                                    // flex: 1,
+                                                    //store: _DataStore_AyohaeWalletTransactionLoadByeWalletAccNoFilterTypeAllTransactionStore,
+                                                    // store:'AyohaUserDashBoardNearestRedeemItemListStore',
+                                                    id: 'AyohaMerchantRewardDiscountList_Redeem_Offline',
+                                                    mode: 'SINGLE',
+                                                    // width: '100%',
+                                                   // grouped:true,
+                                                    disableSelection: true,
+                                                    style: 'background-color:rgba(255,255,255, 0.1);',
+                                                    scrollable: {
+                                                        direction: 'vertical',
+                                                        indicators: {
+                                                            y: {
+                                                                autoHide: true
+                                                            },
+                                                            x: {
+                                                                autoHide: true
+                                                            }
+                                                        }
+                                                    },
+                                                    itemTpl: '<div onclick="MyAccount_AllTransactionHistory_AyohaeWalletTransactionStaging({TotalStampEarn},' + "'" + '{CreatedDate}' + "'" + ',' + "'" + '{AccountName}' + "'" + ',' + "'" + '{UserProfileImg}' + "'" + ',' + "'" + '{PhoneNo}' + "'" + ',' + "'" + '{TransactionNote}' + "'" + ',' + "'" + '{TransactionAmount}' + "'" + ',' + "'" + '{TransactionType}' + "'" + ',' + "'" + '{MembershipCardCode}' + "'" + ',' + "'" + '{OrderNo}' + "'" + ',' + "'" + '{ItemCartCode}' + "'" + ',' + "'" + '{FullAccountName}' + "'" + ',' + "'" + '{TransactionReferenceNo}' + "'" + ','+ "'" + '{EnterpriseAddress}' + "'" + ','+ "'" + '{EnterpriseTagLine}' + "'" + ',`{CustomerAccNo}`,{ID},`{CreatedDate}`)" class="myContent" style="background-color:white;width:106%;height:70px;">' +
+                           
+                           
+                                                    // '<table onclick="MyAccount_AllTransactionHistory_AyohaeWalletTransactionStaging({TotalStampEarn},' + "'" + '{CreatedDate}' + "'" + ',' + "'" + '{AccountName}' + "'" + ',' + "'" + '{UserProfileImg}' + "'" + ',' + "'" + '{PhoneNo}' + "'" + ',' + "'" + '{TransactionNote}' + "'" + ',' + "'" + '{TransactionAmount}' + "'" + ',' + "'" + '{TransactionType}' + "'" + ',' + "'" + '{MembershipCardCode}' + "'" + ',' + "'" + '{OrderNo}' + "'" + ',' + "'" + '{ItemCartCode}' + "'" + ',' + "'" + '{FullAccountName}' + "'" + ',' + "'" + '{TransactionReferenceNo}' + "'" + ',{ID})" style="border-collapse:collapse;border-spacing:0;width:106%;background-color:white;margin:-10px 0px 0px -18px;height:80px;"><tr><td style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:0px 10px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:20%;vertical-align:center"><div style="border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none white;border-radius: 50px;width:60px;height:60px;color:white;vertical-align: bottom; text-align:center;font-family: Lucida Console, Courier, monospace;font-size: 35px;background-image: url({AccountProfileImg}); background-size: 100% 100%;"></div></td><td style="font-family:Arial, sans-serif;font-size:14px;font-weight:bold;padding:0px 0px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:80%;vertical-align:center">{AccountName}<br><font style="font-family:Arial, sans-serif;font-size:10px;font-weight:normal;">{isSpentOrIncome} - {CreatedDate}</font></td></tr></table><br>'
+                                                     '<table style="border-collapse:collapse;border-spacing:0;width:106%;background-color:white;margin:-10px 0px 0px -18px;height:80px;"><tr><td style="font-family:Arial, sans-serif;font-size:12px;font-weight:normal;padding:0px 10px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:20%;vertical-align:center"><div style="border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none white;border-radius: 50px;width:60px;height:60px;color:white;vertical-align: bottom; text-align:center;font-family: Lucida Console, Courier, monospace;font-size: 35px;background-image: url({AccountProfileImg}); background-size: 100% 100%;"></div></td><td style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;padding:0px 0px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:80%;vertical-align:center">{AccountName}<br><font style="font-family:Arial, sans-serif;font-size:10px;font-weight:normal;">{CreatedDate}<br>{ModifiedPaymentChannel}</font></td></tr></table><br>'
+                                                   
+                                                     + '<div style="width:96%;height:20px;margin:-80px 0px 0px 0px;color:black;vertical-align: top; text-align:right;font-family:Arial, sans-serif;font-size: 12px;font-weight:bold;">RM{TransactionAmount}<br><span style="color:purple">(A.Pts: {AyohaPoint})</span></div>'
+                                                         + '</div>',
+                           
+                           
+                                                    //height: '100%',
+                           
+                                                    emptyText: CoreFunction_AyohaMerchantReward_listEmptyRedeemOffline_TextMsg(),
+                           
+                           
+                                                },
+                                            ]
+
                                         },
+                                       
                                         {
                 
                                             id: 'AyohaMerchantRewardDiscountList_Expired',
@@ -5356,7 +5518,8 @@ window._EligibleVsUsed_DatalabelsRegistered =
                     label: 'Eligible',
                     data: eligible,
                     stack: 'perks',
-                    backgroundColor: 'rgba(255,255,255,0.55)',
+                   // backgroundColor: 'rgba(255,255,255,0.55)',
+                    backgroundColor:'#ecfdf5',
                     borderRadius: 12,
                     borderSkipped: false,
                     barThickness: 25,
@@ -6063,11 +6226,16 @@ Ext.getCmp('listcarouselAyohaMerchantRewards_Point_'+RedeemPointStatus).setHeigh
         // button yang ditekan jadi hitam/putih
         btn.classList.add('active');
         if(RedeemStatus=="Eligible" || RedeemStatus=="Expired"){
+            Ext.getCmp("htmltxtDiscountPerksSearch").setHidden(false);
+            Ext.getCmp("htmltxtDiscountPerksSearch_OnlineOfflineDiscount").setHidden(true);
         Ext.getCmp('carouselAyohaMerchantRewards_Discounts').setActiveItem(Index);
         AyohaMerchantReward_DiscountCampaignRedeem_LoadByDiscountRedeemStatusStore(RedeemStatus);
         return;
         }
         if(RedeemStatus=="Redeem_Online" || RedeemStatus=="Redeem_Offline"){
+            Ext.getCmp("htmltxtDiscountPerksSearch").setHidden(true);
+            Ext.getCmp("htmltxtDiscountPerksSearch_OnlineOfflineDiscount").setHidden(false);
+
             Ext.getCmp('carouselAyohaMerchantRewards_Discounts').setActiveItem(Index);
             AyohaMerchantReward_DiscountCampaignRedeemLoadByDiscountRedeemStatus_OnlineOfflineStore(RedeemStatus);
             return;
@@ -6301,9 +6469,15 @@ var AyohaMerchantReward_FREEZE_COMPUTED = false; // sudah kira offset atau belum
 
     function AyohaMerchantReward_Initialized_SearchText(){
         document.getElementById("txtStampPerksSearch").addEventListener("keyup", AyohaMerchantReward_txtStampPerksSearch_DataStore_AyohaUserDashBoard_StampCardLoadByStampedRedeemStatusStoreOnKeyUp);
+        document.getElementById("txtPointPerksSearch").addEventListener("keyup", AyohaMerchantReward_txtPointPerksSearch_DataStore_PointCampaignRedeemLoadByPointRedeemStatusStoreOnKeyUp);
+        document.getElementById("txtVoucherPerksSearch").addEventListener("keyup", AyohaMerchantReward_txtVoucherPerksSearch_DataStore_VoucherCampaignRedeemLoadByVoucherRedeemStatusStoreOnKeyUp);
+        document.getElementById("txtContestPerksSearch").addEventListener("keyup", AyohaMerchantReward_txtContestPerksSearch_DataStore_ContestCampaignRedeem_LoadByContestRedeemStatusStoreStoreOnKeyUp);
+        document.getElementById("txtEventPerksSearch").addEventListener("keyup", AyohaMerchantReward_txtEventPerksSearch_DataStore_EventCampaignRedeemLoadByEventRedeemStatusStoreOnKeyUp);
+        document.getElementById("txtDiscountPerksSearch").addEventListener("keyup", AyohaMerchantReward_txtDiscountPerksSearch_DataStore_DiscountCampaignRedeem_LoadByDiscountRedeemStatusStoreOnKeyUp);
+        document.getElementById("txtDiscountPerksSearch_OnlineOfflineDiscount").addEventListener("keyup", AyohaMerchantReward_txtDiscountPerksSearch_OnlineOfflineDiscount_DataStore_DiscountCampaignRedeemLoadByDiscountRedeemStatus_OnlineOfflineStoreOnKeyUp);
     }
 
-
+    
 var globalAyohaMerchantReward_StampFilter;
     function AyohaMerchantReward_txtStampPerksSearch_DataStore_AyohaUserDashBoard_StampCardLoadByStampedRedeemStatusStoreOnKeyUp(){
         _DataStore_AyohaUserDashBoard_StampCardLoadByStampedRedeemStatusStore.clearFilter();
@@ -6374,14 +6548,237 @@ var globalAyohaMerchantReward_StampFilter;
     
     }
 
+    function AyohaMerchantReward_txtPointPerksSearch_DataStore_PointCampaignRedeemLoadByPointRedeemStatusStoreOnKeyUp(){
+        _DataStore_PointCampaignRedeemLoadByPointRedeemStatusStore.clearFilter();
+
+        var queryString = document.getElementById('txtPointPerksSearch').value;
+   
+  
+        if (queryString) {
+            
+    
+            var thisRegEx = new RegExp(queryString, "i");
+            _DataStore_PointCampaignRedeemLoadByPointRedeemStatusStore.filterBy(function (record) {
+                if (thisRegEx.test(record.get('SearchCol'))) {
+                    console.log('ada0');
+    
+                  
+                    return true;
+    
+                };
+                return false;
+                console.log('tiada1');
+    
+                //  return false;
+            });
+           // countEnterprisesLoadAyohaMerchantListStore = _DataStore_EnterprisesLoadByMerchantCategory_temp.getCount();
+            //  Ext.getCmp('htmlSubscriberListTypeLbl').setHtml('<font size="2" color="black"><b>All Cards(' + countEnterprise + ')</b></font>');
+        }
+    
+    
+        else {
+            _DataStore_PointCampaignRedeemLoadByPointRedeemStatusStore.clearFilter();
+            return false;
+        }
+        return;
+    
+       
+    
+    }
+
+    function AyohaMerchantReward_txtVoucherPerksSearch_DataStore_VoucherCampaignRedeemLoadByVoucherRedeemStatusStoreOnKeyUp(){
+        _DataStore_VoucherCampaignRedeemLoadByVoucherRedeemStatusStore.clearFilter();
+
+        var queryString = document.getElementById('txtVoucherPerksSearch').value;
+   
+  
+        if (queryString) {
+            
+    
+            var thisRegEx = new RegExp(queryString, "i");
+            _DataStore_VoucherCampaignRedeemLoadByVoucherRedeemStatusStore.filterBy(function (record) {
+                if (thisRegEx.test(record.get('SearchCol'))) {
+                    console.log('ada0');
+    
+                  
+                    return true;
+    
+                };
+                return false;
+                console.log('tiada1');
+    
+                //  return false;
+            });
+           // countEnterprisesLoadAyohaMerchantListStore = _DataStore_EnterprisesLoadByMerchantCategory_temp.getCount();
+            //  Ext.getCmp('htmlSubscriberListTypeLbl').setHtml('<font size="2" color="black"><b>All Cards(' + countEnterprise + ')</b></font>');
+        }
+    
+    
+        else {
+            _DataStore_VoucherCampaignRedeemLoadByVoucherRedeemStatusStore.clearFilter();
+            return false;
+        }
+        return;
+    
+       
+    
+    }
+    
+    function AyohaMerchantReward_txtContestPerksSearch_DataStore_ContestCampaignRedeem_LoadByContestRedeemStatusStoreStoreOnKeyUp(){
+        _DataStore_ContestCampaignRedeem_LoadByContestRedeemStatusStore.clearFilter();
+
+        var queryString = document.getElementById('txtContestPerksSearch').value;
+   
+  
+        if (queryString) {
+            
+    
+            var thisRegEx = new RegExp(queryString, "i");
+            _DataStore_ContestCampaignRedeem_LoadByContestRedeemStatusStore.filterBy(function (record) {
+                if (thisRegEx.test(record.get('SearchCol'))) {
+                    console.log('ada0');
+    
+                  
+                    return true;
+    
+                };
+                return false;
+                console.log('tiada1');
+    
+                //  return false;
+            });
+           // countEnterprisesLoadAyohaMerchantListStore = _DataStore_EnterprisesLoadByMerchantCategory_temp.getCount();
+            //  Ext.getCmp('htmlSubscriberListTypeLbl').setHtml('<font size="2" color="black"><b>All Cards(' + countEnterprise + ')</b></font>');
+        }
+    
+    
+        else {
+            _DataStore_ContestCampaignRedeem_LoadByContestRedeemStatusStore.clearFilter();
+            return false;
+        }
+        return;
+    
+       
+    
+    }
+    
+
+    function AyohaMerchantReward_txtEventPerksSearch_DataStore_EventCampaignRedeemLoadByEventRedeemStatusStoreOnKeyUp(){
+        _DataStore_EventCampaignRedeemLoadByEventRedeemStatusStore.clearFilter();
+
+        var queryString = document.getElementById('txtEventPerksSearch').value;
+   
+  
+        if (queryString) {
+            
+    
+            var thisRegEx = new RegExp(queryString, "i");
+            _DataStore_EventCampaignRedeemLoadByEventRedeemStatusStore.filterBy(function (record) {
+                if (thisRegEx.test(record.get('SearchCol'))) {
+                    console.log('ada0');
+    
+                  
+                    return true;
+    
+                };
+                return false;
+                console.log('tiada1');
+    
+                //  return false;
+            });
+           // countEnterprisesLoadAyohaMerchantListStore = _DataStore_EnterprisesLoadByMerchantCategory_temp.getCount();
+            //  Ext.getCmp('htmlSubscriberListTypeLbl').setHtml('<font size="2" color="black"><b>All Cards(' + countEnterprise + ')</b></font>');
+        }
+    
+    
+        else {
+            _DataStore_EventCampaignRedeemLoadByEventRedeemStatusStore.clearFilter();
+            return false;
+        }
+        return;
+    
+       
+    
+    }
+    
 
 
+    function AyohaMerchantReward_txtDiscountPerksSearch_DataStore_DiscountCampaignRedeem_LoadByDiscountRedeemStatusStoreOnKeyUp(){
+        _DataStore_DiscountCampaignRedeem_LoadByDiscountRedeemStatusStore.clearFilter();
+
+        var queryString = document.getElementById('txtDiscountPerksSearch').value;
+   
+  
+        if (queryString) {
+            
+    
+            var thisRegEx = new RegExp(queryString, "i");
+            _DataStore_DiscountCampaignRedeem_LoadByDiscountRedeemStatusStore.filterBy(function (record) {
+                if (thisRegEx.test(record.get('ModifiedDiscountEndDate'))) {
+                    console.log('ada0');
+    
+                  
+                    return true;
+    
+                };
+                return false;
+                console.log('tiada1');
+    
+                //  return false;
+            });
+           // countEnterprisesLoadAyohaMerchantListStore = _DataStore_EnterprisesLoadByMerchantCategory_temp.getCount();
+            //  Ext.getCmp('htmlSubscriberListTypeLbl').setHtml('<font size="2" color="black"><b>All Cards(' + countEnterprise + ')</b></font>');
+        }
+    
+    
+        else {
+            _DataStore_DiscountCampaignRedeem_LoadByDiscountRedeemStatusStore.clearFilter();
+            return false;
+        }
+        return;
+    
+       
+    
+    }
 
 
+    function AyohaMerchantReward_txtDiscountPerksSearch_OnlineOfflineDiscount_DataStore_DiscountCampaignRedeemLoadByDiscountRedeemStatus_OnlineOfflineStoreOnKeyUp(){
+        _DataStore_DiscountCampaignRedeemLoadByDiscountRedeemStatus_OnlineOfflineStore.clearFilter();
 
-
-
-
+        var queryString = document.getElementById('txtDiscountPerksSearch_OnlineOfflineDiscount').value;
+   
+  
+        if (queryString) {
+            
+    
+            var thisRegEx = new RegExp(queryString, "i");
+            _DataStore_DiscountCampaignRedeemLoadByDiscountRedeemStatus_OnlineOfflineStore.filterBy(function (record) {
+                if (thisRegEx.test(record.get('ModifiedSearchCol'))) {
+                    console.log('ada0');
+    
+                  
+                    return true;
+    
+                };
+                return false;
+                console.log('tiada1');
+    
+                //  return false;
+            });
+           // countEnterprisesLoadAyohaMerchantListStore = _DataStore_EnterprisesLoadByMerchantCategory_temp.getCount();
+            //  Ext.getCmp('htmlSubscriberListTypeLbl').setHtml('<font size="2" color="black"><b>All Cards(' + countEnterprise + ')</b></font>');
+        }
+    
+    
+        else {
+            _DataStore_DiscountCampaignRedeemLoadByDiscountRedeemStatus_OnlineOfflineStore.clearFilter();
+            return false;
+        }
+        return;
+    
+       
+    
+    }
 
     // Call this after you get the counts from server/SQL
 function setStampPerkCounts(eligible, redeem, approved, expired) {

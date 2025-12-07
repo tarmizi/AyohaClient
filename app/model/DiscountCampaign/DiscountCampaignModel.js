@@ -20,6 +20,7 @@ Ext.define('ianMizi.model.DiscountCampaign.DiscountCampaignModel', {
       'isRequireDiscountEndDate',
       'EnterpriseLogo',
       'EnterpriseName',
+      'SearchCol',
       {
         name: 'ModifiedWidth',
         convert: function (value, record) {
@@ -41,7 +42,23 @@ Ext.define('ianMizi.model.DiscountCampaign.DiscountCampaignModel', {
           }
           return _value;
       }
-  },    
+  },    {
+    name: 'ModifiedSearchCol',
+    convert: function (value, record) {
+    var values;
+    var _value;
+        var str = record.get('isRequireDiscountEndDate');
+        var searchcol = record.get('SearchCol');
+        if (str == "No") {
+            _value = "Valid Life Time";
+        } else {
+          _value = record.get('DiscountEndDate');
+        }
+        
+        values =searchcol+"|"+ _value;
+          return values;
+    }
+},   
         ]
     }
 });

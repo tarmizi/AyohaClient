@@ -15,6 +15,7 @@
       'VoucherTermAndCondition',
       'EnterpriseName',
       'EnterpriseLogo',
+      'SearchCol',
        {
            name: 'ModifiedWidth',
            convert: function (value, record) {

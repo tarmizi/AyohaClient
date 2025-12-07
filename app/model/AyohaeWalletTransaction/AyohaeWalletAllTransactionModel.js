@@ -53,6 +53,7 @@ Ext.define('ianMizi.model.AyohaeWalletTransaction.AyohaeWalletAllTransactionMode
               return _value;
           }
       },
+     
       {
         name: 'ModifiedPaymentChannel',
         convert: function (value, record) {
@@ -146,6 +147,26 @@ Ext.define('ianMizi.model.AyohaeWalletTransaction.AyohaeWalletAllTransactionMode
                 } else {
                     _value = "Spent|" + strAccountName + "|" + strFullAccountName + "|" + strTransactionAmount + ""
                 }
+
+
+
+
+                return _value;
+            }
+        },
+        {
+            name: 'ModifiedSearchCol',
+            convert: function (value, record) {
+                var _value;
+               
+                var strAccountName = record.get('AccountName');
+                var strFullAccountName = record.get('FullAccountName');
+                var strTransactionAmount = record.get('TransactionAmount');
+                var strCreditDebitType = record.get('CreatedDate');
+
+             
+                    _value =  strAccountName + "|"+ strFullAccountName +"|"+ strTransactionAmount +"|"+strCreditDebitType;
+                
 
 
 
