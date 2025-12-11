@@ -2069,6 +2069,12 @@ var globalFloatPanelMerchantDetailPage_WhatsAppNo;
 
 
 
+var globalFloatPanelMerchantDetailPage_NamaJalan;
+var globalFloatPanelMerchantDetailPage_Postkod;
+var globalFloatPanelMerchantDetailPage_Bandar;
+var globalFloatPanelMerchantDetailPage_Negeri;
+var globalFloatPanelMerchantDetailPage_EnterpriseDescriptions;
+var globalFloatPanelMerchantDetailPage_EnterprisePhoneNo;
 
 
 
@@ -2101,6 +2107,13 @@ function FloatPanel_MerchantDetailPageShow(ID,EnterpriseAccNo, EnterpriseLogoPat
     globalFloatPanelMerchantDetailPage_EnterpriseCoordinate = EnterpriseCoordinate;
     globalFloatPanelMerchantDetailPage_BusinessMode = BusinessMode;
     globalFloatPanelMerchantDetailPage_WhatsAppNo = PICContactNo;
+    globalFloatPanelMerchantDetailPage_NamaJalan=NamaJalan;
+    globalFloatPanelMerchantDetailPage_Postkod=Postkod;
+    globalFloatPanelMerchantDetailPage_Bandar=Bandar;
+    globalFloatPanelMerchantDetailPage_Negeri=Negeri;
+    globalFloatPanelMerchantDetailPage_EnterpriseDescriptions=EnterpriseDescriptions;
+    globalFloatPanelMerchantDetailPage_EnterprisePhoneNo=EnterprisePhoneNo;
+
     //  globalDashboard_AyohaHotMerchant_EnterpriseAccNo = EnterpriseAccNo;
     localStorage.setItem("globalFloatPanelMerchantDetailPage_ID", ID);
 
@@ -2304,7 +2317,7 @@ function FloatPanel_AyohaStore_EnterprisesCheckIn () {
               }, null, { delegate: '#' + checkInButtonId });
             }, 10);
           }
-  
+ 
           Ext.Viewport.unmask();
         } else {
           swalFireFail('Fail! -> ' + (result.responseText || '').trim());
@@ -2359,7 +2372,7 @@ function  FloatPanel_AyohaStore_EnterprisesCheckInXX(){
               var etagline =FloatPanel_AyohaStore_getEnterpriseTagLine();
               if(count==1){
            
-alert('Can Check In Now');
+
                 FloatPanel_Membership_CheckInPageShow(logo,eName,etagline,CheckInCount);
                
                 

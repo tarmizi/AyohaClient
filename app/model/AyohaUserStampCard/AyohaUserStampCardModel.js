@@ -58,12 +58,13 @@
                              var IsStampRulePopUp = record.get('IsStampRulePopUp');
                              var StampContent = record.get('StampContent');
                              if (IsStampRulePopUp == "POINTLOYALTYCARD") {
-                                 _value = '<img src="' + StampContent + '" width="70px" height="70px" alt="Company Name">';
+                                _value = '<img src="' + StampContent + '" width="70px" height="70px" alt="Company Name">';
+                                 //_value = '<img src="' + StampContent + '" style="width:100%; height:100%; object-fit:cover;"  alt="Company Name">';
                              } else {
                                  _value = StampContent;
                              }
                             
-
+                             
 
                              return _value
                          }

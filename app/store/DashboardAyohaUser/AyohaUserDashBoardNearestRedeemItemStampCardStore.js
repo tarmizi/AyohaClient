@@ -117,3 +117,33 @@ var _DataStore_AyohaUserDashBoardStampCardLoadByStampedRedeemExpiredStore = Ext.
     //autoLoad: true
 
 });
+
+
+
+
+
+
+var _DataStore_DashBoard_StampCardLoadByEnterpriseAccNoStore = Ext.create('Ext.data.Store', {
+
+    model: 'ianMizi.model.AyohaUserStampCard.AyohaUserStampCardModel',
+    id: '_DashBoard_StampCardLoadByEnterpriseAccNoStoreID',
+    proxy: {
+        type: 'ajax',
+        url: GetAPIurl() + '/DashboardAyohaUser/DashBoardStampCardLoadByEnterpriseAccNo',
+        actionMethods: {
+            read: 'POST'
+        },
+        reader: {
+            type: 'json',
+            rootProperty: 'results',
+            totalProperty: 'total',
+            successProperty: 'success',
+            messageProperty: 'message'
+        }
+    },
+
+
+
+    //autoLoad: true
+
+});

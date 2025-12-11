@@ -851,7 +851,7 @@ Ext.define('ianMizi.view.MyAccount.Dashboard', {
                //height: '100%',
              margin: '0 0 0 0',
                width: '100%',
-               height: 190,
+               height: 205,
            // ori height: 190,
              
                style: 'background-color:transparent',
@@ -864,7 +864,7 @@ Ext.define('ianMizi.view.MyAccount.Dashboard', {
                     // xtype: 'container',
                       id: 'mainDashboardCarousel',
                       name: 'namemainDashboardCarousel',
-                     height: 190,
+                      height: 205,
                     //ori  height: 190,
                       width: '100%',
                       indicator: false,
@@ -895,7 +895,7 @@ Ext.define('ianMizi.view.MyAccount.Dashboard', {
   width: '100%',
  
 //ori height: 190,
- height: 190,
+ height: 205,
   title: 'Dashboard_AyohaReward_MainDashboard',
   style: "background-color: transparent;",
   layout: {
@@ -909,13 +909,15 @@ Ext.define('ianMizi.view.MyAccount.Dashboard', {
           xtype: 'container',
           width: '100%',
           height: 30,
+          style: 'background-color:transparent',
          //ori height: 10,
+       
       },
       {
         xtype: 'container',
           width: '91%',
-        
-          height: 145,
+          height: 165,
+         // height: 145,
           style: 'background-color:white;border:2px solid #ECF0F1;border-radius:25px',
           layout: {
             type: 'vbox',
@@ -928,7 +930,7 @@ Ext.define('ianMizi.view.MyAccount.Dashboard', {
                 xtype: 'container',
                 width: '100%',
               
-                height: 50,
+                height: 70,
                 style: 'background-color:transparent',
                 layout: {
                   type: 'hbox',
@@ -941,7 +943,7 @@ Ext.define('ianMizi.view.MyAccount.Dashboard', {
                     xtype: 'container',
                     width: '100%',
                     margin: '-50 0 0 0',                  
-                    height: 30,
+                    height: 50,
                     style: 'background-color:transparent',
                     layout: {
                       type: 'vbox',
@@ -962,6 +964,20 @@ Ext.define('ianMizi.view.MyAccount.Dashboard', {
                         // id: 'labelDashboard_LastCheckInTimeStamp',    
                         // html: '<div  style="color:white;text-align: left;font-size:10px;width:100%;margin:0px 0px 0px 0px;">00:00:00</div>'
                          html: '<div style="font-size:10px;color:white;background:#2e7d32;border:1px solid #bbf7d0;padding:4px 8px;border-radius:999px;white-space:nowrap;">Earn +10 Ayoha Point on every checkin</div>'
+                        
+                    },
+                    {
+                        margin: '2 0 0 14',
+                        // id: 'labelDashboard_LastCheckInTimeStamp',    
+                        // html: '<div  style="color:white;text-align: left;font-size:10px;width:100%;margin:0px 0px 0px 0px;">00:00:00</div>'
+                         html: '<div style="font-size:10px;color:black;background:transparnt;white-space:nowrap;">-Turn collected ayoha point into Ayoha voucher</div>'
+                        
+                    },
+                    {
+                        margin: '2 0 0 14',
+                        // id: 'labelDashboard_LastCheckInTimeStamp',    
+                        // html: '<div  style="color:white;text-align: left;font-size:10px;width:100%;margin:0px 0px 0px 0px;">00:00:00</div>'
+                         html: '<div style="font-size:10px;color:black;background:transparnt;white-space:nowrap;">-Max 3x check in per-merchant in a day</div>'
                         
                     }
                   ]
@@ -991,10 +1007,10 @@ Ext.define('ianMizi.view.MyAccount.Dashboard', {
             // z-index: 10;
                  xtype: 'component',
                  html:
-                 '<div onclick="FloatPanel_Membership_MembershipCardHubsUpgradeShow();" style="position:absolute;top:-58px;right:20px;background-color:transparent;border-radius:50%;' +
-                      'width:110px;height:111px;z-index:10;display:flex;align-items:center;justify-content:center;">' +
-                   '<img src="resources/icons/maskotEarnPoint04.png" ' +
-                        'style="width:110px;height:111px;display:block;" ' +
+                 '<div onclick="FloatPanel_Membership_MembershipCardHubsUpgradeShow();" style="position:absolute;top:-58px;right:0px;background-color:transparent;border-radius:50%;' +
+                      'width:121px;height:141px;z-index:10;display:flex;align-items:center;justify-content:center;">' +
+                   '<img src="resources/icons/maskotEarnPoint05.png" ' +
+                        'style="width:110px;height:141px;display:block;" ' +
                         'alt="Company Name" />' +
                  '</div>'
              },
@@ -1014,7 +1030,7 @@ Ext.define('ianMizi.view.MyAccount.Dashboard', {
                 items: [
                     {
                         html:
-                          '<div onclick="FloatPanel_Membership_MembershipCardHubsUpgradeShow();" style="width:100%;padding:10px;margin:-7px 0 0 0;">' +
+                          '<div onclick="FloatPanel_Membership_MembershipCardHubsUpgradeShow();" style="width:100%;padding:10px;margin:-4px 0 0 0;">' +
                             '<style>' +
                               '@keyframes ayohaPulse{0%{box-shadow:0 0 0 0 rgba(138,43,226,.35)}70%{box-shadow:0 0 0 14px rgba(138,43,226,0)}100%{box-shadow:0 0 0 0 rgba(138,43,226,0)}}' +
                               '@keyframes ayohaShine{0%{transform:translateX(-120%)}100%{transform:translateX(120%)}}' +
@@ -1040,7 +1056,7 @@ Ext.define('ianMizi.view.MyAccount.Dashboard', {
                                   '</svg>' +
                                 '</span>' +
             
-                                '<span>Find Merchant & Join</span>' +
+                                '<span>Find Merchant Or Scan</span>' +
             
                                 '<span style="margin-left:2px;display:inline-flex;align-items:center;' +
                                             'background:linear-gradient(90deg,#f59e0b,#fbbf24);color:#111;' +
@@ -1563,7 +1579,12 @@ html: '<div style="text-align:center;padding:10px;margin:-3px 0px 0px 0px;">' +
         align: 'center'
     },
     items:[
-////////////////////////////////// Check-In Reward/////
+
+
+
+
+
+
 {
     xtype: 'container',
     width: '100%',
@@ -1573,7 +1594,7 @@ html: '<div style="text-align:center;padding:10px;margin:-3px 0px 0px 0px;">' +
    // style: 'background: transparent;',
   },
 
-
+////////////////////////////////// Check-In /////
   {
     xtype: 'container',
     width: '100%',
@@ -1679,13 +1700,21 @@ html: '<div style="text-align:center;padding:10px;margin:-3px 0px 0px 0px;">' +
                  {
                     xtype: 'component',
                     id:'imgDashboard_maskotCheckIn',
+                    hidden:true,
                     html:
-                    '<div style="position:absolute;top:-22px;right:10px;background-color:transparent;border-radius:50%;' +
-                         'width:120px;height:140px;z-index:5;display:flex;align-items:center;justify-content:center;">' +
+                    '<div style="position:absolute;top:-22px;right:20px;background-color:transparent;border-radius:50%;' +
+                         'width:130px;height:150px;z-index:5;display:flex;align-items:center;justify-content:center;">' +
                       '<img src="resources/icons/maskotCheckIn_Success03.png" ' +
-                           'style="width:120px;height:140px;display:block;" ' +
+                           'style="width:130px;height:150px;display:block;" ' +
                            'alt="Company Name" />' +
                     '</div>'
+                    // html:
+                    // '<div style="position:absolute;top:-22px;right:10px;background-color:transparent;border-radius:50%;' +
+                    //      'width:120px;height:140px;z-index:5;display:flex;align-items:center;justify-content:center;">' +
+                    //   '<img src="resources/icons/maskotCheckIn_Success03.png" ' +
+                    //        'style="width:120px;height:140px;display:block;" ' +
+                    //        'alt="Company Name" />' +
+                    // '</div>'
                 },
           
           
@@ -2054,7 +2083,7 @@ html: '<div style="text-align:center;padding:10px;margin:-3px 0px 0px 0px;">' +
             hidden:true, 
           //  width: 350,
           width: '100%',                  
-            html: '<div  style="color:purple;text-align: center;font-size:12px;width:100%;margin:0px 0px 0px 0px;"><u>View all past check-ins</u></div>'
+            html: '<div  style="color:purple;text-align: left;font-size:12px;width:100%;margin:0px 0px 0px 14px;"><u>View all past check-ins</u></div>'
             // html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: 70%"><col style="width:30%"></colgroup><thead><tr><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:right;vertical-align:top;word-break:normal" rowspan="2"><div style="margin:0px 0px 0px -15px">TARMIZI RAHIM</div><br>Lagendary Card Mortal </th><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:middle;word-break:normal" rowspan="2">Medal</th></tr><tr></tr></thead></table>'
         },
     ]
@@ -2063,13 +2092,1806 @@ html: '<div style="text-align:center;padding:10px;margin:-3px 0px 0px 0px;">' +
   },
  
 
+  ///////////////////////////////////Merchant Page////////
+  {
+    xtype: 'container',
+    width: '98%',
+    height:740,
+    id:'containerCheckInMerchantPage',
+    style: 'background: transparent;',
+  // style: 'background:  #faf5ff;',
+    layout: {
+
+        type: 'vbox',
+        pack: 'start',
+        align: 'center'
+    },
+    items:[
+        {
+            xtype: 'container',
+            width: '100%',
+            height:20,
+        
+           // margin: '0 0 0 0',
+           margin: '20 0 0 0',
+            // style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1 ;background: white;border-radius: 0px 15px 15px 0px;',
+            //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
+            style: 'background-color:transparent',
+            //style: "background-color: white;",
+            layout: {
+                type: 'hbox',
+                pack: 'center',
+                align: 'center',
+            },
+            items: [
+                
+                 {
+                    
+                     margin: '0 0 0 0',
+                     //width: '100%',
+                    
+                     //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
+                    html: '<div style="color:black;text-align: left;font-size:14px;width:100%;margin:10px 0px 0px 10px"><b>📍 You’re checked in here</b></div>'
+                    // html: '<span style="font-size:10px;color:#16a34a;background:#ecfdf5;border:1px solid #bbf7d0;padding:3px 6px;border-radius:999px;white-space:nowrap;">Get available perks in selected Check-In Merchant!</span><br><div style="color:white;text-align: left;font-size:10px;width:100%;margin:-25px 0px 0px 0px;">One Hub • Double Reward,Get your exiciting perks!</div>'
+                     
+                 },
+                 {
+                     xtype: 'spacer',
+                    // hidden:true,
+                 },
+                 {
+                    xtype: 'component',
+                     hidden:true,
+                    html:
+                    '<div style="position:absolute;top:-80px;right:20px;background-color:transparent;border-radius:50%;' +
+                         'width:130px;height:150px;z-index:5;display:flex;align-items:center;justify-content:center;">' +
+                      '<img src="resources/icons/maskotCheckIn_Success03.png" ' +
+                           'style="width:130px;height:150px;display:block;" ' +
+                           'alt="Company Name" />' +
+                    '</div>'
+                },
+          
+          
+            ]
+          },
+          {
+            xtype: 'container',
+            width: '95%',
+            margin: '10 0 0 0',
+             height: 90,
+            style: 'background-color: transparent;',
+            id: 'containerDashboard_MerchantDetailPage_EnterpriseInfo',
+
+            //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
+            // style: 'border-bottom:2px solid #D25959;background-color:transparent',
+            layout: {
+                type: 'hbox',
+                pack: 'left',
+                align: 'left',
+            },
+            items: [
+                {
+                    xtype: 'container',
+                    width: '23%',
+                    height: 90,
+                    style: 'background-color: transparent;',
+                    id: 'containerDashboard_MerchantDetailPage_EnterpriseInfo_Logo',
+
+                    //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
+                    // style: 'border-bottom:2px solid #D25959;background-color:transparent',
+                    layout: {
+                        type: 'hbox',
+                        pack: 'left',
+                        align: 'left',
+                    },
+                    items: [
+                        {
+                            width: '100%',
+                            height: 90,
+                            id: 'htmlDashboard_MerchantDetailPage_EnterpriseInfo_Logo',
+                            html: '<div ><img src="null" width="100%" height="90" alt="Company Name"></div>',
+                        }
+                    ]
+                },
+                 {
+                     xtype: 'container',
+                     width: '71%',
+                     height: 90,
+                     style: 'background-color: transparent;',
+                     id: 'containerDashboard_MerchantDetailPage_EnterpriseInfo_EnterpiseInfoExtended',
+
+                     //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
+                     // style: 'border-bottom:2px solid #D25959;background-color:transparent',
+                     layout: {
+                         type: 'vbox',
+                         pack: 'start',
+                         align: 'left',
+                     },
+                     items: [
+                         {
+                             margin: '-5 0 0 0',
+                             id: 'htmlDashboard_MerchantDetailPage_EnterpriseInfo_EnterpiseInfoExtended_EnterpriseName_TagLine',                                                              
+                             html: '<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 17px;font-weight:bold;color:black;margin:0px 0px 0px 0px;padding:0px 6px;">Monster Chicken</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 10px;font-weight:normal;color:black;margin:-27px 0px 0px 0px;padding:0px 6px;"><i>Ayam Cheesee Leleh</i></div>',
+                         },
+                         {
+                             xtype: 'container',
+                             width: '100%',
+                             height: 35,
+                             docked:'bottom',
+                             style: 'background-color: transparent;',
+                             id: 'containerDashboard_MerchantDetailPage_EnterpriseInfo_EnterpiseInfoExtendedBotom',
+                             layout: {
+                                 type: 'vbox',
+                                 pack: 'start',
+                                 align: 'left',
+                             },
+                             items: [
+                                 {
+                                  margin: '-10 0 0 0',
+                                     id: 'htmlDashboard_MerchantDetailPage_EnterpriseInfo_EnterpiseInfoExtended_EnterpriseFullAddress',
+                                     html: '<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 12px;font-weight:normal;color:black;padding:0px 6px;">Lot 153,Aeon Nilai, Bandar Baru Nilai,71800 Nilai,Negeri Sembilan</div>'
+                                 }
+                             ]
+                         }
+                     ]
+                 },
+
+
+{
+xtype: 'container',
+width: '6%',    
+//height: 90,
+height: 100,
+style: 'background-color: transparent;',
+layout: {
+type: 'vbox',
+pack: 'center',
+align: 'center',
+},
+items: [
+{
+xtype: 'container',
+width: '100%',
+hidden:true,
+//height: 90,
+height: 40,
+style: 'background-color: transparent;',
+id: 'containerDashboard_MerchantDetailPage_EnterpriseInfo_Direction',
+
+//  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
+// style: 'border-bottom:2px solid #D25959;background-color:transparent',
+layout: {
+type: 'vbox',
+pack: 'top',
+align: 'right',
+},
+items: [
+{
+width: '100%',
+height: 30,
+html: '<div onclick="FloatPanelMerchantDetailPage_OpenDirection();"><img src="resources/icons/DirectionPurple.jpg" width="24" height="24" alt="Company Name"></div>',
+},
+//  {
+//      width: '100%',
+//      height: 5,
+//      margin: '-7 0 0 0',
+//     // hidden:true,
+//      html: '<div onclick="FloatPanelMerchantDetailPage_OpenDirection();" style="width:100%;background-color: transparent;text-align:center;border: 1px none white;font-family:Century Gothic;font-size: 7px;font-weight:normal;color:black;">Location</div>'
+//  },
+]
+},
+{
+xtype: 'container',
+width: '100%',
+// height: 90,
+height: 40,
+hidden:true,
+style: 'background-color: transparent;',
+id: 'containerDashboard_MerchantDetailPage_EnterpriseInfo_OnlineStore',
+name:'namecontainerDashboard_MerchantDetailPage_EnterpriseInfo_OnlineStore',
+
+// style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:1px solid #ECF0F1 ;background-color: transparent;',
+// style: 'border-bottom:2px solid #D25959;background-color:transparent',
+layout: {
+type: 'vbox',
+pack: 'center',
+align: 'center',
+},
+items: [
+{
+width: '100%',
+height: 30,
+html: '<div onclick="FloatPanelMerchantDetailPage_AyohaStore()"><img src="resources/icons/onlineStore.jpg" width="24" height="24" alt="Company Name"></div>',
+//  margin:'15 0 0 0',
+},
+//   {
+//       width: '100%',                     
+// height: 5,
+// margin: '4 0 0 5',
+//       html: '<div onclick="FloatPanelMerchantDetailPage_AyohaStore()" style="width:100%;background-color: transparent;text-align:center;border: 1px none white;font-family:Century Gothic;font-size: 7px;font-weight:normal;color:black;margin:-12px 0px 0px -5px;">Ayoha</div><br><div style="width:100%;background-color: transparent;text-align:center;border: 1px none white;font-family:Century Gothic;font-size: 7px;font-weight:normal;color:black;margin:-26px 0px 0px -5px">Store</div>'
+//   },
+]
+}
+]
+
+},
+                
+            ]
+
+        },
+        {
+            xtype: 'carousel',
+            //hidden:true,
+            id: 'CarouselDashboard_MerchantDetailPage',
+            name: 'nameCarouselDashboard_MerchantDetailPage',
+            margin:'5 0 0 0',
+            width: '95%',
+            height: 310,
+            style: 'background-color:transparent',
+            //height: '100%',
+            indicator: true,
+//             requires: [
+// 'Ext.carousel.Carousel',
+// 'Ext.util.DelayedTask',
+// 'Ext.Video'
+//             ],
+            listeners: {
+                activeitemchange: function (container, newCard, oldCard, index) {
+
+
+                },
+
+            },
 
 
 
+           
+            // items: [
+
+
+            //  ]
+        },
+
+        {
+            xtype: 'container',
+            width: '95%',
+            height: 50,
+            zIndex: 100,
+            margin:'-50 0 0 0',
+            style: 'background-color: transparent;',
+            id: 'containerDashboard_MerchantDetailPage_EnterpriseSocialMedias',
+
+            //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
+            // style: 'border-bottom:2px solid #D25959;background-color:transparent',
+            layout: {
+                type: 'hbox',
+                pack: 'left',
+                align: 'left',
+            },
+            items: [
+                {
+                    xtype: 'container',
+                    width: '60%',
+                    height: 50,
+                    //zIndex: 100,
+                    margin: '0 0 0 0',
+                    style: 'background-color: transparent;',
+                },
+                {
+                    xtype: 'container',
+                    width: '40%',
+                    height: 50,
+                    //zIndex: 100,
+                    margin: '0 0 0 0',
+                    style: 'background-color: transparent;',
+                    id: 'containerDashboard_MerchantDetailPage_EnterpriseSocialMedias_Inner',
+
+                    //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
+                    // style: 'border-bottom:2px solid #D25959;background-color:transparent',
+                    layout: {
+                        type: 'vbox',
+                        pack: 'start',
+                        align: 'right',
+                    },
+                    items: [
+                        {
+                            html: '<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 10px;font-weight:normal;color:white;margin:-27px 0px 0px 0px;padding:0px 6px;">Visit Us On:</div>'
+                        },
+                        {
+                            xtype: 'container',
+                            width: '100%',
+                            height: 50,
+                            //zIndex: 100,
+                            margin: '-30 0 0 0',
+                            style: 'background-color: transparent;',
+                            id: 'containerDashboard_MerchantDetailPage_EnterpriseSocialMedias_InnerInner',
+
+                            //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
+                            // style: 'border-bottom:2px solid #D25959;background-color:transparent',
+                            layout: {
+                                type: 'hbox',
+                                pack: 'right',
+                                align: 'right',
+                            },
+
+
+                            items: [
+
+                                 {
+                                     id: 'htmlDashboard_MerchantDetailPage_Website',
+                                     hidden:true,
+                                     height: 26,
+                                     margin: '0 0 0 0',
+                                     width: 26,
+                                     // html: '<div style="color:black;text-align: center;font-size:16px;width:100%;font-weight:bold;margin:0px 0px 0px 0px;">3</div>',
+                                     html: '<div onclick="FloatPanel_MerchantDetailPage_OpenWebsite();"><img src="resources/icons/websiteicon02.png" width="26" height="26" alt="Company Name"></div>',
+                                 },
+                                 {
+                                     xtype: 'spacer',
+                                     width: 6,
+
+                                 },
+                                 {
+                                     id: 'htmlDashboard_MerchantDetailPage_Insta',
+                                     hidden:true,
+                                     height: 26,
+                                     margin: '0 0 0 0',
+                                     width: 26,
+                                     // html: '<div style="color:black;text-align: center;font-size:16px;width:100%;font-weight:bold;margin:0px 0px 0px 0px;">3</div>',
+                                     html: '<div onclick="FloatPanel_MerchantDetailPage_OpenInsta();" ><img src="resources/icons/instagramlogo.png" width="26" height="26" alt="Company Name"></div>',
+                                 },
+                                 {
+                                     xtype: 'spacer',
+                                     width: 6,
+
+                                 },
+                                 {
+                                     id: 'htmlDashboard_MerchantDetailPage_TikTok',
+                                     hidden: true,
+                                     height: 26,
+                                     margin: '0 0 0 0',
+                                     width: 26,
+                                     // html: '<div style="color:black;text-align: center;font-size:16px;width:100%;font-weight:bold;margin:0px 0px 0px 0px;">3</div>',
+                                     html: '<div onclick="FloatPanel_MerchantDetailPage_OpenTikTok();" ><img src="resources/icons/TikToklogo.png" width="26" height="26" alt="Company Name"></div>',
+                                 },
+                                 {
+                                     xtype: 'spacer',
+                                     width: 6,
+
+                                 },
+
+                                 {
+                                     id: 'htmlDashboard_MerchantDetailPage_FB',
+                                     hidden:true,
+                                     height: 26,
+                                     margin: '0 0 0 0',
+                                     width: 26,
+                                     // html: '<div style="color:black;text-align: center;font-size:16px;width:100%;font-weight:bold;margin:0px 0px 0px 0px;">3</div>',
+                                     html: '<div onclick="FloatPanel_MerchantDetailPage_OpenFB();" ><img src="resources/icons/facebook.png" width="26" height="26" alt="Company Name"></div>',
+                                 },
+                                  {
+                                      xtype: 'spacer',
+                                      width: 6,
+
+                                  },
+                            ]
+                        }
+                    ]
+                },
+                {
+                    xtype: 'container',
+                    width: '10%',
+                    height: 50,
+                    //zIndex: 100,
+                    margin: '0 0 0 0',
+                    style: 'background-color: transparent;',
+                },
+            ]
+        },
+//         {
+//             xtype: 'container',
+//             width: '95%',
+//              height: 90,
+//             style: 'background-color: transparent;',
+//             id: 'containerDashboard_MerchantDetailPage_EnterpriseInfo',
+
+//             //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
+//             // style: 'border-bottom:2px solid #D25959;background-color:transparent',
+//             layout: {
+//                 type: 'hbox',
+//                 pack: 'left',
+//                 align: 'left',
+//             },
+//             items: [
+//                 {
+//                     xtype: 'container',
+//                     width: '23%',
+//                     height: 90,
+//                     style: 'background-color: transparent;',
+//                     id: 'containerDashboard_MerchantDetailPage_EnterpriseInfo_Logo',
+
+//                     //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
+//                     // style: 'border-bottom:2px solid #D25959;background-color:transparent',
+//                     layout: {
+//                         type: 'hbox',
+//                         pack: 'left',
+//                         align: 'left',
+//                     },
+//                     items: [
+//                         {
+//                             width: '100%',
+//                             height: 90,
+//                             id: 'htmlDashboard_MerchantDetailPage_EnterpriseInfo_Logo',
+//                             html: '<div ><img src="null" width="100%" height="90" alt="Company Name"></div>',
+//                         }
+//                     ]
+//                 },
+//                  {
+//                      xtype: 'container',
+//                      width: '71%',
+//                      height: 90,
+//                      style: 'background-color: transparent;',
+//                      id: 'containerDashboard_MerchantDetailPage_EnterpriseInfo_EnterpiseInfoExtended',
+
+//                      //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
+//                      // style: 'border-bottom:2px solid #D25959;background-color:transparent',
+//                      layout: {
+//                          type: 'vbox',
+//                          pack: 'start',
+//                          align: 'left',
+//                      },
+//                      items: [
+//                          {
+//                              margin: '-5 0 0 0',
+//                              id: 'htmlDashboard_MerchantDetailPage_EnterpriseInfo_EnterpiseInfoExtended_EnterpriseName_TagLine',                                                              
+//                              html: '<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 17px;font-weight:bold;color:black;margin:0px 0px 0px 0px;padding:0px 6px;">Monster Chicken</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 10px;font-weight:normal;color:black;margin:-27px 0px 0px 0px;padding:0px 6px;"><i>Ayam Cheesee Leleh</i></div>',
+//                          },
+//                          {
+//                              xtype: 'container',
+//                              width: '100%',
+//                              height: 35,
+//                              docked:'bottom',
+//                              style: 'background-color: transparent;',
+//                              id: 'containerDashboard_MerchantDetailPage_EnterpriseInfo_EnterpiseInfoExtendedBotom',
+//                              layout: {
+//                                  type: 'vbox',
+//                                  pack: 'start',
+//                                  align: 'left',
+//                              },
+//                              items: [
+//                                  {
+//                                   margin: '-10 0 0 0',
+//                                      id: 'htmlDashboard_MerchantDetailPage_EnterpriseInfo_EnterpiseInfoExtended_EnterpriseFullAddress',
+//                                      html: '<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 12px;font-weight:normal;color:black;padding:0px 6px;">Lot 153,Aeon Nilai, Bandar Baru Nilai,71800 Nilai,Negeri Sembilan</div>'
+//                                  }
+//                              ]
+//                          }
+//                      ]
+//                  },
+
+
+// {
+// xtype: 'container',
+// width: '6%',    
+// //height: 90,
+// height: 100,
+// style: 'background-color: transparent;',
+// layout: {
+// type: 'vbox',
+// pack: 'center',
+// align: 'center',
+// },
+// items: [
+// {
+// xtype: 'container',
+// width: '100%',
+// hidden:true,
+// //height: 90,
+// height: 40,
+// style: 'background-color: transparent;',
+// id: 'containerDashboard_MerchantDetailPage_EnterpriseInfo_Direction',
+
+// //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
+// // style: 'border-bottom:2px solid #D25959;background-color:transparent',
+// layout: {
+// type: 'vbox',
+// pack: 'top',
+// align: 'right',
+// },
+// items: [
+// {
+// width: '100%',
+// height: 30,
+// html: '<div onclick="FloatPanelMerchantDetailPage_OpenDirection();"><img src="resources/icons/DirectionPurple.jpg" width="24" height="24" alt="Company Name"></div>',
+// },
+// //  {
+// //      width: '100%',
+// //      height: 5,
+// //      margin: '-7 0 0 0',
+// //     // hidden:true,
+// //      html: '<div onclick="FloatPanelMerchantDetailPage_OpenDirection();" style="width:100%;background-color: transparent;text-align:center;border: 1px none white;font-family:Century Gothic;font-size: 7px;font-weight:normal;color:black;">Location</div>'
+// //  },
+// ]
+// },
+// {
+// xtype: 'container',
+// width: '100%',
+// // height: 90,
+// height: 40,
+// hidden:true,
+// style: 'background-color: transparent;',
+// id: 'containerDashboard_MerchantDetailPage_EnterpriseInfo_OnlineStore',
+// name:'namecontainerDashboard_MerchantDetailPage_EnterpriseInfo_OnlineStore',
+
+// // style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:1px solid #ECF0F1 ;background-color: transparent;',
+// // style: 'border-bottom:2px solid #D25959;background-color:transparent',
+// layout: {
+// type: 'vbox',
+// pack: 'center',
+// align: 'center',
+// },
+// items: [
+// {
+// width: '100%',
+// height: 30,
+// html: '<div onclick="FloatPanelMerchantDetailPage_AyohaStore()"><img src="resources/icons/onlineStore.jpg" width="24" height="24" alt="Company Name"></div>',
+// //  margin:'15 0 0 0',
+// },
+// //   {
+// //       width: '100%',                     
+// // height: 5,
+// // margin: '4 0 0 5',
+// //       html: '<div onclick="FloatPanelMerchantDetailPage_AyohaStore()" style="width:100%;background-color: transparent;text-align:center;border: 1px none white;font-family:Century Gothic;font-size: 7px;font-weight:normal;color:black;margin:-12px 0px 0px -5px;">Ayoha</div><br><div style="width:100%;background-color: transparent;text-align:center;border: 1px none white;font-family:Century Gothic;font-size: 7px;font-weight:normal;color:black;margin:-26px 0px 0px -5px">Store</div>'
+// //   },
+// ]
+// }
+// ]
+
+// },
+                
+//             ]
+
+//         },
+        //  {
+        //      xtype: 'container',
+        //      width: '95%',
+        //      margin:'5 0 0 0',
+        //      height: 1,
+        //      style: 'background-color: grey;',
+        //  },
+
+        // {
+        //     xtype: 'container',
+        //     width: '95%',
+        //     height: 5,
+        //     style: 'background-color: transparent;',
+        // },
+       
+        {
+            xtype: 'container',
+            width: '95%',
+            height: 70,
+            style: 'background-color: transparent;',
+            id: 'containerDashboard_MerchantDetailPage_EnterpriseDescription',
+
+            //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
+            // style: 'border-bottom:2px solid #D25959;background-color:transparent',
+            layout: {
+                type: 'vbox',
+                pack: 'left',
+                align: 'left',
+            },
+            items: [
+            
+                {
+                    width: '100%',
+                    height: 65,
+                    margin: '10 0 0 0',
+                    id: 'htmlDashboard_MerchantDetailPage_EnterpriseDescription',
+                    html: '<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 12px;font-weight:normal;color:black;padding:0px 7px;">Kami menjual ayam cheese yang padu dan maengancam nyawa dan liur anda,kipidap dont gi babp</div>'
+                }
+            ]
+
+        },
+
+         {
+             xtype: 'container',
+             width: '95%',
+             height: 5,
+             style: 'background-color: transparent;',
+         },
+         {
+          xtype: 'container',
+          width: '95%',
+          height: 35,
+          style: 'background-color: transparent;',
+          id: 'containerDashboard_MerchantDetailPage_EnterpriseCheckIn',
+          name:'namecontainerDashboard_MerchantDetailPage_EnterpriseCheckIn',
+
+          //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
+          // style: 'border-bottom:2px solid #D25959;background-color:transparent',
+          layout: {
+              type: 'hbox',
+              pack: 'left',
+              align: 'left',
+          },
+          items: [
+              {
+                  xtype: 'container',
+                  width: '7%',
+                  height: 42,
+                  style: 'background-color: transparent;',
+                  id: 'containerDashboard_MerchantDetailPage_EnterpriseCheckInIcon',
+
+                  //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
+                  // style: 'border-bottom:2px solid #D25959;background-color:transparent',
+                  layout: {
+                      type: 'hbox',
+                      pack: 'left',
+                      align: 'left',
+                  },
+                  items: [
+                      {
+                          width: '100%',
+                          margin: '-6 0 0 -10',
+                          height: 42,
+                          html: '<div ><img src="resources/icons/ayoha_checkin_icon.png" width="40" height="40" alt="Company Name"></div>',
+                      }
+                  ]
+              },
+               {
+                   xtype: 'container',
+                   width: '92%',
+                   height: 35,
+                   style: 'background-color: transparent;',
+                   id: 'containerDashboard_MerchantDetailPage_EnterpriseCheckInDetails',
+
+                   //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
+                   // style: 'border-bottom:2px solid #D25959;background-color:transparent',
+                   layout: {
+                       type: 'hbox',
+                       pack: 'left',
+                       align: 'left',
+                   },
+                   items: [
+                       {
+                           width: '100%',
+                           height: 35,
+                           margin: '-3 0 0 0',
+                           id: 'htmlDashboard_MerchantDetailPage_EnterpriseCheckInDetails',                                                             
+                           html: '<div onclick="FloatPanel_MerchantDetailPage_EnterpriseCheckInDetails()" style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 12px;font-weight:bold;color:black;margin:0px 0px 0px 0px;padding:0px 6px;">Loading..</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 10px;font-weight:normal;color:black;margin:-27px 0px 0px 0px;padding:0px 6px;">Last Check-In</div>',
+                       }
+                   ]
+               }
+          ]
+
+      },
+      {
+          xtype: 'container',
+          width: '95%',
+          height: 7,
+          style: 'background-color: transparent;',
+      },
+        {
+            xtype: 'container',
+            width: '95%',
+            height: 35,
+            style: 'background-color: transparent;',
+            id: 'containerDashboard_MerchantDetailPage_EnterpriseWorkingHour',
+
+            //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
+            // style: 'border-bottom:2px solid #D25959;background-color:transparent',
+            layout: {
+                type: 'hbox',
+                pack: 'left',
+                align: 'left',
+            },
+            items: [
+                {
+                    xtype: 'container',
+                    width: '7%',
+                    height: 26,
+                    style: 'background-color: transparent;',
+                    id: 'containerDashboard_MerchantDetailPage_EnterpriseWorkingHourIcon',
+
+                    //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
+                    // style: 'border-bottom:2px solid #D25959;background-color:transparent',
+                    layout: {
+                        type: 'hbox',
+                        pack: 'left',
+                        align: 'left',
+                    },
+                    items: [
+                        {
+                            width: '100%',
+                            height: 26,
+                            html: '<div onclick="FloatPanel_MerchantDetailPage_EnterpriseWorkingHourDetails()" ><img src="resources/icons/History01.png" width="100%" height="26" alt="Company Name"></div>',
+                        }
+                    ]
+                },
+                 {
+                     xtype: 'container',
+                     width: '92%',
+                     height: 35,
+                     style: 'background-color: transparent;',
+                     id: 'containerDashboard_MerchantDetailPage_EnterpriseWorkingHourDetails',
+
+                     //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
+                     // style: 'border-bottom:2px solid #D25959;background-color:transparent',
+                     layout: {
+                         type: 'hbox',
+                         pack: 'left',
+                         align: 'left',
+                     },
+                     items: [
+                         {
+                             width: '100%',
+                             height: 35,
+                             margin: '-3 0 0 0',
+                             id: 'htmlDashboard_MerchantDetailPage_EnterpriseWorkingHourDetails',                                                             
+                             html: '<div onclick="FloatPanel_MerchantDetailPage_EnterpriseWorkingHourDetails()" style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 14px;font-weight:bold;color:black;margin:0px 0px 0px 0px;padding:0px 6px;">10.00AM - 10.00PM (Closed Now)</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 10px;font-weight:normal;color:black;margin:-27px 0px 0px 0px;padding:0px 6px;">Business Hour</div>',
+                         }
+                     ]
+                 }
+            ]
+
+        },
+
+
+          {
+              xtype: 'container',
+              width: '95%',
+              height: 7,
+              style: 'background-color: transparent;',
+          },
+
+        {
+            xtype: 'container',
+            width: '95%',
+            height: 35,
+            style: 'background-color: transparent;',
+            id: 'containerDashboard_MerchantDetailPage_EnterpriseBusinessContactNo',
+
+            //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
+            // style: 'border-bottom:2px solid #D25959;background-color:transparent',
+            layout: {
+                type: 'hbox',
+                pack: 'left',
+                align: 'left',
+            },
+            items: [
+                {
+                    xtype: 'container',
+                    width: '7%',
+                    height: 26,
+                    style: 'background-color: transparent;',
+                    id: 'containerDashboard_MerchantDetailPage_EnterpriseContactIcon',
+
+                    //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
+                    // style: 'border-bottom:2px solid #D25959;background-color:transparent',
+                    layout: {
+                        type: 'hbox',
+                        pack: 'left',
+                        align: 'left',
+                    },
+                    items: [
+                        {
+                            width: '100%',
+                            height: 26,
+                            html: '<div ><img src="resources/icons/BusinessContactIcon.png" width="100%" height="26" alt="Company Name"></div>',
+                        }
+                    ]
+                },
+                 {
+                     xtype: 'container',
+                     width: '92%',
+                     height: 35,
+                     style: 'background-color: transparent;',
+                     id: 'containerDashboard_MerchantDetailPage_EnterpriseContactDetails',
+
+                     //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
+                     // style: 'border-bottom:2px solid #D25959;background-color:transparent',
+                     layout: {
+                         type: 'hbox',
+                         pack: 'left',
+                         align: 'left',
+                     },
+                     items: [
+                         {
+                             width: '100%',
+                             height: 35,
+                             margin: '-3 0 0 0',
+                             id: 'htmlDashboard_MerchantDetailPage_EnterpriseContactDetails',                                                              
+                             html: '<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 12px;font-weight:bold;color:black;margin:0px 0px 0px 0px;padding:0px 6px;">03-663998765</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 10px;font-weight:normal;color:black;margin:-27px 0px 0px 0px;padding:0px 6px;">Business Contact No</div>',
+                         }
+                     ]
+                 }
+            ]
+
+        },
+
+          {
+              xtype: 'container',
+              width: '95%',
+              height: 7,
+              style: 'background-color: transparent;',
+          },
+
+        {
+            xtype: 'container',
+            width: '95%',
+            height: 35,
+            style: 'background-color: transparent;',
+            id: 'containerDashboard_MerchantDetailPage_EnterpriseWhatsAppBusinessContactNo',
+
+            //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
+            // style: 'border-bottom:2px solid #D25959;background-color:transparent',
+            layout: {
+                type: 'hbox',
+                pack: 'left',
+                align: 'left',
+            },
+            items: [
+                {
+                    xtype: 'container',
+                    width: '7%',
+                    height: 26,
+                    style: 'background-color: transparent;',
+                    id: 'containerDashboard_MerchantDetailPage_EnterpriseWhatsAppContactIcon',
+
+                    //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
+                    // style: 'border-bottom:2px solid #D25959;background-color:transparent',
+                    layout: {
+                        type: 'hbox',
+                        pack: 'left',
+                        align: 'left',
+                    },
+                    items: [
+                        {
+                            width: '100%',
+                            height: 26,
+                            html: '<div ><img src="resources/icons/WhatsApp01.png" width="100%" height="26" alt="Company Name"></div>',
+                        }
+                    ]
+                },
+                 {
+                     xtype: 'container',
+                     width: '92%',
+                     height: 35,
+                     style: 'background-color: transparent;',
+                     id: 'containerDashboard_MerchantDetailPage_EnterpriseWhatsAppDetails',
+
+                     //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
+                     // style: 'border-bottom:2px solid #D25959;background-color:transparent',
+                     layout: {
+                         type: 'hbox',
+                         pack: 'left',
+                         align: 'left',
+                     },
+                     items: [
+                         {
+                             width: '100%',
+                             height: 35,
+                             margin: '-3 0 0 0',
+                             id: 'htmlDashboard_MerchantDetailPage_EnterpriseWhatsAppDetails',                                                              
+                             html: '<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 12px;font-weight:bold;color:black;margin:0px 0px 0px 0px;padding:0px 6px;">013-3376958</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 10px;font-weight:normal;color:black;margin:-27px 0px 0px 0px;padding:0px 6px;">WhatsApp Contact No</div>',
+                         }
+                     ]
+                 }
+            ]
+
+        },
+
+
+
+
+
+
+                {
+                    xtype: 'container',
+                    width: '95%',
+                    height: 10,
+                    style: 'background-color: transparent;',
+                },
+
+        {
+            xtype: 'container',
+            width: '95%',
+            height: 35,
+            style: 'background-color: transparent;',
+            id: 'containerDashboard_MerchantDetailPage_EnterpriseLoveUs',
+
+            //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
+            // style: 'border-bottom:2px solid #D25959;background-color:transparent',
+            layout: {
+                type: 'hbox',
+                pack: 'left',
+                align: 'left',
+            },
+            items: [
+                {
+                    xtype: 'container',
+                    width: '7%',
+                    height: 26,
+                    style: 'background-color: transparent;',
+                    id: 'containerDashboard_MerchantDetailPage_EnterpriseLoveUsIcon',
+
+                    //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
+                    // style: 'border-bottom:2px solid #D25959;background-color:transparent',
+                    layout: {
+                        type: 'hbox',
+                        pack: 'left',
+                        align: 'left',
+                    },
+                    items: [
+                        {
+                            width: '100%',
+                            height: 26,
+                            id: 'htmlDashboard_MerchantDetailPage_EnterpriseLoveUsIcon',
+                            html: '<div><img src="resources/icons/unlovepurple.png" width="100%" height="26" alt="Company Name"></div>',
+                        }
+                    ]
+                },
+                 {
+                     xtype: 'container',
+                     width: '92%',
+                     height: 35,
+                     style: 'background-color: transparent;',
+                     id: 'containerDashboard_MerchantDetailPage_EnterpriseLoveUsDetails',
+
+                     //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
+                     // style: 'border-bottom:2px solid #D25959;background-color:transparent',
+                     layout: {
+                         type: 'hbox',
+                         pack: 'left',
+                         align: 'left',
+                     },
+                     items: [
+                         {
+                            // width: '33%',
+                             width: '31%',
+                             height: 35,
+                             margin: '-3 0 0 0',
+                             id: 'htmlDashboard_MerchantDetailPage_EnterpriseLoveUsDetails',                                                              
+                             html: '<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 14px;font-weight:bold;color:black;margin:0px 0px 0px 0px;padding:0px 6px;">2</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 10px;font-weight:normal;color:black;margin:-27px 0px 0px 0px;padding:0px 6px;">Love Us</div>',
+                         },
+                         {
+
+                             xtype: 'container',
+                           //  width: '30%',
+                             width: '23%',
+                             //margin:'0 0 0 0',
+                             height: 35,
+                             style: 'background-color: transparent;',
+                             id: 'containerDashboard_MerchantDetailPage_EnterpriseReviewRateDetails',
+
+                             //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
+                             // style: 'border-bottom:2px solid #D25959;background-color:transparent',
+                             layout: {
+                                 type: 'vbox',
+                                 pack: 'left',
+                                 align: 'left',
+                             },
+                             items: [
+                                 {
+                                     xtype: 'container',
+                                     width: '100%',
+                                    // flex: 1,
+                                     margin: '-10 0 0 0',
+                                     height: 50,
+                                     id: 'containerDashboard_MerchantDetailPage_ReviewAndRate',
+                                    // name: 'namecontainerFloatPanel_AyohaStore_ReviewAndRate',
+                                     // style: 'background-color:rgba(255, 255, 255, 0.3);border-radius: 10px 10px 10px 10px;',
+                                     style: "background-color: transparent;",
+                                     layout: {
+                                         type: 'vbox',
+                                         pack: 'center',
+                                         align: 'center'
+
+                                     },
+                                     items: [
+                                         {
+                                             margin: '0 0 0 5',
+                                             id: 'htmlDashboard_MerchantDetailPage_ReviewAndRateCount',
+                                             html: '<div style="color:black;text-align: center;font-size:14px;width:100%;font-weight:bold;margin:0px 0px 0px 0px;">0.0</div>',
+
+                                         },
+
+                                         {
+                                             xtype: 'container',
+                                             width: '100%',
+                                             margin: '-12 0 0 0',
+                                             height: 9,
+                                             // style: 'background-color:rgba(255, 255, 255, 0.3);border-radius: 10px 10px 10px 10px;',
+                                             style: "background-color: transparent;",
+                                             layout: {
+                                                 type: 'hbox',
+                                                 pack: 'center',
+                                                 align: 'center'
+
+                                             },
+                                             items: [
+
+                                                 {
+                                                     id: 'htmlDashboard_MerchantDetailPage_Star1',
+                                                     height: 9,
+                                                     width: 9,
+                                                     html: '<div ><img src="resources/icons/reviewstarunrate.png" width="9" height="9" alt="Company Name"></div>',
+                                                 },
+{
+id: 'htmlDashboard_MerchantDetailPage_Star2',
+height: 9,
+width: 9,
+html: '<div ><img src="resources/icons/reviewstarunrate.png" width="9" height="9" alt="Company Name"></div>',
+},
+{
+id: 'htmlDashboard_MerchantDetailPage_Star3',
+height: 9,
+width: 9,
+html: '<div ><img src="resources/icons/reviewstarunrate.png" width="9" height="9" alt="Company Name"></div>',
+},
+{
+id: 'htmlDashboard_MerchantDetailPage_Star4',
+height: 9,
+width: 9,
+html: '<div ><img src="resources/icons/reviewstarunrate.png" width="9" height="9" alt="Company Name"></div>',
+},
+{
+id: 'htmlDashboard_MerchantDetailPage_Star5',
+height: 9,
+width: 9,
+html: '<div ><img src="resources/icons/reviewstarunrate.png" width="9" height="9" alt="Company Name"></div>',
+
+},
+                                             ]
+                                         },
+
+                                         {
+                                             xtype: 'container',
+                                             width: '100%',
+                                             margin: '8 0 0 0',
+                                             height: 9,
+                                             layout: {
+                                                 type: 'hbox',
+                                                 pack: 'center',
+                                                 align: 'center'
+                                             },
+                                             items: [
+                                                 {
+                                                     id: 'htmlDashboard_MerchantDetailPage_ReviewByCount',
+                                                     html: '<div style="width100%;text-align:right;background-color: transparent;font-family:Arial, sans-serif;font-size:8px;color:black;font-weight:bold;overflow:hidden;"><img src="resources/icons/myaccountwhite01.png" alt="Image" style="width:7px;height:7px;">&nbsp;0 Reviews</div>',
+                                                 },
+                                             ]
+                                         },
+                                          //{
+                                          //    margin: '0 0 0 0',
+                                          //    height: 15,
+                                          //    id: 'htmlAyohaMerchantReview_TotalReviewsxx',
+                                          //    html: '<div style="width100%;text-align:right;background-color: transparent;font-family:Arial, sans-serif;font-size:10px;color:black;font-weight:bold;overflow:hidden;margin:-13px 10px 10px 0px;"><img src="resources/icons/merchantrateusAccountImg.png" alt="Image" style="width:10px;height:10px;">&nbsp;&nbsp;&nbsp;0 Reviews</div>'
+                                          //}
+                                     ]
+                                 },
+                             ]
+                         },
+
+{
+xtype: 'container',
+width: '33%',
+height: 35,
+style: 'background-color: transparent;',
+layout: {
+type: 'vbox',
+pack: 'top',
+align: 'right'
+},
+items:[
+{
+margin: '2 0 0 0',
+// hidden: true,
+width: 30,
+height: 30,
+html: '<img onClick="FloatPanel_AyohaStore_OrderHistoryShow()" src="resources/icons/purchase01.png" alt="Image" style="width:30px;height:30px;">',
+// ui:'plain'
+},
+]
+},
+
+
+                         {
+                             xtype: 'container',
+                            // width: '37%',
+                             width: '13%',
+                             height: 35,
+                             style: 'background-color: transparent;',
+                             id: 'containerFloatPanel_MerchantDetailPage_AyohaStoreCart',
+                             layout: {
+                              type: 'vbox',
+                              pack: 'top',
+                              align: 'right'
+
+                             },
+                             items: [
+
+                              {
+                                  xtype: 'container',
+                                  width: '100%',
+                                 // hidden:true,
+                               margin: '0 0 0 0',
+                                  height: 30,
+                                  style: 'background-color: transparent;',
+                                  layout: {
+                                   type: 'vbox',
+                                   pack: 'top',
+                                   align: 'right'
+                              },
+                              items:[
+                                  {
+                                      margin: '-10 8 0 0',
+                                      id: 'htmlDashboard_MerchantDetailPage_CountbadgeText',
+                                      html: '<div style="background: transparent;height:10px;font-size: 14px;font-weight:normal;color:black;text-align:center;" ><b>0</b></div>'
+                                     
+                                  },
+                                  {
+                                     margin: '2 0 0 0',
+                                      // hidden: true,
+                                      width: 30,
+                                      height: 30,
+                                      html: '<img onClick="FloatPanel_AyohaStore_CartShow()" src="resources/icons/myCart02.png" alt="Image" style="width:30px;height:30px;">',
+                                      // ui:'plain'
+                                  },
+                              ]
+                          },
+                                
+
+                             ]
+                         }
+
+                     ]
+                 },
+            ]
+
+        },
+
+
+       
+
+          
+    ]
+
+},
+
+
+///////////////////////////////////Perks you can enjoy here////////
+{
+    xtype: 'container',
+    width: '100%',
+    height:1100,
+   // hidden: false,
+    id:'containerDashboard_PerksYouCanEnjoyHere',
+   // margin: '0 0 0 0',
+   margin: '0 0 0 0',
+    // style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1 ;background: white;border-radius: 0px 15px 15px 0px;',
+    //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
+    style: 'background-color:transparent',
+    //style: "background-color: white;",
+    layout: {
+        type: 'vbox',
+        pack: 'start',
+        align: 'center',
+    },
+    items:[
+        {
+            xtype: 'container',
+            width: '100%',
+           // hidden: false,
+            id:'containerDashboard_PerksYouCanEnjoyHereHeaderTitle',
+           // margin: '0 0 0 0',
+           margin: '20 0 0 0',
+            // style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1 ;background: white;border-radius: 0px 15px 15px 0px;',
+            //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
+            style: 'background-color:transparent',
+            //style: "background-color: white;",
+            layout: {
+                type: 'hbox',
+                pack: 'center',
+                align: 'center',
+            },
+            items: [
+                 {
+                    
+                     margin: '10 0 0 14',
+                     //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
+                    html: '<div style="color:black;text-align: left;font-size:14px;width:100%;margin:0px 0px 0px 0px"><b>🎁 Perks you can enjoy here</b></div>'
+                    // html: '<span style="font-size:10px;color:#16a34a;background:#ecfdf5;border:1px solid #bbf7d0;padding:3px 6px;border-radius:999px;white-space:nowrap;">Get available perks in selected Check-In Merchant!</span><br><div style="color:white;text-align: left;font-size:10px;width:100%;margin:-25px 0px 0px 0px;">One Hub • Double Reward,Get your exiciting perks!</div>'
+                     
+                 },
+                 {
+                     xtype: 'spacer'
+                 },
+                 {
+          
+                    margin: '0 14 0 14',
+                    hidden:true,
+                    html: '<div onclick="FloatPanel_AyohaEnterpriseRewardItemShow();" style="background-color: transparent; color: white; font-family: Arial, Helvetica, sans-serif; font-weight: normal; font-size: 10px; padding: 3px 6px; border-radius: 50px; display: inline-block; text-align: center; white-space: nowrap;margin:5px 0px 0px 0px;"><u>View All</u></div>'
+                
+                },
+               
+          
+          
+            ]
+          },
+
+  /////////Stamps Perks
+          {
+            xtype: 'container',
+            width: '100%',
+            height: 290,    
+            margin: '10 0 0 0',
+            id: 'containerDashboard_Perks_Stamps',
+            style: 'background:transparent',
+            layout: {
+                type: 'vbox',
+                pack: 'start',
+                align: 'center'
+            },
+            items:[
+                {
+                    xtype: 'container',
+                    width: '100%',
+                    height: 40,    
+                    margin: '0 0 0 14',
+                    id: 'containerDashboardHeader_ButtonPerks_Stamps_Outter',
+                    style: 'background:transparent',
+                    layout: {
+                        type: 'hbox',
+                        pack: 'start',
+                        align: 'center'
+                    },
+                    items:[
+                        {
+                            xtype: 'container',
+                            width: 130,
+                            height: 35,    
+                            margin: '10 0 0 0',
+                            id: 'containerDashboardHeader_ButtonPerks_Stamps',
+                            name:'nameContainerDashboardHeader_ButtonPerks_Stamps',
+                            style: 'background:#fdf2ff;border-radius:20px;margin:0 10px 8px 10px;padding:6px 8x;',
+                            layout: {
+                                type: 'vbox',
+                                pack: 'center',
+                                align: 'center'
+                            },
+                            items: [{
+                                id: 'htmlDashboardHeader_ButtonPerks_Stamps',
+                                html:
+                                //   '<div style="text-align:center;width:100%;">' +
+                                //     '<div style="font-size:12px;font-weight:700;color:#111827;">Digital Stamps</div>' +
+                                //     '<div style="margin:4px auto 0 auto;width:40px;height:3px;border-radius:999px;' +
+                                //           'background-image:linear-gradient(90deg,#ff00de,#c800ff);"></div>' +
+                                //   '</div>',
+                                  '<div style="text-align:center;width:100%;">' +
+                                  '<div style="font-size:12px;font-weight:600;color:#7c3aed;">Digital Stamps</div>' + // ungu, bukan grey mati
+                                  '<div style="margin:4px auto 0 auto;width:32px;height:2px;border-radius:999px;' +
+                                  'background-image:linear-gradient(90deg,#ff00de,#c800ff);"></div>' +
+                                '</div>',
+                                  listeners: {
+                                    element: 'element',
+                                    tap: function () {
+                                      //  Dashboard_Perks_SetActive('Stamps');
+                                    }
+                                }
+                            }],
+                            
+                        },
+                    ]
+                },
+                         
+               
+                 {
+                    xtype: 'container',
+                    width: '100%',
+                    height: 250,
+                   
+                    style: "background-color: transparent;",
+                    title: 'StampsStatus_EligiblePerks',
+                    id:'containerTabpanelDashboardMerchantRewards_StampsStatus_Eligible',
+                    layout: {
+                        type: 'vbox',
+                        pack: 'start',
+                        align: 'center',
+                    }, 
+                    items:[
+                         ///////Eligible Stamp 
+                         {
+                            xtype: 'dataview',
+                            id: 'listTabpanelDashboardMerchantRewards_StampsStatus_NA',
+                            width: '90%',
+                            height:'100%',
+                            // store: _DataStore_DashboardStampCard_SuccessCheckIn_LoadStampCardPerkStore, // kalau ada store, letak balik sini
+                        
+                            // DATAVIEW SETTING UNTUK HORIZONTAL
+                            scrollable: {
+                                direction: 'horizontal',
+                                indicators: false,
+                            },
+                        
+                            // susun item sebelah-menyebelah, 1 row sahaja
+                            inline: {
+                                wrap: false
+                            },
+                        
+                            // supaya style senang kontrol
+                            itemCls: 'stamp-horizontal-item',
+                        
+                            style: 'background-color:rgba(255,255,255,0);border-radius:0px;',
+                            itemTpl: new Ext.XTemplate([
+                                // CARD
+                                '<div onclick="SuccessCheckinController_Dashboard_StampCard_SuccessCheckIn_OpenMerchantLoyaltyProgram({ID})"' +
+                                '     style="background:#fff; width:260px;' +
+                                '            height:220px;' +                             // ✅ semua card sama tinggi
+                                '            display:flex; flex-direction:column;' +      // susun atas-bawah
+                                '            border-radius:12px; overflow:hidden;' +
+                                '            margin:0 15px 0 0; border:0;">' +
+                              //  '            box-shadow:0 12px 30px rgba(24,39,75,.14), 0 3px 10px rgba(24,39,75,.10);">',
+                            
+                                // IMAGE SECTION
+                                '  <div style="position:relative; overflow:hidden; flex:0 0 165px;">', // ✅ gambar 350px tinggi
+                                '    <div style="width:100%; height:100%; overflow:hidden;">',
+                                '      {ModifiedStampContent_CheckInSuccess}',   // pastikan img dalam ni width:100%; height:100%; object-fit:cover;
+                                '    </div>',
+                            
+                                '    <div style="display:none;position:absolute; top:12px; left:12px;' +
+                                '                background-color:#808000; color:#fff; padding:5px 12px;' +
+                                '                border-radius:8px; font-size:12px; font-weight:bold;">' +
+                                '      Loyalty Stamp' +
+                                '    </div>',
+                                '  </div>',
+
+
+                                       // CONTENT SECTION
+
+
+                                       '  <div style="padding:0px 10px 0px 10px; margin-top:0px;">',
+                                       '    <h2 style="font-size:14px; font-weight:bold; margin:4px 0 4px 0; color:#2c3e50;' +
+                                       '               white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">' +
+                                       '      {StampContentNote}' +
+                                       '    </h2>',
+                                       '    <p style="margin:0 0 2px 0; color:#95a5a6; font-size:11px;">End Date: {EndDate}</p>',
+                                       '  </div>',
+
+
+                   
+                            
+                                // CONTENT SECTION (MELEKAT BAWAH GAMBAR)
+                                // '  <div style="padding:6px 10px 8px 10px; margin-top:2px; flex:0 0 auto;">',
+                                // '    <div style="border-bottom:1px solid #e9e9ee; margin-bottom:2px; height:0;"></div>',
+                            
+                                // '    <h2 style="font-size:14px; font-weight:bold; margin:4px 0 2px 0; color:#2c3e50; line-height:1.4;' +
+                                // '               white-space:normal; word-break:break-word;' +
+                                // '               display:-webkit-box; -webkit-line-clamp:2;' +
+                                // '               -webkit-box-orient:vertical; overflow:hidden;">' +
+                                // '      {StampContentNote}' +
+                                // '    </h2>',
+                            
+                                // '    <p style="margin:0 0 2px 0; color:#95a5a6; font-size:10px;">' +
+                                // '      End Date: {EndDate}' +
+                                // '    </p>',
+                            
+                                // '  </div>',
+                                '</div>'
+                            ].join(''))
+                            
+                            
+                        }
+                        
+                
+                      
+                ]
+                },
+                
+            ]
+            
+          },
+
+  /////////Point Perks
+  {
+    xtype: 'container',
+    width: '100%',
+    height:300,    
+    margin: '10 0 0 0',
+    id: 'containerDashboard_Perks_Points',
+    style: 'background:transparent',
+    layout: {
+        type: 'vbox',
+        pack: 'start',
+        align: 'center'
+    },
+    items:[
+        {
+            xtype: 'container',
+            width: '100%',
+            height: 40,    
+            margin: '0 0 0 14',
+            id: 'containerDashboardHeader_ButtonPerks_Points_Outter',
+            style: 'background:transparent',
+            layout: {
+                type: 'hbox',
+                pack: 'start',
+                align: 'center'
+            },
+            items:[
+                {
+                    xtype: 'container',
+                    width: 130,
+                    height: 35,    
+                    margin: '10 0 0 0',
+                    id: 'containerDashboardHeader_ButtonPerks_Points',
+                    style: 'background:#fdf2ff;border-radius:20px;margin:0 10px 8px 10px;padding:6px 8x;',
+                    layout: {
+                        type: 'vbox',
+                        pack: 'center',
+                        align: 'center'
+                    },
+                    items: [{
+                        id: 'htmlDashboardHeader_ButtonPerks_Points',
+                        html:
+                        //   '<div style="text-align:center;width:100%;">' +
+                        //     '<div style="font-size:12px;font-weight:700;color:#111827;">Digital Stamps</div>' +
+                        //     '<div style="margin:4px auto 0 auto;width:40px;height:3px;border-radius:999px;' +
+                        //           'background-image:linear-gradient(90deg,#ff00de,#c800ff);"></div>' +
+                        //   '</div>',
+                          '<div style="text-align:center;width:100%;">' +
+                          '<div style="font-size:12px;font-weight:600;color:#7c3aed;">Point Reward</div>' + // ungu, bukan grey mati
+                          '<div style="margin:4px auto 0 auto;width:32px;height:2px;border-radius:999px;' +
+                          'background-image:linear-gradient(90deg,#ff00de,#c800ff);"></div>' +
+                        '</div>',
+                          listeners: {
+                            element: 'element',
+                            tap: function () {
+                                SuccessCheckinController_Dashboard_LoadPointPerks();
+                            }
+                        }
+                    }],
+                    
+                },
+            ]
+        },
+                 
+       
+         {
+            xtype: 'container',
+            width: '100%',
+            height: 300,
+           
+            style: "background-color: transparent;",
+            title: 'PointsStatus_EligiblePerks',
+            id:'containerTabpanelDashboardMerchantRewards_PointsStatus_Eligible',
+            layout: {
+                type: 'vbox',
+                pack: 'start',
+                align: 'center',
+            }, 
+            items:[
+                 ///////Eligible Point 
+                 {
+                    xtype: 'dataview',
+                    id: 'listTabpanelDashboardMerchantRewards_Point',
+                    width: '90%',
+                    height:'100%',
+                    // store: _DataStore_DashboardStampCard_SuccessCheckIn_LoadStampCardPerkStore, // kalau ada store, letak balik sini
+                
+                    // DATAVIEW SETTING UNTUK HORIZONTAL
+                    scrollable: {
+                        direction: 'horizontal',
+                        indicators: false,
+                    },
+                
+                    // susun item sebelah-menyebelah, 1 row sahaja
+                    inline: {
+                        wrap: false
+                    },
+                
+                    // supaya style senang kontrol
+                    itemCls: 'stamp-horizontal-item',
+                
+                    style: 'background-color:rgba(255,255,255,0);border-radius:0px;',
+                   // store:_DataStore_DashboardPointCard_SuccessCheckIn_LoadPointCardPerkStore,
+
+                   itemTpl: new Ext.XTemplate([
+                    // CARD
+                    '<div onclick="SuccessCheckinController_Dashboard_PointCard_SuccessCheckIn_OpenMerchantLoyaltyProgram(`{MembershipCardCode}`)"' +
+                    '     style="background:#fff; width:260px; border-radius:12px; overflow:hidden;' +
+                    '            margin:0 15px 0 0; border:0;' +
+                    '            height:220px;' +
+                    '            position:relative;">' + // ✅ penting
+                   // '            box-shadow:0 12px 30px rgba(24,39,75,.14), 0 3px 10px rgba(24,39,75,.10);">',
+                
+                    // IMAGE SECTION
+                    '  <div style="position:relative; width:100%; overflow:visible;">' + // ✅ tukar visible
+                    '    <img src="{ImgPath}" alt="{ItemName}"' +
+                    '         style="width:100%; height:165px; display:block;">',
+                
+                    // BADGE
+                    '    <div style="position:absolute; bottom:-25px; right:16px;' +
+                    '                display:flex; flex-direction:column; align-items:center; justify-content:center;' +
+                    '                width:60px; height:60px; background:#1E90FF; color:#fff;' +
+                    '                border-radius:50%; box-shadow:0 4px 8px rgba(0,0,0,0.2);' +
+                    '                border:2px solid #fff; font-weight:bold; line-height:1; gap:2px; z-index:10;">' +
+                    '      <span style="font-size:8px; margin:0;">Redeem</span>' +
+                    '      <span style="font-size:14px; margin:0;">{ItemPoint}</span>' +
+                    '      <span style="font-size:8px; margin:0;">Points</span>' +
+                    '    </div>',
+                    '  </div>',
+                
+                    // CONTENT SECTION
+                    '  <div style="padding:0px 10px 0px 10px; margin-top:0px;">',
+                    '    <h2 style="font-size:14px; font-weight:bold; margin:4px 0 4px 0; color:#2c3e50; line-height:1.4;' +
+                    '               white-space:normal; word-break:break-word;' +
+                    '               display:-webkit-box; -webkit-line-clamp:2;' +
+                    '               -webkit-box-orient:vertical; overflow:hidden; text-overflow:ellipsis;">' +
+                    '      {ItemName}' +
+                    '    </h2>',
+                    '    <p style="margin:0 0 2px 0; color:#95a5a6; font-size:11px;">End Date: {EndDate}</p>',
+                    '  </div>',
+                    '</div>'
+                ].join(''))
+                
+
+                //    itemTpl: new Ext.XTemplate([
+                //     // CARD
+                //     '<div onclick="FloatPanel_AyohaMerchantInfo_PointCardLoyaltyProgram_OpenPointCard(`{MembershipCardCode}`)"' +
+                //     '     style="background:#fff; width:260px; border-radius:12px; overflow:hidden;' +
+                //     '            margin:0 10px 0 0; border:0;' +
+                //     '            height:220px;' +     
+                //     '            box-shadow:0 12px 30px rgba(24,39,75,.14), 0 3px 10px rgba(24,39,75,.10);">',
+                
+                //     // 📌 IMAGE SECTION – auto height, no crop
+                //     '  <div style="position:relative; width:100%; overflow:hidden;">',
+                //     '    <img src="{ImgPath}" alt="{ItemName}"',
+                //     '         style="width:100%; height:140px; display:block;">',
+                
+                //     // Tag "Loyalty Point" (atas kiri)
+                //     // '    <div style="position:absolute; top:12px; left:12px;' +
+                //     // '                background-color:#1E90FF; color:#fff; padding:5px 12px;' +
+                //     // '                border-radius:8px; font-size:12px; font-weight:bold; z-index:2;">' +
+                //     // '      Loyalty Point' +
+                //     // '    </div>',
+                
+                //     // Bulat "Redeem X Points" (bawah kanan, overlap border)
+                //     '    <div style="position:absolute; bottom:-25px; right:16px;' +
+                //     '                display:flex; flex-direction:column; align-items:center; justify-content:center;' +
+                //     '                width:60px; height:60px; background:#1E90FF; color:#fff;' +
+                //     '                border-radius:50%; box-shadow:0 4px 8px rgba(0,0,0,0.2);' +
+                //     '                border:2px solid #fff; font-weight:bold; line-height:1; gap:2px; z-index:10;">' +
+                //     '      <span style="font-size:8px; margin:0;">Redeem</span>' +
+                //     '      <span style="font-size:14px; margin:0;">{ItemPoint}</span>' +
+                //     '      <span style="font-size:8px; margin:0;">Points</span>' +
+                //     '    </div>',
+                //     '  </div>',
+                
+                //     // 📌 CONTENT SECTION
+                //     '  <div style="padding:12px 10px 12px 10px; margin-top:18px;">',
+                
+                //     '    <h2 style="font-size:12px; font-weight:700; margin:4px 0 4px 0; color:#2c3e50; line-height:1.4;' +
+                //     '               white-space:normal; word-break:break-word;' +
+                //     '               display:-webkit-box; -webkit-line-clamp:2;' +
+                //     '               -webkit-box-orient:vertical; overflow:hidden;">' +
+                //     '      {ItemName}' +
+                //     '    </h2>',
+                
+                //     '    <p style="margin:0 0 2px 0; color:#95a5a6; font-size:11px;">' +
+                //     '      End Date: {EndDate}' +
+                //     '    </p>',
+                
+                //     '  </div>',
+                //     '</div>'
+                // ].join(''))
+                
+
+
+                
+                
+                    
+                }
+                
+        
+              
+        ]
+        },
+        
+    ]
+    
+  },
+
+
+         /////////Voucher Perks
+  {
+    xtype: 'container',
+    width: '100%',
+    height:550,    
+    margin: '10 0 0 0',
+    id: 'containerDashboard_Perks_Vouchers',
+    style: 'background:transparent',
+    layout: {
+        type: 'vbox',
+        pack: 'start',
+        align: 'center'
+    },
+    items:[
+        {
+            xtype: 'container',
+            width: '100%',
+            height: 40,    
+            margin: '0 0 0 14',
+            id: 'containerDashboardHeader_ButtonPerks_Vouchers_Outter',
+            style: 'background:transparent',
+            layout: {
+                type: 'hbox',
+                pack: 'start',
+                align: 'center'
+            },
+            items:[
+                {
+                    xtype: 'container',
+                    width: 130,
+                    height: 35,    
+                    margin: '10 0 0 0',
+                    id: 'containerDashboardHeader_ButtonPerks_Vouchers',
+                    style: 'background:#fdf2ff;border-radius:20px;margin:0 10px 8px 10px;padding:6px 8x;',
+                    layout: {
+                        type: 'vbox',
+                        pack: 'center',
+                        align: 'center'
+                    },
+                    items: [{
+                        id: 'htmlDashboardHeader_ButtonPerks_Vouchers',
+                        html:
+                        //   '<div style="text-align:center;width:100%;">' +
+                        //     '<div style="font-size:12px;font-weight:700;color:#111827;">Digital Stamps</div>' +
+                        //     '<div style="margin:4px auto 0 auto;width:40px;height:3px;border-radius:999px;' +
+                        //           'background-image:linear-gradient(90deg,#ff00de,#c800ff);"></div>' +
+                        //   '</div>',
+                          '<div style="text-align:center;width:100%;">' +
+                          '<div style="font-size:12px;font-weight:600;color:#7c3aed;">Vouchers</div>' + // ungu, bukan grey mati
+                          '<div style="margin:4px auto 0 auto;width:32px;height:2px;border-radius:999px;' +
+                          'background-image:linear-gradient(90deg,#ff00de,#c800ff);"></div>' +
+                        '</div>',
+                          listeners: {
+                            element: 'element',
+                            tap: function () {                              
+                                SuccessCheckinController_Dashboard_LoadVoucherPerks();
+                            }
+                        }
+                    }],
+                    
+                },
+            ]
+        },
+                 
+       
+         {
+            xtype: 'container',
+            width: '100%',
+            height: 500,
+           
+            style: "background-color: transparent;",
+            title: 'VouchersStatus_EligiblePerks',
+            id:'containerTabpanelDashboardMerchantRewards_VouchersStatus_Eligible',
+            layout: {
+                type: 'vbox',
+                pack: 'start',
+                align: 'center',
+            }, 
+            items:[
+                 ///////Eligible Voucher
+             
+
+                 {
+                    xtype: 'dataview',
+                    id: 'listTabpanelDashboardMerchantRewards_Voucher',
+                    width: '90%',
+                    height:'100%',
+                
+                    // DATAVIEW SETTING UNTUK HORIZONTAL
+                    scrollable: {
+                        direction: 'horizontal',
+                        indicators: false,
+                    },
+                
+                    // susun item sebelah-menyebelah, 1 row sahaja
+                    inline: {
+                        wrap: false
+                    },
+                
+                    // supaya style senang kontrol
+                   // itemCls: 'stamp-horizontal-item',
+                
+                  //  style: 'background-color:rgba(255,255,255,0);border-radius:0px;',
+                    style: 'background-color:rgba(255,255,255,0);border-radius:0px;padding:0 8px;',
+
+                
+
+                    itemTpl: new Ext.XTemplate([
+                        '<div onclick="FloatPanel_AyohaRewardVoucherDetailShow(',
+                            '\' {VoucherName} \',',
+                            '\' {VoucherImgPath} \',',
+                            '\' {EntitledVoucherEndDate} \',',
+                            '\' {DayLeft} \',',
+                            '\' {VoucherCode} \',',
+                            '\' {VoucherAmount} \');" ',
+                            'class="myContent" ',
+                            'style="background-color:transparent;width:310px;height:300px;margin:0 15px 0 0;">',  // ✅ fixed width + gap kanan
+                      
+                          // GAMBAR
+                          '  <img src="{VoucherImgPath}"',
+                          '       style="width:100%;height:170px;margin:0;display:block;border-radius:0px 0px 0 0;border:2px dotted grey;" />',
+                      
+                          // BODY PUTIH
+                          '  <div style="padding:8px 10px 10px 10px;background:#ffffff;border-radius:0 0 12px 12px;">',
+                      
+                          // ROW 1: LABEL
+                          '    <div style="display:flex;justify-content:space-between;font-size:11px;color:#6b7280;">',
+                          '      <span>Voucher Name:</span>',
+                          '      <span>Merchant:</span>',
+                          '    </div>',
+                      
+                          // ROW 2: VALUE NAMA VOUCHER + MERCHANT (1 LINE, ELLIPSIS)
+                          '    <div style="display:flex;justify-content:space-between;margin-top:2px;">',
+                          '      <span style="font-family:Arial,sans-serif;font-size:14px;font-weight:bold;color:#111827;',
+                          '                   max-width:60%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">',
+                          '        {VoucherName}',
+                          '      </span>',
+                          '      <span style="font-family:Arial,sans-serif;font-size:14px;font-weight:bold;color:#111827;',
+                          '                   max-width:40%;text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">',
+                          '        {EnterpriseName}',
+                          '      </span>',
+                          '    </div>',
+                      
+                          // ROW 3: LABEL END + AMOUNT
+                          '    <div style="display:flex;justify-content:space-between;margin-top:8px;font-size:11px;color:#6b7280;">',
+                          '      <span>End:</span>',
+                          '      <span>Voucher Amount(RM)</span>',
+                          '    </div>',
+                      
+                          // ROW 4: VALUE END DATE + DAY LEFT + AMOUNT
+                          '    <div style="display:flex;justify-content:space-between;margin-top:2px;font-size:14px;font-weight:bold;color:#111827;">',
+                          '      <span style="max-width:60%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">',
+                          '        {EntitledVoucherEndDate} &nbsp;&bull;&nbsp;{DayLeft} Day Left',
+                          '      </span>',
+                          '      <span style="text-align:right;max-width:40%;">{VoucherAmount}</span>',
+                          '    </div>',
+                      
+                          '  </div>',  // end body
+                        '</div>'      // end card
+                      ].join(''))
+                      
+
+            
+
+                
+                
+                    
+                }
+                
+        
+              
+        ]
+        },
+        
+    ]
+    
+  },
+
+
+       
+    ]
+},
+  ///////////////////////////////////CheckIn Reward////////
 
   {
     xtype: 'container',
     width: '100%',
+    height: 30,
    // hidden: false,
     id:'containerDashboard_MembershipInsight',
    // margin: '0 0 0 0',
@@ -2088,7 +3910,7 @@ html: '<div style="text-align:center;padding:10px;margin:-3px 0px 0px 0px;">' +
             
              margin: '10 0 0 14',
              //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
-            html: '<div style="color:black;text-align: left;font-size:14px;width:100%;margin:0px 0px 0px 0px"><b>Check-In Rewards</b></div><br><div style="color:black;text-align: left;font-size:10px;width:100%;margin:-25px 0px 0px 0px;">Tap “Check-In” to redeem at<b> <u>kopi surat cinta-putrajaya!</u></b></div>'
+            html: '<div  style="color:black;text-align: left;font-size:14px;width:100%;margin:0px 0px 0px 0px"><b>Check-In Rewards</b></div><br><div style="color:black;text-align: left;font-size:10px;width:100%;margin:-25px 0px 0px 0px;">Tap “Check-In” to redeem at<b> <u>kopi surat cinta-putrajaya!</u></b></div>'
             // html: '<span style="font-size:10px;color:#16a34a;background:#ecfdf5;border:1px solid #bbf7d0;padding:3px 6px;border-radius:999px;white-space:nowrap;">Get available perks in selected Check-In Merchant!</span><br><div style="color:white;text-align: left;font-size:10px;width:100%;margin:-25px 0px 0px 0px;">One Hub • Double Reward,Get your exiciting perks!</div>'
              
          },
@@ -2107,6 +3929,8 @@ html: '<div style="text-align:center;padding:10px;margin:-3px 0px 0px 0px;">' +
   
     ]
   },
+
+  
   {
   
         id: 'Dashboard_MyAccount_MembershipPerksList',
@@ -2152,6 +3976,11 @@ html: '<div style="text-align:center;padding:10px;margin:-3px 0px 0px 0px;">' +
   
       
   },
+
+
+
+
+
   //////////Membership Card List Container//////////
   {
     xtype: 'container',
@@ -10751,6 +12580,26 @@ function initializeContainerSingleTapEvent() {
         //Dashboard_SearchMerchantListShow();
       }
     );
+
+
+
+
+
+
+
+    var containerViewnameContainerDashboardHeader_ButtonPerks_Stamps = Ext.ComponentQuery.query('container[name=nameContainerDashboardHeader_ButtonPerks_Stamps]')[0];
+    var containerViewElnameContainerDashboardHeader_ButtonPerks_Stamps = containerViewnameContainerDashboardHeader_ButtonPerks_Stamps.element;
+    containerViewElnameContainerDashboardHeader_ButtonPerks_Stamps.on('tap',
+      function (event, node, options, eOpts) {       
+        ianMizi.app
+        .getController('Dashboard.SuccessCheckinController')
+        .Dashboard_StampCard_SuccessCheckIn_LoadStampCardPerkStore();
+      }
+    );
+
+
+
+    
 }
 
 
@@ -13698,6 +15547,33 @@ function Dashboard_LoadLastCheckIn(){
                AppState.MainDashboard.MainDashboardCheckInCount  = record.get('CheckInCount');
 
 
+    globalFloatPanelMerchantDetailPage_ID =record.get('ID');
+    globalFloatPanelMerchantDetailPage_EnterpriseAccNo = record.get('EnterpriseAccNo');
+    globalFloatPanelMerchantDetailPage_EnterpriseLogo = record.get('EnterpriseLogoPath');
+    globalFloatPanelMerchantDetailPage_EnterpriseName =record.get('EnterpriseName');
+    globalFloatPanelMerchantDetailPage_EnterpriseTagLine =record.get('EnterpriseTagLine');
+    globalFloatPanel_MerchantDetailPage_EnterpriseFacebook = record.get('EnterpriseFacebook');
+    globalFloatPanel_MerchantDetailPage_EnterpriseWebsite = record.get('EnterpriseWebsite');
+    globalFloatPanel_MerchantDetailPage_EnterpriseInstagram = record.get('EnterpriseInstagram');
+    globalFloatPanel_MerchantDetailPage_EnterpriseTikTok = record.get('EnterpriseTwiter');
+    globalFloatPanelMerchantDetailPage_EnterpriseCoordinate = record.get('EnterpriseCoordinate');
+    globalFloatPanelMerchantDetailPage_BusinessMode = record.get('BusinessMode');
+    globalFloatPanelMerchantDetailPage_WhatsAppNo =record.get('PICContactNo');
+    globalFloatPanelMerchantDetailPage_NamaJalan=record.get('NamaJalan');
+    globalFloatPanelMerchantDetailPage_Postkod=record.get('Postkod');
+    globalFloatPanelMerchantDetailPage_Bandar=record.get('Bandar');
+    globalFloatPanelMerchantDetailPage_Negeri=record.get('Negeri');
+    globalFloatPanelMerchantDetailPage_EnterpriseDescriptions=record.get('EnterpriseDescriptions');
+    globalFloatPanelMerchantDetailPage_EnterprisePhoneNo=record.get('EnterprisePhoneNo');
+   
+  
+
+
+
+
+
+
+
                 Ext.getCmp('DashboardMain_EnterprisesLoadLastCheckInStoreID').setStore(_DataStore_EnterprisesLoadLastCheckInStore);
                Ext.getCmp('labelDashboard_LastCheckInTimeStamp').setHtml('<div  style="background-color:transparent;color:black;text-align: left;font-size:10px;width:100%;margin:0px 0px 0px 0px;font-weight:normal;">'+CheckInCount+'-'+RelativeCheckInTime+'</div>');
              //   Ext.getCmp('labelDashboard_LastCheckInTimeStamp').setHtml('<div style="color:white;text-align: left;font-size:14px;width:100%;margin:0px 0px 0px 0px"><b>Last Check-In</b></div><br><div  style="color:white;text-align: left;font-size:10px;width:100%;margin:-25px 0px 0px 0px;">'+RelativeCheckInTime+'</div>');
@@ -13726,7 +15602,8 @@ function Dashboard_LoadLastCheckIn(){
                 Ext.getCmp('containerCheckInRewardspacer02').setStyle('background-color:transparent');
                 Ext.getCmp('containerCheckInRewardspacer03').setStyle('background-color:transparent');
                 Ext.getCmp('labelDashboard_Viewallpastcheck-ins').setHidden(false); 
-
+               // _DataStore_EnterprisesLoadByMerchantCategory=_DataStore_EnterprisesLoadLastCheckInStore;
+                Dashboard_MerchantDetailPageShow();
                 CoreFunction_DashboardLoadByEnterpriseAccNoStorePerk();
             
             } else {

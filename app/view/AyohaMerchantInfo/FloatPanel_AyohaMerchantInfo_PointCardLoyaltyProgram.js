@@ -341,10 +341,6 @@ inset: false,       // make sure inset styling isn’t applied
 '',
 '    </div>'
 ].join(''),
-
-
-
-
 )},
 
 

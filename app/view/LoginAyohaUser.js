@@ -513,7 +513,7 @@ function loadAyohaUserProfileLoginBody() {
                     if (data.total > 0) {
                         Ext.getCmp('tabpanelMyAccount_Dashboard').getTabBar().hide();
                         Ext.getCmp('tabpanelAyohaMerchantRewards').getTabBar().hide();
-                       // Ext.getCmp('tabpanelAyohaMerchantRewards_Points').getTabBar().hide();
+                       // Ext.getCmp('tabpanelDashboardMerchantRewards').getTabBar().hide();
                         AyohaMerchantReward_InitializedTabEvent();
                         localStorage.setItem('AyohaUserAccountNo',data.results[0].AccountNo);
                         localStorage.setItem('AyohaUserKatalaluan', data.results[0].Katalaluan);
@@ -717,7 +717,9 @@ function loadUserProfileWithOutLogOut() {
                      //   Ext.getCmp('tabpanelMyAccount_Dashboard').getTabBar().hide();
                         localStorage.setItem('AyohaUserAccountNo', data.results[0].AccountNo);
                         localStorage.setItem('AyohaUserKatalaluan', data.results[0].Katalaluan);
-
+                        Ext.getCmp('tabpanelMyAccount_Dashboard').getTabBar().hide();
+                        Ext.getCmp('tabpanelAyohaMerchantRewards').getTabBar().hide();
+                       // Ext.getCmp('tabpanelDashboardMerchantRewards').getTabBar().hide();
                         //routeCurrPage = '15';
                         //routesArray.push("mainView,view,15");
                         //  ArrappRoute.push("MainDashBoard");
@@ -1034,7 +1036,9 @@ function loadAyohaUserProfileLoginBodyAfterCreatedAccount(valUserName,valKataLal
                        // Ext.getCmp('tabpanelMyAccount_Dashboard').getTabBar().hide();
                         localStorage.setItem('AyohaUserAccountNo', data.results[0].AccountNo);
                         localStorage.setItem('AyohaUserKatalaluan', data.results[0].Katalaluan);
-
+                        Ext.getCmp('tabpanelMyAccount_Dashboard').getTabBar().hide();
+                        Ext.getCmp('tabpanelAyohaMerchantRewards').getTabBar().hide();
+                       // Ext.getCmp('tabpanelDashboardMerchantRewards').getTabBar().hide();
                         //routeCurrPage = '15';
                         //routesArray.push("mainView,view,15");
                         //  ArrappRoute.push("MainDashBoard");

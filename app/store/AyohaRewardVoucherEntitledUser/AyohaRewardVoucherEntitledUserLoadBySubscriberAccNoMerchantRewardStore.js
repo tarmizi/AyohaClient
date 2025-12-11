@@ -55,3 +55,32 @@ var _DataStore_VoucherCampaignRedeemLoadByVoucherRedeemStatusStore = Ext.create(
     //autoLoad: true
 
 });
+
+
+
+
+
+var _DataStore_DashboardVoucherCard_SuccessCheckIn_LoadVoucherPerkStore = Ext.create('Ext.data.Store', {
+
+    model: 'ianMizi.model.AyohaRewardVoucherEntitledUser.AyohaRewardVoucherEntitledUserModel',
+    id: '_DashboardVoucherCard_SuccessCheckIn_LoadVoucherPerkStoreID',
+    proxy: {
+        type: 'ajax',
+        url: GetAPIurl() + '/DashboardAyohaUser/DashboardVoucherCard_SuccessCheckIn_LoadVoucherPerk',
+        actionMethods: {
+            read: 'POST'
+        },
+        reader: {
+            type: 'json',
+            rootProperty: 'results',
+            totalProperty: 'total',
+            successProperty: 'success',
+            messageProperty: 'message'
+        }
+    },
+
+   
+
+    //autoLoad: true
+
+});

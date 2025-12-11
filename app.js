@@ -21,6 +21,13 @@ Ext.application({
            'Ext.app.History',
            'Ext.carousel.Carousel'
     ],
+
+    controllers: [
+        'Dashboard.SuccessCheckinController'
+    ],
+
+
+
     models: ['Customer.CustomerModel', 'Receipt.FlatBillModel', 'CloudReceiptsMobileUser.CloudReceiptsMobileUserModel', 'Notifications.NotificationsModel',
         'Enterprise.EnterpriseModel', 'EnterpriseSubscriber.EnterpriseSubscriberModel', 'ReceiptTemplate.ReceiptTemplateModel', 'Receipt.ReceiptModel',
         'RedeemItem.RedeemItemModel', 'LoyaltyStamp.LoyaltyStampModel', 'Subscriber.SubscriberModel', 'StampCampaign.StampCampaignModel', 'StampCard.StampCardModel',

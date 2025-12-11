@@ -3751,9 +3751,9 @@ var globalFloatPanelAyohaStore_CheckMembershipCardIsUsedStatus;
 function FloatPanel_AyohaStore_AyohaStoreSaleItemloadByEnterpriseAccNoItemCategoryStore(ItemCategoryCode) {
 
 //alert('FloatPanel_AyohaStore_AyohaStoreSaleItemloadByEnterpriseAccNoItemCategoryStore' + ItemCategoryCode)
-console.log(FloatPanel_AyohaStore_getEnterpriseAccNo())
-console.log(ItemCategoryCode)
-console.log(GetCurrAyohaUserAccountNo())
+// alert(FloatPanel_AyohaStore_getEnterpriseAccNo())
+// alert(ItemCategoryCode)
+// alert(GetCurrAyohaUserAccountNo())
 
 
     _DataStore_AyohaStoreSaleItemloadByEnterpriseAccNoItemCategoryStore.getProxy().setExtraParam('EnterpriseAccNo',FloatPanel_AyohaStore_getEnterpriseAccNo());

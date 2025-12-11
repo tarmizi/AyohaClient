@@ -171,6 +171,8 @@ function FloatPanel_MyAccountMaster() {
                                                       _FloatPanel_MyAccountMasterisOpen = 'N';
 
                                                       RemovePages("FloatPanel_MyAccountMasterHide()");
+                                                     
+                                                    
 
                                                   }
                                               },

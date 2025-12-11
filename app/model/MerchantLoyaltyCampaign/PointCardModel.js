@@ -24,7 +24,8 @@ Ext.define('ianMizi.model.MerchantLoyaltyCampaign.PointCardModel', {
                   'MembershipCardFeePaymentCycle',
                   'isCampaignExpired',
                   'BusinessMode',    
-                  'EnterpriseDescription',               
+                  'EnterpriseDescription',
+                  'isMember'               
                     
                     
         ]

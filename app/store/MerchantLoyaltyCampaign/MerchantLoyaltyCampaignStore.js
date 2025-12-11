@@ -307,3 +307,31 @@ var _DataStore_AyohaRewardVoucher_EntitledUser_LoadBySubscriberAccNo_MerchantLoy
   }
 
 });
+
+
+
+
+var _DataStore_DashboardPointCard_SuccessCheckIn_LoadPointCardPerkStore = Ext.create('Ext.data.Store', {
+
+  model: 'ianMizi.model.MerchantLoyaltyCampaign.PointCardModel',
+  id: '_DashboardPointCard_SuccessCheckIn_LoadPointCardPerkStoreID',
+  proxy: {
+      type: 'ajax',
+     url: GetAPIurl() + '/DashboardAyohaUser/DashboardPointCard_SuccessCheckIn_LoadPointCardPerk',
+    //  url: GetAPIurl() + '/AyohaStore_Cart/'+AyohaStoreCartRouteFunction,
+      actionMethods: {
+          read: 'POST'
+        //  read: AyohaStoreCartRouteMethod
+      },
+      reader: {
+          type: 'json',
+          rootProperty: 'results',
+          totalProperty: 'total',
+          successProperty: 'success',
+          messageProperty: 'message'
+      }
+  },
+
+ 
+
+});

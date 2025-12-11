@@ -55,3 +55,31 @@ var _DataStore_AyohaUserStampCard_MerchantLoyaltyCampaign_LoadStampStore = Ext.c
     }
 
 });
+
+
+
+
+
+var _DataStore_DashboardStampCard_SuccessCheckIn_LoadStampCardPerkStore = Ext.create('Ext.data.Store', {
+
+  model: 'ianMizi.model.MerchantLoyaltyCampaign.StampCardModel',
+  id: '_DashboardStampCard_SuccessCheckIn_LoadStampCardPerkStoreID',
+  proxy: {
+      type: 'ajax',
+     url: GetAPIurl() + '/DashboardAyohaUser/DashboardStampCard_SuccessCheckIn_LoadStampCardPerk',
+    //  url: GetAPIurl() + '/AyohaStore_Cart/'+AyohaStoreCartRouteFunction,
+      actionMethods: {
+          read: 'POST'
+        //  read: AyohaStoreCartRouteMethod
+      },
+      reader: {
+          type: 'json',
+          rootProperty: 'results',
+          totalProperty: 'total',
+          successProperty: 'success',
+          messageProperty: 'message'
+      }
+  },
+
+
+});

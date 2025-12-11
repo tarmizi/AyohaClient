@@ -16,6 +16,7 @@
       'EnterpriseName',
       'EnterpriseLogo',
       'SearchCol',
+      'isMember',
        {
            name: 'ModifiedWidth',
            convert: function (value, record) {

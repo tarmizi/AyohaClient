@@ -5098,7 +5098,8 @@ function AyohaMerchantReward_AyohaRewardEventLoadBySubscriberAccNoStore() {
                   
                     var count = _DataStore_AyohaRewardVoucherEntitledUserLoadBySubscriberAccNoMerchantRewardStore.getCount();
                     Ext.getCmp('AyohaMerchantReward_VoucherList_Eligible').setStore(_DataStore_AyohaRewardVoucherEntitledUserLoadBySubscriberAccNoMerchantRewardStore);
-            
+                   
+                    
                     if (count < 1) {
 
                        // Ext.getCmp('html_AyohaMerchantRewards_VoucherTab_ReadyVoucher').setHtml('<div  style="color:white;text-align: center;font-size:10px;width:100%;">Your Vouchers-(0)</div>');
