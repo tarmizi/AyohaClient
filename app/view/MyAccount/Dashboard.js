@@ -3325,7 +3325,7 @@ html: '<img onClick="FloatPanel_AyohaStore_OrderHistoryShow()" src="resources/ic
           {
             xtype: 'container',
             width: '100%',
-            height: 290,    
+            height: 200,    
             margin: '10 0 0 0',
             id: 'containerDashboard_Perks_Stamps',
             style: 'background:transparent',
@@ -3390,7 +3390,7 @@ html: '<img onClick="FloatPanel_AyohaStore_OrderHistoryShow()" src="resources/ic
                  {
                     xtype: 'container',
                     width: '100%',
-                    height: 250,
+                    height: '100%',
                    
                     style: "background-color: transparent;",
                     title: 'StampsStatus_EligiblePerks',
@@ -3427,15 +3427,15 @@ html: '<img onClick="FloatPanel_AyohaStore_OrderHistoryShow()" src="resources/ic
                             itemTpl: new Ext.XTemplate([
                                 // CARD
                                 '<div onclick="SuccessCheckinController_Dashboard_StampCard_SuccessCheckIn_OpenMerchantLoyaltyProgram({ID})"' +
-                                '     style="background:#fff; width:260px;' +
-                                '            height:220px;' +                             // ✅ semua card sama tinggi
+                                '     style="background:#fff; width:120px;' +
+                                '            height:140px;' +                             // ✅ semua card sama tinggi
                                 '            display:flex; flex-direction:column;' +      // susun atas-bawah
                                 '            border-radius:12px; overflow:hidden;' +
-                                '            margin:0 15px 0 0; border:0;">' +
+                                '            margin:0 10px 0 0; border:0;">' +
                               //  '            box-shadow:0 12px 30px rgba(24,39,75,.14), 0 3px 10px rgba(24,39,75,.10);">',
                             
                                 // IMAGE SECTION
-                                '  <div style="position:relative; overflow:hidden; flex:0 0 165px;">', // ✅ gambar 350px tinggi
+                                '  <div style="position:relative; overflow:hidden; flex:0 0 95px;">', // ✅ gambar 350px tinggi
                                 '    <div style="width:100%; height:100%; overflow:hidden;">',
                                 '      {ModifiedStampContent_CheckInSuccess}',   // pastikan img dalam ni width:100%; height:100%; object-fit:cover;
                                 '    </div>',
@@ -3452,11 +3452,11 @@ html: '<img onClick="FloatPanel_AyohaStore_OrderHistoryShow()" src="resources/ic
 
 
                                        '  <div style="padding:0px 10px 0px 10px; margin-top:0px;">',
-                                       '    <h2 style="font-size:14px; font-weight:bold; margin:4px 0 4px 0; color:#2c3e50;' +
+                                       '    <h2 style="font-size:12px; font-weight:bold; margin:4px 0 4px 0; color:#2c3e50;' +
                                        '               white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">' +
                                        '      {StampContentNote}' +
                                        '    </h2>',
-                                       '    <p style="margin:0 0 2px 0; color:#95a5a6; font-size:11px;">End Date: {EndDate}</p>',
+                                       '    <p style="margin:0 0 0 0; color:#95a5a6; font-size:10px;">End: {EndDate}</p>',
                                        '  </div>',
 
 
@@ -3497,7 +3497,8 @@ html: '<img onClick="FloatPanel_AyohaStore_OrderHistoryShow()" src="resources/ic
   {
     xtype: 'container',
     width: '100%',
-    height:300,    
+   //ori height:135,    
+    height:155,    
     margin: '10 0 0 0',
     id: 'containerDashboard_Perks_Points',
     style: 'background:transparent',
@@ -3561,8 +3562,8 @@ html: '<img onClick="FloatPanel_AyohaStore_OrderHistoryShow()" src="resources/ic
          {
             xtype: 'container',
             width: '100%',
-            height: 300,
-           
+           // height: 300,
+            height: 95,
             style: "background-color: transparent;",
             title: 'PointsStatus_EligiblePerks',
             id:'containerTabpanelDashboardMerchantRewards_PointsStatus_Eligible',
@@ -3573,91 +3574,45 @@ html: '<img onClick="FloatPanel_AyohaStore_OrderHistoryShow()" src="resources/ic
             }, 
             items:[
                  ///////Eligible Point 
-                 {
-                    xtype: 'dataview',
-                    id: 'listTabpanelDashboardMerchantRewards_Point',
-                    width: '90%',
-                    height:'100%',
-                    // store: _DataStore_DashboardStampCard_SuccessCheckIn_LoadStampCardPerkStore, // kalau ada store, letak balik sini
+                //  {
+                //     xtype: 'dataview',
+                //     id: 'listTabpanelDashboardMerchantRewards_Point',
+                //     width: '90%',
+                //     height:'100%',
+                //     // store: _DataStore_DashboardStampCard_SuccessCheckIn_LoadStampCardPerkStore, // kalau ada store, letak balik sini
                 
-                    // DATAVIEW SETTING UNTUK HORIZONTAL
-                    scrollable: {
-                        direction: 'horizontal',
-                        indicators: false,
-                    },
+                //     // DATAVIEW SETTING UNTUK HORIZONTAL
+                //     scrollable: {
+                //         direction: 'horizontal',
+                //         indicators: false,
+                //     },
                 
-                    // susun item sebelah-menyebelah, 1 row sahaja
-                    inline: {
-                        wrap: false
-                    },
+                //     // susun item sebelah-menyebelah, 1 row sahaja
+                //     inline: {
+                //         wrap: false
+                //     },
                 
-                    // supaya style senang kontrol
-                    itemCls: 'stamp-horizontal-item',
+                //     // supaya style senang kontrol
+                //     itemCls: 'stamp-horizontal-item',
                 
-                    style: 'background-color:rgba(255,255,255,0);border-radius:0px;',
-                   // store:_DataStore_DashboardPointCard_SuccessCheckIn_LoadPointCardPerkStore,
-
-                   itemTpl: new Ext.XTemplate([
-                    // CARD
-                    '<div onclick="SuccessCheckinController_Dashboard_PointCard_SuccessCheckIn_OpenMerchantLoyaltyProgram(`{MembershipCardCode}`)"' +
-                    '     style="background:#fff; width:260px; border-radius:12px; overflow:hidden;' +
-                    '            margin:0 15px 0 0; border:0;' +
-                    '            height:220px;' +
-                    '            position:relative;">' + // ✅ penting
-                   // '            box-shadow:0 12px 30px rgba(24,39,75,.14), 0 3px 10px rgba(24,39,75,.10);">',
-                
-                    // IMAGE SECTION
-                    '  <div style="position:relative; width:100%; overflow:visible;">' + // ✅ tukar visible
-                    '    <img src="{ImgPath}" alt="{ItemName}"' +
-                    '         style="width:100%; height:165px; display:block;">',
-                
-                    // BADGE
-                    '    <div style="position:absolute; bottom:-25px; right:16px;' +
-                    '                display:flex; flex-direction:column; align-items:center; justify-content:center;' +
-                    '                width:60px; height:60px; background:#1E90FF; color:#fff;' +
-                    '                border-radius:50%; box-shadow:0 4px 8px rgba(0,0,0,0.2);' +
-                    '                border:2px solid #fff; font-weight:bold; line-height:1; gap:2px; z-index:10;">' +
-                    '      <span style="font-size:8px; margin:0;">Redeem</span>' +
-                    '      <span style="font-size:14px; margin:0;">{ItemPoint}</span>' +
-                    '      <span style="font-size:8px; margin:0;">Points</span>' +
-                    '    </div>',
-                    '  </div>',
-                
-                    // CONTENT SECTION
-                    '  <div style="padding:0px 10px 0px 10px; margin-top:0px;">',
-                    '    <h2 style="font-size:14px; font-weight:bold; margin:4px 0 4px 0; color:#2c3e50; line-height:1.4;' +
-                    '               white-space:normal; word-break:break-word;' +
-                    '               display:-webkit-box; -webkit-line-clamp:2;' +
-                    '               -webkit-box-orient:vertical; overflow:hidden; text-overflow:ellipsis;">' +
-                    '      {ItemName}' +
-                    '    </h2>',
-                    '    <p style="margin:0 0 2px 0; color:#95a5a6; font-size:11px;">End Date: {EndDate}</p>',
-                    '  </div>',
-                    '</div>'
-                ].join(''))
-                
+                //     style: 'background-color:rgba(255,255,255,0);border-radius:0px;',
+                //    // store:_DataStore_DashboardPointCard_SuccessCheckIn_LoadPointCardPerkStore,
 
                 //    itemTpl: new Ext.XTemplate([
                 //     // CARD
-                //     '<div onclick="FloatPanel_AyohaMerchantInfo_PointCardLoyaltyProgram_OpenPointCard(`{MembershipCardCode}`)"' +
-                //     '     style="background:#fff; width:260px; border-radius:12px; overflow:hidden;' +
-                //     '            margin:0 10px 0 0; border:0;' +
-                //     '            height:220px;' +     
-                //     '            box-shadow:0 12px 30px rgba(24,39,75,.14), 0 3px 10px rgba(24,39,75,.10);">',
+                //     '<div onclick="SuccessCheckinController_Dashboard_PointCard_SuccessCheckIn_OpenMerchantLoyaltyProgram(`{MembershipCardCode}`)"' +
+                //     '     style="background:#fff; width:200px; border-radius:12px; overflow:hidden;' +
+                //     '            margin:0 15px 0 0; border:0;' +
+                //     '            height:220px;' +
+                //     '            position:relative;">' + // ✅ penting
+                //    // '            box-shadow:0 12px 30px rgba(24,39,75,.14), 0 3px 10px rgba(24,39,75,.10);">',
                 
-                //     // 📌 IMAGE SECTION – auto height, no crop
-                //     '  <div style="position:relative; width:100%; overflow:hidden;">',
-                //     '    <img src="{ImgPath}" alt="{ItemName}"',
-                //     '         style="width:100%; height:140px; display:block;">',
+                //     // IMAGE SECTION
+                //     '  <div style="position:relative; width:100%; overflow:visible;">' + // ✅ tukar visible
+                //     '    <img src="{ImgPath}" alt="{ItemName}"' +
+                //     '         style="width:100%; height:165px; display:block;">',
                 
-                //     // Tag "Loyalty Point" (atas kiri)
-                //     // '    <div style="position:absolute; top:12px; left:12px;' +
-                //     // '                background-color:#1E90FF; color:#fff; padding:5px 12px;' +
-                //     // '                border-radius:8px; font-size:12px; font-weight:bold; z-index:2;">' +
-                //     // '      Loyalty Point' +
-                //     // '    </div>',
-                
-                //     // Bulat "Redeem X Points" (bawah kanan, overlap border)
+                //     // BADGE
                 //     '    <div style="position:absolute; bottom:-25px; right:16px;' +
                 //     '                display:flex; flex-direction:column; align-items:center; justify-content:center;' +
                 //     '                width:60px; height:60px; background:#1E90FF; color:#fff;' +
@@ -3669,31 +3624,145 @@ html: '<img onClick="FloatPanel_AyohaStore_OrderHistoryShow()" src="resources/ic
                 //     '    </div>',
                 //     '  </div>',
                 
-                //     // 📌 CONTENT SECTION
-                //     '  <div style="padding:12px 10px 12px 10px; margin-top:18px;">',
-                
-                //     '    <h2 style="font-size:12px; font-weight:700; margin:4px 0 4px 0; color:#2c3e50; line-height:1.4;' +
+                //     // CONTENT SECTION
+                //     '  <div style="padding:0px 10px 0px 10px; margin-top:0px;">',
+                //     '    <h2 style="font-size:14px; font-weight:bold; margin:4px 0 4px 0; color:#2c3e50; line-height:1.4;' +
                 //     '               white-space:normal; word-break:break-word;' +
                 //     '               display:-webkit-box; -webkit-line-clamp:2;' +
-                //     '               -webkit-box-orient:vertical; overflow:hidden;">' +
+                //     '               -webkit-box-orient:vertical; overflow:hidden; text-overflow:ellipsis;">' +
                 //     '      {ItemName}' +
                 //     '    </h2>',
-                
-                //     '    <p style="margin:0 0 2px 0; color:#95a5a6; font-size:11px;">' +
-                //     '      End Date: {EndDate}' +
-                //     '    </p>',
-                
+                //     '    <p style="margin:0 0 2px 0; color:#95a5a6; font-size:11px;">End Date: {EndDate}</p>',
                 //     '  </div>',
                 //     '</div>'
                 // ].join(''))
+                
+
+                // //    itemTpl: new Ext.XTemplate([
+                // //     // CARD
+                // //     '<div onclick="FloatPanel_AyohaMerchantInfo_PointCardLoyaltyProgram_OpenPointCard(`{MembershipCardCode}`)"' +
+                // //     '     style="background:#fff; width:260px; border-radius:12px; overflow:hidden;' +
+                // //     '            margin:0 10px 0 0; border:0;' +
+                // //     '            height:220px;' +     
+                // //     '            box-shadow:0 12px 30px rgba(24,39,75,.14), 0 3px 10px rgba(24,39,75,.10);">',
+                
+                // //     // 📌 IMAGE SECTION – auto height, no crop
+                // //     '  <div style="position:relative; width:100%; overflow:hidden;">',
+                // //     '    <img src="{ImgPath}" alt="{ItemName}"',
+                // //     '         style="width:100%; height:140px; display:block;">',
+                
+                // //     // Tag "Loyalty Point" (atas kiri)
+                // //     // '    <div style="position:absolute; top:12px; left:12px;' +
+                // //     // '                background-color:#1E90FF; color:#fff; padding:5px 12px;' +
+                // //     // '                border-radius:8px; font-size:12px; font-weight:bold; z-index:2;">' +
+                // //     // '      Loyalty Point' +
+                // //     // '    </div>',
+                
+                // //     // Bulat "Redeem X Points" (bawah kanan, overlap border)
+                // //     '    <div style="position:absolute; bottom:-25px; right:16px;' +
+                // //     '                display:flex; flex-direction:column; align-items:center; justify-content:center;' +
+                // //     '                width:60px; height:60px; background:#1E90FF; color:#fff;' +
+                // //     '                border-radius:50%; box-shadow:0 4px 8px rgba(0,0,0,0.2);' +
+                // //     '                border:2px solid #fff; font-weight:bold; line-height:1; gap:2px; z-index:10;">' +
+                // //     '      <span style="font-size:8px; margin:0;">Redeem</span>' +
+                // //     '      <span style="font-size:14px; margin:0;">{ItemPoint}</span>' +
+                // //     '      <span style="font-size:8px; margin:0;">Points</span>' +
+                // //     '    </div>',
+                // //     '  </div>',
+                
+                // //     // 📌 CONTENT SECTION
+                // //     '  <div style="padding:12px 10px 12px 10px; margin-top:18px;">',
+                
+                // //     '    <h2 style="font-size:12px; font-weight:700; margin:4px 0 4px 0; color:#2c3e50; line-height:1.4;' +
+                // //     '               white-space:normal; word-break:break-word;' +
+                // //     '               display:-webkit-box; -webkit-line-clamp:2;' +
+                // //     '               -webkit-box-orient:vertical; overflow:hidden;">' +
+                // //     '      {ItemName}' +
+                // //     '    </h2>',
+                
+                // //     '    <p style="margin:0 0 2px 0; color:#95a5a6; font-size:11px;">' +
+                // //     '      End Date: {EndDate}' +
+                // //     '    </p>',
+                
+                // //     '  </div>',
+                // //     '</div>'
+                // // ].join(''))
                 
 
 
                 
                 
                     
-                }
+                // }
+                ////////////////////Eligible Point
+                {
+                    xtype: 'list',
+                    width: '90%',
+                    height:'100%',
+                   //height: 95,       
+                    id: 'listTabpanelDashboardMerchantRewards_Point',
+                    mode: 'SINGLE',
+                    //scrollable:false,
+                    scrollable: {                    
+                        direction: 'vertical',
+                        indicators: {
+                            y: {
+                                autoHide: true
+                            },
+                            x: {
+                                autoHide: true
+                            }
+                        }
+                    },
+                    style: 'background-color:rgba(255,255,255, 0.1);',
+                    // width: '100%',
+                    disableSelection: true,
+                    itemTpl:
+                    '<div class="myContent" style="position:relative;background-color:white;width:100%;height:80px;border-radius:10px;">' +
                 
+                    
+                  '<div style="position:absolute;top:0;right:-3px;' +
+                  'background-color:#4169E1;' +                     // color utama badge
+                  'color:#FFFFFF;' +
+                  'font-size:10px;font-weight:bold;' +
+                  'padding:3px 7px;' +
+                  'border-radius:0px 0px 10px 10px;' +
+                  'border:1px none rgba(255,255,255,.25);' +               // garis luar sikit lebih gelap
+                  'box-shadow:0 2px 4px rgba(0,0,0,0.15);">' +// bagi timbul sedikit
+                  '{ItemPoint} points</div>' +
+                
+                      '<table style="border-collapse:collapse;border-spacing:0;width:110%;background-color:white;margin:-10px 0 0 -15px;height:90px;">' +
+                        '<tr onclick="SuccessCheckinController_Dashboard_PointCard_SuccessCheckIn_OpenMerchantLoyaltyProgram(`{MembershipCardCode}`)">' +
+                          '<td style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:0px 5px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:20%;vertical-align:center;">' +
+                                        '    <img src="{ImgPath}" alt="{ItemName}"' +
+                    '         style="width:80px; height:80px; display:block;">'+
+                          '</td>' +
+                          '<td style="font-family:Arial, sans-serif;font-size:12px;font-weight:bold;padding:0 2px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:80%;vertical-align:center;">' +
+                            '{ItemName}<br>' +
+                            '<font style="font-family:Arial, sans-serif;font-size:12px;font-weight:normal;">' +
+                              'Merchant:&nbsp;{EnterpriseName}<br>' +
+                              'End:{EndDate}' +
+                              
+                            '</font>' +
+                           // '<span style="float:right; white-space:nowrap;color:green;margin:10px 10px 0px 0px;font-size:10px">&#9679;&nbsp;{CampaignDayLeft} Day Left</span>' +
+                          '</td>' +
+                        '</tr>' +
+                      '</table>' +
+                
+                  
+                
+                    '<div style="position:absolute;bottom:-5px;right:0px;display:none;' +
+                    'background-color:transparent;' +
+                    'color:green;' +
+                    'font-size:10px;font-weight:normal;' +
+                    'white-space:nowrap;">' +              // tutup style dengan ">
+                    '&#9679;&nbsp;{CampaignDayLeft} Day Left' +  // ini jadi content
+                  '</div>' +
+                '</div>',
+                    
+                
+                
+                },  
         
               
         ]

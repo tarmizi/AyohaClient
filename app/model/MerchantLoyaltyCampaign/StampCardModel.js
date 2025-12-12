@@ -97,10 +97,10 @@ Ext.define('ianMizi.model.MerchantLoyaltyCampaign.StampCardModel', {
                             _value1= ImagePath.replace("width:70px", "width:100%");
                            // _value2=_value1.replace("height:70px", "height:250px");
                             _value2=_value1.replace("height:70px", "height:100%;object-fit:cover;");
-                            _value3 = _value2.replace("font-size: 35px;", "font-size: 60px;");
-                            _value4 = _value3.replace("margin:7px 0px 0px 0px", "margin:15px 0px 0px 0px")
-                            _value5 = _value4.replace("margin:-90px 0px 0px 0px", "margin:-150px 0px 0px 0px")
-                            _value6 = _value5.replace('size="3"', 'size="6"')
+                            _value3 = _value2.replace("font-size: 35px;", "font-size: 50px;");
+                            _value4 = _value3.replace("margin:7px 0px 0px 0px", "margin:0px 0px 0px 0px")
+                            _value5 = _value4.replace("margin:-90px 0px 0px 0px", "margin:-125px 0px 0px 0px")
+                            _value6 = _value5.replace('size="3"', 'size="5"')
                             _value = _value6.replace("border-radius: 50px", "border-radius: 0px")
                             
 
