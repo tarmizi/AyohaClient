@@ -506,6 +506,25 @@ function FloatPanel_AyohaRewardVoucherDetailShow(VoucherName, VoucherImage, Vouc
     }
 
     
+    if(globalisSuccessCheckinController_Dashboard_LoadVoucherPerksOpen=='Y'){
+        // VoucherTermAndCondition = _DataStore_DashboardVoucherCard_SuccessCheckIn_LoadVoucherPerkStore.findRecord('VoucherCode', VoucherCode, 0, false, false, true);
+        // document.getElementById('input-FloatPanel_AyohaRewardVoucherDetailVoucherDetailTextArea').value = VoucherTermAndCondition.get('VoucherTermAndCondition');
+        
+        Dashboard_SuccessCheckIn_SetTnCByVoucherCode(VoucherCode)
+        
+       globalisSuccessCheckinController_Dashboard_LoadVoucherPerksOpen='N';
+        
+       // Ext.getCmp('FloatPanel_AyohaRewardVoucherDetailID').setZIndex(110);
+        return;
+    }
+    
+
+
+
+   
+
+
+    
     VoucherTermAndCondition = _DataStore_AyohaRewardVoucherEntitledUserLoadBySubscriberAccNoVoucherTypeStore.findRecord('VoucherCode', VoucherCode, 0, false, false, true);
    
 
@@ -559,6 +578,52 @@ function FloatPanel_AyohaRewardVoucherDetailShow(VoucherName, VoucherImage, Vouc
 
 
 }
+
+
+
+function Dashboard_SuccessCheckIn_SetTnCByVoucherCode(VoucherCode) {
+    var store = _DataStore_DashboardVoucherCard_SuccessCheckIn_LoadVoucherPerkStore;
+  
+    if (!store) return;
+  
+    // kalau store belum load / masih loading
+    if (store.isLoading && store.isLoading()) {
+      store.on('load', function () {
+        AyohaVoucher_SetTnCByVoucherCode(VoucherCode);
+      }, null, { single: true });
+      return;
+    }
+  
+    // cari record (pastikan string)
+    var code = String(VoucherCode || '').trim();
+    var rec  = store.findRecord('VoucherCode', code, 0, false, false, true);
+  
+    if (!rec) {
+      console.warn('VoucherCode not found:', code, 'storeCount:', store.getCount());
+      return;
+    }
+  
+    var tnc = rec.get('VoucherTermAndCondition') || '';
+  
+    // ✅ cara paling betul untuk Sencha Touch
+    var taCmp = Ext.getCmp('FloatPanel_AyohaRewardVoucherDetailVoucherDetailTextArea');
+    if (taCmp) {
+      taCmp.setValue(tnc);
+      return;
+    }
+  
+    // fallback kalau nak pakai DOM
+    var el = document.getElementById('input-FloatPanel_AyohaRewardVoucherDetailVoucherDetailTextArea');
+    if (el) el.value = tnc;
+  }
+
+
+
+
+
+
+
+
 
 
 

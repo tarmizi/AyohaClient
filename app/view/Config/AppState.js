@@ -46,6 +46,7 @@ var AppState = {
         MainDashboardAyohaRewardPointCheckIn :null,
         MainDashboardCheckInCount : null,
         MainDashboardBottomkMenuTabTag : null,
+        MainDashboard_CheckInSuccess_VoucherCount : null,
       
     
     },
@@ -133,7 +134,15 @@ var AppState = {
         TotalRedeemedPerks:0,
         TotalApprovedRedeemedPerks:0,
         TotalExpiredPerks:0,
-    }
+    },
+
+
+
+
+
+
+
+   
 };
 
 

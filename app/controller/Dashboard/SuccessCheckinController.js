@@ -104,7 +104,20 @@ function SuccessCheckinController_Dashboard_LoadPointPerks() {
                 console.log('Store loaded successfully, total records: ' + records.length);
                 
                 Ext.getCmp('listTabpanelDashboardMerchantRewards_Point').setStore(_DataStore_DashboardPointCard_SuccessCheckIn_LoadPointCardPerkStore);
-                 
+              if(records.length > 1){
+                var containerheight=records.length * 95;
+                var existingcontainerheight=165;
+                var newcontainerHeight=existingcontainerheight+containerheight;
+                Ext.getCmp('containerDashboard_Perks_Points').setHeight(newcontainerHeight-95)
+
+                Ext.getCmp('containerTabpanelDashboardMerchantRewards_PointsStatus_Eligible').setHeight(containerheight)
+
+
+
+                
+              }
+               
+                
                // LoadingPanelHide();
             } else {
                 console.error('Failed to load store data or no record found.');
@@ -123,6 +136,99 @@ function SuccessCheckinController_Dashboard_LoadPointPerks() {
 
 
 
+var globalisSuccessCheckinController_Dashboard_LoadVoucherPerksOpen;
+function SuccessCheckinController_Dashboard_LoadVoucherPerks_setPerksOpen() {
+    globalisSuccessCheckinController_Dashboard_LoadVoucherPerksOpen="Y";
+    is_FloatPanel_DashboardMerchantRewardHide = "N";
+}
+
+
+//window.AyohaLoyaltySelected = window.AyohaLoyaltySelected || 'points'; // default
+
+function AyohaSelectLoyaltySegOri(type) {
+    // Senarai ID yang dikemaskini (6 item)
+    var allSegments = ['segStamps', 'segPoints', 'segVouchers', 'segContest', 'segEvent', 'segDiscount'];
+    
+    // Mapping Type ke ID
+    var targetId = '';
+    if (type === 'stamps') targetId = 'segStamps';
+    else if (type === 'points') targetId = 'segPoints';
+    else if (type === 'vouchers') targetId = 'segVouchers';
+    else if (type === 'contest') targetId = 'segContest';
+    else if (type === 'event') targetId = 'segEvent';
+    else if (type === 'discount') targetId = 'segDiscount';
+
+    // Loop untuk toggle class
+    allSegments.forEach(function(id) {
+        var el = document.getElementById(id);
+        if (el) {
+            if (id === targetId) {
+                if (!el.classList.contains('ayohaSel')) {
+                    el.classList.add('ayohaSel');
+                    // Auto scroll ke elemen yang dipilih (optional UX improvement)
+                    el.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                }
+            } else {
+                el.classList.remove('ayohaSel');
+            }
+        }
+    });
+
+    window.AyohaLoyaltySelected = type;
+}
+
+function AyohaSelectLoyaltySeg(type) {
+    // 1. Senarai ID
+    var allSegments = ['segStamps', 'segPoints', 'segVouchers', 'segContest', 'segEvent', 'segDiscount'];
+    
+    // 2. Mapping Type ke ID
+    var targetId = '';
+    if (type === 'stamps') targetId = 'segStamps';
+    else if (type === 'points') targetId = 'segPoints';
+    else if (type === 'vouchers') targetId = 'segVouchers';
+    else if (type === 'contest') targetId = 'segContest';
+    else if (type === 'event') targetId = 'segEvent';
+    else if (type === 'discount') targetId = 'segDiscount';
+
+    // 3. Loop untuk toggle class
+    allSegments.forEach(function(id) {
+        var el = document.getElementById(id);
+        if (el) {
+            if (id === targetId) {
+                // Tambah class selected
+                if (!el.classList.contains('ayohaSel')) {
+                    el.classList.add('ayohaSel');
+                    
+                    // --- FIX SCROLLING (Hanya scroll container, bukan page) ---
+                    var container = el.parentElement; // Ambil bapa element (.ayoha-container)
+                    
+                    // Kira posisi tengah
+                    var scrollPosition = el.offsetLeft - (container.offsetWidth / 2) + (el.offsetWidth / 2);
+                    
+                    // Scroll container sahaja
+                    container.scrollTo({
+                        left: scrollPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            } else {
+                // Buang class
+                el.classList.remove('ayohaSel');
+            }
+        }
+    });
+
+    // Simpan state global
+    window.AyohaLoyaltySelected = type;
+}
+
+  
+  
+
+// Call sekali lepas panel render, untuk apply default highlight
+function AyohaInitLoyaltySegHighlight(){
+  //AyohaSelectLoyaltySeg(window.AyohaLoyaltySelected || 'points');
+}
 
 
 function SuccessCheckinController_Dashboard_LoadVoucherPerks() {
@@ -140,13 +246,13 @@ function SuccessCheckinController_Dashboard_LoadVoucherPerks() {
         callback: function (records, operation, success) {
             if (success && records.length > 0) {
                // console.log('Store loaded successfully, total records: ' + records.length);
-              
-             
+               globalisSuccessCheckinController_Dashboard_LoadVoucherPerksOpen="Y";
+             AppState.MainDashboard.MainDashboard_CheckInSuccess_VoucherCount=records.length;
                 Ext.getCmp('listTabpanelDashboardMerchantRewards_Voucher').setStore(_DataStore_DashboardVoucherCard_SuccessCheckIn_LoadVoucherPerkStore);
-        
+                setScreenWidth_Voucherperks();
 
             } else {
-               
+                globalisSuccessCheckinController_Dashboard_LoadVoucherPerksOpen="N";
               
             }
         }
@@ -163,6 +269,40 @@ function SuccessCheckinController_Dashboard_LoadVoucherPerks() {
 }
 
 
+
+
+
+
+
+
+function setScreenWidth_Voucherperks() {
+
+    var ejasWidth=Math.max(
+        document.documentElement.clientWidth || 0, // viewport width
+        window.innerWidth || 0
+      );
+    var count=AppState.MainDashboard.MainDashboard_CheckInSuccess_VoucherCount;
+   
+    if(count==1){
+
+        var w = ejasWidth-45;
+        var els = document.querySelectorAll('[id^="voucherCard_"]');
+        for (var i = 0; i < els.length; i++) {
+          els[i].style.width = w + 'px';
+        }
+      
+    }
+    if(count>1){
+        var w = ejasWidth-80;
+        var els = document.querySelectorAll('[id^="voucherCard_"]');
+        for (var i = 0; i < els.length; i++) {
+          els[i].style.width = w + 'px';
+        }
+    }
+
+
+     
+  }
 
 
 function SuccessCheckinController_Dashboard_StampCard_SuccessCheckIn_OpenMerchantLoyaltyProgram(val){

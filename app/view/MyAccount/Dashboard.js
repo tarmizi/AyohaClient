@@ -956,7 +956,7 @@ Ext.define('ianMizi.view.MyAccount.Dashboard', {
                         margin: '-5 0 0 14',
                         // id: 'labelDashboard_LastCheckInTimeStamp',    
                         // html: '<div  style="color:white;text-align: left;font-size:10px;width:100%;margin:0px 0px 0px 0px;">00:00:00</div>'
-                         html: '<div style="color:purple;text-align: left;font-size:16px;width:100%;margin:0px 0px 0px 0px"><b>Merchant Check-In</b></div>',
+                         html: '<div style="color:#3A0ca3;text-align: left;font-size:18px;width:100%;margin:0px 0px 0px 0px"><b>Merchant Check-In</b></div>',
                         
                     },
                     {
@@ -966,13 +966,7 @@ Ext.define('ianMizi.view.MyAccount.Dashboard', {
                          html: '<div style="font-size:10px;color:white;background:#2e7d32;border:1px solid #bbf7d0;padding:4px 8px;border-radius:999px;white-space:nowrap;">Earn +10 Ayoha Point on every checkin</div>'
                         
                     },
-                    {
-                        margin: '2 0 0 14',
-                        // id: 'labelDashboard_LastCheckInTimeStamp',    
-                        // html: '<div  style="color:white;text-align: left;font-size:10px;width:100%;margin:0px 0px 0px 0px;">00:00:00</div>'
-                         html: '<div style="font-size:10px;color:black;background:transparnt;white-space:nowrap;">-Turn collected ayoha point into Ayoha voucher</div>'
-                        
-                    },
+                  
                     {
                         margin: '2 0 0 14',
                         // id: 'labelDashboard_LastCheckInTimeStamp',    
@@ -1048,7 +1042,7 @@ Ext.define('ianMizi.view.MyAccount.Dashboard', {
                                       'font:700 15px/1 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;' +
                                       'letter-spacing:.2px;border:1px solid rgba(255,255,255,.18);' +
                                       'box-shadow:0 8px 18px rgba(138,43,226,.25);' +
-                                      //'animation:ayohaPulse 2.2s ease-out infinite;overflow:hidden;transform:translateZ(0);">' +
+                                      'animation:ayohaPulse 2.2s ease-out infinite;overflow:hidden;transform:translateZ(0);">' +
             
                                 '<span style="width:20px;height:20px;display:inline-flex;align-items:center;justify-content:center;">' +
                                   '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="display:block">' +
@@ -1056,7 +1050,7 @@ Ext.define('ianMizi.view.MyAccount.Dashboard', {
                                   '</svg>' +
                                 '</span>' +
             
-                                '<span>Find Merchant Or Scan</span>' +
+                                '<span>Find Merchant Here!</span>' +
             
                                 '<span style="margin-left:2px;display:inline-flex;align-items:center;' +
                                             'background:linear-gradient(90deg,#f59e0b,#fbbf24);color:#111;' +
@@ -1689,7 +1683,7 @@ html: '<div style="text-align:center;padding:10px;margin:-3px 0px 0px 0px;">' +
                      //width: '100%',
                     
                      //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
-                    html: '<div style="color:black;text-align: left;font-size:14px;width:100%;margin:10px 0px 0px 10px"><b>🎉 Last Successful Check-In!</b></div>'
+                    html: '<div style="color:#3A0ca3;text-align: left;font-size:18px;width:100%;margin:10px 0px 0px 10px"><b>🎉 Last Successful Check-In!</b></div>'
                     // html: '<span style="font-size:10px;color:#16a34a;background:#ecfdf5;border:1px solid #bbf7d0;padding:3px 6px;border-radius:999px;white-space:nowrap;">Get available perks in selected Check-In Merchant!</span><br><div style="color:white;text-align: left;font-size:10px;width:100%;margin:-25px 0px 0px 0px;">One Hub • Double Reward,Get your exiciting perks!</div>'
                      
                  },
@@ -1761,7 +1755,7 @@ html: '<div style="text-align:center;padding:10px;margin:-3px 0px 0px 0px;">' +
     
     itemTpl: '<div class="myContent" style="background-color:transparent;width:103%;margin:-30px 0px 0px 0px" onclick="FloatPanel_MerchantDetailPageShow({ID}, `{EnterpriseAccNo}`, `{EnterpriseLogoPath}`, `{EnterpriseName}`, `{EnterpriseTagLine}`,`{NamaJalan}`, `{Postkod}`, `{Bandar}`, `{Negeri}`, `{EnterpriseCoordinate}`,`{EnterpriseDescriptions}`, `{EnterprisePhoneNo}`,`{PICContactNo}`, `{`EnterpriseFacebook}`, `{EnterpriseWebsite}`, `{EnterpriseInstagram}`,`{EnterpriseTwiter}`, `{BusinessMode}`)";>' +                                 
     '{ModifiedIsMemberDashboardMerchantListLastCheckIn}' +
-    '<div style="overflow:hidden;width:105%;margin:-57px 0px 0px -11px;background-color:transparent;height:60px;"><div style="font-family:Arial, sans-serif;font-size:18px;font-weight:normal;float:left;width:17%;margin:5px 0px 0px 0px;background-color:transparent;"><img src="{EnterpriseLogoPath}" style="border:1px none white; width:35px;height:35px;margin:3px 0px 0px 0px;" /></div><div style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;float:left;width:80%;margin:3px 0px 0px -15px;background-color:transparent;color:black"><b>{EnterpriseName}</b><br><div style="font-family:Arial, sans-serif;font-size:10px;font-weight:normal;float:left;margin:-2px 0px 0px 0px;background-color:transparent;color:black;width:73%;"><i>{EnterpriseTagLine}</i></div><br><div style="font-family:Arial, sans-serif;font-size:10px;font-weight:normal;float:left;margin:-5px 0px 0px 0px;background-color:transparent;color:black;width:73%;"><img src="resources/icons/locationThree.png" style="width:16px;height:12px;"/>{Bandar},{Negeri}</div><div style="font-family:Arial, sans-serif;font-size:12px;font-weight:normal;float:right;margin:-10px -25px 0px 0px;background-color:transparent;color:black;width:30%;">{ModifiedCountStar}</div></div>' +
+    '<div style="overflow:hidden;width:105%;margin:-57px 0px 0px -11px;background-color:transparent;height:60px;"><div style="font-family:Arial, sans-serif;font-size:18px;font-weight:normal;float:left;width:17%;margin:5px 0px 0px 0px;background-color:transparent;"><img src="{EnterpriseLogoPath}" style="border:1px none white; width:35px;height:35px;margin:3px 0px 0px 0px;" /></div><div style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;float:left;width:80%;margin:3px 0px 0px -15px;background-color:transparent;color:#4F4F4F"><b>{EnterpriseName}</b><br><div style="font-family:Arial, sans-serif;font-size:10px;font-weight:normal;float:left;margin:-2px 0px 0px 0px;background-color:transparent;color:black;width:73%;"><i>{EnterpriseTagLine}</i></div><br><div style="font-family:Arial, sans-serif;font-size:10px;font-weight:normal;float:left;margin:-5px 0px 0px 0px;background-color:transparent;color:black;width:73%;"><img src="resources/icons/locationThree.png" style="width:16px;height:12px;"/>{Bandar},{Negeri}</div><div style="font-family:Arial, sans-serif;font-size:12px;font-weight:normal;float:right;margin:-10px -25px 0px 0px;background-color:transparent;color:black;width:30%;">{ModifiedCountStar}</div></div>' +
     '</div>' +
     '</div>',
     
@@ -1888,143 +1882,7 @@ html: '<div style="text-align:center;padding:10px;margin:-3px 0px 0px 0px;">' +
 
 
 
-//         {
 
-//     xtype: 'container',
-//     width: '100%',
-//     height: '100%',
-//     style: 'background: #faf5ff;',
-//     layout: {
-
-//         type: 'hbox',
-//         pack: 'start',
-//         align: 'center'
-// },
-// items:[
-// //     {
-// //         xtype: 'container',
-// //         width: '40%',
-// //         height: '100%',
-// //         style: 'background: transparent;',
-// //         layout: {
-    
-// //             type: 'vbox',
-// //             pack: 'start',
-// //             align: 'center'
-// //     },
-// //     items:[
-// //         {
-// //             xtype: 'component',
-// //             html:
-// //             '<div style="position:absolute;top:-52px;left:10px;background-color:transparent;' +
-// //                  'width:155px;height:157px;z-index:5;display:flex;align-items:center;justify-content:center;">' +
-// //               '<img src="resources/icons/maskotCheckIn01.png" ' +
-// //                    'style="width:150px;height:157px;display:block;" ' +
-// //                    'alt="Company Name" />' +
-// //             '</div>'
-// //         },
-
-// //     ]
-// // },
-//       {
-//         xtype: 'list',
-//         //  hidden:true,
-//          margin: '3 0 0 0',           
-//           id: 'DashboardMain_EnterprisesLoadLastCheckInStoreID',
-//           //height: 60,
-//           mode: 'SINGLE',
-//           disableSelection: true,
-//           scrollable: {
-//               direction: 'vertical',
-//               indicators: {
-//                   y: {
-//                       autoHide: true
-//                   },
-//                   x: {
-//                       autoHide: true
-//                   }
-//               }
-//           },
-//          style: 'background-color:rgba(255, 255, 255, 0.5);border-radius: 10px 10px 10px 10px;',
-//         //  style: 'background-color:#fdf2ff;',
-
-// itemTpl: '<div class="myContent" style="background-color:transparent;width:103%;margin:-30px 0px 0px 0px" onclick="FloatPanel_MerchantDetailPageShow({ID}, `{EnterpriseAccNo}`, `{EnterpriseLogoPath}`, `{EnterpriseName}`, `{EnterpriseTagLine}`,`{NamaJalan}`, `{Postkod}`, `{Bandar}`, `{Negeri}`, `{EnterpriseCoordinate}`,`{EnterpriseDescriptions}`, `{EnterprisePhoneNo}`,`{PICContactNo}`, `{`EnterpriseFacebook}`, `{EnterpriseWebsite}`, `{EnterpriseInstagram}`,`{EnterpriseTwiter}`, `{BusinessMode}`)";>' +                                 
-// '{ModifiedIsMemberDashboardMerchantListLastCheckIn}' +
-// '<div style="overflow:hidden;width:105%;margin:-57px 0px 0px -11px;background-color:transparent;height:60px;"><div style="font-family:Arial, sans-serif;font-size:18px;font-weight:normal;float:left;width:17%;margin:5px 0px 0px 0px;background-color:transparent;"><img src="{EnterpriseLogoPath}" style="border:1px none white; width:35px;height:35px;margin:3px 0px 0px 0px;" /></div><div style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;float:left;width:80%;margin:3px 0px 0px -15px;background-color:transparent;color:black"><b>{EnterpriseName}</b><br><div style="font-family:Arial, sans-serif;font-size:10px;font-weight:normal;float:left;margin:-2px 0px 0px 0px;background-color:transparent;color:black;width:73%;"><i>{EnterpriseTagLine}</i></div><br><div style="font-family:Arial, sans-serif;font-size:10px;font-weight:normal;float:left;margin:-5px 0px 0px 0px;background-color:transparent;color:black;width:73%;"><img src="resources/icons/locationThree.png" style="width:16px;height:12px;"/>{Bandar},{Negeri}</div><div style="font-family:Arial, sans-serif;font-size:12px;font-weight:normal;float:right;margin:-10px -25px 0px 0px;background-color:transparent;color:black;width:30%;">{ModifiedCountStar}</div></div>' +
-// '</div>' +
-// '</div>',
-
-             
-
-
-// emptyText:
-//   '<div style="' +
-//     'max-width:320px;' +              // lebar card
-//     'margin:8px auto 12px auto;' +    // 🔴 center horizontal (auto kiri/kanan)
-//     'padding:12px 16px;' +
-//     'border-radius:16px;' +
-//     'background:#fdf2ff;' +
-//     'display:flex;' +
-//     'flex-direction:column;' +
-//     'align-items:center;' +
-//     'justify-content:center;' +
-//     'min-height:88px;' +
-//     'text-align:center;' +
-//   '">' +
-
-//     // ICON
-//     '<div style="' +
-//       'width:32px;height:32px;border-radius:999px;' +
-//       'background:#faf5ff;display:flex;align-items:center;' +
-//       'justify-content:center;margin-bottom:6px;' +
-//     '">' +
-//       '<svg width="18" height="18" viewBox="0 0 24 24" fill="#a855f7">' +
-//         '<path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/>' +
-//       '</svg>' +
-//     '</div>' +
-
-//     // TEXT
-//     '<div style="font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;' +
-//                 'font-size:11px;color:#4b5563;line-height:1.3;">' +
-//       'Use <strong>Find Merchant &amp; Join</strong> above to make your first ' +
-//       'check-in and earn <strong>+10 Ayoha Points</strong>.' +
-//     '</div>' +
-//   '</div>',
-
-
-
-
-
-
-
-//           listeners: {
-//               itemtap: function (list, idx, target, records, evt) {
-//                   LoadingPanelShow(getLoadingIcon(),'Loading....');
-//                   MembershipTag= records.get('isMember');
-//                   glonbalDashboard_SearchMerchantList_FullCompanyAddress=records.get('NamaJalan')+',<br>'+records.get('Postkod')+' '+records.get('Bandar')+'.<br> '+records.get('Negeri')
-            
-
-//               },
-//               deselect: function (list, records) {
-               
-//               }
-//           },
-
-
-//           width: '100%',
-//           height: 60,
-//           disableSelection: true,
-//           scrollable:false,
-
-
-
-
-
-
-//       },
-// ]
-// },
-       
        
   
   
@@ -2131,7 +1989,7 @@ html: '<div style="text-align:center;padding:10px;margin:-3px 0px 0px 0px;">' +
                      //width: '100%',
                     
                      //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
-                    html: '<div style="color:black;text-align: left;font-size:14px;width:100%;margin:10px 0px 0px 10px"><b>📍 You’re checked in here</b></div>'
+                    html: '<div style="color:#3A0ca3;text-align: left;font-size:18px;width:100%;margin:10px 0px 0px 10px"><b>📍 You’re checked in here</b></div>'
                     // html: '<span style="font-size:10px;color:#16a34a;background:#ecfdf5;border:1px solid #bbf7d0;padding:3px 6px;border-radius:999px;white-space:nowrap;">Get available perks in selected Check-In Merchant!</span><br><div style="color:white;text-align: left;font-size:10px;width:100%;margin:-25px 0px 0px 0px;">One Hub • Double Reward,Get your exiciting perks!</div>'
                      
                  },
@@ -2209,7 +2067,7 @@ html: '<div style="text-align:center;padding:10px;margin:-3px 0px 0px 0px;">' +
                      },
                      items: [
                          {
-                             margin: '-5 0 0 0',
+                             margin: '-2 0 0 0',
                              id: 'htmlDashboard_MerchantDetailPage_EnterpriseInfo_EnterpiseInfoExtended_EnterpriseName_TagLine',                                                              
                              html: '<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 17px;font-weight:bold;color:black;margin:0px 0px 0px 0px;padding:0px 6px;">Monster Chicken</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 10px;font-weight:normal;color:black;margin:-27px 0px 0px 0px;padding:0px 6px;"><i>Ayam Cheesee Leleh</i></div>',
                          },
@@ -3283,6 +3141,7 @@ html: '<img onClick="FloatPanel_AyohaStore_OrderHistoryShow()" src="resources/ic
         {
             xtype: 'container',
             width: '100%',
+            height:63,
            // hidden: false,
             id:'containerDashboard_PerksYouCanEnjoyHereHeaderTitle',
            // margin: '0 0 0 0',
@@ -3301,7 +3160,7 @@ html: '<img onClick="FloatPanel_AyohaStore_OrderHistoryShow()" src="resources/ic
                     
                      margin: '10 0 0 14',
                      //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
-                    html: '<div style="color:black;text-align: left;font-size:14px;width:100%;margin:0px 0px 0px 0px"><b>🎁 Perks you can enjoy here</b></div>'
+                    html: '<div style="color:#3A0ca3;text-align: left;font-size:18px;width:100%;margin:0px 0px 0px 0px"><b>🎁 Perks you can enjoy here</b></div><br> <div style="margin:-24px 0px 0px 25px;font-size:11px;color:#6b7280;">Collect stamps, earn points & claim vouchers here</div>'
                     // html: '<span style="font-size:10px;color:#16a34a;background:#ecfdf5;border:1px solid #bbf7d0;padding:3px 6px;border-radius:999px;white-space:nowrap;">Get available perks in selected Check-In Merchant!</span><br><div style="color:white;text-align: left;font-size:10px;width:100%;margin:-25px 0px 0px 0px;">One Hub • Double Reward,Get your exiciting perks!</div>'
                      
                  },
@@ -3321,12 +3180,436 @@ html: '<img onClick="FloatPanel_AyohaStore_OrderHistoryShow()" src="resources/ic
             ]
           },
 
+{
+    xtype: 'container',
+    width: '100%',
+    height: 85,  
+    hidden:true,  
+    margin: '0 0 0 0',
+    id: 'containerDashboardHeader_ButtonPerks_Main3',
+    style: 'background:transparent',
+    layout: {
+        type: 'vbox',
+        pack: 'start',
+        align: 'center'
+    },
+    items:[
+        {
+            width: '95%',
+            height: '100%', 
+            // html:
+            // '<style>' +
+            //   /* 1. CONTAINER STYLE */
+            //   '.ayoha-container {' +
+            //     'width: 100%; height: 70px; background: #efe7ff; border-radius: 16px; overflow: hidden;' +
+            //     'display: flex; align-items: stretch; box-shadow: 0 6px 18px rgba(0,0,0,.05);' +
+            //     'border: 1px solid rgba(124,58,237,.15); font-family: Arial, sans-serif;' +
+            //     'box-sizing: border-box;' +
+            //   '}' +
+        
+            //   /* 2. SEGMENT STYLE (DEFAULT UNSELECTED) */
+            //   '.ayohaSeg {' +
+            //     'background: rgba(255,255,255,.25);' +
+            //     'color: #4c1d95;' + /* Warna teks & ikon ASAL (ungu) */
+            //     'transition: all .2s ease; cursor: pointer; -webkit-tap-highlight-color: transparent;' +
+            //     'display: flex; align-items: center; justify-content: center; gap: 8px; padding: 0 10px; flex: 1;' +
+            //   '}' +
+            //   '.ayohaSeg:active { transform: scale(.97); }' +
+        
+            //   /* 3. SELECTED STYLE */
+            //   '.ayohaSel {' +
+            //     'background: linear-gradient(180deg, #d600ff 0%, #9b00ff 100%) !important;' +
+            //     'color: #ffffff !important;' + /* Warna teks & ikon SELECTED (putih) */
+            //     'box-shadow: inset 0 0 0 1px rgba(255,255,255,.3), 0 8px 16px rgba(155,0,255,.25) !important;' +
+            //     'flex: 1.2 !important;' +
+            //   '}' +
+             
+            //   /* --- ICON COLOR CONTROL --- */
+            //   /* Kalau guna SVG: Pastikan dalam kod SVG guna fill="currentColor" */
+            //   '.ayohaSeg svg {' +
+            //     'width: 24px; height: 24px; transition: all .2s ease;' +
+            //     /* Tak perlu set fill color sini sebab dia akan ikut warna text parent */
+            //   '}' +
+        
+            //   /* Kalau guna GAMBAR (PNG/JPG): Guna filter ini */
+            //   '.ayohaSeg img {' +
+            //     'width: 24px; height: 24px; transition: all .2s ease;' +
+            //   '}' +
+            //   '.ayohaSel img {' +
+            //     'filter: brightness(0) invert(1);' + /* Tukar jadi putih */
+            //   '}' +
+            //   /* --------------------------- */
+        
+            //   /* 4. TYPOGRAPHY */
+            //   '.ayohaTitle { font-size: 13px; font-weight: 800; opacity: .9; line-height: 1.1; }' +
+            //   '.ayohaSub { font-size: 11px; font-weight: 700; opacity: .7; margin-top: 2px; }' +
+            //   '.ayohaSel .ayohaTitle { font-size: 15px; font-weight: 900; opacity: 1; }' +
+            //   '.ayohaSel .ayohaSub { font-size: 12px; font-weight: 800; opacity: 1; color: #fff; }' +
+        
+            //   /* MOBILE RESPONSIVE (< 480px) */
+            //   '@media screen and (max-width: 480px) {' +
+            //     '.ayoha-container { height: 60px; }' +
+            //     '.ayohaSeg { gap: 4px; padding: 0 2px; }' +
+            //     '.ayohaTitle { font-size: 10px; }' +
+            //     '.ayohaSub { font-size: 9px; }' +
+            //     '.ayohaSel .ayohaTitle { font-size: 12px; }' +
+            //     '.ayohaSel .ayohaSub { font-size: 10px; }' +
+            //     /* Kecilkan ikon di mobile */
+            //     '.ayohaSeg svg, .ayohaSeg img { width: 24px !important; height:24px !important; }' +
+            //   '}' +
+            // '</style>' +
+        
+            // '<div class="ayoha-container">' +
+            //   // LEFT: Stamps
+            //   '<div id="segStamps" class="ayohaSeg" onclick="AyohaSelectLoyaltySeg(\'stamps\')">' +
+              
+            //   '<img src="resources/icons/stampPerk01.png" alt="Image" style="width:24px;height:24px;">'+
+           
+            //     '<div style="text-align:center;"><div class="ayohaTitle">Stamps</div><div class="ayohaSub">4/10</div></div>' +
+            //   '</div>' +
+        
+            //   // MIDDLE: Points (Selected Default)
+            //   '<div id="segPoints" class="ayohaSeg ayohaSel"  onclick="AyohaSelectLoyaltySeg(\'points\')">' +
+            //    '<img src="resources/icons/PointPerks02.png" alt="Image" style="width:24px;height:24px;">'+
+            //     '<div style="text-align:center;"><div class="ayohaTitle">1460</div><div class="ayohaSub">Pts</div></div>' +
+            //   '</div>' +
+        
+            //   // RIGHT: Vouchers
+            //   '<div id="segVouchers" class="ayohaSeg"  onclick="AyohaSelectLoyaltySeg(\'vouchers\')" style="position:relative;">' +
+            //    // '<div style="position:absolute; top:8px; right:8px; width:8px; height:8px; border-radius:50%; background:#ff2d2d; box-shadow:0 0 0 2px #fff;"></div>' +
+            //     '<img src="resources/icons/VoucherPerks01.png" alt="Image" style="width:24px;height:24px;">'+
+            //     '<div style="text-align:center;"><div class="ayohaTitle">Vouchers</div><div class="ayohaSub">(3)</div></div>' +
+            //   '</div>' +
+            // '</div>',
+        
+       
+            html:
+            '<style>' +
+              /* 1. CONTAINER STYLE (Scrollable) */
+              '.ayoha-container {' +
+                'width: 100%; height: 80px; background: #efe7ff; border-radius: 16px;' +
+                'display: flex; align-items: stretch;' +
+                'box-shadow: 0 6px 18px rgba(0,0,0,.05);' +
+                'border: 1px solid rgba(124,58,237,.15); font-family: Arial, sans-serif;' +
+                'box-sizing: border-box;' +
+                'overflow-x: auto;' + /* Allow scrolling sideways */
+                '-webkit-overflow-scrolling: touch;' + /* Smooth scroll on iOS */
+              '}' +
+              /* Hide scrollbar for cleaner look */
+              '.ayoha-container::-webkit-scrollbar { display: none; }' +
+        
+              /* 2. SEGMENT STYLE (Vertical Stack) */
+              '.ayohaSeg {' +
+                'background: rgba(255,255,255,.25);' +
+                'color: #4c1d95;' +
+                'transition: all .2s ease; cursor: pointer; -webkit-tap-highlight-color: transparent;' +
+                'display: flex;' +
+                'flex-direction: column;' + /* SUSUN TEGAK (Icon atas, Text bawah) */
+                'align-items: center; justify-content: center;' +
+                'gap: 4px;' +
+                'padding: 0 4px;' +
+                'min-width: 75px;' + /* Lebar minimum supaya tak kemek */
+                'flex: 1;' + 
+              '}' +
+              '.ayohaSeg:active { transform: scale(.97); }' +
+        
+              /* 3. SELECTED STYLE */
+              '.ayohaSel {' +
+                'background: linear-gradient(180deg, #d600ff 0%, #9b00ff 100%) !important;' +
+                'color: #ffffff !important;' +
+                'box-shadow: inset 0 0 0 1px rgba(255,255,255,.3), 0 8px 16px rgba(155,0,255,.25) !important;' +
+                'min-width: 85px;' + /* Besar sikit bila selected */
+              '}' +
+              
+              /* --- ICON COLOR CONTROL --- */
+              '.ayohaSeg img {' +
+                'width: 24px; height: 24px; transition: all .2s ease; object-fit: contain;' +
+              '}' +
+              '.ayohaSel img {' +
+                'filter: brightness(0) invert(1);' +
+              '}' +
+        
+              /* 4. TYPOGRAPHY */
+              '.ayohaTitle { font-size: 11px; font-weight: 800; opacity: .9; line-height: 1.1; text-align: center; }' +
+              '.ayohaSub { font-size: 10px; font-weight: 700; opacity: .7; margin-top: 0px; text-align: center; }' +
+              
+              '.ayohaSel .ayohaTitle { font-size: 12px; font-weight: 900; opacity: 1; }' +
+              '.ayohaSel .ayohaSub { font-size: 10px; font-weight: 800; opacity: 1; color: #fff; }' +
+        
+              /* MOBILE RESPONSIVE (< 480px) */
+              '@media screen and (max-width: 480px) {' +
+                '.ayoha-container { height: 75px; }' +
+                '.ayohaSeg { min-width: 70px; }' + /* Kecilkan sikit width di phone */
+              '}' +
+            '</style>' +
+        
+            '<div class="ayoha-container">' +
+              
+              // 1. Stamps
+              '<div id="segStamps" class="ayohaSeg" onclick="AyohaSelectLoyaltySeg(\'stamps\')">' +
+                '<img src="resources/icons/stampPerk01.png" alt="Stamp">' +
+                '<div>' +
+                  '<div class="ayohaTitle">Stamps</div>' +
+                  '<div class="ayohaSub">4/10</div>' +
+                '</div>' +
+              '</div>' +
+        
+              // 2. Points (Selected Default)
+              '<div id="segPoints"  class="ayohaSeg ayohaSel" onclick="AyohaSelectLoyaltySeg(\'points\')">' +
+                '<img src="resources/icons/PointPerks02.png" alt="Points">' +
+                '<div>' +
+                  '<div class="ayohaTitle">1460</div>' +
+                  '<div class="ayohaSub">Pts</div>' +
+                '</div>' +
+              '</div>' +
+        
+              // 3. Vouchers
+              '<div id="segVouchers" class="ayohaSeg" onclick="AyohaSelectLoyaltySeg(\'vouchers\')">' +
+                '<img src="resources/icons/VoucherPerks01.png" alt="Voucher">' +
+                '<div>' +
+                  '<div class="ayohaTitle">Vouchers</div>' +
+                  '<div class="ayohaSub">(3)</div>' +
+                '</div>' +
+              '</div>' +
+        
+              // 4. Contest (NEW)
+              '<div id="segContest"  class="ayohaSeg" onclick="AyohaSelectLoyaltySeg(\'contest\')">' +
+                // Sila letak icon contest anda disini
+                '<img src="resources/icons/ContestPerks01.png" alt="Stamp">' +
+                '<div>' +
+                  '<div class="ayohaTitle">Contest</div>' +
+                  '<div class="ayohaSub">Join</div>' +
+                '</div>' +
+              '</div>' +
+        
+              // 5. Event (NEW)
+              '<div id="segEvent"  class="ayohaSeg" onclick="AyohaSelectLoyaltySeg(\'event\')">' +
+                // Sila letak icon event anda disini
+                '<img src="resources/icons/EventPerks01.png" alt="Stamp">' +
+                '<div>' +
+                  '<div class="ayohaTitle">Events</div>' +
+                  '<div class="ayohaSub">New</div>' +
+                '</div>' +
+              '</div>' +
+        
+              // 6. Discount (NEW)
+              '<div id="segDiscount" style="display:none" class="ayohaSeg" onclick="AyohaSelectLoyaltySeg(\'discount\')">' +
+                // Sila letak icon discount anda disini
+                '<img src="resources/icons/DiscountPerks01.png" alt="Stamp">' +
+                '<div>' +
+                  '<div class="ayohaTitle">Deals</div>' +
+                  '<div class="ayohaSub">% Off</div>' +
+                '</div>' +
+              '</div>' +
+        
+            '</div>',
+          
+        }
+    ]
+},
+
+// {
+//     xtype: 'container',
+//     width: '100%',
+//     height: 137,    
+//     margin: '0 0 0 0',
+//     id: 'containerDashboardHeader_ButtonPerks_Main6',
+//     style: 'background:transparent',
+//     hidden:true,
+//     layout: {
+//         type: 'vbox',
+//         pack: 'start',
+//         align: 'center'
+//     },
+//     items:[
+//         {
+//             width: '95%',
+//             height: '100%', 
+//             html:
+//             '<div style="font-family:\'Segoe UI\', sans-serif;width:100%;background-color:#ffffff;' +
+//                      'border-radius:15px;overflow:hidden;box-shadow:0 4px 10px rgba(0,0,0,0.05);padding:10px;">' +
+          
+          
+//               '<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;">' +
+          
+//                 // 1) Stamps
+//                 '<div style="background-color:#f3e5f5;border-radius:8px;padding:10px 5px;text-align:center;cursor:pointer;' +
+//                            'border:1px solid #e1bee7;" onclick="AyohaEarnRedeemTabClick(\'stamps\')">' +
+//                   '<div style="color:#6a1b9a;font-weight:bold;font-size:12px;">Stamps</div>' +
+//                   '<div style="font-size:10px;color:#888;">4/10</div>' +
+//                 '</div>' +
+          
+//                 // 2) Points
+//                 '<div style="background-color:#d500f9;border-radius:8px;padding:10px 5px;text-align:center;cursor:pointer;' +
+//                            'color:white;box-shadow:0 2px 5px rgba(213,0,249,0.4);" onclick="AyohaEarnRedeemTabClick(\'points\')">' +
+//                   '<div style="font-weight:bold;font-size:12px;">Points</div>' +
+//                   '<div style="font-size:10px;opacity:0.9;">1460</div>' +
+//                 '</div>' +
+          
+//                 // 3) Voucher
+//                 '<div style="background-color:#f3e5f5;border-radius:8px;padding:10px 5px;text-align:center;cursor:pointer;' +
+//                            'position:relative;border:1px solid #e1bee7;" onclick="AyohaEarnRedeemTabClick(\'voucher\')">' +
+//                   '<div style="position:absolute;top:-5px;right:-5px;background:red;color:white;font-size:8px;width:16px;height:16px;' +
+//                              'border-radius:50%;display:flex;align-items:center;justify-content:center;">3</div>' +
+//                   '<div style="color:#6a1b9a;font-weight:bold;font-size:12px;">Voucher</div>' +
+//                   '<div style="font-size:10px;color:#888;">Active</div>' +
+//                 '</div>' +
+          
+//                 // 4) Tier
+//                 '<div style="background-color:#f3e5f5;border-radius:8px;padding:10px 5px;text-align:center;cursor:pointer;' +
+//                            'border:1px solid #e1bee7;" onclick="AyohaEarnRedeemTabClick(\'tier\')">' +
+//                   '<div style="color:#6a1b9a;font-weight:bold;font-size:12px;">Tier</div>' +
+//                   '<div style="font-size:10px;color:#888;">Gold</div>' +
+//                 '</div>' +
+          
+//                 // 5) B-Day
+//                 '<div style="background-color:#f3e5f5;border-radius:8px;padding:10px 5px;text-align:center;cursor:pointer;' +
+//                            'border:1px solid #e1bee7;" onclick="AyohaEarnRedeemTabClick(\'bday\')">' +
+//                   '<div style="color:#6a1b9a;font-weight:bold;font-size:12px;">B-Day</div>' +
+//                   '<div style="font-size:10px;color:#888;">Dec</div>' +
+//                 '</div>' +
+          
+//                 // 6) Refer
+//                 '<div style="background-color:#f3e5f5;border-radius:8px;padding:10px 5px;text-align:center;cursor:pointer;' +
+//                            'border:1px solid #e1bee7;" onclick="AyohaEarnRedeemTabClick(\'refer\')">' +
+//                   '<div style="color:#6a1b9a;font-weight:bold;font-size:12px;">Refer</div>' +
+//                   '<div style="font-size:10px;color:#888;">Earn RM5</div>' +
+//                 '</div>' +
+          
+//               '</div>' +
+//             '</div>' ,
+          
+          
+//             // html:
+//             // '<div style="' +
+//             //   'width:100%;' +
+//             //   'height:64px;' +
+//             //   'background:#efe7ff;' +
+//             //   'border-radius:16px;' +
+//             //   'overflow:hidden;' +
+//             //   'display:flex;' +
+//             //   'align-items:stretch;' +
+//             //   'box-shadow:0 6px 18px rgba(0,0,0,.08);' +
+//             //   'border:1px solid rgba(124,58,237,.15);' +
+//             //   'font-family:Arial, sans-serif;' +
+//             // '">' +
+          
+//             //   // LEFT: Stamps
+//             //   '<div style="' +
+//             //     'flex:1;' +
+//             //     'display:flex;' +
+//             //     'align-items:center;' +
+//             //     'justify-content:center;' +
+//             //     'gap:10px;' +
+//             //     'padding:8px 10px;' +
+//             //     'color:#4c1d95;' +
+//             //     'background:rgba(255,255,255,.25);' +
+//             //   '">' +
+          
+//             //     '<div style="' +
+//             //       'width:26px;height:26px;border-radius:10px;' +
+//             //       'background:rgba(124,58,237,.12);' +
+//             //       'display:flex;align-items:center;justify-content:center;' +
+//             //     '">' +
+//             //       '<svg width="16" height="16" viewBox="0 0 24 24" fill="none">' +
+//             //         '<path d="M12 12c2.2 0 4-1.8 4-4S14.2 4 12 4 8 5.8 8 8s1.8 4 4 4Z" stroke="#7c3aed" stroke-width="2" stroke-linecap="round"/>' +
+//             //         '<path d="M4 20c1.8-4 5-6 8-6s6.2 2 8 6" stroke="#7c3aed" stroke-width="2" stroke-linecap="round"/>' +
+//             //       '</svg>' +
+//             //     '</div>' +
+          
+//             //     '<div style="line-height:1;">' +
+//             //       '<div style="font-size:14px;font-weight:700;">Stamps</div>' +
+//             //       '<div style="font-size:12px;font-weight:700;opacity:.85;margin-top:3px;">4/10</div>' +
+//             //     '</div>' +
+          
+//             //   '</div>' +
+          
+//             //   // MIDDLE: Points
+//             //   '<div style="' +
+//             //     'flex:1.15;' +
+//             //     'display:flex;' +
+//             //     'align-items:center;' +
+//             //     'justify-content:center;' +
+//             //     'gap:10px;' +
+//             //     'padding:8px 10px;' +
+//             //     'color:#fff;' +
+//             //     'background:linear-gradient(180deg,#d600ff,#9b00ff);' +
+//             //     'box-shadow:inset 0 1px 0 rgba(255,255,255,.35);' +
+//             //     'position:relative;' +
+//             //   '">' +
+          
+//             //     '<div style="' +
+//             //       'width:26px;height:26px;border-radius:999px;' +
+//             //       'background:rgba(255,255,255,.25);' +
+//             //       'display:flex;align-items:center;justify-content:center;' +
+//             //       'border:1px solid rgba(255,255,255,.35);' +
+//             //     '">' +
+//             //       '<svg width="16" height="16" viewBox="0 0 24 24" fill="none">' +
+//             //         '<path d="M12 3c4.4 0 8 2 8 4.5S16.4 12 12 12 4 10 4 7.5 7.6 3 12 3Z" fill="#FFD54A"/>' +
+//             //         '<path d="M12 12c4.4 0 8-2 8-4.5v9C20 19 16.4 21 12 21s-8-2-8-4.5v-9C4 10 7.6 12 12 12Z" fill="#FFC107"/>' +
+//             //         '<path d="M12 6.2c-1.2 0-2 .5-2 1.3 0 .7.5 1.1 1.6 1.3l.6.1c1.4.3 2.1 1 2.1 2.1 0 1.3-1.1 2.2-2.8 2.2-.9 0-1.8-.2-2.6-.7" stroke="#7a4b00" stroke-width="1.5" stroke-linecap="round"/>' +
+//             //       '</svg>' +
+//             //     '</div>' +
+          
+//             //     '<div style="font-size:20px;font-weight:900;letter-spacing:.2px;">' +
+//             //       '1460 <span style="font-weight:800;font-size:16px;opacity:.95;">Pts</span>' +
+//             //     '</div>' +
+          
+//             //   '</div>' +
+          
+//             //   // RIGHT: Vouchers
+//             //   '<div style="' +
+//             //     'flex:1;' +
+//             //     'display:flex;' +
+//             //     'align-items:center;' +
+//             //     'justify-content:center;' +
+//             //     'gap:10px;' +
+//             //     'padding:8px 10px;' +
+//             //     'color:#4c1d95;' +
+//             //     'background:rgba(255,255,255,.25);' +
+//             //     'position:relative;' +
+//             //   '">' +
+          
+//             //     // red dot
+//             //     '<div style="' +
+//             //       'position:absolute;top:10px;right:12px;' +
+//             //       'width:10px;height:10px;border-radius:999px;' +
+//             //       'background:#ff2d2d;' +
+//             //       'box-shadow:0 0 0 2px rgba(239,231,255,1);' +
+//             //     '"></div>' +
+          
+//             //     '<div style="' +
+//             //       'width:26px;height:26px;border-radius:10px;' +
+//             //       'background:rgba(124,58,237,.12);' +
+//             //       'display:flex;align-items:center;justify-content:center;' +
+//             //     '">' +
+//             //       '<svg width="16" height="16" viewBox="0 0 24 24" fill="none">' +
+//             //         '<path d="M4 9c2 0 2-3 4-3h12v12H8c-2 0-2-3-4-3V9Z" stroke="#7c3aed" stroke-width="2" stroke-linejoin="round"/>' +
+//             //         '<path d="M16 6v12" stroke="#7c3aed" stroke-width="2" stroke-linecap="round"/>' +
+//             //         '<path d="M10 9h3" stroke="#7c3aed" stroke-width="2" stroke-linecap="round"/>' +
+//             //       '</svg>' +
+//             //     '</div>' +
+          
+//             //     '<div style="line-height:1;text-align:left;">' +
+//             //       '<div style="font-size:14px;font-weight:700;">Vouchers</div>' +
+//             //       '<div style="font-size:12px;font-weight:700;opacity:.85;margin-top:3px;">(3 Active)</div>' +
+//             //     '</div>' +
+          
+//             //   '</div>' +
+          
+//             // '</div>'
+          
+//         }
+//     ]
+// },       
+
+      
   /////////Stamps Perks
           {
             xtype: 'container',
             width: '100%',
-            height: 200,    
-            margin: '10 0 0 0',
+            height: 230,    
+            margin: '0 0 0 0',
             id: 'containerDashboard_Perks_Stamps',
             style: 'background:transparent',
             layout: {
@@ -3335,27 +3618,15 @@ html: '<img onClick="FloatPanel_AyohaStore_OrderHistoryShow()" src="resources/ic
                 align: 'center'
             },
             items:[
-                {
-                    xtype: 'container',
-                    width: '100%',
-                    height: 40,    
-                    margin: '0 0 0 14',
-                    id: 'containerDashboardHeader_ButtonPerks_Stamps_Outter',
-                    style: 'background:transparent',
-                    layout: {
-                        type: 'hbox',
-                        pack: 'start',
-                        align: 'center'
-                    },
-                    items:[
+               
                         {
                             xtype: 'container',
-                            width: 130,
-                            height: 35,    
-                            margin: '10 0 0 0',
+                            width: '100%',
+                            height: 58,    
+                            margin: '0 0 0 0',
                             id: 'containerDashboardHeader_ButtonPerks_Stamps',
                             name:'nameContainerDashboardHeader_ButtonPerks_Stamps',
-                            style: 'background:#fdf2ff;border-radius:20px;margin:0 10px 8px 10px;padding:6px 8x;',
+                            style: 'background:transparent;',
                             layout: {
                                 type: 'vbox',
                                 pack: 'center',
@@ -3363,36 +3634,66 @@ html: '<img onClick="FloatPanel_AyohaStore_OrderHistoryShow()" src="resources/ic
                             },
                             items: [{
                                 id: 'htmlDashboardHeader_ButtonPerks_Stamps',
-                                html:
+                                // html:                                
                                 //   '<div style="text-align:center;width:100%;">' +
-                                //     '<div style="font-size:12px;font-weight:700;color:#111827;">Digital Stamps</div>' +
-                                //     '<div style="margin:4px auto 0 auto;width:40px;height:3px;border-radius:999px;' +
-                                //           'background-image:linear-gradient(90deg,#ff00de,#c800ff);"></div>' +
-                                //   '</div>',
-                                  '<div style="text-align:center;width:100%;">' +
-                                  '<div style="font-size:12px;font-weight:600;color:#7c3aed;">Digital Stamps</div>' + // ungu, bukan grey mati
-                                  '<div style="margin:4px auto 0 auto;width:32px;height:2px;border-radius:999px;' +
-                                  'background-image:linear-gradient(90deg,#ff00de,#c800ff);"></div>' +
-                                '</div>',
+                                //   '<div style="font-size:12px;font-weight:600;color:#7c3aed;">Digital Stamps</div>' + // ungu, bukan grey mati
+                                //   '<div style="margin:4px auto 0 auto;width:32px;height:2px;border-radius:999px;' +
+                                //   'background-image:linear-gradient(90deg,#ff00de,#c800ff);"></div>' +
+                                // '</div>',
+                                width: '95%',
+                                height:'100%', 
+                                html:
+  '<div class="ayohaHdrCard">' +
+    '<div class="ayohaHdrIcon">' +
+      // stamp icon (SVG)
+      '<svg width="18" height="18" viewBox="0 0 24 24" fill="none">' +
+        '<path d="M7 3h10a2 2 0 0 1 2 2v5.2a3 3 0 0 1 0 5.6V19a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-3.2a3 3 0 0 1 0-5.6V5a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>' +
+        '<path d="M9 8h6M9 12h6M9 16h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>' +
+      '</svg>' +
+    '</div>' +
+
+    '<div class="ayohaHdrText">' +
+      '<div class="ayohaHdrTitle">Digital Stamps</div>' +
+      '<div class="ayohaHdrSub">Collect stamps & unlock rewards</div>' +
+    '</div>' +
+
+    '<div class="ayohaHdrRight">' +
+      // kalau ada progress, tukar 4/10 ikut data
+      '<div class="ayohaHdrBadge">4/10</div>' +
+      '<div class="ayohaHdrChevron">›</div>' +
+    '</div>' +
+  '</div>',
+
                                   listeners: {
                                     element: 'element',
                                     tap: function () {
-                                      //  Dashboard_Perks_SetActive('Stamps');
+                                        ianMizi.app
+                                        .getController('Dashboard.SuccessCheckinController')
+                                        .Dashboard_StampCard_SuccessCheckIn_LoadStampCardPerkStore();
                                     }
                                 }
                             }],
                             
                         },
-                    ]
-                },
+                    
                          
                
                  {
                     xtype: 'container',
-                    width: '100%',
-                    height: '100%',
+                    width: '95%',
+                    height: 160,
                    
-                    style: "background-color: transparent;",
+                    style: "background: rgba(255,255,255,.72);box-shadow: 0 10px 24px rgba(157,0,255,.10);"+
+                    "border-top: 1px none rgba(214,0,255,.16);"+
+                    "border-left: 1px solid rgba(214,0,255,.16);"+
+                    "border-right: 1px solid rgba(214,0,255,.16);"+
+                    "border-bottom: 1px solid rgba(214,0,255,.16);"+
+                    "backdrop-filter: blur(6px);",
+
+                   
+                    
+                    
+                    
                     title: 'StampsStatus_EligiblePerks',
                     id:'containerTabpanelDashboardMerchantRewards_StampsStatus_Eligible',
                     layout: {
@@ -3402,10 +3703,10 @@ html: '<img onClick="FloatPanel_AyohaStore_OrderHistoryShow()" src="resources/ic
                     }, 
                     items:[
                          ///////Eligible Stamp 
-                         {
+                         { margin: '8 0 0 0',
                             xtype: 'dataview',
                             id: 'listTabpanelDashboardMerchantRewards_StampsStatus_NA',
-                            width: '90%',
+                            width: '96%',
                             height:'100%',
                             // store: _DataStore_DashboardStampCard_SuccessCheckIn_LoadStampCardPerkStore, // kalau ada store, letak balik sini
                         
@@ -3431,8 +3732,8 @@ html: '<img onClick="FloatPanel_AyohaStore_OrderHistoryShow()" src="resources/ic
                                 '            height:140px;' +                             // ✅ semua card sama tinggi
                                 '            display:flex; flex-direction:column;' +      // susun atas-bawah
                                 '            border-radius:12px; overflow:hidden;' +
-                                '            margin:0 10px 0 0; border:0;">' +
-                              //  '            box-shadow:0 12px 30px rgba(24,39,75,.14), 0 3px 10px rgba(24,39,75,.10);">',
+                                '            margin:0 10px 0 0; border:1px solid #E9E0F2;"' +
+                                '            box-shadow:0 12px 30px rgba(24,39,75,.14), 0 3px 10px rgba(24,39,75,.10);">',
                             
                                 // IMAGE SECTION
                                 '  <div style="position:relative; overflow:hidden; flex:0 0 95px;">', // ✅ gambar 350px tinggi
@@ -3451,7 +3752,7 @@ html: '<img onClick="FloatPanel_AyohaStore_OrderHistoryShow()" src="resources/ic
                                        // CONTENT SECTION
 
 
-                                       '  <div style="padding:0px 10px 0px 10px; margin-top:0px;">',
+                                       '  <div style="padding:0px 10px 0px 10px; margin-top:0px; ">',
                                        '    <h2 style="font-size:12px; font-weight:bold; margin:4px 0 4px 0; color:#2c3e50;' +
                                        '               white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">' +
                                        '      {StampContentNote}' +
@@ -3511,60 +3812,65 @@ html: '<img onClick="FloatPanel_AyohaStore_OrderHistoryShow()" src="resources/ic
         {
             xtype: 'container',
             width: '100%',
-            height: 40,    
-            margin: '0 0 0 14',
+            height: 58,    
+            margin: '0 0 0 0',
             id: 'containerDashboardHeader_ButtonPerks_Points_Outter',
-            style: 'background:transparent',
+            style: 'background:transparent;',
             layout: {
-                type: 'hbox',
-                pack: 'start',
+                type: 'vbox',
+                pack: 'center',
                 align: 'center'
             },
-            items:[
-                {
-                    xtype: 'container',
-                    width: 130,
-                    height: 35,    
-                    margin: '10 0 0 0',
-                    id: 'containerDashboardHeader_ButtonPerks_Points',
-                    style: 'background:#fdf2ff;border-radius:20px;margin:0 10px 8px 10px;padding:6px 8x;',
-                    layout: {
-                        type: 'vbox',
-                        pack: 'center',
-                        align: 'center'
-                    },
-                    items: [{
-                        id: 'htmlDashboardHeader_ButtonPerks_Points',
-                        html:
-                        //   '<div style="text-align:center;width:100%;">' +
-                        //     '<div style="font-size:12px;font-weight:700;color:#111827;">Digital Stamps</div>' +
-                        //     '<div style="margin:4px auto 0 auto;width:40px;height:3px;border-radius:999px;' +
-                        //           'background-image:linear-gradient(90deg,#ff00de,#c800ff);"></div>' +
-                        //   '</div>',
-                          '<div style="text-align:center;width:100%;">' +
-                          '<div style="font-size:12px;font-weight:600;color:#7c3aed;">Point Reward</div>' + // ungu, bukan grey mati
-                          '<div style="margin:4px auto 0 auto;width:32px;height:2px;border-radius:999px;' +
-                          'background-image:linear-gradient(90deg,#ff00de,#c800ff);"></div>' +
-                        '</div>',
-                          listeners: {
-                            element: 'element',
-                            tap: function () {
-                                SuccessCheckinController_Dashboard_LoadPointPerks();
-                            }
-                        }
-                    }],
-                    
-                },
-            ]
+            items: [{
+                id: 'htmlDashboardHeader_ButtonPerks_Points',              
+                width: '95%',
+                height:'100%', 
+                html:
+'<div class="ayohaHdrCard">' +
+'<div class="ayohaHdrIcon">' +
+// stamp icon (SVG)
+'<svg width="18" height="18" viewBox="0 0 24 24" fill="none">' +
+'<path d="M7 3h10a2 2 0 0 1 2 2v5.2a3 3 0 0 1 0 5.6V19a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-3.2a3 3 0 0 1 0-5.6V5a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>' +
+'<path d="M9 8h6M9 12h6M9 16h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>' +
+'</svg>' +
+'</div>' +
+
+'<div class="ayohaHdrText">' +
+'<div class="ayohaHdrTitle">Loyalty Point</div>' +
+'<div class="ayohaHdrSub">Redeem your loyalty point</div>' +
+'</div>' +
+
+'<div class="ayohaHdrRight">' +
+// kalau ada progress, tukar 4/10 ikut data
+'<div class="ayohaHdrBadge">4/10</div>' +
+'<div class="ayohaHdrChevron">›</div>' +
+'</div>' +
+'</div>',
+
+                  listeners: {
+                    element: 'element',
+                    tap: function () {
+                        SuccessCheckinController_Dashboard_LoadPointPerks();
+                    }
+                }
+            }],
+            
         },
+    
+       
                  
        
          {
             xtype: 'container',
-            width: '100%',
+            width: '95%',
            // height: 300,
             height: 95,
-            style: "background-color: transparent;",
+            style: "background: rgba(255,255,255,.72);box-shadow: 0 10px 24px rgba(157,0,255,.10);"+
+            "border-top: 1px none rgba(214,0,255,.16);"+
+            "border-left: 1px solid rgba(214,0,255,.16);"+
+            "border-right: 1px solid rgba(214,0,255,.16);"+
+            "border-bottom: 1px solid rgba(214,0,255,.16);"+
+            "backdrop-filter: blur(6px);",
             title: 'PointsStatus_EligiblePerks',
             id:'containerTabpanelDashboardMerchantRewards_PointsStatus_Eligible',
             layout: {
@@ -3573,147 +3879,27 @@ html: '<img onClick="FloatPanel_AyohaStore_OrderHistoryShow()" src="resources/ic
                 align: 'center',
             }, 
             items:[
-                 ///////Eligible Point 
-                //  {
-                //     xtype: 'dataview',
-                //     id: 'listTabpanelDashboardMerchantRewards_Point',
-                //     width: '90%',
-                //     height:'100%',
-                //     // store: _DataStore_DashboardStampCard_SuccessCheckIn_LoadStampCardPerkStore, // kalau ada store, letak balik sini
-                
-                //     // DATAVIEW SETTING UNTUK HORIZONTAL
-                //     scrollable: {
-                //         direction: 'horizontal',
-                //         indicators: false,
-                //     },
-                
-                //     // susun item sebelah-menyebelah, 1 row sahaja
-                //     inline: {
-                //         wrap: false
-                //     },
-                
-                //     // supaya style senang kontrol
-                //     itemCls: 'stamp-horizontal-item',
-                
-                //     style: 'background-color:rgba(255,255,255,0);border-radius:0px;',
-                //    // store:_DataStore_DashboardPointCard_SuccessCheckIn_LoadPointCardPerkStore,
-
-                //    itemTpl: new Ext.XTemplate([
-                //     // CARD
-                //     '<div onclick="SuccessCheckinController_Dashboard_PointCard_SuccessCheckIn_OpenMerchantLoyaltyProgram(`{MembershipCardCode}`)"' +
-                //     '     style="background:#fff; width:200px; border-radius:12px; overflow:hidden;' +
-                //     '            margin:0 15px 0 0; border:0;' +
-                //     '            height:220px;' +
-                //     '            position:relative;">' + // ✅ penting
-                //    // '            box-shadow:0 12px 30px rgba(24,39,75,.14), 0 3px 10px rgba(24,39,75,.10);">',
-                
-                //     // IMAGE SECTION
-                //     '  <div style="position:relative; width:100%; overflow:visible;">' + // ✅ tukar visible
-                //     '    <img src="{ImgPath}" alt="{ItemName}"' +
-                //     '         style="width:100%; height:165px; display:block;">',
-                
-                //     // BADGE
-                //     '    <div style="position:absolute; bottom:-25px; right:16px;' +
-                //     '                display:flex; flex-direction:column; align-items:center; justify-content:center;' +
-                //     '                width:60px; height:60px; background:#1E90FF; color:#fff;' +
-                //     '                border-radius:50%; box-shadow:0 4px 8px rgba(0,0,0,0.2);' +
-                //     '                border:2px solid #fff; font-weight:bold; line-height:1; gap:2px; z-index:10;">' +
-                //     '      <span style="font-size:8px; margin:0;">Redeem</span>' +
-                //     '      <span style="font-size:14px; margin:0;">{ItemPoint}</span>' +
-                //     '      <span style="font-size:8px; margin:0;">Points</span>' +
-                //     '    </div>',
-                //     '  </div>',
-                
-                //     // CONTENT SECTION
-                //     '  <div style="padding:0px 10px 0px 10px; margin-top:0px;">',
-                //     '    <h2 style="font-size:14px; font-weight:bold; margin:4px 0 4px 0; color:#2c3e50; line-height:1.4;' +
-                //     '               white-space:normal; word-break:break-word;' +
-                //     '               display:-webkit-box; -webkit-line-clamp:2;' +
-                //     '               -webkit-box-orient:vertical; overflow:hidden; text-overflow:ellipsis;">' +
-                //     '      {ItemName}' +
-                //     '    </h2>',
-                //     '    <p style="margin:0 0 2px 0; color:#95a5a6; font-size:11px;">End Date: {EndDate}</p>',
-                //     '  </div>',
-                //     '</div>'
-                // ].join(''))
-                
-
-                // //    itemTpl: new Ext.XTemplate([
-                // //     // CARD
-                // //     '<div onclick="FloatPanel_AyohaMerchantInfo_PointCardLoyaltyProgram_OpenPointCard(`{MembershipCardCode}`)"' +
-                // //     '     style="background:#fff; width:260px; border-radius:12px; overflow:hidden;' +
-                // //     '            margin:0 10px 0 0; border:0;' +
-                // //     '            height:220px;' +     
-                // //     '            box-shadow:0 12px 30px rgba(24,39,75,.14), 0 3px 10px rgba(24,39,75,.10);">',
-                
-                // //     // 📌 IMAGE SECTION – auto height, no crop
-                // //     '  <div style="position:relative; width:100%; overflow:hidden;">',
-                // //     '    <img src="{ImgPath}" alt="{ItemName}"',
-                // //     '         style="width:100%; height:140px; display:block;">',
-                
-                // //     // Tag "Loyalty Point" (atas kiri)
-                // //     // '    <div style="position:absolute; top:12px; left:12px;' +
-                // //     // '                background-color:#1E90FF; color:#fff; padding:5px 12px;' +
-                // //     // '                border-radius:8px; font-size:12px; font-weight:bold; z-index:2;">' +
-                // //     // '      Loyalty Point' +
-                // //     // '    </div>',
-                
-                // //     // Bulat "Redeem X Points" (bawah kanan, overlap border)
-                // //     '    <div style="position:absolute; bottom:-25px; right:16px;' +
-                // //     '                display:flex; flex-direction:column; align-items:center; justify-content:center;' +
-                // //     '                width:60px; height:60px; background:#1E90FF; color:#fff;' +
-                // //     '                border-radius:50%; box-shadow:0 4px 8px rgba(0,0,0,0.2);' +
-                // //     '                border:2px solid #fff; font-weight:bold; line-height:1; gap:2px; z-index:10;">' +
-                // //     '      <span style="font-size:8px; margin:0;">Redeem</span>' +
-                // //     '      <span style="font-size:14px; margin:0;">{ItemPoint}</span>' +
-                // //     '      <span style="font-size:8px; margin:0;">Points</span>' +
-                // //     '    </div>',
-                // //     '  </div>',
-                
-                // //     // 📌 CONTENT SECTION
-                // //     '  <div style="padding:12px 10px 12px 10px; margin-top:18px;">',
-                
-                // //     '    <h2 style="font-size:12px; font-weight:700; margin:4px 0 4px 0; color:#2c3e50; line-height:1.4;' +
-                // //     '               white-space:normal; word-break:break-word;' +
-                // //     '               display:-webkit-box; -webkit-line-clamp:2;' +
-                // //     '               -webkit-box-orient:vertical; overflow:hidden;">' +
-                // //     '      {ItemName}' +
-                // //     '    </h2>',
-                
-                // //     '    <p style="margin:0 0 2px 0; color:#95a5a6; font-size:11px;">' +
-                // //     '      End Date: {EndDate}' +
-                // //     '    </p>',
-                
-                // //     '  </div>',
-                // //     '</div>'
-                // // ].join(''))
-                
-
-
-                
-                
-                    
-                // }
+            
                 ////////////////////Eligible Point
                 {
                     xtype: 'list',
-                    width: '90%',
+                    width: '96%',
                     height:'100%',
                    //height: 95,       
                     id: 'listTabpanelDashboardMerchantRewards_Point',
                     mode: 'SINGLE',
-                    //scrollable:false,
-                    scrollable: {                    
-                        direction: 'vertical',
-                        indicators: {
-                            y: {
-                                autoHide: true
-                            },
-                            x: {
-                                autoHide: true
-                            }
-                        }
-                    },
+                    scrollable:false,
+                    // scrollable: {                    
+                    //     direction: 'vertical',
+                    //     indicators: {
+                    //         y: {
+                    //             autoHide: true
+                    //         },
+                    //         x: {
+                    //             autoHide: true
+                    //         }
+                    //     }
+                    // },
                     style: 'background-color:rgba(255,255,255, 0.1);',
                     // width: '100%',
                     disableSelection: true,
@@ -3790,60 +3976,64 @@ html: '<img onClick="FloatPanel_AyohaStore_OrderHistoryShow()" src="resources/ic
         {
             xtype: 'container',
             width: '100%',
-            height: 40,    
-            margin: '0 0 0 14',
+            height: 58,    
+            margin: '0 0 0 0',
             id: 'containerDashboardHeader_ButtonPerks_Vouchers_Outter',
-            style: 'background:transparent',
+            style: 'background:transparent;',
             layout: {
-                type: 'hbox',
-                pack: 'start',
+                type: 'vbox',
+                pack: 'center',
                 align: 'center'
             },
-            items:[
-                {
-                    xtype: 'container',
-                    width: 130,
-                    height: 35,    
-                    margin: '10 0 0 0',
-                    id: 'containerDashboardHeader_ButtonPerks_Vouchers',
-                    style: 'background:#fdf2ff;border-radius:20px;margin:0 10px 8px 10px;padding:6px 8x;',
-                    layout: {
-                        type: 'vbox',
-                        pack: 'center',
-                        align: 'center'
-                    },
-                    items: [{
-                        id: 'htmlDashboardHeader_ButtonPerks_Vouchers',
-                        html:
-                        //   '<div style="text-align:center;width:100%;">' +
-                        //     '<div style="font-size:12px;font-weight:700;color:#111827;">Digital Stamps</div>' +
-                        //     '<div style="margin:4px auto 0 auto;width:40px;height:3px;border-radius:999px;' +
-                        //           'background-image:linear-gradient(90deg,#ff00de,#c800ff);"></div>' +
-                        //   '</div>',
-                          '<div style="text-align:center;width:100%;">' +
-                          '<div style="font-size:12px;font-weight:600;color:#7c3aed;">Vouchers</div>' + // ungu, bukan grey mati
-                          '<div style="margin:4px auto 0 auto;width:32px;height:2px;border-radius:999px;' +
-                          'background-image:linear-gradient(90deg,#ff00de,#c800ff);"></div>' +
-                        '</div>',
-                          listeners: {
-                            element: 'element',
-                            tap: function () {                              
-                                SuccessCheckinController_Dashboard_LoadVoucherPerks();
-                            }
-                        }
-                    }],
-                    
-                },
-            ]
+            items: [{
+                id: 'htmlDashboardHeader_ButtonPerks_Vouchers',              
+                width: '95%',
+                height:'100%', 
+                html:
+'<div class="ayohaHdrCard">' +
+'<div class="ayohaHdrIcon">' +
+// stamp icon (SVG)
+'<svg width="18" height="18" viewBox="0 0 24 24" fill="none">' +
+'<path d="M7 3h10a2 2 0 0 1 2 2v5.2a3 3 0 0 1 0 5.6V19a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-3.2a3 3 0 0 1 0-5.6V5a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>' +
+'<path d="M9 8h6M9 12h6M9 16h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>' +
+'</svg>' +
+'</div>' +
+
+'<div class="ayohaHdrText">' +
+'<div class="ayohaHdrTitle">Vouchers</div>' +
+'<div class="ayohaHdrSub">Used  special voucher to claim our services/product</div>' +
+'</div>' +
+
+'<div class="ayohaHdrRight">' +
+// kalau ada progress, tukar 4/10 ikut data
+'<div class="ayohaHdrBadge">4/10</div>' +
+'<div class="ayohaHdrChevron">›</div>' +
+'</div>' +
+'</div>',
+
+                  listeners: {
+                    element: 'element',
+                    tap: function () {
+                        SuccessCheckinController_Dashboard_LoadVoucherPerks();
+                    }
+                }
+            }],
+            
         },
+      
                  
        
          {
             xtype: 'container',
-            width: '100%',
-            height: 500,
+            width: '95%',
+            height: 190,
            
-            style: "background-color: transparent;",
+            style: "background: rgba(255,255,255,.72);box-shadow: 0 10px 24px rgba(157,0,255,.10);"+
+            "border-top: 1px none rgba(214,0,255,.16);"+
+            "border-left: 1px solid rgba(214,0,255,.16);"+
+            "border-right: 1px solid rgba(214,0,255,.16);"+
+            "border-bottom: 1px solid rgba(214,0,255,.16);"+
+            "backdrop-filter: blur(6px);",
             title: 'VouchersStatus_EligiblePerks',
             id:'containerTabpanelDashboardMerchantRewards_VouchersStatus_Eligible',
             layout: {
@@ -3855,10 +4045,10 @@ html: '<img onClick="FloatPanel_AyohaStore_OrderHistoryShow()" src="resources/ic
                  ///////Eligible Voucher
              
 
-                 {
+                 {margin: '8 0 0 0',
                     xtype: 'dataview',
                     id: 'listTabpanelDashboardMerchantRewards_Voucher',
-                    width: '90%',
+                    width: '96%',
                     height:'100%',
                 
                     // DATAVIEW SETTING UNTUK HORIZONTAL
@@ -3877,11 +4067,8 @@ html: '<img onClick="FloatPanel_AyohaStore_OrderHistoryShow()" src="resources/ic
                 
                   //  style: 'background-color:rgba(255,255,255,0);border-radius:0px;',
                     style: 'background-color:rgba(255,255,255,0);border-radius:0px;padding:0 8px;',
-
-                
-
                     itemTpl: new Ext.XTemplate([
-                        '<div onclick="FloatPanel_AyohaRewardVoucherDetailShow(',
+                        '<div id="voucherCard_{ID}" onclick="SuccessCheckinController_Dashboard_LoadVoucherPerks_setPerksOpen();FloatPanel_AyohaRewardVoucherDetailShow(',
                             '\' {VoucherName} \',',
                             '\' {VoucherImgPath} \',',
                             '\' {EntitledVoucherEndDate} \',',
@@ -3889,50 +4076,119 @@ html: '<img onClick="FloatPanel_AyohaStore_OrderHistoryShow()" src="resources/ic
                             '\' {VoucherCode} \',',
                             '\' {VoucherAmount} \');" ',
                             'class="myContent" ',
-                            'style="background-color:transparent;width:310px;height:300px;margin:0 15px 0 0;">',  // ✅ fixed width + gap kanan
+                            'style="background-color:transparent;width:310px;height:300px;margin:0 15px 0 0;">',
                       
-                          // GAMBAR
-                          '  <img src="{VoucherImgPath}"',
-                          '       style="width:100%;height:170px;margin:0;display:block;border-radius:0px 0px 0 0;border:2px dotted grey;" />',
+                          // ✅ IMAGE WRAPPER (relative)
+                          '  <div style="position:relative;width:100%;height:170px;border-radius:12px;overflow:hidden;',
+                          '              border:3px dotted #CBD5E1;">',
                       
-                          // BODY PUTIH
-                          '  <div style="padding:8px 10px 10px 10px;background:#ffffff;border-radius:0 0 12px 12px;">',
+                            // IMAGE
+                            '    <img src="{VoucherImgPath}" ',
+                            '         style="width:100%;height:100%;margin:0;display:block;object-fit:cover;" />',
                       
-                          // ROW 1: LABEL
-                          '    <div style="display:flex;justify-content:space-between;font-size:11px;color:#6b7280;">',
-                          '      <span>Voucher Name:</span>',
-                          '      <span>Merchant:</span>',
-                          '    </div>',
+                            // ✅ OVERLAY (absolute)
+                            '    <div style="position:absolute;left:0;right:0;bottom:0;',
+                            '                padding:4px 10px 4px 10px;',
+                            '                background:rgba(0,0,0,0.3);',
+                            '                z-index:10;">',
                       
-                          // ROW 2: VALUE NAMA VOUCHER + MERCHANT (1 LINE, ELLIPSIS)
-                          '    <div style="display:flex;justify-content:space-between;margin-top:2px;">',
-                          '      <span style="font-family:Arial,sans-serif;font-size:14px;font-weight:bold;color:#111827;',
-                          '                   max-width:60%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">',
-                          '        {VoucherName}',
-                          '      </span>',
-                          '      <span style="font-family:Arial,sans-serif;font-size:14px;font-weight:bold;color:#111827;',
-                          '                   max-width:40%;text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">',
-                          '        {EnterpriseName}',
-                          '      </span>',
-                          '    </div>',
+                              // ROW 1: LABEL
+                              '      <div style="display:flex;justify-content:space-between;font-size:10px;color:rgba(255,255,255,.75);">',
+                              '        <span>Voucher Name:</span>',
+                            //  '        <span>Merchant:</span>',
+                              '      </div>',
                       
-                          // ROW 3: LABEL END + AMOUNT
-                          '    <div style="display:flex;justify-content:space-between;margin-top:8px;font-size:11px;color:#6b7280;">',
-                          '      <span>End:</span>',
-                          '      <span>Voucher Amount(RM)</span>',
-                          '    </div>',
+                              // ROW 2: VALUE
+                              '      <div style="display:flex;justify-content:space-between;margin-top:2px;">',
+                              '        <span style="font-family:Arial,sans-serif;font-size:12px;font-weight:bold;color:#fff;',
+                              '                     max-width:60%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">',
+                              '          {VoucherName}',
+                              '        </span>',
+                            //   '        <span style="font-family:Arial,sans-serif;font-size:12px;font-weight:bold;color:#fff;',
+                            //   '                     max-width:40%;text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">',
+                            //   '          {EnterpriseName}',
+                            //   '        </span>',
+                              '      </div>',
                       
-                          // ROW 4: VALUE END DATE + DAY LEFT + AMOUNT
-                          '    <div style="display:flex;justify-content:space-between;margin-top:2px;font-size:14px;font-weight:bold;color:#111827;">',
-                          '      <span style="max-width:60%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">',
-                          '        {EntitledVoucherEndDate} &nbsp;&bull;&nbsp;{DayLeft} Day Left',
-                          '      </span>',
-                          '      <span style="text-align:right;max-width:40%;">{VoucherAmount}</span>',
-                          '    </div>',
+                              // ROW 3: LABEL END + AMOUNT
+                              '      <div style="display:flex;justify-content:space-between;margin-top:8px;font-size:10px;color:rgba(255,255,255,.75);">',
+                              '        <span>End:</span>',
+                              '        <span>Voucher Amount(RM)</span>',
+                              '      </div>',
                       
-                          '  </div>',  // end body
-                        '</div>'      // end card
+                              // ROW 4: VALUE END + AMOUNT
+                              '      <div style="display:flex;justify-content:space-between;margin-top:2px;font-size:12px;font-weight:bold;color:#fff;">',
+                              '        <span style="max-width:60%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">',
+                              '          {EntitledVoucherEndDate} &nbsp;&bull;&nbsp;{DayLeft} Day Left',
+                              '        </span>',
+                              '        <span style="text-align:right;max-width:40%;">{VoucherAmount}</span>',
+                              '      </div>',
+                      
+                            '    </div>', // end overlay
+                          '  </div>',     // end wrapper
+                      
+                        '</div>'          // end card
                       ].join(''))
+                      
+                
+
+                    // itemTpl: new Ext.XTemplate([
+                    //     '<div id="voucherCard_{ID}"  onclick="SuccessCheckinController_Dashboard_LoadVoucherPerks_setPerksOpen();FloatPanel_AyohaRewardVoucherDetailShow(',
+                    //         '\' {VoucherName} \',',
+                    //         '\' {VoucherImgPath} \',',
+                    //         '\' {EntitledVoucherEndDate} \',',
+                    //         '\' {DayLeft} \',',
+                    //         '\' {VoucherCode} \',',
+                    //         '\' {VoucherAmount} \');" ',
+                    //         'class="myContent" ',
+                    //         'style="background-color:transparent;width:310px;height:300px;margin:0 15px 0 0;">',  // ✅ fixed width + gap kanan
+                      
+                    //       // GAMBAR
+                    //       '  <img src="{VoucherImgPath}"',
+                    //       '       style="width:100%;height:170px;margin:0;display:block;border-radius:0px 0px 0 0;border:2px dotted grey;" />',
+
+
+                      
+                    //       // BODY PUTIH
+                    //     //ori  '  <div style="padding:8px 10px 4px 10px;background:#ffffff;border-radius:0 0 12px 12px;">',
+                    //       '  <div style="padding:8px 10px 4px 10px;background: rgba(0, 0, 0, 0.7);border-radius:0 0 12px 12px;margin-top:-90px;z-index:10px;">',
+                    //       // ROW 1: LABEL
+                    //       '    <div style="display:flex;justify-content:space-between;font-size:10px;color:#6b7280;">',
+                    //       '      <span>Voucher Name:</span>',
+                    //       '      <span>Merchant:</span>',
+                    //       '    </div>',
+                      
+                    //       // ROW 2: VALUE NAMA VOUCHER + MERCHANT (1 LINE, ELLIPSIS)
+                    //       '    <div style="display:flex;justify-content:space-between;margin-top:2px;">',
+                    //     //ori  '      <span style="font-family:Arial,sans-serif;font-size:12px;font-weight:bold;color:#111827;',
+                    //       '      <span style="font-family:Arial,sans-serif;font-size:12px;font-weight:bold;color:white;',
+                    //       '                   max-width:60%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">',
+                    //       '        {VoucherName}',
+                    //       '      </span>',
+                    //      //ori '      <span style="font-family:Arial,sans-serif;font-size:12px;font-weight:bold;color:#111827;',
+                    //       '      <span style="font-family:Arial,sans-serif;font-size:12px;font-weight:bold;color:white;',
+                    //       '                   max-width:40%;text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">',
+                    //       '        {EnterpriseName}',
+                    //       '      </span>',
+                    //       '    </div>',
+                      
+                    //       // ROW 3: LABEL END + AMOUNT
+                    //       '    <div style="display:flex;justify-content:space-between;margin-top:8px;font-size:10px;color:#6b7280;">',
+                    //       '      <span>End:</span>',
+                    //       '      <span>Voucher Amount(RM)</span>',
+                    //       '    </div>',
+                      
+                    //       // ROW 4: VALUE END DATE + DAY LEFT + AMOUNT
+                    //       '    <div style="display:flex;justify-content:space-between;margin-top:2px;font-size:12px;font-weight:bold;color:#111827;">',
+                    //       '      <span style="max-width:60%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">',
+                    //       '        {EntitledVoucherEndDate} &nbsp;&bull;&nbsp;{DayLeft} Day Left',
+                    //       '      </span>',
+                    //       '      <span style="text-align:right;max-width:40%;">{VoucherAmount}</span>',
+                    //       '    </div>',
+                      
+                    //       '  </div>',  // end body
+                    //     '</div>'      // end card
+                    //   ].join(''))
                       
 
             
@@ -12656,15 +12912,15 @@ function initializeContainerSingleTapEvent() {
 
 
 
-    var containerViewnameContainerDashboardHeader_ButtonPerks_Stamps = Ext.ComponentQuery.query('container[name=nameContainerDashboardHeader_ButtonPerks_Stamps]')[0];
-    var containerViewElnameContainerDashboardHeader_ButtonPerks_Stamps = containerViewnameContainerDashboardHeader_ButtonPerks_Stamps.element;
-    containerViewElnameContainerDashboardHeader_ButtonPerks_Stamps.on('tap',
-      function (event, node, options, eOpts) {       
-        ianMizi.app
-        .getController('Dashboard.SuccessCheckinController')
-        .Dashboard_StampCard_SuccessCheckIn_LoadStampCardPerkStore();
-      }
-    );
+    // var containerViewnameContainerDashboardHeader_ButtonPerks_Stamps = Ext.ComponentQuery.query('container[name=nameContainerDashboardHeader_ButtonPerks_Stamps]')[0];
+    // var containerViewElnameContainerDashboardHeader_ButtonPerks_Stamps = containerViewnameContainerDashboardHeader_ButtonPerks_Stamps.element;
+    // containerViewElnameContainerDashboardHeader_ButtonPerks_Stamps.on('tap',
+    //   function (event, node, options, eOpts) {       
+    //     ianMizi.app
+    //     .getController('Dashboard.SuccessCheckinController')
+    //     .Dashboard_StampCard_SuccessCheckIn_LoadStampCardPerkStore();
+    //   }
+    // );
 
 
 
