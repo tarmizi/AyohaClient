@@ -58,6 +58,31 @@ var _DataStore_DiscountCampaignRedeem_LoadByDiscountRedeemStatusStore = Ext.crea
 
 
 
+var _DataStore_DashboardDiscount_SuccessCheckIn_Load_DiscountPerkStore = Ext.create('Ext.data.Store', {
+
+    model: 'ianMizi.model.DiscountCampaign.DiscountCampaignModel',
+    id: '_DashboardDiscount_SuccessCheckIn_Load_DiscountPerkStoreID',
+    proxy: {
+        type: 'ajax',
+        url: GetAPIurl() + '/DashboardAyohaUser/DashboardDiscount_SuccessCheckIn_Load_DiscountPerk',
+        actionMethods: {
+            read: 'POST'
+        },
+        reader: {
+            type: 'json',
+            rootProperty: 'results',
+            totalProperty: 'total',
+            successProperty: 'success',
+            messageProperty: 'message'
+        }
+    },
+
+
+
+    //autoLoad: true
+
+});
+
 
 
 var _DataStore_DiscountCampaignRedeemLoadByDiscountRedeemStatus_OnlineOfflineStore = Ext.create('Ext.data.Store', {

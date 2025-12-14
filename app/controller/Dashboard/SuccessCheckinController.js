@@ -223,13 +223,62 @@ function AyohaSelectLoyaltySeg(type) {
 }
 
   
+function AyohaContestImgFit(imgEl){
+    try{
+      var w = imgEl.naturalWidth || 0;
+      var h = imgEl.naturalHeight || 0;
+      if(!w || !h) return;
   
-
-// Call sekali lepas panel render, untuk apply default highlight
-function AyohaInitLoyaltySegHighlight(){
-  //AyohaSelectLoyaltySeg(window.AyohaLoyaltySelected || 'points');
-}
-
+      var r = w / h;
+      var frame = imgEl.parentNode;
+      var bg = frame ? frame.querySelector('.ayohaImgBg') : null;
+  
+      // wide banner (contoh 16:9) -> cover (lebih cantik)
+      if(r >= 1.7){
+        imgEl.style.objectFit = 'cover';
+        if(bg) bg.style.display = 'none';
+      }else{
+        // poster/doc/photo biasa -> contain tapi ruang tepi diisi blur bg
+        imgEl.style.objectFit = 'contain';
+        if(bg){
+          bg.style.display = 'block';
+          bg.src = imgEl.src;
+        }
+      }
+  
+      imgEl.style.objectPosition = 'center';
+    }catch(e){}
+  }
+  
+  function AyohaImgFitAuto(imgEl){
+    try{
+      var w = imgEl.naturalWidth || 0;
+      var h = imgEl.naturalHeight || 0;
+      if(!w || !h) return;
+  
+      var r = w / h;                       // ratio
+      var frame = imgEl.parentNode;        // div frame
+      var bg = frame ? frame.querySelector('.ayohaImgBg') : null;
+  
+      // wide banner -> cover, lain2 -> contain + blur bg
+      if(r >= 1.7){
+        imgEl.style.objectFit = 'cover';
+        if(bg) bg.style.display = 'none';
+      }else{
+        imgEl.style.objectFit = 'contain';
+        if(bg){
+          bg.style.display = 'block';
+          bg.src = imgEl.src;
+        }
+      }
+  
+      imgEl.style.objectPosition = 'center';
+      imgEl.style.width = '100%';
+      imgEl.style.height = '100%';
+      imgEl.style.display = 'block';
+    }catch(e){}
+  }
+  
 
 function SuccessCheckinController_Dashboard_LoadVoucherPerks() {
  
@@ -249,7 +298,8 @@ function SuccessCheckinController_Dashboard_LoadVoucherPerks() {
                globalisSuccessCheckinController_Dashboard_LoadVoucherPerksOpen="Y";
              AppState.MainDashboard.MainDashboard_CheckInSuccess_VoucherCount=records.length;
                 Ext.getCmp('listTabpanelDashboardMerchantRewards_Voucher').setStore(_DataStore_DashboardVoucherCard_SuccessCheckIn_LoadVoucherPerkStore);
-                setScreenWidth_Voucherperks();
+               // setScreenWidth_Voucherperks();
+                setScreenWidthListDynamic(records.length,"voucherCard_");
 
             } else {
                 globalisSuccessCheckinController_Dashboard_LoadVoucherPerksOpen="N";
@@ -271,8 +321,147 @@ function SuccessCheckinController_Dashboard_LoadVoucherPerks() {
 
 
 
+function SuccessCheckinController_Dashboard_LoadContestPerks() {
+
+    _DataStore_Contest_SuccessCheckIn_LoadContestPerkStore.getProxy().setExtraParam('EnterpriseAccNo', globalFloatPanelMerchantDetailPage_EnterpriseAccNo);
+    _DataStore_Contest_SuccessCheckIn_LoadContestPerkStore.getProxy().setExtraParam('SubscriberAccNo', GetCurrAyohaUserAccountNo());
+    _DataStore_Contest_SuccessCheckIn_LoadContestPerkStore.getProxy().setUrl(GetAPIurl() + '/DashboardAyohaUser/DashboardContest_SuccessCheckIn_LoadContestPerk');
+
+  //  _DataStore_AyohaRewardVoucherEntitledUserLoadBySubscriberAccNoMerchantRewardStore.load();
 
 
+
+
+  _DataStore_Contest_SuccessCheckIn_LoadContestPerkStore.load({
+        callback: function (records, operation, success) {
+            if (success && records.length > 0) {
+            
+              // globalisSuccessCheckinController_Dashboard_LoadVoucherPerksOpen="Y";
+              // AppState.MainDashboard.MainDashboard_CheckInSuccess_VoucherCount=records.length;
+                Ext.getCmp('listTabpanelDashboardMerchantRewards_Contest').setStore(_DataStore_Contest_SuccessCheckIn_LoadContestPerkStore);
+                setScreenWidthListDynamic(records.length,"contestCard_");
+               
+            } else {
+               
+              //  globalisSuccessCheckinController_Dashboard_LoadVoucherPerksOpen="N";
+              
+            }
+        }
+    });
+
+
+
+
+
+
+
+   
+
+}
+
+
+
+
+
+function SuccessCheckinController_Dashboard_LoadEventPerks() {
+
+    _DataStore_Event_SuccessCheckIn_Load_EventPerkStore.getProxy().setExtraParam('EnterpriseAccNo', globalFloatPanelMerchantDetailPage_EnterpriseAccNo);
+    _DataStore_Event_SuccessCheckIn_Load_EventPerkStore.getProxy().setExtraParam('SubscriberAccNo', GetCurrAyohaUserAccountNo());
+    _DataStore_Event_SuccessCheckIn_Load_EventPerkStore.getProxy().setUrl(GetAPIurl() + '/DashboardAyohaUser/DashboardEvent_SuccessCheckIn_Load_EventPerk');
+
+  //  _DataStore_AyohaRewardVoucherEntitledUserLoadBySubscriberAccNoMerchantRewardStore.load();
+
+
+
+
+  _DataStore_Event_SuccessCheckIn_Load_EventPerkStore.load({
+        callback: function (records, operation, success) {
+            if (success && records.length > 0) {
+            
+              // globalisSuccessCheckinController_Dashboard_LoadVoucherPerksOpen="Y";
+              // AppState.MainDashboard.MainDashboard_CheckInSuccess_VoucherCount=records.length;
+                Ext.getCmp('listTabpanelDashboardMerchantRewards_Event').setStore(_DataStore_Event_SuccessCheckIn_Load_EventPerkStore);
+                setScreenWidthListDynamic(records.length,"eventCard_");
+               
+            } else {
+               
+              //  globalisSuccessCheckinController_Dashboard_LoadVoucherPerksOpen="N";
+              
+            }
+        }
+    });
+
+
+
+}
+
+
+
+
+
+
+
+
+function SuccessCheckinController_Dashboard_LoadDiscountPerks() {
+
+    _DataStore_DashboardDiscount_SuccessCheckIn_Load_DiscountPerkStore.getProxy().setExtraParam('EnterpriseAccNo', globalFloatPanelMerchantDetailPage_EnterpriseAccNo);
+    _DataStore_DashboardDiscount_SuccessCheckIn_Load_DiscountPerkStore.getProxy().setExtraParam('SubscriberAccNo', GetCurrAyohaUserAccountNo());
+    _DataStore_DashboardDiscount_SuccessCheckIn_Load_DiscountPerkStore.getProxy().setUrl(GetAPIurl() + '/DashboardAyohaUser/DashboardDiscount_SuccessCheckIn_Load_DiscountPerk');
+
+  //  _DataStore_AyohaRewardVoucherEntitledUserLoadBySubscriberAccNoMerchantRewardStore.load();
+
+
+
+
+  _DataStore_DashboardDiscount_SuccessCheckIn_Load_DiscountPerkStore.load({
+        callback: function (records, operation, success) {
+            if (success && records.length > 0) {
+            
+              // globalisSuccessCheckinController_Dashboard_LoadVoucherPerksOpen="Y";
+              // AppState.MainDashboard.MainDashboard_CheckInSuccess_VoucherCount=records.length;
+                Ext.getCmp('listTabpanelDashboardMerchantRewards_Discount').setStore(_DataStore_DashboardDiscount_SuccessCheckIn_Load_DiscountPerkStore);
+                setScreenWidthListDynamic(records.length,"discountCard_");
+               
+            } else {
+               
+              //  globalisSuccessCheckinController_Dashboard_LoadVoucherPerksOpen="N";
+              
+            }
+        }
+    });
+
+
+
+}
+
+function setScreenWidthListDynamic(count,jenis) {
+
+    var ejasWidth=Math.max(
+        document.documentElement.clientWidth || 0, // viewport width
+        window.innerWidth || 0
+      );
+    //var count=AppState.MainDashboard.MainDashboard_CheckInSuccess_VoucherCount;
+   
+    if(count==1){
+
+        var w = ejasWidth-45;
+        var els = document.querySelectorAll('[id^="'+jenis+'"]');
+        for (var i = 0; i < els.length; i++) {
+          els[i].style.width = w + 'px';
+        }
+      
+    }
+    if(count>1){
+        var w = ejasWidth-80;
+        var els = document.querySelectorAll('[id^="'+jenis+'"]');
+        for (var i = 0; i < els.length; i++) {
+          els[i].style.width = w + 'px';
+        }
+    }
+
+
+     
+  }
 
 
 function setScreenWidth_Voucherperks() {

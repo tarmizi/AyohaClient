@@ -76,3 +76,31 @@ var _DataStore_EventCampaignRedeemLoadByEventRedeemStatusStore = Ext.create('Ext
     //autoLoad: true
 
 });
+
+
+
+
+
+
+var _DataStore_Event_SuccessCheckIn_Load_EventPerkStore = Ext.create('Ext.data.Store', {
+
+    model: 'ianMizi.model.AyohaRewardEvent.AyohaRewardEventModel',
+    id: '_Event_SuccessCheckIn_Load_EventPerkStoreID',
+    proxy: {
+        type: 'ajax',
+        url: GetAPIurl() + '/DashboardAyohaUser/DashboardEvent_SuccessCheckIn_Load_EventPerk',
+        actionMethods: {
+            read: 'POST'
+        },
+        reader: {
+            type: 'json',
+            rootProperty: 'results',
+            totalProperty: 'total',
+            successProperty: 'success',
+            messageProperty: 'message'
+        }
+    },
+
+ 
+
+});

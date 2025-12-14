@@ -3,6 +3,7 @@ var detectIndex = [];
 var iseWalletButtonTap = "NO";
 var DashboardArrIndexmainDashboardCarousel = 0;
 var indexmainDashboardCarousel = 0;
+//var contestCardW = Math.min(getScreenWidth() - 60, 340);
 Ext.define('ianMizi.view.MyAccount.Dashboard', {
     extend: 'Ext.Container',
     //  extend: 'Ext.Panel',
@@ -1563,7 +1564,7 @@ html: '<div style="text-align:center;padding:10px;margin:-3px 0px 0px 0px;">' +
     id: 'MainMaincontainerDashbord',
    // style: 'background: white;',
     style:"background: linear-gradient(180deg, #FFF1F9 0%, #F3E8FF 100%);",
-    height:2600,
+    height:4600,
     width:'100%',
     margin: '0 0 0 0',
     layout: {
@@ -3123,7 +3124,7 @@ html: '<img onClick="FloatPanel_AyohaStore_OrderHistoryShow()" src="resources/ic
 {
     xtype: 'container',
     width: '100%',
-    height:1100,
+    height:1960,
    // hidden: false,
     id:'containerDashboard_PerksYouCanEnjoyHere',
    // margin: '0 0 0 0',
@@ -3732,9 +3733,10 @@ html: '<img onClick="FloatPanel_AyohaStore_OrderHistoryShow()" src="resources/ic
                                 '            height:140px;' +                             // ✅ semua card sama tinggi
                                 '            display:flex; flex-direction:column;' +      // susun atas-bawah
                                 '            border-radius:12px; overflow:hidden;' +
-                                '            margin:0 10px 0 0; border:1px solid #E9E0F2;"' +
+                               // '            margin:0 10px 0 0; border:1px solid #E9E0F2;"' +
+                                '            margin:0 5px 0 10px; border:1px solid #E9E0F2;"' +
                                 '            box-shadow:0 12px 30px rgba(24,39,75,.14), 0 3px 10px rgba(24,39,75,.10);">',
-                            
+                               
                                 // IMAGE SECTION
                                 '  <div style="position:relative; overflow:hidden; flex:0 0 95px;">', // ✅ gambar 350px tinggi
                                 '    <div style="width:100%; height:100%; overflow:hidden;">',
@@ -3963,7 +3965,7 @@ html: '<img onClick="FloatPanel_AyohaStore_OrderHistoryShow()" src="resources/ic
   {
     xtype: 'container',
     width: '100%',
-    height:550,    
+    height:260,    
     margin: '10 0 0 0',
     id: 'containerDashboard_Perks_Vouchers',
     style: 'background:transparent',
@@ -4076,8 +4078,8 @@ html: '<img onClick="FloatPanel_AyohaStore_OrderHistoryShow()" src="resources/ic
                             '\' {VoucherCode} \',',
                             '\' {VoucherAmount} \');" ',
                             'class="myContent" ',
-                            'style="background-color:transparent;width:310px;height:300px;margin:0 15px 0 0;">',
-                      
+                            'style="background-color:transparent;width:310px;height:300px;margin:0 10px 0 5px;">',
+                           
                           // ✅ IMAGE WRAPPER (relative)
                           '  <div style="position:relative;width:100%;height:170px;border-radius:12px;overflow:hidden;',
                           '              border:3px dotted #CBD5E1;">',
@@ -4208,7 +4210,675 @@ html: '<img onClick="FloatPanel_AyohaStore_OrderHistoryShow()" src="resources/ic
   },
 
 
+         /////////Contest Perks
+         {
+            xtype: 'container',
+            width: '100%',
+            height:390,    
+            margin: '10 0 0 0',
+            id: 'containerDashboard_Perks_Contests',
+            style: 'background:transparent',
+            layout: {
+                type: 'vbox',
+                pack: 'start',
+                align: 'center'
+            },
+            items:[
+                {
+                    xtype: 'container',
+                    width: '100%',
+                    height: 58,    
+                    margin: '0 0 0 0',
+                    id: 'containerDashboardHeader_ButtonPerks_Contests_Outter',
+                    style: 'background:transparent;',
+                    layout: {
+                        type: 'vbox',
+                        pack: 'center',
+                        align: 'center'
+                    },
+                    items: [{
+                        id: 'htmlDashboardHeader_ButtonPerks_Contests',              
+                        width: '95%',
+                        height:'100%', 
+                        html:
+        '<div class="ayohaHdrCard">' +
+        '<div class="ayohaHdrIcon">' +
+        // stamp icon (SVG)
+        '<svg width="18" height="18" viewBox="0 0 24 24" fill="none">' +
+        '<path d="M7 3h10a2 2 0 0 1 2 2v5.2a3 3 0 0 1 0 5.6V19a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-3.2a3 3 0 0 1 0-5.6V5a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>' +
+        '<path d="M9 8h6M9 12h6M9 16h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>' +
+        '</svg>' +
+        '</div>' +
+        
+        '<div class="ayohaHdrText">' +
+        '<div class="ayohaHdrTitle">Contest</div>' +
+        '<div class="ayohaHdrSub">Hurry up join Our special contest!</div>' +
+        '</div>' +
+        
+        '<div class="ayohaHdrRight">' +
+        // kalau ada progress, tukar 4/10 ikut data
+        '<div class="ayohaHdrBadge">4/10</div>' +
+        '<div class="ayohaHdrChevron">›</div>' +
+        '</div>' +
+        '</div>',
+        
+                          listeners: {
+                            element: 'element',
+                            tap: function () {
+                                SuccessCheckinController_Dashboard_LoadContestPerks();
+                            }
+                        }
+                    }],
+                    
+                },
+              
+                         
+               
+                 {
+                    xtype: 'container',
+                    width: '95%',
+                    height: 320,
+                   
+                    style: "background: rgba(255,255,255,.72);box-shadow: 0 10px 24px rgba(157,0,255,.10);"+
+                    "border-top: 1px none rgba(214,0,255,.16);"+
+                    "border-left: 1px solid rgba(214,0,255,.16);"+
+                    "border-right: 1px solid rgba(214,0,255,.16);"+
+                    "border-bottom: 1px solid rgba(214,0,255,.16);"+
+                    "backdrop-filter: blur(6px);",
+                    title: 'VouchersStatus_EligiblePerks',
+                    id:'containerTabpanelDashboardMerchantRewards_ContestsStatus_Eligible',
+                    layout: {
+                        type: 'vbox',
+                        pack: 'start',
+                        align: 'center',
+                    }, 
+                    items:[
+                         ///////Eligible Contest
+                     
+        
+                         {
+                            margin: '8 0 0 0',
+                            xtype: 'dataview',
+                            id: 'listTabpanelDashboardMerchantRewards_Contest',
+                            width: '96%',
+                            height:'100%',
+                        
+                            // DATAVIEW SETTING UNTUK HORIZONTAL
+                            scrollable: {
+                                direction: 'horizontal',
+                                indicators: false,
+                            },
+                        
+                            // susun item sebelah-menyebelah, 1 row sahaja
+                            inline: {
+                                wrap: false
+                            },
+                        
+                            // supaya style senang kontrol
+                           //itemCls: 'stamp-horizontal-item',
+                        
+                          //  style: 'background-color:rgba(255,255,255,0);border-radius:0px;',
+                            style: 'background-color:rgba(255,255,255,0);border-radius:0px;padding:0 8px;',
+                            itemTpl:
+                            '<div id="contestCard_{ID}" class="myContent" style="display:inline-block;vertical-align:top;' +
+                              'background-color:#fff;' +
+                             // 'width:280px;' +
+                              'margin:0 5px 0 10px;' +
+                              'border:1px solid #E9E0F2;' +
+                              'border-radius:14px;' +
+                              'overflow:hidden;' +                 // ✅ border ikut satu card
+                              'box-shadow:0 6px 14px rgba(0,0,0,.06);' +
+                            '">' +
+                          
+                              // IMAGE
+                              '<div style="width:100%;height:205px;position:relative;overflow:hidden;background:#fff;">' +
+
+                              // BLUR BACKGROUND (fill kosong tepi)
+                              '<img class="ayohaImgBg" src="{AdvertisementImgPath}" style="' +
+                                'position:absolute;left:0;top:0;width:100%;height:100%;' +
+                                'object-fit:cover;filter:blur(12px);transform:scale(1.1);opacity:.28;' +
+                              '"/>' +
+                            
+                              // MAIN IMAGE (no distort)
+                              '<img onclick="FloatPanel_DashboardMerchantReward_MembershipContestDetailShow({ID});" ' +
+                                   'onload="AyohaContestImgFit(this)" ' +
+                                   'src="{AdvertisementImgPath}" style="' +
+                                     'position:relative;z-index:2;width:100%;height:100%;display:block;' +
+                                     'object-fit:contain;object-position:center;' +
+                                   '"/>' +
+                            '</div>' +
+                          
+                        //     '<div style="width:100%;height:210px;overflow:hidden;background:#fff;">' +
+                        //     '<img onclick="FloatPanel_DashboardMerchantReward_MembershipContestDetailShow({ID});" ' +
+                        //          'onload="AyohaContestImgFit(this)" ' +
+                        //          'src="{AdvertisementImgPath}" ' +
+                        //          'style="width:100%;height:100%;display:block;object-fit:contain;object-position:center;" />' +
+                        //   '</div>' +
+                              // CONTENT AREA (info bawah)
+                              '<div onclick="FloatPanel_DashboardMerchantReward_MembershipContestDetailShow({ID});" style="' +
+                                'padding:7px 8px 6px 8px;' +
+                                'background:#fff;' +
+                              '">' +
+                          
+                                '<div style="width:60%;float:left;height:34px;background:transparent;margin:0;">' +
+                                  '<div style="font-family:Arial,sans-serif;font-size:10px;color:#111;font-weight:normal;text-align:left;padding:0 10px;">Contest Name:</div>' +
+                                  '<div style="font-family:Arial,sans-serif;font-size:12px;color:#111;font-weight:bold;margin:2px 0 0 0;text-align:left;padding:0 10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">{ContestName}</div>' +
+                                '</div>' +
+                          
+                                '<div style="width:60%;float:left;height:34px;background:transparent;margin:10px 0 0 0;">' +
+                                  '<div style="font-family:Arial,sans-serif;font-size:10px;color:#111;font-weight:normal;text-align:left;padding:0 10px;">Contest Period:</div>' +
+                                  '<div style="font-family:Arial,sans-serif;font-size:12px;color:#111;font-weight:bold;margin:2px 0 0 0;text-align:left;padding:0 10px;">{StartDate_DateOnly} - {EndDate_DateOnly}</div>' +
+                                '</div>' +
+                          
+                                '<div style="width:40%;float:left;height:34px;background:transparent;margin:10px 0 0 0;">' +
+                                  '<div style="text-align:right;color:#111;font-family:Arial;font-size:10px;font-weight:normal;width:100%;padding:0 7px;">Contest Status</div>' +
+                                  '<div style="text-align:right;color:#111;font-family:Arial;font-size:12px;font-weight:bold;width:100%;padding:0 7px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">{ContestStatus_ContestStatus}</div>' +
+                                '</div>' +
+                          
+                                '<div style="clear:both;"></div>' +   // ✅ clear float supaya wrapper ikut tinggi content
+                          
+                              '</div>' +
+                          
+                            '</div>',
+                          
+                              
+        
+                    
+        
+                        
+                        
+                            
+                        }
+                        
+                
+                      
+                ]
+                },
+                
+            ]
+            
+          },
+            /////////Event Perks
+            {
+                xtype: 'container',
+                width: '100%',
+                height:390,    
+                margin: '10 0 0 0',
+                id: 'containerDashboard_Perks_Events',
+                style: 'background:transparent',
+                layout: {
+                    type: 'vbox',
+                    pack: 'start',
+                    align: 'center'
+                },
+                items:[
+                    {
+                        xtype: 'container',
+                        width: '100%',
+                        height: 58,    
+                        margin: '0 0 0 0',
+                        id: 'containerDashboardHeader_ButtonPerks_Events_Outter',
+                        style: 'background:transparent;',
+                        layout: {
+                            type: 'vbox',
+                            pack: 'center',
+                            align: 'center'
+                        },
+                        items: [{
+                            id: 'htmlDashboardHeader_ButtonPerks_Events',              
+                            width: '95%',
+                            height:'100%', 
+                            html:
+            '<div class="ayohaHdrCard">' +
+            '<div class="ayohaHdrIcon">' +
+            // stamp icon (SVG)
+            '<svg width="18" height="18" viewBox="0 0 24 24" fill="none">' +
+            '<path d="M7 3h10a2 2 0 0 1 2 2v5.2a3 3 0 0 1 0 5.6V19a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-3.2a3 3 0 0 1 0-5.6V5a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>' +
+            '<path d="M9 8h6M9 12h6M9 16h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>' +
+            '</svg>' +
+            '</div>' +
+            
+            '<div class="ayohaHdrText">' +
+            '<div class="ayohaHdrTitle">Event</div>' +
+            '<div class="ayohaHdrSub">Hurry up join Our special contest!</div>' +
+            '</div>' +
+            
+            '<div class="ayohaHdrRight">' +
+            // kalau ada progress, tukar 4/10 ikut data
+            '<div class="ayohaHdrBadge">4/10</div>' +
+            '<div class="ayohaHdrChevron">›</div>' +
+            '</div>' +
+            '</div>',
+            
+                              listeners: {
+                                element: 'element',
+                                tap: function () {
+                                    SuccessCheckinController_Dashboard_LoadEventPerks();
+                                }
+                            }
+                        }],
+                        
+                    },
+                  
+                             
+                   
+                     {
+                        xtype: 'container',
+                        width: '95%',
+                        height: 320,
+                       
+                        style: "background: rgba(255,255,255,.72);box-shadow: 0 10px 24px rgba(157,0,255,.10);"+
+                        "border-top: 1px none rgba(214,0,255,.16);"+
+                        "border-left: 1px solid rgba(214,0,255,.16);"+
+                        "border-right: 1px solid rgba(214,0,255,.16);"+
+                        "border-bottom: 1px solid rgba(214,0,255,.16);"+
+                        "backdrop-filter: blur(6px);",
+                       // title: 'EventsStatus_EligiblePerks',
+                        id:'containerTabpanelDashboardMerchantRewards_EventsStatus_Eligible',
+                        layout: {
+                            type: 'vbox',
+                            pack: 'start',
+                            align: 'center',
+                        }, 
+                        items:[
+                             ///////Eligible Contest
+                         
+            
+                             {
+                                margin: '8 0 0 0',
+                                xtype: 'dataview',
+                                id: 'listTabpanelDashboardMerchantRewards_Event',                      
+                                width: '96%',
+                                height:'100%',
+                            
+                                // DATAVIEW SETTING UNTUK HORIZONTAL
+                                scrollable: {
+                                    direction: 'horizontal',
+                                    indicators: false,
+                                },
+                            
+                                // susun item sebelah-menyebelah, 1 row sahaja
+                                inline: {
+                                    wrap: false
+                                },
+                            
+                                // supaya style senang kontrol
+                               //itemCls: 'stamp-horizontal-item',
+                            
+                              //  style: 'background-color:rgba(255,255,255,0);border-radius:0px;',
+                                style: 'background-color:rgba(255,255,255,0);border-radius:0px;padding:0 8px;',
+                                itemTpl: (function(){
+
+                                    // ✅ kekal semua parameter
+                                    var evClick =
+                                      "FloatPanel_DashboardMerchantReward_MembershipEventDetailShow(" +
+                                        "'{EnterpriseLogo}'," +
+                                        "'{EnterpriseName}'," +
+                                        "'{EventCoverPhoto}'," +
+                                        "'{EventName}'," +
+                                        "'{EventStartDate_Day}'," +
+                                        "'{EventStartDate_Month}'," +
+                                        "'{EventStartTime}'," +
+                                        "'{EventEndDate_Day}'," +
+                                        "'{EventEndDate_Month}'," +
+                                        "'{EventEndTime}'," +
+                                        "'{EventLocationName}'," +
+                                        "'{ModifiedWidth}'," +
+                                        "'{EventDescription}'," +
+                                        "'{EventLocationCoordinate}'," +
+                                        "'{EventUrlTicket}'," +
+                                        "'{EventCode}'," +
+                                        "'{EnterpriseAccNo}'," +
+                                        "'{RespondStatus}'," +
+                                        "{ID}" +
+                                      ");";
+                                  
+                                    return [
+                                      '<div  id="eventCard_{ID}"  class="myContent" style="display:inline-block;vertical-align:top;',
+                                        'background:#fff;',
+                                        //'width:280px;',
+                                        'height:300px;',
+                                       // 'margin:0 12px 0 0;',
+                                        'margin:0 5px 0 10px;' ,
+                                        'border:2px solid #E9E0F2;',
+                                        'border-radius:14px;',
+                                        'overflow:hidden;',
+                                        'box-shadow:0 6px 14px rgba(0,0,0,.06);',
+                                      '">',
+                                  
+                                        // ✅ IMAGE FRAME (auto fit + blur-fill)
+                                        '<div style="width:100%;height:200px;position:relative;overflow:hidden;background:#fff;">',
+                                  
+                                          // blur background
+                                          '<img class="ayohaImgBg" src="{EventCoverPhoto}" style="',
+                                            'position:absolute;left:0;top:0;width:100%;height:100%;',
+                                            'object-fit:cover;filter:blur(12px);transform:scale(1.1);opacity:.28;',
+                                          '"/>',
+                                  
+                                          // main image
+                                          '<img onclick="', evClick, '" ',
+                                               'onload="AyohaImgFitAuto(this)" ',
+                                               'src="{EventCoverPhoto}" ',
+                                               'style="position:relative;z-index:2;width:100%;height:100%;display:block;margin:0;',
+                                                     'object-fit:contain;object-position:center;" />',
+                                  
+                                        '</div>',
+                                  
+                                        // CONTENT AREA
+                                        '<div onclick="', evClick, '" style="padding:0px 0 0 0;">',
+                                  
+                                          '<div style="width:90px;float:left;height:70px;background:transparent;margin:0;">',
+                                            '<div style="font-family:Arial,sans-serif;font-size:40px;color:black;font-weight:bold;text-align:center;">{EventStartDate_Day}</div>',
+                                            '<div style="font-family:Arial,sans-serif;font-size:16px;color:red;font-weight:bold;margin:-10px 0 0 0;text-align:center;">{EventStartDate_Month}</div>',
+                                          '</div>',
+                                  
+                                          '<div style="width:calc(100% - 90px);float:left;height:140px;background:transparent;margin:0;word-break:break-word;">',
+                                            '<div style="margin:5px 10px 0 0;text-align:left;color:black;font-family:Arial;font-size:14px;font-weight:bold;',
+                                                        'white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">{EventName}</div>',
+                                  
+                                            '<div style="margin:6px 10px 0 0;text-align:left;color:black;font-family:Arial;font-size:11px;font-weight:normal;line-height:1.25;">',
+                                              '{EventStartDate_Day} {EventStartDate_Month},{EventStartTime} - {EventEndDate_Day} {EventEndDate_Month},{EventEndTime}.',
+                                            '</div>',
+                                  
+                                            '<div style="margin:6px 10px 0 0;text-align:left;color:black;font-family:Arial;font-size:11px;font-weight:normal;line-height:1.25;',
+                                                        'white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">{EventLocationName}.</div>',
+                                  
+                                            '<div style="margin:6px 10px 0 0;text-align:left;color:black;font-family:Arial;font-size:11px;font-weight:normal;line-height:1.25;">',
+                                              '<b>({RespondStatus_IwillAttendCount})</b> Will Attend, <b>({RespondStatus_InterestedCount})</b> Interested',
+                                            '</div>',
+                                          '</div>',
+                                  
+                                          '<div style="clear:both;"></div>',
+                                        '</div>',
+                                  
+                                      '</div>'
+                                    ].join('');
+                                  
+                                  }())
+                                  
+
+
+
+                                // itemTpl: (function(){
+
+                                //     // ✅ kekal semua parameter (string guna single-quote, ID kekal number)
+                                //     var evClick =
+                                //       "FloatPanel_DashboardMerchantReward_MembershipEventDetailShow(" +
+                                //         "'{EnterpriseLogo}'," +
+                                //         "'{EnterpriseName}'," +
+                                //         "'{EventCoverPhoto}'," +
+                                //         "'{EventName}'," +
+                                //         "'{EventStartDate_Day}'," +
+                                //         "'{EventStartDate_Month}'," +
+                                //         "'{EventStartTime}'," +
+                                //         "'{EventEndDate_Day}'," +
+                                //         "'{EventEndDate_Month}'," +
+                                //         "'{EventEndTime}'," +
+                                //         "'{EventLocationName}'," +
+                                //         "'{ModifiedWidth}'," +
+                                //         "'{EventDescription}'," +
+                                //         "'{EventLocationCoordinate}'," +
+                                //         "'{EventUrlTicket}'," +
+                                //         "'{EventCode}'," +
+                                //         "'{EnterpriseAccNo}'," +
+                                //         "'{RespondStatus}'," +
+                                //         "{ID}" +
+                                //       ");";
+                                  
+                                //     return [
+                                //       '<div class="myContent" style="display:inline-block;vertical-align:top;',
+                                //         'background:#fff;',
+                                //         'width:280px;',
+                                //         'height:350px;',
+                                //         'margin:0 12px 0 0;',
+                                //         'border:2px solid #E9E0F2;',
+                                //         'border-radius:14px;',
+                                //         'overflow:hidden;',
+                                //         'box-shadow:0 6px 14px rgba(0,0,0,.06);',
+                                //       '">',
+                                  
+                                //         // IMAGE (cover)
+                                //         '<img onclick="', evClick, '" ',
+                                //              'src="{EventCoverPhoto}" ',
+                                //              'style="width:100%;height:200px;display:block;object-fit:cover;object-position:center;margin:0;" />',
+                                  
+                                //         // CONTENT AREA
+                                //         '<div onclick="', evClick, '" style="padding:10px 0 0 0;">',
+                                  
+                                //           '<div style="width:90px;float:left;height:70px;background:transparent;margin:0;">',
+                                //             '<div style="font-family:Arial,sans-serif;font-size:40px;color:black;font-weight:bold;text-align:center;">{EventStartDate_Day}</div>',
+                                //             '<div style="font-family:Arial,sans-serif;font-size:16px;color:red;font-weight:bold;margin:-10px 0 0 0;text-align:center;">{EventStartDate_Month}</div>',
+                                //           '</div>',
+                                  
+                                //           '<div style="width:calc(100% - 90px);float:left;height:140px;background:transparent;margin:0;word-break:break-word;">',
+                                //             '<div style="margin:5px 10px 0 0;text-align:left;color:black;font-family:Arial;font-size:14px;font-weight:bold;',
+                                //                         'white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">{EventName}</div>',
+                                  
+                                //             '<div style="margin:6px 10px 0 0;text-align:left;color:black;font-family:Arial;font-size:11px;font-weight:normal;line-height:1.25;">',
+                                //               '{EventStartDate_Day} {EventStartDate_Month},{EventStartTime} - {EventEndDate_Day} {EventEndDate_Month},{EventEndTime}.',
+                                //             '</div>',
+                                  
+                                //             '<div style="margin:6px 10px 0 0;text-align:left;color:black;font-family:Arial;font-size:11px;font-weight:normal;line-height:1.25;',
+                                //                         'white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">{EventLocationName}.</div>',
+                                  
+                                //             '<div style="margin:6px 10px 0 0;text-align:left;color:black;font-family:Arial;font-size:11px;font-weight:normal;line-height:1.25;">',
+                                //               '<b>({RespondStatus_IwillAttendCount})</b> Will Attend, <b>({RespondStatus_InterestedCount})</b> Interested',
+                                //             '</div>',
+                                //           '</div>',
+                                  
+                                //           '<div style="clear:both;"></div>',
+                                //         '</div>',
+                                  
+                                //       '</div>'
+                                //     ].join('');
+                                  
+                                //   }())
+                              
+                                  
+                            
+                            
+                                
+                            }
+                            
+                    
+                          
+                    ]
+                    },
+                    
+                ]
+                
+              },
        
+               /////////Discount Perks
+         {
+            xtype: 'container',
+            width: '100%',
+            height:390,    
+            margin: '10 0 0 0',
+            id: 'containerDashboard_Perks_Discounts',
+            style: 'background:transparent',
+            layout: {
+                type: 'vbox',
+                pack: 'start',
+                align: 'center'
+            },
+            items:[
+                {
+                    xtype: 'container',
+                    width: '100%',
+                    height: 58,    
+                    margin: '0 0 0 0',
+                    id: 'containerDashboardHeader_ButtonPerks_Discounts_Outter',
+                    style: 'background:transparent;',
+                    layout: {
+                        type: 'vbox',
+                        pack: 'center',
+                        align: 'center'
+                    },
+                    items: [{
+                        id: 'htmlDashboardHeader_ButtonPerks_Discounts',              
+                        width: '95%',
+                        height:'100%', 
+                        html:
+        '<div class="ayohaHdrCard">' +
+        '<div class="ayohaHdrIcon">' +
+        // stamp icon (SVG)
+        '<svg width="18" height="18" viewBox="0 0 24 24" fill="none">' +
+        '<path d="M7 3h10a2 2 0 0 1 2 2v5.2a3 3 0 0 1 0 5.6V19a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-3.2a3 3 0 0 1 0-5.6V5a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>' +
+        '<path d="M9 8h6M9 12h6M9 16h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>' +
+        '</svg>' +
+        '</div>' +
+        
+        '<div class="ayohaHdrText">' +
+        '<div class="ayohaHdrTitle">Discount</div>' +
+        '<div class="ayohaHdrSub">Hurry up join Our special Discount!</div>' +
+        '</div>' +
+        
+        '<div class="ayohaHdrRight">' +
+        // kalau ada progress, tukar 4/10 ikut data
+        '<div class="ayohaHdrBadge">4/10</div>' +
+        '<div class="ayohaHdrChevron">›</div>' +
+        '</div>' +
+        '</div>',
+        
+                          listeners: {
+                            element: 'element',
+                            tap: function () {
+                                SuccessCheckinController_Dashboard_LoadDiscountPerks();
+                            }
+                        }
+                    }],
+                    
+                },
+              
+                         
+               
+                 {
+                    xtype: 'container',
+                    width: '95%',
+                    height: 320,
+                   
+                    style: "background: rgba(255,255,255,.72);box-shadow: 0 10px 24px rgba(157,0,255,.10);"+
+                    "border-top: 1px none rgba(214,0,255,.16);"+
+                    "border-left: 1px solid rgba(214,0,255,.16);"+
+                    "border-right: 1px solid rgba(214,0,255,.16);"+
+                    "border-bottom: 1px solid rgba(214,0,255,.16);"+
+                    "backdrop-filter: blur(6px);",
+                    title: 'DiscountsStatus_EligiblePerks',
+                    id:'containerTabpanelDashboardMerchantRewards_DiscountsStatus_Eligible',
+                    layout: {
+                        type: 'vbox',
+                        pack: 'start',
+                        align: 'center',
+                    }, 
+                    items:[
+                         ///////Eligible Discount
+                     
+        
+                         {
+                            margin: '8 0 0 0',
+                            xtype: 'dataview',
+                            id: 'listTabpanelDashboardMerchantRewards_Discount',
+                            width: '96%',
+                            height:'100%',
+                        
+                            // DATAVIEW SETTING UNTUK HORIZONTAL
+                            scrollable: {
+                                direction: 'horizontal',
+                                indicators: false,
+                            },
+                        
+                            // susun item sebelah-menyebelah, 1 row sahaja
+                            inline: {
+                                wrap: false
+                            },
+                        
+                            // supaya style senang kontrol
+                           //itemCls: 'stamp-horizontal-item',
+                        
+                          //  style: 'background-color:rgba(255,255,255,0);border-radius:0px;',
+                            style: 'background-color:rgba(255,255,255,0);border-radius:0px;padding:0 8px;',
+                            itemTpl:
+                            '<div id="discountCard_{ID}"  class="myContent" style="display:inline-block;vertical-align:top;' +
+                              'background-color:#fff;' +
+                             // 'width:280px;' +
+                              'margin:0 5px 0 10px;' +
+                              'border:1px solid #E9E0F2;' +
+                              'border-radius:14px;' +
+                              'overflow:hidden;' +                 // ✅ border ikut satu card
+                              'box-shadow:0 6px 14px rgba(0,0,0,.06);' +
+                            '">' +
+                          
+                              // IMAGE
+                              '<div style="width:100%;height:205px;position:relative;overflow:hidden;background:#fff;">' +
+
+                              // BLUR BACKGROUND (fill kosong tepi)
+                              '<img class="ayohaImgBg" src="{DiscountImgPath}" style="' +
+                                'position:absolute;left:0;top:0;width:100%;height:100%;' +
+                                'object-fit:cover;filter:blur(12px);transform:scale(1.1);opacity:.28;' +
+                              '"/>' +
+                            
+                              // MAIN IMAGE (no distort)
+                              '<img onclick="FloatPanel_MerchantDiscountLoyaltyDescriptionShow(`{DiscountCode}`,`{EnterpriseAccNo}`);"' +
+                                   'onload="AyohaContestImgFit(this)" ' +
+                                   'src="{DiscountImgPath}" style="' +
+                                     'position:relative;z-index:2;width:100%;height:100%;display:block;' +
+                                     'object-fit:contain;object-position:center;' +
+                                   '"/>' +
+                            '</div>' +
+                          
+                        //     '<div style="width:100%;height:210px;overflow:hidden;background:#fff;">' +
+                        //     '<img onclick="FloatPanel_DashboardMerchantReward_MembershipContestDetailShow({ID});" ' +
+                        //          'onload="AyohaContestImgFit(this)" ' +
+                        //          'src="{AdvertisementImgPath}" ' +
+                        //          'style="width:100%;height:100%;display:block;object-fit:contain;object-position:center;" />' +
+                        //   '</div>' +
+                              // CONTENT AREA (info bawah)
+                              '<div onclick="FloatPanel_MerchantDiscountLoyaltyDescriptionShow(`{DiscountCode}`,`{EnterpriseAccNo}`);" style="' +
+                                'padding:7px 8px 6px 8px;' +
+                                'background:#fff;' +
+                              '">' +
+                          
+                                '<div style="width:60%;float:left;height:34px;background:transparent;margin:0;">' +
+                                  '<div style="font-family:Arial,sans-serif;font-size:10px;color:#111;font-weight:normal;text-align:left;padding:0 10px;">Discount Name:</div>' +
+                                  '<div style="font-family:Arial,sans-serif;font-size:12px;color:#111;font-weight:bold;margin:2px 0 0 0;text-align:left;padding:0 10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">{DiscountName}</div>' +
+                                '</div>' +
+                          
+                                '<div style="width:60%;float:left;height:34px;background:transparent;margin:10px 0 0 0;">' +
+                                  '<div style="font-family:Arial,sans-serif;font-size:10px;color:#111;font-weight:normal;text-align:left;padding:0 10px;">Discount End:</div>' +
+                                  '<div style="font-family:Arial,sans-serif;font-size:12px;color:#111;font-weight:bold;margin:2px 0 0 0;text-align:left;padding:0 10px;">{ModifiedDiscountEndDate}</div>' +
+                                '</div>' +
+                          
+                                '<div style="width:40%;float:left;height:34px;background:transparent;margin:10px 0 0 0;">' +
+                                  '<div style="text-align:right;color:#111;font-family:Arial;font-size:10px;font-weight:normal;width:100%;padding:0 7px;">Discount</div>' +
+                                  '<div style="text-align:right;color:#111;font-family:Arial;font-size:12px;font-weight:bold;width:100%;padding:0 7px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">{DiscountPercent}%</div>' +
+                                '</div>' +
+                          
+                                '<div style="clear:both;"></div>' +   // ✅ clear float supaya wrapper ikut tinggi content
+                          
+                              '</div>' +
+                          
+                            '</div>',
+                          
+
+
+
+                          
+                    
+        
+                        
+                        
+                            
+                        }
+                        
+                
+                      
+                ]
+                },
+                
+            ]
+            
+          },
     ]
 },
   ///////////////////////////////////CheckIn Reward////////

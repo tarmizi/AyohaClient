@@ -33,6 +33,7 @@
       'isRequiredReceipt',
       'ContestStatus_ContestStatus',
       'SearchCol',
+      'isMember',
        {
            name: 'ModifiedWidth',
            convert: function (value, record) {

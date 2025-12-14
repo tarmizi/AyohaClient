@@ -21,6 +21,7 @@ Ext.define('ianMizi.model.DiscountCampaign.DiscountCampaignModel', {
       'EnterpriseLogo',
       'EnterpriseName',
       'SearchCol',
+      'isMember',
       {
         name: 'ModifiedWidth',
         convert: function (value, record) {

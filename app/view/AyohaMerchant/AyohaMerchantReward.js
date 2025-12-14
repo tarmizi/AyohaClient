@@ -5189,7 +5189,9 @@ function AyohaMerchantReward_AyohaRewardEventLoadBySubscriberAccNoStore() {
                 if (success && records.length > 0) {
                   
                     Ext.getCmp('AyohaMerchantReward_ContestList_'+RedeemStatus).setStore(_DataStore_ContestCampaignRedeem_LoadByContestRedeemStatusStore);
-                   
+                  
+                    
+
                 } else {
 
                     Ext.getCmp('AyohaMerchantReward_ContestList_'+RedeemStatus).setStore(_DataStore_ContestCampaignRedeem_LoadByContestRedeemStatusStore);
@@ -5217,6 +5219,9 @@ function AyohaMerchantReward_AyohaRewardEventLoadBySubscriberAccNoStore() {
                     if (success && records.length > 0) {
                         
                         Ext.getCmp('AyohaMerchantReward_MembershipEvent_'+RedeemStatus).setStore(_DataStore_EventCampaignRedeemLoadByEventRedeemStatusStore);
+               
+                      //  Ext.getCmp('listTabpanelDashboardMerchantRewards_Event').setStore(_DataStore_EventCampaignRedeemLoadByEventRedeemStatusStore);
+                      
                         //AyohaMerchantReward_AyohaRewardDiscountCampaing_LoadBySubscriberAccNo();
                        
                         
