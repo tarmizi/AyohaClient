@@ -67,7 +67,8 @@ Ext.define('ianMizi.controller.Dashboard.SuccessCheckinController', {
             if (success && records.length > 0) {
                 console.log('Store loaded successfully, total records: ' + records.length);
                 Ext.getCmp('listTabpanelDashboardMerchantRewards_StampsStatus_NA').setStore(_DataStore_DashboardStampCard_SuccessCheckIn_LoadStampCardPerkStore);
-                       
+                Ext.getCmp('listTabpanelDashboard_PerksInfo_StampsStatus_NA').setStore(_DataStore_DashboardStampCard_SuccessCheckIn_LoadStampCardPerkStore);
+                   
                        
                 
                // LoadingPanelHide();
@@ -104,18 +105,20 @@ function SuccessCheckinController_Dashboard_LoadPointPerks() {
                 console.log('Store loaded successfully, total records: ' + records.length);
                 
                 Ext.getCmp('listTabpanelDashboardMerchantRewards_Point').setStore(_DataStore_DashboardPointCard_SuccessCheckIn_LoadPointCardPerkStore);
-              if(records.length > 1){
-                var containerheight=records.length * 95;
-                var existingcontainerheight=165;
-                var newcontainerHeight=existingcontainerheight+containerheight;
-                Ext.getCmp('containerDashboard_Perks_Points').setHeight(newcontainerHeight-95)
+                Ext.getCmp('listTabpanelDashboard_PerksInfo_Point').setStore(_DataStore_DashboardPointCard_SuccessCheckIn_LoadPointCardPerkStore);
+           
+                //   if(records.length > 1){
+            //     var containerheight=records.length * 95;
+            //     var existingcontainerheight=165;
+            //     var newcontainerHeight=existingcontainerheight+containerheight;
+            //     Ext.getCmp('containerDashboard_Perks_Points').setHeight(newcontainerHeight-95)
 
-                Ext.getCmp('containerTabpanelDashboardMerchantRewards_PointsStatus_Eligible').setHeight(containerheight)
+            //     Ext.getCmp('containerTabpanelDashboardMerchantRewards_PointsStatus_Eligible').setHeight(containerheight)
 
 
 
                 
-              }
+            //   }
                
                 
                // LoadingPanelHide();
@@ -220,6 +223,62 @@ function AyohaSelectLoyaltySeg(type) {
 
     // Simpan state global
     window.AyohaLoyaltySelected = type;
+
+
+    if(type=='stamps'){
+        ianMizi.app
+        .getController('Dashboard.SuccessCheckinController')
+        .Dashboard_StampCard_SuccessCheckIn_LoadStampCardPerkStore();
+        Ext.getCmp('tabpanelDashboard_PerksInfo').setActiveItem(0);
+        Ext.getCmp('tabpanelDashboard_PerksInfo').setHeight(250);
+        Ext.getCmp('containerDashboard_PerksYouCanEnjoyHere').setHeight(400);
+        Ext.getCmp('containerDashboard_PerksInSideTapPanel').setHeight(400);
+        Ext.getCmp('tabpanelDashboard_PerksInfo').setHeight(400);
+    }
+    if(type=='points'){
+        SuccessCheckinController_Dashboard_LoadPointPerks();
+        Ext.getCmp('tabpanelDashboard_PerksInfo').setActiveItem(1);
+        Ext.getCmp('tabpanelDashboard_PerksInfo').setHeight(250);
+        Ext.getCmp('containerDashboard_PerksYouCanEnjoyHere').setHeight(400);
+        Ext.getCmp('containerDashboard_PerksInSideTapPanel').setHeight(400);
+        Ext.getCmp('tabpanelDashboard_PerksInfo').setHeight(400);
+    }
+    if(type=='vouchers'){
+        SuccessCheckinController_Dashboard_LoadVoucherPerks();
+        Ext.getCmp('tabpanelDashboard_PerksInfo').setActiveItem(2);
+        Ext.getCmp('tabpanelDashboard_PerksInfo').setHeight(270);
+        Ext.getCmp('containerDashboard_PerksYouCanEnjoyHere').setHeight(420);
+        Ext.getCmp('containerDashboard_PerksInSideTapPanel').setHeight(420);
+        Ext.getCmp('tabpanelDashboard_PerksInfo').setHeight(420);
+    }
+
+    if(type=='contest'){
+        SuccessCheckinController_Dashboard_LoadContestPerks();
+        Ext.getCmp('tabpanelDashboard_PerksInfo').setActiveItem(3);
+        Ext.getCmp('tabpanelDashboard_PerksInfo').setHeight(560);
+        Ext.getCmp('containerDashboard_PerksYouCanEnjoyHere').setHeight(560);
+        Ext.getCmp('containerDashboard_PerksInSideTapPanel').setHeight(560);     
+        
+    }
+    if(type=='event'){
+        SuccessCheckinController_Dashboard_LoadEventPerks();
+        Ext.getCmp('tabpanelDashboard_PerksInfo').setActiveItem(4);
+        Ext.getCmp('tabpanelDashboard_PerksInfo').setHeight(560);
+        Ext.getCmp('containerDashboard_PerksYouCanEnjoyHere').setHeight(560);
+        Ext.getCmp('containerDashboard_PerksInSideTapPanel').setHeight(560);     
+        
+    }
+
+    if(type=='discount'){
+        SuccessCheckinController_Dashboard_LoadDiscountPerks();
+        Ext.getCmp('tabpanelDashboard_PerksInfo').setActiveItem(5);
+        Ext.getCmp('tabpanelDashboard_PerksInfo').setHeight(560);
+        Ext.getCmp('containerDashboard_PerksYouCanEnjoyHere').setHeight(560);
+        Ext.getCmp('containerDashboard_PerksInSideTapPanel').setHeight(560);     
+        
+    }
+    
+    
 }
 
   
@@ -298,7 +357,10 @@ function SuccessCheckinController_Dashboard_LoadVoucherPerks() {
                globalisSuccessCheckinController_Dashboard_LoadVoucherPerksOpen="Y";
              AppState.MainDashboard.MainDashboard_CheckInSuccess_VoucherCount=records.length;
                 Ext.getCmp('listTabpanelDashboardMerchantRewards_Voucher').setStore(_DataStore_DashboardVoucherCard_SuccessCheckIn_LoadVoucherPerkStore);
-               // setScreenWidth_Voucherperks();
+                Ext.getCmp('listTabpanelDashboard_PerksInfo_Voucher').setStore(_DataStore_DashboardVoucherCard_SuccessCheckIn_LoadVoucherPerkStore);
+                
+                
+                // setScreenWidth_Voucherperks();
                 setScreenWidthListDynamic(records.length,"voucherCard_");
 
             } else {
@@ -339,6 +401,9 @@ function SuccessCheckinController_Dashboard_LoadContestPerks() {
               // globalisSuccessCheckinController_Dashboard_LoadVoucherPerksOpen="Y";
               // AppState.MainDashboard.MainDashboard_CheckInSuccess_VoucherCount=records.length;
                 Ext.getCmp('listTabpanelDashboardMerchantRewards_Contest').setStore(_DataStore_Contest_SuccessCheckIn_LoadContestPerkStore);
+                Ext.getCmp('listTabpanelDashboard_PerksInfo_Contest').setStore(_DataStore_Contest_SuccessCheckIn_LoadContestPerkStore);
+               
+               
                 setScreenWidthListDynamic(records.length,"contestCard_");
                
             } else {
@@ -381,6 +446,9 @@ function SuccessCheckinController_Dashboard_LoadEventPerks() {
               // globalisSuccessCheckinController_Dashboard_LoadVoucherPerksOpen="Y";
               // AppState.MainDashboard.MainDashboard_CheckInSuccess_VoucherCount=records.length;
                 Ext.getCmp('listTabpanelDashboardMerchantRewards_Event').setStore(_DataStore_Event_SuccessCheckIn_Load_EventPerkStore);
+                Ext.getCmp('listTabpanelDashboard_PerksInfo_Event').setStore(_DataStore_Event_SuccessCheckIn_Load_EventPerkStore);
+               
+               
                 setScreenWidthListDynamic(records.length,"eventCard_");
                
             } else {
@@ -420,6 +488,8 @@ function SuccessCheckinController_Dashboard_LoadDiscountPerks() {
               // globalisSuccessCheckinController_Dashboard_LoadVoucherPerksOpen="Y";
               // AppState.MainDashboard.MainDashboard_CheckInSuccess_VoucherCount=records.length;
                 Ext.getCmp('listTabpanelDashboardMerchantRewards_Discount').setStore(_DataStore_DashboardDiscount_SuccessCheckIn_Load_DiscountPerkStore);
+                Ext.getCmp('listTabpanelDashboard_PerksInfo_Discount').setStore(_DataStore_DashboardDiscount_SuccessCheckIn_Load_DiscountPerkStore);
+              
                 setScreenWidthListDynamic(records.length,"discountCard_");
                
             } else {
@@ -433,6 +503,246 @@ function SuccessCheckinController_Dashboard_LoadDiscountPerks() {
 
 
 }
+
+
+
+
+
+
+
+
+function SuccessCheckinController_DashboardSuccessCheckIn_LoadPerkCanEnjoyInfo() {
+   
+
+
+   
+
+    
+   
+
+    var task = Ext.create('Ext.util.DelayedTask', function () {
+
+        var objn = {
+            "EnterpriseAccNo": globalFloatPanelMerchantDetailPage_EnterpriseAccNo,
+            "SubscriberAccNo":  GetCurrAyohaUserAccountNo()
+        };
+        // console.log(objn);
+        var _value = Ext.Ajax.request({
+
+            type: "POST",
+
+            url: GetAPIurl() + '/DashboardAyohaUser/DashboardSuccessCheckIn_LoadPerkCanEnjoyInfo',
+
+            dataType: "json",
+            data: JSON.stringify(objn),
+            headers: {
+                "Content-Type": "application/json; charset=utf-8"
+            },
+
+            success: function (result, request) {
+
+                //console.log(result.responseText);
+
+
+                data = Ext.decode(result.responseText.trim());
+
+                if (data.success == "true") {
+                   
+                    if (data.total > 0) {
+                       var CurrentStampCount =parseInt(data.results[0].CurrentStampCount);
+                       var TotalStampCount = parseInt(data.results[0].TotalStampCount);
+                       var StampProgressDisplay = data.results[0].StampProgressDisplay
+                       var StampPerksCount = parseInt(data.results[0].StampPerksCount);
+                       var PointPerksCount = parseInt(data.results[0].PointPerksCount);
+                       var CurrentPointsBalance =parseFloat( data.results[0].CurrentPointsBalance);
+                       var VoucherUsed =parseInt(data.results[0].VoucherUsed);
+                       var VoucherEntitle = parseInt(data.results[0].VoucherEntitle);
+                       var SubmittedContest = parseInt(data.results[0].SubmittedContest);
+                       var AvailableContest = parseInt(data.results[0].AvailableContest);
+                       var JoinedEvent = parseInt(data.results[0].JoinedEvent);
+                       var AvailableEvent = parseInt(data.results[0].AvailableEvent);
+                       var AvailableDiscount = parseInt(data.results[0].AvailableDiscount);
+                       var DiscountUsage = parseInt(data.results[0].DiscountUsage);
+
+
+
+
+                       document.getElementById('segStamps').style.display = 'none';
+                       document.getElementById('segPoints').style.display = 'none';
+                       document.getElementById('segVouchers').style.display = 'none';
+                       document.getElementById('segContest').style.display = 'none';
+                       document.getElementById('segEvent').style.display = 'none';
+                       document.getElementById('segDiscount').style.display = 'none';
+                       var ttlPerks=0;
+                       var ttlHeight_containerDashboard_PerksOutSideTapPanel=0;
+
+                       if(StampPerksCount>0){
+                        ttlPerks=ttlPerks+1;
+                        document.getElementById('segStamps').style.display = 'flex';
+                        Ext.getCmp('containerDashboard_Perks_Stamps').setHidden(false);
+                        ttlHeight_containerDashboard_PerksOutSideTapPanel=ttlHeight_containerDashboard_PerksOutSideTapPanel+230;
+                       }
+                       if(PointPerksCount>0){
+                        ttlPerks=ttlPerks+1;
+                          document.getElementById('segPoints').style.display = 'flex';
+                          Ext.getCmp('containerDashboard_Perks_Points').setHidden(false);
+                          ttlHeight_containerDashboard_PerksOutSideTapPanel=ttlHeight_containerDashboard_PerksOutSideTapPanel+230;
+                       }
+                       if(VoucherEntitle>0){
+                        ttlPerks=ttlPerks+1;
+                        document.getElementById('segVouchers').style.display = 'flex';
+                        Ext.getCmp('containerDashboard_Perks_Vouchers').setHidden(false);
+                        ttlHeight_containerDashboard_PerksOutSideTapPanel=ttlHeight_containerDashboard_PerksOutSideTapPanel+260;
+                       }
+                       if(AvailableContest>0){
+                        ttlPerks=ttlPerks+1;
+                        document.getElementById('segContest').style.display = 'flex';
+                        Ext.getCmp('containerDashboard_Perks_Contests').setHidden(false);
+                        ttlHeight_containerDashboard_PerksOutSideTapPanel=ttlHeight_containerDashboard_PerksOutSideTapPanel+390;
+                       }
+                       if(AvailableEvent>0){
+                        ttlPerks=ttlPerks+1;
+                        document.getElementById('segEvent').style.display = 'flex';
+                        Ext.getCmp('containerDashboard_Perks_Events').setHidden(false);
+                        ttlHeight_containerDashboard_PerksOutSideTapPanel=ttlHeight_containerDashboard_PerksOutSideTapPanel+390;
+                       }
+                       if(AvailableDiscount>0){
+                        ttlPerks=ttlPerks+1;
+                        document.getElementById('segDiscount').style.display = 'flex';
+                        Ext.getCmp('containerDashboard_Perks_Discounts').setHidden(false);
+                        ttlHeight_containerDashboard_PerksOutSideTapPanel=ttlHeight_containerDashboard_PerksOutSideTapPanel+390;
+                       }
+
+
+                       if(ttlPerks <=2){
+                        Ext.getCmp('containerDashboardHeader_ButtonPerks_Main3').setHidden(true);
+                        Ext.getCmp('containerDashboard_PerksInSideTapPanel').setHidden(true);
+                        Ext.getCmp('containerDashboard_PerksOutSideTapPanel').setHidden(false);
+                        Ext.getCmp('containerDashboard_PerksOutSideTapPanel').setHeight(ttlHeight_containerDashboard_PerksOutSideTapPanel);
+                        Ext.getCmp('containerDashboard_PerksYouCanEnjoyHere').setHeight(ttlHeight_containerDashboard_PerksOutSideTapPanel+100);
+                        
+                        
+                        
+                       }
+                       if(ttlPerks>=3){
+                        Ext.getCmp('containerDashboardHeader_ButtonPerks_Main3').setHidden(false);
+                        Ext.getCmp('containerDashboard_PerksInSideTapPanel').setHidden(false);
+                        Ext.getCmp('containerDashboard_PerksOutSideTapPanel').setHidden(true);
+                      
+                        
+                       if(StampPerksCount>0){
+                        AyohaSelectLoyaltySeg('stamps');
+                        return;
+                       }
+                       if(PointPerksCount>0){
+                        AyohaSelectLoyaltySeg('points');
+                        return;
+                       }
+                       if(VoucherEntitle>0){
+                        AyohaSelectLoyaltySeg('vouchers');
+                        return;
+                       }
+                       if(AvailableContest>0){
+                        AyohaSelectLoyaltySeg('contest');
+                        return;
+                       }
+                       if(AvailableEvent>0){
+                        AyohaSelectLoyaltySeg('event');
+                        return;
+                       }
+                       if(AvailableDiscount>0){
+                        AyohaSelectLoyaltySeg('discount');
+                        return;
+                       }
+                       
+
+
+
+                       }
+                      
+
+
+
+
+
+
+
+
+
+                      
+                    
+                      
+                       
+                     //  
+                     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                       
+                        
+                    }
+                    if (data.total == 0) {
+
+                      
+
+                    }
+
+
+
+
+
+                }
+                else {
+
+
+                    Ext.Viewport.unmask();
+                }
+
+
+            },
+
+            failure: function (result, request) {
+                Ext.Viewport.unmask();
+            }
+
+        });
+
+
+
+    });
+
+    //  Ext.Viewport.unmask();
+
+    //   setDashBoardMerchantReviewRate(FiveStar, FourStar, ThreeStar, TwoStar, OneStar);
+    task.delay(800);
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 function setScreenWidthListDynamic(count,jenis) {
 

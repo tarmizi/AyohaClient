@@ -513,7 +513,7 @@ function loadAyohaUserProfileLoginBody() {
                     if (data.total > 0) {
                         Ext.getCmp('tabpanelMyAccount_Dashboard').getTabBar().hide();
                         Ext.getCmp('tabpanelAyohaMerchantRewards').getTabBar().hide();
-                       // Ext.getCmp('tabpanelDashboardMerchantRewards').getTabBar().hide();
+                       Ext.getCmp('tabpanelDashboard_PerksInfo').getTabBar().hide();
                         AyohaMerchantReward_InitializedTabEvent();
                         localStorage.setItem('AyohaUserAccountNo',data.results[0].AccountNo);
                         localStorage.setItem('AyohaUserKatalaluan', data.results[0].Katalaluan);
@@ -599,23 +599,21 @@ function loadAyohaUserProfileLoginBody() {
 
                       
                         initializeContainerSingleTapEvent();
-                      //  Dashboard_AyohaUserDashBoardNearestRedeemItemStampCardStore();
                         DashboardAyohaUserMainStore();
-                        //loadVIAAdvertisement();
-                        
-                       //FloatPanel_AyohaeWallet_IconShow();
+                      
                         AyohaRedeemPrize_LoadByRowStatusAndGCStore();
                       // FloatPanel_Advertisement_FloatAdvertisementShow();
                         Dashboard_LoadAyohaEwallet();
                         initTapListener_AyohaMerchantsIcon();
-                        //
-                        //loadEnterprisesContactUsLinkStore();
+                     
                         loadAdvertisementloadHotSeatStore();
                         Dashboard_AyohaRewardVoucherEntitledUserLoadBySubscriberAccNoVoucherTypeStore();
                         AyohaMerchantReward_loadVIAAdvertisement();
                        AyohaMerchantReward_containerDashboardMerchantRewardScroller();
                        AyohaMerchantReward_Initialized_SearchText();
-                       // TestRoutePanelShow();
+                       SuccessCheckinController_DashboardSuccessCheckIn_LoadPerkCanEnjoyInfo();
+                        //   FloatPanel_MainDashboard_PendingOrderAyohaStoreOrderPendingOrderMainDashbord_CountStore();
+                      
                     }
                     if (data.total <= 0) {
                         // swalFireFail("Login Failed!");
@@ -719,7 +717,7 @@ function loadUserProfileWithOutLogOut() {
                         localStorage.setItem('AyohaUserKatalaluan', data.results[0].Katalaluan);
                         Ext.getCmp('tabpanelMyAccount_Dashboard').getTabBar().hide();
                         Ext.getCmp('tabpanelAyohaMerchantRewards').getTabBar().hide();
-                       // Ext.getCmp('tabpanelDashboardMerchantRewards').getTabBar().hide();
+                        Ext.getCmp('tabpanelDashboard_PerksInfo').getTabBar().hide();
                         //routeCurrPage = '15';
                         //routesArray.push("mainView,view,15");
                         //  ArrappRoute.push("MainDashBoard");
@@ -784,6 +782,7 @@ function loadUserProfileWithOutLogOut() {
                         //loadEnterprisesContactUsLinkStore();
                         loadAdvertisementloadHotSeatStore();
                         Dashboard_AyohaRewardVoucherEntitledUserLoadBySubscriberAccNoVoucherTypeStore();
+                     
                         // TestRoutePanelShow();
                     }
                     if (data.total <= 0) {
@@ -1038,7 +1037,7 @@ function loadAyohaUserProfileLoginBodyAfterCreatedAccount(valUserName,valKataLal
                         localStorage.setItem('AyohaUserKatalaluan', data.results[0].Katalaluan);
                         Ext.getCmp('tabpanelMyAccount_Dashboard').getTabBar().hide();
                         Ext.getCmp('tabpanelAyohaMerchantRewards').getTabBar().hide();
-                       // Ext.getCmp('tabpanelDashboardMerchantRewards').getTabBar().hide();
+                       Ext.getCmp('tabpanelDashboard_PerksInfo').getTabBar().hide();
                         //routeCurrPage = '15';
                         //routesArray.push("mainView,view,15");
                         //  ArrappRoute.push("MainDashBoard");
@@ -1106,7 +1105,7 @@ function loadAyohaUserProfileLoginBodyAfterCreatedAccount(valUserName,valKataLal
                         loadAdvertisementloadHotSeatStore();
                         Dashboard_AyohaRewardVoucherEntitledUserLoadBySubscriberAccNoVoucherTypeStore();
                         LoginAyohaUser_OneSignalCreateAccountMessage();
-
+                      
 
 
                       

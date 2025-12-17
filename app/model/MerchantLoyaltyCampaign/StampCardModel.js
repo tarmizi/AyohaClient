@@ -56,6 +56,7 @@ Ext.define('ianMizi.model.MerchantLoyaltyCampaign.StampCardModel', {
                   'BusinessMode',    
                   'EnterpriseDescription',
                   'isMember',
+                  'StampedRedeemStatus',
                   {
                     name: 'ModifiedStampContent',
                     convert: function (value, record) {
@@ -130,6 +131,77 @@ Ext.define('ianMizi.model.MerchantLoyaltyCampaign.StampCardModel', {
                            
                          }
                      },
+
+
+                     {
+                        name: 'ModifiedStampedRedeemStatusBackground',
+                        convert: function (value, record) {
+                            var _value;
+                            var StampedRedeemStatus = record.get('StampedRedeemStatus');
+                            if (StampedRedeemStatus == "Approved") {
+                                _value = 'background-color: #6C757D;color: #FFFFFF;';
+                                return _value
+                            } else if (StampedRedeemStatus == "Submitted") {
+                                _value = 'background-color: #FD7E14;color: #FFFFFF;';
+                                return _value
+                            } 
+                            else {
+                                _value = 'background: linear-gradient(135deg,#ff00de,#c800ff);color:#fff;';
+                                return _value
+                            }
+
+
+
+                          
+                        }
+                    },
+                    {
+                        name: 'ModifiedStampContentSequence',
+                        convert: function (value, record) {
+                            var _value;
+                            var StampedRedeemStatus = record.get('StampedRedeemStatus');
+                            var StampContentSequence = record.get('StampContentSequence');
+                            
+                            if (StampedRedeemStatus == "Approved") {
+                                _value = 'Claimed';
+                                return _value
+                            } else if (StampedRedeemStatus == "Submitted") {
+                                _value = 'Pending';
+                                return _value
+                            } 
+                            else {
+                                _value =StampContentSequence+'/'+ '11';
+                                return _value
+                            }
+
+
+
+                          
+                        }
+                    },
+                    {
+                        name: 'ModifiedStampContentSequenceWidth',
+                        convert: function (value, record) {
+                            var _value;
+                            var StampedRedeemStatus = record.get('StampedRedeemStatus');
+                            
+                            if (StampedRedeemStatus == "Approved") {
+                                _value ='56px';
+                                return _value
+                            } else if (StampedRedeemStatus == "Submitted") {
+                                _value ='56px';
+                                return _value
+                            } 
+                            else {
+                                _value ='46px';
+                                return _value
+                            }
+
+
+
+                          
+                        }
+                    },
         ]
     }
 });
