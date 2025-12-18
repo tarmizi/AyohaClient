@@ -6,7 +6,7 @@ Ext.define('ianMizi.view.Config.CoreVariable', {
 var CoreVariable_CheckOutBoxDesign="background-color: white;border-top:1px none grey;border-left:1px none grey;border-bottom:1px none grey;border-right:1px none grey;box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);";
 
 function FloatPanel_AyohaStore_getEnterpriseAccNo() {
-    // alert(globalFloatPanel_AyohaStore_ModuleTagging)
+   
        var EntAccNo;
        if (globalFloatPanel_AyohaStore_ModuleTagging == "HotSeatAdvertisement") {
            EntAccNo = globalFloatPanel_PreviewAdvertisement_EnterpriseAccNo;
@@ -64,7 +64,11 @@ function FloatPanel_AyohaStore_getEnterpriseAccNo() {
        else if (globalFloatPanel_AyohaStore_ModuleTagging == "FloatPanel_MembershipCardList_NotYetSubscribed") {
            EntAccNo = _FloatPanel_MembershipCardList_NotYetSubscribed_EnterpriseAccNo;
        }
-     
+       else if (globalFloatPanel_AyohaStore_ModuleTagging == "FloatPanel_AyohaMerchantInfo_LoyaltyProgram") {
+        EntAccNo = globalFloatPanelMerchantDetailPage_EnterpriseAccNo;
+    }
+
+       
        return EntAccNo;
    }
    
@@ -132,6 +136,7 @@ function FloatPanel_AyohaStore_getEnterpriseAccNo() {
     else if (globalFloatPanel_AyohaStore_ModuleTagging == "FloatPanel_AyohaMerchantInfo_LoyaltyProgram") {
         EntLogo = globalFloatPanel_AyohaStore_CheckOut_EnterpriseLogo;
     }
+  
    
        
     //   alert(globalFloatPanelMerchantDetailPage_EnterpriseLogo);

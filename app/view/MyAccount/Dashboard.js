@@ -3220,94 +3220,7 @@ html: '<img onClick="FloatPanel_AyohaStore_OrderHistoryShow()" src="resources/ic
             },
             items:[
                 {
-                    width: '95%',
-                //    height: '100%', 
-                    // html:
-                    // '<style>' +
-                    //   /* 1. CONTAINER STYLE */
-                    //   '.ayoha-container {' +
-                    //     'width: 100%; height: 70px; background: #efe7ff; border-radius: 16px; overflow: hidden;' +
-                    //     'display: flex; align-items: stretch; box-shadow: 0 6px 18px rgba(0,0,0,.05);' +
-                    //     'border: 1px solid rgba(124,58,237,.15); font-family: Arial, sans-serif;' +
-                    //     'box-sizing: border-box;' +
-                    //   '}' +
-                
-                    //   /* 2. SEGMENT STYLE (DEFAULT UNSELECTED) */
-                    //   '.ayohaSeg {' +
-                    //     'background: rgba(255,255,255,.25);' +
-                    //     'color: #4c1d95;' + /* Warna teks & ikon ASAL (ungu) */
-                    //     'transition: all .2s ease; cursor: pointer; -webkit-tap-highlight-color: transparent;' +
-                    //     'display: flex; align-items: center; justify-content: center; gap: 8px; padding: 0 10px; flex: 1;' +
-                    //   '}' +
-                    //   '.ayohaSeg:active { transform: scale(.97); }' +
-                
-                    //   /* 3. SELECTED STYLE */
-                    //   '.ayohaSel {' +
-                    //     'background: linear-gradient(180deg, #d600ff 0%, #9b00ff 100%) !important;' +
-                    //     'color: #ffffff !important;' + /* Warna teks & ikon SELECTED (putih) */
-                    //     'box-shadow: inset 0 0 0 1px rgba(255,255,255,.3), 0 8px 16px rgba(155,0,255,.25) !important;' +
-                    //     'flex: 1.2 !important;' +
-                    //   '}' +
-                     
-                    //   /* --- ICON COLOR CONTROL --- */
-                    //   /* Kalau guna SVG: Pastikan dalam kod SVG guna fill="currentColor" */
-                    //   '.ayohaSeg svg {' +
-                    //     'width: 24px; height: 24px; transition: all .2s ease;' +
-                    //     /* Tak perlu set fill color sini sebab dia akan ikut warna text parent */
-                    //   '}' +
-                
-                    //   /* Kalau guna GAMBAR (PNG/JPG): Guna filter ini */
-                    //   '.ayohaSeg img {' +
-                    //     'width: 24px; height: 24px; transition: all .2s ease;' +
-                    //   '}' +
-                    //   '.ayohaSel img {' +
-                    //     'filter: brightness(0) invert(1);' + /* Tukar jadi putih */
-                    //   '}' +
-                    //   /* --------------------------- */
-                
-                    //   /* 4. TYPOGRAPHY */
-                    //   '.ayohaTitle { font-size: 13px; font-weight: 800; opacity: .9; line-height: 1.1; }' +
-                    //   '.ayohaSub { font-size: 11px; font-weight: 700; opacity: .7; margin-top: 2px; }' +
-                    //   '.ayohaSel .ayohaTitle { font-size: 15px; font-weight: 900; opacity: 1; }' +
-                    //   '.ayohaSel .ayohaSub { font-size: 12px; font-weight: 800; opacity: 1; color: #fff; }' +
-                
-                    //   /* MOBILE RESPONSIVE (< 480px) */
-                    //   '@media screen and (max-width: 480px) {' +
-                    //     '.ayoha-container { height: 60px; }' +
-                    //     '.ayohaSeg { gap: 4px; padding: 0 2px; }' +
-                    //     '.ayohaTitle { font-size: 10px; }' +
-                    //     '.ayohaSub { font-size: 9px; }' +
-                    //     '.ayohaSel .ayohaTitle { font-size: 12px; }' +
-                    //     '.ayohaSel .ayohaSub { font-size: 10px; }' +
-                    //     /* Kecilkan ikon di mobile */
-                    //     '.ayohaSeg svg, .ayohaSeg img { width: 24px !important; height:24px !important; }' +
-                    //   '}' +
-                    // '</style>' +
-                
-                    // '<div class="ayoha-container">' +
-                    //   // LEFT: Stamps
-                    //   '<div id="segStamps" class="ayohaSeg" onclick="AyohaSelectLoyaltySeg(\'stamps\')">' +
-                      
-                    //   '<img src="resources/icons/stampPerk01.png" alt="Image" style="width:24px;height:24px;">'+
-                   
-                    //     '<div style="text-align:center;"><div class="ayohaTitle">Stamps</div><div class="ayohaSub">4/10</div></div>' +
-                    //   '</div>' +
-                
-                    //   // MIDDLE: Points (Selected Default)
-                    //   '<div id="segPoints" class="ayohaSeg ayohaSel"  onclick="AyohaSelectLoyaltySeg(\'points\')">' +
-                    //    '<img src="resources/icons/PointPerks02.png" alt="Image" style="width:24px;height:24px;">'+
-                    //     '<div style="text-align:center;"><div class="ayohaTitle">1460</div><div class="ayohaSub">Pts</div></div>' +
-                    //   '</div>' +
-                
-                    //   // RIGHT: Vouchers
-                    //   '<div id="segVouchers" class="ayohaSeg"  onclick="AyohaSelectLoyaltySeg(\'vouchers\')" style="position:relative;">' +
-                    //    // '<div style="position:absolute; top:8px; right:8px; width:8px; height:8px; border-radius:50%; background:#ff2d2d; box-shadow:0 0 0 2px #fff;"></div>' +
-                    //     '<img src="resources/icons/VoucherPerks01.png" alt="Image" style="width:24px;height:24px;">'+
-                    //     '<div style="text-align:center;"><div class="ayohaTitle">Vouchers</div><div class="ayohaSub">(3)</div></div>' +
-                    //   '</div>' +
-                    // '</div>',
-                
-               
+                    width: '95%',  
                     html:
                     '<style>' +
                       /* 1. CONTAINER STYLE (Scrollable) */
@@ -3356,7 +3269,7 @@ html: '<img onClick="FloatPanel_AyohaStore_OrderHistoryShow()" src="resources/ic
                 
                       /* 4. TYPOGRAPHY */
                       '.ayohaTitle { font-size: 11px; font-weight: 800; opacity: .9; line-height: 1.1; text-align: center; }' +
-                      '.ayohaSub { font-size: 10px; font-weight: 700; opacity: .7; margin-top: 0px; text-align: center; }' +
+                      '.ayohaSub { font-size: 11px; font-weight: 800; opacity: .7; margin-top: 0px; text-align: center; }' +
                       
                       '.ayohaSel .ayohaTitle { font-size: 12px; font-weight: 900; opacity: 1; }' +
                       '.ayohaSel .ayohaSub { font-size: 10px; font-weight: 800; opacity: 1; color: #fff; }' +
@@ -3374,8 +3287,8 @@ html: '<img onClick="FloatPanel_AyohaStore_OrderHistoryShow()" src="resources/ic
                       '<div id="segStamps" style="display:none" class="ayohaSeg" onclick="AyohaSelectLoyaltySeg(\'stamps\')">' +
                         '<img src="resources/icons/stampPerk01.png" alt="Stamp">' +
                         '<div>' +
-                          '<div class="ayohaTitle">Stamps</div>' +
-                          '<div class="ayohaSub">4/10</div>' +
+                          '<div   class="ayohaTitle">Stamps</div>' +
+                          '<div id="Dashboard_PerksYouCanEnjoyHere_StampCount" class="ayohaSub">Stamp Perks</div>' +
                         '</div>' +
                       '</div>' +
                 
@@ -3383,8 +3296,8 @@ html: '<img onClick="FloatPanel_AyohaStore_OrderHistoryShow()" src="resources/ic
                       '<div id="segPoints" style="display:none" class="ayohaSeg ayohaSel" onclick="AyohaSelectLoyaltySeg(\'points\')">' +
                         '<img src="resources/icons/PointPerks02.png" alt="Points">' +
                         '<div>' +
-                          '<div class="ayohaTitle">1460</div>' +
-                          '<div class="ayohaSub">Pts</div>' +
+                          '<div class="ayohaTitle">Point Reward</div>' +
+                          '<div id="Dashboard_PerksYouCanEnjoyHere_PointCount" class="ayohaSub">Pts</div>' +
                         '</div>' +
                       '</div>' +
                 
@@ -3393,7 +3306,7 @@ html: '<img onClick="FloatPanel_AyohaStore_OrderHistoryShow()" src="resources/ic
                         '<img src="resources/icons/VoucherPerks01.png" alt="Voucher">' +
                         '<div>' +
                           '<div class="ayohaTitle">Vouchers</div>' +
-                          '<div class="ayohaSub">(3)</div>' +
+                          '<div id="Dashboard_PerksYouCanEnjoyHere_VoucherCount" class="ayohaSub">(3)</div>' +
                         '</div>' +
                       '</div>' +
                 
@@ -3403,7 +3316,7 @@ html: '<img onClick="FloatPanel_AyohaStore_OrderHistoryShow()" src="resources/ic
                         '<img src="resources/icons/ContestPerks01.png" alt="Stamp">' +
                         '<div>' +
                           '<div class="ayohaTitle">Contest</div>' +
-                          '<div class="ayohaSub">Join</div>' +
+                          '<div id="Dashboard_PerksYouCanEnjoyHere_ContestCount" class="ayohaSub">Join</div>' +
                         '</div>' +
                       '</div>' +
                 
@@ -3413,7 +3326,7 @@ html: '<img onClick="FloatPanel_AyohaStore_OrderHistoryShow()" src="resources/ic
                         '<img src="resources/icons/EventPerks01.png" alt="Stamp">' +
                         '<div>' +
                           '<div class="ayohaTitle">Events</div>' +
-                          '<div class="ayohaSub">New</div>' +
+                          '<div id="Dashboard_PerksYouCanEnjoyHere_EventCount" class="ayohaSub">New</div>' +
                         '</div>' +
                       '</div>' +
                 
@@ -3423,7 +3336,7 @@ html: '<img onClick="FloatPanel_AyohaStore_OrderHistoryShow()" src="resources/ic
                         '<img src="resources/icons/DiscountPerks01.png" alt="Stamp">' +
                         '<div>' +
                           '<div class="ayohaTitle">Discount</div>' +
-                          '<div class="ayohaSub">% Off</div>' +
+                          '<div id="Dashboard_PerksYouCanEnjoyHere_DiscountCount" class="ayohaSub">% Off</div>' +
                         '</div>' +
                       '</div>' +
                 
@@ -3501,7 +3414,7 @@ html: '<img onClick="FloatPanel_AyohaStore_OrderHistoryShow()" src="resources/ic
 
     '<div class="ayohaHdrRight">' +
       // kalau ada progress, tukar 4/10 ikut data
-      '<div id="successCheckIn_CurrentStamp" class="ayohaHdrBadge">4/10</div>' +
+      '<div id="Dashboard_successCheckIn_CurrentStamp_InTabPanel" class="ayohaHdrBadge">4/10</div>' +
       '<div class="ayohaHdrChevron">›</div>' +
     '</div>' +
   '</div>',
@@ -3722,7 +3635,7 @@ html: '<img onClick="FloatPanel_AyohaStore_OrderHistoryShow()" src="resources/ic
 
     '<div class="ayohaHdrRight">' +
       // kalau ada progress, tukar 4/10 ikut data
-      '<div id="successCheckIn_CurrentPoint" class="ayohaHdrBadge">4/10</div>' +
+      '<div id="Dashboard_successCheckIn_CurrentPoint_InTabPanel" class="ayohaHdrBadge">4/10</div>' +
     //  '<div class="ayohaHdrChevron">›</div>' +
     '</div>' +
   '</div>',
@@ -3941,7 +3854,7 @@ html: '<img onClick="FloatPanel_AyohaStore_OrderHistoryShow()" src="resources/ic
 
 '<div class="ayohaHdrRight">' +
 // kalau ada progress, tukar 4/10 ikut data
-'<div class="ayohaHdrBadge">4/10</div>' +
+'<div id="Dashboard_successCheckIn_Voucher_InTabPanel" class="ayohaHdrBadge">4/10</div>' +
 '<div class="ayohaHdrChevron">›</div>' +
 '</div>' +
 '</div>',
@@ -4148,7 +4061,7 @@ html: '<img onClick="FloatPanel_AyohaStore_OrderHistoryShow()" src="resources/ic
         
         '<div class="ayohaHdrRight">' +
         // kalau ada progress, tukar 4/10 ikut data
-        '<div class="ayohaHdrBadge">4/10</div>' +
+        '<div id="Dashboard_successCheckIn_Contest_InTabPanel" class="ayohaHdrBadge">4/10</div>' +
         '<div class="ayohaHdrChevron">›</div>' +
         '</div>' +
         '</div>',
@@ -4359,7 +4272,7 @@ html: '<img onClick="FloatPanel_AyohaStore_OrderHistoryShow()" src="resources/ic
             
             '<div class="ayohaHdrRight">' +
             // kalau ada progress, tukar 4/10 ikut data
-            '<div class="ayohaHdrBadge">4/10</div>' +
+            '<div id="Dashboard_successCheckIn_Event_InTabPanel" class="ayohaHdrBadge">4/10</div>' +
             '<div class="ayohaHdrChevron">›</div>' +
             '</div>' +
             '</div>',
@@ -4584,7 +4497,7 @@ html: '<img onClick="FloatPanel_AyohaStore_OrderHistoryShow()" src="resources/ic
         
         '<div class="ayohaHdrRight">' +
         // kalau ada progress, tukar 4/10 ikut data
-        '<div class="ayohaHdrBadge">4/10</div>' +
+        '<div id="Dashboard_successCheckIn_Discount_InTabPanel" class="ayohaHdrBadge">4/10</div>' +
         '<div class="ayohaHdrChevron">›</div>' +
         '</div>' +
         '</div>',
@@ -4822,7 +4735,7 @@ html: '<img onClick="FloatPanel_AyohaStore_OrderHistoryShow()" src="resources/ic
 
     '<div class="ayohaHdrRight">' +
       // kalau ada progress, tukar 4/10 ikut data
-      '<div id="successCheckIn_CurrentStamp" class="ayohaHdrBadge">4/10</div>' +
+      '<div id="Dashboard_successCheckIn_CurrentStamp_OutTabPanel" class="ayohaHdrBadge">4/10</div>' +
       '<div class="ayohaHdrChevron">›</div>' +
     '</div>' +
   '</div>',
@@ -4830,9 +4743,9 @@ html: '<img onClick="FloatPanel_AyohaStore_OrderHistoryShow()" src="resources/ic
                                   listeners: {
                                     element: 'element',
                                     tap: function () {
-                                        ianMizi.app
-                                        .getController('Dashboard.SuccessCheckinController')
-                                        .Dashboard_StampCard_SuccessCheckIn_LoadStampCardPerkStore();
+                                        // ianMizi.app
+                                        // .getController('Dashboard.SuccessCheckinController')
+                                        // .Dashboard_StampCard_SuccessCheckIn_LoadStampCardPerkStore();
                                     }
                                 }
                             }],
@@ -5026,7 +4939,7 @@ html: '<img onClick="FloatPanel_AyohaStore_OrderHistoryShow()" src="resources/ic
   '<div class="ayohaHdrCard">' +
     '<div class="ayohaHdrIcon">' +
       // stamp icon (SVG)
-      '<img src="resources/icons/stampedFeatureWhite05.png" style="width:20px;height:20px;" /> ' +
+      '<img src="resources/icons/PointPerks04.png" style="width:20px;height:20px;" /> ' +
      
      
     //   '<svg width="18" height="18" viewBox="0 0 24 24" fill="none">' +
@@ -5037,14 +4950,24 @@ html: '<img onClick="FloatPanel_AyohaStore_OrderHistoryShow()" src="resources/ic
 
     '<div class="ayohaHdrText">' +
       '<div class="ayohaHdrTitle">Loyalty Point</div>' +
-      '<div class="ayohaHdrSub">Collect stamps & unlock rewards</div>' +
+      '<div class="ayohaHdrSub">Earn points, get free treats</div>' +
     '</div>' +
 
     '<div class="ayohaHdrRight">' +
       // kalau ada progress, tukar 4/10 ikut data
-      '<div id="successCheckIn_CurrentStamp" class="ayohaHdrBadge">4/10</div>' +
+      '<div id="Dashboard_successCheckIn_CurrentPoint_OutTabPanel" class="ayohaHdrBadge">0</div>' +
     //  '<div class="ayohaHdrChevron">›</div>' +
     '</div>' +
+
+
+
+
+//     '<div class="ayohaHdrRight" style="display: flex; flex-direction: column; align-items: flex-end; justify-content: center;">' +
+//     // Angka Poin
+//     '<div id="Dashboard_successCheckIn_CurrentPoint_OutTabPanel" class="ayohaHdrBadge" style="margin-bottom: 2px;">0</div>' +
+//     // Subtitle Redeemable
+//     '<div style="font-size: 8px; color: #757575; font-weight: bold;  letter-spacing: 0.5px;">Redeemable</div>' +
+// '</div>'+
   '</div>',
 
                                   listeners: {
@@ -5259,7 +5182,7 @@ html: '<img onClick="FloatPanel_AyohaStore_OrderHistoryShow()" src="resources/ic
 
 '<div class="ayohaHdrRight">' +
 // kalau ada progress, tukar 4/10 ikut data
-'<div class="ayohaHdrBadge">4/10</div>' +
+'<div id="Dashboard_successCheckIn_Voucher_OutTabPanel" class="ayohaHdrBadge">4/10</div>' +
 '<div class="ayohaHdrChevron">›</div>' +
 '</div>' +
 '</div>',
@@ -5267,7 +5190,7 @@ html: '<img onClick="FloatPanel_AyohaStore_OrderHistoryShow()" src="resources/ic
                   listeners: {
                     element: 'element',
                     tap: function () {
-                        SuccessCheckinController_Dashboard_LoadVoucherPerks();
+                       // SuccessCheckinController_Dashboard_LoadVoucherPerks();
                     }
                 }
             }],
@@ -5448,7 +5371,7 @@ html: '<img onClick="FloatPanel_AyohaStore_OrderHistoryShow()" src="resources/ic
         
         '<div class="ayohaHdrRight">' +
         // kalau ada progress, tukar 4/10 ikut data
-        '<div class="ayohaHdrBadge">4/10</div>' +
+        '<div id="Dashboard_successCheckIn_Contest_OutTabPanel" class="ayohaHdrBadge">4/10</div>' +
         '<div class="ayohaHdrChevron">›</div>' +
         '</div>' +
         '</div>',
@@ -5456,7 +5379,7 @@ html: '<img onClick="FloatPanel_AyohaStore_OrderHistoryShow()" src="resources/ic
                           listeners: {
                             element: 'element',
                             tap: function () {
-                                SuccessCheckinController_Dashboard_LoadContestPerks();
+                               // SuccessCheckinController_Dashboard_LoadContestPerks();
                             }
                         }
                     }],
@@ -5637,7 +5560,7 @@ html: '<img onClick="FloatPanel_AyohaStore_OrderHistoryShow()" src="resources/ic
             
             '<div class="ayohaHdrRight">' +
             // kalau ada progress, tukar 4/10 ikut data
-            '<div class="ayohaHdrBadge">4/10</div>' +
+            '<div id="Dashboard_successCheckIn_Event_OutTabPanel" class="ayohaHdrBadge">4/10</div>' +
             '<div class="ayohaHdrChevron">›</div>' +
             '</div>' +
             '</div>',
@@ -5854,7 +5777,7 @@ html: '<img onClick="FloatPanel_AyohaStore_OrderHistoryShow()" src="resources/ic
         
         '<div class="ayohaHdrRight">' +
         // kalau ada progress, tukar 4/10 ikut data
-        '<div class="ayohaHdrBadge">4/10</div>' +
+        '<div id="Dashboard_successCheckIn_Discount_OutTabPanel" class="ayohaHdrBadge">4/10</div>' +
         '<div class="ayohaHdrChevron">›</div>' +
         '</div>' +
         '</div>',
@@ -14211,6 +14134,8 @@ function initializeContainerSingleTapEvent() {
     containerViewElMenuBottom_MyStore.on('tap',
       function (event, node, options, eOpts) {
        // Ext.getCmp('containerAyohaMerchantRewardBottom_Search').setHidden(true);
+       AyohaRewardPointRewardRankingStore();
+            AyohaRewardContestLoadActiveStore();
         SideMenuMembershipCardListHide();
         Ext.getCmp('htmlDashboardMenuBottom_HomeTxt').setHtml('<div style="color:grey;text-align: center;font-size:8px;width:100%;font-weight:normal">Home</div>');
         Ext.getCmp('htmlDashboardMenuBottom_AyohaRewardTxt').setHtml('<div style="color:purple;text-align: center;font-size:8px;width:100%;font-weight:bold">Ayoha</div><br><div style="color:purple;text-align: center;font-size:8px;width:100%;margin:-25px 0px 0px 0px;font-weight:bold">Reward</div>');
@@ -15630,8 +15555,7 @@ AppState.FloatPanel_AyohaReward.AyohaTaAndWinTapBalance=AyohaTaAndWin_TapBalance
 
 
     
-            AyohaRewardPointRewardRankingStore();
-            AyohaRewardContestLoadActiveStore();
+          
            // Dashboard_MembershipCardLoadBySubscriberAccNoDashboardMainStore();
            Dashboard_MembershipCardLoadBySubscriberAccNoDashboardMainStore_Front() 
             var containerView = Ext.ComponentQuery.query('container[name=btnMyDashboard_AyohaRewardRankingContest]')[0];
@@ -17539,6 +17463,11 @@ function NextRanking(){
 
 function Dashboard_MembershipCardLoadBySubscriberAccNoDashboardMainStore_Front() {
 
+
+
+
+
+
     globalOpenMembershipCardList_Upgrade_From = 'DashboardMain';
     globalFloatPanel_MembershipCardList_UpgradeShow_FromAyohaMerchant_isMembershipCardSubscribed = 'NO';
     _DataStore_MembershipCardLoadBySubscriberAccNoDashboardMainStore.getProxy().setExtraParam('SubscriberAccNo', GetCurrAyohaUserAccountNo());
@@ -17552,14 +17481,16 @@ function Dashboard_MembershipCardLoadBySubscriberAccNoDashboardMainStore_Front()
              
                 var count = parseInt(_DataStore_MembershipCardLoadBySubscriberAccNoDashboardMainStore.getCount());
                 Ext.getCmp('Dashboard_MyAccount_UnSubscribedMembershipCardList_front').setStore(_DataStore_MembershipCardLoadBySubscriberAccNoDashboardMainStore);
-               // alert(count);
+               //alert(count);
         
                 LoadingPanelHide();
                 console.log('Stores updated based on loaded membership card data.');
-                Dashboard_SearchMerchantList_EnterprisesLoadAyohaMerchantListStore_Front();
+                Dashboard_LoadLastCheckIn();
+           // 18/12-2025 disable list of merchant  // Dashboard_SearchMerchantList_EnterprisesLoadAyohaMerchantListStore_Front();
             } else {
                 console.log('Failed to load membership card data or no records returned.');
-                Dashboard_SearchMerchantList_EnterprisesLoadAyohaMerchantListStore_Front()
+                Dashboard_LoadLastCheckIn();
+             //18/12-2025disable list of merchant  Dashboard_SearchMerchantList_EnterprisesLoadAyohaMerchantListStore_Front()
             }
         }
     });
@@ -17610,10 +17541,10 @@ function Dashboard_SearchMerchantList_EnterprisesLoadAyohaMerchantListStore_Fron
         callback: function (records, operation, success) {
             if (success && records.length > 0) {
                 console.log('Store loaded successfully, total records: ' + records.length);
-    
+   
              //   id: 'DashboardMain_SearchMerchantListLoadAllStoreID'
                 Ext.getCmp('DashboardMain_SearchMerchantListLoadAllStoreID').setStore(_DataStore_EnterprisesLoadByMerchantCategory_temp_front);
-                Dashboard_LoadLastCheckIn();
+                //Dashboard_LoadLastCheckIn();
                 LoadingPanelHide();
             } else {
                 console.error('Failed to load store data or no record found.');
@@ -17666,7 +17597,7 @@ function Dashboard_LoadLastCheckIn(){
                AppState.MainDashboard.MainDashboardAyohaRewardPointCheckIn = record.get('AyohaRewardPointCheckIn');
                AppState.MainDashboard.MainDashboardCheckInCount  = record.get('CheckInCount');
 
-
+             
     globalFloatPanelMerchantDetailPage_ID =record.get('ID');
     globalFloatPanelMerchantDetailPage_EnterpriseAccNo = record.get('EnterpriseAccNo');
     globalFloatPanelMerchantDetailPage_EnterpriseLogo = record.get('EnterpriseLogoPath');
@@ -17722,9 +17653,9 @@ function Dashboard_LoadLastCheckIn(){
                 Ext.getCmp('containerCheckInRewardspacer02').setStyle('background-color:transparent');
                 Ext.getCmp('containerCheckInRewardspacer03').setStyle('background-color:transparent');
                 Ext.getCmp('labelDashboard_Viewallpastcheck-ins').setHidden(false); 
-               // _DataStore_EnterprisesLoadByMerchantCategory=_DataStore_EnterprisesLoadLastCheckInStore;
-                Dashboard_MerchantDetailPageShow();
-                CoreFunction_DashboardLoadByEnterpriseAccNoStorePerk();
+              
+              Dashboard_MerchantDetailPageShow();
+              // CoreFunction_DashboardLoadByEnterpriseAccNoStorePerk();
             
             } else {
               // alert('Failed to load store data or no record found.');

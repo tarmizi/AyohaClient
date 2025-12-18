@@ -602,7 +602,6 @@ function loadAyohaUserProfileLoginBody() {
                         DashboardAyohaUserMainStore();
                       
                         AyohaRedeemPrize_LoadByRowStatusAndGCStore();
-                      // FloatPanel_Advertisement_FloatAdvertisementShow();
                         Dashboard_LoadAyohaEwallet();
                         initTapListener_AyohaMerchantsIcon();
                      
@@ -611,7 +610,7 @@ function loadAyohaUserProfileLoginBody() {
                         AyohaMerchantReward_loadVIAAdvertisement();
                        AyohaMerchantReward_containerDashboardMerchantRewardScroller();
                        AyohaMerchantReward_Initialized_SearchText();
-                       SuccessCheckinController_DashboardSuccessCheckIn_LoadPerkCanEnjoyInfo();
+                     //  SuccessCheckinController_DashboardSuccessCheckIn_LoadPerkCanEnjoyInfo();
                         //   FloatPanel_MainDashboard_PendingOrderAyohaStoreOrderPendingOrderMainDashbord_CountStore();
                       
                     }

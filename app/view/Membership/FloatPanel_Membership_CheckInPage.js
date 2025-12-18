@@ -466,7 +466,7 @@ function FloatPanel_Membership_CheckInPage() {
                     {
                         xtype: 'component',
                         styleHtmlContent:true,
-                        html : '<div onclick="FloatPanel_Membership_CheckInPageHide()" class="ayo-later">Maybe Later</div>'
+                        html : '<div onclick="FloatPanel_Membership_CheckInPageHide()" class="ayo-later">Maybe Laterxxxxxx</div>'
                     }
                 ],
             },

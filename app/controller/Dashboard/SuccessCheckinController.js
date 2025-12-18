@@ -148,36 +148,43 @@ function SuccessCheckinController_Dashboard_LoadVoucherPerks_setPerksOpen() {
 
 //window.AyohaLoyaltySelected = window.AyohaLoyaltySelected || 'points'; // default
 
-function AyohaSelectLoyaltySegOri(type) {
-    // Senarai ID yang dikemaskini (6 item)
-    var allSegments = ['segStamps', 'segPoints', 'segVouchers', 'segContest', 'segEvent', 'segDiscount'];
+function AyohaSelectLoyaltySegNonTab(type) {
+
+
+
+    if(type=='stamps'){
+        ianMizi.app
+        .getController('Dashboard.SuccessCheckinController')
+        .Dashboard_StampCard_SuccessCheckIn_LoadStampCardPerkStore();
+      
+    }
+    if(type=='points'){
+        SuccessCheckinController_Dashboard_LoadPointPerks();
+      
+    }
+    if(type=='vouchers'){
+        SuccessCheckinController_Dashboard_LoadVoucherPerks();
+       
+    }
+
+    if(type=='contest'){
+        SuccessCheckinController_Dashboard_LoadContestPerks();
+        
+        
+    }
+    if(type=='event'){
+        SuccessCheckinController_Dashboard_LoadEventPerks();
+         
+        
+    }
+
+    if(type=='discount'){
+        SuccessCheckinController_Dashboard_LoadDiscountPerks();
+         
+        
+    }
     
-    // Mapping Type ke ID
-    var targetId = '';
-    if (type === 'stamps') targetId = 'segStamps';
-    else if (type === 'points') targetId = 'segPoints';
-    else if (type === 'vouchers') targetId = 'segVouchers';
-    else if (type === 'contest') targetId = 'segContest';
-    else if (type === 'event') targetId = 'segEvent';
-    else if (type === 'discount') targetId = 'segDiscount';
-
-    // Loop untuk toggle class
-    allSegments.forEach(function(id) {
-        var el = document.getElementById(id);
-        if (el) {
-            if (id === targetId) {
-                if (!el.classList.contains('ayohaSel')) {
-                    el.classList.add('ayohaSel');
-                    // Auto scroll ke elemen yang dipilih (optional UX improvement)
-                    el.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-                }
-            } else {
-                el.classList.remove('ayohaSel');
-            }
-        }
-    });
-
-    window.AyohaLoyaltySelected = type;
+    
 }
 
 function AyohaSelectLoyaltySeg(type) {
@@ -515,9 +522,209 @@ function SuccessCheckinController_DashboardSuccessCheckIn_LoadPerkCanEnjoyInfo()
    
 
 
-   
+ 
 
-    
+    _DataStore_SuccessCheckIn_LoadPerkCanEnjoyInfoStore.getProxy().setExtraParam('EnterpriseAccNo', globalFloatPanelMerchantDetailPage_EnterpriseAccNo);
+    _DataStore_SuccessCheckIn_LoadPerkCanEnjoyInfoStore.getProxy().setExtraParam('SubscriberAccNo', GetCurrAyohaUserAccountNo());
+    _DataStore_SuccessCheckIn_LoadPerkCanEnjoyInfoStore.getProxy().setUrl(GetAPIurl() + '/DashboardAyohaUser/DashboardSuccessCheckIn_LoadPerkCanEnjoyInfo');
+
+  _DataStore_SuccessCheckIn_LoadPerkCanEnjoyInfoStore.load({
+        callback: function (records, operation, success) {
+         
+            if (success && records.length > 0) {
+                console.log(records[0].data)
+              
+                var record = records[0]; // Access only the first record
+                var CurrentStampCount =parseInt(record.get('CurrentStampCount'));
+                var TotalStampCount = parseInt(record.get('TotalStampCount'));
+                var StampProgressDisplay = record.get('StampProgressDisplay');
+                var StampPerksCount = parseInt(record.get('StampPerksCount'));
+                var PointPerksCount = parseInt(record.get('PointPerksCount'));
+                var CurrentPointsBalance =parseFloat(record.get('CurrentPointsBalance'));
+                var VoucherUsed =parseInt(record.get('VoucherUsed'));
+                var VoucherEntitle = parseInt(record.get('VoucherEntitle'));
+                var SubmittedContest = parseInt(record.get('SubmittedContest'));
+                var AvailableContest = parseInt(record.get('AvailableContest'));
+                var JoinedEvent = parseInt(record.get('JoinedEvent'));
+                var AvailableEvent = parseInt(record.get('AvailableEvent'));
+                var AvailableDiscount = parseInt(record.get('AvailableDiscount'));
+                var DiscountUsage = parseInt(record.get('DiscountUsage'));
+              
+              //  document.getElementById("Dashboard_PerksYouCanEnjoyHere_StampCount").innerHTML = '<span style="color: #A020F0; margin-right: 5px;">●</span>' + StampPerksCount + ' Rewards';
+               
+               document.getElementById("Dashboard_PerksYouCanEnjoyHere_StampCount").textContent ='● '+StampPerksCount +' Rewards';
+                document.getElementById("Dashboard_PerksYouCanEnjoyHere_PointCount").textContent = '● '+PointPerksCount+' Bonus';
+
+                document.getElementById("Dashboard_PerksYouCanEnjoyHere_VoucherCount").textContent ='● '+ VoucherEntitle+' Gifts';
+                document.getElementById("Dashboard_PerksYouCanEnjoyHere_ContestCount").textContent = '● '+AvailableContest +' Prizes';
+
+                document.getElementById("Dashboard_PerksYouCanEnjoyHere_EventCount").textContent ='● '+AvailableEvent +' Invites';
+                document.getElementById("Dashboard_PerksYouCanEnjoyHere_DiscountCount").textContent ='● '+ AvailableDiscount +' Promo';
+                
+
+                document.getElementById("Dashboard_successCheckIn_CurrentStamp_InTabPanel").textContent = StampProgressDisplay;
+                document.getElementById("Dashboard_successCheckIn_CurrentPoint_InTabPanel").textContent = CurrentPointsBalance+' Pts';
+                document.getElementById("Dashboard_successCheckIn_Voucher_InTabPanel").textContent = VoucherUsed+'/'+VoucherEntitle;
+                document.getElementById("Dashboard_successCheckIn_Contest_InTabPanel").textContent = SubmittedContest+'/'+AvailableContest;
+                document.getElementById("Dashboard_successCheckIn_Event_InTabPanel").textContent = JoinedEvent+'/'+AvailableEvent;
+                document.getElementById("Dashboard_successCheckIn_Discount_InTabPanel").textContent = DiscountUsage+'/'+AvailableDiscount;
+
+
+
+            
+                document.getElementById("Dashboard_successCheckIn_CurrentStamp_OutTabPanel").textContent = StampProgressDisplay;
+                document.getElementById("Dashboard_successCheckIn_CurrentPoint_OutTabPanel").textContent = CurrentPointsBalance+' Pts';
+                document.getElementById("Dashboard_successCheckIn_Voucher_OutTabPanel").textContent = VoucherUsed+'/'+VoucherEntitle;
+                document.getElementById("Dashboard_successCheckIn_Contest_OutTabPanel").textContent = SubmittedContest+'/'+AvailableContest;
+                document.getElementById("Dashboard_successCheckIn_Event_OutTabPanel").textContent = JoinedEvent+'/'+AvailableEvent;
+                document.getElementById("Dashboard_successCheckIn_Discount_OutTabPanel").textContent = DiscountUsage+'/'+AvailableDiscount;
+                
+                
+                
+                
+                document.getElementById('segStamps').style.display = 'none';
+                document.getElementById('segPoints').style.display = 'none';
+                document.getElementById('segVouchers').style.display = 'none';
+                document.getElementById('segContest').style.display = 'none';
+                document.getElementById('segEvent').style.display = 'none';
+                document.getElementById('segDiscount').style.display = 'none';
+                var ttlPerks=0;
+                var ttlHeight_containerDashboard_PerksOutSideTapPanel=0;
+
+                if(StampPerksCount>0){
+                 ttlPerks=ttlPerks+1;
+                 document.getElementById('segStamps').style.display = 'flex';
+                 Ext.getCmp('containerDashboard_Perks_Stamps').setHidden(false);
+                 ttlHeight_containerDashboard_PerksOutSideTapPanel=ttlHeight_containerDashboard_PerksOutSideTapPanel+230;
+                }
+                if(PointPerksCount>0){
+                 ttlPerks=ttlPerks+1;
+                   document.getElementById('segPoints').style.display = 'flex';
+                   Ext.getCmp('containerDashboard_Perks_Points').setHidden(false);
+                   ttlHeight_containerDashboard_PerksOutSideTapPanel=ttlHeight_containerDashboard_PerksOutSideTapPanel+230;
+                }
+                if(VoucherEntitle>0){
+                 ttlPerks=ttlPerks+1;
+                 document.getElementById('segVouchers').style.display = 'flex';
+                 Ext.getCmp('containerDashboard_Perks_Vouchers').setHidden(false);
+                 ttlHeight_containerDashboard_PerksOutSideTapPanel=ttlHeight_containerDashboard_PerksOutSideTapPanel+260;
+                }
+                if(AvailableContest>0){
+                 ttlPerks=ttlPerks+1;
+                 document.getElementById('segContest').style.display = 'flex';
+                 Ext.getCmp('containerDashboard_Perks_Contests').setHidden(false);
+                 ttlHeight_containerDashboard_PerksOutSideTapPanel=ttlHeight_containerDashboard_PerksOutSideTapPanel+390;
+                }
+                if(AvailableEvent>0){
+                 ttlPerks=ttlPerks+1;
+                 document.getElementById('segEvent').style.display = 'flex';
+                 Ext.getCmp('containerDashboard_Perks_Events').setHidden(false);
+                 ttlHeight_containerDashboard_PerksOutSideTapPanel=ttlHeight_containerDashboard_PerksOutSideTapPanel+390;
+                }
+                if(AvailableDiscount>0){
+                 ttlPerks=ttlPerks+1;
+                 document.getElementById('segDiscount').style.display = 'flex';
+                 Ext.getCmp('containerDashboard_Perks_Discounts').setHidden(false);
+                 ttlHeight_containerDashboard_PerksOutSideTapPanel=ttlHeight_containerDashboard_PerksOutSideTapPanel+390;
+                }
+
+
+                if(ttlPerks <=2){
+                 Ext.getCmp('containerDashboardHeader_ButtonPerks_Main3').setHidden(true);
+                 Ext.getCmp('containerDashboard_PerksInSideTapPanel').setHidden(true);
+                 Ext.getCmp('containerDashboard_PerksOutSideTapPanel').setHidden(false);
+                 Ext.getCmp('containerDashboard_PerksOutSideTapPanel').setHeight(ttlHeight_containerDashboard_PerksOutSideTapPanel);
+                 Ext.getCmp('containerDashboard_PerksYouCanEnjoyHere').setHeight(ttlHeight_containerDashboard_PerksOutSideTapPanel+100);
+                 
+                 if(StampPerksCount>0){
+                     AyohaSelectLoyaltySegNonTab('stamps');
+                    
+                    }
+                    if(PointPerksCount>0){
+                     AyohaSelectLoyaltySegNonTab('points');
+                    
+                    }
+                    if(VoucherEntitle>0){
+                     AyohaSelectLoyaltySegNonTab('vouchers');
+                   
+                    }
+                    if(AvailableContest>0){
+                     AyohaSelectLoyaltySegNonTab('contest');
+                   
+                    }
+                    if(AvailableEvent>0){
+                     AyohaSelectLoyaltySegNonTab('event');
+                   
+                    }
+                    if(AvailableDiscount>0){
+                     AyohaSelectLoyaltySegNonTab('discount');
+                    
+                    }
+                 
+                }
+                if(ttlPerks>=3){
+                 Ext.getCmp('containerDashboardHeader_ButtonPerks_Main3').setHidden(false);
+                 Ext.getCmp('containerDashboard_PerksInSideTapPanel').setHidden(false);
+                 Ext.getCmp('containerDashboard_PerksOutSideTapPanel').setHidden(true);
+               
+                 
+                if(StampPerksCount>0){
+                 AyohaSelectLoyaltySeg('stamps');
+                 return;
+                }
+                if(PointPerksCount>0){
+                 AyohaSelectLoyaltySeg('points');
+                 return;
+                }
+                if(VoucherEntitle>0){
+                 AyohaSelectLoyaltySeg('vouchers');
+                 return;
+                }
+                if(AvailableContest>0){
+                 AyohaSelectLoyaltySeg('contest');
+                 return;
+                }
+                if(AvailableEvent>0){
+                 AyohaSelectLoyaltySeg('event');
+                 return;
+                }
+                if(AvailableDiscount>0){
+                 AyohaSelectLoyaltySeg('discount');
+                 return;
+                }
+                
+
+
+
+                }
+               
+
+
+
+
+
+
+
+            } else {
+               
+              //  globalisSuccessCheckinController_Dashboard_LoadVoucherPerksOpen="N";
+              
+            }
+        }
+    });
+
+
+
+
+
+
+
+
+
+
+
+return;
+
    
 
     var task = Ext.create('Ext.util.DelayedTask', function () {
@@ -565,7 +772,7 @@ function SuccessCheckinController_DashboardSuccessCheckIn_LoadPerkCanEnjoyInfo()
                        var DiscountUsage = parseInt(data.results[0].DiscountUsage);
 
 
-
+                       document.getElementById("successCheckIn_CurrentStamp_OutTabPanel").textContent = StampProgressDisplay;
 
                        document.getElementById('segStamps').style.display = 'none';
                        document.getElementById('segPoints').style.display = 'none';
@@ -621,7 +828,30 @@ function SuccessCheckinController_DashboardSuccessCheckIn_LoadPerkCanEnjoyInfo()
                         Ext.getCmp('containerDashboard_PerksOutSideTapPanel').setHeight(ttlHeight_containerDashboard_PerksOutSideTapPanel);
                         Ext.getCmp('containerDashboard_PerksYouCanEnjoyHere').setHeight(ttlHeight_containerDashboard_PerksOutSideTapPanel+100);
                         
-                        
+                        if(StampPerksCount>0){
+                            AyohaSelectLoyaltySegNonTab('stamps');
+                           
+                           }
+                           if(PointPerksCount>0){
+                            AyohaSelectLoyaltySegNonTab('points');
+                           
+                           }
+                           if(VoucherEntitle>0){
+                            AyohaSelectLoyaltySegNonTab('vouchers');
+                          
+                           }
+                           if(AvailableContest>0){
+                            AyohaSelectLoyaltySegNonTab('contest');
+                          
+                           }
+                           if(AvailableEvent>0){
+                            AyohaSelectLoyaltySegNonTab('event');
+                          
+                           }
+                           if(AvailableDiscount>0){
+                            AyohaSelectLoyaltySegNonTab('discount');
+                           
+                           }
                         
                        }
                        if(ttlPerks>=3){
@@ -726,7 +956,7 @@ function SuccessCheckinController_DashboardSuccessCheckIn_LoadPerkCanEnjoyInfo()
     //  Ext.Viewport.unmask();
 
     //   setDashBoardMerchantReviewRate(FiveStar, FourStar, ThreeStar, TwoStar, OneStar);
-    task.delay(800);
+    task.delay(1000);
 
 
 }

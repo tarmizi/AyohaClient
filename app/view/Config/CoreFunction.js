@@ -484,9 +484,10 @@ function CoreFunction_DashboardLoadByEnterpriseAccNoStorePerk() {
     
               
                 Ext.getCmp('Dashboard_MyAccount_MembershipPerksList').setStore(_DataStore_VIEW_merchantperk_View_DashboardLoadByEnterpriseAccNoStore)
-                
+                SuccessCheckinController_DashboardSuccessCheckIn_LoadPerkCanEnjoyInfo();
                 //LoadingPanelHide();
             } else {
+                SuccessCheckinController_DashboardSuccessCheckIn_LoadPerkCanEnjoyInfo();
                 //alert('Failed to load store data or no record found.');
                // LoadingPanelHide();
             }
@@ -823,9 +824,7 @@ function CoreFunction_DashboardMerchantDetailPage_EnterprisesCoverMediaLoadByEnt
     var counter = 1;
 
 
-console.log(EnterpriseAccNo)
-console.log(day)
-console.log(GetCurrAyohaUserAccountNo())
+
      _DataStore_EnterprisesCoverMediaLoadByEnterpriseAccNoStore.removeAll();
     _DataStore_EnterprisesCoverMediaLoadByEnterpriseAccNoStore.getProxy().setExtraParam('EnterpriseAccNo', EnterpriseAccNo);
     _DataStore_EnterprisesCoverMediaLoadByEnterpriseAccNoStore.getProxy().setExtraParam('Today', day);
@@ -959,9 +958,8 @@ console.log(GetCurrAyohaUserAccountNo())
             
             
                     CoreFunction_DasboardMerchantDetailPage_CalculateRating(EnterpriseAccNo);
-                //     FloatPanelMerchantDetailPage_EnterprisesOnlineStoreLoadByEnterpriseAccNoStore();
-                //     FloatPanelMerchantDetailPage_MembershipCardLoadByEnterpriseAccNoStore();
-                CoreFunction_DasboardAyohaStore_EnterprisesCheckIn();                
+              
+                  //CoreFunction_DasboardAyohaStore_EnterprisesCheckIn();                
                 // LoadingPanelHide();
             } else {
                 console.error('Failed to load store data or no record found.');
@@ -1295,11 +1293,11 @@ globalFloatPanelMerchantDetailPage_CountReviewer=TotalVoter;
 
 
 
-                       
+                        CoreFunction_DasboardAyohaStore_EnterprisesCheckIn(); 
                         Ext.Viewport.unmask();
                     }
                     if (data.total == 0) {
-
+                        CoreFunction_DasboardAyohaStore_EnterprisesCheckIn(); 
                         Ext.Viewport.unmask();
 
                     }
@@ -1310,7 +1308,7 @@ globalFloatPanelMerchantDetailPage_CountReviewer=TotalVoter;
 
                 }
                 else {
-
+                    CoreFunction_DasboardAyohaStore_EnterprisesCheckIn(); 
 
                     Ext.Viewport.unmask();
                 }
@@ -1319,6 +1317,7 @@ globalFloatPanelMerchantDetailPage_CountReviewer=TotalVoter;
             },
 
             failure: function (result, request) {
+                CoreFunction_DasboardAyohaStore_EnterprisesCheckIn(); 
                 Ext.Viewport.unmask();
             }
 
@@ -1361,7 +1360,20 @@ function CoreFunction_DasboardAyohaStore_EnterprisesCheckIn () {
           var logo    = FloatPanel_AyohaStore_getEnterpriseLogo();
           var eName   = FloatPanel_AyohaStore_getEnterpriseName();
           var etagline= FloatPanel_AyohaStore_getEnterpriseTagLine();
-  
+          Ext.getCmp('htmlDashboard_MerchantDetailPage_EnterpriseCheckInDetails').setHtml('<div  style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 12px;font-weight:bold;color:black;margin:0px 0px 0px 0px;padding:0px 6px;">'+ RelativeCheckInTime +'-Total Check-In ('+AccumulateTotalCheckIn+')X Times</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 10px;font-weight:normal;color:black;margin:-27px 0px 0px 0px;padding:0px 6px;">Last Check-In</div>');     
+          CoreFunction_DashboardLoadByEnterpriseAccNoStorePerk();
+          return;
+
+
+
+
+
+
+
+
+
+
+
           // If can check in now, open the panel immediately
           if (count == 1) {
             FloatPanel_Membership_CheckInPageShow(logo, eName, etagline, CheckInCount);
@@ -1385,6 +1397,11 @@ function CoreFunction_DasboardAyohaStore_EnterprisesCheckIn () {
            return
          
         }
+
+
+
+
+
           var cmp = Ext.getCmp('htmlDashboard_MerchantDetailPage_EnterpriseCheckInDetails');
   
           if (RelativeCheckInTime) {
