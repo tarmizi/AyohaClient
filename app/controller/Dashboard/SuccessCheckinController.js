@@ -515,196 +515,177 @@ function SuccessCheckinController_Dashboard_LoadDiscountPerks() {
 
 
 
-
-
-
 function SuccessCheckinController_DashboardSuccessCheckIn_LoadPerkCanEnjoyInfo() {
-   
 
+    // Helper untuk pastikan integer selamat (elak NaN)
+    var getSafeInt = function(val) {
+        var num = parseInt(val, 10);
+        return isNaN(num) ? 0 : num;
+    };
 
- 
+    // Helper untuk set text content dengan selamat (elak error kalau ID tak jumpa)
+    var setSafeText = function(id, text) {
+        var el = document.getElementById(id);
+        if (el) el.textContent = text;
+    };
 
+    // 1. Setup Proxy Store
     _DataStore_SuccessCheckIn_LoadPerkCanEnjoyInfoStore.getProxy().setExtraParam('EnterpriseAccNo', globalFloatPanelMerchantDetailPage_EnterpriseAccNo);
     _DataStore_SuccessCheckIn_LoadPerkCanEnjoyInfoStore.getProxy().setExtraParam('SubscriberAccNo', GetCurrAyohaUserAccountNo());
     _DataStore_SuccessCheckIn_LoadPerkCanEnjoyInfoStore.getProxy().setUrl(GetAPIurl() + '/DashboardAyohaUser/DashboardSuccessCheckIn_LoadPerkCanEnjoyInfo');
 
-  _DataStore_SuccessCheckIn_LoadPerkCanEnjoyInfoStore.load({
+    // 2. Load Store
+    _DataStore_SuccessCheckIn_LoadPerkCanEnjoyInfoStore.load({
         callback: function (records, operation, success) {
-         
+
             if (success && records.length > 0) {
-                console.log(records[0].data)
+                
+                var record = records[0];
+                console.log("Data Loaded:", record.data);
+
+                // --- A. DATA PARSING (Guna Helper) ---
+                var StampPerksCount   = getSafeInt(record.get('StampPerksCount'));
+                var PointPerksCount   = getSafeInt(record.get('PointPerksCount'));
+                var VoucherEntitle    = getSafeInt(record.get('VoucherEntitle'));
+                var AvailableContest  = getSafeInt(record.get('AvailableContest'));
+                var AvailableEvent    = getSafeInt(record.get('AvailableEvent'));
+                var AvailableDiscount = getSafeInt(record.get('AvailableDiscount'));
+
+                // Data lain untuk paparan text
+                var StampProgress     = record.get('StampProgressDisplay');
+                var CurrPoints        = parseFloat(record.get('CurrentPointsBalance')).toFixed(2); // Cantikkan decimal
+                var VoucherUsed       = getSafeInt(record.get('VoucherUsed'));
+                var SubmittedContest  = getSafeInt(record.get('SubmittedContest'));
+                var JoinedEvent       = getSafeInt(record.get('JoinedEvent'));
+                var DiscountUsage     = getSafeInt(record.get('DiscountUsage'));
+
+                // --- B. UPDATE TEKS UI (Sekali jalan) ---
+                setSafeText("Dashboard_PerksYouCanEnjoyHere_StampCount", '● ' + StampPerksCount + ' Rewards');
+                setSafeText("Dashboard_PerksYouCanEnjoyHere_PointCount", '● ' + PointPerksCount + ' Bonus');
+                setSafeText("Dashboard_PerksYouCanEnjoyHere_VoucherCount", '● ' + VoucherEntitle + ' Gifts');
+                setSafeText("Dashboard_PerksYouCanEnjoyHere_ContestCount", '● ' + AvailableContest + ' Prizes');
+                setSafeText("Dashboard_PerksYouCanEnjoyHere_EventCount", '● ' + AvailableEvent + ' Invites');
+                setSafeText("Dashboard_PerksYouCanEnjoyHere_DiscountCount", '● ' + AvailableDiscount + ' Promo');
+
+                // Update text dalam tab/panel (Guna loop atau set manual macam ni ok sebab ID spesifik)
+                // InTabPanel
+                setSafeText("Dashboard_successCheckIn_CurrentStamp_InTabPanel", StampProgress);
+                setSafeText("Dashboard_successCheckIn_CurrentPoint_InTabPanel", CurrPoints + ' Pts');
+                setSafeText("Dashboard_successCheckIn_Voucher_InTabPanel", VoucherUsed + '/' + VoucherEntitle);
+                setSafeText("Dashboard_successCheckIn_Contest_InTabPanel", SubmittedContest + '/' + AvailableContest);
+                setSafeText("Dashboard_successCheckIn_Event_InTabPanel", JoinedEvent + '/' + AvailableEvent);
+                setSafeText("Dashboard_successCheckIn_Discount_InTabPanel", DiscountUsage + '/' + AvailableDiscount);
+                
+                // OutTabPanel
+                setSafeText("Dashboard_successCheckIn_CurrentStamp_OutTabPanel", StampProgress);
+                setSafeText("Dashboard_successCheckIn_CurrentPoint_OutTabPanel", CurrPoints + ' Pts');
+                setSafeText("Dashboard_successCheckIn_Voucher_OutTabPanel", VoucherUsed + '/' + VoucherEntitle);
+                setSafeText("Dashboard_successCheckIn_Contest_OutTabPanel", SubmittedContest + '/' + AvailableContest);
+                setSafeText("Dashboard_successCheckIn_Event_OutTabPanel", JoinedEvent + '/' + AvailableEvent);
+                setSafeText("Dashboard_successCheckIn_Discount_OutTabPanel", DiscountUsage + '/' + AvailableDiscount);
+
+                // --- C. LOGIC CALCULATE PERKS & HEIGHT ---
+                var ttlPerks = 0;
+                var currentHeight = 0;
+
+                // Reset semua ke hidden dulu supaya bersih
+                var segments = ['segStamps', 'segPoints', 'segVouchers', 'segContest', 'segEvent', 'segDiscount'];
+                var containers = ['containerDashboard_Perks_Stamps', 'containerDashboard_Perks_Points', 'containerDashboard_Perks_Vouchers', 'containerDashboard_Perks_Contests', 'containerDashboard_Perks_Events', 'containerDashboard_Perks_Discounts'];
+                
+                // Helper function untuk process setiap section
+                var processSection = function(count, heightVal, segId, contId) {
+                    if (count > 0) {
+                        ttlPerks++;
+                        currentHeight += heightVal;
+                        if(document.getElementById(segId)) document.getElementById(segId).style.display = 'flex';
+                        Ext.getCmp(contId).setHidden(false);
+                    } else {
+                        if(document.getElementById(segId)) document.getElementById(segId).style.display = 'none';
+                        Ext.getCmp(contId).setHidden(true);
+                    }
+                };
+
+                // Jalankan logic untuk setiap item
+                processSection(StampPerksCount, 230, 'segStamps', 'containerDashboard_Perks_Stamps');
+                processSection(PointPerksCount, 230, 'segPoints', 'containerDashboard_Perks_Points');
+                processSection(VoucherEntitle, 260, 'segVouchers', 'containerDashboard_Perks_Vouchers');
+                processSection(AvailableContest, 390, 'segContest', 'containerDashboard_Perks_Contests');
+                processSection(AvailableEvent, 390, 'segEvent', 'containerDashboard_Perks_Events');
+                processSection(AvailableDiscount, 390, 'segDiscount', 'containerDashboard_Perks_Discounts');
+
+                
+                // --- D. LOGIC UI SWITCHING (<=2 vs >=3) ---
+                
+                if (ttlPerks <= 2) {
+                    // MODE: SEDIKIT (Tunjuk Vertical List - OutSideTapPanel)
+                    Ext.getCmp('containerDashboardHeader_ButtonPerks_Main3').setHidden(true);
+                    Ext.getCmp('containerDashboard_PerksInSideTapPanel').setHidden(true);
+                    Ext.getCmp('containerDashboard_PerksOutSideTapPanel').setHidden(false);
+                    
+                    Ext.getCmp('containerDashboard_PerksOutSideTapPanel').setHeight(currentHeight);
+                    Ext.getCmp('containerDashboard_PerksYouCanEnjoyHere').setHeight(currentHeight + 100);
+
+                    // Auto Select (Priority Logic)
+                    if (StampPerksCount > 0)      AyohaSelectLoyaltySegNonTab('stamps');
+                    else if (PointPerksCount > 0) AyohaSelectLoyaltySegNonTab('points');
+                    else if (VoucherEntitle > 0)  AyohaSelectLoyaltySegNonTab('vouchers');
+                    else if (AvailableContest > 0) AyohaSelectLoyaltySegNonTab('contest');
+                    else if (AvailableEvent > 0)  AyohaSelectLoyaltySegNonTab('event');
+                    else if (AvailableDiscount > 0) AyohaSelectLoyaltySegNonTab('discount');
+
+                } else {
+                    // MODE: BANYAK (Tunjuk Tab Panel - InSideTapPanel)
+                    Ext.getCmp('containerDashboardHeader_ButtonPerks_Main3').setHidden(false);
+                    Ext.getCmp('containerDashboard_PerksInSideTapPanel').setHidden(false);
+                    Ext.getCmp('containerDashboard_PerksOutSideTapPanel').setHidden(true);
+                    
+                    // Reset height jika perlu (optional)
+                    // Ext.getCmp('containerDashboard_PerksYouCanEnjoyHere').setHeight('100%'); 
+
+                    // Auto Select (Priority Logic) - Guna Else If supaya tak run banyak kali
+                    if (StampPerksCount > 0)      AyohaSelectLoyaltySeg('stamps');
+                    else if (PointPerksCount > 0) AyohaSelectLoyaltySeg('points');
+                    else if (VoucherEntitle > 0)  AyohaSelectLoyaltySeg('vouchers');
+                    else if (AvailableContest > 0) AyohaSelectLoyaltySeg('contest');
+                    else if (AvailableEvent > 0)  AyohaSelectLoyaltySeg('event');
+                    else if (AvailableDiscount > 0) AyohaSelectLoyaltySeg('discount');
+                }
+                SuccessCheckinController_DashboardSuccessCheckIn_LoadUnLockMemberOnlyPerks();
+            } else {
+                // Tiada data atau success = false
+                console.log("No records found or load failed.");
+                SuccessCheckinController_DashboardSuccessCheckIn_LoadUnLockMemberOnlyPerks();
+                // Boleh handle UI kosong di sini jika perlu
+            }
+        },
+        failure: function() {
+            console.log("Store load failure");
+        }
+    });
+}
+
+
+
+function SuccessCheckinController_DashboardSuccessCheckIn_LoadUnLockMemberOnlyPerks() {
+
+   
+    _DataStore_MembershipCardLoadByEnterpriseAccNo_DashboardMainStore.getProxy().setExtraParam('EnterpriseAccNo', globalFloatPanelMerchantDetailPage_EnterpriseAccNo);
+    _DataStore_MembershipCardLoadByEnterpriseAccNo_DashboardMainStore.getProxy().setExtraParam('SubscriberAccNo', GetCurrAyohaUserAccountNo());
+    _DataStore_MembershipCardLoadByEnterpriseAccNo_DashboardMainStore.getProxy().setUrl(GetAPIurl() + '/MembershipCard/MembershipCardLoadByEnterpriseAccNo_DashboardMain');
+
+ 
+
+    _DataStore_MembershipCardLoadByEnterpriseAccNo_DashboardMainStore.load({
+        callback: function (records, operation, success) {
+            // alert(records.length)
+            // alert(success)
+            if (success && records.length > 0) {
+           
               
-                var record = records[0]; // Access only the first record
-                var CurrentStampCount =parseInt(record.get('CurrentStampCount'));
-                var TotalStampCount = parseInt(record.get('TotalStampCount'));
-                var StampProgressDisplay = record.get('StampProgressDisplay');
-                var StampPerksCount = parseInt(record.get('StampPerksCount'));
-                var PointPerksCount = parseInt(record.get('PointPerksCount'));
-                var CurrentPointsBalance =parseFloat(record.get('CurrentPointsBalance'));
-                var VoucherUsed =parseInt(record.get('VoucherUsed'));
-                var VoucherEntitle = parseInt(record.get('VoucherEntitle'));
-                var SubmittedContest = parseInt(record.get('SubmittedContest'));
-                var AvailableContest = parseInt(record.get('AvailableContest'));
-                var JoinedEvent = parseInt(record.get('JoinedEvent'));
-                var AvailableEvent = parseInt(record.get('AvailableEvent'));
-                var AvailableDiscount = parseInt(record.get('AvailableDiscount'));
-                var DiscountUsage = parseInt(record.get('DiscountUsage'));
-              
-              //  document.getElementById("Dashboard_PerksYouCanEnjoyHere_StampCount").innerHTML = '<span style="color: #A020F0; margin-right: 5px;">●</span>' + StampPerksCount + ' Rewards';
+                Ext.getCmp('listDashboard_MembershipCard_CheckIn').setStore(_DataStore_MembershipCardLoadByEnterpriseAccNo_DashboardMainStore);
+               // setScreenWidthMembershipCardCheckIn(count,jenis)
+               setScreenWidthMembershipCardCheckIn(records.length,"membershipCard_");
                
-               document.getElementById("Dashboard_PerksYouCanEnjoyHere_StampCount").textContent ='● '+StampPerksCount +' Rewards';
-                document.getElementById("Dashboard_PerksYouCanEnjoyHere_PointCount").textContent = '● '+PointPerksCount+' Bonus';
-
-                document.getElementById("Dashboard_PerksYouCanEnjoyHere_VoucherCount").textContent ='● '+ VoucherEntitle+' Gifts';
-                document.getElementById("Dashboard_PerksYouCanEnjoyHere_ContestCount").textContent = '● '+AvailableContest +' Prizes';
-
-                document.getElementById("Dashboard_PerksYouCanEnjoyHere_EventCount").textContent ='● '+AvailableEvent +' Invites';
-                document.getElementById("Dashboard_PerksYouCanEnjoyHere_DiscountCount").textContent ='● '+ AvailableDiscount +' Promo';
-                
-
-                document.getElementById("Dashboard_successCheckIn_CurrentStamp_InTabPanel").textContent = StampProgressDisplay;
-                document.getElementById("Dashboard_successCheckIn_CurrentPoint_InTabPanel").textContent = CurrentPointsBalance+' Pts';
-                document.getElementById("Dashboard_successCheckIn_Voucher_InTabPanel").textContent = VoucherUsed+'/'+VoucherEntitle;
-                document.getElementById("Dashboard_successCheckIn_Contest_InTabPanel").textContent = SubmittedContest+'/'+AvailableContest;
-                document.getElementById("Dashboard_successCheckIn_Event_InTabPanel").textContent = JoinedEvent+'/'+AvailableEvent;
-                document.getElementById("Dashboard_successCheckIn_Discount_InTabPanel").textContent = DiscountUsage+'/'+AvailableDiscount;
-
-
-
-            
-                document.getElementById("Dashboard_successCheckIn_CurrentStamp_OutTabPanel").textContent = StampProgressDisplay;
-                document.getElementById("Dashboard_successCheckIn_CurrentPoint_OutTabPanel").textContent = CurrentPointsBalance+' Pts';
-                document.getElementById("Dashboard_successCheckIn_Voucher_OutTabPanel").textContent = VoucherUsed+'/'+VoucherEntitle;
-                document.getElementById("Dashboard_successCheckIn_Contest_OutTabPanel").textContent = SubmittedContest+'/'+AvailableContest;
-                document.getElementById("Dashboard_successCheckIn_Event_OutTabPanel").textContent = JoinedEvent+'/'+AvailableEvent;
-                document.getElementById("Dashboard_successCheckIn_Discount_OutTabPanel").textContent = DiscountUsage+'/'+AvailableDiscount;
-                
-                
-                
-                
-                document.getElementById('segStamps').style.display = 'none';
-                document.getElementById('segPoints').style.display = 'none';
-                document.getElementById('segVouchers').style.display = 'none';
-                document.getElementById('segContest').style.display = 'none';
-                document.getElementById('segEvent').style.display = 'none';
-                document.getElementById('segDiscount').style.display = 'none';
-                var ttlPerks=0;
-                var ttlHeight_containerDashboard_PerksOutSideTapPanel=0;
-
-                if(StampPerksCount>0){
-                 ttlPerks=ttlPerks+1;
-                 document.getElementById('segStamps').style.display = 'flex';
-                 Ext.getCmp('containerDashboard_Perks_Stamps').setHidden(false);
-                 ttlHeight_containerDashboard_PerksOutSideTapPanel=ttlHeight_containerDashboard_PerksOutSideTapPanel+230;
-                }
-                if(PointPerksCount>0){
-                 ttlPerks=ttlPerks+1;
-                   document.getElementById('segPoints').style.display = 'flex';
-                   Ext.getCmp('containerDashboard_Perks_Points').setHidden(false);
-                   ttlHeight_containerDashboard_PerksOutSideTapPanel=ttlHeight_containerDashboard_PerksOutSideTapPanel+230;
-                }
-                if(VoucherEntitle>0){
-                 ttlPerks=ttlPerks+1;
-                 document.getElementById('segVouchers').style.display = 'flex';
-                 Ext.getCmp('containerDashboard_Perks_Vouchers').setHidden(false);
-                 ttlHeight_containerDashboard_PerksOutSideTapPanel=ttlHeight_containerDashboard_PerksOutSideTapPanel+260;
-                }
-                if(AvailableContest>0){
-                 ttlPerks=ttlPerks+1;
-                 document.getElementById('segContest').style.display = 'flex';
-                 Ext.getCmp('containerDashboard_Perks_Contests').setHidden(false);
-                 ttlHeight_containerDashboard_PerksOutSideTapPanel=ttlHeight_containerDashboard_PerksOutSideTapPanel+390;
-                }
-                if(AvailableEvent>0){
-                 ttlPerks=ttlPerks+1;
-                 document.getElementById('segEvent').style.display = 'flex';
-                 Ext.getCmp('containerDashboard_Perks_Events').setHidden(false);
-                 ttlHeight_containerDashboard_PerksOutSideTapPanel=ttlHeight_containerDashboard_PerksOutSideTapPanel+390;
-                }
-                if(AvailableDiscount>0){
-                 ttlPerks=ttlPerks+1;
-                 document.getElementById('segDiscount').style.display = 'flex';
-                 Ext.getCmp('containerDashboard_Perks_Discounts').setHidden(false);
-                 ttlHeight_containerDashboard_PerksOutSideTapPanel=ttlHeight_containerDashboard_PerksOutSideTapPanel+390;
-                }
-
-
-                if(ttlPerks <=2){
-                 Ext.getCmp('containerDashboardHeader_ButtonPerks_Main3').setHidden(true);
-                 Ext.getCmp('containerDashboard_PerksInSideTapPanel').setHidden(true);
-                 Ext.getCmp('containerDashboard_PerksOutSideTapPanel').setHidden(false);
-                 Ext.getCmp('containerDashboard_PerksOutSideTapPanel').setHeight(ttlHeight_containerDashboard_PerksOutSideTapPanel);
-                 Ext.getCmp('containerDashboard_PerksYouCanEnjoyHere').setHeight(ttlHeight_containerDashboard_PerksOutSideTapPanel+100);
-                 
-                 if(StampPerksCount>0){
-                     AyohaSelectLoyaltySegNonTab('stamps');
-                    
-                    }
-                    if(PointPerksCount>0){
-                     AyohaSelectLoyaltySegNonTab('points');
-                    
-                    }
-                    if(VoucherEntitle>0){
-                     AyohaSelectLoyaltySegNonTab('vouchers');
-                   
-                    }
-                    if(AvailableContest>0){
-                     AyohaSelectLoyaltySegNonTab('contest');
-                   
-                    }
-                    if(AvailableEvent>0){
-                     AyohaSelectLoyaltySegNonTab('event');
-                   
-                    }
-                    if(AvailableDiscount>0){
-                     AyohaSelectLoyaltySegNonTab('discount');
-                    
-                    }
-                 
-                }
-                if(ttlPerks>=3){
-                 Ext.getCmp('containerDashboardHeader_ButtonPerks_Main3').setHidden(false);
-                 Ext.getCmp('containerDashboard_PerksInSideTapPanel').setHidden(false);
-                 Ext.getCmp('containerDashboard_PerksOutSideTapPanel').setHidden(true);
-               
-                 
-                if(StampPerksCount>0){
-                 AyohaSelectLoyaltySeg('stamps');
-                 return;
-                }
-                if(PointPerksCount>0){
-                 AyohaSelectLoyaltySeg('points');
-                 return;
-                }
-                if(VoucherEntitle>0){
-                 AyohaSelectLoyaltySeg('vouchers');
-                 return;
-                }
-                if(AvailableContest>0){
-                 AyohaSelectLoyaltySeg('contest');
-                 return;
-                }
-                if(AvailableEvent>0){
-                 AyohaSelectLoyaltySeg('event');
-                 return;
-                }
-                if(AvailableDiscount>0){
-                 AyohaSelectLoyaltySeg('discount');
-                 return;
-                }
-                
-
-
-
-                }
-               
-
-
-
-
-
-
-
             } else {
                
               //  globalisSuccessCheckinController_Dashboard_LoadVoucherPerksOpen="N";
@@ -715,253 +696,7 @@ function SuccessCheckinController_DashboardSuccessCheckIn_LoadPerkCanEnjoyInfo()
 
 
 
-
-
-
-
-
-
-
-
-return;
-
-   
-
-    var task = Ext.create('Ext.util.DelayedTask', function () {
-
-        var objn = {
-            "EnterpriseAccNo": globalFloatPanelMerchantDetailPage_EnterpriseAccNo,
-            "SubscriberAccNo":  GetCurrAyohaUserAccountNo()
-        };
-        // console.log(objn);
-        var _value = Ext.Ajax.request({
-
-            type: "POST",
-
-            url: GetAPIurl() + '/DashboardAyohaUser/DashboardSuccessCheckIn_LoadPerkCanEnjoyInfo',
-
-            dataType: "json",
-            data: JSON.stringify(objn),
-            headers: {
-                "Content-Type": "application/json; charset=utf-8"
-            },
-
-            success: function (result, request) {
-
-                //console.log(result.responseText);
-
-
-                data = Ext.decode(result.responseText.trim());
-
-                if (data.success == "true") {
-                   
-                    if (data.total > 0) {
-                       var CurrentStampCount =parseInt(data.results[0].CurrentStampCount);
-                       var TotalStampCount = parseInt(data.results[0].TotalStampCount);
-                       var StampProgressDisplay = data.results[0].StampProgressDisplay
-                       var StampPerksCount = parseInt(data.results[0].StampPerksCount);
-                       var PointPerksCount = parseInt(data.results[0].PointPerksCount);
-                       var CurrentPointsBalance =parseFloat( data.results[0].CurrentPointsBalance);
-                       var VoucherUsed =parseInt(data.results[0].VoucherUsed);
-                       var VoucherEntitle = parseInt(data.results[0].VoucherEntitle);
-                       var SubmittedContest = parseInt(data.results[0].SubmittedContest);
-                       var AvailableContest = parseInt(data.results[0].AvailableContest);
-                       var JoinedEvent = parseInt(data.results[0].JoinedEvent);
-                       var AvailableEvent = parseInt(data.results[0].AvailableEvent);
-                       var AvailableDiscount = parseInt(data.results[0].AvailableDiscount);
-                       var DiscountUsage = parseInt(data.results[0].DiscountUsage);
-
-
-                       document.getElementById("successCheckIn_CurrentStamp_OutTabPanel").textContent = StampProgressDisplay;
-
-                       document.getElementById('segStamps').style.display = 'none';
-                       document.getElementById('segPoints').style.display = 'none';
-                       document.getElementById('segVouchers').style.display = 'none';
-                       document.getElementById('segContest').style.display = 'none';
-                       document.getElementById('segEvent').style.display = 'none';
-                       document.getElementById('segDiscount').style.display = 'none';
-                       var ttlPerks=0;
-                       var ttlHeight_containerDashboard_PerksOutSideTapPanel=0;
-
-                       if(StampPerksCount>0){
-                        ttlPerks=ttlPerks+1;
-                        document.getElementById('segStamps').style.display = 'flex';
-                        Ext.getCmp('containerDashboard_Perks_Stamps').setHidden(false);
-                        ttlHeight_containerDashboard_PerksOutSideTapPanel=ttlHeight_containerDashboard_PerksOutSideTapPanel+230;
-                       }
-                       if(PointPerksCount>0){
-                        ttlPerks=ttlPerks+1;
-                          document.getElementById('segPoints').style.display = 'flex';
-                          Ext.getCmp('containerDashboard_Perks_Points').setHidden(false);
-                          ttlHeight_containerDashboard_PerksOutSideTapPanel=ttlHeight_containerDashboard_PerksOutSideTapPanel+230;
-                       }
-                       if(VoucherEntitle>0){
-                        ttlPerks=ttlPerks+1;
-                        document.getElementById('segVouchers').style.display = 'flex';
-                        Ext.getCmp('containerDashboard_Perks_Vouchers').setHidden(false);
-                        ttlHeight_containerDashboard_PerksOutSideTapPanel=ttlHeight_containerDashboard_PerksOutSideTapPanel+260;
-                       }
-                       if(AvailableContest>0){
-                        ttlPerks=ttlPerks+1;
-                        document.getElementById('segContest').style.display = 'flex';
-                        Ext.getCmp('containerDashboard_Perks_Contests').setHidden(false);
-                        ttlHeight_containerDashboard_PerksOutSideTapPanel=ttlHeight_containerDashboard_PerksOutSideTapPanel+390;
-                       }
-                       if(AvailableEvent>0){
-                        ttlPerks=ttlPerks+1;
-                        document.getElementById('segEvent').style.display = 'flex';
-                        Ext.getCmp('containerDashboard_Perks_Events').setHidden(false);
-                        ttlHeight_containerDashboard_PerksOutSideTapPanel=ttlHeight_containerDashboard_PerksOutSideTapPanel+390;
-                       }
-                       if(AvailableDiscount>0){
-                        ttlPerks=ttlPerks+1;
-                        document.getElementById('segDiscount').style.display = 'flex';
-                        Ext.getCmp('containerDashboard_Perks_Discounts').setHidden(false);
-                        ttlHeight_containerDashboard_PerksOutSideTapPanel=ttlHeight_containerDashboard_PerksOutSideTapPanel+390;
-                       }
-
-
-                       if(ttlPerks <=2){
-                        Ext.getCmp('containerDashboardHeader_ButtonPerks_Main3').setHidden(true);
-                        Ext.getCmp('containerDashboard_PerksInSideTapPanel').setHidden(true);
-                        Ext.getCmp('containerDashboard_PerksOutSideTapPanel').setHidden(false);
-                        Ext.getCmp('containerDashboard_PerksOutSideTapPanel').setHeight(ttlHeight_containerDashboard_PerksOutSideTapPanel);
-                        Ext.getCmp('containerDashboard_PerksYouCanEnjoyHere').setHeight(ttlHeight_containerDashboard_PerksOutSideTapPanel+100);
-                        
-                        if(StampPerksCount>0){
-                            AyohaSelectLoyaltySegNonTab('stamps');
-                           
-                           }
-                           if(PointPerksCount>0){
-                            AyohaSelectLoyaltySegNonTab('points');
-                           
-                           }
-                           if(VoucherEntitle>0){
-                            AyohaSelectLoyaltySegNonTab('vouchers');
-                          
-                           }
-                           if(AvailableContest>0){
-                            AyohaSelectLoyaltySegNonTab('contest');
-                          
-                           }
-                           if(AvailableEvent>0){
-                            AyohaSelectLoyaltySegNonTab('event');
-                          
-                           }
-                           if(AvailableDiscount>0){
-                            AyohaSelectLoyaltySegNonTab('discount');
-                           
-                           }
-                        
-                       }
-                       if(ttlPerks>=3){
-                        Ext.getCmp('containerDashboardHeader_ButtonPerks_Main3').setHidden(false);
-                        Ext.getCmp('containerDashboard_PerksInSideTapPanel').setHidden(false);
-                        Ext.getCmp('containerDashboard_PerksOutSideTapPanel').setHidden(true);
-                      
-                        
-                       if(StampPerksCount>0){
-                        AyohaSelectLoyaltySeg('stamps');
-                        return;
-                       }
-                       if(PointPerksCount>0){
-                        AyohaSelectLoyaltySeg('points');
-                        return;
-                       }
-                       if(VoucherEntitle>0){
-                        AyohaSelectLoyaltySeg('vouchers');
-                        return;
-                       }
-                       if(AvailableContest>0){
-                        AyohaSelectLoyaltySeg('contest');
-                        return;
-                       }
-                       if(AvailableEvent>0){
-                        AyohaSelectLoyaltySeg('event');
-                        return;
-                       }
-                       if(AvailableDiscount>0){
-                        AyohaSelectLoyaltySeg('discount');
-                        return;
-                       }
-                       
-
-
-
-                       }
-                      
-
-
-
-
-
-
-
-
-
-                      
-                    
-                      
-                       
-                     //  
-                     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                       
-                        
-                    }
-                    if (data.total == 0) {
-
-                      
-
-                    }
-
-
-
-
-
-                }
-                else {
-
-
-                    Ext.Viewport.unmask();
-                }
-
-
-            },
-
-            failure: function (result, request) {
-                Ext.Viewport.unmask();
-            }
-
-        });
-
-
-
-    });
-
-    //  Ext.Viewport.unmask();
-
-    //   setDashBoardMerchantReviewRate(FiveStar, FourStar, ThreeStar, TwoStar, OneStar);
-    task.delay(1000);
-
-
 }
-
-
 
 
 
@@ -993,6 +728,41 @@ function setScreenWidthListDynamic(count,jenis) {
     }
     if(count>1){
         var w = ejasWidth-80;
+        var els = document.querySelectorAll('[id^="'+jenis+'"]');
+        for (var i = 0; i < els.length; i++) {
+          els[i].style.width = w + 'px';
+        }
+    }
+
+
+     
+  }
+
+
+
+
+
+
+
+  function setScreenWidthMembershipCardCheckIn(count,jenis) {
+
+    var ejasWidth=Math.max(
+        document.documentElement.clientWidth || 0, // viewport width
+        window.innerWidth || 0
+      );
+    //var count=AppState.MainDashboard.MainDashboard_CheckInSuccess_VoucherCount;
+   
+    if(count==1){
+
+        var w = ejasWidth-35;
+        var els = document.querySelectorAll('[id^="'+jenis+'"]');
+        for (var i = 0; i < els.length; i++) {
+          els[i].style.width = w + 'px';
+        }
+      
+    }
+    if(count>1){
+        var w = ejasWidth-70;
         var els = document.querySelectorAll('[id^="'+jenis+'"]');
         for (var i = 0; i < els.length; i++) {
           els[i].style.width = w + 'px';

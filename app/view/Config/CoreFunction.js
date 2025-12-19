@@ -482,12 +482,13 @@ function CoreFunction_DashboardLoadByEnterpriseAccNoStorePerk() {
             if (success && records.length > 0) {
                //alert('_DataStore_VIEW_merchantperk_View_LoadbySubscriberAccNoStore loaded successfully, total records: ' + records.length);
     
-              
+             
                 Ext.getCmp('Dashboard_MyAccount_MembershipPerksList').setStore(_DataStore_VIEW_merchantperk_View_DashboardLoadByEnterpriseAccNoStore)
-                SuccessCheckinController_DashboardSuccessCheckIn_LoadPerkCanEnjoyInfo();
+               
+               // disabled 20/12/2025 SuccessCheckinController_DashboardSuccessCheckIn_LoadPerkCanEnjoyInfo();
                 //LoadingPanelHide();
             } else {
-                SuccessCheckinController_DashboardSuccessCheckIn_LoadPerkCanEnjoyInfo();
+               // SuccessCheckinController_DashboardSuccessCheckIn_LoadPerkCanEnjoyInfo();
                 //alert('Failed to load store data or no record found.');
                // LoadingPanelHide();
             }
@@ -951,16 +952,13 @@ function CoreFunction_DashboardMerchantDetailPage_EnterprisesCoverMediaLoadByEnt
                     
             
 
-
-                    // Assuming your functions return a Promise (like fetch, axios, etc.)
-
                   
             
-            
+                  //disable 20122025  CoreFunction_DashboardLoadByEnterpriseAccNoStorePerk();
                     CoreFunction_DasboardMerchantDetailPage_CalculateRating(EnterpriseAccNo);
+                    CoreFunction_DasboardAyohaStore_EnterprisesCheckIn(); 
               
-                  //CoreFunction_DasboardAyohaStore_EnterprisesCheckIn();                
-                // LoadingPanelHide();
+                
             } else {
                 console.error('Failed to load store data or no record found.');
                 LoadingPanelHide();
@@ -1293,11 +1291,11 @@ globalFloatPanelMerchantDetailPage_CountReviewer=TotalVoter;
 
 
 
-                        CoreFunction_DasboardAyohaStore_EnterprisesCheckIn(); 
+                       
                         Ext.Viewport.unmask();
                     }
                     if (data.total == 0) {
-                        CoreFunction_DasboardAyohaStore_EnterprisesCheckIn(); 
+                      
                         Ext.Viewport.unmask();
 
                     }
@@ -1308,7 +1306,7 @@ globalFloatPanelMerchantDetailPage_CountReviewer=TotalVoter;
 
                 }
                 else {
-                    CoreFunction_DasboardAyohaStore_EnterprisesCheckIn(); 
+                  
 
                     Ext.Viewport.unmask();
                 }
@@ -1317,7 +1315,7 @@ globalFloatPanelMerchantDetailPage_CountReviewer=TotalVoter;
             },
 
             failure: function (result, request) {
-                CoreFunction_DasboardAyohaStore_EnterprisesCheckIn(); 
+             
                 Ext.Viewport.unmask();
             }
 
@@ -1361,7 +1359,7 @@ function CoreFunction_DasboardAyohaStore_EnterprisesCheckIn () {
           var eName   = FloatPanel_AyohaStore_getEnterpriseName();
           var etagline= FloatPanel_AyohaStore_getEnterpriseTagLine();
           Ext.getCmp('htmlDashboard_MerchantDetailPage_EnterpriseCheckInDetails').setHtml('<div  style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 12px;font-weight:bold;color:black;margin:0px 0px 0px 0px;padding:0px 6px;">'+ RelativeCheckInTime +'-Total Check-In ('+AccumulateTotalCheckIn+')X Times</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 10px;font-weight:normal;color:black;margin:-27px 0px 0px 0px;padding:0px 6px;">Last Check-In</div>');     
-          CoreFunction_DashboardLoadByEnterpriseAccNoStorePerk();
+          SuccessCheckinController_DashboardSuccessCheckIn_LoadPerkCanEnjoyInfo();
           return;
 
 

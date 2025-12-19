@@ -37,6 +37,27 @@ var _DataStore_MembershipCardLoadBySubscriberAccNoDashboardMainStore = Ext.creat
 });
 
 
+var _DataStore_MembershipCardLoadByEnterpriseAccNo_DashboardMainStore = Ext.create('Ext.data.Store', {
+
+    model: 'ianMizi.model.MembershipCard.MembershipCardModel',
+    id: '_MembershipCardLoadByEnterpriseAccNo_DashboardMainID',
+    proxy: {
+        type: 'ajax',
+        url: GetAPIurl() + '/MembershipCard/MembershipCardLoadByEnterpriseAccNo_DashboardMain',
+        actionMethods: {
+            read: 'POST'
+        },
+        reader: {
+            type: 'json',
+            rootProperty: 'results',
+            totalProperty: 'total',
+            successProperty: 'success',
+            messageProperty: 'message'
+        }
+    },
+});
+
+
 
 var _DataStore_MembershipCard_LoadforCheck_InStore = Ext.create('Ext.data.Store', {
 
