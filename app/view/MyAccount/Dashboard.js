@@ -1564,7 +1564,8 @@ html: '<div style="text-align:center;padding:10px;margin:-3px 0px 0px 0px;">' +
     id: 'MainMaincontainerDashbord',
    // style: 'background: white;',
     style:"background: linear-gradient(180deg, #FFF1F9 0%, #F3E8FF 100%);",
-    height:4600,
+    //height:4600,
+    height:2780,
     width:'100%',
     margin: '0 0 0 0',
     layout: {
@@ -1593,10 +1594,10 @@ html: '<div style="text-align:center;padding:10px;margin:-3px 0px 0px 0px;">' +
   {
     xtype: 'container',
     width: '100%',
-    height:140,
+    height:145,
     id:'containerCheckInRewardspacer02',
   // style: 'background: transparent;',
-   style: 'background:  #faf5ff;',
+   style: 'background:  #faf5ff;border-bottom:1px solid  #E5E7EB;border-top:2px none #faf5ff;border-left:2px none #faf5ff;border-right:2px none #faf5ff;',
     layout: {
 
         type: 'vbox',
@@ -1626,10 +1627,10 @@ html: '<div style="text-align:center;padding:10px;margin:-3px 0px 0px 0px;">' +
                     xtype: 'component',
                     id:'imgDashboard_maskotCheckIn',
                     html:
-                    '<div style="position:absolute;top:-22px;left:20px;background-color:transparent;border-radius:50%;' +
-                         'width:125px;height:137px;z-index:5;display:flex;align-items:center;justify-content:center;">' +
+                    '<div style="position:absolute;top:-28px;left:20px;background-color:transparent;border-radius:50%;' +
+                         'width:125px;height:147px;z-index:5;display:flex;align-items:center;justify-content:center;">' +
                       '<img src="resources/icons/maskotCheckIn03.png" ' +
-                           'style="width:120px;height:110px;display:block;" ' +
+                           'style="width:120px;height:120px;display:block;" ' +
                            'alt="Company Name" />' +
                     '</div>'
                 },
@@ -1813,7 +1814,7 @@ html: '<div style="text-align:center;padding:10px;margin:-3px 0px 0px 0px;">' +
     emptyText:
       '<div style="' +
         'max-width:350px;' +              // lebar card
-        'margin:50px auto 12px auto;' +    // 🔴 center horizontal (auto kiri/kanan)
+        'margin:55px auto 12px auto;' +    // 🔴 center horizontal (auto kiri/kanan)
         'padding:12px 16px;' +
         'border-radius:16px;' +
         //'background:#fdf2ff;' +
@@ -2349,184 +2350,7 @@ html: '<div onclick="FloatPanelMerchantDetailPage_AyohaStore()"><img src="resour
                 },
             ]
         },
-//         {
-//             xtype: 'container',
-//             width: '95%',
-//              height: 90,
-//             style: 'background-color: transparent;',
-//             id: 'containerDashboard_MerchantDetailPage_EnterpriseInfo',
 
-//             //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
-//             // style: 'border-bottom:2px solid #D25959;background-color:transparent',
-//             layout: {
-//                 type: 'hbox',
-//                 pack: 'left',
-//                 align: 'left',
-//             },
-//             items: [
-//                 {
-//                     xtype: 'container',
-//                     width: '23%',
-//                     height: 90,
-//                     style: 'background-color: transparent;',
-//                     id: 'containerDashboard_MerchantDetailPage_EnterpriseInfo_Logo',
-
-//                     //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
-//                     // style: 'border-bottom:2px solid #D25959;background-color:transparent',
-//                     layout: {
-//                         type: 'hbox',
-//                         pack: 'left',
-//                         align: 'left',
-//                     },
-//                     items: [
-//                         {
-//                             width: '100%',
-//                             height: 90,
-//                             id: 'htmlDashboard_MerchantDetailPage_EnterpriseInfo_Logo',
-//                             html: '<div ><img src="null" width="100%" height="90" alt="Company Name"></div>',
-//                         }
-//                     ]
-//                 },
-//                  {
-//                      xtype: 'container',
-//                      width: '71%',
-//                      height: 90,
-//                      style: 'background-color: transparent;',
-//                      id: 'containerDashboard_MerchantDetailPage_EnterpriseInfo_EnterpiseInfoExtended',
-
-//                      //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
-//                      // style: 'border-bottom:2px solid #D25959;background-color:transparent',
-//                      layout: {
-//                          type: 'vbox',
-//                          pack: 'start',
-//                          align: 'left',
-//                      },
-//                      items: [
-//                          {
-//                              margin: '-5 0 0 0',
-//                              id: 'htmlDashboard_MerchantDetailPage_EnterpriseInfo_EnterpiseInfoExtended_EnterpriseName_TagLine',                                                              
-//                              html: '<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 17px;font-weight:bold;color:black;margin:0px 0px 0px 0px;padding:0px 6px;">Monster Chicken</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 10px;font-weight:normal;color:black;margin:-27px 0px 0px 0px;padding:0px 6px;"><i>Ayam Cheesee Leleh</i></div>',
-//                          },
-//                          {
-//                              xtype: 'container',
-//                              width: '100%',
-//                              height: 35,
-//                              docked:'bottom',
-//                              style: 'background-color: transparent;',
-//                              id: 'containerDashboard_MerchantDetailPage_EnterpriseInfo_EnterpiseInfoExtendedBotom',
-//                              layout: {
-//                                  type: 'vbox',
-//                                  pack: 'start',
-//                                  align: 'left',
-//                              },
-//                              items: [
-//                                  {
-//                                   margin: '-10 0 0 0',
-//                                      id: 'htmlDashboard_MerchantDetailPage_EnterpriseInfo_EnterpiseInfoExtended_EnterpriseFullAddress',
-//                                      html: '<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 12px;font-weight:normal;color:black;padding:0px 6px;">Lot 153,Aeon Nilai, Bandar Baru Nilai,71800 Nilai,Negeri Sembilan</div>'
-//                                  }
-//                              ]
-//                          }
-//                      ]
-//                  },
-
-
-// {
-// xtype: 'container',
-// width: '6%',    
-// //height: 90,
-// height: 100,
-// style: 'background-color: transparent;',
-// layout: {
-// type: 'vbox',
-// pack: 'center',
-// align: 'center',
-// },
-// items: [
-// {
-// xtype: 'container',
-// width: '100%',
-// hidden:true,
-// //height: 90,
-// height: 40,
-// style: 'background-color: transparent;',
-// id: 'containerDashboard_MerchantDetailPage_EnterpriseInfo_Direction',
-
-// //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
-// // style: 'border-bottom:2px solid #D25959;background-color:transparent',
-// layout: {
-// type: 'vbox',
-// pack: 'top',
-// align: 'right',
-// },
-// items: [
-// {
-// width: '100%',
-// height: 30,
-// html: '<div onclick="FloatPanelMerchantDetailPage_OpenDirection();"><img src="resources/icons/DirectionPurple.jpg" width="24" height="24" alt="Company Name"></div>',
-// },
-// //  {
-// //      width: '100%',
-// //      height: 5,
-// //      margin: '-7 0 0 0',
-// //     // hidden:true,
-// //      html: '<div onclick="FloatPanelMerchantDetailPage_OpenDirection();" style="width:100%;background-color: transparent;text-align:center;border: 1px none white;font-family:Century Gothic;font-size: 7px;font-weight:normal;color:black;">Location</div>'
-// //  },
-// ]
-// },
-// {
-// xtype: 'container',
-// width: '100%',
-// // height: 90,
-// height: 40,
-// hidden:true,
-// style: 'background-color: transparent;',
-// id: 'containerDashboard_MerchantDetailPage_EnterpriseInfo_OnlineStore',
-// name:'namecontainerDashboard_MerchantDetailPage_EnterpriseInfo_OnlineStore',
-
-// // style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:1px solid #ECF0F1 ;background-color: transparent;',
-// // style: 'border-bottom:2px solid #D25959;background-color:transparent',
-// layout: {
-// type: 'vbox',
-// pack: 'center',
-// align: 'center',
-// },
-// items: [
-// {
-// width: '100%',
-// height: 30,
-// html: '<div onclick="FloatPanelMerchantDetailPage_AyohaStore()"><img src="resources/icons/onlineStore.jpg" width="24" height="24" alt="Company Name"></div>',
-// //  margin:'15 0 0 0',
-// },
-// //   {
-// //       width: '100%',                     
-// // height: 5,
-// // margin: '4 0 0 5',
-// //       html: '<div onclick="FloatPanelMerchantDetailPage_AyohaStore()" style="width:100%;background-color: transparent;text-align:center;border: 1px none white;font-family:Century Gothic;font-size: 7px;font-weight:normal;color:black;margin:-12px 0px 0px -5px;">Ayoha</div><br><div style="width:100%;background-color: transparent;text-align:center;border: 1px none white;font-family:Century Gothic;font-size: 7px;font-weight:normal;color:black;margin:-26px 0px 0px -5px">Store</div>'
-// //   },
-// ]
-// }
-// ]
-
-// },
-                
-//             ]
-
-//         },
-        //  {
-        //      xtype: 'container',
-        //      width: '95%',
-        //      margin:'5 0 0 0',
-        //      height: 1,
-        //      style: 'background-color: grey;',
-        //  },
-
-        // {
-        //     xtype: 'container',
-        //     width: '95%',
-        //     height: 5,
-        //     style: 'background-color: transparent;',
-        // },
        
         {
             xtype: 'container',
@@ -6133,7 +5957,7 @@ html: '<img onClick="FloatPanel_AyohaStore_OrderHistoryShow()" src="resources/ic
    // hidden: false,
     id:'containerDashboard_MembershipInsight',
    // margin: '0 0 0 0',
-   margin: '10 0 0 0',
+   margin: '20 0 0 0',
     // style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1 ;background: white;border-radius: 0px 15px 15px 0px;',
     //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
     style: 'background-color:transparent',
@@ -6180,7 +6004,7 @@ html: '<img onClick="FloatPanel_AyohaStore_OrderHistoryShow()" src="resources/ic
        margin: '13 0 0 0',
         xtype: 'dataview',
         //height: 150,
-        height: 100,
+        height: 90,
         style: 'background-color:rgba(255,255,255, 0);border-radius: 0px 0px 0px 0px;',
         //style: "background-color: white;",
         inline: {
@@ -6247,7 +6071,8 @@ html: '<img onClick="FloatPanel_AyohaStore_OrderHistoryShow()" src="resources/ic
                      {
                          margin: '10 0 0 14',
                          //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
-                         html: '<div style="color:black;text-align: left;font-size:14px;width:100%;margin:0px 0px 0px 0px"><b>Membership Hubs</b></div><br><div  style="color:black;text-align: left;font-size:10px;width:100%;margin:-25px 0px 0px 0px;">Tap the card to see what’s included and how it pays back</div>'
+                        // html: '<div style="color:black;text-align: left;font-size:14px;width:100%;margin:0px 0px 0px 0px"><b>Membership Hubs</b></div><br><div  style="color:black;text-align: left;font-size:10px;width:100%;margin:-25px 0px 0px 0px;">Tap the card to see what’s included and how it pays back</div>'
+                         html: '<div style="color:#3A0ca3;text-align: left;font-size:18px;width:100%;margin:10px 0px 0px 10px"><b>Membership Card Hubs</b></div><br><div  style="color:black;text-align: left;font-size:10px;width:100%;margin:-25px 0px 0px 0px;">Tap the card to see what’s included and how it pays back</div>'
                          // html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: 70%"><col style="width:30%"></colgroup><thead><tr><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:right;vertical-align:top;word-break:normal" rowspan="2"><div style="margin:0px 0px 0px -15px">TARMIZI RAHIM</div><br>Lagendary Card Mortal </th><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:middle;word-break:normal" rowspan="2">Medal</th></tr><tr></tr></thead></table>'
                      },
                      {
@@ -6284,7 +6109,7 @@ html: '<img onClick="FloatPanel_AyohaStore_OrderHistoryShow()" src="resources/ic
                 id: 'Dashboard_MyAccount_UnSubscribedMembershipCardList_front',
                 margin: '3 0 0 0',
                 xtype: 'dataview',
-                height: 220,
+                height: 230,
                 //height: 180,
                 style: "background-color: transparent;",
                 inline: {
@@ -6349,7 +6174,7 @@ html: '<img onClick="FloatPanel_AyohaStore_OrderHistoryShow()" src="resources/ic
                 width: '100%',
                // hidden: false,
                 id:'containerSelectedPremiumperksbyAyoha',
-                margin: '10 0 0 0',
+                margin: '0 0 0 0',
                 // style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1 ;background: white;border-radius: 0px 15px 15px 0px;',
                 //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
                 style: 'background-color:transparent',
@@ -6369,8 +6194,15 @@ html: '<img onClick="FloatPanel_AyohaStore_OrderHistoryShow()" src="resources/ic
                          '<span style="display:inline-flex;align-items:center;gap:8px;background:#6b21a8;color:#fff;font:600 10px/1.2 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;padding:6px 6px;border-radius:999px;letter-spacing:.2px;white-space:nowrap;">'+
                          ' 👑 Ayoha Premium Perks'+
                          '</span>'+
-                         '</div><br><b>Selected Premium perks by Ayoha</b></div><br><div  style="color:black;text-align: left;font-size:10px;width:100%;margin:-25px 0px 0px 0px;">Dont be missed the great chances</div>'
+                         '</div><br><div style="color:#3A0ca3;text-align: left;font-size:18px;width:100%;margin:0px 0px 0px 0px"><b>Selected premium perks by Ayoha</b></div></div><br><div  style="color:black;text-align: left;font-size:10px;width:100%;margin:-25px 0px 0px 0px;">Dont be missed the great chances</div>'
                         
+
+
+
+
+
+
+                        // html: '<div style="color:#3A0ca3;text-align: left;font-size:18px;width:100%;margin:10px 0px 0px 10px"><b>Membership Card Hubs</b></div><br><div  style="color:black;text-align: left;font-size:10px;width:100%;margin:-25px 0px 0px 0px;">Tap the card to see what’s included and how it pays back</div>'
                      },
                      {
                          xtype: 'spacer'
@@ -6423,16 +6255,17 @@ html: '<img onClick="FloatPanel_AyohaStore_OrderHistoryShow()" src="resources/ic
                      {
                          margin: '10 0 0 14',
                          //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
-                         html: '<div style="color:black;text-align: left;font-size:14px;width:100%;margin:0px 0px 0px 0px"><b>Membership Loyalty Campaigns</b></div><br><div  style="color:black;text-align: left;font-size:10px;width:100%;margin:-25px 0px 0px 0px;">Member only benefits,turn your transactions into a reward</div>'
+                       //  html: '<div style="color:black;text-align: left;font-size:14px;width:100%;margin:0px 0px 0px 0px"><b>Membership Loyalty Campaigns</b></div><br><div  style="color:black;text-align: left;font-size:10px;width:100%;margin:-25px 0px 0px 0px;">Member only benefits,turn your transactions into a reward</div>'
                          // html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: 70%"><col style="width:30%"></colgroup><thead><tr><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:right;vertical-align:top;word-break:normal" rowspan="2"><div style="margin:0px 0px 0px -15px">TARMIZI RAHIM</div><br>Lagendary Card Mortal </th><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:middle;word-break:normal" rowspan="2">Medal</th></tr><tr></tr></thead></table>'
-                     },
+                         html: '<div style="color:#3A0ca3;text-align: left;font-size:18px;width:100%;margin:10px 0px 0px 0px"><b>Membership Loyalty Campaigns</b></div><br><div  style="color:black;text-align: left;font-size:10px;width:100%;margin:-25px 0px 0px 0px;">Member only benefits,turn your transactions into a reward</div>'
+                        },
                      {
                          xtype: 'spacer'
                      },
                      {
   
                         margin: '0 14 0 0',
-                     
+                     hidden:true,
                         html: '<div onclick="FloatPanel_AyohaEnterpriseRewardItemShow();" style="color:black;text-align: center;font-size:12px;width:100%;"><u>View All</u></div>'
                     
                     },
@@ -6463,7 +6296,7 @@ html: '<img onClick="FloatPanel_AyohaStore_OrderHistoryShow()" src="resources/ic
                 width: '100%',
                 height:300,
                 hidden: false,
-                margin: '20 0 0 0',
+                margin: '0 0 0 0',
                 style: 'background-color:transparent',
                 // scrollable: {
                 //     direction: 'horizontal',
@@ -7620,7 +7453,8 @@ html: '<img onClick="FloatPanel_AyohaStore_OrderHistoryShow()" src="resources/ic
          {
              margin: '0 0 0 14',
              //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
-             html: '<div style="color:black;text-align: left;font-size:14px;width:100%;margin:0px 0px 0px 0px"><b>Merchant List</b></div><br><div  style="color:black;text-align: left;font-size:10px;width:100%;margin:-25px 0px 0px 0px;">From neighbourhood stalls to hidden gems,<br> explore and enjoy more every visit</div>'
+            // html: '<div style="color:black;text-align: left;font-size:14px;width:100%;margin:0px 0px 0px 0px"><b>Ayoha Merchant Gems</b></div><br><div  style="color:black;text-align: left;font-size:10px;width:100%;margin:-25px 0px 0px 0px;">From neighbourhood stalls to hidden gems,<br> explore and enjoy more every visit</div>'
+             html: '<div style="color:#3A0ca3;text-align: left;font-size:18px;width:100%;margin:10px 0px 0px 0px"><b>Most Top Ayoha Merchant</b></div><br><div  style="color:black;text-align: left;font-size:10px;width:100%;margin:-25px 0px 0px 0px;">From neighbourhood stalls to hidden gems,<br> explore and enjoy more every visit</div>'
              // html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: 70%"><col style="width:30%"></colgroup><thead><tr><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:right;vertical-align:top;word-break:normal" rowspan="2"><div style="margin:0px 0px 0px -15px">TARMIZI RAHIM</div><br>Lagendary Card Mortal </th><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:middle;word-break:normal" rowspan="2">Medal</th></tr><tr></tr></thead></table>'
          },
          {
@@ -8329,7 +8163,8 @@ html: '<div ><img src="resources/icons/reviewstarunrate.png" width="9" height="9
                      {
                          margin: '0 0 0 14',
                          //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
-                         html: '<div style="color:black;text-align: left;font-size:14px;width:100%;margin:0px 0px 0px 0px"><b>Merchant VIP Advertisement </b></div><br><div  style="color:black;text-align: left;font-size:10px;width:100%;margin:-25px 0px 0px 0px;">From neighbourhood stalls to hidden gems,<br>enjoy more every visit</div>'
+                        // html: '<div style="color:black;text-align: left;font-size:14px;width:100%;margin:0px 0px 0px 0px"><b>Merchant VIP Advertisement </b></div><br><div  style="color:black;text-align: left;font-size:10px;width:100%;margin:-25px 0px 0px 0px;">From neighbourhood stalls to hidden gems,<br>enjoy more every visit</div>'
+                         html: '<div style="color:#3A0ca3;text-align: left;font-size:18px;width:100%;margin:10px 0px 0px 0px"><b>Merchant VIP Advertisement</b></div><br><div  style="color:black;text-align: left;font-size:10px;width:100%;margin:-25px 0px 0px 0px;">Ayoha merchant with special offered for you</div>'
                          // html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: 70%"><col style="width:30%"></colgroup><thead><tr><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:right;vertical-align:top;word-break:normal" rowspan="2"><div style="margin:0px 0px 0px -15px">TARMIZI RAHIM</div><br>Lagendary Card Mortal </th><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:middle;word-break:normal" rowspan="2">Medal</th></tr><tr></tr></thead></table>'
                      },
                      {
@@ -8488,451 +8323,6 @@ html: '<div ><img src="resources/icons/reviewstarunrate.png" width="9" height="9
   
                 ]
   },
-//   {
-//                 xtype: 'container',
-            
-//                 id: 'Dashboard_Carousel_PremiumAdvertisement',
-//                 name: 'nameDashboard_Carousel_PremiumAdvertisement',                
-//                 //width: '100%',
-//                 //height: '100%',
-//                 margin: '25 0 0 0',
-//                 width: '100%',
-//             // height: 480,
-//              height: 370,
-//                // disable:true,
-//                style: 'background-color:transparent',
-             
-            
-//              //margin: '-322 0 0 0',
-//                 //indicators: false,
-//                 layout: {
-//                     type: 'vbox',
-//                     pack: 'start',
-//                     align: 'center',
-//                 },
-//                 items: [
-//                    {
-//                        xtype: 'carousel',
-//                        id: 'mainDashboardCarousel_PremiumAdvertisement',
-//                        name: 'namemainDashboardCarousel_PremiumAdvertisement',
-//                        height: 340,
-//                        width: '90%',
-//                        style: 'background-color:transparent',
-//                        listeners: {
-//                            activeitemchange: function (container, newCard, oldCard, index) {
-//                                var index =parseInt(container.getActiveIndex());
-//                                indexmainDashboardCarousel =parseInt(container.getActiveIndex());
-                             
-                              
-                            
-//                                    DashboardArrIndexmainDashboardCarousel =parseInt(index);
-                                  
-                                            
-//                                    Ext.getCmp('containerMyAccount_DashboardAdvertisementPremium_PremiumAdvertisement').setStyle('background-color: rgba(0, 0, 0, 0.4);display:block;');
-//                                    Ext.getCmp('containerMyAccount_DashboardAdvertisementPremium_PremiumAdvertisement').setZIndex(100);
-//                                    Ext.getCmp('containerMyAccount_DashboardAdvertisementPremium_PremiumAdvertisement').setHidden(false);
-  
-//                                    slideUpShow('containerMyAccount_DashboardAdvertisementPremium_PremiumAdvertisement',500);
-  
-                                  
-                                  
-                             
-                   
-                   
-//                                 //    Ext.getCmp('containerDashbord_MyAyohaStoreRateReview_PremiumAdvertisement').setHidden(false);
-//                                 //    Ext.getCmp('containerDashbord_MyAyohaStore_PremiumAdvertisement').setHidden(false);
-                                  
-                                 
-                                   
-         
-                                   
-                                   
-                                 
-                   
-                   
-                   
-                   
-//                                    Ext.getCmp('htmlDashboard_AyohaStore_CompanyLogo_PremiumAdvertisement').setHtml('<div style="width: 48px; height: 42px ; z-index: 100 !important;  border-width: 2px; border-style: solid; border-color: rgb(236, 240, 241); background: white; border-radius: 10%;" ><img src="'+ArrAdvertisementPremium_CompanyLogo[DashboardArrIndexmainDashboardCarousel]+'" width="44" height="39" alt="Company Name"></div>');
-//                                    Ext.getCmp('htmlDashboard_AyohaStore_CompanyInfo_Name_PremiumAdvertisement').setHtml('<div style="color:white;text-align: left;font-size:12px;width:100%;font-weight:bold">'+ArrAdvertisementPremium_CompanyName[DashboardArrIndexmainDashboardCarousel]+'</div>');
-//                                    Ext.getCmp('htmlDashboard_AyohaStore_CompanyInfo_Tagline_PremiumAdvertisement').setHtml('<div style="color:white;text-align: left;font-size:11px;width:100%;font-weight:bold;margin:0px 0px 0px 0px;">'+ArrAdvertisementPremium_AdvertisementTitle[DashboardArrIndexmainDashboardCarousel]+'</div>');
-                                   
-                   
-                   
-                   
-//                                    Dashboard_CalculateRating(ArrAdvertisementPremium_EnterpriseAccNo[DashboardArrIndexmainDashboardCarousel],ArrAdvertisementPremium_CompanyLogo[DashboardArrIndexmainDashboardCarousel],ArrAdvertisementPremium_CompanyName[DashboardArrIndexmainDashboardCarousel]);
-                              
-//                                console.log("mainDashboardCarousel Index_PremiumAdvertisement:" + container.getActiveIndex());
-//                            },
-                          
-                           
-//                        },
-//                                                          items:[
-  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-//                    ]
-//                    },
-                   
-                   
-                   
-//             {
-//                xtype: 'container',
-//               //margin: '170 0 0 0',
-//                margin: '0 0 0 0',
-//             //  docked:'bottom',
-//              margin: '-92 0 0 0',
-//             //hidden:true,
-//               zIndex: 200,
-//                id: 'containerMyAccount_DashboardAdvertisementPremium_PremiumAdvertisement',
-//               // name: 'namecontainerMyAccount_DashboardMyReward',
-            
-//              // style: 'background-color:yellow;',
-//               style: 'background-color:transparent;',
-//                //style: 'border-right:2px solid #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px #ECF0F1 white;background: white;border-radius: 10px 0px 0px 10px;box-shadow: 5px 10px 18px #888888;',
-//                // style: 'border-right:2px solid #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px #ECF0F1 white;background: white;border-radius: 20px 20px 20px 20px;',
-           
-//                height: 50,
-//                width: '90%',
-//                layout: {
-           
-//                    type: 'hbox',
-//                    pack: 'center',
-//                    align: 'center'
-//                },
-//                items: [
-//                    //{
-//                    //    xtype: 'panel',
-//                    //    width:1
-//                    //},
-//                    {
-//                        xtype: 'container', 
-//                        id: 'containerMyAccount_DashboardAdvertisementPremium_EnterpriseInfo_PremiumAdvertisement',
-//                        name: 'namecontainerMyAccount_DashboardAdvertisementPremium_EnterpriseInfo_PremiumAdvertisement',                        
-//                        width: '70%',
-//                       height: 50,
-//                       //hidden:true,
-//                       style: 'background-color:transparent;',
-//                       zIndex: 200,
-//                       layout: {
-           
-//                        type: 'hbox',
-//                        pack: 'start',
-//                        align: 'center'
-//                    },
-//                       items:[
-                      
-//                        {
-//                            xtype: 'container',
-//                            width: '24%',
-//                            id: 'containerDashboard_AyohaStore_Logo_PremiumAdvertisement',
-//                            height: 50,
-//                           // style: 'background-color:transparent;',
-//                            margin: '0 0 0 0',
-//                            //style: {
-//                            //    // background: '#D25959',
-//                            //    background: 'rgba(76, 175, 80, 0.3);',
-//                            //    // border: '2px'
-//                            //},
-//                           //  style: 'border-right:1px solid #ECF0F1;border-left:1px solid #ECF0F1;border-bottom:1px solid #ECF0F1;border-top:1px solid #ECF0F1 ;background: white;',
-//                          style: 'background-color:transparent',
-//                            layout: {
-//                                type: 'vbox',
-//                                pack: 'center',
-//                                align: 'center',
-//                            },
-//                            items: [
-//                                  {
-//                                      //xtype: 'button',
-//                                      //height: 75,
-//                                      //width: 75,
-//                                    //   height: 50,
-//                                    //   width: '100%',
-//                                      margin: '0 0 0 16',
-//                                      id: 'htmlDashboard_AyohaStore_CompanyLogo_PremiumAdvertisement',
-//                                      //badgeText: "2",
-//                                      //  html: '<img src="resources/icons/MyAdvertisementDashboardOne.png" width="65" height="65" alt="Company Name">',
-//                                      html: '<div style="width: 50px; height: 47px ; z-index: 200 !important;  border-width: 2px; border-style: solid; border-color: rgb(236, 240, 241); background: white; border-radius: 10%;" ><img src="https://setkita.com/AyohaImgCard/Logo/39259-0123214416-NoEnterprise/azmah01-removebg-preview.png" width="50" height="47" alt="Company Name"></div>',
-  
-//                                  },
-  
-//                            ]
-//                        },
-//                        {
-//                            xtype: 'spacer',
-//                            width: 10
-//                        },
-//                           {
-//                               xtype: 'container',
-//                               width: '74%',
-//                               id: 'containerDashboard_AyohaStore_CompanyInfo_PremiumAdvertisement',
-  
-  
-//                               margin: '0 0 0 0',
-//                               //style: {
-//                               //    // background: '#D25959',
-//                               //    background: 'rgba(76, 175, 80, 0.3);',
-//                               //    // border: '2px'
-//                               //},
-//                               //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
-//                               style: 'background-color:transparent',
-//                               layout: {
-//                                   type: 'vbox',
-//                                   pack: 'center',
-//                                   align: 'center',
-//                               },
-//                               items: [
-//                                      {
-  
-//                                          id: 'htmlDashboard_AyohaStore_CompanyInfo_Name_PremiumAdvertisement',
-//                                          width: '100%',
-//                                          html: '<div style="color:white;text-align: left;font-size:12px;width:100%;font-weight:bold">IanMizi Technology Sdn Bhd</div>',
-  
-  
-//                                      },
-//                                       {
-  
-//                                           id: 'htmlDashboard_AyohaStore_CompanyInfo_Line_PremiumAdvertisement',
-//                                           width: '100%',
-//                                           margin: '0 0 0 0',
-//                                           html: '<div style="background-color:white;text-align: left;font-size:16px;width:80%;font-weight:bold;height:1px"></div>',
-  
-  
-//                                       },
-//                                       {
-  
-//                                           id: 'htmlDashboard_AyohaStore_CompanyInfo_Tagline_PremiumAdvertisement',
-  
-//                                           width: '100%',
-//                                           // iconCls: 'list',
-//                                           //html: '<div style="border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 30px 30px 30px 30px;width:45px;height:45px;" ><img src="resources/icons/founder.jpg" width="25" height="25"  alt="Company Name" style="margin:7px 0px 0px 0px;border-radius: 50%;"></div>',
-//                                           html: '<div style="color:white;text-align: left;font-size:10px;width:100%;font-weight:normal;margin:0px 0px 0px 0px;">Burger padu bak hang!</div>',
-  
-  
-//                                       },
-                                      
-  
-//                               ]
-//                           },
-//                       ]
-  
-//                    },
-  
-//                    {
-//                        xtype: 'container',
-//                        zIndex: 100,
-//                        width: '30%',
-//                       height: 50,
-//                       layout: {
-           
-//                        type: 'hbox',
-//                        pack: 'end',
-//                        align: 'center'
-//                    },
-//                       items:[
-  
-                     
-  
-//                        {
-  
-//                            xtype: 'container',
-//                          //  width: '30%',
-//                          id: 'containerDashbord_MyAyohaStoreRateReview_PremiumAdvertisement',
-//                          name: 'namecontainerDashbord_MyAyohaStoreRateReview_PremiumAdvertisement',
-//                            width: '60%',
-//                            //hidden: true,
-//                            //margin:'0 0 0 0',
-//                            height: 35,
-//                            style: 'background-color: transparent;',
-//                           // id: 'containerFloatPanel_MerchantDetailPage_EnterpriseReviewRateDetails',
-  
-//                            //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
-//                            // style: 'border-bottom:2px solid #D25959;background-color:transparent',
-//                            layout: {
-//                                type: 'vbox',
-//                                pack: 'center',
-//                                align: 'center',
-//                            },
-//                            items: [
-//                                {
-//                                    xtype: 'container',
-//                                    width: '100%',
-//                                   // flex: 1,
-//                                    margin: '-5 0 0 0',
-//                                    height: 50,
-//                                    id: 'containerDashbord_ReviewAndRate_PremiumAdvertisement',
-//                                   // name: 'namecontainerFloatPanel_AyohaStore_ReviewAndRate',
-//                                    // style: 'background-color:rgba(255, 255, 255, 0.3);border-radius: 10px 10px 10px 10px;',
-//                                    style: "background-color: transparent;",
-//                                    layout: {
-//                                        type: 'vbox',
-//                                        pack: 'center',
-//                                        align: 'center'
-  
-//                                    },
-//                                    items: [
-//                                        {
-//                                            margin: '0 0 0 0',
-//                                            id: 'htmlDashbord_ReviewAndRateCount_PremiumAdvertisement',
-//                                            html: '<div style="color:white;text-align: center;font-size:16px;width:100%;font-weight:bold;margin:0px 0px 0px 0px;">0.0</div>',
-  
-//                                        },
-  
-//                                        {
-//                                            xtype: 'container',
-//                                            width: '100%',
-//                                            margin: '-12 0 0 0',
-//                                            height: 9,
-//                                            // style: 'background-color:rgba(255, 255, 255, 0.3);border-radius: 10px 10px 10px 10px;',
-//                                            style: "background-color: transparent;",
-//                                            layout: {
-//                                                type: 'hbox',
-//                                                pack: 'center',
-//                                                align: 'center'
-  
-//                                            },
-//                                            items: [
-  
-//                                                {
-//                                                    id: 'htmlDashbord_Star1',
-//                                                    height: 9,
-//                                                    width: 9,
-//                                                    html: '<div ><img src="resources/icons/reviewstarunrate.png" width="9" height="9" alt="Company Name"></div>',
-//                                                },
-//   {
-//   id: 'htmlDashbord_Star2',
-//   height: 9,
-//   width: 9,
-//   html: '<div ><img src="resources/icons/reviewstarunrate.png" width="9" height="9" alt="Company Name"></div>',
-//   },
-//   {
-//   id: 'htmlDashbord_Star3',
-//   height: 9,
-//   width: 9,
-//   html: '<div ><img src="resources/icons/reviewstarunrate.png" width="9" height="9" alt="Company Name"></div>',
-//   },
-//   {
-//   id: 'htmlDashbord_Star4',
-//   height: 9,
-//   width: 9,
-//   html: '<div ><img src="resources/icons/reviewstarunrate.png" width="9" height="9" alt="Company Name"></div>',
-//   },
-//   {
-//   id: 'htmlDashbord_Star5',
-//   height: 9,
-//   width: 9,
-//   html: '<div ><img src="resources/icons/reviewstarunrate.png" width="9" height="9" alt="Company Name"></div>',
-  
-//   },
-//                                            ]
-//                                        },
-  
-//                                        {
-//                                            xtype: 'container',
-//                                            width: '100%',
-//                                            margin: '10 0 0 0',
-//                                            height: 9,
-//                                            layout: {
-//                                                type: 'hbox',
-//                                                pack: 'center',
-//                                                align: 'center'
-//                                            },
-//                                            items: [
-//                                                {
-//                                                    id: 'htmlDashbord_ReviewByCount_PremiumAdvertisement',
-//                                                    html: '<div style="width100%;text-align:right;background-color: transparent;font-family:Arial, sans-serif;font-size:8px;color:white;font-weight:bold;overflow:hidden;"><img src="resources/icons/myaccountwhite01.png" alt="Image" style="width:7px;height:7px;">&nbsp;0 Reviews</div>',
-//                                                },
-//                                            ]
-//                                        },
-//                                         //{
-//                                         //    margin: '0 0 0 0',
-//                                         //    height: 15,
-//                                         //    id: 'htmlAyohaMerchantReview_TotalReviewsxx',
-//                                         //    html: '<div style="width100%;text-align:right;background-color: transparent;font-family:Arial, sans-serif;font-size:10px;color:black;font-weight:bold;overflow:hidden;margin:-13px 10px 10px 0px;"><img src="resources/icons/merchantrateusAccountImg.png" alt="Image" style="width:10px;height:10px;">&nbsp;&nbsp;&nbsp;0 Reviews</div>'
-//                                         //}
-//                                    ]
-//                                },
-//                            ]
-//                        },
-  
-  
-  
-  
-                     
-//                        {
-//                            xtype: 'panel',
-//                           width: 7
-//                           // width: 3
-//                        },
-  
-  
-                       
-//                        {
-//                         xtype: 'container',
-//                         id: 'containerDashbord_MyAyohaStore_PremiumAdvertisement',
-//                         name: 'namecontainerDashbord_MyAyohaStore_PremiumAdvertisement',
-                      
-//                         style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1;background: white;border-radius: 50%;',
-//                         height: 40,
-//                         width: 40,
-//                         margin: '0 0 0 0',
-//                         layout: {
-  
-//                             type: 'vbox',
-//                             pack: 'center',
-//                             align: 'center'
-//                         },
-//                         items: [
-//                             {
-//                                 //xtype: 'button',
-//                                 //id: 'btnMyAccount_DashboardEwalletIcon',
-//                                 height: 20,
-//                                 width: 20,
-//                                 margin: '0 0 0 0',
-//                                 // iconCls: 'list',
-//                                 //  html: '<div ><img src="resources/icons/CloudRewardLogoWhiteSmallOne.png" width="25" height="25" alt="Company Name"></div>',
-//                                 html: '<div ><img src="resources/icons/onlineStore.jpg" style ="width:20px;height:20px;" alt="Company Name"></div>',
-//                                 // ui: 'plain',
-//                                 //handler: function () {
-  
-//                                 //    //_FloatPanel_AyohaEnterpriseAccount.hide(Ext.fx.Animation({
-//                                 //    //    type: 'slideOut',
-//                                 //    //    direction: 'left',
-//                                 //    //    easing: 'cubic-bezier(.7,0,.7,1)',
-//                                 //    //    duration: 250
-  
-//                                 //    //}));
-//                                 //    //isLoyaltyCardRedeemListOpen = 'N';
-//                                 //}
-//                             },
-//                         ]
-//                     },
-  
-  
-//                       ]
-  
-//                    },
-                 
-//              {
-//                       xtype: 'spacer',
-//                       width:20
-//                    },
-//                ]
-//            },
-                   
-  
-                      
-  
-                  
-  
-//                 ]
-//   },
 
 
 {
@@ -10339,7 +9729,9 @@ xtype: 'spacer'
          {
              margin: '0 0 0 14',
              //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
-             html: '<div style="color:black;text-align: left;font-size:14px;width:100%;"><b>Hot Seat Promotion!</b></div><br><div style="color:black;text-align: left;font-size:10px;width:100%;margin:-25px 0px 0px 0px;">Member price + bonus points,while it lasts.</div>'
+            // html: '<div style="color:black;text-align: left;font-size:14px;width:100%;"><b>Hot Seat Promotion!</b></div><br><div style="color:black;text-align: left;font-size:10px;width:100%;margin:-25px 0px 0px 0px;">Member price + bonus points,while it lasts.</div>'
+             html: '<div style="color:#3A0ca3;text-align: left;font-size:18px;width:100%;margin:10px 0px 0px 0px"><b>Hot Seat Promotion!</b></div><br><div  style="color:black;text-align: left;font-size:10px;width:100%;margin:-25px 0px 0px 0px;">Member price + bonus points,while it lasts.</div>'
+            
              // html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: 70%"><col style="width:30%"></colgroup><thead><tr><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:right;vertical-align:top;word-break:normal" rowspan="2"><div style="margin:0px 0px 0px -15px">TARMIZI RAHIM</div><br>Lagendary Card Mortal </th><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:middle;word-break:normal" rowspan="2">Medal</th></tr><tr></tr></thead></table>'
          },
          {
@@ -14333,8 +13725,12 @@ function initializeContainerSingleTapEvent() {
     containerViewElMenuBottom_MyStore.on('tap',
       function (event, node, options, eOpts) {
        // Ext.getCmp('containerAyohaMerchantRewardBottom_Search').setHidden(true);
+       NextRanking();
+       AyohaRedeemPrize_LoadByRowStatusAndGCStore();
+     AyohaRewardContestLoadActiveStore();
+   
        AyohaRewardPointRewardRankingStore();
-            AyohaRewardContestLoadActiveStore();
+           
         SideMenuMembershipCardListHide();
         Ext.getCmp('htmlDashboardMenuBottom_HomeTxt').setHtml('<div style="color:grey;text-align: center;font-size:8px;width:100%;font-weight:normal">Home</div>');
         Ext.getCmp('htmlDashboardMenuBottom_AyohaRewardTxt').setHtml('<div style="color:purple;text-align: center;font-size:8px;width:100%;font-weight:bold">Ayoha</div><br><div style="color:purple;text-align: center;font-size:8px;width:100%;margin:-25px 0px 0px 0px;font-weight:bold">Reward</div>');
@@ -15884,6 +15280,118 @@ function AyohaRewardPointRewardRankingStore() {
 
 
     var ii = 1;
+
+
+    _DataStore_AyohaRewardPointRewardRankingStore.getProxy().setExtraParam('RankingLevel', "ALL");
+    _DataStore_AyohaRewardPointRewardRankingStore.getProxy().setUrl(GetAPIurl() + '/AyohaRewardPoint/AyohaRewardPointRewardRanking');
+    _DataStore_AyohaRewardPointRewardRankingStore.load();
+
+
+    _DataStore_AyohaRewardPointRewardRankingStore.load({
+        callback: function (records, operation, success) {
+            if (success && records.length > 0) {
+
+             
+                for (i = 0; i < records.length; i++) {
+                  
+                var modelRecord = records[i]; 
+                var AccountName = modelRecord.get('AccountName');
+            var Photo = modelRecord.get('Photo');
+            var AyohaPoint = modelRecord.get('AyohaPoint');
+            var SubscriberAccNo = modelRecord.get('SubscriberAccNo');
+            var JoinDate_DateOnly = modelRecord.get('JoinDate_DateOnly');
+            var JoinDate_TimeOnly = modelRecord.get('JoinDate_TimeOnly');
+
+        
+        
+        
+                    if (ii < 4 && i < 3) {
+                        if (ii == 1) {
+        
+        
+                            Ext.getCmp('imgDashboard_User_AyohaRewardRanking0' + ii).setHtml('<img src="' + Photo + '"  style="width: 80px; height: 80px; border:1px solid white; border-radius: 50%;  margin:0px 0px 0px 0px;">');
+                            Ext.getCmp('htmlDashboard_User_AyohaRewardRanking0' + ii + '_Name').setHtml('<div style="color:black;text-align: center;font-size:12px;width:100%;"><b>' + AccountName + '</b></div>');
+                            Ext.getCmp('htmlDashboard_User_AyohaRewardRanking0' + ii + '_AyohaPoint').setHtml('<div style="color:black;text-align: center;font-size:10px;width:100%;"><b>' + AyohaPoint + ' Point</b></div>');
+                        } else {
+                            Ext.getCmp('imgDashboard_User_AyohaRewardRanking0' + ii).setHtml('<img src="' + Photo + '"  style="width: 70px; height: 70px; border:1px solid white; border-radius: 50%;  margin:0px 0px 0px 0px;">');
+                            Ext.getCmp('htmlDashboard_User_AyohaRewardRanking0' + ii + '_Name').setHtml('<div style="color:black;text-align: center;font-size:12px;width:100%;"><b>' + AccountName + '</b></div>');
+                            Ext.getCmp('htmlDashboard_User_AyohaRewardRanking0' + ii + '_AyohaPoint').setHtml('<div style="color:black;text-align: center;font-size:10px;width:100%;"><b>' + AyohaPoint + ' Point</b></div>');
+                        }
+        
+        
+                    }
+        
+        
+        
+                    if (SubscriberAccNo == GetCurrAyohaUserAccountNo()) {
+        
+                       myRankingNo = ii;
+                        // alert(JoinDate);
+        
+                        globalJoinDate = JoinDate_DateOnly + ' ' + JoinDate_TimeOnly;
+                        //Ext.getCmp('htmlJoinContestDate').setHtml('<div style="color:black;text-align: center;font-size:10px;width:100%;">Joined Date:' + JoinDate_DateOnly + '' + JoinDate_TimeOnly + '</div>');
+        
+        
+                        if (myRankingNo <= 10) {
+        
+                            if (myRankingNo == 1) {
+                                //Ext.getCmp('imgDashboard_User_AyohaRewardRanking01').setHtml('<img src="' + Photo + '"  style="width: 80px; height: 80px; border:1px solid white; border-radius: 50%;  margin:0px 0px 0px 0px;" class="example-1">');
+                                Ext.getCmp('imgDashboard_User_AyohaRewardRanking01').setHtml('<img src="' + Photo + '"  style="width: 80px; height: 80px; border:2px solid grey; border-radius: 50%;  margin:0px 0px 0px 0px;" >');
+                            }
+        
+                            if (myRankingNo == 2) {
+                                //Ext.getCmp('imgDashboard_User_AyohaRewardRanking02').setHtml('<img src="' + Photo + '"  style="width: 70px; height: 70px; border:1px solid white; border-radius: 50%;  margin:0px 0px 0px 0px;" class="example-1">');
+                                Ext.getCmp('imgDashboard_User_AyohaRewardRanking02').setHtml('<img src="' + Photo + '"  style="width: 70px; height: 70px; border:2px grey; border-radius: 50%;  margin:0px 0px 0px 0px;">');
+                            }
+                            if (myRankingNo == 3) {
+                                // Ext.getCmp('imgDashboard_User_AyohaRewardRanking03').setHtml('<img src="' + Photo + '"  style="width: 70px; height: 70px; border:1px solid white; border-radius: 50%;  margin:0px 0px 0px 0px;"  class="example-1">');
+                                Ext.getCmp('imgDashboard_User_AyohaRewardRanking03').setHtml('<img src="' + Photo + '"  style="width: 70px; height: 70px; border:2px solid grey; border-radius: 50%;  margin:0px 0px 0px 0px;">');
+                            }
+                            Ext.getCmp('htmlContestYourRanking').setHtml('<div  class="blink_me" style="color:black;text-align: center;font-size:10px;width:100%;margin:70px 0px 0px 0px;">Hooray You in Ranking !</div>');
+                            Ext.getCmp('htmlContestYourRankingNo').setHtml('<div class="blink_me" style="color:black;text-align: center;font-size:40px;font-weight:bold;width:100%;margin:-10px 0px 0px 0px;">' + myRankingNo + '</div>');
+        
+                        } else {
+                            Ext.getCmp('htmlContestYourRankingNo').setHtml('<div style="color:black;text-align: center;font-size:40px;font-weight:bold;width:100%;margin:-10px 0px 0px 0px;">' + myRankingNo + '</div>');
+                            Ext.getCmp('htmlContestYourRanking').setHtml('<div style="color:black;text-align: center;font-size:10px;width:100%;margin:70px 0px 0px 0px;">Your Ranking !</div>');
+                        }
+        
+        
+                    }
+        
+                    ii++;
+        
+                }
+
+
+
+
+
+
+
+
+            } else {
+               // SuccessCheckinController_DashboardSuccessCheckIn_LoadPerkCanEnjoyInfo();
+                //alert('Failed to load store data or no record found.');
+               // LoadingPanelHide();
+            }
+        }
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+return;
+
     _DataStore_AyohaRewardPointRewardRankingStore.getProxy().setExtraParam('RankingLevel', "ALL");
     _DataStore_AyohaRewardPointRewardRankingStore.getProxy().setUrl(GetAPIurl() + '/AyohaRewardPoint/AyohaRewardPointRewardRanking');
     _DataStore_AyohaRewardPointRewardRankingStore.load();
@@ -15998,72 +15506,59 @@ var globalConsolationPrizeName;
 function AyohaRewardContestLoadActiveStore() {
 
 
-    //Ext.getStore('AyohaRewardContestLoadActiveStore').getProxy().setExtraParams({
-    //    RowStatus: "Active",
-    //});
-    //Ext.StoreMgr.get('AyohaRewardContestLoadActiveStore').load();
-
     _DataStore_AyohaRewardContestLoadActiveStore.getProxy().setExtraParam('RowStatus', "Active");
     _DataStore_AyohaRewardContestLoadActiveStore.getProxy().setUrl(GetAPIurl() + '/AyohaRewardContest/AyohaRewardContestLoadActive');
-    _DataStore_AyohaRewardContestLoadActiveStore.load();
+    
 
-
-    var task = Ext.create('Ext.util.DelayedTask', function () {
-        //Ext.getStore('AyohaRewardContestLoadActiveStore').getProxy().setExtraParams({
-        //    RowStatus: "Active",
-        //});
-        //Ext.StoreMgr.get('AyohaRewardContestLoadActiveStore').load();
-        //var myStore = Ext.getStore('AyohaRewardContestLoadActiveStore');
-        var count = _DataStore_AyohaRewardContestLoadActiveStore.getCount();
-        var modelRecord = _DataStore_AyohaRewardContestLoadActiveStore.getAt(0);
-
-
-        if (count >= 1) {
-            var ContestCode = modelRecord.get('ContestCode');
-            var EndDate_DateOnly = modelRecord.get('EndDate_DateOnly');
-            globalWinnerAnnoucementStatus = modelRecord.get('WinnerAnnoucementStatus');
-            globalTodayDateSvr = modelRecord.get('TodayDateSvr');
-            globalFirstPrizeImgPath = modelRecord.get('FirstPrizeImgPath');
-            globalFirstPrizeImgName = modelRecord.get('FirstPrizeImgName');
-
-            globalSecondPrizeImgPath = modelRecord.get('SecondPrizeImgPath');
-            globalSecondPrizeImgName = modelRecord.get('SecondPrizeImgName');
-
-
-            globalThirdPrizeImgPath = modelRecord.get('ThirdPrizeImgPath');
-            globalThirdPrizeImgName = modelRecord.get('ThirdPrizeImgName');
-
-
-            globalConsolationPrizeImg = modelRecord.get('ConsolationPrizeImg');
-            globalConsolationPrizeName = modelRecord.get('ConsolationPrizeName');
-
-
-            globalContestEndDateDateOnly = EndDate_DateOnly;
-            globalContestAdvertisementImgPath = modelRecord.get('AdvertisementImgPath');
-            localStorage.setItem("ContestCode", ContestCode);
-            localStorage.setItem("WinnerAnnoucementStatus", globalWinnerAnnoucementStatus);
-            localStorage.setItem("TodayDateSvr", globalTodayDateSvr);
-            localStorage.setItem("EndDateContest", EndDate_DateOnly);
-
-
-
-            //Ext.getCmp('htmlJoinContestDate').setHtml('<div style="color:black;text-align: center;font-size:10px;width:100%;">Contest End Date:' + EndDate_DateOnly + '</div>');
-            // Ext.getCmp('htmlJoinContestDate').setHtml('<div style="color:black;text-align: center;font-size:14px;width:100%;">Contest End Date:' + EndDate_DateOnly + '</div>');
-
-            // localStorage.setItem("ContestEndDateDateOnly", EndDate_DateOnly);
+    _DataStore_AyohaRewardContestLoadActiveStore.load({
+        callback: function (records, operation, success) {
+         
+            if (success && records.length > 0) {
+                var modelRecord = records[0]; 
+                var ContestCode = modelRecord.get('ContestCode');
+                var EndDate_DateOnly = modelRecord.get('EndDate_DateOnly');
+                globalWinnerAnnoucementStatus = modelRecord.get('WinnerAnnoucementStatus');
+                globalTodayDateSvr = modelRecord.get('TodayDateSvr');
+                globalFirstPrizeImgPath = modelRecord.get('FirstPrizeImgPath');
+                globalFirstPrizeImgName = modelRecord.get('FirstPrizeImgName');
+    
+                globalSecondPrizeImgPath = modelRecord.get('SecondPrizeImgPath');
+                globalSecondPrizeImgName = modelRecord.get('SecondPrizeImgName');
+    
+    
+                globalThirdPrizeImgPath = modelRecord.get('ThirdPrizeImgPath');
+                globalThirdPrizeImgName = modelRecord.get('ThirdPrizeImgName');
+    
+    
+                globalConsolationPrizeImg = modelRecord.get('ConsolationPrizeImg');
+                globalConsolationPrizeName = modelRecord.get('ConsolationPrizeName');
+    
+    
+                globalContestEndDateDateOnly = EndDate_DateOnly;
+                globalContestAdvertisementImgPath = modelRecord.get('AdvertisementImgPath');
+                localStorage.setItem("ContestCode", ContestCode);
+                localStorage.setItem("WinnerAnnoucementStatus", globalWinnerAnnoucementStatus);
+                localStorage.setItem("TodayDateSvr", globalTodayDateSvr);
+                localStorage.setItem("EndDateContest", EndDate_DateOnly);
+    
+    
+    
+    
+    
+    
+                AyohaRewardContestantLoadByContestCodeStore();
+            }
 
 
 
-
-
-            AyohaRewardContestantLoadByContestCodeStore();
+          
+           
         }
-
-
-        Ext.Viewport.setMasked(false);
-
     });
-    task.delay(1000);
+
+
+
+
 
 }
 
@@ -16073,44 +15568,33 @@ var globalIsContestant = "N";
 
 function AyohaRewardContestantLoadByContestCodeStore() {
     globalIsContestant = "N";
-    NextRanking();
-    //Ext.getStore('AyohaRewardContestantLoadByContestCodeStore').getProxy().setExtraParams({
-    //    ContestCode: localStorage.getItem("ContestCode"),
-    //    SubscriberAccNo: GetCurrAyohaUserAccountNo(),
-    //});
-    //Ext.StoreMgr.get('AyohaRewardContestantLoadByContestCodeStore').load();
-
+ 
+  
     _DataStore_AyohaRewardContestantLoadByContestCodeStore.getProxy().setExtraParam('ContestCode', localStorage.getItem("ContestCode"));
     _DataStore_AyohaRewardContestantLoadByContestCodeStore.getProxy().setExtraParam('SubscriberAccNo', GetCurrAyohaUserAccountNo());
     _DataStore_AyohaRewardContestantLoadByContestCodeStore.getProxy().setUrl(GetAPIurl() + '/AyohaRewardContestant/AyohaRewardContestantLoadByContestCode');
-    _DataStore_AyohaRewardContestantLoadByContestCodeStore.load();
+  
+
+    _DataStore_AyohaRewardContestantLoadByContestCodeStore.load({
+        callback: function (records, operation, success) {
+         
+            if (success && records.length == 0) {
+                var count = _DataStore_AyohaRewardContestantLoadByContestCodeStore.getCount();
+                AppState.FloatPanel_AyohaReward.isButtonEnterContestOrViewMyRanking="EnterContest";
+                Ext.getCmp('containerDashboard_User_AyohaRewardRankingEnterContestBtnID').setHidden(false);
+                Ext.getCmp('containerDashboard_User_AyohaRewardRankingViewMyRankingBtnID').setHidden(true);
+        
+                Ext.getCmp('containerDashboard_User_AyohaRewardRankingEnterContestBtnID').setHidden(false);
+                Ext.getCmp('imgMyDashboard_AyohaRewardRankingContest').setHidden(false);
+                Ext.getCmp('imgMyDashboard_AyohaRewardRankingContestShining').setHidden(true);
+                Ext.getCmp('containerContestEndDate').setHidden(false);
+            }
 
 
 
-    var task = Ext.create('Ext.util.DelayedTask', function () {
-        //Ext.getStore('AyohaRewardContestantLoadByContestCodeStore').getProxy().setExtraParams({
-        //    ContestCode: localStorage.getItem("ContestCode"),
-        //    SubscriberAccNo: GetCurrAyohaUserAccountNo(),
-        //});
-        //Ext.StoreMgr.get('AyohaRewardContestantLoadByContestCodeStore').load();
-        //var myStore = Ext.getStore('AyohaRewardContestantLoadByContestCodeStore');
-        var count = _DataStore_AyohaRewardContestantLoadByContestCodeStore.getCount();
-        console.log(count);
-        //var modelRecord = myStore.getAt(0);
-        //var ID = modelRecord.get('ID');
-        AppState.FloatPanel_AyohaReward.isButtonEnterContestOrViewMyRanking="EnterContest";
-        Ext.getCmp('containerDashboard_User_AyohaRewardRankingEnterContestBtnID').setHidden(false);
-        Ext.getCmp('containerDashboard_User_AyohaRewardRankingViewMyRankingBtnID').setHidden(true);
-
-        Ext.getCmp('containerDashboard_User_AyohaRewardRankingEnterContestBtnID').setHidden(false);
-        Ext.getCmp('imgMyDashboard_AyohaRewardRankingContest').setHidden(false);
-        Ext.getCmp('imgMyDashboard_AyohaRewardRankingContestShining').setHidden(true);
-        Ext.getCmp('containerContestEndDate').setHidden(false);
-        //Ext.getCmp('containerDashboard_User_MembershipActivities').setMargin('220 0 0 0');
-      //  Ext.getCmp('containerDashboard_User_MembershipActivities').setMargin('100 0 0 0');
-
-        // Ext.getCmp('containerDashboard_MerchantRedemption').setMargin('90 0 0 0');
-        if (count >= 1) {
+            if (success && records.length > 0) {
+               
+   
             globalIsContestant = "Y";
             AppState.FloatPanel_AyohaReward.isButtonEnterContestOrViewMyRanking="ViewMyRanking";
             Ext.getCmp('containerDashboard_User_AyohaRewardRankingEnterContestBtnID').setHidden(true);
@@ -16121,16 +15605,17 @@ function AyohaRewardContestantLoadByContestCodeStore() {
             Ext.getCmp('imgMyDashboard_AyohaRewardRankingContestShining').setHidden(false);
             Ext.getCmp('containerContestEndDate').setHidden(false);
 
-            //  Ext.getCmp('containerDashboard_User_MembershipActivities').setMargin('220 0 0 0');
-            // Ext.getCmp('containerDashboard_MerchantRedemption').setMargin('120 0 0 0');
-           // Ext.getCmp('containerDashboard_User_MembershipActivities').setMargin('100 0 0 0');
 
+       
+      
+
+            } 
+            AyohaRewardContest_Extended();
         }
-        AyohaRewardContest_Extended();
-        Ext.Viewport.setMasked(false);
-
     });
-    task.delay(1000);
+
+
+
 
 }
 
@@ -16152,13 +15637,17 @@ function AyohaRewardContest_Extended() {
 
     }
 
-    _DataStore_AyohaRewardContestantLoadByContestCodeStore.getProxy().setExtraParam('ContestCode', ContestCode);
-    _DataStore_AyohaRewardContestantLoadByContestCodeStore.getProxy().setExtraParam('SubscriberAccNo', GetCurrAyohaUserAccountNo());
-    _DataStore_AyohaRewardContestantLoadByContestCodeStore.getProxy().setUrl(GetAPIurl() + '/AyohaRewardContestant/AyohaRewardContestantLoadByContestCode');
-    _DataStore_AyohaRewardContestantLoadByContestCodeStore.load();
 
-    var task = Ext.create('Ext.util.DelayedTask', function () {
-        var check = _DataStore_AyohaRewardContestantLoadByContestCodeStore.getCount();
+
+
+    _DataStore_AyohaRewardContestantLoadByContestCodeStore.getProxy().setExtraParam('ContestCode', ContestCode);
+    _DataStore_AyohaRewardContestantLoadByContestCodeStore.getProxy().setExtraParam('SubscriberAccNo', GetCurrAyohaUserAccountNo()); 
+    _DataStore_AyohaRewardContestantLoadByContestCodeStore.getProxy().setUrl(GetAPIurl() + '/AyohaRewardContestant/AyohaRewardContestantLoadByContestCode');
+
+    _DataStore_AyohaRewardContestantLoadByContestCodeStore.load({
+        callback: function (records, operation, success) {
+            if (success && records.length > 0) {
+                var check = _DataStore_AyohaRewardContestantLoadByContestCodeStore.getCount();
         AppState.FloatPanel_AyohaReward.isContestTapAndWinActive=_DataStore_AyohaRewardContestantLoadByContestCodeStore.getCount();
         
         Ext.getCmp('Dashboard_containerAyohaRewardContest01').setHeight(270);
@@ -16172,10 +15661,21 @@ function AyohaRewardContest_Extended() {
 
 
         }
-        Ext.Viewport.setMasked(false);
+       
+     //  
 
+            } else {
+                console.error('Failed to load store data or no record found.');
+                LoadingPanelHide();
+            }
+            Dashboard_AyohaRewardVoucherEntitledUserLoadBySubscriberAccNoVoucherTypeStore();
+        }
     });
-    task.delay(300);
+
+
+
+
+
 
 
 }
@@ -16278,21 +15778,61 @@ function AyohaRedeemPrize_LoadByRowStatusAndGCStore() {
 
 
 
-    //if (AyohaUserGroupCode.length > 1)
-    //{
-    //    _DataStore_AyohaRedeemPrizeLoadByAyohaUserGroupCode.getProxy().setExtraParam('AyohaUserGroupCode', AyohaUserGroupCode);
-    //    _DataStore_AyohaRedeemPrizeLoadByAyohaUserGroupCode.getProxy().setUrl(GetAPIurl() + '/AyohaRedeemPrize/AyohaRedeemPrizeLoadByAyohaUserGroupCode');
-    //    _DataStore_AyohaRedeemPrizeLoadByAyohaUserGroupCode.load();
-
-    //}
 
 
-    //if (AyohaUserGroupCode.length < 0) {
-    //    console.log("sd");
-    //    _DataStore_AyohaRedeemPrizeLoadByAyohaUserGroupCode.getProxy().setExtraParam('AyohaUserGroupCode', "01");
-    //    _DataStore_AyohaRedeemPrizeLoadByAyohaUserGroupCode.getProxy().setUrl(GetAPIurl() + '/AyohaRedeemPrize/AyohaRedeemPrizeLoadByAyohaUserGroupCode');
-    //    _DataStore_AyohaRedeemPrizeLoadByAyohaUserGroupCode.load();
-    //}
+
+
+
+    _DataStore_AyohaRedeemPrizeLoadByAyohaUserGroupCode.getProxy().setExtraParam('AyohaUserGroupCode', "01");
+    _DataStore_AyohaRedeemPrizeLoadByAyohaUserGroupCode.getProxy().setUrl(GetAPIurl() + '/AyohaRedeemPrize/AyohaRedeemPrizeLoadByAyohaUserGroupCode');
+
+
+
+    _DataStore_AyohaRedeemPrizeLoadByAyohaUserGroupCode.load({
+        callback: function (records, operation, success) {
+            if (success && records.length > 0) {
+                var record = records[0]; // Access only the first record
+               
+
+                for (i = 0; i < 5; i++) {
+                    var store = records[i];
+                    var ItemPoint = store.get('ItemPoint');
+                    var ImgPath = store.get('ImgPath');
+                    var ItemName = store.get('ItemName');
+                    var ItemPrizePriceCost = store.get('ItemPrizePriceCost');
+                    var ItemCode = store.get('ItemCode');
+    
+    
+                    Ext.getCmp('containerAyohaRewardRedemption_carosel_APoint' + i).setHtml('<div style="color:purple;text-align: center;font-size:15px;width:100%;font-weight:bold">🎁' + ItemPoint + '- </div>');
+                    Ext.getCmp('containerAyohaRewardRedemption_carosel_APointImg' + i).setHtml('<div style="color:black;text-align: center;font-size:10px;width:100%;font-weight:bold"><img src="' + ImgPath + '" alt="Image" style="width:70%;height:230px;"></div>');
+                    Ext.getCmp('containerAyohaRewardRedemption_carosel_APointNameItemTxt' + i).setHtml('<div style="color:black;text-align: center;font-size:15px;width:100%;font-weight:bold">' + ItemName + '</div>');
+                    Ext.getCmp('containerAyohaRewardRedemption_carosel_APointNameItemPriceTxt' + i).setHtml('<div style="color:black;text-align: center;font-size:12px;width:100%;font-weight:normal">Worth RM' + ItemPrizePriceCost + '</div>');
+                    arrAyohaRedeemPrizeLoadByAyohaUserGroupCode_Point.push(ItemPoint);
+                    arrAyohaRedeemPrizeLoadByAyohaUserGroupCode_ItemImage.push(ImgPath);
+                    arrAyohaRedeemPrizeLoadByAyohaUserGroupCode_ItemName.push(ItemName);
+                    arrAyohaRedeemPrizeLoadByAyohaUserGroupCode_ItemPrice.push(ItemPrizePriceCost);
+                    arrAyohaRedeemPrizeLoadByAyohaUserGroupCode_ItemCode.push(ItemCode);
+        
+        
+        
+                }
+
+
+
+
+
+            } else {
+              
+            }
+        }
+    });
+
+
+
+return;
+
+
+
 
     _DataStore_AyohaRedeemPrizeLoadByAyohaUserGroupCode.getProxy().setExtraParam('AyohaUserGroupCode', "01");
     _DataStore_AyohaRedeemPrizeLoadByAyohaUserGroupCode.getProxy().setUrl(GetAPIurl() + '/AyohaRedeemPrize/AyohaRedeemPrizeLoadByAyohaUserGroupCode');
@@ -16640,6 +16180,8 @@ function Dashboard_AyohaRewardVoucherEntitledUserLoadBySubscriberAccNoVoucherTyp
                 console.log('Store loaded successfully, total records: ' + records.length);
                // var count = _DataStore_AyohaRewardVoucherEntitledUserLoadBySubscriberAccNoVoucherTypeStore.getCount();
                 var count =records.length;
+
+               
                 AppState.FloatPanel_AyohaReward.AyohaVoucherCount=records.length;
                 Ext.getCmp('Dashboard_AyohaVoucherListID').setStore(_DataStore_AyohaRewardVoucherEntitledUserLoadBySubscriberAccNoVoucherTypeStore);
         
@@ -16654,7 +16196,7 @@ function Dashboard_AyohaRewardVoucherEntitledUserLoadBySubscriberAccNoVoucherTyp
                 if (count > 1) {
                     Ext.getCmp('htmlDashboard_AyohaVaucherTxt').setHtml('<div style="color:black;text-align: center;font-size:16px;width:100%;font-weight:bold"><font class="blink_me" size=4x>(' + count + ')</font> Redeemable Ayoha Voucher!</div>');
                 }
-                Dashboard_AyohaHotMerchantSet01();
+              //  Dashboard_AyohaHotMerchantSet01();
             } else {
                 console.error('Failed to load store data or no record found.');
                 LoadingPanelHide();
@@ -16664,42 +16206,6 @@ function Dashboard_AyohaRewardVoucherEntitledUserLoadBySubscriberAccNoVoucherTyp
 
 
 
-
-
-
-
-
-
-    // _DataStore_AyohaRewardVoucherEntitledUserLoadBySubscriberAccNoVoucherTypeStore.getProxy().setExtraParam('SubscriberAccNo', GetCurrAyohaUserAccountNo());
-    // _DataStore_AyohaRewardVoucherEntitledUserLoadBySubscriberAccNoVoucherTypeStore.getProxy().setExtraParam('VoucherType', "AyohaVoucher");
-    // _DataStore_AyohaRewardVoucherEntitledUserLoadBySubscriberAccNoVoucherTypeStore.getProxy().setUrl(GetAPIurl() + '/AyohaRewardVoucher_EntitledUser/AyohaRewardVoucherEntitledUserLoadBySubscriberAccNoVoucherType');
-
-    // _DataStore_AyohaRewardVoucherEntitledUserLoadBySubscriberAccNoVoucherTypeStore.load();
-
-
-
-    // var task = Ext.create('Ext.util.DelayedTask', function () {
-
-
-
-    //     //_DataStore_EnterprisesLoadByMerchantCategory.load();
-    //     var count = _DataStore_AyohaRewardVoucherEntitledUserLoadBySubscriberAccNoVoucherTypeStore.getCount();
-    //     Ext.getCmp('Dashboard_AyohaVoucherListID').setStore(_DataStore_AyohaRewardVoucherEntitledUserLoadBySubscriberAccNoVoucherTypeStore);
-
-    //     if (count < 1) {
-    //         Ext.getCmp('htmlDashboard_AyohaVaucherTxt').setHtml('<div style="color:black;text-align: center;font-size:16px;width:100%;font-weight:bold">(0) Ayoha Vocher Left!</div>');
-    //     }
-
-    //     if (count == 1) {
-    //         Ext.getCmp('htmlDashboard_AyohaVaucherTxt').setHtml('<div style="color:black;text-align: center;font-size:16px;width:100%;font-weight:bold"><font class="blink_me" size=4x>(' + count + ')</font> Redeemable Ayoha Voucher!</div>');
-    //     }
-
-    //     if (count > 1) {
-    //         Ext.getCmp('htmlDashboard_AyohaVaucherTxt').setHtml('<div style="color:black;text-align: center;font-size:16px;width:100%;font-weight:bold"><font class="blink_me" size=4x>(' + count + ')</font> Redeemable Ayoha Voucher!</div>');
-    //     }
-    //     Dashboard_AyohaHotMerchantSet01();
-    // });
-    // task.delay(1000);
 
 }
 
@@ -17857,12 +17363,18 @@ function Dashboard_LoadLastCheckIn(){
                 Ext.getCmp('containerCheckInRewardspacer02').setStyle('background-color:transparent');
                 Ext.getCmp('containerCheckInRewardspacer03').setStyle('background-color:transparent');
                 Ext.getCmp('labelDashboard_Viewallpastcheck-ins').setHidden(false); 
-              
+                Ext.getCmp('containerDashboard_MembershipInsight').setMargin('10 0 0 0'); 
+                
               Dashboard_MerchantDetailPageShow();
               // CoreFunction_DashboardLoadByEnterpriseAccNoStorePerk();
             
             } else {
               // alert('Failed to load store data or no record found.');
+
+
+              Ext.getCmp('MainMaincontainerDashbord').setHeight(2780);
+
+              
                Ext.getCmp('DashboardMain_EnterprisesLoadLastCheckInStoreID').setStore(_DataStore_EnterprisesLoadLastCheckInStore);
               
                Ext.getCmp('DashboardMain_EnterprisesLoadLastCheckInStoreID').setHidden(false); 
@@ -17870,14 +17382,17 @@ function Dashboard_LoadLastCheckIn(){
                 Ext.getCmp('labelDashboard_LastCheckInTimeStamp').setHidden(true);
                 Ext.getCmp('labelDashboard_LastCheckInEarnedPointToDisplay').setHidden(true);
                 Ext.getCmp('containerDashboard_LastCheckInTimeStamp').setHidden(true);                
-                Ext.getCmp('DashboardMain_EnterprisesLoadLastCheckInStoreID').setHeight(100);
+                Ext.getCmp('DashboardMain_EnterprisesLoadLastCheckInStoreID').setHeight(110);
                // Ext.getCmp('DashboardMain_EnterprisesLoadLastCheckInStoreID').setStyle('background-color:rgba(255, 255, 255, 10);border-radius: 10px 10px 0px 0px;');
                Ext.getCmp('containerDashboard_imgDashboard_maskotCheckIn_htmlDashboard_NotYetCheckInTxt').setHidden(false); 
                Ext.getCmp('containerDashboard_imgDashboard_succesMaskotCheckIn_htmlDashboard_LastCheckInTxt').setHidden(true); 
                 Ext.getCmp('DashboardMain_EnterprisesLoadLastCheckInStoreID').setStyle('background-color:rgba(250, 245, 255, 1);border-radius: 10px 10px 0px 0px;');
-             
                
-               
+                Ext.getCmp('containerCheckInMerchantPage').setHidden(true);
+                Ext.getCmp('containerDashboard_PerksYouCanEnjoyHere').setHidden(true);
+                Ext.getCmp('containerDashboard_MembershipCard_CheckIn').setHidden(true);
+                Ext.getCmp('containerDashboard_RecentVisitor_CheckIn').setHidden(true);
+                
                
                Ext.getCmp('btnDashboard_CheckIn').setHidden(true);
                 CoreFunction_DashboardLoadInitialPerk(); 

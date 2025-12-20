@@ -601,12 +601,12 @@ function loadAyohaUserProfileLoginBody() {
                         initializeContainerSingleTapEvent();
                         DashboardAyohaUserMainStore();
                       
-                        AyohaRedeemPrize_LoadByRowStatusAndGCStore();
+                        //AyohaRedeemPrize_LoadByRowStatusAndGCStore();
                         Dashboard_LoadAyohaEwallet();
                         initTapListener_AyohaMerchantsIcon();
                      
                         loadAdvertisementloadHotSeatStore();
-                        Dashboard_AyohaRewardVoucherEntitledUserLoadBySubscriberAccNoVoucherTypeStore();
+                      //  Dashboard_AyohaRewardVoucherEntitledUserLoadBySubscriberAccNoVoucherTypeStore();
                         AyohaMerchantReward_loadVIAAdvertisement();
                        AyohaMerchantReward_containerDashboardMerchantRewardScroller();
                        AyohaMerchantReward_Initialized_SearchText();
@@ -1324,7 +1324,7 @@ function loadAyohaUserProfileLoginBodyAfterCreatedAccount(valUserName,valKataLal
                         initTapListener_AyohaMerchantsIcon();
                      
                         loadAdvertisementloadHotSeatStore();
-                        Dashboard_AyohaRewardVoucherEntitledUserLoadBySubscriberAccNoVoucherTypeStore();
+                      //  Dashboard_AyohaRewardVoucherEntitledUserLoadBySubscriberAccNoVoucherTypeStore();
                         AyohaMerchantReward_loadVIAAdvertisement();
                        AyohaMerchantReward_containerDashboardMerchantRewardScroller();
                        AyohaMerchantReward_Initialized_SearchText();
