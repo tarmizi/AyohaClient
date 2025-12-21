@@ -400,7 +400,7 @@ function CoreFunction_DashboardAyohaUser() {
              // AyohaRewardContestLoadActiveStore();          
               //Dashboard_MembershipCardLoadBySubscriberAccNoDashboardMainStore_Front() 
           
-  
+              Dashboard_LoadLastCheckIn();
   
          
           } else {
@@ -718,7 +718,7 @@ function getGreeting() {
   function Dashboard_MerchantDetailPageShow() {
     FloatPanel_MerchantPageDetail="";
     FloatPanel_MerchantPageDetail = Ext.getCmp('CarouselDashboard_MerchantDetailPage');
-    //AddRoutePages("FloatPanel_MerchantDetailPageHide()");
+   
 
     OnClickFloatPanel_MerchantDetailPage_MembershipLoyaltyProgram_Txt_tagging = 'slideUp';
     OnClickhtmlFloatPanel_MerchantDetailPage_OnlineStore_Txt_tagging = 'slideUp';
@@ -1335,7 +1335,7 @@ globalFloatPanelMerchantDetailPage_CountReviewer=TotalVoter;
 
 
 
-function CoreFunction_DasboardAyohaStore_EnterprisesCheckIn () {
+function CoreFunction_DasboardAyohaStore_EnterprisesCheckIn() {
     var payload = {
       EnterpriseAccNo: FloatPanel_AyohaStore_getEnterpriseAccNo(),
       SubscriberAccNo: GetCurrAyohaUserAccountNo()

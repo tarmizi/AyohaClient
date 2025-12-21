@@ -6048,17 +6048,13 @@ html: '<img onClick="FloatPanel_AyohaStore_OrderHistoryShow()" src="resources/ic
 
 
   //////////Membership Card List Container//////////
-  {
-    xtype: 'container',
-    width: '100%',
-    height:5
-  },
+
   {
                 xtype: 'container',
                 width: '100%',
                 hidden: false,
                 id:'containerDashboard_AyohaMerchantMembershipCardList',
-                margin: '0 0 0 0',
+                margin: '5 0 0 0',
                 // style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1 ;background: white;border-radius: 0px 15px 15px 0px;',
                 //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
                 style: 'background-color:transparent',
@@ -6232,6 +6228,7 @@ html: '<img onClick="FloatPanel_AyohaStore_OrderHistoryShow()" src="resources/ic
   {
                margin: '-25 0 0 0',
                 width: '100%',
+                id:'Dashboard_premiumperksByAyoha',
                 height: 300,
                 xtype: 'imagecarousel' // Use the xtype you defined
               
@@ -6295,6 +6292,7 @@ html: '<img onClick="FloatPanel_AyohaStore_OrderHistoryShow()" src="resources/ic
                 xtype: 'container',
                 width: '100%',
                 height:300,
+                id:'containerDashboard_loyaltyCampaignProgram',
                 hidden: false,
                 margin: '0 0 0 0',
                 style: 'background-color:transparent',
@@ -8135,13 +8133,13 @@ html: '<div ><img src="resources/icons/reviewstarunrate.png" width="9" height="9
 
 //////////// end merchnat list
 
-{
-    xtype: 'container',
-    //  style: 'background-image: url("resources/icons/bgfront07.png"); background-size: 100% 400px;background-repeat: no-repeat;',
-    width: '100%',
-    height: 30,
-    style: "background-color: transparent;",
-},
+// {
+//     xtype: 'container',
+//     //  style: 'background-image: url("resources/icons/bgfront07.png"); background-size: 100% 400px;background-repeat: no-repeat;',
+//     width: '100%',
+//     height: 30,
+//     style: "background-color: transparent;",
+// },
 
 
   ////// merchant vip advertisement //////
@@ -8150,7 +8148,7 @@ html: '<div ><img src="resources/icons/reviewstarunrate.png" width="9" height="9
                 width: '100%',
                 hidden: false,
                 id:'containerDashboard_merchant_vip_advertisement',
-                margin: '0 0 0 0',
+                margin: '30 0 0 0',
                 // style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1 ;background: white;border-radius: 0px 15px 15px 0px;',
                 //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
                 style: 'background-color:transparent',
@@ -8327,6 +8325,7 @@ html: '<div ><img src="resources/icons/reviewstarunrate.png" width="9" height="9
 
 {
     xtype: 'container',
+    id:'containerDashboard_merchantVIPAdvertismentMain',
     //  style: 'background-image: url("resources/icons/bgfront07.png"); background-size: 100% 400px;background-repeat: no-repeat;',
     width: '100%',
     height: 400,
@@ -17354,20 +17353,54 @@ function Dashboard_LoadLastCheckIn(){
                
                
                 Ext.getCmp('DashboardMain_EnterprisesLoadLastCheckInStoreID').setHidden(false); 
+
+
+
+                Ext.getCmp('containerCheckInMerchantPage').setHidden(false); 
+                Ext.getCmp('containerDashboard_PerksYouCanEnjoyHere').setHidden(false); 
+                Ext.getCmp('containerDashboard_MembershipCard_CheckIn').setHidden(false); 
+                Ext.getCmp('containerDashboard_RecentVisitor_CheckIn').setHidden(false); 
+
+
+
+
                 Ext.getCmp('DashboardMain_EnterprisesLoadCheckInEmptyID').setHidden(true); 
                 
                 Ext.getCmp('containerDashboard_imgDashboard_maskotCheckIn_htmlDashboard_NotYetCheckInTxt').setHidden(true); 
                 Ext.getCmp('containerDashboard_imgDashboard_succesMaskotCheckIn_htmlDashboard_LastCheckInTxt').setHidden(false); 
                 // Ext.getCmp('htmlDashboard_NotYetCheckInTxt').setHidden(true); 
                 Ext.getCmp('containerCheckInRewardspacer01').setStyle('background-color:transparent');
-                Ext.getCmp('containerCheckInRewardspacer02').setStyle('background-color:transparent');
+                Ext.getCmp('containerCheckInRewardspacer02').setStyle('background-color:transparent;border-bottom:1px none  #E5E7EB;border-top:2px none #faf5ff;border-left:2px none #faf5ff;border-right:2px none #faf5ff;');
                 Ext.getCmp('containerCheckInRewardspacer03').setStyle('background-color:transparent');
                 Ext.getCmp('labelDashboard_Viewallpastcheck-ins').setHidden(false); 
                 Ext.getCmp('containerDashboard_MembershipInsight').setMargin('10 0 0 0'); 
-                
+
+
+//////////////////////////Hidden When CheckIn
+Ext.getCmp('containerDashboard_MembershipInsight').setHidden(true); 
+Ext.getCmp('Dashboard_MyAccount_MembershipPerksList').setHidden(true); 
+Ext.getCmp('containerDashboard_AyohaMerchantMembershipCardList').setHidden(true); 
+Ext.getCmp('Dashboard_MyAccount_UnSubscribedMembershipCardList_front').setHidden(true); 
+Ext.getCmp('containerSelectedPremiumperksbyAyoha').setHidden(true); 
+Ext.getCmp('Dashboard_premiumperksByAyoha').setHidden(true); 
+Ext.getCmp('containerDashboard_AyohaMerchantLoyaltyCampaignList').setHidden(true); 
+Ext.getCmp('containerDashboard_loyaltyCampaignProgram').setHidden(true); 
+Ext.getCmp('containerDashboard_AyohaOnlineMerchantStoreList').setHidden(true); 
+Ext.getCmp('Dashboard_Carousel_PremiumAdvertisement').setHidden(true); 
+Ext.getCmp('containerDashboard_merchant_vip_advertisement').setHidden(true); 
+Ext.getCmp('containerDashboard_merchantVIPAdvertismentMain').setHidden(true); 
+Ext.getCmp('containerDashboard_HotSeatPromotion').setHidden(true); 
+Ext.getCmp('containerDashboard_HotSeatPromotionImage').setHidden(true); 
+Ext.getCmp('MainMaincontainerDashbord').setHeight(2200); 
               Dashboard_MerchantDetailPageShow();
+
+
+
+
+
+
               // CoreFunction_DashboardLoadByEnterpriseAccNoStorePerk();
-            
+            return;
             } else {
               // alert('Failed to load store data or no record found.');
 
