@@ -685,6 +685,7 @@ function SuccessCheckinController_DashboardSuccessCheckIn_LoadUnLockMemberOnlyPe
                 Ext.getCmp('listDashboard_MembershipCard_CheckIn').setStore(_DataStore_MembershipCardLoadByEnterpriseAccNo_DashboardMainStore);
                // setScreenWidthMembershipCardCheckIn(count,jenis)
                setScreenWidthMembershipCardCheckIn(records.length,"membershipCard_");
+               SuccessCheckinController_DashboardSuccessCheckIn_LoadVIEWMerchantDashboard_StoreActivity();
                
             } else {
                
@@ -698,6 +699,38 @@ function SuccessCheckinController_DashboardSuccessCheckIn_LoadUnLockMemberOnlyPe
 
 }
 
+
+
+
+function SuccessCheckinController_DashboardSuccessCheckIn_LoadVIEWMerchantDashboard_StoreActivity() {
+
+   
+    _DataStore_VIEWMerchantDashboard_StoreActivityStore.getProxy().setExtraParam('enterpriseAccNo', globalFloatPanelMerchantDetailPage_EnterpriseAccNo); 
+    _DataStore_MembershipCardLoadByEnterpriseAccNo_DashboardMainStore.getProxy().setUrl(GetAPIurl() + '/VIEW_MerchantDashboard/VIEWMerchantDashboard_StoreActivity');
+
+ 
+
+    _DataStore_VIEWMerchantDashboard_StoreActivityStore.load({
+        callback: function (records, operation, success) {
+            // alert(records.length)
+            // alert(success)
+            if (success && records.length > 0) {
+           
+              
+                Ext.getCmp('listDashboardStoreActivity').setStore(_DataStore_VIEWMerchantDashboard_StoreActivityStore);
+             //  setScreenWidthMembershipCardCheckIn(records.length,"membershipCard_");
+               
+            } else {
+               
+              //  globalisSuccessCheckinController_Dashboard_LoadVoucherPerksOpen="N";
+              
+            }
+        }
+    });
+
+
+
+}
 
 
 

@@ -21,7 +21,200 @@
     position: relative;
 }
     </style>
+<style>
+ .ayohaHappeningCard{
+  background:#fff;
+  border-radius:18px;
+  padding:14px 14px 10px 14px;
+  margin:12px;
+  box-shadow:0 10px 26px rgba(168,85,247,.18);
+}
 
+.ayohaHappeningHeader{ margin-bottom:10px; }
+
+.ayohaHTitle{
+  font-size:18px;
+  font-weight:900;
+  color:#5b21b6;
+  line-height:1.1;
+}
+.ayohaHSub{
+  font-size:12px;
+  color:#8b8796;
+  margin-top:4px;
+}
+
+.ayohaSeeAllBtn.x-button{
+  border:0 !important;
+  background:linear-gradient(180deg,#d600ff,#9b00ff) !important;
+  color:#fff !important;
+  border-radius:999px !important;
+  padding:6px 12px !important;
+  font-weight:800 !important;
+  font-size:12px !important;
+  min-height:auto !important;
+}
+.ayohaSeeAllBtn .x-button-label{ padding:0 !important; }
+
+.ayohaHappeningList{
+  padding-top:2px;
+}
+.ayohaHappeningList .x-dataview-container{
+  display:flex;
+  align-items:flex-start;
+  flex-wrap:nowrap;
+}
+
+.ayohaHItem{
+  width:86px;
+  margin-right:14px;
+  text-align:center;
+}
+
+.ayohaAvatarWrap{
+  position:relative;
+  width:64px;
+  height:64px;
+  margin:0 auto 6px auto;
+}
+
+.ayohaAvatar{
+  width:64px;
+  height:64px;
+  border-radius:999px;
+  object-fit:cover;
+  border:3px solid #efe8ff; /* soft purple ring */
+  box-shadow:0 8px 18px rgba(0,0,0,.10);
+}
+
+/* =========================
+   BADGE BASE (shared)
+   ========================= */
+.ayohaBadge{
+  position:absolute;
+  right:-2px;
+  bottom:-2px;
+  width:24px;
+  height:24px;
+  border-radius:999px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 6px 14px rgba(0,0,0,.16);
+  border:2px solid #fff;
+  overflow:hidden; /* supaya svg kemas */
+}
+.ayohaBadge svg{ display:block; } /* avoid svg baseline gap */
+
+/* =========================
+   EXISTING BADGES
+   ========================= */
+
+/* PIN badge */
+.ayohaBadgePin{
+  background:linear-gradient(180deg,#b56cff,#7c3aed);
+}
+
+/* CARD badge */
+.ayohaBadgeCard{
+  background:linear-gradient(180deg,#f7c948,#f59e0b);
+}
+.ayohaCardIcon{
+  width:12px; height:9px;
+  border-radius:2px;
+  background:rgba(255,255,255,.95);
+  position:relative;
+}
+.ayohaCardIcon:after{
+  content:'';
+  position:absolute;
+  left:2px; right:2px; top:3px;
+  height:1px;
+  background:rgba(0,0,0,.12);
+}
+.ayohaPlusMini{
+  position:absolute;
+  right:-5px;
+  top:-5px;
+  width:14px;
+  height:14px;
+  border-radius:999px;
+  background:#fff;
+  color:#111;
+  font-weight:900;
+  font-size:11px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 4px 10px rgba(0,0,0,.18);
+}
+
+/* =========================
+   NEW BADGES
+   badge: stamp | point | event | store | contest
+   ========================= */
+
+/* 1) Stamp Collected (purple stamp vibe) */
+.ayohaBadgeStamp{
+  background:linear-gradient(180deg,#d946ef,#7c3aed);
+}
+
+/* 2) Point Collected (green reward) */
+.ayohaBadgePoint{
+  background:linear-gradient(180deg,#22c55e,#16a34a);
+}
+
+/* 3) Event Respond (blue calendar/check) */
+.ayohaBadgeEvent{
+  background:linear-gradient(180deg,#60a5fa,#2563eb);
+}
+
+/* 4) Ayoha Store (orange shop) */
+.ayohaBadgeStore{
+  background:linear-gradient(180deg,#fbbf24,#f97316);
+}
+
+/* 5) Contest Status (red trophy) */
+.ayohaBadgeContest{
+  background:linear-gradient(180deg,#fb7185,#dc2626);
+}
+
+/* =========================
+   TEXT
+   ========================= */
+.ayohaName{
+   
+  font-size:13px;
+  font-weight:800;
+  color:#111827;
+  line-height:1.1;
+  max-width:86px;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}.ayohaActivity{
+    margin-top:3px;
+    font-size:11px;
+  color:#111827;
+  line-height:1.2;
+
+  display:-webkit-box;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2;
+
+  overflow:hidden;
+  text-overflow:ellipsis;
+  word-break:break-word;
+
+  min-height: calc(12px * 1.2 * 2);  /* ✅ ensure semua item sama tinggi */
+}
+.ayohaTime{
+  font-size:11px;
+  color:#8b8796;
+  margin-top:1px;
+}
+
+</style>
     <style>
         .ayohaHdrCard{
   display:flex; align-items:center; justify-content:space-between;

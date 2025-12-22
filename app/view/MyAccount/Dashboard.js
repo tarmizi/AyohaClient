@@ -51,7 +51,8 @@ Ext.define('ianMizi.view.MyAccount.Dashboard', {
                 xtype: 'container',
                 // style: 'background-image: url("resources/icons/pointbackdrop.png"); background-size: 100% 30%;background-repeat: no-repeat;',
                // style: "background-color: transparent;",
-                style: 'background-color: #fac;background-image: linear-gradient(#c800ffc9,#ff00de75);',
+               // style: 'background-color: #fac;background-image: linear-gradient(#c800ffc9,#ff00de75);',
+                style: "background: linear-gradient(90deg, #491A7F 0%, #7027A5 50%, #9537C8 100%);",
               //  docked:'top',
                 layout: {
                     type: 'vbox',
@@ -862,7 +863,7 @@ Ext.define('ianMizi.view.MyAccount.Dashboard', {
                items: [
                   {
                     xtype: 'carousel',
-                    // xtype: 'container',
+                   hidden:true,
                       id: 'mainDashboardCarousel',
                       name: 'namemainDashboardCarousel',
                       height: 205,
@@ -1330,7 +1331,266 @@ html: '<div style="text-align:center;padding:10px;margin:-3px 0px 0px 0px;">' +
                   ]
                   },
                   
+                  {
+                    xtype: 'carousel',
+                    // xtype: 'container',
+                      id: 'mainDashboardCarousel_CheckIn',
+                      name: 'namemainDashboardCarousel_CheckIn',
+                      height: 205,
+                    //ori  height: 190,
+                      width: '100%',
+                      indicator: false,
+                    
+                       style: "background: linear-gradient(90deg, #491A7F 0%, #7027A5 50%, #9537C8 100%);",
+
+                                                        items:[
+
+
+                                                        
+{
+  xtype: 'container',
+
+  
+  width: '100%',
+ 
+//ori height: 190,
+ height: 205,
+  title: 'Dashboard_AyohaReward_MainDashboard_CheckIn',
+ // style: "background: linear-gradient(90deg, #491A7F 0%, #7027A5 50%, #9537C8 100%);",
+  style: 'background-color:transparent',
+  layout: {
+      type: 'vbox',
+      pack: 'start',
+      align: 'center'
+
+  },
+  items:[
+      {
+          xtype: 'container',
+          width: '100%',
+          height: 35,
+          style: 'background-color:transparent',
+         //ori height: 10,
+       
+      },
+      {
+        xtype: 'container',
+          width: '91%',
+          height: 165,
+         // height: 145,
+          style: 'background-color:transparent;border:2px none #F5D3A0;border-radius:25px',
+          layout: {
+            type: 'vbox',
+            pack: 'center',
+            align: 'center',
+        },
+        items:[
+
+            {
+                xtype: 'container',
+                width: '100%',
+              
+                height: 70,
+                style: 'background-color:transparent',
+                layout: {
+                  type: 'hbox',
+                  pack: 'center',
+                  align: 'center',
+              },
+              items:[
+                {
+
+                    xtype: 'container',
+                    width: '100%',
+                    margin: '-50 0 0 0',                  
+                    height: 50,
+                    style: 'background-color:transparent',
+                    layout: {
+                      type: 'vbox',
+                      pack: 'start',
+                      align: 'left',
+                  },items:[
+
+                    {
+
+                        margin: '-5 0 0 14',
+                        // id: 'labelDashboard_LastCheckInTimeStamp',    
+                        // html: '<div  style="color:white;text-align: left;font-size:10px;width:100%;margin:0px 0px 0px 0px;">00:00:00</div>'
+                         html: '<div style="color:white;text-align: left;font-size:18px;width:100%;margin:0px 0px 0px 0px"><b>Check-In Successfull!</b></div>',
+                        
+                    },
+                    {
+                        margin: '-2 0 0 14',
+                        // id: 'labelDashboard_LastCheckInTimeStamp',    
+                        // html: '<div  style="color:white;text-align: left;font-size:10px;width:100%;margin:0px 0px 0px 0px;">00:00:00</div>'
+                         html: '<div style="font-size:10px;color:white;background:#2e7d32;border:1px solid #bbf7d0;padding:4px 8px;border-radius:999px;white-space:nowrap;">+10 Ayoha Point added !</div>'
+                        
+                    },
                   
+                    {
+                        margin: '2 0 0 14',
+                        // id: 'labelDashboard_LastCheckInTimeStamp',    
+                        // html: '<div  style="color:white;text-align: left;font-size:10px;width:100%;margin:0px 0px 0px 0px;">00:00:00</div>'
+                         html: '<div style="font-size:10px;color:white;background:transparnt;white-space:nowrap;">Awesome!,you are one step closer to your next <br>reward</div>'
+                        
+                    }
+                  ]
+
+
+
+                
+                
+                
+                
+                
+                
+                
+                },
+                {
+                    xtype: 'spacer'
+                },
+    
+    
+    
+                {
+            //         position: absolute;
+            // top: -50px; /* Moves the mascot up to break the border */
+            // right: 0px;
+            // width: 140px; /* Adjust based on your actual image size */
+            // height: auto;
+            // z-index: 10;
+                 xtype: 'component',
+                 html:
+                 '<div  style="position:absolute;top:-58px;right:0px;background-color:transparent;border-radius:50%;' +
+                      'width:131px;height:141px;z-index:10;display:flex;align-items:center;justify-content:center;">' +
+                   '<img src="resources/icons/maskotCheckIn_Success04.png" ' +
+                        'style="width:120px;height:141px;display:block;" ' +
+                        'alt="Company Name" />' +
+                 '</div>'
+             },
+              ]
+            },
+           
+            {
+                xtype: 'container',
+                width: '100%',
+                height: 40,
+                style: 'background-color:transparent',
+                layout: {
+                    type: 'vbox',
+                    pack: 'start',
+                    align: 'center'
+                },
+                items: [
+                    {
+
+
+
+                        html:
+                        '<div onclick="FloatPanel_Membership_MembershipCardHubsUpgradeShow();" style="width:100%;padding:10px;margin:-4px 0 0 0;">' +
+                          '<style>' +
+                            '@keyframes ayohaPulse{0%{box-shadow:0 0 0 0 rgba(255, 193, 7, 0.4)}70%{box-shadow:0 0 0 14px rgba(255, 193, 7, 0)}100%{box-shadow:0 0 0 0 rgba(255, 193, 7, 0)}}' +
+                            '@keyframes ayohaShine{0%{transform:translateX(-120%)}100%{transform:translateX(120%)}}' +
+                          '</style>' +
+                      
+                          // ✅ Gold Gradient Button
+                          '<a href="#checkin" aria-label="Find Next Merchant" ' +
+                             'style="position:relative;display:flex;width:100%;max-width:100%;' +
+                                    'align-items:center;justify-content:center;gap:10px;' +
+                                    'height:50px;padding:0 18px;box-sizing:border-box;' +
+                                    'background:linear-gradient(90deg, #FFC107 0%, #FF9800 100%);' +
+                                    'color:#fff;text-decoration:none;border-radius:10px;' +
+                                    'font:700 15px/1 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;' +
+                                    'letter-spacing:.2px;border:none;' +
+                                    'box-shadow:0 4px 10px rgba(255, 152, 0, 0.3);' +
+                                    'animation:ayohaPulse 2.2s ease-out infinite;overflow:hidden;transform:translateZ(0);">' +
+                      
+                              // Search Icon (SVG)
+                              '<span style="width:20px;height:20px;display:inline-flex;align-items:center;justify-content:center;">' +
+                                '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="display:block">' +
+                                  '<circle cx="11" cy="11" r="8"></circle>' +
+                                  '<line x1="21" y1="21" x2="16.65" y2="16.65"></line>' +
+                                '</svg>' +
+                              '</span>' +
+                      
+                              // Text
+                              '<span style="text-shadow: 0 1px 1px rgba(0,0,0,0.1);">Find Next Merchant</span>' +
+                      
+                              // Shine Effect Overlay
+                              '<span style="content:\'\';position:absolute;top:-30%;left:0;width:30%;height:160%;' +
+                                         'background:linear-gradient(90deg,rgba(255,255,255,0) 0%,rgba(255,255,255,.55) 50%,rgba(255,255,255,0) 100%);' +
+                                         'filter:blur(2px);transform:translateX(-120%);pointer-events:none;' +
+                                         'animation:ayohaShine 2.8s ease-in-out infinite;"></span>' +
+                          '</a>' +
+                        '</div>',
+
+
+
+                        // html:
+                        //   '<div onclick="FloatPanel_Membership_MembershipCardHubsUpgradeShow();" style="width:100%;padding:10px;margin:-4px 0 0 0;">' +
+                        //     '<style>' +
+                        //       '@keyframes ayohaPulse{0%{box-shadow:0 0 0 0 rgba(138,43,226,.35)}70%{box-shadow:0 0 0 14px rgba(138,43,226,0)}100%{box-shadow:0 0 0 0 rgba(138,43,226,0)}}' +
+                        //       '@keyframes ayohaShine{0%{transform:translateX(-120%)}100%{transform:translateX(120%)}}' +
+                        //     '</style>' +
+            
+                        //     // ✅ full-width button
+                        //     '<a href="#checkin" aria-label="Check-In Now"' +
+                        //        'style="position:relative;display:flex;width:100%;max-width:100%;' +
+                        //               'align-items:center;justify-content:center;gap:10px;' +
+                        //               'height:50px;padding:0 18px;box-sizing:border-box;' +
+                        //              // 'background-color:#fac;background:linear-gradient(90deg,#ff00de75,#c800ffc9);' +
+                        //               'background-color:#fac;background:linear-gradient(#c800ffc9,#c800ffc9);' +
+                        //              // 'color:#fff;text-decoration:none;border-radius:999px;' +
+                        //               'color:#fff;text-decoration:none;border-radius:10px;' +
+                        //               'font:700 15px/1 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;' +
+                        //               'letter-spacing:.2px;border:1px solid rgba(255,255,255,.18);' +
+                        //               'box-shadow:0 8px 18px rgba(138,43,226,.25);' +
+                        //               'animation:ayohaPulse 2.2s ease-out infinite;overflow:hidden;transform:translateZ(0);">' +
+            
+                        //         '<span style="width:20px;height:20px;display:inline-flex;align-items:center;justify-content:center;">' +
+                        //           '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="display:block">' +
+                        //             '<path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/>' +
+                        //           '</svg>' +
+                        //         '</span>' +
+            
+                        //         '<span>Find Merchant Here!</span>' +
+            
+                        //         '<span style="margin-left:2px;display:inline-flex;align-items:center;' +
+                        //                     'background:linear-gradient(90deg,#f59e0b,#fbbf24);color:#111;' +
+                        //                     'font:800 10px/1.1 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;' +
+                        //                     'padding:3px 6px;border-radius:999px;">+10 pts</span>' +
+            
+                        //         '<span style="content:\'\';position:absolute;top:-30%;left:0;width:30%;height:160%;' +
+                        //                     'background:linear-gradient(90deg,rgba(255,255,255,0) 0%,rgba(255,255,255,.55) 50%,rgba(255,255,255,0) 100%);' +
+                        //                     'filter:blur(2px);transform:translateX(-120%);pointer-events:none;' +
+                        //                     'animation:ayohaShine 2.8s ease-in-out infinite;"></span>' +
+                        //     '</a>' +
+                        //   '</div>',
+                        width: '100%',
+                        height: 40
+                    }
+                ]
+            }
+            
+        ]
+      
+      },
+       
+         
+      
+
+     
+ 
+  ]
+},
+
+
+                 
+      
+                 
+                 
+                  ]
+                  },
                   
            {
               xtype: 'container',
@@ -1681,11 +1941,11 @@ html: '<div style="text-align:center;padding:10px;margin:-3px 0px 0px 0px;">' +
                 
                  {
                     
-                     margin: '0 0 0 0',
+                     margin: '0 0 0 14',
                      //width: '100%',
                     
                      //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
-                    html: '<div style="color:#3A0ca3;text-align: left;font-size:18px;width:100%;margin:10px 0px 0px 10px"><b>🎉 Check-In Confirmed</b></div>'
+                    html: '<div style="color:#3A0ca3;text-align: left;font-size:18px;width:100%;margin:10px 0px 0px 0px"><b> Check-In Confirmed</b></div>'
                     // html: '<span style="font-size:10px;color:#16a34a;background:#ecfdf5;border:1px solid #bbf7d0;padding:3px 6px;border-radius:999px;white-space:nowrap;">Get available perks in selected Check-In Merchant!</span><br><div style="color:white;text-align: left;font-size:10px;width:100%;margin:-25px 0px 0px 0px;">One Hub • Double Reward,Get your exiciting perks!</div>'
                      
                  },
@@ -1987,11 +2247,11 @@ html: '<div style="text-align:center;padding:10px;margin:-3px 0px 0px 0px;">' +
                 
                  {
                     
-                     margin: '0 0 0 0',
+                     margin: '0 0 0 14',
                      //width: '100%',
                     
                      //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
-                    html: '<div style="color:#3A0ca3;text-align: left;font-size:18px;width:100%;margin:10px 0px 0px 10px"><b>📍 You’re checked in here</b></div>'
+                    html: '<div style="color:#3A0ca3;text-align: left;font-size:18px;width:100%;margin:10px 0px 0px 0px"><b>You’re checked in here</b></div>'
                   //  html: '<div style="color:#3A0ca3;text-align: left;font-size:18px;width:100%;margin:10px 0px 0px 10px"><b>Welcome To</b></div>'
                     
                     // html: '<span style="font-size:10px;color:#16a34a;background:#ecfdf5;border:1px solid #bbf7d0;padding:3px 6px;border-radius:999px;white-space:nowrap;">Get available perks in selected Check-In Merchant!</span><br><div style="color:white;text-align: left;font-size:10px;width:100%;margin:-25px 0px 0px 0px;">One Hub • Double Reward,Get your exiciting perks!</div>'
@@ -5796,7 +6056,7 @@ html: '<img onClick="FloatPanel_AyohaStore_OrderHistoryShow()" src="resources/ic
                     // html: '<span style="font-size:10px;color:#16a34a;background:#ecfdf5;border:1px solid #bbf7d0;padding:3px 6px;border-radius:999px;white-space:nowrap;">Get available perks in selected Check-In Merchant!</span><br><div style="color:white;text-align: left;font-size:10px;width:100%;margin:-25px 0px 0px 0px;">One Hub • Double Reward,Get your exiciting perks!</div>'
                     margin: '10 0 0 14',
                     //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
-                   html: '<div     style="color:#3A0ca3;text-align: left;font-size:18px;width:100%;margin:0px 0px 0px 0px"><b>🔓Unlock Premium Access</b></div><br> <div style="margin:-24px 0px 0px 25px;font-size:11px;color:#6b7280;">Get this store’s membership card for premium access</div>'
+                   html: '<div     style="color:#3A0ca3;text-align: left;font-size:18px;width:100%;margin:0px 0px 0px 0px"><b>Unlock Premium Access</b></div><br> <div style="margin:-24px 0px 0px 0px;font-size:11px;color:#6b7280;">Get this store’s membership card for premium access</div>'
            
                  },
                
@@ -5926,7 +6186,7 @@ html: '<img onClick="FloatPanel_AyohaStore_OrderHistoryShow()" src="resources/ic
                     // html: '<span style="font-size:10px;color:#16a34a;background:#ecfdf5;border:1px solid #bbf7d0;padding:3px 6px;border-radius:999px;white-space:nowrap;">Get available perks in selected Check-In Merchant!</span><br><div style="color:white;text-align: left;font-size:10px;width:100%;margin:-25px 0px 0px 0px;">One Hub • Double Reward,Get your exiciting perks!</div>'
                     margin: '10 0 0 14',
                     //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
-                   html: '<div     style="color:#3A0ca3;text-align: left;font-size:18px;width:100%;margin:0px 0px 0px 0px"><b>👀People Checked-In Recently</b></div><br> <div style="margin:-24px 0px 0px 25px;font-size:11px;color:#6b7280;">See who else visited recently</div>'
+                   html: '<div     style="color:#3A0ca3;text-align: left;font-size:18px;width:100%;margin:0px 0px 0px 0px"><b>Recently Active</b></div><br> <div style="margin:-24px 0px 0px 0px;font-size:11px;color:#6b7280;">See who’s been active recently</div>'
            
                  },
                
@@ -5945,6 +6205,84 @@ html: '<img onClick="FloatPanel_AyohaStore_OrderHistoryShow()" src="resources/ic
           
             ]
           },
+          {
+           
+                xtype: 'dataview',
+                cls: 'ayohaHappeningList',
+                width:'90%',
+                height:220,
+                id:'listDashboardStoreActivity',
+               // store: storeHappeningNow,
+                scrollable: {
+                    direction: 'horizontal',
+                    directionLock: true,
+                    indicators: false
+                },
+                inline: true,
+                itemCls: 'ayohaHItem',
+                itemTpl: new Ext.XTemplate(
+                    '<div class="ayohaAvatarWrap">',
+                      '<img class="ayohaAvatar" src="{UserPhoto}" />',
+                  
+                      '<tpl if="badge == \'pin\'">',
+                        '<div class="ayohaBadge ayohaBadgePin" title="Checked-in">',
+                          '<svg width="14" height="14" viewBox="0 0 24 24"><path fill="#fff" d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>',
+                        '</div>',
+                      '</tpl>',
+                  
+                      '<tpl if="badge == \'card\'">',
+                        '<div class="ayohaBadge ayohaBadgeCard" title="Joined">',
+                          '<div class="ayohaCardIcon"></div>',
+                          '<div class="ayohaPlusMini">+</div>',
+                        '</div>',
+                      '</tpl>',
+                  
+                      '<tpl if="badge == \'stamp\'">',
+                        '<div class="ayohaBadge ayohaBadgeStamp" title="Stamp Collected">',
+                          '<svg width="14" height="14" viewBox="0 0 24 24"><path fill="#fff" d="M7 3h10v4h2v4c0 1.1-.9 2-2 2h-1v4l-4-2-4 2v-4H7c-1.1 0-2-.9-2-2V7h2V3zm2 2v2h6V5H9zm-2 4v2h10V9H7z"/></svg>',
+                        '</div>',
+                      '</tpl>',
+                  
+                      '<tpl if="badge == \'point\'">',
+                        '<div class="ayohaBadge ayohaBadgePoint" title="Points Collected">',
+                          '<svg width="14" height="14" viewBox="0 0 24 24"><path fill="#fff" d="M12 2l2.2 4.8L19 7.4l-3.6 3.5.9 5.1L12 14.9 7.7 16l.9-5.1L5 7.4l4.8-.6L12 2z"/></svg>',
+                        '</div>',
+                      '</tpl>',
+                  
+                      '<tpl if="badge == \'event\'">',
+                        '<div class="ayohaBadge ayohaBadgeEvent" title="Event Responded">',
+                          '<svg width="14" height="14" viewBox="0 0 24 24"><path fill="#fff" d="M7 2v2H5a2 2 0 0 0-2 2v13a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3V6a2 2 0 0 0-2-2h-2V2h-2v2H9V2H7zm14 8H3V6h18v4zm-3.8 4.2-6.2 6.2L7 16.6l1.4-1.4 2.6 2.6 4.8-4.8 1.4 1.2z"/></svg>',
+                        '</div>',
+                      '</tpl>',
+                  
+                      '<tpl if="badge == \'store\'">',
+                        '<div class="ayohaBadge ayohaBadgeStore" title="Ayoha Store">',
+                          '<svg width="14" height="14" viewBox="0 0 24 24"><path fill="#fff" d="M3 9l1-5h16l1 5v2a3 3 0 0 1-3 3c-1.1 0-2-.6-2.6-1.4A3.2 3.2 0 0 1 12 14a3.2 3.2 0 0 1-3.4-1.4A3 3 0 0 1 6 14a3 3 0 0 1-3-3V9zm2 6h14v7H5v-7zm3 2v3h3v-3H8z"/></svg>',
+                        '</div>',
+                      '</tpl>',
+                  
+                      '<tpl if="badge == \'contest\'">',
+                        '<div class="ayohaBadge ayohaBadgeContest" title="Contest Activity">',
+                          '<svg width="14" height="14" viewBox="0 0 24 24"><path fill="#fff" d="M6 2h12v3h2v3c0 3-2 5-5 5h-1.2A5.8 5.8 0 0 1 13 15.7V18h3v2H8v-2h3v-2.3A5.8 5.8 0 0 1 10.2 13H9C6 13 4 11 4 8V5h2V2zm-1 6c0 1.7 1.3 3 3 3h.2A7.6 7.6 0 0 1 7 7V6H5v2zm14-2h-2v1c0 1.4-.4 2.7-1.2 4H16c1.7 0 3-1.3 3-3V6z"/></svg>',
+                        '</div>',
+                      '</tpl>',
+                  
+                    '</div>',
+                  
+                    '<div class="ayohaName">{AccountName}</div>',
+                    '<div class="ayohaActivity">{ActivityName}</div>',
+                    '<div class="ayohaTime">{RelativeActivityTime}</div>'
+                  ),
+                  
+                  
+                listeners: {
+                    itemtap: function (dv, index, target, record) {
+                        // TODO: action bila tap user
+                        // console.log(record.get('name'));
+                    }
+                }
+           
+          }
           
      ]
 },

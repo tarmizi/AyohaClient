@@ -1271,7 +1271,8 @@ function ProductInvoice_CheckPaymentGatewayTransaction(billExternalID_ext) {
                                FloatPanel_RewardStoreMembershipCardHide();                           
                                FloatPanel_RewardStoreMembershipCardHide();
                                FloatPanel_OrderCartHide();
-                               FloatPanel_AyohaStore_PaymentMethodList_MembershipCardLoadBySubscriberAccNoDashboardMainStore(billExternalID_ext);
+                               updateSubscriptionStatus(billExternalID_ext);
+                             //Disabled 22/12/2025,tak perlu reload list ni sebab page akn direct ke merchant perk atau check In // FloatPanel_AyohaStore_PaymentMethodList_MembershipCardLoadBySubscriberAccNoDashboardMainStore(billExternalID_ext);
                
                
                             
