@@ -1,4 +1,4 @@
-﻿
+
 var detectIndex = [];
 var iseWalletButtonTap = "NO";
 var DashboardArrIndexmainDashboardCarousel = 0;
@@ -2080,8 +2080,7 @@ items:[
   {
     xtype: 'container',
     width: '100%',
-   // height:145,
-    height:125,
+    height:145,
     id:'containerCheckInRewardspacer02',
   // style: 'background: transparent;',
    style: 'background:  #faf5ff;border-bottom:1px solid  #E5E7EB;border-top:2px none #faf5ff;border-left:2px none #faf5ff;border-right:2px none #faf5ff;',
@@ -2172,46 +2171,13 @@ items:[
                      //width: '100%',
                     
                      //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
-                    html: '<div style="color:#3A0ca3;text-align: left;font-size:18px;width:100%;margin:10px 0px 0px 0px"><b>You’re checked in here</b></div>'
+                    html: '<div style="color:#3A0ca3;text-align: left;font-size:18px;width:100%;margin:10px 0px 0px 0px"><b> Check-In Confirmed</b></div>'
                     // html: '<span style="font-size:10px;color:#16a34a;background:#ecfdf5;border:1px solid #bbf7d0;padding:3px 6px;border-radius:999px;white-space:nowrap;">Get available perks in selected Check-In Merchant!</span><br><div style="color:white;text-align: left;font-size:10px;width:100%;margin:-25px 0px 0px 0px;">One Hub • Double Reward,Get your exiciting perks!</div>'
                      
                  },
                  {
                      xtype: 'spacer',
                     // hidden:true,
-                 },
-                 {hidden:true,
-                    html:
-                    '<div style="padding:10px 12px 0;">' +
-                      '<style>' +
-                       
-                        '.ayohaCheckoutPill{display:inline-flex;align-items:center;gap:7px;' +
-                          'padding:8px 12px;border-radius:999px;cursor:pointer;user-select:none;' +
-                          'background:rgba(124,58,237,.10);border:1px solid rgba(124,58,237,.18);' +
-                          'color:#5b21b6;font:900 12px/1 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;' +
-                          'box-shadow:0 6px 14px rgba(124,58,237,.10);}' +
-                        '.ayohaCheckoutPill:active{transform:scale(.98);}' +
-                        '.ayohaCheckoutIcoWrap{width:18px;height:18px;border-radius:999px;' +
-                          'display:inline-flex;align-items:center;justify-content:center;background:rgba(124,58,237,.16);}' +
-                  
-                       
-                      '</style>' +
-                  
-                    
-                  
-                          /* ✅ Small pill at top-right */
-                          '<div class="ayohaCheckoutPill" onclick="SuccessCheckinController_CheckOutConfirm();">' +
-                            '<span class="ayohaCheckoutIcoWrap" aria-hidden="true">' +
-                              '<svg width="14" height="14" viewBox="0 0 24 24" fill="none">' +
-                                '<path d="M10 17l5-5-5-5" stroke="#5b21b6" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>' +
-                                '<path d="M4 12h11" stroke="#5b21b6" stroke-width="2.4" stroke-linecap="round"/>' +
-                                '<path d="M14 3h5a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-5" stroke="#5b21b6" stroke-width="2.2" stroke-linecap="round"/>' +
-                              '</svg>' +
-                            '</span>' +
-                            '<span>Check-Out</span>' +
-                          '</div>' +
-                        '</div>' 
-                  
                  },
                  {
                     xtype: 'component',
@@ -2457,43 +2423,13 @@ items:[
 
 
         {
-            margin: '0 0 0 0',
+            margin: '6 0 0 0',
 
             id: 'labelDashboard_Viewallpastcheck-ins',
             hidden:true, 
           //  width: 350,
-          width: '93%',
-          html:
-          '<div style="padding:6px 6px 2px;display:flex;justify-content:flex-end;">' +   // ✅ kanan + padding kecil
-            '<style>' +
-              '.ayohaHistoryBtn{display:inline-flex;align-items:center;gap:7px;' +
-                'padding:5px 12px;border-radius:999px;' +                                // ✅ padding kecil
-                'background:rgba(124,58,237,.10);' +
-                'border:1px solid rgba(124,58,237,.18);' +
-                'color:#5b21b6;' +
-                'font:900 11px/1 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;' + // ✅ font kecil sikit
-                'box-shadow:0 5px 12px rgba(124,58,237,.10);' +
-                'text-decoration:none;user-select:none;}' +
-              '.ayohaHistoryBtn:active{transform:scale(.98);}' +
-              '.ayohaHistoryIco{width:16px;height:16px;border-radius:999px;' +          // ✅ icon wrap kecil
-                'display:inline-flex;align-items:center;justify-content:center;' +
-                'background:rgba(124,58,237,.16);}' +
-              '.ayohaHistoryTxt{white-space:nowrap;}' +
-            '</style>' +
-        
-            '<div class="ayohaHistoryBtn" onclick="SuccessCheckinController_ViewCheckinHistory();">' +
-              '<span class="ayohaHistoryIco" aria-hidden="true">' +
-                '<svg width="13" height="13" viewBox="0 0 24 24" fill="none">' +          // ✅ svg kecil
-                  '<path d="M12 8v5l3 2" stroke="#5b21b6" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>' +
-                  '<path d="M3 12a9 9 0 1 0 3-6.7" stroke="#5b21b6" stroke-width="2.2" stroke-linecap="round"/>' +
-                  '<path d="M3 5v4h4" stroke="#5b21b6" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>' +
-                '</svg>' +
-              '</span>' +
-              '<span class="ayohaHistoryTxt">View Check-In History</span>' +
-            '</div>' +
-          '</div>'
-        
-         //   html: '<div  style="color:purple;text-align: left;font-size:12px;width:100%;margin:0px 0px 0px 14px;"><u>View all past check-ins</u></div>'
+          width: '100%',                  
+            html: '<div  style="color:purple;text-align: left;font-size:12px;width:100%;margin:0px 0px 0px 14px;"><u>View all past check-ins</u></div>'
             // html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: 70%"><col style="width:30%"></colgroup><thead><tr><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:right;vertical-align:top;word-break:normal" rowspan="2"><div style="margin:0px 0px 0px -15px">TARMIZI RAHIM</div><br>Lagendary Card Mortal </th><th style="background-color:#ffffff;border-color:#ffffff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:middle;word-break:normal" rowspan="2">Medal</th></tr><tr></tr></thead></table>'
         },
     ]
@@ -2502,7 +2438,999 @@ items:[
   },
  
 
- 
+  ///////////////////////////////////Merchant Page////////
+  {
+    xtype: 'container',
+    width: '98%',
+    height:740,
+    id:'containerCheckInMerchantPage',
+    style: 'background: transparent;',
+  // style: 'background:  #faf5ff;',
+    layout: {
+
+        type: 'vbox',
+        pack: 'start',
+        align: 'center'
+    },
+    items:[
+        {
+            xtype: 'container',
+            width: '100%',
+            height:20,
+        
+           // margin: '0 0 0 0',
+           margin: '20 0 0 0',
+            // style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1 ;background: white;border-radius: 0px 15px 15px 0px;',
+            //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
+            style: 'background-color:transparent',
+            //style: "background-color: white;",
+            layout: {
+                type: 'hbox',
+                pack: 'center',
+                align: 'center',
+            },
+            items: [
+                
+                 {
+                    
+                     margin: '0 0 0 14',
+                     //width: '100%',
+                    
+                     //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
+                    html: '<div style="color:#3A0ca3;text-align: left;font-size:18px;width:100%;margin:10px 0px 0px 0px"><b>You’re checked in here</b></div>'
+                  //  html: '<div style="color:#3A0ca3;text-align: left;font-size:18px;width:100%;margin:10px 0px 0px 10px"><b>Welcome To</b></div>'
+                    
+                    // html: '<span style="font-size:10px;color:#16a34a;background:#ecfdf5;border:1px solid #bbf7d0;padding:3px 6px;border-radius:999px;white-space:nowrap;">Get available perks in selected Check-In Merchant!</span><br><div style="color:white;text-align: left;font-size:10px;width:100%;margin:-25px 0px 0px 0px;">One Hub • Double Reward,Get your exiciting perks!</div>'
+                     
+                 },
+                 {
+                     xtype: 'spacer',
+                    // hidden:true,
+                 },
+                 {
+                    xtype: 'component',
+                     hidden:true,
+                    html:
+                    '<div style="position:absolute;top:-80px;right:20px;background-color:transparent;border-radius:50%;' +
+                         'width:130px;height:150px;z-index:5;display:flex;align-items:center;justify-content:center;">' +
+                      '<img src="resources/icons/maskotCheckIn_Success03.png" ' +
+                           'style="width:130px;height:150px;display:block;" ' +
+                           'alt="Company Name" />' +
+                    '</div>'
+                },
+          
+          
+            ]
+          },
+          {
+            xtype: 'container',
+            width: '95%',
+            margin: '10 0 0 0',
+             height: 90,
+            style: 'background-color: transparent;',
+            id: 'containerDashboard_MerchantDetailPage_EnterpriseInfo',
+
+            //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
+            // style: 'border-bottom:2px solid #D25959;background-color:transparent',
+            layout: {
+                type: 'hbox',
+                pack: 'left',
+                align: 'left',
+            },
+            items: [
+                {
+                    xtype: 'container',
+                    width: '23%',
+                    height: 90,
+                    style: 'background-color: transparent;',
+                    id: 'containerDashboard_MerchantDetailPage_EnterpriseInfo_Logo',
+
+                    //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
+                    // style: 'border-bottom:2px solid #D25959;background-color:transparent',
+                    layout: {
+                        type: 'hbox',
+                        pack: 'left',
+                        align: 'left',
+                    },
+                    items: [
+                        {
+                            width: '100%',
+                            height: 90,
+                            id: 'htmlDashboard_MerchantDetailPage_EnterpriseInfo_Logo',
+                            html: '<div ><img src="null" width="100%" height="90" alt="Company Name"></div>',
+                        }
+                    ]
+                },
+                 {
+                     xtype: 'container',
+                     width: '71%',
+                     height: 90,
+                     style: 'background-color: transparent;',
+                     id: 'containerDashboard_MerchantDetailPage_EnterpriseInfo_EnterpiseInfoExtended',
+
+                     //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
+                     // style: 'border-bottom:2px solid #D25959;background-color:transparent',
+                     layout: {
+                         type: 'vbox',
+                         pack: 'start',
+                         align: 'left',
+                     },
+                     items: [
+                         {
+                             margin: '-2 0 0 0',
+                             id: 'htmlDashboard_MerchantDetailPage_EnterpriseInfo_EnterpiseInfoExtended_EnterpriseName_TagLine',                                                              
+                             html: '<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 17px;font-weight:bold;color:black;margin:0px 0px 0px 0px;padding:0px 6px;">Monster Chicken</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 10px;font-weight:normal;color:black;margin:-27px 0px 0px 0px;padding:0px 6px;"><i>Ayam Cheesee Leleh</i></div>',
+                         },
+                         {
+                             xtype: 'container',
+                             width: '100%',
+                             height: 35,
+                             docked:'bottom',
+                             style: 'background-color: transparent;',
+                             id: 'containerDashboard_MerchantDetailPage_EnterpriseInfo_EnterpiseInfoExtendedBotom',
+                             layout: {
+                                 type: 'vbox',
+                                 pack: 'start',
+                                 align: 'left',
+                             },
+                             items: [
+                                 {
+                                  margin: '-10 0 0 0',
+                                     id: 'htmlDashboard_MerchantDetailPage_EnterpriseInfo_EnterpiseInfoExtended_EnterpriseFullAddress',
+                                     html: '<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 12px;font-weight:normal;color:black;padding:0px 6px;">Lot 153,Aeon Nilai, Bandar Baru Nilai,71800 Nilai,Negeri Sembilan</div>'
+                                 }
+                             ]
+                         }
+                     ]
+                 },
+
+
+{
+xtype: 'container',
+width: '6%',    
+//height: 90,
+height: 100,
+style: 'background-color: transparent;',
+layout: {
+type: 'vbox',
+pack: 'center',
+align: 'center',
+},
+items: [
+{
+xtype: 'container',
+width: '100%',
+hidden:true,
+//height: 90,
+height: 40,
+style: 'background-color: transparent;',
+id: 'containerDashboard_MerchantDetailPage_EnterpriseInfo_Direction',
+
+//  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
+// style: 'border-bottom:2px solid #D25959;background-color:transparent',
+layout: {
+type: 'vbox',
+pack: 'top',
+align: 'right',
+},
+items: [
+{
+width: '100%',
+height: 30,
+html: '<div onclick="FloatPanelMerchantDetailPage_OpenDirection();"><img src="resources/icons/DirectionPurple.jpg" width="24" height="24" alt="Company Name"></div>',
+},
+//  {
+//      width: '100%',
+//      height: 5,
+//      margin: '-7 0 0 0',
+//     // hidden:true,
+//      html: '<div onclick="FloatPanelMerchantDetailPage_OpenDirection();" style="width:100%;background-color: transparent;text-align:center;border: 1px none white;font-family:Century Gothic;font-size: 7px;font-weight:normal;color:black;">Location</div>'
+//  },
+]
+},
+{
+xtype: 'container',
+width: '100%',
+// height: 90,
+height: 40,
+hidden:true,
+style: 'background-color: transparent;',
+id: 'containerDashboard_MerchantDetailPage_EnterpriseInfo_OnlineStore',
+name:'namecontainerDashboard_MerchantDetailPage_EnterpriseInfo_OnlineStore',
+
+// style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:1px solid #ECF0F1 ;background-color: transparent;',
+// style: 'border-bottom:2px solid #D25959;background-color:transparent',
+layout: {
+type: 'vbox',
+pack: 'center',
+align: 'center',
+},
+items: [
+{
+width: '100%',
+height: 30,
+html: '<div onclick="FloatPanelMerchantDetailPage_AyohaStore()"><img src="resources/icons/onlineStore.jpg" width="24" height="24" alt="Company Name"></div>',
+//  margin:'15 0 0 0',
+},
+//   {
+//       width: '100%',                     
+// height: 5,
+// margin: '4 0 0 5',
+//       html: '<div onclick="FloatPanelMerchantDetailPage_AyohaStore()" style="width:100%;background-color: transparent;text-align:center;border: 1px none white;font-family:Century Gothic;font-size: 7px;font-weight:normal;color:black;margin:-12px 0px 0px -5px;">Ayoha</div><br><div style="width:100%;background-color: transparent;text-align:center;border: 1px none white;font-family:Century Gothic;font-size: 7px;font-weight:normal;color:black;margin:-26px 0px 0px -5px">Store</div>'
+//   },
+]
+}
+]
+
+},
+                
+            ]
+
+        },
+        {
+            xtype: 'carousel',
+            //hidden:true,
+            id: 'CarouselDashboard_MerchantDetailPage',
+            name: 'nameCarouselDashboard_MerchantDetailPage',
+            margin:'5 0 0 0',
+            width: '95%',
+            height: 310,
+            style: 'background-color:transparent',
+            //height: '100%',
+            indicator: true,
+//             requires: [
+// 'Ext.carousel.Carousel',
+// 'Ext.util.DelayedTask',
+// 'Ext.Video'
+//             ],
+            listeners: {
+                activeitemchange: function (container, newCard, oldCard, index) {
+
+
+                },
+
+            },
+
+
+
+           
+            // items: [
+
+
+            //  ]
+        },
+
+        {
+            xtype: 'container',
+            width: '95%',
+            height: 50,
+            zIndex: 100,
+            margin:'-50 0 0 0',
+            style: 'background-color: transparent;',
+            id: 'containerDashboard_MerchantDetailPage_EnterpriseSocialMedias',
+
+            //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
+            // style: 'border-bottom:2px solid #D25959;background-color:transparent',
+            layout: {
+                type: 'hbox',
+                pack: 'left',
+                align: 'left',
+            },
+            items: [
+                {
+                    xtype: 'container',
+                    width: '60%',
+                    height: 50,
+                    //zIndex: 100,
+                    margin: '0 0 0 0',
+                    style: 'background-color: transparent;',
+                },
+                {
+                    xtype: 'container',
+                    width: '40%',
+                    height: 50,
+                    //zIndex: 100,
+                    margin: '0 0 0 0',
+                    style: 'background-color: transparent;',
+                    id: 'containerDashboard_MerchantDetailPage_EnterpriseSocialMedias_Inner',
+
+                    //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
+                    // style: 'border-bottom:2px solid #D25959;background-color:transparent',
+                    layout: {
+                        type: 'vbox',
+                        pack: 'start',
+                        align: 'right',
+                    },
+                    items: [
+                        {
+                            html: '<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 10px;font-weight:normal;color:white;margin:-27px 0px 0px 0px;padding:0px 6px;">Visit Us On:</div>'
+                        },
+                        {
+                            xtype: 'container',
+                            width: '100%',
+                            height: 50,
+                            //zIndex: 100,
+                            margin: '-30 0 0 0',
+                            style: 'background-color: transparent;',
+                            id: 'containerDashboard_MerchantDetailPage_EnterpriseSocialMedias_InnerInner',
+
+                            //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
+                            // style: 'border-bottom:2px solid #D25959;background-color:transparent',
+                            layout: {
+                                type: 'hbox',
+                                pack: 'right',
+                                align: 'right',
+                            },
+
+
+                            items: [
+
+                                 {
+                                     id: 'htmlDashboard_MerchantDetailPage_Website',
+                                     hidden:true,
+                                     height: 26,
+                                     margin: '0 0 0 0',
+                                     width: 26,
+                                     // html: '<div style="color:black;text-align: center;font-size:16px;width:100%;font-weight:bold;margin:0px 0px 0px 0px;">3</div>',
+                                     html: '<div onclick="FloatPanel_MerchantDetailPage_OpenWebsite();"><img src="resources/icons/websiteicon02.png" width="26" height="26" alt="Company Name"></div>',
+                                 },
+                                 {
+                                     xtype: 'spacer',
+                                     width: 6,
+
+                                 },
+                                 {
+                                     id: 'htmlDashboard_MerchantDetailPage_Insta',
+                                     hidden:true,
+                                     height: 26,
+                                     margin: '0 0 0 0',
+                                     width: 26,
+                                     // html: '<div style="color:black;text-align: center;font-size:16px;width:100%;font-weight:bold;margin:0px 0px 0px 0px;">3</div>',
+                                     html: '<div onclick="FloatPanel_MerchantDetailPage_OpenInsta();" ><img src="resources/icons/instagramlogo.png" width="26" height="26" alt="Company Name"></div>',
+                                 },
+                                 {
+                                     xtype: 'spacer',
+                                     width: 6,
+
+                                 },
+                                 {
+                                     id: 'htmlDashboard_MerchantDetailPage_TikTok',
+                                     hidden: true,
+                                     height: 26,
+                                     margin: '0 0 0 0',
+                                     width: 26,
+                                     // html: '<div style="color:black;text-align: center;font-size:16px;width:100%;font-weight:bold;margin:0px 0px 0px 0px;">3</div>',
+                                     html: '<div onclick="FloatPanel_MerchantDetailPage_OpenTikTok();" ><img src="resources/icons/TikToklogo.png" width="26" height="26" alt="Company Name"></div>',
+                                 },
+                                 {
+                                     xtype: 'spacer',
+                                     width: 6,
+
+                                 },
+
+                                 {
+                                     id: 'htmlDashboard_MerchantDetailPage_FB',
+                                     hidden:true,
+                                     height: 26,
+                                     margin: '0 0 0 0',
+                                     width: 26,
+                                     // html: '<div style="color:black;text-align: center;font-size:16px;width:100%;font-weight:bold;margin:0px 0px 0px 0px;">3</div>',
+                                     html: '<div onclick="FloatPanel_MerchantDetailPage_OpenFB();" ><img src="resources/icons/facebook.png" width="26" height="26" alt="Company Name"></div>',
+                                 },
+                                  {
+                                      xtype: 'spacer',
+                                      width: 6,
+
+                                  },
+                            ]
+                        }
+                    ]
+                },
+                {
+                    xtype: 'container',
+                    width: '10%',
+                    height: 50,
+                    //zIndex: 100,
+                    margin: '0 0 0 0',
+                    style: 'background-color: transparent;',
+                },
+            ]
+        },
+
+       
+        {
+            xtype: 'container',
+            width: '95%',
+            height: 70,
+            style: 'background-color: transparent;',
+            id: 'containerDashboard_MerchantDetailPage_EnterpriseDescription',
+
+            //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
+            // style: 'border-bottom:2px solid #D25959;background-color:transparent',
+            layout: {
+                type: 'vbox',
+                pack: 'left',
+                align: 'left',
+            },
+            items: [
+            
+                {
+                    width: '100%',
+                    height: 65,
+                    margin: '10 0 0 0',
+                    id: 'htmlDashboard_MerchantDetailPage_EnterpriseDescription',
+                    html: '<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 12px;font-weight:normal;color:black;padding:0px 7px;">Kami menjual ayam cheese yang padu dan maengancam nyawa dan liur anda,kipidap dont gi babp</div>'
+                }
+            ]
+
+        },
+
+         {
+             xtype: 'container',
+             width: '95%',
+             height: 5,
+             style: 'background-color: transparent;',
+         },
+         {
+          xtype: 'container',
+          width: '95%',
+          height: 35,
+          style: 'background-color: transparent;',
+          id: 'containerDashboard_MerchantDetailPage_EnterpriseCheckIn',
+          name:'namecontainerDashboard_MerchantDetailPage_EnterpriseCheckIn',
+
+          //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
+          // style: 'border-bottom:2px solid #D25959;background-color:transparent',
+          layout: {
+              type: 'hbox',
+              pack: 'left',
+              align: 'left',
+          },
+          items: [
+              {
+                  xtype: 'container',
+                  width: '7%',
+                  height: 42,
+                  style: 'background-color: transparent;',
+                  id: 'containerDashboard_MerchantDetailPage_EnterpriseCheckInIcon',
+
+                  //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
+                  // style: 'border-bottom:2px solid #D25959;background-color:transparent',
+                  layout: {
+                      type: 'hbox',
+                      pack: 'left',
+                      align: 'left',
+                  },
+                  items: [
+                      {
+                          width: '100%',
+                          margin: '-6 0 0 -10',
+                          height: 42,
+                          html: '<div ><img src="resources/icons/ayoha_checkin_icon.png" width="40" height="40" alt="Company Name"></div>',
+                      }
+                  ]
+              },
+               {
+                   xtype: 'container',
+                   width: '92%',
+                   height: 35,
+                   style: 'background-color: transparent;',
+                   id: 'containerDashboard_MerchantDetailPage_EnterpriseCheckInDetails',
+
+                   //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
+                   // style: 'border-bottom:2px solid #D25959;background-color:transparent',
+                   layout: {
+                       type: 'hbox',
+                       pack: 'left',
+                       align: 'left',
+                   },
+                   items: [
+                       {
+                           width: '100%',
+                           height: 35,
+                           margin: '-3 0 0 0',
+                           id: 'htmlDashboard_MerchantDetailPage_EnterpriseCheckInDetails',                                                             
+                           html: '<div onclick="FloatPanel_MerchantDetailPage_EnterpriseCheckInDetails()" style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 12px;font-weight:bold;color:black;margin:0px 0px 0px 0px;padding:0px 6px;">Loading..</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 10px;font-weight:normal;color:black;margin:-27px 0px 0px 0px;padding:0px 6px;">Last Check-In</div>',
+                       }
+                   ]
+               }
+          ]
+
+      },
+      {
+          xtype: 'container',
+          width: '95%',
+          height: 7,
+          style: 'background-color: transparent;',
+      },
+        {
+            xtype: 'container',
+            width: '95%',
+            height: 35,
+            style: 'background-color: transparent;',
+            id: 'containerDashboard_MerchantDetailPage_EnterpriseWorkingHour',
+
+            //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
+            // style: 'border-bottom:2px solid #D25959;background-color:transparent',
+            layout: {
+                type: 'hbox',
+                pack: 'left',
+                align: 'left',
+            },
+            items: [
+                {
+                    xtype: 'container',
+                    width: '7%',
+                    height: 26,
+                    style: 'background-color: transparent;',
+                    id: 'containerDashboard_MerchantDetailPage_EnterpriseWorkingHourIcon',
+
+                    //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
+                    // style: 'border-bottom:2px solid #D25959;background-color:transparent',
+                    layout: {
+                        type: 'hbox',
+                        pack: 'left',
+                        align: 'left',
+                    },
+                    items: [
+                        {
+                            width: '100%',
+                            height: 26,
+                            html: '<div onclick="FloatPanel_MerchantDetailPage_EnterpriseWorkingHourDetails()" ><img src="resources/icons/History01.png" width="100%" height="26" alt="Company Name"></div>',
+                        }
+                    ]
+                },
+                 {
+                     xtype: 'container',
+                     width: '92%',
+                     height: 35,
+                     style: 'background-color: transparent;',
+                     id: 'containerDashboard_MerchantDetailPage_EnterpriseWorkingHourDetails',
+
+                     //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
+                     // style: 'border-bottom:2px solid #D25959;background-color:transparent',
+                     layout: {
+                         type: 'hbox',
+                         pack: 'left',
+                         align: 'left',
+                     },
+                     items: [
+                         {
+                             width: '100%',
+                             height: 35,
+                             margin: '-3 0 0 0',
+                             id: 'htmlDashboard_MerchantDetailPage_EnterpriseWorkingHourDetails',                                                             
+                             html: '<div onclick="FloatPanel_MerchantDetailPage_EnterpriseWorkingHourDetails()" style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 14px;font-weight:bold;color:black;margin:0px 0px 0px 0px;padding:0px 6px;">10.00AM - 10.00PM (Closed Now)</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 10px;font-weight:normal;color:black;margin:-27px 0px 0px 0px;padding:0px 6px;">Business Hour</div>',
+                         }
+                     ]
+                 }
+            ]
+
+        },
+
+
+          {
+              xtype: 'container',
+              width: '95%',
+              height: 7,
+              style: 'background-color: transparent;',
+          },
+
+        {
+            xtype: 'container',
+            width: '95%',
+            height: 35,
+            style: 'background-color: transparent;',
+            id: 'containerDashboard_MerchantDetailPage_EnterpriseBusinessContactNo',
+
+            //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
+            // style: 'border-bottom:2px solid #D25959;background-color:transparent',
+            layout: {
+                type: 'hbox',
+                pack: 'left',
+                align: 'left',
+            },
+            items: [
+                {
+                    xtype: 'container',
+                    width: '7%',
+                    height: 26,
+                    style: 'background-color: transparent;',
+                    id: 'containerDashboard_MerchantDetailPage_EnterpriseContactIcon',
+
+                    //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
+                    // style: 'border-bottom:2px solid #D25959;background-color:transparent',
+                    layout: {
+                        type: 'hbox',
+                        pack: 'left',
+                        align: 'left',
+                    },
+                    items: [
+                        {
+                            width: '100%',
+                            height: 26,
+                            html: '<div ><img src="resources/icons/BusinessContactIcon.png" width="100%" height="26" alt="Company Name"></div>',
+                        }
+                    ]
+                },
+                 {
+                     xtype: 'container',
+                     width: '92%',
+                     height: 35,
+                     style: 'background-color: transparent;',
+                     id: 'containerDashboard_MerchantDetailPage_EnterpriseContactDetails',
+
+                     //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
+                     // style: 'border-bottom:2px solid #D25959;background-color:transparent',
+                     layout: {
+                         type: 'hbox',
+                         pack: 'left',
+                         align: 'left',
+                     },
+                     items: [
+                         {
+                             width: '100%',
+                             height: 35,
+                             margin: '-3 0 0 0',
+                             id: 'htmlDashboard_MerchantDetailPage_EnterpriseContactDetails',                                                              
+                             html: '<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 12px;font-weight:bold;color:black;margin:0px 0px 0px 0px;padding:0px 6px;">03-663998765</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 10px;font-weight:normal;color:black;margin:-27px 0px 0px 0px;padding:0px 6px;">Business Contact No</div>',
+                         }
+                     ]
+                 }
+            ]
+
+        },
+
+          {
+              xtype: 'container',
+              width: '95%',
+              height: 7,
+              style: 'background-color: transparent;',
+          },
+
+        {
+            xtype: 'container',
+            width: '95%',
+            height: 35,
+            style: 'background-color: transparent;',
+            id: 'containerDashboard_MerchantDetailPage_EnterpriseWhatsAppBusinessContactNo',
+
+            //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
+            // style: 'border-bottom:2px solid #D25959;background-color:transparent',
+            layout: {
+                type: 'hbox',
+                pack: 'left',
+                align: 'left',
+            },
+            items: [
+                {
+                    xtype: 'container',
+                    width: '7%',
+                    height: 26,
+                    style: 'background-color: transparent;',
+                    id: 'containerDashboard_MerchantDetailPage_EnterpriseWhatsAppContactIcon',
+
+                    //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
+                    // style: 'border-bottom:2px solid #D25959;background-color:transparent',
+                    layout: {
+                        type: 'hbox',
+                        pack: 'left',
+                        align: 'left',
+                    },
+                    items: [
+                        {
+                            width: '100%',
+                            height: 26,
+                            html: '<div ><img src="resources/icons/WhatsApp01.png" width="100%" height="26" alt="Company Name"></div>',
+                        }
+                    ]
+                },
+                 {
+                     xtype: 'container',
+                     width: '92%',
+                     height: 35,
+                     style: 'background-color: transparent;',
+                     id: 'containerDashboard_MerchantDetailPage_EnterpriseWhatsAppDetails',
+
+                     //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
+                     // style: 'border-bottom:2px solid #D25959;background-color:transparent',
+                     layout: {
+                         type: 'hbox',
+                         pack: 'left',
+                         align: 'left',
+                     },
+                     items: [
+                         {
+                             width: '100%',
+                             height: 35,
+                             margin: '-3 0 0 0',
+                             id: 'htmlDashboard_MerchantDetailPage_EnterpriseWhatsAppDetails',                                                              
+                             html: '<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 12px;font-weight:bold;color:black;margin:0px 0px 0px 0px;padding:0px 6px;">013-3376958</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 10px;font-weight:normal;color:black;margin:-27px 0px 0px 0px;padding:0px 6px;">WhatsApp Contact No</div>',
+                         }
+                     ]
+                 }
+            ]
+
+        },
+
+
+
+
+
+
+                {
+                    xtype: 'container',
+                    width: '95%',
+                    height: 10,
+                    style: 'background-color: transparent;',
+                },
+
+        {
+            xtype: 'container',
+            width: '95%',
+            height: 35,
+            style: 'background-color: transparent;',
+            id: 'containerDashboard_MerchantDetailPage_EnterpriseLoveUs',
+
+            //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
+            // style: 'border-bottom:2px solid #D25959;background-color:transparent',
+            layout: {
+                type: 'hbox',
+                pack: 'left',
+                align: 'left',
+            },
+            items: [
+                {
+                    xtype: 'container',
+                    width: '7%',
+                    height: 26,
+                    style: 'background-color: transparent;',
+                    id: 'containerDashboard_MerchantDetailPage_EnterpriseLoveUsIcon',
+
+                    //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
+                    // style: 'border-bottom:2px solid #D25959;background-color:transparent',
+                    layout: {
+                        type: 'hbox',
+                        pack: 'left',
+                        align: 'left',
+                    },
+                    items: [
+                        {
+                            width: '100%',
+                            height: 26,
+                            id: 'htmlDashboard_MerchantDetailPage_EnterpriseLoveUsIcon',
+                            html: '<div><img src="resources/icons/unlovepurple.png" width="100%" height="26" alt="Company Name"></div>',
+                        }
+                    ]
+                },
+                 {
+                     xtype: 'container',
+                     width: '92%',
+                     height: 35,
+                     style: 'background-color: transparent;',
+                     id: 'containerDashboard_MerchantDetailPage_EnterpriseLoveUsDetails',
+
+                     //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
+                     // style: 'border-bottom:2px solid #D25959;background-color:transparent',
+                     layout: {
+                         type: 'hbox',
+                         pack: 'left',
+                         align: 'left',
+                     },
+                     items: [
+                         {
+                            // width: '33%',
+                             width: '31%',
+                             height: 35,
+                             margin: '-3 0 0 0',
+                             id: 'htmlDashboard_MerchantDetailPage_EnterpriseLoveUsDetails',                                                              
+                             html: '<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 14px;font-weight:bold;color:black;margin:0px 0px 0px 0px;padding:0px 6px;">2</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 10px;font-weight:normal;color:black;margin:-27px 0px 0px 0px;padding:0px 6px;">Love Us</div>',
+                         },
+                         {
+
+                             xtype: 'container',
+                           //  width: '30%',
+                             width: '23%',
+                             //margin:'0 0 0 0',
+                             height: 35,
+                             style: 'background-color: transparent;',
+                             id: 'containerDashboard_MerchantDetailPage_EnterpriseReviewRateDetails',
+
+                             //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
+                             // style: 'border-bottom:2px solid #D25959;background-color:transparent',
+                             layout: {
+                                 type: 'vbox',
+                                 pack: 'left',
+                                 align: 'left',
+                             },
+                             items: [
+                                 {
+                                     xtype: 'container',
+                                     width: '100%',
+                                    // flex: 1,
+                                     margin: '-10 0 0 0',
+                                     height: 50,
+                                     id: 'containerDashboard_MerchantDetailPage_ReviewAndRate',
+                                    // name: 'namecontainerFloatPanel_AyohaStore_ReviewAndRate',
+                                     // style: 'background-color:rgba(255, 255, 255, 0.3);border-radius: 10px 10px 10px 10px;',
+                                     style: "background-color: transparent;",
+                                     layout: {
+                                         type: 'vbox',
+                                         pack: 'center',
+                                         align: 'center'
+
+                                     },
+                                     items: [
+                                         {
+                                             margin: '0 0 0 5',
+                                             id: 'htmlDashboard_MerchantDetailPage_ReviewAndRateCount',
+                                             html: '<div style="color:black;text-align: center;font-size:14px;width:100%;font-weight:bold;margin:0px 0px 0px 0px;">0.0</div>',
+
+                                         },
+
+                                         {
+                                             xtype: 'container',
+                                             width: '100%',
+                                             margin: '-12 0 0 0',
+                                             height: 9,
+                                             // style: 'background-color:rgba(255, 255, 255, 0.3);border-radius: 10px 10px 10px 10px;',
+                                             style: "background-color: transparent;",
+                                             layout: {
+                                                 type: 'hbox',
+                                                 pack: 'center',
+                                                 align: 'center'
+
+                                             },
+                                             items: [
+
+                                                 {
+                                                     id: 'htmlDashboard_MerchantDetailPage_Star1',
+                                                     height: 9,
+                                                     width: 9,
+                                                     html: '<div ><img src="resources/icons/reviewstarunrate.png" width="9" height="9" alt="Company Name"></div>',
+                                                 },
+{
+id: 'htmlDashboard_MerchantDetailPage_Star2',
+height: 9,
+width: 9,
+html: '<div ><img src="resources/icons/reviewstarunrate.png" width="9" height="9" alt="Company Name"></div>',
+},
+{
+id: 'htmlDashboard_MerchantDetailPage_Star3',
+height: 9,
+width: 9,
+html: '<div ><img src="resources/icons/reviewstarunrate.png" width="9" height="9" alt="Company Name"></div>',
+},
+{
+id: 'htmlDashboard_MerchantDetailPage_Star4',
+height: 9,
+width: 9,
+html: '<div ><img src="resources/icons/reviewstarunrate.png" width="9" height="9" alt="Company Name"></div>',
+},
+{
+id: 'htmlDashboard_MerchantDetailPage_Star5',
+height: 9,
+width: 9,
+html: '<div ><img src="resources/icons/reviewstarunrate.png" width="9" height="9" alt="Company Name"></div>',
+
+},
+                                             ]
+                                         },
+
+                                         {
+                                             xtype: 'container',
+                                             width: '100%',
+                                             margin: '8 0 0 0',
+                                             height: 9,
+                                             layout: {
+                                                 type: 'hbox',
+                                                 pack: 'center',
+                                                 align: 'center'
+                                             },
+                                             items: [
+                                                 {
+                                                     id: 'htmlDashboard_MerchantDetailPage_ReviewByCount',
+                                                     html: '<div style="width100%;text-align:right;background-color: transparent;font-family:Arial, sans-serif;font-size:8px;color:black;font-weight:bold;overflow:hidden;"><img src="resources/icons/myaccountwhite01.png" alt="Image" style="width:7px;height:7px;">&nbsp;0 Reviews</div>',
+                                                 },
+                                             ]
+                                         },
+                                          //{
+                                          //    margin: '0 0 0 0',
+                                          //    height: 15,
+                                          //    id: 'htmlAyohaMerchantReview_TotalReviewsxx',
+                                          //    html: '<div style="width100%;text-align:right;background-color: transparent;font-family:Arial, sans-serif;font-size:10px;color:black;font-weight:bold;overflow:hidden;margin:-13px 10px 10px 0px;"><img src="resources/icons/merchantrateusAccountImg.png" alt="Image" style="width:10px;height:10px;">&nbsp;&nbsp;&nbsp;0 Reviews</div>'
+                                          //}
+                                     ]
+                                 },
+                             ]
+                         },
+
+{
+xtype: 'container',
+width: '33%',
+height: 35,
+style: 'background-color: transparent;',
+layout: {
+type: 'vbox',
+pack: 'top',
+align: 'right'
+},
+items:[
+{
+margin: '2 0 0 0',
+// hidden: true,
+width: 30,
+height: 30,
+html: '<img onClick="FloatPanel_AyohaStore_OrderHistoryShow()" src="resources/icons/purchase01.png" alt="Image" style="width:30px;height:30px;">',
+// ui:'plain'
+},
+]
+},
+
+
+                         {
+                             xtype: 'container',
+                            // width: '37%',
+                             width: '13%',
+                             height: 35,
+                             style: 'background-color: transparent;',
+                             id: 'containerFloatPanel_MerchantDetailPage_AyohaStoreCart',
+                             layout: {
+                              type: 'vbox',
+                              pack: 'top',
+                              align: 'right'
+
+                             },
+                             items: [
+
+                              {
+                                  xtype: 'container',
+                                  width: '100%',
+                                 // hidden:true,
+                               margin: '0 0 0 0',
+                                  height: 30,
+                                  style: 'background-color: transparent;',
+                                  layout: {
+                                   type: 'vbox',
+                                   pack: 'top',
+                                   align: 'right'
+                              },
+                              items:[
+                                  {
+                                      margin: '-10 8 0 0',
+                                      id: 'htmlDashboard_MerchantDetailPage_CountbadgeText',
+                                      html: '<div style="background: transparent;height:10px;font-size: 14px;font-weight:normal;color:black;text-align:center;" ><b>0</b></div>'
+                                     
+                                  },
+                                  {
+                                     margin: '2 0 0 0',
+                                      // hidden: true,
+                                      width: 30,
+                                      height: 30,
+                                      html: '<img onClick="FloatPanel_AyohaStore_CartShow()" src="resources/icons/myCart02.png" alt="Image" style="width:30px;height:30px;">',
+                                      // ui:'plain'
+                                  },
+                              ]
+                          },
+                                
+
+                             ]
+                         }
+
+                     ]
+                 },
+            ]
+
+        },
+
+
+       
+
+          
+    ]
+
+},
+
 
 ///////////////////////////////////Perks you can enjoy here////////
 {
@@ -5315,8 +6243,7 @@ items:[
 {
     xtype: 'container',
     width: '100%',
-   // height: 330,
-    height: 315,
+    height: 330,
     id:'containerDashboard_MembershipCard_CheckIn',
     margin: '0 0 0 0',
      // style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1 ;background: white;border-radius: 0px 15px 15px 0px;',
@@ -5441,1004 +6368,12 @@ items:[
      ]
 },
 
- ///////////////////////////////////Merchant Page////////
- {
-    xtype: 'container',
-    width: '98%',
-    height:750,
-    id:'containerCheckInMerchantPage',
-    style: 'background: transparent;',
-  // style: 'background:  #faf5ff;',
-    layout: {
-
-        type: 'vbox',
-        pack: 'start',
-        align: 'center'
-    },
-    items:[
-        {
-            xtype: 'container',
-            width: '100%',
-            height:20,
-        
-           // margin: '0 0 0 0',
-           margin: '20 0 0 0',
-            // style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1 ;background: white;border-radius: 0px 15px 15px 0px;',
-            //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
-            style: 'background-color:transparent',
-            //style: "background-color: white;",
-            layout: {
-                type: 'hbox',
-                pack: 'center',
-                align: 'center',
-            },
-            items: [
-                
-                 {
-                    
-                     margin: '0 0 0 14',
-                     //width: '100%',
-                    
-                     //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
-                    html: '<div style="color:#3A0ca3;text-align: left;font-size:18px;width:100%;margin:10px 0px 0px 0px"><b>Merchant Details</b></div>'
-                  //  html: '<div style="color:#3A0ca3;text-align: left;font-size:18px;width:100%;margin:10px 0px 0px 10px"><b>Welcome To</b></div>'
-                    
-                    // html: '<span style="font-size:10px;color:#16a34a;background:#ecfdf5;border:1px solid #bbf7d0;padding:3px 6px;border-radius:999px;white-space:nowrap;">Get available perks in selected Check-In Merchant!</span><br><div style="color:white;text-align: left;font-size:10px;width:100%;margin:-25px 0px 0px 0px;">One Hub • Double Reward,Get your exiciting perks!</div>'
-                     
-                 },
-                 {
-                     xtype: 'spacer',
-                    // hidden:true,
-                 },
-                 {
-                    xtype: 'component',
-                     hidden:true,
-                    html:
-                    '<div style="position:absolute;top:-80px;right:20px;background-color:transparent;border-radius:50%;' +
-                         'width:130px;height:150px;z-index:5;display:flex;align-items:center;justify-content:center;">' +
-                      '<img src="resources/icons/maskotCheckIn_Success03.png" ' +
-                           'style="width:130px;height:150px;display:block;" ' +
-                           'alt="Company Name" />' +
-                    '</div>'
-                },
-          
-          
-            ]
-          },
-          {
-            xtype: 'container',
-            width: '95%',
-            margin: '10 0 0 0',
-             height: 90,
-            style: 'background-color: transparent;',
-            id: 'containerDashboard_MerchantDetailPage_EnterpriseInfo',
-
-            //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
-            // style: 'border-bottom:2px solid #D25959;background-color:transparent',
-            layout: {
-                type: 'hbox',
-                pack: 'left',
-                align: 'left',
-            },
-            items: [
-                {
-                    xtype: 'container',
-                    width: '23%',
-                    height: 90,
-                    style: 'background-color: transparent;',
-                    id: 'containerDashboard_MerchantDetailPage_EnterpriseInfo_Logo',
-
-                    //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
-                    // style: 'border-bottom:2px solid #D25959;background-color:transparent',
-                    layout: {
-                        type: 'hbox',
-                        pack: 'left',
-                        align: 'left',
-                    },
-                    items: [
-                        {
-                            width: '100%',
-                            height: 90,
-                            id: 'htmlDashboard_MerchantDetailPage_EnterpriseInfo_Logo',
-                            html: '<div ><img src="null" width="100%" height="90" alt="Company Name"></div>',
-                        }
-                    ]
-                },
-                 {
-                     xtype: 'container',
-                     width: '71%',
-                     height: 90,
-                     style: 'background-color: transparent;',
-                     id: 'containerDashboard_MerchantDetailPage_EnterpriseInfo_EnterpiseInfoExtended',
-
-                     //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
-                     // style: 'border-bottom:2px solid #D25959;background-color:transparent',
-                     layout: {
-                         type: 'vbox',
-                         pack: 'start',
-                         align: 'left',
-                     },
-                     items: [
-                         {
-                             margin: '-2 0 0 0',
-                             id: 'htmlDashboard_MerchantDetailPage_EnterpriseInfo_EnterpiseInfoExtended_EnterpriseName_TagLine',                                                              
-                             html: '<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 17px;font-weight:bold;color:black;margin:0px 0px 0px 0px;padding:0px 6px;">Monster Chicken</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 10px;font-weight:normal;color:black;margin:-27px 0px 0px 0px;padding:0px 6px;"><i>Ayam Cheesee Leleh</i></div>',
-                         },
-                         {
-                             xtype: 'container',
-                             width: '100%',
-                             height: 35,
-                             docked:'bottom',
-                             style: 'background-color: transparent;',
-                             id: 'containerDashboard_MerchantDetailPage_EnterpriseInfo_EnterpiseInfoExtendedBotom',
-                             layout: {
-                                 type: 'vbox',
-                                 pack: 'start',
-                                 align: 'left',
-                             },
-                             items: [
-                                 {
-                                  margin: '-10 0 0 0',
-                                     id: 'htmlDashboard_MerchantDetailPage_EnterpriseInfo_EnterpiseInfoExtended_EnterpriseFullAddress',
-                                     html: '<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 12px;font-weight:normal;color:black;padding:0px 6px;">Lot 153,Aeon Nilai, Bandar Baru Nilai,71800 Nilai,Negeri Sembilan</div>'
-                                 }
-                             ]
-                         }
-                     ]
-                 },
-
-
-{
-xtype: 'container',
-width: '6%',    
-//height: 90,
-height: 100,
-style: 'background-color: transparent;',
-layout: {
-type: 'vbox',
-pack: 'center',
-align: 'center',
-},
-items: [
-{
-xtype: 'container',
-width: '100%',
-hidden:true,
-//height: 90,
-height: 40,
-style: 'background-color: transparent;',
-id: 'containerDashboard_MerchantDetailPage_EnterpriseInfo_Direction',
-
-//  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
-// style: 'border-bottom:2px solid #D25959;background-color:transparent',
-layout: {
-type: 'vbox',
-pack: 'top',
-align: 'right',
-},
-items: [
-{
-width: '100%',
-height: 30,
-html: '<div onclick="FloatPanelMerchantDetailPage_OpenDirection();"><img src="resources/icons/DirectionPurple.jpg" width="24" height="24" alt="Company Name"></div>',
-},
-//  {
-//      width: '100%',
-//      height: 5,
-//      margin: '-7 0 0 0',
-//     // hidden:true,
-//      html: '<div onclick="FloatPanelMerchantDetailPage_OpenDirection();" style="width:100%;background-color: transparent;text-align:center;border: 1px none white;font-family:Century Gothic;font-size: 7px;font-weight:normal;color:black;">Location</div>'
-//  },
-]
-},
-{
-xtype: 'container',
-width: '100%',
-// height: 90,
-height: 40,
-hidden:true,
-style: 'background-color: transparent;',
-id: 'containerDashboard_MerchantDetailPage_EnterpriseInfo_OnlineStore',
-name:'namecontainerDashboard_MerchantDetailPage_EnterpriseInfo_OnlineStore',
-
-// style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:1px solid #ECF0F1 ;background-color: transparent;',
-// style: 'border-bottom:2px solid #D25959;background-color:transparent',
-layout: {
-type: 'vbox',
-pack: 'center',
-align: 'center',
-},
-items: [
-{
-width: '100%',
-height: 30,
-html: '<div onclick="FloatPanelMerchantDetailPage_AyohaStore()"><img src="resources/icons/onlineStore.jpg" width="24" height="24" alt="Company Name"></div>',
-//  margin:'15 0 0 0',
-},
-//   {
-//       width: '100%',                     
-// height: 5,
-// margin: '4 0 0 5',
-//       html: '<div onclick="FloatPanelMerchantDetailPage_AyohaStore()" style="width:100%;background-color: transparent;text-align:center;border: 1px none white;font-family:Century Gothic;font-size: 7px;font-weight:normal;color:black;margin:-12px 0px 0px -5px;">Ayoha</div><br><div style="width:100%;background-color: transparent;text-align:center;border: 1px none white;font-family:Century Gothic;font-size: 7px;font-weight:normal;color:black;margin:-26px 0px 0px -5px">Store</div>'
-//   },
-]
-}
-]
-
-},
-                
-            ]
-
-        },
-        {
-            xtype: 'carousel',
-            //hidden:true,
-            id: 'CarouselDashboard_MerchantDetailPage',
-            name: 'nameCarouselDashboard_MerchantDetailPage',
-            margin:'5 0 0 0',
-            width: '95%',
-            height: 310,
-            style: 'background-color:transparent',
-            //height: '100%',
-            indicator: true,
-//             requires: [
-// 'Ext.carousel.Carousel',
-// 'Ext.util.DelayedTask',
-// 'Ext.Video'
-//             ],
-            listeners: {
-                activeitemchange: function (container, newCard, oldCard, index) {
-
-
-                },
-
-            },
-
-
-
-           
-            // items: [
-
-
-            //  ]
-        },
-
-        {
-            xtype: 'container',
-            width: '95%',
-            height: 50,
-            zIndex: 100,
-            margin:'-50 0 0 0',
-            style: 'background-color: transparent;',
-            id: 'containerDashboard_MerchantDetailPage_EnterpriseSocialMedias',
-
-            //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
-            // style: 'border-bottom:2px solid #D25959;background-color:transparent',
-            layout: {
-                type: 'hbox',
-                pack: 'left',
-                align: 'left',
-            },
-            items: [
-                {
-                    xtype: 'container',
-                    width: '60%',
-                    height: 50,
-                    //zIndex: 100,
-                    margin: '0 0 0 0',
-                    style: 'background-color: transparent;',
-                },
-                {
-                    xtype: 'container',
-                    width: '40%',
-                    height: 50,
-                    //zIndex: 100,
-                    margin: '0 0 0 0',
-                    style: 'background-color: transparent;',
-                    id: 'containerDashboard_MerchantDetailPage_EnterpriseSocialMedias_Inner',
-
-                    //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
-                    // style: 'border-bottom:2px solid #D25959;background-color:transparent',
-                    layout: {
-                        type: 'vbox',
-                        pack: 'start',
-                        align: 'right',
-                    },
-                    items: [
-                        {
-                            html: '<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 10px;font-weight:normal;color:white;margin:-27px 0px 0px 0px;padding:0px 6px;">Visit Us On:</div>'
-                        },
-                        {
-                            xtype: 'container',
-                            width: '100%',
-                            height: 50,
-                            //zIndex: 100,
-                            margin: '-30 0 0 0',
-                            style: 'background-color: transparent;',
-                            id: 'containerDashboard_MerchantDetailPage_EnterpriseSocialMedias_InnerInner',
-
-                            //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
-                            // style: 'border-bottom:2px solid #D25959;background-color:transparent',
-                            layout: {
-                                type: 'hbox',
-                                pack: 'right',
-                                align: 'right',
-                            },
-
-
-                            items: [
-
-                                 {
-                                     id: 'htmlDashboard_MerchantDetailPage_Website',
-                                     hidden:true,
-                                     height: 26,
-                                     margin: '0 0 0 0',
-                                     width: 26,
-                                     // html: '<div style="color:black;text-align: center;font-size:16px;width:100%;font-weight:bold;margin:0px 0px 0px 0px;">3</div>',
-                                     html: '<div onclick="FloatPanel_MerchantDetailPage_OpenWebsite();"><img src="resources/icons/websiteicon02.png" width="26" height="26" alt="Company Name"></div>',
-                                 },
-                                 {
-                                     xtype: 'spacer',
-                                     width: 6,
-
-                                 },
-                                 {
-                                     id: 'htmlDashboard_MerchantDetailPage_Insta',
-                                     hidden:true,
-                                     height: 26,
-                                     margin: '0 0 0 0',
-                                     width: 26,
-                                     // html: '<div style="color:black;text-align: center;font-size:16px;width:100%;font-weight:bold;margin:0px 0px 0px 0px;">3</div>',
-                                     html: '<div onclick="FloatPanel_MerchantDetailPage_OpenInsta();" ><img src="resources/icons/instagramlogo.png" width="26" height="26" alt="Company Name"></div>',
-                                 },
-                                 {
-                                     xtype: 'spacer',
-                                     width: 6,
-
-                                 },
-                                 {
-                                     id: 'htmlDashboard_MerchantDetailPage_TikTok',
-                                     hidden: true,
-                                     height: 26,
-                                     margin: '0 0 0 0',
-                                     width: 26,
-                                     // html: '<div style="color:black;text-align: center;font-size:16px;width:100%;font-weight:bold;margin:0px 0px 0px 0px;">3</div>',
-                                     html: '<div onclick="FloatPanel_MerchantDetailPage_OpenTikTok();" ><img src="resources/icons/TikToklogo.png" width="26" height="26" alt="Company Name"></div>',
-                                 },
-                                 {
-                                     xtype: 'spacer',
-                                     width: 6,
-
-                                 },
-
-                                 {
-                                     id: 'htmlDashboard_MerchantDetailPage_FB',
-                                     hidden:true,
-                                     height: 26,
-                                     margin: '0 0 0 0',
-                                     width: 26,
-                                     // html: '<div style="color:black;text-align: center;font-size:16px;width:100%;font-weight:bold;margin:0px 0px 0px 0px;">3</div>',
-                                     html: '<div onclick="FloatPanel_MerchantDetailPage_OpenFB();" ><img src="resources/icons/facebook.png" width="26" height="26" alt="Company Name"></div>',
-                                 },
-                                  {
-                                      xtype: 'spacer',
-                                      width: 6,
-
-                                  },
-                            ]
-                        }
-                    ]
-                },
-                {
-                    xtype: 'container',
-                    width: '10%',
-                    height: 50,
-                    //zIndex: 100,
-                    margin: '0 0 0 0',
-                    style: 'background-color: transparent;',
-                },
-            ]
-        },
-
-       
-        {
-            xtype: 'container',
-            width: '95%',
-            height: 70,
-            style: 'background-color: transparent;',
-            id: 'containerDashboard_MerchantDetailPage_EnterpriseDescription',
-
-            //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
-            // style: 'border-bottom:2px solid #D25959;background-color:transparent',
-            layout: {
-                type: 'vbox',
-                pack: 'left',
-                align: 'left',
-            },
-            items: [
-            
-                {
-                    width: '100%',
-                    height: 65,
-                    margin: '10 0 0 0',
-                    id: 'htmlDashboard_MerchantDetailPage_EnterpriseDescription',
-                    html: '<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 12px;font-weight:normal;color:black;padding:0px 7px;">Kami menjual ayam cheese yang padu dan maengancam nyawa dan liur anda,kipidap dont gi babp</div>'
-                }
-            ]
-
-        },
-
-         {
-             xtype: 'container',
-             width: '95%',
-             height: 5,
-             style: 'background-color: transparent;',
-         },
-         {
-          xtype: 'container',
-          width: '95%',
-          height: 35,
-          style: 'background-color: transparent;',
-          id: 'containerDashboard_MerchantDetailPage_EnterpriseCheckIn',
-          name:'namecontainerDashboard_MerchantDetailPage_EnterpriseCheckIn',
-
-          //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
-          // style: 'border-bottom:2px solid #D25959;background-color:transparent',
-          layout: {
-              type: 'hbox',
-              pack: 'left',
-              align: 'left',
-          },
-          items: [
-              {
-                  xtype: 'container',
-                  width: '7%',
-                  height: 42,
-                  style: 'background-color: transparent;',
-                  id: 'containerDashboard_MerchantDetailPage_EnterpriseCheckInIcon',
-
-                  //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
-                  // style: 'border-bottom:2px solid #D25959;background-color:transparent',
-                  layout: {
-                      type: 'hbox',
-                      pack: 'left',
-                      align: 'left',
-                  },
-                  items: [
-                      {
-                          width: '100%',
-                          margin: '-6 0 0 -10',
-                          height: 42,
-                          html: '<div ><img src="resources/icons/ayoha_checkin_icon.png" width="40" height="40" alt="Company Name"></div>',
-                      }
-                  ]
-              },
-               {
-                   xtype: 'container',
-                   width: '92%',
-                   height: 35,
-                   style: 'background-color: transparent;',
-                   id: 'containerDashboard_MerchantDetailPage_EnterpriseCheckInDetails',
-
-                   //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
-                   // style: 'border-bottom:2px solid #D25959;background-color:transparent',
-                   layout: {
-                       type: 'hbox',
-                       pack: 'left',
-                       align: 'left',
-                   },
-                   items: [
-                       {
-                           width: '100%',
-                           height: 35,
-                           margin: '-3 0 0 0',
-                           id: 'htmlDashboard_MerchantDetailPage_EnterpriseCheckInDetails',                                                             
-                           html: '<div onclick="FloatPanel_MerchantDetailPage_EnterpriseCheckInDetails()" style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 12px;font-weight:bold;color:black;margin:0px 0px 0px 0px;padding:0px 6px;">Loading..</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 10px;font-weight:normal;color:black;margin:-27px 0px 0px 0px;padding:0px 6px;">Last Check-In</div>',
-                       }
-                   ]
-               }
-          ]
-
-      },
-      {
-          xtype: 'container',
-          width: '95%',
-          height: 7,
-          style: 'background-color: transparent;',
-      },
-        {
-            xtype: 'container',
-            width: '95%',
-            height: 35,
-            style: 'background-color: transparent;',
-            id: 'containerDashboard_MerchantDetailPage_EnterpriseWorkingHour',
-
-            //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
-            // style: 'border-bottom:2px solid #D25959;background-color:transparent',
-            layout: {
-                type: 'hbox',
-                pack: 'left',
-                align: 'left',
-            },
-            items: [
-                {
-                    xtype: 'container',
-                    width: '7%',
-                    height: 26,
-                    style: 'background-color: transparent;',
-                    id: 'containerDashboard_MerchantDetailPage_EnterpriseWorkingHourIcon',
-
-                    //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
-                    // style: 'border-bottom:2px solid #D25959;background-color:transparent',
-                    layout: {
-                        type: 'hbox',
-                        pack: 'left',
-                        align: 'left',
-                    },
-                    items: [
-                        {
-                            width: '100%',
-                            height: 26,
-                            html: '<div onclick="FloatPanel_MerchantDetailPage_EnterpriseWorkingHourDetails()" ><img src="resources/icons/History01.png" width="100%" height="26" alt="Company Name"></div>',
-                        }
-                    ]
-                },
-                 {
-                     xtype: 'container',
-                     width: '92%',
-                     height: 35,
-                     style: 'background-color: transparent;',
-                     id: 'containerDashboard_MerchantDetailPage_EnterpriseWorkingHourDetails',
-
-                     //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
-                     // style: 'border-bottom:2px solid #D25959;background-color:transparent',
-                     layout: {
-                         type: 'hbox',
-                         pack: 'left',
-                         align: 'left',
-                     },
-                     items: [
-                         {
-                             width: '100%',
-                             height: 35,
-                             margin: '-3 0 0 0',
-                             id: 'htmlDashboard_MerchantDetailPage_EnterpriseWorkingHourDetails',                                                             
-                             html: '<div onclick="FloatPanel_MerchantDetailPage_EnterpriseWorkingHourDetails()" style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 14px;font-weight:bold;color:black;margin:0px 0px 0px 0px;padding:0px 6px;">10.00AM - 10.00PM (Closed Now)</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 10px;font-weight:normal;color:black;margin:-27px 0px 0px 0px;padding:0px 6px;">Business Hour</div>',
-                         }
-                     ]
-                 }
-            ]
-
-        },
-
-
-          {
-              xtype: 'container',
-              width: '95%',
-              height: 7,
-              style: 'background-color: transparent;',
-          },
-
-        {
-            xtype: 'container',
-            width: '95%',
-            height: 35,
-            style: 'background-color: transparent;',
-            id: 'containerDashboard_MerchantDetailPage_EnterpriseBusinessContactNo',
-
-            //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
-            // style: 'border-bottom:2px solid #D25959;background-color:transparent',
-            layout: {
-                type: 'hbox',
-                pack: 'left',
-                align: 'left',
-            },
-            items: [
-                {
-                    xtype: 'container',
-                    width: '7%',
-                    height: 26,
-                    style: 'background-color: transparent;',
-                    id: 'containerDashboard_MerchantDetailPage_EnterpriseContactIcon',
-
-                    //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
-                    // style: 'border-bottom:2px solid #D25959;background-color:transparent',
-                    layout: {
-                        type: 'hbox',
-                        pack: 'left',
-                        align: 'left',
-                    },
-                    items: [
-                        {
-                            width: '100%',
-                            height: 26,
-                            html: '<div ><img src="resources/icons/BusinessContactIcon.png" width="100%" height="26" alt="Company Name"></div>',
-                        }
-                    ]
-                },
-                 {
-                     xtype: 'container',
-                     width: '92%',
-                     height: 35,
-                     style: 'background-color: transparent;',
-                     id: 'containerDashboard_MerchantDetailPage_EnterpriseContactDetails',
-
-                     //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
-                     // style: 'border-bottom:2px solid #D25959;background-color:transparent',
-                     layout: {
-                         type: 'hbox',
-                         pack: 'left',
-                         align: 'left',
-                     },
-                     items: [
-                         {
-                             width: '100%',
-                             height: 35,
-                             margin: '-3 0 0 0',
-                             id: 'htmlDashboard_MerchantDetailPage_EnterpriseContactDetails',                                                              
-                             html: '<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 12px;font-weight:bold;color:black;margin:0px 0px 0px 0px;padding:0px 6px;">03-663998765</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 10px;font-weight:normal;color:black;margin:-27px 0px 0px 0px;padding:0px 6px;">Business Contact No</div>',
-                         }
-                     ]
-                 }
-            ]
-
-        },
-
-          {
-              xtype: 'container',
-              width: '95%',
-              height: 7,
-              style: 'background-color: transparent;',
-          },
-
-        {
-            xtype: 'container',
-            width: '95%',
-            height: 35,
-            style: 'background-color: transparent;',
-            id: 'containerDashboard_MerchantDetailPage_EnterpriseWhatsAppBusinessContactNo',
-
-            //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
-            // style: 'border-bottom:2px solid #D25959;background-color:transparent',
-            layout: {
-                type: 'hbox',
-                pack: 'left',
-                align: 'left',
-            },
-            items: [
-                {
-                    xtype: 'container',
-                    width: '7%',
-                    height: 26,
-                    style: 'background-color: transparent;',
-                    id: 'containerDashboard_MerchantDetailPage_EnterpriseWhatsAppContactIcon',
-
-                    //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
-                    // style: 'border-bottom:2px solid #D25959;background-color:transparent',
-                    layout: {
-                        type: 'hbox',
-                        pack: 'left',
-                        align: 'left',
-                    },
-                    items: [
-                        {
-                            width: '100%',
-                            height: 26,
-                            html: '<div ><img src="resources/icons/WhatsApp01.png" width="100%" height="26" alt="Company Name"></div>',
-                        }
-                    ]
-                },
-                 {
-                     xtype: 'container',
-                     width: '92%',
-                     height: 35,
-                     style: 'background-color: transparent;',
-                     id: 'containerDashboard_MerchantDetailPage_EnterpriseWhatsAppDetails',
-
-                     //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
-                     // style: 'border-bottom:2px solid #D25959;background-color:transparent',
-                     layout: {
-                         type: 'hbox',
-                         pack: 'left',
-                         align: 'left',
-                     },
-                     items: [
-                         {
-                             width: '100%',
-                             height: 35,
-                             margin: '-3 0 0 0',
-                             id: 'htmlDashboard_MerchantDetailPage_EnterpriseWhatsAppDetails',                                                              
-                             html: '<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 12px;font-weight:bold;color:black;margin:0px 0px 0px 0px;padding:0px 6px;">013-3376958</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 10px;font-weight:normal;color:black;margin:-27px 0px 0px 0px;padding:0px 6px;">WhatsApp Contact No</div>',
-                         }
-                     ]
-                 }
-            ]
-
-        },
-
-
-
-
-
-
-                {
-                    xtype: 'container',
-                    width: '95%',
-                    height: 10,
-                    style: 'background-color: transparent;',
-                },
-
-        {
-            xtype: 'container',
-            width: '95%',
-            height: 35,
-            style: 'background-color: transparent;',
-            id: 'containerDashboard_MerchantDetailPage_EnterpriseLoveUs',
-
-            //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
-            // style: 'border-bottom:2px solid #D25959;background-color:transparent',
-            layout: {
-                type: 'hbox',
-                pack: 'left',
-                align: 'left',
-            },
-            items: [
-                {
-                    xtype: 'container',
-                    width: '7%',
-                    height: 26,
-                    style: 'background-color: transparent;',
-                    id: 'containerDashboard_MerchantDetailPage_EnterpriseLoveUsIcon',
-
-                    //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
-                    // style: 'border-bottom:2px solid #D25959;background-color:transparent',
-                    layout: {
-                        type: 'hbox',
-                        pack: 'left',
-                        align: 'left',
-                    },
-                    items: [
-                        {
-                            width: '100%',
-                            height: 26,
-                            id: 'htmlDashboard_MerchantDetailPage_EnterpriseLoveUsIcon',
-                            html: '<div><img src="resources/icons/unlovepurple.png" width="100%" height="26" alt="Company Name"></div>',
-                        }
-                    ]
-                },
-                 {
-                     xtype: 'container',
-                     width: '92%',
-                     height: 35,
-                     style: 'background-color: transparent;',
-                     id: 'containerDashboard_MerchantDetailPage_EnterpriseLoveUsDetails',
-
-                     //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
-                     // style: 'border-bottom:2px solid #D25959;background-color:transparent',
-                     layout: {
-                         type: 'hbox',
-                         pack: 'left',
-                         align: 'left',
-                     },
-                     items: [
-                         {
-                            // width: '33%',
-                             width: '31%',
-                             height: 35,
-                             margin: '-3 0 0 0',
-                             id: 'htmlDashboard_MerchantDetailPage_EnterpriseLoveUsDetails',                                                              
-                             html: '<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 14px;font-weight:bold;color:black;margin:0px 0px 0px 0px;padding:0px 6px;">2</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 10px;font-weight:normal;color:black;margin:-27px 0px 0px 0px;padding:0px 6px;">Love Us</div>',
-                         },
-                         {
-
-                             xtype: 'container',
-                           //  width: '30%',
-                             width: '23%',
-                             //margin:'0 0 0 0',
-                             height: 35,
-                             style: 'background-color: transparent;',
-                             id: 'containerDashboard_MerchantDetailPage_EnterpriseReviewRateDetails',
-
-                             //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
-                             // style: 'border-bottom:2px solid #D25959;background-color:transparent',
-                             layout: {
-                                 type: 'vbox',
-                                 pack: 'left',
-                                 align: 'left',
-                             },
-                             items: [
-                                 {
-                                     xtype: 'container',
-                                     width: '100%',
-                                    // flex: 1,
-                                     margin: '-10 0 0 0',
-                                     height: 50,
-                                     id: 'containerDashboard_MerchantDetailPage_ReviewAndRate',
-                                    // name: 'namecontainerFloatPanel_AyohaStore_ReviewAndRate',
-                                     // style: 'background-color:rgba(255, 255, 255, 0.3);border-radius: 10px 10px 10px 10px;',
-                                     style: "background-color: transparent;",
-                                     layout: {
-                                         type: 'vbox',
-                                         pack: 'center',
-                                         align: 'center'
-
-                                     },
-                                     items: [
-                                         {
-                                             margin: '0 0 0 5',
-                                             id: 'htmlDashboard_MerchantDetailPage_ReviewAndRateCount',
-                                             html: '<div style="color:black;text-align: center;font-size:14px;width:100%;font-weight:bold;margin:0px 0px 0px 0px;">0.0</div>',
-
-                                         },
-
-                                         {
-                                             xtype: 'container',
-                                             width: '100%',
-                                             margin: '-12 0 0 0',
-                                             height: 9,
-                                             // style: 'background-color:rgba(255, 255, 255, 0.3);border-radius: 10px 10px 10px 10px;',
-                                             style: "background-color: transparent;",
-                                             layout: {
-                                                 type: 'hbox',
-                                                 pack: 'center',
-                                                 align: 'center'
-
-                                             },
-                                             items: [
-
-                                                 {
-                                                     id: 'htmlDashboard_MerchantDetailPage_Star1',
-                                                     height: 9,
-                                                     width: 9,
-                                                     html: '<div ><img src="resources/icons/reviewstarunrate.png" width="9" height="9" alt="Company Name"></div>',
-                                                 },
-{
-id: 'htmlDashboard_MerchantDetailPage_Star2',
-height: 9,
-width: 9,
-html: '<div ><img src="resources/icons/reviewstarunrate.png" width="9" height="9" alt="Company Name"></div>',
-},
-{
-id: 'htmlDashboard_MerchantDetailPage_Star3',
-height: 9,
-width: 9,
-html: '<div ><img src="resources/icons/reviewstarunrate.png" width="9" height="9" alt="Company Name"></div>',
-},
-{
-id: 'htmlDashboard_MerchantDetailPage_Star4',
-height: 9,
-width: 9,
-html: '<div ><img src="resources/icons/reviewstarunrate.png" width="9" height="9" alt="Company Name"></div>',
-},
-{
-id: 'htmlDashboard_MerchantDetailPage_Star5',
-height: 9,
-width: 9,
-html: '<div ><img src="resources/icons/reviewstarunrate.png" width="9" height="9" alt="Company Name"></div>',
-
-},
-                                             ]
-                                         },
-
-                                         {
-                                             xtype: 'container',
-                                             width: '100%',
-                                             margin: '8 0 0 0',
-                                             height: 9,
-                                             layout: {
-                                                 type: 'hbox',
-                                                 pack: 'center',
-                                                 align: 'center'
-                                             },
-                                             items: [
-                                                 {
-                                                     id: 'htmlDashboard_MerchantDetailPage_ReviewByCount',
-                                                     html: '<div style="width100%;text-align:right;background-color: transparent;font-family:Arial, sans-serif;font-size:8px;color:black;font-weight:bold;overflow:hidden;"><img src="resources/icons/myaccountwhite01.png" alt="Image" style="width:7px;height:7px;">&nbsp;0 Reviews</div>',
-                                                 },
-                                             ]
-                                         },
-                                          //{
-                                          //    margin: '0 0 0 0',
-                                          //    height: 15,
-                                          //    id: 'htmlAyohaMerchantReview_TotalReviewsxx',
-                                          //    html: '<div style="width100%;text-align:right;background-color: transparent;font-family:Arial, sans-serif;font-size:10px;color:black;font-weight:bold;overflow:hidden;margin:-13px 10px 10px 0px;"><img src="resources/icons/merchantrateusAccountImg.png" alt="Image" style="width:10px;height:10px;">&nbsp;&nbsp;&nbsp;0 Reviews</div>'
-                                          //}
-                                     ]
-                                 },
-                             ]
-                         },
-
-{
-xtype: 'container',
-width: '33%',
-height: 35,
-style: 'background-color: transparent;',
-layout: {
-type: 'vbox',
-pack: 'top',
-align: 'right'
-},
-items:[
-{
-margin: '2 0 0 0',
-// hidden: true,
-width: 30,
-height: 30,
-html: '<img onClick="FloatPanel_AyohaStore_OrderHistoryShow()" src="resources/icons/purchase01.png" alt="Image" style="width:30px;height:30px;">',
-// ui:'plain'
-},
-]
-},
-
-
-                         {
-                             xtype: 'container',
-                            // width: '37%',
-                             width: '13%',
-                             height: 35,
-                             style: 'background-color: transparent;',
-                             id: 'containerFloatPanel_MerchantDetailPage_AyohaStoreCart',
-                             layout: {
-                              type: 'vbox',
-                              pack: 'top',
-                              align: 'right'
-
-                             },
-                             items: [
-
-                              {
-                                  xtype: 'container',
-                                  width: '100%',
-                                 // hidden:true,
-                               margin: '0 0 0 0',
-                                  height: 30,
-                                  style: 'background-color: transparent;',
-                                  layout: {
-                                   type: 'vbox',
-                                   pack: 'top',
-                                   align: 'right'
-                              },
-                              items:[
-                                  {
-                                      margin: '-10 8 0 0',
-                                      id: 'htmlDashboard_MerchantDetailPage_CountbadgeText',
-                                      html: '<div style="background: transparent;height:10px;font-size: 14px;font-weight:normal;color:black;text-align:center;" ><b>0</b></div>'
-                                     
-                                  },
-                                  {
-                                     margin: '2 0 0 0',
-                                      // hidden: true,
-                                      width: 30,
-                                      height: 30,
-                                      html: '<img onClick="FloatPanel_AyohaStore_CartShow()" src="resources/icons/myCart02.png" alt="Image" style="width:30px;height:30px;">',
-                                      // ui:'plain'
-                                  },
-                              ]
-                          },
-                                
-
-                             ]
-                         }
-
-                     ]
-                 },
-            ]
-
-        },
-
-
-       
-
-          
-    ]
-
-},
 
 //////////Recent Visitors
 {
     xtype: 'container',
     width: '100%',
-    height: 210,
+    height: 290,
     id:'containerDashboard_RecentVisitor_CheckIn',
     margin: '0 0 0 0',
      // style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1 ;background: white;border-radius: 0px 15px 15px 0px;',
@@ -6574,132 +6509,6 @@ html: '<img onClick="FloatPanel_AyohaStore_OrderHistoryShow()" src="resources/ic
                 }
            
           }
-          
-     ]
-},
-
-
-
-//////////Check Out
-{
-    xtype: 'container',
-    width: '100%',
-    height: 200,
-    hidden: true,
-    id:'containerDashboard_CheckOut',
-    margin: '0 0 0 0',
-     // style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1 ;background: white;border-radius: 0px 15px 15px 0px;',
-     //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
-     style: 'background-color:transparent',
-     //style: "background-color: white;",
-     layout: {
-         type: 'vbox',
-         pack: 'start',
-         align: 'center',
-     },
-     items:[
-        {
-            xtype: 'container',
-            width: '100%',
-            height: 60,
-           // hidden: false,
-            id:'containerDashboard_CheckOut_Header',
-           // margin: '0 0 0 0',
-           margin: '0 0 0 0',
-            // style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1 ;background: white;border-radius: 0px 15px 15px 0px;',
-            //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
-            style: 'background-color:transparent',
-            //style: "background-color: white;",
-            layout: {
-                type: 'hbox',
-                pack: 'center',
-                align: 'center',
-            },
-            items: [
-                 {
-                    
-                    //  margin: '10 0 0 14',
-                    //  //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
-                    // html: '<div  style="color:black;text-align: left;font-size:14px;width:100%;margin:0px 0px 0px 0px"><b>Check-In Rewards</b></div><br><div style="color:black;text-align: left;font-size:10px;width:100%;margin:-25px 0px 0px 0px;">Tap “Check-In” to redeem at<b> <u>kopi surat cinta-putrajaya!</u></b></div>'
-                    // html: '<span style="font-size:10px;color:#16a34a;background:#ecfdf5;border:1px solid #bbf7d0;padding:3px 6px;border-radius:999px;white-space:nowrap;">Get available perks in selected Check-In Merchant!</span><br><div style="color:white;text-align: left;font-size:10px;width:100%;margin:-25px 0px 0px 0px;">One Hub • Double Reward,Get your exiciting perks!</div>'
-                    margin: '10 0 0 14',
-                    //   html: '<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 100%" class="tg"><colgroup><col style="width: auto;height:60px"></colgroup><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal"><div style="color:black;text-align: center;font-size:18px;width:100%;">Tarmizi Rahim</div><br><div style="color:black;text-align: center;font-size:12px;width:100%;margin:-27px 0px 0px 0px;">Ayoha Legendry Card</div><img src="resources/icons/editProfileWhite.png" width="30" height="30" alt="Company Name"></tr></thead></table>',
-                //   html: '<div     style="color:#3A0ca3;text-align: left;font-size:18px;width:100%;margin:0px 0px 0px 0px"><b>Check-Out</b></div>'
-                   html: '<div     style="color:#3A0ca3;text-align: left;font-size:18px;width:100%;margin:0px 0px 0px 0px"><b>👋Check-Out</b></div><br> <div style="margin:-24px 0px 0px 0px;font-size:11px;color:#3A0ca3;font-weight:bold;">See you again , check in next time for more rewards!</div>'
-           
-                 },
-                 //See you again—check in next time for more rewards!
-                 {
-                     xtype: 'spacer'
-                 },
-                 {
-          
-                    margin: '0 14 0 14',
-                    hidden:true,
-                    html: '<div onclick="FloatPanel_AyohaEnterpriseRewardItemShow();" style="background-color: transparent; color: white; font-family: Arial, Helvetica, sans-serif; font-weight: normal; font-size: 10px; padding: 3px 6px; border-radius: 50px; display: inline-block; text-align: center; white-space: nowrap;margin:5px 0px 0px 0px;"><u>View All</u></div>'
-                
-                },
-               
-          
-          
-            ]
-          },
-          {
-            width: '100%',
-            height: 90,
-            html:
-            '<div class="ayohaCheckoutWrap" onclick="SuccessCheckinController_CheckOutConfirm();">' +
-              '<style>' +
-                '.ayohaCheckoutWrap{width:100%;padding:14px 14px 18px;box-sizing:border-box;background:transparent;}' +
-          
-                /* ✅ RAPATKAN MASCOT DENGAN BUTTON (buang gap) */
-                '.ayohaCheckoutHero{position:relative;width:100%;display:flex;justify-content:center;align-items:flex-end;padding:0;box-sizing:border-box;margin-bottom:-10px;}' +
-                '.ayohaCheckoutMascot{width:min(220px,70vw);height:auto;display:block;margin:0;transform-origin:50% 80%;animation:ayohaMascotFloat 2.8s ease-in-out infinite;}' +
-                '@keyframes ayohaMascotFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}' +
-          
-                '.ayohaBubble{position:absolute;left:50%;top:0;transform:translate(-120%,0);background:#fff;border:2px solid rgba(95,38,162,.9);color:#4b1a8a;border-radius:999px;padding:10px 14px;font:900 14px/1.1 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;box-shadow:0 10px 20px rgba(124,58,237,.10);white-space:nowrap;}' +
-                '.ayohaBubble:after{content:"";position:absolute;right:22px;bottom:-10px;width:16px;height:16px;background:#fff;border-right:2px solid rgba(95,38,162,.9);border-bottom:2px solid rgba(95,38,162,.9);transform:rotate(45deg);border-bottom-right-radius:4px;}' +
-          
-                '@keyframes coPulse{0%{box-shadow:0 10px 24px rgba(124,58,237,.20),0 0 0 0 rgba(255,255,255,.30)}70%{box-shadow:0 10px 24px rgba(124,58,237,.20),0 0 0 14px rgba(255,255,255,0)}100%{box-shadow:0 10px 24px rgba(124,58,237,.20),0 0 0 0 rgba(255,255,255,0)}}' +
-                '@keyframes coShine{0%{transform:translateX(-120%)}100%{transform:translateX(120%)}}' +
-          
-                /* ✅ optional: tarik button naik sikit lagi */
-                '.coBtn{position:relative;display:flex;align-items:center;gap:12px;width:100%;padding:12px 14px;border-radius:16px;color:#fff;background:linear-gradient(135deg,#7c3aed,#c800ff);border:1px solid rgba(255,255,255,.16);overflow:hidden;animation:coPulse 2.4s ease-out infinite;box-sizing:border-box;margin-top:-6px;}' +
-                '.coIcon{width:42px;height:42px;border-radius:14px;background:rgba(255,255,255,.14);display:flex;align-items:center;justify-content:center;flex:0 0 auto;}' +
-                '.coTitle{font:900 15px/1.1 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;letter-spacing:.2px;}' +
-                '.coSub{opacity:.9;margin-top:2px;font:700 12px/1.1 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;}' +
-                '.coChip{margin-left:auto;background:linear-gradient(90deg,#f59e0b,#fbbf24);color:#111;padding:6px 10px;border-radius:999px;font:900 11px/1 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;flex:0 0 auto;}' +
-                '.coShine{position:absolute;top:-30%;left:0;width:32%;height:170%;background:linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,.55),rgba(255,255,255,0));filter:blur(2px);transform:translateX(-120%);pointer-events:none;animation:coShine 2.8s ease-in-out infinite;}' +
-              '</style>' +
-          
-              '<div class="ayohaCheckoutHero">' +
-                '<img class="ayohaCheckoutMascot" src="resources/icons/checkOut03.png" alt="Thanks for visiting mascot">' +
-               // '<div class="ayohaBubble">Thanks for visiting!</div>' +
-              '</div>' +
-          
-              '<div class="coBtn" role="button" aria-label="Check-Out">' +
-                '<div class="coIcon" aria-hidden="true">' +
-                  '<svg width="22" height="22" viewBox="0 0 24 24" fill="none">' +
-                    '<path d="M10 17l5-5-5-5" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>' +
-                    '<path d="M4 12h11" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/>' +
-                    '<path d="M14 3h5a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-5" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/>' +
-                  '</svg>' +
-                '</div>' +
-          
-                '<div style="min-width:0">' +
-                  '<div class="coTitle">Check-Out</div>' +
-                  '<div class="coSub">End your visit &amp; update status</div>' +
-                '</div>' +
-          
-                '<div class="coChip">Done</div>' +
-                '<span class="coShine"></span>' +
-              '</div>' +
-            '</div>'
-          
-          
-          
-          }
-          
           
      ]
 },
@@ -18152,7 +17961,7 @@ Ext.getCmp('Dashboard_Carousel_takCheckIn').setHidden(true);
 Ext.getCmp('Dashboard_Carousel_takCheckIn').setHeight(0);
 Ext.getCmp('Dashboard_Carousel_CheckIn').setHidden(false); 
 Ext.getCmp('Dashboard_Carousel_CheckIn').setHeight(205); 
-Ext.getCmp('containerDashboard_CheckOut').setHidden(false); 
+
 
 //Ext.getCmp('mainDashboardCarousel').setHidden(true); 
 
@@ -18180,7 +17989,7 @@ Ext.getCmp('MainMaincontainerDashbord').setHeight(2200);
 
 
 
-              Ext.getCmp('containerDashboard_CheckOut').setHidden(true); 
+
              
                Ext.getCmp('DashboardMain_EnterprisesLoadLastCheckInStoreID').setStore(_DataStore_EnterprisesLoadLastCheckInStore);
               

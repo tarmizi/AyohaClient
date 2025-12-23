@@ -3235,3 +3235,15 @@ function animatedContainer(containerName) {
     });
 }
 
+
+function ayohaThemeColor_Hero(){
+  var value="background: linear-gradient(180deg, #491A7F 0%, #7027A5 50%, #9537C8 100%);";
+  //  var value="background: linear-gradient(90deg, #491A7F 0%, #7027A5 100%, #9537C8 50%);";
+    return value;
+}
+
+function ayohaThemeColor_Body(){
+  var value="background: linear-gradient(180deg, #FFF1F9 0%, #F3E8FF 100%);";
+   //var value="background: linear-gradient(180deg,#F3E8FF 0%,#FFF1F9 100%);";
+    return value;
+}

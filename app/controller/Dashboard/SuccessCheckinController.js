@@ -238,7 +238,8 @@ function AyohaSelectLoyaltySeg(type) {
         .Dashboard_StampCard_SuccessCheckIn_LoadStampCardPerkStore();
         Ext.getCmp('tabpanelDashboard_PerksInfo').setActiveItem(0);
         Ext.getCmp('tabpanelDashboard_PerksInfo').setHeight(250);
-        Ext.getCmp('containerDashboard_PerksYouCanEnjoyHere').setHeight(400);
+        //Ext.getCmp('containerDashboard_PerksYouCanEnjoyHere').setHeight(400);
+        Ext.getCmp('containerDashboard_PerksYouCanEnjoyHere').setHeight(390);
         Ext.getCmp('containerDashboard_PerksInSideTapPanel').setHeight(400);
         Ext.getCmp('tabpanelDashboard_PerksInfo').setHeight(400);
     }
@@ -246,7 +247,8 @@ function AyohaSelectLoyaltySeg(type) {
         SuccessCheckinController_Dashboard_LoadPointPerks();
         Ext.getCmp('tabpanelDashboard_PerksInfo').setActiveItem(1);
         Ext.getCmp('tabpanelDashboard_PerksInfo').setHeight(250);
-        Ext.getCmp('containerDashboard_PerksYouCanEnjoyHere').setHeight(400);
+      //  Ext.getCmp('containerDashboard_PerksYouCanEnjoyHere').setHeight(400);
+        Ext.getCmp('containerDashboard_PerksYouCanEnjoyHere').setHeight(390);
         Ext.getCmp('containerDashboard_PerksInSideTapPanel').setHeight(400);
         Ext.getCmp('tabpanelDashboard_PerksInfo').setHeight(400);
     }
@@ -254,7 +256,8 @@ function AyohaSelectLoyaltySeg(type) {
         SuccessCheckinController_Dashboard_LoadVoucherPerks();
         Ext.getCmp('tabpanelDashboard_PerksInfo').setActiveItem(2);
         Ext.getCmp('tabpanelDashboard_PerksInfo').setHeight(270);
-        Ext.getCmp('containerDashboard_PerksYouCanEnjoyHere').setHeight(420);
+      //  Ext.getCmp('containerDashboard_PerksYouCanEnjoyHere').setHeight(420);
+      Ext.getCmp('containerDashboard_PerksYouCanEnjoyHere').setHeight(410);
         Ext.getCmp('containerDashboard_PerksInSideTapPanel').setHeight(420);
         Ext.getCmp('tabpanelDashboard_PerksInfo').setHeight(420);
     }
@@ -263,7 +266,8 @@ function AyohaSelectLoyaltySeg(type) {
         SuccessCheckinController_Dashboard_LoadContestPerks();
         Ext.getCmp('tabpanelDashboard_PerksInfo').setActiveItem(3);
         Ext.getCmp('tabpanelDashboard_PerksInfo').setHeight(560);
-        Ext.getCmp('containerDashboard_PerksYouCanEnjoyHere').setHeight(560);
+       // Ext.getCmp('containerDashboard_PerksYouCanEnjoyHere').setHeight(560);
+        Ext.getCmp('containerDashboard_PerksYouCanEnjoyHere').setHeight(550);
         Ext.getCmp('containerDashboard_PerksInSideTapPanel').setHeight(560);     
         
     }
@@ -271,7 +275,8 @@ function AyohaSelectLoyaltySeg(type) {
         SuccessCheckinController_Dashboard_LoadEventPerks();
         Ext.getCmp('tabpanelDashboard_PerksInfo').setActiveItem(4);
         Ext.getCmp('tabpanelDashboard_PerksInfo').setHeight(560);
-        Ext.getCmp('containerDashboard_PerksYouCanEnjoyHere').setHeight(560);
+       // Ext.getCmp('containerDashboard_PerksYouCanEnjoyHere').setHeight(560);
+        Ext.getCmp('containerDashboard_PerksYouCanEnjoyHere').setHeight(550);
         Ext.getCmp('containerDashboard_PerksInSideTapPanel').setHeight(560);     
         
     }
@@ -280,7 +285,8 @@ function AyohaSelectLoyaltySeg(type) {
         SuccessCheckinController_Dashboard_LoadDiscountPerks();
         Ext.getCmp('tabpanelDashboard_PerksInfo').setActiveItem(5);
         Ext.getCmp('tabpanelDashboard_PerksInfo').setHeight(560);
-        Ext.getCmp('containerDashboard_PerksYouCanEnjoyHere').setHeight(560);
+       // Ext.getCmp('containerDashboard_PerksYouCanEnjoyHere').setHeight(560);
+       Ext.getCmp('containerDashboard_PerksYouCanEnjoyHere').setHeight(550);
         Ext.getCmp('containerDashboard_PerksInSideTapPanel').setHeight(560);     
         
     }
