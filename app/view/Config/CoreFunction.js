@@ -463,6 +463,44 @@ function CoreFunction_DashboardAyohaUser() {
 }
 
 
+function CoreFunction_DashboardEnterprises_LoadRecentlyCheckIn() {
+  
+
+
+
+    
+    _DataStore_EnterprisesLoadRecentlyCheckInStore.getProxy().setExtraParam('SubscriberAccNo', GetCurrAyohaUserAccountNo());
+    _DataStore_EnterprisesLoadRecentlyCheckInStore.getProxy().setUrl(GetAPIurl() + '/Enterprises/Enterprises_LoadRecentlyCheckIn');
+
+
+
+
+    _DataStore_EnterprisesLoadRecentlyCheckInStore.load({
+        callback: function (records, operation, success) {
+
+        
+            if (success && records.length > 0) {
+               
+              
+                Ext.getCmp('DataView_RecentCheckins').setStore(_DataStore_EnterprisesLoadRecentlyCheckInStore)
+                
+                LoadingPanelHide();
+            } else {
+                console.error('Failed to load store data or no record found.');
+                LoadingPanelHide();
+            }
+        }
+    });
+
+
+
+
+}
+
+
+
+
+
 
 function CoreFunction_DashboardLoadByEnterpriseAccNoStorePerk() {
   

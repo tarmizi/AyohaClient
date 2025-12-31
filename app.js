@@ -103,7 +103,7 @@ Ext.application({
     'MembershipCard.MembershipCardLoadBySubscriberAccNoDashboardMainStore','Master.BankAccountTypeStore', 'AyohaeWallet.AyohaeWalletAccountRequestCashOutStore','AyohaRewardContest.AyohaRewardContestLoadBySubscriberAccNoAndContestCodeStore','MembershipCardPaymentPlan.MembershipCardPaymentPlanLoadByPaymentPlanCodeStore',
     'AyohaStoreOrder.AyohaStoreOrderPendingOrderMainDashbordStore','Merchantperk.VIEW_merchantperk_ViewStore','MembershipCard.MembershipCardLoadByMembershipCardCodeStore','MerchantLoyaltyCampaign.AyohaUserStampCard_MerchantLoyaltyCampaign_LoadStampStore','MerchantLoyaltyCampaign.MerchantLoyaltyCampaignStore',
 'Enterprises.EnterprisesLoadLastCheckInStore','DiscountCampaign.DiscountCampaing_LoadBySubscriberAccNoStore','PointCampaignRedeem.PointCampaignRedeemLoadByPointRedeemStatusStore','DashboardAyohaUser.SuccessCheckInStore',
-'ViewMerchantDashboard.StoreActivityStore'],
+'ViewMerchantDashboard.StoreActivityStore','Enterprises.Enterprises_LoadRecentlyCheckIn'],
     //
     views: ['ImageCarousel','Config.AppState','MyAccount.Dashboard', 'MyAccount.FloatPanel_MyAccountMaster', 'Config.Configs', 'Config.QRcode', 'Main', 'LoginAyohaUser', 'Subscriber.FloatPanel_SubscriberMaster', 'AyohaNotification.FloatPanel_AyohaNotification',
         'AyohaNotification.FloatPanel_AyohaNotification_Notification', 'AyohaReward.FloatPanel_AyohaReward_PointTransactions', 'AyohaReward.FloatPanel_AyohaReward_ContestHistory',
@@ -138,7 +138,7 @@ Ext.application({
 'AyohaEnterpriseAccount.FloatPanel_AyohaEnterpriseRewardItem','Menu.FloatPanel_ScannedMerchant','AyohaMerchantInfo.FloatPanel_AyohaMerchantInfo_LoyaltyProgram','AyohaMerchantInfo.FloatPanel_AyohaMerchantInfo_PointCardLoyaltyProgram',
 'AyohaMerchantInfo.FloatPanel_AyohaMerchantInfo_DiscountCardLoyaltyProgram','AyohaMerchantInfo.FloatPanel_AyohaMerchantInfo_ContestCardLoyaltyProgram','AyohaMerchantInfo.FloatPanel_AyohaMerchantInfo_EventCardLoyaltyProgram','AyohaMerchantInfo.FloatPanel_AyohaMerchantInfo_VoucherCardLoyaltyProgram',
 'AyohaReward.FloatPanel_AyohaReward_MainDashboard','Membership.FloatPanel_Membership_CheckInPage','Membership.FloatPanel_Membership_CheckInPage_Confirmed','AyohaReward.FloatPanel_AyohaReward','Config.CoreFunction','Membership.FloatPanel_Membership_MembershipCardHubsUpgrade',
-'AyohaMerchant.AyohaMerchantReward','Membership.MembershipCardList','Membership.SideMenuMembershipCardList','AyohaMerchant.SideMenuAyohaMerchantReward'],
+'AyohaMerchant.AyohaMerchantReward','Membership.MembershipCardList','Membership.SideMenuMembershipCardList','AyohaMerchant.SideMenuAyohaMerchantReward','CheckOut.FloatPanel_CheckOut_NonMember'],
 
 
     icon: {

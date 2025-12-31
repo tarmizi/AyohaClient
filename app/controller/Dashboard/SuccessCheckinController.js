@@ -712,7 +712,7 @@ function SuccessCheckinController_DashboardSuccessCheckIn_LoadVIEWMerchantDashbo
 
    
     _DataStore_VIEWMerchantDashboard_StoreActivityStore.getProxy().setExtraParam('enterpriseAccNo', globalFloatPanelMerchantDetailPage_EnterpriseAccNo); 
-    _DataStore_MembershipCardLoadByEnterpriseAccNo_DashboardMainStore.getProxy().setUrl(GetAPIurl() + '/VIEW_MerchantDashboard/VIEWMerchantDashboard_StoreActivity');
+    _DataStore_VIEWMerchantDashboard_StoreActivityStore.getProxy().setUrl(GetAPIurl() + '/VIEW_MerchantDashboard/VIEWMerchantDashboard_StoreActivity');
 
  
 
@@ -738,7 +738,36 @@ function SuccessCheckinController_DashboardSuccessCheckIn_LoadVIEWMerchantDashbo
 
 }
 
+function SuccessCheckinController_DashboardSuccessCheckIn_LoadMerchantDashboard_CheckOutActivityStore() {
 
+   
+    _DataStore_MerchantDashboard_CheckOutActivityStore.getProxy().setExtraParam('enterpriseAccNo', globalFloatPanelMerchantDetailPage_EnterpriseAccNo);
+    _DataStore_MerchantDashboard_CheckOutActivityStore.getProxy().setExtraParam('AccountNo', GetCurrAyohaUserAccountNo());  
+    _DataStore_MerchantDashboard_CheckOutActivityStore.getProxy().setUrl(GetAPIurl() + '/VIEW_MerchantDashboard/MerchantDashboard_CheckOutActivity');
+
+ 
+
+    _DataStore_MerchantDashboard_CheckOutActivityStore.load({
+        callback: function (records, operation, success) {
+          
+            // alert(success)
+            if (success && records.length > 0) {
+           
+              
+                Ext.getCmp('listFloatPanel_CheckOutNonMember').setStore(_DataStore_MerchantDashboard_CheckOutActivityStore);
+             //  setScreenWidthMembershipCardCheckIn(records.length,"membershipCard_");
+               
+            } else {
+               
+              //  globalisSuccessCheckinController_Dashboard_LoadVoucherPerksOpen="N";
+              
+            }
+        }
+    });
+
+
+
+}
 
 
 
@@ -1026,3 +1055,98 @@ function Dashboard_Perks_SetActive(type) {
     // contohnya:
     // if (type === 'Stamps') { ... }
 }
+
+
+function AyohaSetProgressORI(cardElOrId, used, limit){
+
+   
+   
+
+if(used=="1st Check-In"){
+    used=1;
+    Ext.getCmp('html_DashboardCheckInRewardProgress').setHidden(false);
+    Ext.getCmp('html_DashboardCheckInRewardProgressMaxReached').setHidden(true);
+}
+if(used=="2nd Check-In"){
+    used=2;
+    Ext.getCmp('html_DashboardCheckInRewardProgress').setHidden(false);
+    Ext.getCmp('html_DashboardCheckInRewardProgressMaxReached').setHidden(true);
+}else
+{
+    used=3;
+    Ext.getCmp('html_DashboardCheckInRewardProgress').setHidden(true);
+    Ext.getCmp('html_DashboardCheckInRewardProgressMaxReached').setHidden(false);
+   // return
+}
+
+
+    const card = (typeof cardElOrId === 'string')
+      ? document.getElementById(cardElOrId)
+      : cardElOrId;
+  
+    if (!card) return;
+  
+    // safety
+    used  = Number(used)  || 0;
+    limit = Number(limit) || 0;
+    if (limit <= 0) limit = 1;
+  
+    // clamp 0..limit
+    used = Math.max(0, Math.min(used, limit));
+  
+    const fill = card.querySelector('[data-ayoha="fill"]');
+    const txt  = card.querySelector('[data-ayoha="usedText"]');
+  
+    const pct = (used / limit) * 100;
+  
+    if (fill) fill.style.width = pct + '%';
+    if (txt)  txt.textContent = `${used}/${limit}Max`;
+  }
+
+
+
+
+  function AyohaSetProgress(cardElOrId, used, limit){
+
+    // --- normalize used (string -> number) ---
+    if (typeof used === 'string') {
+      var u = used.toLowerCase();
+      if (u.indexOf('1st') >= 0) used = 1;
+      else if (u.indexOf('2nd') >= 0) used = 2;
+      else if (u.indexOf('3rd') >= 0) used = 3;
+      else used = parseInt(used, 10); // fallback kalau "1", "2", "3"
+    }
+  
+    used  = Number(used)  || 0;
+    limit = Number(limit) || 3;       // default 3
+    if (limit <= 0) limit = 1;
+  
+    // clamp
+    used = Math.max(0, Math.min(used, limit));
+  
+    // --- show/hide UI based on used ---
+    var cmpProgress = Ext.getCmp('html_DashboardCheckInRewardProgress');
+    var cmpMax      = Ext.getCmp('html_DashboardCheckInRewardProgressMaxReached');
+  
+    // ✅ rule: show normal progress when used < limit, show max reached when used >= limit
+    var isMax = (used >= limit);
+  
+    if (cmpProgress) cmpProgress.setHidden(isMax);
+    if (cmpMax)      cmpMax.setHidden(!isMax);
+  
+    // --- update progress bar within the card ---
+    var card = (typeof cardElOrId === 'string')
+      ? document.getElementById(cardElOrId)
+      : cardElOrId;
+  
+    if (!card) return;
+  
+    var fill = card.querySelector('[data-ayoha="fill"]');
+    var txt  = card.querySelector('[data-ayoha="usedText"]');
+  
+    var pct = (used / limit) * 100;
+  
+    if (fill) fill.style.width = pct + '%';
+    if (txt)  txt.textContent  = used + '/' + limit + (isMax ? ' (Max)' : '');
+  }
+  
