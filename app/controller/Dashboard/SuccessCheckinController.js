@@ -739,8 +739,10 @@ function SuccessCheckinController_DashboardSuccessCheckIn_LoadVIEWMerchantDashbo
 }
 
 function SuccessCheckinController_DashboardSuccessCheckIn_LoadMerchantDashboard_CheckOutActivityStore() {
-
-   
+    var defHeightForm=270;
+    var increaseHeightForm=77;
+   var defHeightList=0;
+   var increaseHeightList=77;
     _DataStore_MerchantDashboard_CheckOutActivityStore.getProxy().setExtraParam('enterpriseAccNo', globalFloatPanelMerchantDetailPage_EnterpriseAccNo);
     _DataStore_MerchantDashboard_CheckOutActivityStore.getProxy().setExtraParam('AccountNo', GetCurrAyohaUserAccountNo());  
     _DataStore_MerchantDashboard_CheckOutActivityStore.getProxy().setUrl(GetAPIurl() + '/VIEW_MerchantDashboard/MerchantDashboard_CheckOutActivity');
@@ -750,11 +752,24 @@ function SuccessCheckinController_DashboardSuccessCheckIn_LoadMerchantDashboard_
     _DataStore_MerchantDashboard_CheckOutActivityStore.load({
         callback: function (records, operation, success) {
           
-            // alert(success)
-            if (success && records.length > 0) {
            
+            if (success && records.length > 0) {
+                
+                var resultHeightForm=increaseHeightForm*records.length;
+                Ext.getCmp('LoadingFloatPanel_CheckOut_NonMemberID').setHeight(defHeightForm+resultHeightForm);
+               
+               
+                var resultHeightList=increaseHeightList*records.length;
+                Ext.getCmp('containerFloatPanel_CheckOut_NonMemberActivityList').setHeight(defHeightList+resultHeightList);
+               
+                
               
+
+                
+
+                
                 Ext.getCmp('listFloatPanel_CheckOutNonMember').setStore(_DataStore_MerchantDashboard_CheckOutActivityStore);
+
              //  setScreenWidthMembershipCardCheckIn(records.length,"membershipCard_");
                
             } else {

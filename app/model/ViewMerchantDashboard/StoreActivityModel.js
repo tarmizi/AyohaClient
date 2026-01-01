@@ -11,6 +11,8 @@ Ext.define('ianMizi.model.ViewMerchantDashboard.StoreActivityModel', {
             'TblActivity',
             'LoyaltyActivity',
             'RelativeActivityTime',
+            'UpdatedTime',
+            'AyohaRewardPointCheckIn',
             {
                 name: 'badge',
                 convert: function (value, record) {
@@ -61,6 +63,51 @@ Ext.define('ianMizi.model.ViewMerchantDashboard.StoreActivityModel', {
                     
                     if(str=="Ayoha Store"){
                         _value = 'Purchased an item';
+                        return _value;
+                    }
+                    
+                    else{
+                      _value = 'No Name';
+                    }
+                  
+                    
+                }
+            },
+            {
+                name: 'ActivitySub',
+                convert: function (value, record) {
+     
+                    var _value;
+                    var str = record.get('TblActivity');
+                    var LoyaltyActivity=record.get('LoyaltyActivity');
+                    var AyohaRewardPointCheckIn=record.get('AyohaRewardPointCheckIn');
+                 
+                    
+                    if(str=="Check-In Status"){
+                        _value =AyohaRewardPointCheckIn+ 'A.pts';
+                        return _value;
+                    } if(str=="Memberships Status"){
+                        _value =LoyaltyActivity;
+                        return _value;
+                    }
+                    if(str=="Stamp Collected"){
+                        _value =LoyaltyActivity;
+                        return _value;
+                    }  if(str=="Point Collected"){
+                        _value = LoyaltyActivity;
+                        return _value;
+                    }
+                    if(str=="Contest Status"){
+                        _value = LoyaltyActivity;
+                        return _value;
+                    }
+                    if(str=="Event Respond"){
+                        _value = LoyaltyActivity;
+                        return _value;
+                    }
+                    
+                    if(str=="Ayoha Store"){
+                        _value = LoyaltyActivity;
                         return _value;
                     }
                     
