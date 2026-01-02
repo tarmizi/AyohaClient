@@ -6750,7 +6750,15 @@ html: '<img onClick="FloatPanel_AyohaStore_OrderHistoryShow()" src="resources/ic
                           '<svg width="14" height="14" viewBox="0 0 24 24"><path fill="#fff" d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>',
                         '</div>',
                       '</tpl>',
-                  
+                      '<tpl if="badge == \'checkout\'">',
+                      '<div class="ayohaBadge ayohaBadgeCheckout" title="Checked-out">',
+                        '<svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true">',
+                          '<path d="M10 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h4" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>',
+                          '<path d="M17 16l4-4-4-4" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>',
+                          '<path d="M21 12H9" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>',
+                        '</svg>',
+                      '</div>',
+                      '</tpl>',
                       '<tpl if="badge == \'card\'">',
                         '<div class="ayohaBadge ayohaBadgeCard" title="Joined">',
                           '<div class="ayohaCardIcon"></div>',
@@ -18411,8 +18419,10 @@ function Dashboard_LoadLastCheckIn(){
     globalFloatPanelMerchantDetailPage_Negeri=record.get('Negeri');
     globalFloatPanelMerchantDetailPage_EnterpriseDescriptions=record.get('EnterpriseDescriptions');
     globalFloatPanelMerchantDetailPage_EnterprisePhoneNo=record.get('EnterprisePhoneNo');
+    globalFloatPanelMerchantDetailPage_CheckInCode=record.get('CheckInCode');
+    
    
-  
+
 
     Ext.getCmp('htmlDashboard_MerchantLogo_Name_Tagline').setHtml('<div class="ayohaHeroMerchant">' +
     '<div class="ayohaHeroMerchantLogo">' +
@@ -18518,7 +18528,7 @@ Ext.getCmp('MainMaincontainerDashbord').setHeight(2330);
             } else {
               // alert('Failed to load store data or no record found.');
 
-             // alert('tak checkin')
+             
               Ext.getCmp('MainMaincontainerDashbord').setHeight(2780);
            //   Ext.getCmp('Dashboard_Carousel').setHeight(205); 
            Ext.getCmp('containerCheckInRewardspacer02').setHidden(true); 
@@ -18527,6 +18537,37 @@ Ext.getCmp('MainMaincontainerDashbord').setHeight(2330);
               Ext.getCmp('Dashboard_Carousel_CheckIn').setHidden(true); 
               Ext.getCmp('Dashboard_Carousel_CheckIn').setHeight(0); 
               Ext.getCmp('containerCheckInRewardProgress').setHidden(true); 
+
+
+
+
+
+//////////////////////////UnHidden When CheckOut
+Ext.getCmp('containerCheckInRewardspacer01').setHidden(false); 
+Ext.getCmp('containerDashboard_MembershipInsight').setHidden(false); 
+Ext.getCmp('Dashboard_MyAccount_MembershipPerksList').setHidden(false); 
+Ext.getCmp('containerDashboard_AyohaMerchantMembershipCardList').setHidden(false); 
+Ext.getCmp('Dashboard_MyAccount_UnSubscribedMembershipCardList_front').setHidden(false); 
+Ext.getCmp('containerSelectedPremiumperksbyAyoha').setHidden(false); 
+Ext.getCmp('Dashboard_premiumperksByAyoha').setHidden(false); 
+Ext.getCmp('containerDashboard_AyohaMerchantLoyaltyCampaignList').setHidden(false); 
+Ext.getCmp('containerDashboard_loyaltyCampaignProgram').setHidden(false); 
+Ext.getCmp('containerDashboard_AyohaOnlineMerchantStoreList').setHidden(false); 
+Ext.getCmp('Dashboard_Carousel_PremiumAdvertisement').setHidden(false); 
+Ext.getCmp('containerDashboard_merchant_vip_advertisement').setHidden(false); 
+Ext.getCmp('containerDashboard_merchantVIPAdvertismentMain').setHidden(false); 
+Ext.getCmp('containerDashboard_HotSeatPromotion').setHidden(false); 
+Ext.getCmp('containerDashboard_HotSeatPromotionImage').setHidden(false); 
+
+
+
+
+
+
+
+
+
+
 
               Ext.getCmp('containerDashboard_RecentlyCheckInTitle').setHidden(false); 
               Ext.getCmp('containerRecentlyCheckIn').setHidden(false); 

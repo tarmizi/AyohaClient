@@ -739,10 +739,15 @@ function SuccessCheckinController_DashboardSuccessCheckIn_LoadVIEWMerchantDashbo
 }
 
 function SuccessCheckinController_DashboardSuccessCheckIn_LoadMerchantDashboard_CheckOutActivityStore() {
-    var defHeightForm=270;
-    var increaseHeightForm=77;
-   var defHeightList=0;
-   var increaseHeightList=77;
+//     var defHeightForm=270;
+//     var increaseHeightForm=77;
+//    var defHeightList=0;
+//    var increaseHeightList=77;
+  // var defHeightForm=330;
+   var defHeightForm=360;
+   var increaseHeightForm=160;
+  var defHeightList=0;
+  var increaseHeightList=65;
     _DataStore_MerchantDashboard_CheckOutActivityStore.getProxy().setExtraParam('enterpriseAccNo', globalFloatPanelMerchantDetailPage_EnterpriseAccNo);
     _DataStore_MerchantDashboard_CheckOutActivityStore.getProxy().setExtraParam('AccountNo', GetCurrAyohaUserAccountNo());  
     _DataStore_MerchantDashboard_CheckOutActivityStore.getProxy().setUrl(GetAPIurl() + '/VIEW_MerchantDashboard/MerchantDashboard_CheckOutActivity');
@@ -754,14 +759,29 @@ function SuccessCheckinController_DashboardSuccessCheckIn_LoadMerchantDashboard_
           
            
             if (success && records.length > 0) {
-                
+               
                 var resultHeightForm=increaseHeightForm*records.length;
-                Ext.getCmp('LoadingFloatPanel_CheckOut_NonMemberID').setHeight(defHeightForm+resultHeightForm);
-               
-               
                 var resultHeightList=increaseHeightList*records.length;
-                Ext.getCmp('containerFloatPanel_CheckOut_NonMemberActivityList').setHeight(defHeightList+resultHeightList);
+                if(records.length==1){
+                    Ext.getCmp('LoadingFloatPanel_CheckOut_NonMemberID').setHeight(defHeightForm+resultHeightForm);              
                
+             
+                    Ext.getCmp('containerFloatPanel_CheckOut_NonMemberActivityList').setHeight(defHeightList+resultHeightList);
+                    Ext.getCmp('listFloatPanel_CheckOutNonMember').setHeight(defHeightList+resultHeightList);
+                    
+                }else
+            
+                if(records.length>1){
+var minusForm=(records.length*100)-100;
+var minusList=10-(records.length*5);
+//var resultMinusForm=
+
+                    Ext.getCmp('LoadingFloatPanel_CheckOut_NonMemberID').setHeight((defHeightForm+resultHeightForm)-minusForm);              
+               
+             
+                    Ext.getCmp('containerFloatPanel_CheckOut_NonMemberActivityList').setHeight((defHeightList+resultHeightList));
+                    Ext.getCmp('listFloatPanel_CheckOutNonMember').setHeight((defHeightList+resultHeightList));
+                }
                 
               
 
@@ -769,11 +789,11 @@ function SuccessCheckinController_DashboardSuccessCheckIn_LoadMerchantDashboard_
 
                 
                 Ext.getCmp('listFloatPanel_CheckOutNonMember').setStore(_DataStore_MerchantDashboard_CheckOutActivityStore);
-
+                SuccessCheckinController_DasboardMerchantDetailPage_CalculateRating(globalFloatPanelMerchantDetailPage_EnterpriseAccNo);
              //  setScreenWidthMembershipCardCheckIn(records.length,"membershipCard_");
                
             } else {
-               
+                SuccessCheckinController_DasboardMerchantDetailPage_CalculateRating(globalFloatPanelMerchantDetailPage_EnterpriseAccNo)
               //  globalisSuccessCheckinController_Dashboard_LoadVoucherPerksOpen="N";
               
             }
@@ -787,7 +807,349 @@ function SuccessCheckinController_DashboardSuccessCheckIn_LoadMerchantDashboard_
 
 
 
+function SuccessCheckinController_DasboardMerchantDetailPage_CalculateRating(EnterpriseAccNo) {
+   
 
+
+
+    var task = Ext.create('Ext.util.DelayedTask', function () {
+
+        var objn = {
+            "EnterpriseAccNo": EnterpriseAccNo
+        };
+        // console.log(objn);
+        var _value = Ext.Ajax.request({
+
+            type: "POST",
+
+            url: GetAPIurl() + '/AyohaMerchantReview/AyohaMerchantReviewCalculateRating',
+
+            dataType: "json",
+            data: JSON.stringify(objn),
+            headers: {
+                "Content-Type": "application/json; charset=utf-8"
+            },
+
+            success: function (result, request) {
+
+                //console.log(result.responseText);
+
+
+                data = Ext.decode(result.responseText.trim());
+
+                if (data.success == "true") {
+                    //var newData = JSON.parse(JSON.stringify(result.results.Email))
+                    //console.log(result.results.Email);
+                    //  //data.results[0];
+                    // console.log(data.total);
+                    if (data.total > 0) {
+                        FiveStar = data.results[0].FiveStar;
+                        FourStar = data.results[0].FourStar;
+                        ThreeStar = data.results[0].ThreeStar;
+                        TwoStar = data.results[0].TwoStar;
+                        OneStar = data.results[0].OneStar;
+                        TotalStar = data.results[0].TotalStar;
+                        TotalVoter = data.results[0].TotalVoter;
+                        VoteFiveStar = data.results[0].VoteFiveStar;
+                        VoteFourStar = data.results[0].VoteFourStar;
+                        VoteThreeStar = data.results[0].VoteThreeStar;
+                        VoteTwoStar = data.results[0].VoteTwoStar;
+                        VoteOneStar = data.results[0].VoteOneStar;
+
+
+                        var TotalAvg = (VoteFiveStar + VoteFourStar + VoteThreeStar + VoteTwoStar + VoteOneStar) / TotalVoter;
+globalFloatPanelMerchantDetailPage_CountStar=TotalAvg;
+globalFloatPanelMerchantDetailPage_CountReviewer=TotalVoter;
+                        if (TotalAvg) {
+
+                            Ext.getCmp('htmlFloatPanel_CheckOutNonMemberReviewAndRateCount').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();" style="color:black;text-align: center;font-size:20px;width:100%;font-weight:bold;margin:0px 0px 0px 0px;">' + TotalAvg.toFixed(1) + '</div>');
+
+                        } else {
+                            Ext.getCmp('htmlFloatPanel_CheckOutNonMemberReviewAndRateCount').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();" style="color:black;text-align: center;font-size:20px;width:100%;font-weight:bold;margin:0px 0px 0px 0px;">0.0</div>');
+                        }
+
+                        Ext.getCmp('htmlFloatPanel_CheckOutNonMember_ReviewByCount').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();" style="width100%;text-align:center;background-color: transparent;font-family:Arial, sans-serif;font-size:18px;color:black;font-weight:normal;overflow:hidden;">&nbsp;' + TotalVoter + ' Reviews</div>');
+
+                        //  Ext.getCmp('htmlAyohaMerchantReview_TotalReviews').setHtml('<div style="width100%;text-align:right;background-color: transparent;font-family:Arial, sans-serif;font-size:10px;color:black;font-weight:bold;overflow:hidden;margin:-13px 10px 10px 0px;"><img src="resources/icons/merchantrateusAccountImg.png" alt="Image" style="width:10px;height:10px;">&nbsp;&nbsp;&nbsp; Reviews</div>');
+
+                        var RateReviews = TotalAvg.toFixed(1);
+                        globalFloatPanelMerchantDetailPage_CountReviewer= TotalVoter;
+                        globalFloatPanelMerchantDetailPage_CountStar=TotalAvg.toFixed(1);
+                      
+
+                        if (RateReviews == 5) {
+
+                            Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star1').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/star.png" width="20" height="20" alt="Company Name"></div>');
+                            Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star2').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/star.png" width="20" height="20" alt="Company Name"></div>');
+                            Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star3').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/star.png" width="20" height="20" alt="Company Name"></div>');
+                            Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star4').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/star.png" width="20" height="20" alt="Company Name"></div>');
+                            Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star5').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/star.png" width="20" height="20" alt="Company Name"></div>');
+
+
+                        }
+                        if ((RateReviews >= 4) && (RateReviews < 5)) {
+                            Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star1').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/star.png" width="20" height="20" alt="Company Name"></div>');
+                            Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star2').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/star.png" width="20" height="20" alt="Company Name"></div>');
+                            Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star3').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/star.png" width="20" height="20" alt="Company Name"></div>');
+                            Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star4').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/star.png" width="20" height="20" alt="Company Name"></div>');
+                            Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star5').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/reviewstarunrate.png" width="20" height="20" alt="Company Name"></div>');
+
+
+                            if ((RateReviews >= 4.2) && (RateReviews <= 4.4)) {
+
+                                Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star1').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/star.png" width="20" height="20" alt="Company Name"></div>');
+                                Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star2').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/star.png" width="20" height="20" alt="Company Name"></div>');
+                                Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star3').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/star.png" width="20" height="20" alt="Company Name"></div>');
+                                Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star4').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/star.png" width="20" height="20" alt="Company Name"></div>');
+                                Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star5').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/StarpointThree.png" width="20" height="20" alt="Company Name"></div>');
+
+                            }
+                            if (RateReviews == 4.5) {
+
+                                Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star1').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/star.png" width="20" height="20" alt="Company Name"></div>');
+                                Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star2').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/star.png" width="20" height="20" alt="Company Name"></div>');
+                                Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star3').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/star.png" width="20" height="20" alt="Company Name"></div>');
+                                Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star4').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/star.png" width="20" height="20" alt="Company Name"></div>');
+                                Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star5').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/StarpointFive.png" width="20" height="20" alt="Company Name"></div>');
+                            }
+                            if ((RateReviews >= 4.6) && (RateReviews <= 4.8)) {
+
+                                Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star1').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/star.png" width="20" height="20" alt="Company Name"></div>');
+                                Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star2').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/star.png" width="20" height="20" alt="Company Name"></div>');
+                                Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star3').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/star.png" width="20" height="20" alt="Company Name"></div>');
+                                Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star4').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/star.png" width="20" height="20" alt="Company Name"></div>');
+                                Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star5').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/StarpointSeven.png" width="20" height="20" alt="Company Name"></div>');
+                            }
+                            if (RateReviews == 4.9) {
+                                Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star1').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/star.png" width="20" height="20" alt="Company Name"></div>');
+                                Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star2').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/star.png" width="20" height="20" alt="Company Name"></div>');
+                                Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star3').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/star.png" width="20" height="20" alt="Company Name"></div>');
+                                Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star4').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/star.png" width="20" height="20" alt="Company Name"></div>');
+                                Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star5').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/StarpointNine.png" width="20" height="20" alt="Company Name"></div>');
+                            }
+
+
+
+                        }
+                        if ((RateReviews >= 3) && (RateReviews < 4)) {
+
+                            Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star1').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/star.png" width="20" height="20" alt="Company Name"></div>');
+                            Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star2').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/star.png" width="20" height="20" alt="Company Name"></div>');
+                            Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star3').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/star.png" width="20" height="20" alt="Company Name"></div>');
+                            Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star4').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/reviewstarunrate.png" width="20" height="20" alt="Company Name"></div>');
+                            Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star5').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/reviewstarunrate.png" width="20" height="20" alt="Company Name"></div>');
+
+
+
+
+
+                            if ((RateReviews >= 3.2) && (RateReviews <= 3.4)) {
+
+                                Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star1').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/star.png" width="20" height="20" alt="Company Name"></div>');
+                                Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star2').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/star.png" width="20" height="20" alt="Company Name"></div>');
+                                Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star3').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/star.png" width="20" height="20" alt="Company Name"></div>');
+                                Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star4').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/StarpointThree.png" width="20" height="20" alt="Company Name"></div>');
+                                Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star5').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/reviewstarunrate.png" width="20" height="20" alt="Company Name"></div>');
+
+                            }
+                            if (RateReviews == 3.5) {
+
+                                Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star1').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/star.png" width="20" height="20" alt="Company Name"></div>');
+                                Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star2').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/star.png" width="20" height="20" alt="Company Name"></div>');
+                                Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star3').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/star.png" width="20" height="20" alt="Company Name"></div>');
+                                Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star4').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/StarpointFive.png" width="20" height="20" alt="Company Name"></div>');
+                                Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star5').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/reviewstarunrate.png" width="20" height="20" alt="Company Name"></div>');
+
+
+
+
+
+                            }
+                            if ((RateReviews >= 3.6) && (RateReviews <= 3.8)) {
+
+                                Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star1').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/star.png" width="20" height="20" alt="Company Name"></div>');
+                                Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star2').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/star.png" width="20" height="20" alt="Company Name"></div>');
+                                Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star3').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/star.png" width="20" height="20" alt="Company Name"></div>');
+                                Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star4').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/StarpointSeven.png" width="20" height="20" alt="Company Name"></div>');
+                                Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star5').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/reviewstarunrate.png" width="20" height="20" alt="Company Name"></div>');
+                            }
+                            if (RateReviews == 3.9) {
+                                Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star1').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/star.png" width="20" height="20" alt="Company Name"></div>');
+                                Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star2').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/star.png" width="20" height="20" alt="Company Name"></div>');
+                                Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star3').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/star.png" width="20" height="20" alt="Company Name"></div>');
+                                Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star4').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/StarpointNine.png" width="20" height="20" alt="Company Name"></div>');
+                                Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star5').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/reviewstarunrate.png" width="20" height="20" alt="Company Name"></div>');
+                            }
+
+
+
+                        }
+                        if ((RateReviews >= 2) && (RateReviews < 3)) {
+
+
+                            Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star1').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/star.png" width="20" height="20" alt="Company Name"></div>');
+                            Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star2').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/star.png" width="20" height="20" alt="Company Name"></div>');
+                            Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star3').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/reviewstarunrate.png" width="20" height="20" alt="Company Name"></div>');
+                            Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star4').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/reviewstarunrate.png" width="20" height="20" alt="Company Name"></div>');
+                            Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star5').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/reviewstarunrate.png" width="20" height="20" alt="Company Name"></div>');
+
+
+                            if ((RateReviews >= 2.2) && (RateReviews <= 2.4)) {
+
+                                Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star1').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/star.png" width="20" height="20" alt="Company Name"></div>');
+                                Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star2').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/star.png" width="20" height="20" alt="Company Name"></div>');
+                                Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star3').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/StarpointThree.png" width="20" height="20" alt="Company Name"></div>');
+                                Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star4').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/reviewstarunrate.png" width="20" height="20" alt="Company Name"></div>');
+                                Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star5').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/reviewstarunrate.png" width="20" height="20" alt="Company Name"></div>');
+                            }
+                            if (RateReviews == 2.5) {
+
+                                Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star1').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/star.png" width="20" height="20" alt="Company Name"></div>');
+                                Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star2').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/star.png" width="20" height="20" alt="Company Name"></div>');
+                                Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star3').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/StarpointFive.png" width="20" height="20" alt="Company Name"></div>');
+                                Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star4').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/reviewstarunrate.png" width="20" height="20" alt="Company Name"></div>');
+                                Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star5').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/reviewstarunrate.png" width="20" height="20" alt="Company Name"></div>');
+                            }
+                            if ((RateReviews >= 2.6) && (RateReviews <= 2.8)) {
+                                Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star1').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/star.png" width="20" height="20" alt="Company Name"></div>');
+                                Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star2').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/star.png" width="20" height="20" alt="Company Name"></div>');
+                                Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star3').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/StarpointSeven.png" width="20" height="20" alt="Company Name"></div>');
+                                Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star4').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/reviewstarunrate.png" width="20" height="20" alt="Company Name"></div>');
+                                Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star5').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/reviewstarunrate.png" width="20" height="20" alt="Company Name"></div>');
+                            }
+                            if (RateReviews == 2.9) {
+                                Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star1').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/star.png" width="20" height="20" alt="Company Name"></div>');
+                                Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star2').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/star.png" width="20" height="20" alt="Company Name"></div>');
+                                Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star3').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/StarpointNine.png" width="20" height="20" alt="Company Name"></div>');
+                                Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star4').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/reviewstarunrate.png" width="20" height="20" alt="Company Name"></div>');
+                                Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star5').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/reviewstarunrate.png" width="20" height="20" alt="Company Name"></div>');
+
+                            }
+
+
+
+
+
+                        }
+                        if ((RateReviews >= 1) && (RateReviews < 2)) {
+
+                            Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star1').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/star.png" width="20" height="20" alt="Company Name"></div>');
+                            Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star2').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/reviewstarunrate.png" width="20" height="20" alt="Company Name"></div>');
+                            Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star3').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/reviewstarunrate.png" width="20" height="20" alt="Company Name"></div>');
+                            Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star4').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/reviewstarunrate.png" width="20" height="20" alt="Company Name"></div>');
+                            Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star5').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/reviewstarunrate.png" width="20" height="20" alt="Company Name"></div>');
+
+                            if ((RateReviews >= 1.2) && (RateReviews <= 1.4)) {
+
+
+                                Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star1').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/star.png" width="20" height="20" alt="Company Name"></div>');
+                                Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star2').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/StarpointThree.png" width="20" height="20" alt="Company Name"></div>');
+                                Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star3').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/reviewstarunrate.png" width="20" height="20" alt="Company Name"></div>');
+                                Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star4').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/reviewstarunrate.png" width="20" height="20" alt="Company Name"></div>');
+                                Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star5').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/reviewstarunrate.png" width="20" height="20" alt="Company Name"></div>');
+
+
+                            }
+                            if (RateReviews == 1.5) {
+                                Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star1').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/star.png" width="20" height="20" alt="Company Name"></div>');
+                                Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star2').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/StarpointFive.png" width="20" height="20" alt="Company Name"></div>');
+                                Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star3').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/reviewstarunrate.png" width="20" height="20" alt="Company Name"></div>');
+                                Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star4').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/reviewstarunrate.png" width="20" height="20" alt="Company Name"></div>');
+                                Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star5').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/reviewstarunrate.png" width="20" height="20" alt="Company Name"></div>');
+
+                            }
+                            if ((RateReviews >= 1.6) && (RateReviews <= 1.8)) {
+                                Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star1').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/star.png" width="20" height="20" alt="Company Name"></div>');
+                                Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star2').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/StarpointSeven.png" width="20" height="20" alt="Company Name"></div>');
+                                Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star3').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/reviewstarunrate.png" width="20" height="20" alt="Company Name"></div>');
+                                Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star4').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/reviewstarunrate.png" width="20" height="20" alt="Company Name"></div>');
+                                Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star5').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/reviewstarunrate.png" width="20" height="20" alt="Company Name"></div>');
+                            }
+                            if (RateReviews == 1.9) {
+                                Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star1').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/star.png" width="20" height="20" alt="Company Name"></div>');
+                                Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star2').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/StarpointNine.png" width="20" height="20" alt="Company Name"></div>');
+                                Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star3').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/reviewstarunrate.png" width="20" height="20" alt="Company Name"></div>');
+                                Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star4').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/reviewstarunrate.png" width="20" height="20" alt="Company Name"></div>');
+                                Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star5').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/reviewstarunrate.png" width="20" height="20" alt="Company Name"></div>');
+                            }
+
+                        }
+                        if ((RateReviews >= 0) && (RateReviews < 1)) {
+
+                            Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star1').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/reviewstarunrate.png" width="20" height="20" alt="Company Name"></div>');
+                            Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star2').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/reviewstarunrate.png" width="20" height="20" alt="Company Name"></div>');
+                            Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star3').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/reviewstarunrate.png" width="20" height="20" alt="Company Name"></div>');
+                            Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star4').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/reviewstarunrate.png" width="20" height="20" alt="Company Name"></div>');
+                            Ext.getCmp('htmlFloatPanel_CheckOutNonMember_Star5').setHtml('<div onclick="FloatPanelMerchantDetailPage_OpenMerchantReview();"><img src="resources/icons/reviewstarunrate.png" width="20" height="20" alt="Company Name"></div>');
+
+
+                        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                       
+                        Ext.Viewport.unmask();
+                    }
+                    if (data.total == 0) {
+                      
+                        Ext.Viewport.unmask();
+
+                    }
+
+
+
+
+
+                }
+                else {
+                  
+
+                    Ext.Viewport.unmask();
+                }
+
+
+            },
+
+            failure: function (result, request) {
+             
+                Ext.Viewport.unmask();
+            }
+
+        });
+
+
+
+    });
+
+    //  Ext.Viewport.unmask();
+
+    //   setDashBoardMerchantReviewRate(FiveStar, FourStar, ThreeStar, TwoStar, OneStar);
+    task.delay(500);
+
+
+}
 
 
 

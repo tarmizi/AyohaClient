@@ -49,6 +49,7 @@
       'RelativeCheckInTime',
       'AyohaRewardPointCheckIn',
       'CheckInCount',
+      'CheckInCode',
       {
           name: 'ModifiedCountStar',
           convert: function (value, record) {
