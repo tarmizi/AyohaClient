@@ -7007,7 +7007,7 @@ html: '<img onClick="FloatPanel_AyohaStore_OrderHistoryShow()" src="resources/ic
         xtype: 'dataview',
     id: 'DataView_RecentCheckins',
     //store: Store_RecentCheckins,
-    width: '100%',
+    width: '90%',
     // height:145,
      height:160,
     cls: 'ayohaRecentDV',
@@ -16328,7 +16328,7 @@ AppState.FloatPanel_AyohaReward.AyohaTaAndWinTapBalance=AyohaTaAndWin_TapBalance
     
 
          //   FloatPanel_MainDashboard_PendingOrderAyohaStoreOrderPendingOrderMainDashbord_CountStore();
-            LoadingPanelHide();
+           // LoadingPanelHide();
             Ext.Viewport.setMasked(false);
 
 
@@ -18517,7 +18517,7 @@ Ext.getCmp('containerDashboard_CheckOut').setHidden(false);
 
 Ext.getCmp('MainMaincontainerDashbord').setHeight(2330); 
             Dashboard_MerchantDetailPageShow();
-
+            LoadingPanelHide();
 //alert('checkin')
 
 
@@ -18595,9 +18595,9 @@ Ext.getCmp('containerDashboard_HotSeatPromotionImage').setHidden(false);
                Ext.getCmp('btnDashboard_CheckIn').setHidden(true);
                 CoreFunction_DashboardLoadInitialPerk(); 
                 Dashboard_MembershipCardLoadBySubscriberAccNoDashboardMainStore_Front(); 
-                CoreFunction_DashboardLoadByEnterpriseAccNoStorePerk();
+             //   CoreFunction_DashboardLoadByEnterpriseAccNoStorePerk();
                 CoreFunction_DashboardEnterprises_LoadRecentlyCheckIn();  
-                // LoadingPanelHide();
+                LoadingPanelHide();
             }
 
             

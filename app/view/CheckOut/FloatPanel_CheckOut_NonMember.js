@@ -988,7 +988,11 @@ function FloatPanel_CheckOut_NonMember_EnterprisesWorkingHourLoadByEnterpriseAcc
 
 
 function FloatPanel_CheckOut_NonMember_CheckOut(){
-    LoadingPanelShow(getLoadingIcon(), 'Mechant Check Out');
+   LoadingPanelShow(getLoadingIcon(), 'Checking-Out...');
+   FloatPanel_CheckOut_NonMemberHide();
+   
+  // FloatPanel_CheckOut_ConfirmedCheckOu_DashboardAyohaGoTop();
+   //return
     var objn = {
         "EnterpriseHQAccNo": globalFloatPanelMerchantDetailPage_EnterpriseAccNo,
         "EnterpriseAccNo": globalFloatPanelMerchantDetailPage_EnterpriseAccNo,
@@ -999,7 +1003,7 @@ function FloatPanel_CheckOut_NonMember_CheckOut(){
     };
     var _value = Ext.Ajax.request({
         type: "POST",
-        url: GetAPIurl() + '/EnterprisesCheckIn/EnterprisesCheckIn_Insert',
+        url: GetAPIurl() + '/EnterprisesCheckIn/EnterprisesCheckIn_InsertCheckOut',
         dataType: "json",
         data: JSON.stringify(objn),
         headers: {
@@ -1009,15 +1013,16 @@ function FloatPanel_CheckOut_NonMember_CheckOut(){
             data = Ext.decode(result.responseText.trim());
 
             if (data.success == "true") {
-                
                
+                
                 DashboardAyohaUserMainStore();
                      
-                        loadAdvertisementloadHotSeatStore();
-                      //  Dashboard_AyohaRewardVoucherEntitledUserLoadBySubscriberAccNoVoucherTypeStore();
-                        AyohaMerchantReward_loadVIAAdvertisement();
-                     
-                FloatPanel_CheckOut_NonMemberHide();
+                       // loadAdvertisementloadHotSeatStore();
+                    
+                      //  AyohaMerchantReward_loadVIAAdvertisement();
+                        FloatPanel_CheckOut_ConfirmedCheckOutShow();
+                       // FloatPanel_CheckOut_ConfirmedCheckOut_DashboardAyohaGoTop();
+              //  FloatPanel_CheckOut_NonMemberHide();
                // Dashboard_MerchantDetailPageShow();
             } else {
                 swalFireFail("Fail!->" + result.responseText.trim());
