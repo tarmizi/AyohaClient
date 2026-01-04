@@ -68,13 +68,17 @@
                     SubscriberAccNo = record.get('SubscriberAccNo');
                    var  ID = record.get('ID');
 
-                 if (SubscriberAccNo == GetCurrAyohaUserAccountNo()) {
-                     _value = '<div style="width:100%;text-align:right;margin:-60px 0px 0px 0px;height:26px;background-color:white;"><button OnClick="AyohaMerchantReviewLike(' + ID + ')" class="buttonsHtmlBgTransparent"><img src="resources/icons/like03.png" style="width: 23px; height: 23px; margin:10px 0px 0px -420px;" /><div style="background-color: transparent;font-family:Arial, sans-serif;font-size:12px;color:white;font-weight:bold;margin:-18px 0px 0px -375px;">12</div></button><button OnClick="AyohaMerchantReview_AddEditShow_Edit(' + ID + ')" class="buttonsHtmlBgTransparent"><img src="resources/icons/editReview.png" style="width: 23px; height: 23px; margin:10px 0px 0px 0px;" /></button></div>';
-                    } else {
-                     _value = '<div style="width:100%;text-align:right;margin:-60px 0px 0px 0px;height:26px;background-color:white;"><button OnClick="AyohaMerchantReviewLike(' + ID + ')" class="buttonsHtmlBgTransparent"><img src="resources/icons/like03.png" style="width: 23px; height: 23px; margin:10px 0px 0px 50px;" /></button></div>';
-                    }
+                //  if (SubscriberAccNo == GetCurrAyohaUserAccountNo()) {
+                //      _value = '<div style="width:100%;text-align:right;margin:-60px 0px 0px 0px;height:26px;background-color:transparent;"><button OnClick="AyohaMerchantReviewLike(' + ID + ')" class="buttonsHtmlBgTransparent"><img src="resources/icons/like03.png" style="width: 23px; height: 23px; margin:10px 0px 0px -420px;" /><div style="background-color: transparent;font-family:Arial, sans-serif;font-size:12px;color:white;font-weight:bold;margin:-18px 0px 0px -375px;">12</div></button><button OnClick="AyohaMerchantReview_AddEditShow_Edit(' + ID + ')" class="buttonsHtmlBgTransparent"><img src="resources/icons/editReview.png" style="width: 23px; height: 23px; margin:10px 0px 0px 0px;" /></button></div>';
+                //     } else {
+                //      _value = '<div style="width:100%;text-align:right;margin:-60px 0px 0px 0px;height:26px;background-color:transparent;"><button OnClick="AyohaMerchantReviewLike(' + ID + ')" class="buttonsHtmlBgTransparent"><img src="resources/icons/like03.png" style="width: 23px; height: 23px; margin:10px 0px 0px 50px;" /></button></div>';
+                //     }
 
-
+                    if (SubscriberAccNo == GetCurrAyohaUserAccountNo()) {
+                        _value = '<div style="width:100%;text-align:right;margin:-60px 0px 0px 0px;height:26px;background-color:transparent;"><button class="buttonsHtmlBgTransparent"><img src="resources/icons/transparentbox.png" style="width: 23px; height: 23px; margin:10px 0px 0px -420px;" /><div style="background-color: transparent;font-family:Arial, sans-serif;font-size:12px;color:white;font-weight:bold;margin:-18px 0px 0px -375px;"></div></button><button OnClick="AyohaMerchantReview_AddEditShow_Edit(' + ID + ')" class="buttonsHtmlBgTransparent"><img src="resources/icons/editReview.png" style="width: 23px; height: 23px; margin:10px 0px 0px 0px;" /></button></div>';
+                       } else {
+                        _value = '<div style="width:100%;text-align:right;margin:-60px 0px 0px 0px;height:26px;background-color:transparent;"><button class="buttonsHtmlBgTransparent"><img src="resources/icons/transparentbox.png" style="width: 23px; height: 23px; margin:10px 0px 0px 50px;" /></button></div>';
+                       }
 
                  
                     return _value

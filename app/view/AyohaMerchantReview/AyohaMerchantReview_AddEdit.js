@@ -57,10 +57,10 @@ function AyohaMerchantReview_AddEdit() {
              duration: 250,
              easing: 'ease-out'
          },
-         //style: 'border-bottom:1px solid;background-color:#353839;',
+         style:ayohaThemeColor_Background(),
          // style: 'border-bottom:1px none;background-color:white;',
         // style: ' background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);',
-         style: 'background-color: #fac;background-image: linear-gradient(#c800ffc9,#ff00de75);',
+       //  style: 'background-color: #fac;background-image: linear-gradient(#c800ffc9,#ff00de75);',
          listeners: {
              initialize: function (c) {
                  this.element.on({
@@ -106,8 +106,8 @@ function AyohaMerchantReview_AddEdit() {
              height: '100%',
              width: '100%',
              xtype: 'container',
-             // style: 'border-bottom:0px solid;background-color:#353839;',
-             style: 'border-bottom:0px solid;background-color:transparent;',
+             style:ayohaThemeColor_Body(),
+            // style: 'border-bottom:0px solid;background-color:transparent;',
 
              // style: ' background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);',
              layout: {
@@ -715,8 +715,8 @@ function AyohaMerchantReview_AddEditShow_Add() {
     isAyohaMerchantReview_AddEditOpen = 'Y';
 
 
-    var AyohaUserPicProfile= localStorage.getItem('AyohaUserPicProfile');
-    var AyohaUserAccountNames = localStorage.getItem('AyohaUserAccountNames');
+    var AyohaUserPicProfile= AppState.LoginAyohaUser.AyohaUserPicProfile;
+    var AyohaUserAccountNames = AppState.LoginAyohaUser.AyohaUserAccountNames;
 
     Ext.getCmp('htmlAyohaMerchantReview_AddEdit_TitleHeaderTxt').setHtml('<div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-family:Century Gothic;font-size: 11px;font-weight:normal;color:black;margin:10px 0px 0px 0px">Review By</div><br><div style="width:100%;background-color: transparent;text-align:right;border: 1px none white;font-family:Century Gothic;font-size: 17px;font-weight:bold;color:black;margin:-25px 0px 0px 0px">' + AyohaUserAccountNames + '</div>');
     Ext.getCmp('btnAyohaMerchantReview_AddEdit_PicProfile').setHtml('<div ><img src="' + AyohaUserPicProfile + '" width="30" height="30" alt="Company Name"></div>');

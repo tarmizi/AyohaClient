@@ -22,24 +22,23 @@ var _AyohaMerchantReview_isFirstLoad = "N";
 function AyohaMerchantReview() {
 
     _AyohaMerchantReview =
-    Ext.create('Ext.Panel', {
-        zIndex: 300,
+    Ext.create('Ext.Container', {
+        zIndex: 200,
         xtype: 'container',
         //height: 465,
        height: '100%',
         width: '100%',
         id: 'AyohaMerchantReviewID',
-        draggable: false,
-
-        styleHtmlContent: true,
-
+      ///  styleHtmlContent: true,
         centered: true,
-        //bottom: 64,
-        // zIndex: 100,
-        modal: true,
-        // hideOnMaskTap: true,
+        
+        // --- START: Key Changes for Backdrop ---
+        modal: false, // Use Sencha's modal handling
+        hideOnMaskTap: false, // Prevent closing on tap
         layout: {
-            type: 'fit'
+            type: 'vbox',
+            pack: 'start',  // Center the white box vertically
+            align: 'center'  // Center the white box horizontally
         },
         showAnimation: {
             type: 'popIn',
@@ -55,10 +54,19 @@ function AyohaMerchantReview() {
             duration: 250,
             easing: 'ease-out'
         },
+        // scrollable: {
+        //     direction: 'vertical',
+        //     directionLock: true,
+        //     indicators: false,
+        //     bounces: false,
+        //     outOfBoundRestrictFactor: 0,
+        //     //threshold: 20,
+           
+        // },
         //style: 'border-bottom:1px solid;background-color:#353839;',
-        // style: 'border-bottom:1px solid;background-color:white;',
+        style:ayohaThemeColor_Body(),
        //style: 'background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);',
-       style: 'background-color: #fac;background-image: linear-gradient(#c800ffc9,#ff00de75);',
+      /// style: 'background-color: #fac;background-image: linear-gradient(#c800ffc9,#ff00de75);',
         listeners: {
             initialize: function (c) {
                 this.element.on({
@@ -97,516 +105,534 @@ function AyohaMerchantReview() {
 
         items: [
             
-            
+            {
+
+                xtype: 'container',
+                width: '100%',
+                margin: '0 0 0 0',
+                docked: 'top',
+                height: ayoha_HeaderHeight(),
+                id: 'containerAyohaMerchantReviewHeader',
+                style:ayohaThemeColor_Header(),
+              
+                layout: {
+                    type: 'hbox',
+                    pack: 'center',
+                    align: 'center',
+                },
+                // hidden:true,
+                items:
+                       [
+                                     {
+                                         xtype: 'button',
+                                         id: 'btnAyohaMerchantReviewBack',
+                                         height: 30,
+                                         margin: '5 0 0 10',
+                                         width: 35,
+                                         // iconCls: 'list',
+                                         html: '<div ><img src="resources/icons/backwhite03Ori.png" width="25" height="20" alt="Company Name"></div>',
+                                         ui: 'plain',
+                                         handler: function () {
+                                             _AyohaMerchantReview.hide(Ext.fx.Animation({
+                                                 type: 'slideOut',
+                                                 direction: 'left',
+                                                 easing: 'cubic-bezier(.7,0,.7,1)',
+                                                 duration: 250
+
+                                             }));
+                                             isAyohaMerchantReviewOpen = 'N';
+                                             _AyohaMerchantReview_isFirstLoad = "N";
+                                           
+   
+                                             RemovePages("AyohaMerchantReviewHide()");
+
+                                         }
+                                     },
+
+                                      {
+                                          xtype: 'spacer',
+
+                                      },
+
+                                       {
+                                           margin: '0 15 0 0',
+                                           id: 'htmlAyohaMerchantReview_TitleHeaderTxt',
+                                          html:ayohaTheme_HeaderText('Ayoha Merchant Review'),
+                                          // html: '<div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-weight:700;font-size:18px;color:white">Ayoha Merchant Review</div>',
+                                       },                                
 
 
+                       ]
 
+            },
+
+
+           
             
 
 
 
                     {
                         xtype: 'container',
-                        width: '100%',
-                        height: '100%',
+                        width: '95%',
+                       // height:'100%',
+                        flex: 1, // ✅
+                        id:'Scrollable_containerAyohaMerchantReviewMainContentID',
+                       // height:2000,
                         //    margin: '0 0 0 0',
-                       // style: 'background-color: transparent',
+                       style: 'background-color: transparent',
                         //style: ' background-color: #fac;background-image: linear-gradient(#ff00de75, #c800ffc9);',
-                        style: 'background-color: #fac;background-image: linear-gradient(#c800ffc9,#ff00de75);',
+                       // style: 'background-color: #fac;background-image: linear-gradient(#c800ffc9,#ff00de75);',
+                        scrollable: {
+            direction: 'vertical',
+            directionLock: true,
+            indicators: false,
+           
+        },
                         layout: {
                             type: 'vbox',
                             pack: 'start',
-                            align: 'center'
+                            align: 'stretch'
 
                         },
                         items: [
-                            {
-
-                                xtype: 'container',
-                                width: '100%',
-                                margin: '10 0 0 0',
-                                //docked: 'top',
-                                height: 32,
-
-                                //  title: '<font size="3" color="white">Live Tracking Map</font>',
-                                //hidden: true,
-
-                                id: 'containerAyohaMerchantReviewHeader',
-                                style: {
-                                    // background: '#D25959',
-                                    background: 'transparent',
-                                    // border: '2px'
-                                },
-                                //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
-                                // style: 'border-bottom:2px solid #D25959;background-color:transparent',
-                                layout: {
-                                    type: 'hbox',
-                                    pack: 'center',
-                                    align: 'center',
-                                },
-                                // hidden:true,
-                                items:
-                                       [
 
 
-                                                     {
-                                                         xtype: 'button',
-                                                         id: 'btnAyohaMerchantReviewBack',
-                                                         height: 30,
-                                                         margin: '0 0 0 10',
-                                                         width: 35,
-                                                         // iconCls: 'list',
-                                                         html: '<div ><img src="resources/icons/backwhite03Ori.png" width="25" height="20" alt="Company Name"></div>',
-                                                         ui: 'plain',
-                                                         handler: function () {
-                                                             _AyohaMerchantReview.hide(Ext.fx.Animation({
-                                                                 type: 'slideOut',
-                                                                 direction: 'left',
-                                                                 easing: 'cubic-bezier(.7,0,.7,1)',
-                                                                 duration: 250
+{
+    xtype: 'container',
+    width: '100%',
+    //height:0,
+    id: 'containerAyohaMerchantReviewMainContentID',
+   style: 'background-color: transparent',
+   layout: {
+    type: 'vbox',
+    pack: 'start',
+    align: 'stretch'
 
-                                                             }));
-                                                             isAyohaMerchantReviewOpen = 'N';
-                                                             _AyohaMerchantReview_isFirstLoad = "N";
-                                                             RemovePages("AyohaMerchantReviewHide()");
+},
+items:[
+{
+        xtype: 'container',
+        width: '100%',
+        height: 15,
+        //margin:'0 0 0 0',
+       // hidden: true,
+      style: "background-color: transparent;",
+    },
+    {
+        xtype: 'container',
+        id: 'containerAyohaMerchantReview_ReviewCompanyInfo',
+        width: '100%',
+        height: 130,
+        margin:'0 0 0 0',
+        style: "background-color: transparent",
+        layout: {
+            type: 'vbox',
+            pack: 'start',
+            align: 'center'
 
-                                                         }
-                                                     },
-
-                                                      {
-                                                          xtype: 'spacer',
-
-                                                      },
-
-                                                       {
-                                                           margin: '0 15 0 0',
-                                                           id: 'htmlAyohaMerchantReview_TitleHeaderTxt',
-                                                           html: '<font size=2 color=white><b>Ayoha Merchant Review</b></font>'
-                                                       },
-
-                                                            {
-                                                                xtype: 'button',
-                                                                hidden:true,
-                                                                //  id: 'btnFloatPanel_MembershipCardManagement_CardIcon',
-                                                                height: 30,
-                                                                width: 35,
-                                                                // iconCls: 'list',
-                                                                html: '<div ><img src="resources/icons/MerchantReviewIconWhite01.png" width="25" height="20" alt="Company Name"></div>',
-                                                                ui: 'plain',
-                                                                handler: function () {
-
-                                                                    // AyohaMerchantReview_AddEditShow();
-                                                                  
-                                                                    _AyohaMerchantReview.hide(Ext.fx.Animation({
-                                                                        type: 'slideOut',
-                                                                        direction: 'right',
-                                                                        easing: 'cubic-bezier(.7,0,.7,1)',
-                                                                        duration: 250
-
-                                                                    }));
-                                                                    isAyohaMerchantReviewOpen = 'N';
-                                                                    _AyohaMerchantReview_isFirstLoad = "N";
-                                                                    RemovePages("AyohaMerchantReviewHide()");
-                                                                 
-                                                                }
-                                                            },
-
-
-
-
-
-
-
-
-
-
-
-
-                                       ]
-
-                            },
-
-                            {
-                                xtype: 'container',
-                                id: 'containerAyohaMerchantReview_ReviewCompanyInfo',
-                                width: '100%',
-                                height: 100,
-                                margin:'0 0 0 0',
-                                // hidden: true,
-                                style: "background-color: transparent",
-                                //style: "background-color: #F35B57;",
-                                //   style: 'background-image: url("resources/icons/previewcardloadinglatest.gif"); background-size: 80% 80%;',
-                                layout: {
-                                    type: 'vbox',
-                                    pack: 'start',
-                                    align: 'center'
-
-                                },
-                                items: [
-                                      {
-                                          margin: '-10 0 0 -130',
-                                          id: 'containerAyohaMerchantReview_ReviewCompanyInfo_Logo',                                         
-                                          html: '<img src="resources/icons/ccrlogo.png" alt="Image" style="width:90px;height:90px;">',
-
-                                      },
-                                      {
-                                          margin:'-7 0 0 -130',
-                                          id: 'containerAyohaMerchantReview_ReviewCompanyInfo_Name',
-                                          html: '<div style="width:100%;background-color: transparent;text-align:center;border: 1px none white;font-family:Century Gothic;font-size: 17px;font-weight:bold;color:white;">Community Coffea Sdn Bhd</div>',
-
-                                      },
-                                      {
-                                          xtype: 'container',
-                                          id: 'containerAyohaMerchantReview_ReviewCompanyInfo_AddNewReview',
-                                          width: '95%',
-                                          height: 30,
-                                          margin: '-80 0 0 0',
-                                          // hidden: true,
-                                          style: "background-color: transparent",
-                                          //style: "background-color: #F35B57;",
-                                          //   style: 'background-image: url("resources/icons/previewcardloadinglatest.gif"); background-size: 80% 80%;',
-                                          layout: {
-                                              type: 'vbox',
-                                              pack: 'start',
-                                              align: 'right'
-
-                                          },
-                                          items: [
-                                              {
-                                                  xtype: 'container',
-                                                  id: 'containerAyohaMerchantReview_ReviewCompanyInfo_AddNewReviewPanel',
-                                                  name: 'namecontainerAyohaMerchantReview_ReviewCompanyInfo_AddNewReviewPanel',
-                                                  width: 120,
-                                                  height: 30,
-                                                  margin: '0 0 0 0',
-                                                  // hidden: true,
-                                                 // style: "background-color: white",
-                                                  //style: "background-color: #F35B57;",
-                                                  style: 'border-right:2px solid purple;border-left:2px solid purple;border-bottom:2px solid purple;border-top:2px solid purple ;background: white;border-radius: 10px 10px 10px 10px;',
-                                                  layout: {
-                                                      type: 'hbox',
-                                                      pack: 'center',
-                                                      align: 'center'
-
-                                                  },
-                                                  items: [
-
-                           
-
-                                                      {
-                                                          margin:'5 0 0 0',
-                                                          html: '<img src="resources/icons/editReview.png" alt="Image" style="width:24px;height:24px;">'
-                                                      },
-                                                      {
-                                                          margin:'13 0 0 5',
-                                                          html: '<div style="background: transparent;height:30px;font-size: 11px;font-weight:normal;color:black;text-align:center;" >Write a review</div>'
-                                                      }
-
-                                                  ]
-                                              }
-                                          ]
-
-                                      }
-                                ]
-                            },
-
-
-                            {
-                                xtype: 'container',
-                                id: 'containerAyohaMerchantReview_ReviewMaster',
-                                width: '100%',
-                                height: 125,
-                                margin:'5 0 0 0',
-                               // hidden: true,
-                              //  style: "background-color: white",
-                                style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1 ;background: white;',
-                                //style: "background-color: #F35B57;",
-                                //   style: 'background-image: url("resources/icons/previewcardloadinglatest.gif"); background-size: 80% 80%;',
-                                layout: {
-                                    type: 'hbox',
-                                    pack: 'left',
-                                    align: 'left'
-
-                                },
-                                items: [
-                                      //{
-                                      //    xtype: 'container',
-                                      //    id: 'containerAyohaMerchantReview_LoadingInner',
-                                      //    width: '100%',
-                                      //    height: 140,
-                                      //    //hidden:true,
-                                      //    // style: "background-color: transparent",
-                                      //    //style: "background-color: #F35B57;",
-                                      //    style: 'background-image: url("resources/icons/reviewImgSample.png"); background-size: 100% 140px;background-repeat: no-repeat;',
-
-                                      //},
-                                      {
-                                          xtype: 'container',
-                                          width: '66%',
-                                          height: 140,
-                                          style: "background-color: white",
-                                          //style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1 ;background: white;',
-                                          layout: {
-                                              type: 'vbox',
-                                              pack: 'start',
-                                              align: 'left'
-                                          },
-                                          items: [
-
-                                               {
-                                                  // margin: '-30 0 0 -37',
-                                                   margin: '-10 0 0 0',
-                                                  // html: '<div id="barchartAyohaMerchanReview" style="width: 300px; height: 140px;"></div>'
-                                             html:'<canvas id="barchartAyohaMerchanReview" width="200" height="140"></canvas>'
-                                                },
-
-                                          ]
-
-                                      },
-
-                                            {
-                                                xtype: 'container',
-                                                width: '34%',
-                                                height: 140,
-                                                style: "background-color: white",
-                                                layout: {
-                                                    type: 'vbox',
-                                                    pack: 'start',
-                                                    align: 'center'
-                                                },
-                                                items: [
-
-                                                     {
-                                                         margin: '-10 0 0 6',
-                                                         id:'htmlAyohaMerchantReview_Rate',
-                                                         html: '<div style="width:100%;background-color: transparent;text-align:center;border: 1px none white;font-size: 60px;font-weight:bold;color:black;">0.0</div>',
-                                                     },
-
-                                                       {
-                                                           xtype: 'container',
-                                                           width: '100%',
-                                                           height: 28,
-                                                           margin:'-18 0 0 -2',
-                                                           style: "background-color: transparent",
-                                                           layout: {
-                                                               type: 'hbox',
-                                                               pack: 'left',
-                                                               align: 'left'
-                                                           },
-                                                           items: [
-
-                                                                {
-                                                                    xtype: 'button',
-                                                                    id: 'btnAyohaMerchantReview_Star1',
-                                                                    height: 28,
-                                                                    width: 28,
-                                                                    // iconCls: 'list',
-                                                                    html: '<div ><img src="resources/icons/reviewstarunrate.png" width="18" height="18" alt="Company Name"></div>',
-                                                                    ui: 'plain',
-                                                                    handler: function () {
-                                                                    
-
-                                                                    }
-                                                                },
+        },
+        items:[
             {
-                xtype: 'button',
-                id: 'btnAyohaMerchantReview_Star2',
-                height: 28,
-                width: 28,
-                margin:'0 0 0 -5',
-                // iconCls: 'list',
-                html: '<div ><img src="resources/icons/reviewstarunrate.png" width="18" height="18" alt="Company Name"></div>',
-                ui: 'plain',
-                handler: function () {
-              
-                }
-            },
-              {
-                  xtype: 'button',
-                  id: 'btnAyohaMerchantReview_Star3',
-                  height: 28,
-                  width: 28,
-                  margin: '0 0 0 -5',
-                  // iconCls: 'list',
-                  html: '<div ><img src="resources/icons/reviewstarunrate.png" width="18" height="18" alt="Company Name"></div>',
-                  ui: 'plain',
-                  handler: function () {
+                xtype: 'container',
+               // id: 'containerAyohaMerchantReview_ReviewCompanyInfo',
+                width: 90,
+                height: 90,
+                margin:'0 0 0 0',
+                style: "background-color: white;border-radius:20px;"+ayoha_BorderColor(),
+                layout: {
+                    type: 'vbox',
+                    pack: 'center',
+                    align: 'center'
 
-                 
-                  }
-              },
-                {
-                    xtype: 'button',
-                    id: 'btnAyohaMerchantReview_Star4',
-                    height: 28,
-                    width: 28,
-                    margin: '0 0 0 -5',
-                    // iconCls: 'list',
-                    html: '<div ><img src="resources/icons/reviewstarunrate.png" width="18" height="18" alt="Company Name"></div>',
-                    ui: 'plain',
-                    handler: function () {
-                   
-                    }
                 },
-                  {
-                      xtype: 'button',
-                      id: 'btnAyohaMerchantReview_Star5',
-                      height: 28,
-                      width: 28,
-                      margin: '0 0 0 -5',
-                      // iconCls: 'list',
-                      html: '<div ><img src="resources/icons/reviewstarunrate.png" width="18" height="18" alt="Company Name"></div>',
-                      ui: 'plain',
-                      handler: function () {
-                   
-                      }
+                items:[
+                    {
+                        width: 65,
+                        height:65,
+                       // margin:'110 0 0 0',
+                         id: 'containerAyohaMerchantReview_ReviewCompanyInfo_Logo',                                         
+                         html: '<img src="resources/icons/ccrlogo.png" alt="Image" style="width:90px;height:90px;">',
+
+                     },
+                ]
+            },
+            {
+                xtype: 'container',
+                width: '100%',
+                height:4,
+                // id: 'containerAyohaMerchantReview_ReviewCompanyInfo_Name',
+                // html: '<div style="width:100%;background-color: transparent;text-align:center;border: 1px none white;font-family:Century Gothic;font-size: 17px;font-weight:bold;color:white;">Community Coffea Sdn Bhd</div>',
+
+             },
+           
+            {
+              
+               width: '100%',
+               height:18,
+                id: 'containerAyohaMerchantReview_ReviewCompanyInfo_Name',
+                html: '<div style="width:100%;background-color: transparent;text-align:center;border: 1px none white;font-family:Century Gothic;font-size: 17px;font-weight:bold;color:white;">Community Coffea Sdn Bhd</div>',
+
+            },
+            {
+                xtype: 'container',
+                width: '100%',
+                height:4,
+                // id: 'containerAyohaMerchantReview_ReviewCompanyInfo_Name',
+                // html: '<div style="width:100%;background-color: transparent;text-align:center;border: 1px none white;font-family:Century Gothic;font-size: 17px;font-weight:bold;color:white;">Community Coffea Sdn Bhd</div>',
+
+             },
+            {
+              
+                width: '100%',
+                height:12,
+                 id: 'containerAyohaMerchantReview_ReviewCompanyInfo_Location',
+                // <div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-family:Century Gothic;font-weight:700;font-size:12px;color:#6B7280;">Permatang Tok Mahat, Perak</div>
+                 html: '<div style="width:100%;background-color: transparent;text-align:center;border: 1px none white;font-family:Century Gothic;font-weight:700;font-size:12px;color:#6B7280;">Permatang Tok Mahat, Perak</div>',
+
+             },
+        ]
+    },
+
+   
+    // {
+    //     xtype: 'container',
+    //     width: '100%',
+    //     height: 5,
+    //     //margin:'0 0 0 0',
+    //    // hidden: true,
+    //   style: "background-color: transparent;",
+    // },
+   
+{
+xtype: 'container',
+width: '100%',
+height: 20,
+//margin:'0 0 0 0',
+// hidden: true,
+style: "background-color: transparent;",
+layout: {
+type: 'vbox',
+pack: 'center',
+align: 'center'
+
+},
+items:[
+{
+xtype: 'container',
+width: '95%',
+height: 1,
+//margin:'20 0 0 0',
+// hidden: true,
+style: ayoha_BorderColor_1px(),
+}
+]
+},
+    {
+        xtype: 'container',
+        id: 'containerAyohaMerchantReview_ReviewMaster',
+        width: '100%',
+        height: 115,
+      //  margin:'0 0 0 0',
+       // hidden: true,
+      style: "background-color: transparent",
+        //style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1 ;background: white;',
+    
+        layout: {
+            type: 'hbox',
+            pack: 'left',
+            align: 'left'
+
+        },
+        items: [
+              //{
+              //    xtype: 'container',
+              //    id: 'containerAyohaMerchantReview_LoadingInner',
+              //    width: '100%',
+              //    height: 140,
+              //    //hidden:true,
+              //    // style: "background-color: transparent",
+              //    //style: "background-color: #F35B57;",
+              //    style: 'background-image: url("resources/icons/reviewImgSample.png"); background-size: 100% 140px;background-repeat: no-repeat;',
+
+              //},
+              {
+                  xtype: 'container',
+                  width: '66%',
+                  height: 120,
+                  style: "background-color: transparent",
+                  //style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1 ;background: white;',
+                  layout: {
+                      type: 'vbox',
+                      pack: 'start',
+                      align: 'left'
                   },
-                                                           ]
+                  items: [
 
-                                                       },
+                       {
+                          // margin: '-30 0 0 -37',
+                           margin: '-10 0 0 0',
+                          // html: '<div id="barchartAyohaMerchanReview" style="width: 300px; height: 140px;"></div>'
+                     html:'<canvas id="barchartAyohaMerchanReview" width="200" height="140"></canvas>'
+                        },
 
+                  ]
 
+              },
 
+                    {
+                        xtype: 'container',
+                        width: '34%',
+                        height: 120,
+                        style: "background-color: transparent",
+                        layout: {
+                            type: 'vbox',
+                            pack: 'center',
+                            align: 'center'
+                        },
+                        items: [
 
-                                                       {
-                                                           margin: '13 0 0 0',
-                                                           id: 'htmlAyohaMerchantReview_TotalReviews',
-                                                           html: '<div style="width100%;text-align:right;background-color: transparent;font-family:Arial, sans-serif;font-size:10px;color:black;font-weight:bold;overflow:hidden;margin:-13px 10px 10px 0px;"><img src="resources/icons/merchantrateusAccountImg.png" alt="Image" style="width:10px;height:10px;">&nbsp;&nbsp;&nbsp;0 Reviews</div>'
-                                                       }
-
-
-
-
-                                                ]
-
-                                            },
-
-
-                                       
-
-                                ]
-
-                            },
-
-                            //{
-                            //    xtype: 'container',
-                            //    style: 'background-color: transparent',
-                            //    width: '100%',
-                            //    height:5,
-                            //},
-
-                            
-                            {
-                                xtype: 'container',
+                             {
+                                // margin: '-30 0 0 6',
                                 width: '100%',
-                                height: '95%',
-                                id: 'AyohaMerchantReviewContentID',
-                                layout: {
-                                    type: 'vbox',
-                                    pack: 'start',
-                                    align: 'center'
+                                height: 45,
+                                 id:'htmlAyohaMerchantReview_Rate',
+                                 html: '<div style="width:100%;background-color: transparent;text-align:center;border: 1px none white;font-size: 60px;font-weight:bold;color:black;">0.0</div>',
+                             },
 
-                                },
-                               // style: 'background-color:transparent',
-                                style: 'border-top:2px solid #ECF0F1 ;background: transparent;',
+                               {
+                                   xtype: 'container',
+                                   width: '100%',
+                                   height: 28,
+                                   margin:'0 0 0 -10',
+                                   style: "background-color: transparent",
+                                   layout: {
+                                       type: 'hbox',
+                                       pack: 'start',
+                                       align: 'left'
+                                   },
+                                   items: [
 
-                                items: [
-                                    {
-                                        xtype: 'list',
-                                        width: '100%',
-                                        // height: '98%',
-                                        // flex: 1,
-                                       // store: 'AyohaMerchantReviewLoadByEnterpriseAccNoStore',
-                                        store:_DataStore_AyohaMerchantReviewLoadByEnterpriseAccNoStore,
-                                        id: 'AyohaMerchantReviewListID',
-                                        mode: 'SINGLE',
-                                        // width: '100%',
-                                        disableSelection: true,
-                                        style: 'background-color:rgba(255, 255, 255, 10);border-radius: 0px 0px 0px 0px;',
-                                        scrollable: {
-                                            direction: 'vertical',
-                                            indicators: {
-                                                y: {
-                                                    autoHide: true
-                                                },
-                                                x: {
-                                                    autoHide: true
-                                                }
+                                        {
+                                            xtype: 'button',
+                                            id: 'btnAyohaMerchantReview_Star1',
+                                            height: 28,
+                                            width: 28,
+                                            // iconCls: 'list',
+                                            html: '<div ><img src="resources/icons/reviewstarunrate.png" width="18" height="18" alt="Company Name"></div>',
+                                            ui: 'plain',
+                                            handler: function () {
+                                            
+
                                             }
                                         },
-                                        itemTpl: '<div class="myContent" style="background-color:white;width:104%;">' +
+{
+xtype: 'button',
+id: 'btnAyohaMerchantReview_Star2',
+height: 28,
+width: 28,
+margin:'0 0 0 -5',
+// iconCls: 'list',
+html: '<div ><img src="resources/icons/reviewstarunrate.png" width="18" height="18" alt="Company Name"></div>',
+ui: 'plain',
+handler: function () {
+
+}
+},
+{
+xtype: 'button',
+id: 'btnAyohaMerchantReview_Star3',
+height: 28,
+width: 28,
+margin: '0 0 0 -5',
+// iconCls: 'list',
+html: '<div ><img src="resources/icons/reviewstarunrate.png" width="18" height="18" alt="Company Name"></div>',
+ui: 'plain',
+handler: function () {
 
 
-                                           
-                                           '<table style="border-collapse:collapse;border-spacing:0;width:100%;background-color:white;margin:-5px 0px 0px -13px;height:110px;"><tr onclick="openAyohaMerchantReviewPanel({ID})"><td style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:3px 3px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:18%;vertical-align:top"><img src="{Photo}" style="border:1px solid grey; width:52px;height:52px;border-radius:50%;margin:0px 0px 0px 0px;" /></td><td style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:2px 0px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;width:80%;vertical-align:top"><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 12px;font-weight:bold;color:black;margin:0px 0px 0px 0px">{AccountName}</div><br><div style="width:100%;background-color: transparent;text-align:left;border: 1px none white;font-size: 12px;font-weight:normal;color:black;margin:-17px 0px 0px 0px">{ModifiedStarReview} - {ReviewDate}</div><br><div style="width:100%;background-color: white;text-align:left;border: 1px none white;font-family:Century Gothic;font-size: 12px;font-weight:normal;color:black;margin:-17px 0px 0px 0px">{ModifiedReviewTxt}<br><br><br></div></td></tr></table>' +
+}
+},
+{
+xtype: 'button',
+id: 'btnAyohaMerchantReview_Star4',
+height: 28,
+width: 28,
+margin: '0 0 0 -5',
+// iconCls: 'list',
+html: '<div ><img src="resources/icons/reviewstarunrate.png" width="18" height="18" alt="Company Name"></div>',
+ui: 'plain',
+handler: function () {
 
-                                              '</div>'+
-                                         '<br>'+
-                                         '{ModifiedBottomButton}',
-                                       //'<div style="width:100%;text-align:right;margin:-60px 0px 0px 0px;height:26px;background-color:white;"><button OnClick="FloatPanel_AyohaNotificationManagement_SetRecipiednt__DeleteSpecificMember({ID})" class="buttonsHtmlBgTransparent"><img src="resources/icons/like02.png" style="width: 23px; height: 23px; margin:10px 0px 0px 50px;" /></button></div>',
+}
+},
+{
+xtype: 'button',
+id: 'btnAyohaMerchantReview_Star5',
+height: 28,
+width: 28,
+margin: '0 0 0 -5',
+// iconCls: 'list',
+html: '<div ><img src="resources/icons/reviewstarunrate.png" width="18" height="18" alt="Company Name"></div>',
+ui: 'plain',
+handler: function () {
 
+}
+},
+                                   ]
 
-
-
-                                        //'<div style="width:100%;text-align:right;margin:-60px 0px 0px 0px;"><button OnClick="AyohaMerchantReviewLike({ID})" class="buttonsHtmlBgTransparent"><img src="resources/icons/DeletePurple.png" style="width: 23px; height: 23px; margin:0px 0px 0px 30px;" /></button></div>',
-                                        //height: '100%',
-
-                                        emptyText: '<div class="myContent">No Review Yet</div>',
-                                        //listeners: {
-                                        //    itemsingletap: function (list, idx, target, records, evt) {
-
-                                        //        //var EnterpriseHQAccountNo = records.get('CampaignEnterpriseHQAccNo');
-                                        //        //var EnterpriseAccountNo = records.get('CampaignEnterpriseAccNo');
-                                        //        //var MembershipCardCode = records.get('MembershipCardCode');
-                                        //        //var ID = records.get('ID');
-                                        //        ////FloatPanel_AyohaNotification_EditCardShow_Edit(ID);
-                                        //        //FloatPanel_MembershipCardList_UpgradeShow_MyMembershipCard(EnterpriseHQAccountNo, EnterpriseAccountNo, MembershipCardCode, ID);
-                                        //        //setTimeout(function () {
-                                        //        //    Ext.getCmp('containerFloatPanel_MembershipCardList_UpgradeBottom').setHidden(true);
-                                        //        //    // Ext.getCmp('containerFloatPanel_MembershipCardList_UpgradeBottom').setHidden(true);
-
-                                        //        //    Ext.getCmp('htmlFloatPanel_MembershipCardList_Upgrade_TitleHeaderTxt').setHtml('<font size=2 color=white><b>My Membership Card</b></font>');
-                                        //        //}, 2000);
-
-
-
-                                        //    },
-                                        //    deselect: function (list, records) {
-
-                                        //    }
-                                        //},
-                                        listeners: {
-                                            itemswipe: function (list, idx, target, record, evt) {
-                                                //  To get the selection you should use getSelection() instead
-                                                //////var selected = list.getActiveItem();
-                                                //////alert(list.getActiveItem());
-                                                //////if (!selected) { return; }
-
-                                                //////var selectedIndex = selected[0];
-                                                //////alert([selectedIndex, idx]);
-                                                //Ext.Msg.alert('itemswipe', idx);
+                               },
 
 
-                                            } // itemswipe
-                                        }
 
-                                    },
-                                ]
-                            },
-                            
 
-                            
-
-                            
-
+                               {
+                                   margin: '17 0 0 10',
+                                  width: '100%',
+                                  height: 10,
+                                   id: 'htmlAyohaMerchantReview_TotalReviews',
+                                   html: '<div style="width100%;text-align:center;background-color: transparent;font-family:Arial, sans-serif;font-size:10px;color:black;font-weight:bold;overflow:hidden;margin:-13px 10px 10px 0px;"><img src="resources/icons/merchantrateusAccountImg.png" alt="Image" style="width:10px;height:10px;">&nbsp;&nbsp;&nbsp;0 Reviews</div>'
+                               }
 
 
 
 
                         ]
+
                     },
 
 
+               
+
+        ]
+
+    },
+       
+    {
+        xtype: 'container',
+        width: '100%',
+        //height:  '100%',
+        id: 'AyohaMerchantReviewContentID',
+        layout: {
+            type: 'vbox',
+            pack: 'start',
+            align: 'stretch'
+
+        },
+       // style: 'background-color:transparent',
+        style: 'background: transparent;',
+
+        items: [
+            {
+                xtype: 'list',
+                width: '100%',
+               /// height: '100%',
+              //  scrollable: false,      // ✅ list tak scroll
+                infinite: false,        // ✅ render semua items (penting!)
+                variableHeights: true ,  // ✅ kalau review/reply panjang
+                store:_DataStore_AyohaMerchantReviewLoadByEnterpriseAccNoStore,
+                id: 'AyohaMerchantReviewListID',
+                mode: 'SINGLE',
+                // width: '100%',
+                disableSelection: true,
+                scrollable:false,
+               style: 'background-color:rgba(255, 255, 255, 0);border-radius: 0px 0px 0px 0px;',
+              //  style: 'background-color:transparent !important;border-radius:0;',
+                // scrollable: {
+                //     direction: 'vertical',
+                //     indicators: {
+                //         y: {
+                //             autoHide: true
+                //         },
+                //         x: {
+                //             autoHide: true
+                //         }
+                //     }
+                //},
+
+                itemTpl: '<div class="review-item-container" style="background-color:transparent; width:100%; border-bottom:1px solid rgba(124,58,237,.14); padding: 15px 10px; display: flex; flex-direction: column;">' +
+
+                // --- BAHAGIAN ATAS: GAMBAR & NAMA ---
+                '<div style="display: flex; flex-direction: row; align-items: flex-start; margin-bottom: 10px;">' +
+                    // Avatar Image
+                    '<div style="margin-right: 12px;">' +
+                        '<img src="{Photo}" style="width:50px; height:50px; border-radius:50%; border:1px solid #ccc; object-fit: cover;" />' +
+                    '</div>' +
+    
+                    // User Info & Rating
+                    '<div style="flex: 1;">' +
+                        '<div style="font-family:Arial, sans-serif; font-size:14px; font-weight:bold; color:#333; margin-bottom: 2px;">{AccountName}</div>' +
+                        '<div style="font-family:Arial, sans-serif; font-size:12px; color:#666;">{ModifiedStarReview} <span style="margin: 0 5px;">•</span> {ReviewDate}</div>' +
+                    '</div>' +
+                '</div>' +
+    
+                // --- BAHAGIAN TENGAH: TEKS REVIEW ---
+                // "word-wrap: break-word" penting supaya teks tak melimpah keluar
+                '<div style="font-family:Century Gothic, sans-serif; font-size:13px; color:#333; line-height: 1.4; margin-bottom: 0px; word-wrap: break-word;">' +
+                    '{ModifiedReviewTxt}' +
+                '</div>' +
+    
+                // --- BAHAGIAN BAWAH: BUTTONS (EDIT/DELETE) ---
+                // Ruang ini akan auto-expand jika button wujud
+                '<div style="width: 100%; display: flex; justify-content: flex-end;">' +
+                    '{ModifiedBottomButton}' +
+                '</div>' +
+    
+             '</div>',
+
+
+
+              
+
+                emptyText: '<div class="myContent">No Review Yet</div>',
+              
+               
+
+            },
+        ]
+    },
+    {
+        xtype: 'container',
+        width: '100%',
+        height: 20,              // ✅ lebih kurang height bottom bar (90) + gap
+        style: 'background:transparent;'
+      }
+]
+},
+
+                        ]
+                    },
+
+
+                    {
+                       
+                        xtype: 'container',
+                        margin: '0 0 0 0',
+                       docked:'bottom',                    
+                        height: 90,
+                        width: '100%',
+                        style: 'border-top:2px solid rgba(124,58,237,.14);border-bottom:2px none #D25959;border-left:2px none #D25959;border-right:2px none #D25959;background-color:transparent;',
+                        layout: {
+                            type: 'vbox',
+                            pack: 'start',
+                            align: 'center'
+                        },
+                        items:[
+                           {
+                               width: '90%',
+                               //height: 30,
+                               html:
+                             '<div class="ayohaMActions">' +
+                               '<button class="ayohaCheckOutBtn" onclick="AyohaMerchantReview_AddEditReview();">Write a review and rate us</button>' +
+                              
+                            '</div>' 
+                             
+                             
+                             
+                             },
+                             
+                        ]
+                   }
 
 
 
@@ -688,8 +714,8 @@ function AyohaMerchantReviewShow(ID) {
     AyohaMerchantReview_AyohaMerchantReviewLoadByEnterpriseAccNoStore();
 
    
-    Ext.getCmp('containerAyohaMerchantReview_ReviewCompanyInfo_Logo').setHtml('<img src="' + EnterpriseLogoPath.get('EnterpriseLogoPath') + '" alt="Image" style="width:90px;height:90px;">');
-    Ext.getCmp('containerAyohaMerchantReview_ReviewCompanyInfo_Name').setHtml('<div style="width:100%;background-color: transparent;text-align:center;border: 1px none white;font-family:Century Gothic;font-size: 17px;font-weight:bold;color:white;">' + EnterpriseName.get('EnterpriseName') + '</div>');
+    Ext.getCmp('containerAyohaMerchantReview_ReviewCompanyInfo_Logo').setHtml('<div style="width:80px;height:80px;background-color:white;border-radius:20px"><img src="' + EnterpriseLogoPath + '" alt="Image" style="width:70px;height:70px;"></div>');
+    Ext.getCmp('containerAyohaMerchantReview_ReviewCompanyInfo_Name').setHtml('<div style="width:100%;background-color: transparent;text-align:center;border: 1px none white;font-family:Century Gothic;font-size: 14px;font-weight:bold;color:black;">' + EnterpriseName + '</div>');
 
 }
 
@@ -706,9 +732,11 @@ function AyohaMerchantReviewShow_FromOther(EnterpriseLogoPath,EnterpriseName,Ent
     globalEnterpriseAccNo_AyohaMerchantReview = EnterpriseAccNo;
     AyohaMerchantReview_AyohaMerchantReviewLoadByEnterpriseAccNoStore();
 
-   
-    Ext.getCmp('containerAyohaMerchantReview_ReviewCompanyInfo_Logo').setHtml('<img src="' + EnterpriseLogoPath + '" alt="Image" style="width:90px;height:90px;">');
-    Ext.getCmp('containerAyohaMerchantReview_ReviewCompanyInfo_Name').setHtml('<div style="width:100%;background-color: transparent;text-align:center;border: 1px none white;font-family:Century Gothic;font-size: 17px;font-weight:bold;color:white;">' + EnterpriseName + '</div>');
+    Ext.getCmp('containerAyohaMerchantReview_ReviewCompanyInfo_Logo').setHtml('<div style="width:80px;height:80px;background-color:white;border-radius:20px"><img src="' + EnterpriseLogoPath + '" alt="Image" style="width:70px;height:70px;"></div>');
+    Ext.getCmp('containerAyohaMerchantReview_ReviewCompanyInfo_Name').setHtml('<div style="width:100%;background-color: transparent;text-align:center;border: 1px none white;font-family:Century Gothic;font-size: 14px;font-weight:bold;color:black;">' + EnterpriseName + '</div>');
+
+   // Ext.getCmp('containerAyohaMerchantReview_ReviewCompanyInfo_Logo').setHtml('<img src="' + EnterpriseLogoPath + '" alt="Image" style="width:90px;height:90px;">');
+   // Ext.getCmp('containerAyohaMerchantReview_ReviewCompanyInfo_Name').setHtml('<div style="width:100%;background-color: transparent;text-align:center;border: 1px none white;font-family:Century Gothic;font-size: 17px;font-weight:bold;color:black;">' + EnterpriseName + '</div>');
 
 }
 
@@ -720,33 +748,49 @@ function AyohaMerchantReviewShow_FromFloatPanel_MerchantDetailPage() {
     Ext.Viewport.remove(_AyohaMerchantReview);
     this.overlay = Ext.Viewport.add(AyohaMerchantReview());
     this.overlay.show();
-    AyohaMerchantReviewAdjustHeight();
+    //AyohaMerchantReviewAdjustHeight();
     console.log("2:" + _AyohaMerchantReview_isFirstLoad);
     isAyohaMerchantReviewOpen = 'Y';
     globalAyohaMerchantReview_AddEdit_PostReview_isSave = "N";
-    //var EnterpriseAccNo = _DataStore_EnterprisesLoadByRowStatusStore.findRecord('ID', ID, 0, false, false, true);
-    //var EnterpriseLogoPath = _DataStore_EnterprisesLoadByRowStatusStore.findRecord('ID', ID, 0, false, false, true);
-    //var EnterpriseName = _DataStore_EnterprisesLoadByRowStatusStore.findRecord('ID', ID, 0, false, false, true);
-
-    //var EnterpriseAccNo = _DataStore_EnterprisesLoadByMerchantCategory.findRecord('ID', ID, 0, false, false, true);
-    //var EnterpriseLogoPath = _DataStore_EnterprisesLoadByMerchantCategory.findRecord('ID', ID, 0, false, false, true);
-    //var EnterpriseName = _DataStore_EnterprisesLoadByMerchantCategory.findRecord('ID', ID, 0, false, false, true);
-
-
-    //globalFloatPanelMerchantDetailPage_EnterpriseAccNo = EnterpriseAccNo;
-    //globalFloatPanelMerchantDetailPage_EnterpriseLogo = EnterpriseLogoPath;
-    //globalFloatPanelMerchantDetailPage_EnterpriseName = EnterpriseName;
-    //globalFloatPanelMerchantDetailPage_EnterpriseTagLine = EnterpriseTagLine;
 
 
 
+    var accNo  = globalFloatPanelMerchantDetailPage_EnterpriseAccNo;
+var logo   = globalFloatPanelMerchantDetailPage_EnterpriseLogo;
+var name   = globalFloatPanelMerchantDetailPage_EnterpriseName;
 
-    globalEnterpriseAccNo_AyohaMerchantReview = globalFloatPanelMerchantDetailPage_EnterpriseAccNo;
-    AyohaMerchantReview_AyohaMerchantReviewLoadByEnterpriseAccNoStore();
+Ext.getCmp('containerAyohaMerchantReview_ReviewCompanyInfo_Logo')
+  .setHtml('<img src="'+logo+'" style="width:65px;height:65px;">');
+
+Ext.getCmp('containerAyohaMerchantReview_ReviewCompanyInfo_Name')
+  .setHtml('<div style="text-align:center;font-weight:900;font-size:18px;color:#111827;">'+name+'</div>');
+
+var task = Ext.create('Ext.util.DelayedTask', function () {
+  // guna accNo local, bukan global
+  globalEnterpriseAccNo_AyohaMerchantReview = accNo;
+  AyohaMerchantReview_AyohaMerchantReviewLoadByEnterpriseAccNoStore_FixForCheckInPage(accNo);
+});
+task.delay(0); // tak perlu 500ms kalau sekadar nak trigger selepas render
 
 
-    Ext.getCmp('containerAyohaMerchantReview_ReviewCompanyInfo_Logo').setHtml('<img src="' + globalFloatPanelMerchantDetailPage_EnterpriseLogo + '" alt="Image" style="width:90px;height:90px;">');
-    Ext.getCmp('containerAyohaMerchantReview_ReviewCompanyInfo_Name').setHtml('<div style="width:100%;background-color: transparent;text-align:center;border: 1px none white;font-family:Century Gothic;font-size: 17px;font-weight:bold;color:white;">' + globalFloatPanelMerchantDetailPage_EnterpriseName + '</div>');
+   
+    
+
+    // Ext.getCmp('containerAyohaMerchantReview_ReviewCompanyInfo_Logo').setHtml('<img src="' + globalFloatPanelMerchantDetailPage_EnterpriseLogo + '" alt="Image" style="width:65px;height:65px;">');
+    // Ext.getCmp('containerAyohaMerchantReview_ReviewCompanyInfo_Name').setHtml('<div style="width:100%;background-color: transparent;text-align:center;border: 1px none white;font-family:Century Gothic;font-weight:900;font-size:18px;color:#111827;">' + globalFloatPanelMerchantDetailPage_EnterpriseName + '</div>');
+  
+  
+    // var task = Ext.create('Ext.util.DelayedTask', function () {
+    //     globalEnterpriseAccNo_AyohaMerchantReview = globalFloatPanelMerchantDetailPage_EnterpriseAccNo;
+    //     AyohaMerchantReview_AyohaMerchantReviewLoadByEnterpriseAccNoStore();
+    // });
+
+    // task.delay(500);
+  
+  
+  
+   // Ext.getCmp('containerAyohaMerchantReview_ReviewCompanyInfo_Logo').setHtml('<img src="' + globalFloatPanelMerchantDetailPage_EnterpriseLogo + '" alt="Image" style="width:90px;height:90px;">');
+   // Ext.getCmp('containerAyohaMerchantReview_ReviewCompanyInfo_Name').setHtml('<div style="width:100%;background-color: transparent;text-align:center;border: 1px none white;font-family:Century Gothic;font-size: 17px;font-weight:bold;color:black;">' + globalFloatPanelMerchantDetailPage_EnterpriseName + '</div>');
 
 
 
@@ -763,7 +807,7 @@ function AyohaMerchantReviewShow_FromMerchantListSearchResult(ID) {
     Ext.Viewport.remove(_AyohaMerchantReview);
     this.overlay = Ext.Viewport.add(AyohaMerchantReview());
     this.overlay.show();
-    AyohaMerchantReviewAdjustHeight();
+   // AyohaMerchantReviewAdjustHeight();
     console.log("2:" + _AyohaMerchantReview_isFirstLoad);
     isAyohaMerchantReviewOpen = 'Y';
     globalAyohaMerchantReview_AddEdit_PostReview_isSave = "N";
@@ -777,9 +821,11 @@ function AyohaMerchantReviewShow_FromMerchantListSearchResult(ID) {
     globalEnterpriseAccNo_AyohaMerchantReview = EnterpriseAccNo.get('EnterpriseAccNo');
     AyohaMerchantReview_AyohaMerchantReviewLoadByEnterpriseAccNoStore();
 
+    Ext.getCmp('containerAyohaMerchantReview_ReviewCompanyInfo_Logo').setHtml('<div style="width:80px;height:80px;background-color:white;border-radius:20px"><img src="' + EnterpriseLogoPath.get('EnterpriseLogoPath') + '" alt="Image" style="width:70px;height:70px;"></div>');
+    Ext.getCmp('containerAyohaMerchantReview_ReviewCompanyInfo_Name').setHtml('<div style="width:100%;background-color: transparent;text-align:center;border: 1px none white;font-family:Century Gothic;font-size: 14px;font-weight:bold;color:black;">' + EnterpriseName.get('EnterpriseName') + '</div>');
 
-    Ext.getCmp('containerAyohaMerchantReview_ReviewCompanyInfo_Logo').setHtml('<img src="' + EnterpriseLogoPath.get('EnterpriseLogoPath') + '" alt="Image" style="width:90px;height:90px;">');
-    Ext.getCmp('containerAyohaMerchantReview_ReviewCompanyInfo_Name').setHtml('<div style="width:100%;background-color: transparent;text-align:center;border: 1px none white;font-family:Century Gothic;font-size: 17px;font-weight:bold;color:white;">' + EnterpriseName.get('EnterpriseName') + '</div>');
+   // Ext.getCmp('containerAyohaMerchantReview_ReviewCompanyInfo_Logo').setHtml('<img src="' + EnterpriseLogoPath.get('EnterpriseLogoPath') + '" alt="Image" style="width:90px;height:90px;">');
+   // Ext.getCmp('containerAyohaMerchantReview_ReviewCompanyInfo_Name').setHtml('<div style="width:100%;background-color: transparent;text-align:center;border: 1px none white;font-family:Century Gothic;font-size: 17px;font-weight:bold;color:black;">' + EnterpriseName.get('EnterpriseName') + '</div>');
 
 
 
@@ -797,7 +843,7 @@ function AyohaMerchantReviewShow_FromAyohaStore() {
     Ext.Viewport.remove(_AyohaMerchantReview);
     this.overlay = Ext.Viewport.add(AyohaMerchantReview());
     this.overlay.show();   
-    AyohaMerchantReviewAdjustHeight();
+   // AyohaMerchantReviewAdjustHeight();
     console.log("2:" + _AyohaMerchantReview_isFirstLoad);
     isAyohaMerchantReviewOpen = 'Y';
     globalAyohaMerchantReview_AddEdit_PostReview_isSave = "N";
@@ -848,10 +894,12 @@ function AyohaMerchantReviewShow_FromAyohaStore() {
         logo = globalFloatPanelMerchantDetailPage_EnterpriseLogo;
         Name = globalFloatPanelMerchantDetailPage_EnterpriseName;
     }
+alert('dfd')
+    Ext.getCmp('containerAyohaMerchantReview_ReviewCompanyInfo_Logo').setHtml('<div style="width:80px;height:80px;background-color:white;border-radius:20px"><img src="' + logo + '" alt="Image" style="width:70px;height:70px;"></div>');
+    Ext.getCmp('containerAyohaMerchantReview_ReviewCompanyInfo_Name').setHtml('<div style="width:100%;background-color: transparent;text-align:center;border: 1px none white;font-family:Century Gothic;font-size: 14px;font-weight:bold;color:black;">' + Name + '</div>');
 
-
-    Ext.getCmp('containerAyohaMerchantReview_ReviewCompanyInfo_Logo').setHtml('<img src="' + logo + '" alt="Image" style="width:90px;height:90px;">');
-    Ext.getCmp('containerAyohaMerchantReview_ReviewCompanyInfo_Name').setHtml('<div style="width:100%;background-color: transparent;text-align:center;border: 1px none white;font-family:Century Gothic;font-size: 17px;font-weight:bold;color:white;">' + Name + '</div>');
+   // Ext.getCmp('containerAyohaMerchantReview_ReviewCompanyInfo_Logo').setHtml('<img src="' + logo + '" alt="Image" style="width:90px;height:90px;">');
+   // Ext.getCmp('containerAyohaMerchantReview_ReviewCompanyInfo_Name').setHtml('<div style="width:100%;background-color: transparent;text-align:center;border: 1px none white;font-family:Century Gothic;font-size: 17px;font-weight:bold;color:black;">' + Name + '</div>');
     AyohaMerchantReview_AyohaMerchantReviewLoadByEnterpriseAccNoStore();
 
 
@@ -868,17 +916,17 @@ function AyohaMerchantReviewShow_FromAyohaStore() {
 
 
 function AyohaMerchantReviewAdjustHeight() {
-    var y = parseInt(screen.height);
-    var x = parseInt(window.innerHeight);
+    // var y = parseInt(screen.height);
+    // var x = parseInt(window.innerHeight);
 
 
-    var newHeights = x - 270;
-    console.log(newHeights);
-    // globalFloatPanel_AyohaNotificationManagement_ViewMessageAdjustHeight = newHeights;
+    // var newHeights = x - 270;
+    // console.log(newHeights);
+    // // globalFloatPanel_AyohaNotificationManagement_ViewMessageAdjustHeight = newHeights;
 
-    Ext.getCmp('AyohaMerchantReviewID').setHeight(x + 20);
-    Ext.getCmp('AyohaMerchantReviewListID').setHeight(newHeights);
-    AyohaMerchantReview_initializedTapEvent();
+    // Ext.getCmp('AyohaMerchantReviewID').setHeight(x + 20);
+    // Ext.getCmp('AyohaMerchantReviewListID').setHeight(newHeights);
+    // AyohaMerchantReview_initializedTapEvent();
 
     //542
  
@@ -889,6 +937,7 @@ function AyohaMerchantReviewAdjustHeight() {
 
 function AyohaMerchantReviewHide() {
     if (isAyohaMerchantReviewOpen == "Y") {
+
         RemovePages("AyohaMerchantReviewHide()");
         _AyohaMerchantReview.hide(); isAyohaMerchantReviewOpen = 'N'; _AyohaMerchantReview_isFirstLoad = "N";
        
@@ -898,35 +947,40 @@ function AyohaMerchantReviewHide() {
 
 
 
-function AyohaMerchantReview_initializedTapEvent() {
-    var containerView = Ext.ComponentQuery.query('container[name=namecontainerAyohaMerchantReview_ReviewCompanyInfo_AddNewReviewPanel]')[0];
-    var containerViewEl = containerView.element;
-    containerViewEl.on('tap',
-      function (event, node, options, eOpts) {
-if(isFloatPanel_MembershipCardList_NotYetSubscribedOpen=='Y'){
+function AyohaMerchantReview_AddEditReview() {
+    if(isFloatPanel_MembershipCardList_NotYetSubscribedOpen=='Y'){
 
-    swalFireCannotReviewDueToNotMember();
-    return
-}
-if( MembershipTag == 'NO'){
-    swalFireCannotReviewDueToNotMember();
-    return
-}
-          globalAyohaMerchantReview_ItemCodeReview = 'AyohaStoreReview';
-          AyohaMerchantReview_AddEditShow_Add();
-          //setDashBoardMerchantReviewRate();
-      }
-    );
+        swalFireCannotReviewDueToNotMember();
+        return
+    }
+    if( MembershipTag == 'NO'){
+        swalFireCannotReviewDueToNotMember();
+        return
+    }
+              globalAyohaMerchantReview_ItemCodeReview = 'AyohaStoreReview';
+              AyohaMerchantReview_AddEditShow_Add();
+    
+    // var containerView = Ext.ComponentQuery.query('container[name=namecontainerAyohaMerchantReview_ReviewCompanyInfo_AddNewReviewPanel]')[0];
+    // var containerViewEl = containerView.element;
+    // containerViewEl.on('tap',
+    //   function (event, node, options, eOpts) {
+
+    //       //setDashBoardMerchantReviewRate();
+    //   }
+    // );
 }
 
 
 
 
 var globalAyohaMerchantReview_ItemCodeReview;
-
+var defaultlistHeight=180;
+var increaseListHeight=0;
 function AyohaMerchantReview_AyohaMerchantReviewLoadByEnterpriseAccNoStore() {
 
 //alert(globalEnterpriseAccNo_AyohaMerchantReview);
+//var defaultlistHeight=200;
+increaseListHeight=0;
     _DataStore_AyohaMerchantReviewLoadByEnterpriseAccNoStore.getProxy().setExtraParam('EnterpriseAccNo', globalEnterpriseAccNo_AyohaMerchantReview);
     _DataStore_AyohaMerchantReviewLoadByEnterpriseAccNoStore.getProxy().setExtraParam('ItemCodeReview', 'AyohaStoreReview');
     _DataStore_AyohaMerchantReviewLoadByEnterpriseAccNoStore.getProxy().setUrl(GetAPIurl() + '/AyohaMerchantReview/AyohaMerchantReviewLoadByEnterpriseAccNo');
@@ -934,12 +988,14 @@ function AyohaMerchantReview_AyohaMerchantReviewLoadByEnterpriseAccNoStore() {
     _DataStore_AyohaMerchantReviewLoadByEnterpriseAccNoStore.load({
         callback: function (records, operation, success) {
             if (success && records.length > 0) {
+                increaseListHeight=(defaultlistHeight * records.length)-170;
+                Ext.getCmp('containerAyohaMerchantReviewMainContentID').setHeight(increaseListHeight);
                // alert('Store loaded successfully, total records: ' + records.length);
     
                 AyohaMerchantReview_AyohaMerchantReview_CalculateRating();
                 LoadingPanelHide();
             } else {
-                alert('Failed to load store data or no record found.');
+               // alert('Failed to load store data or no record found.');
                 LoadingPanelHide();
             }
         }
@@ -948,29 +1004,145 @@ function AyohaMerchantReview_AyohaMerchantReviewLoadByEnterpriseAccNoStore() {
 
 
 
-    // Ext.getStore('AyohaMerchantReviewLoadByEnterpriseAccNoStore').getProxy().setExtraParams({
-    //     EnterpriseAccNo: globalEnterpriseAccNo_AyohaMerchantReview,
-    //     ItemCodeReview: 'AyohaStoreReview'
-    // });
-    // Ext.StoreMgr.get('AyohaMerchantReviewLoadByEnterpriseAccNoStore').load();
-    // var task = Ext.create('Ext.util.DelayedTask', function () {
-    //     Ext.getStore('AyohaMerchantReviewLoadByEnterpriseAccNoStore').getProxy().setExtraParams({
-    //         EnterpriseAccNo: globalEnterpriseAccNo_AyohaMerchantReview,
-    //         ItemCodeReview: 'AyohaStoreReview'
-    //     });
-    //     _DataStore_AyohaMerchantReviewLoadByEnterpriseAccNoStore=Ext.StoreMgr.get('AyohaMerchantReviewLoadByEnterpriseAccNoStore').load();
-    //     var myStore = Ext.getStore('AyohaMerchantReviewLoadByEnterpriseAccNoStore');
-    //     count = myStore.getCount();
-    //     AyohaMerchantReview_AyohaMerchantReview_CalculateRating();
-    //     Ext.Viewport.setMasked(false);
-
-      
-
-    // });
-    // task.delay(500);
+    
 
 
 }
+
+
+function AyohaReviewList_AutoFitHeight(){
+    var list = Ext.getCmp('AyohaMerchantReviewListID');
+    if(!list || !list.element) return;
+  
+    Ext.defer(function(){
+      // ✅ cari inner list element (ikut ST/Ext version)
+      var inner =
+        list.element.down('.x-list-inner') ||
+        list.element.down('.x-list-container') ||
+        list.element;
+  
+      var h = inner && inner.dom ? inner.dom.scrollHeight : 0;
+  
+      // fallback: sum each item height
+      if(!h){
+        var items = list.element.dom.querySelectorAll('.x-list-item, .x-list-header-wrap');
+        h = 0;
+        for (var i=0;i<items.length;i++) h += (items[i].offsetHeight || 0);
+      }
+  
+      list.setHeight(h + 12); // ✅ buffer sikit
+      list.updateLayout && list.updateLayout();
+  
+      var sc = Ext.getCmp('Scrollable_containerAyohaMerchantReviewMainContentID');
+      if(sc && sc.getScrollable && sc.getScrollable()){
+        sc.getScrollable().getScroller().refresh();
+      }
+    }, 500);
+  }
+  
+
+
+
+        
+          
+
+          function AyohaMerchantReview_AyohaMerchantReviewLoadByEnterpriseAccNoStore_FixForCheckInPage(accNo){
+
+            var store = _DataStore_AyohaMerchantReviewLoadByEnterpriseAccNoStore;
+          
+            store.getProxy().setExtraParam('EnterpriseAccNo', accNo);
+            store.getProxy().setExtraParam('ItemCodeReview', 'AyohaStoreReview');
+            store.getProxy().setUrl(GetAPIurl() + '/AyohaMerchantReview/AyohaMerchantReviewLoadByEnterpriseAccNo');
+          
+            store.load({
+              callback: function(records, op, success){
+          
+                if(success){
+
+                    var list = Ext.getCmp('AyohaMerchantReviewListID');
+
+                    // bila list siap render items
+                    list.on('refresh', AyohaReviewList_AutoFitHeight, null, { single:true });
+                    list.refresh && list.refresh();
+              
+                    // ✅ kalau gambar lambat load (ubah height item), fit semula
+                    Ext.defer(function(){
+                      if(!list || !list.element) return;
+                      var imgs = list.element.dom.querySelectorAll('img');
+                      for (var i=0;i<imgs.length;i++){
+                        if(!imgs[i].complete){
+                          imgs[i].onload = imgs[i].onerror = AyohaReviewList_AutoFitHeight;
+                        }
+                      }
+                    }, 500);
+
+
+
+
+
+
+
+
+
+
+
+                //   var list = Ext.getCmp('AyohaMerchantReviewListID');
+          
+                //   // ✅ pastikan list repaint dulu
+                //   if (list.refresh) list.refresh();
+          
+                //   // ✅ tunggu list painted baru kira
+                //   if (list.isPainted && list.isPainted()) {
+                //     FitReviewListHeight();
+                //   } else {
+                //     list.on('painted', FitReviewListHeight, null, { single:true });
+                //   }
+                 
+                
+                  AyohaMerchantReview_AyohaMerchantReview_CalculateRating();
+                }
+          
+                LoadingPanelHide();
+              }
+            });
+          }
+          
+          
+          function FitReviewListHeight(){
+            var list = Ext.getCmp('AyohaMerchantReviewListID');
+            if (!list || !list.element) return;
+          
+            Ext.defer(function () {
+          
+              // ✅ include item + header wrap
+              var nodes = list.element.dom.querySelectorAll('.x-list-item, .x-list-header-wrap');
+              var h = 0;
+          
+              for (var i = 0; i < nodes.length; i++) {
+                h += (nodes[i].offsetHeight || 0);
+              }
+          
+              // fallback kalau masih 0 (kadang DOM belum settle)
+              if (!h) {
+                h = list.element.dom.scrollHeight || 0;
+              }
+          
+              list.setHeight(h);
+          
+              var sc = Ext.getCmp('Scrollable_containerAyohaMerchantReviewMainContentID');
+              if (sc && sc.getScrollable && sc.getScrollable()) {
+                sc.getScrollable().getScroller().refresh();
+              }
+             
+            }, 50);
+          }
+          
+          
+
+
+
+
+
 
 
 var FiveStar;
@@ -1035,18 +1207,18 @@ function AyohaMerchantReview_AyohaMerchantReview_CalculateRating() {
 
 
                         var TotalAvg = (VoteFiveStar + VoteFourStar + VoteThreeStar + VoteTwoStar + VoteOneStar) / TotalVoter;
-
+                        //width:100%;background-color: transparent;text-align:center;border: 1px none white;font-family:Century Gothic;font-weight:900;font-size:16px;color:#111827;
                         if (TotalAvg) {
-                            Ext.getCmp('htmlAyohaMerchantReview_Rate').setHtml('<div style="width:100%;background-color: transparent;text-align:center;border: 1px none white;font-size: 60px;font-weight:bold;color:black;">' + TotalAvg.toFixed(1) + '</div>');
+                            Ext.getCmp('htmlAyohaMerchantReview_Rate').setHtml('<div style="width:100%;background-color: transparent;text-align:center;border: 1px none white;font-family:Century Gothic;font-size: 40px;font-weight:bold;color:black;">' + TotalAvg.toFixed(1) + '</div>');
 
                         } else
                         {
-                            Ext.getCmp('htmlAyohaMerchantReview_Rate').setHtml('<div style="width:100%;background-color: transparent;text-align:center;border: 1px none white;font-size: 60px;font-weight:bold;color:black;">0.0</div>');
+                            Ext.getCmp('htmlAyohaMerchantReview_Rate').setHtml('<div style="width:100%;background-color: transparent;text-align:center;border: 1px none white;font-family:Century Gothic;font-size: 40px;font-weight:bold;color:black;">0.0</div>');
 
                         }
                        
 
-                        Ext.getCmp('htmlAyohaMerchantReview_TotalReviews').setHtml('<div style="width100%;text-align:right;background-color: transparent;font-family:Arial, sans-serif;font-size:10px;color:black;font-weight:bold;overflow:hidden;margin:-13px 10px 10px 0px;"><img src="resources/icons/merchantrateusAccountImg.png" alt="Image" style="width:10px;height:10px;">&nbsp;&nbsp;&nbsp;' + TotalVoter + ' Reviews</div>');
+                        Ext.getCmp('htmlAyohaMerchantReview_TotalReviews').setHtml('<div style="width100%;text-align:center;background-color: transparent;font-family:Century Gothic;;font-size:10px;color:black;font-weight:bold;overflow:hidden;margin:-13px 10px 10px 0px;"><img src="resources/icons/merchantrateusAccountImg.png" alt="Image" style="width:10px;height:10px;">&nbsp;&nbsp;&nbsp;' + TotalVoter + ' Reviews</div>');
 
                         var RateReviews = TotalAvg.toFixed(1);
 
@@ -1392,7 +1564,7 @@ const valueLabels = {
         backgroundColor: 'orange',
         borderWidth: 0,
         borderRadius: 8,
-        barPercentage: 0.8,
+        barPercentage: 0.95,
         categoryPercentage: 0.8
       }]
     },
@@ -1493,11 +1665,6 @@ function setDashBoardMerchantReviewRateOld() {
                          width: 320,
                          height: 185,
                          bar: { groupWidth: "80%" },
-                         //animation: {
-                         //    startup: true,
-                         //    duration: 2500,
-                         //    easing: 'out'
-                         //},
                          vAxis: { minValue: 0 },
                          hAxis: {
                              textStyle: { color: 'transparent' },
@@ -1506,16 +1673,8 @@ function setDashBoardMerchantReviewRateOld() {
                              },
                              baselineColor: '#FFFFFF'
                          },
-                         vAxis: {
-                             //textStyle: { color: '#FFF' ,size:'12px'}
-                             title: '',
-                             //textStyle: {
-                             //    color: "black",
-                             //    fontName: "sans-serif",
-                             //    fontSize: 12,
-                             //    bold: true,
-                             //    italic: false
-                             //}
+                         vAxis: {                           
+                             title: '',                          
                          },
                          animation: {
                              duration: 2500,
