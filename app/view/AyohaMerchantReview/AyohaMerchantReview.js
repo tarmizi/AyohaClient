@@ -112,8 +112,9 @@ function AyohaMerchantReview() {
                 margin: '0 0 0 0',
                 docked: 'top',
                 height: ayoha_HeaderHeight(),
-                id: 'containerAyohaMerchantReviewHeader',
                 style:ayohaThemeColor_Header(),
+                id: 'containerAyohaMerchantReviewHeader',
+                
               
                 layout: {
                     type: 'hbox',
@@ -978,8 +979,55 @@ var defaultlistHeight=180;
 var increaseListHeight=0;
 function AyohaMerchantReview_AyohaMerchantReviewLoadByEnterpriseAccNoStore() {
 
-//alert(globalEnterpriseAccNo_AyohaMerchantReview);
-//var defaultlistHeight=200;
+
+    var store = _DataStore_AyohaMerchantReviewLoadByEnterpriseAccNoStore;
+          
+    store.getProxy().setExtraParam('EnterpriseAccNo', globalEnterpriseAccNo_AyohaMerchantReview);
+    store.getProxy().setExtraParam('ItemCodeReview', 'AyohaStoreReview');
+    store.getProxy().setUrl(GetAPIurl() + '/AyohaMerchantReview/AyohaMerchantReviewLoadByEnterpriseAccNo');
+  
+    store.load({
+      callback: function(records, op, success){
+  
+        if(success){
+
+            var list = Ext.getCmp('AyohaMerchantReviewListID');
+
+            // bila list siap render items
+            list.on('refresh', AyohaReviewList_AutoFitHeight, null, { single:true });
+            list.refresh && list.refresh();
+      
+            // ✅ kalau gambar lambat load (ubah height item), fit semula
+            Ext.defer(function(){
+              if(!list || !list.element) return;
+              var imgs = list.element.dom.querySelectorAll('img');
+              for (var i=0;i<imgs.length;i++){
+                if(!imgs[i].complete){
+                  imgs[i].onload = imgs[i].onerror = AyohaReviewList_AutoFitHeight;
+                }
+              }
+            }, 500);
+
+
+
+
+
+         
+        
+          AyohaMerchantReview_AyohaMerchantReview_CalculateRating();
+        }
+  
+        LoadingPanelHide();
+      }
+    });
+
+
+
+
+
+
+
+    return
 increaseListHeight=0;
     _DataStore_AyohaMerchantReviewLoadByEnterpriseAccNoStore.getProxy().setExtraParam('EnterpriseAccNo', globalEnterpriseAccNo_AyohaMerchantReview);
     _DataStore_AyohaMerchantReviewLoadByEnterpriseAccNoStore.getProxy().setExtraParam('ItemCodeReview', 'AyohaStoreReview');
@@ -1030,7 +1078,7 @@ function AyohaReviewList_AutoFitHeight(){
         for (var i=0;i<items.length;i++) h += (items[i].offsetHeight || 0);
       }
   
-      list.setHeight(h + 12); // ✅ buffer sikit
+      list.setHeight(h + 100); // ✅ buffer sikit
       list.updateLayout && list.updateLayout();
   
       var sc = Ext.getCmp('Scrollable_containerAyohaMerchantReviewMainContentID');
@@ -1080,23 +1128,6 @@ function AyohaReviewList_AutoFitHeight(){
 
 
 
-
-
-
-
-
-
-                //   var list = Ext.getCmp('AyohaMerchantReviewListID');
-          
-                //   // ✅ pastikan list repaint dulu
-                //   if (list.refresh) list.refresh();
-          
-                //   // ✅ tunggu list painted baru kira
-                //   if (list.isPainted && list.isPainted()) {
-                //     FitReviewListHeight();
-                //   } else {
-                //     list.on('painted', FitReviewListHeight, null, { single:true });
-                //   }
                  
                 
                   AyohaMerchantReview_AyohaMerchantReview_CalculateRating();
@@ -1126,7 +1157,7 @@ function AyohaReviewList_AutoFitHeight(){
               if (!h) {
                 h = list.element.dom.scrollHeight || 0;
               }
-          
+          alert(h)
               list.setHeight(h);
           
               var sc = Ext.getCmp('Scrollable_containerAyohaMerchantReviewMainContentID');

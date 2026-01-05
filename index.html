@@ -23,6 +23,444 @@
 }
     </style>
 
+
+
+
+<style>
+  /* ===== Center each list item row ===== */
+.ayohaHubList .x-list-item,
+.ayohaHubList .x-list-item-body{
+  background: transparent !important;
+}
+
+.ayohaHubRow{
+  width:100%;
+  display:flex;
+  justify-content:center;      /* ✅ center card */
+  padding: 0 0 16px 0;         /* spacing bawah setiap card */
+  box-sizing:border-box;
+}
+
+/* ===== Main Card ===== */
+.ayohaHubCard{
+  width:88vw;
+  max-width:88vw;
+  border-radius:15px;
+  overflow:hidden;
+  display:block;
+  box-shadow:0 4px 20px rgba(0,0,0,0.30);
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ===== Hero / Background Image ===== */
+.ayohaHubHero{
+  position:relative;
+  height: clamp(210px, 70vw, 280px);  /* sama feel dgn 70vw + max 280 */
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+}
+
+/* ===== Overlay text bottom ===== */
+.ayohaHubOverlay{
+  position:absolute;
+  left:0; right:0; bottom:0;
+  background: rgba(0,0,0,.50);
+  color:#fff;
+  padding: 12px 14px;
+}
+
+.ayohaHubTagline{
+  font-size: clamp(12px, 3vw, 14px);
+  line-height:1.2;
+  opacity:.95;
+}
+.ayohaHubCta{
+  font-size: clamp(16px, 4.2vw, 22px);
+  font-weight: 900;
+  text-align: center;
+  width: 100%;
+  line-height: 1.15;
+
+  margin-top: 6px;     /* smooth top */
+  margin-bottom: 6px;  /* ✅ jarak ke fee */
+  transform: none !important;
+}
+
+.ayohaHubFee{
+  font-size: clamp(12px, 3vw, 14px);
+  font-weight: 600;
+  opacity: .80;
+  text-align: center;
+  width: 100%;
+  line-height: 1.1;
+
+  margin-top: 0;
+  transform: none !important;
+}
+
+
+
+
+
+
+/* bagi overlay lebih ruang atas supaya CTA tak rapat */
+.ayohaHubOverlay{
+  padding: 12px 14px 14px !important;   /* top naik sikit */
+}
+
+/* turunkan CTA dengan margin (bukan transform) */
+.ayohaHubCta{
+  transform: none !important;
+  text-align: center;
+  width: 100%;
+
+  margin-top: 10px !important;   /* ✅ turun (adjust 8-14) */
+  margin-bottom: 6px !important;
+  line-height: 1.15;
+}
+
+/* fee rapat sikit bawah CTA */
+.ayohaHubFee{
+  transform: none !important;
+  margin-top: 0 !important;
+  line-height: 1.1;
+}
+
+
+/* ===== Mini Membership Card (floating) ===== */
+
+
+/* Top (logo + name) jangan bagi jadi tinggi */
+.ayohaMiniTop{
+  padding: 6px 10px 4px !important;
+  min-height: 26px;
+  display:flex;
+  align-items:center;
+  gap:6px;
+  overflow:hidden;
+  font-weight: 900 !important;   /* ✅ bold */
+  color: #ffffff !important;     /* ✅ putih */
+  text-shadow: 0 1px 2px rgba(0,0,0,.25);
+}
+
+.ayohaMiniTop img{
+  max-height: 18px !important;
+  width:auto !important;
+  display:block;
+}
+
+/* kalau nama merchant panjang, ellipsis */
+.ayohaMiniTop *{
+  max-width: 100%;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+
+/* Mid section kecilkan supaya fit */
+.ayohaMiniMid{
+  padding: 8px 10px 4px !important;
+  overflow:hidden;
+}
+.ayohaMiniType{
+  font-size: 10px !important;
+  font-weight: 700 !important;         /* ✅ kurang dari 900 */
+  letter-spacing: .12em !important;    /* ✅ premium tracking */
+  text-transform: uppercase;
+  color: rgba(255,255,255,.92) !important;
+  text-shadow: 0 2px 6px rgba(0,0,0,.30) !important;
+}
+
+
+.ayohaMiniNo{
+  font-size: 10px !important;
+  font-weight: 600 !important;
+  letter-spacing: .08em !important;
+  color: rgba(255,255,255,.92) !important;
+  margin-top: 3px !important;
+  text-shadow: 0 2px 6px rgba(0,0,0,.30) !important;
+}
+
+
+.ayohaMiniName{
+  font-size: 9px !important;
+  font-weight: 700 !important;
+  letter-spacing: .04em !important;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.85) !important;
+  margin-top: 4px !important;
+  text-shadow: 0 2px 6px rgba(0,0,0,.30) !important;
+}
+
+
+/* ✅ bottom row jadi 2 column: left & right */
+.ayohaMiniBottom{
+  margin-top:auto;
+  padding: 6px 10px 10px !important;
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  gap:12px;
+}
+
+/* left & right column */
+.ayohaMiniCol{
+  flex:1;
+  min-width:0;
+}
+
+.ayohaMiniCol.right{
+  text-align:right;            /* ✅ valid until to right */
+}
+
+/* ✅ premium label + value */
+.ayohaMiniBottom .k{
+  font-size: 7px !important;
+  font-weight: 600 !important;
+  letter-spacing: .10em !important;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.60) !important;
+  text-shadow: 0 2px 6px rgba(0,0,0,.30) !important;
+}
+
+.ayohaMiniBottom .v{
+  font-size: 8px !important;
+  font-weight: 700 !important;
+  color: rgba(255,255,255,.88) !important;
+  margin-top: 2px !important;
+  text-shadow: 0 2px 6px rgba(0,0,0,.30) !important;
+}
+
+
+
+
+
+
+/* ===== Mini Membership Card (Premium) ===== */
+.ayohaMiniCard{
+  position:absolute;
+  outline: 1px solid rgba(255,255,255,.14);
+  outline-offset: -3px;
+  left:50%;
+  top: calc(50% + 28px);
+  transform: translate(-50%, -50%) rotate(-1deg);   /* ✅ slight tilt = premium */
+  transform-origin: center;
+
+  width: min(52vw, 240px) !important;
+  height: min(calc(52vw * .63), 151px) !important;
+
+  border-radius:14px;
+  overflow:hidden;
+
+  background-size: cover !important;
+  background-position:center;
+  background-repeat:no-repeat;
+
+  /* ✅ premium rim light + inner highlight */
+  border:1px solid rgba(255,255,255,.45);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.28),
+    inset 0 -1px 0 rgba(0,0,0,.18),
+    0 18px 46px rgba(0,0,0,.42),
+    0 8px 18px rgba(0,0,0,.22);
+
+  z-index:3 !important;
+
+  display:flex;
+  flex-direction:column;
+}
+
+/* ✅ Shine diagonal (premium highlight) */
+.ayohaMiniCard:before{
+  content:"";
+  position:absolute;
+  inset:-45%;
+  pointer-events:none;
+  z-index:2;
+
+  background: linear-gradient(135deg,
+    rgba(255,255,255,.22) 0%,
+    rgba(255,255,255,.10) 26%,
+    rgba(255,255,255,0) 55%
+  );
+  transform: rotate(10deg);
+}
+
+/* ✅ Overlay gelap halus (jaga readability, jangan over-dark) */
+.ayohaMiniCard:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  z-index:1;
+
+  background:
+    radial-gradient(120% 120% at 20% 10%, rgba(255,255,255,.10) 0%, rgba(255,255,255,0) 55%),
+    linear-gradient(180deg,
+      rgba(0,0,0,.08) 0%,
+      rgba(0,0,0,.12) 60%,
+      rgba(0,0,0,.18) 100%
+    );
+}
+
+/* ✅ content sentiasa di atas */
+.ayohaMiniTop,
+.ayohaMiniMid,
+.ayohaMiniBottom{
+  position:relative;
+  z-index:3;
+}
+
+
+/* ===== Info section (white) ===== */
+.ayohaHubInfo{
+  background:#fff;
+  padding: 14px;
+}
+
+.ayohaHubInfoTop{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  margin-bottom:8px;
+}
+
+.ayohaHubName{
+  font-weight:900;
+  font-size: clamp(16px, 4.5vw, 20px);
+  letter-spacing:.2px;
+}
+
+.ayohaHubType{
+  font-size: 12px;
+  color:#666;
+  white-space:nowrap;
+}
+
+.ayohaHubAddr{
+  font-size: 13px;
+  color:#444;
+}
+
+.ayohaHubRating{
+  margin-top:10px;
+  font-size: 13px;
+  color:#333;
+  display:flex;
+  align-items:center;
+  gap:6px;
+  flex-wrap:wrap;
+}
+
+.ayohaHubReviews{
+  color:#3366cc;
+  text-decoration:none;
+  font-weight:700;
+}
+/* 1cm ≈ 38px */
+
+/* ✅ spotlight fokus di belakang membership card */
+.ayohaHubHero:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  z-index: 0;
+
+  /* gelap sikit kawasan tengah (belakang card), tepi kekal natural */
+  background: radial-gradient(
+    65% 55% at 50% 55%,
+    rgba(0,0,0,.35) 0%,
+    rgba(0,0,0,.20) 45%,
+    rgba(0,0,0,0) 75%
+  );
+}
+
+/* pastikan elemen atas (card + overlay) berada di depan */
+.ayohaMiniCard{ z-index: 3 !important; }
+.ayohaHubOverlay{ z-index: 2; }
+
+
+
+.ayohaCheckInPill{
+  position:absolute;
+  top:12px;
+  left:12px;
+  z-index:4;
+
+  padding:6px 10px 6px 28px;   /* ✅ bagi ruang utk icon kiri */
+  border-radius:999px;
+  backdrop-filter: blur(6px);
+
+  color:#fff;
+  font:900 12px/1 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  letter-spacing:.2px;
+
+  border:1px solid rgba(255,255,255,.35);
+  box-shadow:0 8px 18px rgba(0,0,0,.22);
+}
+
+/* ✅ icon base */
+.ayohaCheckInPill:before{
+  content:"";
+  position:absolute;
+  left:9px;
+  top:50%;
+  transform:translateY(-50%);
+  width:14px;
+  height:14px;
+  border-radius:999px;
+  background: rgba(255,255,255,.22);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.28);
+}
+
+/* ===== 0 = merah + icon warning ===== */
+.ayohaCheckInPill.zero{
+  background: linear-gradient(135deg, rgba(239,68,68,.92), rgba(220,38,38,.88));
+  box-shadow: 0 10px 22px rgba(239,68,68,.28), 0 8px 18px rgba(0,0,0,.22);
+}
+.ayohaCheckInPill.zero:before{
+  content:"!";
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:11px;
+  font-weight:1000;
+  background: rgba(255,255,255,.25);
+}
+
+/* ===== 1+ = ayoha theme + icon check ===== */
+.ayohaCheckInPill.active{
+  background: linear-gradient(135deg,
+    rgba(214,0,255,.92),
+    rgba(155,0,255,.90),
+    rgba(255,0,222,.72)
+  );
+  box-shadow: 0 10px 22px rgba(214,0,255,.26), 0 10px 22px rgba(255,0,222,.18), 0 8px 18px rgba(0,0,0,.22);
+}
+.ayohaCheckInPill.active:before{
+  content:"✓";
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:12px;
+  font-weight:1000;
+  background: rgba(255,255,255,.20);
+}
+
+
+/* ✅ Lock card atas overlay (stabil across device) */
+.ayohaHubHero .ayohaMiniCard{
+  top: auto !important;
+  bottom: 62px !important;   /* adjust 64-90 ikut tinggi overlay */
+  left: 50% !important;
+  transform: translateX(-50%) rotate(-1deg) !important;
+}
+
+</style>
+
     <style>
 
 

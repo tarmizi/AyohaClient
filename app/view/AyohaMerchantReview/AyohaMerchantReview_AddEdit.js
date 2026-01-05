@@ -997,7 +997,7 @@ function AyohaMerchantReview_AddEdit_PostReview_Add() {
                 data = Ext.decode(result.responseText.trim());
 
                 if (data.success == "true") {
-                   
+                   AppState.AyohaMerchantReview_AddEdit.RateStarGiven=starCount;
                     swalFireSuccesPostReview('Success post your review/rating,Thank You!');
                     AyohaMerchantReview_AddEditHide();
                     globalAyohaMerchantReview_AddEdit_PostReview_isSave = "Y";
@@ -1083,7 +1083,7 @@ function AyohaMerchantReview_AddEdit_PostReview_Edit() {
                 data = Ext.decode(result.responseText.trim());
 
                 if (data.success == "true") {
-
+                    AppState.AyohaMerchantReview_AddEdit.RateStarGiven=starCount;
                     swalFireSuccesPostReview('Success post your review/rating,Thank You!');
                   
                     AyohaMerchantReview_AddEditHide();
@@ -1165,7 +1165,7 @@ function AyohaMerchantReview_AddEdit_PostReview_Delete() {
                 data = Ext.decode(result.responseText.trim());
 
                 if (data.success == "true") {
-
+                    AppState.AyohaMerchantReview_AddEdit.RateStarGiven=0;
                     swalFireSuccesDeletePostReview('Post your review/rating delete Successfully!');                  
                     AyohaMerchantReview_AddEditHide();
                     globalAyohaMerchantReview_AddEdit_PostReview_isSave = "Y";

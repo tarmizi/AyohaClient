@@ -140,7 +140,9 @@ var AppState = {
 
 
 
-
+    AyohaMerchantReview_AddEdit:{
+RateStarGiven:0,
+    }
 
    
 };
