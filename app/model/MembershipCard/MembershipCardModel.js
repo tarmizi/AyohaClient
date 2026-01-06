@@ -784,8 +784,54 @@ if(str){
 
                        }
                    },
+                   {
+                    name: 'ModifiedCTA',
+                    convert: function (value, record) {
+            
+                        var _value;
+                        var _fee;
+                        var str = record.get('MembershipCardFee');
+                        if(str){
+                               _fee= record.get('MembershipCardFee');
+                        }else{
+                            _fee=0;
+                        }
+            if(_fee>0){
+                _value='<div class="ayohaHubCta">View Membership Plans</div>'
+            }else if (_fee==0){
+                _value='<div class="ayohaHubCta">Join for Free</div>'
+            }
+                       
+            
+            
+                        return _value;
+                    }
+                },
                   
-
+                {
+                    name: 'ModifiedHelperCTA',
+                    convert: function (value, record) {
+            
+                        var _value;
+                        var _fee;
+                        var _tagLine=record.get('ModifiedMarketingTagline');
+                        var str = record.get('MembershipCardFee');
+                        if(str){
+                               _fee= record.get('MembershipCardFee');
+                        }else{
+                            _fee=0;
+                        }
+            if(_fee>0){
+                _value='<div class="ayohaHubFee">Membership from RM '+_fee+'</div>'
+            }else if (_fee==0){
+                _value='<div class="ayohaHubFee">'+record.get('ModifiedMarketingTagline')+'</div>'
+            }
+                       
+            
+            
+                        return _value;
+                    }
+                },
               
         ]
     }

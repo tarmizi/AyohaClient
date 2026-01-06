@@ -181,163 +181,190 @@ function FloatPanel_Membership_MembershipCardHubsUpgrade() {
                                 style: 'background-color:rgba(255, 255, 255, 0); border-radius:0;',
                                 scrollable: { direction: 'vertical', indicators: false },
                                 disableSelection: true,
-                                itemHeight: 'auto',
-                              
-                                itemTpl: [
-                                  '<div class="ayohaHubRow">',
-                                    '<div class="ayohaHubCard" OnClick="FloatPanel_MembershipCardList_NotYetSubscribedShow_FromDashboard_Main(`{MembershipCardCode}`,`{EnterpriseAccNo}`,`{isMembershipCardSubscribed}`,`{MembershipCardFeePaymentCycle}`,`{CountStar}`,`{CountReviewer}`)">',
-                              
-                                      '<div class="ayohaHubHero" style="background-image:url(\'{MembershipCardBackgroundImg_back}\');">',
-                                    //  '<div class="ayohaCheckInPill">Today Check In: 1</div>',
+                              itemHeight: 'auto',
+                               // itemHeight: 430,
 
-                                      '<div class="ayohaCheckInPill ' +
-                                      '<tpl if="TodayCheckInCount == 0">zero</tpl>' +
-                                      '<tpl if="TodayCheckInCount != 0">active</tpl>' +
-                                    '">Today Check In: {TodayCheckInCount}</div>',
-                                    
+                                useSimpleItems: true,
+                                bufferSize: 5,
+                                // listeners: {
+                                //     painted: function(list){
+                                //       var scroller = list.getScrollable().getScroller();
+                                //       scroller.on({
+                                //         scrollstart: function(){ Ext.getBody().addCls('ayohaScrolling'); },
+                                //         scrollend:   function(){ Ext.getBody().removeCls('ayohaScrolling'); }
+                                //       });
+                                //     }
+                                //   },
+                                  
+                                // listeners: {
+                                //     painted: function(list){
+                                //       if (list.__ayohaScrollHooked) return;
+                                //       list.__ayohaScrollHooked = true;
+                                  
+                                //       var scroller = list.getScrollable().getScroller();
+                                //       scroller.on({
+                                //         scrollstart: function(){ Ext.getBody().addCls('ayohaScrolling'); },
+                                //         scrollend:   function(){ Ext.getBody().removeCls('ayohaScrolling'); }
+                                //       });
+                                //     }
+                                //   },
+                                  
+                                 
+                                  
 
 
 
-                                        '<div class="ayohaMiniCard" style="background-image:url({MembershipCardBackgroundImg});">',
-                                          '<div class="ayohaMiniTop">{ModifiedEnterprisesLogoDesignOneTwo}{ModifiedEnterprisesNameDesignOneTwo}</div>',
-                              
-                                          '<div class="ayohaMiniMid">',
-                                            '<div class="ayohaMiniType">{MembershipCardType}</div>',
-                                            '<div class="ayohaMiniNo">123 4567</div>',
-                                            '<div class="ayohaMiniName">MEMBER NAME</div>',
-                                          '</div>',
-                              
 
-                                          '<div class="ayohaMiniBottom">' +
-                                          '<div class="ayohaMiniCol">' +
-                                            '<div class="k">Member Since</div>' +
-                                            '<div class="v">Upon approval</div>' +
-                                          '</div>' +
-                                          '<div class="ayohaMiniCol right">' +
-                                            '<div class="k">Valid Until</div>' +
-                                            '<div class="v">Dec 0000</div>' +
-                                          '</div>' +
-                                        '</div>',
+
+                            //     itemTpl: [
+                            //         '<div class="ayohaHubRow">',
+                            //           '<div class="ayohaHubCard" OnClick="FloatPanel_MembershipCardList_NotYetSubscribedShow_FromDashboard_Main(`{MembershipCardCode}`,`{EnterpriseAccNo}`,`{isMembershipCardSubscribed}`,`{MembershipCardFeePaymentCycle}`,`{CountStar}`,`{CountReviewer}`)">',
+                                  
+                            //             '<div class="ayohaHubHero" style="background-image:url(\'{MembershipCardBackgroundImg_back}\');">',
+                                  
+                            //             '<div class="ayohaPillCheckin">Today&#39;s Check-In: <b>{CheckInCount}</b></div>',
+                                  
+                            //               '<div class="ayohaMiniCard" style="background-image:url({MembershipCardBackgroundImg});">',
+                            //                 '<div class="ayohaMiniTop">{ModifiedEnterprisesLogoDesignOneTwo}{ModifiedEnterprisesNameDesignOneTwo}</div>',
+                                  
+                            //                 '<div class="ayohaMiniMid">',
+                            //                   '<div class="ayohaMiniType">{MembershipCardType}</div>',
+                            //                   '<div class="ayohaMiniNo">123 4567</div>',
+                            //                   '<div class="ayohaMiniName">MEMBER NAME</div>',
+                            //                 '</div>',
+                                  
+                            //                 '<div class="ayohaMiniBottom">',
+                            //                   '<div class="ayohaMiniCol">',
+                            //                     '<div class="k">Member Since</div>',
+                            //                     '<div class="v">Upon approval</div>',
+                            //                   '</div>',
+                            //                   '<div class="ayohaMiniCol right">',
+                            //                     '<div class="k">Valid Until</div>',
+                            //                     '<div class="v">Dec 0000</div>',
+                            //                   '</div>',
+                            //                 '</div>',
+                                  
+                            //               '</div>',
+                                  
+
                                         
 
 
+                            //               '<div class="ayohaHubOverlay">',
+                            //                '{ModifiedCTA}',
+                            //                '{ModifiedHelperCTA}',                                         
 
-                                        //   '<div class="ayohaMiniBottom">',
-                                        //     '<div class="ayohaMiniCol">',
-                                        //       '<div class="k">Member Since</div>',
-                                        //       '<div class="v">After Approved</div>',
-                                        //     '</div>',
-                                        //     '<div class="ayohaMiniCol right">',
-                                        //       '<div class="k">Valid Until</div>',
-                                        //       '<div class="v">{ModifiedStrExpiredDate}</div>',
-                                        //     '</div>',
-                                        //   '</div>',
+                            //               '</div>',
+                                  
+                            //             '</div>',
+                                  
+                            //             '<div class="ayohaHubInfo">',
+                            //               '<div class="ayohaHubInfoTop">',
+                            //                 '<div class="ayohaHubName">{EnterprisesName}</div>',
+                            //                 '<div class="ayohaHubType">{BusinessTypeGroup}</div>',
+                            //               '</div>',
+                                  
+                            //               '<div class="ayohaHubAddr">{ModifiedEnterpriseAddress}</div>',
+                                  
+                            //               '<div class="ayohaHubRating">',
+                            //                 '{ModifiedCountStarCountStar}',
+                            //                 '<a class="ayohaHubReviews" href="javascript:void(0)">{CountReviewer} Reviews</a>',
+                            //               '</div>',
+
+                                         
+                                  
+                            //             '</div>',
+                                  
+                            //           '</div>',
+                            //         '</div>'
+                            //       ].join('')
+                                  
+
+
+                            //   }
+                              
+
+
+
+                            itemTpl: [
+                                '<div class="ayohaHubRow">',
+                                  '<div class="ayohaHubCard" OnClick="FloatPanel_MembershipCardList_NotYetSubscribedShow_FromDashboard_Main(`{MembershipCardCode}`,`{EnterpriseAccNo}`,`{isMembershipCardSubscribed}`,`{MembershipCardFeePaymentCycle}`,`{CountStar}`,`{CountReviewer}`)">',
+                              
+                                    '<div class="ayohaHubHero" style="background-image:url(\'{MembershipCardBackgroundImg_back}\');">',
+                              
+                                      '<div class="ayohaPillCheckin">Today&#39;s Check-In: <b>3</b></div>',
+                              
+                                      '<div class="ayohaMiniCard" style="background-image:url({MembershipCardBackgroundImg});">',
+                                        '<div class="ayohaMiniTop">{ModifiedEnterprisesLogoDesignOneTwo}{ModifiedEnterprisesNameDesignOneTwo}</div>',
+                              
+                                        '<div class="ayohaMiniMid">',
+                                          '<div class="ayohaMiniType">{MembershipCardType}</div>',
+                                          '<div class="ayohaMiniNo">123 4567</div>',
+                                          '<div class="ayohaMiniName">MEMBER NAME</div>',
                                         '</div>',
                               
-                                        '<div class="ayohaHubOverlay">',
-                                        //   '<div class="ayohaHubTagline">{ModifiedMarketingTagline}</div>',
-                                          '<div class="ayohaHubCta">{ModifiedGetItNow}</div>',
-                                          '<div class="ayohaHubFee">Membership from RM{MembershipCardFee}</div>',
+                                        '<div class="ayohaMiniBottom">',
+                                          '<div class="ayohaMiniCol">',
+                                            '<div class="k">Member Since</div>',
+                                            '<div class="v">Upon approval</div>',
+                                          '</div>',
+                                          '<div class="ayohaMiniCol right">',
+                                            '<div class="k">Valid Until</div>',
+                                            '<div class="v">Dec 0000</div>',
+                                          '</div>',
                                         '</div>',
-                              
                                       '</div>',
                               
-                                      '<div class="ayohaHubInfo">',
-                                        '<div class="ayohaHubInfoTop">',
-                                          '<div class="ayohaHubName">{EnterprisesName}</div>',
-                                          '<div class="ayohaHubType">{BusinessTypeGroup}</div>',
-                                        '</div>',
+                                      '<div class="ayohaHubOverlay">',
+                                      // '{ModifiedCTA}',
+                                    //    '{ModifiedHelperCTA}',        
+                                        '<div style="margin:6px 0px 0px 0px"><div class="ayohaBtnCheckInNow">',
+                                          '<span class="ico">',
+                                            '<svg viewBox="0 0 24 24" aria-hidden="true">',
+                                              '<path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"></path>',
+                                            '</svg>',
+                                          '</span>',
+                                          '<span class="txt">Check-In Now</span>',
+                                        '</div></div>',
+                                //    '{ModifiedHelperCTA}',  
+                                         '<div class="ayohaHubOverlayHint">✓ Membership Active • Expires Dec 2026</div>',
                               
-                                        '<div class="ayohaHubAddr">{ModifiedEnterpriseAddress}</div>',
-                              
-                                        '<div class="ayohaHubRating">',
-                                          '{ModifiedCountStarCountStar}',
-                                          '<a class="ayohaHubReviews" href="javascript:void(0)">{CountReviewer} Reviews</a>',
-                                        '</div>',
                                       '</div>',
                               
                                     '</div>',
-                                  '</div>'
-                                ].join('')
-                              }
                               
-
-
-
-
-
-
-
-  
-                    //         {
-                    //             xtype: 'list',
-                    //           id: 'FloatPanel_Membership_MembershipCardHubsUpgradeList',
-                    //             height: '100%',
-                    //             width: '100%',
-                    //             margin: '0 0 0 0',
-                    //             style: 'background-color:rgba(255, 255, 255, 0); border-radius:0;',
-                    //             scrollable: {
-                    //               direction: 'vertical',
-                    //               indicators: false
-                    //             },
-                               
-                    //             disableSelection: true,
-                                
-                    //             itemHeight: 'auto',
-                               
+                                    '<div class="ayohaHubInfo">',
+                                      '<div class="ayohaHubInfoTop">',
+                                        '<div class="ayohaHubName">{EnterprisesName}</div>',
+                                        '<div class="ayohaHubType">{BusinessTypeGroup}</div>',
+                                      '</div>',
+                              
+                                      '<div class="ayohaHubAddr">{ModifiedEnterpriseAddress}</div>',
+                              
+                                      '<div class="ayohaHubRating">',
+                                        '{ModifiedCountStarCountStar}',
+                                        '<a class="ayohaHubReviews" href="javascript:void(0)">{CountReviewer} Reviews</a>',
+                                      '</div>',
+                                    '</div>',
+                              
+                                  '</div>',
+                                '</div>'
+                              ].join('')
                               
                               
-                             
-                              
-                    //             itemTpl: [
-                    //                 // Outer card wrapper
-                    //                 //'<div style="min-width:100vw; max-width:100vw; height:auto; margin:0; border-radius:15px; overflow:hidden; box-shadow:0 4px 20px rgba(0,0,0,0.3); display:inline-block;">',
-                    //                 '<div OnClick="FloatPanel_MembershipCardList_NotYetSubscribedShow_FromDashboard_Main(`{MembershipCardCode}`,`{EnterpriseAccNo}`,`{isMembershipCardSubscribed}`,`{MembershipCardFeePaymentCycle}`,`{CountStar}`,`{CountReviewer}`)" style="min-width:88vw; max-width:88vw; margin-right:5vw; box-sizing:border-box; border-radius:15px; overflow:hidden; box-shadow:0 4px 20px rgba(0,0,0,0.3); display:inline-block;">',
-                    //                   // Background Image Section
-                    //                   //'<div style="position:relative; height:70vw; max-height:280px; background-image:url(\'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTo8sRD9DXiKgEd0sTh66b2Ljls8laA8hQ0yw&s\'); background-size:cover; background-position:center; background-repeat:no-repeat;">',
-                    //                   '<div style="position:relative; height:70vw; max-height:280px; background-image:url(\'{MembershipCardBackgroundImg_back}\'); background-size:cover; background-position:center; background-repeat:no-repeat;">',
-                                  
-                    //                     // Membership Card Image (Gold)
-                    //                    // '<img src="https://5.imimg.com/data5/KA/JP/TU/SELLER-22794929/gold-membership-card.jpg" alt="Gold Member" ',
-                    //                    // 'style="position:absolute; top:45%; right:4vw; width:42vw; max-width:200px; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,0.5); z-index:2;">',
-                    //                    '<div  style="border:1px solid white;position:absolute; top:45%; right:4vw; width:42vw; max-width:200px; border-radius:10px;  z-index:2;background-image: url({MembershipCardBackgroundImg});background-size: 100% 100%;box-shadow: 5px 2px 18px #888888;">' +
-   
-                    //                    '<table style="border-collapse:collapse;border-spacing:0;border:none;width:100%;margin:-9px 0px 0px 0px;" OnClick="FloatPanel_MembershipCardList_NotYetSubscribedShow_FromDashboard_Main(`{MembershipCardCode}`,`{EnterpriseAccNo}`,`{isMembershipCardSubscribed}`,`{MembershipCardFeePaymentCycle}`,`{CountStar}`,`{CountReviewer}`)" ><tr><td style="background-color:transparent;border-color:white;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:10px;font-weight:normal;overflow:hidden;padding:0px 5px;text-align:left;vertical-align:middle;word-break:normal;width:100%;height:33px;color:white" colspan="3">{ModifiedEnterprisesLogoDesignOneTwo}{ModifiedEnterprisesNameDesignOneTwo}</td></tr><tbody><tr><td style="border-color:black;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:top;word-break:normal;width:100%;" colspan="3"><div style="margin:10px 0px 0px 10px;width:100%;text-align:left;font-family:Playball, cursive;font-size:8px;font-weight:normal;border-top: 1px none white;color:white;padding:0px 0px;">{MembershipCardType}</div><br><div style="margin:-23px 0px 0px 10px;width:100%;text-align:left;color:white;font-family:Orbitron;font-size:9px;font-weight:normal;border-top: 1px none white;padding:0px 0px">123 4567</div><br><div style="margin:-22px 0px 0px 10px;width:100%;text-align:left;color:white;font-family:Orbitron;font-size:8px;font-weight:normal;border-top: 1px none white;padding:0px 0px">MEMBER NAME</div></td><td style="border-color:black;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:0px 0px;text-align:center;vertical-align:top;word-break:normal;width:5%;"></td></tr><tr><td style="border-color:black;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:0px 0px;text-align:left;vertical-align:top;word-break:normal" colspan="2"><div style="margin:8px 0px 0px 10px;width:100%;text-align:left;color:white;font-family:Orbitron,sans-serif;font-size:7px;font-weight:normal;border-top: 1px none white;padding:0px 0px">Member Since</div><br><div style="margin:-23px 0px 0px 10px;width:100%;text-align:left;color:white;font-family:Orbitron,sans-serif;font-size:5px;font-weight:normal;border-top: 1px none white;padding:0px 0px">After Approved</div><br><div style="margin:-18px 0px 0px 0px;width:100%;text-align:left;color:transparent;font-family:Orbitron,sans-serif;font-size:5px;font-weight:normal;border-top: 1px none white;padding:0px 0px;height:5px">After Approved</div></td><td style="border-color:black;border-style:none;border-width:1px;font-family:Arial, sans-serif;font-size:7px;overflow:hidden;padding:0px 0px;text-align:right;vertical-align:top;word-break:normal"><div style="margin:8px 0px 0px -15px;width:100%;text-align:right;color:white;font-family:Orbitron,sans-serif;font-size:5px;font-weight:normal;border-top: 1px none white;padding:0px 0px">Valid Until</div><br><div style="margin:-10px 0px 0px -15px;width:100%;text-align:right;color:white;font-family:Orbitron,sans-serif;font-size:5px;font-weight:normal;border-top: 1px none white;padding:0px 0px">{ModifiedStrExpiredDate}</div></td><br><div style="margin:-18px 0px 0px 0px;width:100%;text-align:left;color:transparent;font-family:Orbitron,sans-serif;font-size:7px;font-weight:normal;border-top: 1px none white;padding:0px 0px;height:5px">After Approved</div></tr></tbody></table>' +
-                    //                                                  '</div>'+
 
 
 
 
 
-                    //                     // Text Overlay
-                    //                     '<div style="position:absolute; bottom:0; left:0; width:100%; background-color:rgba(0,0,0,0.5); color:white; padding:2vw; z-index:1;">',
-                    //                       '<div style="font-size:3vw; line-height:1.2;">{ModifiedMarketingTagline}</div>',
-                    //                       '<div class="blink_me" style="font-size:4.2vw; font-weight:bold;">{ModifiedGetItNow}</div>',
-                    //                       '<div style="font-size:3vw;">Membership Fees: RM{MembershipCardFee}</div>',
-                    //                     '</div>',
-                    //                   '</div>',
-                                  
-                    //                   // Merchant Info Section
-                    //                   '<div style="padding:4vw; background-color:white;">',
-                    //                     '<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">',
-                    //                       '<div style="font-weight:bold; font-size:4.5vw;">{EnterprisesName}</div>',
-                    //                       '<div style="display:flex; align-items:center;">',
-                    //                        // '<img src="https://cdn-icons-png.flaticon.com/512/2920/2920029.png" width="6vw" style="margin-right:1vw;">',
-                    //                         '<span style="font-size:3vw; color:#555;">{BusinessTypeGroup}</span>',
-                    //                       '</div>',
-                    //                     '</div>',
-                                  
-                    //                     '<div style="font-size:3.2vw; color:#444;">{ModifiedEnterpriseAddress}</div>',
-                                  
-                    //                     '<div id:"ModifiedCountStarCountStar" style="margin-top:2vw; font-size:3.2vw; color:#333;">{ModifiedCountStarCountStar} ',
-                    //                       '<a href="#" style="color:#3366cc; text-decoration:none;">{CountReviewer} Reviews</a>',
-                    //                     '</div>',
-                    //                   '</div>',
-                    //                 '</div>'
-                    //               ].join('')                                 
-                              
-                    // },
-                       
+
+
+
+
+                          }
+
+
+
                 
                 
                 
