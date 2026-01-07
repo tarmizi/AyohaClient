@@ -39,6 +39,131 @@
       'LoyaltCampaignCount',
       'CountReviewer',
       'CountStar',
+      'ValidUntilDate',
+      'MembershipDate',
+      'TodayCheckInCount',
+      {
+        name: 'ModifiedTodayCheckInCount',
+        convert: function (value, record) {
+
+            var _value;
+            var TodayCheckInCount = record.get('TodayCheckInCount');
+
+            if (TodayCheckInCount == 0) {
+                _value = '<div class="ayohaPillCheckin0">Today Check-In: <b>0</b></div>';
+                return _value;
+            }else
+            if (TodayCheckInCount > 0) {
+
+                _value = '<div class="ayohaPillCheckin">Today&#39;s Check-In: <b>'+TodayCheckInCount+'</b></div>';
+                return _value;
+
+            }
+
+
+
+
+
+
+           
+        }
+    },
+      {
+        name: 'ModifiedMembershipDate',
+        convert: function (value, record) {
+
+            var _value;
+            var isMembershipCardSubscribed = record.get('isMembershipCardSubscribed');
+
+            if (isMembershipCardSubscribed == "YES") {
+                _value = record.get('MembershipDate');
+            }
+            if (isMembershipCardSubscribed == "NO") {
+
+                _value = 'Upon Approval';
+
+            }
+
+
+
+
+
+
+            return _value;
+        }
+    },
+    {
+        name: 'ModifiedAyohaUserAccountName',
+        convert: function (value, record) {
+
+            var _value;
+            var isMembershipCardSubscribed = record.get('isMembershipCardSubscribed');
+
+            if (isMembershipCardSubscribed == "YES") {
+                _value = record.get('AyohaUserAccountName');
+            }
+            if (isMembershipCardSubscribed == "NO") {
+
+                _value = 'YOUR NAME';
+
+            }
+
+
+
+
+
+
+            return _value;
+        }
+    },
+    {
+        name: 'ModifiedMembershipNo',
+        convert: function (value, record) {
+
+            var _value;
+            var isMembershipCardSubscribed = record.get('isMembershipCardSubscribed');
+
+            if (isMembershipCardSubscribed == "YES") {
+                _value = record.get('MembershipNo');
+            }
+            if (isMembershipCardSubscribed == "NO") {
+
+                _value = '123 4567 89';
+
+            }
+
+
+
+
+
+
+            return _value;
+        }
+    },
+    {
+        name: 'ModifiedValidUntilDate',
+        convert: function (value, record) {
+
+            var _value;
+            var isMembershipCardSubscribed = record.get('isMembershipCardSubscribed');
+
+            if (isMembershipCardSubscribed == "YES") {
+                _value = record.get('ValidUntilDate');
+            }
+            if (isMembershipCardSubscribed == "NO") {
+
+                _value = '00/00';
+
+            }
+
+
+
+
+
+
+            return _value;
+        }
+    },
       {
         name: 'isLoadMore',
         type: 'boolean',
@@ -663,37 +788,41 @@ if(str){
 
                     }
                 }
-                   , {
-                       name: 'ModifiedMembershipNo',
-                       convert: function (value, record) {
-                           // Mizi - 01113218926 - 9309422 - MMC - 02 - 23
-                           // 0111 3218 9269
-                           var _value;
-                           var str = record.get('MembershipNo');
-                           if(str){
-                           var str1 = str.split('-');
-                           var str2 = str1[1];
-                           var str3 = str1[2];
-                           var str4 = str3.substring(0, 1);
+                //    , {
+                //        name: 'ModifiedMembershipNo',
+                //        convert: function (value, record) {
+                //            // Mizi - 01113218926 - 9309422 - MMC - 02 - 23
+                //            // 0111 3218 9269
+                //            var _value;
+                //            var str = record.get('MembershipNo');
+                //            if(str){
+                //            var str1 = str.split('-');
+                //            var str2 = str1[1];
+                //            var str3 = str1[2];
+                //            var str4 = str3.substring(0, 1);
 
-                           var str5 = str2 + str4;
-                           var str6 = str5;
+                //            var str5 = str2 + str4;
+                //            var str6 = str5;
 
-                           var str7 = insert(str6, 4, " ");
-                           var str8 = insert(str7, 9, " ");
-
-
-
-                           _value = str8;
-                           }
-                           return _value;
+                //            var str7 = insert(str6, 4, " ");
+                //            var str8 = insert(str7, 9, " ");
 
 
 
+                //            _value = str8;
+                //            }
+                //            return _value;
 
 
-                       }
-                   }, {
+
+
+
+                //        }
+                //    }
+                   
+                   
+                   ,  
+                   {
                        name: 'ModifiedUntilDate',
                        convert: function (value, record) {
                            // Mizi - 01113218926 - 9309422 - MMC - 02 - 23
@@ -791,47 +920,88 @@ if(str){
                         var _value;
                         var _fee;
                         var str = record.get('MembershipCardFee');
-                        if(str){
-                               _fee= record.get('MembershipCardFee');
-                        }else{
-                            _fee=0;
-                        }
-            if(_fee>0){
-                _value='<div class="ayohaHubCta">View Membership Plans</div>'
-            }else if (_fee==0){
-                _value='<div class="ayohaHubCta">Join for Free</div>'
-            }
+                        var isMembershipCardSubscribed = record.get('isMembershipCardSubscribed');
+                        var _tagLine=record.get('ModifiedMarketingTagline');
+                        var _MembershipCardType=record.get('MembershipCardType');
                        
+                        if(isMembershipCardSubscribed=="YES"){
+                           
+                            var isValidLifeTime=record.get('isValidLifeTime');
+                            var endDate;
+                            if(isValidLifeTime=="YES"){
+                                endDate="Lifetime Member";
+                            }else{
+                               endDate = "Expires on "+record.get('ValidUntilDateMonthYearOnly');
+                              // endDate="Expires on "+record.get('ValidUntilDate')
+                               
+                               
+                            }
+
+
+                           _value= '<div style="margin:6px 0px 0px 0px"><div class="ayohaBtnCheckInNow">'+
+                                          '<span class="ico">'+
+                                            '<svg viewBox="0 0 24 24" aria-hidden="true">'+
+                                              '<path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"></path>'+
+                                            '</svg>'+
+                                          '</span>'+
+                                          '<span class="txt">Check-In Now</span>'+
+                                        '</div></div>'+
+                                        '<div class="ayohaHubOverlayHint">✓ Active • '+_MembershipCardType+' • '+endDate+'</div>'
+                                        
+                                        return _value;
+
+                        }
+                        if(isMembershipCardSubscribed=="NO"){
+
+                            if(str){
+                                _fee= record.get('MembershipCardFee');
+                         }else{
+                             _fee=0;
+                         }
+             if(_fee>0){
+                 _value='<div class="ayohaHubCta">View Membership Plans <span style="font-size:12px;font-weight:bold; color:white;">&#10095;</span></div>'+
+                 '<div class="ayohaHubFee">Membership from RM '+_fee+'</div>'
+             }else if (_fee==0){
+                 _value='<div class="ayohaHubCta">🎉 Join for Free <span style="font-size:12px;font-weight:bold; color:white;">&#10095;</span></div>'+
+                        '<div class="ayohaHubFee">'+_tagLine+'</div>'
+             }
+             return _value;
+
+                        }
+
+
+
+       
             
             
-                        return _value;
+                      
                     }
                 },
                   
-                {
-                    name: 'ModifiedHelperCTA',
-                    convert: function (value, record) {
+            //     {
+            //         name: 'ModifiedHelperCTA',
+            //         convert: function (value, record) {
             
-                        var _value;
-                        var _fee;
-                        var _tagLine=record.get('ModifiedMarketingTagline');
-                        var str = record.get('MembershipCardFee');
-                        if(str){
-                               _fee= record.get('MembershipCardFee');
-                        }else{
-                            _fee=0;
-                        }
-            if(_fee>0){
-                _value='<div class="ayohaHubFee">Membership from RM '+_fee+'</div>'
-            }else if (_fee==0){
-                _value='<div class="ayohaHubFee">'+record.get('ModifiedMarketingTagline')+'</div>'
-            }
+            //             var _value;
+            //             var _fee;
+            //             var _tagLine=record.get('ModifiedMarketingTagline');
+            //             var str = record.get('MembershipCardFee');
+            //             if(str){
+            //                    _fee= record.get('MembershipCardFee');
+            //             }else{
+            //                 _fee=0;
+            //             }
+            // if(_fee>0){
+            //     _value='<div class="ayohaHubFee">Membership from RM '+_fee+'</div>'
+            // }else if (_fee==0){
+            //     _value='<div class="ayohaHubFee">'+record.get('ModifiedMarketingTagline')+'</div>'
+            // }
                        
             
             
-                        return _value;
-                    }
-                },
+            //             return _value;
+            //         }
+            //     },
               
         ]
     }

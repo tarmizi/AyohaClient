@@ -158,14 +158,17 @@ function FloatPanel_Membership_MembershipCardHubsUpgrade() {
                     {
                         xtype: 'container',
 
-                        width: '100%',
-                        height: '100%',
-                        layout: {
-                            type: 'vbox',
-                            pack: 'start',
-                            align: 'center'
+                      
 
-                        },
+                        width: '100%',
+  height: '100%',
+  layout: 'fit',
+                        // layout: {
+                        //     type: 'vbox',
+                        //     pack: 'start',
+                        //     align: 'center'
+
+                        // },
                         items: [
                             
 
@@ -176,7 +179,7 @@ function FloatPanel_Membership_MembershipCardHubsUpgrade() {
                                 xtype: 'list',
                                 id: 'FloatPanel_Membership_MembershipCardHubsUpgradeList',
                                 cls: 'ayohaHubList', // ✅ penting untuk center + styling
-                                height: '100%',
+                              //  height: '100%',
                                 width: '100%',
                                 style: 'background-color:rgba(255, 255, 255, 0); border-radius:0;',
                                 scrollable: { direction: 'vertical', indicators: false },
@@ -292,42 +295,41 @@ function FloatPanel_Membership_MembershipCardHubsUpgrade() {
                               
                                     '<div class="ayohaHubHero" style="background-image:url(\'{MembershipCardBackgroundImg_back}\');">',
                               
-                                      '<div class="ayohaPillCheckin">Today&#39;s Check-In: <b>3</b></div>',
-                              
+                                      //'<div class="ayohaPillCheckin">Today&#39;s Check-In: <b>3</b></div>',
+                              '{ModifiedTodayCheckInCount}',
                                       '<div class="ayohaMiniCard" style="background-image:url({MembershipCardBackgroundImg});">',
                                         '<div class="ayohaMiniTop">{ModifiedEnterprisesLogoDesignOneTwo}{ModifiedEnterprisesNameDesignOneTwo}</div>',
                               
                                         '<div class="ayohaMiniMid">',
                                           '<div class="ayohaMiniType">{MembershipCardType}</div>',
-                                          '<div class="ayohaMiniNo">123 4567</div>',
-                                          '<div class="ayohaMiniName">MEMBER NAME</div>',
+                                          '<div class="ayohaMiniNo">{ModifiedMembershipNo}</div>',
+                                          '<div class="ayohaMiniName">{ModifiedAyohaUserAccountName}</div>',
                                         '</div>',
                               
                                         '<div class="ayohaMiniBottom">',
                                           '<div class="ayohaMiniCol">',
                                             '<div class="k">Member Since</div>',
-                                            '<div class="v">Upon approval</div>',
+                                            '<div class="v">{ModifiedMembershipDate}</div>',
                                           '</div>',
                                           '<div class="ayohaMiniCol right">',
                                             '<div class="k">Valid Until</div>',
-                                            '<div class="v">Dec 0000</div>',
+                                            '<div class="v">{ValidUntilDateMonthYearOnly}</div>',
                                           '</div>',
                                         '</div>',
                                       '</div>',
                               
                                       '<div class="ayohaHubOverlay">',
-                                      // '{ModifiedCTA}',
-                                    //    '{ModifiedHelperCTA}',        
-                                        '<div style="margin:6px 0px 0px 0px"><div class="ayohaBtnCheckInNow">',
-                                          '<span class="ico">',
-                                            '<svg viewBox="0 0 24 24" aria-hidden="true">',
-                                              '<path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"></path>',
-                                            '</svg>',
-                                          '</span>',
-                                          '<span class="txt">Check-In Now</span>',
-                                        '</div></div>',
-                                //    '{ModifiedHelperCTA}',  
-                                         '<div class="ayohaHubOverlayHint">✓ Membership Active • Expires Dec 2026</div>',
+                                      '{ModifiedCTA}',
+                                      // '{ModifiedHelperCTA}',        
+                                        // '<div style="margin:6px 0px 0px 0px"><div class="ayohaBtnCheckInNow">',
+                                        //   '<span class="ico">',
+                                        //     '<svg viewBox="0 0 24 24" aria-hidden="true">',
+                                        //       '<path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"></path>',
+                                        //     '</svg>',
+                                        //   '</span>',
+                                        //   '<span class="txt">Check-In Now</span>',
+                                        // '</div></div>',                                
+                                        //  '<div class="ayohaHubOverlayHint">✓ Membership Active • Expires Dec 2026</div>',
                               
                                       '</div>',
                               
@@ -361,17 +363,69 @@ function FloatPanel_Membership_MembershipCardHubsUpgrade() {
 
 
 
-                          }
+                          },
 
 
-
+                          {
+                       
+                            xtype: 'container',
+                            margin: '0 0 0 0',
+                           docked:'bottom',                    
+                            height: 82,
+                            width: '100%',
+                            style: 'border-top:2px solid rgba(124,58,237,.14);border-bottom:2px none #D25959;border-left:2px none #D25959;border-right:2px none #D25959;background-color:transparent;',
+                            layout: {
+                                type: 'vbox',
+                                pack: 'start',
+                                align: 'center'
+                            },
+                            items:[
+                                {
+                                    height: 82,
+                                    //margin:'-5 0 0 0',
+                                    width: '100%',
+                                    html:'<div class="ayohaSearchWrap">' +
+                                    '<div class="ayohaSearchBar">' +
+                                
+                                      '<span class="ayohaSearchIco" aria-hidden="true">' +
+                                        '<svg viewBox="0 0 24 24">' +
+                                          '<path d="M10.5 3a7.5 7.5 0 1 0 4.6 13.4l3.2 3.2a1 1 0 0 0 1.4-1.4l-3.2-3.2A7.5 7.5 0 0 0 10.5 3Zm0 2a5.5 5.5 0 1 1 0 11a5.5 5.5 0 0 1 0-11Z"></path>' +
+                                        '</svg>' +
+                                      '</span>' +
+                                
+                                      '<input id="ayohaSearchInput" class="ayohaSearchInput" type="search" ' +
+                                        'placeholder="Search merchants or cards…" autocomplete="off" />' +
+                                
+                                      '<button class="ayohaIconBtn ayohaIconBtnQr" aria-label="Scan QR" ' +
+                                        'onclick="if(event.stopPropagation){event.stopPropagation();} event.cancelBubble=true; ' +
+                                        'FloatPanel_ScanQR && FloatPanel_ScanQR();">' +
+                                        '<svg viewBox="0 0 24 24">' +
+                                          '<path d="M3 3h8v8H3V3zm2 2v4h4V5H5zm8-2h8v8h-8V3zm2 2v4h4V5h-4zM3 13h8v8H3v-8zm2 2v4h4v-4H5zm12 0h2v2h-2v-2zm-4 0h2v4h-2v-4zm6 0h2v6h-2v-6zm-4 4h6v2h-6v-2z"></path>' +
+                                        '</svg>' +
+                                      '</button>' +
+                                
+                                      '<button class="ayohaIconBtn ayohaIconBtnFilter" aria-label="Filter" ' +
+                                        'onclick="if(event.stopPropagation){event.stopPropagation();} event.cancelBubble=true; ' +
+                                        'FloatPanel_Filter && FloatPanel_Filter();">' +
+                                        '<svg viewBox="0 0 24 24">' +
+                                          '<path d="M4 6h16v2H4V6zm3 5h10v2H7v-2zm3 5h4v2h-4v-2z"></path>' +
+                                        '</svg>' +
+                                      '</button>' +
+                                
+                                    '</div>' +
+                                  '</div>',
+                                }
+                          
+                                 
+                            ]
+                       }
                 
                 
                 
                 ]
                     },
 
-
+                   
                 ]
             },
 
