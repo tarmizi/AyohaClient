@@ -48,17 +48,21 @@
 
             var _value;
             var TodayCheckInCount = record.get('TodayCheckInCount');
+            var isMembershipCardSubscribed = record.get('isMembershipCardSubscribed');
 
-            if (TodayCheckInCount == 0) {
-                _value = '<div class="ayohaPillCheckin0">Today Check-In: <b>0</b></div>';
-                return _value;
-            }else
-            if (TodayCheckInCount > 0) {
-
-                _value = '<div class="ayohaPillCheckin">Today&#39;s Check-In: <b>'+TodayCheckInCount+'</b></div>';
-                return _value;
-
+            if (isMembershipCardSubscribed == "YES") {
+                if (TodayCheckInCount == 0) {
+                    _value = '<div class="ayohaPillCheckin0">Today Check-In: <b>0</b></div>';
+                    return _value;
+                }else
+                if (TodayCheckInCount > 0) {
+    
+                    _value = '<div class="ayohaPillCheckin">Today&#39;s Check-In: <b>'+TodayCheckInCount+'</b></div>';
+                    return _value;
+    
+                }
             }
+           
 
 
 
