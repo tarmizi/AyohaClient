@@ -310,7 +310,8 @@ function FloatPanel_Membership_MembershipCardHubsUpgrade() {
                     
                                 itemTpl: [
                                     '<div class="ayohaHubRow">',
-                                      '<div class="ayohaHubCard" OnClick="FloatPanel_MembershipCardList_NotYetSubscribedShow_FromDashboard_Main(`{MembershipCardCode}`,`{EnterpriseAccNo}`,`{isMembershipCardSubscribed}`,`{MembershipCardFeePaymentCycle}`,`{CountStar}`,`{CountReviewer}`)">',
+                                     // '<div class="ayohaHubCard" OnClick="FloatPanel_MembershipCardList_NotYetSubscribedShow_FromDashboard_Main(`{MembershipCardCode}`,`{EnterpriseAccNo}`,`{isMembershipCardSubscribed}`,`{MembershipCardFeePaymentCycle}`,`{CountStar}`,`{CountReviewer}`)">',
+                                      '<div class="ayohaHubCard" OnClick="FloatPanel_Membership_MembershipCardHubsUpgrade_CheckInPageShow(`{EnterprisesLogo}`,`{EnterprisesName}`,`{EnterpriseAddress}`,`{TodayCheckInCount}`,`{EnterpriseAccNo}`)">',
                                   
                                         '<div class="ayohaHubHero" style="background-image:url(\'{MembershipCardBackgroundImg_back}\');">',
                                             '{ModifiedTodayCheckInCount}',
@@ -636,60 +637,118 @@ function FloatPanel_Membership_MembershipCardHubsUpgradeHide() {
 }
 
 
-// //var _DataStore_MembershipsLoadBySubscriberAccNoStore;
-// function FloatPanel_Membership_MembershipCardHubsUpgrade_MembershipsLoadBySubscriberAccNoStore() {
+function FloatPanel_Membership_MembershipCardHubsUpgrade_CheckInPageShow(logoUrl,EnterpriseName,EnterpriseTagline,CheckInCount,EnterpiseAccNo) {
+    // Create a new div element to hold our custom HTML
 
-
-//     //console.log(GetCurrAyohaUserAccountNo());
-
-//     //Ext.getStore('MembershipsLoadBySubscriberAccNoStore').getProxy().setExtraParams({
-//     //    SubscriberAccNo: GetCurrAyohaUserAccountNo()
-//     //});
-//     //Ext.StoreMgr.get('MembershipsLoadBySubscriberAccNoStore').load();
-
-//    // alert(GetCurrAyohaUserAccountNo())
-//     _DataStore_MembershipsLoadBySubscriberAccNoStore.getProxy().setExtraParam('SubscriberAccNo', GetCurrAyohaUserAccountNo());
-//     _DataStore_MembershipsLoadBySubscriberAccNoStore.getProxy().setUrl(GetAPIurl() + '/Memberships/MembershipsLoadBySubscriberAccNo');
-//     _DataStore_MembershipsLoadBySubscriberAccNoStore.load();
-
-//     var task = Ext.create('Ext.util.DelayedTask', function () {
-      
-//         //Ext.getStore('MembershipsLoadBySubscriberAccNoStore').getProxy().setExtraParams({
-//         //    SubscriberAccNo: GetCurrAyohaUserAccountNo()
-//         //});
-
-//         ////  var myStore = Ext.getStore('MembershipCardLoadByEnterpriseAccNoStore');
-//         ////  countMembershipCardLoadByEnterpriseAccNoStoreFirst = myStore.getCount();
-//         ////console.log(countMembershipCardLoadByEnterpriseAccNoStoreFirst)
-
-
-//         //Ext.StoreMgr.get('MembershipsLoadBySubscriberAccNoStore').load();
-
-//         //var myStore = Ext.getStore('MembershipsLoadBySubscriberAccNoStore');
-//         //_DataStore_MembershipsLoadBySubscriberAccNoStore = Ext.getStore('MembershipsLoadBySubscriberAccNoStore');
-
-//         var count = parseInt(_DataStore_MembershipsLoadBySubscriberAccNoStore.getCount());
-
-      
+    if(CheckInCount <=3){
+        const popupContent = document.createElement('div');
+        // This HTML is unchanged
+        popupContent.innerHTML = `
+            <div class="checkin-popup">
+                <div class="checkin-icon-top">🎁</div>
+                <div class="checkin-header">Ayoha Reward Membership</div>
+                <h2 class="checkin-title">Check-In Point Loyalty</h2>
+                <hr class="checkin-divider">
+                <div class="checkin-stamp">
+                   
+                    <img src="${logoUrl}" alt="${EnterpriseName} Logo" style="width:78px;height:78px; object-fit: contain; border-radius: 10px;">
+                </div>
+                
+          
+                <p class="checkin-subtitle">${EnterpriseName}</p>
+               
+                <span class="checkin-subtitle-small">${EnterpriseTagline}</span>
+                <div class="checkin-info">
+                    <p>Get <strong>10 FREE Ayoha Points</strong> just for visiting our ayoha merchant -<strong> ${EnterpriseName}</strong> today. You can collect this<strong>10 point </strong>up to <strong>3 times per day!</strong></p>
+                </div>
+            </div>
+        `;
     
-      
-//         LoadingPanelHide();
-//         Ext.Viewport.setMasked(false);
-
-
-
-
-
-
-
-
-
-
-//     });
-//     task.delay(1000);
-
-
-
-
-// }
-
+        // --- THIS IS THE UPDATED SweetAlert2 CODE ---
+        Swal.fire({
+            // Use 'html' to pass the DOM element
+            html: popupContent,
+    
+            // Use 'customClass' to apply ALL our custom styles
+            customClass: {
+                popup: 'ayoha-checkin-swal', // The main modal
+                confirmButton: 'swal-button--confirm-custom', // The confirm button
+                cancelButton: 'swal-button--cancel-custom'   // The cancel button
+            },
+            allowOutsideClick: false, // Prevents closing on overlay click
+            allowEscapeKey: false,    // Prevents closing with the Esc key
+            // --- Button configuration ---
+            showCancelButton: true,
+            confirmButtonText: "Tap to Check-In",
+            cancelButtonText: "Maybe Later",
+    
+            // --- Remove default SweetAlert2 elements ---
+            showCloseButton: false,
+            showConfirmButton: true,
+            title: ' ', // Hides the title but keeps the space
+            padding: 0, // We will control padding with CSS
+            
+        }).then((result) => {
+            // --- THIS IS THE UPDATED .then() LOGIC ---
+            // Handle the button clicks
+            if (result.isConfirmed) {
+                
+                // The "Tap to Check-In" popup has now closed automatically.
+                // Now, run your Sencha AJAX request to save the check-in.
+    
+                var objn = {
+                    "EnterpriseHQAccNo": EnterpiseAccNo,
+                    "EnterpriseAccNo":EnterpiseAccNo,
+                    "SubscriberAccNo": GetCurrAyohaUserAccountNo(),
+                    "CheckInCode": "CIC-" + GenerateRandomNo() + '-' + GetCurrAyohaUserAccountNo(),
+                    "CheckInMethod": "Online",
+                    "CheckInPage": "MerchantList"
+                };
+                var _value = Ext.Ajax.request({
+                    type: "POST",
+                    url: GetAPIurl() + '/EnterprisesCheckIn/EnterprisesCheckIn_Insert',
+                    dataType: "json",
+                    data: JSON.stringify(objn),
+                    headers: {
+                        "Content-Type": "application/json; charset=utf-8"
+                    },
+                    success: function (result, request) {
+                        data = Ext.decode(result.responseText.trim());
+    
+                        if (data.success == "true") {
+                            
+                            // After the save is successful,
+                            // show your animation and the *new* "Confirmed" popup.
+                            FloatPanel_AyohaStore_AyohaPointCollectedAnimShow();
+                            FloatPanel_Membership_CheckInPage_ConfirmedShow(CheckInCount); // This is correct.
+                            CoreFunction_DashboardAyohaUser();
+                            FloatPanel_Membership_MembershipCardHubsUpgradeHide();
+                           // Dashboard_MerchantDetailPageShow();
+                        } else {
+                            swalFireFail("Fail!->" + result.responseText.trim());
+                            LoadingPanelHide();
+                            Ext.Viewport.unmask();
+                        }
+                        Ext.Viewport.unmask();
+                    },
+                    failure: function (result, request) {
+                        swalFireFail("Fail!" + result.responseText.trim());
+                        Ext.Viewport.unmask();
+                        LoadingPanelHide();
+                    }
+                });
+    
+                // --- I HAVE REMOVED THE OLD PLACEHOLDER FUNCTION CALL FROM HERE ---
+    
+            } else if (result.isDismissed) {
+                // User clicked "Maybe Later" or closed the modal
+                // The popup also closes automatically here.
+            }
+        });
+    }else{
+        CoreFunction_DashboardAyohaUser();
+        FloatPanel_Membership_MembershipCardHubsUpgradeHide();
+    }
+  
+}
+   
