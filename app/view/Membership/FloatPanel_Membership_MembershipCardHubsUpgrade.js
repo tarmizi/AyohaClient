@@ -719,8 +719,9 @@ function FloatPanel_Membership_MembershipCardHubsUpgrade_CheckInPageShow(logoUrl
                             
                             // After the save is successful,
                             // show your animation and the *new* "Confirmed" popup.
+
                             FloatPanel_AyohaStore_AyohaPointCollectedAnimShow();
-                            FloatPanel_Membership_CheckInPage_ConfirmedShow(CheckInCount); // This is correct.
+                            FloatPanel_Membership_CheckInPage_ConfirmedShow(CheckInCount + 1); // This is correct.
                             CoreFunction_DashboardAyohaUser();
                             FloatPanel_Membership_MembershipCardHubsUpgradeHide();
                            // Dashboard_MerchantDetailPageShow();

@@ -1479,353 +1479,13 @@ html: '<div style="text-align:center;padding:10px;margin:-3px 0px 0px 0px;">' +
           //margin: '-60 0 0 0',
        
             items: [
-//                {
-//                  xtype: 'carousel',
-//                  hidden:true,
-//                    id: 'mainDashboardCarousel',
-//                    height: 205,
-//                  //ori  height: 190,
-//                    width: '100%',
-//                    indicator: false,
-//                    style: ayohaThemeColor_Hero(),
-                  
 
-//                                                      items:[
-
-
-                                                
-// {
-// xtype: 'container',
-
-
-// width: '100%',
-
-// //ori height: 190,
-// height: 205,
-// title: 'Dashboard_AyohaReward_MainDashboard',
-// style: "background-color: transparent;",
-// layout: {
-//    type: 'vbox',
-//    pack: 'start',
-//    align: 'center'
-
-// },
-// items:[
-//    {
-//        xtype: 'container',
-//        width: '100%',
-//        height: 30,
-//        style: 'background-color:transparent',
-//       //ori height: 10,
-    
-//    },
-//    {
-//      xtype: 'container',
-//        width: '91%',
-//        height: 165,
-//       // height: 145,
-//       // style: 'background-color:white;border:2px solid #ECF0F1;border-radius:25px',
-//        style: 'background-color:transparent;border:2px none #ECF0F1;border-radius:25px',
-//        layout: {
-//          type: 'vbox',
-//          pack: 'center',
-//          align: 'center',
-//      },
-//      items:[
-
-//          {
-//              xtype: 'container',
-//              width: '100%',
-           
-//              height: 70,
-//              style: 'background-color:transparent',
-//              layout: {
-//                type: 'hbox',
-//                pack: 'center',
-//                align: 'center',
-//            },
-//            items:[
-//              {
-
-//                  xtype: 'container',
-//                  width: '100%',
-//                  margin: '-50 0 0 0',                  
-//                  height: 50,
-//                  style: 'background-color:transparent',
-//                  layout: {
-//                    type: 'vbox',
-//                    pack: 'start',
-//                    align: 'left',
-//                },items:[
-
-//                  {
-
-//                      margin: '-15 0 0 14',
-//                      // id: 'labelDashboard_LastCheckInTimeStamp',    
-//                     // html: '<div style="color:#3A0ca3;text-align: left;font-size:18px;width:100%;margin:0px 0px 0px 0px"><b>Merchant Check-In</b></div>',
-                     
-//                       html: '<div style="color:white;text-align: left;font-size:18px;width:100%;margin:0px 0px 0px 0px"><b>Merchant Check-In</b></div>',
-                     
-//                  },
-//                  {
-//                      margin: '2 0 0 14',
-//                      // id: 'labelDashboard_LastCheckInTimeStamp',    
-//                      // html: '<div  style="color:white;text-align: left;font-size:10px;width:100%;margin:0px 0px 0px 0px;">00:00:00</div>'
-//                       html: '<div style="font-size:10px;color:#3B1A00;background:#F59E0B;border:1px solid #FBBF24;padding:4px 8px;border-radius:999px;white-space:nowrap;">Earn +10 Ayoha Point on every checkin</div>'
-                     
-//                  },
-               
-//                  {
-//                      margin: '2 0 0 20',
-//                      // id: 'labelDashboard_LastCheckInTimeStamp',    
-//                      // html: '<div  style="color:white;text-align: left;font-size:10px;width:100%;margin:0px 0px 0px 0px;">00:00:00</div>'
-//                       html: '<div style="font-size:8px;color:white;background:transparnt;white-space:nowrap;font-weight:600px">Max 3x check in per-merchant in a day</div>'
-                     
-//                  }
-//                ]
-
-
-
-             
-             
-             
-             
-             
-             
-             
-//              },
-//              {
-//                  xtype: 'spacer'
-//              },
- 
- 
- 
-//              {
-//          //         position: absolute;
-//          // top: -50px; /* Moves the mascot up to break the border */
-//          // right: 0px;
-//          // width: 140px; /* Adjust based on your actual image size */
-//          // height: auto;
-//          // z-index: 10;
-//               xtype: 'component',
-//               html:
-//               '<div onclick="FloatPanel_Membership_MembershipCardHubsUpgradeShow();" style="position:absolute;top:-58px;right:0px;background-color:transparent;border-radius:50%;' +
-//                    'width:121px;height:141px;z-index:10;display:flex;align-items:center;justify-content:center;">' +
-//                 '<img src="resources/icons/maskotEarnPoint05.png" ' +
-//                      'style="width:110px;height:141px;display:block;" ' +
-//                      'alt="Company Name" />' +
-//               '</div>'
-//           },
-//            ]
-//          },
-        
-//          {
-//              xtype: 'container',
-//              width: '100%',
-//              height: 40,
-//              style: 'background-color:transparent',
-//              layout: {
-//                  type: 'vbox',
-//                  pack: 'start',
-//                  align: 'center'
-//              },
-//              items: [
-//                  {
-//                      html:
-//                        '<div onclick="FloatPanel_Membership_MembershipCardHubsUpgradeShow();" style="width:100%;padding:10px;margin:-4px 0 0 0;">' +
-//                          '<style>' +
-//                           // '@keyframes ayohaPulse{0%{box-shadow:0 0 0 0 rgba(138,43,226,.35)}70%{box-shadow:0 0 0 14px rgba(138,43,226,0)}100%{box-shadow:0 0 0 0 rgba(138,43,226,0)}}' +
-//                            '@keyframes ayohaPulse{0%{box-shadow:0 8px 18px rgba(138,43,226,.25),0 0 0 0 rgba(255,255,255,.45),0 0 18px 0 rgba(255,0,222,.35);}70%{box-shadow:0 8px 18px rgba(138,43,226,.25),0 0 0 14px rgba(255,255,255,0),0 0 28px 10px rgba(255,0,222,0);}100%{box-shadow:0 8px 18px rgba(138,43,226,.25),0 0 0 0 rgba(255,255,255,0),0 0 0 0 rgba(255,0,222,0);}}'+
-
-                           
-                           
-                           
-//                            '@keyframes ayohaShine{0%{transform:translateX(-120%)}100%{transform:translateX(120%)}}' +
-//                          '</style>' +
-         
-//                          // ✅ full-width button
-//                          '<a href="#checkin" aria-label="Check-In Now"' +
-//                             'style="position:relative;display:flex;width:100%;max-width:100%;' +
-//                                    'align-items:center;justify-content:center;gap:10px;' +
-//                                    'height:50px;padding:0 18px;box-sizing:border-box;' +
-//                                   // 'background-color:#fac;background:linear-gradient(90deg,#ff00de75,#c800ffc9);' +
-//                                    'background-color:#fac;background:linear-gradient(#c800ffc9,#c800ffc9);' +
-//                                   // 'color:#fff;text-decoration:none;border-radius:999px;' +
-//                                    'color:#fff;text-decoration:none;border-radius:10px;' +
-//                                    'font:700 15px/1 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;' +
-//                                    'letter-spacing:.2px;border:1px solid rgba(255,255,255,.18);' +
-//                                    'box-shadow:0 8px 18px rgba(138,43,226,.25);' +
-//                                    'animation:ayohaPulse 2.2s ease-out infinite;overflow:hidden;transform:translateZ(0);">' +
-         
-//                              '<span style="width:20px;height:20px;display:inline-flex;align-items:center;justify-content:center;">' +
-//                                '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="display:block">' +
-//                                  '<path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/>' +
-//                                '</svg>' +
-//                              '</span>' +
-         
-//                              '<span>Find Merchant Here!</span>' +
-         
-//                              '<span style="margin-left:2px;display:inline-flex;align-items:center;' +
-//                                          'background:linear-gradient(90deg,#f59e0b,#fbbf24);color:#111;' +
-//                                          'font:800 10px/1.1 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;' +
-//                                          'padding:3px 6px;border-radius:999px;">+10 pts</span>' +
-         
-//                              '<span style="content:\'\';position:absolute;top:-30%;left:0;width:30%;height:160%;' +
-//                                          'background:linear-gradient(90deg,rgba(255,255,255,0) 0%,rgba(255,255,255,.55) 50%,rgba(255,255,255,0) 100%);' +
-//                                          'filter:blur(2px);transform:translateX(-120%);pointer-events:none;' +
-//                                          'animation:ayohaShine 2.8s ease-in-out infinite;"></span>' +
-//                          '</a>' +
-//                        '</div>',
-//                      width: '100%',
-//                      height: 40
-//                  }
-//              ]
-//          }
-         
-//      ]
-   
-//    },
-//       //////////////////////last checkin//
-//       {
-//        xtype: 'container',
-//        width: '100%',
-//        hidden: true,
-//        id:'containerDashboard_LastCheckIn',
-//        margin: '0 0 0 0',
-//        // style: 'border-right:2px solid #ECF0F1;border-left:2px solid #ECF0F1;border-bottom:2px solid #ECF0F1;border-top:2px solid #ECF0F1 ;background: white;border-radius: 0px 15px 15px 0px;',
-//        //  style: 'border-right:2px none #ECF0F1;border-left:2px none #ECF0F1;border-bottom:2px none #ECF0F1;border-top:2px none #ECF0F1 ;background: red;',
-//        style: 'background-color:transparent',
-//        layout: {
-//            type: 'hbox',
-//            pack: 'center',
-//            align: 'center',
-//        },
-//        items: [
-//             {
-//                 margin: '10 0 0 14',
-//                // id: 'labelDashboard_LastCheckInTimeStamp',    
-//                // html: '<div  style="color:white;text-align: left;font-size:10px;width:100%;margin:0px 0px 0px 0px;">00:00:00</div>'
-//                 html: '<div style="color:white;text-align: left;font-size:14px;width:100%;margin:0px 0px 0px 0px"><span style="font-size:10px;color:#16a34a;background:#ecfdf5;border:1px solid #bbf7d0;padding:3px 6px;border-radius:999px;white-space:nowrap;">Earn +10 Ayoha Point on every checkin</span><br><b>Membership Hubs Check-In</b></div><br><div  style="color:white;text-align: left;font-size:10px;width:100%;margin:-25px 0px 0px 0px;">Last Check-In Merchant:</div>'
-               
-//             },
-//             {
-//                 xtype: 'spacer'
-//             },
-
-
-
-//             {
-//              xtype: 'component',
-//              html:
-//              '<div style="position:absolute;top:-12px;right:20px;background-color:transparent;border-radius:50%;' +
-//                   'width:135px;height:137px;z-index:5;display:flex;align-items:center;justify-content:center;">' +
-//                '<img src="resources/icons/maskotEarnPoint02.png" ' +
-//                     'style="width:130px;height:82px;display:block;" ' +
-//                     'alt="Company Name" />' +
-//              '</div>'
-//          },
-
-
-
-//             {
-// id: 'btnDashboard_CheckIn',
-// hidden:true,
-//                margin: '10 14 0 0',
-//             html:'<a href="#checkin" class="example-5" role="button"'+
-//             //'onclick="Dashboard_SearchMerchantListShow();" style="display:inline-flex;align-items:center;gap:5px;padding:6px 9px;'+
-//              'onclick="FloatPanel_Membership_MembershipCardHubsUpgradeShow();" style="display:inline-flex;align-items:center;gap:5px;padding:6px 9px;'+
-//                    'background-color: #fac;background-image: linear-gradient(#c800ffc9, #ff00de75);'+
-//                   'color:#fff;text-decoration:none;border-radius:999px;'+
-//                    'font:400 10px/1 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;'+
-//                    'letter-spacing:.2px;'+
-//                    'border:2px solid #fac; border-radius: 18px; box-shadow: 0 12px 28px rgba(0,0,0,.28);">'+            
-//           '<span>Check-In Now</span>'+
-//          '</a>',
-//               // html: '<div onclick="FloatPanel_Membership_CheckInPage_ConfirmedShow();" style="color:white;text-align: center;font-size:12px;width:100%;"><u>Check-In Trail</u></div>'
-           
-//            },
-          
-
-           
-//        ]
-//    },
-//    {
-//        xtype: 'container',
-//        margin: '3 0 0 0',
-//        hidden: true,           
-//        id: 'DashboardMain_EnterprisesLoadCheckInEmptyID',
-//        name:'nameDashboardMain_EnterprisesLoadCheckInEmpty',
-//        // mode: 'SINGLE',
-//        // disableSelection: true,
-//        // scrollable: {
-//        //     direction: 'vertical',
-//        //     indicators: {
-//        //         y: {
-//        //             autoHide: true
-//        //         },
-//        //         x: {
-//        //             autoHide: true
-//        //         }
-//        //     }
-//        // },
-//        style: 'background-color:rgba(255, 255, 255, 0.5);border-radius: 10px 10px 10px 10px;',
-    
-
-
-          
-
-
-
-
-
-
-
-// html: '<div style="text-align:center;padding:10px;margin:-3px 0px 0px 0px;">' +
-//        '<style>@keyframes ayohaPulse{0%{box-shadow:0 0 0 0 rgba(138,43,226,.35)}70%{box-shadow:0 0 0 14px rgba(138,43,226,0)}100%{box-shadow:0 0 0 0 rgba(138,43,226,0)}}@keyframes ayohaShine{0%{transform:translateX(-120%)}100%{transform:translateX(120%)}}</style>' +
-//        '<a href="#checkin" aria-label="Check-In Now"' +
-//           'style="position:relative;display:inline-flex;align-items:center;justify-content:center;gap:10px;min-width:210px;height:48px;padding:0 18px;background-color: #fac;background:linear-gradient(90deg,#ff00de75, #c800ffc9);color:#fff;text-decoration:none;border-radius:999px;font:700 15px/1 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;letter-spacing:.2px;border:1px solid rgba(255,255,255,.18);box-shadow:0 8px 18px rgba(138,43,226,.25);animation:ayohaPulse 2.2s ease-out infinite;overflow:hidden;transform:translateZ(0);">' +
-//            '<span style="width:20px;height:20px;display:inline-flex;align-items:center;justify-content:center;">' +
-//              '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="display:block"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>' +
-//            '</span>' +
-//            '<span>Check-In Now</span>' +
-//            '<span style="margin-left:2px;display:inline-flex;align-items:center;background:linear-gradient(90deg,#f59e0b,#fbbf24);color:#111;font:800 10px/1.1 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;padding:3px 6px;border-radius:999px;">+10 pts</span>' +
-//            '<span style="content:\'\';position:absolute;top:-30%;left:0;width:30%;height:160%;background:linear-gradient(90deg,rgba(255,255,255,0) 0%,rgba(255,255,255,.55) 50%,rgba(255,255,255,0) 100%);filter:blur(2px);transform:translateX(-120%);pointer-events:none;animation:ayohaShine 2.8s ease-in-out infinite;"></span>' +
-//        '</a>' +
-//       '<div style="margin-top:8px;font:600 11px/1.2 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:white;">Earn +10 Ayoha Points on every check-in</div>' +
-//      '</div>',
-       
-
-
-//        width: '92%',
-//        height: 80,
-//        disableSelection: true,
-//        scrollable:false,
-
-
-
-
-
-
-//    },
-
-  
-
-// ]
-// },
-
-
-              
-   
-              
-              
-//                ]
-//                },
-               
                {
                  xtype: 'carousel',
                  // xtype: 'container',
                    id: 'mainDashboardCarousel_CheckIn',
-                   height: 205,
+                  // height: 205,
+                   height: 255,
                   // hidden:true,
                  //ori  height: 190,
                    width: '100%',
@@ -1844,7 +1504,8 @@ xtype: 'container',
 width: '100%',
 
 //ori height: 190,
-height: 205,
+//height: 205,
+height: 255,
 title: 'Dashboard_AyohaReward_MainDashboard_CheckIn',
 // style: "background: linear-gradient(90deg, #491A7F 0%, #7027A5 50%, #9537C8 100%);",
 style: 'background-color:transparent',
@@ -1865,9 +1526,11 @@ items:[
    },
    {
      xtype: 'container',
-       width: '91%',
-     height: 165,
-      //height: 145,
+      // width: '91%',
+       width: '100%',
+     //height: 165,
+     height: 210,
+      
        style: 'background-color:transparent;border:2px none #F5D3A0;border-radius:25px',
        layout: {
          type: 'vbox',
@@ -1876,122 +1539,270 @@ items:[
      },
      items:[
 
-         {
-             xtype: 'container',
-             width: '100%',
+        //  {
+        //      xtype: 'container',
+        //      width: '100%',
            
-             height: 70,
-             style: 'background-color:transparent',
-             layout: {
-               type: 'hbox',
-               pack: 'center',
-               align: 'center',
-           },
-           items:[
-             {
-
-                 xtype: 'container',
-                 width: '100%',
-              //  margin: '-50 0 0 0',    
-                margin: '-70 0 0 0',                  
-                 height: 50,
-                 style: 'background-color:transparent',
-                 layout: {
-                   type: 'vbox',
-                   pack: 'start',
-                   align: 'left',
-               },items:[
-                {
-
-                   // margin: '-10 0 0 14',
-                     margin: '-30 0 0 14',
-                      html: '<div style="color:white;text-align: left;font-size:18px;width:100%;margin:0px 0px 0px 0px"><b>Check-in Success !</b></div>',
-                     
-                      // id: 'labelDashboard_LastCheckInTimeStamp',    
-                      // html: '<div  style="color:white;text-align: left;font-size:10px;width:100%;margin:0px 0px 0px 0px;">00:00:00</div>'
-                    //  html: '<div class="ayohaPillSuccess">+10 points</div>'
-                  },
-                  {
-                    margin: '0 0 0 14',
-                    html: '<div class="ayohaPillSuccess">+10 points</div>'
-                  },
-
-                //  {
-
-                //     // margin: '0 0 0 0',
-                //     margin: '0 0 0 0',
-                //      // id: 'labelDashboard_LastCheckInTimeStamp',    
-                //      // html: '<div  style="color:white;text-align: left;font-size:10px;width:100%;margin:0px 0px 0px 0px;">00:00:00</div>'
-                //       html: '<div style="color:white;text-align: left;font-size:18px;width:100%;margin:0px 0px 0px 0px"><b>Check-in complete</b></div>',
-                     
-                //  },
-                 {
-                    // margin: '4 0 0 0',
-                     margin: '12 0 0 10',
-                   // hidden:true,
-                     // id: 'labelDashboard_LastCheckInTimeStamp',    
-                    
-                    // html: '<div style="font-size:10px;color:white;background:#2e7d32;border:1px solid #bbf7d0;padding:4px 8px;border-radius:999px;white-space:nowrap;">+10 Ayoha Point added !</div>'
-                   id:'htmlDashboard_MerchantLogo_Name_Tagline',
-                    html:
-                    '<div class="ayohaHeroMerchant">' +
-                      '<div class="ayohaHeroMerchantLogo">' +
-                        '<img src="resources/icons/communityCoffea.png" alt="Merchant Logo">' +
-                      '</div>' +
-                      '<div class="ayohaHeroMerchantText">' +
-                        '<div class="ayohaHeroMerchantName">Ayu Kuala Sepetang</div>' +
-                        '<div class="ayohaHeroMerchantTagline">Dont Give Up!</div>' +
-                      '</div>' +
-                    '</div>'
-                  
-                 },
-               
-                 {
-                     margin: '2 0 0 5',
-                    hidden:true,
-                     // id: 'labelDashboard_LastCheckInTimeStamp',    
-                     // html: '<div  style="color:white;text-align: left;font-size:10px;width:100%;margin:0px 0px 0px 0px;">00:00:00</div>'
-                      html: '<div style="font-size:9px;color:white;background:transparnt;white-space:nowrap;font-weight:700px">Awesome!,you are one step closer to your next <br>reward</div>'
-                     
-                 }
-               ]
-
-
-
-             
-             
-             
-             
-             
-             
-             
-             },
-             {
-                 xtype: 'spacer'
-             },
- 
- 
- 
-             {
-         //         position: absolute;
-         // top: -50px; /* Moves the mascot up to break the border */
-         // right: 0px;
-         // width: 140px; /* Adjust based on your actual image size */
-         // height: auto;
-         // z-index: 10;
-       
-              xtype: 'component',
-              html:
-              '<div  style="position:absolute;top:-48px;right:0px;background-color:transparent;border-radius:50%;' +
-                   'width:111px;height:131px;z-index:10;display:flex;align-items:center;justify-content:center;">' +
-                '<img src="resources/icons/maskotCheckIn_Success02.png" ' +
-                     'style="width:120px;height:131px;display:block;" ' +
-                     'alt="Company Name" />' +
-              '</div>'
-          },
-           ]
-         },
+        //    // height: 70,
+        //     height: 130,
+        //      style: 'background-color:transparent',
+        //      layout: {
+        //        type: 'hbox',
+        //        pack: 'center',
+        //        align: 'center',
+        //    },
+        //    items:[
+        //     {
+        //         xtype: 'container',
+        //         width: '100%', 
+        //         // UBAH SINI: Margin perlu adjust sikit sebab container makin tinggi
+        //        // margin: '-85 0 0 0', 
+        //         margin: '-25 0 0 0', 
+        //         height: 120, // PENTING: Naikkan height (sebab logo & text kini bertingkat)
+        //         style: 'background-color:transparent',
+        //         layout: { type: 'vbox', pack: 'start', align: 'center' }, // Align center
+        //         items: [
+        //             {
+        //                 width: '100%',
+        //                 margin: '-30 0 0 0', // Adjust margin bawah sikit
+        //                 // Centerkan tajuk "You've Arrived" juga
+        //                 html: '<div style="color:white; text-align:center; font-size:18px; width:100%;"><b>You\'ve Arrived! 🎉</b></div>',
+        //             },
+        //             {
+        //                 margin: '20 0 0 0',
+        //                 width: '100%',
+        //                 id: 'htmlDashboard_MerchantLogo_Name_Tagline',
+        //                 html: 
+        //                 // UBAH SINI: Guna flex-direction: column (Menegak) & align-items: center
+        //                 '<div style="display:flex; flex-direction:column; align-items:center; width:100%;">' +
+                            
+        //                     // 1. LOGO (Duduk Atas)
+        //                     '<div class="ayohaHeroMerchantLogo" style="margin-bottom:6px;">' +
+        //                         // Saiz logo boleh besar sikit sebab ruang dah banyak (50px)
+        //                         '<img src="resources/icons/communityCoffea.png" style="width:50px; height:50px; border-radius:12px; border:2px solid rgba(255,255,255,0.8); background:white; display:block;" alt="Logo">' +
+        //                     '</div>' +
         
+        //                     // 2. TEKS (Duduk Bawah & Center)
+        //                     '<div class="ayohaHeroMerchantText" style="text-align:center; width:100%;">' +
+                                
+        //                         // Nama Kedai (Center & Multi-line allowed)
+        //                         '<div class="ayohaHeroMerchantName" >' +
+        //                             'Ayu Kuala Sepetang' +
+        //                         '</div>' +
+        
+        //                         // Tagline
+        //                         '<div class="ayohaHeroMerchantTagline">' +
+        //                             '📍 Kuala Sepetang • 🍽️ Cafe & Bakery' +
+        //                         '</div>' +
+        
+        //                         // Check-In Time
+        //                         '<div class="ayohaHeroMerchantCheckInCount" >' +
+        //                             '1st Check-In Today, 12:00 AM' +
+        //                         '</div>' +
+        
+        //                     '</div>' +
+        //                 '</div>'
+        //             }
+        //         ]
+        //     },
+       
+ 
+        //      {
+        
+        //         width: '15%',
+        //       xtype: 'component',
+        //   hidden:true,
+        //     html:
+        //     // Container utama posisi (Top Right)
+        //     '<div style="position:absolute; top:0px; right:0px; z-index:10;">' +
+          
+        //          // Wrapper untuk celebration
+        //          '<div class="celebration-container">' +
+          
+        //               // --- LAYER BELAKANG: CONFETTI ---
+        //               '<div class="confetti-explosion">' +
+        //                   // Gabungan class menentukan Posisi (cf-X) dan Warna (c-X)
+        //                   '<i class="confetti-piece cf-1 c-gold"></i>' +
+        //                   '<i class="confetti-piece cf-2 c-purple"></i>' +
+        //                   '<i class="confetti-piece cf-3 c-teal"></i>' +
+        //                   '<i class="confetti-piece cf-4 c-gold"></i>' +
+        //                   '<i class="confetti-piece cf-5 c-blue"></i>' +
+        //                   '<i class="confetti-piece cf-6 c-purple"></i>' +
+        //                   '<i class="confetti-piece cf-7 c-gold"></i>' +
+        //                   '<i class="confetti-piece cf-8 c-teal"></i>' +
+        //                   // Kepingan kecil
+        //                   '<i class="confetti-piece cf-9  cf-small c-gold"></i>' +
+        //                   '<i class="confetti-piece cf-10 cf-small c-purple"></i>' +
+        //                   '<i class="confetti-piece cf-11 cf-small c-blue"></i>' +
+        //                   '<i class="confetti-piece cf-12 cf-small c-gold"></i>' +
+        //               '</div>' +
+          
+        //               // --- LAYER DEPAN: MASKOT ---
+        //               // Imej maskot dengan class 'mascot-float'
+        //               '<img src="resources/icons/maskotCheckIn_Success04.png" ' +
+        //                   'class="mascot-float" ' +
+        //                    'alt="Mascot Success" />' +
+          
+        //          '</div>' +
+          
+        //     '</div>'
+
+        //   },
+        //    ]
+        //  },
+        {
+            xtype: 'container',
+            width: '100%',
+            height: 130, // Maintain height baru
+            style: 'background-color:transparent',
+            layout: {
+                type: 'hbox',
+                pack: 'center', // Pastikan pack center
+                align: 'start', // Align start supaya mascot boleh anchor dari atas
+            },
+            items: [
+
+///////mascot di kiri
+
+// {
+//     width: 0, // Kekal 0 supaya tak tolak text center lari
+//     xtype: 'component',
+//     html:
+//     // UBAH SINI:
+//     // 1. Tukar 'right' kepada 'left: 0px' atau 'left: 10px'
+//     // 2. top: -30px (Kekalkan tinggi)
+//     '<div style="position:absolute; top:-40px; left:5px; z-index:1; width:125px;">' + 
+//         '<div class="celebration-container">' +
+            
+//             // Confetti (Class stop-confetti mesti ada dalam CSS)
+//             '<div class="confetti-explosion">' +
+//                 '<i class="confetti-piece cf-1 c-gold"></i>' +
+//                 '<i class="confetti-piece cf-2 c-purple"></i>' +
+//                 '<i class="confetti-piece cf-3 c-teal"></i>' +
+//                 '<i class="confetti-piece cf-4 c-gold"></i>' +
+//                 '<i class="confetti-piece cf-5 c-blue"></i>' +
+//                 '<i class="confetti-piece cf-6 c-purple"></i>' +
+//                 '<i class="confetti-piece cf-7 c-gold"></i>' +
+//                 '<i class="confetti-piece cf-8 c-teal"></i>' +
+//                  // ... baki confetti ...
+//             '</div>' +
+
+//             // Image Maskot
+//             '<img src="resources/icons/maskotCheckIn_Success04.png" class="mascot-float" style="width:100%; height:auto; display:block;" alt="Mascot" />' +
+//         '</div>' +
+//     '</div>'
+// },
+
+
+// {
+//     xtype: 'container',
+//     flex: 1, // Flex 1 ambil baki ruang
+//     margin: '-5 0 0 0',
+//     height: 120,
+//     style: 'background-color:transparent',
+//     layout: { type: 'vbox', pack: 'start', align: 'center' },
+//     items: [
+//         {
+//             width: '100%',
+//             margin: '-30 0 0 0',
+//             html: '<div style="color:white; text-align:center; font-size:18px; width:100%;"><b>You\'ve Arrived!</b></div>',
+//         },
+//         {
+//             margin: '20 0 0 0',
+//             width: '100%',
+//             id: 'htmlDashboard_MerchantLogo_Name_Tagline',
+//             html:
+//             '<div style="display:flex; flex-direction:column; align-items:center; width:100%; position:relative; z-index:2;">' + 
+                
+//                 // LOGO
+//                 '<div class="ayohaHeroMerchantLogo" style="margin-bottom:6px;">' +
+//                     '<img src="resources/icons/communityCoffea.png" style="width:50px; height:50px; border-radius:12px; border:2px solid rgba(255,255,255,0.8); background:white; display:block;" alt="Logo">' +
+//                 '</div>' +
+
+//                 // TEXT WRAPPER
+//                 '<div class="ayohaHeroMerchantText" style="text-align:center; width:100%;">' +
+//                     '<div class="ayohaHeroMerchantName">Ayu Kuala Sepetang</div>' +
+//                     '<div class="ayohaHeroMerchantTagline">📍 Kuala Sepetang • 🍽️ Cafe & Bakery</div>' +
+//                     '<div class="ayohaHeroMerchantCheckInCount">1st Check-In Today, 12:00 AM</div>' +
+//                 '</div>' +
+//             '</div>'
+//         }
+//     ]
+// }
+
+
+
+
+       ////mascot dikanan       
+                {
+                    xtype: 'container',
+                    flex: 1, // PENTING: Guna flex 1 supaya dia ambil SEMUA ruang yang ada
+                    margin: '-5 0 0 0',
+                    height: 120,
+                    style: 'background-color:transparent',
+                    layout: { type: 'vbox', pack: 'start', align: 'center' },
+                    items: [
+                        {
+                            width: '100%',
+                            margin: '-30 0 0 0',
+                            html: '<div style="color:white; text-align:center; font-size:18px; width:100%;"><b>You\'ve Arrived!</b></div>',
+                        },
+                        {
+                            margin: '20 0 0 0',
+                            width: '100%',
+                            id: 'htmlDashboard_MerchantLogo_Name_Tagline',
+                            html:
+                            '<div style="display:flex; flex-direction:column; align-items:center; width:100%; position:relative; z-index:2;">' + // z-index 2 supaya text duduk atas confetti kalau berlaga
+                                
+                                // LOGO
+                                '<div class="ayohaHeroMerchantLogo" style="margin-bottom:6px;">' +
+                                    '<img src="resources/icons/communityCoffea.png" style="width:50px; height:50px; border-radius:12px; border:2px solid rgba(255,255,255,0.8); background:white; display:block;" alt="Logo">' +
+                                '</div>' +
+        
+                                // TEXT WRAPPER
+                                '<div class="ayohaHeroMerchantText" style="text-align:center; width:100%;">' +
+                                    '<div class="ayohaHeroMerchantName">Ayu Kuala Sepetang</div>' +
+                                    '<div class="ayohaHeroMerchantTagline">📍 Kuala Sepetang • 🍽️ Cafe & Bakery</div>' +
+                                    '<div class="ayohaHeroMerchantCheckInCount">1st Check-In Today, 12:00 AM</div>' +
+                                '</div>' +
+                            '</div>'
+                        }
+                    ]
+                },
+        
+              
+{
+    width: 0, // Kekalkan 0 supaya Center Text tak lari
+    xtype: 'component',
+    html:
+    // UBAH SINI:
+    // 1. top: -30px (Tarik maskot naik atas supaya tak nampak rendah)
+    // 2. width: 125px (Besarkan saiz tapak maskot)
+    // 3. right: -5px (Tolak ke kanan sikit supaya tak himpit teks center)
+    '<div style="position:absolute; top:-10px; right:-5px; z-index:1; width:125px;">' + 
+        '<div class="celebration-container">' +
+            
+            // Confetti (Code sama, cuma pastikan class stop-confetti tadi ada dalam CSS)
+            '<div class="confetti-explosion">' +
+                '<i class="confetti-piece cf-1 c-gold"></i>' +
+                '<i class="confetti-piece cf-2 c-purple"></i>' +
+                '<i class="confetti-piece cf-3 c-teal"></i>' +
+                '<i class="confetti-piece cf-4 c-gold"></i>' +
+                '<i class="confetti-piece cf-5 c-blue"></i>' +
+                '<i class="confetti-piece cf-6 c-purple"></i>' +
+                '<i class="confetti-piece cf-7 c-gold"></i>' +
+                '<i class="confetti-piece cf-8 c-teal"></i>' +
+                 // ... baki confetti ...
+            '</div>' +
+
+            // Image Maskot
+            // width: 100% akan ikut width wrapper (125px tadi), so dia akan jadi besar.
+            '<img src="resources/icons/maskotCheckIn_Success04.png" class="mascot-float" style="width:100%; height:auto; display:block;" alt="Mascot" />' +
+        '</div>' +
+    '</div>'
+}
+            ]
+        },
          {
              xtype: 'container',
              width: '100%',
@@ -2209,6 +2020,7 @@ items:[
    // margin:'-50px 0px 0px 0px',
     margin:'-65px 0px 0px 0px',
     zIndex:1,
+   // height:198,
     height:185,
     //hidden:true,
     id:'containerCheckInRewardProgress',
@@ -2221,7 +2033,9 @@ items:[
     align: 'center'
 },
 items:[
-    { hidden:true,  
+    { 
+        
+        hidden:true,  
         width: '90%',
         height:160,    
        id:'html_DashboardCheckInRewardProgress',
@@ -2273,9 +2087,36 @@ items:[
            // '<div class="ayohaMLast">Last: <b>Monster Chickens</b> • 04:06 PM</div>' +
       
             '<div class="ayohaMActions">' +
-              '<button class="ayohaMBtn" onclick="Ayoha_CheckInAgain &amp;&amp; Ayoha_CheckInAgain();">Check-In Again</button>' +
+              '<button class="ayohaMBtn" onclick="Ayoha_CheckInAgain &amp;&amp; Ayoha_CheckInAgain();">Unlock +10 (2/3)</button>' +
               '<button class="ayohaMBtnGhost" onclick="FloatPanel_Membership_MembershipCardHubsUpgradeShow();">Explore Nearby</button>' +
             '</div>' +
+
+
+
+
+            '<div style="' +
+            'margin-top:2px;padding:6px 10px;display:inline-flex;align-items:center;gap:8px;' +
+            'font:900 12px/1.25 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;' +
+            'letter-spacing:.1px;color:#111827;' +
+            'background:transparent;border:1px none rgba(124,58,237,.18);' +
+            //'border-radius:999px;box-shadow:0 6px 16px rgba(124,58,237,.10);' +
+           // 'backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);' +
+          '">' +
+            // '<span style="' +
+            //   'width:8px;height:8px;border-radius:50%;display:inline-block;' +
+            //   'background:radial-gradient(circle at 30% 30%, rgba(255,255,255,.95) 0%, rgba(255,255,255,0) 55%),' +
+            //              'linear-gradient(135deg, rgba(255,0,222,.75), rgba(200,0,255,.80));' +
+            //   'box-shadow:0 0 0 3px rgba(255,0,222,.10);' +
+            // '"></span>' +
+            '🔒 Complete 1 Mission to Unlock' +
+          '</div>'+
+
+
+
+
+
+
+
           '</div>' +
         '</div>'
       
@@ -18424,16 +18265,18 @@ function Dashboard_LoadLastCheckIn(){
    
 
 
-    Ext.getCmp('htmlDashboard_MerchantLogo_Name_Tagline').setHtml('<div class="ayohaHeroMerchant">' +
-    '<div class="ayohaHeroMerchantLogo">' +
-      '<img src="'+globalFloatPanelMerchantDetailPage_EnterpriseLogo+'" alt="Merchant Logo">' +
-    '</div>' +
-    '<div class="ayohaHeroMerchantText">' +
-      '<div class="ayohaHeroMerchantName">'+globalFloatPanelMerchantDetailPage_EnterpriseName+'</div>' +
-      '<div class="ayohaHeroMerchantTagline">'+globalFloatPanelMerchantDetailPage_EnterpriseTagLine+'</div>' +
-    '</div>' +
-  '</div>'
-)
+//     Ext.getCmp('htmlDashboard_MerchantLogo_Name_Tagline').setHtml('<div class="ayohaHeroMerchant">' +
+//     '<div class="ayohaHeroMerchantLogo">' +
+//       '<img src="'+globalFloatPanelMerchantDetailPage_EnterpriseLogo+'" alt="Merchant Logo">' +
+//     '</div>' +
+//     '<div class="ayohaHeroMerchantText">' +
+//       '<div class="ayohaHeroMerchantName">'+globalFloatPanelMerchantDetailPage_EnterpriseName+'</div>' +
+//      // '<div class="ayohaHeroMerchantTagline">'+globalFloatPanelMerchantDetailPage_EnterpriseTagLine+'</div>' +
+//      '<div class="ayohaHeroMerchantTagline">📍 Kuala Sepetang • 🍽️ Cafe & Bakery</div>' +     
+//       '<div class="ayohaHeroMerchantCheckInCount">1st Check-In Today,12:00 AM</div>' +
+//     '</div>' +
+//   '</div>'
+// )
 
 
 
@@ -18461,14 +18304,29 @@ function Dashboard_LoadLastCheckIn(){
                
                
                 Ext.getCmp('DashboardMain_EnterprisesLoadLastCheckInStoreID').setHidden(false); 
+                
+                
+
+                if(CheckInCount<=2){
+                    Ext.getCmp('containerCheckInRewardProgress').setHidden(false); 
+                    Ext.getCmp('html_DashboardCheckInRewardProgressMaxReached').setHidden(true); 
+                    Ext.getCmp('html_DashboardCheckInRewardProgress').setHidden(false); 
+                }
+                if(CheckInCount > 2){
+                    Ext.getCmp('containerCheckInRewardProgress').setHidden(true); 
+                    Ext.getCmp('html_DashboardCheckInRewardProgressMaxReached').setHidden(false); 
+                    Ext.getCmp('html_DashboardCheckInRewardProgress').setHidden(false); 
+                }
+
+                
 
 
-               
+
                 Ext.getCmp('containerCheckInMerchantPage').setHidden(false); 
                 Ext.getCmp('containerDashboard_PerksYouCanEnjoyHere').setHidden(false); 
                 Ext.getCmp('containerDashboard_MembershipCard_CheckIn').setHidden(false); 
                 Ext.getCmp('containerDashboard_RecentVisitor_CheckIn').setHidden(false); 
-                Ext.getCmp('containerCheckInRewardspacer02').setHidden(false); 
+                Ext.getCmp('containerCheckInRewardspacer02').setHidden(true); 
 
                // Ext.getCmp('Dashboard_Carousel_CheckIn').setHidden(false); 
 
@@ -18510,7 +18368,8 @@ Ext.getCmp('containerCheckInRewardspacer01').setHidden(true);
 Ext.getCmp('Dashboard_Carousel_takCheckIn').setHidden(true); 
 Ext.getCmp('Dashboard_Carousel_takCheckIn').setHeight(0);
 Ext.getCmp('Dashboard_Carousel_CheckIn').setHidden(false); 
-Ext.getCmp('Dashboard_Carousel_CheckIn').setHeight(205); 
+//Ext.getCmp('Dashboard_Carousel_CheckIn').setHeight(205); 
+Ext.getCmp('Dashboard_Carousel_CheckIn').setHeight(245); 
 Ext.getCmp('containerDashboard_CheckOut').setHidden(false); 
 
 //Ext.getCmp('mainDashboardCarousel').setHidden(true); 

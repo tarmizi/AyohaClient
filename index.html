@@ -22,6 +22,183 @@
     position: relative;
 }
     </style>
+
+    <style>
+      /* Container untuk Badge */
+.gold-badge-wrapper {
+  position: relative;
+  display: inline-block;
+  border-radius: 50%; /* Pastikan ia bulat ikut bentuk badge */
+  overflow: hidden;   /* Penting: Supaya kilauan tak "tumpah" keluar */
+  transform: translateZ(0); /* Hardware acceleration untuk mobile smooth */
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4); /* Glow kuning lembut di belakang */
+}
+
+/* Layer Kilauan (The Shine) */
+.gold-badge-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -150%; /* Mula dari luar kiri */
+  width: 100%;
+  height: 100%;
+  
+  /* Buat garisan cahaya putih yang pudar */
+  background: linear-gradient(
+    to right, 
+    rgba(255, 255, 255, 0) 0%, 
+    rgba(255, 255, 255, 0.8) 50%, 
+    rgba(255, 255, 255, 0) 100%
+  );
+  
+  transform: skewX(-25deg); /* Sengetkan cahaya supaya nampak natural */
+  animation: shine-effect 3s infinite; /* Ulang setiap 3 saat */
+}
+
+/* Keyframes untuk gerakkan cahaya */
+@keyframes shine-effect {
+  0% {
+    left: -150%;
+  }
+  20% {
+    left: 150%; /* Cahaya melintas laju dalam 0.6 saat (20% dari 3s) */
+  }
+  100% {
+    left: 150%; /* Tunggu diam (pause) sebelum ulang balik */
+  }
+}
+.gold-badge-wrapper {
+  /* ...kod yang atas tadi... */
+  animation: pop-in 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes pop-in {
+  0% { transform: scale(0); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+.ayoha-floating-mascot {
+    /* Maskot terapung naik turun dalam masa 3 saat */
+    animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+    0% { transform: translate(0, 0px); }
+    50% { transform: translate(0, -8px); } /* Naik 8px */
+    100% { transform: translate(0, 0px); }
+}
+
+/* Wrapper utama untuk memastikan semua duduk setempat */
+.celebration-container {
+    position: relative;
+    width: 120px;
+    height: 131px;
+}
+
+.mascot-float {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    display: block;
+    filter: drop-shadow(0 5px 10px rgba(0,0,0,0.3));
+    
+    /* Animasi sekali sahaja (forwards bermaksud dia kekal saiz akhir) */
+    animation: mascot-entry 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    
+    /* Mula-mula kita sorokkan dia */
+    transform: scale(0); 
+    opacity: 0;
+}
+
+@keyframes mascot-entry {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1); /* Kembali saiz asal */
+        opacity: 1;
+    }
+}
+
+
+/* --- CONFETTI SETUP --- */
+
+/* Titik tengah letupan (di belakang maskot) */
+.confetti-explosion {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    z-index: 1; /* Duduk di belakang maskot */
+    animation: stop-confetti 1s ease-out forwards;
+    animation-delay: 5s;
+}
+
+/* Bentuk asas kepingan konfeti */
+.confetti-piece {
+    position: absolute;
+    display: block;
+    width: 8px;
+    height: 12px;
+    opacity: 0; /* Mula-mula halimunan */
+}
+
+/* Warna-warna konfeti (ikut tema app: Emas, Ungu, Teal) */
+.c-gold   { background-color: #FFD700; }
+.c-purple { background-color: #9C27B0; }
+.c-teal   { background-color: #00BCD4; }
+.c-blue   { background-color: #2196F3; }
+
+/* Animasi Letupan: Bergerak dari tengah ke luar, berpusing, dan pudar */
+@keyframes pop-confetti {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg) scale(0.5);
+        opacity: 1; /* Muncul tiba-tiba */
+    }
+    80% {
+        opacity: 1; /* Kekal terang sekejap */
+    }
+    100% {
+        /* Variable (--tx, --ty, --r) akan ditentukan pada setiap kepingan di bawah */
+        transform: translate(var(--tx), var(--ty)) rotate(var(--r)) scale(1);
+        opacity: 0; /* Pudar dan hilang */
+    }
+}
+
+/* --- POSISI SETIAP KEPINGAN (Manual tapi padu) --- */
+/* Kita buat 12 kepingan. Setiap satu ada arah berbeza. */
+
+.cf-1 { --tx: -60px; --ty: -70px; --r: 120deg; animation: pop-confetti 1.2s ease-out infinite 0.1s; }
+.cf-2 { --tx:   0px; --ty: -90px; --r: -90deg; animation: pop-confetti 1.2s ease-out infinite 0.3s; }
+.cf-3 { --tx:  60px; --ty: -70px; --r:  45deg; animation: pop-confetti 1.2s ease-out infinite 0.2s; }
+.cf-4 { --tx: -80px; --ty:    0px; --r: 180deg; animation: pop-confetti 1.2s ease-out infinite 0.5s; }
+.cf-5 { --tx:  80px; --ty:    0px; --r: -45deg; animation: pop-confetti 1.2s ease-out infinite 0.4s; }
+.cf-6 { --tx: -60px; --ty:  60px; --r:  90deg; animation: pop-confetti 1.2s ease-out infinite 0.1s; }
+.cf-7 { --tx:   0px; --ty:  80px; --r: 200deg; animation: pop-confetti 1.2s ease-out infinite 0.3s; }
+.cf-8 { --tx:  60px; --ty:  60px; --r: -70deg; animation: pop-confetti 1.2s ease-out infinite 0.2s; }
+
+/* Kepingan kecil tambahan untuk variasi */
+.cf-small { width: 5px; height: 5px; border-radius: 50%; }
+.cf-9  { --tx: -40px; --ty: -100px; --r: 0deg; animation: pop-confetti 1.5s ease-out infinite 0.6s; }
+.cf-10 { --tx:  40px; --ty: -100px; --r: 0deg; animation: pop-confetti 1.5s ease-out infinite 0.7s; }
+.cf-11 { --tx: -90px; --ty:  -30px; --r: 0deg; animation: pop-confetti 1.5s ease-out infinite 0.5s; }
+.cf-12 { --tx:  90px; --ty:  -30px; --r: 0deg; animation: pop-confetti 1.5s ease-out infinite 0.6s; }
+
+/* Nota: Saya set 'infinite' supaya anda boleh nampak efeknya berulang.
+   Untuk production, anda boleh buang 'infinite' supaya ia meletup SEKALI sahaja bila page load. */
+
+   @keyframes stop-confetti {
+    0% {
+        opacity: 1; /* Masih nampak */
+    }
+    100% {
+        opacity: 0; /* Pudar habis */
+        visibility: hidden; /* Sorok terus supaya tak kacau performance */
+    }
+}
+    </style>
 <style>
 /* Row wrapper (duduk dalam container docked top) */
 .ayohaHeroDockRowTop{
@@ -1236,51 +1413,95 @@ text-align: center;
   max-width: 92%;
 }
 
-.ayohaHeroMerchantLogo{
-  width:44px;
-  height:44px;
-  border-radius:12px;
+.ayohaHeroMerchantLogo {
+  /* 1. SIZE: Besarkan sikit supaya jadi focal point */
+  width: 56px;
+  height: 56px;
+  flex: 0 0 56px; /* Update flex basis ikut width */
+  
+  border-radius: 14px; /* Curve sikit lagi bucu dia */
+  background: rgba(255, 255, 255, 1);
+  
+  /* 2. BORDER: Tebalkan sikit (2px) supaya 'pop' */
+  border: 2px solid rgba(255, 255, 255, 0.6); 
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); /* Shadow lebih dramatik sikit */
 
-  background:rgba(255,255,255,1);
-  border:1px solid rgba(255,255,255,.18);
-  box-shadow:0 10px 18px rgba(0,0,0,.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  overflow:hidden;
-  flex:0 0 44px;
+  /* 3. ALIGNMENT: INI PALING PENTING UNTUK CENTER */
+  margin: 0 auto 8px auto; 
+  /* Atas: 0, Kanan: Auto, Bawah: 8px (jarak dengan teks), Kiri: Auto */
 }
 
-.ayohaHeroMerchantLogo img{
-  width:34px;
-  height:34px;
-  object-fit:contain;
-  display:block;
+.ayohaHeroMerchantLogo img {
+  /* Saiz imej adjust ikut container baru */
+  width: 50px; 
+  height: 50px; 
+  object-fit: contain;
+  display: block;
+  border-radius: 10px; /* Optional: smoothkan bucu gambar */
 }
 
 .ayohaHeroMerchantText{
   min-width:0;                 /* ✅ penting untuk ellipsis */
 }
+.ayohaHeroMerchantName {
+  color: #ffffff;
+  /* Tambah text-align center */
+  text-align: center; 
+  font: 900 16px/1.1 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; /* Saya besarkan font sikit ke 16px */
+  letter-spacing: -.2px;
 
-.ayohaHeroMerchantName{
-  color:#ffffff;
-  font:900 14px/1.05 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-  letter-spacing:-.2px;
-
-  white-space:nowrap;
-  overflow:hidden;
-  text-overflow:ellipsis;
+  white-space: normal;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  
+  /* FIX UTAMA: */
+  width: 100%; /* Pakai ruang penuh */
+  max-width: 100%; /* Buang had 80% supaya dia boleh center */
+  margin: 0 auto; /* Pastikan kotak ini duduk tengah */
+  transform: none; /* BUANG translateX(-5px) */
 }
 
-.ayohaHeroMerchantTagline{
-  margin-top:3px;
-  color:rgba(255,255,255,.78);
-  font:700 10px/1.2 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+.ayohaHeroMerchantTagline {
+  margin-top: 4px;
+  color: rgba(255, 255, 255, .9); /* Terangkan sikit warna */
+  /* Tambah text-align center */
+  text-align: center;
+  font: 700 11px/1.2 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  
+  white-space: normal;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  
+  /* FIX UTAMA: */
+  width: 100%;
+  max-width: 90%; /* Kecilkan sikit dari nama kedai supaya nampak kemas */
+  margin: 0 auto; /* Centerkan kotak */
+  transform: none; /* BUANG translateX(-5px) */
+}
 
-  white-space:nowrap;
-  overflow:hidden;
-  text-overflow:ellipsis;
+.ayohaHeroMerchantCheckInCount {
+  margin-top: 4px;
+  color: rgba(255, 255, 255, .78);
+  /* Tambah text-align center */
+  text-align: center;
+  font: 700 10px/1.2 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  
+  /* FIX UTAMA: */
+  width: 100%;
+  transform: none; /* BUANG translateX(-5px) */
 }
 
 </style>
@@ -1303,7 +1524,7 @@ text-align: center;
 /* ===== Card Base (Ayoha theme: white + lavender + glow stars) ===== */
 .ayohaMCard{
   border-radius:22px;
-  padding:14px 14px 12px;
+  padding:14px 14px 5px;
   position:relative;
   overflow:hidden;
 
@@ -1456,7 +1677,7 @@ text-align: center;
 .ayohaMProgTop b{ color:#111827; }
 
 .ayohaMBar{
-  margin-top:8px;
+  margin-top:10px;
   height:11px;
   border-radius:999px;
   background:rgba(17,24,39,.10);
@@ -1514,7 +1735,7 @@ text-align: center;
 
 /* ===== Buttons ===== */
 .ayohaMActions{
-  margin-top:12px;
+  margin-top:15px;
   display:flex;
   gap:10px;
 }
