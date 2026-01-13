@@ -637,10 +637,11 @@ function FloatPanel_Membership_MembershipCardHubsUpgradeHide() {
 }
 
 
-function FloatPanel_Membership_MembershipCardHubsUpgrade_CheckInPageShow(logoUrl,EnterpriseName,EnterpriseTagline,CheckInCount,EnterpiseAccNo) {
+function FloatPanel_Membership_MembershipCardHubsUpgrade_CheckInPageShow(logoUrl,EnterpriseName,EnterpriseTagline,StrCheckInCount,EnterpiseAccNo) {
     // Create a new div element to hold our custom HTML
 
-    if(CheckInCount <=3){
+  var CheckInCount=parseInt(StrCheckInCount);
+    if(CheckInCount <=2){
         const popupContent = document.createElement('div');
         // This HTML is unchanged
         popupContent.innerHTML = `
@@ -717,13 +718,16 @@ function FloatPanel_Membership_MembershipCardHubsUpgrade_CheckInPageShow(logoUrl
     
                         if (data.success == "true") {
                             
+                          CheckInCount=CheckInCount+1;
                             // After the save is successful,
                             // show your animation and the *new* "Confirmed" popup.
 
-                            FloatPanel_AyohaStore_AyohaPointCollectedAnimShow();
-                            FloatPanel_Membership_CheckInPage_ConfirmedShow(CheckInCount + 1); // This is correct.
+                         //   FloatPanel_AyohaStore_AyohaPointCollectedAnimShow();
+                          //  FloatPanel_Membership_CheckInPage_ConfirmedShow(CheckInCount + 1); // This is correct.
+                          Ayoha_CelebrationReward(CheckInCount);
                             CoreFunction_DashboardAyohaUser();
                             FloatPanel_Membership_MembershipCardHubsUpgradeHide();
+                          //  Ayoha_WelcomeBackFans();
                            // Dashboard_MerchantDetailPageShow();
                         } else {
                             swalFireFail("Fail!->" + result.responseText.trim());
@@ -747,8 +751,49 @@ function FloatPanel_Membership_MembershipCardHubsUpgrade_CheckInPageShow(logoUrl
             }
         });
     }else{
-        CoreFunction_DashboardAyohaUser();
-        FloatPanel_Membership_MembershipCardHubsUpgradeHide();
+      var objn = {
+        "EnterpriseHQAccNo": EnterpiseAccNo,
+        "EnterpriseAccNo":EnterpiseAccNo,
+        "SubscriberAccNo": GetCurrAyohaUserAccountNo(),
+        "CheckInCode": "CIC-" + GenerateRandomNo() + '-' + GetCurrAyohaUserAccountNo(),
+        "CheckInMethod": "Online",
+        "CheckInPage": "MerchantList"
+    };
+    var _value = Ext.Ajax.request({
+        type: "POST",
+        url: GetAPIurl() + '/EnterprisesCheckIn/EnterprisesCheckIn_Insert',
+        dataType: "json",
+        data: JSON.stringify(objn),
+        headers: {
+            "Content-Type": "application/json; charset=utf-8"
+        },
+        success: function (result, request) {
+            data = Ext.decode(result.responseText.trim());
+
+            if (data.success == "true") {
+                
+                // After the save is successful,
+                // show your animation and the *new* "Confirmed" popup.
+
+               // FloatPanel_AyohaStore_AyohaPointCollectedAnimShow();
+               // FloatPanel_Membership_CheckInPage_ConfirmedShow(CheckInCount + 1); // This is correct.
+                CoreFunction_DashboardAyohaUser();
+                FloatPanel_Membership_MembershipCardHubsUpgradeHide();
+                Ayoha_WelcomeBackFans();
+               // Dashboard_MerchantDetailPageShow();
+            } else {
+                swalFireFail("Fail!->" + result.responseText.trim());
+                LoadingPanelHide();
+                Ext.Viewport.unmask();
+            }
+            Ext.Viewport.unmask();
+        },
+        failure: function (result, request) {
+            swalFireFail("Fail!" + result.responseText.trim());
+            Ext.Viewport.unmask();
+            LoadingPanelHide();
+        }
+    });
     }
   
 }

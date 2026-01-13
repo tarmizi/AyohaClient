@@ -1525,5 +1525,149 @@ if(used=="2nd Check-In"){
   
     if (fill) fill.style.width = pct + '%';
     if (txt)  txt.textContent  = used + '/' + limit + (isMax ? ' (Max)' : '');
+
+
+
+
   }
   
+
+  function SetOverMaxCount(count) {
+    // 1. Tentukan Gelaran (Title) ikut jumlah count
+    var title = "";
+    
+    if (count == 4) {
+        title = "Super Fan";       // Level 1
+    } else if (count == 5) {
+        title = "Legendary";       // Level 2
+    } else if (count >= 6 && count < 10) {
+        title = "Unstoppable";     // Level 3
+    } else if (count >= 10) {
+        title = "God Mode 👑";     // Level Dewa
+    } else {
+        title = "Extra Visit";     // Default
+    }
+
+    // 2. Cari Element dan Update
+    var el = document.getElementById('OverMaxReachCount');
+    
+    if (el) {
+        // Format: "4 (Super Fan)"
+        el.innerText = count + " (" + title + ")";
+        
+        // OPTIONAL: Tukar warna kalau dah level tinggi sangat (contoh: 10 ke atas)
+        if (count >= 10) {
+            el.style.color = "#d97706"; // Tukar jadi Gold
+        }
+    } else {
+        console.log("Error: Element OverMaxReachCount tak jumpa.");
+    }
+}
+
+
+function Ayoha_WelcomeBackFans() {
+    // 1. Buat Wrapper jika belum ada
+    let wrapper = document.getElementById('ayohaConfettiWrapper');
+    if (!wrapper) {
+        wrapper = document.createElement('div');
+        wrapper.id = 'ayohaConfettiWrapper';
+        document.body.appendChild(wrapper);
+    }
+
+    // 2. Buat Message Toast
+    let toast = document.createElement('div');
+    toast.className = 'ayoha-welcome-toast';
+    toast.innerHTML = '<span>🎉</span> Welcome back, Super Fan!';
+    wrapper.appendChild(toast);
+
+    // Tunjuk toast dengan animasi
+    setTimeout(() => { toast.classList.add('show'); }, 100);
+
+    // 3. Generate 50 keping confetti (Sikit je supaya ringan)
+    const colors = ['#ff4d4d', '#f9cb28', '#7c3aed', '#3b82f6', '#10b981']; // Merah, Kuning, Ungu, Biru, Hijau
+    
+    for (let i = 0; i < 50; i++) {
+        const piece = document.createElement('div');
+        piece.className = 'ayoha-confetti-piece';
+        
+        // Random Properties
+        const bg = colors[Math.floor(Math.random() * colors.length)];
+        const left = Math.floor(Math.random() * 100) + 'vw'; // Posisi Kiri-Kanan random
+        const animDuration = (Math.random() * 2 + 1.5) + 's'; // Kelajuan jatuh random (1.5s - 3.5s)
+        const animDelay = (Math.random() * 0.5) + 's'; // Delay sikit supaya tak jatuh serentak
+
+        piece.style.backgroundColor = bg;
+        piece.style.left = left;
+        piece.style.animation = `ayohaConfettiFall ${animDuration} linear forwards ${animDelay}`;
+
+        wrapper.appendChild(piece);
+    }
+
+    // 4. AUTO CLEANUP (Sangat Penting untuk Performance)
+    // Selepas 3.5 saat, buang semua elemen dari memory telefon
+    setTimeout(() => {
+        if(wrapper) {
+            wrapper.innerHTML = ''; // Kosongkan wrapper
+            // wrapper.remove(); // Boleh uncomment kalau nak buang wrapper terus
+        }
+    }, 3500);
+}
+
+
+function Ayoha_CelebrationReward(checkInNo) {
+    // 1. Buat Wrapper
+    let wrapper = document.createElement('div');
+    wrapper.id = 'ayohaRewardWrapper';
+    document.body.appendChild(wrapper);
+
+    // 2. Tentukan Teks berdasarkan Check-in No
+    let subText = "";
+    if (checkInNo === 1) subText = "Great start! (1/3)";
+    else if (checkInNo === 2) subText = "Almost there! (2/3)";
+    else if (checkInNo === 3) subText = "Mission Complete! (3/3)";
+    else subText = "Check-in successful!";
+
+    // 3. Masukkan Kad Reward (HTML String)
+    let cardHTML = 
+        '<div class="ayoha-reward-card">' +
+            '<div class="ayoha-reward-title">👏 Check-in Successful!</div>' +
+            '<div class="ayoha-reward-points">' +
+                '<span class="ayoha-coin-icon">🪙</span> +10 PTS' +
+            '</div>' +
+            '<div class="ayoha-reward-sub">' + subText + '</div>' +
+        '</div>';
+    
+    wrapper.innerHTML = cardHTML;
+
+    // 4. GENERATE EXPLOSIVE CONFETTI (30 keping cukup)
+    const colors = ['#FCD34D', '#F87171', '#A78BFA', '#34D399', '#60A5FA']; // Warna ceria
+    
+    for (let i = 0; i < 30; i++) {
+        let p = document.createElement('div');
+        p.className = 'ayoha-confetti-p';
+        p.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        
+        // Kira arah letupan rawak (Explosion Math)
+        let angle = Math.random() * Math.PI * 2; // Arah 360 darjah
+        let velocity = 100 + Math.random() * 150; // Jarak terbang (100px - 250px)
+        let tx = Math.cos(angle) * velocity + 'px';
+        let ty = Math.sin(angle) * velocity + 'px';
+
+        // Set variable CSS untuk animasi
+        p.style.setProperty('--tx', tx);
+        p.style.setProperty('--ty', ty);
+        
+        // Animasi
+        p.style.animation = `ayohaExplode 1.5s ease-out forwards`;
+        
+        wrapper.appendChild(p);
+    }
+
+    // 5. AUTO CLEANUP (Hilang selepas 3 saat)
+    setTimeout(() => {
+        // Tambah efek fade out pada wrapper sebelum buang
+        wrapper.style.transition = "opacity 0.5s";
+        wrapper.style.opacity = "0";
+        setTimeout(() => { if(wrapper) wrapper.remove(); }, 500);
+    }, 3000);
+}

@@ -49,7 +49,9 @@
       'RelativeCheckInTime',
       'AyohaRewardPointCheckIn',
       'CheckInCount',
+      'CheckInCountStr',
       'CheckInCode',
+      'JenisPerniagaan',
       {
           name: 'ModifiedCountStar',
           convert: function (value, record) {
